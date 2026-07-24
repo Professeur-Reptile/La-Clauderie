@@ -2,42 +2,42 @@
   "guilde": {
     "classementServeur": 5,
     "classement": {
-      "releveLe": "2026-07-24T16:49:41Z",
+      "releveLe": "2026-07-24T19:41:43Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Monarchs",
-          "memberCount": 99,
-          "totalLifetimeXp": 41720579,
+          "memberCount": 97,
+          "totalLifetimeXp": 41205646,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "HUMANITY",
           "memberCount": 92,
-          "totalLifetimeXp": 30831858,
+          "totalLifetimeXp": 30915843,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Look Good Play Good",
           "memberCount": 77,
-          "totalLifetimeXp": 23906778,
+          "totalLifetimeXp": 24179929,
           "topLevel": 20
         },
         {
           "rank": 4,
           "name": "Ehren Nuggets",
           "memberCount": 91,
-          "totalLifetimeXp": 12009172,
+          "totalLifetimeXp": 12020330,
           "topLevel": 20
         },
         {
           "rank": 5,
           "name": "La Clauderie",
           "memberCount": 41,
-          "totalLifetimeXp": 10432044,
+          "totalLifetimeXp": 10489912,
           "topLevel": 20
         },
         {
@@ -50,8 +50,8 @@
         {
           "rank": 7,
           "name": "OTUKEN",
-          "memberCount": 30,
-          "totalLifetimeXp": 7382224,
+          "memberCount": 32,
+          "totalLifetimeXp": 7658808,
           "topLevel": 20
         },
         {
@@ -65,7 +65,7 @@
           "rank": 9,
           "name": "Holy Order",
           "memberCount": 34,
-          "totalLifetimeXp": 5867596,
+          "totalLifetimeXp": 6016945,
           "topLevel": 20
         },
         {
@@ -80,7 +80,7 @@
         "rank": 5,
         "name": "La Clauderie",
         "memberCount": 41,
-        "totalLifetimeXp": 10432044,
+        "totalLifetimeXp": 10489912,
         "topLevel": 20
       }
     }
