@@ -109,6 +109,16 @@ liste. Pour ajouter / renommer / réordonner un onglet : **modifier uniquement
   seule copie, servie par le déploiement du site) — donc il ne peut plus « rater »
   un nouvel onglet.
 
+## 📱 App installable (PWA)
+
+Le site s'ajoute à l'écran d'accueil : `manifest.json` + `sw.js` (racine) +
+`assets/pwa.js` + `assets/icon-*.png`. Toute page doit garder dans son `<head>`
+le `<link rel="manifest">` et le `<script src="assets/pwa.js" defer>` (chemins
+relatifs — `../` depuis `notes/`) ; en copiant une page existante, ils suivent
+tout seuls. Le service worker est en **réseau d'abord** (pas de contenu
+périmé) ; si un jour il faut purger le cache de tout le monde, incrémenter
+`CACHE` dans `sw.js`. Icônes : `python3 scripts/make_icons.py` (Pillow).
+
 ## 📖 Code source du jeu — disponible dans chaque session
 
 Un hook SessionStart (`.claude/hooks/session-start.sh`, présent dans ce repo

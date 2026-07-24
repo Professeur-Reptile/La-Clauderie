@@ -14,6 +14,7 @@ Site statique, simple : un calendrier de guilde, le Discord, et les nouveautés 
 | `metiers.html` | Récolte & Métiers : où récolter (minerai/bois/herbes/pêche) par zone et toutes les recettes par métier (bloc `CRAFT` recalculé automatiquement par `update-bis.yml` → `scripts/build_craft.py`, données embarquées) + guide Enchantement éditorial |
 | `assets/nav.js` | La barre de navigation de TOUTES les pages (site + Codex) — source de vérité unique des onglets |
 | `assets/codex-popup.js` | Fiches incrustées : ouvre objets, sorts, talents, monstres, PNJ, quêtes et glossaire **dans la page**, à partir des données du Codex (voir plus bas) |
+| `manifest.json` + `sw.js` + `assets/pwa.js` | **App installable** : le site s'ajoute à l'écran d'accueil (voir « Installer le site comme une app »). Icônes régénérables par `scripts/make_icons.py` |
 | `woc.html` | Tuto « Acheter des $WOC » : wallet Solana, achat de SOL/USDC, swap vers le token officiel, liaison en jeu et Claudium à ~20 % de remise — éditorial, sourcé sur la doc du jeu (README + docs/claudium-store.md, v0.27) |
 | `admin.html` | Espace officiers : gérer le calendrier, les membres et les faits d'armes |
 | `patch-notes.html` | Historique de **toutes** les mises à jour du jeu, la plus récente en premier |
@@ -174,6 +175,30 @@ secrets du repo :
 > (visible dans l'onglet « Informations générales » de l'hébergement). Le
 > fichier `.htaccess` du site redirige ensuite `http://` et `www.` vers
 > `https://laclauderie.fr`.
+
+## Installer le site comme une app
+
+Le site est une **PWA** : sur téléphone comme sur ordinateur, il s'ajoute à
+l'écran d'accueil et s'ouvre en plein écran, sans barre de navigateur.
+
+- **Android / Chrome / Edge** : une pastille « 📲 Installer l'app » apparaît en
+  bas de page (ou menu ⋮ → « Installer l'application »).
+- **iPhone / iPad** : Apple ne donne pas de bouton — Safari → Partager →
+  « Sur l'écran d'accueil ». La pastille rappelle la manip.
+- La pastille se ferme définitivement avec le ✕ (mémorisé dans le navigateur).
+
+Sous le capot :
+
+| Fichier | Rôle |
+|---|---|
+| `manifest.json` | Nom, icônes, couleurs, raccourcis (Builds, Métiers, PvP, Nouveautés) |
+| `sw.js` | Service worker **réseau d'abord** : jamais de contenu périmé tant que le réseau répond, et le site s'ouvre quand même hors ligne (dernière visite en cache). Pour repartir d'un cache propre chez tout le monde : incrémenter `CACHE` en tête du fichier |
+| `assets/pwa.js` | Enregistre le service worker et affiche la pastille d'installation |
+| `assets/icon-*.png` | Icônes 192/512/maskable/apple-touch, générées par `python3 scripts/make_icons.py` (même blason que le favicon) |
+
+Chaque page charge ces deux lignes dans son `<head>` (chemins relatifs, `../`
+depuis `notes/`) : `<link rel="manifest" …>` et `<script src="…/assets/pwa.js" defer>`.
+Une nouvelle page créée en copiant une page existante les emporte donc avec elle.
 
 ## Liens
 

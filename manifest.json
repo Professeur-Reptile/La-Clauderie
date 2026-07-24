@@ -1,0 +1,24 @@
+{
+  "name": "La Clauderie — Guilde World of ClaudeCraft",
+  "short_name": "La Clauderie",
+  "description": "La guilde francophone de World of ClaudeCraft : events, builds, métiers, PvP, nouveautés et Codex.",
+  "lang": "fr",
+  "id": "/",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b0d12",
+  "theme_color": "#c8a04b",
+  "categories": ["games", "entertainment"],
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Builds", "url": "bis.html" },
+    { "name": "Récolte & Métiers", "url": "metiers.html" },
+    { "name": "PvP", "url": "pvp.html" },
+    { "name": "Nouveautés", "url": "patch-notes.html" }
+  ]
+}

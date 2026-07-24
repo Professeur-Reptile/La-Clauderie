@@ -18,6 +18,13 @@ AddDefaultCharset UTF-8
   # garde « env=HTTPS » dépendait d'une variable d'environnement que le
   # front OVH ne pose pas forcément — le header pouvait ne jamais partir.
   Header always set Strict-Transport-Security "max-age=31536000"
+
+  # Le service worker (mode app / écran d'accueil) ne doit jamais être servi
+  # depuis un cache périmé, sinon une mise à jour du site peut mettre des
+  # heures à atteindre les téléphones qui ont installé l'app.
+  <FilesMatch "^sw\.js$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
 </IfModule>
 
 RewriteEngine On

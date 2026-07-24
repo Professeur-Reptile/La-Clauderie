@@ -72,6 +72,7 @@ jobs:
         run: |
           mkdir -p _site
           cp *.html *.json _site/   # toutes les pages et données de la racine — une nouvelle page ne peut plus être oubliée du déploiement
+          cp sw.js _site/           # service worker de l'app installable (manifest.json est déjà pris par *.json ci-dessus)
           cp -r assets _site/assets
           cp -r notes _site/notes
           cp .htaccess _site/.htaccess
