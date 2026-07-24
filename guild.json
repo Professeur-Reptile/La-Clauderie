@@ -2,70 +2,70 @@
   "guilde": {
     "classementServeur": 5,
     "classement": {
-      "releveLe": "2026-07-24T19:41:43Z",
+      "releveLe": "2026-07-24T22:13:23Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Monarchs",
-          "memberCount": 97,
-          "totalLifetimeXp": 41205646,
+          "memberCount": 98,
+          "totalLifetimeXp": 41507523,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "HUMANITY",
           "memberCount": 92,
-          "totalLifetimeXp": 30915843,
+          "totalLifetimeXp": 30975406,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Look Good Play Good",
           "memberCount": 77,
-          "totalLifetimeXp": 24179929,
+          "totalLifetimeXp": 24393370,
           "topLevel": 20
         },
         {
           "rank": 4,
           "name": "Ehren Nuggets",
           "memberCount": 91,
-          "totalLifetimeXp": 12020330,
+          "totalLifetimeXp": 12032903,
           "topLevel": 20
         },
         {
           "rank": 5,
           "name": "La Clauderie",
           "memberCount": 41,
-          "totalLifetimeXp": 10489912,
+          "totalLifetimeXp": 10490537,
           "topLevel": 20
         },
         {
           "rank": 6,
+          "name": "OTUKEN",
+          "memberCount": 34,
+          "totalLifetimeXp": 7844062,
+          "topLevel": 20
+        },
+        {
+          "rank": 7,
           "name": "Peasants",
           "memberCount": 34,
           "totalLifetimeXp": 7797373,
           "topLevel": 20
         },
         {
-          "rank": 7,
-          "name": "OTUKEN",
-          "memberCount": 32,
-          "totalLifetimeXp": 7658808,
-          "topLevel": 20
-        },
-        {
           "rank": 8,
-          "name": "Glorious",
-          "memberCount": 28,
-          "totalLifetimeXp": 6475309,
+          "name": "Holy Order",
+          "memberCount": 40,
+          "totalLifetimeXp": 6947956,
           "topLevel": 20
         },
         {
           "rank": 9,
-          "name": "Holy Order",
-          "memberCount": 34,
-          "totalLifetimeXp": 6016945,
+          "name": "Glorious",
+          "memberCount": 28,
+          "totalLifetimeXp": 6475309,
           "topLevel": 20
         },
         {
@@ -80,7 +80,7 @@
         "rank": 5,
         "name": "La Clauderie",
         "memberCount": 41,
-        "totalLifetimeXp": 10489912,
+        "totalLifetimeXp": 10490537,
         "topLevel": 20
       }
     }
