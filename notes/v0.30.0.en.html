@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>What's new in v0.30.0 — La Clauderie</title>
+<meta name="description" content="Everything new in World of ClaudeCraft v0.30.0: enchant your equipped gear, crit and haste retuned, a second ranked arena, a visual and audio overhaul, normal dungeon within reach.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="What&#39;s new in v0.30.0 — La Clauderie">
+<meta property="og:description" content="Everything new in World of ClaudeCraft v0.30.0: enchant your equipped gear, crit and haste retuned, a second ranked arena, a visual and audio overhaul, normal dungeon within reach.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.30.0.en.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.30.0.en.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') !== 'en') location.replace('v0.30.0.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head>
+<body>
+<body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Site navigation"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Patch notes</p>
+    <h1>What's new in <span class="v">v0.30.0</span></h1>
+    <p class="lede">Enchanting finally lands on equipped gear, crit and haste are worth half as much per point, a second ranked arena opens its doors — and the game gets a visual and audio overhaul: 259 painted icons, Eastbrook Vale's town center rebuilt, 47 real sound recordings. Click a card for the detailed rules.</p>
+    <div class="meta">
+      <span><b>Released</b> Jul 26, 2026</span>
+      <span><b>Since</b> v0.29.1</span>
+      <span><b>Enchanting</b> · stats · arena · AV overhaul</span>
+    </div>
+    <div class="hint">💡 Click a card to open its detailed rules — and the <span data-codex="term|proc">underlined words</span> for their definition.</div>
+  </header>
+
+  <!-- 1 ENCHANTING & PROFESSIONS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Enchanting without the detour, gathering with tools</h2></div>
+    <p class="sec-sub">No more unequipping to enchant, and the interface finally explains what each enchant gives you. Meanwhile gathering goes professional: every node now demands the trade's tool, from level 1.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="enchant" tabindex="0" role="button" aria-label="Details: enchanting equipped gear">
+        <h3>Enchant what you wear <span class="chip c-new">New</span></h3>
+        <p>Enchants now apply <strong class="hl">directly to equipped gear</strong> — rings and dual-wielded weapons included, with an exact slot picker. You can even <strong class="hl">replace</strong> an existing enchant, behind a confirmation that names what gets destroyed.</p>
+        <span class="more-link">The new rules</span>
+      </div>
+      <div class="card more" data-detail="tools" tabindex="0" role="button" aria-label="Details: gathering tools required">
+        <h3>Gathering demands its tools <span class="chip c-bal">Balance</span></h3>
+        <p>Mining, chopping, herbing and fishing now require <strong class="hl">the matching tool</strong> (pick, axe, sickle, rod) — from level 1, bare hands refused. Tools can sit on your <strong class="hl">action bar</strong> and walk you to the node automatically.</p>
+        <span class="more-link">What changes in practice</span>
+      </div>
+      <div class="card">
+        <h3>Worth remembering</h3>
+        <ul>
+          <li>The Apply Enchant list shows each choice's <strong class="hl">stat bonus</strong>, grouped Base / Runed / Greater.</li>
+          <li>Crafting, salvaging and disenchanting now check <strong class="hl">bag space</strong> before completing — no more lost results.</li>
+          <li>Crafting no longer grants character experience <strong class="hl">at the skill cap</strong>: a grey recipe teaches nothing and pays nothing.</li>
+          <li>The <span data-codex="item|Kilnscale Mantle">Kilnscale Mantle</span> now vendors for 280 copper (down from 470): no more guaranteed vendor profit.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 STATS & COMBAT -->
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Crit and haste retuned</h2></div>
+    <p class="sec-sub">The big secondary-stat rebalance: it now takes twice as many rating points for 1% of crit or haste. The fire mage and elixirs get their turn on the table too.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="ratings" tabindex="0" role="button" aria-label="Details: the crit and haste conversion">
+        <h3>20 rating for 1% <span class="chip c-bal">Balance</span></h3>
+        <p><span data-codex="term|crit">Crit</span> and <span data-codex="term|haste">haste</span> rating now convert at <strong class="hl">20 points per 1%</strong> (up from 10). Gear was left untouched: every piece grants <strong class="hl">half the percentage</strong> it used to. Hit stays at 10.</p>
+        <span class="more-link">Why, and what to do</span>
+      </div>
+      <div class="card more" data-detail="mage" tabindex="0" role="button" aria-label="Details: fire mage burst reined in">
+        <h3>Fire mage falls in line <span class="chip c-bal">Balance</span></h3>
+        <p>Two excesses fixed: the delayed burn paid out <strong class="hl">double</strong> its stated 40%, and all three <span data-codex="ability|Cinderfall">Cinderfall</span> charges came back in 8 s each. Each charge now recharges in <strong class="hl">30 seconds</strong>.</p>
+        <span class="more-link">The fix in detail</span>
+      </div>
+      <div class="card">
+        <h3>Worth remembering</h3>
+        <ul>
+          <li><strong class="hl">One elixir at a time</strong>: <span data-codex="item|Elixir of the Boar">Boar</span>, <span data-codex="item|Vipersear Elixir">Vipersear</span>, <span data-codex="item|Elixir of the Bear">Bear</span> and <span data-codex="item|Elixir of the Serpent">Serpent</span> share a single slot — the latest drink replaces the active one.</li>
+          <li>Ground AoEs — <span data-codex="ability|Holy Ground">Holy Ground</span>, <span data-codex="ability|Earthquake">Earthquake</span>, <span data-codex="ability|Blizzard">Blizzard</span>, <span data-codex="ability|Meteor">Meteor</span> — and <span data-codex="ability|Heroic Leap">Heroic Leap</span> finally scale with your <strong class="hl">damage modifiers</strong>.</li>
+          <li>Nothing to re-gem: it's the <strong class="hl">conversion</strong> that changed, not your items.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 ARENA -->
+  <section>
+    <div class="sec-head"><span class="sec-num">03</span><h2>The Drowned Court joins the rotation</h2></div>
+    <p class="sec-sub">A second ranked arena map enters the circuit, and the Ashen Coliseum is rebuilt from the ground up. Ranked 1v1 and 2v2 now alternate between the two.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="drowned" tabindex="0" role="button" aria-label="Details: The Drowned Court">
+        <h3>The Drowned Court <span class="chip c-pvp">PvP</span></h3>
+        <p>A new ranked map: same outer bounds as the Coliseum, but <strong class="hl">two colonnades of five pillars</strong> carve out a central nave and two side aisles — an entirely different game of sightlines.</p>
+        <span class="more-link">The map in detail</span>
+      </div>
+      <div class="card more" data-detail="coliseum" tabindex="0" role="button" aria-label="Details: the Ashen Coliseum rebuilt">
+        <h3>The Coliseum rebuilt <span class="chip c-pvp">PvP</span></h3>
+        <p>The Ashen Coliseum's pit grows about <strong class="hl">18% longer</strong> with redesigned cover, and the Fiesta danger ring now starts at <strong class="hl">radius 26</strong>: the whole pit is in play.</p>
+        <span class="more-link">What changes</span>
+      </div>
+      <div class="card">
+        <h3>Arena comfort</h3>
+        <ul>
+          <li>A target picked during the countdown now <strong class="hl">survives the gong</strong> instead of being cleared.</li>
+          <li>The Arena window refreshes <strong class="hl">immediately</strong> on queue, leave and after each ranked match.</li>
+          <li>Ranked 1v1 and 2v2 <strong class="hl">alternate</strong> between the two maps with slot parity.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 DUNGEON -->
+  <section>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Gravewyrm Sanctum, freshly-capped edition</h2></div>
+    <p class="sec-sub">The normal dungeon becomes genuinely finishable in quest gear, and Korzul's Grave Inferno finally fires in normal fights — right when it should scare you.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="sanctum" tabindex="0" role="button" aria-label="Details: the normal Sanctum retune">
+        <h3>Normal within reach <span class="chip c-bal">Balance</span></h3>
+        <p>Normal <span data-codex="dungeon|Gravewyrm Sanctum">Gravewyrm Sanctum</span> is retuned for a group <strong class="hl">freshly at the level cap in quest gear</strong>: damage floors drop to ~20–31% of a fresh <span data-codex="term|tank">tank</span>'s health per swing.</p>
+        <span class="more-link">The new numbers</span>
+      </div>
+      <div class="card more" data-detail="inferno" tabindex="0" role="button" aria-label="Details: Grave Inferno triggered at 50%">
+        <h3>Grave Inferno shows up <span class="chip c-mob">Mechanic</span></h3>
+        <p><span data-codex="mob|Korzul the Gravewyrm">Korzul</span>'s channel only armed on a fixed timer — normal groups never saw it. It now also arms when he drops <strong class="hl">below 50% health</strong>. Eating all four pulses costs <strong class="hl">1,050 to 1,350 damage</strong>.</p>
+        <span class="more-link">The mechanic</span>
+      </div>
+      <div class="card">
+        <h3>Worth remembering</h3>
+        <ul>
+          <li>On heroic, boss-summoned adds hit <strong class="hl">40% softer</strong> across several dungeons.</li>
+          <li>The Grave Inferno counter hasn't changed: <strong class="hl">get out of the ring</strong>.</li>
+          <li>The retune doesn't reopen the solo door — it's a group-level adjustment.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 AV OVERHAUL & UI -->
+  <section>
+    <div class="sec-head"><span class="sec-num">05</span><h2>The game gets a makeover — and a voice</h2></div>
+    <p class="sec-sub">The biggest art drop since launch: hand-painted icons, a rebuilt town, real sound recordings. Plus a shower of interface improvements.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="art" tabindex="0" role="button" aria-label="Details: the visual and audio overhaul">
+        <h3>Painted and recorded <span class="chip c-new">Overhaul</span></h3>
+        <p><strong class="hl">259 item icons</strong> and 18 UI icons switch to painted art, <span data-codex="zone|Eastbrook Vale">Eastbrook Vale</span>'s town center is <strong class="hl">rebuilt</strong> (bank, forge, inn, chapel…), and <strong class="hl">47 real recordings</strong> give sound to gathering, crafting, enchanting, eating and drinking.</p>
+        <span class="more-link">The full programme</span>
+      </div>
+      <div class="card more" data-detail="ui" tabindex="0" role="button" aria-label="Details: interface and social">
+        <h3>Interface &amp; social <span class="chip c-util">Comfort</span></h3>
+        <p>The <strong class="hl">Auction House</strong> filters by armor type and primary stat, an indicator by the minimap flags <strong class="hl">World Market pickups</strong>, and guild officers can post a <strong class="hl">guild message</strong> (240 characters) atop the guild tab.</p>
+        <span class="more-link">The full list</span>
+      </div>
+      <div class="card">
+        <h3>Under the hood</h3>
+        <ul>
+          <li>The server input cap triples (40 → <strong class="hl">120 messages/s</strong>): 120 Hz screens stop losing movement inputs.</li>
+          <li>Distant characters <strong class="hl">keep animating</strong> instead of freezing, and overlapping nameplates stack into a readable column.</li>
+          <li>Decorative critters (rabbits, squirrels, songbirds) <strong class="hl">are removed from the world</strong>.</li>
+          <li>Camera zoom is remembered between sessions; two mobile pinch-zoom bugs fixed.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Compiled for <strong>La Clauderie</strong> — data and rules from the official v0.30.0 patch notes.</p>
+    <p style="margin-top:8px"><a href="../patch-notes.html">← All updates</a> · <a href="../index.html">Home</a></p>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Close">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    enchant: {
+      title: "Enchanting lands on equipped gear",
+      summary: "No more unequipping, replacement behind a confirmation, and an interface that finally says what each enchant gives.",
+      body: `
+        <h4>Apply without unequipping</h4>
+        <ul>
+          <li>Enchants apply <b>directly to the equipped item</b>. For rings and dual-wielded weapons (two identical copies possible), you pick the <b>exact slot</b>.</li>
+          <li>Disenchanting an item whose only copy is already enchanted no longer throws "you do not have this item": disenchanting consumes a <b>raw copy first</b> when you have one.</li>
+        </ul>
+        <h4>Replacing an enchant — for real</h4>
+        <ul>
+          <li>Applying a different enchant to an already-enchanted piece shows a <b>confirmation</b>: the destroyed enchant's name, the reagent cost, and a reminder that the old enchant's materials are <b>not refunded</b>. Irreversible.</li>
+          <li>Re-applying an <b>identical</b> enchant is still refused — no accidental waste.</li>
+        </ul>
+        <h4>An interface that explains itself</h4>
+        <ul>
+          <li>The Apply Enchant list shows each choice's <b>stat bonus</b>, grouped into <b>Base</b>, <b>Runed</b> and <b>Greater</b>.</li>
+          <li>Tooltips replace the vague "Enchanted" badge with a <b>per-line attribution</b>.</li>
+        </ul>`
+    },
+    tools: {
+      title: "Every gather demands its tool",
+      summary: "Mining, chopping, herbalism and fishing now check for the trade's tool — from level 1. Bare hands no longer cut it.",
+      body: `
+        <h4>The rule</h4>
+        <ul>
+          <li>Every gathering node and every cast checks the tool: a <b>pick</b> to mine, an <b>axe</b> to chop, a <b>sickle</b> to herb, a <b>pole or rod</b> to fish.</li>
+          <li>It applies <b>from level 1</b>: starter tools cost <b>20 copper</b> each at suppliers.</li>
+        </ul>
+        <h4>The comfort that comes with it</h4>
+        <ul>
+          <li>Tools can sit on your <b>action bar</b>; using one <b>walks you automatically</b> to the targeted node.</li>
+          <li>A stranger's unlooted corpse resting on a node <b>no longer blocks</b> you from gathering it.</li>
+          <li>The character sheet shows your gathering skill <b>rounded down</b> — no more fake "100" at 99.5.</li>
+          <li>If a skill displayed 100 or 200 without the matching deed, the <b>deed is granted retroactively</b> at your next login.</li>
+        </ul>`
+    },
+    ratings: {
+      title: "Crit and haste: 20 rating for 1%",
+      summary: "The rating conversion doubles for crit and haste. Gear doesn't change — its yield does.",
+      body: `
+        <h4>The new conversion</h4>
+        <ul>
+          <li><span data-codex="term|crit">Crit</span> and <span data-codex="term|haste">haste</span> rating convert at <b>20 points per 1%</b>, up from 10. <b>Hit</b> rating stays at 10 per 1%.</li>
+          <li>Item and set-bonus values were <b>intentionally left untouched</b>: every piece simply yields half the percentage.</li>
+        </ul>
+        <h4>What it means for you</h4>
+        <ul>
+          <li><b>Nothing to replace, nothing to re-gem</b>: your gear is still the right gear, it just weighs half as much in crit/haste.</li>
+          <li><span data-codex="term|rotation">Rotations</span> built around haste thresholds will need to <b>revisit those thresholds</b> — see the Builds page for updated priorities.</li>
+        </ul>`
+    },
+    mage: {
+      title: "Fire mage burst, reined in",
+      summary: "Two short-fight excesses: a burn that paid double and near-free Cinderfall charges.",
+      body: `
+        <h4>The burn paid double</h4>
+        <ul>
+          <li>The fire mage's delayed burn <b>re-extended its full duration</b> instead of carrying only the unpaid balance — paying out about <b>double</b> its stated 40% over 6 seconds. Fixed.</li>
+        </ul>
+        <h4>Cinderfall moves to 30 s per charge</h4>
+        <ul>
+          <li><span data-codex="ability|Cinderfall">Cinderfall</span> keeps its <b>three charges</b>, but each now recharges in <b>30 seconds</b> instead of 8.</li>
+          <li>An opener chaining three Cinderfalls is still possible — but now it's <b>earned</b>: the reserve takes a minute and a half to rebuild.</li>
+        </ul>`
+    },
+    drowned: {
+      title: "The Drowned Court — the second ranked map",
+      summary: "Same outer walls as the Ashen Coliseum, but an entirely different interior geometry.",
+      body: `
+        <h4>The geometry</h4>
+        <ul>
+          <li>Two <b>colonnades of five straight pillars</b> line a <b>central nave</b> and two <b>side aisles</b>: sightlines cut short, kites orbit the pillars.</li>
+          <li>Outer bounds and walls are <b>identical to the Coliseum</b> — your distance habits still hold, your cover habits don't.</li>
+        </ul>
+        <h4>The rotation</h4>
+        <ul>
+          <li>Ranked <b>1v1 and 2v2</b> alternate between the two maps with <b>slot parity</b>: queue twice, see both arenas.</li>
+        </ul>`
+    },
+    coliseum: {
+      title: "The Ashen Coliseum rebuilt, the Fiesta retuned",
+      summary: "The pit grows longer, cover is redesigned, and the Fiesta danger ring now covers the entire pit.",
+      body: `
+        <h4>The pit</h4>
+        <ul>
+          <li>About <b>18% longer</b>, width unchanged, with <b>redesigned cover</b> — memorized positions need relearning.</li>
+        </ul>
+        <h4>The Fiesta</h4>
+        <ul>
+          <li>The danger ring starts at <b>radius 26</b>: it covers <b>the whole pit</b> — no more quiet corner to wait it out.</li>
+        </ul>`
+    },
+    sanctum: {
+      title: "Normal Gravewyrm Sanctum: the new floors",
+      summary: "Two tuning passes to make the dungeon finishable by a freshly-capped group in quest gear.",
+      body: `
+        <h4>The damage floors</h4>
+        <ul>
+          <li>Trash: about <b>103</b> per swing. <b>Korgath the Bound</b>: ~301. <span data-codex="mob|Korzul the Gravewyrm">Korzul</span>: ~280. <b>Grand Necromancer Velkhar</b>: ~200.</li>
+          <li>That's roughly <b>20 to 31%</b> of a freshly-geared <span data-codex="term|tank">tank</span>'s health per swing — demanding, but healable.</li>
+        </ul>
+        <h4>And on heroic</h4>
+        <ul>
+          <li><b>Boss-summoned</b> adds hit <b>40% softer</b> across several dungeons: ~150 on a reference tank instead of 250.</li>
+        </ul>`
+    },
+    inferno: {
+      title: "Grave Inferno finally fires",
+      summary: "Korzul's signature mechanic only armed on a fixed timer and went unseen on normal. It's now guaranteed below 50% health.",
+      body: `
+        <h4>The trigger</h4>
+        <ul>
+          <li>Before: the channel only armed <b>every 30 seconds</b> — most normal groups killed <span data-codex="mob|Korzul the Gravewyrm">Korzul</span> without ever seeing it.</li>
+          <li>It now also arms <b>when he drops below 50% health</b>: every group will see it at least once.</li>
+        </ul>
+        <h4>The counter</h4>
+        <ul>
+          <li>Standing through the full channel — <b>four pulses</b> — costs about <b>1,050 to 1,350 raw damage</b>. The rule hasn't changed: <b>get out of the ring</b>.</li>
+        </ul>`
+    },
+    art: {
+      title: "Hand-painted, really recorded",
+      summary: "The biggest art drop since launch: icons, town, animations and sound.",
+      body: `
+        <h4>The icons</h4>
+        <ul>
+          <li>About <b>259 non-weapon items</b> now show painted art in bags, tooltips, loot windows and vendor lists.</li>
+          <li><b>18 UI icons</b> (side rail, mobile bottom bar, Mobile Plus tray) go painted too — Professions gets its own mortar-and-pestle.</li>
+        </ul>
+        <h4>Eastbrook Vale rebuilt</h4>
+        <ul>
+          <li><span data-codex="zone|Eastbrook Vale">Eastbrook Vale</span>'s town center is rebuilt: <b>bank, forge, inn, chapel, weaving workshop, toolery, market stall</b>, wall wings and the Grand Armory — plus a new banker's chest and a redesigned Ravenpost mailbox.</li>
+          <li>If you logged out in town, you may reappear <b>slightly moved</b> at your next login.</li>
+        </ul>
+        <h4>The sound</h4>
+        <ul>
+          <li><b>47 real recordings</b>: gathering (herbs, ore, wood), crafting at all 10 stations, disenchanting, salvaging, masterwork — and eating, drinking, quaffing potions, all previously <b>silent</b>.</li>
+          <li>Heal-over-time spells (<span data-codex="ability|Patch Up">Patch Up</span> and friends) no longer play their sound <b>every tick</b> — once on application.</li>
+        </ul>
+        <h4>And out in the world</h4>
+        <ul>
+          <li>Overlapping nameplates <b>stack into a readable column</b>; far characters (beyond ~58 m) <b>keep animating</b>.</li>
+          <li>The priest's halo no longer <b>pierces</b> the pointy hat, and the rock mound at the mine entrance draws where it actually blocks.</li>
+          <li><b>Decorative critters</b> — rabbits, squirrels, songbirds — are removed from the world.</li>
+        </ul>`
+    },
+    ui: {
+      title: "Interface, social and controls — the list",
+      summary: "A filterable Auction House, a guild message, steadier targeting and a shower of comfort fixes.",
+      body: `
+        <h4>Commerce &amp; guild</h4>
+        <ul>
+          <li>The <b>Auction House</b> filters gear by <b>armor type</b> (Cloth, Leather, Mail) and <b>primary stat</b> (Strength, Agility, Intellect).</li>
+          <li>A <b>World Market indicator</b> by the minimap lights up when gold or items from expired listings await at the Trader.</li>
+          <li><b>Guild officers</b> can post a welcome message up to <b>240 characters</b> atop the Guild tab.</li>
+        </ul>
+        <h4>Targeting &amp; camera</h4>
+        <ul>
+          <li>New <b>"Keep Target on Ground Click"</b> option: clicking empty ground no longer clears your target.</li>
+          <li>The <b>target-of-target</b> frame anchors beside the target frame (not below), and the target frame no longer flickers on selection.</li>
+          <li><b>Camera zoom</b> is remembered between sessions; camera drags no longer trip the browser's "press Esc to release your cursor" notice.</li>
+        </ul>
+        <h4>Community fixes</h4>
+        <ul>
+          <li><b>Reset to Defaults</b> now resets only the open tab, instead of wiping every category.</li>
+          <li>Bag gold updates <b>immediately</b>, the World Market and your bags stop fighting for space in mobile landscape, and the character sheet tracks prestige rank live.</li>
+          <li>Meat and Cloth labels added to Town Focus and the corpse-harvest picker; the vendor sale log is finally translated for stacks.</li>
+        </ul>`
+    }
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Inline cards (glossary, mobs, spells…) based on the Codex data -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

@@ -680,7 +680,7 @@ const BUILDS = {
    ],
    rotation: [
     ["Cinderbolt", { fr: "le spam principal : chaque crit alimente Ignition et compte pour Hot Streak.", en: "the main spam: every crit feeds Ignition and counts toward Hot Streak." }],
-    ["Cinderfall", { fr: "instant, hors GCD, crit garanti, 3 charges — l'outil pour forcer le 2e crit d'un Hot Streak.", en: "instant, off-GCD, guaranteed crit, 3 charges — the tool to force the 2nd crit of a Hot Streak." }],
+    ["Cinderfall", { fr: "instant, hors GCD, crit garanti, 3 charges — l'outil pour forcer le 2e crit d'un Hot Streak. v0.30 : chaque charge recharge en 30 s (au lieu de 8) — un outil de précision, plus un spam.", en: "instant, off-GCD, guaranteed crit, 3 charges — the tool to force the 2nd crit of a Hot Streak. v0.30: each charge recharges in 30s (up from 8) — a precision tool now, not a spam." }],
     ["Pyrelance", { fr: "à consommer sur proc Hot Streak : instant, gratuit, et le crit relance la machine.", en: "spend it on a Hot Streak proc: instant, free, and the crit restarts the engine." }],
     ["Dragon's Breath", { fr: "le cône à charger : crit garanti à pleine charge, et il compte pour Hot Streak.", en: "the charge-up cone: guaranteed crit at full charge, and it counts toward Hot Streak." }],
     ["Scald", { fr: "le filler en déplacement — et crit garanti sous 30 % PV de la cible.", en: "the filler while moving — and a guaranteed crit below 30% of the target's HP." }],
@@ -13112,6 +13112,10 @@ function renderBuild() {
       <h2 class="bsec-h">🧠 ${T({ fr: "Spé & talents", en: "Spec & talents" })}</h2>
       <div class="bspec"><b><span data-codex="spec|${spec.split(" — ")[0].replace(/"/g, "&quot;")}">${spec}</span></b><span class="bmastery">${loc(b.mastery)}</span><p>${loc(b.pourquoi)}</p></div>
       <div class="bstats">${T({ fr: "Priorité de stats : ", en: "Stat priority: " })}<b>${loc(b.stats)}</b></div>
+      <p class="bt-cap">${T({
+        fr: "v0.30 : le critique et la hâte se convertissent désormais à <b>20 points de score pour 1 %</b> (le toucher reste à 10). L'équipement n'a pas changé — chaque pièce rend juste moitié moins de pourcentage ; les priorités relatives ci-dessus restent valables.",
+        en: "v0.30: crit and haste rating now convert at <b>20 points per 1%</b> (hit stays at 10). Gear didn't change — every piece simply yields half the percentage; the relative priorities above still hold.",
+      })}</p>
       <ol class="btalents">${talents}</ol>
       <p class="bt-cap">${T({
         fr: "Talents 2.0 (v0.27) : <b>un choix par rangée</b>, débloquées aux niveaux 5, 8, 11, 14, 17 et 20 — six choix en tout, modifiables à tout moment.",

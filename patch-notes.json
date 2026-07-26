@@ -2,6 +2,28 @@
   "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
   "versions": [
     {
+      "version": "v0.30.0",
+      "date": "2026-07-26",
+      "titre": "Enchante ton équipement, crit et hâte recalibrés — et une deuxième arène",
+      "resume": "L'enchantement se pose enfin directement sur l'équipement porté, remplacement compris (derrière une confirmation qui nomme ce qui sera détruit), avec une interface qui affiche le bonus de chaque enchant. Le critique et la hâte demandent désormais 20 points de score pour 1 % au lieu de 10 — l'équipement n'a pas bougé, il rend moitié moins. La Drowned Court rejoint l'Ashen Coliseum reconstruite en rotation classée, la récolte exige l'outil du métier dès le niveau 1, et le jeu s'offre une refonte audiovisuelle : 259 icônes peintes, le bourg d'Eastbrook Vale rebâti, 47 vrais enregistrements sonores. Le Gravewyrm Sanctum normal devient finissable en équipement de quête et le Grave Inferno de Korzul se déclenche enfin sous 50 % de santé.",
+      "temps_forts": [
+        "Enchantement sur l'équipement porté, remplacement possible — et des écrans qui expliquent enfin chaque bonus",
+        "Critique et hâte à 20 points pour 1 % (au lieu de 10) : chaque pièce rend moitié moins, rien à re-gemmer",
+        "La Drowned Court, deuxième arène classée en rotation 1v1/2v2 avec l'Ashen Coliseum reconstruite",
+        "Refonte audiovisuelle : 259 icônes peintes, Eastbrook Vale rebâti, 47 vrais sons — et la récolte exige ses outils dès le niveau 1"
+      ],
+      "page": "notes/v0.30.0.html",
+      "titre_en": "Enchant your gear, crit and haste retuned — and a second arena",
+      "resume_en": "Enchanting finally lands directly on equipped gear, replacement included (behind a confirmation naming what gets destroyed), with an interface that shows each enchant's bonus. Crit and haste now take 20 rating points per 1% instead of 10 — gear was left untouched, it simply yields half. The Drowned Court joins the rebuilt Ashen Coliseum in the ranked rotation, gathering requires the trade's tool from level 1, and the game gets an audiovisual overhaul: 259 painted icons, Eastbrook Vale's town center rebuilt, 47 real sound recordings. Normal Gravewyrm Sanctum becomes finishable in quest gear and Korzul's Grave Inferno finally fires below 50% health.",
+      "temps_forts_en": [
+        "Enchant equipped gear, replacement included — and screens that finally explain each bonus",
+        "Crit and haste at 20 rating per 1% (up from 10): every piece yields half, nothing to re-gem",
+        "The Drowned Court, a second ranked arena rotating 1v1/2v2 with the rebuilt Ashen Coliseum",
+        "Audiovisual overhaul: 259 painted icons, Eastbrook Vale rebuilt, 47 real sounds — and gathering demands its tools from level 1"
+      ],
+      "page_en": "notes/v0.30.0.en.html"
+    },
+    {
       "version": "v0.29.1",
       "date": "2026-07-23",
       "titre": "Hotfix d'équilibrage : soigneurs, tanks et héroïque recalibrés",
