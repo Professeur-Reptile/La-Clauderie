@@ -2674,7 +2674,7 @@ const CRAFT = {
 </script>
 
 <script src="assets/lang.js"></script>
-<script src="assets/version.js" data-version="v0.30.0" defer></script>
+<script src="assets/version.js" data-version="v0.31.0" defer></script>
 <script>
 (function () {
   const T = (fr, en) => (window.LANG === 'en' ? en : fr);
@@ -2912,7 +2912,7 @@ const CRAFT = {
 
   function renderEnchant() {
     return `<div class="block">
-      <div class="block-head"><h2>🪄 ${T('Enchantement', 'Enchanting')}</h2><span class="lvl">${T('guide v0.30', 'v0.30 guide')}</span><span class="sub">${T('pas de recettes : tout est connu d’office', 'no recipes: everything is known from the start')}</span></div>
+      <div class="block-head"><h2>🪄 ${T('Enchantement', 'Enchanting')}</h2><span class="lvl">${T('guide v0.31', 'v0.31 guide')}</span><span class="sub">${T('pas de recettes : tout est connu d’office', 'no recipes: everything is known from the start')}</span></div>
       <p style="color:var(--dim);font-size:0.93rem;margin:8px 0 0">✅ ${T(
         '<b style="color:var(--text)">Activé en jeu depuis la v0.29.0</b> — et depuis la v0.30.0, l’enchant se pose <b style="color:var(--text)">directement sur l’équipement porté</b> (anneaux et armes doublées : on choisit l’emplacement exact). Tout passe par le <b style="color:var(--text)">menu d’objet du sac</b> : clic sur une pièce → « Désenchanter » (la détruit contre des matériaux) ou « Appliquer un enchant » via un sélecteur qui affiche désormais le bonus chiffré de chaque choix, groupé Base / Runed / Greater. Pas de station, pas de paire d’archétype requise : tout le monde peut enchanter. Les magnitudes restent <b style="color:var(--text)">divisées par deux</b> depuis la v0.29 : un jeu complet d’enchants pèse les 15-25 derniers % au-dessus du meilleur équipement — un bonus de finition, pas un palier d’équipement.',
         '<b style="color:var(--text)">Live in game since v0.29.0</b> — and since v0.30.0, enchants apply <b style="color:var(--text)">directly to equipped gear</b> (rings and dual-wielded weapons: you pick the exact slot). Everything goes through the <b style="color:var(--text)">bag item menu</b>: click a piece → “Disenchant” (destroys it for materials) or “Apply Enchant” through a picker that now shows each choice’s stat bonus, grouped Base / Runed / Greater. No station, no archetype pair required: everyone can enchant. Magnitudes remain <b style="color:var(--text)">cut in half</b> since v0.29: a full set of enchants is the last 15-25% on top of best-in-slot gear — a finishing bonus, not a gear tier.')}</p>
@@ -2939,8 +2939,8 @@ const CRAFT = {
         <div class="node fish">
           <h3><span class="ico">⚠️</span>${T('Les pièges', 'The traps')}</h3>
           <p style="margin:0;color:var(--dim);font-size:0.9rem">${T(
-            '• <b style="color:var(--text)">Remplacer un enchant détruit l’ancien</b> (v0.30) : la confirmation nomme ce qui sera perdu, les matériaux de l’ancien ne sont pas remboursés — irréversible. Réappliquer un enchant identique reste refusé.<br>• Désenchanter consomme <b style="color:var(--text)">d’abord une copie brute</b> quand tu en as une — la copie enchantée est préservée.<br>• Attention au « vendre le junk » : poussières, essences et shards peuvent y passer (les pièces liées, elles, sont désormais protégées).<br>• Enchanter une pièce Masterwork ne fait rien perdre (bonus cumulés).',
-            '• <b style="color:var(--text)">Replacing an enchant destroys the old one</b> (v0.30): the confirmation names what gets lost, the old enchant’s materials are not refunded — irreversible. Re-applying an identical enchant is still refused.<br>• Disenchanting consumes a <b style="color:var(--text)">raw copy first</b> when you have one — the enchanted copy is preserved.<br>• Careful with “sell all junk”: dust, essences and shards can get liquidated (bound pieces, though, are now protected).<br>• Enchanting a Masterwork piece loses nothing (bonuses stack).')}</p>
+            '• <b style="color:var(--text)">Remplacer un enchant détruit l’ancien</b> (v0.30) : la confirmation nomme ce qui sera perdu, les matériaux de l’ancien ne sont pas remboursés — irréversible. Depuis la v0.31, les choix « écraseurs » sont <b style="color:var(--text)">marqués en rouge</b> dans le sélecteur. Réappliquer un enchant identique reste refusé.<br>• Désenchanter détruit <b style="color:var(--text)">la copie exactement cliquée</b> (v0.31) — plus de sélection automatique du « doublon le moins précieux » : vérifie ton clic avant de confirmer.<br>• Attention au « vendre le junk » : poussières, essences et shards peuvent y passer (les pièces liées, elles, sont désormais protégées).<br>• Enchanter une pièce Masterwork ne fait rien perdre (bonus cumulés).',
+            '• <b style="color:var(--text)">Replacing an enchant destroys the old one</b> (v0.30): the confirmation names what gets lost, the old enchant’s materials are not refunded — irreversible. Since v0.31, overwriting choices are <b style="color:var(--text)">flagged in red</b> in the picker. Re-applying an identical enchant is still refused.<br>• Disenchanting destroys <b style="color:var(--text)">the exact copy you clicked</b> (v0.31) — no more automatic “least special duplicate” selection: check your click before confirming.<br>• Careful with “sell all junk”: dust, essences and shards can get liquidated (bound pieces, though, are now protected).<br>• Enchanting a Masterwork piece loses nothing (bonuses stack).')}</p>
         </div>
       </div>
     </div>`;

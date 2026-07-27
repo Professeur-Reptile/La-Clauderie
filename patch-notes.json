@@ -2,6 +2,28 @@
   "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
   "versions": [
     {
+      "version": "v0.31.0",
+      "date": "2026-07-27",
+      "titre": "Le monde devient solide : moteur physique, escalade — et un marché mieux rangé",
+      "resume": "Le jeu se dote d'un vrai moteur physique, calculé à l'identique hors ligne, sur le serveur et dans la prédiction du client : les collisions suivent enfin ce que l'œil voit, et selon la hauteur de l'obstacle on l'enjambe, on le franchit d'un saut, on se hisse sur le rebord ou on escalade le mur. Étals, chapelles, quais et mobilier de donjon deviennent solides — les raccourcis qui passaient au travers sont morts. À côté, le dépeçage de cadavres est blindé contre les requêtes malformées, les sacs gagnent leur propre rayon au World Market, l'enchant qui en écraserait un autre s'affiche en rouge (et le désenchantement détruit la copie cliquée), l'empilement vertical des plaques de nom fait marche arrière, et les bannissements déconnectent immédiatement.",
+      "temps_forts": [
+        "Un vrai moteur physique — collisions balayées en continu, glissade, montée de marche — identique hors ligne, serveur et client",
+        "Enjamber, franchir d'un saut, se hisser, escalader : la hauteur de l'obstacle décide — et le mobilier de donjon devient praticable",
+        "Étals, chapelles, quais, caisses : les décors deviennent solides, les raccourcis à travers les murs ne passent plus",
+        "Rayon Sacs au World Market, enchant « écraseur » marqué en rouge, désenchantement sur la copie cliquée — et dépeçage blindé"
+      ],
+      "page": "notes/v0.31.0.html",
+      "titre_en": "The world turns solid: a physics engine, climbing — and a tidier market",
+      "resume_en": "The game gets a real physics engine, resolved identically offline, on the server and in client prediction: collisions finally match what the eye sees, and depending on an obstacle's height you stride over it, vault it, pull up onto the ledge or climb the wall. Market stalls, chapels, docks and dungeon furniture become solid — shortcuts that clipped through are dead. Alongside, corpse harvesting is hardened against malformed requests, bags get their own aisle on the World Market, an enchant that would crush another shows up in red (and disenchanting destroys the copy you clicked), vertical nameplate stacking is rolled back, and bans disconnect immediately.",
+      "temps_forts_en": [
+        "A real physics engine — continuous swept collision, sliding, step-up — identical offline, server and client",
+        "Stride, vault, pull up, climb: obstacle height decides — and dungeon furniture becomes standable",
+        "Market stalls, chapels, docks, crates: scenery turns solid, through-the-wall shortcuts no longer work",
+        "A Bags aisle on the World Market, overwriting enchants flagged in red, disenchant on the clicked copy — and hardened corpse harvest"
+      ],
+      "page_en": "notes/v0.31.0.en.html"
+    },
+    {
       "version": "v0.30.0",
       "date": "2026-07-26",
       "titre": "Enchante ton équipement, crit et hâte recalibrés — et une deuxième arène",
