@@ -2,6 +2,28 @@
   "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
   "versions": [
     {
+      "version": "v0.32.0",
+      "date": "2026-07-29",
+      "titre": "Les Failles : des donjons sans fin nés d'une graine — et onze royaumes à explorer",
+      "resume": "La plus grosse version depuis longtemps. Les Failles arrivent : des donjons instanciés entièrement procéduraux, générés depuis une simple graine et classés de C à S — plus le rang monte, plus les boss dévoilent de mécaniques, jusqu'aux deux légendaires exclusifs du rang S. Le continent s'agrandit de onze royaumes d'un coup, avec 105 quêtes, 48 PNJ et le donjon de plein air Wildheart Basin. Les montures deviennent de vrais objets : les rênes se rangent au sac, se glissent en barre d'action et se montent d'un clic. Et le monde se charge désormais par morceaux — distance de vue accrue, terrain comblé entre les zones, carte de continent interactive — pendant que les compteurs de combat se déplacent, se redimensionnent et se détaillent au survol.",
+      "temps_forts": [
+        "Les Failles : des donjons générés à l'infini depuis graine + niveau + étage, classés de C à S — et 15 % des graines C cachent l'Infernal Citadel",
+        "Onze nouveaux royaumes, 105 quêtes, 48 PNJ — et le donjon Wildheart Basin, caché derrière la Sunken Idol au Palmreach",
+        "Les montures deviennent des objets : rênes au sac, barre d'action, montage en un clic — les épiques ne tombent qu'en Faille de rang S",
+        "Le monde se charge par morceaux : vue plus loin, terrain entre les zones, carte de continent interactive — et compteurs de combat déplaçables"
+      ],
+      "page": "notes/v0.32.0.html",
+      "titre_en": "Rifts: endless dungeons born from a seed — and eleven realms to explore",
+      "resume_en": "The biggest patch in a long while. Rifts arrive: fully procedural instanced dungeons, generated from nothing but a seed and ranked C to S — the higher the rank, the more mechanics bosses reveal, up to the two S-rank exclusive legendaries. The continent grows by eleven realms at once, with 105 quests, 48 NPCs and the open-field Wildheart Basin dungeon. Mounts become real items: reins live in a bag, drag to an action bar and mount in one click. And the world now streams in chunks — greater view distance, terrain filled in between zones, an interactive continent map — while the combat meters become movable, resizable and hover-detailed.",
+      "temps_forts_en": [
+        "Rifts: dungeons generated endlessly from seed + level + floor, ranked C to S — and 15% of C-rank seeds hide the Infernal Citadel",
+        "Eleven new realms, 105 quests, 48 NPCs — and the Wildheart Basin dungeon, hidden behind the Sunken Idol in the Palmreach",
+        "Mounts become items: reins in your bag, on your action bar, mounted in one click — the epics only drop from S-rank rifts",
+        "The world streams in chunks: greater view distance, terrain between zones, an interactive continent map — and movable combat meters"
+      ],
+      "page_en": "notes/v0.32.0.en.html"
+    },
+    {
       "version": "v0.31.0",
       "date": "2026-07-27",
       "titre": "Le monde devient solide : moteur physique, escalade — et un marché mieux rangé",

@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Nouveautés v0.32.0 — La Clauderie</title>
+<meta name="description" content="Toutes les nouveautés de la v0.32.0 de World of ClaudeCraft : les Failles (donjons procéduraux classés de C à S), onze nouveaux royaumes, 105 quêtes, le donjon Wildheart Basin, des montures-objets et un monde chargé en continu.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Nouveautés v0.32.0 — La Clauderie">
+<meta property="og:description" content="Toutes les nouveautés de la v0.32.0 de World of ClaudeCraft : les Failles (donjons procéduraux classés de C à S), onze nouveaux royaumes, 105 quêtes, le donjon Wildheart Basin, des montures-objets et un monde chargé en continu.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.32.0.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.32.0.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') === 'en') location.replace('v0.32.0.en.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Notes de version</p>
+    <h1>Nouveautés <span class="v">v0.32.0</span></h1>
+    <p class="lede">La plus grosse version depuis longtemps : les Failles — des donjons instanciés générés à l'infini depuis une simple graine, classés de C à S —, onze nouveaux royaumes avec 105 quêtes et le donjon Wildheart Basin, des montures qui deviennent de vrais objets à ranger au sac, et un monde chargé en continu avec sa carte de continent interactive. Clique sur une bulle pour les règles détaillées.</p>
+    <div class="meta">
+      <span><b>Publiée</b> le 29 juil. 2026</span>
+      <span><b>Depuis</b> la v0.31.0</span>
+      <span><b>Failles</b> · royaumes · montures · monde</span>
+    </div>
+    <div class="hint">💡 Clique sur une nouveauté pour ouvrir ses règles détaillées — et sur les <span data-codex="term|proc">mots soulignés</span> pour leur définition.</div>
+  </header>
+
+  <!-- 1 LES FAILLES -->
+  <section>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Les Failles : des donjons sans fin</h2></div>
+    <p class="sec-sub">Le morceau de la version : des donjons instanciés entièrement procéduraux, reconstruits à l'identique depuis trois nombres — une graine, un niveau, un étage. Quatre rangs de portails, huit ambiances, et une citadelle écrite à la main cachée dans certaines graines.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="rifts" tabindex="0" role="button" aria-label="Détails : la génération des Failles">
+        <h3>Nées d'une graine <span class="chip c-new">Nouveau</span></h3>
+        <p>Chaque Faille est générée depuis <strong class="hl">graine + niveau + étage</strong>, rien d'autre : serveur, simulation hors ligne et client reconstruisent <strong class="hl">exactement le même donjon</strong>. De <strong class="hl">3 à 6 étages</strong> par descente, avec une ambiance tirée par étage.</p>
+        <span class="more-link">Comment ça marche</span>
+      </div>
+      <div class="card more" data-detail="ranks" tabindex="0" role="button" aria-label="Détails : les rangs C à S">
+        <h3>Classées de C à S <span class="chip c-raid">Défi</span></h3>
+        <p>Quatre rangs de portail — <strong class="hl">C (niv. 20), B (22), A (25), S (28)</strong>. Plus le rang monte, plus les boss dévoilent de mécaniques : <strong class="hl">1 en C, jusqu'à 4 en S</strong>, avec un réglage héroïque de plus en plus musclé.</p>
+        <span class="more-link">L'échelle de difficulté</span>
+      </div>
+      <div class="card more" data-detail="riftloot" tabindex="0" role="button" aria-label="Détails : le butin des Failles">
+        <h3>Le butin suit le rang <span class="chip c-epic">Butin</span></h3>
+        <p>Objet garanti dès le rang C, <strong class="hl">épique garanti dès le B</strong> — et au rang S, deux légendaires exclusifs à <strong class="hl">0,3 % chacun</strong> : <span data-codex="item|Heart of the Rift">Heart of the Rift</span> et <span data-codex="item|Voidsong, Dirk of the Sundered Veil">Voidsong</span>.</p>
+        <span class="more-link">Le tableau des récompenses</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 ONZE ROYAUMES -->
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Onze royaumes à explorer</h2></div>
+    <p class="sec-sub">Le monde s'agrandit d'un coup : onze nouveaux royaumes, 105 quêtes, 48 nouveaux PNJ — et un donjon de plein air caché derrière une idole engloutie.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="realms" tabindex="0" role="button" aria-label="Détails : les onze nouveaux royaumes">
+        <h3>Les onze nouveaux <span class="chip c-new">Nouveau</span></h3>
+        <p>Du <span data-codex="zone|The Veiled Hollow">Veiled Hollow</span> au <span data-codex="zone|The Farshore">Farshore</span> en passant par les <span data-codex="zone|The Drakelands">Drakelands</span> et l'<span data-codex="zone|The Evergarden">Evergarden</span> : <strong class="hl">onze royaumes</strong>, chacun avec ses quêtes et ses habitants.</p>
+        <span class="more-link">La liste complète</span>
+      </div>
+      <div class="card more" data-detail="wildheart" tabindex="0" role="button" aria-label="Détails : le donjon Wildheart Basin">
+        <h3>The Wildheart Basin <span class="chip c-mob">Donjon</span></h3>
+        <p>Un donjon <strong class="hl">niveau 20 en plein air</strong>, caché derrière la Sunken Idol au <span data-codex="zone|The Palmreach">Palmreach</span> : une caldeira de jungle inondée, deux routes autour d'une île aux bêtes, et une terrasse rituelle sous un <strong class="hl">sanctuaire jaguar colossal</strong>.</p>
+        <span class="more-link">Visite guidée</span>
+      </div>
+      <div class="card">
+        <h3>À retenir</h3>
+        <ul>
+          <li><strong class="hl">105 nouvelles quêtes</strong> et <strong class="hl">48 nouveaux PNJ</strong> répartis dans les onze royaumes.</li>
+          <li>Les vides entre les zones écrites à la main sont désormais <strong class="hl">comblés de terrain</strong> : le continent se traverse sans couture.</li>
+          <li>Une <strong class="hl">vue d'ensemble du continent</strong>, interactive, rejoint la carte du monde pour s'y retrouver.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 MONTURES -->
+  <section>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Les montures deviennent des objets</h2></div>
+    <p class="sec-sub">Fini la sélection persistante : les rênes sont des objets utilisables comme les autres. On les garde au sac, on les glisse en barre d'action, on clique pour monter.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="mounts" tabindex="0" role="button" aria-label="Détails : le nouveau système de montures">
+        <h3>Des rênes dans le sac <span class="chip c-util">Refonte</span></h3>
+        <p>Les six montures existent désormais comme <strong class="hl">objets « rênes »</strong> : sac, barre d'action, un clic et c'est monté. Changement de monture <strong class="hl">instantané</strong>, démontage <strong class="hl">sans canalisation</strong> — et l'entraînement d'équitation reste le prérequis.</p>
+        <span class="more-link">Le système en détail</span>
+      </div>
+      <div class="card">
+        <h3>À retenir</h3>
+        <ul>
+          <li>Trois paliers de vitesse : <strong class="hl">peu commune +70 %</strong>, <strong class="hl">rare +75 %</strong>, <strong class="hl">épique +80 %</strong>.</li>
+          <li>Les rênes épiques (Aether-Jouster Hover-Cycle, Thunderstrut the Grand Gobbler) ne tombent <strong class="hl">qu'en Faille de rang S</strong>.</li>
+          <li>Le fidèle <strong class="hl">Valorsteed</strong> reste l'achat du maître d'écurie — il n'a jamais été un drop.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 LE MONDE EN CONTINU -->
+  <section>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Un monde chargé en continu</h2></div>
+    <p class="sec-sub">Le streaming de chunks remplace le chargement du monde d'un seul bloc : on voit plus loin, la mémoire ne déborde plus, et le terrain remplit les blancs de la carte.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="streaming" tabindex="0" role="button" aria-label="Détails : le streaming du monde">
+        <h3>Le monde par morceaux <span class="chip c-util">Perfs</span></h3>
+        <p>Le monde se charge désormais <strong class="hl">morceau par morceau</strong> autour de toi, au lieu de résider entier en mémoire : <strong class="hl">distance de vue accrue</strong> sans plafond mémoire — c'est ce qui rend possibles onze royaumes d'un coup.</p>
+        <span class="more-link">Ce que ça change</span>
+      </div>
+      <div class="card">
+        <h3>À retenir</h3>
+        <ul>
+          <li>Le <strong class="hl">terrain procédural</strong> comble les espaces entre les zones écrites à la main — plus de vide entre deux régions.</li>
+          <li>En vol, le passage au-dessus des obstacles est <strong class="hl">relevé à la hauteur d'enjambée</strong> au sol : plus d'accrochage en rase-mottes.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 INTERFACE, VOIX & COULISSES -->
+  <section>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Compteurs libres, PNJ qui parlent</h2></div>
+    <p class="sec-sub">Les panneaux de compteur de combat se déplacent, se redimensionnent et se séparent, le survol détaille les dégâts — et plus aucun PNJ d'accueil n'est muet.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="meters" tabindex="0" role="button" aria-label="Détails : les compteurs de combat">
+        <h3>Compteurs à ta main <span class="chip c-util">Confort</span></h3>
+        <p>Les panneaux du compteur de combat sont <strong class="hl">déplaçables, redimensionnables et séparables</strong> — et le survol d'une ligne ouvre le <strong class="hl">détail des dégâts</strong>, sort par sort.</p>
+        <span class="more-link">Ce qui change à l'écran</span>
+      </div>
+      <div class="card more" data-detail="voices" tabindex="0" role="button" aria-label="Détails : voix et localisation">
+        <h3>Des voix partout <span class="chip c-new">Audio</span></h3>
+        <p><strong class="hl">72 nouvelles voix de PNJ</strong> et 334 nouveaux clips rejoignent le jeu — <strong class="hl">90 voix et 525 répliques</strong> au total : plus aucun PNJ d'accueil n'est silencieux.</p>
+        <span class="more-link">Le détail des chiffres</span>
+      </div>
+      <div class="card">
+        <h3>À retenir</h3>
+        <ul>
+          <li>Tous les textes nouveaux ou modifiés sont traduits dans <strong class="hl">toutes les langues du jeu</strong> — zéro ligne en attente.</li>
+          <li>Sous le capot : <strong class="hl">22 785 tests</strong> au vert sur cette version, issue de 201 pull requests.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Compilé pour <strong>La Clauderie</strong> — données et règles issues des notes de version officielles v0.32.0.</p>
+    <p style="margin-top:8px"><a href="../patch-notes.html">← Toutes les mises à jour</a> · <a href="../index.html">Accueil</a></p>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    rifts: {
+      title: "Les Failles — un donjon entier dans trois nombres",
+      summary: "Chaque Faille est reconstruite à l'identique depuis sa graine, son niveau de base et l'index d'étage — serveur, simulation hors ligne et client génèrent exactement le même donjon.",
+      body: `
+        <h4>La génération</h4>
+        <ul>
+          <li>Une Faille se décrit entièrement par <b>graine + niveau + étage</b> : pas de plan stocké, le donjon est régénéré à la demande, identique partout.</li>
+          <li>Chaque descente procédurale compte <b>3 à 6 étages</b>, et l'ambiance est tirée <b>étage par étage</b> : une même Faille peut passer du gel à la lave en descendant.</li>
+          <li>Huit ambiances au tirage : <b>Frostbound, Emberforge, Venomweald, Boneyard, Warcamp, Voidscar, Stormspire, Sunken</b> — chacune avec son décor, sa brume et son bestiaire.</li>
+        </ul>
+        <h4>La citadelle cachée</h4>
+        <ul>
+          <li><b>15 % des graines de rang C</b> ouvrent l'<b>Infernal Citadel</b> : un set-piece de <b>2 étages écrit à la main</b>, réservé au rang C — en B, A et S, c'est toujours la descente procédurale.</li>
+        </ul>`
+    },
+    ranks: {
+      title: "L'échelle des rangs : C, B, A, S",
+      summary: "Le rang du portail fixe le niveau, le réglage héroïque et le nombre de mécaniques que les boss dévoilent.",
+      body: `
+        <h4>Les quatre rangs</h4>
+        <ul>
+          <li><b>C — portail niveau 20</b> : les monstres grimpent d'un niveau par étage, plafonnés à 22 ; réglage normal.</li>
+          <li><b>B — niveau 22</b> : monstres au plafond 22, réglés à <b>parité héroïque</b>.</li>
+          <li><b>A — niveau 25</b> : réglage héroïque <b>× 1,2</b>.</li>
+          <li><b>S — niveau 28</b> : réglage héroïque <b>× 1,33</b>, monstres à plat niveau 23 sur tous les étages — le sommet de l'échelle.</li>
+        </ul>
+        <h4>Les boss suivent</h4>
+        <ul>
+          <li>Chaque boss de Faille porte un répertoire de mécaniques dont le rang fixe le budget : <b>1 active en C, 2 en B, 3 en A, 4 en S</b>. Le même boss devient une autre bête selon la porte franchie.</li>
+        </ul>`
+    },
+    riftloot: {
+      title: "Le tableau des récompenses",
+      summary: "Chaque rang paie son propre palier — un rang ne cumule pas les chances des rangs inférieurs, l'échelle monte en rareté.",
+      body: `
+        <h4>À la victoire</h4>
+        <ul>
+          <li><b>C</b> : un objet garanti (table de donjon normal) + <b>10 000 pièces</b>.</li>
+          <li><b>B</b> : un <b>épique héroïque garanti</b> + 10 000 pièces.</li>
+          <li><b>A</b> : épique garanti + <b>35 000 pièces</b>.</li>
+          <li><b>S</b> : épique garanti, <b>35 % de chance d'un second épique</b>, et 55 000 pièces au total.</li>
+        </ul>
+        <h4>Les légendaires du rang S</h4>
+        <ul>
+          <li>Chaque victoire en S tire <b>indépendamment à 0,3 %</b> chacun des deux légendaires exclusifs : <span data-codex="item|Heart of the Rift">Heart of the Rift</span> (collier toutes classes) et <span data-codex="item|Voidsong, Dirk of the Sundered Veil">Voidsong, Dirk of the Sundered Veil</span> (arme de lanceur). Une victoire qui réussit les deux jets rafle les deux.</li>
+        </ul>
+        <h4>Les montures</h4>
+        <ul>
+          <li><b>B</b> : rênes peu communes à <b>0,5 %</b> · <b>A</b> : rares à <b>0,1 %</b> · <b>S</b> : épiques à <b>0,3 %</b> — seule source de ces deux rênes-là. Le rang C n'en donne pas, et chaque rang ne tire que son propre palier.</li>
+        </ul>`
+    },
+    realms: {
+      title: "Les onze nouveaux royaumes",
+      summary: "Onze régions rejoignent le continent d'un coup, chacune avec ses quêtes et ses habitants.",
+      body: `
+        <h4>La liste</h4>
+        <ul>
+          <li><b>The Veiled Hollow</b> · <b>The Drakelands</b> · <b>The Frostveil Reach</b> · <b>The Amberfall</b> · <b>The Willowfen</b> · <b>The Nightbloom</b> · <b>The Wraithwood</b> · <b>The Galecrest</b> · <b>The Palmreach</b> · <b>The Evergarden</b> · <b>The Farshore</b></li>
+        </ul>
+        <h4>Ce qu'on y trouve</h4>
+        <ul>
+          <li><b>105 nouvelles quêtes</b> et <b>48 nouveaux PNJ</b> répartis dans les onze régions.</li>
+          <li>Le détail des zones, de leurs monstres et de leurs ressources est dans le <b>Codex</b> — les fiches se mettent à jour automatiquement depuis les données du jeu.</li>
+        </ul>`
+    },
+    wildheart: {
+      title: "The Wildheart Basin — la caldeira du jaguar",
+      summary: "Un donjon de plein air niveau 20, caché derrière la Sunken Idol au Palmreach.",
+      body: `
+        <h4>Le lieu</h4>
+        <ul>
+          <li>Contrairement aux couloirs processionnaires d'Orkadia, l'intérieur est une <b>caldeira de jungle inondée</b> : une pluie chaude siffle sur les vieilles pierres.</li>
+          <li><b>Deux routes</b> contournent une <b>île aux bêtes</b> centrale, et les deux chemins remontent vers une unique <b>terrasse rituelle</b> sous un sanctuaire jaguar colossal.</li>
+        </ul>
+        <h4>Pour qui</h4>
+        <ul>
+          <li>Donjon <b>niveau 20</b>, en champ ouvert — pensez lignes de vue et packs qui patrouillent, pas couloirs.</li>
+        </ul>`
+    },
+    mounts: {
+      title: "Montures : des rênes comme objets",
+      summary: "La sélection persistante disparaît — les rênes sont des objets utilisables ordinaires.",
+      body: `
+        <h4>Le système</h4>
+        <ul>
+          <li>Les rênes se gardent <b>dans un sac</b>, se glissent <b>en barre d'action</b> et se <b>cliquent pour monter</b> — comme n'importe quel objet utilisable.</li>
+          <li>Passer d'une monture à l'autre est <b>instantané</b>, et descendre de monture ne demande <b>aucune canalisation</b>.</li>
+          <li>L'<b>entraînement d'équitation</b> reste le prérequis : les rênes ne montent personne qui ne sait pas tenir en selle.</li>
+        </ul>
+        <h4>L'écurie</h4>
+        <ul>
+          <li><b>Peu communes (+70 %)</b> : Reins of the Sky-Reach Stormfeather (le griffon) · Reins of Kama-Kage the Shadow-Jump Toad (le crapaud).</li>
+          <li><b>Rares (+75 %)</b> : Reins of the Goliath Grag-Bear (l'ours) · Reins of the Moss-Shell Stalk-Glider (l'escargot).</li>
+          <li><b>Épiques (+80 %)</b> : Ignition Key: Aether-Jouster Hover-Cycle · Reins of Thunderstrut the Grand Gobbler — exclusives aux Failles de rang S.</li>
+          <li>Le <b>Valorsteed</b> s'achète toujours chez le maître d'écurie, comme avant.</li>
+        </ul>`
+    },
+    streaming: {
+      title: "Le streaming du monde",
+      summary: "Le monde se charge par morceaux autour du joueur au lieu de résider entier en mémoire.",
+      body: `
+        <h4>Ce qui change</h4>
+        <ul>
+          <li>Le <b>streaming de chunks</b> remplace la résidence tout-en-un : le client ne garde en mémoire que ce qui t'entoure.</li>
+          <li>Résultat : une <b>distance de vue accrue</b> sans plafond mémoire — c'est ce qui rend possibles les onze nouveaux royaumes d'un coup.</li>
+          <li>Les espaces entre les zones écrites à la main sont <b>comblés de terrain généré</b> : le continent est continu, plus de vide entre deux régions.</li>
+        </ul>
+        <h4>Et en vol</h4>
+        <ul>
+          <li>Le seuil de survol des obstacles en vol est <b>relevé à la hauteur d'enjambée au sol</b> : ce qu'on enjambe à pied ne t'accroche plus en rase-mottes.</li>
+        </ul>`
+    },
+    meters: {
+      title: "Les compteurs de combat, à ta façon",
+      summary: "Les panneaux se déplacent, se redimensionnent, se séparent — et le survol détaille les dégâts.",
+      body: `
+        <h4>Les panneaux</h4>
+        <ul>
+          <li>Chaque panneau du compteur de combat est <b>déplaçable</b> et <b>redimensionnable</b>, et les panneaux se <b>séparent</b> : dégâts d'un côté, soins de l'autre, chacun où tu veux.</li>
+        </ul>
+        <h4>Le survol</h4>
+        <ul>
+          <li>Survoler une ligne du compteur ouvre la <b>décomposition des dégâts</b> — sort par sort, de quoi lire d'où vient vraiment le chiffre.</li>
+        </ul>
+        <h4>Et la carte</h4>
+        <ul>
+          <li>Une <b>vue d'ensemble du continent</b>, interactive, rejoint la carte du monde — indispensable maintenant que le continent a onze régions de plus.</li>
+        </ul>`
+    },
+    voices: {
+      title: "90 voix, 525 répliques",
+      summary: "La campagne d'enregistrement continue : plus aucun PNJ d'accueil n'est muet.",
+      body: `
+        <h4>Les chiffres</h4>
+        <ul>
+          <li><b>72 nouvelles voix de PNJ</b> et <b>334 nouveaux clips</b> dans cette version.</li>
+          <li>Le jeu compte désormais <b>90 voix</b> pour <b>525 répliques vocalisées</b> — et aucun PNJ qui t'accueille ne reste silencieux.</li>
+        </ul>
+        <h4>Côté traduction</h4>
+        <ul>
+          <li>Tous les textes nouveaux ou modifiés sont livrés traduits dans <b>toutes les langues du jeu</b>, zéro ligne en attente.</li>
+        </ul>`
+    }
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>
