@@ -31,6 +31,10 @@ se limite à la partie rédactionnelle des « Nouveautés » :
      Vérifier que les noms existent dans `../wocc-knowledge-base/data/*.json`.
    - La page FR redirige vers `.en.html` si `lang=en` (et inversement) — garder
      les deux scripts de redirection en tête de fichier.
+   - **Si la MAJ ajoute des objets équipables/montables**, inclure une section
+     « Les nouveaux objets, et où les trouver » (modèle : section 06 de
+     `notes/v0.32.0.html`) : qui drope quoi, à quel taux, avec un span
+     `data-codex` par objet.
 3. **Ajouter une entrée en tête de `patch-notes.json`** (version, date, titre,
    resume, temps_forts, page + variantes `_en` et `page_en`). L'accueil et la
    page Nouveautés se mettent à jour tout seuls à partir de ce fichier.
