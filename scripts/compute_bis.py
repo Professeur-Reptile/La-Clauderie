@@ -182,6 +182,28 @@ for _iid in sorted(HEROIC_OK):
         if _chs:
             _add(_iid, f"Butin héroïque : {_m['name']}{_pct_combined(_chs)}")
 
+# Butin des Failles (RIFT_LOOT.json, extrait depuis la v0.32.0) : ces
+# récompenses sont attribuées PAR LE CODE du jeu à la victoire
+# (rift/progression.ts, addRiftClearGearLoot) — aucune table de butin ne les
+# liste. Sans ce bloc, elles passaient pour « héritage » inobtenable et le BiS
+# les écartait à tort. Toléré absent (données antérieures à la v0.32.0).
+_RIFT = _load('RIFT_LOOT', {})
+for _iid in _RIFT.get('epicIds', []):
+    _add(_iid, "Faille (rang B ou plus) : épique de victoire garanti")
+_LEGPCT = _RIFT.get('legendaryChanceS')
+for _iid in _RIFT.get('legendaryIds', []):
+    _add(_iid, "Faille rang S : légendaire"
+         + (f" · {round(_LEGPCT * 100, 1)} % par victoire" if _LEGPCT else ""))
+for _iid in _RIFT.get('rareIds', []):
+    _add(_iid, "Faille : drop d'ambiance (trash, gros taux sur le boss d'ambiance)")
+for _iid in _RIFT.get('gearIds', []):
+    _add(_iid, "Faille : first-clear (équipement personnel, améliorable à l'Essence)")
+for _tier, _mi in sorted((_RIFT.get('mounts') or {}).items()):
+    for _iid in _mi.get('reins', []):
+        _ch = _mi.get('chance')
+        _add(_iid, f"Faille rang {_tier} : monture"
+             + (f" · {round(_ch * 100, 1)} % par victoire" if _ch else ""))
+
 # Héritage : équipement (arme/armure) sans AUCUNE provenance connue — ni butin,
 # ni vendeur, ni quête, ni delve, ni marché, ni départ de classe. Vérifié dans
 # le code du jeu v0.25.0 : ces objets ne sont placés nulle part. Hors du pool.
