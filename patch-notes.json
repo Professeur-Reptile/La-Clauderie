@@ -2,6 +2,28 @@
   "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
   "versions": [
     {
+      "version": "v0.32.1",
+      "date": "2026-07-30",
+      "titre": "/unstuck ne tue plus, un portail de Faille par zone — et les escortes enfin finissables",
+      "resume": "Le correctif qui tient les promesses de la v0.32.0. La commande /unstuck cesse d'exécuter : elle téléporte au cimetière le plus proche contre cinq minutes d'Affliction d'Instabilité (−75 % d'attributs). Les Failles changent d'échelle : fini les trois portails mondiaux, chaque zone garde le sien en rotation horaire, la descente se lie au groupe façon raid dès le premier kill, et un first-clear adverse ne t'éjecte plus — tu finis ta descente avec le butin de parcours. Les quatre quêtes d'escorte, impossibles depuis la sortie (les escortés étaient des monstres, pas des PNJ), deviennent finissables. Le Wildheart Basin est recalibré sur le modèle du Gravewyrm Sanctum, 34 créatures des nouveaux royaumes reçoivent enfin butin et objets de famille, et les iPhone 4 Go entrent dans le monde sans mourir.",
+      "temps_forts": [
+        "/unstuck téléporte au cimetière au lieu de tuer — contre 5 minutes d'Affliction d'Instabilité (−75 % d'attributs)",
+        "Failles : un portail par zone en rotation horaire, liaison de groupe façon raid, et les perdants de la course finissent leur descente",
+        "Les quatre quêtes d'escorte (Wren, Mosley, Suli, Bram) enfin finissables — les escortés étaient des monstres, pas des PNJ",
+        "Wildheart Basin recalibré (santé doublée, vrais dégâts) et du butin pour 34 créatures des nouveaux royaumes"
+      ],
+      "page": "notes/v0.32.1.html",
+      "titre_en": "/unstuck stops killing, one rift portal per zone — and the escorts finally completable",
+      "resume_en": "The patch that keeps v0.32.0's promises. The /unstuck command stops executing people: it teleports to the nearest graveyard for five minutes of Instability Affliction (−75% attributes). Rifts change scale: the three worldwide portals are gone, every zone keeps its own on an hourly rotation, the descent binds to the group raid-style on the first kill, and a rival first-clear no longer ejects you — you finish your descent with the mid-run loot. The four escort quests, impossible since release (the escortees were mobs, not NPCs), become completable. The Wildheart Basin is retuned on the Gravewyrm Sanctum model, 34 creatures of the new realms finally receive loot and heirlooms, and 4 GB iPhones enter the world without dying.",
+      "temps_forts_en": [
+        "/unstuck teleports to the graveyard instead of killing — for 5 minutes of Instability Affliction (−75% attributes)",
+        "Rifts: one portal per zone on an hourly rotation, raid-style group binding, and race losers finish their descent",
+        "The four escort quests (Wren, Mosley, Suli, Bram) finally completable — the escortees were mobs, not NPCs",
+        "Wildheart Basin retuned (health doubled, real damage) and loot for 34 creatures of the new realms"
+      ],
+      "page_en": "notes/v0.32.1.en.html"
+    },
+    {
       "version": "v0.32.0",
       "date": "2026-07-29",
       "titre": "Les Failles : des donjons sans fin nés d'une graine — et onze royaumes à explorer",
