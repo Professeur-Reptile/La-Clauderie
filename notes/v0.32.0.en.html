@@ -273,6 +273,30 @@
       </div>
     </div>
   </section>
+
+  <!-- 6 THE NEW ITEMS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">06</span><h2>The new items, and where to find them</h2></div>
+    <p class="sec-sub">Two legendaries, twelve epics, ten rares — reins aside. At a glance: who drops what, at what rate — click a card for the full list, and any name for its Codex sheet.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="itemslego" tabindex="0" role="button" aria-label="Details: the two legendaries">
+        <h3>Two legendaries <span class="chip c-epic">S rank</span></h3>
+        <p><span data-codex="item|Heart of the Rift">Heart of the Rift</span> (all-class necklace) and <span data-codex="item|Voidsong, Dirk of the Sundered Veil">Voidsong</span> (caster dagger) — <strong class="hl">0.3% each</strong>, only on an S-rank rift clear.</p>
+        <span class="more-link">Both sheets</span>
+      </div>
+      <div class="card more" data-detail="itemsepic" tabindex="0" role="button" aria-label="Details: the epics">
+        <h3>Twelve epics <span class="chip c-epic">Rifts &amp; dungeon</span></h3>
+        <p>The <strong class="hl">4 clear epics</strong> (guaranteed from rank B), <strong class="hl">Zulgar's 3 weapons</strong> in the Wildheart Basin, the <strong class="hl">3 Riftbound rings</strong> from first-clears — and the <strong class="hl">2 mount reins</strong> of rank S.</p>
+        <span class="more-link">The list and sources</span>
+      </div>
+      <div class="card more" data-detail="itemsrare" tabindex="0" role="button" aria-label="Details: the environment rares">
+        <h3>Ten environment rares <span class="chip c-new">Rifts</span></h3>
+        <p>Each rift environment has its <strong class="hl">signature piece</strong> (+ two for the Infernal Citadel): a slim chance on trash, a <strong class="hl">fat chance on the environment's boss</strong> — at every rank.</p>
+        <span class="more-link">The ten pieces</span>
+      </div>
+    </div>
+    <div class="hint">💎 All of these are searchable in the Codex — and the best ones are already compared in the Builds tab.</div>
+  </section>
 </div>
 
 <footer>
@@ -420,6 +444,66 @@
         <h4>And the map</h4>
         <ul>
           <li>An interactive <b>continent overview</b> joins the world map — indispensable now that the continent has eleven more regions.</li>
+        </ul>`
+    },
+    itemslego: {
+      title: "The two S-rank legendaries",
+      summary: "Every S-rank clear rolls independently at 0.3% for each — a clear that beats both rolls takes both.",
+      body: `
+        <h4><span data-codex="item|Heart of the Rift">Heart of the Rift</span> — necklace</h4>
+        <ul>
+          <li><b>14 Stamina, 6 Strength, 6 Agility, 6 Intellect</b>: the game's only legendary neck, wearable by every class — already BiS for several specs on the Builds tab.</li>
+        </ul>
+        <h4><span data-codex="item|Voidsong, Dirk of the Sundered Veil">Voidsong, Dirk of the Sundered Veil</span> — dagger</h4>
+        <ul>
+          <li>A caster main-hand (<b>19 Int, 17 Spi, 13 Sta</b>) with a "Voidsong" proc on spell damage (15%).</li>
+        </ul>
+        <h4>The source</h4>
+        <ul>
+          <li>An <b>S-rank rift clear</b> only — 0.3% per legendary, independent rolls, party loot on the final boss's corpse. Details in the <a href="../failles.html">Rifts guide</a>.</li>
+        </ul>`
+    },
+    itemsepic: {
+      title: "The twelve epics: who, where, how",
+      summary: "Three distinct sources: the rift clear (rank B and up), the Wildheart Basin's final boss, and the first-clear.",
+      body: `
+        <h4>Rift clear — guaranteed epic from rank B</h4>
+        <ul>
+          <li><span data-codex="item|Emberforged Bulwark">Emberforged Bulwark</span> (mail chest, Strength) · <span data-codex="item|Stormsunder Hood">Stormsunder Hood</span> (leather helm, Agility) · <span data-codex="item|Voidweave Mantle">Voidweave Mantle</span> (cloth shoulders, Intellect) · <span data-codex="item|Abysswrought Band">Abysswrought Band</span> (Sta/Spi ring).</li>
+          <li>One <b>guaranteed</b> draw per B/A/S clear — and at rank S, a <b>35% chance at a second</b>.</li>
+        </ul>
+        <h4>Zulgar, in the Wildheart Basin</h4>
+        <ul>
+          <li><span data-codex="item|Wildheart Tuskblade">Wildheart Tuskblade</span> · <span data-codex="item|Hexwood Staff of the Basin">Hexwood Staff of the Basin</span> · <span data-codex="item|Fangknife of Zulgar">Fangknife of Zulgar</span> — three epic weapons on the final boss of the Palmreach's level-20 dungeon.</li>
+        </ul>
+        <h4>Rift first-clear</h4>
+        <ul>
+          <li><span data-codex="item|Riftbound Band of Might">Riftbound Band of Might</span> · <span data-codex="item|Riftbound Band of Insight">Riftbound Band of Insight</span> · <span data-codex="item|Riftbound Band of Guile">Riftbound Band of Guile</span> — one personal ring per winning member, upgradeable with <span data-codex="item|Rift Essence">Rift Essence</span> (and gem-socketable at A/S).</li>
+        </ul>
+        <h4>And the two reins</h4>
+        <ul>
+          <li><span data-codex="item|Ignition Key: Aether-Jouster Hover-Cycle">Aether-Jouster Hover-Cycle</span> · <span data-codex="item|Reins of Thunderstrut the Grand Gobbler">Thunderstrut the Grand Gobbler</span> — 0.3% on an S clear, nowhere else. See the <a href="../montures.html">Mounts guide</a>.</li>
+        </ul>`
+    },
+    itemsrare: {
+      title: "The ten environment rares",
+      summary: "One signature piece per procedural environment, plus two for the Infernal Citadel — slim chance on trash, fat chance on the environment's boss, at every rank.",
+      body: `
+        <h4>Weapons</h4>
+        <ul>
+          <li><span data-codex="item|Hoarfrost Edge">Hoarfrost Edge</span> (Frostbound) · <span data-codex="item|Pit Lord's Cleaver">Pit Lord's Cleaver</span> (Infernal Citadel).</li>
+        </ul>
+        <h4>Armor</h4>
+        <ul>
+          <li><span data-codex="item|Emberforge Gauntlets">Emberforge Gauntlets</span> (Emberforge) · <span data-codex="item|Broodmother Carapace">Broodmother Carapace</span> (Venomweald) · <span data-codex="item|Bonelord Mantle">Bonelord Mantle</span> (Boneyard) · <span data-codex="item|Graskbreaker Girdle">Graskbreaker Girdle</span> (Warcamp) · <span data-codex="item|Voidscar Handwraps">Voidscar Handwraps</span> (Voidscar) · <span data-codex="item|Stormscale Treads">Stormscale Treads</span> (Stormspire) · <span data-codex="item|Pactbound Vestments">Pactbound Vestments</span> (Infernal Citadel).</li>
+        </ul>
+        <h4>Jewelry</h4>
+        <ul>
+          <li><span data-codex="item|Abyssal Loop">Abyssal Loop</span> (Sunken).</li>
+        </ul>
+        <h4>How to farm them</h4>
+        <ul>
+          <li>Each piece only drops <b>in its own environment</b> — and floors re-roll their environment every descent: the environment's boss carries the fat rate, at any rank (C is enough).</li>
         </ul>`
     },
     voices: {

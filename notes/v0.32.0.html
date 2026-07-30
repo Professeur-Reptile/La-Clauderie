@@ -273,6 +273,30 @@
       </div>
     </div>
   </section>
+
+  <!-- 6 LES NOUVEAUX OBJETS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">06</span><h2>Les nouveaux objets, et où les trouver</h2></div>
+    <p class="sec-sub">Deux légendaires, douze épiques, dix rares — sans compter les rênes. En un coup d'œil : qui drope quoi, à quel taux — clique sur une carte pour la liste complète, et sur un nom pour sa fiche Codex.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="itemslego" tabindex="0" role="button" aria-label="Détails : les deux légendaires">
+        <h3>Deux légendaires <span class="chip c-epic">Rang S</span></h3>
+        <p><span data-codex="item|Heart of the Rift">Heart of the Rift</span> (collier toutes classes) et <span data-codex="item|Voidsong, Dirk of the Sundered Veil">Voidsong</span> (dague de lanceur) — <strong class="hl">0,3 % chacun</strong>, uniquement à la victoire d'une Faille de rang S.</p>
+        <span class="more-link">Les deux fiches</span>
+      </div>
+      <div class="card more" data-detail="itemsepic" tabindex="0" role="button" aria-label="Détails : les épiques">
+        <h3>Douze épiques <span class="chip c-epic">Failles &amp; donjon</span></h3>
+        <p>Les <strong class="hl">4 épiques de victoire</strong> (garantis dès le rang B), les <strong class="hl">3 armes de Zulgar</strong> au Wildheart Basin, les <strong class="hl">3 anneaux Riftbound</strong> du first-clear — et les <strong class="hl">2 rênes de monture</strong> du rang S.</p>
+        <span class="more-link">La liste et les sources</span>
+      </div>
+      <div class="card more" data-detail="itemsrare" tabindex="0" role="button" aria-label="Détails : les rares d'ambiance">
+        <h3>Dix rares d'ambiance <span class="chip c-new">Failles</span></h3>
+        <p>Chaque ambiance de Faille a sa <strong class="hl">pièce signature</strong> (+ deux pour l'Infernal Citadel) : petite chance sur le trash, <strong class="hl">grosse chance sur le boss d'ambiance</strong> — à tous les rangs.</p>
+        <span class="more-link">Les dix pièces</span>
+      </div>
+    </div>
+    <div class="hint">💎 Tous ces objets sont cherchables dans le Codex — et les meilleurs sont déjà comparés dans l'onglet Builds.</div>
+  </section>
 </div>
 
 <footer>
@@ -420,6 +444,66 @@
         <h4>Et la carte</h4>
         <ul>
           <li>Une <b>vue d'ensemble du continent</b>, interactive, rejoint la carte du monde — indispensable maintenant que le continent a onze régions de plus.</li>
+        </ul>`
+    },
+    itemslego: {
+      title: "Les deux légendaires du rang S",
+      summary: "Chaque victoire en Faille S tire indépendamment à 0,3 % chacun des deux — une victoire qui réussit les deux jets rafle les deux.",
+      body: `
+        <h4><span data-codex="item|Heart of the Rift">Heart of the Rift</span> — collier</h4>
+        <ul>
+          <li><b>14 Endurance, 6 Force, 6 Agilité, 6 Intellect</b> : le seul cou légendaire du jeu, jouable par toutes les classes — déjà BiS de plusieurs spés sur l'onglet Builds.</li>
+        </ul>
+        <h4><span data-codex="item|Voidsong, Dirk of the Sundered Veil">Voidsong, Dirk of the Sundered Veil</span> — dague</h4>
+        <ul>
+          <li>Arme principale de lanceur (<b>19 Int, 17 Esp, 13 End</b>) avec un proc « Voidsong » sur dégâts de sort (15 %).</li>
+        </ul>
+        <h4>La source</h4>
+        <ul>
+          <li>Victoire d'une <b>Faille de rang S</b> uniquement — 0,3 % par légendaire, jets indépendants, butin de groupe sur le cadavre du boss final. Détails dans le <a href="../failles.html">guide Failles</a>.</li>
+        </ul>`
+    },
+    itemsepic: {
+      title: "Les douze épiques : qui, où, comment",
+      summary: "Trois sources distinctes : la victoire de Faille (rang B ou plus), le boss final du Wildheart Basin, et le first-clear.",
+      body: `
+        <h4>Victoire de Faille — épique garanti dès le rang B</h4>
+        <ul>
+          <li><span data-codex="item|Emberforged Bulwark">Emberforged Bulwark</span> (torse mailles, Force) · <span data-codex="item|Stormsunder Hood">Stormsunder Hood</span> (casque cuir, Agilité) · <span data-codex="item|Voidweave Mantle">Voidweave Mantle</span> (épaules tissu, Intellect) · <span data-codex="item|Abysswrought Band">Abysswrought Band</span> (anneau End/Esp).</li>
+          <li>Un tirage <b>garanti</b> par victoire B/A/S — et au rang S, <b>35 % de chance d'un second</b>.</li>
+        </ul>
+        <h4>Zulgar, au Wildheart Basin</h4>
+        <ul>
+          <li><span data-codex="item|Wildheart Tuskblade">Wildheart Tuskblade</span> · <span data-codex="item|Hexwood Staff of the Basin">Hexwood Staff of the Basin</span> · <span data-codex="item|Fangknife of Zulgar">Fangknife of Zulgar</span> — trois armes épiques sur le boss final du donjon niveau 20 du Palmreach.</li>
+        </ul>
+        <h4>First-clear de Faille</h4>
+        <ul>
+          <li><span data-codex="item|Riftbound Band of Might">Riftbound Band of Might</span> · <span data-codex="item|Riftbound Band of Insight">Riftbound Band of Insight</span> · <span data-codex="item|Riftbound Band of Guile">Riftbound Band of Guile</span> — un anneau personnel par membre du groupe vainqueur, améliorable à l'<span data-codex="item|Rift Essence">Essence de Faille</span> (et sertissable de gemmes en A/S).</li>
+        </ul>
+        <h4>Et les deux rênes</h4>
+        <ul>
+          <li><span data-codex="item|Ignition Key: Aether-Jouster Hover-Cycle">Aether-Jouster Hover-Cycle</span> · <span data-codex="item|Reins of Thunderstrut the Grand Gobbler">Thunderstrut the Grand Gobbler</span> — 0,3 % à la victoire en S, nulle part ailleurs. Voir le <a href="../montures.html">guide Montures</a>.</li>
+        </ul>`
+    },
+    itemsrare: {
+      title: "Les dix rares d'ambiance",
+      summary: "Une pièce signature par ambiance procédurale, plus deux pour l'Infernal Citadel — petite chance sur le trash, grosse sur le boss d'ambiance, à tous les rangs.",
+      body: `
+        <h4>Armes</h4>
+        <ul>
+          <li><span data-codex="item|Hoarfrost Edge">Hoarfrost Edge</span> (Frostbound) · <span data-codex="item|Pit Lord's Cleaver">Pit Lord's Cleaver</span> (Infernal Citadel).</li>
+        </ul>
+        <h4>Armures</h4>
+        <ul>
+          <li><span data-codex="item|Emberforge Gauntlets">Emberforge Gauntlets</span> (Emberforge) · <span data-codex="item|Broodmother Carapace">Broodmother Carapace</span> (Venomweald) · <span data-codex="item|Bonelord Mantle">Bonelord Mantle</span> (Boneyard) · <span data-codex="item|Graskbreaker Girdle">Graskbreaker Girdle</span> (Warcamp) · <span data-codex="item|Voidscar Handwraps">Voidscar Handwraps</span> (Voidscar) · <span data-codex="item|Stormscale Treads">Stormscale Treads</span> (Stormspire) · <span data-codex="item|Pactbound Vestments">Pactbound Vestments</span> (Infernal Citadel).</li>
+        </ul>
+        <h4>Bijou</h4>
+        <ul>
+          <li><span data-codex="item|Abyssal Loop">Abyssal Loop</span> (Sunken).</li>
+        </ul>
+        <h4>Comment les farmer</h4>
+        <ul>
+          <li>La pièce ne tombe que <b>dans son ambiance</b> — et les étages re-tirent leur ambiance à chaque descente : c'est le boss d'ambiance qui porte le gros taux, à n'importe quel rang (le C suffit).</li>
         </ul>`
     },
     voices: {
