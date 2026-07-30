@@ -34,8 +34,9 @@ se limite à la partie rédactionnelle des « Nouveautés » :
 3. **Ajouter une entrée en tête de `patch-notes.json`** (version, date, titre,
    resume, temps_forts, page + variantes `_en` et `page_en`). L'accueil et la
    page Nouveautés se mettent à jour tout seuls à partir de ce fichier.
-3bis. **Mettre à jour les badges « à jour de la version »** : `pvp.html` et
-   `metiers.html` portent `data-version="vX.Y.Z"` sur leur inclusion de
+3bis. **Mettre à jour les badges « à jour de la version »** : `pvp.html`,
+   `metiers.html`, `failles.html` et `montures.html` portent
+   `data-version="vX.Y.Z"` sur leur inclusion de
    `assets/version.js` — passer cet attribut à la nouvelle version APRÈS avoir
    relu la page concernée (guide PvP si la MAJ touche talents/sorts/PvP,
    partie éditoriale des Métiers sinon elle reste à l'ancienne version et le

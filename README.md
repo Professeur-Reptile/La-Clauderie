@@ -12,6 +12,9 @@ Site statique, simple : un calendrier de guilde, le Discord, et les nouveautés 
 | `index.html` | Accueil : Discord, guides, puis 3 onglets — Calendrier (à venir + passés), Membres, Faits d'armes |
 | `bis.html` | Builds par classe et rôle : spé, talents, rotation (éditorial, bloc `BUILDS`) et best-in-slot (bloc `BIS`, recalculé automatiquement par `update-bis.yml` → `scripts/compute_bis.py`) |
 | `metiers.html` | Récolte & Métiers : où récolter (minerai/bois/herbes/pêche) par zone et toutes les recettes par métier (bloc `CRAFT` recalculé automatiquement par `update-bis.yml` → `scripts/build_craft.py`, données embarquées) + guide Enchantement éditorial |
+| `pvp.html` | Guide PvP : modes, Honor/Warfare, un build d'arène par classe, compos 2v2 et Protect Yumi — éditorial, vérifié sur les documents de design du jeu |
+| `failles.html` | Guide Failles (v0.32.0) : portails C/B/A/S, course au first-clear, butin rang par rang, forge à Essence — éditorial, vérifié sur le code du jeu |
+| `montures.html` | Guide Montures (v0.32.0) : système de rênes, les sept montures, sources, prix et taux de drop — éditorial, vérifié sur le code du jeu |
 | `assets/nav.js` | La barre de navigation de TOUTES les pages (site + Codex) — source de vérité unique des onglets |
 | `assets/codex-popup.js` | Fiches incrustées : ouvre objets, sorts, talents, monstres, PNJ, quêtes et glossaire **dans la page**, à partir des données du Codex (voir plus bas) |
 | `manifest.json` + `sw.js` + `assets/pwa.js` | **App installable** : le site s'ajoute à l'écran d'accueil (voir « Installer le site comme une app »). Icônes régénérables par `scripts/make_icons.py` |

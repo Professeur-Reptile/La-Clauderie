@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Failles — La Clauderie</title>
+<meta name="description" content="Le guide des Failles de la guilde : portails C/B/A/S, la course au first-clear, le butin rang par rang, la forge à Essence de Faille et les conseils de La Clauderie.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Failles — La Clauderie">
+<meta property="og:description" content="Le guide des Failles de la guilde : portails C/B/A/S, la course au first-clear, le butin rang par rang, la forge à Essence de Faille et les conseils de La Clauderie.">
+<meta property="og:url" content="https://laclauderie.fr/failles.html">
+<link rel="canonical" href="https://laclauderie.fr/failles.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script src="assets/pwa.js" defer></script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-uncommon: #1eff00; --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --tank: #4a90d9; --heal: #58c46a; --dps: #e5544a; --arcane: #58b6c9;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(88,182,201,0.08), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(200,160,75,0.07), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 880px; margin: 0 auto; padding: 0 clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  header.page { padding: clamp(36px, 6vw, 60px) 0 clamp(20px, 3vw, 30px); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 12px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.1rem, 6vw, 3.2rem); line-height: 1.05; margin: 0 0 10px; }
+  .lede { color: var(--dim); max-width: 62ch; margin: 0; font-size: 0.98rem; }
+
+  h2.sec { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.4rem, 3.4vw, 1.8rem); margin: 38px 0 6px; }
+  .sec-sub { color: var(--dim); font-size: 0.92rem; margin: 0 0 16px; max-width: 68ch; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 12px; padding: 16px 18px; }
+  .card h3 { margin: 0 0 6px; font-size: 1.02rem; font-family: var(--font-display); font-weight: 600; }
+  .card p { margin: 6px 0 0; font-size: 0.9rem; color: var(--dim); }
+  .card b { color: var(--text); }
+  .chip { display: inline-block; font-family: var(--font-mono); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.08em; border: 1px solid color-mix(in srgb, var(--arcane) 45%, transparent); color: var(--arcane); border-radius: 5px; padding: 1px 7px; margin-left: 6px; vertical-align: middle; }
+  .chip.gold { border-color: color-mix(in srgb, var(--gold) 45%, transparent); color: var(--gold-bright); }
+  .chip.green { border-color: color-mix(in srgb, var(--heal) 45%, transparent); color: var(--heal); }
+  .chip.epic { border-color: color-mix(in srgb, var(--q-epic) 45%, transparent); color: var(--q-epic); }
+
+  .note { background: color-mix(in srgb, var(--gold) 8%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 30%, transparent); border-radius: 10px; padding: 13px 16px; font-size: 0.87rem; color: var(--dim); margin: 16px 0 0; }
+  .note b { color: var(--gold-bright); }
+
+  .htable { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 10px; }
+  .htable th { text-align: left; font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--faint); padding: 7px 10px; border-bottom: 1px solid var(--line); }
+  .htable td { padding: 8px 10px; border-bottom: 1px solid var(--line-soft); color: var(--dim); }
+  .htable td:first-child { color: var(--text); font-weight: 600; }
+  .htable td.num { font-family: var(--font-mono); color: var(--gold-bright); white-space: nowrap; }
+  .tscroll { overflow-x: auto; }
+
+  .rank { display: inline-block; width: 1.55em; text-align: center; font-family: var(--font-mono); font-weight: 700; border-radius: 5px; padding: 1px 0; border: 1px solid currentColor; }
+  .r-c { color: #9fb3c8; } .r-b { color: var(--q-uncommon); } .r-a { color: var(--q-rare); } .r-s { color: var(--q-epic); }
+
+  footer { border-top: 1px solid var(--line-soft); margin-top: 44px; padding: 26px 0 50px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="failles" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="page">
+    <p class="eyebrow" data-en="Rift guide · Patch v0.32.0">Guide Failles · Patch v0.32.0</p>
+    <h1 data-en="Rifts — the endless dungeons">Les Failles — donjons sans fin</h1>
+    <p class="lede" data-en="Everything the guild knows about Rifts: how portals spawn and how the first-clear race works, what each rank (C, B, A, S) actually changes, the loot table rank by rank — legendaries and mounts included — and the Rift Essence forge. Numbers checked against the game's source code, tag v0.32.0.">Tout ce que la guilde sait des Failles : comment les portails apparaissent et comment marche la course au first-clear, ce que chaque rang (C, B, A, S) change vraiment, le butin rang par rang — légendaires et montures comprises — et la forge à Essence de Faille. Chiffres vérifiés dans le code source du jeu, tag v0.32.0.</p>
+  </header>
+
+  <!-- ============================== LES BASES ============================== -->
+  <h2 class="sec" data-en="How a Rift works">Comment marche une Faille</h2>
+  <p class="sec-sub" data-en="A Rift is an instanced dungeon generated from three numbers — a seed, a base level, a floor index. Same seed, same dungeon, for everyone: your run and the enemy group's run are the exact same layout.">Une Faille est un donjon instancié généré depuis trois nombres — une graine, un niveau de base, un index d'étage. Même graine, même donjon, pour tout le monde : votre run et celui du groupe d'en face sont exactement le même plan.</p>
+  <div class="cards">
+    <div class="card">
+      <h3 data-en="The portals">Les portails <span class="chip" data-en="entrance">entrée</span></h3>
+      <p data-en="Rift portals spawn <b>in the open world</b>: up to <b>3 natural portals</b> open at once, each living <b>1 hour</b>, with a new spawn every 2–4 h — plus a pool of <b>community portals</b> (target: 8, 6 h lifetime). <b>Level 20 required</b> to enter.">Les portails de Faille apparaissent <b>dans le monde ouvert</b> : jusqu'à <b>3 portails naturels</b> ouverts à la fois, chacun vivant <b>1 heure</b>, avec une nouvelle apparition toutes les 2–4 h — plus une réserve de <b>portails communautaires</b> (objectif : 8, durée de vie 6 h). <b>Niveau 20 requis</b> pour entrer.</p>
+    </div>
+    <div class="card">
+      <h3 data-en="The race">La course <span class="chip gold">first-clear</span></h3>
+      <p data-en="Every group entering the same portal gets <b>its own copy</b> of the same dungeon — and races for the <b>single first-clear claim</b>. The first party to kill the final boss wins: the portal seals, the competitors' runs end, and the winners' names are announced to the whole world.">Chaque groupe qui entre dans le même portail reçoit <b>sa propre copie</b> du même donjon — et court pour l'unique <b>first-clear</b>. Le premier groupe à tuer le boss final gagne : le portail se scelle, les runs concurrents s'arrêtent, et les noms des vainqueurs sont annoncés au monde entier.</p>
+    </div>
+    <div class="card">
+      <h3 data-en="The descent">La descente <span class="chip green" data-en="3–6 floors">3–6 étages</span></h3>
+      <p data-en="A procedural run is <b>3 to 6 floors</b>, each rolling its own environment among eight: Frostbound, Emberforge, Venomweald, Boneyard, Warcamp, Voidscar, Stormspire, Sunken. And <b>15% of C-rank seeds</b> open the hand-authored two-floor <b>Infernal Citadel</b> instead.">Une descente procédurale fait <b>3 à 6 étages</b>, chacun tirant son ambiance parmi huit : Frostbound, Emberforge, Venomweald, Boneyard, Warcamp, Voidscar, Stormspire, Sunken. Et <b>15 % des graines de rang C</b> ouvrent à la place l'<b>Infernal Citadel</b>, un set-piece de deux étages écrit à la main.</p>
+    </div>
+  </div>
+  <div class="note" data-en="<b>Death rule (anti-zerg):</b> while your instance's mobs are in combat, dead members can NOT walk back in. Finish the fight (or wipe), then re-enter. Plan your resurrections accordingly."><b>Règle de mort (anti-zerg) :</b> tant que les monstres de votre instance sont en combat, les membres morts ne peuvent PAS re-rentrer. Finissez le combat (ou wipez), puis revenez. Prévoyez vos résurrections en conséquence.</div>
+
+  <!-- ============================== LES RANGS ============================== -->
+  <h2 class="sec" data-en="The four ranks">Les quatre rangs</h2>
+  <p class="sec-sub" data-en="The portal's rank drives everything: mob levels, heroic stat tuning, and how many mechanics each boss reveals. Every rift boss carries a repertoire of up to four mechanics — the rank sets how many are live.">Le rang du portail pilote tout : le niveau des monstres, le réglage héroïque des stats, et le nombre de mécaniques que chaque boss dévoile. Chaque boss de Faille porte un répertoire de jusqu'à quatre mécaniques — le rang fixe combien sont actives.</p>
+  <div class="tscroll">
+  <table class="htable">
+    <thead><tr>
+      <th data-en="Rank">Rang</th>
+      <th data-en="Portal">Portail</th>
+      <th data-en="Mobs">Monstres</th>
+      <th data-en="Tuning">Réglage</th>
+      <th data-en="Boss mechanics">Mécaniques de boss</th>
+    </tr></thead>
+    <tbody>
+      <tr><td><span class="rank r-c">C</span></td><td class="num" data-en="level 20">niveau 20</td><td data-en="+1 level per floor, capped at 22">+1 niveau par étage, plafond 22</td><td data-en="normal">normal</td><td class="num">1</td></tr>
+      <tr><td><span class="rank r-b">B</span></td><td class="num" data-en="level 22">niveau 22</td><td data-en="flat 22">22 constant</td><td data-en="heroic parity">parité héroïque</td><td class="num">2</td></tr>
+      <tr><td><span class="rank r-a">A</span></td><td class="num" data-en="level 25">niveau 25</td><td data-en="flat 22">22 constant</td><td data-en="heroic × 1.2">héroïque × 1,2</td><td class="num">3</td></tr>
+      <tr><td><span class="rank r-s">S</span></td><td class="num" data-en="level 28">niveau 28</td><td data-en="flat 23 every floor">23 constant sur tous les étages</td><td data-en="heroic × 1.33">héroïque × 1,33</td><td class="num">4</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note" data-en="<b>The Infernal Citadel is C-rank only:</b> at B, A and S the descent is always procedural. And S-rank mobs sit at level 23 — one above the fairness cap — so the +5-level Giantslayer credit is not earnable inside S rifts."><b>L'Infernal Citadel est réservée au rang C :</b> en B, A et S, la descente est toujours procédurale. Et les monstres du rang S sont niveau 23 — un cran au-dessus du plafond d'équité — donc le crédit Giantslayer (+5 niveaux) ne s'obtient pas dans les Failles S.</div>
+
+  <!-- ============================== LE BUTIN ============================== -->
+  <h2 class="sec" data-en="The loot, rank by rank">Le butin, rang par rang</h2>
+  <p class="sec-sub" data-en="Every winning clear pays on the final boss's corpse, under normal party loot rules. Each rank rolls ONLY its own tier — ranks don't inherit the tiers below, the ladder climbs in rarity. Rifts pay no Heroic Marks, by design.">Chaque victoire paie sur le cadavre du boss final, selon les règles de butin de groupe normales. Chaque rang ne tire QUE son propre palier — les rangs n'héritent pas des paliers inférieurs, l'échelle monte en rareté. Les Failles ne paient pas de Marques héroïques, c'est voulu.</p>
+  <div class="tscroll">
+  <table class="htable">
+    <thead><tr>
+      <th data-en="Rank">Rang</th>
+      <th data-en="Guaranteed">Garanti</th>
+      <th data-en="Coin">Pièces</th>
+      <th data-en="Mount">Monture</th>
+      <th data-en="Legendaries">Légendaires</th>
+    </tr></thead>
+    <tbody>
+      <tr><td><span class="rank r-c">C</span></td><td data-en="1 item (normal dungeon table)">1 objet (table de donjon normal)</td><td class="num">10 000</td><td>—</td><td>—</td></tr>
+      <tr><td><span class="rank r-b">B</span></td><td data-en="1 heroic epic">1 épique héroïque</td><td class="num">10 000</td><td class="num">0,5 %</td><td>—</td></tr>
+      <tr><td><span class="rank r-a">A</span></td><td data-en="1 heroic epic">1 épique héroïque</td><td class="num">35 000</td><td class="num">0,1 %</td><td>—</td></tr>
+      <tr><td><span class="rank r-s">S</span></td><td data-en="1 epic + 35% for a 2nd">1 épique + 35 % pour un 2e</td><td class="num">55 000</td><td class="num">0,3 %</td><td class="num" data-en="0.3% each">0,3 % chacun</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note" data-en="<b>The S-rank chase:</b> every S clear rolls independently for <span data-codex='item|Heart of the Rift'>Heart of the Rift</span> (class-neutral necklace) and <span data-codex='item|Voidsong, Dirk of the Sundered Veil'>Voidsong, Dirk of the Sundered Veil</span> (caster main-hand) — beat both rolls, take both. The epic reins (<span data-codex='item|Ignition Key: Aether-Jouster Hover-Cycle'>Hover-Cycle</span>, <span data-codex='item|Reins of Thunderstrut the Grand Gobbler'>Gobbler</span>) exist NOWHERE else. Full details on the <a href='montures.html'>Mounts page</a>. On top of it all, the final boss drops a <b>sealed cache</b>: pick its lock (Tumbler's Path, same mini-game as delve chests) for bonus coin."><b>La chasse du rang S :</b> chaque victoire en S tire indépendamment <span data-codex="item|Heart of the Rift">Heart of the Rift</span> (collier toutes classes) et <span data-codex="item|Voidsong, Dirk of the Sundered Veil">Voidsong, Dirk of the Sundered Veil</span> (arme de lanceur) — réussis les deux jets, repars avec les deux. Les rênes épiques (<span data-codex="item|Ignition Key: Aether-Jouster Hover-Cycle">Hover-Cycle</span>, <span data-codex="item|Reins of Thunderstrut the Grand Gobbler">Gobbler</span>) n'existent NULLE PART ailleurs. Détails sur la <a href="montures.html">page Montures</a>. Et en prime, le boss final lâche une <b>cache scellée</b> : crochetez-la (Tumbler's Path, le même mini-jeu que les coffres de delve) pour des pièces bonus.</div>
+
+  <!-- ============================== LA FORGE ============================== -->
+  <h2 class="sec" data-en="First-clear spoils &amp; the Rift forge">Le first-clear &amp; la forge de Faille</h2>
+  <p class="sec-sub" data-en="Winning the race pays extra, personally, to every member: a piece of rift gear rolled for your class, a pile of <span data-codex='item|Rift Essence'>Rift Essence</span>, and at A/S a <span data-codex='item|Crimson Rift Gem'>Rift Gem</span>. That gear then feeds a self-contained upgrade system.">Gagner la course paie en plus, personnellement, à chaque membre : une pièce d'équipement de Faille tirée pour ta classe, un tas d'<span data-codex="item|Rift Essence">Essence de Faille</span>, et en A/S une <span data-codex="item|Crimson Rift Gem">gemme de Faille</span>. Cet équipement alimente ensuite un système d'amélioration autonome.</p>
+  <div class="cards">
+    <div class="card">
+      <h3 data-en="Upgrade">Améliorer <span class="chip gold" data-en="essence">essence</span></h3>
+      <p data-en="Each upgrade level on a rift piece costs <b>2 + 2 × current level</b> Essence (2, 4, 6…) and re-rolls its stats upward. Essence drops on first-clears — more per clear at higher ranks (1 to 8 per member).">Chaque niveau d'amélioration d'une pièce de Faille coûte <b>2 + 2 × niveau actuel</b> d'Essence (2, 4, 6…) et re-tire ses stats vers le haut. L'Essence tombe au first-clear — d'autant plus par victoire que le rang est haut (1 à 8 par membre).</p>
+    </div>
+    <div class="card">
+      <h3 data-en="Enchant">Enchanter <span class="chip gold">4 essences</span></h3>
+      <p data-en="For a flat <b>4 Essence</b>, pin a bonus stat of your choice on a rift piece — the bonus scales with the piece's power. Separate from the regular enchanting profession.">Pour <b>4 Essences</b>, fixe une stat bonus de ton choix sur une pièce de Faille — le bonus grandit avec la puissance de la pièce. Indépendant du métier d'enchantement classique.</p>
+    </div>
+    <div class="card">
+      <h3 data-en="Socket">Sertir <span class="chip epic" data-en="gems">gemmes</span></h3>
+      <p data-en="The three <b>Rift Gems</b> (Crimson, Azure, Verdant) socket into rift gear for another bonus line. They drop on A and S first-clears — one per member per clear.">Les trois <b>gemmes de Faille</b> (Crimson, Azure, Verdant) se sertissent dans l'équipement de Faille pour une ligne de bonus supplémentaire. Elles tombent aux first-clears de rang A et S — une par membre par victoire.</p>
+    </div>
+  </div>
+
+  <!-- ============================== CONSEILS ============================== -->
+  <h2 class="sec" data-en="The guild's advice">Les conseils de la guilde</h2>
+  <div class="cards">
+    <div class="card">
+      <h3 data-en="Form BEFORE the portal">Groupez-vous AVANT le portail</h3>
+      <p data-en="The race starts when the first group enters. A pre-formed group that walks in together beats a pickup that assembles inside. Call portal spawns in guild chat — 3 naturals + the community pool means there's almost always one up.">La course démarre quand le premier groupe entre. Un groupe formé qui entre ensemble bat un pickup qui s'assemble à l'intérieur. Annoncez les apparitions de portails dans le chat de guilde — 3 naturels + la réserve communautaire, il y en a presque toujours un d'ouvert.</p>
+    </div>
+    <div class="card">
+      <h3 data-en="C to farm, S to chase">Le C pour farmer, le S pour rêver</h3>
+      <p data-en="C-rank can't drop epics — it mirrors normal-dungeon economy. B is the cheapest guaranteed epic in the game. A pays triple coin. S is where the legendaries, the epic mounts and the second-epic roll live: bring your best five, mobs hit at heroic × 1.33.">Le rang C ne peut pas lâcher d'épique — il suit l'économie des donjons normaux. Le B est l'épique garanti le moins cher du jeu. Le A paie triple en pièces. Le S est là où vivent les légendaires, les montures épiques et le jet de second épique : venez à cinq, au complet — les monstres tapent en héroïque × 1,33.</p>
+    </div>
+    <div class="card">
+      <h3 data-en="Learn the eight rooms">Apprenez les huit ambiances</h3>
+      <p data-en="Each environment has its own mob roster and its own boss. The same boss reveals 1 mechanic at C but all 4 at S — practice the fight at low rank before racing it at high rank. Floors re-roll their environment: scout each stairwell before pulling.">Chaque ambiance a son bestiaire et son boss. Le même boss dévoile 1 mécanique en C mais les 4 en S — apprenez le combat à bas rang avant de le courir à haut rang. Les étages re-tirent leur ambiance : reconnaissez chaque escalier avant de pull.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <p data-en="Compiled by La Clauderie — portal cadence, rank tuning, loot rates and forge costs verified against the game's source code (tag v0.32.0).">Compilé par La Clauderie — cadence des portails, réglage des rangs, taux de butin et coûts de forge vérifiés dans le code source du jeu (tag v0.32.0).</p>
+    <p style="margin-top:8px"><a href="index.html" data-en="← Back to the site">← Retour au site</a></p>
+  </div>
+</footer>
+
+<script src="assets/nav.js"></script>
+<script src="assets/lang.js"></script>
+<script src="assets/version.js" data-version="v0.32.0" defer></script>
+<script src="assets/codex-popup.js" defer></script>
+</body>
+</html>

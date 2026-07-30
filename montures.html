@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Montures — La Clauderie</title>
+<meta name="description" content="Le guide des montures de la guilde : le système de rênes de la v0.32.0, les sept montures du jeu, où chacune s'obtient (prix et taux de drop) et par laquelle commencer.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Montures — La Clauderie">
+<meta property="og:description" content="Le guide des montures de la guilde : le système de rênes de la v0.32.0, les sept montures du jeu, où chacune s'obtient (prix et taux de drop) et par laquelle commencer.">
+<meta property="og:url" content="https://laclauderie.fr/montures.html">
+<link rel="canonical" href="https://laclauderie.fr/montures.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script src="assets/pwa.js" defer></script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-uncommon: #1eff00; --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --tank: #4a90d9; --heal: #58c46a; --dps: #e5544a;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(88,196,106,0.07), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(200,160,75,0.07), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 880px; margin: 0 auto; padding: 0 clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  header.page { padding: clamp(36px, 6vw, 60px) 0 clamp(20px, 3vw, 30px); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 12px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.1rem, 6vw, 3.2rem); line-height: 1.05; margin: 0 0 10px; }
+  .lede { color: var(--dim); max-width: 62ch; margin: 0; font-size: 0.98rem; }
+
+  h2.sec { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.4rem, 3.4vw, 1.8rem); margin: 38px 0 6px; }
+  .sec-sub { color: var(--dim); font-size: 0.92rem; margin: 0 0 16px; max-width: 68ch; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 12px; padding: 16px 18px; }
+  .card h3 { margin: 0 0 6px; font-size: 1.02rem; font-family: var(--font-display); font-weight: 600; }
+  .card p { margin: 6px 0 0; font-size: 0.9rem; color: var(--dim); }
+  .card b { color: var(--text); }
+  .chip { display: inline-block; font-family: var(--font-mono); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.08em; border: 1px solid color-mix(in srgb, var(--heal) 45%, transparent); color: var(--heal); border-radius: 5px; padding: 1px 7px; margin-left: 6px; vertical-align: middle; }
+  .chip.gold { border-color: color-mix(in srgb, var(--gold) 45%, transparent); color: var(--gold-bright); }
+
+  .note { background: color-mix(in srgb, var(--gold) 8%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 30%, transparent); border-radius: 10px; padding: 13px 16px; font-size: 0.87rem; color: var(--dim); margin: 16px 0 0; }
+  .note b { color: var(--gold-bright); }
+
+  .htable { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 10px; }
+  .htable th { text-align: left; font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--faint); padding: 7px 10px; border-bottom: 1px solid var(--line); }
+  .htable td { padding: 8px 10px; border-bottom: 1px solid var(--line-soft); color: var(--dim); }
+  .htable td:first-child { color: var(--text); font-weight: 600; }
+  .htable td.num { font-family: var(--font-mono); color: var(--gold-bright); white-space: nowrap; }
+  .tscroll { overflow-x: auto; }
+  .q-common { color: #ffffff; } .q-unc { color: var(--q-uncommon); } .q-rare { color: var(--q-rare); } .q-epic { color: var(--q-epic); }
+
+  footer { border-top: 1px solid var(--line-soft); margin-top: 44px; padding: 26px 0 50px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="montures" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="page">
+    <p class="eyebrow" data-en="Mount guide · Patch v0.32.0">Guide Montures · Patch v0.32.0</p>
+    <h1 data-en="Mounts — the guild stable">Montures — l'écurie de la guilde</h1>
+    <p class="lede" data-en="Since v0.32.0 mounts are ordinary items: reins live in a bag, drag to an action bar, click to ride. Seven mounts exist — one you buy, six you loot. Who sells what, who drops what, at what rate, and which to chase first: everything below is verified against the game's source code.">Depuis la v0.32.0, les montures sont des objets ordinaires : les rênes se rangent au sac, se glissent en barre d'action, et un clic suffit pour monter. Sept montures existent — une s'achète, six se lootent. Qui vend quoi, qui lâche quoi, à quel taux, et laquelle viser d'abord : tout ce qui suit est vérifié dans le code source du jeu.</p>
+  </header>
+
+  <!-- ============================== LE SYSTÈME ============================== -->
+  <h2 class="sec" data-en="The reins system (v0.32.0)">Le système de rênes (v0.32.0)</h2>
+  <div class="cards">
+    <div class="card">
+      <h3 data-en="One item, one click">Un objet, un clic</h3>
+      <p data-en="Reins are <b>usable items</b>: keep them in a bag, drag them to an action bar, click to mount. Owning the reins IS owning the mount — they're soulbound and never transfer. Switching mounts is <b>instant</b>, dismounting has <b>no channel</b>.">Les rênes sont des <b>objets utilisables</b> : au sac, en barre d'action, un clic et c'est monté. Posséder les rênes, C'EST posséder la monture — elles sont liées et ne se transfèrent jamais. Changer de monture est <b>instantané</b>, descendre ne demande <b>aucune canalisation</b>.</p>
+    </div>
+    <div class="card">
+      <h3 data-en="One prerequisite">Un seul prérequis <span class="chip gold" data-en="riding">équitation</span></h3>
+      <p data-en="<b>Riding Training</b> — 80 gold at level 20, from <span data-codex='npc|Marla Hitchen'>Marla Hitchen</span>, plus her riding lesson (don't fall off the Valorsteed). No per-mount level gates: once trained, any reins you own will carry you.">L'<b>entraînement d'équitation</b> — 80 po au niveau 20, chez <span data-codex="npc|Marla Hitchen">Marla Hitchen</span>, avec sa leçon d'équitation (rester en selle sur le Valorsteed). Aucun palier par monture : une fois formé, toutes les rênes que tu possèdes te portent.</p>
+    </div>
+    <div class="card">
+      <h3 data-en="Speed is the only stat">La vitesse, seule stat</h3>
+      <p data-en="A mount grants movement speed, nothing else — and every mount is a <b>ground mount</b> (no flying). The purchasable horse gives <b>+60%</b>; loot mounts tier above at <b>+70 / +75 / +80%</b> by rarity.">Une monture donne de la vitesse de déplacement, rien d'autre — et toutes sont des montures <b>terrestres</b> (pas de vol). Le cheval achetable donne <b>+60 %</b> ; les montures de loot montent à <b>+70 / +75 / +80 %</b> selon la rareté.</p>
+    </div>
+  </div>
+  <div class="note" data-en="<b>Where's Marla?</b> Her yard sits on the Galecrest downs, between the Shear and the Wreckfields — she moved there in v0.32.0 (previously Eastbrook Vale, then Highwatch). Look for the barn beside the race yard, southwest of the continent."><b>Où est Marla ?</b> Son écurie est sur les plateaux du Galecrest, entre le Shear et les Wreckfields — elle y a déménagé en v0.32.0 (avant : Eastbrook Vale, puis Highwatch). Cherchez la grange à côté du champ de course, au sud-ouest du continent.</div>
+
+  <!-- ============================== L'ÉCURIE ============================== -->
+  <h2 class="sec" data-en="The seven mounts">Les sept montures</h2>
+  <p class="sec-sub" data-en="One purchase, two heroic-dungeon drops, two rare drops, two rift-S exclusives. The Nythraxis heroic raid carries a secondary path to all four droppable non-epics. Rift ranks pay the SAME per-mount rate as their heroic sources — a rift is never a cheaper route.">Un achat, deux drops de donjon héroïque, deux drops rares, deux exclusivités des Failles S. Le raid héroïque Nythraxis offre un chemin secondaire vers les quatre non-épiques lootables. Les Failles paient le MÊME taux par monture que les sources héroïques — une Faille n'est jamais un raccourci.</p>
+  <div class="tscroll">
+  <table class="htable">
+    <thead><tr>
+      <th data-en="Mount">Monture</th>
+      <th data-en="Speed">Vitesse</th>
+      <th>Source</th>
+      <th data-en="Rate">Taux</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td class="q-common"><span data-codex="item|Reins of the Valorsteed">Valorsteed</span></td>
+        <td class="num">+60 %</td>
+        <td data-en="Bought from Marla Hitchen (after Riding Training)">Achat chez Marla Hitchen (après l'équitation)</td>
+        <td class="num" data-en="10 gold">10 po</td>
+      </tr>
+      <tr>
+        <td class="q-unc"><span data-codex="item|Reins of the Sky-Reach Stormfeather">Sky-Reach Stormfeather</span> <span data-en="(griffin)">(griffon)</span></td>
+        <td class="num">+70 %</td>
+        <td data-en="<span data-codex='mob|Morthen the Gravecaller'>Morthen</span> heroic (<span data-codex='dungeon|The Hollow Crypt'>The Hollow Crypt</span>) · heroic raid · B rifts"><span data-codex="mob|Morthen the Gravecaller">Morthen</span> héroïque (<span data-codex="dungeon|The Hollow Crypt">The Hollow Crypt</span>) · raid héroïque · Failles B</td>
+        <td class="num">0,5 %</td>
+      </tr>
+      <tr>
+        <td class="q-unc"><span data-codex="item|Reins of Kama-Kage the Shadow-Jump Toad">Kama-Kage</span> <span data-en="(toad)">(crapaud)</span></td>
+        <td class="num">+70 %</td>
+        <td data-en="<span data-codex='mob|Vael the Fogbinder'>Vael the Fogbinder</span> heroic (<span data-codex='dungeon|The Sunken Bastion'>The Sunken Bastion</span>) · heroic raid · B rifts"><span data-codex="mob|Vael the Fogbinder">Vael the Fogbinder</span> héroïque (<span data-codex="dungeon|The Sunken Bastion">The Sunken Bastion</span>) · raid héroïque · Failles B</td>
+        <td class="num">0,5 %</td>
+      </tr>
+      <tr>
+        <td class="q-rare"><span data-codex="item|Reins of the Goliath Grag-Bear">Goliath Grag-Bear</span> <span data-en="(bear)">(ours)</span></td>
+        <td class="num">+75 %</td>
+        <td data-en="<span data-codex='mob|Ysolei, Avatar of the Drowned Moon'>Ysolei</span> heroic (<span data-codex='dungeon|The Drowned Temple'>The Drowned Temple</span>) · heroic raid · A rifts"><span data-codex="mob|Ysolei, Avatar of the Drowned Moon">Ysolei</span> héroïque (<span data-codex="dungeon|The Drowned Temple">The Drowned Temple</span>) · raid héroïque · Failles A</td>
+        <td class="num">0,1 %</td>
+      </tr>
+      <tr>
+        <td class="q-rare"><span data-codex="item|Reins of the Moss-Shell Stalk-Glider">Moss-Shell Stalk-Glider</span> <span data-en="(snail)">(escargot)</span></td>
+        <td class="num">+75 %</td>
+        <td data-en="<span data-codex='mob|Korzul the Gravewyrm'>Korzul</span> heroic (<span data-codex='dungeon|Gravewyrm Sanctum'>Gravewyrm Sanctum</span>) · heroic raid · A rifts"><span data-codex="mob|Korzul the Gravewyrm">Korzul</span> héroïque (<span data-codex="dungeon|Gravewyrm Sanctum">Gravewyrm Sanctum</span>) · raid héroïque · Failles A</td>
+        <td class="num">0,1 %</td>
+      </tr>
+      <tr>
+        <td class="q-epic"><span data-codex="item|Ignition Key: Aether-Jouster Hover-Cycle">Aether-Jouster Hover-Cycle</span></td>
+        <td class="num">+80 %</td>
+        <td data-en="S-rank rift clears — nowhere else">Victoires en Faille S — nulle part ailleurs</td>
+        <td class="num">0,3 %</td>
+      </tr>
+      <tr>
+        <td class="q-epic"><span data-codex="item|Reins of Thunderstrut the Grand Gobbler">Thunderstrut the Grand Gobbler</span></td>
+        <td class="num">+80 %</td>
+        <td data-en="S-rank rift clears — nowhere else">Victoires en Faille S — nulle part ailleurs</td>
+        <td class="num">0,3 %</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note" data-en="<b>The Nythraxis heroic raid</b> rolls ALL four droppable non-epics on the same kill (both uncommons at 0.5%, both rares at 0.1%): it's the best single lockout for collectors. Epic reins never drop there — S rifts are their only source, details on the <a href='failles.html'>Rifts page</a>."><b>Le raid héroïque Nythraxis</b> tire les QUATRE non-épiques lootables sur le même kill (les deux peu communes à 0,5 %, les deux rares à 0,1 %) : c'est le meilleur kill unique pour les collectionneurs. Les rênes épiques n'y tombent jamais — les Failles S sont leur seule source, détails sur la <a href="failles.html">page Failles</a>.</div>
+
+  <!-- ============================== PAR OÙ COMMENCER ============================== -->
+  <h2 class="sec" data-en="What to chase, in order">Quoi viser, dans l'ordre</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>1 · Valorsteed <span class="chip gold" data-en="day one">jour 1</span></h3>
+      <p data-en="90 gold all-in (80 training + 10 reins) for +60% forever. There is no reason to walk: it pays for itself in travel time within the day.">90 po tout compris (80 d'entraînement + 10 de rênes) pour +60 % à vie. Aucune raison de marcher : rentabilisé en temps de trajet dans la journée.</p>
+    </div>
+    <div class="card">
+      <h3 data-en="2 · Griffin or toad">2 · Griffon ou crapaud <span class="chip">+70 %</span></h3>
+      <p data-en="Farm the heroic you already run for gear: Morthen (Hollow Crypt) for the Stormfeather, Vael (Sunken Bastion) for Kama-Kage — 0.5% per clear, and the heroic raid rolls both.">Farmez l'héroïque que vous courez déjà pour l'équipement : Morthen (Hollow Crypt) pour le Stormfeather, Vael (Sunken Bastion) pour Kama-Kage — 0,5 % par kill, et le raid héroïque tire les deux.</p>
+    </div>
+    <div class="card">
+      <h3 data-en="3 · The long chases">3 · Les longues chasses <span class="chip">+75 / +80 %</span></h3>
+      <p data-en="The bear and snail (0.1%) are marathon drops — take them as they come. The epics are S-rift trophies: 0.3% per clear, so run S for the guaranteed epic and the legendaries, and let the reins be the surprise.">L'ours et l'escargot (0,1 %) sont des drops marathon — prenez-les comme ils viennent. Les épiques sont des trophées de Faille S : 0,3 % par victoire — courez le S pour l'épique garanti et les légendaires, et laissez les rênes être la surprise.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <p data-en="Compiled by La Clauderie — prices, sources and drop rates verified against the game's source code (tag v0.32.0).">Compilé par La Clauderie — prix, sources et taux de drop vérifiés dans le code source du jeu (tag v0.32.0).</p>
+    <p style="margin-top:8px"><a href="index.html" data-en="← Back to the site">← Retour au site</a></p>
+  </div>
+</footer>
+
+<script src="assets/nav.js"></script>
+<script src="assets/lang.js"></script>
+<script src="assets/version.js" data-version="v0.32.0" defer></script>
+<script src="assets/codex-popup.js" defer></script>
+</body>
+</html>
