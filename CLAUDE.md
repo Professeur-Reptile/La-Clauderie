@@ -38,6 +38,11 @@ se limite à la partie rédactionnelle des « Nouveautés » :
 3. **Ajouter une entrée en tête de `patch-notes.json`** (version, date, titre,
    resume, temps_forts, page + variantes `_en` et `page_en`). L'accueil et la
    page Nouveautés se mettent à jour tout seuls à partir de ce fichier.
+2bis. **Si la MAJ ajoute des icônes peintes d'objets** (« painted icons » dans
+   les notes), resynchroniser l'art embarqué :
+   `bash scripts/sync_item_art.sh` puis commit d'`assets/items/`. Cet art
+   (nommé `<id>.webp`) alimente les vignettes du BiS (`iconFor()` de
+   `bis.html`), les fiches d'objets de `codex-popup.js` et le guide Montures.
 3bis. **Mettre à jour les badges « à jour de la version »** : `pvp.html`,
    `metiers.html`, `failles.html` et `montures.html` portent
    `data-version="vX.Y.Z"` sur leur inclusion de

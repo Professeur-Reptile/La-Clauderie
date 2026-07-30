@@ -12935,9 +12935,12 @@ function trSrc(s) {
     .replace(/^Récompense de quête : « (.*) »$/, "Quest reward: “$1”");
 }
 
-// Icônes officielles du jeu (extraites de World of ClaudeCraft, tag v0.23.0) :
-// art peint (public/ui/items), miniatures de modèles d'armes (public/ui/weapons)
-// et icônes procédurales rendues par le moteur d'icônes du jeu lui-même.
+// Icônes officielles du jeu. Depuis la v0.32.1, l'art peint COMPLET de
+// public/ui/items est embarqué dans assets/items/ (562 webp, nommés par id
+// d'objet — resynchro : scripts/sync_item_art.sh). iconFor() tente d'abord
+// « assets/items/<id>.webp » ; la table ITEM_IMG ci-dessous (héritée du tag
+// v0.23.0, nom → fichier) ne sert plus que de REPLI pour les objets sans art
+// officiel (miniatures d'armes .jpg, vieux exports .png).
 const ITEM_IMG = {
   "Barrowlord Dread Visage": "deathlords_dread_visage.webp",
   "Barrowlord Legguards": "deathlord_legguards.webp",
@@ -13012,8 +13015,17 @@ const ITEM_IMG = {
 };
 
 function iconFor(item) {
-  const f = ITEM_IMG[item.name];
-  return f ? `<img src="assets/items/${f}" alt="" loading="lazy" width="128" height="128">` : "";
+  // L'art officiel est nommé par id d'objet ; une jumelle héroïque partage
+  // l'art de sa base. Si le webp manque (404), on retombe sur l'ancienne
+  // table nom → fichier, et sinon l'image se retire proprement.
+  const base = String(item.id || "").replace(/^heroic_/, "");
+  const legacy = ITEM_IMG[item.name];
+  if (!base && !legacy) return "";
+  const fallback = legacy
+    ? `this.onerror=null;this.src='assets/items/${legacy}'`
+    : "this.remove()";
+  const src = base ? `assets/items/${base}.webp` : `assets/items/${legacy}`;
+  return `<img src="${src}" onerror="${base ? fallback : 'this.remove()'}" alt="" loading="lazy" width="128" height="128">`;
 }
 
 // Badge « héroïque » (v0.25) : la version montée en ilvl d'un objet porte le

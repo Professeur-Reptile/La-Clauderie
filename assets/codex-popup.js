@@ -439,6 +439,11 @@ const qColor = q => ({ poor:'#9d9d9d', uncommon:'#1eff00', rare:'#2f8bff', epic:
 function itemSheet(it) {
   const q = it.quality || 'common';
   const body = [];
+  // Art peint officiel du jeu, embarqué par le site sous assets/items/<id>.webp
+  // (une jumelle héroïque partage l'art de sa base). L'image se retire toute
+  // seule si l'objet n'a pas encore d'art — un 404 ne casse rien.
+  const artId = String(it.id || '').replace(/^heroic_/, '');
+  if (artId) body.push(`<img class="cxp-art" src="${SITE_BASE}assets/items/${artId}.webp" alt="" loading="lazy" onerror="this.remove()">`);
   if (it.weapon) body.push(`<div class="cxp-dps">${((it.weapon.min + it.weapon.max) / 2 / (it.weapon.speed || 1)).toFixed(1)} DPS — ${it.weapon.min}–${it.weapon.max} ${T({ fr: 'dégâts, vitesse', en: 'damage, speed' })} ${it.weapon.speed ?? '—'}</div>`);
   const stats = Object.entries(it.stats || {}).map(([k,v]) => `+${v} ${STAT_FR[k] || k}`);
   // Combat ratings + puissance des sorts : stockés HORS de it.stats dans les
@@ -747,6 +752,8 @@ const CSS = `
   .cxp-note { color: #aab1bf; font-size: .86rem; }
   .cxp-dim { color: #8b93a3; font-size: .86rem; }
   .cxp-dps { font-weight: 600; margin-bottom: 8px; }
+  .cxp-art { display: block; width: 96px; height: 96px; border-radius: 10px; margin: 0 0 10px;
+    border: 1px solid rgba(200,160,75,.35); background: #0b0d12; object-fit: cover; }
   .cxp-stats { color: #1eff00cc; margin-bottom: 8px; }
   .cxp-kv { display: grid; grid-template-columns: 1fr; gap: 4px 14px; margin: 8px 0; }
   .cxp-kv div { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px dashed rgba(139,147,163,.16); padding: 3px 0; }
