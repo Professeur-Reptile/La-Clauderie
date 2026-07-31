@@ -2,6 +2,28 @@
   "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
   "versions": [
     {
+      "version": "v0.32.3",
+      "date": "2026-07-31",
+      "titre": "Le respawn se cale sur le niveau de la zone — et les meilleurs spots de farm passent à la caisse",
+      "resume": "Un correctif d'économie et de monde ouvert. Tout le trash revenait sur un même minuteur de 25 secondes quel que soit le niveau de la zone : désormais 60 s dans les zones de départ, 120 s dans la tranche du Mirefen Marsh, 180 s au-dessus — les monstres rares nommés et les minuteurs écrits à la main ne changent pas. Les vagues d'embuscade des quêtes d'escorte (Frostveil Reach, Wraithwood, Palmreach, Farshore) arrêtent de laisser des monstres traîner en boucle. Quinze gabarits de bêtes, araignées et reptiles sans pièces de cuivre reçoivent des composants récoltables. Et les deux itinéraires les plus rentables du jeu encaissent la baisse : le couloir du Glimmermere passe de 189,2 à 27,5 pièces d'or/h, les gardiens du Veiled Hollow de 42,3 à 11,8.",
+      "temps_forts": [
+        "Le respawn du trash suit le niveau de la zone : 60 s / 120 s / 180 s selon le palier — rares et minuteurs écrits à la main inchangés",
+        "Les vagues d'embuscade d'escorte ne laissent plus de monstres traîner en boucle (Frostveil, Wraithwood, Palmreach, Farshore)",
+        "Quinze gabarits de bêtes/araignées/reptiles sans cuivre deviennent dépeçables",
+        "Le couloir du Glimmermere tombe de 189,2 à 27,5 pièces d'or/h, les gardiens du Veiled Hollow de 42,3 à 11,8"
+      ],
+      "page": "notes/v0.32.3.html",
+      "titre_en": "Respawn now scales with zone level — and the best farm spots take a real hit",
+      "resume_en": "An economy-and-open-world patch. Every trash mob used to come back on the same flat 25-second timer regardless of zone level: now 60s in starter zones, 120s in the Mirefen Marsh band, 180s above that — named rares and hand-authored timers are unchanged. Escort quest ambush waves (Frostveil Reach, Wraithwood, Palmreach, Farshore) stop letting mobs linger in a loop. Fifteen beast, spider and reptile templates with no coin gain harvestable components. And the game's two most profitable routes take the hit: the Glimmermere corridor drops from 189.2 to 27.5 gold/hr, the Veiled Hollow guardians from 42.3 to 11.8.",
+      "temps_forts_en": [
+        "Trash respawn now follows zone level: 60s / 120s / 180s by tier — named rares and hand-authored timers unchanged",
+        "Escort ambush waves stop leaving mobs to linger in a loop (Frostveil, Wraithwood, Palmreach, Farshore)",
+        "Fifteen coinless beast/spider/reptile templates become skinnable",
+        "The Glimmermere corridor drops from 189.2 to 27.5 gold/hr, the Veiled Hollow guardians from 42.3 to 11.8"
+      ],
+      "page_en": "notes/v0.32.3.en.html"
+    },
+    {
       "version": "v0.32.2",
       "date": "2026-07-31",
       "titre": "Portails de Faille équitables, suivi d'étage en jeu — et un vainqueur en cas de duel simultané",
