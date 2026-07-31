@@ -554,14 +554,28 @@ def optimize(cls, role):
     # normales/héroïques comprises. Quatre remplaçants + le best = les 5
     # meilleurs objets du slot : de quoi s'adapter quand les premiers drops
     # se font attendre.
+    #
+    # Cas particulier main droite/gauche : porter une arme à deux mains
+    # signifie renoncer à l'offhand actuel (evaluate() vaut -1e9 tant que les
+    # deux sont équipés ensemble — interdit par le jeu). Sans en tenir compte,
+    # TOUT candidat deux-mains ressort à -1e9 dès qu'un offhand est porté et
+    # disparaît systématiquement des alternatives, même quand il bat le reste
+    # une fois l'offhand retiré. On compare donc chaque candidat mainhand
+    # deux-mains SANS offhand — la vraie config qu'il donnerait — et on
+    # n'offre des alternatives d'offhand que si l'offhand actuel est bien
+    # équipable (mainhand une main) : à deux mains, ce slot n'existe pas.
     alts={}
     for sl in SLOTS:
         cur=equip[sl]; ranked=[]
+        if sl=='offhand' and equip.get('mainhand') and ITEMS[equip['mainhand']].get('hand')=='twohand':
+            continue  # pas d'offhand possible avec l'arme retenue : pas d'alternative à proposer
         for iid in pool[sl]:
             if iid==cur: continue
             if sl not in ('ring1','ring2') and iid in equip.values(): continue
             if sl in ('ring1','ring2') and iid in (equip['ring1'],equip['ring2']): continue
             e2=dict(equip); e2[sl]=iid
+            if sl=='mainhand' and ITEMS[iid].get('hand')=='twohand':
+                e2['offhand']=None
             v=evaluate(cls,role,e2)
             ranked.append((v, iscore(iid), iid))
         ranked.sort(key=lambda t: (t[0], t[1]), reverse=True)
