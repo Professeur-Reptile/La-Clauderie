@@ -6,18 +6,27 @@
 
        <script src="assets/version.js" data-version="v0.28.0" defer></script>
 
-   Le script compare cette version à la dernière entrée de patch-notes.json
-   (la source de vérité du site, tenue à jour par la Routine de veille) et
-   affiche un badge sous l'en-tête de la page :
-     ✓ vert  — la page est à jour de la dernière version du jeu ;
-     ⏳ orange — le jeu a avancé, la relecture est en cours (la Routine
-                horaire s'en charge) : le lecteur sait quoi prendre avec des
-                pincettes.
+   Le script croise TROIS sources pour ne jamais affirmer à tort « c'est la
+   dernière version du jeu » :
+     - pageV  : la version pour laquelle CETTE page a été relue (data-version) ;
+     - notesV : la dernière entrée de patch-notes.json — tenue par la Routine
+                éditoriale (horaire), donc en léger retard possible sur le jeu ;
+     - kbTag  : data/_meta.json de la knowledge base — écrit par l'extraction
+                automatique (cron 5 min), donc la vraie dernière version DÉTECTÉE
+                du jeu, presque toujours en avance sur la Routine éditoriale.
+   Trois badges possibles :
+     ✓ vert   — pageV = notesV = kbTag : à jour, et vérifié contre le jeu.
+     ⏳ orange (page en retard) — le jeu a avancé (notesV a bougé), la
+                relecture de CETTE page est en cours.
+     ⏳ orange (MAJ toute fraîche) — kbTag a bougé mais notesV ne le sait pas
+                encore : une nouvelle version du jeu vient de sortir, les
+                Nouveautés et cette page sont en cours de rédaction — pas
+                encore « la dernière version », littéralement pas encore su.
 
    Qui met à jour data-version ?
      - bis.html     → scripts/inject_bis.py (automatique, avec le recalcul) ;
-     - pvp.html, metiers.html → la Routine éditoriale, après relecture
-       (voir CLAUDE.md, procédure « nouvelle MAJ »).
+     - pvp.html, metiers.html, failles.html, montures.html → la Routine
+       éditoriale, après relecture (voir CLAUDE.md, procédure « nouvelle MAJ »).
    ============================================================================ */
 (function () {
   'use strict';
@@ -29,7 +38,15 @@
   var lang = (localStorage.getItem('lang') === 'en') ? 'en' : 'fr';
   var root = /\/notes\//.test(location.pathname) ? '../' : '';
 
-  function render(latest) {
+  // Même résolution de chemin que assets/codex-popup.js pour data/_meta.json.
+  var GH_PAGES = 'https://reptile-new.github.io/wocc-knowledge-base';
+  var onLocal = /^(localhost|127\.|0\.0\.0\.0)/.test(location.hostname);
+  var onLaclauderie = /(^|\.)laclauderie\.fr$/.test(location.hostname);
+  var KB_META_URL = onLaclauderie ? '/data/_meta.json'
+    : onLocal ? '/wocc-knowledge-base/data/_meta.json'
+    : GH_PAGES + '/data/_meta.json';
+
+  function render(notesV, kbTag) {
     var head = document.querySelector('header.page, header.hero');
     if (!head) return;
 
@@ -48,16 +65,26 @@
 
     var el = document.createElement('p');
     el.className = 'ver-badge';
-    if (latest && latest !== pageV) {
+    // Priorité 1 : le jeu a une version connue (kbTag) que la Routine éditoriale
+    // n'a pas encore inscrite dans patch-notes.json (notesV) — une MAJ toute
+    // fraîche, pas encore documentée nulle part. Ne JAMAIS dire « dernière
+    // version » dans ce cas, même si pageV = notesV.
+    if (kbTag && notesV && kbTag !== notesV) {
       el.className += ' warn';
       el.innerHTML = (lang === 'en'
-        ? '⏳ Checked for <b>' + pageV + '</b> — the game is now on <b>' + latest + '</b>, review in progress. '
-        : '⏳ Page vérifiée pour la <b>' + pageV + '</b> — le jeu est passé en <b>' + latest + '</b>, relecture en cours. ')
+        ? '⏳ The game just moved to <b>' + kbTag + '</b> — not yet the version shown here (<b>' + pageV + '</b>). Patch notes and this page are being written, check back shortly. '
+        : '⏳ Le jeu vient de passer en <b>' + kbTag + '</b> — pas encore la version affichée ici (<b>' + pageV + '</b>). Les Nouveautés et cette page sont en cours de rédaction, repasse dans un instant. ')
         + '<a href="' + root + 'patch-notes.html">' + (lang === 'en' ? 'See what changed' : 'Voir ce qui a changé') + '</a>';
-    } else if (latest) {
+    } else if (notesV && notesV !== pageV) {
+      el.className += ' warn';
+      el.innerHTML = (lang === 'en'
+        ? '⏳ Checked for <b>' + pageV + '</b> — the game is now on <b>' + notesV + '</b>, review in progress. '
+        : '⏳ Page vérifiée pour la <b>' + pageV + '</b> — le jeu est passé en <b>' + notesV + '</b>, relecture en cours. ')
+        + '<a href="' + root + 'patch-notes.html">' + (lang === 'en' ? 'See what changed' : 'Voir ce qui a changé') + '</a>';
+    } else if (notesV) {
       el.innerHTML = lang === 'en'
-        ? '✓ Up to date with <b>' + latest + '</b> — the latest game version'
-        : '✓ À jour de la <b>' + latest + '</b> — la dernière version du jeu';
+        ? '✓ Up to date with <b>' + notesV + '</b> — the latest game version'
+        : '✓ À jour de la <b>' + notesV + '</b> — la dernière version du jeu';
     } else {
       // patch-notes.json injoignable : on affiche au moins la version vérifiée.
       el.innerHTML = (lang === 'en' ? 'Content checked for <b>' : 'Contenu vérifié pour la <b>') + pageV + '</b>';
@@ -65,11 +92,17 @@
     head.appendChild(el);
   }
 
-  fetch(root + 'patch-notes.json', { cache: 'no-cache' })
-    .then(function (r) { return r.json(); })
-    .then(function (d) {
-      var latest = d && d.versions && d.versions[0] && d.versions[0].version;
-      render(latest || null);
-    })
-    .catch(function () { render(null); });
+  function safeJson(url) {
+    return fetch(url, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+  }
+
+  Promise.all([
+    safeJson(root + 'patch-notes.json'),
+    safeJson(KB_META_URL)
+  ]).then(function (results) {
+    var notesData = results[0], kbMeta = results[1];
+    var notesV = notesData && notesData.versions && notesData.versions[0] && notesData.versions[0].version;
+    var kbTag = kbMeta && kbMeta.tag;
+    render(notesV || null, kbTag || null);
+  });
 })();
