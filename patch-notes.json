@@ -2,6 +2,28 @@
   "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
   "versions": [
     {
+      "version": "v0.32.4",
+      "date": "2026-07-31",
+      "titre": "Hotfix desktop : le gel au « Chargement du monde » est corrigé",
+      "resume": "Un hotfix d'urgence, sans aucun changement de gameplay. Depuis le passage aux textures compressées KTX2 de la v0.32.2, l'application de bureau (Windows, macOS, Linux) pouvait geler sans fin sur l'écran « Chargement du monde » : le décodeur de textures générait du code à la volée, ce que la politique de sécurité stricte du client interdit. Il a été reconstruit sans génération dynamique de code — la sécurité n'a pas été assouplie, les textures ne changent pas d'un octet et les gains mémoire d'iOS sont préservés. Deux nouvelles suites de tests verrouillent le tout pour qu'une future montée de version ne recasse pas le desktop en silence. L'application se met à jour toute seule ; navigateur et mobile n'ont jamais été concernés.",
+      "temps_forts": [
+        "Le gel du client de bureau au « Chargement du monde » (v0.32.2 et v0.32.3) est corrigé — Windows, macOS et Linux",
+        "Le décodeur de textures est reconstruit sans génération dynamique de code : la sécurité du client reste intacte",
+        "Textures et gains mémoire iOS inchangés : le décodeur corrigé produit un résultat identique à l'octet près",
+        "Rien à faire : l'application se met à jour toute seule — navigateur et mobile n'ont jamais gelé"
+      ],
+      "page": "notes/v0.32.4.html",
+      "titre_en": "Desktop hotfix: the \"Loading world\" freeze is fixed",
+      "resume_en": "An emergency hotfix with zero gameplay changes. Since the v0.32.2 switch to KTX2 compressed textures, the desktop app (Windows, macOS, Linux) could freeze forever on the \"Loading world\" screen: the texture decoder generated code on the fly, which the client's strict security policy forbids. It was rebuilt without dynamic code generation — security was not loosened, the textures do not change by a single byte, and the iOS memory gains are preserved. Two new test suites lock it all down so a future upgrade can't silently re-break the desktop. The app updates itself; browser and mobile were never affected.",
+      "temps_forts_en": [
+        "The desktop client's \"Loading world\" freeze (v0.32.2 and v0.32.3) is fixed — Windows, macOS and Linux",
+        "The texture decoder is rebuilt without dynamic code generation: client security stays intact",
+        "Textures and iOS memory gains unchanged: the patched decoder produces byte-identical output",
+        "Nothing to do: the app updates itself — browser and mobile never froze"
+      ],
+      "page_en": "notes/v0.32.4.en.html"
+    },
+    {
       "version": "v0.32.3",
       "date": "2026-07-31",
       "titre": "Le respawn se cale sur le niveau de la zone — et les meilleurs spots de farm passent à la caisse",
