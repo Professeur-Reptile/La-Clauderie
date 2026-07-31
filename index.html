@@ -296,8 +296,10 @@
     </div>
   </section>
 
-  <!-- 3. La vie de la guilde, en onglets -->
-  <section class="guild">
+  <!-- 3. La vie de la guilde, en onglets — masquée pour le moment (on la
+       remettra plus tard) ; le JS continue de tourner sans erreur, elle
+       n'est retirée que visuellement. -->
+  <section class="guild" style="display:none">
     <div class="tabs" role="tablist" aria-label="La vie de la guilde">
       <button class="tab" role="tab" id="tabBtn-calendrier" aria-selected="true" aria-controls="tab-calendrier">📅 <span data-en="Calendar">Calendrier</span> <span class="n" id="nEvents"></span></button>
       <button class="tab" role="tab" id="tabBtn-membres" aria-selected="false" aria-controls="tab-membres">👥 <span data-en="Members">Membres</span> <span class="n" id="nMembers"></span></button>
@@ -340,7 +342,8 @@
 
 <footer>
   <div class="wrap">
-    <p><a href="admin.html" data-en="Officers’ area">Espace officiers</a></p>
+    <!-- Masqué pour le moment, on la remettra plus tard. -->
+    <p style="display:none"><a href="admin.html" data-en="Officers’ area">Espace officiers</a></p>
   </div>
 </footer>
 
