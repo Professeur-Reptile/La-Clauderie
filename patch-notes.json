@@ -2,6 +2,28 @@
   "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
   "versions": [
     {
+      "version": "v0.32.2",
+      "date": "2026-07-31",
+      "titre": "Portails de Faille équitables, suivi d'étage en jeu — et un vainqueur en cas de duel simultané",
+      "resume": "Un correctif de confort et d'équité. Les portails de Faille respawnent désormais à la première heure pile suivant la vraie fermeture du précédent (scellé par un clear ou effondré après 2 h) — plus jamais pendant qu'une descente tourne encore ; leur durée de vie passe d'ailleurs à 2 h. Un repère affiche l'étage en cours et un compte à rebours pendant la descente, les membres du groupe apparaissent enfin sur la carte, et deux coups fatals portés au même tic en duel ne finissent plus en double mort — un seul vainqueur, laissé à 1 PV. Six monstres rares rejoignent les hauts faits de chronique, les vagues d'embuscade des escortes se réengagent correctement, et toutes les textures du jeu passent à un format compressé pour GPU — la suite des optimisations mobiles de la v0.32.1.",
+      "temps_forts": [
+        "Failles : le respawn attend la vraie fermeture du portail précédent (jamais pendant une descente en cours), durée de vie portée à 2 h",
+        "Un suivi d'étage et un compte à rebours s'affichent pendant la descente en Faille",
+        "Les membres du groupe s'affichent sur la carte — et un duel à égalité parfaite désigne un vainqueur au lieu d'une double mort",
+        "Textures du jeu compressées pour GPU (KTX2/Basis) : la suite des optimisations mobiles de la v0.32.1"
+      ],
+      "page": "notes/v0.32.2.html",
+      "titre_en": "Fair rift portals, an in-rift floor tracker — and a winner on simultaneous duels",
+      "resume_en": "A comfort-and-fairness patch. Rift portals now respawn at the first hourly boundary right after the previous one truly closes (sealed by a clear or collapsed after 2h) — never while a descent is still running; their lifetime also grows to 2h. A tracker shows the current floor and a countdown while you descend, party members finally appear on the map, and two lethal blows landing on the same duel tick no longer end in a double death — a single winner, left at 1 HP. Six rare mobs join the chronicle deeds, escort ambush waves re-engage correctly, and every texture in the game switches to a GPU-compressed format — continuing v0.32.1's mobile optimization work.",
+      "temps_forts_en": [
+        "Rifts: respawn waits for the previous portal's real closure (never mid-descent), lifetime extended to 2h",
+        "An in-rift floor tracker and countdown show while you descend",
+        "Party members show up on the map — and a perfectly-tied duel now picks a winner instead of a double death",
+        "Game textures GPU-compressed (KTX2/Basis): continuing v0.32.1's mobile optimization work"
+      ],
+      "page_en": "notes/v0.32.2.en.html"
+    },
+    {
       "version": "v0.32.1",
       "date": "2026-07-30",
       "titre": "/unstuck ne tue plus, un portail de Faille par zone — et les escortes enfin finissables",

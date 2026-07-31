@@ -106,9 +106,9 @@
 
 <div class="wrap">
   <header class="page">
-    <p class="eyebrow" data-en="Rift guide · Patch v0.32.1">Guide Failles · Patch v0.32.1</p>
+    <p class="eyebrow" data-en="Rift guide · Patch v0.32.2">Guide Failles · Patch v0.32.2</p>
     <h1 data-en="Rifts — the endless dungeons">Les Failles — donjons sans fin</h1>
-    <p class="lede" data-en="Everything the guild knows about Rifts: how portals spawn and how the first-clear race works, what each rank (C, B, A, S) actually changes, the loot table rank by rank — legendaries and mounts included — and the Rift Essence forge. Numbers checked against the game's source code, tag v0.32.1.">Tout ce que la guilde sait des Failles : comment les portails apparaissent et comment marche la course au first-clear, ce que chaque rang (C, B, A, S) change vraiment, le butin rang par rang — légendaires et montures comprises — et la forge à Essence de Faille. Chiffres vérifiés dans le code source du jeu, tag v0.32.1.</p>
+    <p class="lede" data-en="Everything the guild knows about Rifts: how portals spawn and how the first-clear race works, what each rank (C, B, A, S) actually changes, the loot table rank by rank — legendaries and mounts included — and the Rift Essence forge. Numbers checked against the game's source code, tag v0.32.2.">Tout ce que la guilde sait des Failles : comment les portails apparaissent et comment marche la course au first-clear, ce que chaque rang (C, B, A, S) change vraiment, le butin rang par rang — légendaires et montures comprises — et la forge à Essence de Faille. Chiffres vérifiés dans le code source du jeu, tag v0.32.2.</p>
   </header>
 
   <!-- ============================== LES BASES ============================== -->
@@ -117,7 +117,7 @@
   <div class="cards">
     <div class="card">
       <h3 data-en="The portals">Les portails <span class="chip" data-en="entrance">entrée</span></h3>
-      <p data-en="Since v0.32.1, <b>every eligible zone keeps one portal open</b>, refreshed on an <b>hourly rotation</b> (lifetime 1 h). A zone sealed by a first-clear stays empty until the next cycle — no instant re-farming. <b>Level 20 required</b> to enter.">Depuis la v0.32.1, <b>chaque zone éligible garde un portail ouvert</b>, renouvelé en <b>rotation horaire</b> (durée de vie 1 h). Une zone scellée par un first-clear reste vide jusqu'au cycle suivant — pas de re-farm instantané. <b>Niveau 20 requis</b> pour entrer.</p>
+      <p data-en="Every eligible zone keeps its own <b>hourly boundary</b>: at the boundary it opens a fresh portal UNLESS the current one is still active, in which case respawn waits for the next boundary — since v0.32.2, never mid-descent. An unclaimed portal lives up to <b>2 hours</b> before collapsing; a zone sealed by a first-clear stays empty until the first boundary after the seal. <b>Level 20 required</b> to enter.">Chaque zone éligible garde son propre <b>créneau horaire</b> : à l'heure pile, elle ouvre un nouveau portail SAUF si le portail en cours est encore actif — le respawn attend alors le créneau suivant, depuis la v0.32.2 plus jamais en pleine descente. Un portail non réclamé vit jusqu'à <b>2 heures</b> avant de s'effondrer ; une zone scellée par un first-clear reste vide jusqu'au premier créneau après le scellement. <b>Niveau 20 requis</b> pour entrer.</p>
     </div>
     <div class="card">
       <h3 data-en="The race">La course <span class="chip gold">first-clear</span></h3>
@@ -129,6 +129,7 @@
     </div>
   </div>
   <div class="note" data-en="<b>Death rule (anti-zerg):</b> while your instance's mobs are in combat, dead members can NOT walk back in. Finish the fight (or wipe), then re-enter. Plan your resurrections accordingly."><b>Règle de mort (anti-zerg) :</b> tant que les monstres de votre instance sont en combat, les membres morts ne peuvent PAS re-rentrer. Finissez le combat (ou wipez), puis revenez. Prévoyez vos résurrections en conséquence.</div>
+  <div class="note" data-en="<b>In-rift HUD (v0.32.2):</b> once inside, a tracker shows your current floor (&quot;Floor 2 of 5&quot;) and a countdown to the entrance's closure — and your party now shows up as markers on the zone map."><b>Repère en jeu (v0.32.2) :</b> une fois entré, un suivi affiche l'étage en cours (« Étage 2 sur 5 ») et un compte à rebours jusqu'à la fermeture de l'entrée — et ton groupe s'affiche désormais sur la carte de zone.</div>
 
   <!-- ============================== LES RANGS ============================== -->
   <h2 class="sec" data-en="The four ranks">Les quatre rangs</h2>
@@ -213,14 +214,14 @@
 
 <footer>
   <div class="wrap">
-    <p data-en="Compiled by La Clauderie — portal cadence, rank tuning, loot rates and forge costs verified against the game's source code (tag v0.32.1).">Compilé par La Clauderie — cadence des portails, réglage des rangs, taux de butin et coûts de forge vérifiés dans le code source du jeu (tag v0.32.1).</p>
+    <p data-en="Compiled by La Clauderie — portal cadence, rank tuning, loot rates and forge costs verified against the game's source code (tag v0.32.2).">Compilé par La Clauderie — cadence des portails, réglage des rangs, taux de butin et coûts de forge vérifiés dans le code source du jeu (tag v0.32.2).</p>
     <p style="margin-top:8px"><a href="index.html" data-en="← Back to the site">← Retour au site</a></p>
   </div>
 </footer>
 
 <script src="assets/nav.js"></script>
 <script src="assets/lang.js"></script>
-<script src="assets/version.js" data-version="v0.32.1" defer></script>
+<script src="assets/version.js" data-version="v0.32.2" defer></script>
 <script src="assets/codex-popup.js" defer></script>
 </body>
 </html>
