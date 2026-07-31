@@ -549,17 +549,23 @@ def optimize(cls, role):
         equip['ring1'], equip['ring2'] = best_ring[1]
         score = evaluate(cls, role, equip)
 
+    # Alternatives : le TOP 4 derrière la pièce retenue, classé — mesuré comme
+    # le reste (l'objet remplacé dans la panoplie complète), jumelles
+    # normales/héroïques comprises. Quatre remplaçants + le best = les 5
+    # meilleurs objets du slot : de quoi s'adapter quand les premiers drops
+    # se font attendre.
     alts={}
     for sl in SLOTS:
-        cur=equip[sl]; bs=None
+        cur=equip[sl]; ranked=[]
         for iid in pool[sl]:
             if iid==cur: continue
             if sl not in ('ring1','ring2') and iid in equip.values(): continue
             if sl in ('ring1','ring2') and iid in (equip['ring1'],equip['ring2']): continue
             e2=dict(equip); e2[sl]=iid
             v=evaluate(cls,role,e2)
-            if better(v,iid,bs): bs=(v,iid)
-        if bs: alts[sl]=bs[1]
+            ranked.append((v, iscore(iid), iid))
+        ranked.sort(key=lambda t: (t[0], t[1]), reverse=True)
+        if ranked: alts[sl]=[iid for _v,_s,iid in ranked[:4]]
     return score, equip, alts
 
 # --- enchantements recommandés (v0.29) ----------------------------------------
@@ -652,8 +658,9 @@ for cls in ROLES:
             if not iid: continue
             entry={"best":item_export(iid, cls)}
             if sl in alts:
-                e2=dict(equip); e2[sl]=alts[sl]
-                entry["alt"]=item_export(alts[sl], cls)
+                entry["alts"]=[item_export(a, cls) for a in alts[sl]]
+                # rétro-compatibilité : « alt » = le premier remplaçant.
+                entry["alt"]=entry["alts"][0]
             picks[sl]=entry
         out[cls]['roles'][role]={'picks':picks,'sets':setline,'score':round(score,1)}
         ench = pick_enchants(cls, role, equip)
