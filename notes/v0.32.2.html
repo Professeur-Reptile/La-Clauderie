@@ -249,13 +249,16 @@
   const DETAILS = {
     fairness: {
       title: "Le respawn des portails, réglé sur la fermeture",
-      summary: "Un portail n'ouvre plus qu'à la première heure pile suivant la fermeture réelle du précédent — jamais pendant qu'une descente tourne encore.",
+      summary: "Un portail n'ouvre plus qu'au premier créneau horaire suivant la fermeture réelle du précédent — jamais pendant qu'une descente tourne encore. En pratique, la cadence perçue tourne souvent autour d'1 heure, pas 2.",
       body: `
         <h4>La règle</h4>
         <ul>
-          <li>Chaque zone garde son propre <b>créneau horaire</b>. À l'heure pile, la zone ouvre un nouveau portail — SAUF si le portail en cours est encore ouvert, auquel cas le créneau est <b>sauté</b> et la zone est re-jugée à l'heure suivante.</li>
-          <li>Une zone scellée par un <b>first-clear</b> reste vide jusqu'au premier créneau à ou après le scellement — jamais de re-farm instantané.</li>
-          <li>Un portail non réclamé s'effondre après <b>2 heures</b> pile (un multiple exact du cycle horaire), donc son remplacement tombe toujours exactement sur le créneau suivant.</li>
+          <li>Chaque zone garde son propre <b>créneau horaire</b>, compté depuis l'ouverture du portail — pas depuis sa fermeture. À chaque créneau, la zone ouvre un nouveau portail SAUF si le précédent est encore ouvert, auquel cas le créneau est <b>sauté</b> et la zone est re-jugée au suivant.</li>
+          <li>Le prochain portail arrive au <b>premier créneau à ou après la fermeture</b> du précédent. Concrètement (exemples chiffrés du jeu) : un clear à 45 min fait revenir le prochain portail à la marque <b>1 h</b> ; un clear à 1 h 30 le fait revenir à la marque <b>2 h</b>. Un portail non réclamé s'effondre après <b>2 heures</b> pile, son remplacement tombant immédiatement sur ce créneau.</li>
+        </ul>
+        <h4>La cadence réelle</h4>
+        <ul>
+          <li>Un groupe qui clear vite (le cas le plus courant, surtout en C/B) verra donc le <b>prochain portail de sa zone dans l'heure</b> qui suit l'ouverture — pas dans les 2 heures. Les 2 heures ne sont que le <b>plafond</b> du cas où personne ne termine la Faille.</li>
         </ul>
         <h4>Ce que ça corrige</h4>
         <ul>

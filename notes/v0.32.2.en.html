@@ -249,13 +249,16 @@
   const DETAILS = {
     fairness: {
       title: "Portal respawn, tied to real closure",
-      summary: "A portal only opens at the first hourly boundary right after the previous one truly closes — never while a descent is still running.",
+      summary: "A portal only opens at the first hourly boundary right after the previous one truly closes — never while a descent is still running. In practice, the felt cadence is often closer to 1 hour than 2.",
       body: `
         <h4>The rule</h4>
         <ul>
-          <li>Every zone keeps its own <b>hourly boundary</b>. At the boundary, the zone opens a new portal — UNLESS the current one is still open, in which case the boundary is <b>skipped</b> and the zone is re-judged at the next one.</li>
-          <li>A zone sealed by a <b>first-clear</b> stays empty until the first boundary at or after the seal — never an instant re-farm.</li>
-          <li>An unclaimed portal collapses after exactly <b>2 hours</b> (an exact multiple of the hourly cycle), so its replacement always lands right on the next boundary.</li>
+          <li>Every zone keeps its own <b>hourly boundary</b>, counted from when its portal opened — not from when it closed. At each boundary, the zone opens a new portal UNLESS the current one is still open, in which case the boundary is <b>skipped</b> and the zone is re-judged at the next one.</li>
+          <li>The next portal lands at the <b>first boundary at or after</b> the previous one's closure. Concretely (worked examples from the game's own code): a clear at 45 minutes brings the next portal back at the <b>1h</b> mark; a clear at 1h30 brings it back at the <b>2h</b> mark. An unclaimed portal collapses after exactly <b>2 hours</b>, with its replacement landing immediately on that boundary.</li>
+        </ul>
+        <h4>The felt cadence</h4>
+        <ul>
+          <li>A group that clears fast (the common case, especially at C/B rank) will see its zone's <b>next portal within the hour</b> — not within 2 hours. The 2-hour figure is only the <b>ceiling</b> for a rift nobody finishes.</li>
         </ul>
         <h4>What this fixes</h4>
         <ul>

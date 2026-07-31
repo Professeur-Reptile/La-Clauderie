@@ -21,6 +21,23 @@ se limite à la partie rédactionnelle des « Nouveautés » :
 
 1. **Trouver le contenu de la version.** Récupérer les notes de version du jeu
    (`https://github.com/levy-street/world-of-claudecraft/releases/tag/vX.Y.Z`).
+1bis. **Vérifier les affirmations chiffrées/mécaniques contre le code, pas
+   seulement contre le résumé des notes.** Les notes officielles décrivent
+   l'INTENTION ; le comportement réel peut différer (arrondis, interactions
+   entre systèmes, cas non mentionné). Pour chaque chiffre ou règle qui finira
+   dans une carte/fiche détaillée : `git diff v<précédente>..v<actuelle> --
+   src/...` sur le fichier concerné dans `../world-of-claudecraft`, et si un
+   test existe (`tests/*.test.ts`), le lire — les exemples chiffrés qui y sont
+   épinglés (`it('...', () => { expect(...).toBe(...) })`) valent plus que la
+   prose des notes. Exemple vécu (v0.32.2) : les notes annonçaient une durée
+   de vie de portail de Faille « 2 heures », vrai seulement dans le cas où
+   personne ne le termine — `tests/rift_portals.test.ts` montre qu'un clear
+   rapide fait revenir le prochain portail dès la marque **1 h**, ce que des
+   joueurs ont signalé et qui a demandé de reformuler `failles.html` et
+   `notes/v0.32.2.html`. Si un écart est trouvé : reformuler pour décrire le
+   comportement réel (avec la source exacte), jamais recopier la formulation
+   du jeu telle quelle sans vérification quand un chiffre ou une mécanique
+   précise est en jeu.
 2. **Créer `notes/vX.Y.Z.html` + `notes/vX.Y.Z.en.html`** en copiant la structure
    EXACTE de la version la plus récente du dossier `notes/` (même `<style>`, même
    scaffolding modal, mêmes classes). N'adapter que : version, méta, hero,
