@@ -2,56 +2,56 @@
   "guilde": {
     "classementServeur": 7,
     "classement": {
-      "releveLe": "2026-08-01T08:31:10Z",
+      "releveLe": "2026-08-01T10:44:55Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Monarchs",
           "memberCount": 98,
-          "totalLifetimeXp": 49007953,
+          "totalLifetimeXp": 49044671,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "HUMANITY",
-          "memberCount": 98,
-          "totalLifetimeXp": 38564118,
+          "memberCount": 97,
+          "totalLifetimeXp": 38033566,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Look Good Play Good",
           "memberCount": 85,
-          "totalLifetimeXp": 30282848,
+          "totalLifetimeXp": 30287109,
           "topLevel": 20
         },
         {
           "rank": 4,
           "name": "Raiders United",
-          "memberCount": 89,
-          "totalLifetimeXp": 23026179,
+          "memberCount": 88,
+          "totalLifetimeXp": 22540269,
           "topLevel": 20
         },
         {
           "rank": 5,
           "name": "Holy Order",
           "memberCount": 66,
-          "totalLifetimeXp": 15508937,
+          "totalLifetimeXp": 15743406,
           "topLevel": 20
         },
         {
           "rank": 6,
           "name": "Ehren Nuggets",
           "memberCount": 97,
-          "totalLifetimeXp": 13931929,
+          "totalLifetimeXp": 13937310,
           "topLevel": 20
         },
         {
           "rank": 7,
           "name": "La Clauderie",
           "memberCount": 43,
-          "totalLifetimeXp": 12170914,
+          "totalLifetimeXp": 12180187,
           "topLevel": 20
         },
         {
@@ -80,7 +80,7 @@
         "rank": 7,
         "name": "La Clauderie",
         "memberCount": 43,
-        "totalLifetimeXp": 12170914,
+        "totalLifetimeXp": 12180187,
         "topLevel": 20
       }
     }
