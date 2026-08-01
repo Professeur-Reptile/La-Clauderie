@@ -619,7 +619,7 @@ const BUILDS = {
                en: "Preventive healing: Doctrine armors up BEFORE the damage. A well-timed shield is a heal you'll never have to cast — and Anointing speeds an ally up by 20%." },
    stats: { fr: "Intelligence > Esprit > Crit > Hâte (le crit nourrit Halo Aftershock)", en: "Intellect > Spirit > Crit > Haste (crit feeds Halo Aftershock)" },
    talents: [
-    ["Warding Refrain", "niv. 5", { fr: "1 Whispered Prayer sur 3 durcit sa cible en bouclier de 40 — que ta maîtrise monte à 52.", en: "every 3rd Whispered Prayer hardens its target into a 40 ward — which your mastery raises to 52." }],
+    ["Warding Refrain", "niv. 5", { fr: "1 Whispered Prayer sur 3 durcit sa cible en bouclier de 40 pendant 10 s — montant fixe : la maîtrise n'amplifie que Psalm of Warding.", en: "every 3rd Whispered Prayer hardens its target into a 40 ward for 10s — flat amount: the mastery only amplifies Psalm of Warding." }],
     ["Shattered Psalm", "niv. 8", { fr: "Psalm of Warding soigne 45 quand il est entièrement consommé : le bouclier rembourse.", en: "Psalm of Warding heals 45 when fully consumed: the shield pays you back." }],
     ["Measured Mercy", "niv. 11", { fr: "1 soin sur 3 rend le suivant 50 % moins cher — la même économie de mana que Benison.", en: "every 3rd heal makes the next one 50% cheaper — the same mana economy as Benison." }],
     ["Mercy Deferred", "niv. 14", { fr: "Solemn Prayer laisse un écho 10 s : soin instantané de 60 sous 35 % PV — le filet sous le filet.", en: "Solemn Prayer leaves a 10s echo: an instant 60 heal below 35% HP — the net under the net." }],
@@ -627,7 +627,7 @@ const BUILDS = {
     ["Halo Aftershock", "niv. 20", { fr: "chaque soin critique pose un bouclier de 50 en plus : ton crit devient une seconde maîtrise.", en: "every critical heal also wards for 50: your crit becomes a second mastery." }]
    ],
    rotation: [
-    ["Psalm of Warding", { fr: "toutes les 6 s, sur celui qui va encaisser : +30 % d'absorption via la maîtrise, et Shattered Psalm le fait soigner en cédant.", en: "every 6s, on whoever is about to take the hit: +30% absorption from the mastery, and Shattered Psalm makes it heal when it breaks." }],
+    ["Psalm of Warding", { fr: "toutes les 4,2 s (la spé raccourcit son CD de 30 %), sur celui qui va encaisser : +18 % d'absorption de spé, +30 % de maîtrise, et Shattered Psalm le fait soigner en cédant.", en: "every 4.2s (the spec shaves 30% off its CD), on whoever is about to take the hit: +18% absorption from the spec, +30% from the mastery, and Shattered Psalm makes it heal when it breaks." }],
     ["Anointing", { fr: "le sort signature (CD 120 s) : +20 % de hâte des sorts sur la cible 15 s — sur toi quand ça saigne, sur un DPS pour le burst.", en: "the signature spell (120s CD): +20% spell haste on the target for 15s — on yourself when things bleed, on a DPS for burst." }],
     ["Whispered Prayer", { fr: "le filler — un bouclier gratuit tous les 3 casts avec Warding Refrain.", en: "the filler — a free ward every 3 casts with Warding Refrain." }],
     ["Lingering Grace", { fr: "le HoT d'entretien sous les boucliers.", en: "the maintenance HoT beneath the shields." }],
@@ -637,6 +637,38 @@ const BUILDS = {
    ],
    astuce: { fr: "Pose Psalm of Warding sur le tank AVANT le pull, pas après le premier coup — un disci en retard n'est qu'un Benison en moins bien.",
              en: "Shield the tank BEFORE the pull, not after the first hit — a late disc priest is just a worse Benison." }
+  },
+  {
+   tag: { fr: "Rempart (hors-méta)", en: "Bulwark (off-meta)" },
+   spec: "Doctrine (discipline)",
+   mastery: { fr: "Fixed Purpose : tes boucliers absorbent 30 % de plus, +8 % de PV max",
+              en: "Fixed Purpose: your shields absorb 30% more, +8% max health" },
+   pourquoi: { fr: "Le « tank prêtre » assumé — et hors-méta : le jeu ne connaît que trois classes tank (Guerrier, Paladin, Druide), le Prêtre n'a ni provocation ni bonus de menace, et l'outil Donjons t'inscrira soigneur (le rôle est verrouillé par la spé). Mais en solo, en duo et en Délice, personne ne t'en empêche : Doctrine encaisse pour de vrai — bouclier quasi permanent, PV gonflés par la maîtrise, et du vol de vie sur Mindfracture.",
+               en: "The unapologetic “tank priest” — and off-meta: the game only knows three tank classes (Warrior, Paladin, Druid), the Priest has no taunt and no threat bonus, and the Dungeon Finder will sign you up as a healer (your role is locked to your spec). But solo, in duos and in Delves, nobody can stop you: Doctrine genuinely takes hits — a near-permanent shield, mastery-inflated HP, and lifesteal on Mindfracture." },
+   stats: { fr: "Endurance (PV max = plus gros Wounded Halo) > Intelligence (tes soins) > Esprit > Crit (Halo Aftershock)",
+            en: "Stamina (max HP = bigger Wounded Halo) > Intellect (your heals) > Spirit > Crit (feeds Halo Aftershock)" },
+   talents: [
+    ["Warding Refrain", "niv. 5", { fr: "1 Whispered Prayer sur 3 pose un bouclier de 40 pendant 10 s — du blindage gratuit pendant que tu te retapes entre deux packs.", en: "every 3rd Whispered Prayer adds a 40 ward for 10s — free plating while you patch yourself up between packs." }],
+    ["Shattered Psalm", "niv. 8", { fr: "en face-tank, ton Psalm of Warding casse en boucle — et chaque bris entier te rend 45 PV. Contre des packs de casters, Hushword (silence 4 s) se défend.", en: "face-tanking, your Psalm of Warding breaks on repeat — and every full break heals you 45. Against caster packs, Hushword (4s silence) is a fair swap." }],
+    ["Gloam Siphon", "niv. 11", { fr: "Mindfracture inflige 30 de plus sur 3 s et te soigne de 100 % de ces dégâts : ton bouton de dégâts devient du vol de vie.", en: "Mindfracture deals an extra 30 over 3s and heals you for 100% of it: your damage button becomes lifesteal." }],
+    ["Twin Fracture", "niv. 14", { fr: "Mindfracture stocke 2 charges : double dose de dégâts et de Gloam Siphon d'affilée quand ça chauffe.", en: "Mindfracture stores 2 charges: a double dose of damage and Gloam Siphon back-to-back when things heat up." }],
+    ["Wounded Halo", "niv. 17", { fr: "LE talent rempart : tout coup d'au moins 15 % de tes PV max allume un bouclier de 15 % de tes PV max pendant 10 s (recharge interne 20 s). Plus d'Endurance = plus gros bouclier.", en: "THE bulwark talent: any hit for at least 15% of your max HP kindles a ward for 15% of your max HP for 10s (20s internal cooldown). More Stamina = bigger ward." }],
+    ["Halo Aftershock", "niv. 20", { fr: "chaque soin critique pose 50 d'absorption en plus — tes Whispered Prayer d'entretien blindent en critiquant. Thoughtburn si tu farmes des packs.", en: "every critical heal also wards for 50 — your upkeep Whispered Prayers plate you up when they crit. Thoughtburn if you farm packs." }]
+   ],
+   rotation: [
+    ["Litany of Resolve", { fr: "le +5 % d'Endurance, posé avant de partir (30 min).", en: "the +5% Stamina buff, applied before heading out (30 min)." }],
+    ["Psalm of Warding", { fr: "sur toi AVANT le pull, puis à chaque recharge (4,2 s en Doctrine) : 210 de base au rang 4, ~322 avec la spé (+18 %) et la maîtrise (+30 %).", en: "on yourself BEFORE the pull, then on every recharge (4.2s as Doctrine): 210 base at rank 4, ~322 with the spec (+18%) and the mastery (+30%)." }],
+    ["Mindfracture", { fr: "×2 charges : tes dégâts ET ton vol de vie (Gloam Siphon).", en: "×2 charges: your damage AND your lifesteal (Gloam Siphon)." }],
+    ["Dirge of Decay", { fr: "le DoT en ouverture sur chaque cible.", en: "the DoT as an opener on every target." }],
+    ["Litany of Woe", { fr: "le filler canalisé — tu encaisses en canalisant, le bouclier s'en charge.", en: "the channelled filler — you take the hits mid-channel, the shield handles it." }],
+    ["Whispered Prayer", { fr: "entre deux packs : se soigner recharge aussi Warding Refrain (1 sur 3) et peut critiquer (Halo Aftershock).", en: "between packs: healing yourself also advances Warding Refrain (every 3rd) and can crit (Halo Aftershock)." }],
+    ["Urgent Prayer", { fr: "l'urgence, quand tout a cédé.", en: "the emergency heal, once everything has broken." }],
+    ["Anointing", { fr: "le sort signature (CD 120 s) : +20 % de hâte des sorts 15 s — sur toi, c'est plus de boucliers et de soins à la minute.", en: "the signature spell (120s CD): +20% spell haste for 15s — on yourself, that's more shields and heals per minute." }]
+   ],
+   astuce: { fr: "Le terrain de jeu du Rempart, c'est le Délice : ta compagnonne (Acolyte Tessa ou Edda Reedhand) est soigneuse — tu tiens la ligne devant, elle soigne derrière. En donjon classique, rebascule sur le build Doctrine « soin » : c'est comme soigneur que le groupe t'attend.",
+             en: "The Bulwark's home turf is the Delve: your companion (Acolyte Tessa or Edda Reedhand) is a healer — you hold the line up front, she heals from behind. In regular dungeons, switch back to the Doctrine “healing” build: a healer is what the group expects you to be." },
+   gearnote: { fr: "Le BiS ci-dessous est calculé pour le heal (Intelligence/Esprit). En Rempart, privilégie les pièces à Endurance du Codex : les boucliers ont un montant fixe (la puissance des sorts ne les grossit pas), tes PV max, eux, font tout grossir — Wounded Halo comme la maîtrise (+8 %).",
+               en: "The BiS below is computed for healing (Intellect/Spirit). As Bulwark, favour Stamina pieces from the Codex: shields are flat amounts (spell power does not grow them), while your max HP grows everything — Wounded Halo and the mastery (+8%) alike." }
   }],
   dps: {
    spec: "Vespers (shadow)",
