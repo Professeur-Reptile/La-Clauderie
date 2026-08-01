@@ -2,56 +2,56 @@
   "guilde": {
     "classementServeur": 7,
     "classement": {
-      "releveLe": "2026-08-01T10:44:55Z",
+      "releveLe": "2026-08-01T13:46:03Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Monarchs",
-          "memberCount": 98,
-          "totalLifetimeXp": 49044671,
+          "memberCount": 96,
+          "totalLifetimeXp": 49478237,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "HUMANITY",
           "memberCount": 97,
-          "totalLifetimeXp": 38033566,
+          "totalLifetimeXp": 38184303,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Look Good Play Good",
           "memberCount": 85,
-          "totalLifetimeXp": 30287109,
+          "totalLifetimeXp": 30421954,
           "topLevel": 20
         },
         {
           "rank": 4,
           "name": "Raiders United",
-          "memberCount": 88,
-          "totalLifetimeXp": 22540269,
+          "memberCount": 93,
+          "totalLifetimeXp": 24294442,
           "topLevel": 20
         },
         {
           "rank": 5,
           "name": "Holy Order",
-          "memberCount": 66,
-          "totalLifetimeXp": 15743406,
+          "memberCount": 65,
+          "totalLifetimeXp": 15384421,
           "topLevel": 20
         },
         {
           "rank": 6,
           "name": "Ehren Nuggets",
           "memberCount": 97,
-          "totalLifetimeXp": 13937310,
+          "totalLifetimeXp": 13964552,
           "topLevel": 20
         },
         {
           "rank": 7,
           "name": "La Clauderie",
           "memberCount": 43,
-          "totalLifetimeXp": 12180187,
+          "totalLifetimeXp": 12302017,
           "topLevel": 20
         },
         {
@@ -80,7 +80,7 @@
         "rank": 7,
         "name": "La Clauderie",
         "memberCount": 43,
-        "totalLifetimeXp": 12180187,
+        "totalLifetimeXp": 12302017,
         "topLevel": 20
       }
     }
