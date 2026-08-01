@@ -134,7 +134,7 @@
 
 <div class="wrap">
   <header class="page">
-    <p class="eyebrow" data-en="PvP guide · Patch v0.30.0">Guide PvP · Patch v0.30.0</p>
+    <p class="eyebrow" data-en="PvP guide · Patch v0.33.0">Guide PvP · Patch v0.33.0</p>
     <h1 data-en="PvP — Coliseum &amp; Drowned Court">PvP — Colisée &amp; Drowned Court</h1>
     <p class="lede" data-en="Everything the guild knows about player-versus-player: the real game modes (ranked 1v1 &amp; 2v2, Fiesta, Protect Yumi in 3v3/5v5, the Vale Cup, duels), how Honor and the Warfare rating work, one PvP build per class, and the comps we recommend. Numbers checked against the game's own design docs.">Tout ce que la guilde sait du joueur-contre-joueur : les vrais modes du jeu (1v1 et 2v2 classés, Fiesta, Protect Yumi en 3v3/5v5, la Vale Cup, duels), le fonctionnement de l'Honor et du Warfare, un build PvP par classe, et les compos qu'on recommande. Chiffres vérifiés dans les documents de design du jeu.</p>
   </header>
@@ -283,7 +283,7 @@
 
 <script src="assets/nav.js"></script>
 <script src="assets/lang.js"></script>
-<script src="assets/version.js" data-version="v0.32.4" defer></script>
+<script src="assets/version.js" data-version="v0.33.0" defer></script>
 <script>
 // Builds PvP par classe — éditorial La Clauderie, mêmes rangées de talents que
 // la page Builds (TALENTS.json de la knowledge base), re-choisies pour l'arène.
@@ -307,7 +307,8 @@ const PVP = {
    { fr: "<b>Maiming Strike</b> actif sur la cible de kill à chaque instant — c'est ta raison d'être.", en: "<b>Maiming Strike</b> up on the kill target at every moment — it's your reason to exist." },
    { fr: "<b>Hobbling Cut</b> (−50 % vitesse) pour coller, <b>Storm Bolt</b> pour couper un soin, <b>Jawcrack</b> pour verrouiller l'école.", en: "<b>Hobbling Cut</b> (−50% speed) to stick, <b>Storm Bolt</b> to stop a heal, <b>Jawcrack</b> to lock the school." },
    { fr: "<b>Intimidating Shout</b> pour peel ton soigneur — la peur subit les DR, garde-la pour l'urgence.", en: "<b>Intimidating Shout</b> to peel for your healer — fear suffers DR, save it for emergencies." },
-   { fr: "Garde <b>Avatar</b> pour SORTIR d'une chaîne de contrôle, pas pour l'ouvrir — depuis la v0.29 il se lance vraiment sous stun ou peur.", en: "Save <b>Avatar</b> to BREAK OUT of a control chain, not to open with it — since v0.29 it genuinely casts while stunned or feared." }
+   { fr: "Garde <b>Avatar</b> pour SORTIR d'une chaîne de contrôle, pas pour l'ouvrir — depuis la v0.29 il se lance vraiment sous stun ou peur.", en: "Save <b>Avatar</b> to BREAK OUT of a control chain, not to open with it — since v0.29 it genuinely casts while stunned or feared." },
+   { fr: "Nouveau en v0.33.0 : <b>Seething Fury</b> (niv. 10, hors GCD, 30 s) — 20 rage gratuites pour ouvrir sur Maiming Strike ou relancer après un switch.", en: "New in v0.33.0: <b>Seething Fury</b> (lvl 10, off-GCD, 30s) — 20 free rage to open into Maiming Strike or restart after a swap." }
   ],
   partner: { fr: "Partenaire 2v2 : Spiritmend (« l'Étau ») ou Doctrine.", en: "2v2 partner: Spiritmend (“the Vise”) or Doctrine." }
  },
@@ -396,7 +397,7 @@ const PVP = {
   pourquoi: { fr: "Le maître du contrôle : slow permanent, roots, stun, poly instantané et une immunité totale. Tu ne gagnes pas en tapant plus fort — tu gagnes parce que l'adversaire ne joue jamais.", en: "The control master: permanent slow, roots, a stun, an instant polymorph and full immunity. You don't win by hitting harder — you win because the opponent never gets to play." },
   talents: [
    ["Double Blink", "niv. 5", { fr: "2 charges de Flickerstep : la distance est ta barre de vie.", en: "2 Flickerstep charges: distance is your health bar." }],
-   ["Greater Invisibility", "niv. 8", { fr: "purge 2 DoTs et −90 % de dégâts : LA réponse au train ennemi.", en: "removes 2 DoTs and −90% damage: THE answer to the enemy train." }],
+   ["Greater Invisibility", "niv. 8", { fr: "purge 2 DoTs et disparaît 20 s — mais depuis la v0.33.0 les −90 % ne durent que 2 s À LA SORTIE : un outil de repositionnement, plus une immunité au train ennemi.", en: "removes 2 DoTs and vanishes for 20s — but since v0.33.0 the −90% only lasts 2s ON EXIT: a repositioning tool, no longer an immunity to the enemy train." }],
    ["Snap Bewitch", "niv. 11", { fr: "le poly INSTANTANÉ (CD 20 s) : le soigneur adverse en crapaud, sans fenêtre de cast.", en: "the INSTANT polymorph (20s CD): the enemy healer as a toad, no cast window needed." }],
    ["Racing Mind", "niv. 14", { fr: "un Glacial Spike instantané : le burst qui n'attend pas.", en: "an instant Glacial Spike: burst that doesn't wait." }],
    ["Winter's Recall", "niv. 17", { fr: "re-Flickerstep, re-Frostveil : les défensifs en double.", en: "re-Flickerstep, re-Frostveil: defensives, doubled." }],
@@ -404,7 +405,7 @@ const PVP = {
   ],
   plan: [
    { fr: "<b>Rimelance</b> en continu : le slow de 40 % EST le gameplay — les procs sont un bonus.", en: "<b>Rimelance</b> at all times: the 40% slow IS the gameplay — procs are a bonus." },
-   { fr: "La chaîne de kill : <b>Deadfrost</b> (stun, hors DR) → <b>Winterlash</b> → <b>Ice Lance ×2</b> → <b>Glacial Spike</b> instantané.", en: "The kill chain: <b>Deadfrost</b> (stun, no DR) → <b>Winterlash</b> → <b>Ice Lance ×2</b> → instant <b>Glacial Spike</b>." },
+   { fr: "La chaîne de kill : <b>Deadfrost</b> (stun, hors DR) → <b>Winterlash</b> → <b>Ice Lance ×2</b> → <b>Glacial Spike</b> instantané. Bonus v0.33.0 : le stun compte désormais comme « gelé » — Ice Lance frappe ×3 pendant tout Deadfrost.", en: "The kill chain: <b>Deadfrost</b> (stun, no DR) → <b>Winterlash</b> → <b>Ice Lance ×2</b> → instant <b>Glacial Spike</b>. v0.33.0 bonus: stuns now count as “frozen” — Ice Lance hits ×3 through all of Deadfrost." },
    { fr: "<b>Snap Bewitch</b> le soigneur pendant la chaîne — attention, le poly casse au moindre dégât : annonce-le.", en: "<b>Snap Bewitch</b> the healer during the chain — careful, poly breaks on any damage: call it." },
    { fr: "<b>Icebind</b> la mêlée qui te colle, <b>Cold Coffin</b> pour annuler leur burst — 8 s d'immunité, gratuites.", en: "<b>Icebind</b> the melee glued to you, <b>Cold Coffin</b> to cancel their burst — 8s of immunity, free." }
   ],

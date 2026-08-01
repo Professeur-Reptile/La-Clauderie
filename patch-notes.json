@@ -2,6 +2,32 @@
   "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
   "versions": [
     {
+      "version": "v0.33.0",
+      "date": "2026-08-01",
+      "titre": "La refonte graphique, 296 sorts avec leur signature, le Basin héroïque — et Epic Games",
+      "resume": "La plus grosse mise à jour audiovisuelle du jeu. Le monde entier est re-texturé (matériaux physiques, herbe peignée, éboulis) avec un nouveau palier graphique « Insane », la résolution dynamique et 39 commits d'optimisation. Chacune des 296 capacités reçoit une identité visuelle et sonore (hitstop, motifs signatures, audio échantillonné). Le Wildheart Basin devient la sixième instance héroïque : Zulgar y garantit deux épiques par kill parmi six nouveaux, et peut lâcher les deux montures bleues à 0,1 % chacune. Les monstres gagnent l'Évasion classique (5 s d'inaccessibilité et ils rentrent au camp, soignés) — fin de l'exploit de la corniche —, les boss de Faille espacent leurs mécaniques de 5 s, la Greater Invisibility du Mage ne protège plus que 2 s à la sortie, et Seething Fury redevient apprenable par les guerriers au niveau 10. Le jeu débarque enfin sur l'Epic Games Store, avec liaison de compte optionnelle et miroir des hauts faits.",
+      "temps_forts": [
+        "Refonte graphique complète : matériaux physiques, palier « Insane », résolution dynamique — et 39 commits d'optimisation",
+        "296 sorts avec identité visuelle et sonore : archétypes, hitstop, marques au sol, audio échantillonné",
+        "Le Wildheart Basin passe en héroïque : 2 épiques garantis par kill de Zulgar (6 nouveaux) et les 2 montures bleues à 0,1 %",
+        "L'Évasion classique : un monstre inatteignable 5 s rentre au camp immunisé — l'exploit de la corniche est mort",
+        "Mage : la réduction de 90 % de Greater Invisibility ne s'applique plus que 2 s après la fin de l'invisibilité",
+        "Le jeu arrive sur l'Epic Games Store — liaison de compte « link-not-login » et hauts faits miroités"
+      ],
+      "page": "notes/v0.33.0.html",
+      "titre_en": "The graphics overhaul, 296 abilities with their own signature, Heroic Basin — and Epic Games",
+      "resume_en": "The game's biggest audiovisual update yet. The whole world is re-textured (physical materials, combed grass, cliff scree) with a new \"Insane\" graphics tier, dynamic resolution and 39 optimization commits. Each of the 296 abilities gets a visual and audio identity (hitstop, signature motifs, sampled audio). The Wildheart Basin becomes the sixth heroic instance: heroic Zulgar guarantees two epics per kill out of six new ones, and can drop both blue mounts at 0.1% each. Mobs gain classic Evade (5s unreachable and they walk home, healed) — the ledge exploit is dead —, Rift bosses space their mechanics 5s apart, the Mage's Greater Invisibility now only protects for 2s on exit, and Seething Fury becomes learnable again for warriors at level 10. And the game finally lands on the Epic Games Store, with an optional account link and mirrored deeds.",
+      "temps_forts_en": [
+        "Full graphics overhaul: physical materials, the \"Insane\" tier, dynamic resolution — and 39 optimization commits",
+        "296 abilities with a visual and audio identity: archetypes, hitstop, ground decals, sampled audio",
+        "The Wildheart Basin goes Heroic: 2 guaranteed epics per Zulgar kill (6 new ones) and both blue mounts at 0.1%",
+        "Classic Evade: a mob unreachable for 5s walks home immune — the ledge exploit is dead",
+        "Mage: Greater Invisibility's 90% damage reduction now only applies for 2s after the invisibility ends",
+        "The game lands on the Epic Games Store — \"link, not login\" account linking and mirrored deeds"
+      ],
+      "page_en": "notes/v0.33.0.en.html"
+    },
+    {
       "version": "v0.32.4",
       "date": "2026-07-31",
       "titre": "Hotfix desktop : le gel au « Chargement du monde » est corrigé",

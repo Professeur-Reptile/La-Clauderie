@@ -265,6 +265,7 @@ const BUILDS = {
    ],
    rotation: [
     ["Onrush", { fr: "l'engage — charge 8-25 yd, stun 1 s et 9 rage pour démarrer.", en: "the engage — 8-25 yd charge, 1s stun and 9 rage to get going." }],
+    ["Seething Fury", { fr: "nouveau v0.33.0 (niv. 10, hors GCD, 30 s) : 20 rage instantanées — un Shieldcrack ou un Iron Resolve d'avance au pull.", en: "new in v0.33.0 (lvl 10, off-GCD, 30s): 20 instant rage — a Shieldcrack or Iron Resolve head start on the pull." }],
     ["Shieldcrack", { fr: "ton sort signature (génère 15 rage) : la grosse menace, à chaque cooldown.", en: "your signature spell (generates 15 rage): the big threat hit, on every cooldown." }],
     ["Armor Shear ×5", { fr: "monte les 5 stacks (−25 armure/stack), puis entretiens — tout le groupe en profite.", en: "build the 5 stacks (−25 armor/stack), then keep them up — the whole group benefits." }],
     ["Revenge", { fr: "gratuit après une esquive ou une parade : à caser dès que ça s'allume.", en: "free after a dodge or parry: weave it in whenever it lights up." }],
@@ -295,6 +296,7 @@ const BUILDS = {
    ],
    rotation: [
     ["Onrush", { fr: "l'engage — et 9 rage pour lancer la machine.", en: "the engage — and 9 rage to start the engine." }],
+    ["Seething Fury", { fr: "nouveau v0.33.0 (niv. 10, hors GCD, 30 s) : 20 rage instantanées — rapproche le prochain Red Harvest à 80 rage.", en: "new in v0.33.0 (lvl 10, off-GCD, 30s): 20 instant rage — brings the next 80-rage Red Harvest closer." }],
     ["Bloodletting", { fr: "ton sort signature : 50 % arme + 30, te soigne 3 % PV max, 30 % de chance d'Enrage.", en: "your signature spell: 50% weapon + 30, heals you for 3% max HP, 30% chance to Enrage." }],
     ["Twinstrike", { fr: "le filler : 2× 40 % arme, 2 charges qui rechargent en parallèle (v0.27) — n'en gaspille aucune.", en: "the filler: 2× 40% weapon, 2 charges recharging in parallel (v0.27) — never waste one." }],
     ["Red Harvest", { fr: "à 80 rage : triple frappe et Enrage garanti — le cœur du build.", en: "at 80 rage: triple strike and guaranteed Enrage — the heart of the build." }],
@@ -324,7 +326,8 @@ const BUILDS = {
    ],
    rotation: [
     ["Onrush", { fr: "l'engage — deux charges avec le talent, et 9 rage à chaque fois.", en: "the engage — two charges with the talent, 9 rage each time." }],
-    ["Redhand ×2", { fr: "2 charges, imparable, et chaque coup renforce ton prochain Maiming Strike de 20 % (cumulable ×2) — arme-le avant chaque Maiming.", en: "2 charges, cannot be dodged, and each hit empowers your next Maiming Strike by 20% (stacks twice) — load it before every Maiming." }],
+    ["Seething Fury", { fr: "nouveau v0.33.0 (niv. 10, hors GCD, 30 s) : 20 rage instantanées — de quoi armer Redhand + Maiming Strike dès l'engage.", en: "new in v0.33.0 (lvl 10, off-GCD, 30s): 20 instant rage — enough to load Redhand + Maiming Strike right on the engage." }],
+    ["Redhand ×2",{ fr: "2 charges, imparable, et chaque coup renforce ton prochain Maiming Strike de 20 % (cumulable ×2) — arme-le avant chaque Maiming.", en: "2 charges, cannot be dodged, and each hit empowers your next Maiming Strike by 20% (stacks twice) — load it before every Maiming." }],
     ["Maiming Strike", { fr: "ton sort signature (CD 6 s) : arme + saignement (Gaping Wounds) et −50 % de soins reçus sur la cible.", en: "your signature spell (6s CD): weapon + bleed (Gaping Wounds) and −50% healing received on the target." }],
     ["Breachmaker", { fr: "fissure la garde : +20 % de dégâts sur la cible pendant 8 s (CD 45 s) — ta fenêtre de burst.", en: "cracks the guard: +20% damage on the target for 8s (45s CD) — your burst window." }],
     ["Brute Swing", { fr: "le filler : 50 % arme et 8 rage générés.", en: "the filler: 50% weapon damage and 8 rage generated." }],
@@ -674,7 +677,7 @@ const BUILDS = {
    stats: { fr: "Intelligence > Crit > Hâte", en: "Intellect > Crit > Haste" },
    talents: [
     ["Ice Floes", "niv. 5", { fr: "tes deux prochains sorts à incantation se lancent en mouvement — Cinderbolt sans t'arrêter.", en: "your next two cast-time spells can be cast while moving — Cinderbolt without stopping." }],
-    ["Greater Invisibility", "niv. 8", { fr: "invisible 20 s, purge 2 DoT et −90 % de dégâts subis — le bouton « oups » du DPS.", en: "invisible for 20s, removes 2 DoTs and −90% damage taken — the DPS 'oops' button." }],
+    ["Greater Invisibility", "niv. 8", { fr: "invisible 20 s et purge 2 DoT — depuis la v0.33.0 les −90 % ne s'appliquent que 2 s à la FIN de l'invisibilité : le bouton « oups » sauve encore d'un wipe de mécanique, plus d'un DoT déjà posé.", en: "invisible for 20s and removes 2 DoTs — since v0.33.0 the −90% only applies for 2s when the invisibility ENDS: the 'oops' button still saves you from a mechanic, no longer from a DoT already ticking." }],
     ["Snap Bewitch", "niv. 11", { fr: "Bewitch devient instantané (CD 20 s) : le CC de secours sans cast.", en: "Bewitch becomes instant (20s CD): emergency CC with no cast." }],
     ["Power Echo", "niv. 14", { fr: "ton prochain sort direct se répète à 50 % de puissance — à caler sur une Pyrelance de Hot Streak.", en: "your next direct spell repeats at 50% power — line it up with a Hot Streak Pyrelance." }],
     ["Elemental Convergence", "niv. 17", { fr: "alterner un sort de Feu et de Givre ouvre 8 s de surpuissance (1×/30 s) : glisse un Rimelance entre deux Cinderbolt.", en: "alternating a Fire and a Frost spell opens an 8s power surge (once per 30s): slip a Rimelance between two Cinderbolts." }],
@@ -719,8 +722,8 @@ const BUILDS = {
     ["Summon Water Elemental", { fr: "l'élémentaire, toujours dehors.", en: "the elemental, always out." }],
     ["Aether Insight", { fr: "le buff +5 % Int du groupe.", en: "the group's +5% Int buff." }]
    ],
-   astuce: { fr: "Brittle Ruin donne +50 % de chance de critique contre les cibles gelées : garde tes Ice Lance pour les fenêtres Winter's Chill au lieu de les lâcher au fil de l'eau — c'est là que les chiffres explosent. Et Cold Coffin (immunité 8 s) reste le meilleur « bouton pause » du jeu.",
-             en: "Brittle Ruin grants +50% crit chance against frozen targets: hold your Ice Lances for Winter's Chill windows instead of dribbling them out — that's where the numbers explode. And Cold Coffin (8s immunity) is still the best pause button in the game." }
+   astuce: { fr: "Brittle Ruin donne +50 % de chance de critique contre les cibles gelées : garde tes Ice Lance pour les fenêtres Winter's Chill au lieu de les lâcher au fil de l'eau — c'est là que les chiffres explosent. Depuis la v0.33.0, « gelé » compte TOUTE entrave dure (racine, stun, stase) : un Ice Lance pendant Deadfrost profite aussi du ×3. Et Cold Coffin (immunité 8 s) reste le meilleur « bouton pause » du jeu.",
+             en: "Brittle Ruin grants +50% crit chance against frozen targets: hold your Ice Lances for Winter's Chill windows instead of dribbling them out — that's where the numbers explode. Since v0.33.0, “frozen” counts EVERY hard crowd-control (root, stun, stasis): an Ice Lance during Deadfrost also gets the ×3. And Cold Coffin (8s immunity) is still the best pause button in the game." }
   }],
   heal: {
    spec: "Chronomancy (arcane)",

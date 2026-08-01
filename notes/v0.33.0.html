@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Nouveautés v0.33.0 — La Clauderie</title>
+<meta name="description" content="Toutes les nouveautés de la v0.33.0 de World of ClaudeCraft : la refonte graphique et le palier Insane, une identité visuelle et sonore pour les 296 sorts, le Wildheart Basin en héroïque avec six nouveaux épiques, l'Évasion classique des monstres et l'arrivée sur l'Epic Games Store.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Nouveautés v0.33.0 — La Clauderie">
+<meta property="og:description" content="Toutes les nouveautés de la v0.33.0 de World of ClaudeCraft : la refonte graphique et le palier Insane, une identité visuelle et sonore pour les 296 sorts, le Wildheart Basin en héroïque avec six nouveaux épiques, l'Évasion classique des monstres et l'arrivée sur l'Epic Games Store.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.33.0.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.33.0.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') === 'en') location.replace('v0.33.0.en.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Notes de version</p>
+    <h1>Nouveautés <span class="v">v0.33.0</span></h1>
+    <p class="lede">La plus grosse mise à jour audiovisuelle du jeu : refonte graphique complète avec le nouveau palier « Insane », une identité visuelle et sonore pour chacun des 296 sorts, le Wildheart Basin en mode héroïque avec six nouveaux épiques, l'Évasion classique contre les exploits de terrain — et le jeu débarque sur l'Epic Games Store. Clique sur une bulle pour le détail.</p>
+    <div class="meta">
+      <span><b>Publiée</b> le 1 août 2026</span>
+      <span><b>Depuis</b> la v0.32.4</span>
+      <span><b>Ampleur</b> · 2 591 fichiers, +97 000 lignes</span>
+    </div>
+    <div class="hint">💡 Clique sur une nouveauté pour ouvrir ses règles détaillées — et sur les <span data-codex="term|proc">mots soulignés</span> pour leur définition.</div>
+  </header>
+
+  <!-- 1 GRAPHISMES & PERFORMANCES -->
+  <section>
+    <div class="sec-head"><span class="sec-num">01</span><h2>La refonte graphique &amp; performances</h2></div>
+    <p class="sec-sub">Le monde entier a été re-texturé, un palier graphique « Insane » coiffe désormais Ultra, et 39 commits de performance font tourner le tout plus vite qu'avant.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="world" tabindex="0" role="button" aria-label="Détails : le monde re-texturé">
+        <h3>Un monde re-texturé <span class="chip c-new">Refonte</span></h3>
+        <p>Des <strong class="hl">familles de matériaux</strong> (écorce, tissu, métal, roche) avec vraies normales et rugosité, une <strong class="hl">herbe peignée</strong> aux teintes changeantes, des chemins de terre nettoyés, des éboulis au pied des falaises et des canopées texturées.</p>
+        <span class="more-link">Ce qui change à l'écran</span>
+      </div>
+      <div class="card more" data-detail="tiers" tabindex="0" role="button" aria-label="Détails : les paliers graphiques et la résolution dynamique">
+        <h3>Le palier « Insane » <span class="chip c-util">Options</span></h3>
+        <p>Cinq préréglages — <strong class="hl">Low, Medium, High, Ultra, Insane</strong> — plus un mode Avancé : chaque curseur se règle séparément, et la <strong class="hl">résolution dynamique</strong> maintient la fluidité dans les gros combats.</p>
+        <span class="more-link">Les nouveaux réglages</span>
+      </div>
+      <div class="card more" data-detail="perf" tabindex="0" role="button" aria-label="Détails : les optimisations de performance">
+        <h3>Plus beau ET plus fluide <span class="chip c-util">Perf</span></h3>
+        <p><strong class="hl">39 commits d'optimisation</strong> : moins d'appels de rendu, anticrénelage SMAA, tri d'affichage avant-vers-arrière, et plus aucune allocation mémoire par image.</p>
+        <span class="more-link">Le détail technique</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 VFX & SFX -->
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Chaque sort a désormais sa signature</h2></div>
+    <p class="sec-sub">Fini les mêmes particules colorées pour tout le monde : les 296 capacités du jeu reçoivent chacune une identité visuelle ET sonore.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="vfx" tabindex="0" role="button" aria-label="Détails : les effets visuels par sort">
+        <h3>296 sorts, 296 identités visuelles <span class="chip c-new">VFX</span></h3>
+        <p>Un registre d'effets couvre <strong class="hl">chacune des 296 capacités</strong> : archétypes d'animation, motifs signatures, impacts par école de magie, marques au sol — avec des rondes d'identité dédiées pour guerrier, voleur, prêtre et druide.</p>
+        <span class="more-link">Comment c'est construit</span>
+      </div>
+      <div class="card more" data-detail="sfx" tabindex="0" role="button" aria-label="Détails : le ressenti des coups et l'audio">
+        <h3>Le ressenti des coups <span class="chip c-new">SFX</span></h3>
+        <p><strong class="hl">Micro-arrêt à l'impact</strong> (hitstop), inclinaison du corps pendant l'incantation, lueur sur le personnage — et une <strong class="hl">couche audio échantillonnée</strong> avec une identité sonore par capacité.</p>
+        <span class="more-link">Le détail du feeling</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 WILDHEART HÉROÏQUE -->
+  <section>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Le Wildheart Basin passe en héroïque</h2></div>
+    <p class="sec-sub">La caldeira du Palmreach devient la sixième instance héroïque du jeu — avec la table de loot la plus généreuse des donjons 5 joueurs : deux épiques garantis par kill.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="heroic" tabindex="0" role="button" aria-label="Détails : le mode héroïque du Wildheart Basin">
+        <h3>Zulgar en héroïque <span class="chip c-raid">Donjon</span></h3>
+        <p><span data-codex="mob|Zulgar, Voice of the Basin">Zulgar</span> héroïque paie <strong class="hl">exactement deux épiques distincts par kill</strong> : un tiré dans chaque groupe de trois (33-34 % par objet) — le format des autres 5-joueurs héroïques.</p>
+        <span class="more-link">Les règles du loot</span>
+      </div>
+      <div class="card more" data-detail="bluemounts" tabindex="0" role="button" aria-label="Détails : les montures bleues au Basin héroïque">
+        <h3>Deux montures bleues <span class="chip c-epic">0,1 %</span></h3>
+        <p>Seul 5-joueurs à offrir <strong class="hl">les deux rênes bleues</strong> : <span data-codex="item|Reins of the Goliath Grag-Bear">Grag-Bear</span> et <span data-codex="item|Reins of the Moss-Shell Stalk-Glider">Stalk-Glider</span>, chacune à <strong class="hl">0,1 %</strong> sur le kill héroïque — même taux qu'à leur source d'origine.</p>
+        <span class="more-link">Pourquoi deux, et à quel taux</span>
+      </div>
+      <div class="card">
+        <h3>À retenir</h3>
+        <ul>
+          <li>Comme dans les autres instances héroïques, les drops épiques et rares du Basin peuvent sortir en <strong class="hl">variante héroïque</strong> améliorée.</li>
+          <li>Les montures épiques (80 %) restent <strong class="hl">exclusives aux Failles de rang S</strong> — rien ne change de ce côté.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 MONDE OUVERT & FAILLES -->
+  <section>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Monde ouvert &amp; Failles : deux exploits en moins</h2></div>
+    <p class="sec-sub">Les monstres savent désormais abandonner une cible inatteignable, les boss de Faille n'empilent plus leurs mécaniques — et le Basin normal reçoit sa passe de réglage.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="evade" tabindex="0" role="button" aria-label="Détails : l'Évasion classique">
+        <h3>L'Évasion classique <span class="chip c-bal">Anti-exploit</span></h3>
+        <p>Un monstre engagé qui ne peut pas atteindre sa cible pendant <strong class="hl">5 secondes</strong> rentre à son camp, <strong class="hl">immunisé et soigné à fond</strong> — le mot « Evade » flotte à l'écran. Tuer un monstre coincé derrière une corniche, c'est fini.</p>
+        <span class="more-link">Les règles exactes</span>
+      </div>
+      <div class="card more" data-detail="spacing" tabindex="0" role="button" aria-label="Détails : l'espacement des mécaniques de boss de Faille">
+        <h3>Boss de Faille : mécaniques espacées <span class="chip c-bal">Failles</span></h3>
+        <p>Un boss de Faille ne peut plus faire <strong class="hl">deux mécaniques en même temps</strong> (le combo peur + zone au sol du même instant) : un verrou partagé impose <strong class="hl">5 secondes</strong> entre deux mécaniques.</p>
+        <span class="more-link">Comment le verrou marche</span>
+      </div>
+      <div class="card more" data-detail="tier2" tabindex="0" role="button" aria-label="Détails : la passe de réglage du Wildheart Basin normal">
+        <h3>Le Basin normal, réglé <span class="chip c-mob">Donjon</span></h3>
+        <p>Le <span data-codex="mob|Fanglord Beastmaster">Fanglord Beastmaster</span> drope sa <span data-codex="item|Fanglord's Beastspear">Beastspear</span> à <strong class="hl">12 %</strong>, Zulgar garantit un <strong class="hl">uncommon de jambes</strong> par kill, et un <strong class="hl">portail de sortie</strong> s'ouvre à sa mort.</p>
+        <span class="more-link">Toute la passe de réglage</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 CLASSES -->
+  <section>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Classes : le Mage rééquilibré, le Guerrier réparé</h2></div>
+    <p class="sec-sub">Deux changements qui comptent : la Grande Invisibilité ne protège plus pendant qu'on est invisible, et une capacité de guerrier perdue depuis des mois redevient apprenable.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="ginvis" tabindex="0" role="button" aria-label="Détails : la refonte de Greater Invisibility">
+        <h3>Mage : <span data-codex="ability|Greater Invisibility">Greater Invisibility</span> retravaillée <span class="chip c-bal">Équilibrage</span></h3>
+        <p>La réduction de <strong class="hl">90 % des dégâts</strong> ne s'applique plus PENDANT les 20 s d'invisibilité : elle s'applique <strong class="hl">2 s après sa fin</strong>. Et le bonus « cible gelée » du Givre compte désormais <strong class="hl">toute entrave dure</strong>, plus seulement les racines.</p>
+        <span class="more-link">Avant / après</span>
+      </div>
+      <div class="card more" data-detail="fury" tabindex="0" role="button" aria-label="Détails : Seething Fury rendue au Guerrier">
+        <h3>Guerrier : <span data-codex="ability|Seething Fury">Seething Fury</span> enfin apprenable <span class="chip c-bal">Correctif</span></h3>
+        <p>La capacité existait dans le code mais <strong class="hl">aucun guerrier ne pouvait l'apprendre</strong> depuis la refonte des talents : elle rejoint le kit au <strong class="hl">niveau 10</strong> — 20 points de rage instantanés, 30 s de recharge, hors GCD.</p>
+        <span class="more-link">L'histoire du bug</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 LES NOUVEAUX OBJETS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">06</span><h2>Les nouveaux objets, et où les trouver</h2></div>
+    <p class="sec-sub">Six épiques héroïques, un rare signature et un trio d'uncommons garantis — tout sort du Wildheart Basin. En un coup d'œil : qui drope quoi, à quel taux. Clique sur un nom pour sa fiche Codex.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="itemsheroic" tabindex="0" role="button" aria-label="Détails : les six épiques héroïques">
+        <h3>Six épiques héroïques <span class="chip c-epic">Zulgar HM</span></h3>
+        <p>Trois torses, une couronne, des jambières et la <strong class="hl">première arme à deux mains lourde</strong> des donjons 5 joueurs — <strong class="hl">deux garantis par kill</strong> de Zulgar héroïque.</p>
+        <span class="more-link">La liste et les taux</span>
+      </div>
+      <div class="card more" data-detail="itemsnormal" tabindex="0" role="button" aria-label="Détails : les objets du Basin normal">
+        <h3>Le rare et le trio garanti <span class="chip c-new">Basin normal</span></h3>
+        <p>La <span data-codex="item|Fanglord's Beastspear">Fanglord's Beastspear</span> (rare, 12 % sur le Beastmaster) et <strong class="hl">un uncommon de jambes garanti</strong> par kill de Zulgar — mailles, cuir ou tissu.</p>
+        <span class="more-link">Les quatre objets</span>
+      </div>
+      <div class="card more" data-detail="terrorspark" tabindex="0" role="button" aria-label="Détails : la monture Terrorspark Groundshaker">
+        <h3>Le char Terrorspark <span class="chip c-epic">Monture</span></h3>
+        <p>Le <strong class="hl">Terrorspark Groundshaker</strong>, premier char pilotable (épique, +80 % vitesse), entre dans les fichiers du jeu — mais il est <strong class="hl">réservé aux développeurs</strong> pour l'instant : aucune source joueur.</p>
+        <span class="more-link">Ce qu'on sait vraiment</span>
+      </div>
+    </div>
+    <div class="hint">💎 Tous ces objets sont cherchables dans le Codex — et les meilleurs sont déjà comparés dans l'onglet Builds.</div>
+  </section>
+
+  <!-- 7 EPIC GAMES -->
+  <section>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Le jeu arrive sur l'Epic Games Store</h2></div>
+    <p class="sec-sub">Epic devient un canal de distribution à part entière — avec une liaison de compte optionnelle qui recopie vos hauts faits en succès Epic.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="epic" tabindex="0" role="button" aria-label="Détails : l'intégration Epic Games">
+        <h3>Lier son compte Epic <span class="chip c-util">Plateforme</span></h3>
+        <p>Le principe est <strong class="hl">« liaison, pas connexion »</strong> : votre compte de jeu reste le seul maître à bord, et la liaison — optionnelle, via une carte dans les options — <strong class="hl">recopie vos hauts faits</strong> en succès Epic.</p>
+        <span class="more-link">Comment ça marche</span>
+      </div>
+      <div class="card">
+        <h3>À retenir</h3>
+        <ul>
+          <li><strong class="hl">Rien ne change</strong> pour les comptes existants : la liaison est entièrement optionnelle.</li>
+          <li>Epic n'est <strong class="hl">jamais une autorité</strong> : c'est le jeu qui décide des hauts faits, Epic n'en reçoit qu'une copie.</li>
+          <li>L'application de bureau peut désormais être distribuée et mise à jour via Epic.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 INTERFACE & CORRECTIFS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">08</span><h2>Interface, confort &amp; correctifs</h2></div>
+    <p class="sec-sub">112 correctifs accompagnent la refonte — voici ceux qui changent vraiment la vie, et les petits plus d'interface.</p>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>Interface <span class="chip c-util">Confort</span></h3>
+        <ul>
+          <li><strong class="hl">Fenêtres d'aura de cible configurables</strong> : position, taille, opacité et couleur de l'icône, des arcs et de l'anneau au sol.</li>
+          <li>Le <strong class="hl">nom de guilde</strong> s'affiche à côté de chaque joueur sur les deux tableaux des scores — La Clauderie en tête, évidemment.</li>
+          <li>Le filtre d'armure du marché gagne les catégories <strong class="hl">cou et anneaux</strong>.</li>
+          <li>Traductions complètes dans les <strong class="hl">21 langues</strong> du jeu.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Correctifs notables <span class="chip c-bal">112 fixes</span></h3>
+        <ul>
+          <li>L'objet en <strong class="hl">main gauche ne perd plus</strong> son enchantement, ses stats d'ouvrage et ses améliorations à la reconnexion — ils étaient silencieusement effacés au chargement.</li>
+          <li>Les <strong class="hl">flashs noirs</strong> d'une fraction de seconde en jeu en ligne sont corrigés.</li>
+          <li>Le glisser-déposer reconnaît correctement les <strong class="hl">emplacements de main gauche</strong>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Compilé pour <strong>La Clauderie</strong> — données et règles vérifiées dans le code source v0.33.0 du jeu.</p>
+    <p style="margin-top:8px"><a href="../patch-notes.html">← Toutes les mises à jour</a> · <a href="../index.html">Accueil</a></p>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    world: {
+      title: "Le monde re-texturé, dans le détail",
+      summary: "Des familles de matériaux physiques remplacent les aplats de couleur — le sol, la végétation et les falaises y passent tous.",
+      body: `
+        <h4>Les matériaux</h4>
+        <ul>
+          <li>Quatre <b>familles de surfaces</b> — écorce, tissu, métal, roche — avec atlas de normales et de rugosité cuits : les objets accrochent la lumière selon leur matière, plus selon leur couleur.</li>
+          <li>Projection <b>triplanaire</b> par-dessus les atlas : fini les textures étirées sur les pentes.</li>
+        </ul>
+        <h4>Le sol et la végétation</h4>
+        <ul>
+          <li>Les <b>chemins de terre</b> perdent leur effet « moquette » ; les couches de terrain reçoivent une variation à grande échelle qui casse la répétition.</li>
+          <li>L'<b>herbe est peignée</b> (anisotropie orientée) avec une dérive de teinte, et un tapis de brins dense apparaît au premier plan.</li>
+          <li>Des <b>éboulis</b> se déposent au pied des falaises, et les canopées d'arbres reçoivent leurs propres textures.</li>
+        </ul>`
+    },
+    tiers: {
+      title: "Les paliers graphiques et la résolution dynamique",
+      summary: "Cinq préréglages plus un mode Avancé où chaque curseur se règle séparément.",
+      body: `
+        <h4>Les préréglages</h4>
+        <ul>
+          <li>Cinq paliers : <b>Low, Medium, High, Ultra</b> et le nouveau <b>Insane</b> — pensé pour les machines qui ont de la marge. Medium a été recalibré au passage.</li>
+          <li>Le mode <b>Avancé</b> expose chaque réglage individuellement : toucher un curseur bascule automatiquement le préréglage sur « Avancé ».</li>
+        </ul>
+        <h4>La résolution dynamique</h4>
+        <ul>
+          <li>Quand la scène charge trop, le jeu <b>baisse temporairement la résolution de rendu</b> plutôt que de laisser tomber des images — et remonte dès que ça se calme.</li>
+          <li>Un garde-fou au démarrage détecte les configurations fragiles et propose un palier adapté avant le premier chargement.</li>
+        </ul>`
+    },
+    perf: {
+      title: "Les 39 commits de performance",
+      summary: "La refonte graphique arrive avec sa propre cure d'optimisation — le jeu est plus beau ET plus rapide.",
+      body: `
+        <h4>Ce qui a été optimisé</h4>
+        <ul>
+          <li><b>Moins d'appels de rendu</b> : géométries fusionnées, masques de terrain par chunk, indexation du terrain en <span class="kbd">Uint16</span>.</li>
+          <li><b>SMAA</b> remplace l'anticrénelage précédent : des bords nets sans le coût du suréchantillonnage.</li>
+          <li>Le <b>tri avant-vers-arrière</b> des objets opaques évite de dessiner des pixels qui seront recouverts.</li>
+          <li><b>Zéro allocation mémoire par image</b> dans les chemins chauds : moins de travail pour le ramasse-miettes, moins de micro-saccades.</li>
+          <li>Les <b>tempêtes de compilation de shaders</b> — le gel de quelques secondes à la première rencontre d'un nouvel effet — sont éliminées.</li>
+        </ul>`
+    },
+    vfx: {
+      title: "296 sorts, 296 identités visuelles",
+      summary: "Un registre d'effets par capacité remplace les particules génériques colorées par école.",
+      body: `
+        <h4>Le système</h4>
+        <ul>
+          <li>Chaque capacité a sa <b>fiche d'effet complète</b> : archétype d'animation, palette, style de préparation, motifs signatures, blocs d'impact — le tout piloté par les données, pas codé au cas par cas.</li>
+          <li>Les <b>impacts par école</b> (feu, givre, ombre…) utilisent des planches d'animation dédiées, avec des marques au sol qui se dissolvent (braises, givre, runes).</li>
+          <li>Des <b>rondes d'identité par classe</b> ont affiné le rendu de chaque kit : guerrier, voleur, prêtre et druide ont chacun eu la leur.</li>
+          <li>Les buffs prennent une <b>orbite visuelle</b> autour du personnage et les barrières une coquille — visibles aussi sur les autres joueurs en ligne.</li>
+        </ul>
+        <h4>Et la lisibilité ?</h4>
+        <ul>
+          <li>Le budget d'effets <b>se dégrade proprement</b> sur les paliers graphiques bas : les motifs et marques au sol s'effacent d'abord, la couleur de l'école reste toujours lisible.</li>
+        </ul>`
+    },
+    sfx: {
+      title: "Le ressenti des coups, expliqué",
+      summary: "Trois briques : le micro-arrêt à l'impact, le corps qui participe à l'incantation, et une couche audio par capacité.",
+      body: `
+        <h4>Le visuel</h4>
+        <ul>
+          <li><b>Hitstop</b> : à l'image de contact d'un gros coup, le temps se fige une fraction de seconde — c'est ce qui fait « sentir » l'impact.</li>
+          <li><b>Inclinaison de préparation</b> : le personnage se penche dans son incantation (ressort d'animation), et son <b>rig s'illumine</b> pendant les montées en puissance.</li>
+        </ul>
+        <h4>L'audio</h4>
+        <ul>
+          <li>Une <b>couche d'échantillons</b> (sons studio ElevenLabs) s'ajoute aux identités <b>audio procédurales par capacité</b> : chaque sort a sa signature sonore reconnaissable à l'oreille.</li>
+          <li>Les résultats d'évitement (esquive, parade… et le nouveau « Evade ») ont leur propre retour sonore.</li>
+        </ul>`
+    },
+    heroic: {
+      title: "Le Wildheart Basin héroïque : les règles du loot",
+      summary: "Sixième instance héroïque du jeu — et la seule à garantir deux épiques par kill de boss.",
+      body: `
+        <h4>Le format</h4>
+        <ul>
+          <li>Le Basin rejoint <b>Hollow Crypt, Sunken Bastion, Drowned Temple, Gravewyrm Sanctum</b> et le raid Nythraxis au rang des instances héroïques.</li>
+          <li><span data-codex="mob|Zulgar, Voice of the Basin">Zulgar</span> héroïque tire dans <b>deux groupes de trois objets distincts</b> : chaque groupe paie toujours exactement un objet (33-34 % chacun) — soit <b>deux épiques garantis par kill</b>, sans doublon possible au sein d'un groupe.</li>
+          <li>Groupe 1 — les torses : <span data-codex="item|Basin Stalker's Tunic">Basin Stalker's Tunic</span>, <span data-codex="item|Verdant-Heart Vestment">Verdant-Heart Vestment</span>, <span data-codex="item|Sunbone Ritual Hauberk">Sunbone Ritual Hauberk</span>.</li>
+          <li>Groupe 2 : <span data-codex="item|Greatfang of the Basin">Greatfang of the Basin</span>, <span data-codex="item|Sunbone Oracle's Crown">Sunbone Oracle's Crown</span>, <span data-codex="item|Bloodmane War-Legguards">Bloodmane War-Legguards</span>.</li>
+        </ul>
+        <h4>Les variantes héroïques</h4>
+        <ul>
+          <li>Comme dans les cinq autres instances, les drops épiques et rares faits dans le Basin héroïque peuvent sortir en <b>variante héroïque</b> au niveau d'objet supérieur.</li>
+        </ul>`
+    },
+    bluemounts: {
+      title: "Les deux montures bleues du Basin héroïque",
+      summary: "Le Basin ne remplace pas les sources existantes : il ajoute un second chemin, au même taux par monture.",
+      body: `
+        <h4>Ce qui change</h4>
+        <ul>
+          <li>Zulgar héroïque peut lâcher les <b>deux rênes bleues du jeu</b> : <span data-codex="item|Reins of the Goliath Grag-Bear">Reins of the Goliath Grag-Bear</span> et <span data-codex="item|Reins of the Moss-Shell Stalk-Glider">Reins of the Moss-Shell Stalk-Glider</span>, à <b>0,1 % chacune</b>, en jets indépendants du loot d'équipement.</li>
+          <li>La règle maintenue par les développeurs est la <b>parité par monture</b> : 0,1 % partout où une bleue peut tomber — le Basin n'est donc jamais un chemin « moins cher » vers l'une d'elles.</li>
+          <li>C'est en revanche le <b>seul 5-joueurs à offrir les deux</b> : 0,2 % de chance agrégée d'y voir une bleue par clear héroïque, contre 0,1 % chez Ysolei ou Korzul (choix assumé des développeurs, daté du 1er août dans le code).</li>
+        </ul>
+        <h4>Ce qui ne change pas</h4>
+        <ul>
+          <li>Les montures épiques (+80 %) restent <b>exclusives aux victoires de Faille de rang S</b> — elles n'apparaissent sur aucune table de donjon.</li>
+        </ul>
+        <p>Le <a href="../montures.html">guide Montures</a> est à jour avec ces nouvelles sources.</p>`
+    },
+    evade: {
+      title: "L'Évasion classique, les règles exactes",
+      summary: "Un monstre qui ne peut pas atteindre sa cible abandonne au bout de 5 secondes — vérifié dans le code et ses tests.",
+      body: `
+        <h4>Le déclencheur</h4>
+        <ul>
+          <li>À chaque tick de combat, le jeu vérifie trois choses : la cible est <b>hors de portée</b>, le monstre n'a <b>commis aucun déplacement</b>, et son pas direct vers la cible est <b>mangé par un obstacle</b> (mur, falaise, eau profonde, haie du labyrinthe).</li>
+          <li>Au bout de <b>5 secondes</b> cumulées dans cet état, le monstre passe en Évasion : il rentre à son point d'apparition, <b>immunisé à tout</b>, et arrive <b>soigné à fond</b>.</li>
+        </ul>
+        <h4>Les cas particuliers</h4>
+        <ul>
+          <li>Un monstre <b>immobilisé</b> (racine, étourdissement) met son chronomètre <b>en pause</b> — il ne se réinitialise pas : le spam de racines ne peut pas empêcher l'Évasion indéfiniment.</li>
+          <li>Les <b>lanceurs de sorts à portée</b> de leur cible n'accumulent jamais de temps d'Évasion — ils continuent simplement de lancer.</li>
+          <li>Attaquer un monstre en Évasion affiche le mot <b>« Evade »</b> en texte flottant (et une ligne dans le journal de combat) au lieu de dégâts.</li>
+        </ul>
+        <h4>Pourquoi</h4>
+        <ul>
+          <li>C'est la fin de l'<b>exploit de la corniche</b> : se percher hors d'atteinte (le rebord de Faille, une falaise) et tuer gratuitement un monstre coincé contre le mur — le leash classique ne se déclenchait jamais car il mesure le déplacement du monstre, quasi nul quand il est coincé.</li>
+        </ul>`
+    },
+    spacing: {
+      title: "Le verrou d'espacement des mécaniques de boss",
+      summary: "Chaque mécanique gardait son propre minuteur — quand deux tombaient sur le même tick, le boss faisait tout en même temps.",
+      body: `
+        <h4>La règle</h4>
+        <ul>
+          <li>Sur tout boss ou mini-boss de Faille, les mécaniques offensives partagent désormais <b>un seul verrou</b> : une mécanique ne peut partir que verrou libre, et le re-arme pour <b>5 secondes</b> (une incantation longue ajoute son temps de cast par-dessus).</li>
+          <li>Une mécanique dont l'heure arrive pendant le verrou <b>attend sans perdre son tour</b> : à la libération, c'est la plus en retard qui part en premier. Aucune mécanique n'est supprimée d'un combat — tout est simplement étalé.</li>
+          <li>Le verrou ne tourne <b>qu'au contact du boss</b> : kiter un boss gèle ses mécaniques en attente, elles reprennent au re-contact.</li>
+        </ul>
+        <h4>Ce qui n'est pas concerné</h4>
+        <ul>
+          <li>Le ralentissement anti-kite, les boucliers du boss et son kit de soutien (invocations d'adds, soins) gardent leur cadence propre — le verrou ne gouverne que la pression dirigée sur les joueurs.</li>
+          <li>Les boss du monde et des donjons classiques ne changent pas : le verrou est <b>propre aux Failles</b> (Citadelle infernale incluse).</li>
+        </ul>`
+    },
+    tier2: {
+      title: "La passe de réglage du Basin normal",
+      summary: "Nouveau loot à tous les étages, un portail de sortie, et deux réglages de combat vérifiés dans le code.",
+      body: `
+        <h4>Le loot</h4>
+        <ul>
+          <li>Le rare <span data-codex="mob|Fanglord Beastmaster">Fanglord Beastmaster</span> drope la <span data-codex="item|Fanglord's Beastspear">Fanglord's Beastspear</span> (rare, 2 mains) à <b>12 %</b>, plus une <span data-codex="item|Chipped Tusk">Chipped Tusk</span> garantie et 25 pièces d'argent.</li>
+          <li><span data-codex="mob|Zulgar, Voice of the Basin">Zulgar</span> garantit désormais <b>exactement un uncommon de jambes</b> par kill : <span data-codex="item|Bloodmane Warleggings">Bloodmane Warleggings</span> (mailles), <span data-codex="item|Vineclaw Stalking Breeches">Vineclaw Stalking Breeches</span> (cuir) ou <span data-codex="item|Sunbone Ritual Sarong">Sunbone Ritual Sarong</span> (tissu) — ses trois armes épiques restent à 6 % chacune.</li>
+          <li>Le trash du Basin lâche des <span data-codex="item|Chipped Tusk">Chipped Tusk</span> (35 à 45 % selon le monstre).</li>
+        </ul>
+        <h4>Le confort</h4>
+        <ul>
+          <li>À la mort de Zulgar, un <b>portail de sortie</b> s'ouvre sur la terrasse du sanctuaire — fini les 220 mètres de marche retour dans un donjon vide (les deux difficultés).</li>
+        </ul>
+        <h4>Les réglages de combat</h4>
+        <ul>
+          <li>La lance des trolls passe à l'école <b>nature</b> : elle ressemblait à un coup de mêlée raté à 24 m — attention, la réduction des dégâts physiques (garde du guerrier) <b>ne s'y applique donc plus</b>.</li>
+          <li>Les sangliers « pression rapide » passent de 7,1 à <b>7,5 de vitesse</b> : à 7,1 contre la course des joueurs (7), ils ne rattrapaient littéralement jamais personne.</li>
+        </ul>`
+    },
+    ginvis: {
+      title: "Greater Invisibility : avant / après",
+      summary: "Le talent de niveau 8 du Mage change de nature : d'immunité quasi totale pendant 20 s, il devient un outil de fuite avec fenêtre de protection à la sortie.",
+      body: `
+        <h4>Avant</h4>
+        <ul>
+          <li>Invisible 20 s, purge 2 effets périodiques, et <b>−90 % de dégâts subis pendant TOUTE l'invisibilité</b> (plus 3 s après une sortie anticipée).</li>
+        </ul>
+        <h4>Après (v0.33.0)</h4>
+        <ul>
+          <li>Invisible 20 s et purge 2 effets périodiques — mais les <b>−90 % ne s'appliquent que 2 secondes, à la FIN de l'invisibilité</b> (sortie naturelle ou interrompue).</li>
+          <li>Concrètement : pendant l'invisibilité, les dégâts qui vous trouvent quand même (zones au sol, périodiques restants) <b>tapent plein pot</b> — le talent protège la sortie, plus la balade.</li>
+        </ul>
+        <h4>Et le « gelé » du Givre</h4>
+        <ul>
+          <li>Les bonus « contre cible gelée » (<span data-codex="ability|Ice Lance">Ice Lance</span> ×3 dégâts) comptent désormais <b>toute entrave dure</b> — étourdissement et stase comprises — plus seulement les racines. Un petit plus pour compenser.</li>
+        </ul>
+        <p>Le <a href="../pvp.html">guide PvP</a> et la fiche Mage de l'onglet <a href="../bis.html">Builds</a> ont été mis à jour en conséquence.</p>`
+    },
+    fury: {
+      title: "Seething Fury : l'histoire du bug",
+      summary: "La capacité existait, complète et fonctionnelle — mais plus rien dans le jeu ne pouvait vous l'apprendre.",
+      body: `
+        <h4>Le bug</h4>
+        <ul>
+          <li><span data-codex="ability|Seething Fury">Seething Fury</span> était définie comme capacité active de guerrier… mais la refonte v2 des talents avait <b>supprimé le rang de talent qui l'accordait</b> sans la rattacher au kit de base : aucun guerrier, même niveau 20, ne pouvait la trouver — un joueur l'a signalée « introuvable » et le propriétaire du jeu a confirmé.</li>
+        </ul>
+        <h4>Le correctif</h4>
+        <ul>
+          <li>Elle rejoint le <b>kit de base du guerrier au niveau 10</b> : <b>20 points de rage</b> instantanés, <b>30 s</b> de recharge, <b>hors GCD</b> — un bouton d'ouverture et de secours pour les rotations à rage.</li>
+        </ul>`
+    },
+    itemsheroic: {
+      title: "Les six épiques du Zulgar héroïque",
+      summary: "Niveau d'objet 31, un seul jet de caractéristique secondaire par pièce — deux garantis par kill, un par groupe.",
+      body: `
+        <h4>Groupe 1 — les torses (un garanti par kill)</h4>
+        <ul>
+          <li><span data-codex="item|Basin Stalker's Tunic">Basin Stalker's Tunic</span> — cuir Agilité (34 %) : le retour d'un torse agi-cuir héroïque pour voleur, chasseur et druide féral.</li>
+          <li><span data-codex="item|Verdant-Heart Vestment">Verdant-Heart Vestment</span> — cuir Intellect (33 %) : le <b>premier torse cuir Intellect du jeu</b>, taillé pour le druide soigneur.</li>
+          <li><span data-codex="item|Sunbone Ritual Hauberk">Sunbone Ritual Hauberk</span> — mailles Intellect (33 %), pour les soigneurs en mailles.</li>
+        </ul>
+        <h4>Groupe 2 (un garanti par kill)</h4>
+        <ul>
+          <li><span data-codex="item|Greatfang of the Basin">Greatfang of the Basin</span> — <b>première deux-mains lourde</b> (Force) des donjons 5 joueurs (34 %).</li>
+          <li><span data-codex="item|Sunbone Oracle's Crown">Sunbone Oracle's Crown</span> — couronne tissu de lanceur (33 %).</li>
+          <li><span data-codex="item|Bloodmane War-Legguards">Bloodmane War-Legguards</span> — jambières mailles Force (33 %).</li>
+        </ul>
+        <p>Les meilleurs de ces objets apparaissent déjà dans les classements de l'onglet <a href="../bis.html">Builds</a>.</p>`
+    },
+    itemsnormal: {
+      title: "Les objets du Basin normal",
+      summary: "Un rare signature sur le Beastmaster et un trio d'uncommons garantis sur Zulgar — accessibles dès le mode normal.",
+      body: `
+        <h4>Le rare</h4>
+        <ul>
+          <li><span data-codex="item|Fanglord's Beastspear">Fanglord's Beastspear</span> — lance deux mains rare (niveau d'objet 23), <b>12 %</b> sur le <span data-codex="mob|Fanglord Beastmaster">Fanglord Beastmaster</span>, utilisable par guerrier, chasseur, chaman et paladin.</li>
+        </ul>
+        <h4>Le trio garanti de Zulgar</h4>
+        <ul>
+          <li>Un des trois par kill, à coup sûr : <span data-codex="item|Bloodmane Warleggings">Bloodmane Warleggings</span> (mailles, 34 %), <span data-codex="item|Vineclaw Stalking Breeches">Vineclaw Stalking Breeches</span> (cuir, 33 %), <span data-codex="item|Sunbone Ritual Sarong">Sunbone Ritual Sarong</span> (tissu, 33 %) — niveau d'objet 21, un par classe d'armure.</li>
+        </ul>`
+    },
+    terrorspark: {
+      title: "Le Terrorspark Groundshaker : ce qu'on sait vraiment",
+      summary: "La monture est bien dans le jeu — mais son objet d'apprentissage n'a volontairement aucune source joueur.",
+      body: `
+        <h4>Ce qui est vrai</h4>
+        <ul>
+          <li>Le <b>Terrorspark Groundshaker</b> est un char pilotable de rareté épique, <b>+80 % de vitesse</b> — le même palier que les deux montures des Failles S.</li>
+          <li>Son objet d'apprentissage, <b>« Ignition Key: Terrorspark Groundshaker »</b>, est lié quand ramassé et existe dans les données du jeu.</li>
+        </ul>
+        <h4>Ce qu'il faut savoir avant de farmer</h4>
+        <ul>
+          <li>Le code est explicite : l'objet est <b>volontairement absent</b> des vendeurs, des quêtes, du loot des créatures, du loot héroïque et des récompenses de Faille — il est réservé aux outils développeur « tant que la fonctionnalité est en développement ».</li>
+          <li>Autrement dit : <b>inutile de le chercher en jeu aujourd'hui</b>. Si une source joueur apparaît dans une future version, le <a href="../montures.html">guide Montures</a> sera mis à jour.</li>
+        </ul>`
+    },
+    epic: {
+      title: "L'intégration Epic Games, expliquée",
+      summary: "Un canal de distribution de plus et un miroir de hauts faits — pas un nouveau système de compte.",
+      body: `
+        <h4>La distribution</h4>
+        <ul>
+          <li>L'application de bureau peut désormais être <b>installée et mise à jour via l'Epic Games Store</b>, au même titre que le téléchargement direct.</li>
+        </ul>
+        <h4>La liaison de compte</h4>
+        <ul>
+          <li>Le modèle est <b>« liaison, pas connexion »</b> : on ne se connecte pas au jeu avec Epic. Une carte dans les options — visible seulement si la fonctionnalité est active côté serveur — permet de <b>lier</b> son compte Epic à son compte de jeu, et de le délier à tout moment.</li>
+          <li>Une fois lié, vos <b>hauts faits sont recopiés en succès Epic</b> — y compris ceux débloqués avant la liaison (rattrapage automatique).</li>
+          <li>Epic n'est <b>jamais une autorité</b> : c'est la simulation du jeu qui décide des hauts faits ; Epic n'en reçoit qu'une copie, et rien de ce qui vient d'Epic ne peut en accorder, en retirer ou en réordonner un.</li>
+        </ul>`
+    }
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

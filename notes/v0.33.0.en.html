@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>What's new in v0.33.0 — La Clauderie</title>
+<meta name="description" content="Everything new in World of ClaudeCraft v0.33.0: the graphics overhaul and the Insane tier, a visual and audio identity for all 296 abilities, Heroic Wildheart Basin with six new epics, classic mob Evade, and the Epic Games Store launch.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="What's new in v0.33.0 — La Clauderie">
+<meta property="og:description" content="Everything new in World of ClaudeCraft v0.33.0: the graphics overhaul and the Insane tier, a visual and audio identity for all 296 abilities, Heroic Wildheart Basin with six new epics, classic mob Evade, and the Epic Games Store launch.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.33.0.en.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.33.0.en.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') !== 'en') location.replace('v0.33.0.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Site navigation"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Patch notes</p>
+    <h1>What's new in <span class="v">v0.33.0</span></h1>
+    <p class="lede">The game's biggest audiovisual update yet: a full graphics overhaul with the new "Insane" tier, a visual and audio identity for each of the 296 abilities, Heroic Wildheart Basin with six new epics, classic Evade against terrain exploits — and the game lands on the Epic Games Store. Click a bubble for the details.</p>
+    <div class="meta">
+      <span><b>Released</b> Aug 1, 2026</span>
+      <span><b>Since</b> v0.32.4</span>
+      <span><b>Scale</b> · 2,591 files, +97,000 lines</span>
+    </div>
+    <div class="hint">💡 Click a bubble to open its detailed rules — and any <span data-codex="term|proc">underlined word</span> for its definition.</div>
+  </header>
+
+  <!-- 1 GRAPHICS & PERFORMANCE -->
+  <section>
+    <div class="sec-head"><span class="sec-num">01</span><h2>The graphics &amp; performance overhaul</h2></div>
+    <p class="sec-sub">The whole world has been re-textured, an "Insane" graphics tier now sits above Ultra, and 39 performance commits make it all run faster than before.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="world" tabindex="0" role="button" aria-label="Details: the re-textured world">
+        <h3>A re-textured world <span class="chip c-new">Overhaul</span></h3>
+        <p><strong class="hl">Surface-material families</strong> (bark, fabric, metal, rock) with real normals and roughness, <strong class="hl">combed grass</strong> with hue drift, cleaned-up dirt paths, cliff-base scree and textured canopies.</p>
+        <span class="more-link">What changes on screen</span>
+      </div>
+      <div class="card more" data-detail="tiers" tabindex="0" role="button" aria-label="Details: graphics tiers and dynamic resolution">
+        <h3>The "Insane" tier <span class="chip c-util">Settings</span></h3>
+        <p>Five presets — <strong class="hl">Low, Medium, High, Ultra, Insane</strong> — plus an Advanced mode: every dial adjusts separately, and <strong class="hl">dynamic resolution</strong> keeps big fights smooth.</p>
+        <span class="more-link">The new settings</span>
+      </div>
+      <div class="card more" data-detail="perf" tabindex="0" role="button" aria-label="Details: the performance work">
+        <h3>Prettier AND smoother <span class="chip c-util">Perf</span></h3>
+        <p><strong class="hl">39 optimization commits</strong>: fewer draw calls, SMAA edge antialiasing, front-to-back sorting, and zero per-frame memory allocations.</p>
+        <span class="more-link">The technical details</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 VFX & SFX -->
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Every ability now has its own signature</h2></div>
+    <p class="sec-sub">No more one-size-fits-all colored particles: all 296 of the game's abilities each get a visual AND audio identity.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="vfx" tabindex="0" role="button" aria-label="Details: per-ability visual effects">
+        <h3>296 abilities, 296 visual identities <span class="chip c-new">VFX</span></h3>
+        <p>An effects registry covers <strong class="hl">every one of the 296 abilities</strong>: animation archetypes, signature motifs, per-school impacts, ground decals — with dedicated identity passes for warrior, rogue, priest and druid.</p>
+        <span class="more-link">How it's built</span>
+      </div>
+      <div class="card more" data-detail="sfx" tabindex="0" role="button" aria-label="Details: hit feel and audio">
+        <h3>How hits feel <span class="chip c-new">SFX</span></h3>
+        <p><strong class="hl">Contact-frame hitstop</strong>, a windup lean during casts, a glow on the character rig — and a <strong class="hl">sampled audio layer</strong> with a per-ability sound identity.</p>
+        <span class="more-link">The feel, in detail</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 HEROIC WILDHEART -->
+  <section>
+    <div class="sec-head"><span class="sec-num">03</span><h2>The Wildheart Basin goes Heroic</h2></div>
+    <p class="sec-sub">The Palmreach caldera becomes the game's sixth heroic instance — with the most generous loot table of any five-man: two guaranteed epics per kill.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="heroic" tabindex="0" role="button" aria-label="Details: Heroic Wildheart Basin">
+        <h3>Heroic Zulgar <span class="chip c-raid">Dungeon</span></h3>
+        <p>Heroic <span data-codex="mob|Zulgar, Voice of the Basin">Zulgar</span> pays <strong class="hl">exactly two distinct epics per kill</strong>: one drawn from each group of three (33-34% per item) — the format every other heroic five-man uses.</p>
+        <span class="more-link">The loot rules</span>
+      </div>
+      <div class="card more" data-detail="bluemounts" tabindex="0" role="button" aria-label="Details: the blue mounts in the Heroic Basin">
+        <h3>Two blue mounts <span class="chip c-epic">0.1%</span></h3>
+        <p>The only five-man offering <strong class="hl">both blue reins</strong>: <span data-codex="item|Reins of the Goliath Grag-Bear">Grag-Bear</span> and <span data-codex="item|Reins of the Moss-Shell Stalk-Glider">Stalk-Glider</span>, each at <strong class="hl">0.1%</strong> on the heroic kill — the same rate as their original sources.</p>
+        <span class="more-link">Why both, and at what rate</span>
+      </div>
+      <div class="card">
+        <h3>Worth knowing</h3>
+        <ul>
+          <li>As in the other heroic instances, epic and rare drops made inside the Basin can roll into upgraded <strong class="hl">heroic variants</strong>.</li>
+          <li>Epic mounts (80%) remain <strong class="hl">exclusive to rank-S Rift clears</strong> — nothing changes there.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 OPEN WORLD & RIFTS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Open world &amp; Rifts: two exploits down</h2></div>
+    <p class="sec-sub">Mobs now know how to give up on an unreachable target, Rift bosses no longer stack their mechanics — and the normal-mode Basin gets its tuning pass.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="evade" tabindex="0" role="button" aria-label="Details: classic Evade">
+        <h3>Classic Evade <span class="chip c-bal">Anti-exploit</span></h3>
+        <p>An engaged mob that can't reach its target for <strong class="hl">5 seconds</strong> walks home, <strong class="hl">immune and healed to full</strong> — the word "Evade" floats on screen. Killing a mob pinned behind a ledge is over.</p>
+        <span class="more-link">The exact rules</span>
+      </div>
+      <div class="card more" data-detail="spacing" tabindex="0" role="button" aria-label="Details: Rift boss mechanic spacing">
+        <h3>Rift bosses: spaced mechanics <span class="chip c-bal">Rifts</span></h3>
+        <p>A Rift boss can no longer land <strong class="hl">two mechanics at the same instant</strong> (the same-tick fear + ground AOE combo): a shared lock enforces <strong class="hl">5 seconds</strong> between any two mechanics.</p>
+        <span class="more-link">How the lock works</span>
+      </div>
+      <div class="card more" data-detail="tier2" tabindex="0" role="button" aria-label="Details: the normal-mode Wildheart Basin tuning pass">
+        <h3>The normal Basin, tuned <span class="chip c-mob">Dungeon</span></h3>
+        <p>The <span data-codex="mob|Fanglord Beastmaster">Fanglord Beastmaster</span> drops his <span data-codex="item|Fanglord's Beastspear">Beastspear</span> at <strong class="hl">12%</strong>, Zulgar guarantees an <strong class="hl">uncommon leg piece</strong> per kill, and an <strong class="hl">exit portal</strong> opens on his death.</p>
+        <span class="more-link">The full tuning pass</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 CLASSES -->
+  <section>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Classes: the Mage rebalanced, the Warrior repaired</h2></div>
+    <p class="sec-sub">Two changes that matter: Greater Invisibility no longer protects you while invisible, and a warrior ability lost for months becomes learnable again.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="ginvis" tabindex="0" role="button" aria-label="Details: the Greater Invisibility rework">
+        <h3>Mage: <span data-codex="ability|Greater Invisibility">Greater Invisibility</span> reworked <span class="chip c-bal">Balance</span></h3>
+        <p>The <strong class="hl">90% damage reduction</strong> no longer applies WHILE you're invisible for 20s: it applies for <strong class="hl">2s after the invisibility ends</strong>. And Frost's "frozen target" bonus now counts <strong class="hl">every hard crowd-control</strong>, not roots alone.</p>
+        <span class="more-link">Before / after</span>
+      </div>
+      <div class="card more" data-detail="fury" tabindex="0" role="button" aria-label="Details: Seething Fury returned to the Warrior">
+        <h3>Warrior: <span data-codex="ability|Seething Fury">Seething Fury</span> finally learnable <span class="chip c-bal">Fix</span></h3>
+        <p>The ability existed in the code but <strong class="hl">no warrior could learn it</strong> since the talent rework: it joins the kit at <strong class="hl">level 10</strong> — 20 instant rage, 30s cooldown, off the GCD.</p>
+        <span class="more-link">The story of the bug</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 NEW ITEMS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">06</span><h2>The new items, and where to find them</h2></div>
+    <p class="sec-sub">Six heroic epics, a signature rare and a guaranteed uncommon trio — all of it drops in the Wildheart Basin. At a glance: who drops what, at what rate. Click a name for its Codex entry.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="itemsheroic" tabindex="0" role="button" aria-label="Details: the six heroic epics">
+        <h3>Six heroic epics <span class="chip c-epic">Heroic Zulgar</span></h3>
+        <p>Three chests, a crown, leg guards and the <strong class="hl">first heavy two-hander</strong> in any five-man — <strong class="hl">two guaranteed per kill</strong> of heroic Zulgar.</p>
+        <span class="more-link">The list and the rates</span>
+      </div>
+      <div class="card more" data-detail="itemsnormal" tabindex="0" role="button" aria-label="Details: the normal-mode Basin items">
+        <h3>The rare and the guaranteed trio <span class="chip c-new">Normal Basin</span></h3>
+        <p>The <span data-codex="item|Fanglord's Beastspear">Fanglord's Beastspear</span> (rare, 12% off the Beastmaster) and <strong class="hl">one guaranteed uncommon leg piece</strong> per Zulgar kill — mail, leather or cloth.</p>
+        <span class="more-link">The four items</span>
+      </div>
+      <div class="card more" data-detail="terrorspark" tabindex="0" role="button" aria-label="Details: the Terrorspark Groundshaker mount">
+        <h3>The Terrorspark tank <span class="chip c-epic">Mount</span></h3>
+        <p>The <strong class="hl">Terrorspark Groundshaker</strong>, the first rideable tank (epic, +80% speed), enters the game files — but it's <strong class="hl">developer-only</strong> for now: no player-facing source.</p>
+        <span class="more-link">What we actually know</span>
+      </div>
+    </div>
+    <div class="hint">💎 All of these items are searchable in the Codex — and the best ones are already ranked in the Builds tab.</div>
+  </section>
+
+  <!-- 7 EPIC GAMES -->
+  <section>
+    <div class="sec-head"><span class="sec-num">07</span><h2>The game lands on the Epic Games Store</h2></div>
+    <p class="sec-sub">Epic becomes a first-class distribution channel — with an optional account link that mirrors your deeds into Epic achievements.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="epic" tabindex="0" role="button" aria-label="Details: the Epic Games integration">
+        <h3>Linking your Epic account <span class="chip c-util">Platform</span></h3>
+        <p>The principle is <strong class="hl">"link, not login"</strong>: your game account stays in charge, and the optional link — a card in the settings — <strong class="hl">mirrors your deeds</strong> into Epic achievements.</p>
+        <span class="more-link">How it works</span>
+      </div>
+      <div class="card">
+        <h3>Worth knowing</h3>
+        <ul>
+          <li><strong class="hl">Nothing changes</strong> for existing accounts: linking is entirely optional.</li>
+          <li>Epic is <strong class="hl">never an authority</strong>: the game decides your deeds, Epic only receives a copy.</li>
+          <li>The desktop app can now be distributed and updated through Epic.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 UI & FIXES -->
+  <section>
+    <div class="sec-head"><span class="sec-num">08</span><h2>Interface, comfort &amp; fixes</h2></div>
+    <p class="sec-sub">112 fixes ship alongside the overhaul — here are the ones that genuinely matter, plus the interface extras.</p>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>Interface <span class="chip c-util">Comfort</span></h3>
+        <ul>
+          <li><strong class="hl">Configurable target aura windows</strong>: position, size, opacity and color of the icon, the arcs and the ground ring.</li>
+          <li>Each player's <strong class="hl">guild name</strong> now shows beside their name on both high-score boards — La Clauderie on top, naturally.</li>
+          <li>The market's armor filter gains <strong class="hl">neck and ring</strong> categories.</li>
+          <li>Complete translations across the game's <strong class="hl">21 languages</strong>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Notable fixes <span class="chip c-bal">112 fixes</span></h3>
+        <ul>
+          <li>Your <strong class="hl">offhand no longer loses</strong> its enchant, masterwork stats and upgrades when you log back in — they were being silently wiped on load.</li>
+          <li>The split-second <strong class="hl">black flashes</strong> in online play are fixed.</li>
+          <li>Drag-and-drop now correctly recognizes <strong class="hl">offhand slots</strong>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Compiled for <strong>La Clauderie</strong> — data and rules verified against the v0.33.0 game source code.</p>
+    <p style="margin-top:8px"><a href="../patch-notes.html">← All updates</a> · <a href="../index.html">Home</a></p>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Close">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    world: {
+      title: "The re-textured world, in detail",
+      summary: "Physical material families replace flat color fills — ground, vegetation and cliffs all get the treatment.",
+      body: `
+        <h4>Materials</h4>
+        <ul>
+          <li>Four <b>surface families</b> — bark, fabric, metal, rock — with baked normal and roughness atlases: objects catch light according to their material, not just their color.</li>
+          <li><b>Triplanar projection</b> over the atlases: no more stretched textures on slopes.</li>
+        </ul>
+        <h4>Ground and vegetation</h4>
+        <ul>
+          <li><b>Dirt paths</b> lose their "carpet" look; terrain splat layers get macro variation that breaks up repetition.</li>
+          <li>The <b>grass is combed</b> (oriented anisotropy) with hue drift, and a dense near-field blade carpet appears up close.</li>
+          <li><b>Scree</b> settles at cliff bases, and tree canopies get their own texturing.</li>
+        </ul>`
+    },
+    tiers: {
+      title: "Graphics tiers and dynamic resolution",
+      summary: "Five presets plus an Advanced mode where every dial adjusts separately.",
+      body: `
+        <h4>The presets</h4>
+        <ul>
+          <li>Five tiers: <b>Low, Medium, High, Ultra</b> and the new <b>Insane</b> — built for machines with headroom to spare. Medium was recalibrated along the way.</li>
+          <li><b>Advanced</b> mode exposes each setting individually: touching a dial automatically flips the preset to "Advanced".</li>
+        </ul>
+        <h4>Dynamic resolution</h4>
+        <ul>
+          <li>When a scene gets heavy, the game <b>temporarily lowers the render resolution</b> instead of dropping frames — and scales back up as soon as things calm down.</li>
+          <li>A startup safety check detects fragile configurations and suggests a suitable tier before the first load.</li>
+        </ul>`
+    },
+    perf: {
+      title: "The 39 performance commits",
+      summary: "The graphics overhaul ships with its own optimization pass — the game is prettier AND faster.",
+      body: `
+        <h4>What was optimized</h4>
+        <ul>
+          <li><b>Fewer draw calls</b>: merged geometry, per-chunk splat masks, <span class="kbd">Uint16</span> terrain indexing.</li>
+          <li><b>SMAA</b> replaces the previous antialiasing: crisp edges without the supersampling cost.</li>
+          <li><b>Front-to-back sorting</b> of opaque objects avoids drawing pixels that would be covered anyway.</li>
+          <li><b>Zero per-frame memory allocations</b> in the hot paths: less garbage-collector work, fewer micro-stutters.</li>
+          <li>The <b>shader-compile storms</b> — the multi-second freeze the first time a new effect appears — are eliminated.</li>
+        </ul>`
+    },
+    vfx: {
+      title: "296 abilities, 296 visual identities",
+      summary: "A per-ability effects registry replaces the generic school-colored particles.",
+      body: `
+        <h4>The system</h4>
+        <ul>
+          <li>Every ability has a <b>complete effect spec</b>: animation archetype, palette, windup style, signature motifs, impact blocks — all data-driven, not hand-coded case by case.</li>
+          <li><b>Per-school impacts</b> (fire, frost, shadow…) use dedicated animation flipbooks, with dissolving ground marks (embers, rime, runes).</li>
+          <li><b>Per-class identity passes</b> refined each kit's look: warrior, rogue, priest and druid each got their own round.</li>
+          <li>Buffs get a <b>visual orbit</b> around the character and barriers a shell — visible on other players online too.</li>
+        </ul>
+        <h4>What about readability?</h4>
+        <ul>
+          <li>The effects budget <b>degrades gracefully</b> on lower graphics tiers: motifs and ground marks fade first, the school color always stays readable.</li>
+        </ul>`
+    },
+    sfx: {
+      title: "How hits feel, explained",
+      summary: "Three building blocks: contact-frame hitstop, a body that takes part in the cast, and a per-ability audio layer.",
+      body: `
+        <h4>The visuals</h4>
+        <ul>
+          <li><b>Hitstop</b>: on a big hit's contact frame, time freezes for a split second — that's what makes an impact "land".</li>
+          <li><b>Windup lean</b>: the character leans into the cast (an animation spring), and the <b>rig glows</b> during power-ups.</li>
+        </ul>
+        <h4>The audio</h4>
+        <ul>
+          <li>A <b>sampled layer</b> (ElevenLabs studio sounds) joins <b>per-ability procedural audio identities</b>: every ability has a sound signature you can recognize by ear.</li>
+          <li>Avoidance results (dodge, parry… and the new "Evade") get their own audio cue.</li>
+        </ul>`
+    },
+    heroic: {
+      title: "Heroic Wildheart Basin: the loot rules",
+      summary: "The game's sixth heroic instance — and the only one guaranteeing two epics per boss kill.",
+      body: `
+        <h4>The format</h4>
+        <ul>
+          <li>The Basin joins <b>Hollow Crypt, Sunken Bastion, Drowned Temple, Gravewyrm Sanctum</b> and the Nythraxis raid among the heroic instances.</li>
+          <li>Heroic <span data-codex="mob|Zulgar, Voice of the Basin">Zulgar</span> draws from <b>two groups of three distinct items</b>: each group always pays exactly one item (33-34% each) — <b>two guaranteed epics per kill</b>, with no duplicates within a group.</li>
+          <li>Group 1 — the chests: <span data-codex="item|Basin Stalker's Tunic">Basin Stalker's Tunic</span>, <span data-codex="item|Verdant-Heart Vestment">Verdant-Heart Vestment</span>, <span data-codex="item|Sunbone Ritual Hauberk">Sunbone Ritual Hauberk</span>.</li>
+          <li>Group 2: <span data-codex="item|Greatfang of the Basin">Greatfang of the Basin</span>, <span data-codex="item|Sunbone Oracle's Crown">Sunbone Oracle's Crown</span>, <span data-codex="item|Bloodmane War-Legguards">Bloodmane War-Legguards</span>.</li>
+        </ul>
+        <h4>Heroic variants</h4>
+        <ul>
+          <li>As in the five other instances, epic and rare drops made inside the heroic Basin can roll into <b>heroic variants</b> at a higher item level.</li>
+        </ul>`
+    },
+    bluemounts: {
+      title: "The Heroic Basin's two blue mounts",
+      summary: "The Basin doesn't replace the existing sources: it adds a second path, at the same per-mount rate.",
+      body: `
+        <h4>What changes</h4>
+        <ul>
+          <li>Heroic Zulgar can drop <b>both of the game's blue reins</b>: <span data-codex="item|Reins of the Goliath Grag-Bear">Reins of the Goliath Grag-Bear</span> and <span data-codex="item|Reins of the Moss-Shell Stalk-Glider">Reins of the Moss-Shell Stalk-Glider</span>, at <b>0.1% each</b>, rolled independently of the gear loot.</li>
+          <li>The rule the developers maintain is <b>per-mount parity</b>: 0.1% anywhere a blue can drop — so the Basin is never a "cheaper" route to either one.</li>
+          <li>It is, however, the <b>only five-man offering both</b>: a 0.2% aggregate chance of seeing a blue per heroic clear, versus 0.1% at Ysolei or Korzul (a deliberate owner call, dated August 1 in the code).</li>
+        </ul>
+        <h4>What doesn't change</h4>
+        <ul>
+          <li>Epic mounts (+80%) remain <b>exclusive to rank-S Rift victories</b> — they appear on no dungeon table.</li>
+        </ul>
+        <p>The <a href="../montures.html">Mounts guide</a> is up to date with these new sources.</p>`
+    },
+    evade: {
+      title: "Classic Evade, the exact rules",
+      summary: "A mob that can't reach its target gives up after 5 seconds — verified in the code and its tests.",
+      body: `
+        <h4>The trigger</h4>
+        <ul>
+          <li>Every combat tick, the game checks three things: the target is <b>out of reach</b>, the mob <b>committed no movement</b>, and its direct step toward the target is <b>eaten by an obstacle</b> (wall, cliff, deep water, maze hedge).</li>
+          <li>After <b>5 cumulative seconds</b> in that state, the mob Evades: it walks back to its spawn point, <b>immune to everything</b>, and arrives <b>healed to full</b>.</li>
+        </ul>
+        <h4>The edge cases</h4>
+        <ul>
+          <li>A <b>rooted or stunned</b> mob <b>pauses</b> its clock — it does not reset: root spam can't hold off the Evade forever.</li>
+          <li><b>Spellcasters in range</b> of their target never accumulate Evade time — they just keep casting.</li>
+          <li>Attacking an evading mob floats the word <b>"Evade"</b> (plus a combat log line) instead of damage.</li>
+        </ul>
+        <h4>Why</h4>
+        <ul>
+          <li>It's the end of the <b>ledge exploit</b>: perching out of reach (the Rift ledge, a cliff) and freely killing a mob pinned against the wall — the classic leash never fired because it measures the mob's own displacement, which is near zero when it's pinned.</li>
+        </ul>`
+    },
+    spacing: {
+      title: "The boss mechanic spacing lock",
+      summary: "Each mechanic kept its own timer — when two came due on the same tick, the boss did everything at once.",
+      body: `
+        <h4>The rule</h4>
+        <ul>
+          <li>On every Rift boss and miniboss, the offensive mechanics now share <b>a single lock</b>: a mechanic can only fire while the lock is clear, and re-arms it for <b>5 seconds</b> (a hardcast adds its cast time on top).</li>
+          <li>A mechanic that comes due during the lock <b>waits without losing its turn</b>: when the lock clears, the most overdue one fires first. No mechanic is ever deleted from a fight — everything is simply spread out.</li>
+          <li>The lock only ticks <b>while in contact with the boss</b>: kiting a boss freezes its held mechanics, and they resume on re-contact.</li>
+        </ul>
+        <h4>What's not governed</h4>
+        <ul>
+          <li>The anti-kite snare, the boss's self-shields and its support kit (add summons, heals) keep their own cadence — the lock only governs pressure aimed at players.</li>
+          <li>World and classic dungeon bosses don't change: the lock is <b>Rift-specific</b> (Infernal Citadel included).</li>
+        </ul>`
+    },
+    tier2: {
+      title: "The normal-mode Basin tuning pass",
+      summary: "New loot at every level, an exit portal, and two combat tweaks verified in the code.",
+      body: `
+        <h4>The loot</h4>
+        <ul>
+          <li>The rare <span data-codex="mob|Fanglord Beastmaster">Fanglord Beastmaster</span> drops the <span data-codex="item|Fanglord's Beastspear">Fanglord's Beastspear</span> (rare two-hander) at <b>12%</b>, plus a guaranteed <span data-codex="item|Chipped Tusk">Chipped Tusk</span> and 25 silver.</li>
+          <li><span data-codex="mob|Zulgar, Voice of the Basin">Zulgar</span> now guarantees <b>exactly one uncommon leg piece</b> per kill: <span data-codex="item|Bloodmane Warleggings">Bloodmane Warleggings</span> (mail), <span data-codex="item|Vineclaw Stalking Breeches">Vineclaw Stalking Breeches</span> (leather) or <span data-codex="item|Sunbone Ritual Sarong">Sunbone Ritual Sarong</span> (cloth) — his three epic weapons stay at 6% each.</li>
+          <li>Basin trash drops <span data-codex="item|Chipped Tusk">Chipped Tusks</span> (35 to 45% depending on the mob).</li>
+        </ul>
+        <h4>The comfort</h4>
+        <ul>
+          <li>On Zulgar's death an <b>exit portal</b> opens at the shrine terrace — no more 220-yard walk back through an empty dungeon (both difficulties).</li>
+        </ul>
+        <h4>The combat tweaks</h4>
+        <ul>
+          <li>The trolls' thrown spear becomes <b>nature</b> school: it used to look like a whiffed melee swing from 24 yards — note that physical damage reduction (the warrior's guard) <b>no longer applies</b> to it.</li>
+          <li>The "fast melee pressure" boars go from 7.1 to <b>7.5 move speed</b>: at 7.1 against player run speed (7), they literally never caught anyone.</li>
+        </ul>`
+    },
+    ginvis: {
+      title: "Greater Invisibility: before / after",
+      summary: "The Mage's level-8 talent changes nature: from a near-immunity for 20s to an escape tool with a protection window on exit.",
+      body: `
+        <h4>Before</h4>
+        <ul>
+          <li>Invisible for 20s, removes 2 damage-over-time effects, and <b>90% less damage taken for the WHOLE invisibility</b> (plus 3s after an early break).</li>
+        </ul>
+        <h4>After (v0.33.0)</h4>
+        <ul>
+          <li>Invisible for 20s and removes 2 damage-over-time effects — but the <b>90% reduction only applies for 2 seconds, when the invisibility ENDS</b> (naturally or by breaking it).</li>
+          <li>In practice: while invisible, damage that still finds you (ground zones, remaining periodic effects) <b>hits at full force</b> — the talent protects the exit, not the stroll.</li>
+        </ul>
+        <h4>And Frost's "frozen"</h4>
+        <ul>
+          <li>"Against frozen targets" bonuses (<span data-codex="ability|Ice Lance">Ice Lance</span> ×3 damage) now count <b>every hard crowd-control</b> — stuns and stasis included — not roots alone. A small compensation.</li>
+        </ul>
+        <p>The <a href="../pvp.html">PvP guide</a> and the Mage entry in the <a href="../bis.html">Builds</a> tab have been updated accordingly.</p>`
+    },
+    fury: {
+      title: "Seething Fury: the story of the bug",
+      summary: "The ability existed, complete and functional — but nothing in the game could teach it to you anymore.",
+      body: `
+        <h4>The bug</h4>
+        <ul>
+          <li><span data-codex="ability|Seething Fury">Seething Fury</span> was defined as a warrior active ability… but the v2 talent rework <b>deleted the talent rank that granted it</b> without re-homing it in the base kit: no warrior, even at level 20, could find it — a player reported it "unfindable" and the game's owner confirmed.</li>
+        </ul>
+        <h4>The fix</h4>
+        <ul>
+          <li>It joins the <b>warrior's base kit at level 10</b>: <b>20 instant rage</b>, a <b>30s</b> cooldown, <b>off the GCD</b> — an opener and emergency button for rage-hungry rotations.</li>
+        </ul>`
+    },
+    itemsheroic: {
+      title: "Heroic Zulgar's six epics",
+      summary: "Item level 31, exactly one secondary rating per piece — two guaranteed per kill, one from each group.",
+      body: `
+        <h4>Group 1 — the chests (one guaranteed per kill)</h4>
+        <ul>
+          <li><span data-codex="item|Basin Stalker's Tunic">Basin Stalker's Tunic</span> — Agility leather (34%): a heroic agi-leather chest returns for rogue, hunter and feral druid.</li>
+          <li><span data-codex="item|Verdant-Heart Vestment">Verdant-Heart Vestment</span> — Intellect leather (33%): the <b>first Intellect leather chest in the game</b>, cut for the healing druid.</li>
+          <li><span data-codex="item|Sunbone Ritual Hauberk">Sunbone Ritual Hauberk</span> — Intellect mail (33%), for mail-wearing healers.</li>
+        </ul>
+        <h4>Group 2 (one guaranteed per kill)</h4>
+        <ul>
+          <li><span data-codex="item|Greatfang of the Basin">Greatfang of the Basin</span> — the <b>first heavy two-hander</b> (Strength) in any five-man (34%).</li>
+          <li><span data-codex="item|Sunbone Oracle's Crown">Sunbone Oracle's Crown</span> — a caster's cloth crown (33%).</li>
+          <li><span data-codex="item|Bloodmane War-Legguards">Bloodmane War-Legguards</span> — Strength mail legs (33%).</li>
+        </ul>
+        <p>The best of these items already appear in the <a href="../bis.html">Builds</a> tab rankings.</p>`
+    },
+    itemsnormal: {
+      title: "The normal-mode Basin items",
+      summary: "A signature rare on the Beastmaster and a guaranteed uncommon trio on Zulgar — available from normal mode.",
+      body: `
+        <h4>The rare</h4>
+        <ul>
+          <li><span data-codex="item|Fanglord's Beastspear">Fanglord's Beastspear</span> — a rare two-hand spear (item level 23), <b>12%</b> off the <span data-codex="mob|Fanglord Beastmaster">Fanglord Beastmaster</span>, usable by warrior, hunter, shaman and paladin.</li>
+        </ul>
+        <h4>Zulgar's guaranteed trio</h4>
+        <ul>
+          <li>One of the three per kill, every time: <span data-codex="item|Bloodmane Warleggings">Bloodmane Warleggings</span> (mail, 34%), <span data-codex="item|Vineclaw Stalking Breeches">Vineclaw Stalking Breeches</span> (leather, 33%), <span data-codex="item|Sunbone Ritual Sarong">Sunbone Ritual Sarong</span> (cloth, 33%) — item level 21, one per armor class.</li>
+        </ul>`
+    },
+    terrorspark: {
+      title: "The Terrorspark Groundshaker: what we actually know",
+      summary: "The mount is really in the game — but its teaching item deliberately has no player-facing source.",
+      body: `
+        <h4>What's true</h4>
+        <ul>
+          <li>The <b>Terrorspark Groundshaker</b> is an epic-rarity rideable tank at <b>+80% speed</b> — the same tier as the two rank-S Rift mounts.</li>
+          <li>Its teaching item, <b>"Ignition Key: Terrorspark Groundshaker"</b>, is soulbound and exists in the game data.</li>
+        </ul>
+        <h4>Before you go farming</h4>
+        <ul>
+          <li>The code is explicit: the item is <b>intentionally absent</b> from vendors, quests, creature loot, heroic loot and Rift reward pools — it's reserved for developer tools "while the feature remains under development".</li>
+          <li>In other words: <b>there is no point hunting it in-game today</b>. If a player-facing source appears in a future version, the <a href="../montures.html">Mounts guide</a> will be updated.</li>
+        </ul>`
+    },
+    epic: {
+      title: "The Epic Games integration, explained",
+      summary: "One more distribution channel and a deeds mirror — not a new account system.",
+      body: `
+        <h4>Distribution</h4>
+        <ul>
+          <li>The desktop app can now be <b>installed and updated through the Epic Games Store</b>, alongside the direct download.</li>
+        </ul>
+        <h4>The account link</h4>
+        <ul>
+          <li>The model is <b>"link, not login"</b>: you don't sign in to the game with Epic. A card in the settings — visible only when the feature is enabled server-side — lets you <b>link</b> your Epic account to your game account, and unlink it at any time.</li>
+          <li>Once linked, your <b>deeds are mirrored into Epic achievements</b> — including those unlocked before you linked (automatic catch-up).</li>
+          <li>Epic is <b>never an authority</b>: the game's simulation decides your deeds; Epic only receives a copy, and nothing coming from Epic can grant, revoke or reorder one.</li>
+        </ul>`
+    }
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Inline Codex cards (glossary, mobs, spells…) powered by the Codex data -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>
