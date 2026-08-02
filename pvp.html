@@ -134,7 +134,7 @@
 
 <div class="wrap">
   <header class="page">
-    <p class="eyebrow" data-en="PvP guide · Patch v0.30.0">Guide PvP · Patch v0.30.0</p>
+    <p class="eyebrow" data-en="PvP guide · Patch v0.33.1">Guide PvP · Patch v0.33.1</p>
     <h1 data-en="PvP — Coliseum &amp; Drowned Court">PvP — Colisée &amp; Drowned Court</h1>
     <p class="lede" data-en="Everything the guild knows about player-versus-player: the real game modes (ranked 1v1 &amp; 2v2, Fiesta, Protect Yumi in 3v3/5v5, the Vale Cup, duels), how Honor and the Warfare rating work, one PvP build per class, and the comps we recommend. Numbers checked against the game's own design docs.">Tout ce que la guilde sait du joueur-contre-joueur : les vrais modes du jeu (1v1 et 2v2 classés, Fiesta, Protect Yumi en 3v3/5v5, la Vale Cup, duels), le fonctionnement de l'Honor et du Warfare, un build PvP par classe, et les compos qu'on recommande. Chiffres vérifiés dans les documents de design du jeu.</p>
   </header>
@@ -283,7 +283,7 @@
 
 <script src="assets/nav.js"></script>
 <script src="assets/lang.js"></script>
-<script src="assets/version.js" data-version="v0.32.4" defer></script>
+<script src="assets/version.js" data-version="v0.33.1" defer></script>
 <script>
 // Builds PvP par classe — éditorial La Clauderie, mêmes rangées de talents que
 // la page Builds (TALENTS.json de la knowledge base), re-choisies pour l'arène.
@@ -307,7 +307,8 @@ const PVP = {
    { fr: "<b>Maiming Strike</b> actif sur la cible de kill à chaque instant — c'est ta raison d'être.", en: "<b>Maiming Strike</b> up on the kill target at every moment — it's your reason to exist." },
    { fr: "<b>Hobbling Cut</b> (−50 % vitesse) pour coller, <b>Storm Bolt</b> pour couper un soin, <b>Jawcrack</b> pour verrouiller l'école.", en: "<b>Hobbling Cut</b> (−50% speed) to stick, <b>Storm Bolt</b> to stop a heal, <b>Jawcrack</b> to lock the school." },
    { fr: "<b>Intimidating Shout</b> pour peel ton soigneur — la peur subit les DR, garde-la pour l'urgence.", en: "<b>Intimidating Shout</b> to peel for your healer — fear suffers DR, save it for emergencies." },
-   { fr: "Garde <b>Avatar</b> pour SORTIR d'une chaîne de contrôle, pas pour l'ouvrir — depuis la v0.29 il se lance vraiment sous stun ou peur.", en: "Save <b>Avatar</b> to BREAK OUT of a control chain, not to open with it — since v0.29 it genuinely casts while stunned or feared." }
+   { fr: "Garde <b>Avatar</b> pour SORTIR d'une chaîne de contrôle, pas pour l'ouvrir — depuis la v0.29 il se lance vraiment sous stun ou peur.", en: "Save <b>Avatar</b> to BREAK OUT of a control chain, not to open with it — since v0.29 it genuinely casts while stunned or feared." },
+   { fr: "<b>Seething Fury</b> (niv. 10, hors GCD, CD 30 s) : 20 rage instantanées. Le sort était orphelin depuis la refonte des talents et introuvable — la v0.33 le rend enfin apprenable. En ouverture, ça vaut un Maiming Strike de plus.", en: "<b>Seething Fury</b> (lvl 10, off the GCD, 30s CD): 20 instant rage. The ability was orphaned by the talent rework and unfindable — v0.33 finally makes it learnable. On the opener that's one extra Maiming Strike." }
   ],
   partner: { fr: "Partenaire 2v2 : Spiritmend (« l'Étau ») ou Doctrine.", en: "2v2 partner: Spiritmend (“the Vise”) or Doctrine." }
  },
@@ -396,7 +397,7 @@ const PVP = {
   pourquoi: { fr: "Le maître du contrôle : slow permanent, roots, stun, poly instantané et une immunité totale. Tu ne gagnes pas en tapant plus fort — tu gagnes parce que l'adversaire ne joue jamais.", en: "The control master: permanent slow, roots, a stun, an instant polymorph and full immunity. You don't win by hitting harder — you win because the opponent never gets to play." },
   talents: [
    ["Double Blink", "niv. 5", { fr: "2 charges de Flickerstep : la distance est ta barre de vie.", en: "2 Flickerstep charges: distance is your health bar." }],
-   ["Greater Invisibility", "niv. 8", { fr: "purge 2 DoTs et −90 % de dégâts : LA réponse au train ennemi.", en: "removes 2 DoTs and −90% damage: THE answer to the enemy train." }],
+   ["Greater Invisibility", "niv. 8", { fr: "purge 2 DoTs et disparaît 20 s : LA réponse au train ennemi. v0.33 : les −90 % de dégâts ne couvrent plus l'invisibilité, ils démarrent à sa FIN pour 2 s — la sortie est protégée, pas le séjour.", en: "removes 2 DoTs and vanishes for 20s: THE answer to the enemy train. v0.33: the −90% damage no longer covers the vanish, it starts when the vanish ENDS, for 2s — the exit is protected, not the stay." }],
    ["Snap Bewitch", "niv. 11", { fr: "le poly INSTANTANÉ (CD 20 s) : le soigneur adverse en crapaud, sans fenêtre de cast.", en: "the INSTANT polymorph (20s CD): the enemy healer as a toad, no cast window needed." }],
    ["Racing Mind", "niv. 14", { fr: "un Glacial Spike instantané : le burst qui n'attend pas.", en: "an instant Glacial Spike: burst that doesn't wait." }],
    ["Winter's Recall", "niv. 17", { fr: "re-Flickerstep, re-Frostveil : les défensifs en double.", en: "re-Flickerstep, re-Frostveil: defensives, doubled." }],

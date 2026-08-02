@@ -106,7 +106,7 @@
 
 <div class="wrap">
   <header class="page">
-    <p class="eyebrow" data-en="Rift guide · Patch v0.32.3">Guide Failles · Patch v0.32.3</p>
+    <p class="eyebrow" data-en="Rift guide · Patch v0.33.1">Guide Failles · Patch v0.33.1</p>
     <h1 data-en="Rifts — the endless dungeons">Les Failles — donjons sans fin</h1>
     <p class="lede" data-en="Everything the guild knows about Rifts: how portals spawn and how the first-clear race works, what each rank (C, B, A, S) actually changes, the loot table rank by rank — legendaries and mounts included — and the Rift Essence forge. Numbers checked against the game's source code, tag v0.32.3.">Tout ce que la guilde sait des Failles : comment les portails apparaissent et comment marche la course au first-clear, ce que chaque rang (C, B, A, S) change vraiment, le butin rang par rang — légendaires et montures comprises — et la forge à Essence de Faille. Chiffres vérifiés dans le code source du jeu, tag v0.32.3.</p>
   </header>
@@ -152,6 +152,8 @@
   </table>
   </div>
   <div class="note" data-en="<b>The Infernal Citadel is C-rank only:</b> at B, A and S the descent is always procedural. And S-rank mobs sit at level 23 — one above the fairness cap — so the +5-level Giantslayer credit is not earnable inside S rifts."><b>L'Infernal Citadel est réservée au rang C :</b> en B, A et S, la descente est toujours procédurale. Et les monstres du rang S sont niveau 23 — un cran au-dessus du plafond d'équité — donc le crédit Giantslayer (+5 niveaux) ne s'obtient pas dans les Failles S.</div>
+  <div class="note" data-en="<b>v0.33 — mechanics no longer stack.</b> On a rift boss the player-facing mechanics share ONE lock: a mechanic can only fire while the lock is clear, and firing re-arms it for 5 seconds (a hardcast adds its cast time on top, so no instant can land while a telegraph bar fills). A mechanic that comes due during the lock HOLDS without re-arming its own timer, and when the lock clears the MOST OVERDUE one fires — so at S rank, where all four are live, every cadence stretches proportionally instead of one driver starving. Not governed: the AoE slow, stoneskin, the add/heal support kit, and the on-hit fear. The lock only ticks while the boss is engaged AND in melee contact — a kited boss freezes with its held mechanics."><b>v0.33 — les mécaniques ne se superposent plus.</b> Sur un boss de Faille, les mécaniques qui visent les joueurs partagent UN seul verrou : une mécanique ne peut partir que si le verrou est libre, et son départ le réarme pour 5 secondes (une incantation ajoute son temps de cast par-dessus, donc aucun instantané ne tombe pendant qu'une barre de télégraphe se remplit). Une mécanique due pendant le verrou ATTEND sans réarmer son propre minuteur, et à la levée c'est la PLUS EN RETARD qui passe — donc en rang S, où les quatre sont actives, toutes les cadences s'étirent proportionnellement au lieu d'en affamer une. Non gouvernés : le ralentissement de zone, la peau de pierre, le kit de soutien (adds, soins) et la peur au coup porté. Le verrou ne tique que pendant que le boss est engagé ET au contact — un boss kité gèle avec ses mécaniques en attente.</div>
+  <div class="note" data-en="<b>v0.33 — the tank is no longer feared, and the ledge is closed.</b> A mob's AoE fear now SKIPS its own current target: fearing the player holding the boss sent it careening through the group. Solo, you are your own tank and this fear can never reach you (if a pet or escort NPC holds aggro, no player is exempt — but the boss stays anchored to the pet anyway). Separately, a mob pinned out of reach for 5 accumulated seconds — engaged, committing zero movement, its straight step refused by geometry — now Evades home, heals to full and drops your loot rights. That closes the ledge exploit, and it applies to rift bosses too."><b>v0.33 — le tank n'est plus terrorisé, et la corniche est fermée.</b> La peur de zone d'un monstre SAUTE désormais sa propre cible actuelle : terroriser celui qui tient le boss l'envoyait labourer le groupe. En solo tu es ton propre tank et cette peur ne peut plus t'atteindre (si un familier ou un PNJ d'escorte tient l'aggro, aucun joueur n'est exempté — mais le boss reste de toute façon ancré sur le familier). Par ailleurs, un monstre coincé hors de portée pendant 5 secondes cumulées — engagé, mouvement nul, son pas droit refusé par la géométrie — rentre chez lui, se soigne à fond et te retire tes droits de butin. C'est la fin de l'exploit de la corniche, boss de Faille compris.</div>
 
   <!-- ============================== LE BUTIN ============================== -->
   <h2 class="sec" data-en="The loot, rank by rank">Le butin, rang par rang</h2>
@@ -221,7 +223,7 @@
 
 <script src="assets/nav.js"></script>
 <script src="assets/lang.js"></script>
-<script src="assets/version.js" data-version="v0.32.4" defer></script>
+<script src="assets/version.js" data-version="v0.33.1" defer></script>
 <script src="assets/codex-popup.js" defer></script>
 </body>
 </html>

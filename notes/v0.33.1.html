@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Nouveautés v0.33.1 — La Clauderie</title>
+<meta name="description" content="Toutes les nouveautés de la v0.33.1 de World of ClaudeCraft : le nouveau palier graphique Insane, les 296 sorts qui ont enfin leur propre effet visuel et sonore, l'esquive classique des monstres inatteignables, le butin de Cœur-Sauvage et le ralentissement du farm de trash.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Nouveautés v0.33.1 — La Clauderie">
+<meta property="og:description" content="Toutes les nouveautés de la v0.33.1 de World of ClaudeCraft : le nouveau palier graphique Insane, les 296 sorts qui ont enfin leur propre effet visuel et sonore, l'esquive classique des monstres inatteignables, le butin de Cœur-Sauvage et le ralentissement du farm de trash.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.33.1.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.33.1.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') === 'en') location.replace('v0.33.1.en.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Notes de version</p>
+    <h1>Nouveautés <span class="v">v0.33.1</span></h1>
+    <p class="lede">La plus grosse mise à jour visuelle du jeu : un nouveau palier graphique <strong class="hl">Insane</strong>, une refonte du terrain et du feuillage, et surtout <strong class="hl">296 sorts qui ont enfin leur propre effet visuel et sonore</strong>. Côté jeu : les monstres qui ne peuvent pas t'atteindre s'esquivent à l'ancienne, le tank n'est plus terrorisé par son propre boss, le bassin de Cœur-Sauvage répond d'un seul bloc — et le farm de trash a été franchement ralenti. Clique sur une bulle pour le détail.</p>
+    <div class="meta">
+      <span><b>Publiée</b> le 2 août 2026</span>
+      <span><b>Depuis</b> la v0.32.4</span>
+      <span><b>Couvre</b> la 0.33.0 (jamais taguée) et la 0.33.1</span>
+      <span><b>384</b> commits · ~60 PR</span>
+    </div>
+    <div class="hint">💡 Clique sur une nouveauté pour ouvrir ses règles détaillées — et sur un nom souligné pour sa fiche Codex.</div>
+  </header>
+
+  <!-- 1 GRAPHISMES -->
+  <section>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Le monde est plus beau — et tourne mieux</h2></div>
+    <p class="sec-sub">Un palier de plus tout en haut, un palier Medium redécoupé, des réglages fins pour bricoler soi-même, et 39 commits d'optimisation sous le capot. La 0.33.1 vient récupérer la fluidité que la refonte avait laissée sur la table.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="gfx" tabindex="0" role="button" aria-label="Détails : les paliers graphiques et le gouverneur">
+        <h3>Un nouveau palier « Insane » <span class="chip c-new">Nouveau</span></h3>
+        <p>Au-dessus d'Ultra : <strong class="hl">tout allumé</strong>. Nouvelles familles de matériaux (écorce, tissu, métal, roche), passe complète sur le terrain et le feuillage, et un <strong class="hl">gouverneur de résolution dynamique</strong> qui baisse la définition plutôt que de laisser tomber des images.</p>
+        <span class="more-link">Les paliers en détail</span>
+      </div>
+      <div class="card more" data-detail="pacing" tabindex="0" role="button" aria-label="Détails : le correctif de fluidité de la 0.33.1">
+        <h3>La 0.33.1 récupère la fluidité <span class="chip c-bal">Correctif</span></h3>
+        <p>Trois plaies de la refonte : des <strong class="hl">zones d'image figées</strong> en Medium, une précompilation de shaders qui s'affichait au lieu de rester derrière l'écran de chargement en Insane, et une <strong class="hl">bagarre entre travaux GPU</strong> au démarrage. Les trois sont réglées.</p>
+        <span class="more-link">Ce qui a été réparé</span>
+      </div>
+    </div>
+    <div class="grid cols-3" style="margin-top:13px">
+      <div class="card">
+        <h3>Ce qui change à l'œil</h3>
+        <ul>
+          <li>Chemins de terre <strong class="hl">dé-moquettés</strong>, variation macro sur toutes les couches du sol.</li>
+          <li>Herbe <strong class="hl">peignée</strong> avec dérive de teinte et tapis de brins en champ proche.</li>
+          <li>Éboulis de falaise (solides, on marche dessus) et touffes d'aiguilles dans les canopées.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Ce qui change en performance</h3>
+        <ul>
+          <li>Régime sec sur les appels de rendu : props, ombres et lots du monde.</li>
+          <li><strong class="hl">SMAA</strong> remplace l'anticrénelage suréchantillonné.</li>
+          <li>Tri opaque avant-arrière, indexation Uint16 du terrain, matrices de feuillage figées.</li>
+          <li>Plus aucune allocation par image dans la boucle de rendu.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Où régler ça</h3>
+        <ul>
+          <li>Les <strong class="hl">réglages granulaires</strong> permettent de monter une seule chose (l'herbe, le feuillage) sans tout monter.</li>
+          <li>Le gouverneur reste <strong class="hl">armé à tous les paliers</strong> ; Ultra et Insane lui laissent simplement plus de marge.</li>
+          <li>Insane pousse jusqu'à <strong class="hl">4 échantillons</strong> de détail de surface, contre 3 en Ultra et 0 en dessous.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 VFX / SFX -->
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Chaque sort a désormais sa signature</h2></div>
+    <p class="sec-sub">Fini les projectiles interchangeables : un registre d'effets par sort couvre <strong class="hl">296 capacités</strong>, chacune avec son ADN de projectile, son impact selon l'école de magie, son décalque au sol — et sa propre identité sonore.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="vfx" tabindex="0" role="button" aria-label="Détails : le registre d'effets visuels par sort">
+        <h3>296 sorts, 296 identités <span class="chip c-new">Nouveau</span></h3>
+        <p>Les <strong class="hl">évènements de sort transportent maintenant l'identifiant du sort</strong>, donc chaque projectile garde son apparence propre jusqu'à l'impact. Les sorts au sol se posent au point visé, les pulsations de zone se ré-ancrent sur la zone.</p>
+        <span class="more-link">Le détail du système</span>
+      </div>
+      <div class="card">
+        <h3>Ce que tu vas sentir</h3>
+        <ul>
+          <li><strong class="hl">Hitstop à l'image de contact</strong> : le coup « pèse », l'action se fige une fraction de seconde à l'impact.</li>
+          <li>Ressort d'inclinaison à l'armement, lueur du personnage pendant les incantations et sous buff.</li>
+          <li>Tournées d'identité par classe : <span data-codex="ability|Shieldcrack">Shieldcrack</span>, <span data-codex="ability|Reaping Arc">Reaping Arc</span>, <span data-codex="ability|Jawcrack">Jawcrack</span>, <span data-codex="ability|Throat Wire">Throat Wire</span>, <span data-codex="ability|Bleed Out">Bleed Out</span>, <span data-codex="ability|Dirt Toss">Dirt Toss</span>, <span data-codex="ability|Splitshot">Splitshot</span>, <span data-codex="ability|Lingering Grace">Lingering Grace</span>, <span data-codex="ability|Fleet Form">Fleet Form</span>.</li>
+          <li>Une couche sonore <strong class="hl">échantillonnée</strong> par-dessus l'audio procédural de chaque sort, et des voix de personnage féminines enregistrées.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 EVADE -->
+  <section>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Les monstres inatteignables s'esquivent</h2></div>
+    <p class="sec-sub">Le retour du comportement classique : un monstre coincé derrière un mur ou sous une corniche pendant que tu le grignotes en sécurité rentre chez lui, se soigne à fond — et tu perds tes droits sur son butin.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="evade" tabindex="0" role="button" aria-label="Détails : la détection de cible inatteignable">
+        <h3>Cinq secondes bloqué, puis retour au bercail <span class="chip c-mob">Monstres</span></h3>
+        <p>La détection est stricte : le monstre doit être <strong class="hl">engagé, hors de portée, à l'arrêt complet</strong>, et son pas droit vers toi doit être refusé par la géométrie. <strong class="hl">Cinq secondes</strong> de ça et il repart — soins complets, butin perdu.</p>
+        <span class="more-link">Les conditions exactes</span>
+      </div>
+      <div class="card">
+        <h3>À retenir</h3>
+        <ul>
+          <li>Ça s'applique <strong class="hl">aussi aux boss</strong> : coincer un boss hors de portée réinitialise le pull. Seul <span data-codex="mob|Nythraxis, Scourge of Thornpeak">Nythraxis</span> en est dispensé (script d'encontre).</li>
+          <li>L'immobilisation (root) <strong class="hl">gèle le compteur</strong> — ni déclenchement, ni remise à zéro. Le spam de root ne sert donc à rien dans un sens comme dans l'autre.</li>
+          <li>Un lanceur de sorts qui se tient volontairement à portée d'incantation n'est jamais concerné : c'est un combat, pas un blocage.</li>
+          <li>C'était l'<strong class="hl">exploit de la corniche</strong> dans les Failles : il est fermé.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 WILDHEART -->
+  <section>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Le bassin de Cœur-Sauvage répond d'un seul bloc</h2></div>
+    <p class="sec-sub">Tirer <span data-codex="mob|Zulgar, Voice of the Basin">Zulgar</span> en laissant la route vivante réveillait déjà tout le bassin — sauf que les paquets lointains rentraient chez eux avant d'avoir fait un pas. Plus maintenant.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="chainpull" tabindex="0" role="button" aria-label="Détails : la punition du pull anticipé">
+        <h3>La punition porte enfin sur tout le bassin <span class="chip c-raid">Donjon</span></h3>
+        <p>Un monstre réveillé à l'autre bout de <span data-codex="dungeon|The Wildheart Basin">Cœur-Sauvage</span> démarrait déjà hors de sa laisse et s'esquivait au premier tick. Il porte maintenant un <strong class="hl">sursis de transit</strong> qui suspend la laisse souple le temps de la traversée.</p>
+        <span class="more-link">Comment ça marche</span>
+      </div>
+      <div class="card">
+        <h3>Et un portail de sortie au boss</h3>
+        <ul>
+          <li>Un <strong class="hl">portail s'ouvre à la mort de Zulgar</strong>, sur la terrasse du sanctuaire — plus besoin de refaire les ~220 yards de route à pied.</li>
+          <li>La conséquence assumée du sursis : un groupe qui tire puis <strong class="hl">détale se fait courser</strong>, pas semer. Le monstre kité <em>loin</em> du point de pull ne dépense jamais son sursis.</li>
+          <li>Les deux sorties restent les mêmes : le <strong class="hl">portail de sortie</strong> (qui te retire de toutes les tables de haine) ou le <strong class="hl">wipe</strong>. Les deux coûtent la tentative.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 FAILLES & CONFORT -->
+  <section>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Boss de Faille, peur, et enfin des boîtes aux lettres</h2></div>
+    <p class="sec-sub">Deux corrections de combat qui changent vraiment la vie en groupe, et une poignée de commodités qu'on attendait depuis longtemps.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="spacing" tabindex="0" role="button" aria-label="Détails : l'espacement des mécaniques de boss de Faille">
+        <h3>Les mécaniques ne se superposent plus <span class="chip c-bal">Failles</span></h3>
+        <p>Sur un boss de Faille, les mécaniques partagent un <strong class="hl">verrou de 5 secondes</strong>. Celle qui est due pendant le verrou <strong class="hl">attend sans se réarmer</strong> — et à la levée, c'est la <strong class="hl">plus en retard</strong> qui passe.</p>
+        <span class="more-link">Ce qui est gouverné, ce qui ne l'est pas</span>
+      </div>
+      <div class="card more" data-detail="tankfear" tabindex="0" role="button" aria-label="Détails : l'exemption de peur du tank">
+        <h3>Le tank n'est plus terrorisé <span class="chip c-bal">Global</span></h3>
+        <p>La cible actuelle du boss est <strong class="hl">exemptée de sa peur de zone</strong> : terroriser celui qui tient le boss l'envoyait labourer le groupe. Ça vaut pour <strong class="hl">tous les monstres à peur de zone</strong>, Failles comme donjons.</p>
+        <span class="more-link">Les cas particuliers</span>
+      </div>
+      <div class="card">
+        <h3>Confort <span class="chip c-util">Qualité de vie</span></h3>
+        <ul>
+          <li>Une <strong class="hl">boîte aux lettres dans les onze hubs de zone</strong> : Eldergleam, Wyrmwatch, Icemantle, Lanternmere, Bridgemere, Moonrest, Gallowmere, Drifthaven, Hedgewick, Wickharbor, Gullhaven.</li>
+          <li>Les objets <strong class="hl">gardent leur identité</strong> à travers le rachat vendeur, le Marché mondial et le courrier.</li>
+          <li>Le <strong class="hl">nom de guilde</strong> s'affiche à côté de chaque joueur sur les deux tableaux de score.</li>
+          <li>Fenêtre d'auras de cible et auras de combat configurables (auras de proc guerrier comprises).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 OBJETS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">06</span><h2>Les nouveaux objets, et où les trouver</h2></div>
+    <p class="sec-sub">Cœur-Sauvage se remplit : quatre pièces en mode normal, six épiques en héroïque — et une monture dont il faut dire tout de suite qu'elle n'est <em>pas</em> attrapable. Clique sur une carte pour les taux exacts, sur un nom pour sa fiche Codex.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="lootnormal" tabindex="0" role="button" aria-label="Détails : le butin de Cœur-Sauvage en normal">
+        <h3>Cœur-Sauvage, mode normal <span class="chip c-new">Nouveau</span></h3>
+        <p><span data-codex="mob|Zulgar, Voice of the Basin">Zulgar</span> lâche désormais <strong class="hl">une jambière verte garantie</strong> (une par classe d'armure), et le rare <span data-codex="mob|Fanglord Beastmaster">Fanglord Beastmaster</span> porte sa lance à deux mains à <strong class="hl">12 %</strong>.</p>
+        <span class="more-link">Les quatre pièces et leurs taux</span>
+      </div>
+      <div class="card more" data-detail="lootheroic" tabindex="0" role="button" aria-label="Détails : le butin héroïque de Cœur-Sauvage">
+        <h3>Cœur-Sauvage héroïque <span class="chip c-epic">Six épiques</span></h3>
+        <p>Deux groupes de trois, <strong class="hl">~33 % par pièce</strong> — dont le <strong class="hl">premier plastron en cuir intelligence</strong> du jeu pour druide soigneur, et la <strong class="hl">première arme à deux mains lourde</strong> en cinq joueurs.</p>
+        <span class="more-link">Les six pièces et les montures</span>
+      </div>
+      <div class="card more" data-detail="mount" tabindex="0" role="button" aria-label="Détails : la monture Terrorspark Groundshaker">
+        <h3>Terrétincelle : pas encore pour nous <span class="chip c-util">Attention</span></h3>
+        <p>La monture <span data-codex="item|Ignition Key: Terrorspark Groundshaker">Terrorspark Groundshaker</span> existe bien, en épique 80 % de vitesse. Mais dans le code, elle est <strong class="hl">réservée aux développeurs</strong> — aucune source joueur, nulle part. Ne la cherche pas.</p>
+        <span class="more-link">Pourquoi on le précise</span>
+      </div>
+    </div>
+    <div class="hint">💎 Tous ces objets sont cherchables dans le Codex — et les meilleurs sont déjà pris en compte dans l'onglet Builds.</div>
+  </section>
+
+  <!-- 7 ECONOMIE -->
+  <section>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Le farm de trash a nettement ralenti</h2></div>
+    <p class="sec-sub">C'est le changement le moins spectaculaire de la mise à jour et probablement celui que tu sentiras le plus vite : le respawn du trash extérieur passe d'un plat 25 secondes à un palier par zone.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="respawn" tabindex="0" role="button" aria-label="Détails : les paliers de respawn par zone">
+        <h3>60 / 120 / 180 secondes selon la zone <span class="chip c-bal">Économie</span></h3>
+        <p>Un camp farmé se régénérait <strong class="hl">trois fois par minute</strong> et payait bien au-delà de ce que sa zone visait. Désormais : <strong class="hl">60 s</strong> jusqu'au niveau 7, <strong class="hl">120 s</strong> jusqu'au 14, <strong class="hl">180 s</strong> au-dessus.</p>
+        <span class="more-link">Ce qui bouge et ce qui ne bouge pas</span>
+      </div>
+      <div class="card">
+        <h3>Et la courbe de pièces</h3>
+        <ul>
+          <li>Les pièces des <strong class="hl">dix zones de juillet</strong> ont été recalibrées : petits ajustements sur le trash, coupes nettes sur certaines élites (le Gravekeep de Galecrest passe de 450 à 100 cuivres).</li>
+          <li>Dans l'autre sens : les monstres de Cœur-Sauvage lâchent plus (le <span data-codex="mob|Fanglord Beastmaster">Fanglord Beastmaster</span> passe de 1 000 à <strong class="hl">2 500 cuivres</strong>).</li>
+          <li>Les <strong class="hl">rares nommés et minibosses gardent leur cadence exacte</strong> : leur horloge n'a pas été rebasée.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 CLASSES & DIVERS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">08</span><h2>Classes, correctifs, et Epic Games</h2></div>
+    <p class="sec-sub">112 correctifs sur la ligne 0.33.0, concentrés sur le rendu (28) et la simulation (24). Trois touchent directement des classes — dont un sort de guerrier qui était tout bonnement introuvable.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="classes" tabindex="0" role="button" aria-label="Détails : les changements de classe">
+        <h3>Guerrier : <span data-codex="ability|Seething Fury">Seething Fury</span> existe enfin <span class="chip c-plate">Guerrier</span></h3>
+        <p>Le sort était écrit, apprenable au <strong class="hl">niveau 10</strong>… et rattaché à rien depuis la refonte des talents. Un guerrier niveau 20 ne pouvait pas le trouver. Il est <strong class="hl">re-rattaché au kit de base</strong>.</p>
+        <span class="more-link">Les trois changements de classe</span>
+      </div>
+      <div class="card">
+        <h3>Mage &amp; démoniste</h3>
+        <ul>
+          <li><span data-codex="ability|Greater Invisibility">Greater Invisibility</span> : la réduction de 90 % des dégâts <strong class="hl">ne s'applique plus pendant</strong> l'invisibilité — elle démarre <strong class="hl">quand celle-ci se termine</strong>, pour 2 secondes. Le retrait de 2 DoT ne change pas.</li>
+          <li>Le <strong class="hl">démon tank du démoniste provoque tout seul</strong> par défaut : plus besoin d'activer la provocation à la main pour qu'il tienne l'aggro.</li>
+          <li>Correctifs : emplacements d'équipement gelés, invisibilité de mage gelée, et une série sur l'authentification, le démoniste, le mage, les métiers et le social.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Epic Games <span class="chip c-util">Distribution</span></h3>
+        <ul>
+          <li>Epic devient un <strong class="hl">canal de distribution à part entière</strong> dans les builds de bureau.</li>
+          <li>Liaison de compte <strong class="hl">côté serveur</strong>, avec vérification par preuve de lien.</li>
+          <li>Miroir des hauts faits vers Epic, et une carte de liaison dans l'interface.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Compilé pour <strong>La Clauderie</strong> — notes de version officielles v0.33.1, recoupées avec le code source du jeu.</p>
+    <p style="margin-top:8px"><a href="../patch-notes.html">← Toutes les mises à jour</a> · <a href="../index.html">Accueil</a></p>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    gfx: {
+      title: "Les paliers graphiques, et ce qu'ils font vraiment",
+      summary: "Insane vient se poser au-dessus d'Ultra ; Ultra a été redimensionné et Medium redécoupé. Le gouverneur de résolution, lui, tourne partout.",
+      body: `
+        <h4>Les cinq paliers</h4>
+        <ul>
+          <li>L'échelle est désormais <b>Low → Medium → High → Ultra → Insane</b>. Ultra a été <b>rééchelonné</b> et Medium <b>redécoupé</b> au passage : ce ne sont pas les mêmes réglages qu'avant sous le même nom.</li>
+          <li>La vraie différence Ultra / Insane ne se joue pas sur les réglages « gouvernables » (ils sont déjà tous au maximum en Ultra) mais sur les <b>couches de rendu elles-mêmes</b> : détail de surface, parallaxe de la pierre usée, micro-ombres du terrain.</li>
+          <li>Concrètement, le détail de surface monte à <b>4 échantillons en Insane</b>, 3 en Ultra, 0 en dessous.</li>
+          <li>Côté anticrénelage, Ultra et Insane partagent volontairement le même plafond de densité de pixels (1,75) que High : leur post-traitement tourne déjà en pleine résolution.</li>
+        </ul>
+        <h4>Le gouverneur de résolution dynamique</h4>
+        <ul>
+          <li>Il vise <b>60 images/seconde</b> et, quand ça décroche, baisse la résolution de rendu plutôt que de laisser tomber des images — puis la remonte quand la situation est stable.</li>
+          <li>Il reste <b>armé à tous les paliers</b>. Ultra et Insane lui donnent des seuils volontairement plus laxistes (il attend 30 ms avant de réagir, 44 ms pour réagir vite) et Insane prend des <b>pas de qualité plus petits</b> — la dégradation est moins visible.</li>
+          <li>Le plancher est à <b>0,78</b> de la résolution sur bureau et <b>0,68</b> sur mobile : il ne peut pas transformer ton écran en bouillie.</li>
+          <li>Nouveauté 0.33 : le levier de résolution ne <b>réalloue plus</b> les tampons de rendu quand il bouge — c'était la source des à-coups qu'il était censé éviter.</li>
+        </ul>
+        <h4>Les réglages granulaires</h4>
+        <ul>
+          <li>Chaque poste (résolution, herbe, feuillage, props, interface) a son propre curseur avec ses bornes. Tu peux monter l'herbe sans monter le reste, ou l'inverse.</li>
+          <li>Certains postes sont <b>non gouvernables</b> par construction (l'interface, les props) : le gouverneur ne les touche jamais, seul ton réglage compte.</li>
+        </ul>`
+    },
+    pacing: {
+      title: "Ce que la 0.33.1 est venue réparer",
+      summary: "La refonte graphique avait laissé trois problèmes de fluidité derrière elle. Le patch les traite un par un.",
+      body: `
+        <h4>Les trois correctifs de fluidité</h4>
+        <ul>
+          <li><b>Medium : les zones d'image figées.</b> Le post-traitement en région réduite n'était pas conscient des régions, donc la résolution dynamique pouvait laisser à l'écran des <b>morceaux d'image périmés</b>. Il est maintenant sûr par région.</li>
+          <li><b>La comptabilité redevient honnête.</b> Le comptage des appels de dessin et des triangles était faux sur les paliers post-traités — donc les rapports de performance <i>et le gouverneur lui-même</i> travaillaient sur de faux chiffres.</li>
+          <li><b>Insane sur bureau : la précompilation reste cachée.</b> La précompilation des shaders et des textures à l'entrée passe désormais <b>derrière l'écran de chargement</b>, et le travail GPU est sérialisé et priorisé : démarrage, vue en direct et compilation d'arrière-plan ne se marchent plus dessus. La pression de compilation du palier High a aussi été réduite.</li>
+        </ul>
+        <h4>Et le bloom</h4>
+        <ul>
+          <li>Le constructeur de bloom accepte maintenant <b>les deux formes connues</b> du shader de composition (r165 et r182) de la bibliothèque de rendu, avec ses cinq prises intactes.</li>
+          <li>Sur une forme inconnue, il <b>échoue en se fermant</b> plutôt qu'en produisant n'importe quoi — le choix prudent.</li>
+        </ul>`
+    },
+    vfx: {
+      title: "Le registre d'effets par sort",
+      summary: "296 capacités ont chacune leur fiche visuelle : archétype, motifs, impact par école de magie, décalque au sol.",
+      body: `
+        <h4>Comment c'est construit</h4>
+        <ul>
+          <li>Un <b>registre piloté par spécification</b> décrit chaque sort : un séquenceur d'archétype, un jeu de motifs, un livre d'images d'impact <b>par école de magie</b>, et des décalques de sol (fissure, brûlure).</li>
+          <li>Les primitives visuelles viennent de la galerie d'effets et ont été portées dans le jeu — ce n'est pas une couche de plus, c'est le même vocabulaire visuel partout.</li>
+          <li>Les évènements d'effet transportent maintenant l'<b>identifiant du sort</b>. C'est ce qui permet à chaque projectile de garder son apparence propre du départ à l'impact, au lieu de retomber sur un générique par école.</li>
+          <li>Les sorts lancés au sol se <b>fixent au point visé</b>, et les pulsations de zone se <b>ré-ancrent sur la zone</b> au lieu de suivre le lanceur.</li>
+        </ul>
+        <h4>Le ressenti</h4>
+        <ul>
+          <li><b>Hitstop à l'image de contact</b> : une micro-pause au moment de l'impact, qui donne du poids au coup.</li>
+          <li><b>Ressort d'inclinaison à l'armement</b>, lueur du squelette du personnage pendant les incantations et sous buff, apparitions spectrales pour les créatures fantômes.</li>
+        </ul>
+        <h4>Le son</h4>
+        <ul>
+          <li>Un pack d'effets sonores <b>échantillonnés</b> se pose par-dessus les identités audio <b>procédurales</b> déjà existantes — les deux couches se complètent, la seconde n'est pas remplacée.</li>
+          <li>Des <b>voix de personnage féminines</b> enregistrées ont été mises en place.</li>
+        </ul>`
+    },
+    evade: {
+      title: "La détection de cible inatteignable, au détail près",
+      summary: "Cinq secondes de blocage authentique, mesurées sous des conditions volontairement strictes pour ne jamais punir un joueur qui se bat normalement.",
+      body: `
+        <h4>Pourquoi c'est arrivé</h4>
+        <ul>
+          <li>Les monstres poursuivent <b>en ligne droite</b>, avec un éventail de glissement et sans navigation. Un monstre dont la cible se tient derrière un mur ou sous une corniche <b>s'épingle sur place pour toujours</b>, toujours en combat, pendant que la cible le grignote sans risque. C'était l'exploit de la corniche des Failles.</li>
+        </ul>
+        <h4>Les quatre conditions</h4>
+        <ul>
+          <li>Il faut que le monstre soit <b>engagé et hors de portée</b>. Un corps-à-corps à portée d'arme ou un lanceur de sorts posté à portée d'incantation, c'est un combat : le compteur reste à zéro.</li>
+          <li>Il faut qu'il <b>ne bouge pas du tout</b>. L'éventail de glissement ne valide un mouvement que s'il fait un vrai progrès, donc un monstre qui contourne ou longe un mur bouge à chaque tick et se remet à zéro. Un monstre vraiment coincé, lui, bouge exactement zéro.</li>
+          <li>Il faut que son <b>pas droit vers toi soit refusé</b> par la géométrie (un prop, de l'eau profonde, une falaise non escaladable, une haie du Grand Labyrinthe). Rester planté avec du terrain libre devant soi, c'est un hoquet d'IA, pas une cible inatteignable.</li>
+          <li>Et il faut que ça dure <b>5 secondes cumulées</b>. Les états qui court-circuitent le combat (étourdissement, peur, charges, maintien du soigneur) <b>gèlent le compteur</b> : « 5 secondes coincé » veut dire 5 secondes de vrai blocage, quelle que soit la quantité de contrôle intercalée.</li>
+        </ul>
+        <h4>Ce qui se passe ensuite</h4>
+        <ul>
+          <li>Le monstre passe en état d'esquive : il devient <b>invulnérable</b>, rentre à son point d'apparition et <b>se soigne à fond</b> en arrivant. Les droits de butin sont perdus.</li>
+          <li>Ça vaut pour <b>tous les monstres qui ont une laisse, boss compris</b>. Seuls les scripts d'encontre sans laisse (Nythraxis) en sont exemptés.</li>
+          <li>Le seuil est volontairement <b>plus long</b> (5 s) que celui de l'esquive de retour au bercail (3 s) : un faux positif ici soigne un monstre en plein combat et punit les joueurs, il fallait de la marge.</li>
+          <li>Un monstre qui traverse les obstacles n'est jamais concerné : sa poursuite ne peut pas être bloquée par la géométrie.</li>
+        </ul>`
+    },
+    chainpull: {
+      title: "Le sursis de transit du pull anticipé",
+      summary: "La laisse était bonne pour le combat et mauvaise pour le voyage. Le sursis règle exactement ça, et rien d'autre.",
+      body: `
+        <h4>Le problème</h4>
+        <ul>
+          <li>Tirer Zulgar avec la route encore vivante réveille <b>tout le bassin</b>, et la laisse de chaque monstre réveillé est ancrée sur <b>celui qui a tiré</b> — c'est ce qui empêche le groupe de traîner le paquet à plus de 70 yards.</li>
+          <li>Mais un monstre qui répond à l'appel depuis l'autre bout d'une instance de ~180 yards démarre <b>déjà hors de sa propre sphère de laisse</b> : il s'esquivait sur son tout premier tick engagé, avant d'avoir fait un pas. « Tout le bassin vient pour toi » se réduisait en silence à « les paquets à moins de 70 yards du sanctuaire viennent pour toi ».</li>
+        </ul>
+        <h4>Le sursis</h4>
+        <ul>
+          <li>Un monstre appelé porte un drapeau qui <b>suspend la laisse souple</b> pendant sa traversée. Il n'expire pas sur un minuteur : il se <b>dépense à l'arrivée</b>, dès que le monstre entre dans la sphère de laisse — avec une hystérésis d'un yard, pour qu'un arrivant ne puisse pas se libérer pile sur la frontière et casser au tick suivant.</li>
+          <li>Volontairement étroit : <b>seule la laisse souple</b> est tenue. L'attache dure (mesurée depuis le point d'apparition) est vérifiée en premier, et la détection de cible inatteignable tourne toujours ensuite — un monstre appelé mais coincé par la géométrie rentre chez lui sur le compteur normal de cinq secondes.</li>
+          <li>Conséquence assumée : un groupe qui tire puis part en courant se fait <b>poursuivre</b>, parce qu'un monstre kité <i>loin</i> du point de pull n'atteint jamais la sphère qui dépenserait son sursis. C'est la punition qui fonctionne comme écrit.</li>
+          <li>Ça reste borné par l'instance : sortir par le portail te retire de <b>toutes les tables de haine intérieures</b>, et un wipe lâche le pull de la même façon. Les deux coûtent la tentative.</li>
+        </ul>
+        <h4>Le portail de sortie</h4>
+        <ul>
+          <li>Il s'ouvre <b>à la mort de Zulgar</b>, sur la terrasse du sanctuaire — à ~220 yards de la sortie d'entrée. Le groupe qui a nettoyé sort par là au lieu de refaire la route à pied.</li>
+        </ul>`
+    },
+    spacing: {
+      title: "Le verrou d'espacement des mécaniques de boss de Faille",
+      summary: "Un seul verrou partagé par les mécaniques d'un boss de Faille : 5 secondes minimum entre deux, et la plus en retard passe en premier.",
+      body: `
+        <h4>Le problème</h4>
+        <ul>
+          <li>Chaque mécanique de boss tourne sur son propre minuteur libre. Quand deux cadences s'alignent, elles atterrissent <b>sur le même tick</b> — le playtest du 30 juillet a vu l'Abyssal Maw terroriser et lâcher son AoE au même instant.</li>
+        </ul>
+        <h4>La règle</h4>
+        <ul>
+          <li>Sur un boss <b>apparu dans une Faille</b>, les mécaniques qui visent les joueurs partagent <b>un seul verrou</b>. Une mécanique ne peut partir que si le verrou est libre, et son départ le réarme pour <b>5 secondes</b>.</li>
+          <li>Une incantation ajoute son <b>temps d'incantation par-dessus</b> : aucun sort instantané (une peur, typiquement) ne peut tomber pendant qu'une barre de télégraphe se remplit.</li>
+          <li>Une mécanique due pendant le verrou <b>attend sans se réarmer</b> : son minuteur continue de dériver dans le négatif, et cette dérive <i>est</i> son âge de retard. À la levée du verrou, c'est la <b>plus en retard</b> qui part. Résultat : sur un kit qui demande plus qu'un départ par fenêtre, toutes les cadences s'étirent proportionnellement — aucune mécanique n'est supprimée du combat, aucune ne perd un cycle.</li>
+          <li>Les 5 secondes ne sont pas arbitraires : c'est assez pour que la plus longue peur de mécanique (les 2,5 s de Terrifying Screech) s'écoule entièrement et laisse une marge de réaction.</li>
+        </ul>
+        <h4>Ce qui n'est PAS gouverné</h4>
+        <ul>
+          <li>Le <b>ralentissement de zone</b> (l'anti-kite doit garder sa cadence, sinon un kiteur gagne des fenêtres gratuites).</li>
+          <li>La <b>peau de pierre</b> (un buff personnel qui n'atteint jamais les joueurs) et le kit de soutien (invocation d'adds pilotée par les seuils de vie, soins, protections).</li>
+          <li>La <b>peur au coup porté</b> (elle ne touche que la victime du coup) et le déclencheur de charge héroïque.</li>
+        </ul>
+        <h4>Portée</h4>
+        <ul>
+          <li>Le verrou ne tique <b>que pendant que le boss est engagé et au contact</b>. Un boss kité gèle avec ses mécaniques en attente, puis reprend la ponction au retour au contact.</li>
+          <li>Inerte pour tout monstre sans le tampon d'apparition de Faille : les boss du monde ouvert et des donjons ne sont pas touchés.</li>
+        </ul>`
+    },
+    tankfear: {
+      title: "L'exemption de peur du tank",
+      summary: "La cible actuelle du monstre ne peut plus être terrorisée par sa peur de zone. Ça vaut partout, pas seulement en Faille.",
+      body: `
+        <h4>La règle</h4>
+        <ul>
+          <li>Quand un monstre déclenche sa <b>peur de zone</b>, le joueur qui est sa <b>cible actuelle</b> est sauté. Terroriser celui qui tient le boss l'envoie labourer le groupe — et empilé sur n'importe quelle autre mécanique, c'était injouable.</li>
+          <li>Ça couvre <b>tous les porteurs de peur de zone</b>, Failles et donjons confondus, pas seulement les boss de Faille.</li>
+        </ul>
+        <h4>Les cas particuliers</h4>
+        <ul>
+          <li><b>En solo</b>, tu es ton propre tank : cette peur-là ne peut plus jamais t'atteindre.</li>
+          <li><b>Si un familier ou un PNJ d'escorte tient l'aggro</b>, aucun joueur n'est exempté — mais ce n'est pas grave : le boss reste ancré sur le familier, donc le chaos de « le tank part en courant » ne peut pas se produire.</li>
+          <li>La <b>peur au coup porté</b> (celle qui ne frappe que la victime d'un coup) est un autre système et n'est pas concernée.</li>
+          <li>La réduction des retours de contrôle (chaque peur successive dure moins longtemps) continue de s'appliquer normalement aux joueurs non exemptés.</li>
+        </ul>`
+    },
+    lootnormal: {
+      title: "Le butin de Cœur-Sauvage en mode normal",
+      summary: "Une jambière verte garantie sur le boss, une lance à deux mains sur le rare, et un trophée qui tombe partout.",
+      body: `
+        <h4>Sur <b>Zulgar, Voice of the Basin</b></h4>
+        <ul>
+          <li><b>Une jambière verte garantie</b> à chaque kill : le jeu tire exactement une des trois, une par classe d'armure —
+            <span data-codex="item|Bloodmane Warleggings">Bloodmane Warleggings</span> (mailles, 34 %),
+            <span data-codex="item|Vineclaw Stalking Breeches">Vineclaw Stalking Breeches</span> (cuir, 33 %),
+            <span data-codex="item|Sunbone Ritual Sarong">Sunbone Ritual Sarong</span> (tissu, 33 %).</li>
+          <li>Les trois armes épiques déjà connues restent à <b>6 % chacune</b>, et les fragments d'os à 80 %.</li>
+        </ul>
+        <h4>Sur le rare <b>Fanglord Beastmaster</b></h4>
+        <ul>
+          <li><span data-codex="item|Fanglord's Beastspear">Fanglord's Beastspear</span> à <b>12 %</b> : une lance à deux mains rare de niveau d'objet 23, pour guerrier, chasseur, chaman et paladin.</li>
+          <li>Un <span data-codex="item|Chipped Tusk">Chipped Tusk</span> <b>garanti</b> (trophée sans valeur, la convention des rares trolls), et ses pièces passent de 1 000 à <b>2 500 cuivres</b>.</li>
+        </ul>
+        <h4>Sur le trash du bassin</h4>
+        <ul>
+          <li>Les <span data-codex="item|Chipped Tusk">Chipped Tusk</span> tombent maintenant sur les trois familles de trash :
+            <span data-codex="mob|Vineclaw Stalker">Vineclaw Stalker</span> 35 %,
+            <span data-codex="mob|Bloodmane Ravager">Bloodmane Ravager</span> 40 %,
+            <span data-codex="mob|Sunbone Hexcaller">Sunbone Hexcaller</span> 45 %.</li>
+        </ul>
+        <h4>Deux ajustements de trash à connaître</h4>
+        <ul>
+          <li>Le <b>Bloodmane Ravager</b> passe de 7,1 à <b>7,5 de vitesse</b> : à 7,1 il gagnait 0,1 yard/seconde sur un joueur en fuite (qui court à 7) et ne rattrapait donc <i>jamais</i> personne. Sa « pression de mêlée rapide » existe enfin pour de vrai en mode normal.</li>
+          <li>La lance à distance du <b>Vineclaw Stalker</b> passe de l'école physique à l'école nature. C'est d'abord un correctif visuel (le monstre semblait faire des moulinets de mêlée à 24 yards), mais ça a une conséquence réelle : <b>la réduction de dégâts purement physique ne s'y applique plus</b> — la Raised Guard d'un guerrier protection ne couvre plus la lance, tandis que les amplifications de dégâts magiques, oui.</li>
+        </ul>`
+    },
+    lootheroic: {
+      title: "Le butin héroïque de Cœur-Sauvage",
+      summary: "Six épiques niveau 20 en deux groupes de trois, plus deux montures bleues — le seul cinq-joueurs à en proposer deux.",
+      body: `
+        <h4>Premier groupe : les plastrons (~33 % par pièce)</h4>
+        <ul>
+          <li><span data-codex="item|Basin Stalker's Tunic">Basin Stalker's Tunic</span> — cuir agilité (34 %). Il rebouche le trou laissé par le retrait du plastron précédent ; les druides farouches y retrouvent leur accès.</li>
+          <li><span data-codex="item|Verdant-Heart Vestment">Verdant-Heart Vestment</span> — cuir intelligence (33 %). C'est le <b>premier plastron en cuir intelligence du jeu</b>, tout simplement.</li>
+          <li><span data-codex="item|Sunbone Ritual Hauberk">Sunbone Ritual Hauberk</span> — mailles intelligence (33 %), pour les soigneurs en mailles.</li>
+        </ul>
+        <h4>Second groupe (~33 % par pièce)</h4>
+        <ul>
+          <li><span data-codex="item|Greatfang of the Basin">Greatfang of the Basin</span> — la <b>première arme à deux mains lourde en cinq joueurs</b> (34 %), vitesse 3,4.</li>
+          <li><span data-codex="item|Sunbone Oracle's Crown">Sunbone Oracle's Crown</span> — casque en tissu lanceur (33 %).</li>
+          <li><span data-codex="item|Bloodmane War-Legguards">Bloodmane War-Legguards</span> — jambières en mailles force (33 %).</li>
+        </ul>
+        <h4>Les deux montures</h4>
+        <ul>
+          <li>Cœur-Sauvage est le <b>cinquième donjon héroïque</b>, et les deux montures bleues du catalogue étaient déjà attribuées à Ysolei et Korzul. Plutôt qu'une cinquième monture signature, le bassin porte une <b>voie secondaire vers les deux</b>, à taux égal.</li>
+          <li><b>0,1 % chacune</b>, exactement le taux partout ailleurs : le bassin n'est jamais une route moins chère vers l'une ou l'autre. En revanche c'est le seul cinq-joueurs à en offrir deux, donc son taux <i>agrégé</i> est de <b>0,2 % par clear héroïque</b> contre 0,1 % chez Ysolei et Korzul.</li>
+          <li>Les montures <b>épiques restent exclusives aux Failles de rang S</b> et n'apparaissent jamais ici.</li>
+        </ul>`
+    },
+    mount: {
+      title: "Terrorspark Groundshaker : ce que dit le code",
+      summary: "Les notes officielles l'annoncent comme rejoignant l'écurie. Dans le code livré, elle n'a aucune source joueur.",
+      body: `
+        <h4>Ce qu'elle est</h4>
+        <ul>
+          <li>Un engin blindé compact — chenilles lourdes, canon de gros calibre, selle. En jeu : monture <b>épique</b>, <b>+80 % de vitesse</b>, le palier le plus haut, à égalité avec l'Aether-Jouster Hover-Cycle et le Thunderstrut Gobbler.</li>
+          <li>Elle a droit à une passe de surface PBR procédurale et à des textures compressées — le travail d'art est bien réel et fini.</li>
+        </ul>
+        <h4>Ce qu'elle n'est pas (encore)</h4>
+        <ul>
+          <li>Le code est explicite : elle est <b>volontairement absente des vendeurs, des quêtes, du butin des créatures, du butin héroïque et des récompenses de Faille</b>. Aucune source joueur, nulle part.</li>
+          <li>Le commentaire de la table des montures le dit noir sur blanc : les deux autres épiques viennent des clears de Faille rang S, la Terrorspark est <b>réservée aux développeurs pour l'instant</b> et n'a <b>pas d'acquisition côté joueur</b>.</li>
+          <li>La table des montures a d'ailleurs vu sa description révisée en conséquence : le palier haut n'est plus décrit comme « butin uniquement » mais comme « collection <b>ou</b> réservé aux développeurs ».</li>
+        </ul>
+        <h4>Pourquoi on le précise</h4>
+        <ul>
+          <li>Parce que les notes officielles la listent parmi les nouveautés de contenu, sans mentionner qu'elle n'est pas attrapable. Inutile de farmer quoi que ce soit en espérant la faire tomber : ça n'arrivera pas dans cette version.</li>
+          <li>Elle apparaît dans le Codex parce qu'elle existe dans les données du jeu — sa présence n'y vaut pas source.</li>
+        </ul>`
+    },
+    respawn: {
+      title: "Les paliers de respawn, et ce qu'ils ne touchent pas",
+      summary: "Le trash extérieur passe d'un plat 25 secondes à un palier décidé par la bande de niveau de sa zone. Les rares nommés ne bougent pas d'un pouce.",
+      body: `
+        <h4>La nouvelle règle</h4>
+        <ul>
+          <li>Tous les monstres du monde ouvert partageaient <b>un seul délai de 25 secondes</b>. Un camp farmé se régénérait donc environ <b>trois fois par minute</b>, et les paquets denses payaient de l'or et de l'expérience bien au-delà de ce que leur zone visait.</li>
+          <li>Désormais le délai vient de la <b>bande de niveau de la zone</b> : <b>60 s</b> jusqu'au niveau 7, <b>120 s</b> jusqu'au 14, <b>180 s</b> au-dessus.</li>
+          <li>C'est le <b>point d'apparition</b> du monstre qui décide, pas l'endroit où il meurt : traîner un monstre hors de son camp ne change pas sa cadence.</li>
+        </ul>
+        <h4>Ce qui ne bouge pas</h4>
+        <ul>
+          <li>Les monstres qui portent <b>leur propre horloge</b> gardent l'ancienne base : les rares nommés (dont le multiplicateur ×4 donne les 100 secondes historiques) et les minibosses aux cadences taillées à la main.</li>
+          <li>C'est délibéré : rebaser ces horloges aurait étiré un rare de six heures à plus de <b>quarante heures</b>, et un rare de quête de trois minutes à vingt-deux minutes. Le but était de ralentir le <b>trash farmable</b>, pas de casser les cadences réglées.</li>
+          <li>Ce qui bouge, donc : le trash simple, et les quatre boss du monde ouvert qui n'avaient jamais déclaré de cadence.</li>
+        </ul>
+        <h4>La courbe de pièces</h4>
+        <ul>
+          <li>Les récompenses en cuivre des <b>dix zones de juillet</b> ont été recalibrées en même temps. Petits ajustements sur le trash (110 → 100 pour les bandits de Galecrest), coupes nettes sur des élites du monde ouvert.</li>
+          <li>Certains monstres montent au contraire : ceux de Cœur-Sauvage, notamment, dont le rare passe de 1 000 à 2 500 cuivres.</li>
+        </ul>`
+    },
+    classes: {
+      title: "Les trois changements de classe",
+      summary: "Un sort de guerrier ressuscité, une invisibilité de mage recadrée, un démon de démoniste qui fait enfin son travail tout seul.",
+      body: `
+        <h4>Guerrier — <b>Seething Fury</b> était introuvable</h4>
+        <ul>
+          <li>Le sort existait, complètement écrit : <b>niveau 10</b>, gratuit, <b>30 secondes de recharge</b>, hors du délai global, et il génère <b>20 de rage</b> instantanément.</li>
+          <li>Mais l'intégration des talents version 2 avait supprimé la ligne de l'arbre de classe qui l'accordait, <b>sans le rattacher ailleurs</b>. La fonction qui calcule les sorts connus à un niveau donné ne pouvait donc jamais le retourner : un guerrier niveau 20 vivant ne le trouvait nulle part (c'est un joueur qui l'a signalé).</li>
+          <li>Il est maintenant rattaché à la <b>liste de base du guerrier</b>. Il s'apprend au niveau 10 comme prévu depuis le début.</li>
+        </ul>
+        <h4>Mage — <b>Greater Invisibility</b> recadrée</h4>
+        <ul>
+          <li>Avant : le sort appliquait la disparition <i>et</i> la réduction de 90 % des dégâts <b>pendant</b> l'invisibilité, avec un reliquat de 3 secondes après.</li>
+          <li>Maintenant : le sort retire toujours <b>2 effets de dégâts sur la durée</b> et applique la disparition de 20 secondes — mais la réduction de 90 % <b>ne démarre qu'à la fin de l'invisibilité</b>, et pour <b>2 secondes</b>.</li>
+          <li>C'est un vrai changement de puissance à connaître : la fenêtre protégée s'est déplacée, elle n'est plus cumulée avec l'invisibilité elle-même.</li>
+        </ul>
+        <h4>Démoniste — le démon tank provoque tout seul</h4>
+        <ul>
+          <li>Le démon tank est désormais <b>marqué comme le porteur de menace</b> de l'écurie. Sa création active la <b>provocation automatique par défaut</b> : il tient l'aggro sans qu'il faille basculer un réglage à la main.</li>
+          <li>Ses statistiques ne changent pas (grosse réserve de vie, armure lourde, dégâts modestes).</li>
+        </ul>
+        <h4>Et les correctifs voisins</h4>
+        <ul>
+          <li>112 correctifs sur la ligne 0.33.0, concentrés sur le rendu (28) et la simulation (24) : emplacements d'équipement gelés, invisibilité de mage gelée, plus une série sur l'authentification, le démoniste, le mage, les métiers et le social.</li>
+        </ul>`
+    }
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

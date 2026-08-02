@@ -272,7 +272,8 @@ const BUILDS = {
     ["Raised Guard / Iron Resolve", { fr: "tes défensifs : −50 % dégâts physiques 6 s (2 charges, recharge en parallèle) et l'absorption à 4 dégâts/rage (max 160).", en: "your defensives: −50% physical damage for 6s (2 charges, parallel recharge) and the 4 damage/rage absorb (max 160)." }],
     ["Jawcrack", { fr: "l'interrupt gratuit — coupe les casts en priorité.", en: "the free interrupt — cutting casts comes first." }],
     ["Defiant Bellow", { fr: "le taunt AoE (10 yd) — récupère tout un pack qui part sur le heal.", en: "the AoE taunt (10 yd) — grabs a whole pack heading for the healer." }],
-    ["Goad", { fr: "le taunt monocible pour le reste.", en: "the single-target taunt for everything else." }]
+    ["Goad", { fr: "le taunt monocible pour le reste.", en: "the single-target taunt for everything else." }],
+    ["Seething Fury", { fr: "20 rage instantanées, hors GCD, CD 30 s. v0.33 : le sort existait au niv. 10 mais n'était rattaché à rien depuis la refonte des talents — il est enfin apprenable. À garder pour ouvrir un pull avec un Shieldcrack immédiat.", en: "20 instant rage, off the GCD, 30s CD. v0.33: the ability existed at lvl 10 but was attached to nothing since the talent rework — it is finally learnable. Save it to open a pull with an immediate Shieldcrack." }]
    ],
    astuce: { fr: "Iron Bellow avant le pull (ça tient 30 min). Direhowl (−20 % dégâts ennemis 20 s) sur les gros packs, Valor Roar (+20 % PV max groupe 10 s) sur un burst annoncé, et Faultline pour un stun frontal 3 s quand ça déborde.",
              en: "Iron Bellow before the pull (it lasts 30 min). Direhowl (−20% enemy damage for 20s) on big packs, Valor Roar (+20% group max HP for 10s) on a telegraphed burst, and Faultline for a 3s frontal stun when things spill over." }
@@ -300,7 +301,8 @@ const BUILDS = {
     ["Red Harvest", { fr: "à 80 rage : triple frappe et Enrage garanti — le cœur du build.", en: "at 80 rage: triple strike and guaranteed Enrage — the heart of the build." }],
     ["Bladed Gyre", { fr: "l'AoE dès 3 cibles.", en: "the AoE at 3+ targets." }],
     ["Early Grave", { fr: "l'exécution sous 20 % PV — prioritaire sur tout le reste.", en: "the execute below 20% HP — takes priority over everything else." }],
-    ["Jawcrack", { fr: "l'interrupt gratuit : les casts, c'est aussi ton boulot.", en: "the free interrupt: casts are your job too." }]
+    ["Jawcrack", { fr: "l'interrupt gratuit : les casts, c'est aussi ton boulot.", en: "the free interrupt: casts are your job too." }],
+    ["Seething Fury", { fr: "20 rage instantanées, hors GCD, CD 30 s. v0.33 : introuvable depuis la refonte des talents, le sort est enfin apprenable au niv. 10 — de quoi lancer un Red Harvest sans attendre la barre.", en: "20 instant rage, off the GCD, 30s CD. v0.33: unfindable since the talent rework, it is finally learnable at lvl 10 — enough to fire a Red Harvest without waiting on the bar." }]
    ],
    astuce: { fr: "Iron Bellow avant le pull (30 min, un seul guerrier le pose). Si le heal est sous l'eau, Furious Mending : pendant sa durée, Bloodletting te soigne 20 % PV max. Garde Valor Roar (+20 % PV max groupe) pour les phases de burst ennemi. Et depuis la v0.27.2, Titan's Grip coûte cher : deux armes à deux mains = −12 % de dégâts physiques — le double une-main (1,75× de budget de stats) est redevenu la référence.",
              en: "Iron Bellow before the pull (30 min, only one warrior needs to apply it). If the healer is drowning, Furious Mending: while it lasts, Bloodletting heals you for 20% max HP. Keep Valor Roar (+20% group max HP) for enemy burst phases. And since v0.27.2, Titan's Grip has a real price: two two-handers = −12% physical damage — dual one-handers (1.75× stat budget) are back as the baseline." }
@@ -331,7 +333,8 @@ const BUILDS = {
     ["Early Grave", { fr: "l'exécution sous 20 % PV — et gratuite à n'importe quel PV sur un proc de Sudden Death.", en: "the execute below 20% HP — and free at any HP on a Sudden Death proc." }],
     ["Widening Arc", { fr: "12 s où tes frappes monocibles touchent un ennemi de plus — le cleave sans changer de rotation.", en: "12s where your single-target strikes hit one extra enemy — cleave without changing your rotation." }],
     ["Reaping Arc", { fr: "la frappe en arc quand le pack est large.", en: "the sweeping strike when the pack is wide." }],
-    ["Jawcrack", { fr: "l'interrupt — 10 rage quand il coupe un cast.", en: "the interrupt — 10 rage when it stops a cast." }]
+    ["Jawcrack", { fr: "l'interrupt — 10 rage quand il coupe un cast.", en: "the interrupt — 10 rage when it stops a cast." }],
+    ["Seething Fury", { fr: "20 rage instantanées, hors GCD, CD 30 s. v0.33 : le sort était orphelin depuis la refonte des talents, il s'apprend enfin au niv. 10 — l'amorce du Redhand → Maiming Strike sur un pull froid.", en: "20 instant rage, off the GCD, 30s CD. v0.33: orphaned since the talent rework, it finally learns at lvl 10 — the primer for Redhand → Maiming Strike on a cold pull." }]
    ],
    astuce: { fr: "Master Armorer exige une arme à DEUX MAINS : la paire de une-main de Bloodrush ne l'active pas. Et garde Hobbling Cut sous la main — sous −50 % de vitesse, rien n'échappe ni à toi ni au groupe.",
              en: "Master Armorer requires a TWO-HANDED weapon: Bloodrush's one-hander pair does not activate it. Keep Hobbling Cut handy — at −50% speed, nothing escapes you or the group." },
@@ -674,7 +677,7 @@ const BUILDS = {
    stats: { fr: "Intelligence > Crit > Hâte", en: "Intellect > Crit > Haste" },
    talents: [
     ["Ice Floes", "niv. 5", { fr: "tes deux prochains sorts à incantation se lancent en mouvement — Cinderbolt sans t'arrêter.", en: "your next two cast-time spells can be cast while moving — Cinderbolt without stopping." }],
-    ["Greater Invisibility", "niv. 8", { fr: "invisible 20 s, purge 2 DoT et −90 % de dégâts subis — le bouton « oups » du DPS.", en: "invisible for 20s, removes 2 DoTs and −90% damage taken — the DPS 'oops' button." }],
+    ["Greater Invisibility", "niv. 8", { fr: "invisible 20 s et purge 2 DoT — le bouton « oups » du DPS. v0.33 : les −90 % de dégâts subis démarrent à la FIN de l'invisibilité, pour 2 s (avant, ils couvraient toute la durée).", en: "invisible for 20s and removes 2 DoTs — the DPS 'oops' button. v0.33: the −90% damage taken now starts when the invisibility ENDS, for 2s (it used to cover the whole duration)." }],
     ["Snap Bewitch", "niv. 11", { fr: "Bewitch devient instantané (CD 20 s) : le CC de secours sans cast.", en: "Bewitch becomes instant (20s CD): emergency CC with no cast." }],
     ["Power Echo", "niv. 14", { fr: "ton prochain sort direct se répète à 50 % de puissance — à caler sur une Pyrelance de Hot Streak.", en: "your next direct spell repeats at 50% power — line it up with a Hot Streak Pyrelance." }],
     ["Elemental Convergence", "niv. 17", { fr: "alterner un sort de Feu et de Givre ouvre 8 s de surpuissance (1×/30 s) : glisse un Rimelance entre deux Cinderbolt.", en: "alternating a Fire and a Frost spell opens an 8s power surge (once per 30s): slip a Rimelance between two Cinderbolts." }],
@@ -833,8 +836,8 @@ const BUILDS = {
     ["Consume", { fr: "le filler-soin quand tu as pris des coups.", en: "the healing filler once you've taken hits." }],
     ["Gag Order", { fr: "l'interrupt.", en: "the interrupt." }]
    ],
-   astuce: { fr: "Ton démon est un vrai coéquipier : Fiendlore lui transfère tes dégâts, alors surveille SES PV aussi — un démon mort, et te voilà un Hexcraft sans talents.",
-             en: "Your demon is a real teammate: Fiendlore transfers your damage to it, so watch ITS health too — with a dead demon, you're just a Hexcraft with no talents." }
+   astuce: { fr: "Ton démon est un vrai coéquipier : Fiendlore lui transfère tes dégâts, alors surveille SES PV aussi — un démon mort, et te voilà un Hexcraft sans talents. Depuis la v0.33, le démon TANK provoque tout seul par défaut : plus besoin d'activer la provocation à la main pour qu'il tienne l'aggro.",
+             en: "Your demon is a real teammate: Fiendlore transfers your damage to it, so watch ITS health too — with a dead demon, you're just a Hexcraft with no talents. Since v0.33 the TANK demon auto-taunts by default: no manual toggle needed for it to hold aggro." }
   }]
  },
  hunter: {
