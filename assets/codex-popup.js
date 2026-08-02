@@ -593,6 +593,9 @@ function specSheet({ spec, cls }) {
 
 function mobSheet(m) {
   const body = [];
+  // Portrait officiel du jeu, embarqué sous assets/mobs/<id>.webp (même
+  // mécanique que l'art des objets : un 404 retire l'image sans rien casser).
+  if (m.id) body.push(`<img class="cxp-art" src="${SITE_BASE}assets/mobs/${m.id}.webp" alt="" loading="lazy" onerror="this.remove()">`);
   const rank = m.boss ? 'Boss' : m.elite ? (m.rare ? T({ fr: 'Élite rare', en: 'Rare elite' }) : T({ fr: 'Élite', en: 'Elite' })) : m.rare ? 'Rare' : null;
   const wb = byId.worldboss[m.id];
   body.push(kvGrid([

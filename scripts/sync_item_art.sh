@@ -27,11 +27,15 @@ TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 git -c advice.detachedHead=false clone --depth 1 --filter=blob:none --sparse \
   --branch "$TAG" --quiet "$GAME_URL" "$TMP/game"
-git -C "$TMP/game" sparse-checkout set public/ui/items --quiet
+git -C "$TMP/game" sparse-checkout set public/ui/items public/ui/mobs --quiet
 
-mkdir -p assets/items
+mkdir -p assets/items assets/mobs
 BEFORE=$(ls assets/items/*.webp 2>/dev/null | wc -l)
 cp "$TMP/game/public/ui/items/"*.webp assets/items/
 AFTER=$(ls assets/items/*.webp 2>/dev/null | wc -l)
 echo "assets/items : $BEFORE → $AFTER webp (tag $TAG)"
-echo "Reste à commiter : git add assets/items && git commit"
+MBEFORE=$(ls assets/mobs/*.webp 2>/dev/null | wc -l)
+cp "$TMP/game/public/ui/mobs/"*.webp assets/mobs/
+MAFTER=$(ls assets/mobs/*.webp 2>/dev/null | wc -l)
+echo "assets/mobs : $MBEFORE → $MAFTER webp (tag $TAG)"
+echo "Reste à commiter : git add assets/items assets/mobs && git commit"
