@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
 <title>What's new in v0.33.1 — La Clauderie</title>
-<meta name="description" content="Everything new in World of ClaudeCraft v0.33.1: the new Insane graphics tier, 296 abilities with their own visual and audio identity, classic Evade for unreachable mobs, Wildheart Basin loot, and much slower trash farming.">
+<meta name="description" content="Everything new in World of ClaudeCraft v0.33.1, explained simply: a better-looking, smoother game, 296 restyled spells, the end of risk-free kills on stuck mobs, new Wildheart loot and slower farming.">
 <meta name="theme-color" content="#c8a04b">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="La Clauderie">
 <meta property="og:title" content="What's new in v0.33.1 — La Clauderie">
-<meta property="og:description" content="Everything new in World of ClaudeCraft v0.33.1: the new Insane graphics tier, 296 abilities with their own visual and audio identity, classic Evade for unreachable mobs, Wildheart Basin loot, and much slower trash farming.">
+<meta property="og:description" content="Everything new in World of ClaudeCraft v0.33.1, explained simply: a better-looking, smoother game, 296 restyled spells, the end of risk-free kills on stuck mobs, new Wildheart loot and slower farming.">
 <meta property="og:url" content="https://laclauderie.fr/notes/v0.33.1.en.html">
 <link rel="canonical" href="https://laclauderie.fr/notes/v0.33.1.en.html">
 <meta property="og:image" content="https://laclauderie.fr/assets/og.png">
@@ -149,56 +149,32 @@
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · Release notes</p>
     <h1>What's new in <span class="v">v0.33.1</span></h1>
-    <p class="lede">The game's biggest visual update yet: a new <strong class="hl">Insane</strong> graphics tier, a full terrain and foliage pass, and above all <strong class="hl">296 abilities that finally have their own visual and audio identity</strong>. On the gameplay side: mobs that can't reach you now Evade classic-style, the tank is no longer feared by their own boss, the Wildheart Basin answers as one — and open-world trash farming got a lot slower. Click a card for the detail.</p>
+    <p class="lede">The big graphics update. The game looks better, runs smoother, and every spell now has its own look and sound. Also in the box: no more killing mobs stuck behind walls, the tank no longer runs from their own boss, new loot in Wildheart Basin — and farming is slower. Click a card for details.</p>
     <div class="meta">
       <span><b>Released</b> 2 Aug 2026</span>
       <span><b>Since</b> v0.32.4</span>
-      <span><b>Covers</b> 0.33.0 (never tagged) and 0.33.1</span>
-      <span><b>384</b> commits · ~60 PRs</span>
+      <span><b>Covers</b> versions 0.33.0 and 0.33.1</span>
     </div>
-    <div class="hint">💡 Click any feature to open its detailed rules — and any underlined name for its Codex entry.</div>
+    <div class="hint">💡 Click any card for details — and any underlined name for its Codex entry.</div>
   </header>
 
   <!-- 1 GRAPHICS -->
   <section>
-    <div class="sec-head"><span class="sec-num">01</span><h2>The world looks better — and runs better</h2></div>
-    <p class="sec-sub">One more tier at the top, a regated Medium, granular dials for tinkering yourself, and 39 optimization commits under the hood. v0.33.1 then goes and recovers the frame pacing the overhaul left on the table.</p>
+    <div class="sec-head"><span class="sec-num">01</span><h2>The game looks better — and runs smoother</h2></div>
+    <p class="sec-sub">A new top graphics level, a reworked world (terrain, grass, paths), and lots of optimization. No monster PC required: every level runs better than before.</p>
     <div class="grid cols-2">
-      <div class="card more" data-detail="gfx" tabindex="0" role="button" aria-label="Details: the graphics tiers and the governor">
-        <h3>A new "Insane" tier <span class="chip c-new">New</span></h3>
-        <p>Above Ultra: <strong class="hl">everything on</strong>. New surface-detail material families (bark, fabric, metal, rock), a full terrain and foliage pass, and a <strong class="hl">dynamic-resolution governor</strong> that lowers resolution instead of dropping frames.</p>
-        <span class="more-link">The tiers in detail</span>
-      </div>
-      <div class="card more" data-detail="pacing" tabindex="0" role="button" aria-label="Details: the v0.33.1 frame pacing fix">
-        <h3>v0.33.1 recovers the frame pacing <span class="chip c-bal">Fix</span></h3>
-        <p>Three sores left by the overhaul: <strong class="hl">stale on-screen regions</strong> on Medium, a shader prewarm that showed itself instead of staying behind the loading cover on desktop Insane, and <strong class="hl">GPU work colliding</strong> at boot. All three are fixed.</p>
-        <span class="more-link">What was repaired</span>
-      </div>
-    </div>
-    <div class="grid cols-3" style="margin-top:13px">
-      <div class="card">
-        <h3>What changes to the eye</h3>
-        <ul>
-          <li><strong class="hl">De-carpeted</strong> dirt paths, macro variation on every ground splat layer.</li>
-          <li><strong class="hl">Combed</strong> grass with hue drift and a near-field blade carpet.</li>
-          <li>Cliff scree scatter (solid, and you can stand on it) and needle/leaf clumps in the canopies.</li>
-        </ul>
+      <div class="card more" data-detail="gfx" tabindex="0" role="button" aria-label="Details: the graphics levels">
+        <h3>New "Insane" level <span class="chip c-new">New</span></h3>
+        <p>Above Ultra, with <strong class="hl">everything maxed out</strong>. And if things slow down, the game <strong class="hl">softens the picture slightly on its own</strong> instead of stuttering, then sharpens it back up.</p>
+        <span class="more-link">See details</span>
       </div>
       <div class="card">
-        <h3>What changes in performance</h3>
+        <h3>What you'll see</h3>
         <ul>
-          <li>Draw-call diet for props, shadows and world batches.</li>
-          <li><strong class="hl">SMAA</strong> replaces supersampled edge AA.</li>
-          <li>Front-to-back opaque sort, Uint16 terrain indexing, frozen static foliage matrices.</li>
-          <li>No more per-frame allocations in the render loop.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Where to tune it</h3>
-        <ul>
-          <li>The <strong class="hl">granular dials</strong> let you raise one thing (grass, foliage) without raising everything.</li>
-          <li>The governor stays <strong class="hl">armed on every tier</strong>; Ultra and Insane simply give it more slack.</li>
-          <li>Insane pushes surface detail to <strong class="hl">4 taps</strong>, against 3 on Ultra and 0 below.</li>
+          <li>The <strong class="hl">terrain and grass are redone</strong>: more realistic dirt paths, livelier grass, loose rocks on the cliffs.</li>
+          <li><strong class="hl">New materials</strong>: bark, fabric, metal and rock finally have real texture.</li>
+          <li>You can <strong class="hl">tune each detail separately</strong> (just the grass, just the shadows…).</li>
+          <li>v0.33.1 fixes the last issues: no more frozen patches of screen, no more stutter at launch.</li>
         </ul>
       </div>
     </div>
@@ -206,21 +182,20 @@
 
   <!-- 2 VFX / SFX -->
   <section>
-    <div class="sec-head"><span class="sec-num">02</span><h2>Every ability now has a signature</h2></div>
-    <p class="sec-sub">No more interchangeable projectiles: a per-ability effect registry covers <strong class="hl">296 abilities</strong>, each with its own bolt DNA, its impact by magic school, its ground decal — and its own audio identity.</p>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Every spell has its own look</h2></div>
+    <p class="sec-sub">Before, lots of spells looked the same. Now <strong class="hl">296 abilities</strong> each have their own look and their own sound.</p>
     <div class="grid cols-2">
-      <div class="card more" data-detail="vfx" tabindex="0" role="button" aria-label="Details: the per-ability spell VFX registry">
-        <h3>296 abilities, 296 identities <span class="chip c-new">New</span></h3>
-        <p><strong class="hl">Spell effect events now carry the ability id</strong>, so every projectile keeps its authored look all the way to impact. Ground casts claim at their aimed point, zone pulses re-anchor to the zone.</p>
-        <span class="more-link">How the system works</span>
+      <div class="card more" data-detail="vfx" tabindex="0" role="button" aria-label="Details: the spell effects">
+        <h3>296 spells, restyled <span class="chip c-new">New</span></h3>
+        <p>Every projectile keeps <strong class="hl">its own look</strong> from cast to impact, with a different hit depending on the magic (fire, frost, shadow…) and marks left on the ground.</p>
+        <span class="more-link">See details</span>
       </div>
       <div class="card">
         <h3>What you'll feel</h3>
         <ul>
-          <li><strong class="hl">Contact-frame hitstop</strong>: the hit has weight, the action freezes for a fraction of a second on impact.</li>
-          <li>A windup lean spring, character rig glow while casting and under buffs.</li>
-          <li>Per-class identity rounds: <span data-codex="ability|Shieldcrack">Shieldcrack</span>, <span data-codex="ability|Reaping Arc">Reaping Arc</span>, <span data-codex="ability|Jawcrack">Jawcrack</span>, <span data-codex="ability|Throat Wire">Throat Wire</span>, <span data-codex="ability|Bleed Out">Bleed Out</span>, <span data-codex="ability|Dirt Toss">Dirt Toss</span>, <span data-codex="ability|Splitshot">Splitshot</span>, <span data-codex="ability|Lingering Grace">Lingering Grace</span>, <span data-codex="ability|Fleet Form">Fleet Form</span>.</li>
-          <li>A <strong class="hl">sampled</strong> SFX layer over each ability's procedural audio, plus staged female player voice recordings.</li>
+          <li>Hits have <strong class="hl">punch</strong>: the picture pauses for a split second on impact.</li>
+          <li>Your character <strong class="hl">glows while casting</strong> and under buffs.</li>
+          <li>Every spell now has <strong class="hl">its own sound</strong>, and female character voices have been recorded.</li>
         </ul>
       </div>
     </div>
@@ -228,21 +203,20 @@
 
   <!-- 3 EVADE -->
   <section>
-    <div class="sec-head"><span class="sec-num">03</span><h2>Mobs that cannot reach you now Evade</h2></div>
-    <p class="sec-sub">Classic behaviour is back: a mob pinned behind a wall or under a ledge while you chip it down risk-free walks home, heals to full — and you lose your loot rights.</p>
+    <div class="sec-head"><span class="sec-num">03</span><h2>No more killing stuck mobs</h2></div>
+    <p class="sec-sub">The well-known trick: climb a rock or a ledge, the mob gets stuck below, and you kill it risk-free. That's over.</p>
     <div class="grid cols-2">
-      <div class="card more" data-detail="evade" tabindex="0" role="button" aria-label="Details: unreachable-target detection">
-        <h3>Five seconds pinned, then home it goes <span class="chip c-mob">Mobs</span></h3>
-        <p>Detection is strict: the mob must be <strong class="hl">engaged, out of reach, committing zero movement</strong>, with its straight step toward you refused by geometry. <strong class="hl">Five seconds</strong> of that and it leaves — full heal, loot gone.</p>
-        <span class="more-link">The exact conditions</span>
+      <div class="card more" data-detail="evade" tabindex="0" role="button" aria-label="Details: stuck mobs go home">
+        <h3>A stuck mob goes home <span class="chip c-mob">Mobs</span></h3>
+        <p>If it really can't reach you for <strong class="hl">5 seconds</strong>, it gives up: it walks back to its camp, <strong class="hl">heals back to full</strong>, and you lose its loot.</p>
+        <span class="more-link">See details</span>
       </div>
       <div class="card">
         <h3>Worth knowing</h3>
         <ul>
-          <li>This applies to <strong class="hl">bosses too</strong>: pinning a boss out of reach force-resets the pull. Only <span data-codex="mob|Nythraxis, Scourge of Thornpeak">Nythraxis</span> opts out (encounter script).</li>
-          <li>Root <strong class="hl">holds the clock</strong> — no growth, no reset. Root spam can neither trigger an evade nor re-arm a pinned mob's timer.</li>
-          <li>A caster standing at spell range on purpose is never caught by this: that's a fight, not a stall.</li>
-          <li>This was the <strong class="hl">rift ledge exploit</strong>: it's closed.</li>
+          <li>It works <strong class="hl">on bosses too</strong>: a stuck boss = fight cancelled.</li>
+          <li>No cheating: <strong class="hl">stuns and roots don't reset the timer</strong> — they just pause it.</li>
+          <li>No risk in normal play: a mob hitting you, or a caster attacking from range, is never affected.</li>
         </ul>
       </div>
     </div>
@@ -250,47 +224,45 @@
 
   <!-- 4 WILDHEART -->
   <section>
-    <div class="sec-head"><span class="sec-num">04</span><h2>The Wildheart Basin answers as one</h2></div>
-    <p class="sec-sub">Pulling <span data-codex="mob|Zulgar, Voice of the Basin">Zulgar</span> with the route still alive already woke the whole basin — except the far packs walked home before taking a single step. Not any more.</p>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Wildheart: the risky pull is actually risky</h2></div>
+    <p class="sec-sub">In this dungeon, pulling the boss <span data-codex="mob|Zulgar, Voice of the Basin">Zulgar</span> without clearing the route is supposed to wake the WHOLE dungeon against you. Except the far-away mobs used to turn back. Fixed.</p>
     <div class="grid cols-2">
-      <div class="card more" data-detail="chainpull" tabindex="0" role="button" aria-label="Details: the premature-boss-pull punish">
-        <h3>The punish finally reaches the whole basin <span class="chip c-raid">Dungeon</span></h3>
-        <p>A mob woken at the far end of <span data-codex="dungeon|The Wildheart Basin">Wildheart</span> started already outside its own leash and evaded on its very first tick. It now carries a <strong class="hl">transit grace</strong> that suspends the soft leash while it crosses.</p>
-        <span class="more-link">How it works</span>
+      <div class="card more" data-detail="chainpull" tabindex="0" role="button" aria-label="Details: the early pull">
+        <h3>The whole dungeon shows up, for real <span class="chip c-raid">Dungeon</span></h3>
+        <p>Pull Zulgar too early and <strong class="hl">every mob still alive comes for you</strong>, even from the far end of the dungeon. And if you run, they chase you.</p>
+        <span class="more-link">See details</span>
       </div>
       <div class="card">
-        <h3>And a boss exit portal</h3>
+        <h3>Good news though</h3>
         <ul>
-          <li>A <strong class="hl">portal opens on Zulgar's death</strong>, at the shrine terrace — no more walking the ~220 yards of route back.</li>
-          <li>The accepted consequence of the grace: a group that pulls then <strong class="hl">runs gets chased</strong>, not leashed. A mob kited <em>away</em> from the pull point never spends its grace.</li>
-          <li>The two outs are unchanged: the <strong class="hl">exit portal</strong> (which scrubs you from every inside hate table) or a <strong class="hl">wipe</strong>. Both cost the group the attempt.</li>
+          <li>An <strong class="hl">exit portal appears when Zulgar dies</strong>: no more walking all the way back.</li>
+          <li>To escape a botched pull: leave through the entrance portal, or die. Either way, the attempt is lost.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- 5 RIFTS & QOL -->
+  <!-- 5 GROUP FIGHTS -->
   <section>
-    <div class="sec-head"><span class="sec-num">05</span><h2>Rift bosses, fear, and mailboxes at last</h2></div>
-    <p class="sec-sub">Two combat fixes that genuinely change group life, and a handful of conveniences that were a long time coming.</p>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Boss fights are fairer</h2></div>
+    <p class="sec-sub">Two changes that will make group play much saner, plus some small conveniences.</p>
     <div class="grid cols-3">
-      <div class="card more" data-detail="spacing" tabindex="0" role="button" aria-label="Details: rift boss mechanic spacing">
-        <h3>Mechanics no longer stack up <span class="chip c-bal">Rifts</span></h3>
-        <p>On a rift boss, mechanics share a <strong class="hl">5-second lock</strong>. One that comes due while the lock runs <strong class="hl">holds without re-arming</strong> — and when the lock clears, the <strong class="hl">most overdue</strong> one fires.</p>
-        <span class="more-link">What's governed, what isn't</span>
+      <div class="card more" data-detail="spacing" tabindex="0" role="button" aria-label="Details: rift boss attacks">
+        <h3>Rift bosses take turns <span class="chip c-bal">Rifts</span></h3>
+        <p>Before, a boss could throw <strong class="hl">two big attacks at once</strong> (a fear + an explosion, say). Now there are <strong class="hl">always at least 5 seconds</strong> between two.</p>
+        <span class="more-link">See details</span>
       </div>
-      <div class="card more" data-detail="tankfear" tabindex="0" role="button" aria-label="Details: the tank fear exemption">
-        <h3>The tank is no longer feared <span class="chip c-bal">Global</span></h3>
-        <p>The boss's current target is <strong class="hl">exempt from its AoE fear</strong>: fearing the one player holding the boss sent it careening through the group. This covers <strong class="hl">every AoE-fear carrier</strong>, rift and dungeon alike.</p>
-        <span class="more-link">The edge cases</span>
+      <div class="card more" data-detail="tankfear" tabindex="0" role="button" aria-label="Details: the tank and fear">
+        <h3>The tank no longer runs away <span class="chip c-bal">Everywhere</span></h3>
+        <p>A boss's area fear <strong class="hl">no longer affects the player tanking it</strong>. No more boss rampaging through the group because its tank is running around in a panic.</p>
+        <span class="more-link">See details</span>
       </div>
       <div class="card">
-        <h3>Conveniences <span class="chip c-util">Quality of life</span></h3>
+        <h3>Conveniences <span class="chip c-util">Handy</span></h3>
         <ul>
-          <li>A <strong class="hl">mailbox in all eleven zone hubs</strong>: Eldergleam, Wyrmwatch, Icemantle, Lanternmere, Bridgemere, Moonrest, Gallowmere, Drifthaven, Hedgewick, Wickharbor, Gullhaven.</li>
-          <li>Items <strong class="hl">keep their identity</strong> through vendor buyback, the World Market and mail.</li>
-          <li><strong class="hl">Guild names</strong> show beside each player on both high-score boards.</li>
-          <li>A target aura window, plus configurable combat auras (warrior proc auras included).</li>
+          <li>A <strong class="hl">mailbox in every village</strong> in the game (all eleven zones).</li>
+          <li><strong class="hl">Guild names</strong> now show on the leaderboards.</li>
+          <li>The game comes to the <strong class="hl">Epic Games Store</strong>, with account linking.</li>
         </ul>
       </div>
     </div>
@@ -298,73 +270,69 @@
 
   <!-- 6 ITEMS -->
   <section>
-    <div class="sec-head"><span class="sec-num">06</span><h2>The new items, and where to find them</h2></div>
-    <p class="sec-sub">Wildheart fills out: four pieces on normal, six epics on heroic — and a mount we have to say up front is <em>not</em> obtainable. Click a card for exact rates, a name for its Codex entry.</p>
+    <div class="sec-head"><span class="sec-num">06</span><h2>The new loot, and where to get it</h2></div>
+    <p class="sec-sub">It all happens in Wildheart Basin. Click a card for rates, a name for its Codex entry.</p>
     <div class="grid cols-3">
-      <div class="card more" data-detail="lootnormal" tabindex="0" role="button" aria-label="Details: Wildheart normal loot">
-        <h3>Wildheart, normal mode <span class="chip c-new">New</span></h3>
-        <p><span data-codex="mob|Zulgar, Voice of the Basin">Zulgar</span> now drops a <strong class="hl">guaranteed green legs piece</strong> (one per armor class), and the rare <span data-codex="mob|Fanglord Beastmaster">Fanglord Beastmaster</span> carries his two-hander at <strong class="hl">12%</strong>.</p>
-        <span class="more-link">The four pieces and their rates</span>
+      <div class="card more" data-detail="lootnormal" tabindex="0" role="button" aria-label="Details: normal mode loot">
+        <h3>On normal mode <span class="chip c-new">New</span></h3>
+        <p>The boss <span data-codex="mob|Zulgar, Voice of the Basin">Zulgar</span> drops <strong class="hl">a guaranteed green legs piece</strong> every kill, and the dungeon's rare mob drops a <strong class="hl">two-handed spear</strong>.</p>
+        <span class="more-link">Items and rates</span>
       </div>
-      <div class="card more" data-detail="lootheroic" tabindex="0" role="button" aria-label="Details: Wildheart heroic loot">
-        <h3>Heroic Wildheart <span class="chip c-epic">Six epics</span></h3>
-        <p>Two groups of three, <strong class="hl">~33% per piece</strong> — including the <strong class="hl">first int-leather chest</strong> anywhere in the game for healing druids, and the <strong class="hl">first HEAVY two-hander</strong> in a five-man.</p>
-        <span class="more-link">The six pieces and the mounts</span>
+      <div class="card more" data-detail="lootheroic" tabindex="0" role="button" aria-label="Details: heroic loot">
+        <h3>On heroic: 6 epics <span class="chip c-epic">Epic</span></h3>
+        <p>Six new epic items on the boss, roughly a <strong class="hl">1 in 3 chance each</strong> — including two firsts for the game. And <strong class="hl">both rare mounts</strong> can drop here.</p>
+        <span class="more-link">The full list</span>
       </div>
-      <div class="card more" data-detail="mount" tabindex="0" role="button" aria-label="Details: the Terrorspark Groundshaker mount">
-        <h3>Terrorspark: not for us yet <span class="chip c-util">Heads up</span></h3>
-        <p>The <span data-codex="item|Ignition Key: Terrorspark Groundshaker">Terrorspark Groundshaker</span> mount does exist, epic, 80% speed. But in the code it is <strong class="hl">developer-only</strong> — no player source anywhere. Don't go looking.</p>
-        <span class="more-link">Why we're flagging it</span>
+      <div class="card more" data-detail="mount" tabindex="0" role="button" aria-label="Details: the Terrorspark mount">
+        <h3>⚠️ The tank mount: not farmable <span class="chip c-util">Heads up</span></h3>
+        <p>The update announces a <strong class="hl">tank mount</strong>, the Terrorspark Groundshaker. We checked the game's code: <strong class="hl">impossible to get</strong> for now. Don't waste your time.</p>
+        <span class="more-link">Why</span>
       </div>
     </div>
-    <div class="hint">💎 All of these are searchable in the Codex — and the best of them are already accounted for in the Builds tab.</div>
   </section>
 
-  <!-- 7 ECONOMY -->
+  <!-- 7 FARMING -->
   <section>
-    <div class="sec-head"><span class="sec-num">07</span><h2>Trash farming got noticeably slower</h2></div>
-    <p class="sec-sub">The least spectacular change in the update and probably the one you'll feel first: open-world trash respawn moves from a flat 25 seconds to a per-zone tier.</p>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Farming is slower</h2></div>
+    <p class="sec-sub">The quietest change in the update, but you'll feel it fast.</p>
     <div class="grid cols-2">
-      <div class="card more" data-detail="respawn" tabindex="0" role="button" aria-label="Details: per-zone respawn tiers">
-        <h3>60 / 120 / 180 seconds by zone <span class="chip c-bal">Economy</span></h3>
-        <p>A farmed camp regenerated about <strong class="hl">three times a minute</strong> and paid far past what its zone was tuned for. Now: <strong class="hl">60s</strong> up to level 7, <strong class="hl">120s</strong> through 14, <strong class="hl">180s</strong> above.</p>
-        <span class="more-link">What moves and what doesn't</span>
+      <div class="card more" data-detail="respawn" tabindex="0" role="button" aria-label="Details: mob respawns">
+        <h3>Mobs respawn more slowly <span class="chip c-bal">Economy</span></h3>
+        <p>Before: 25 seconds everywhere. Now: <strong class="hl">1 to 3 minutes depending on the zone</strong> (the higher the zone level, the longer). Farming a camp in a loop pays much less.</p>
+        <span class="more-link">See details</span>
       </div>
       <div class="card">
-        <h3>And the coin curve</h3>
+        <h3>And the money</h3>
         <ul>
-          <li>Coin rewards across the <strong class="hl">ten July zones</strong> were recalibrated: small trims on trash, sharp cuts on some elites (Galecrest's Gravekeep goes from 450 to 100 copper).</li>
-          <li>In the other direction: Wildheart mobs pay more (the <span data-codex="mob|Fanglord Beastmaster">Fanglord Beastmaster</span> goes from 1,000 to <strong class="hl">2,500 copper</strong>).</li>
-          <li><strong class="hl">Named rares and minibosses keep their exact cadence</strong>: their clocks were not re-based.</li>
+          <li>Coin drops have been <strong class="hl">rebalanced</strong>: slightly less on most mobs, noticeably more in Wildheart Basin.</li>
+          <li><strong class="hl">Rare mobs don't change</strong>: same respawn schedules as before.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- 8 CLASSES & MISC -->
+  <!-- 8 CLASSES -->
   <section>
-    <div class="sec-head"><span class="sec-num">08</span><h2>Classes, fixes, and Epic Games</h2></div>
-    <p class="sec-sub">112 fix commits on the 0.33.0 line, concentrated in render (28) and sim (24). Three touch classes directly — including a warrior ability that was flat-out unfindable.</p>
+    <div class="sec-head"><span class="sec-num">08</span><h2>For your class</h2></div>
+    <p class="sec-sub">Three changes worth knowing, and around a hundred small fixes.</p>
     <div class="grid cols-3">
       <div class="card more" data-detail="classes" tabindex="0" role="button" aria-label="Details: the class changes">
-        <h3>Warrior: <span data-codex="ability|Seething Fury">Seething Fury</span> exists at last <span class="chip c-plate">Warrior</span></h3>
-        <p>The ability was written, learnable at <strong class="hl">level 10</strong>… and attached to nothing since the talent rework. A level 20 warrior could not find it. It's now <strong class="hl">re-homed on the base kit</strong>.</p>
-        <span class="more-link">The three class changes</span>
+        <h3>Warrior: a lost ability, found <span class="chip c-plate">Warrior</span></h3>
+        <p><span data-codex="ability|Seething Fury">Seething Fury</span> (20 rage instantly) existed in the game but <strong class="hl">nobody could learn it</strong> — a bug. It's fixed: it learns at level 10.</p>
+        <span class="more-link">See the three changes</span>
       </div>
       <div class="card">
-        <h3>Mage &amp; warlock</h3>
+        <h3>Mage <span class="chip c-bal">Change</span></h3>
         <ul>
-          <li><span data-codex="ability|Greater Invisibility">Greater Invisibility</span>: the 90% damage cut <strong class="hl">no longer applies during</strong> the vanish — it starts <strong class="hl">when the vanish ends</strong>, for 2 seconds. The 2-DoT strip is unchanged.</li>
-          <li>The warlock's <strong class="hl">tank demon auto-taunts by default</strong>: no manual toggle needed for it to hold aggro.</li>
-          <li>Fixes: frozen equip slots, mage frozen invisibility, plus a run of auth, warlock, mage, professions and social fixes.</li>
+          <li><span data-codex="ability|Greater Invisibility">Greater Invisibility</span> changes: the <strong class="hl">90% damage reduction no longer protects during</strong> the invisibility. It kicks in <strong class="hl">when you reappear</strong>, for 2 seconds.</li>
+          <li>In short: still a great escape button, but no longer a 20-second shield.</li>
         </ul>
       </div>
       <div class="card">
-        <h3>Epic Games <span class="chip c-util">Distribution</span></h3>
+        <h3>Warlock <span class="chip c-new">Improvement</span></h3>
         <ul>
-          <li>Epic becomes a <strong class="hl">first-class distribution channel</strong> in the desktop builds.</li>
-          <li><strong class="hl">Server-side</strong> account linking, with link-proof verification.</li>
-          <li>An achievement mirror to Epic, and a link card in the UI.</li>
+          <li>Your <strong class="hl">tank demon holds the enemies' attention on its own</strong>: no more toggling its taunt by hand.</li>
+          <li>And for everyone: around a hundred bug fixes (stuck gear, frozen invisibility, professions, login…).</li>
         </ul>
       </div>
     </div>
@@ -373,7 +341,7 @@
 
 <footer>
   <div class="wrap">
-    <p>Compiled for <strong>La Clauderie</strong> — official v0.33.1 release notes, cross-checked against the game's source code.</p>
+    <p>Compiled for <strong>La Clauderie</strong> — official v0.33.1 release notes, checked against the game's code.</p>
     <p style="margin-top:8px"><a href="../patch-notes.html">← All updates</a> · <a href="../index.html">Home</a></p>
   </div>
 </footer>
@@ -390,275 +358,229 @@
 <script>
   const DETAILS = {
     gfx: {
-      title: "The graphics tiers, and what they actually do",
-      summary: "Insane sits above Ultra; Ultra was rescaled and Medium regated. The resolution governor, meanwhile, runs everywhere.",
+      title: "The graphics levels",
+      summary: "Five levels: Low, Medium, High, Ultra and the new Insane. Plus an automatic anti-stutter everywhere.",
       body: `
-        <h4>The five tiers</h4>
+        <h4>The new Insane level</h4>
         <ul>
-          <li>The scale is now <b>Low → Medium → High → Ultra → Insane</b>. Ultra was <b>rescaled</b> and Medium <b>regated</b> along the way: they are not the same settings as before under the same name.</li>
-          <li>The real Ultra/Insane difference isn't in the "governable" buckets (they already sit at maximum on Ultra) but in the <b>render layers themselves</b>: surface detail, worn-stone parallax, terrain micro-shadow.</li>
-          <li>Concretely, surface detail goes to <b>4 taps on Insane</b>, 3 on Ultra, 0 below.</li>
-          <li>On anti-aliasing, Ultra and Insane deliberately share High's 1.75 pixel-ratio cap: their post-processing already runs at full resolution.</li>
+          <li>It's <b>everything maxed out</b>: the most detailed materials, micro-shadows, maximum everything. For big machines.</li>
+          <li>Ultra and Medium were also touched up along the way — same names, better results.</li>
         </ul>
-        <h4>The dynamic-resolution governor</h4>
+        <h4>The automatic anti-stutter</h4>
         <ul>
-          <li>It targets <b>60 fps</b> and, when that slips, lowers render resolution instead of dropping frames — then walks it back up once things are stable.</li>
-          <li>It stays <b>armed on every tier</b>. Ultra and Insane get deliberately looser thresholds (it waits 30 ms before reacting, 44 ms to react urgently) and Insane takes <b>smaller quality steps</b> — the degradation is less visible.</li>
-          <li>The floor is <b>0.78</b> of resolution on desktop and <b>0.68</b> on mobile: it cannot turn your screen to mush.</li>
-          <li>New in 0.33: the resolution lever no longer <b>reallocates</b> render buffers when it moves — that reallocation was the source of the hitches it was supposed to prevent.</li>
+          <li>The game aims for <b>60 frames per second</b>. If it drops, the game <b>softens the picture slightly</b> instead of stuttering, then sharpens it back once things settle.</li>
+          <li>There's a floor: the picture can never become truly ugly.</li>
+          <li>It works at every graphics level, lowest to highest.</li>
         </ul>
-        <h4>The granular dials</h4>
+        <h4>The fine-grained settings</h4>
         <ul>
-          <li>Each bucket (resolution, grass, foliage, props, UI) has its own slider with its own bounds. You can raise grass without raising the rest, or the reverse.</li>
-          <li>Some buckets are <b>non-governable</b> by construction (UI, props): the governor never touches them, only your setting counts.</li>
-        </ul>`
-    },
-    pacing: {
-      title: "What v0.33.1 came to repair",
-      summary: "The graphics overhaul left three frame-pacing problems behind it. The patch takes them one at a time.",
-      body: `
-        <h4>The three pacing fixes</h4>
-        <ul>
-          <li><b>Medium: stale regions.</b> Reduced-region post-processing wasn't region-aware, so dynamic resolution could leave <b>stale chunks of frame</b> on screen. It is now region-safe.</li>
-          <li><b>The accounting is truthful again.</b> Logical-frame draw and triangle counts were wrong on post-processed tiers — so perf reporting <i>and the governor itself</i> were working off fake numbers.</li>
-          <li><b>Desktop Insane: prewarm stays hidden.</b> The entry shader and texture prewarm now runs <b>behind the loading cover</b>, and GPU work is serialized and prioritized so boot, live view and background compilation stop colliding. High preset compile pressure was reduced too.</li>
+          <li>New: you can tune <b>each element separately</b> — grass, shadows, vegetation, props. Handy for gaining frames without sacrificing everything.</li>
         </ul>
-        <h4>And the bloom</h4>
+        <h4>And v0.33.1 finishes the job</h4>
         <ul>
-          <li>The bloom constructor now accepts <b>both known shapes</b> of the render library's composite shader (r165 and r182), with all five of its taps intact.</li>
-          <li>On an unknown shape it <b>fails closed</b> rather than producing something arbitrary — the cautious choice.</li>
+          <li>It fixes the frozen patches of screen on Medium, the launch stutter on Insane, and a performance counter that was showing wrong numbers.</li>
         </ul>`
     },
     vfx: {
-      title: "The per-ability effect registry",
-      summary: "296 abilities each get their own visual spec: archetype, motif set, impact by magic school, ground decal.",
+      title: "The spell effects, in detail",
+      summary: "296 abilities now each have their own look and their own sound.",
       body: `
-        <h4>How it's built</h4>
+        <h4>What changes on screen</h4>
         <ul>
-          <li>A <b>spec-driven registry</b> describes each ability: an archetype sequencer, a motif set, impact flipbooks <b>per magic school</b>, and ground decals (crack, char).</li>
-          <li>The visual primitives come from the effects gallery and were ported into the game — this isn't another layer on top, it's the same visual vocabulary everywhere.</li>
-          <li>Effect events now carry the <b>ability id</b>. That's what lets each projectile keep its authored look from launch to impact, instead of falling back to a per-school generic.</li>
-          <li>Ground casts <b>claim at their aimed point</b>, and zone pulses <b>re-anchor to the zone</b> instead of following the caster.</li>
+          <li>Every spell has <b>its own projectile</b>, recognizable from cast to impact. A mage's fireball no longer looks like a priest's bolt.</li>
+          <li>The impact depends on the magic: fire burns, frost shatters, shadow gnaws. Some spells leave <b>marks on the ground</b> (cracks, scorch marks).</li>
+          <li>Area spells land <b>exactly where you aimed</b>.</li>
+          <li>Hits have punch: the picture <b>pauses for a split second on impact</b>, like in fighting games.</li>
+          <li>Your character <b>glows while casting</b> and under buffs.</li>
         </ul>
-        <h4>The feel</h4>
+        <h4>What changes in your ears</h4>
         <ul>
-          <li><b>Contact-frame hitstop</b>: a micro-pause at the moment of impact that gives the hit weight.</li>
-          <li>A <b>windup lean spring</b>, character rig glow while casting and under buffs, spirit apparitions for ghost creatures.</li>
-        </ul>
-        <h4>The audio</h4>
-        <ul>
-          <li>A <b>sampled</b> SFX pack sits over the existing <b>procedural</b> per-ability audio identities — the two layers complement each other, the second wasn't replaced.</li>
-          <li><b>Female player voice recordings</b> have been staged.</li>
+          <li>Every spell now has <b>its own sound</b>, with real audio samples layered over the generated sounds.</li>
+          <li><b>Female voices</b> have been recorded for the characters.</li>
         </ul>`
     },
     evade: {
-      title: "Unreachable-target detection, in detail",
-      summary: "Five seconds of genuine pinning, measured under deliberately strict conditions so it never punishes a player fighting normally.",
+      title: "Stuck mobs, in detail",
+      summary: "5 seconds genuinely stuck = the mob gives up, walks home and heals back to full.",
       body: `
-        <h4>Why this happened</h4>
+        <h4>Why this change</h4>
         <ul>
-          <li>Mobs chase <b>in a straight line</b>, with a slide fan and no pathfinding. A mob whose target stands behind a wall or under a ledge <b>pins in place forever</b>, still in combat, while the target chips it down risk-free. That was the rift ledge exploit.</li>
+          <li>The trick was well known: climb a rock, a ledge or duck behind a low wall. The mob stood there stuck, unable to fight back, and you killed it at leisure. Very popular in Rifts.</li>
         </ul>
-        <h4>The four conditions</h4>
+        <h4>The new rule</h4>
         <ul>
-          <li>The mob must be <b>engaged and out of reach</b>. Melee in swing range, or a caster posted at spell range, is a fight: the clock stays at zero.</li>
-          <li>It must be <b>committing zero movement</b>. The slide fan only commits a step when it makes real progress, so a mob circling or wall-sliding moves every tick and resets. A genuinely pinned mob commits exactly zero.</li>
-          <li>Its <b>straight step toward you must be refused</b> by geometry (a prop, deep water, an unclimbable cliff face, a Great Maze hedge). Standing still with open ground ahead is an AI hiccup, not an unreachable target.</li>
-          <li>And it must last <b>5 accumulated seconds</b>. States that bypass the engaged runner (stun, fear, charge dashes, healer hold) <b>freeze the clock</b>: "5 seconds pinned" means 5 seconds of genuine pinning, however much CC interleaves.</li>
+          <li>A mob that is <b>genuinely stuck for 5 seconds</b> — standing still, unable to reach you, the path physically blocked — gives up the fight.</li>
+          <li>It walks back to its camp, <b>invulnerable on the way</b>, and <b>heals back to full</b> when it arrives. Everything you did to it is lost, and so is its loot.</li>
+          <li>It applies <b>to bosses too</b>: a stuck boss = fight cancelled, start over.</li>
         </ul>
-        <h4>What happens next</h4>
+        <h4>The important points</h4>
         <ul>
-          <li>The mob enters evade: it becomes <b>immune</b>, walks home to its spawn and <b>heals to full</b> on arrival. Loot rights are dropped.</li>
-          <li>This covers <b>every mob that can leash, bosses included</b>. Only leash-free encounter scripts (Nythraxis) opt out.</li>
-          <li>The threshold is deliberately <b>longer</b> (5s) than the walk-home evade stall (3s): a false positive here full-heals a mob mid-fight and punishes players, so it needed margin.</li>
-          <li>A mob that phases through obstacles is never affected: its chase can't be terrain-pinned.</li>
+          <li><b>No cheating:</b> stuns, roots and fears <b>pause</b> the timer — they don't reset it. You can't keep a mob from leaving by chain-stunning it.</li>
+          <li><b>No risk in normal play:</b> a mob hitting you in melee, or a caster attacking from spell range, is never affected. It has to be genuinely blocked by the scenery.</li>
         </ul>`
     },
     chainpull: {
-      title: "The chain-pull transit grace",
-      summary: "The leash was right for the fight and wrong for the journey. The grace fixes exactly that, and nothing else.",
+      title: "The early pull in Wildheart, in detail",
+      summary: "Pulling the boss without clearing the route wakes the WHOLE dungeon — and now it actually works.",
       body: `
-        <h4>The problem</h4>
+        <h4>The dungeon's rule</h4>
         <ul>
-          <li>Pulling Zulgar with the route still alive wakes <b>the whole basin</b>, and every woken mob's leash is anchored on <b>the puller</b> — that's what stops the group dragging the pack more than 70 yards.</li>
-          <li>But a mob answering the call from the far end of a ~180-yard instance starts <b>already outside its own leash sphere</b>: it evaded on its very first engaged tick, before taking a step. "The whole basin comes for you" silently shrank to "the packs within 70 yards of the shrine come for you".</li>
+          <li>Wildheart Basin has a special rule: attack the boss Zulgar while mobs are still alive on the route, and <b>all of them come down on you at once</b>. That's the punishment for pulling too early.</li>
         </ul>
-        <h4>The grace</h4>
+        <h4>What was broken</h4>
         <ul>
-          <li>A called mob carries a flag that <b>suspends the soft leash</b> while it crosses. It doesn't expire on a timer: it is <b>spent on arrival</b>, the moment the mob is inside the leash sphere — with one yard of hysteresis, so an arriving mob can't clear right on the boundary and break on the next tick.</li>
-          <li>Deliberately narrow: it holds <b>only the soft leash</b>. The hard tether (measured from the spawn point) is checked first, and unreachable-target detection still runs afterwards — a chain-pulled mob pinned by geometry evades home on the normal five-second clock.</li>
-          <li>Accepted consequence: a group that pulls then runs gets <b>chased</b>, because a mob kited <i>away</i> from the pull point never reaches the sphere that would spend its grace. That's the punish working as written.</li>
-          <li>It stays bounded by the instance: leaving through the portal scrubs you from <b>every inside hate table</b>, and a wipe drops the pull the same way. Both cost the group the attempt.</li>
+          <li>Mobs from the far end of the dungeon did start heading your way… but <b>turned back after a few steps</b> because of a distance limit. In practice, only the mobs near the boss ever arrived.</li>
         </ul>
-        <h4>The exit portal</h4>
+        <h4>What changes</h4>
         <ul>
-          <li>It opens <b>on Zulgar's death</b>, at the shrine terrace — ~220 yards from the entrance exit. The cleared run steps out there instead of walking the route back.</li>
+          <li>Now they <b>cross the whole dungeon</b> to reach you. The advertised punishment is real.</li>
+          <li>And if you run, they <b>chase you</b> instead of giving up. The only two ways out: the entrance portal, or death. Either way, the attempt is lost.</li>
+        </ul>
+        <h4>The bonus</h4>
+        <ul>
+          <li>An <b>exit portal appears when Zulgar dies</b>, right next to him. No more long walk back after the win.</li>
         </ul>`
     },
     spacing: {
-      title: "The rift boss mechanic spacing lock",
-      summary: "One lock shared by a rift boss's mechanics: 5 seconds minimum between two, and the most overdue goes first.",
+      title: "Rift boss attacks, in detail",
+      summary: "Always at least 5 seconds between two big attacks from a rift boss.",
       body: `
         <h4>The problem</h4>
         <ul>
-          <li>Every boss mechanic runs on its own free-running timer. When two cadences align, they land <b>on the same tick</b> — the 30 July playtest saw the Abyssal Maw fear and AoE the same instant.</li>
+          <li>Each big boss attack (fear, explosion, ground zone…) had its own timer. When two timers lined up, you got <b>both attacks at once</b> — a fear during an explosion, say. Unplayable.</li>
         </ul>
-        <h4>The rule</h4>
+        <h4>The fix</h4>
         <ul>
-          <li>On a <b>rift-spawned</b> boss, the player-facing mechanics share <b>one lock</b>. A mechanic may only fire while the lock is clear, and firing re-arms it for <b>5 seconds</b>.</li>
-          <li>A hardcast adds its <b>cast time on top</b>: no instant (a fear, typically) can land while a telegraph bar fills.</li>
-          <li>A mechanic that comes due while the lock runs <b>holds without re-arming</b>: its timer keeps drifting negative, and that drift <i>is</i> its overdue age. When the lock clears, the <b>most overdue</b> one fires. So on a kit demanding more than one fire per window, every cadence stretches proportionally — no mechanic is deleted from the fight, none loses a cycle.</li>
-          <li>The 5 seconds aren't arbitrary: it's long enough for the longest mechanic CC (Terrifying Screech's 2.5s fear) to fully elapse and leave a reaction margin.</li>
+          <li>On a rift boss there are now <b>at least 5 seconds between two big attacks</b>. An attack that was due during that gap <b>waits its turn</b> — it isn't cancelled, just delayed.</li>
+          <li>Why 5 seconds? That's how long the game's longest fear takes to wear off, plus a margin to react.</li>
+          <li>No attack is removed: the boss does everything it did before, just <b>never two things at once</b>.</li>
         </ul>
-        <h4>What is NOT governed</h4>
+        <h4>The limits</h4>
         <ul>
-          <li>The <b>AoE slow</b> (the anti-kite snare must keep its own cadence or a kiter earns free windows).</li>
-          <li><b>Stoneskin</b> (a self-buff that never lands on players) and the support kit (hp-threshold-driven add summons, heals, wards).</li>
-          <li>The <b>on-hit fear</b> (it only ever hits the swing victim) and the heroic charge trigger.</li>
-        </ul>
-        <h4>Scope</h4>
-        <ul>
-          <li>The lock only ticks <b>while the boss is engaged and in melee contact</b>. A kited boss freezes with its held mechanics, then resumes the drain on re-contact.</li>
-          <li>Inert for any mob without the rift spawn stamp: world and dungeon bosses are untouched.</li>
+          <li>The anti-kite area slow isn't included (otherwise you could just run).</li>
+          <li>Only <b>rift</b> bosses are affected — dungeon and world bosses don't change.</li>
         </ul>`
     },
     tankfear: {
-      title: "The tank fear exemption",
-      summary: "A mob's current target can no longer be feared by its AoE fear. This applies everywhere, not just in rifts.",
+      title: "The tank and fear, in detail",
+      summary: "The player tanking a mob is no longer affected by its area fear.",
       body: `
-        <h4>The rule</h4>
+        <h4>The problem</h4>
         <ul>
-          <li>When a mob fires its <b>AoE fear</b>, the player who is its <b>current target</b> is skipped. Fearing the one holding the boss sends it careening through the group — and stacked onto any other mechanic, that was unplayable.</li>
-          <li>This covers <b>every AoE-fear carrier</b>, rift and dungeon alike, not just rift bosses.</li>
+          <li>When a boss cast its area fear, the tank ran off like everyone else… and the boss, with nobody holding it, <b>went straight for the healers and DPS</b>. Guaranteed chaos.</li>
         </ul>
-        <h4>The edge cases</h4>
+        <h4>The fix</h4>
         <ul>
-          <li><b>Solo</b>, you are your own tank: this fear can never reach you any more.</li>
-          <li><b>If a pet or escort NPC holds aggro</b>, no player is exempt — but that's fine: the boss stays anchored to the pet, so the "tank runs off" chaos can't happen.</li>
-          <li>The <b>on-hit fear</b> (the one that only strikes a swing victim) is a different system and is not affected.</li>
-          <li>Diminishing returns on crowd control (each successive fear lasting less) still apply normally to non-exempt players.</li>
+          <li>The mob's current target — in practice, the tank — is <b>ignored by the area fear</b>. The rest of the group runs, but the boss stays held.</li>
+          <li>It applies <b>everywhere</b>: rifts, dungeons, open world.</li>
+          <li>Solo bonus: you're your own tank, so <b>this fear can never affect you</b> when playing alone.</li>
+        </ul>
+        <h4>The limit</h4>
+        <ul>
+          <li>The <b>on-hit fear</b> (the one that only affects whoever got struck) still exists — it's a different mechanic and hasn't changed.</li>
         </ul>`
     },
     lootnormal: {
-      title: "Wildheart Basin loot on normal",
-      summary: "A guaranteed green legs piece on the boss, a two-handed spear on the rare, and a trophy dropping everywhere.",
+      title: "Wildheart loot on normal",
+      summary: "A guaranteed green legs piece on the boss, a spear on the rare mob.",
       body: `
-        <h4>On <b>Zulgar, Voice of the Basin</b></h4>
+        <h4>On the boss Zulgar</h4>
         <ul>
-          <li><b>One guaranteed green legs piece</b> per kill: the game draws exactly one of three, one per armor class —
-            <span data-codex="item|Bloodmane Warleggings">Bloodmane Warleggings</span> (mail, 34%),
-            <span data-codex="item|Vineclaw Stalking Breeches">Vineclaw Stalking Breeches</span> (leather, 33%),
-            <span data-codex="item|Sunbone Ritual Sarong">Sunbone Ritual Sarong</span> (cloth, 33%).</li>
-          <li>The three known epic weapons stay at <b>6% each</b>, and bone fragments at 80%.</li>
+          <li>Every kill drops <b>one guaranteed green legs piece</b>, one of three depending on your luck:
+            <span data-codex="item|Bloodmane Warleggings">Bloodmane Warleggings</span> (mail),
+            <span data-codex="item|Vineclaw Stalking Breeches">Vineclaw Stalking Breeches</span> (leather) or
+            <span data-codex="item|Sunbone Ritual Sarong">Sunbone Ritual Sarong</span> (cloth). Roughly a 1 in 3 chance each.</li>
         </ul>
-        <h4>On the rare <b>Fanglord Beastmaster</b></h4>
+        <h4>On the dungeon's rare mob</h4>
         <ul>
-          <li><span data-codex="item|Fanglord's Beastspear">Fanglord's Beastspear</span> at <b>12%</b>: a rare item-level 23 two-hander for warrior, hunter, shaman and paladin.</li>
-          <li>A <b>guaranteed</b> <span data-codex="item|Chipped Tusk">Chipped Tusk</span> (worthless trophy, the troll rare convention), and his coin goes from 1,000 to <b>2,500 copper</b>.</li>
+          <li>The <span data-codex="mob|Fanglord Beastmaster">Fanglord Beastmaster</span> drops <span data-codex="item|Fanglord's Beastspear">Fanglord's Beastspear</span>, a <b>rare two-handed spear</b> (warrior, hunter, shaman, paladin) — a <b>12% chance</b>.</li>
+          <li>He also pays more money than before (2,500 copper instead of 1,000).</li>
         </ul>
-        <h4>On basin trash</h4>
+        <h4>Two dungeon mobs changed</h4>
         <ul>
-          <li><span data-codex="item|Chipped Tusk">Chipped Tusk</span> now drops from all three trash families:
-            <span data-codex="mob|Vineclaw Stalker">Vineclaw Stalker</span> 35%,
-            <span data-codex="mob|Bloodmane Ravager">Bloodmane Ravager</span> 40%,
-            <span data-codex="mob|Sunbone Hexcaller">Sunbone Hexcaller</span> 45%.</li>
-        </ul>
-        <h4>Two trash tweaks worth knowing</h4>
-        <ul>
-          <li>The <b>Bloodmane Ravager</b> goes from 7.1 to <b>7.5 move speed</b>: at 7.1 it gained 0.1 yards/second on a moving player (who runs at 7) and therefore <i>never</i> caught anyone. Its "fast melee pressure" finally exists for real on normal.</li>
-          <li>The <b>Vineclaw Stalker</b>'s ranged spear moves from the physical school to nature. That's primarily a visual fix (the mob looked like it was whiffing melee swings from 24 yards), but it has a real consequence: <b>physical-only damage reduction no longer applies to it</b> — a protection warrior's Raised Guard no longer covers the spear, while magic-amp debuffs now do.</li>
+          <li>The <span data-codex="mob|Bloodmane Ravager">Bloodmane Ravager</span> now runs <b>faster than you</b>. It used to be too slow to catch anyone — running away is no longer enough.</li>
+          <li>The <span data-codex="mob|Vineclaw Stalker">Vineclaw Stalker</span>'s spear now deals <b>nature (magic) damage</b> instead of physical. Important for tanks: anti-physical defenses no longer block it.</li>
         </ul>`
     },
     lootheroic: {
-      title: "Heroic Wildheart Basin loot",
-      summary: "Six level-20 epics in two groups of three, plus two blue mounts — the only five-man to offer two.",
+      title: "Heroic Wildheart loot",
+      summary: "Six level-20 epics on the boss, plus both of the game's rare mounts.",
       body: `
-        <h4>First group: the chests (~33% each)</h4>
+        <h4>The six epic items</h4>
         <ul>
-          <li><span data-codex="item|Basin Stalker's Tunic">Basin Stalker's Tunic</span> — agi leather (34%). It fills the hole left by the retired previous chest; feral druids get their access back.</li>
-          <li><span data-codex="item|Verdant-Heart Vestment">Verdant-Heart Vestment</span> — int leather (33%). This is the <b>first int-leather chest anywhere in the game</b>, full stop.</li>
-          <li><span data-codex="item|Sunbone Ritual Hauberk">Sunbone Ritual Hauberk</span> — int mail (33%), for mail healers.</li>
+          <li>The boss drops <b>two items per kill</b> (one from each group of three), roughly a 1 in 3 chance for each item:</li>
+          <li><span data-codex="item|Basin Stalker's Tunic">Basin Stalker's Tunic</span> — agility leather chest (rogue, hunter, feral druid).</li>
+          <li><span data-codex="item|Verdant-Heart Vestment">Verdant-Heart Vestment</span> — intellect leather chest. <b>The first in the game</b>: healing druids never had one.</li>
+          <li><span data-codex="item|Sunbone Ritual Hauberk">Sunbone Ritual Hauberk</span> — mail chest for healers.</li>
+          <li><span data-codex="item|Greatfang of the Basin">Greatfang of the Basin</span> — <b>the first big two-hander</b> lootable in a 5-player dungeon.</li>
+          <li><span data-codex="item|Sunbone Oracle's Crown">Sunbone Oracle's Crown</span> — cloth helmet for casters.</li>
+          <li><span data-codex="item|Bloodmane War-Legguards">Bloodmane War-Legguards</span> — strength mail legs.</li>
         </ul>
-        <h4>Second group (~33% each)</h4>
+        <h4>The mounts</h4>
         <ul>
-          <li><span data-codex="item|Greatfang of the Basin">Greatfang of the Basin</span> — the <b>first HEAVY two-hander in a five-man</b> (34%), speed 3.4.</li>
-          <li><span data-codex="item|Sunbone Oracle's Crown">Sunbone Oracle's Crown</span> — caster cloth helmet (33%).</li>
-          <li><span data-codex="item|Bloodmane War-Legguards">Bloodmane War-Legguards</span> — str mail legs (33%).</li>
-        </ul>
-        <h4>The two mounts</h4>
-        <ul>
-          <li>Wildheart is the <b>fifth heroic five-man</b>, and the catalog's two blue mounts were already paired to Ysolei and Korzul. Rather than a fifth signature mount, the basin carries an <b>equal-rate secondary path to both</b>.</li>
-          <li><b>0.1% each</b>, exactly the rate everywhere else: the basin is never a cheaper route to either one. It is, however, the only five-man offering two, so its <i>aggregate</i> blue rate is <b>0.2% per heroic clear</b> against 0.1% at Ysolei and Korzul.</li>
-          <li><b>Epic mounts stay rift-S exclusive</b> and never appear here.</li>
+          <li><b>Both of the game's rare mounts</b> (the bear and the snail) can drop here, at 0.1% each — the same rate as everywhere else.</li>
+          <li>It's the <b>only dungeon where both drop</b>: if you're hunting both mounts, this is the place to farm.</li>
         </ul>`
     },
     mount: {
-      title: "Terrorspark Groundshaker: what the code says",
-      summary: "The official notes announce it as joining the stable. In the shipped code it has no player source.",
+      title: "The tank mount: why you can't farm it",
+      summary: "It exists in the game, but no mob, vendor or chest gives it.",
       body: `
-        <h4>What it is</h4>
+        <h4>What the official notes say</h4>
         <ul>
-          <li>A compact armored engine — heavy tracks, deep-bore cannon, saddle. In game: an <b>epic</b> mount at <b>+80% speed</b>, the top tier, level with the Aether-Jouster Hover-Cycle and the Thunderstrut Gobbler.</li>
-          <li>It gets a procedural PBR surface pass and compressed textures — the art work is real and finished.</li>
+          <li>"The Terrorspark Groundshaker, a rideable tank mount, joins the stable." A little armored tank with a saddle — very cool.</li>
         </ul>
-        <h4>What it isn't (yet)</h4>
+        <h4>What we checked in the game's code</h4>
         <ul>
-          <li>The code is explicit: it is <b>intentionally absent from vendors, quests, creature loot, heroic loot and rift reward pools</b>. No player source anywhere.</li>
-          <li>The mount table's comment says it in as many words: the other two epics come from rift S clears, the Terrorspark is <b>developer-only for now</b> and has <b>no player-facing acquisition</b>.</li>
-          <li>The mount table's own description was revised accordingly: the top tier is no longer described as "loot-only" but as "collectible <b>or</b> developer-only".</li>
+          <li>The mount is real, its look is finished, and it has the <b>best speed in the game</b> (+80%).</li>
+          <li>But it's <b>nowhere</b>: no vendor, no quest, no mob, no chest gives it. The code keeps it <b>for the developers</b> for now.</li>
         </ul>
-        <h4>Why we're flagging it</h4>
+        <h4>In short</h4>
         <ul>
-          <li>Because the official notes list it among the content additions without mentioning it isn't obtainable. There is no point farming anything hoping for it to drop: it won't, in this version.</li>
-          <li>It appears in the Codex because it exists in the game data — that presence is not a source.</li>
+          <li><b>Don't farm anything hoping it drops</b>: it can't, in this version. It'll probably arrive later — we'll let you know here.</li>
+          <li>You'll see it in the Codex because it exists in the game's data, but being there doesn't mean it can be obtained.</li>
         </ul>`
     },
     respawn: {
-      title: "The respawn tiers, and what they don't touch",
-      summary: "Open-world trash moves from a flat 25 seconds to a tier decided by its zone's level band. Named rares don't budge an inch.",
+      title: "Mob respawns, in detail",
+      summary: "From 25 seconds everywhere to 1-3 minutes depending on the zone. Rare mobs don't change.",
       body: `
-        <h4>The new rule</h4>
+        <h4>Before</h4>
         <ul>
-          <li>Every open-world mob shared <b>one 25-second delay</b>. A farmed camp therefore regenerated about <b>three times a minute</b>, and dense packs paid gold and XP far past what their zone was tuned for.</li>
-          <li>The delay now comes from the <b>zone's level band</b>: <b>60s</b> up to level 7, <b>120s</b> through 14, <b>180s</b> above.</li>
-          <li>It's the mob's <b>spawn point</b> that decides, not where it died: dragging a mob out of its camp doesn't change its cadence.</li>
+          <li>Every mob in the world came back <b>25 seconds</b> after dying. A camp refilled almost as fast as you could empty it: gold and XP came in far too fast.</li>
         </ul>
-        <h4>What doesn't move</h4>
+        <h4>Now</h4>
         <ul>
-          <li>Mobs carrying <b>their own clock</b> keep the old base: named rares (whose ×4 multiplier gives the historical 100 seconds) and minibosses with hand-tuned cadences.</li>
-          <li>That's deliberate: re-basing those clocks would have stretched a six-hour rare past <b>forty hours</b>, and a three-minute quest rare to twenty-two minutes. The goal was to slow <b>farmable trash</b>, not to break tuned cadences.</li>
-          <li>So what moves is: plain trash, and the four open-world bosses that never declared a cadence at all.</li>
+          <li>The delay depends on the zone: <b>1 minute</b> in beginner zones, <b>2 minutes</b> in mid-level zones, <b>3 minutes</b> in high-level zones.</li>
         </ul>
-        <h4>The coin curve</h4>
+        <h4>What doesn't change</h4>
         <ul>
-          <li>Copper rewards across the <b>ten July zones</b> were recalibrated at the same time. Small trims on trash (110 → 100 for Galecrest's bandits), sharp cuts on some open-world elites.</li>
-          <li>Some mobs go the other way: Wildheart's, notably, whose rare moves from 1,000 to 2,500 copper.</li>
+          <li><b>Rare mobs and minibosses</b> keep exactly their old schedules. If you camp a rare, nothing moves for you.</li>
+          <li>Dungeons and Rifts aren't affected — this is open world only.</li>
+        </ul>
+        <h4>And the money</h4>
+        <ul>
+          <li>Coin drops were rebalanced at the same time: slightly less on regular mobs, much less on some elites, but <b>more in Wildheart Basin</b>.</li>
         </ul>`
     },
     classes: {
       title: "The three class changes",
-      summary: "A resurrected warrior ability, a re-scoped mage invisibility, and a warlock demon that finally does its job unattended.",
+      summary: "A warrior ability repaired, the mage's invisibility toned down, the warlock's demon more autonomous.",
       body: `
-        <h4>Warrior — <b>Seething Fury</b> was unfindable</h4>
+        <h4>Warrior — an ability lost for months</h4>
         <ul>
-          <li>The ability existed, fully authored: <b>level 10</b>, free, <b>30-second cooldown</b>, off the global cooldown, generating <b>20 rage</b> instantly.</li>
-          <li>But the v2 talent integration deleted the class-tree row that granted it, <b>without re-homing it</b>. The function that computes known abilities at a level could therefore never return it: a live level 20 warrior couldn't find it anywhere (a player reported it).</li>
-          <li>It is now attached to the <b>warrior's base list</b>. It learns at level 10, as it was always meant to.</li>
+          <li><span data-codex="ability|Seething Fury">Seething Fury</span> gives <b>20 rage instantly</b> (30s cooldown). It was meant to unlock at level 10… but a bug had removed it from the learnable list. Nobody could get it.</li>
+          <li>It's fixed: <b>every warrior level 10 and up has it now</b>. Use it at the start of a fight to attack right away instead of waiting for rage to build.</li>
         </ul>
-        <h4>Mage — <b>Greater Invisibility</b> re-scoped</h4>
+        <h4>Mage — the invisibility protects less</h4>
         <ul>
-          <li>Before: the spell applied the vanish <i>and</i> the 90% damage cut <b>during</b> invisibility, with a 3-second linger after.</li>
-          <li>Now: it still strips <b>2 damage-over-time effects</b> and applies the 20-second vanish — but the 90% cut <b>only starts when the invisibility ends</b>, and lasts <b>2 seconds</b>.</li>
-          <li>This is a real power change to know about: the protected window moved, it no longer stacks with the invisibility itself.</li>
+          <li>Before: <span data-codex="ability|Greater Invisibility">Greater Invisibility</span> made you invisible for 20 seconds <b>AND nearly invincible the whole time</b> (−90% damage).</li>
+          <li>Now: the invisibility and the removal of 2 damage effects don't change, but the −90% protection <b>only kicks in when the invisibility ends</b>, for just 2 seconds.</li>
+          <li>In short: still a great escape button, but no longer a 20-second shield.</li>
         </ul>
-        <h4>Warlock — the tank demon auto-taunts</h4>
+        <h4>Warlock — the tank demon does its job</h4>
         <ul>
-          <li>The tank demon is now <b>marked as the roster's threat-holder</b>. Its creation defaults <b>auto-taunt on</b>: it holds aggro without needing a manual toggle.</li>
-          <li>Its stats are unchanged (deep health pool, heavy armor, modest damage).</li>
-        </ul>
-        <h4>And the neighbouring fixes</h4>
-        <ul>
-          <li>112 fix commits on the 0.33.0 line, concentrated in render (28) and sim (24): frozen equip slots, mage frozen invisibility, plus a run of auth, warlock, mage, professions and social fixes.</li>
+          <li>Your tank demon <b>holds the enemies' attention automatically</b>. You used to have to remember to toggle its taunt by hand — not any more.</li>
         </ul>`
     }
   };
