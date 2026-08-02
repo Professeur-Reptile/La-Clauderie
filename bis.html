@@ -200,7 +200,7 @@
 
 <div class="wrap">
   <header class="page">
-    <p class="eyebrow" data-en="Class guide · Patch v0.32.4">Guide de classe · Patch v0.32.4</p>
+    <p class="eyebrow" data-en="Class guide · Patch v0.33.1">Guide de classe · Patch v0.33.1</p>
     <h1>Builds</h1>
     <p class="lede" data-en="Pick your class, your role — and your specialisation when the class has several for that role: talents (with the why), the rotation, then the best gear in the game — set bonuses included, both rings covered, plus the recommended enchant for every piece (v0.29). All 27 specs are covered. Click an item, talent or spell to open its sheet without leaving the page.">Choisis ta classe, ton rôle — et ta spécialisation quand la classe en a plusieurs pour ce rôle : les talents (avec le pourquoi), la rotation, puis le meilleur équipement du jeu — bonus de sets compris, 2 anneaux inclus, avec l'enchantement recommandé pour chaque pièce (v0.29). Les 27 spés sont couvertes. Clique sur un objet, un talent ou un sort pour ouvrir sa fiche sans quitter la page.</p>
   </header>
@@ -216,7 +216,7 @@
 
 <footer>
   <div class="wrap">
-    <p data-en="Gear optimised on the game&#39;s real data (tag v0.32.4) with the patch&#39;s combat formulas: each item&#39;s value is measured within the full loadout, set bonuses and procs included — that&#39;s why some set pieces beat “better” standalone items. <b style=&quot;color:var(--dim)&quot;>2. to 5.</b> = the slot&#39;s best replacements, ranked — adapt if the top pick hasn&#39;t dropped yet. <b style=&quot;color:var(--dim)&quot;>equippable*</b> = the tooltip lists other classes, but the game only restricts armor by its type (cloth/leather/mail). The game has no “unique” items: wearing <b style=&quot;color:var(--dim)&quot;>two copies of the same ring</b> is allowed (verified in the equipment code) — hence the doubled rings. <b style=&quot;color:var(--dim)&quot;>FURY</b> = bought with PvP Honor (v0.25): its Warfare rating does nothing in PvE, but the raw stats sometimes win the slot anyway.">Panoplies optimisées sur les données réelles du jeu (tag v0.32.4) avec les formules de combat du patch : la valeur de chaque objet est mesurée dans la panoplie complète, bonus de sets et procs compris — c'est pour ça que certaines pièces de set battent des objets « meilleurs » pris isolément. <b style="color:var(--dim)">2. à 5.</b> = les meilleurs remplaçants du slot, classés — de quoi s'adapter tant que le n°1 n'est pas tombé. <b style="color:var(--dim)">équipable*</b> = le tooltip cite d'autres classes, mais le jeu ne restreint les armures que par type (tissu/cuir/mailles). Le jeu n'a pas d'objets « uniques » : porter <b style="color:var(--dim)">deux exemplaires du même anneau</b> est autorisé (vérifié dans le code d'équipement) — d'où les anneaux doublés. <b style="color:var(--dim)">FURY</b> = acheté avec l'Honor PvP (v0.25) : son Warfare ne sert à rien en PvE, mais les stats brutes gagnent parfois quand même l'emplacement.</p>
+    <p data-en="Gear optimised on the game&#39;s real data (tag v0.33.1) with the patch&#39;s combat formulas: each item&#39;s value is measured within the full loadout, set bonuses and procs included — that&#39;s why some set pieces beat “better” standalone items. <b style=&quot;color:var(--dim)&quot;>2. to 5.</b> = the slot&#39;s best replacements, ranked — adapt if the top pick hasn&#39;t dropped yet. <b style=&quot;color:var(--dim)&quot;>equippable*</b> = the tooltip lists other classes, but the game only restricts armor by its type (cloth/leather/mail). The game has no “unique” items: wearing <b style=&quot;color:var(--dim)&quot;>two copies of the same ring</b> is allowed (verified in the equipment code) — hence the doubled rings. <b style=&quot;color:var(--dim)&quot;>FURY</b> = bought with PvP Honor (v0.25): its Warfare rating does nothing in PvE, but the raw stats sometimes win the slot anyway.">Panoplies optimisées sur les données réelles du jeu (tag v0.33.1) avec les formules de combat du patch : la valeur de chaque objet est mesurée dans la panoplie complète, bonus de sets et procs compris — c'est pour ça que certaines pièces de set battent des objets « meilleurs » pris isolément. <b style="color:var(--dim)">2. à 5.</b> = les meilleurs remplaçants du slot, classés — de quoi s'adapter tant que le n°1 n'est pas tombé. <b style="color:var(--dim)">équipable*</b> = le tooltip cite d'autres classes, mais le jeu ne restreint les armures que par type (tissu/cuir/mailles). Le jeu n'a pas d'objets « uniques » : porter <b style="color:var(--dim)">deux exemplaires du même anneau</b> est autorisé (vérifié dans le code d'équipement) — d'où les anneaux doublés. <b style="color:var(--dim)">FURY</b> = acheté avec l'Honor PvP (v0.25) : son Warfare ne sert à rien en PvE, mais les stats brutes gagnent parfois quand même l'emplacement.</p>
     <p style="margin-top:8px"><a href="index.html" data-en="← Back to the site">← Retour au site</a></p>
   </div>
 </footer>
@@ -235,7 +235,7 @@
 
 <script src="assets/nav.js"></script>
 <script src="assets/lang.js"></script>
-<script src="assets/version.js" data-version="v0.32.4" defer></script>
+<script src="assets/version.js" data-version="v0.33.1" defer></script>
 <script>
 // Builds recommandés par La Clauderie — rédigés à partir des vraies données
 // du patch (TALENTS.json / ABILITIES.json de la knowledge base). À réviser à
@@ -1801,6 +1801,26 @@ const BIS = {
         ]
        },
        {
+        "name": "Bloodmane War-Legguards",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 315,
+         "str": 11,
+         "sta": 9,
+         "hit": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "bloodmane_war_legguards",
+        "score": 46.2,
+        "xclass": false,
+        "slot": "legs",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
+       {
         "name": "Furyforged Legguards",
         "q": "epic",
         "set": null,
@@ -1835,25 +1855,6 @@ const BIS = {
         "slot": "legs",
         "src": [
          "Butin héroïque : Korgath the Bound · 10 %"
-        ]
-       },
-       {
-        "name": "Korgath's Chainwraps",
-        "q": "rare",
-        "set": null,
-        "stats": {
-         "armor": 125,
-         "sta": 12
-        },
-        "w": null,
-        "sp": null,
-        "id": "korgaths_chainwraps",
-        "score": 22.4,
-        "xclass": false,
-        "slot": "legs",
-        "src": [
-         "Butin : Korgath the Bound · 10 %",
-         "Récompense de quête : « The Bound Guardian »"
         ]
        }
       ],
@@ -3277,43 +3278,43 @@ const BIS = {
         ]
        },
        {
-        "name": "Morthen's Cryptforged Hauberk",
+        "name": "Sunbone Ritual Hauberk",
         "q": "epic",
         "set": null,
         "stats": {
          "armor": 335,
-         "str": 12,
-         "sta": 10,
-         "hit": 40
-        },
-        "w": null,
-        "sp": null,
-        "id": "morthens_cryptforged_hauberk",
-        "score": 49.9,
-        "xclass": false,
-        "slot": "chest",
-        "src": [
-         "Butin héroïque : Morthen the Gravecaller · 25 %"
-        ]
-       },
-       {
-        "name": "Shroud of the Gravewyrm",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "armor": 90,
          "int": 12,
          "spi": 10,
-         "crit": 40
+         "haste": 40
         },
         "w": null,
         "sp": null,
-        "id": "shroud_of_the_gravewyrm",
-        "score": 29.5,
+        "id": "sunbone_ritual_hauberk",
+        "score": 49.9,
         "xclass": true,
         "slot": "chest",
         "src": [
-         "Butin héroïque : Korzul the Gravewyrm · 33 %"
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
+       {
+        "name": "Verdant-Heart Vestment",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 172,
+         "int": 13,
+         "spi": 9,
+         "haste": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "verdant_heart_vestment",
+        "score": 36.3,
+        "xclass": true,
+        "slot": "chest",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
         ]
        }
       ],
@@ -3502,6 +3503,26 @@ const BIS = {
         ]
        },
        {
+        "name": "Bloodmane War-Legguards",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 315,
+         "str": 11,
+         "sta": 9,
+         "hit": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "bloodmane_war_legguards",
+        "score": 46.2,
+        "xclass": false,
+        "slot": "legs",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
+       {
         "name": "Osmiumscale Leggings",
         "q": "rare",
         "set": null,
@@ -3537,25 +3558,6 @@ const BIS = {
         "slot": "legs",
         "src": [
          "Vendu par FURY"
-        ]
-       },
-       {
-        "name": "Tideguard Greaves",
-        "q": "rare",
-        "set": null,
-        "stats": {
-         "armor": 125,
-         "str": 5,
-         "sta": 8
-        },
-        "w": null,
-        "sp": null,
-        "id": "heroic_tideguard_greaves",
-        "score": 23.4,
-        "xclass": false,
-        "slot": "legs",
-        "src": [
-         "Butin héroïque : Knight-Commander Olen · 10 %"
         ]
        }
       ],
@@ -5203,6 +5205,26 @@ const BIS = {
         ]
        },
        {
+        "name": "Bloodmane War-Legguards",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 315,
+         "str": 11,
+         "sta": 9,
+         "hit": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "bloodmane_war_legguards",
+        "score": 46.2,
+        "xclass": false,
+        "slot": "legs",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
+       {
         "name": "Furyforged Legguards",
         "q": "epic",
         "set": null,
@@ -5237,25 +5259,6 @@ const BIS = {
         "slot": "legs",
         "src": [
          "Butin héroïque : Korgath the Bound · 10 %"
-        ]
-       },
-       {
-        "name": "Korgath's Chainwraps",
-        "q": "rare",
-        "set": null,
-        "stats": {
-         "armor": 125,
-         "sta": 12
-        },
-        "w": null,
-        "sp": null,
-        "id": "korgaths_chainwraps",
-        "score": 22.4,
-        "xclass": false,
-        "slot": "legs",
-        "src": [
-         "Butin : Korgath the Bound · 10 %",
-         "Récompense de quête : « The Bound Guardian »"
         ]
        }
       ],
@@ -6405,6 +6408,26 @@ const BIS = {
         ]
        },
        {
+        "name": "Sunbone Oracle's Crown",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 76,
+         "int": 11,
+         "spi": 7,
+         "crit": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "sunbone_oracles_crown",
+        "score": 24.3,
+        "xclass": true,
+        "slot": "helmet",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
+       {
         "name": "Wraithfire Cowl",
         "q": "epic",
         "set": "Wraithfire Regalia",
@@ -6423,26 +6446,6 @@ const BIS = {
         "slot": "helmet",
         "src": [
          "Butin héroïque : Nythraxis, Scourge of Thornpeak · 26 %"
-        ]
-       },
-       {
-        "name": "Wraithfire Cowl",
-        "q": "epic",
-        "set": "Wraithfire Regalia",
-        "stats": {
-         "armor": 105,
-         "int": 11,
-         "sta": 6,
-         "hit": 20
-        },
-        "w": null,
-        "sp": null,
-        "id": "soulflame_cowl",
-        "score": 25.8,
-        "xclass": true,
-        "slot": "helmet",
-        "src": [
-         "Butin : Nythraxis, Scourge of Thornpeak · 26 %"
         ]
        }
       ],
@@ -6530,6 +6533,26 @@ const BIS = {
         ]
        },
        {
+        "name": "Voidweave Mantle",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 48,
+         "int": 10,
+         "spi": 6,
+         "haste": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "voidweave_mantle",
+        "score": 20.0,
+        "xclass": true,
+        "slot": "shoulder",
+        "src": [
+         "Faille (rang B ou plus) : épique de victoire garanti"
+        ]
+       },
+       {
         "name": "Mournweave Soulspire Mantle",
         "q": "epic",
         "set": "Mournweave Raiment",
@@ -6546,26 +6569,6 @@ const BIS = {
         "slot": "shoulder",
         "src": [
          "Butin : Korzul the Gravewyrm · 4 %"
-        ]
-       },
-       {
-        "name": "Sunken Court Mantle",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "armor": 56,
-         "int": 9,
-         "spi": 7,
-         "haste": 40
-        },
-        "w": null,
-        "sp": null,
-        "id": "sunken_court_mantle",
-        "score": 20.7,
-        "xclass": true,
-        "slot": "shoulder",
-        "src": [
-         "Butin héroïque : Vael the Fogbinder · 25 %"
         ]
        }
       ],
@@ -6592,25 +6595,45 @@ const BIS = {
      },
      "chest": {
       "best": {
-       "name": "Mournweave Starshroud",
+       "name": "Verdant-Heart Vestment",
        "q": "epic",
-       "set": "Mournweave Raiment",
+       "set": null,
        "stats": {
-        "armor": 92,
-        "int": 12,
-        "spi": 8
+        "armor": 172,
+        "int": 13,
+        "spi": 9,
+        "haste": 40
        },
        "w": null,
        "sp": null,
-       "id": "heroic_necromancers_starshroud",
-       "score": 27.7,
+       "id": "verdant_heart_vestment",
+       "score": 36.3,
        "xclass": true,
        "slot": "chest",
        "src": [
-        "Butin héroïque : Korzul the Gravewyrm · 5 %"
+        "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
        ]
       },
       "alts": [
+       {
+        "name": "Mournweave Starshroud",
+        "q": "epic",
+        "set": "Mournweave Raiment",
+        "stats": {
+         "armor": 92,
+         "int": 12,
+         "spi": 8
+        },
+        "w": null,
+        "sp": null,
+        "id": "heroic_necromancers_starshroud",
+        "score": 27.7,
+        "xclass": true,
+        "slot": "chest",
+        "src": [
+         "Butin héroïque : Korzul the Gravewyrm · 5 %"
+        ]
+       },
        {
         "name": "Mournweave Starshroud",
         "q": "epic",
@@ -6628,6 +6651,26 @@ const BIS = {
         "slot": "chest",
         "src": [
          "Butin : Korzul the Gravewyrm · 5 %"
+        ]
+       },
+       {
+        "name": "Sunbone Ritual Hauberk",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 335,
+         "int": 12,
+         "spi": 10,
+         "haste": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "sunbone_ritual_hauberk",
+        "score": 49.9,
+        "xclass": false,
+        "slot": "chest",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
         ]
        },
        {
@@ -6649,44 +6692,6 @@ const BIS = {
         "src": [
          "Butin héroïque : Korzul the Gravewyrm · 33 %"
         ]
-       },
-       {
-        "name": "Moonwrack Robe",
-        "q": "rare",
-        "set": null,
-        "stats": {
-         "armor": 70,
-         "int": 10,
-         "spi": 5
-        },
-        "w": null,
-        "sp": null,
-        "id": "moonshroud_robe",
-        "score": 20.8,
-        "xclass": true,
-        "slot": "chest",
-        "src": [
-         "Butin : Ysolei, Avatar of the Drowned Moon · 33 %"
-        ]
-       },
-       {
-        "name": "Moonwrack Robe",
-        "q": "rare",
-        "set": null,
-        "stats": {
-         "armor": 70,
-         "int": 10,
-         "spi": 5
-        },
-        "w": null,
-        "sp": null,
-        "id": "heroic_moonshroud_robe",
-        "score": 20.8,
-        "xclass": true,
-        "slot": "chest",
-        "src": [
-         "Butin héroïque : Ysolei, Avatar of the Drowned Moon · 33 %"
-        ]
        }
       ],
       "alt": {
@@ -6695,17 +6700,17 @@ const BIS = {
        "set": "Mournweave Raiment",
        "stats": {
         "armor": 92,
-        "int": 11,
-        "spi": 7
+        "int": 12,
+        "spi": 8
        },
        "w": null,
        "sp": null,
-       "id": "necromancers_starshroud",
-       "score": 25.7,
+       "id": "heroic_necromancers_starshroud",
+       "score": 27.7,
        "xclass": true,
        "slot": "chest",
        "src": [
-        "Butin : Korzul the Gravewyrm · 5 %"
+        "Butin héroïque : Korzul the Gravewyrm · 5 %"
        ]
       }
      },
@@ -7373,25 +7378,6 @@ const BIS = {
         ]
        },
        {
-        "name": "Niela's Coldlight Band",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "int": 7,
-         "sta": 4,
-         "hit": 25
-        },
-        "w": null,
-        "sp": null,
-        "id": "nielas_coldlight_band",
-        "score": 11.0,
-        "xclass": false,
-        "slot": "ring",
-        "src": [
-         "Vendu par Quartermaster Vex · 12 Heroic Marks"
-        ]
-       },
-       {
         "name": "Abysswrought Band",
         "q": "epic",
         "set": null,
@@ -7408,6 +7394,25 @@ const BIS = {
         "slot": "ring",
         "src": [
          "Faille (rang B ou plus) : épique de victoire garanti"
+        ]
+       },
+       {
+        "name": "Niela's Coldlight Band",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "int": 7,
+         "sta": 4,
+         "hit": 25
+        },
+        "w": null,
+        "sp": null,
+        "id": "nielas_coldlight_band",
+        "score": 11.0,
+        "xclass": false,
+        "slot": "ring",
+        "src": [
+         "Vendu par Quartermaster Vex · 12 Heroic Marks"
         ]
        }
       ],
@@ -7490,25 +7495,6 @@ const BIS = {
         ]
        },
        {
-        "name": "Niela's Coldlight Band",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "int": 7,
-         "sta": 4,
-         "hit": 25
-        },
-        "w": null,
-        "sp": null,
-        "id": "nielas_coldlight_band",
-        "score": 11.0,
-        "xclass": false,
-        "slot": "ring",
-        "src": [
-         "Vendu par Quartermaster Vex · 12 Heroic Marks"
-        ]
-       },
-       {
         "name": "Abysswrought Band",
         "q": "epic",
         "set": null,
@@ -7525,6 +7511,25 @@ const BIS = {
         "slot": "ring",
         "src": [
          "Faille (rang B ou plus) : épique de victoire garanti"
+        ]
+       },
+       {
+        "name": "Niela's Coldlight Band",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "int": 7,
+         "sta": 4,
+         "hit": 25
+        },
+        "w": null,
+        "sp": null,
+        "id": "nielas_coldlight_band",
+        "score": 11.0,
+        "xclass": false,
+        "slot": "ring",
+        "src": [
+         "Vendu par Quartermaster Vex · 12 Heroic Marks"
         ]
        }
       ],
@@ -7552,8 +7557,8 @@ const BIS = {
     "sets": [
      {
       "name": "Mournweave Raiment",
-      "pieces": 3,
-      "bonus": 3
+      "pieces": 2,
+      "bonus": 2
      },
      {
       "name": "Galecall Vestments",
@@ -7561,7 +7566,7 @@ const BIS = {
       "bonus": 3
      }
     ],
-    "score": 131.5,
+    "score": 131.6,
     "enchants": {
      "mainhand": {
       "id": "enchant_weapon_greater_spellpower",
@@ -8351,23 +8356,23 @@ const BIS = {
         ]
        },
        {
-        "name": "Shroud of the Gravewyrm",
+        "name": "Sunbone Ritual Hauberk",
         "q": "epic",
         "set": null,
         "stats": {
-         "armor": 90,
+         "armor": 335,
          "int": 12,
          "spi": 10,
-         "crit": 40
+         "haste": 40
         },
         "w": null,
         "sp": null,
-        "id": "shroud_of_the_gravewyrm",
-        "score": 29.5,
-        "xclass": true,
+        "id": "sunbone_ritual_hauberk",
+        "score": 49.9,
+        "xclass": false,
         "slot": "chest",
         "src": [
-         "Butin héroïque : Korzul the Gravewyrm · 33 %"
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
         ]
        }
       ],
@@ -8555,6 +8560,26 @@ const BIS = {
         ]
        },
        {
+        "name": "Bloodmane War-Legguards",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 315,
+         "str": 11,
+         "sta": 9,
+         "hit": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "bloodmane_war_legguards",
+        "score": 46.2,
+        "xclass": false,
+        "slot": "legs",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
+       {
         "name": "Osmiumscale Leggings",
         "q": "rare",
         "set": null,
@@ -8590,25 +8615,6 @@ const BIS = {
         "slot": "legs",
         "src": [
          "Vendu par FURY"
-        ]
-       },
-       {
-        "name": "Tideguard Greaves",
-        "q": "rare",
-        "set": null,
-        "stats": {
-         "armor": 125,
-         "str": 5,
-         "sta": 8
-        },
-        "w": null,
-        "sp": null,
-        "id": "heroic_tideguard_greaves",
-        "score": 23.4,
-        "xclass": false,
-        "slot": "legs",
-        "src": [
-         "Butin héroïque : Knight-Commander Olen · 10 %"
         ]
        }
       ],
@@ -9767,6 +9773,26 @@ const BIS = {
         ]
        },
        {
+        "name": "Sunbone Oracle's Crown",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 76,
+         "int": 11,
+         "spi": 7,
+         "crit": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "sunbone_oracles_crown",
+        "score": 24.3,
+        "xclass": true,
+        "slot": "helmet",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
+       {
         "name": "Wraithfire Cowl",
         "q": "epic",
         "set": "Wraithfire Regalia",
@@ -9785,26 +9811,6 @@ const BIS = {
         "slot": "helmet",
         "src": [
          "Butin héroïque : Nythraxis, Scourge of Thornpeak · 26 %"
-        ]
-       },
-       {
-        "name": "Wraithfire Cowl",
-        "q": "epic",
-        "set": "Wraithfire Regalia",
-        "stats": {
-         "armor": 105,
-         "int": 11,
-         "sta": 6,
-         "hit": 20
-        },
-        "w": null,
-        "sp": null,
-        "id": "soulflame_cowl",
-        "score": 25.8,
-        "xclass": true,
-        "slot": "helmet",
-        "src": [
-         "Butin : Nythraxis, Scourge of Thornpeak · 26 %"
         ]
        }
       ],
@@ -9892,6 +9898,26 @@ const BIS = {
         ]
        },
        {
+        "name": "Voidweave Mantle",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 48,
+         "int": 10,
+         "spi": 6,
+         "haste": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "voidweave_mantle",
+        "score": 20.0,
+        "xclass": true,
+        "slot": "shoulder",
+        "src": [
+         "Faille (rang B ou plus) : épique de victoire garanti"
+        ]
+       },
+       {
         "name": "Mournweave Soulspire Mantle",
         "q": "epic",
         "set": "Mournweave Raiment",
@@ -9908,26 +9934,6 @@ const BIS = {
         "slot": "shoulder",
         "src": [
          "Butin : Korzul the Gravewyrm · 4 %"
-        ]
-       },
-       {
-        "name": "Sunken Court Mantle",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "armor": 56,
-         "int": 9,
-         "spi": 7,
-         "haste": 40
-        },
-        "w": null,
-        "sp": null,
-        "id": "sunken_court_mantle",
-        "score": 20.7,
-        "xclass": true,
-        "slot": "shoulder",
-        "src": [
-         "Butin héroïque : Vael the Fogbinder · 25 %"
         ]
        }
       ],
@@ -9954,25 +9960,65 @@ const BIS = {
      },
      "chest": {
       "best": {
-       "name": "Mournweave Starshroud",
+       "name": "Verdant-Heart Vestment",
        "q": "epic",
-       "set": "Mournweave Raiment",
+       "set": null,
        "stats": {
-        "armor": 92,
-        "int": 12,
-        "spi": 8
+        "armor": 172,
+        "int": 13,
+        "spi": 9,
+        "haste": 40
        },
        "w": null,
        "sp": null,
-       "id": "heroic_necromancers_starshroud",
-       "score": 27.7,
+       "id": "verdant_heart_vestment",
+       "score": 36.3,
        "xclass": true,
        "slot": "chest",
        "src": [
-        "Butin héroïque : Korzul the Gravewyrm · 5 %"
+        "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
        ]
       },
       "alts": [
+       {
+        "name": "Mournweave Starshroud",
+        "q": "epic",
+        "set": "Mournweave Raiment",
+        "stats": {
+         "armor": 92,
+         "int": 12,
+         "spi": 8
+        },
+        "w": null,
+        "sp": null,
+        "id": "heroic_necromancers_starshroud",
+        "score": 27.7,
+        "xclass": true,
+        "slot": "chest",
+        "src": [
+         "Butin héroïque : Korzul the Gravewyrm · 5 %"
+        ]
+       },
+       {
+        "name": "Sunbone Ritual Hauberk",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 335,
+         "int": 12,
+         "spi": 10,
+         "haste": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "sunbone_ritual_hauberk",
+        "score": 49.9,
+        "xclass": false,
+        "slot": "chest",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
        {
         "name": "Mournweave Starshroud",
         "q": "epic",
@@ -10011,44 +10057,6 @@ const BIS = {
         "src": [
          "Butin héroïque : Korzul the Gravewyrm · 33 %"
         ]
-       },
-       {
-        "name": "Moonwrack Robe",
-        "q": "rare",
-        "set": null,
-        "stats": {
-         "armor": 70,
-         "int": 10,
-         "spi": 5
-        },
-        "w": null,
-        "sp": null,
-        "id": "moonshroud_robe",
-        "score": 20.8,
-        "xclass": true,
-        "slot": "chest",
-        "src": [
-         "Butin : Ysolei, Avatar of the Drowned Moon · 33 %"
-        ]
-       },
-       {
-        "name": "Moonwrack Robe",
-        "q": "rare",
-        "set": null,
-        "stats": {
-         "armor": 70,
-         "int": 10,
-         "spi": 5
-        },
-        "w": null,
-        "sp": null,
-        "id": "heroic_moonshroud_robe",
-        "score": 20.8,
-        "xclass": true,
-        "slot": "chest",
-        "src": [
-         "Butin héroïque : Ysolei, Avatar of the Drowned Moon · 33 %"
-        ]
        }
       ],
       "alt": {
@@ -10057,17 +10065,17 @@ const BIS = {
        "set": "Mournweave Raiment",
        "stats": {
         "armor": 92,
-        "int": 11,
-        "spi": 7
+        "int": 12,
+        "spi": 8
        },
        "w": null,
        "sp": null,
-       "id": "necromancers_starshroud",
-       "score": 25.7,
+       "id": "heroic_necromancers_starshroud",
+       "score": 27.7,
        "xclass": true,
        "slot": "chest",
        "src": [
-        "Butin : Korzul the Gravewyrm · 5 %"
+        "Butin héroïque : Korzul the Gravewyrm · 5 %"
        ]
       }
      },
@@ -10735,25 +10743,6 @@ const BIS = {
         ]
        },
        {
-        "name": "Niela's Coldlight Band",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "int": 7,
-         "sta": 4,
-         "hit": 25
-        },
-        "w": null,
-        "sp": null,
-        "id": "nielas_coldlight_band",
-        "score": 11.0,
-        "xclass": false,
-        "slot": "ring",
-        "src": [
-         "Vendu par Quartermaster Vex · 12 Heroic Marks"
-        ]
-       },
-       {
         "name": "Abysswrought Band",
         "q": "epic",
         "set": null,
@@ -10770,6 +10759,25 @@ const BIS = {
         "slot": "ring",
         "src": [
          "Faille (rang B ou plus) : épique de victoire garanti"
+        ]
+       },
+       {
+        "name": "Niela's Coldlight Band",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "int": 7,
+         "sta": 4,
+         "hit": 25
+        },
+        "w": null,
+        "sp": null,
+        "id": "nielas_coldlight_band",
+        "score": 11.0,
+        "xclass": false,
+        "slot": "ring",
+        "src": [
+         "Vendu par Quartermaster Vex · 12 Heroic Marks"
         ]
        }
       ],
@@ -10852,25 +10860,6 @@ const BIS = {
         ]
        },
        {
-        "name": "Niela's Coldlight Band",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "int": 7,
-         "sta": 4,
-         "hit": 25
-        },
-        "w": null,
-        "sp": null,
-        "id": "nielas_coldlight_band",
-        "score": 11.0,
-        "xclass": false,
-        "slot": "ring",
-        "src": [
-         "Vendu par Quartermaster Vex · 12 Heroic Marks"
-        ]
-       },
-       {
         "name": "Abysswrought Band",
         "q": "epic",
         "set": null,
@@ -10887,6 +10876,25 @@ const BIS = {
         "slot": "ring",
         "src": [
          "Faille (rang B ou plus) : épique de victoire garanti"
+        ]
+       },
+       {
+        "name": "Niela's Coldlight Band",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "int": 7,
+         "sta": 4,
+         "hit": 25
+        },
+        "w": null,
+        "sp": null,
+        "id": "nielas_coldlight_band",
+        "score": 11.0,
+        "xclass": false,
+        "slot": "ring",
+        "src": [
+         "Vendu par Quartermaster Vex · 12 Heroic Marks"
         ]
        }
       ],
@@ -10914,8 +10922,8 @@ const BIS = {
     "sets": [
      {
       "name": "Mournweave Raiment",
-      "pieces": 3,
-      "bonus": 3
+      "pieces": 2,
+      "bonus": 2
      },
      {
       "name": "Galecall Vestments",
@@ -10923,7 +10931,7 @@ const BIS = {
       "bonus": 3
      }
     ],
-    "score": 148.3,
+    "score": 148.5,
     "enchants": {
      "mainhand": {
       "id": "enchant_weapon_greater_spellpower",
@@ -11713,23 +11721,23 @@ const BIS = {
         ]
        },
        {
-        "name": "Shroud of the Gravewyrm",
+        "name": "Sunbone Ritual Hauberk",
         "q": "epic",
         "set": null,
         "stats": {
-         "armor": 90,
+         "armor": 335,
          "int": 12,
          "spi": 10,
-         "crit": 40
+         "haste": 40
         },
         "w": null,
         "sp": null,
-        "id": "shroud_of_the_gravewyrm",
-        "score": 29.5,
-        "xclass": true,
+        "id": "sunbone_ritual_hauberk",
+        "score": 49.9,
+        "xclass": false,
         "slot": "chest",
         "src": [
-         "Butin héroïque : Korzul the Gravewyrm · 33 %"
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
         ]
        }
       ],
@@ -11917,6 +11925,26 @@ const BIS = {
         ]
        },
        {
+        "name": "Bloodmane War-Legguards",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 315,
+         "str": 11,
+         "sta": 9,
+         "hit": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "bloodmane_war_legguards",
+        "score": 46.2,
+        "xclass": false,
+        "slot": "legs",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
+       {
         "name": "Osmiumscale Leggings",
         "q": "rare",
         "set": null,
@@ -11952,25 +11980,6 @@ const BIS = {
         "slot": "legs",
         "src": [
          "Vendu par FURY"
-        ]
-       },
-       {
-        "name": "Tideguard Greaves",
-        "q": "rare",
-        "set": null,
-        "stats": {
-         "armor": 125,
-         "str": 5,
-         "sta": 8
-        },
-        "w": null,
-        "sp": null,
-        "id": "heroic_tideguard_greaves",
-        "score": 23.4,
-        "xclass": false,
-        "slot": "legs",
-        "src": [
-         "Butin héroïque : Knight-Commander Olen · 10 %"
         ]
        }
       ],
@@ -13276,25 +13285,45 @@ const BIS = {
      },
      "chest": {
       "best": {
-       "name": "Nightfang Harness",
+       "name": "Basin Stalker's Tunic",
        "q": "epic",
-       "set": "Nightfang Vestments",
+       "set": null,
        "stats": {
-        "armor": 170,
+        "armor": 172,
         "agi": 13,
-        "sta": 7
+        "sta": 9,
+        "hit": 40
        },
        "w": null,
        "sp": null,
-       "id": "heroic_wyrmshadow_harness",
-       "score": 34.2,
-       "xclass": true,
+       "id": "basin_stalkers_tunic",
+       "score": 36.3,
+       "xclass": false,
        "slot": "chest",
        "src": [
-        "Butin héroïque : Korzul the Gravewyrm · 5 %"
+        "Butin héroïque : Zulgar, Voice of the Basin · 34 %"
        ]
       },
       "alts": [
+       {
+        "name": "Nightfang Harness",
+        "q": "epic",
+        "set": "Nightfang Vestments",
+        "stats": {
+         "armor": 170,
+         "agi": 13,
+         "sta": 7
+        },
+        "w": null,
+        "sp": null,
+        "id": "heroic_wyrmshadow_harness",
+        "score": 34.2,
+        "xclass": true,
+        "slot": "chest",
+        "src": [
+         "Butin héroïque : Korzul the Gravewyrm · 5 %"
+        ]
+       },
        {
         "name": "Nightfang Harness",
         "q": "epic",
@@ -13354,25 +13383,6 @@ const BIS = {
         "src": [
          "Vendu par FURY"
         ]
-       },
-       {
-        "name": "Wyrmscale Jerkin",
-        "q": "rare",
-        "set": null,
-        "stats": {
-         "armor": 145,
-         "agi": 9,
-         "sta": 4
-        },
-        "w": null,
-        "sp": null,
-        "id": "wyrmscale_jerkin",
-        "score": 25.1,
-        "xclass": true,
-        "slot": "chest",
-        "src": [
-         "Récompense de quête : « Korzul the Gravewyrm »"
-        ]
        }
       ],
       "alt": {
@@ -13381,17 +13391,17 @@ const BIS = {
        "set": "Nightfang Vestments",
        "stats": {
         "armor": 170,
-        "agi": 12,
-        "sta": 6
+        "agi": 13,
+        "sta": 7
        },
        "w": null,
        "sp": null,
-       "id": "wyrmshadow_harness",
-       "score": 32.2,
+       "id": "heroic_wyrmshadow_harness",
+       "score": 34.2,
        "xclass": true,
        "slot": "chest",
        "src": [
-        "Butin : Korzul the Gravewyrm · 5 %"
+        "Butin héroïque : Korzul the Gravewyrm · 5 %"
        ]
       }
      },
@@ -13518,62 +13528,24 @@ const BIS = {
      },
      "legs": {
       "best": {
-       "name": "Nightfang Legguards",
-       "q": "epic",
-       "set": "Nightfang Vestments",
+       "name": "Korgath's Chainwraps",
+       "q": "rare",
+       "set": null,
        "stats": {
-        "armor": 155,
-        "agi": 11,
-        "sta": 7
+        "armor": 125,
+        "sta": 13
        },
        "w": null,
        "sp": null,
-       "id": "heroic_wyrmshadow_legguards",
-       "score": 30.9,
-       "xclass": true,
+       "id": "heroic_korgaths_chainwraps",
+       "score": 23.4,
+       "xclass": false,
        "slot": "legs",
        "src": [
-        "Butin héroïque : Grand Necromancer Velkhar · 5 %"
+        "Butin héroïque : Korgath the Bound · 10 %"
        ]
       },
       "alts": [
-       {
-        "name": "Korgath's Chainwraps",
-        "q": "rare",
-        "set": null,
-        "stats": {
-         "armor": 125,
-         "sta": 13
-        },
-        "w": null,
-        "sp": null,
-        "id": "heroic_korgaths_chainwraps",
-        "score": 23.4,
-        "xclass": false,
-        "slot": "legs",
-        "src": [
-         "Butin héroïque : Korgath the Bound · 10 %"
-        ]
-       },
-       {
-        "name": "Nightfang Legguards",
-        "q": "epic",
-        "set": "Nightfang Vestments",
-        "stats": {
-         "armor": 155,
-         "agi": 10,
-         "sta": 6
-        },
-        "w": null,
-        "sp": null,
-        "id": "wyrmshadow_legguards",
-        "score": 28.9,
-        "xclass": true,
-        "slot": "legs",
-        "src": [
-         "Butin : Grand Necromancer Velkhar · 5 %"
-        ]
-       },
        {
         "name": "Korgath's Chainwraps",
         "q": "rare",
@@ -13591,6 +13563,25 @@ const BIS = {
         "src": [
          "Butin : Korgath the Bound · 10 %",
          "Récompense de quête : « The Bound Guardian »"
+        ]
+       },
+       {
+        "name": "Nightfang Legguards",
+        "q": "epic",
+        "set": "Nightfang Vestments",
+        "stats": {
+         "armor": 155,
+         "agi": 11,
+         "sta": 7
+        },
+        "w": null,
+        "sp": null,
+        "id": "heroic_wyrmshadow_legguards",
+        "score": 30.9,
+        "xclass": true,
+        "slot": "legs",
+        "src": [
+         "Butin héroïque : Grand Necromancer Velkhar · 5 %"
         ]
        },
        {
@@ -13612,6 +13603,25 @@ const BIS = {
         "src": [
          "Butin héroïque : Ysolei, Avatar of the Drowned Moon · 25 %"
         ]
+       },
+       {
+        "name": "Nightfang Legguards",
+        "q": "epic",
+        "set": "Nightfang Vestments",
+        "stats": {
+         "armor": 155,
+         "agi": 10,
+         "sta": 6
+        },
+        "w": null,
+        "sp": null,
+        "id": "wyrmshadow_legguards",
+        "score": 28.9,
+        "xclass": true,
+        "slot": "legs",
+        "src": [
+         "Butin : Grand Necromancer Velkhar · 5 %"
+        ]
        }
       ],
       "alt": {
@@ -13620,16 +13630,17 @@ const BIS = {
        "set": null,
        "stats": {
         "armor": 125,
-        "sta": 13
+        "sta": 12
        },
        "w": null,
        "sp": null,
-       "id": "heroic_korgaths_chainwraps",
-       "score": 23.4,
+       "id": "korgaths_chainwraps",
+       "score": 22.4,
        "xclass": false,
        "slot": "legs",
        "src": [
-        "Butin héroïque : Korgath the Bound · 10 %"
+        "Butin : Korgath the Bound · 10 %",
+        "Récompense de quête : « The Bound Guardian »"
        ]
       }
      },
@@ -14227,14 +14238,9 @@ const BIS = {
       "name": "Direfang Pelt",
       "pieces": 3,
       "bonus": 3
-     },
-     {
-      "name": "Nightfang Vestments",
-      "pieces": 3,
-      "bonus": 3
      }
     ],
-    "score": 4624.7,
+    "score": 4656.4,
     "enchants": {
      "mainhand": {
       "id": "enchant_weapon_agility",
@@ -14688,6 +14694,26 @@ const BIS = {
         ]
        },
        {
+        "name": "Sunbone Oracle's Crown",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 76,
+         "int": 11,
+         "spi": 7,
+         "crit": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "sunbone_oracles_crown",
+        "score": 24.3,
+        "xclass": false,
+        "slot": "helmet",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
+       {
         "name": "Sunken Reliquary Hood",
         "q": "epic",
         "set": null,
@@ -14723,25 +14749,6 @@ const BIS = {
         "slot": "helmet",
         "src": [
          "Fabrication : tailoring"
-        ]
-       },
-       {
-        "name": "Stormroot Cowl",
-        "q": "rare",
-        "set": null,
-        "stats": {
-         "armor": 58,
-         "int": 6,
-         "spi": 4
-        },
-        "w": null,
-        "sp": null,
-        "id": "stormroot_cowl",
-        "score": 14.8,
-        "xclass": false,
-        "slot": "helmet",
-        "src": [
-         "Butin : Brutok Skullsmasher · 20 %"
         ]
        }
       ],
@@ -14929,6 +14936,26 @@ const BIS = {
         ]
        },
        {
+        "name": "Verdant-Heart Vestment",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 172,
+         "int": 13,
+         "spi": 9,
+         "haste": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "verdant_heart_vestment",
+        "score": 36.3,
+        "xclass": false,
+        "slot": "chest",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
+       {
         "name": "Shroud of the Gravewyrm",
         "q": "epic",
         "set": null,
@@ -14965,25 +14992,6 @@ const BIS = {
         "slot": "chest",
         "src": [
          "Butin : Ysolei, Avatar of the Drowned Moon · 33 %"
-        ]
-       },
-       {
-        "name": "Moonwrack Robe",
-        "q": "rare",
-        "set": null,
-        "stats": {
-         "armor": 70,
-         "int": 10,
-         "spi": 5
-        },
-        "w": null,
-        "sp": null,
-        "id": "heroic_moonshroud_robe",
-        "score": 20.8,
-        "xclass": false,
-        "slot": "chest",
-        "src": [
-         "Butin héroïque : Ysolei, Avatar of the Drowned Moon · 33 %"
         ]
        }
       ],
@@ -16484,6 +16492,26 @@ const BIS = {
         ]
        },
        {
+        "name": "Verdant-Heart Vestment",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 172,
+         "int": 13,
+         "spi": 9,
+         "haste": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "verdant_heart_vestment",
+        "score": 36.3,
+        "xclass": false,
+        "slot": "chest",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
+       {
         "name": "Shroud of the Gravewyrm",
         "q": "epic",
         "set": null,
@@ -16504,42 +16532,23 @@ const BIS = {
         ]
        },
        {
-        "name": "Nightveil Tunic",
-        "q": "rare",
+        "name": "Basin Stalker's Tunic",
+        "q": "epic",
         "set": null,
         "stats": {
-         "armor": 130,
-         "agi": 10,
-         "sta": 4
+         "armor": 172,
+         "agi": 13,
+         "sta": 9,
+         "hit": 40
         },
         "w": null,
         "sp": null,
-        "id": "heroic_shadowmeld_tunic",
-        "score": 24.8,
-        "xclass": true,
+        "id": "basin_stalkers_tunic",
+        "score": 36.3,
+        "xclass": false,
         "slot": "chest",
         "src": [
-         "Butin héroïque : Korgath the Bound · 10 %",
-         "Butin héroïque : Grand Necromancer Velkhar · 10 %"
-        ]
-       },
-       {
-        "name": "Moonwrack Tunic",
-        "q": "rare",
-        "set": null,
-        "stats": {
-         "armor": 125,
-         "agi": 10,
-         "sta": 4
-        },
-        "w": null,
-        "sp": null,
-        "id": "heroic_moonshroud_tunic",
-        "score": 24.4,
-        "xclass": true,
-        "slot": "chest",
-        "src": [
-         "Butin héroïque : Ysolei, Avatar of the Drowned Moon · 33 %"
+         "Butin héroïque : Zulgar, Voice of the Basin · 34 %"
         ]
        }
       ],
@@ -17870,6 +17879,26 @@ const BIS = {
         ]
        },
        {
+        "name": "Sunbone Oracle's Crown",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 76,
+         "int": 11,
+         "spi": 7,
+         "crit": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "sunbone_oracles_crown",
+        "score": 24.3,
+        "xclass": false,
+        "slot": "helmet",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
+       {
         "name": "Sunken Reliquary Hood",
         "q": "epic",
         "set": null,
@@ -17905,26 +17934,6 @@ const BIS = {
         "slot": "helmet",
         "src": [
          "Fabrication : tailoring"
-        ]
-       },
-       {
-        "name": "Cinderweave Cowl",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "armor": 70,
-         "int": 5,
-         "sta": 3,
-         "spi": 2
-        },
-        "w": null,
-        "sp": null,
-        "id": "cinderweave_cowl",
-        "score": 15.8,
-        "xclass": false,
-        "slot": "helmet",
-        "src": [
-         "Vendu par FURY"
         ]
        }
       ],
@@ -19497,6 +19506,26 @@ const BIS = {
         ]
        },
        {
+        "name": "Sunbone Oracle's Crown",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 76,
+         "int": 11,
+         "spi": 7,
+         "crit": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "sunbone_oracles_crown",
+        "score": 24.3,
+        "xclass": false,
+        "slot": "helmet",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
+       {
         "name": "Sunken Reliquary Hood",
         "q": "epic",
         "set": null,
@@ -19532,26 +19561,6 @@ const BIS = {
         "slot": "helmet",
         "src": [
          "Fabrication : tailoring"
-        ]
-       },
-       {
-        "name": "Cinderweave Cowl",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "armor": 70,
-         "int": 5,
-         "sta": 3,
-         "spi": 2
-        },
-        "w": null,
-        "sp": null,
-        "id": "cinderweave_cowl",
-        "score": 15.8,
-        "xclass": false,
-        "slot": "helmet",
-        "src": [
-         "Vendu par FURY"
         ]
        }
       ],
@@ -21132,6 +21141,26 @@ const BIS = {
         ]
        },
        {
+        "name": "Sunbone Oracle's Crown",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 76,
+         "int": 11,
+         "spi": 7,
+         "crit": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "sunbone_oracles_crown",
+        "score": 24.3,
+        "xclass": false,
+        "slot": "helmet",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
+       {
         "name": "Sunken Reliquary Hood",
         "q": "epic",
         "set": null,
@@ -21167,26 +21196,6 @@ const BIS = {
         "slot": "helmet",
         "src": [
          "Fabrication : tailoring"
-        ]
-       },
-       {
-        "name": "Cinderweave Cowl",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "armor": 70,
-         "int": 5,
-         "sta": 3,
-         "spi": 2
-        },
-        "w": null,
-        "sp": null,
-        "id": "cinderweave_cowl",
-        "score": 15.8,
-        "xclass": false,
-        "slot": "helmet",
-        "src": [
-         "Vendu par FURY"
         ]
        }
       ],
@@ -22763,6 +22772,26 @@ const BIS = {
         ]
        },
        {
+        "name": "Sunbone Oracle's Crown",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 76,
+         "int": 11,
+         "spi": 7,
+         "crit": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "sunbone_oracles_crown",
+        "score": 24.3,
+        "xclass": false,
+        "slot": "helmet",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
+       {
         "name": "Sunken Reliquary Hood",
         "q": "epic",
         "set": null,
@@ -22798,26 +22827,6 @@ const BIS = {
         "slot": "helmet",
         "src": [
          "Fabrication : tailoring"
-        ]
-       },
-       {
-        "name": "Cinderweave Cowl",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "armor": 70,
-         "int": 5,
-         "sta": 3,
-         "spi": 2
-        },
-        "w": null,
-        "sp": null,
-        "id": "cinderweave_cowl",
-        "score": 15.8,
-        "xclass": false,
-        "slot": "helmet",
-        "src": [
-         "Vendu par FURY"
         ]
        }
       ],
@@ -24395,6 +24404,26 @@ const BIS = {
         ]
        },
        {
+        "name": "Sunbone Oracle's Crown",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 76,
+         "int": 11,
+         "spi": 7,
+         "crit": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "sunbone_oracles_crown",
+        "score": 24.3,
+        "xclass": false,
+        "slot": "helmet",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
+       {
         "name": "Sunken Reliquary Hood",
         "q": "epic",
         "set": null,
@@ -24430,26 +24459,6 @@ const BIS = {
         "slot": "helmet",
         "src": [
          "Fabrication : tailoring"
-        ]
-       },
-       {
-        "name": "Cinderweave Cowl",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "armor": 70,
-         "int": 5,
-         "sta": 3,
-         "spi": 2
-        },
-        "w": null,
-        "sp": null,
-        "id": "cinderweave_cowl",
-        "score": 15.8,
-        "xclass": false,
-        "slot": "helmet",
-        "src": [
-         "Vendu par FURY"
         ]
        }
       ],
@@ -26340,6 +26349,46 @@ const BIS = {
         ]
        },
        {
+        "name": "Basin Stalker's Tunic",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 172,
+         "agi": 13,
+         "sta": 9,
+         "hit": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "basin_stalkers_tunic",
+        "score": 36.3,
+        "xclass": false,
+        "slot": "chest",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 34 %"
+        ]
+       },
+       {
+        "name": "Verdant-Heart Vestment",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 172,
+         "int": 13,
+         "spi": 9,
+         "haste": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "verdant_heart_vestment",
+        "score": 36.3,
+        "xclass": true,
+        "slot": "chest",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
+       {
         "name": "Shroud of the Gravewyrm",
         "q": "epic",
         "set": null,
@@ -26357,45 +26406,6 @@ const BIS = {
         "slot": "chest",
         "src": [
          "Butin héroïque : Korzul the Gravewyrm · 33 %"
-        ]
-       },
-       {
-        "name": "Nightveil Tunic",
-        "q": "rare",
-        "set": null,
-        "stats": {
-         "armor": 130,
-         "agi": 10,
-         "sta": 4
-        },
-        "w": null,
-        "sp": null,
-        "id": "heroic_shadowmeld_tunic",
-        "score": 24.8,
-        "xclass": false,
-        "slot": "chest",
-        "src": [
-         "Butin héroïque : Korgath the Bound · 10 %",
-         "Butin héroïque : Grand Necromancer Velkhar · 10 %"
-        ]
-       },
-       {
-        "name": "Moonwrack Tunic",
-        "q": "rare",
-        "set": null,
-        "stats": {
-         "armor": 125,
-         "agi": 10,
-         "sta": 4
-        },
-        "w": null,
-        "sp": null,
-        "id": "heroic_moonshroud_tunic",
-        "score": 24.4,
-        "xclass": false,
-        "slot": "chest",
-        "src": [
-         "Butin héroïque : Ysolei, Avatar of the Drowned Moon · 33 %"
         ]
        }
       ],
@@ -27920,6 +27930,26 @@ const BIS = {
         ]
        },
        {
+        "name": "Basin Stalker's Tunic",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 172,
+         "agi": 13,
+         "sta": 9,
+         "hit": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "basin_stalkers_tunic",
+        "score": 36.3,
+        "xclass": false,
+        "slot": "chest",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 34 %"
+        ]
+       },
+       {
         "name": "Nightveil Tunic",
         "q": "rare",
         "set": null,
@@ -27956,28 +27986,6 @@ const BIS = {
         "slot": "chest",
         "src": [
          "Butin héroïque : Ysolei, Avatar of the Drowned Moon · 33 %"
-        ]
-       },
-       {
-        "name": "Broodmother Carapace",
-        "q": "rare",
-        "set": null,
-        "stats": {
-         "armor": 165,
-         "agi": 9,
-         "sta": 6
-        },
-        "w": null,
-        "sp": null,
-        "id": "broodmother_carapace",
-        "score": 28.8,
-        "xclass": false,
-        "slot": "chest",
-        "src": [
-         "Butin : Venom Weaver · 2 %",
-         "Butin : Thornback Stalker · 2 %",
-         "Butin : Broodmother Vysska · 35 %",
-         "Faille : drop d'ambiance (trash, gros taux sur le boss d'ambiance)"
         ]
        }
       ],
