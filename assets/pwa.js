@@ -38,7 +38,14 @@
     safe.id = 'pwa-safe-area';
     safe.textContent =
       '.topbar, .guild-bar { padding-top: env(safe-area-inset-top, 0px); }' +
-      ' body { padding-bottom: env(safe-area-inset-bottom, 0px); }';
+      ' body { padding-bottom: env(safe-area-inset-bottom, 0px); }' +
+      // La vraie cause du « haut coupé » sur mobile : chaque page fige la barre
+      // à height:56px (une ligne d'onglets) alors qu'en étroit les onglets
+      // passent sur 2-3 lignes — align-items:center faisait déborder la 1re
+      // ligne AU-DESSUS du haut de page. Corrigé dans le CSS des pages
+      // (min-height) ; répété ici pour tout HTML pas encore rafraîchi.
+      ' .topbar .row, .gb-row { height: auto; min-height: 56px;' +
+      ' padding-top: 8px; padding-bottom: 8px; }';
     document.head.appendChild(safe);
   }
 

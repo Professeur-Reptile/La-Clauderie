@@ -27,7 +27,11 @@
     safe.id = 'pwa-safe-area';
     safe.textContent =
       '.topbar, .guild-bar { padding-top: env(safe-area-inset-top, 0px); }' +
-      ' body { padding-bottom: env(safe-area-inset-bottom, 0px); }';
+      ' body { padding-bottom: env(safe-area-inset-bottom, 0px); }' +
+      // Hauteur figée à 56px dans le CSS des pages = 1re ligne d'onglets
+      // coupée quand ils passent sur plusieurs lignes (voir pwa.js).
+      ' .topbar .row, .gb-row { height: auto; min-height: 56px;' +
+      ' padding-top: 8px; padding-bottom: 8px; }';
     document.head.appendChild(safe);
   }
 
