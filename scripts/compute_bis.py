@@ -198,6 +198,32 @@ for _iid in _RIFT.get('rareIds', []):
     _add(_iid, "Faille : drop d'ambiance (trash, gros taux sur le boss d'ambiance)")
 for _iid in _RIFT.get('gearIds', []):
     _add(_iid, "Faille : first-clear (équipement personnel, améliorable à l'Essence)")
+
+# Bonus de rang des pièces de first-clear (rift/progression.ts,
+# createRiftGearInstance) : une copie réelle porte baseStats
+# { primaire: TIER_POWER, secondaire: ceil(TIER_POWER/2) } PAR-DESSUS les stats
+# de catalogue d'ITEMS.json — l'infobulle du jeu affiche ce bonus « (Enchanted) »
+# mais c'est le rang, pas un enchantement. Le BiS note la meilleure copie
+# obtenable AUJOURD'HUI : un drop de rang S (TIER_POWER 4 → +4 primaire,
+# +2 secondaire), SANS amélioration, gemme ni enchant de forge — la forge
+# d'Essence n'a aucune interface en jeu en v0.33.1 (aucun appelant UI de
+# rift_upgrade_item / rift_enchant_item / rift_socket_gem). Le jour où
+# l'interface sort, relever ce bonus (max : +4+5 primaire, +2+2 End, gemmes).
+_RIFT_SHELL_STATS = {
+    'riftbound_band_of_might':   ('str', 'sta'),
+    'riftbound_band_of_insight': ('int', 'spi'),
+    'riftbound_band_of_guile':   ('agi', 'sta'),
+}
+_RIFT_S_POWER = 4  # TIER_POWER['S']
+for _iid, (_prim, _sec) in _RIFT_SHELL_STATS.items():
+    _it = ITEMS.get(_iid)
+    if not _it: continue
+    _st = dict(_it.get('stats') or {})
+    _st[_prim] = _st.get(_prim, 0) + _RIFT_S_POWER
+    _st[_sec] = _st.get(_sec, 0) + (_RIFT_S_POWER + 1) // 2
+    _it['stats'] = _st
+    SOURCES[_iid] = ["Faille : first-clear — stats d'une copie de rang S "
+                     "(bonus de rang inclus, sans gemme ni amélioration)"]
 for _tier, _mi in sorted((_RIFT.get('mounts') or {}).items()):
     for _iid in _mi.get('reins', []):
         _ch = _mi.get('chance')
