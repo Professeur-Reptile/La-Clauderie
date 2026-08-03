@@ -13,7 +13,7 @@
    ============================================================================ */
 'use strict';
 
-var CACHE = 'clauderie-v1';
+var CACHE = 'clauderie-v2';
 
 // Le minimum pour que l'app s'ouvre hors ligne. Le reste se met en cache
 // tout seul au fil de la navigation.

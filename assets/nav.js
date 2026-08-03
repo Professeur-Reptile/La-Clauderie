@@ -31,6 +31,57 @@
     document.head.appendChild(safe);
   }
 
+  // Filet de secours : iOS renvoie parfois safe-area-inset-top = 0 en mode app
+  // alors que la page est dessinée bord à bord (régressions connues, ex. iOS 26
+  // — WebKit #301994). On mesure la situation réelle et on applique une hauteur
+  // forfaitaire selon l'appareil. Copie du bloc de pwa.js (voir le commentaire
+  // là-bas) pour la page Codex — verrou commun window.__safeAreaFallback.
+  if (!window.__safeAreaFallback) {
+    window.__safeAreaFallback = true;
+    (function () {
+      var appMode = navigator.standalone === true ||
+        (window.matchMedia &&
+          (matchMedia('(display-mode: standalone)').matches ||
+           matchMedia('(display-mode: fullscreen)').matches));
+      var iOS = /iP(hone|ad|od)/.test(navigator.userAgent) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      if (!appMode || !iOS) return;
+
+      function insetReel() {   // ce que env() donne VRAIMENT, mesuré au pixel
+        var p = document.createElement('div');
+        p.style.cssText = 'position:fixed;top:0;left:0;width:1px;visibility:hidden;' +
+          'pointer-events:none;height:env(safe-area-inset-top,0px)';
+        (document.body || document.documentElement).appendChild(p);
+        var h = p.getBoundingClientRect().height;
+        p.remove();
+        return h;
+      }
+      function hauteurBarre() {   // hauteur de la barre d'état par appareil (px CSS)
+        var h = Math.max(screen.width, screen.height);
+        var t = { 812: 48, 844: 47, 852: 59, 874: 62, 896: 48, 912: 62, 926: 47, 932: 59, 956: 62 };
+        return t[h] || (h >= 800 ? 54 : 20);
+      }
+      var style = null;
+      function ajuste() {
+        var portrait = window.innerHeight >= window.innerWidth;
+        var bordABord = window.innerHeight >= screen.height - 1;  // la page couvre tout l'écran
+        var besoin = portrait && bordABord && insetReel() === 0;
+        if (besoin && !style) {
+          style = document.createElement('style');
+          style.id = 'pwa-safe-area-fallback';
+          style.textContent = '.topbar, .guild-bar { padding-top: ' + hauteurBarre() + 'px; }';
+          document.head.appendChild(style);
+        } else if (!besoin && style) {
+          style.remove();
+          style = null;
+        }
+      }
+      ajuste();
+      window.addEventListener('resize', ajuste);
+      window.addEventListener('orientationchange', ajuste);
+    })();
+  }
+
   // ---- Les onglets, dans l'ordre d'affichage. LA seule liste à maintenir. ----
   var TABS = [
     { id: 'home',    file: 'index.html',       fr: 'Accueil',       en: 'Home' },
