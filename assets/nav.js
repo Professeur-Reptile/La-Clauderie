@@ -18,6 +18,21 @@
 (function () {
   'use strict';
 
+  // Mode application (écran d'accueil) : réserve la zone de la barre d'état du
+  // téléphone au-dessus de la barre de navigation. Même injection que dans
+  // pwa.js (garde anti-doublon par id) — dupliquée ici pour la page Codex, qui
+  // charge nav.js mais pas pwa.js.
+  if (!document.getElementById('pwa-safe-area')) {
+    var safe = document.createElement('style');
+    safe.id = 'pwa-safe-area';
+    safe.textContent =
+      '@media (display-mode: standalone), (display-mode: fullscreen) {' +
+      ' .topbar, .guild-bar { padding-top: env(safe-area-inset-top, 0px); }' +
+      ' body { padding-bottom: env(safe-area-inset-bottom, 0px); }' +
+      '}';
+    document.head.appendChild(safe);
+  }
+
   // ---- Les onglets, dans l'ordre d'affichage. LA seule liste à maintenir. ----
   var TABS = [
     { id: 'home',    file: 'index.html',       fr: 'Accueil',       en: 'Home' },

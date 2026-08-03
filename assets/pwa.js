@@ -23,6 +23,22 @@
   var root = self_src.replace(/assets\/pwa\.js.*$/, '');   // racine du site
   var lang = (localStorage.getItem('lang') === 'en') ? 'en' : 'fr';
 
+  // En mode application (écran d'accueil), les téléphones récents dessinent la
+  // page SOUS la barre d'état (heure, batterie, réseau) : la barre du site se
+  // retrouvait cachée derrière. On réserve la zone système avec les insets
+  // sûrs — actif uniquement en mode app, le navigateur classique ne change pas.
+  // (Nécessite viewport-fit=cover dans la balise viewport de chaque page.)
+  if (!document.getElementById('pwa-safe-area')) {
+    var safe = document.createElement('style');
+    safe.id = 'pwa-safe-area';
+    safe.textContent =
+      '@media (display-mode: standalone), (display-mode: fullscreen) {' +
+      ' .topbar, .guild-bar { padding-top: env(safe-area-inset-top, 0px); }' +
+      ' body { padding-bottom: env(safe-area-inset-bottom, 0px); }' +
+      '}';
+    document.head.appendChild(safe);
+  }
+
   var T = {
     fr: {
       install: '📲 Installer l\'app',
