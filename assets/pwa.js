@@ -26,16 +26,19 @@
   // En mode application (écran d'accueil), les téléphones récents dessinent la
   // page SOUS la barre d'état (heure, batterie, réseau) : la barre du site se
   // retrouvait cachée derrière. On réserve la zone système avec les insets
-  // sûrs — actif uniquement en mode app, le navigateur classique ne change pas.
-  // (Nécessite viewport-fit=cover dans la balise viewport de chaque page.)
+  // sûrs. Sans condition de mode : dans un navigateur classique les insets
+  // valent 0, donc rien ne bouge — et iOS ne matche pas toujours
+  // (display-mode: standalone) en mode app, ce qui annulait le correctif.
+  // Nécessite, dans CHAQUE page : viewport-fit=cover dans la balise viewport
+  // ET apple-mobile-web-app-status-bar-style en « black-translucent » — seul
+  // mode où iOS rapporte les vrais insets (en « black », il dessine quand même
+  // bord à bord mais renvoie safe-area-inset-top = 0).
   if (!document.getElementById('pwa-safe-area')) {
     var safe = document.createElement('style');
     safe.id = 'pwa-safe-area';
     safe.textContent =
-      '@media (display-mode: standalone), (display-mode: fullscreen) {' +
-      ' .topbar, .guild-bar { padding-top: env(safe-area-inset-top, 0px); }' +
-      ' body { padding-bottom: env(safe-area-inset-bottom, 0px); }' +
-      '}';
+      '.topbar, .guild-bar { padding-top: env(safe-area-inset-top, 0px); }' +
+      ' body { padding-bottom: env(safe-area-inset-bottom, 0px); }';
     document.head.appendChild(safe);
   }
 
