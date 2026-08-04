@@ -11,9 +11,17 @@
      - pageV  : la version pour laquelle CETTE page a été relue (data-version) ;
      - notesV : la dernière entrée de patch-notes.json — tenue par la Routine
                 éditoriale (horaire), donc en léger retard possible sur le jeu ;
-     - kbTag  : data/_meta.json de la knowledge base — écrit par l'extraction
-                automatique (cron 5 min), donc la vraie dernière version DÉTECTÉE
-                du jeu, presque toujours en avance sur la Routine éditoriale.
+     - kbTag  : la vraie dernière version du jeu, prise au PLUS FRAIS de trois
+                miroirs (voir latestGameTag) : la copie locale de
+                data/_meta.json (rafraîchie au déploiement, jusqu'à 6 h de
+                retard sur OVH), le _meta.json des GitHub Pages de la KB
+                (quelques minutes de retard), et l'API GitHub du repo du jeu
+                (la release réelle, cache local de 10 min pour ménager le
+                quota anonyme). Incident du 4 août 2026 : le badge affichait
+                « à jour de la v0.33.1 — la dernière version du jeu » alors
+                que la v0.34.0 était sortie, parce que le cron de la KB
+                (throttlé ~1 h par GitHub) ET la copie OVH étaient en retard
+                en même temps — d'où les deux sources fraîches ajoutées.
    Trois badges possibles :
      ✓ vert   — pageV = notesV = kbTag : à jour, et vérifié contre le jeu.
      ⏳ orange (page en retard) — le jeu a avancé (notesV a bougé), la
@@ -96,13 +104,50 @@
     return fetch(url, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
   }
 
+  // Compare deux tags « vX.Y.Z » numériquement (v0.34.0 > v0.33.1).
+  function newerTag(a, b) {
+    if (!a) return b; if (!b) return a;
+    var pa = String(a).replace(/^v/, '').split('.'), pb = String(b).replace(/^v/, '').split('.');
+    for (var i = 0; i < 3; i++) {
+      var d = (parseInt(pa[i], 10) || 0) - (parseInt(pb[i], 10) || 0);
+      if (d) return d > 0 ? a : b;
+    }
+    return a;
+  }
+
+  // La release réelle du jeu via l'API GitHub, avec un cache de 10 min en
+  // sessionStorage : une page vue = au plus un appel, et le quota anonyme
+  // (60 req/h/IP) reste très loin.
+  function latestReleaseTag() {
+    var KEY = 'wocc-latest-tag', TTL = 10 * 60 * 1000;
+    try {
+      var c = JSON.parse(sessionStorage.getItem(KEY) || 'null');
+      if (c && c.tag && (Date.now() - c.t) < TTL) return Promise.resolve(c.tag);
+    } catch (e) { /* stockage indisponible : on interroge sans cache */ }
+    return safeJson('https://api.github.com/repos/levy-street/world-of-claudecraft/releases/latest')
+      .then(function (rel) {
+        var tag = rel && rel.tag_name || null;
+        if (tag) { try { sessionStorage.setItem(KEY, JSON.stringify({ tag: tag, t: Date.now() })); } catch (e) {} }
+        return tag;
+      });
+  }
+
+  // Le tag le plus frais parmi les trois miroirs (voir l'en-tête du fichier).
+  function latestGameTag() {
+    var sources = [safeJson(KB_META_URL), latestReleaseTag()];
+    if (onLaclauderie) sources.push(safeJson(GH_PAGES + '/data/_meta.json'));
+    return Promise.all(sources).then(function (r) {
+      var local = r[0] && r[0].tag, api = r[1], pages = r[2] && r[2].tag;
+      return newerTag(newerTag(local, pages), api) || null;
+    });
+  }
+
   Promise.all([
     safeJson(root + 'patch-notes.json'),
-    safeJson(KB_META_URL)
+    latestGameTag()
   ]).then(function (results) {
-    var notesData = results[0], kbMeta = results[1];
+    var notesData = results[0], kbTag = results[1];
     var notesV = notesData && notesData.versions && notesData.versions[0] && notesData.versions[0].version;
-    var kbTag = kbMeta && kbMeta.tag;
     render(notesV || null, kbTag || null);
   });
 })();
