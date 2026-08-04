@@ -54,6 +54,57 @@ const FILES = ['ITEMS','MOBS','NPCS','QUESTS','DUNGEONS','DELVES','ITEM_SETS',
                'WORLD_BOSSES','ZONES','HEROIC_BOSS_LOOT','HEROIC_VENDOR_STOCK',
                'DELVE_SHOPS','ABILITIES','TALENTS','_meta'];
 
+/* ---------- version française (depuis la v0.34.0, le jeu est traduit) ----
+   Deux sources, chargées uniquement quand le site est en français :
+   - NOMS officiels : data/I18N_FR.json (la KB les extrait du catalogue
+     fr_FR du client — ce que voit un joueur en client français). Chaque
+     entrée a deux clés : l'id du jeu ET le nom anglais replié (fold).
+     Affichés en discret à côté des noms anglais, et sous le titre des fiches.
+   - DESCRIPTIONS : assets/codex-fr.json — traductions ÉDITORIALES du site,
+     rédigées à la main (la traduction du jeu a été jugée trop inégale pour
+     être affichée telle quelle). Clés : ability → id ; talent → «classe/id»
+     (ou nom replié) ; spec → «classe/id» ({description, mastery}) ;
+     set → id ({pièces: texte}). Repli silencieux sur l'anglais si absent. */
+let FRN = null, FRD = null, frPromise = null;
+function ensureFr() {
+  if (LANG !== 'fr') return Promise.resolve();
+  return frPromise ??= Promise.all([
+    fetch(`${DATA_BASE}/I18N_FR.json`).then(r => r.ok ? r.json() : null).catch(() => null),
+    fetch(`${SITE_BASE}assets/codex-fr.json`).then(r => r.ok ? r.json() : null).catch(() => null),
+  ]).then(res => { FRN = res[0]; FRD = res[1]; });
+}
+const FR_TYPES = ['item','ability','mob','npc','quest','zone','dungeon','delve','set'];
+function frName(type, ref) {
+  if (!FRN || !ref) return null;
+  const maps = type === 'auto' ? FR_TYPES.map(t => FRN[t]).filter(Boolean)
+    : FRN[type] ? [FRN[type]] : [];
+  for (const m of maps) { const hit = m[ref] || m[fold(ref)]; if (hit) return hit; }
+  return null;
+}
+function frDesc(kind, key) { return (LANG === 'fr' && FRD && FRD[kind] && FRD[kind][key]) || null; }
+
+/* Ajoute, dans chaque [data-codex] de la page française, le nom officiel
+   français en discret — « Valorsteed (Destrier de Bravoure) ». Idempotent
+   (data-fr-done) ; ne marque rien tant que les noms ne sont pas chargés. */
+function annotate(root) {
+  if (!FRN) return;
+  (root || document).querySelectorAll('[data-codex]:not([data-fr-done])').forEach(el => {
+    el.dataset.frDone = '1';
+    const parts = el.dataset.codex.split('|');
+    const type = parts[0].trim();
+    let ref = parts.slice(1).join('|').trim();
+    // Un span sans référence explicite s'appuie sur son texte : on fige la
+    // référence AVANT d'ajouter l'annotation (qui modifie textContent).
+    if (!ref) { ref = el.textContent.trim(); el.dataset.codex = `${type}|${ref}`; }
+    const fr = frName(type, ref);
+    if (!fr || fold(fr) === fold(el.textContent) || fold(fr) === fold(ref)) return;
+    const i = document.createElement('i');
+    i.className = 'cxp-frn';
+    i.textContent = ` (${fr})`;
+    el.appendChild(i);
+  });
+}
+
 /* ---------- petits helpers ---------- */
 
 const esc = s => String(s ?? '').replace(/[&<>"']/g,
@@ -529,7 +580,8 @@ function itemSheet(it) {
 
 function abilitySheet(a) {
   const body = [];
-  if (a.description) body.push(`<p class="cxp-desc">${esc(a.description)}</p>`);
+  const aDesc = frDesc('ability', a.id) || a.description;
+  if (aDesc) body.push(`<p class="cxp-desc">${esc(aDesc)}</p>`);
   body.push(kvGrid([
     [T({ fr: 'Appris au niveau', en: 'Learned at level' }), a.learnLevel],
     [T({ fr: 'Coût', en: 'Cost' }), a.cost || null],
@@ -556,16 +608,19 @@ function abilitySheet(a) {
 
 function talentSheet({ node, cls, choice }) {
   const body = [];
+  // Descriptions maison en français : clé « classe/id » (ou nom replié).
+  const tDesc = (t) => frDesc('talent', `${cls}/${t.id || fold(t.name)}`) || t.description;
   if (choice) {
-    body.push(`<p class="cxp-desc">${esc(choice.description || '')}</p>`);
+    body.push(`<p class="cxp-desc">${esc(tDesc(choice) || '')}</p>`);
     body.push(`<p class="cxp-dim">${T({ fr: 'Option du talent au choix', en: 'Option of the choice talent' })} « ${xlink('talent', node)} ».</p>`);
   } else {
-    if (node.description) body.push(`<p class="cxp-desc">${esc(node.description)}</p>`);
+    const nDesc = tDesc(node);
+    if (nDesc) body.push(`<p class="cxp-desc">${esc(nDesc)}</p>`);
     if (node.level) body.push(`<p class="cxp-dim">${T({ fr: `Rangée débloquée au niveau ${node.level}.`, en: `Row unlocked at level ${node.level}.` })}</p>`);
     if (node.maxRank > 1) body.push(`<p class="cxp-dim">${T({ fr: `Jusqu'à ${node.maxRank} rangs.`, en: `Up to ${node.maxRank} ranks.` })}</p>`);
     if (node.kind === 'choice' && node.choices)
       body.push(section(T({ fr: 'Talent au choix — une seule option', en: 'Choice talent — pick one option' }), ul(node.choices.map(ch =>
-        `<li><b>${esc(ch.icon || '')} ${esc(ch.name)}</b><br><span class="cxp-dim">${esc(ch.description || '')}</span></li>`))));
+        `<li><b>${esc(ch.icon || '')} ${esc(ch.name)}</b><br><span class="cxp-dim">${esc(tDesc(ch) || '')}</span></li>`))));
   }
   const tree = node.tree === 'class' ? T({ fr: 'Arbre de classe', en: 'Class tree' }) : T({ fr: 'Arbre de spécialisation', en: 'Spec tree' });
   return {
@@ -577,14 +632,16 @@ function talentSheet({ node, cls, choice }) {
 
 function specSheet({ spec, cls }) {
   const body = [];
-  if (spec.description) body.push(`<p class="cxp-desc">${esc(spec.description)}</p>`);
+  const fs = (LANG === 'fr' && FRD && FRD.spec && FRD.spec[`${cls}/${spec.id}`]) || {};
+  const sDesc = fs.description || spec.description;
+  if (sDesc) body.push(`<p class="cxp-desc">${esc(sDesc)}</p>`);
   const sig = spec.signature && byId.ability[spec.signature];
   body.push(kvGrid([
     [T({ fr: 'Rôle', en: 'Role' }), ROLE_FR[spec.role] || spec.role],
     [T({ fr: 'Sort signature', en: 'Signature ability' }), sig ? xlink('ability', sig) : null],
   ]));
   if (spec.mastery) body.push(section(`${T({ fr: 'Maîtrise', en: 'Mastery' })} — ${esc(spec.mastery.name || '')}`,
-    `<p class="cxp-desc">${esc(spec.mastery.description || '')}</p>`));
+    `<p class="cxp-desc">${esc(fs.mastery || spec.mastery.description || '')}</p>`));
   return {
     kicker: [T({ fr: 'Spécialisation', en: 'Specialisation' }), CLASS_FR[cls]].filter(Boolean).join(' · '),
     title: `${spec.icon || ''} ${spec.name}`.trim(), body: body.join(''),
@@ -701,7 +758,8 @@ function delveSheet(d) {
 
 function setSheet(s) {
   const body = [];
-  body.push(section('Bonus', ul((s.bonuses || []).map(b => `<li><b>${b.pieces} ${T({ fr: 'pièces', en: 'pieces' })}</b> — ${esc(b.text || b.description || '')}</li>`))));
+  const fb = (LANG === 'fr' && FRD && FRD.set && FRD.set[s.id]) || {};
+  body.push(section('Bonus', ul((s.bonuses || []).map(b => `<li><b>${b.pieces} ${T({ fr: 'pièces', en: 'pieces' })}</b> — ${esc(fb[String(b.pieces)] || b.text || b.description || '')}</li>`))));
   const pieces = (refs.setPieces[s.id] || []).map(it => `<li>${xlink('item', it, null, 'q-' + (it.quality || 'common'))}</li>`);
   body.push(section(`${T({ fr: 'Pièces', en: 'Pieces' })} (${pieces.length})`, ul(pieces)));
   return { kicker: T({ fr: 'Panoplie', en: 'Item set' }), title: s.name, body: body.join(''), codexHref: `${CODEX_SITE}#set/${s.id}` };
@@ -775,6 +833,8 @@ const CSS = `
   .cxp-hero { color: #ff8000; font-size: .78rem; }
   .cxp-xp { color: #b58cf5; }
   .cxp-po { color: #ffd76e; } .cxp-pa { color: #c8ccd6; } .cxp-pc { color: #d29d6b; }
+  .cxp-frn { font-style: italic; font-size: .84em; opacity: .62; }
+  .cxp-title-fr { font-size: .85rem; font-weight: 400; color: #8b93a3; font-style: italic; margin-top: 2px; }
   .cxp-foot { padding: 10px 18px 14px; border-top: 1px solid rgba(200,160,75,.18); font-size: .82rem; }
   .cxp-foot a { color: #c8a04b; text-decoration: none; }
   .cxp-foot a:hover { color: #e6c37a; text-decoration: underline; }
@@ -818,6 +878,7 @@ function render(sheet, fromBack) {
       <div class="cxp-head-txt">
         <div class="cxp-kicker">${esc(sheet.kicker || '')}</div>
         <h3 class="cxp-title" ${sheet.titleColor ? `style="color:${sheet.titleColor}"` : ''}>${esc(sheet.title)}</h3>
+        ${sheet.titleFr ? `<div class="cxp-title-fr">${esc(sheet.titleFr)}</div>` : ''}
       </div>
       <button class="cxp-btn cxp-close" aria-label="${T({ fr: 'Fermer', en: 'Close' })}" title="${T({ fr: 'Fermer', en: 'Close' })}">✕</button>
     </div>
@@ -839,7 +900,7 @@ function openRef(type, ref, fromBack) {
     d.innerHTML = `<div class="cxp-load">${T({ fr: 'Consultation du Codex…', en: 'Consulting the Codex…' })}</div>`;
     (typeof d.showModal === 'function' ? d.showModal() : d.setAttribute('open', ''));
   }
-  ensureData().then(() => {
+  Promise.all([ensureData(), ensureFr()]).then(() => {
     const hit = resolve(type, ref);
     if (!hit) {
       render({ ref: [type, ref], kicker: 'Codex', title: ref,
@@ -849,6 +910,12 @@ function openRef(type, ref, fromBack) {
     }
     const sheet = SHEETS[hit.type](hit.entity);
     sheet.ref = [type, ref];
+    // Sous-titre : le nom officiel français de l'entité (client fr_FR).
+    if (LANG === 'fr' && !sheet.titleFr) {
+      const id = hit.entity && (hit.entity.id || (hit.entity.spec && hit.entity.spec.id));
+      const fr = frName(hit.type, id) || frName(hit.type, sheet.title);
+      if (fr && fold(fr) !== fold(sheet.title || '')) sheet.titleFr = fr;
+    }
     render(sheet, fromBack);
   }).catch(() => {
     render({ ref: [type, ref], kicker: 'Codex', title: T({ fr: 'Codex injoignable', en: 'Codex unreachable' }),
@@ -888,6 +955,7 @@ function enhance(root) {
     el.setAttribute('role', 'button');
     if (!el.title) el.title = T({ fr: 'Voir la fiche', en: 'View the sheet' });
   });
+  annotate(root);
 }
 /* Les liens de navigation vers le Codex sont écrits pour laclauderie.fr
    (« /codex/ ») ; ailleurs (miroir GitHub Pages, dev local), on les repointe
@@ -903,6 +971,9 @@ const boot = () => {
   ensureStyle();
   enhance();
   fixCodexLinks();
+  // Pages françaises : dès que les noms officiels sont là, annoter tout le
+  // document (les ajouts ultérieurs passent par enhance() via l'observer).
+  ensureFr().then(() => annotate());
   // Les pages injectent des [data-codex] après leurs fetch (accueil, builds…) :
   // on ré-applique enhance() sur les ajouts pour garder l'accès clavier.
   new MutationObserver(muts => {

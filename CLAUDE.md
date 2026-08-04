@@ -52,6 +52,16 @@ se limite à la partie rédactionnelle des « Nouveautés » :
      « Les nouveaux objets, et où les trouver » (modèle : section 06 de
      `notes/v0.32.0.html`) : qui drope quoi, à quel taux, avec un span
      `data-codex` par objet.
+2ter. **Tenir les traductions françaises des fiches Codex** :
+   `python3 scripts/check_codex_fr.py` liste les descriptions (sorts, talents,
+   spés, panoplies) ajoutées ou modifiées par la MAJ qui n'ont pas encore leur
+   traduction MAISON dans `assets/codex-fr.json` — les traduire soi-même
+   depuis l'anglais (charte dans l'en-tête du script ; décision d'août 2026 :
+   ne JAMAIS recopier la traduction du jeu, jugée trop inégale), avec
+   l'empreinte `_src` (sha1[:8] du texte anglais). Les NOMS français, eux,
+   sont automatiques : la KB les extrait du client (`data/I18N_FR.json`) et
+   `codex-popup.js` les affiche en discret à côté des noms anglais et dans
+   les fiches — rien à faire.
 3. **Ajouter une entrée en tête de `patch-notes.json`** (version, date, titre,
    resume, temps_forts, page + variantes `_en` et `page_en`). L'accueil et la
    page Nouveautés se mettent à jour tout seuls à partir de ce fichier.
