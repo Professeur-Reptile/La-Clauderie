@@ -314,11 +314,16 @@ def sheet(cls, role, equip, extra=None):
                 hit_r += e.get('hitRating',0)
                 if 'proc' in e: procs.append(e['proc'])
     s['armor'] += 2*s['agi']
-    bear = (cls=='druid' and role=='tank'); cat = (cls=='druid' and role=='dps')
+    # Formes du druide. Le DPS druide est la spé BALANCE (Moongrove), qui joue
+    # en Moonwing Form : +20 % dégâts des sorts (la forme) et la maîtrise
+    # Moonrage +15 % dégâts des sorts / +10 % hâte. Le jeu n'a PAS de spé
+    # « feral DPS » : Wildfang est étiquetée tank (data des specs + guide
+    # intégré), et sa maîtrise dépense la moitié de son budget en menace et
+    # armure. Le site a longtemps décrit un DPS mêlée en forme de Loup : erreur
+    # corrigée le 4 août 2026, elle faisait aussi calculer un BiS Agilité.
+    bear = (cls=='druid' and role=='tank')
     if bear:
         s['armor'] = jround(s['armor']*1.9); ap_bonus += 15 + jround(s['agi']*1.5)
-    if cat:
-        ap_bonus += 8 + 2*LVL; s['agi'] += max(2, LVL//2)
     ap_stats = (2*s['str'] if cls in ('warrior','paladin','shaman','druid')
                 else s['str']+s['agi'] if cls in ('rogue','hunter') else s['str'])
     ap = max(0, ap_stats + ap_bonus)
@@ -389,8 +394,9 @@ def objective(cls, role, sh):
             w=sh['w']; avg=0.6*(w['min']+w['max'])/2
             per=avg+(sh['rap']+bonus['ap'])/14*w['speed']
             return ((per/w['speed'])*(1+haste)*(1+crit)+bonus['dps'])*land_m
-        if cls=='druid':  # félin : l'arme ne compte que par ses stats
-            return (((sh['ap']+bonus['ap'])/14)*(1+haste)*(1+crit)*3.0+bonus['dps'])*land_m
+        if cls=='druid':  # Moongrove : caster en Moonwing Form (+20 %) × Moonrage (+15 %)
+            spd=(60+(sh['sp']+bonus['sp'])*0.714)/2.5*(1+haste+0.10)*(1+0.5*crit)*1.20*1.15
+            return spd*land_s
         w=sh['w']; avg=(w['min']+w['max'])/2
         per=avg+(sh['ap']+bonus['ap'])/14*w['speed']
         return ((per/w['speed'])*(1+haste)*(1+crit)+bonus['dps'])*land_m

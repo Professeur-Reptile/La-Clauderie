@@ -558,32 +558,31 @@ const BUILDS = {
              en: "Cast Wildbloom BEFORE the pull — a rolling HoT is a heal in the bank." }
   },
   dps: {
-   spec: { fr: "Wildfang (feral) — loup", en: "Wildfang (feral) — wolf" },
-   mastery: { fr: "Primal Heart (v0.27) : +15 % dégâts physiques et saignements, +20 % menace, +15 % armure", en: "Primal Heart (v0.27): +15% physical & bleed damage, +20% threat, +15% armor" },
-   pourquoi: { fr: "Le DPS mêlée en forme de Loup, aligné sur le stuff Agilité du BiS ; Moongrove (balance) est l'alternative caster.",
-               en: "Melee DPS in Wolf form, aligned with the BiS agility gear; Moongrove (balance) is the caster alternative." },
-   stats: { fr: "Agilité > Crit > Force > Hâte", en: "Agility > Crit > Strength > Haste" },
+   spec: { fr: "Moongrove (balance) — Moonwing", en: "Moongrove (balance) — Moonwing" },
+   mastery: { fr: "Moonrage : +15 % dégâts des sorts, +10 % hâte des sorts", en: "Moonrage: +15% spell damage, +10% spell haste" },
+   pourquoi: { fr: "C'est LA spé DPS du druide — la seule que le jeu étiquette « dps » (Wildfang est la spé tank, Groveheart la spé soin). Tu joues à distance en Moonwing Form : la forme ajoute +20 % de dégâts des sorts et +50 % d'armure, la maîtrise +15 % de dégâts et +10 % de hâte. Correction du 4 août 2026 : cette page conseillait un DPS mêlée en forme de Loup — c'était en réalité jouer la spé TANK, dont la maîtrise dépense la moitié de son budget en menace et en armure, inutiles pour un DPS.",
+               en: "This is THE druid DPS spec — the only one the game labels “dps” (Wildfang is the tank spec, Groveheart the healer). You play at range in Moonwing Form: the form adds +20% spell damage and +50% armor, the mastery +15% damage and +10% haste. Corrected on 4 August 2026: this page used to recommend melee DPS in Wolf form — which actually meant playing the TANK spec, whose mastery spends half its budget on threat and armor, both useless for a damage dealer." },
+   stats: { fr: "Intelligence > Puissance des sorts > Hâte > Crit", en: "Intellect > Spell power > Haste > Crit" },
    talents: [
-    ["Redmaw", "niv. 5", { fr: "après un passage en Loup, ton premier Rendclaw ou Flense coûte 50 % de moins.", en: "after shifting into Wolf, your first Rendclaw or Flense costs 50% less." }],
-    ["Typhoon", "niv. 8", { fr: "Bruin Rebound est pour l'ours : prends le knockback, l'outil de peel du groupe.", en: "Bruin Rebound is for bears: take the knockback, the group's peel tool." }],
-    ["Lifesap", "niv. 11", { fr: "de l'énergie en vagues, en forme de Loup : plus de griffes par minute.", en: "energy in waves, in Wolf form: more claws per minute." }],
-    ["Redtooth Rhythm", "niv. 14", { fr: "chaque finisher rend le prochain builder 50 % moins cher : ta boucle de dégâts.", en: "each finisher makes the next builder 50% cheaper: your damage loop." }],
-    ["Ironhide Reflex", "niv. 17", { fr: "absorption de 15 % PV max sur un gros coup : la survie du mêlée (v0.27).", en: "absorb 15% max HP on a big hit: melee survival (v0.27)." }],
-    ["Red Haze", "niv. 20", { fr: "+70 PA pendant 15 s — à empiler avec Wolfsblood et Primal Surge.", en: "+70 AP for 15s — stack it with Wolfsblood and Primal Surge." }]
+    ["Moonkindle", "niv. 5", { fr: "1 Wildbolt sur 3 rend ton prochain Lunar Tempest gratuit : de la mana économisée à chaque cycle.", en: "every 3rd Wildbolt makes your next Lunar Tempest free: mana saved on every cycle." }],
+    ["Briar Ambush", "niv. 8", { fr: "Gripping Roots rend ton prochain Wildbolt instantané (une fois toutes les 15 s) — le sort de mobilité du caster.", en: "Gripping Roots makes your next Wildbolt instant (once per 15s) — the caster's mobility trick." }],
+    ["Lifesap", "niv. 11", { fr: "ta ressource revient en vagues, dans toutes les formes : la mana est ton seul vrai plafond.", en: "your resource returns in waves, in any form: mana is your only real ceiling." }],
+    ["Moonspite", "niv. 14", { fr: "1 Lunar Tempest sur 3 rend ton prochain Skyfall INSTANTANÉ : ton plus gros sort sans les 3 s d'incantation.", en: "every 3rd Lunar Tempest makes your next Skyfall INSTANT: your biggest nuke without the 3s cast." }],
+    ["Oaken Reflex", "niv. 17", { fr: "Oakhide rend instantané ton prochain Wildbolt, Skyfall, Wildmend ou Second Bloom — survie ET tempo.", en: "Oakhide makes your next Wildbolt, Skyfall, Wildmend or Second Bloom instant — survival AND tempo." }],
+    ["Nature's Fury", "niv. 20", { fr: "le capstone : en Moonwing Form, +3 % de crit des sorts pour toi ET tout le groupe à 30 m. Aucun autre choix n'apporte ça au raid.", en: "the capstone: in Moonwing Form, +3% spell crit for you AND the whole party within 30 yd. No other option brings that to the group." }]
    ],
    rotation: [
-    ["Wolf Form", { fr: "et Stalk avant le pull.", en: "and Stalk before the pull." }],
-    ["Slinkstrike", { fr: "l'ouverture furtive : étourdit 2 s.", en: "the stealth opener: 2s stun." }],
-    ["Flense", { fr: "le saignement, à garder actif.", en: "the bleed, keep it up." }],
-    ["Claw", { fr: "le générateur de combo.", en: "the combo point generator." }],
-    ["Gorebite", { fr: "le finisher à 4-5 points.", en: "the finisher at 4–5 points." }],
-    ["Rip", { fr: "sur les boss : le finisher-saignement fait plus au total — et la maîtrise le booste de 15 %.", en: "on bosses: the bleed finisher does more overall — and the mastery boosts it by 15%." }],
-    ["Primal Surge", { fr: "le sort signature (v0.25) : +100 % de régén d'énergie pendant 10 s — à empiler avec Wolfsblood.", en: "the signature spell (v0.25): +100% Energy regen for 10s — stack it with Wolfsblood." }],
-    ["Wolfsblood", { fr: "+40 PA pendant 6 s, à caler sur les burst.", en: "+40 AP for 6s, line it up with your burst." }],
-    ["Headbutt", { fr: "l'interrupt (v0.25) : coup de tête bondissant, verrouille l'école 4 s.", en: "the interrupt (v0.25): a lunging headbutt that locks the school for 4s." }]
+    ["Moonwing Form", { fr: "avant tout : +20 % de dégâts des sorts et +50 % d'armure, ça tient jusqu'à ce que tu la quittes.", en: "first of all: +20% spell damage and +50% armor, it lasts until you leave it." }],
+    ["Lunar Tempest", { fr: "instantané, dégâts directs + effet périodique : à poser en ouverture et à entretenir.", en: "instant, direct damage + a DoT: open with it and keep it rolling." }],
+    ["Stinging Swarm", { fr: "le second effet périodique (niv. 20) — deux DoT qui tournent pendant que tu incantes.", en: "your second DoT (lvl 20) — two DoTs ticking while you cast." }],
+    ["Skyfall", { fr: "le gros coup (80-112) : ton remplissage entre deux DoT, instantané quand Moonspite s'allume.", en: "the big hit (80–112): your filler between DoTs, and instant whenever Moonspite lights up." }],
+    ["Wildbolt", { fr: "l'incantation courte (1,5 s) quand tu dois bouger vite ou finir une cible.", en: "the short cast (1.5s) when you need to move or finish a target." }],
+    ["Galeheart", { fr: "l'AoE (recharge 12 s) dès 3 cibles groupées.", en: "the AoE (12s CD) at 3+ clustered targets." }],
+    ["Lifesap", { fr: "ton bouton mana : à claquer AVANT d'être à sec, pas après.", en: "your mana button: press it BEFORE you run dry, not after." }],
+    ["Oakhide", { fr: "+150 armure — et avec Oaken Reflex, un sort instantané offert dans la foulée.", en: "+150 armor — and with Oaken Reflex, a free instant cast right after." }]
    ],
-   astuce: { fr: "En donjon tu es aussi la roue de secours : un battle-rez n'existe pas, mais sortir de forme pour un Wildmend d'urgence a sauvé des runs.",
-             en: "In dungeons you're also the backup plan: battle-rez doesn't exist, but shifting out of form for an emergency Wildmend has saved runs." }
+   astuce: { fr: "Tu restes un druide : sortir de Moonwing pour un Wildmend d'urgence ou un Gripping Roots sur un add sauve des runs — mais chaque sortie te coûte le +20 % de la forme, alors reviens dedans tout de suite. Si tu veux vraiment jouer en mêlée, c'est la spé Wildfang (onglet Tank) : elle tape moins fort mais elle tank pour de vrai.",
+             en: "You're still a druid: dropping out of Moonwing for an emergency Wildmend or a Gripping Roots on an add saves runs — but every exit costs you the form's +20%, so shift straight back. If you really want to play melee, that's the Wildfang spec (Tank tab): less damage, but it genuinely tanks." }
   }
  },
  priest: {
@@ -16041,100 +16040,100 @@ const BIS = {
     "picks": {
      "mainhand": {
       "best": {
-       "name": "Maul of the Scourged Wilds",
-       "q": "epic",
+       "name": "Heartwood of the Deathless Crown",
+       "q": "legendary",
        "set": null,
        "stats": {
-        "str": 12,
-        "agi": 9,
-        "sta": 9,
-        "hit": 65,
-        "crit": 20
+        "sta": 14,
+        "int": 16,
+        "spi": 19,
+        "crit": 30,
+        "haste": 70
        },
        "w": {
-        "min": 60,
-        "max": 81,
-        "speed": 3.7
+        "min": 43,
+        "max": 70,
+        "speed": 3.2
        },
        "sp": null,
-       "id": "heroic_maul_of_the_scourged_wilds",
-       "score": 39.5,
+       "id": "heroic_deathless_heartwood",
+       "score": 57.8,
        "xclass": false,
        "slot": "mainhand",
        "src": [
-        "Butin héroïque : Nythraxis, Scourge of Thornpeak · 25 %"
+        "Butin héroïque : Nythraxis, Scourge of Thornpeak · 3 %"
        ]
       },
       "alts": [
        {
-        "name": "Wildsoul Maul",
+        "name": "Scepter of the Deathless Court",
         "q": "epic",
         "set": null,
         "stats": {
-         "str": 13,
-         "agi": 9,
-         "sta": 7,
+         "int": 13,
+         "spi": 10,
+         "crit": 20,
+         "haste": 65
+        },
+        "w": {
+         "min": 29,
+         "max": 51,
+         "speed": 2.4
+        },
+        "sp": null,
+        "id": "scepter_of_the_deathless_court",
+        "score": 31.3,
+        "xclass": false,
+        "slot": "mainhand",
+        "src": [
+         "Butin héroïque : Nythraxis, Scourge of Thornpeak · 33 %"
+        ]
+       },
+       {
+        "name": "Lunar Tide Greatstaff",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "int": 13,
+         "spi": 9,
          "hit": 50
         },
         "w": {
-         "min": 55,
-         "max": 78,
-         "speed": 3.6
+         "min": 36,
+         "max": 60,
+         "speed": 3
         },
         "sp": null,
-        "id": "wildsoul_maul",
-        "score": 38.2,
+        "id": "lunar_tide_greatstaff",
+        "score": 30.0,
         "xclass": false,
         "slot": "mainhand",
         "src": [
-         "Butin héroïque : Korzul the Gravewyrm · 25 %"
+         "Butin héroïque : Ysolei, Avatar of the Drowned Moon · 25 %"
         ]
        },
        {
-        "name": "Maul of the Scourged Wilds",
-        "q": "epic",
+        "name": "Voidsong, Dirk of the Sundered Veil",
+        "q": "legendary",
         "set": null,
         "stats": {
-         "str": 10,
-         "agi": 8,
-         "sta": 8,
-         "hit": 20
+         "int": 19,
+         "spi": 17,
+         "sta": 13
         },
         "w": {
-         "min": 56,
-         "max": 75,
-         "speed": 3.7
+         "min": 15,
+         "max": 25,
+         "speed": 1.8,
+         "dagger": true
         },
         "sp": null,
-        "id": "maul_of_the_scourged_wilds",
-        "score": 34.9,
+        "id": "voidsong_dirk",
+        "score": 54.6,
         "xclass": false,
         "slot": "mainhand",
         "src": [
-         "Butin : Nythraxis, Scourge of Thornpeak · 25 %"
-        ]
-       },
-       {
-        "name": "Nightfang's Greatstaff",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "str": 10,
-         "agi": 8,
-         "sta": 8
-        },
-        "w": {
-         "min": 53,
-         "max": 72,
-         "speed": 3.6
-        },
-        "sp": null,
-        "id": "heroic_nightfangs_greatstaff",
-        "score": 34.7,
-        "xclass": false,
-        "slot": "mainhand",
-        "src": [
-         "Butin héroïque : Korzul the Gravewyrm · 5 %"
+         "Faille rang S : légendaire · 0.3 % par victoire"
         ]
        },
        {
@@ -16142,75 +16141,217 @@ const BIS = {
         "q": "legendary",
         "set": null,
         "stats": {
-         "sta": 14,
-         "int": 16,
-         "spi": 19,
-         "crit": 30,
-         "haste": 70
+         "spi": 17,
+         "sta": 13,
+         "int": 14
         },
         "w": {
-         "min": 43,
-         "max": 70,
+         "min": 42,
+         "max": 68,
          "speed": 3.2
         },
         "sp": null,
-        "id": "heroic_deathless_heartwood",
-        "score": 57.8,
+        "id": "deathless_heartwood",
+        "score": 52.6,
         "xclass": false,
         "slot": "mainhand",
         "src": [
-         "Butin héroïque : Nythraxis, Scourge of Thornpeak · 3 %"
+         "Butin : Nythraxis, Scourge of Thornpeak · 3 %"
         ]
        }
       ],
       "alt": {
-       "name": "Wildsoul Maul",
+       "name": "Scepter of the Deathless Court",
        "q": "epic",
        "set": null,
        "stats": {
-        "str": 13,
-        "agi": 9,
-        "sta": 7,
-        "hit": 50
+        "int": 13,
+        "spi": 10,
+        "crit": 20,
+        "haste": 65
        },
        "w": {
-        "min": 55,
-        "max": 78,
-        "speed": 3.6
+        "min": 29,
+        "max": 51,
+        "speed": 2.4
        },
        "sp": null,
-       "id": "wildsoul_maul",
-       "score": 38.2,
+       "id": "scepter_of_the_deathless_court",
+       "score": 31.3,
        "xclass": false,
        "slot": "mainhand",
        "src": [
-        "Butin héroïque : Korzul the Gravewyrm · 25 %"
+        "Butin héroïque : Nythraxis, Scourge of Thornpeak · 33 %"
+       ]
+      }
+     },
+     "offhand": {
+      "best": {
+       "name": "Wraithfire Orb",
+       "q": "epic",
+       "set": null,
+       "stats": {
+        "sta": 3,
+        "int": 8,
+        "spi": 6,
+        "crit": 55,
+        "haste": 20
+       },
+       "w": null,
+       "sp": null,
+       "id": "heroic_wraithfire_orb",
+       "score": 17.0,
+       "xclass": false,
+       "slot": "offhand",
+       "src": [
+        "Butin héroïque : Nythraxis, Scourge of Thornpeak · 16 %"
+       ]
+      },
+      "alts": [
+       {
+        "name": "Wraithfire Orb",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "int": 7,
+         "spi": 5,
+         "sta": 3,
+         "crit": 20
+        },
+        "w": null,
+        "sp": null,
+        "id": "wraithfire_orb",
+        "score": 15.0,
+        "xclass": false,
+        "slot": "offhand",
+        "src": [
+         "Butin : Nythraxis, Scourge of Thornpeak · 16 %"
+        ]
+       },
+       {
+        "name": "Valefire Lantern",
+        "q": "uncommon",
+        "set": null,
+        "stats": {
+         "int": 1,
+         "spi": 1
+        },
+        "w": null,
+        "sp": null,
+        "id": "valefire_lantern",
+        "score": 2.0,
+        "xclass": false,
+        "slot": "offhand",
+        "src": [
+         "Butin : Mogger · 20 %"
+        ]
+       }
+      ],
+      "alt": {
+       "name": "Wraithfire Orb",
+       "q": "epic",
+       "set": null,
+       "stats": {
+        "int": 7,
+        "spi": 5,
+        "sta": 3,
+        "crit": 20
+       },
+       "w": null,
+       "sp": null,
+       "id": "wraithfire_orb",
+       "score": 15.0,
+       "xclass": false,
+       "slot": "offhand",
+       "src": [
+        "Butin : Nythraxis, Scourge of Thornpeak · 16 %"
        ]
       }
      },
      "helmet": {
       "best": {
-       "name": "Direfang Crown",
+       "name": "Wraithfire Cowl",
        "q": "epic",
-       "set": "Direfang Pelt",
+       "set": "Wraithfire Regalia",
        "stats": {
-        "armor": 190,
-        "agi": 12,
-        "sta": 8,
+        "armor": 105,
+        "sta": 7,
+        "int": 13,
         "hit": 55,
-        "crit": 20
+        "haste": 20
        },
        "w": null,
        "sp": null,
-       "id": "heroic_nighttalon_crown",
-       "score": 35.8,
+       "id": "heroic_soulflame_cowl",
+       "score": 28.8,
        "xclass": false,
        "slot": "helmet",
        "src": [
-        "Butin héroïque : Nythraxis, Scourge of Thornpeak · 45 %"
+        "Butin héroïque : Nythraxis, Scourge of Thornpeak · 26 %"
        ]
       },
       "alts": [
+       {
+        "name": "Wraithfire Cowl",
+        "q": "epic",
+        "set": "Wraithfire Regalia",
+        "stats": {
+         "armor": 105,
+         "int": 11,
+         "sta": 6,
+         "hit": 20
+        },
+        "w": null,
+        "sp": null,
+        "id": "soulflame_cowl",
+        "score": 25.8,
+        "xclass": false,
+        "slot": "helmet",
+        "src": [
+         "Butin : Nythraxis, Scourge of Thornpeak · 26 %"
+        ]
+       },
+       {
+        "name": "Direfang Crown",
+        "q": "epic",
+        "set": "Direfang Pelt",
+        "stats": {
+         "armor": 190,
+         "agi": 12,
+         "sta": 8,
+         "hit": 55,
+         "crit": 20
+        },
+        "w": null,
+        "sp": null,
+        "id": "heroic_nighttalon_crown",
+        "score": 35.8,
+        "xclass": false,
+        "slot": "helmet",
+        "src": [
+         "Butin héroïque : Nythraxis, Scourge of Thornpeak · 45 %"
+        ]
+       },
+       {
+        "name": "Sunbone Oracle's Crown",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 76,
+         "int": 11,
+         "spi": 7,
+         "crit": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "sunbone_oracles_crown",
+        "score": 24.3,
+        "xclass": false,
+        "slot": "helmet",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
        {
         "name": "Direfang Crown",
         "q": "epic",
@@ -16230,106 +16371,45 @@ const BIS = {
         "src": [
          "Butin : Nythraxis, Scourge of Thornpeak · 45 %"
         ]
-       },
-       {
-        "name": "Wraithfire Cowl",
-        "q": "epic",
-        "set": "Wraithfire Regalia",
-        "stats": {
-         "armor": 105,
-         "sta": 7,
-         "int": 13,
-         "hit": 55,
-         "haste": 20
-        },
-        "w": null,
-        "sp": null,
-        "id": "heroic_soulflame_cowl",
-        "score": 28.8,
-        "xclass": false,
-        "slot": "helmet",
-        "src": [
-         "Butin héroïque : Nythraxis, Scourge of Thornpeak · 26 %"
-        ]
-       },
-       {
-        "name": "Stormsunder Hood",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "armor": 118,
-         "agi": 11,
-         "sta": 7,
-         "crit": 40
-        },
-        "w": null,
-        "sp": null,
-        "id": "stormsunder_hood",
-        "score": 27.8,
-        "xclass": false,
-        "slot": "helmet",
-        "src": [
-         "Faille (rang B ou plus) : épique de victoire garanti"
-        ]
-       },
-       {
-        "name": "Tideguard Faceguard",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "armor": 168,
-         "agi": 10,
-         "sta": 8,
-         "crit": 40
-        },
-        "w": null,
-        "sp": null,
-        "id": "tideguard_faceguard",
-        "score": 32.0,
-        "xclass": true,
-        "slot": "helmet",
-        "src": [
-         "Butin héroïque : Vael the Fogbinder · 25 %"
-        ]
        }
       ],
       "alt": {
-       "name": "Direfang Crown",
+       "name": "Wraithfire Cowl",
        "q": "epic",
-       "set": "Direfang Pelt",
+       "set": "Wraithfire Regalia",
        "stats": {
-        "armor": 190,
-        "agi": 10,
-        "sta": 7,
+        "armor": 105,
+        "int": 11,
+        "sta": 6,
         "hit": 20
        },
        "w": null,
        "sp": null,
-       "id": "nighttalon_crown",
-       "score": 32.8,
+       "id": "soulflame_cowl",
+       "score": 25.8,
        "xclass": false,
        "slot": "helmet",
        "src": [
-        "Butin : Nythraxis, Scourge of Thornpeak · 45 %"
+        "Butin : Nythraxis, Scourge of Thornpeak · 26 %"
        ]
       }
      },
      "shoulder": {
       "best": {
-       "name": "Direfang Shoulderguards",
+       "name": "Wraithfire Mantle",
        "q": "epic",
-       "set": "Direfang Pelt",
+       "set": "Wraithfire Regalia",
        "stats": {
-        "armor": 165,
-        "agi": 10,
+        "armor": 92,
         "sta": 7,
+        "int": 10,
         "hit": 55,
-        "crit": 20
+        "haste": 20
        },
        "w": null,
        "sp": null,
-       "id": "heroic_nighttalon_shoulderguards",
-       "score": 30.8,
+       "id": "heroic_soulflame_mantle",
+       "score": 24.7,
        "xclass": false,
        "slot": "shoulder",
        "src": [
@@ -16338,19 +16418,19 @@ const BIS = {
       },
       "alts": [
        {
-        "name": "Direfang Shoulderguards",
+        "name": "Wraithfire Mantle",
         "q": "epic",
-        "set": "Direfang Pelt",
+        "set": "Wraithfire Regalia",
         "stats": {
-         "armor": 165,
-         "agi": 9,
+         "armor": 92,
+         "int": 9,
          "sta": 6,
          "hit": 20
         },
         "w": null,
         "sp": null,
-        "id": "nighttalon_shoulderguards",
-        "score": 28.8,
+        "id": "soulflame_mantle",
+        "score": 22.7,
         "xclass": false,
         "slot": "shoulder",
         "src": [
@@ -16358,20 +16438,20 @@ const BIS = {
         ]
        },
        {
-        "name": "Wraithfire Mantle",
+        "name": "Direfang Shoulderguards",
         "q": "epic",
-        "set": "Wraithfire Regalia",
+        "set": "Direfang Pelt",
         "stats": {
-         "armor": 92,
+         "armor": 165,
+         "agi": 10,
          "sta": 7,
-         "int": 10,
          "hit": 55,
-         "haste": 20
+         "crit": 20
         },
         "w": null,
         "sp": null,
-        "id": "heroic_soulflame_mantle",
-        "score": 24.7,
+        "id": "heroic_nighttalon_shoulderguards",
+        "score": 30.8,
         "xclass": false,
         "slot": "shoulder",
         "src": [
@@ -16379,23 +16459,23 @@ const BIS = {
         ]
        },
        {
-        "name": "Tidebound Spaulders",
+        "name": "Voidweave Mantle",
         "q": "epic",
         "set": null,
         "stats": {
-         "armor": 148,
-         "agi": 10,
-         "sta": 6,
-         "crit": 40
+         "armor": 48,
+         "int": 10,
+         "spi": 6,
+         "haste": 40
         },
         "w": null,
         "sp": null,
-        "id": "tidebound_spaulders",
-        "score": 28.3,
+        "id": "voidweave_mantle",
+        "score": 20.0,
         "xclass": false,
         "slot": "shoulder",
         "src": [
-         "Butin héroïque : Vael the Fogbinder · 33 %"
+         "Faille (rang B ou plus) : épique de victoire garanti"
         ]
        },
        {
@@ -16420,19 +16500,19 @@ const BIS = {
        }
       ],
       "alt": {
-       "name": "Direfang Shoulderguards",
+       "name": "Wraithfire Mantle",
        "q": "epic",
-       "set": "Direfang Pelt",
+       "set": "Wraithfire Regalia",
        "stats": {
-        "armor": 165,
-        "agi": 9,
+        "armor": 92,
+        "int": 9,
         "sta": 6,
         "hit": 20
        },
        "w": null,
        "sp": null,
-       "id": "nighttalon_shoulderguards",
-       "score": 28.8,
+       "id": "soulflame_mantle",
+       "score": 22.7,
        "xclass": false,
        "slot": "shoulder",
        "src": [
@@ -16442,26 +16522,64 @@ const BIS = {
      },
      "chest": {
       "best": {
-       "name": "Verdant-Heart Vestment",
+       "name": "Mournweave Starshroud",
        "q": "epic",
-       "set": null,
+       "set": "Mournweave Raiment",
        "stats": {
-        "armor": 172,
-        "int": 13,
-        "spi": 9,
-        "haste": 40
+        "armor": 92,
+        "int": 12,
+        "spi": 8
        },
        "w": null,
        "sp": null,
-       "id": "verdant_heart_vestment",
-       "score": 36.3,
+       "id": "heroic_necromancers_starshroud",
+       "score": 27.7,
        "xclass": false,
        "slot": "chest",
        "src": [
-        "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        "Butin héroïque : Korzul the Gravewyrm · 5 %"
        ]
       },
       "alts": [
+       {
+        "name": "Mournweave Starshroud",
+        "q": "epic",
+        "set": "Mournweave Raiment",
+        "stats": {
+         "armor": 92,
+         "int": 11,
+         "spi": 7
+        },
+        "w": null,
+        "sp": null,
+        "id": "necromancers_starshroud",
+        "score": 25.7,
+        "xclass": false,
+        "slot": "chest",
+        "src": [
+         "Butin : Korzul the Gravewyrm · 5 %"
+        ]
+       },
+       {
+        "name": "Verdant-Heart Vestment",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 172,
+         "int": 13,
+         "spi": 9,
+         "haste": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "verdant_heart_vestment",
+        "score": 36.3,
+        "xclass": false,
+        "slot": "chest",
+        "src": [
+         "Butin héroïque : Zulgar, Voice of the Basin · 33 %"
+        ]
+       },
        {
         "name": "Shroud of the Gravewyrm",
         "q": "epic",
@@ -16480,44 +16598,6 @@ const BIS = {
         "slot": "chest",
         "src": [
          "Butin héroïque : Korzul the Gravewyrm · 33 %"
-        ]
-       },
-       {
-        "name": "Nightfang Harness",
-        "q": "epic",
-        "set": "Nightfang Vestments",
-        "stats": {
-         "armor": 170,
-         "agi": 13,
-         "sta": 7
-        },
-        "w": null,
-        "sp": null,
-        "id": "heroic_wyrmshadow_harness",
-        "score": 34.2,
-        "xclass": true,
-        "slot": "chest",
-        "src": [
-         "Butin héroïque : Korzul the Gravewyrm · 5 %"
-        ]
-       },
-       {
-        "name": "Nightfang Harness",
-        "q": "epic",
-        "set": "Nightfang Vestments",
-        "stats": {
-         "armor": 170,
-         "agi": 12,
-         "sta": 6
-        },
-        "w": null,
-        "sp": null,
-        "id": "wyrmshadow_harness",
-        "score": 32.2,
-        "xclass": true,
-        "slot": "chest",
-        "src": [
-         "Butin : Korzul the Gravewyrm · 5 %"
         ]
        },
        {
@@ -16542,40 +16622,39 @@ const BIS = {
        }
       ],
       "alt": {
-       "name": "Shroud of the Gravewyrm",
+       "name": "Mournweave Starshroud",
        "q": "epic",
-       "set": null,
+       "set": "Mournweave Raiment",
        "stats": {
-        "armor": 90,
-        "int": 12,
-        "spi": 10,
-        "crit": 40
+        "armor": 92,
+        "int": 11,
+        "spi": 7
        },
        "w": null,
        "sp": null,
-       "id": "shroud_of_the_gravewyrm",
-       "score": 29.5,
+       "id": "necromancers_starshroud",
+       "score": 25.7,
        "xclass": false,
        "slot": "chest",
        "src": [
-        "Butin héroïque : Korzul the Gravewyrm · 33 %"
+        "Butin : Korzul the Gravewyrm · 5 %"
        ]
       }
      },
      "waist": {
       "best": {
-       "name": "Direfang Waistband",
+       "name": "Wraithfire Cord",
        "q": "epic",
-       "set": "Direfang Pelt",
+       "set": "Wraithfire Regalia",
        "stats": {
-        "armor": 95,
-        "agi": 8,
-        "sta": 5
+        "armor": 50,
+        "int": 8,
+        "spi": 5
        },
        "w": null,
        "sp": null,
-       "id": "nighttalon_waistband",
-       "score": 20.9,
+       "id": "soulflame_cord",
+       "score": 17.2,
        "xclass": false,
        "slot": "waist",
        "src": [
@@ -16583,26 +16662,6 @@ const BIS = {
        ]
       },
       "alts": [
-       {
-        "name": "Bonechill Cord",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "armor": 100,
-         "agi": 9,
-         "sta": 6,
-         "hit": 40
-        },
-        "w": null,
-        "sp": null,
-        "id": "bonechill_cord",
-        "score": 23.3,
-        "xclass": false,
-        "slot": "waist",
-        "src": [
-         "Butin héroïque : Morthen the Gravecaller · 33 %"
-        ]
-       },
        {
         "name": "Sash of the Sunken Court",
         "q": "epic",
@@ -16644,105 +16703,107 @@ const BIS = {
         ]
        },
        {
-        "name": "Cragmaw's Huntcord",
-        "q": "rare",
+        "name": "Bonechill Cord",
+        "q": "epic",
         "set": null,
         "stats": {
-         "armor": 44,
-         "agi": 5,
-         "sta": 3
+         "armor": 100,
+         "agi": 9,
+         "sta": 6,
+         "hit": 40
         },
         "w": null,
         "sp": null,
-        "id": "cragmaw_huntcord",
-        "score": 11.7,
+        "id": "bonechill_cord",
+        "score": 23.3,
         "xclass": false,
         "slot": "waist",
         "src": [
-         "Butin : Old Cragmaw · 25 %"
+         "Butin héroïque : Morthen the Gravecaller · 33 %"
+        ]
+       },
+       {
+        "name": "Cinderweave Cord",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 45,
+         "int": 3,
+         "sta": 3,
+         "spi": 2
+        },
+        "w": null,
+        "sp": null,
+        "id": "cinderweave_cord",
+        "score": 11.8,
+        "xclass": false,
+        "slot": "waist",
+        "src": [
+         "Vendu par FURY"
         ]
        }
       ],
       "alt": {
-       "name": "Bonechill Cord",
+       "name": "Sash of the Sunken Court",
        "q": "epic",
        "set": null,
        "stats": {
-        "armor": 100,
-        "agi": 9,
+        "armor": 48,
+        "int": 9,
         "sta": 6,
         "hit": 40
        },
        "w": null,
        "sp": null,
-       "id": "bonechill_cord",
-       "score": 23.3,
+       "id": "sash_of_the_sunken_court",
+       "score": 19.0,
        "xclass": false,
        "slot": "waist",
        "src": [
-        "Butin héroïque : Morthen the Gravecaller · 33 %"
+        "Butin héroïque : Vael the Fogbinder · 33 %"
        ]
       }
      },
      "legs": {
       "best": {
-       "name": "Nightfang Legguards",
+       "name": "Lunar Choir Leggings",
        "q": "epic",
-       "set": "Nightfang Vestments",
+       "set": null,
        "stats": {
-        "armor": 155,
-        "agi": 11,
-        "sta": 7
+        "armor": 72,
+        "int": 12,
+        "spi": 8,
+        "hit": 40
        },
        "w": null,
        "sp": null,
-       "id": "heroic_wyrmshadow_legguards",
-       "score": 30.9,
-       "xclass": true,
+       "id": "lunar_choir_leggings",
+       "score": 26.0,
+       "xclass": false,
        "slot": "legs",
        "src": [
-        "Butin héroïque : Grand Necromancer Velkhar · 5 %"
+        "Butin héroïque : Ysolei, Avatar of the Drowned Moon · 34 %"
        ]
       },
       "alts": [
        {
-        "name": "Nightfang Legguards",
+        "name": "Mournweave Legwraps",
         "q": "epic",
-        "set": "Nightfang Vestments",
+        "set": "Mournweave Raiment",
         "stats": {
-         "armor": 155,
-         "agi": 10,
-         "sta": 6
+         "armor": 86,
+         "int": 13,
+         "spi": 7
         },
         "w": null,
         "sp": null,
-        "id": "wyrmshadow_legguards",
-        "score": 28.9,
-        "xclass": true,
-        "slot": "legs",
-        "src": [
-         "Butin : Grand Necromancer Velkhar · 5 %"
-        ]
-       },
-       {
-        "name": "Trollhide Leggings",
-        "q": "uncommon",
-        "set": null,
-        "stats": {
-         "armor": 55,
-         "sta": 3,
-         "str": 2
-        },
-        "w": null,
-        "sp": null,
-        "id": "trollhide_leggings",
-        "score": 9.6,
+        "id": "necromancers_legwraps",
+        "score": 27.2,
         "xclass": false,
         "slot": "legs",
         "src": [
-         "Butin : Knight-Commander Olen · 50 %",
-         "Butin : Vael the Fogbinder · 34 %",
-         "Récompense de quête : « Fetish and Bone »"
+         "Butin : Boneclad Revenant · 0 %",
+         "Butin : Marrowlord Varkas · 25 %"
         ]
        },
        {
@@ -16766,59 +16827,81 @@ const BIS = {
         ]
        },
        {
-        "name": "Siltstep Leggings",
+        "name": "Wildgrowth Leggings",
         "q": "epic",
         "set": null,
         "stats": {
-         "armor": 130,
-         "agi": 9,
-         "sta": 7
+         "armor": 112,
+         "sta": 2,
+         "int": 10,
+         "spi": 6
         },
         "w": null,
         "sp": null,
-        "id": "siltstep_leggings",
-        "score": 26.8,
-        "xclass": true,
+        "id": "heroic_wildgrowth_leggings",
+        "score": 27.3,
+        "xclass": false,
         "slot": "legs",
         "src": [
-         "Reliquaire bountiful du delve The Drowned Litany · 3 %"
+         "Butin héroïque : Korzul the Gravewyrm · 5 %"
+        ]
+       },
+       {
+        "name": "Wildgrowth Leggings",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 112,
+         "int": 9,
+         "spi": 5,
+         "sta": 2
+        },
+        "w": null,
+        "sp": null,
+        "id": "wildgrowth_leggings",
+        "score": 25.3,
+        "xclass": false,
+        "slot": "legs",
+        "src": [
+         "Butin : Korzul the Gravewyrm · 5 %"
         ]
        }
       ],
       "alt": {
-       "name": "Nightfang Legguards",
+       "name": "Mournweave Legwraps",
        "q": "epic",
-       "set": "Nightfang Vestments",
+       "set": "Mournweave Raiment",
        "stats": {
-        "armor": 155,
-        "agi": 10,
-        "sta": 6
+        "armor": 86,
+        "int": 13,
+        "spi": 7
        },
        "w": null,
        "sp": null,
-       "id": "wyrmshadow_legguards",
-       "score": 28.9,
-       "xclass": true,
+       "id": "necromancers_legwraps",
+       "score": 27.2,
+       "xclass": false,
        "slot": "legs",
        "src": [
-        "Butin : Grand Necromancer Velkhar · 5 %"
+        "Butin : Boneclad Revenant · 0 %",
+        "Butin : Marrowlord Varkas · 25 %"
        ]
       }
      },
      "gloves": {
       "best": {
-       "name": "Direfang Grips",
+       "name": "Wraithfire Gloves",
        "q": "epic",
-       "set": "Direfang Pelt",
+       "set": "Wraithfire Regalia",
        "stats": {
-        "armor": 110,
-        "agi": 8,
+        "armor": 60,
+        "int": 8,
         "sta": 5
        },
        "w": null,
        "sp": null,
-       "id": "nighttalon_grips",
-       "score": 22.2,
+       "id": "soulflame_gloves",
+       "score": 18.0,
        "xclass": false,
        "slot": "gloves",
        "src": [
@@ -16826,26 +16909,6 @@ const BIS = {
        ]
       },
       "alts": [
-       {
-        "name": "Sanctum Prowler's Grips",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "armor": 104,
-         "agi": 9,
-         "sta": 6,
-         "hit": 40
-        },
-        "w": null,
-        "sp": null,
-        "id": "sanctum_prowlers_grips",
-        "score": 23.7,
-        "xclass": false,
-        "slot": "gloves",
-        "src": [
-         "Butin héroïque : Korzul the Gravewyrm · 33 %"
-        ]
-       },
        {
         "name": "Shadowpulse Handwraps",
         "q": "epic",
@@ -16867,103 +16930,143 @@ const BIS = {
         ]
        },
        {
-        "name": "Nightfang Talongrips",
+        "name": "Sanctum Prowler's Grips",
         "q": "epic",
-        "set": "Nightfang Vestments",
+        "set": null,
         "stats": {
-         "armor": 110,
-         "agi": 10,
-         "sta": 4
+         "armor": 104,
+         "agi": 9,
+         "sta": 6,
+         "hit": 40
         },
         "w": null,
         "sp": null,
-        "id": "heroic_wyrmshadow_talongrips",
-        "score": 23.2,
-        "xclass": true,
+        "id": "sanctum_prowlers_grips",
+        "score": 23.7,
+        "xclass": false,
         "slot": "gloves",
         "src": [
-         "Butin héroïque : Korzul the Gravewyrm · 4 %"
+         "Butin héroïque : Korzul the Gravewyrm · 33 %"
         ]
        },
        {
-        "name": "Nightfang Talongrips",
+        "name": "Grovewarden's Grips",
         "q": "epic",
-        "set": "Nightfang Vestments",
+        "set": null,
         "stats": {
-         "armor": 110,
-         "agi": 9,
-         "sta": 4
+         "armor": 88,
+         "int": 9,
+         "spi": 5
         },
         "w": null,
         "sp": null,
-        "id": "wyrmshadow_talongrips",
-        "score": 22.2,
-        "xclass": true,
+        "id": "heroic_grovewardens_grips",
+        "score": 21.3,
+        "xclass": false,
         "slot": "gloves",
         "src": [
-         "Butin : Korzul the Gravewyrm · 4 %"
+         "Butin héroïque : Korzul the Gravewyrm · 5 %"
+        ]
+       },
+       {
+        "name": "Grovewarden's Grips",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 88,
+         "int": 8,
+         "spi": 5
+        },
+        "w": null,
+        "sp": null,
+        "id": "grovewardens_grips",
+        "score": 20.3,
+        "xclass": false,
+        "slot": "gloves",
+        "src": [
+         "Butin : Korzul the Gravewyrm · 5 %"
         ]
        }
       ],
       "alt": {
-       "name": "Sanctum Prowler's Grips",
+       "name": "Shadowpulse Handwraps",
        "q": "epic",
        "set": null,
        "stats": {
-        "armor": 104,
-        "agi": 9,
-        "sta": 6,
+        "armor": 52,
+        "int": 9,
+        "spi": 6,
         "hit": 40
        },
        "w": null,
        "sp": null,
-       "id": "sanctum_prowlers_grips",
-       "score": 23.7,
+       "id": "shadowpulse_handwraps",
+       "score": 19.3,
        "xclass": false,
        "slot": "gloves",
        "src": [
-        "Butin héroïque : Korzul the Gravewyrm · 33 %"
+        "Butin héroïque : Morthen the Gravecaller · 25 %"
        ]
       }
      },
      "feet": {
       "best": {
-       "name": "Nightfang Treads",
+       "name": "Mournweave Soulsteps",
        "q": "epic",
-       "set": "Nightfang Vestments",
+       "set": "Mournweave Raiment",
        "stats": {
-        "armor": 145,
-        "agi": 8,
-        "sta": 5
+        "armor": 80,
+        "int": 9,
+        "spi": 4
        },
        "w": null,
        "sp": null,
-       "id": "heroic_wyrmshadow_treads",
-       "score": 25.1,
-       "xclass": true,
+       "id": "heroic_necromancers_soulsteps",
+       "score": 19.7,
+       "xclass": false,
        "slot": "feet",
        "src": [
-        "Butin héroïque : Korgath the Bound · 5 %"
+        "Butin héroïque : Grand Necromancer Velkhar · 5 %"
        ]
       },
       "alts": [
        {
-        "name": "Nightfang Treads",
+        "name": "Mournweave Soulsteps",
         "q": "epic",
-        "set": "Nightfang Vestments",
+        "set": "Mournweave Raiment",
         "stats": {
-         "armor": 145,
-         "agi": 7,
-         "sta": 5
+         "armor": 80,
+         "int": 8,
+         "spi": 4
         },
         "w": null,
         "sp": null,
-        "id": "wyrmshadow_treads",
-        "score": 24.1,
+        "id": "necromancers_soulsteps",
+        "score": 18.7,
+        "xclass": false,
+        "slot": "feet",
+        "src": [
+         "Butin : Grand Necromancer Velkhar · 5 %"
+        ]
+       },
+       {
+        "name": "Bonechill Striders",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "armor": 96,
+         "agi": 9,
+         "sta": 5,
+         "hit": 40
+        },
+        "w": null,
+        "sp": null,
+        "id": "bonechill_striders",
+        "score": 22.0,
         "xclass": true,
         "slot": "feet",
         "src": [
-         "Butin : Korgath the Bound · 5 %"
+         "Butin héroïque : Morthen the Gravecaller · 25 %"
         ]
        },
        {
@@ -17005,61 +17108,41 @@ const BIS = {
         "src": [
          "Butin héroïque : Morthen the Gravecaller · 33 %"
         ]
-       },
-       {
-        "name": "Bonechill Striders",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "armor": 96,
-         "agi": 9,
-         "sta": 5,
-         "hit": 40
-        },
-        "w": null,
-        "sp": null,
-        "id": "bonechill_striders",
-        "score": 22.0,
-        "xclass": true,
-        "slot": "feet",
-        "src": [
-         "Butin héroïque : Morthen the Gravecaller · 25 %"
-        ]
        }
       ],
       "alt": {
-       "name": "Nightfang Treads",
+       "name": "Mournweave Soulsteps",
        "q": "epic",
-       "set": "Nightfang Vestments",
+       "set": "Mournweave Raiment",
        "stats": {
-        "armor": 145,
-        "agi": 7,
-        "sta": 5
+        "armor": 80,
+        "int": 8,
+        "spi": 4
        },
        "w": null,
        "sp": null,
-       "id": "wyrmshadow_treads",
-       "score": 24.1,
-       "xclass": true,
+       "id": "necromancers_soulsteps",
+       "score": 18.7,
+       "xclass": false,
        "slot": "feet",
        "src": [
-        "Butin : Korgath the Bound · 5 %"
+        "Butin : Grand Necromancer Velkhar · 5 %"
        ]
       }
      },
      "neck": {
       "best": {
-       "name": "Medallion of Endless Profit",
+       "name": "Zense Meridian",
        "q": "epic",
        "set": null,
        "stats": {
-        "str": 7,
-        "sta": 5,
+        "int": 7,
+        "spi": 5,
         "crit": 25
        },
        "w": null,
        "sp": null,
-       "id": "medallion_of_endless_profit",
+       "id": "zense_meridian",
        "score": 12.0,
        "xclass": false,
        "slot": "neck",
@@ -17068,6 +17151,44 @@ const BIS = {
        ]
       },
       "alts": [
+       {
+        "name": "Swiftfang Talisman",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "str": 6,
+         "agi": 6,
+         "hit": 25
+        },
+        "w": null,
+        "sp": null,
+        "id": "swiftfang_talisman",
+        "score": 12.0,
+        "xclass": false,
+        "slot": "neck",
+        "src": [
+         "Vendu par Quartermaster Vex · 16 Heroic Marks"
+        ]
+       },
+       {
+        "name": "Yumi's Keepsake Locket",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "agi": 7,
+         "sta": 5,
+         "haste": 25
+        },
+        "w": null,
+        "sp": null,
+        "id": "yumis_keepsake_locket",
+        "score": 12.0,
+        "xclass": false,
+        "slot": "neck",
+        "src": [
+         "Vendu par Quartermaster Vex · 16 Heroic Marks"
+        ]
+       },
        {
         "name": "Heart of the Rift",
         "q": "legendary",
@@ -17089,54 +17210,17 @@ const BIS = {
         ]
        },
        {
-        "name": "Swiftfang Talisman",
+        "name": "Medallion of Endless Profit",
         "q": "epic",
         "set": null,
         "stats": {
-         "str": 6,
-         "agi": 6,
-         "hit": 25
-        },
-        "w": null,
-        "sp": null,
-        "id": "swiftfang_talisman",
-        "score": 12.0,
-        "xclass": false,
-        "slot": "neck",
-        "src": [
-         "Vendu par Quartermaster Vex · 16 Heroic Marks"
-        ]
-       },
-       {
-        "name": "Medallion of the Final Oath",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "str": 4,
-         "sta": 4
-        },
-        "w": null,
-        "sp": null,
-        "id": "final_oath_medallion",
-        "score": 8.0,
-        "xclass": false,
-        "slot": "neck",
-        "src": [
-         "Vendu par FURY"
-        ]
-       },
-       {
-        "name": "Yumi's Keepsake Locket",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "agi": 7,
+         "str": 7,
          "sta": 5,
-         "haste": 25
+         "crit": 25
         },
         "w": null,
         "sp": null,
-        "id": "yumis_keepsake_locket",
+        "id": "medallion_of_endless_profit",
         "score": 12.0,
         "xclass": false,
         "slot": "neck",
@@ -17146,39 +17230,38 @@ const BIS = {
        }
       ],
       "alt": {
-       "name": "Heart of the Rift",
-       "q": "legendary",
+       "name": "Swiftfang Talisman",
+       "q": "epic",
        "set": null,
        "stats": {
-        "sta": 14,
         "str": 6,
         "agi": 6,
-        "int": 6
+        "hit": 25
        },
        "w": null,
        "sp": null,
-       "id": "heart_of_the_rift",
-       "score": 32.0,
+       "id": "swiftfang_talisman",
+       "score": 12.0,
        "xclass": false,
        "slot": "neck",
        "src": [
-        "Faille rang S : légendaire · 0.3 % par victoire"
+        "Vendu par Quartermaster Vex · 16 Heroic Marks"
        ]
       }
      },
      "ring1": {
       "best": {
-       "name": "Seal of the Nine Oaths",
+       "name": "Niela's Coldlight Band",
        "q": "epic",
        "set": null,
        "stats": {
-        "str": 7,
+        "int": 7,
         "sta": 4,
         "hit": 25
        },
        "w": null,
        "sp": null,
-       "id": "seal_of_the_nine_oaths",
+       "id": "nielas_coldlight_band",
        "score": 11.0,
        "xclass": false,
        "slot": "ring",
@@ -17187,6 +17270,63 @@ const BIS = {
        ]
       },
       "alts": [
+       {
+        "name": "Zyzz's Deathless Signet",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "spi": 6,
+         "int": 5,
+         "haste": 25
+        },
+        "w": null,
+        "sp": null,
+        "id": "zyzzs_deathless_signet",
+        "score": 11.0,
+        "xclass": false,
+        "slot": "ring",
+        "src": [
+         "Vendu par Quartermaster Vex · 12 Heroic Marks"
+        ]
+       },
+       {
+        "name": "The Architect's Cornerstone",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "int": 6,
+         "spi": 5,
+         "haste": 25
+        },
+        "w": null,
+        "sp": null,
+        "id": "architects_cornerstone",
+        "score": 11.0,
+        "xclass": false,
+        "slot": "ring",
+        "src": [
+         "Vendu par Quartermaster Vex · 12 Heroic Marks"
+        ]
+       },
+       {
+        "name": "Seal of the Nine Oaths",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "str": 7,
+         "sta": 4,
+         "hit": 25
+        },
+        "w": null,
+        "sp": null,
+        "id": "seal_of_the_nine_oaths",
+        "score": 11.0,
+        "xclass": false,
+        "slot": "ring",
+        "src": [
+         "Vendu par Quartermaster Vex · 12 Heroic Marks"
+        ]
+       },
        {
         "name": "Oath of the Round Table",
         "q": "epic",
@@ -17205,75 +17345,20 @@ const BIS = {
         "src": [
          "Vendu par Quartermaster Vex · 12 Heroic Marks"
         ]
-       },
-       {
-        "name": "The Unbroken Circle",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "str": 4,
-         "sta": 3
-        },
-        "w": null,
-        "sp": null,
-        "id": "unbroken_circle",
-        "score": 7.0,
-        "xclass": false,
-        "slot": "ring",
-        "src": [
-         "Vendu par FURY"
-        ]
-       },
-       {
-        "name": "Niela's Coldlight Band",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "int": 7,
-         "sta": 4,
-         "hit": 25
-        },
-        "w": null,
-        "sp": null,
-        "id": "nielas_coldlight_band",
-        "score": 11.0,
-        "xclass": false,
-        "slot": "ring",
-        "src": [
-         "Vendu par Quartermaster Vex · 12 Heroic Marks"
-        ]
-       },
-       {
-        "name": "Iron Vow Band",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "str": 3,
-         "sta": 4
-        },
-        "w": null,
-        "sp": null,
-        "id": "iron_vow_band",
-        "score": 7.0,
-        "xclass": false,
-        "slot": "ring",
-        "src": [
-         "Vendu par FURY"
-        ]
        }
       ],
       "alt": {
-       "name": "Oath of the Round Table",
+       "name": "Zyzz's Deathless Signet",
        "q": "epic",
        "set": null,
        "stats": {
-        "sta": 6,
-        "str": 5,
-        "hit": 25
+        "spi": 6,
+        "int": 5,
+        "haste": 25
        },
        "w": null,
        "sp": null,
-       "id": "oath_of_the_round_table",
+       "id": "zyzzs_deathless_signet",
        "score": 11.0,
        "xclass": false,
        "slot": "ring",
@@ -17284,24 +17369,82 @@ const BIS = {
      },
      "ring2": {
       "best": {
-       "name": "Riftbound Band of Might",
+       "name": "Niela's Coldlight Band",
        "q": "epic",
        "set": null,
        "stats": {
-        "str": 10,
-        "sta": 7
+        "int": 7,
+        "sta": 4,
+        "hit": 25
        },
        "w": null,
        "sp": null,
-       "id": "riftbound_band_of_might",
-       "score": 17.0,
+       "id": "nielas_coldlight_band",
+       "score": 11.0,
        "xclass": false,
        "slot": "ring",
        "src": [
-        "Faille : first-clear — stats d'une copie de rang S (bonus de rang inclus, sans gemme ni amélioration)"
+        "Vendu par Quartermaster Vex · 12 Heroic Marks"
        ]
       },
       "alts": [
+       {
+        "name": "Zyzz's Deathless Signet",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "spi": 6,
+         "int": 5,
+         "haste": 25
+        },
+        "w": null,
+        "sp": null,
+        "id": "zyzzs_deathless_signet",
+        "score": 11.0,
+        "xclass": false,
+        "slot": "ring",
+        "src": [
+         "Vendu par Quartermaster Vex · 12 Heroic Marks"
+        ]
+       },
+       {
+        "name": "The Architect's Cornerstone",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "int": 6,
+         "spi": 5,
+         "haste": 25
+        },
+        "w": null,
+        "sp": null,
+        "id": "architects_cornerstone",
+        "score": 11.0,
+        "xclass": false,
+        "slot": "ring",
+        "src": [
+         "Vendu par Quartermaster Vex · 12 Heroic Marks"
+        ]
+       },
+       {
+        "name": "Seal of the Nine Oaths",
+        "q": "epic",
+        "set": null,
+        "stats": {
+         "str": 7,
+         "sta": 4,
+         "hit": 25
+        },
+        "w": null,
+        "sp": null,
+        "id": "seal_of_the_nine_oaths",
+        "score": 11.0,
+        "xclass": false,
+        "slot": "ring",
+        "src": [
+         "Vendu par Quartermaster Vex · 12 Heroic Marks"
+        ]
+       },
        {
         "name": "Oath of the Round Table",
         "q": "epic",
@@ -17320,75 +17463,20 @@ const BIS = {
         "src": [
          "Vendu par Quartermaster Vex · 12 Heroic Marks"
         ]
-       },
-       {
-        "name": "The Unbroken Circle",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "str": 4,
-         "sta": 3
-        },
-        "w": null,
-        "sp": null,
-        "id": "unbroken_circle",
-        "score": 7.0,
-        "xclass": false,
-        "slot": "ring",
-        "src": [
-         "Vendu par FURY"
-        ]
-       },
-       {
-        "name": "Iron Vow Band",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "str": 3,
-         "sta": 4
-        },
-        "w": null,
-        "sp": null,
-        "id": "iron_vow_band",
-        "score": 7.0,
-        "xclass": false,
-        "slot": "ring",
-        "src": [
-         "Vendu par FURY"
-        ]
-       },
-       {
-        "name": "Sutil's Gambit",
-        "q": "epic",
-        "set": null,
-        "stats": {
-         "agi": 7,
-         "sta": 4,
-         "crit": 25
-        },
-        "w": null,
-        "sp": null,
-        "id": "sutils_gambit",
-        "score": 11.0,
-        "xclass": false,
-        "slot": "ring",
-        "src": [
-         "Vendu par Quartermaster Vex · 12 Heroic Marks"
-        ]
        }
       ],
       "alt": {
-       "name": "Oath of the Round Table",
+       "name": "Zyzz's Deathless Signet",
        "q": "epic",
        "set": null,
        "stats": {
-        "sta": 6,
-        "str": 5,
-        "hit": 25
+        "spi": 6,
+        "int": 5,
+        "haste": 25
        },
        "w": null,
        "sp": null,
-       "id": "oath_of_the_round_table",
+       "id": "zyzzs_deathless_signet",
        "score": 11.0,
        "xclass": false,
        "slot": "ring",
@@ -17400,23 +17488,23 @@ const BIS = {
     },
     "sets": [
      {
-      "name": "Direfang Pelt",
-      "pieces": 4,
-      "bonus": 4
-     },
-     {
-      "name": "Nightfang Vestments",
+      "name": "Mournweave Raiment",
       "pieces": 2,
       "bonus": 2
+     },
+     {
+      "name": "Wraithfire Regalia",
+      "pieces": 4,
+      "bonus": 4
      }
     ],
-    "score": 86.2,
+    "score": 128.2,
     "enchants": {
      "mainhand": {
-      "id": "enchant_weapon_greater_might",
-      "name": "Enchant Weapon - Greater Might",
+      "id": "enchant_weapon_greater_spellpower",
+      "name": "Enchant Weapon - Greater Spellpower",
       "bonus": {
-       "str": 5
+       "int": 5
       },
       "reagents": [
        {
@@ -17432,30 +17520,29 @@ const BIS = {
       ]
      },
      "helmet": {
-      "id": "enchant_helmet_greater_fortitude",
-      "name": "Enchant Helmet - Greater Fortitude",
+      "id": "enchant_helmet_intellect",
+      "name": "Enchant Helmet - Intellect",
       "bonus": {
-       "sta": 6
+       "int": 4
       },
       "reagents": [
        {
-        "id": "arcane_shard",
-        "count": 1,
-        "name": "Chime Shard"
+        "id": "arcane_dust",
+        "count": 3,
+        "name": "Chime Dust"
        },
        {
         "id": "arcane_essence",
         "count": 2,
         "name": "Chime Essence"
        }
-      ],
-      "fallback": true
+      ]
      },
      "shoulder": {
-      "id": "enchant_shoulder_strength",
-      "name": "Enchant Shoulders - Strength",
+      "id": "enchant_shoulder_intellect",
+      "name": "Enchant Shoulders - Intellect",
       "bonus": {
-       "str": 2
+       "int": 2
       },
       "reagents": [
        {
@@ -17486,10 +17573,10 @@ const BIS = {
       "fallback": true
      },
      "waist": {
-      "id": "enchant_waist_strength",
-      "name": "Enchant Belt - Strength",
+      "id": "enchant_waist_agility",
+      "name": "Enchant Belt - Agility",
       "bonus": {
-       "str": 3
+       "agi": 3
       },
       "reagents": [
        {
@@ -17500,29 +17587,29 @@ const BIS = {
       ]
      },
      "legs": {
-      "id": "enchant_legs_runed_hide",
-      "name": "Enchant Legs - Runed Hide",
+      "id": "enchant_legs_intellect",
+      "name": "Enchant Legs - Intellect",
       "bonus": {
-       "agi": 4
+       "int": 4
       },
       "reagents": [
+       {
+        "id": "arcane_dust",
+        "count": 3,
+        "name": "Chime Dust"
+       },
        {
         "id": "arcane_essence",
         "count": 2,
         "name": "Chime Essence"
-       },
-       {
-        "id": "resonant_hide",
-        "count": 1,
-        "name": "Resonant Hide"
        }
       ]
      },
      "gloves": {
-      "id": "enchant_gloves_strength",
-      "name": "Enchant Gloves - Strength",
+      "id": "enchant_gloves_intellect",
+      "name": "Enchant Gloves - Spellpower",
       "bonus": {
-       "str": 3
+       "int": 3
       },
       "reagents": [
        {
@@ -17533,22 +17620,8 @@ const BIS = {
       ]
      },
      "feet": {
-      "id": "enchant_feet_strength",
-      "name": "Enchant Boots - Strength",
-      "bonus": {
-       "str": 2
-      },
-      "reagents": [
-       {
-        "id": "arcane_dust",
-        "count": 3,
-        "name": "Chime Dust"
-       }
-      ]
-     },
-     "neck": {
-      "id": "enchant_neck_agility",
-      "name": "Enchant Necklace - Agility",
+      "id": "enchant_feet_agility",
+      "name": "Enchant Boots - Agility",
       "bonus": {
        "agi": 2
       },
@@ -17560,11 +17633,25 @@ const BIS = {
        }
       ]
      },
-     "ring1": {
-      "id": "enchant_ring_strength",
-      "name": "Enchant Ring - Strength",
+     "neck": {
+      "id": "enchant_neck_intellect",
+      "name": "Enchant Necklace - Intellect",
       "bonus": {
-       "str": 2
+       "int": 2
+      },
+      "reagents": [
+       {
+        "id": "arcane_dust",
+        "count": 3,
+        "name": "Chime Dust"
+       }
+      ]
+     },
+     "ring1": {
+      "id": "enchant_ring_intellect",
+      "name": "Enchant Ring - Intellect",
+      "bonus": {
+       "int": 2
       },
       "reagents": [
        {
@@ -17575,10 +17662,10 @@ const BIS = {
       ]
      },
      "ring2": {
-      "id": "enchant_ring_strength",
-      "name": "Enchant Ring - Strength",
+      "id": "enchant_ring_intellect",
+      "name": "Enchant Ring - Intellect",
       "bonus": {
-       "str": 2
+       "int": 2
       },
       "reagents": [
        {
