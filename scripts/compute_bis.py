@@ -98,10 +98,16 @@ UNOBTAINABLE = {i for i in ITEMS if i.startswith('heroic_') and i[len('heroic_')
 # dans le jeu (ex. Crossroads Saber) — un BiS ne doit rien recommander
 # d'impossible à obtenir. Rempli après la construction de SOURCES.
 
-SOURCES = {}  # iid -> liste de lignes prêtes à afficher (dédupliquées)
-def _add(iid, line):
-    if line not in SOURCES.setdefault(iid, []):
-        SOURCES[iid].append(line)
+SOURCES = {}  # iid -> liste de sources (dédupliquées)
+# Une source est soit une chaîne prête à afficher, soit un objet
+# {"text": …, "ref": "mob|id", "name": …} quand une ENTITÉ du Codex est citée :
+# bis.html rend alors son nom cliquable (fiche du monstre, portrait compris) —
+# demande de la guilde, 4 août 2026. Le texte reste identique dans les deux cas.
+def _add(iid, line, ref=None, name=None):
+    entry = {'text': line, 'ref': ref, 'name': name} if ref else line
+    existing = SOURCES.setdefault(iid, [])
+    if not any((e.get('text') if isinstance(e, dict) else e) == line for e in existing):
+        existing.append(entry)
 
 # Un même objet occupe souvent PLUSIEURS emplacements de la table de butin d'un
 # boss (ex. Nythraxis liste une épaulière 4× à 16-17 %). On agrège par source
@@ -125,14 +131,14 @@ def _loot_by_item(entries):
 
 for _m in _MOBS.values():
     for _iid, _chs in _loot_by_item(_m.get('loot')).items():
-        _add(_iid, f"Butin : {_m['name']}{_pct_combined(_chs)}")
+        _add(_iid, f"Butin : {_m['name']}{_pct_combined(_chs)}", f"mob|{_m['id']}", _m['name'])
 for _bid, _entries in _HEROIC.items():
     _bname = _MOBS.get(_bid, {}).get('name', _bid)
     for _iid, _chs in _loot_by_item(_entries).items():
-        _add(_iid, f"Butin héroïque : {_bname}{_pct_combined(_chs)}")
+        _add(_iid, f"Butin héroïque : {_bname}{_pct_combined(_chs)}", f"mob|{_bid}", _bname)
 for _n in _NPCS.values():
     for _iid in _n.get('vendorItems', []):
-        _add(_iid, f"Vendu par {_n['name']}")
+        _add(_iid, f"Vendu par {_n['name']}", f"npc|{_n['id']}", _n['name'])
 # Quartier-maître héroïque : bijoux payés en Heroic Marks (heroic_vendor.ts) —
 # la seule source des cous/anneaux épiques hors butin.
 _VEX = _MOBS.get('heroic_quartermaster', {}).get('name') or 'Quartermaster Vex'
@@ -180,7 +186,7 @@ for _iid in sorted(HEROIC_OK):
         _chs = [_l.get('chance') for _l in _m.get('loot', [])
                 if isinstance(_l, dict) and _l.get('itemId') == _base]
         if _chs:
-            _add(_iid, f"Butin héroïque : {_m['name']}{_pct_combined(_chs)}")
+            _add(_iid, f"Butin héroïque : {_m['name']}{_pct_combined(_chs)}", f"mob|{_m['id']}", _m['name'])
 
 # Butin des Failles (RIFT_LOOT.json, extrait depuis la v0.32.0) : ces
 # récompenses sont attribuées PAR LE CODE du jeu à la victoire
