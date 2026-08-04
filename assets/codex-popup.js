@@ -1024,9 +1024,14 @@ const boot = () => {
   ensureFr().then(() => annotate());
   // Les pages injectent des [data-codex] après leurs fetch (accueil, builds…) :
   // on ré-applique enhance() sur les ajouts pour garder l'accès clavier.
+  // `data-fr-name` compte autant que `data-codex` : la liste d'équipement du
+  // BiS ne porte que le premier, et un changement de classe ou de rôle la
+  // re-rend entièrement — sans cette moitié du sélecteur, tous les noms
+  // français disparaissaient au premier clic d'onglet (signalé le 4 août 2026).
+  const SEL = '[data-codex], [data-fr-name]';
   new MutationObserver(muts => {
     for (const m of muts) for (const n of m.addedNodes)
-      if (n.nodeType === 1 && (n.matches?.('[data-codex]') || n.querySelector?.('[data-codex]'))) { enhance(n); return; }
+      if (n.nodeType === 1 && (n.matches?.(SEL) || n.querySelector?.(SEL))) { enhance(n); return; }
   }).observe(document.body, { childList: true, subtree: true });
 };
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);

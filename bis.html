@@ -29468,6 +29468,12 @@ function render() {
 
   document.querySelectorAll("[data-cls]").forEach(b => b.addEventListener("click", () => { curCls = b.dataset.cls; curSpec = 0; render(); }));
   document.querySelectorAll("[data-role]").forEach(b => b.addEventListener("click", () => { curRole = b.dataset.role; curSpec = 0; render(); }));
+
+  // Ré-accrocher les noms français après CHAQUE rendu : changer de classe ou
+  // de rôle reconstruit toute la liste, et compter sur l'observateur de
+  // codex-popup.js s'était révélé fragile (les noms disparaissaient au premier
+  // clic d'onglet — signalé le 4 août 2026). Appel direct, donc déterministe.
+  if (window.CodexPopup) CodexPopup.ready().then(() => CodexPopup.enhance());
 }
 render();
 </script>
