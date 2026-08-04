@@ -797,7 +797,9 @@ const CSS = `
   [data-codex]:hover, [data-codex]:focus-visible { color: #e6c37a; border-bottom-color: #e6c37a; outline: none; }
   dialog.cxp {
     background: #141822; color: #dfe3ea; border: 1px solid rgba(200,160,75,.4);
-    border-radius: 14px; padding: 0; width: min(440px, 92vw); max-height: 82vh;
+    border-radius: 14px; padding: 0; width: min(560px, 94vw);
+    max-height: 88vh;
+    max-height: 88dvh; /* dvh : ne passe pas sous la barre d'URL mobile (repli 88vh au-dessus) */
     box-shadow: 0 24px 70px rgba(0,0,0,.6); font-size: .92rem; line-height: 1.5;
   }
   dialog.cxp::backdrop { background: rgba(5,7,11,.65); backdrop-filter: blur(2px); }
@@ -817,8 +819,8 @@ const CSS = `
   .cxp-note { color: #aab1bf; font-size: .86rem; }
   .cxp-dim { color: #8b93a3; font-size: .86rem; }
   .cxp-dps { font-weight: 600; margin-bottom: 8px; }
-  .cxp-art { display: block; width: 96px; height: 96px; border-radius: 10px; margin: 0 0 10px;
-    border: 1px solid rgba(200,160,75,.35); background: #0b0d12; object-fit: cover; }
+  .cxp-art { display: block; width: min(200px, 55%); height: auto; border-radius: 10px; margin: 0 0 10px;
+    border: 1px solid rgba(200,160,75,.35); background: #0b0d12; }
   .cxp-stats { color: #1eff00cc; margin-bottom: 8px; }
   .cxp-kv { display: grid; grid-template-columns: 1fr; gap: 4px 14px; margin: 8px 0; }
   .cxp-kv div { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px dashed rgba(139,147,163,.16); padding: 3px 0; }
