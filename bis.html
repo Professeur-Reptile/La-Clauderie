@@ -29239,11 +29239,16 @@ const CX_REF = {
 
 // Rend chaque nom de talent / sort cliquable (fiche incrustée du Codex),
 // en découpant les libellés composés : « A → B », « A + B », « A / B », « A ×2 ».
-function cxNames(raw) {
+// `kind` force le type de fiche : "talent" pour la rangée de talents (sinon un
+// talent qui accorde un sort homonyme — Typhoon → le sort typhoon — ouvrait la
+// fiche du SORT et affichait son nom français, alors que le client FR laisse
+// TOUS les noms de talents en anglais : deux talents voisins n'étaient pas
+// traités pareil, signalé le 4 août 2026).
+function cxNames(raw, kind) {
   return String(raw).split(/(\s*(?:→|\/|\+)\s*|\s*×\s*\d+\s*$)/).map(part => {
     const t = part.trim();
     if (!t || /^(→|\/|\+|×\s*\d+)$/.test(t)) return part;
-    const ref = CX_REF[t.toLowerCase()] || `auto|${t}`;
+    const ref = kind ? `${kind}|${t}` : (CX_REF[t.toLowerCase()] || `auto|${t}`);
     return `<span data-codex="${ref.replace(/"/g, "&quot;")}">${part}</span>`;
   }).join("");
 }
@@ -29269,7 +29274,7 @@ function renderBuild() {
       `</div>`
     : "";
   const spec = loc(b.spec);
-  const talents = b.talents.map(t => `<li><b>${cxNames(t[0])}</b> <span class="bt-tree">${TREE_LBL(t[1])}</span> — ${loc(t[2])}</li>`).join("");
+  const talents = b.talents.map(t => `<li><b>${cxNames(t[0], "talent")}</b> <span class="bt-tree">${TREE_LBL(t[1])}</span> — ${loc(t[2])}</li>`).join("");
   const rota = b.rotation.map(r => `<li><b>${cxNames(r[0])}</b> — ${loc(r[1])}</li>`).join("");
   box.innerHTML = `
     ${specTabs}
