@@ -606,6 +606,10 @@ function abilitySheet(a) {
   };
 }
 
+// Le champ « icon » des talents porte tantôt un émoji, tantôt un id de sort
+// brut (« slice_and_dice » sur les grants) : on n'affiche que les vrais décors.
+const deco = (icon) => (icon && !/^[a-z0-9_]+$/.test(icon)) ? icon : '';
+
 function talentSheet({ node, cls, choice }) {
   const body = [];
   // Descriptions maison en français : clé « classe/id » (ou nom replié).
@@ -620,12 +624,12 @@ function talentSheet({ node, cls, choice }) {
     if (node.maxRank > 1) body.push(`<p class="cxp-dim">${T({ fr: `Jusqu'à ${node.maxRank} rangs.`, en: `Up to ${node.maxRank} ranks.` })}</p>`);
     if (node.kind === 'choice' && node.choices)
       body.push(section(T({ fr: 'Talent au choix — une seule option', en: 'Choice talent — pick one option' }), ul(node.choices.map(ch =>
-        `<li><b>${esc(ch.icon || '')} ${esc(ch.name)}</b><br><span class="cxp-dim">${esc(tDesc(ch) || '')}</span></li>`))));
+        `<li><b>${esc(deco(ch.icon))} ${esc(ch.name)}</b><br><span class="cxp-dim">${esc(tDesc(ch) || '')}</span></li>`))));
   }
   const tree = node.tree === 'class' ? T({ fr: 'Arbre de classe', en: 'Class tree' }) : T({ fr: 'Arbre de spécialisation', en: 'Spec tree' });
   return {
     kicker: ['Talent', CLASS_FR[cls], tree].filter(Boolean).join(' · '),
-    title: `${choice ? (choice.icon || '') : (node.icon || '')} ${choice ? choice.name : node.name}`.trim(),
+    title: `${deco(choice ? choice.icon : node.icon)} ${choice ? choice.name : node.name}`.trim(),
     body: body.join(''),
   };
 }
