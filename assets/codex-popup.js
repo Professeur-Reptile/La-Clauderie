@@ -804,6 +804,14 @@ const CSS = `
   }
   dialog.cxp::backdrop { background: rgba(5,7,11,.65); backdrop-filter: blur(2px); }
   dialog.cxp[open] { display: flex; flex-direction: column; }
+  /* Téléphone : quasi plein écran et police plus grande — retour guilde
+     (fiche jugée trop petite et peu lisible sur mobile). */
+  @media (max-width: 480px) {
+    dialog.cxp { width: 96vw; font-size: 1rem; }
+    dialog.cxp .cxp-title { font-size: 1.22rem; }
+    dialog.cxp .cxp-body { padding: 16px 16px 18px; }
+    dialog.cxp .cxp-btn { width: 36px; height: 36px; }
+  }
   .cxp-head { display: flex; gap: 10px; align-items: flex-start; padding: 16px 18px 12px;
     border-bottom: 1px solid rgba(200,160,75,.18); position: sticky; top: 0; background: #141822; z-index: 1; }
   .cxp-head-txt { flex: 1; min-width: 0; }
