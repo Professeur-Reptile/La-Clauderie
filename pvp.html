@@ -134,7 +134,7 @@
 
 <div class="wrap">
   <header class="page">
-    <p class="eyebrow" data-en="PvP guide · Patch v0.33.1">Guide PvP · Patch v0.33.1</p>
+    <p class="eyebrow" data-en="PvP guide · Patch v0.34.0">Guide PvP · Patch v0.34.0</p>
     <h1 data-en="PvP — Coliseum &amp; Drowned Court">PvP — Colisée &amp; Drowned Court</h1>
     <p class="lede" data-en="All of PvP, explained simply: the game modes, how to earn and spend Honor, one build per class, and the teams we recommend in 2v2. Numbers checked against the game's documents.">Tout le PvP, expliqué simplement : les modes de jeu, comment gagner et dépenser l'Honor, un build par classe, et les équipes qu'on recommande en 2v2. Chiffres vérifiés dans les documents du jeu.</p>
   </header>
@@ -283,7 +283,7 @@
 
 <script src="assets/nav.js"></script>
 <script src="assets/lang.js"></script>
-<script src="assets/version.js" data-version="v0.33.1" defer></script>
+<script src="assets/version.js" data-version="v0.34.0" defer></script>
 <script>
 // Builds PvP par classe — éditorial La Clauderie, mêmes rangées de talents que
 // la page Builds (TALENTS.json de la knowledge base), re-choisies pour l'arène.
@@ -458,14 +458,14 @@ const PVP = {
   talents: [
    ["Dusk Dividend", "niv. 5", { fr: "les ouvertures furtives rendent 20 énergie.", en: "stealth openers refund 20 energy." }],
    ["Smoke Screen", "niv. 8", { fr: "+30 % d'esquive 8 s : à claquer sur le burst adverse.", en: "+30% dodge for 8s: pop it on enemy burst." }],
-   ["Borrowed Tempo", "niv. 11", { fr: "Cutthroat Tempo gratuit un coup sur trois.", en: "free Cutthroat Tempo every third builder." }],
+   ["Borrowed Tempo", "niv. 11", { fr: "Cutthroat Tempo gratuit un coup sur trois — et depuis la v0.34, « gratuit » veut enfin tout dire : les points de combo ne sont plus consommés (ils comptent quand même dans la durée).", en: "free Cutthroat Tempo every third builder — and since v0.34, “free” finally means it: combo points are no longer spent (they still count toward the duration)." }],
    ["Final Notice", "niv. 14", { fr: "chaque finisher remise le builder suivant : la boucle tourne.", en: "each finisher discounts the next builder: the loop spins." }],
    ["Shadecloak", "niv. 17", { fr: "420 d'absorption : le bouclier pour traverser un focus.", en: "a 420 absorb: the shield to walk through focus fire." }],
    ["Shadeslip", "niv. 20", { fr: "le pas d'ombre SANS casser Duskveil : l'ouverture parfaite, toutes les 24 s.", en: "the shadow-step WITHOUT breaking Duskveil: the perfect opener, every 24s." }]
   ],
   plan: [
-   { fr: "Avant le combat : <b>Sap</b> le soigneur (hors combat), puis ouvre sur l'autre à <b>Gut Punch</b> (stun 4 s, hors DR).", en: "Before the fight: <b>Sap</b> the healer (out of combat), then open on the other with <b>Gut Punch</b> (4s stun, no DR)." },
-   { fr: "<b>Red Ribbon + Bleed Out</b>, puis <b>Smokestep</b> : disparais et laisse saigner — ce DPS-là ne se kick pas.", en: "<b>Red Ribbon + Bleed Out</b>, then <b>Smokestep</b>: vanish and let it bleed — that damage can't be kicked." },
+   { fr: "Avant le combat : <b>Sap</b> le soigneur (hors combat), puis ouvre sur l'autre à <b>Gut Punch</b> (stun 4 s, hors DR). Bonus v0.34 : un joueur stun <b>ne peut plus pivoter</b> (même à la souris) — ton dos-à-dos est garanti pendant tout le stun.", en: "Before the fight: <b>Sap</b> the healer (out of combat), then open on the other with <b>Gut Punch</b> (4s stun, no DR). v0.34 bonus: a stunned player <b>can no longer turn</b> (even with the mouse) — your back position is guaranteed for the whole stun." },
+   { fr: "<b>Red Ribbon + Bleed Out</b>, puis <b>Smokestep</b> : disparais et laisse saigner — ce DPS-là ne se kick pas. Réparé en v0.34 : les attaques déjà engagées sur toi <b>s'arrêtent vraiment</b> à la disparition — fini le Smokestep cassé au swing suivant.", en: "<b>Red Ribbon + Bleed Out</b>, then <b>Smokestep</b>: vanish and let it bleed — that damage can't be kicked. Fixed in v0.34: attacks already engaged on you <b>actually stop</b> when you vanish — no more Smokestep broken by the very next swing." },
    { fr: "<b>Low Blow</b> à 5 points pour rallonger la chaîne de stun, <b>Dirt Toss</b> sur la deuxième cible.", en: "<b>Low Blow</b> at 5 points to extend the stun chain, <b>Dirt Toss</b> on the second target." },
    { fr: "<b>Boot</b> puis <b>Eye Jab</b> : deux coupures d'affilée sur le soigneur qui panique.", en: "<b>Boot</b> then <b>Eye Jab</b>: two interrupts in a row on the panicking healer." }
   ],

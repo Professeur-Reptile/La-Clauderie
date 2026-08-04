@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Nouveautés v0.34.0 — La Clauderie</title>
+<meta name="description" content="Les nouveautés de la v0.34.0 de World of ClaudeCraft, expliquées simplement : la banque de guilde, les montures qui s'échangent entre joueurs, les Drakelands refaites, les charmes d'outils, la cuisine du poisson — et les boss de Faille qu'on peut enfin esquiver.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Nouveautés v0.34.0 — La Clauderie">
+<meta property="og:description" content="Les nouveautés de la v0.34.0 de World of ClaudeCraft, expliquées simplement : la banque de guilde, les montures qui s'échangent entre joueurs, les Drakelands refaites, les charmes d'outils, la cuisine du poisson — et les boss de Faille qu'on peut enfin esquiver.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.34.0.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.34.0.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') === 'en') location.replace('v0.34.0.en.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Notes de version</p>
+    <h1>Nouveautés <span class="v">v0.34.0</span></h1>
+    <p class="lede">La mise à jour de l'économie. La banque de guilde arrive, les montures s'échangent enfin entre joueurs, les Drakelands sont reconstruites, et les métiers reçoivent leur plus gros patch : charmes d'outils, vraie cuisine du poisson, deux fois plus de nœuds de récolte. Et en Faille, les grosses attaques de boss se voient désormais venir. Clique sur une bulle pour le détail.</p>
+    <div class="meta">
+      <span><b>Publiée</b> le 4 août 2026</span>
+      <span><b>Depuis</b> la v0.33.1</span>
+      <span><b>971</b> commits</span>
+    </div>
+    <div class="hint">💡 Clique sur une carte pour le détail — et sur un nom souligné pour sa fiche Codex.</div>
+  </header>
+
+  <!-- 1 BANQUE DE GUILDE -->
+  <section>
+    <div class="sec-head"><span class="sec-num">01</span><h2>La banque de guilde est là</h2></div>
+    <p class="sec-sub">Un coffre commun pour la guilde : de l'or et des objets partagés, des extensions à acheter, et un journal qui trace tout. Une grosse nuance à connaître avant de s'enthousiasmer.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="bank" tabindex="0" role="button" aria-label="Détails : la banque de guilde">
+        <h3>Le coffre commun <span class="chip c-new">Nouveau</span></h3>
+        <p>Un trésor d'or partagé (jusqu'à <strong class="hl">100 000 po</strong>) et un magasin d'objets qui s'étend jusqu'à <strong class="hl">60 emplacements</strong>, payés avec l'or de la guilde. Chaque dépôt, retrait et achat est <strong class="hl">journalisé</strong> — tout le monde voit qui a fait quoi. Enfin… tout le monde ? Voir la nuance.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>⚠️ Réservée aux officiers <span class="chip c-util">Important</span></h3>
+        <ul>
+          <li>Seuls le <strong class="hl">chef de guilde et les officiers</strong> peuvent déposer, retirer — et même <strong class="hl">VOIR</strong> la banque. Les membres n'ont ni onglet, ni lecture, ni journal. On a vérifié dans le code : c'est voulu.</li>
+          <li>Le journal d'activité (50 dernières opérations) n'est visible <strong class="hl">que des officiers</strong> aussi.</li>
+          <li>Concrètement pour la guilde : passez par un officier pour déposer, et demandez-lui l'état du coffre.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 MONTURES -->
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Les montures s'échangent</h2></div>
+    <p class="sec-sub">Le changement d'économie le plus visible : les rênes ne sont plus liées. Une monture se vend, s'offre, se poste — comme n'importe quel objet. Détails et pièges dans le <a href="../montures.html">guide Montures</a>, mis à jour.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="reins" tabindex="0" role="button" aria-label="Détails : les rênes échangeables">
+        <h3>Les rênes se vendent <span class="chip c-new">Économie</span></h3>
+        <p>Échange direct, courrier, Marché, banque de guilde : <strong class="hl">toutes les rênes du jeu</strong> circulent, y compris celles déjà dans tes sacs. Celui qui tient les rênes possède la monture.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="mounts" tabindex="0" role="button" aria-label="Détails : les montures non obtenables">
+        <h3>⚠️ Le Raptor : pas farmable <span class="chip c-util">Attention</span></h3>
+        <p>La monture vedette de la MAJ, le <span data-codex="item|Reins of the Drakemaw Raptor">Drakemaw Raptor</span>, apparaît en jeu mais <strong class="hl">ne s'obtient nulle part</strong> — son drop a été retiré juste avant la sortie. On a vérifié dans le code. La Terrorspark non plus, toujours pas.</p>
+        <span class="more-link">Pourquoi</span>
+      </div>
+      <div class="card">
+        <h3>Confort <span class="chip c-util">Pratique</span></h3>
+        <ul>
+          <li>Sur mobile, le tiroir « More » gagne un <strong class="hl">bouton monture</strong> (invoque ta première monture possédée).</li>
+          <li>Attention : mettre en vente les rênes que tu es <strong class="hl">en train de monter</strong> te démonte sur-le-champ.</li>
+          <li>La vente au vendeur PNJ et la poubelle restent bloquées — aucune monture ne peut être détruite par erreur.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 DRAKELANDS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Les Drakelands, reconstruites</h2></div>
+    <p class="sec-sub">Les vieux drakes ont disparu : la zone <span data-codex="zone|The Drakelands">The Drakelands</span> est repeuplée par la couvée Dragonkin, avec deux nouveaux hauts faits de Chronique à la clé.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="drakelands" tabindex="0" role="button" aria-label="Détails : la couvée Dragonkin">
+        <h3>La couvée Dragonkin <span class="chip c-mob">Monstres</span></h3>
+        <p>Des <span data-codex="mob|Dragonkin Egg">œufs</span> qui éclosent en <span data-codex="mob|Dragonkin Whelp">whelps</span> si on les ignore, des <span data-codex="mob|Dragonkin Broodguard">broodguards</span> en patrouille, et <strong class="hl">quatre <span data-codex="mob|Drakemaw Broodlord">Drakemaw Broodlords</span></strong> élites — plus <span data-codex="mob|Cindraleth the Maw Matriarch">Cindraleth</span>, la matriarche du cratère, entièrement refaite.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="deeds" tabindex="0" role="button" aria-label="Détails : les hauts faits">
+        <h3>Deux hauts faits <span class="chip c-raid">Chronique</span></h3>
+        <p><strong class="hl">Clutch Breaker</strong> (tuer un Broodlord) et <strong class="hl">The Sky Goes Quiet</strong> (finir la chaîne de la Matriarche) — 10 Renown chacun. Le deuxième est <strong class="hl">rétroactif</strong> si tu as déjà fait la quête.</p>
+        <span class="more-link">Les conditions exactes</span>
+      </div>
+      <div class="card">
+        <h3>Et ailleurs <span class="chip c-mob">Élites</span></h3>
+        <ul>
+          <li><span data-codex="mob|Grubjaw the Glutton">Grubjaw</span> (<span data-codex="zone|Mirefen Marsh">Mirefen</span>) : nouveau modèle géant — mêmes stats, même butin.</li>
+          <li>Deux nouveaux élites de monde : <span data-codex="mob|The Drowned Warlord">The Drowned Warlord</span> (Mirefen, niv. 12) et <span data-codex="mob|Brakka the Wallbreaker">Brakka the Wallbreaker</span> (<span data-codex="zone|Thornpeak Heights">Thornpeak</span>, niv. 17).</li>
+          <li>Bonus non annoncé : <span data-codex="mob|Threnos the First Voice">Threnos the First Voice</span> (Thornpeak, niv. 19), qui drope une cape rare à 6 %.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 MÉTIERS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Les métiers : le plus gros patch de leur histoire</h2></div>
+    <p class="sec-sub">Des charmes d'outils fabriqués par les enchanteurs, une pêche qui passe par la cuisine, et une récolte deux fois plus dense. La page <a href="../metiers.html">Récolte &amp; Métiers</a> est à jour.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="charms" tabindex="0" role="button" aria-label="Détails : les charmes d'outils">
+        <h3>Les charmes d'outils <span class="chip c-new">Enchanteur</span></h3>
+        <p>Deux nouveaux objets fabriqués par les enchanteurs : <span data-codex="item|Gatherer's Cache">Gatherer's Cache</span> (récoltes doublées) et <span data-codex="item|Artisan's Eye">Artisan's Eye</span> (qualité fine). Le twist : une charge n'est dépensée <strong class="hl">que si le bonus a vraiment servi</strong>.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="fishing" tabindex="0" role="button" aria-label="Détails : la pêche et la cuisine">
+        <h3>La pêche passe à table <span class="chip c-bal">Pêche</span></h3>
+        <p>Les prises sont maintenant <strong class="hl">crues</strong> : impossible de les manger, il faut les cuisiner (6 nouvelles recettes). Et chaque plan d'eau a un <strong class="hl">plafond d'apprentissage</strong> — au-delà, la canne ne t'apprend plus rien.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="gather" tabindex="0" role="button" aria-label="Détails : la récolte">
+        <h3>Récolte : plus dense, moins pressée <span class="chip c-bal">Récolte</span></h3>
+        <p>Le nombre de nœuds passe de <strong class="hl">99 à 156</strong> (six zones triplées)… mais chaque nœud repousse en <strong class="hl">4 minutes au lieu de 2</strong>. Et les outils exigent désormais un niveau de métier pour être <strong class="hl">utilisés</strong>.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 FAILLES & DELVES -->
+  <section>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Failles : des boss enfin lisibles</h2></div>
+    <p class="sec-sub">Fini les dégâts inévitables : tout se télégraphie, tout s'esquive. Le <a href="../failles.html">guide Failles</a> est à jour.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="riftboss" tabindex="0" role="button" aria-label="Détails : les boss de Faille">
+        <h3>Les grosses attaques se voient venir <span class="chip c-bal">Failles</span></h3>
+        <p>Un cercle au sol <strong class="hl">1,2 s avant chaque détonation</strong>, des balayages qui ne touchent plus que <strong class="hl">devant le boss</strong>, et les contrôles « au contact » suspendus pendant que tu t'échappes. Boss de Faille uniquement.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="delve" tabindex="0" role="button" aria-label="Détails : le coffre de delve">
+        <h3>Delves : le coffre ne se bloque plus <span class="chip c-new">Delves</span></h3>
+        <p>Rater tous ses essais de crochetage sur le coffre final ne le <strong class="hl">verrouille plus</strong> : il s'ouvre quand même, avec le butin de base. Crocheter proprement reste bien plus payant.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 MONDE -->
+  <section>
+    <div class="sec-head"><span class="sec-num">06</span><h2>Le monde : farm, quêtes, villes</h2></div>
+    <p class="sec-sub">La v0.33 avait ralenti le farm ; la v0.34 rebat encore les cartes — dans les deux sens. Et les quêtes trichent moins.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="respawn" tabindex="0" role="button" aria-label="Détails : les réapparitions">
+        <h3>Les respawns changent (encore) <span class="chip c-bal">Économie</span></h3>
+        <p>Les monstres du monde reviennent maintenant en <strong class="hl">60 secondes partout</strong> — on vous avait annoncé 1 à 3 min en v0.33, c'est retombé. Mais <span data-codex="mob|Warlord Drogmar">Drogmar</span> a été nerfé, et les nœuds de récolte vont dans l'autre sens.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="quests" tabindex="0" role="button" aria-label="Détails : les quêtes">
+        <h3>Les quêtes trichent moins <span class="chip c-bal">Quêtes</span></h3>
+        <p>Fini de sonner <strong class="hl">trois fois la même cloche</strong> : chaque objet d'interaction ne crédite qu'une fois. Les objets de quête sont marqués dans les sacs, et les livraisons répétables s'affichent <strong class="hl">en bleu</strong>.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Les villes <span class="chip c-new">Décor</span></h3>
+        <ul>
+          <li><strong class="hl">Fenbridge</strong> (<span data-codex="zone|Mirefen Marsh">Mirefen</span>) est entièrement reconstruite : passerelles reliées, sorties dégagées, vraie ville de marais.</li>
+          <li><strong class="hl">Gull Mere</strong>, « la ville de pêche » des notes officielles, est en fait… un <strong class="hl">lac</strong> : le premier plan d'eau pêchable de l'île de <span data-codex="zone|The Farshore">The Farshore</span>, près du hameau de Gullhaven.</li>
+          <li>À ta mort, le jeu affiche enfin <strong class="hl">qui (ou quoi) t'a tué</strong>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 CLASSES -->
+  <section>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Pour ta classe</h2></div>
+    <p class="sec-sub">Un gros nerf mage, trois réparations voleur, et une précision importante sur l'ours du druide.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Mage <span class="chip c-bal">Nerf</span></h3>
+        <ul>
+          <li><span data-codex="ability|Collective Reversal">Collective Reversal</span> (le rez de groupe après wipe, 30 % PV) gagne un <strong class="hl">cooldown de 5 minutes</strong> — il n'en avait <strong class="hl">aucun</strong>.</li>
+          <li>Pourquoi : un mage d'arrière-ligne pouvait sortir de combat en plein combat et enchaîner les rez de masse. C'est redevenu un outil de récupération, pas une stratégie.</li>
+        </ul>
+      </div>
+      <div class="card more" data-detail="rogue" tabindex="0" role="button" aria-label="Détails : les réparations du voleur">
+        <h3>Voleur : trois réparations <span class="chip c-new">Fix</span></h3>
+        <p><span data-codex="ability|Smokestep">Smokestep</span> marche enfin (les attaques déjà engagées <strong class="hl">s'arrêtent vraiment</strong>), <span data-codex="talent|Borrowed Tempo">Borrowed Tempo</span> ne mange plus tes combos, et un joueur stun <strong class="hl">ne peut plus pivoter</strong> — ton positionnement dans le dos est garanti.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Druide &amp; divers <span class="chip c-mob">À savoir</span></h3>
+        <ul>
+          <li><span data-codex="ability|Bruin Form">Bruin Form</span> a un <strong class="hl">vrai modèle d'ours</strong> à quatre pattes. C'est purement visuel : le tank druide existait déjà, armure et menace ne changent pas.</li>
+          <li>La <strong class="hl">faiblesse de résurrection</strong> (−75 % de stats) ne peut <strong class="hl">plus être dissipée</strong> — par rien. Seul le temps l'enlève.</li>
+          <li>Double-cliquer sur la nourriture ne <strong class="hl">gaspille plus</strong> un deuxième exemplaire, et les morts ne peuvent plus lancer d'actions de métier.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 INTERFACE -->
+  <section>
+    <div class="sec-head"><span class="sec-num">08</span><h2>Confort, interface et le reste</h2></div>
+    <p class="sec-sub">Beaucoup de petites choses qui font une grosse différence au quotidien.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Interface <span class="chip c-util">Pratique</span></h3>
+        <ul>
+          <li>Les <strong class="hl">onglets de chat se réordonnent</strong> à la souris, et les hauts faits sont <strong class="hl">cliquables dans le chat</strong>.</li>
+          <li>Les <strong class="hl">boutons de souris</strong> se assignent comme des touches, mode d'assignation directement sur la barre d'action, et <strong class="hl">verrouillage des emplacements</strong>.</li>
+          <li>La banque gagne un bouton <strong class="hl">« déposer tous les matériaux »</strong> qui liste ce qu'il va transférer.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Achats malins <span class="chip c-util">Vendeurs</span></h3>
+        <ul>
+          <li>Chez les vendeurs : achat par <strong class="hl">1, 5, 10 ou quantité au choix</strong> (les montures et objets liés restent à l'unité).</li>
+          <li>Le Marché demande une <strong class="hl">confirmation d'achat</strong> — et re-vérifie le prix au moment de valider.</li>
+          <li>Le Chercheur de donjons <strong class="hl">masque les groupes</strong> des donjons où tu es verrouillé.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Et le reste <span class="chip c-new">Global</span></h3>
+        <ul>
+          <li><strong class="hl">Plus de 230 images peintes à la main</strong> remplacent des icônes générées (objets, sorts, buffs, portraits) — le Codex et le site les affichent déjà.</li>
+          <li>Un <strong class="hl">bot Discord officiel</strong> synchronise membres et rôles, et relaie l'activité de guilde.</li>
+          <li>Le jeu est traduit dans <strong class="hl">21 langues</strong>, interface d'admin comprise.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Compilé pour <strong>La Clauderie</strong> — notes de version officielles v0.34.0, vérifiées dans le code du jeu.</p>
+    <p style="margin-top:8px"><a href="../patch-notes.html">← Toutes les mises à jour</a> · <a href="../index.html">Accueil</a></p>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    bank: {
+      title: "La banque de guilde, en détail",
+      summary: "Un trésor commun, un magasin d'objets extensible, un journal — réservés au chef et aux officiers.",
+      body: `
+        <h4>Comment elle s'ouvre</h4>
+        <ul>
+          <li>Le trésor d'or marche <b>dès le premier jour</b> : n'importe quel officier peut y déposer ou retirer des pièces auprès d'un banquier.</li>
+          <li>Le magasin d'objets, lui, s'ouvre en achetant le premier palier : <b>24 emplacements pour 9 po</b> — payés de la poche de l'officier qui ouvre.</li>
+          <li>Ensuite, 6 extensions de <b>+6 emplacements</b> chacune, payées avec l'or de la guilde : 2 po 50, 5 po, 10 po, 25 po, 50 po puis 100 po — <b>60 emplacements maximum</b>, ~192 po 50 en tout.</li>
+        </ul>
+        <h4>Ce qui ne rentre pas</h4>
+        <ul>
+          <li>Les <b>objets de quête</b> et les <b>objets liés</b> sont refusés au dépôt — la banque suit les mêmes règles que le courrier et le Marché : si un objet ne peut pas y circuler, il ne peut pas y dormir non plus.</li>
+          <li>Le trésor plafonne à <b>100 000 po</b>. Un dépôt qui dépasserait est refusé en entier, jamais rogné.</li>
+          <li>Bonne nouvelle : les <b>rênes de montures</b> (nouvellement échangeables) y rentrent très bien.</li>
+        </ul>
+        <h4>La nuance qui fâche</h4>
+        <ul>
+          <li>Tout ça est réservé au <b>chef de guilde et aux officiers</b>. Les membres ne voient même pas l'onglet — pas de lecture seule, pas de journal. On a vérifié dans le code : le commentaire des développeurs le dit noir sur blanc (« members get no data and no UI tab »).</li>
+          <li>Le journal (50 dernières opérations : qui a déposé/retiré quoi) est la contrepartie de confiance… entre officiers.</li>
+        </ul>`
+    },
+    reins: {
+      title: "Les rênes échangeables, en détail",
+      summary: "Toutes les rênes circulent : échange, courrier, Marché, banque de guilde. Une seule exception.",
+      body: `
+        <h4>La nouvelle règle</h4>
+        <ul>
+          <li>Posséder les rênes, c'est posséder la monture — et les rênes sont maintenant des objets <b>non liés</b>. Elles se donnent, se vendent au Marché, se postent, se déposent en banque de guilde.</li>
+          <li>Ça vaut pour les <b>8 montures</b> du jeu, y compris les exemplaires <b>déjà dans tes sacs ou ta banque</b> : rien à faire, ils sont devenus échangeables au chargement.</li>
+          <li>Seule exception : la Terrorspark des développeurs, toujours liée (et toujours introuvable).</li>
+        </ul>
+        <h4>Les garde-fous</h4>
+        <ul>
+          <li>Impossible de vendre des rênes à un <b>vendeur PNJ</b> ou de les jeter — aucune monture ne peut être détruite par accident.</li>
+          <li>Le jeu <b>re-vérifie la possession pendant que tu chevauches</b> : échange, poste ou mets en vente les rênes que tu montes, et tu es démonté en un cinquième de seconde. Pas de prêt de monture à distance.</li>
+          <li>La <b>compétence d'équitation</b> (80 po chez Marla) reste personnelle : l'acheteur d'une monture doit l'avoir apprise.</li>
+        </ul>
+        <h4>Ce que ça change pour la guilde</h4>
+        <ul>
+          <li>Les montures rares deviennent un <b>marché</b> : un drop chanceux en donjon héroïque peut se vendre — ou s'offrir à un guildé. Le farm de l'ours et de l'escargot (0,1 %) vaut soudain de l'or.</li>
+        </ul>`
+    },
+    mounts: {
+      title: "Le Raptor et la Terrorspark : pourquoi il ne faut rien farmer",
+      summary: "Deux montures existent dans les données mais n'ont aucune source. Vérifié dans le code.",
+      body: `
+        <h4>Le Drakemaw Raptor (nouveau, v0.34.0)</h4>
+        <ul>
+          <li>Les notes officielles annoncent la monture avec la refonte des Drakelands. Le modèle, les rênes épiques (+80 % de vitesse) et les textes sont bien livrés — elle apparaît même dans la fenêtre Montures.</li>
+          <li>Mais on a vérifié dans le code : <b>aucun monstre, aucun vendeur, aucune quête, aucune Faille</b> ne la donne. Son drop (sur les Broodlords) a été <b>retiré juste avant la sortie</b> — le commentaire des développeurs, daté du 4 août, dit qu'elle sera accrochée à un futur world boss dédié.</li>
+          <li>En clair : <b>ne farme pas les Broodlords pour le Raptor</b> — ils ne lâchent que des pièces et une écaille de quête. Quand la monture deviendra obtenable, on vous le dira ici.</li>
+        </ul>
+        <h4>La Terrorspark Groundshaker (depuis la v0.33)</h4>
+        <ul>
+          <li>Rien n'a changé : elle reste <b>réservée aux développeurs</b>, aucune source ajoutée, et c'est la seule rêne encore liée. L'avertissement de nos notes v0.33.1 tient toujours.</li>
+        </ul>`
+    },
+    drakelands: {
+      title: "La couvée Dragonkin, en détail",
+      summary: "Œufs, whelps, broodguards, quatre Broodlords élites et une Matriarche refaite.",
+      body: `
+        <h4>La nouvelle écologie de la zone</h4>
+        <ul>
+          <li>75 <b>œufs Dragonkin</b> parsèment la zone (anneaux autour des Broodlords, champs épars, cratère). Un œuf ignoré peut éclore en <b>whelp</b> qui te saute dessus — les détruire d'abord est la bonne lecture du terrain. Les œufs ne donnent ni XP ni butin : c'est du terrain, pas du farm.</li>
+          <li>Les <b>Broodguards</b> (17 exemplaires en patrouille) sont la nouvelle source de l'<span data-codex="item|Emberwing Scale">Emberwing Scale</span> de quête (50 % de drop) — l'ancien porteur, l'Emberwing Drake, a <b>disparu du monde</b> (le texte de la quête parle encore de lui, ne le cherchez pas).</li>
+          <li>Quatre <b><span data-codex="mob|Drakemaw Broodlord">Drakemaw Broodlords</span></b> élites-rares (niv. 20, respawn ~100 s) gardent les nids : deux aux Bloodglass Fields, un au rebord nord du cratère, un à l'approche du wargate. Écaille à 90 % pour la quête — mais <b>aucun équipement</b> : on les tue pour le haut fait et la quête, pas pour le loot.</li>
+        </ul>
+        <h4>Cindraleth, la Matriarche</h4>
+        <ul>
+          <li><span data-codex="mob|Cindraleth the Maw Matriarch">Cindraleth</span> est passée de figurante à vrai combat : taille moitié plus grande, cri d'engagement qui <b>brise les œufs à 30 m</b> (les whelps éclosent sur toi), cleave frontal toutes les 5 s, souffle de feu, et un coup de queue qui contre-étourdit.</li>
+          <li>Petite mise en garde de vérificateurs : son respawn est sur le <b>timer commun de 60 s</b> — probablement un oubli (le même bug que Drogmar avant son correctif). Si ça change, on mettra à jour.</li>
+        </ul>`
+    },
+    deeds: {
+      title: "Les deux hauts faits de Chronique",
+      summary: "Clutch Breaker : tuer un Broodlord. The Sky Goes Quiet : finir la chaîne de la Matriarche.",
+      body: `
+        <h4>Clutch Breaker (10 Renown)</h4>
+        <ul>
+          <li>La description parle de tuer un Broodlord « au milieu de ses œufs, à travers le cri, le cleave et le feu »… mais on a vérifié la condition réelle : il suffit de <b>tuer UN Drakemaw Broodlord</b>, n'importe lequel, n'importe comment. Le reste, c'est de la mise en scène.</li>
+          <li>Le crédit est <b>de groupe</b> : tout le monde l'obtient sur le kill.</li>
+        </ul>
+        <h4>The Sky Goes Quiet (10 Renown)</h4>
+        <ul>
+          <li>Attention, celui-là est différent : tuer Cindraleth <b>ne suffit pas</b>. Il faut <b>terminer la quête « Matriarch of the Maw »</b> (précédée de « Scales of the Maw », niv. 19 min, 2 joueurs conseillés, rendue à Gatecaptain Brannoc).</li>
+          <li>Bonne nouvelle : il est <b>rétroactif</b> — si tu as déjà bouclé la chaîne, le haut fait tombe tout seul.</li>
+          <li>La quête récompense 6 000 XP, 36 po et les <span data-codex="item|Mawscale Pauldrons">Mawscale Pauldrons</span> (guerrier, mage, voleur).</li>
+        </ul>`
+    },
+    charms: {
+      title: "Les charmes d'outils, en détail",
+      summary: "Deux consommables d'enchanteur qui boostent la récolte — et ne s'usent que quand ils servent.",
+      body: `
+        <h4>Les deux charmes</h4>
+        <ul>
+          <li><span data-codex="item|Gatherer's Cache">Gatherer's Cache</span> : chance de <b>récolte doublée</b> sur un nœud. <span data-codex="item|Artisan's Eye">Artisan's Eye</span> : chance de frapper le <b>grade fin</b> (Fine) du matériau. Les deux s'apprennent chez <span data-codex="npc|Tinker Gizzel">Tinker Gizzel</span> (l'atelier d'Eastbrook), enchantement 25, et coûtent 5 Chime Shards + 4 Essences + 6 Poussières pièce.</li>
+          <li>Un troisième charme (« Springback ») apparaît dans les fichiers mais n'a <b>ni recette ni effet</b> — ignorez-le.</li>
+          <li>La <b>pêche est exclue</b> : les charmes ne marchent que sur minage, bûcheronnage et cueillette.</li>
+        </ul>
+        <h4>Comment ça marche</h4>
+        <ul>
+          <li>Le charme se slotte <b>par métier</b> (pas par outil), depuis la fenêtre Métiers, et consomme l'objet. Il faut porter un vrai outil du métier.</li>
+          <li>Charges : <b>20 de base</b>, +10 par rang de rareté de ton outil (jusqu'à 50 avec un outil épique).</li>
+          <li>Le point génial, vérifié dans le code : une charge n'est dépensée <b>que si le bonus a réellement changé le résultat</b>. Pas de grade fin possible sur ce nœud ? Rien de dépensé. Le double n'est pas tombé ? Rien de dépensé. Zéro gaspillage.</li>
+        </ul>
+        <h4>La recharge</h4>
+        <ul>
+          <li>Un charme vide se <b>recharge</b> avec des matériaux d'enchantement (la qualité demandée dépend de ton meilleur outil porté). Si <b>tu</b> as fabriqué le charme, ta recharge coûte <b>moitié prix</b> — l'enchanteur de la guilde a un vrai avantage à signer ses charmes.</li>
+        </ul>`
+    },
+    fishing: {
+      title: "La pêche et la cuisine, en détail",
+      summary: "Les prises sont crues, la cuisine les transforme, et chaque eau a un plafond d'apprentissage.",
+      body: `
+        <h4>Cru, puis cuit</h4>
+        <ul>
+          <li>Les 7 poissons pêchables sont maintenant <b>crus</b> : impossible de les manger (« That is raw. Cook it first. »). Ce sont des ingrédients de cuisine, avec un prix plancher chez les vendeurs (de 2 cuivres le perchot à 75 le <span data-codex="item|Sunglint Koi">Sunglint Koi</span>).</li>
+          <li>Six recettes de cuisine les transforment (du Pan-Seared Perch au plateau Angler's Feast qui sort <b>3 plats d'un coup</b>) — et deux cannes haut de gamme, la <span data-codex="item|Stormreel Fishing Rod">Stormreel</span> et la <span data-codex="item|Tidewrought Fishing Rod">Tidewrought</span>, se fabriquent avec du poisson.</li>
+        </ul>
+        <h4>Le plafond d'apprentissage</h4>
+        <ul>
+          <li>Chaque plan d'eau a un palier, et ce palier <b>plafonne ce que la pêche t'enseigne</b> : ~100 dans les eaux de départ, 150 dans le marais, <b>200 uniquement à <span data-codex="zone|Thornpeak Heights">Thornpeak Heights</span></b>.</li>
+          <li>Curiosité vérifiée dans le code : les zones d'extension (même haut niveau) sont toutes des eaux de <b>palier 1</b> — une zone niveau 17 t'enseigne moins bien que le marais niveau 6. Les développeurs le savent, c'est assumé pour l'instant.</li>
+          <li>Gull Mere, « la ville de pêche » des notes ? C'est un <b>lac</b> de l'île The Farshore, près du hameau de Gullhaven — le premier plan d'eau pêchable de l'île, qui n'en avait aucun.</li>
+        </ul>`
+    },
+    gather: {
+      title: "La récolte, en détail",
+      summary: "57 nœuds de plus, un respawn doublé, des infobulles qui disent tout, et des outils à mériter.",
+      body: `
+        <h4>Plus de nœuds, moins vite</h4>
+        <ul>
+          <li>Six zones passent de 6-12 à <b>18 nœuds chacune</b> (Eastbrook, Mirefen, Thornpeak, Willowfen, Galecrest, Farshore) : 156 nœuds au total contre 99.</li>
+          <li>En face, le respawn d'un nœud récolté passe de <b>2 à 4 minutes</b> (par joueur). Résultat net : on tourne sur un circuit plus large au lieu de camper trois filons.</li>
+        </ul>
+        <h4>Des infobulles honnêtes</h4>
+        <ul>
+          <li>Sur PC, survoler un nœud affiche le <b>compte à rebours de repousse</b> et prévient si le <b>grade fin</b> est atteignable avec TON outil. Sur mobile, pas de survol — seulement la teinte sur la minicarte.</li>
+          <li>Avant un craft, la fenêtre annonce noir sur blanc si elle va <b>puiser dans tes matériaux fins</b> faute de stock de base — fini la substitution silencieuse à double valeur.</li>
+        </ul>
+        <h4>Les outils se méritent</h4>
+        <ul>
+          <li>Acheter un outil reste libre, mais l'<b>utiliser</b> exige désormais le niveau de métier : 40 pour le palier 2, 70 pour le 3, 85 pour le 4, 100 pour le 5. (Les cannes à pêche sont exemptées — leur rythme, c'est l'eau.)</li>
+          <li>Nouveau pour les non-artisans : la boutique du delve <b>The Drowned Litany</b> vend les outils de palier 4 (24 Marks, 3 clears) et 5 (56 Marks, clear héroïque) — première voie vers le haut de l'échelle sans passer par un crafteur.</li>
+        </ul>`
+    },
+    riftboss: {
+      title: "Les boss de Faille, en détail",
+      summary: "Télégraphes de 1,2 s, cleave frontal, contrôles suspendus, mèche adaptative.",
+      body: `
+        <h4>Tout se télégraphie</h4>
+        <ul>
+          <li>Les ondes de choc et explosions dessinent un <b>cercle au sol 1,2 seconde</b> avant de détoner — au vrai rayon du souffle, et la détonation se mesure <b>depuis le cercle</b>, pas depuis le boss s'il a bougé. Sortir du cercle = zéro dégât.</li>
+          <li>Les gros balayages (le Sweeping Arc de <span data-codex="mob|Warlord Grask">Warlord Grask</span>, par exemple) ne touchent plus qu'un <b>arc de 180° devant le boss</b> : les mêlées dans le dos ne prennent plus rien.</li>
+          <li>Les grosses incantations gardent leur barre (2,2 à 3 s selon le sort) — c'était déjà ta fenêtre pour bouger.</li>
+        </ul>
+        <h4>Le jeu ne te cloue plus dedans</h4>
+        <ul>
+          <li>Pendant que tu t'échappes d'une zone, les <b>stuns, roots, peurs et ralentissements « au contact »</b> du boss sont suspendus : plus de root qui te fige dans l'explosion qu'on t'a demandé d'éviter.</li>
+          <li>Si tu es <b>ralenti</b>, la mèche des zones de mort s'allonge proportionnellement (jusqu'au double ; double plein si tu es rooté). Le Clinging Silk de <span data-codex="mob|Broodmother Vysska">Broodmother Vysska</span> + Venom Pool en rang S, mathématiquement inesquivable avant, se joue maintenant.</li>
+        </ul>
+        <h4>Les limites</h4>
+        <ul>
+          <li>La règle v0.33 des <b>5 secondes minimum</b> entre deux grosses attaques tient toujours — et le télégraphe s'ajoute par-dessus (6,2 s effectives après une onde de choc).</li>
+          <li>Boss de <b>Faille uniquement</b> : boss de monde, de donjon et de raid inchangés, au pixel près.</li>
+        </ul>`
+    },
+    delve: {
+      title: "Le coffre final de delve, en détail",
+      summary: "Plus d'essais ratés = coffre quand même ouvert, mais au butin de base.",
+      body: `
+        <h4>Avant</h4>
+        <ul>
+          <li>Rater tous ses essais de crochetage sur le coffre final le laissait <b>bloqué à jamais</b> — la descente se terminait sur un mur.</li>
+        </ul>
+        <h4>Maintenant</h4>
+        <ul>
+          <li>Au dernier essai raté, le coffre <b>s'ouvre quand même</b> : tu touches le butin de base, et la sortie du delve s'ouvre normalement.</li>
+          <li>Mais pas de resquille : le butin est celui du <b>palier le plus bas</b>, quelle que soit ta mise, le rare garanti du Bountiful Coffer ne tombe <b>que sur un crochetage réussi</b>, et le haut fait du crochetage parfait non plus. Laisser filer le chrono n'est jamais la bonne stratégie.</li>
+          <li>Rappel des essais par mise : 1 essai en Premium, 2 en Standard, 3 en Modest — et un temps limité par mouvement (3, 6 ou 9 s).</li>
+        </ul>`
+    },
+    respawn: {
+      title: "Les réapparitions, en détail",
+      summary: "60 secondes partout dans le monde. Drogmar nerfé. Les nœuds de récolte doublés dans l'autre sens.",
+      body: `
+        <h4>Le monde ouvert</h4>
+        <ul>
+          <li>En v0.33, les monstres du monde revenaient en <b>1 à 3 minutes selon la zone</b> (c'est ce qu'on vous avait expliqué — c'était vrai). La v0.34 <b>écrase ces paliers</b> : 60 secondes partout, du camp débutant à la zone de fin.</li>
+          <li>Les <b>rares et minibosses</b> gardent leurs horaires spéciaux, comme avant. Donjons, Failles et delves : pas concernés.</li>
+        </ul>
+        <h4>Drogmar, la fin de la poule aux œufs d'or</h4>
+        <ul>
+          <li><span data-codex="mob|Warlord Drogmar">Warlord Drogmar</span> profitait d'un oubli : respawn de trash (60 s) avec un butin de boss. C'est corrigé — <b>respawn 3 minutes</b> et pièces garanties divisées par trois (2 000 → 650 cuivres). À lui seul, il représentait un quart de l'or du couloir de Glimmermere.</li>
+          <li>Ses <b>trois drops uniques</b> (bottes, hache, jambières) n'ont pas bougé : le kill vaut toujours le détour pour l'objet, plus pour l'or.</li>
+        </ul>
+        <h4>Et les récolteurs</h4>
+        <ul>
+          <li>Attention au sens inverse : les <b>nœuds de récolte</b> (minerai, bois, herbes) passent de 2 à <b>4 minutes</b> de repousse — compensés par un monde deux fois plus dense en nœuds. Le farm de monstres accélère, le farm de matériaux s'étale.</li>
+        </ul>`
+    },
+    quests: {
+      title: "Les quêtes, en détail",
+      summary: "Un objet = un crédit, des objets de quête visibles, du bleu pour les livraisons répétables.",
+      body: `
+        <h4>La fin d'une vieille triche</h4>
+        <ul>
+          <li>Une vingtaine de quêtes « interagis avec 3 objets » pouvaient se finir en <b>cliquant trois fois sur le même objet</b> (les Trois Cloches, par exemple). Chaque objet distinct ne crédite plus qu'<b>une fois</b> — recliquer répond « You have already done this one. »</li>
+        </ul>
+        <h4>Les objets de quête, enfin visibles</h4>
+        <ul>
+          <li>Ils sont <b>marqués dans les sacs</b> (nom doré, contexte de quête dans l'infobulle, lien direct vers le suivi) — fini de vendre par erreur le gage d'une quête en cours.</li>
+          <li>Les objectifs de collecte alimentés par des <b>nœuds de récolte</b> dessinent maintenant leur zone de guidance sur la carte — en ne montrant que des nœuds qui peuvent VRAIMENT produire l'objet demandé.</li>
+        </ul>
+        <h4>Le bleu des répétables</h4>
+        <ul>
+          <li>Les <b>livraisons répétables</b> (work orders) s'affichent en bleu sur les quatre surfaces (PNJ, minicarte, carte, dialogue)… <b>après ta première complétion</b>. La toute première fois, la marque reste dorée — elle paie l'XP et l'or complets, c'est honnête.</li>
+          <li>Nouveau aussi : un répétable <b>en attente de sa fenêtre</b> s'affiche atténué au lieu de disparaître — tu sais qu'il reviendra.</li>
+        </ul>`
+    },
+    rogue: {
+      title: "Les trois réparations du voleur",
+      summary: "Smokestep qui marche, Borrowed Tempo vraiment gratuit, et le stun qui verrouille l'orientation.",
+      body: `
+        <h4>Smokestep fonctionne enfin</h4>
+        <ul>
+          <li>Le problème : <span data-codex="ability|Smokestep">Smokestep</span> te rendait indétectable… mais les <b>attaques déjà engagées sur toi continuaient de tomber</b> — l'auto-attaque suivante te sortait de furtivité immédiatement. Le sort au CD de 5 minutes ne servait à rien.</li>
+          <li>Corrigé : à la disparition, autos et incantations hostiles sur toi <b>s'arrêtent net</b>. (Les soins alliés te trouvent toujours — on peut te soigner en furtivité.)</li>
+        </ul>
+        <h4>Borrowed Tempo, vraiment gratuit</h4>
+        <ul>
+          <li>Le talent rend un <span data-codex="ability|Cutthroat Tempo">Cutthroat Tempo</span> sur trois « gratuit » — mais il consommait quand même tes <b>points de combo</b>. Plus maintenant : l'énergie ET les combos sont épargnés (les combos comptent toujours dans la durée du buff).</li>
+        </ul>
+        <h4>Le stun verrouille l'orientation</h4>
+        <ul>
+          <li>Un joueur étourdi pouvait continuer à <b>pivoter à la souris</b> pour te faire face et annuler ton positionnement de dos. Le stun verrouille maintenant l'orientation par tous les canaux — ton Gut Punch garantit le dos-à-dos pour toute sa durée. Gros buff indirect en PvP (le <a href="../pvp.html">guide PvP</a> est à jour).</li>
+        </ul>`
+    }
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

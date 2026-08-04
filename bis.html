@@ -200,7 +200,7 @@
 
 <div class="wrap">
   <header class="page">
-    <p class="eyebrow" data-en="Class guide · Patch v0.33.1">Guide de classe · Patch v0.33.1</p>
+    <p class="eyebrow" data-en="Class guide · Patch v0.34.0">Guide de classe · Patch v0.34.0</p>
     <h1>Builds</h1>
     <p class="lede" data-en="Pick your class and role: the page gives you the talents to take (and why), the order of spells in combat, and the best gear in the game piece by piece, enchants included. All 27 specs are covered. Click an item, talent or spell to see its sheet without leaving the page.">Choisis ta classe et ton rôle : la page te donne les talents à prendre (et pourquoi), l'ordre des sorts en combat, et le meilleur équipement du jeu pièce par pièce, enchantements compris. Les 27 spécialisations sont couvertes. Clique sur un objet, un talent ou un sort pour voir sa fiche sans quitter la page.</p>
   </header>
@@ -235,7 +235,7 @@
 
 <script src="assets/nav.js"></script>
 <script src="assets/lang.js"></script>
-<script src="assets/version.js" data-version="v0.33.1" defer></script>
+<script src="assets/version.js" data-version="v0.34.0" defer></script>
 <script>
 // Builds recommandés par La Clauderie — rédigés à partir des vraies données
 // du patch (TALENTS.json / ABILITIES.json de la knowledge base). À réviser à
@@ -519,7 +519,7 @@ const BUILDS = {
     ["Red Haze", "niv. 20", { fr: "+70 PA pendant 15 s : le burst de menace à l'engage.", en: "+70 AP for 15s: threat burst on the pull." }]
    ],
    rotation: [
-    ["Bruin Form", { fr: "évidemment.", en: "obviously." }],
+    ["Bruin Form", { fr: "évidemment — et depuis la v0.34, avec un vrai modèle d'ours à quatre pattes (le rendu seulement : armure, PV et menace ne changent pas).", en: "obviously — and since v0.34, with a real four-legged bear model (render only: armor, HP and threat are unchanged)." }],
     ["Bruin Rush", { fr: "l'engage : charge + étourdissement.", en: "the engage: charge + stun." }],
     ["Primal Surge", { fr: "le sort signature (v0.25) : 50 rage instantanée en ours — l'ouverture de pack rêvée.", en: "the signature spell (v0.25): an instant 50 Rage in Bruin form — the perfect pack opener." }],
     ["Bonecrush", { fr: "le spam de menace mono-cible.", en: "the single-target threat spam." }],
@@ -748,8 +748,8 @@ const BUILDS = {
     ["Rewind", { fr: "le bouton panique (CD 120 s) : rend au groupe 30 % des dégâts subis sur les 5 dernières secondes (plafond 35 % PV max).", en: "the panic button (120s CD): gives the group back 30% of the damage taken over the last 5 seconds (capped at 35% max HP)." }],
     ["Hourglass of Suspension", { fr: "l'utilitaire (CD 50 s) : suspend un ennemi 60 s, ou met un allié en stase (30 % PV rendus, CD 2× plus vite), ou se pose en piège.", en: "the utility (50s CD): suspends an enemy for 60s, or puts an ally in stasis (30% HP back, CDs tick 2× faster), or drops as a ground trap." }]
    ],
-   astuce: { fr: "Tu as le rez de combat (Temporal Reversal, CD 600 s) ET le Bloodlust (Temporal Acceleration, niv. 20) — mais le sated est partagé avec le Storm Chorus du chaman : décidez AVANT le pull qui lance quoi.",
-             en: "You have the combat res (Temporal Reversal, 600s CD) AND the Bloodlust (Temporal Acceleration, level 20) — but the sated debuff is shared with the shaman's Storm Chorus: decide BEFORE the pull who casts what." }
+   astuce: { fr: "Tu as le rez de combat (Temporal Reversal, CD 600 s) ET le Bloodlust (Temporal Acceleration, niv. 20) — mais le sated est partagé avec le Storm Chorus du chaman : décidez AVANT le pull qui lance quoi. Et le rez de groupe après wipe (Collective Reversal, 7 s de cast hors combat) a maintenant un CD de 5 min (v0.34) : ne le gaspille pas sur un seul mort.",
+             en: "You have the combat res (Temporal Reversal, 600s CD) AND the Bloodlust (Temporal Acceleration, level 20) — but the sated debuff is shared with the shaman's Storm Chorus: decide BEFORE the pull who casts what. And the after-wipe group res (Collective Reversal, 7s out-of-combat cast) now has a 5-minute CD (v0.34): don't waste it on a single death." }
   }
  },
  warlock: {
@@ -942,7 +942,7 @@ const BUILDS = {
    talents: [
     ["Ceaseless Cuts", "niv. 5", { fr: "1 Wicked Slash sur 3 rend 30 énergie — ton générateur se paie tout seul.", en: "every 3rd Wicked Slash restores 30 energy — your generator pays for itself." }],
     ["Smoke Screen", "niv. 8", { fr: "+30 % d'esquive pendant 8 s — le bouton de survie de la mêlée.", en: "+30% dodge for 8s — melee's survival button." }],
-    ["Borrowed Tempo", "niv. 11", { fr: "1 builder sur 3 rend Cutthroat Tempo gratuit — LE buff que tu entretiens de toute façon.", en: "every 3rd builder makes Cutthroat Tempo free — THE buff you maintain anyway." }],
+    ["Borrowed Tempo", "niv. 11", { fr: "1 builder sur 3 rend Cutthroat Tempo gratuit — LE buff que tu entretiens de toute façon. Réparé en v0.34 : le cast gratuit ne consomme plus tes points de combo (ils comptent toujours dans la durée).", en: "every 3rd builder makes Cutthroat Tempo free — THE buff you maintain anyway. Fixed in v0.34: the free cast no longer spends your combo points (they still count toward the duration)." }],
     ["Venom Dividend", "niv. 14", { fr: "autos + poison = 20 % de chance de rendre 10 énergie — et ta maîtrise accélère justement tes autos.", en: "autos + poison = 20% chance to restore 10 energy — and your mastery speeds up those very autos." }],
     ["Borrowed Breath", "niv. 17", { fr: "l'anti-mort : le coup fatal te laisse à 1 PV (une fois par 120 s).", en: "the cheat-death: the killing blow leaves you at 1 HP (once per 120s)." }],
     ["Redline Habit", "niv. 20", { fr: "chaque finisher rend 6 s de CD à Quickened Blood — ton burst tourne en boucle.", en: "each finisher shaves 6s off Quickened Blood's cooldown — your burst loops." }]
@@ -971,7 +971,7 @@ const BUILDS = {
    talents: [
     ["Knife's Dividend", "niv. 5", { fr: "Craven Thrust rend ton prochain Dirt Nap 50 % moins cher : builder et finisher se paient l'un l'autre.", en: "Craven Thrust makes your next Dirt Nap 50% cheaper: builder and finisher pay for each other." }],
     ["Blindside Opening", "niv. 8", { fr: "Eye Jab rend ton prochain Craven Thrust gratuit — sur un boss, l'incapacité perdue ne coûte rien.", en: "Eye Jab makes your next Craven Thrust free — on a boss, the wasted incapacitate costs nothing." }],
-    ["Borrowed Tempo", "niv. 11", { fr: "1 builder sur 3 rend Cutthroat Tempo gratuit — le buff que tu entretiens de toute façon.", en: "every 3rd builder makes Cutthroat Tempo free — the buff you maintain anyway." }],
+    ["Borrowed Tempo", "niv. 11", { fr: "1 builder sur 3 rend Cutthroat Tempo gratuit — le buff que tu entretiens de toute façon. v0.34 : le cast gratuit ne mange plus tes points de combo.", en: "every 3rd builder makes Cutthroat Tempo free — the buff you maintain anyway. v0.34: the free cast no longer eats your combo points." }],
     ["Venom Dividend", "niv. 14", { fr: "autos + poison = 20 % de chance de rendre 10 énergie : la maîtrise booste tes poisons, ce talent les rentabilise.", en: "autos + poison = 20% chance to restore 10 energy: the mastery boosts your poisons, this talent makes them pay." }],
     ["Borrowed Breath", "niv. 17", { fr: "le coup fatal te laisse à 1 PV (1×/120 s) : l'anti-mort du cuir.", en: "the killing blow leaves you at 1 HP (once per 120s): leather's cheat-death." }],
     ["First Cut, Last Word", "niv. 20", { fr: "chaque ouverture furtive rend ton prochain finisher 50 % moins cher : Lurker's Strike → Dirt Nap à moitié prix, sur chaque pack.", en: "each stealth opener makes your next finisher 50% cheaper: Lurker's Strike → half-price Dirt Nap, on every pack." }]
@@ -1000,7 +1000,7 @@ const BUILDS = {
    talents: [
     ["Dusk Dividend", "niv. 5", { fr: "Lurker's Strike et Throat Wire rendent 20 énergie : ouvrir ne coûte (presque) rien.", en: "Lurker's Strike and Throat Wire restore 20 energy: opening costs (almost) nothing." }],
     ["Smoke Screen", "niv. 8", { fr: "+30 % d'esquive pendant 8 s : la survie de la mêlée.", en: "+30% dodge for 8s: melee's survival button." }],
-    ["Borrowed Tempo", "niv. 11", { fr: "1 builder sur 3 rend Cutthroat Tempo gratuit.", en: "every 3rd builder makes Cutthroat Tempo free." }],
+    ["Borrowed Tempo", "niv. 11", { fr: "1 builder sur 3 rend Cutthroat Tempo gratuit — et depuis la v0.34, sans consommer les points de combo.", en: "every 3rd builder makes Cutthroat Tempo free — and since v0.34, without spending the combo points." }],
     ["Final Notice", "niv. 14", { fr: "chaque finisher rend le builder suivant 50 % moins cher : la boucle à saignements s'auto-alimente.", en: "each finisher makes the next builder 50% cheaper: the bleed loop feeds itself." }],
     ["Shadecloak", "niv. 17", { fr: "420 d'absorption pendant 5 s (CD 90 s) : le bouclier d'ombre pour traverser une mécanique.", en: "a 420 absorb for 5s (90s CD): the shadow shield to walk through a mechanic." }],
     ["Shadeslip", "niv. 20", { fr: "le pas d'ombre vers ta cible SANS casser Duskveil (CD 24 s) : l'ouverture parfaite, à volonté.", en: "the shadow-step to your target WITHOUT breaking Duskveil (24s CD): the perfect opener, on tap." }]

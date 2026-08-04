@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>What's new in v0.34.0 — La Clauderie</title>
+<meta name="description" content="Everything new in World of ClaudeCraft v0.34.0, explained simply: the guild bank, mounts you can trade between players, the rebuilt Drakelands, tool charms, fish cooking — and rift bosses you can finally dodge.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="What's new in v0.34.0 — La Clauderie">
+<meta property="og:description" content="Everything new in World of ClaudeCraft v0.34.0, explained simply: the guild bank, mounts you can trade between players, the rebuilt Drakelands, tool charms, fish cooking — and rift bosses you can finally dodge.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.34.0.en.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.34.0.en.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') !== 'en') location.replace('v0.34.0.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Site navigation"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Release notes</p>
+    <h1>What's new in <span class="v">v0.34.0</span></h1>
+    <p class="lede">The economy update. The guild bank arrives, mounts can finally be traded between players, the Drakelands are rebuilt, and professions get their biggest patch yet: tool charms, real fish cooking, twice the gathering nodes. And in Rifts, big boss attacks can now be seen coming. Click a card for details.</p>
+    <div class="meta">
+      <span><b>Released</b> August 4, 2026</span>
+      <span><b>Since</b> v0.33.1</span>
+      <span><b>971</b> commits</span>
+    </div>
+    <div class="hint">💡 Click a card for details — and any underlined name for its Codex sheet.</div>
+  </header>
+
+  <!-- 1 GUILD BANK -->
+  <section>
+    <div class="sec-head"><span class="sec-num">01</span><h2>The guild bank is here</h2></div>
+    <p class="sec-sub">A shared chest for the guild: pooled gold and items, purchasable expansions, and a log that records everything. One big caveat to know before you get excited.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="bank" tabindex="0" role="button" aria-label="Details: the guild bank">
+        <h3>The shared chest <span class="chip c-new">New</span></h3>
+        <p>A shared gold treasury (up to <strong class="hl">100,000 gold</strong>) and an item store that expands to <strong class="hl">60 slots</strong>, paid with guild funds. Every deposit, withdrawal and purchase is <strong class="hl">logged</strong> — everyone sees who did what. Well… everyone? See the caveat.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card">
+        <h3>⚠️ Officers only <span class="chip c-util">Important</span></h3>
+        <ul>
+          <li>Only the <strong class="hl">guild master and officers</strong> can deposit, withdraw — or even <strong class="hl">SEE</strong> the bank. Members get no tab, no read access, no log. We checked the code: it's by design.</li>
+          <li>The activity log (last 50 operations) is also <strong class="hl">officer-only</strong>.</li>
+          <li>In practice for the guild: hand deposits to an officer, and ask them for the chest's state.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 MOUNTS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Mounts can be traded</h2></div>
+    <p class="sec-sub">The most visible economy change: reins are no longer soulbound. A mount can be sold, gifted, mailed — like any other item. Details and traps in the updated <a href="../montures.html">Mount guide</a>.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="reins" tabindex="0" role="button" aria-label="Details: tradable reins">
+        <h3>Reins are for sale <span class="chip c-new">Economy</span></h3>
+        <p>Direct trade, mail, World Market, guild bank: <strong class="hl">every reins in the game</strong> circulates, including the ones already in your bags. Whoever holds the reins owns the mount.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card more" data-detail="mounts" tabindex="0" role="button" aria-label="Details: unobtainable mounts">
+        <h3>⚠️ The Raptor: not farmable <span class="chip c-util">Warning</span></h3>
+        <p>The update's flagship mount, the <span data-codex="item|Reins of the Drakemaw Raptor">Drakemaw Raptor</span>, shows up in game but <strong class="hl">can't be obtained anywhere</strong> — its drop was pulled right before release. We checked the code. The Terrorspark still can't either.</p>
+        <span class="more-link">Why</span>
+      </div>
+      <div class="card">
+        <h3>Comfort <span class="chip c-util">Handy</span></h3>
+        <ul>
+          <li>On mobile, the More tray gains a <strong class="hl">mount button</strong> (summons your first owned mount).</li>
+          <li>Careful: listing the reins you are <strong class="hl">currently riding</strong> dismounts you on the spot.</li>
+          <li>Vendor-selling and discarding stay blocked — no mount can ever be destroyed by mistake.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 DRAKELANDS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">03</span><h2>The Drakelands, rebuilt</h2></div>
+    <p class="sec-sub">The old drakes are gone: <span data-codex="zone|The Drakelands">The Drakelands</span> is repopulated by the Dragonkin brood, with two new chronicle deeds to earn.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="drakelands" tabindex="0" role="button" aria-label="Details: the Dragonkin brood">
+        <h3>The Dragonkin brood <span class="chip c-mob">Mobs</span></h3>
+        <p><span data-codex="mob|Dragonkin Egg">Eggs</span> that hatch into <span data-codex="mob|Dragonkin Whelp">whelps</span> if you ignore them, patrolling <span data-codex="mob|Dragonkin Broodguard">broodguards</span>, and <strong class="hl">four elite <span data-codex="mob|Drakemaw Broodlord">Drakemaw Broodlords</span></strong> — plus <span data-codex="mob|Cindraleth the Maw Matriarch">Cindraleth</span>, the crater matriarch, fully reworked.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card more" data-detail="deeds" tabindex="0" role="button" aria-label="Details: the deeds">
+        <h3>Two deeds <span class="chip c-raid">Chronicle</span></h3>
+        <p><strong class="hl">Clutch Breaker</strong> (kill a Broodlord) and <strong class="hl">The Sky Goes Quiet</strong> (finish the Matriarch's quest chain) — 10 Renown each. The second is <strong class="hl">retroactive</strong> if you've already done the quest.</p>
+        <span class="more-link">The exact conditions</span>
+      </div>
+      <div class="card">
+        <h3>And elsewhere <span class="chip c-mob">Elites</span></h3>
+        <ul>
+          <li><span data-codex="mob|Grubjaw the Glutton">Grubjaw</span> (<span data-codex="zone|Mirefen Marsh">Mirefen</span>): a new giant model — same stats, same loot.</li>
+          <li>Two new world elites: <span data-codex="mob|The Drowned Warlord">The Drowned Warlord</span> (Mirefen, lvl 12) and <span data-codex="mob|Brakka the Wallbreaker">Brakka the Wallbreaker</span> (<span data-codex="zone|Thornpeak Heights">Thornpeak</span>, lvl 17).</li>
+          <li>Unannounced bonus: <span data-codex="mob|Threnos the First Voice">Threnos the First Voice</span> (Thornpeak, lvl 19), who drops a rare cloak at 6%.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 PROFESSIONS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Professions: their biggest patch ever</h2></div>
+    <p class="sec-sub">Tool charms crafted by enchanters, fishing that goes through the kitchen, and gathering twice as dense. The <a href="../metiers.html">Gathering &amp; Professions</a> page is up to date.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="charms" tabindex="0" role="button" aria-label="Details: tool charms">
+        <h3>Tool charms <span class="chip c-new">Enchanter</span></h3>
+        <p>Two new enchanter-crafted items: <span data-codex="item|Gatherer's Cache">Gatherer's Cache</span> (doubled harvests) and <span data-codex="item|Artisan's Eye">Artisan's Eye</span> (fine grade). The twist: a charge is only spent <strong class="hl">when the bonus actually mattered</strong>.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card more" data-detail="fishing" tabindex="0" role="button" aria-label="Details: fishing and cooking">
+        <h3>Fishing goes to the kitchen <span class="chip c-bal">Fishing</span></h3>
+        <p>Catches are now <strong class="hl">raw</strong>: you can't eat them, you cook them (6 new recipes). And every body of water has a <strong class="hl">teaching ceiling</strong> — past it, your rod teaches you nothing.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card more" data-detail="gather" tabindex="0" role="button" aria-label="Details: gathering">
+        <h3>Gathering: denser, slower <span class="chip c-bal">Gathering</span></h3>
+        <p>Node count jumps from <strong class="hl">99 to 156</strong> (six zones tripled)… but each node regrows in <strong class="hl">4 minutes instead of 2</strong>. And tools now require a profession level to be <strong class="hl">used</strong>.</p>
+        <span class="more-link">See details</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 RIFTS & DELVES -->
+  <section>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Rifts: bosses you can finally read</h2></div>
+    <p class="sec-sub">No more unavoidable damage: everything telegraphs, everything dodges. The <a href="../failles.html">Rift guide</a> is up to date.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="riftboss" tabindex="0" role="button" aria-label="Details: rift bosses">
+        <h3>Big attacks can be seen coming <span class="chip c-bal">Rifts</span></h3>
+        <p>A ground ring <strong class="hl">1.2s before every detonation</strong>, sweeps that only hit <strong class="hl">in front of the boss</strong>, and on-hit control suspended while you escape. Rift bosses only.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card more" data-detail="delve" tabindex="0" role="button" aria-label="Details: the delve chest">
+        <h3>Delves: the chest can't jam anymore <span class="chip c-new">Delves</span></h3>
+        <p>Failing every lockpicking try on the final chest no longer <strong class="hl">locks it forever</strong>: it opens anyway, with base-tier loot. Picking it cleanly still pays much better.</p>
+        <span class="more-link">See details</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 WORLD -->
+  <section>
+    <div class="sec-head"><span class="sec-num">06</span><h2>The world: farming, quests, towns</h2></div>
+    <p class="sec-sub">v0.33 slowed farming down; v0.34 reshuffles the deck again — in both directions. And quests cheat less.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="respawn" tabindex="0" role="button" aria-label="Details: respawns">
+        <h3>Respawns change (again) <span class="chip c-bal">Economy</span></h3>
+        <p>World mobs now return in <strong class="hl">60 seconds everywhere</strong> — we told you 1 to 3 minutes in v0.33, and that's been collapsed. But <span data-codex="mob|Warlord Drogmar">Drogmar</span> got nerfed, and gathering nodes go the other way.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card more" data-detail="quests" tabindex="0" role="button" aria-label="Details: quests">
+        <h3>Quests cheat less <span class="chip c-bal">Quests</span></h3>
+        <p>No more ringing <strong class="hl">the same bell three times</strong>: each interactable object only credits once. Quest items are marked in your bags, and repeatable work orders show <strong class="hl">in blue</strong>.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card">
+        <h3>The towns <span class="chip c-new">Scenery</span></h3>
+        <ul>
+          <li><strong class="hl">Fenbridge</strong> (<span data-codex="zone|Mirefen Marsh">Mirefen</span>) is fully rebuilt: connected boardwalks, cleared exits, a real marsh town.</li>
+          <li><strong class="hl">Gull Mere</strong>, the official notes' "fishing town", is actually… a <strong class="hl">lake</strong>: the first fishable water on <span data-codex="zone|The Farshore">The Farshore</span> island, next to the hamlet of Gullhaven.</li>
+          <li>When you die, the game finally tells you <strong class="hl">who (or what) killed you</strong>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 CLASSES -->
+  <section>
+    <div class="sec-head"><span class="sec-num">07</span><h2>For your class</h2></div>
+    <p class="sec-sub">A big mage nerf, three rogue repairs, and an important clarification about the druid's bear.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Mage <span class="chip c-bal">Nerf</span></h3>
+        <ul>
+          <li><span data-codex="ability|Collective Reversal">Collective Reversal</span> (the after-wipe group res, 30% HP) gains a <strong class="hl">5-minute cooldown</strong> — it had <strong class="hl">none</strong>.</li>
+          <li>Why: a backline mage could drop out of combat mid-fight and chain mass resurrections. It's a recovery tool again, not a strategy.</li>
+        </ul>
+      </div>
+      <div class="card more" data-detail="rogue" tabindex="0" role="button" aria-label="Details: the rogue repairs">
+        <h3>Rogue: three repairs <span class="chip c-new">Fix</span></h3>
+        <p><span data-codex="ability|Smokestep">Smokestep</span> finally works (attacks already engaged <strong class="hl">actually stop</strong>), <span data-codex="talent|Borrowed Tempo">Borrowed Tempo</span> no longer eats your combo points, and a stunned player <strong class="hl">can no longer turn</strong> — your back position is guaranteed.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card">
+        <h3>Druid &amp; misc <span class="chip c-mob">Good to know</span></h3>
+        <ul>
+          <li><span data-codex="ability|Bruin Form">Bruin Form</span> has a <strong class="hl">real four-legged bear model</strong>. It's purely visual: druid tanking already existed, armor and threat are unchanged.</li>
+          <li><strong class="hl">Resurrection sickness</strong> (−75% stats) can <strong class="hl">no longer be dispelled</strong> — by anything. Only time removes it.</li>
+          <li>Double-clicking food no longer <strong class="hl">wastes</strong> a second copy, and dead players can no longer perform profession actions.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 INTERFACE -->
+  <section>
+    <div class="sec-head"><span class="sec-num">08</span><h2>Comfort, interface and the rest</h2></div>
+    <p class="sec-sub">Lots of small things that add up to a big daily difference.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Interface <span class="chip c-util">Handy</span></h3>
+        <ul>
+          <li><strong class="hl">Chat tabs reorder</strong> by dragging, and deeds are <strong class="hl">clickable in chat</strong>.</li>
+          <li><strong class="hl">Mouse buttons</strong> bind like keys, an on-bar key-binding mode, and <strong class="hl">action bar slot locking</strong>.</li>
+          <li>The bank gains a <strong class="hl">"deposit all materials"</strong> button that lists what it will transfer.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Smarter shopping <span class="chip c-util">Vendors</span></h3>
+        <ul>
+          <li>At vendors: buy by <strong class="hl">1, 5, 10 or any custom amount</strong> (mounts and soulbound items stay one at a time).</li>
+          <li>The Market asks for a <strong class="hl">buy confirmation</strong> — and re-checks the price when you validate.</li>
+          <li>The Dungeon Finder <strong class="hl">hides listings</strong> for dungeons you're locked out of.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>And the rest <span class="chip c-new">Global</span></h3>
+        <ul>
+          <li><strong class="hl">Over 230 hand-painted images</strong> replace generated icons (items, spells, buffs, portraits) — the Codex and this site already show them.</li>
+          <li>An <strong class="hl">official Discord bot</strong> syncs members and roles, and mirrors guild activity.</li>
+          <li>The game is translated into <strong class="hl">21 languages</strong>, admin dashboard included.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Compiled for <strong>La Clauderie</strong> — official v0.34.0 release notes, verified against the game's code.</p>
+    <p style="margin-top:8px"><a href="../patch-notes.html">← All updates</a> · <a href="../index.html">Home</a></p>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Close">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    bank: {
+      title: "The guild bank, in detail",
+      summary: "A shared treasury, an expandable item store, a log — reserved for the guild master and officers.",
+      body: `
+        <h4>How it opens</h4>
+        <ul>
+          <li>The gold treasury works <b>from day one</b>: any officer can deposit or withdraw coin at a banker.</li>
+          <li>The item store unlocks by buying the first tier: <b>24 slots for 9 gold</b> — paid from the pocket of the officer who opens it.</li>
+          <li>Then 6 expansions of <b>+6 slots</b> each, paid with guild funds: 2g50, 5g, 10g, 25g, 50g then 100g — <b>60 slots maximum</b>, ~192g50 in total.</li>
+        </ul>
+        <h4>What doesn't fit</h4>
+        <ul>
+          <li><b>Quest items</b> and <b>soulbound items</b> are refused at deposit — the bank follows the same rules as mail and the Market: if an item can't travel there, it can't sleep here either.</li>
+          <li>The treasury caps at <b>100,000 gold</b>. A deposit that would overflow is refused whole, never trimmed.</li>
+          <li>Good news: <b>mount reins</b> (newly tradable) fit right in.</li>
+        </ul>
+        <h4>The catch</h4>
+        <ul>
+          <li>All of it is reserved for the <b>guild master and officers</b>. Members don't even see the tab — no read-only view, no log. We checked the code: the developers' comment says it plainly ("members get no data and no UI tab").</li>
+          <li>The log (last 50 operations: who deposited/withdrew what) is the trust mechanism… between officers.</li>
+        </ul>`
+    },
+    reins: {
+      title: "Tradable reins, in detail",
+      summary: "Every reins circulates: trade, mail, Market, guild bank. One single exception.",
+      body: `
+        <h4>The new rule</h4>
+        <ul>
+          <li>Holding the reins means owning the mount — and reins are now <b>unbound</b> items. They can be gifted, listed on the Market, mailed, deposited in the guild bank.</li>
+          <li>This covers all <b>8 mounts</b> in the game, including copies <b>already in your bags or bank</b>: nothing to do, they became tradable on load.</li>
+          <li>One exception: the developers' Terrorspark, still bound (and still unobtainable).</li>
+        </ul>
+        <h4>The guardrails</h4>
+        <ul>
+          <li>You can't sell reins to an <b>NPC vendor</b> or discard them — no mount can be destroyed by accident.</li>
+          <li>The game <b>re-checks ownership while you ride</b>: trade, mail or list the reins you're riding, and you're dismounted within a fifth of a second. No long-distance mount lending.</li>
+          <li>The <b>riding skill</b> (80 gold at Marla's) stays personal: a mount's buyer still needs to have learned it.</li>
+        </ul>
+        <h4>What it changes for the guild</h4>
+        <ul>
+          <li>Rare mounts become a <b>market</b>: a lucky heroic drop can be sold — or gifted to a guildmate. Farming the bear and the snail (0.1%) is suddenly worth gold.</li>
+        </ul>`
+    },
+    mounts: {
+      title: "The Raptor and the Terrorspark: why you shouldn't farm anything",
+      summary: "Two mounts exist in the data but have no source. Verified in the code.",
+      body: `
+        <h4>The Drakemaw Raptor (new, v0.34.0)</h4>
+        <ul>
+          <li>The official notes announce the mount with the Drakelands rework. The model, the epic reins (+80% speed) and the strings all shipped — it even shows in the mounts window.</li>
+          <li>But we checked the code: <b>no mob, no vendor, no quest, no Rift</b> gives it. Its drop (on the Broodlords) was <b>pulled right before release</b> — the developers' comment, dated August 4, says it will hang on a future dedicated world boss.</li>
+          <li>Bottom line: <b>don't farm the Broodlords for the Raptor</b> — they only drop coin and a quest scale. When the mount becomes obtainable, we'll say so here.</li>
+        </ul>
+        <h4>The Terrorspark Groundshaker (since v0.33)</h4>
+        <ul>
+          <li>Nothing changed: it remains <b>developer-only</b>, no source added, and it's the only reins still soulbound. Our v0.33.1 warning still stands.</li>
+        </ul>`
+    },
+    drakelands: {
+      title: "The Dragonkin brood, in detail",
+      summary: "Eggs, whelps, broodguards, four elite Broodlords and a reworked Matriarch.",
+      body: `
+        <h4>The zone's new ecology</h4>
+        <ul>
+          <li>75 <b>Dragonkin eggs</b> dot the zone (rings around the Broodlords, scattered fields, the crater). An ignored egg can hatch into a <b>whelp</b> that jumps you — breaking them first is the right way to read the terrain. Eggs give no XP and no loot: they're terrain, not farm.</li>
+          <li>The <b>Broodguards</b> (17 on patrol) are the new source of the quest's <span data-codex="item|Emberwing Scale">Emberwing Scale</span> (50% drop) — the old carrier, the Emberwing Drake, has <b>vanished from the world</b> (the quest text still mentions it; don't go looking).</li>
+          <li>Four elite-rare <b><span data-codex="mob|Drakemaw Broodlord">Drakemaw Broodlords</span></b> (lvl 20, ~100s respawn) guard the nests: two at the Bloodglass Fields, one on the crater's north rim, one near the wargate approach. A 90% scale for the quest — but <b>no equipment</b>: you kill them for the deed and the quest, not the loot.</li>
+        </ul>
+        <h4>Cindraleth, the Matriarch</h4>
+        <ul>
+          <li><span data-codex="mob|Cindraleth the Maw Matriarch">Cindraleth</span> went from set dressing to a real fight: half again as big, an engage shout that <b>breaks eggs within 30m</b> (the whelps hatch onto you), a frontal cleave every 5s, a fire breath, and a tail counter-stun.</li>
+          <li>A fact-checker's caution: her respawn sits on the <b>common 60s timer</b> — probably an oversight (the same bug Drogmar had before his fix). If it changes, we'll update.</li>
+        </ul>`
+    },
+    deeds: {
+      title: "The two chronicle deeds",
+      summary: "Clutch Breaker: kill one Broodlord. The Sky Goes Quiet: finish the Matriarch's chain.",
+      body: `
+        <h4>Clutch Breaker (10 Renown)</h4>
+        <ul>
+          <li>The description talks about killing a Broodlord "amid its eggs, through the shout, the cleave, and the fire"… but we checked the real condition: just <b>kill ONE Drakemaw Broodlord</b>, any of them, any way you like. The rest is stage dressing.</li>
+          <li>Credit is <b>group-wide</b>: everyone gets it on the kill.</li>
+        </ul>
+        <h4>The Sky Goes Quiet (10 Renown)</h4>
+        <ul>
+          <li>Careful, this one is different: killing Cindraleth <b>is not enough</b>. You must <b>complete the quest "Matriarch of the Maw"</b> (preceded by "Scales of the Maw", min lvl 19, 2 players suggested, turned in to Gatecaptain Brannoc).</li>
+          <li>Good news: it's <b>retroactive</b> — if you've already finished the chain, the deed lands on its own.</li>
+          <li>The quest rewards 6,000 XP, 36 gold and the <span data-codex="item|Mawscale Pauldrons">Mawscale Pauldrons</span> (warrior, mage, rogue).</li>
+        </ul>`
+    },
+    charms: {
+      title: "Tool charms, in detail",
+      summary: "Two enchanter consumables that boost gathering — and only wear down when they help.",
+      body: `
+        <h4>The two charms</h4>
+        <ul>
+          <li><span data-codex="item|Gatherer's Cache">Gatherer's Cache</span>: a chance at a <b>doubled harvest</b> from a node. <span data-codex="item|Artisan's Eye">Artisan's Eye</span>: a chance to strike the material's <b>fine grade</b>. Both are learned from <span data-codex="npc|Tinker Gizzel">Tinker Gizzel</span> (the Eastbrook toolworks), enchanting 25, and cost 5 Chime Shards + 4 Essences + 6 Dust each.</li>
+          <li>A third charm ("Springback") appears in the files but has <b>no recipe and no effect</b> — ignore it.</li>
+          <li><b>Fishing is excluded</b>: charms only work on mining, logging and herbalism.</li>
+        </ul>
+        <h4>How it works</h4>
+        <ul>
+          <li>A charm slots <b>per profession</b> (not per tool), from the Professions window, and consumes the item. You must carry a real tool of that profession.</li>
+          <li>Charges: <b>20 base</b>, +10 per rarity rank of your tool (up to 50 with an epic tool).</li>
+          <li>The brilliant part, verified in the code: a charge is only spent <b>when the bonus actually changed the outcome</b>. Fine grade impossible on this node? Nothing spent. The double didn't proc? Nothing spent. Zero waste.</li>
+        </ul>
+        <h4>Recharging</h4>
+        <ul>
+          <li>An empty charm <b>recharges</b> with enchanting materials (the required quality follows your best carried tool). If <b>you</b> crafted the charm, your recharge costs <b>half price</b> — the guild's enchanter has a real edge signing their charms.</li>
+        </ul>`
+    },
+    fishing: {
+      title: "Fishing and cooking, in detail",
+      summary: "Catches are raw, cooking transforms them, and every water has a teaching ceiling.",
+      body: `
+        <h4>Raw, then cooked</h4>
+        <ul>
+          <li>All 7 catchable fish are now <b>raw</b>: you can't eat them ("That is raw. Cook it first."). They're cooking ingredients, with a vendor price floor (from 2 copper for the perch to 75 for the <span data-codex="item|Sunglint Koi">Sunglint Koi</span>).</li>
+          <li>Six cooking recipes transform them (from Pan-Seared Perch to the Angler's Feast platter that yields <b>3 meals at once</b>) — and two high-end rods, the <span data-codex="item|Stormreel Fishing Rod">Stormreel</span> and the <span data-codex="item|Tidewrought Fishing Rod">Tidewrought</span>, are crafted from fish.</li>
+        </ul>
+        <h4>The teaching ceiling</h4>
+        <ul>
+          <li>Every body of water has a tier, and that tier <b>caps what fishing teaches you</b>: ~100 in starter waters, 150 in the marsh, <b>200 only in <span data-codex="zone|Thornpeak Heights">Thornpeak Heights</span></b>.</li>
+          <li>A curiosity verified in the code: the expansion zones (even high-level ones) are all <b>tier 1</b> waters — a level 17 zone teaches worse than the level 6 marsh. The developers know; it's accepted for now.</li>
+          <li>Gull Mere, the notes' "fishing town"? It's a <b>lake</b> on The Farshore island, next to the hamlet of Gullhaven — the island's first fishable water, as it had none.</li>
+        </ul>`
+    },
+    gather: {
+      title: "Gathering, in detail",
+      summary: "57 more nodes, doubled respawn, tooltips that tell all, and tools you have to earn.",
+      body: `
+        <h4>More nodes, less rush</h4>
+        <ul>
+          <li>Six zones go from 6-12 to <b>18 nodes each</b> (Eastbrook, Mirefen, Thornpeak, Willowfen, Galecrest, Farshore): 156 nodes total versus 99.</li>
+          <li>In exchange, a harvested node's respawn goes from <b>2 to 4 minutes</b> (per player). Net result: you ride a wider circuit instead of camping three veins.</li>
+        </ul>
+        <h4>Honest tooltips</h4>
+        <ul>
+          <li>On desktop, hovering a node shows the <b>regrowth countdown</b> and tells you whether the <b>fine grade</b> is reachable with YOUR tool. On mobile, no hover — only the minimap tint.</li>
+          <li>Before a craft, the window states plainly whether it will <b>dip into your fine materials</b> for lack of base stock — no more silent double-value substitution.</li>
+        </ul>
+        <h4>Tools must be earned</h4>
+        <ul>
+          <li>Buying a tool stays open, but <b>using</b> it now requires the profession level: 40 for tier 2, 70 for tier 3, 85 for tier 4, 100 for tier 5. (Fishing rods are exempt — their pacing is the water.)</li>
+          <li>New for non-crafters: the <b>The Drowned Litany</b> delve shop sells tier 4 tools (24 Marks, 3 clears) and tier 5 (56 Marks, heroic clear) — the first route to the top of the tool ladder without a crafter.</li>
+        </ul>`
+    },
+    riftboss: {
+      title: "Rift bosses, in detail",
+      summary: "1.2s telegraphs, frontal cleave, suspended control, adaptive fuses.",
+      body: `
+        <h4>Everything telegraphs</h4>
+        <ul>
+          <li>Stomps and explosions draw a <b>ground ring 1.2 seconds</b> before detonating — at the blast's true radius, and the detonation is measured <b>from the ring</b>, not from the boss if he drifted. Out of the ring = zero damage.</li>
+          <li>Big sweeps (<span data-codex="mob|Warlord Grask">Warlord Grask</span>'s Sweeping Arc, for instance) now only hit a <b>180° arc in front of the boss</b>: melee behind him takes nothing.</li>
+          <li>Big casts keep their bar (2.2 to 3s depending on the spell) — that was already your window to move.</li>
+        </ul>
+        <h4>The game stops pinning you inside</h4>
+        <ul>
+          <li>While you escape a zone, the boss's <b>on-hit stuns, roots, fears and chills</b> are suspended: no more root freezing you inside the very explosion you were told to dodge.</li>
+          <li>If you're <b>slowed</b>, death-zone fuses stretch proportionally (up to double; full double when rooted). <span data-codex="mob|Broodmother Vysska">Broodmother Vysska</span>'s Clinging Silk + Venom Pool at S rank, mathematically undodgeable before, is now playable.</li>
+        </ul>
+        <h4>The limits</h4>
+        <ul>
+          <li>The v0.33 rule of <b>at least 5 seconds</b> between two big attacks still holds — and the telegraph adds on top (6.2s effective after a stomp).</li>
+          <li><b>Rift bosses only</b>: world, dungeon and raid bosses are unchanged, to the pixel.</li>
+        </ul>`
+    },
+    delve: {
+      title: "The delve final chest, in detail",
+      summary: "No tries left = chest opens anyway, but with base-tier loot.",
+      body: `
+        <h4>Before</h4>
+        <ul>
+          <li>Failing every lockpicking try on the final chest left it <b>jammed forever</b> — the run ended against a wall.</li>
+        </ul>
+        <h4>Now</h4>
+        <ul>
+          <li>On the last failed try, the chest <b>opens anyway</b>: you get the base loot, and the delve's exit opens normally.</li>
+          <li>But no freeloading: the loot is <b>lowest-tier</b> regardless of your ante, the Bountiful Coffer's guaranteed rare only drops <b>on a clean pick</b>, and neither does the flawless-pick deed. Letting the clock run out is never the right play.</li>
+          <li>Reminder of tries per ante: 1 try on Premium, 2 on Standard, 3 on Modest — with a time budget per move (3, 6 or 9s).</li>
+        </ul>`
+    },
+    respawn: {
+      title: "Respawns, in detail",
+      summary: "60 seconds everywhere in the world. Drogmar nerfed. Gathering nodes doubled the other way.",
+      body: `
+        <h4>The open world</h4>
+        <ul>
+          <li>In v0.33, world mobs returned in <b>1 to 3 minutes depending on the zone</b> (that's what we told you — it was true). v0.34 <b>flattens those tiers</b>: 60 seconds everywhere, from the starter camp to the endgame zone.</li>
+          <li><b>Rares and minibosses</b> keep their special schedules, as before. Dungeons, Rifts and delves: unaffected.</li>
+        </ul>
+        <h4>Drogmar, the end of the golden goose</h4>
+        <ul>
+          <li><span data-codex="mob|Warlord Drogmar">Warlord Drogmar</span> was riding an oversight: trash respawn (60s) with boss loot. Fixed — <b>3-minute respawn</b> and guaranteed coin cut to a third (2,000 → 650 copper). He alone was a quarter of the Glimmermere corridor's gold.</li>
+          <li>His <b>three unique drops</b> (boots, axe, legguards) didn't move: the kill is still worth it for the item, no longer for the gold.</li>
+        </ul>
+        <h4>And the gatherers</h4>
+        <ul>
+          <li>Watch the reverse direction: <b>gathering nodes</b> (ore, wood, herbs) go from 2 to <b>4 minutes</b> of regrowth — offset by a world twice as dense in nodes. Mob farming speeds up, material farming spreads out.</li>
+        </ul>`
+    },
+    quests: {
+      title: "Quests, in detail",
+      summary: "One object = one credit, visible quest items, blue for repeatable work orders.",
+      body: `
+        <h4>The end of an old cheat</h4>
+        <ul>
+          <li>About twenty "interact with 3 objects" quests could be finished by <b>clicking the same object three times</b> (the Three Bells, for instance). Each distinct object now credits only <b>once</b> — clicking again answers "You have already done this one."</li>
+        </ul>
+        <h4>Quest items, finally visible</h4>
+        <ul>
+          <li>They're <b>marked in your bags</b> (gold name, quest context in the tooltip, a direct link to the tracker) — no more accidentally vendoring the token of a quest in progress.</li>
+          <li>Collect objectives fed by <b>gathering nodes</b> now draw their guidance area on the map — showing only nodes that can REALLY produce the requested item.</li>
+        </ul>
+        <h4>The blue of repeatables</h4>
+        <ul>
+          <li><b>Repeatable work orders</b> show in blue on all four surfaces (NPC, minimap, map, dialog)… <b>after your first completion</b>. The very first time, the marker stays gold — it pays full XP and gold, which is honest.</li>
+          <li>Also new: a repeatable <b>waiting on its cooldown window</b> shows dimmed instead of disappearing — you know it will come back.</li>
+        </ul>`
+    },
+    rogue: {
+      title: "The rogue's three repairs",
+      summary: "A Smokestep that works, a truly free Borrowed Tempo, and stuns that lock facing.",
+      body: `
+        <h4>Smokestep finally works</h4>
+        <ul>
+          <li>The problem: <span data-codex="ability|Smokestep">Smokestep</span> made you undetectable… but <b>attacks already engaged on you kept landing</b> — the very next auto-attack broke you out of stealth. A 5-minute-cooldown spell that did nothing.</li>
+          <li>Fixed: on vanishing, hostile autos and casts on you <b>stop dead</b>. (Allied heals still find you — you can be healed while stealthed.)</li>
+        </ul>
+        <h4>Borrowed Tempo, truly free</h4>
+        <ul>
+          <li>The talent makes every third <span data-codex="ability|Cutthroat Tempo">Cutthroat Tempo</span> "free" — but it still consumed your <b>combo points</b>. Not anymore: energy AND combos are spared (combos still count toward the buff's duration).</li>
+        </ul>
+        <h4>Stuns lock facing</h4>
+        <ul>
+          <li>A stunned player could keep <b>turning with the mouse</b> to face you and cancel your back positioning. Stuns now lock facing through every input channel — your Gut Punch guarantees back-to-back for its whole duration. A big indirect PvP buff (the <a href="../pvp.html">PvP guide</a> is up to date).</li>
+        </ul>`
+    }
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Embedded sheets (glossary, mobs, spells…) based on the Codex data -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

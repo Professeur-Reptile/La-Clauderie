@@ -2,6 +2,42 @@
   "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
   "versions": [
     {
+      "version": "v0.34.0",
+      "date": "2026-08-04",
+      "titre": "La banque de guilde, les montures qui s'échangent, et le plus gros patch métiers de l'histoire du jeu",
+      "resume": "La mise à jour de l'économie. La banque de guilde arrive — coffre d'or et d'objets commun, extensible jusqu'à 60 emplacements — mais attention : seuls le chef et les officiers y ont accès, les membres ne voient même pas l'onglet (vérifié dans le code). Les rênes de montures ne sont plus liées : toutes les montures s'échangent, se postent et se vendent au Marché, y compris celles déjà dans vos sacs. Les Drakelands sont reconstruites autour de la couvée Dragonkin (œufs qui éclosent, broodguards, quatre Broodlords élites et une Matriarche refaite) — mais la monture Drakemaw Raptor annoncée n'est PAS obtenable : son drop a été retiré juste avant la sortie, ne la farmez pas (la Terrorspark non plus, toujours pas). Les métiers reçoivent leur plus gros patch : charmes d'outils d'enchanteur qui ne s'usent que quand ils servent, poissons crus à cuisiner (6 recettes), récolte passée de 99 à 156 nœuds mais repousse doublée à 4 minutes, et outils qui exigent un niveau de métier pour être utilisés. En Faille, les grosses attaques de boss se télégraphient au sol 1,2 s à l'avance et les balayages s'esquivent dans le dos. Enfin, les monstres du monde réapparaissent en 60 s partout (le farm ré-accélère), le rez de groupe du Mage gagne un cooldown de 5 minutes, et le Smokestep du Voleur marche enfin.",
+      "temps_forts": [
+        "La banque de guilde : or et objets partagés, jusqu'à 60 emplacements — mais réservée au chef et aux officiers, les membres ne la voient même pas",
+        "Les rênes de montures ne sont plus liées : échange, courrier, Marché, banque de guilde — celui qui tient les rênes possède la monture",
+        "⚠️ La monture Drakemaw Raptor annoncée n'est PAS obtenable (drop retiré avant la sortie) — et la Terrorspark toujours pas non plus, vérifié dans le code",
+        "Les Drakelands reconstruites : œufs qui éclosent, broodguards, quatre Broodlords élites, Cindraleth refaite — et deux hauts faits de Chronique (dont un rétroactif)",
+        "Charmes d'outils d'enchanteur : récolte doublée ou grade fin, et une charge n'est dépensée que si le bonus a vraiment servi",
+        "La pêche passe à table : les prises sont crues, 6 recettes de cuisine les transforment — et chaque eau a un plafond d'apprentissage (200 seulement à Thornpeak)",
+        "Récolte : 99 → 156 nœuds, mais repousse doublée (4 min) et outils soumis à un niveau de métier pour être utilisés",
+        "Boss de Faille : cercle au sol 1,2 s avant chaque détonation, balayages esquivables dans le dos, contrôles suspendus pendant la fuite",
+        "Les monstres du monde réapparaissent en 60 s partout (le farm ré-accélère) — mais Drogmar est nerfé : 3 min de respawn et 3× moins d'or",
+        "Mage : le rez de groupe Collective Reversal gagne un CD de 5 min ; Voleur : Smokestep réparé, Borrowed Tempo vraiment gratuit, le stun verrouille l'orientation",
+        "Plus de 230 images peintes à la main, un bot Discord officiel, et le jeu traduit en 21 langues"
+      ],
+      "page": "notes/v0.34.0.html",
+      "titre_en": "The guild bank, tradable mounts, and the biggest professions patch in the game's history",
+      "resume_en": "The economy update. The guild bank arrives — a shared gold-and-item chest, expandable to 60 slots — but beware: only the guild master and officers can access it, members don't even see the tab (verified in the code). Mount reins are no longer soulbound: every mount can be traded, mailed and sold on the Market, including the ones already in your bags. The Drakelands are rebuilt around the Dragonkin brood (hatching eggs, broodguards, four elite Broodlords and a reworked Matriarch) — but the announced Drakemaw Raptor mount is NOT obtainable: its drop was pulled right before release, don't farm for it (the Terrorspark still isn't either). Professions get their biggest patch yet: enchanter-crafted tool charms that only wear down when they help, raw fish that must be cooked (6 recipes), gathering grown from 99 to 156 nodes but with regrowth doubled to 4 minutes, and tools that now require a profession level to use. In Rifts, big boss attacks telegraph on the ground 1.2s ahead and sweeps can be dodged behind the boss. Finally, world mobs respawn in 60s everywhere (farming speeds back up), the Mage's group res gains a 5-minute cooldown, and the Rogue's Smokestep finally works.",
+      "temps_forts_en": [
+        "The guild bank: shared gold and items, up to 60 slots — but officer-only, members don't even see the tab",
+        "Mount reins are no longer soulbound: trade, mail, Market, guild bank — whoever holds the reins owns the mount",
+        "⚠️ The announced Drakemaw Raptor mount is NOT obtainable (drop pulled before release) — and the Terrorspark still isn't either, verified in the code",
+        "The Drakelands rebuilt: hatching eggs, broodguards, four elite Broodlords, a reworked Cindraleth — and two chronicle deeds (one retroactive)",
+        "Enchanter tool charms: doubled harvests or fine grade, and a charge is only spent when the bonus actually helped",
+        "Fishing goes to the kitchen: catches are raw, 6 cooking recipes transform them — and every water has a teaching ceiling (200 only at Thornpeak)",
+        "Gathering: 99 → 156 nodes, but regrowth doubled (4 min) and tools now gated by profession level to use",
+        "Rift bosses: a ground ring 1.2s before every detonation, sweeps dodgeable behind the boss, control suspended while you escape",
+        "World mobs respawn in 60s everywhere (farming speeds back up) — but Drogmar is nerfed: 3-min respawn and 3× less gold",
+        "Mage: the Collective Reversal group res gains a 5-min CD; Rogue: Smokestep fixed, Borrowed Tempo truly free, stuns lock facing",
+        "Over 230 hand-painted images, an official Discord bot, and the game translated into 21 languages"
+      ],
+      "page_en": "notes/v0.34.0.en.html"
+    },
+    {
       "version": "v0.33.1",
       "date": "2026-08-02",
       "titre": "Le jeu est plus beau, chaque sort a son effet, et fini de tuer les monstres coincés",
