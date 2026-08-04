@@ -73,7 +73,11 @@ function ensureFr() {
     fetch(`${SITE_BASE}assets/codex-fr.json`).then(r => r.ok ? r.json() : null).catch(() => null),
   ]).then(res => { FRN = res[0]; FRD = res[1]; });
 }
-const FR_TYPES = ['item','ability','mob','npc','quest','zone','dungeon','delve','set'];
+// `talent` compris : le client français traduit une partie des noms de
+// talents (cascade de src/ui/talent_i18n.ts, rejouée par l'extraction de la
+// KB) et laisse les autres en anglais — la KB n'écrit que les premiers, donc
+// le site affiche exactement ce que le joueur voit en jeu.
+const FR_TYPES = ['item','ability','talent','mob','npc','quest','zone','dungeon','delve','set'];
 // Un type précis → lecture directe. Un span « auto|… » ne sait PAS de quel
 // type il parle : si plusieurs types répondent des noms français DIFFÉRENTS
 // (un objet et un sort homonymes, par exemple), on n'annote rien plutôt que
@@ -639,9 +643,11 @@ function talentSheet({ node, cls, choice }) {
         `<li><b>${esc(deco(ch.icon))} ${esc(ch.name)}</b><br><span class="cxp-dim">${esc(tDesc(ch) || '')}</span></li>`))));
   }
   const tree = node.tree === 'class' ? T({ fr: 'Arbre de classe', en: 'Class tree' }) : T({ fr: 'Arbre de spécialisation', en: 'Spec tree' });
+  const name = choice ? choice.name : node.name;
   return {
     kicker: ['Talent', CLASS_FR[cls], tree].filter(Boolean).join(' · '),
-    title: `${deco(choice ? choice.icon : node.icon)} ${choice ? choice.name : node.name}`.trim(),
+    title: `${deco(choice ? choice.icon : node.icon)} ${name}`.trim(),
+    titleFr: frName('talent', name) || null,
     body: body.join(''),
   };
 }
