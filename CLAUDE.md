@@ -89,6 +89,11 @@ se limite à la partie rédactionnelle des « Nouveautés » :
    le bloc `const BIS` (l'équipement). Si la MAJ ajoute un rôle à une classe
    (ex. Mage soigneur en v0.27.0), ajouter aussi ce rôle dans `ROLES` de
    `scripts/compute_bis.py` pour que l'onglet et le BiS existent.
+3quater. **Avant tout push qui touche une page HTML** :
+   `python3 scripts/check_inline_js.py` — vérifie la syntaxe de tous les
+   scripts embarqués. Une apostrophe droite dans une chaîne JS à apostrophes
+   simples a déjà vidé l'onglet Métiers en production (4 août 2026) : dans
+   les textes français, TOUJOURS l'apostrophe typographique (’).
 4. **Commit sur `claude/site-update-6uhdmv`, puis merge direct sur `main`**
    (fast-forward : `git push origin claude/site-update-6uhdmv:main`). Le déploiement
    part tout seul. **Ne pas ouvrir de PR** sauf demande explicite.
