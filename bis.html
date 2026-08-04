@@ -29227,13 +29227,24 @@ function fmtStats(it) {
   return parts.join(" · ");
 }
 
+// Le jeu donne parfois le MÊME nom anglais à deux capacités différentes : le
+// nom seul ne suffit alors pas à désigner la bonne fiche (ni le bon nom
+// français). Ces libellés-là pointent explicitement l'id du jeu.
+// « Aether Surge » = arcane_surge (le builder à charges d'Arcane), à ne pas
+// confondre avec arcane_power (le buff 20 % dégâts, CD 90 s).
+const CX_REF = {
+  "aether surge": "ability|arcane_surge",
+  "patch up": "ability|mend_pet",
+};
+
 // Rend chaque nom de talent / sort cliquable (fiche incrustée du Codex),
 // en découpant les libellés composés : « A → B », « A + B », « A / B », « A ×2 ».
 function cxNames(raw) {
   return String(raw).split(/(\s*(?:→|\/|\+)\s*|\s*×\s*\d+\s*$)/).map(part => {
     const t = part.trim();
     if (!t || /^(→|\/|\+|×\s*\d+)$/.test(t)) return part;
-    return `<span data-codex="auto|${t.replace(/"/g, "&quot;")}">${part}</span>`;
+    const ref = CX_REF[t.toLowerCase()] || `auto|${t}`;
+    return `<span data-codex="${ref.replace(/"/g, "&quot;")}">${part}</span>`;
   }).join("");
 }
 

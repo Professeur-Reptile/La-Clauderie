@@ -74,12 +74,24 @@ function ensureFr() {
   ]).then(res => { FRN = res[0]; FRD = res[1]; });
 }
 const FR_TYPES = ['item','ability','mob','npc','quest','zone','dungeon','delve','set'];
+// Un type précis → lecture directe. Un span « auto|… » ne sait PAS de quel
+// type il parle : si plusieurs types répondent des noms français DIFFÉRENTS
+// (un objet et un sort homonymes, par exemple), on n'annote rien plutôt que
+// de risquer le nom d'une autre entité. La KB applique la même règle pour
+// les homonymes d'un même type (deux sorts « Aether Surge »).
 function frName(type, ref) {
   if (!FRN || !ref) return null;
-  const maps = type === 'auto' ? FR_TYPES.map(t => FRN[t]).filter(Boolean)
-    : FRN[type] ? [FRN[type]] : [];
-  for (const m of maps) { const hit = m[ref] || m[fold(ref)]; if (hit) return hit; }
-  return null;
+  if (type !== 'auto') {
+    const m = FRN[type];
+    return m ? (m[ref] || m[fold(ref)] || null) : null;
+  }
+  const found = new Set();
+  for (const t of FR_TYPES) {
+    const m = FRN[t]; if (!m) continue;
+    const hit = m[ref] || m[fold(ref)];
+    if (hit) found.add(hit);
+  }
+  return found.size === 1 ? [...found][0] : null;
 }
 function frDesc(kind, key) { return (LANG === 'fr' && FRD && FRD[kind] && FRD[kind][key]) || null; }
 
