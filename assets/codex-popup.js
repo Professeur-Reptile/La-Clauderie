@@ -820,7 +820,11 @@ const CSS = `
   .cxp-btn { flex: none; background: none; border: 1px solid rgba(139,147,163,.35); color: #8b93a3;
     border-radius: 8px; width: 30px; height: 30px; cursor: pointer; font-size: .95rem; line-height: 1; }
   .cxp-btn:hover { color: #e6c37a; border-color: rgba(200,160,75,.5); }
-  .cxp-body { padding: 14px 18px 16px; overflow-y: auto; flex: 1; }
+  /* flex-basis AUTO impérativement : avec « flex: 1 » (basis 0), Safari/iOS
+     fait contribuer le corps pour 0 à la hauteur intrinsèque du dialog —
+     la fiche s'effondrait sur son en-tête (bug remonté par la guilde,
+     4 août 2026). min-height: 0 garde le scroll quand max-height borne. */
+  .cxp-body { padding: 14px 18px 16px; overflow-y: auto; flex: 1 1 auto; min-height: 0; }
   .cxp-body p { margin: 0 0 10px; } .cxp-body p:last-child { margin-bottom: 0; }
   .cxp-desc { color: #c9cfda; }
   .cxp-quote { color: #aab1bf; font-style: italic; }
