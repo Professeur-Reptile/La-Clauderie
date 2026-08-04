@@ -101,9 +101,21 @@ function frDesc(kind, key) { return (LANG === 'fr' && FRD && FRD[kind] && FRD[ki
 
 /* Ajoute, dans chaque [data-codex] de la page française, le nom officiel
    français en discret — « Valorsteed (Destrier de Bravoure) ». Idempotent
-   (data-fr-done) ; ne marque rien tant que les noms ne sont pas chargés. */
+   (data-fr-done) ; ne marque rien tant que les noms ne sont pas chargés.
+
+   `data-fr-name="type|réf"` fait la même chose SANS transformer l'élément en
+   lien de Codex : pour les surfaces qui ont déjà leur propre fiche au clic
+   (la liste d'équipement du BiS, dont les liens ouvrent la fiche maison). */
 function annotate(root) {
   if (!FRN) return;
+  const add = (el, type, ref) => {
+    const fr = frName(type, ref);
+    if (!fr || fold(fr) === fold(el.textContent) || fold(fr) === fold(ref)) return;
+    const i = document.createElement('i');
+    i.className = 'cxp-frn';
+    i.textContent = ` (${fr})`;
+    el.appendChild(i);
+  };
   (root || document).querySelectorAll('[data-codex]:not([data-fr-done])').forEach(el => {
     el.dataset.frDone = '1';
     const parts = el.dataset.codex.split('|');
@@ -112,12 +124,12 @@ function annotate(root) {
     // Un span sans référence explicite s'appuie sur son texte : on fige la
     // référence AVANT d'ajouter l'annotation (qui modifie textContent).
     if (!ref) { ref = el.textContent.trim(); el.dataset.codex = `${type}|${ref}`; }
-    const fr = frName(type, ref);
-    if (!fr || fold(fr) === fold(el.textContent) || fold(fr) === fold(ref)) return;
-    const i = document.createElement('i');
-    i.className = 'cxp-frn';
-    i.textContent = ` (${fr})`;
-    el.appendChild(i);
+    add(el, type, ref);
+  });
+  (root || document).querySelectorAll('[data-fr-name]:not([data-fr-done])').forEach(el => {
+    el.dataset.frDone = '1';
+    const parts = el.dataset.frName.split('|');
+    add(el, parts[0].trim(), parts.slice(1).join('|').trim() || el.textContent.trim());
   });
 }
 
@@ -1020,6 +1032,10 @@ const boot = () => {
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
 else boot();
 
-window.CodexPopup = { open: openRef, enhance };
+// `frName` et `annotate` sont exposés pour les pages qui rendent des noms du
+// jeu hors [data-codex] (liste d'équipement du BiS, titres de leurs propres
+// fiches) : elles obtiennent le nom français officiel sans réimplémenter la
+// résolution ni recharger les données.
+window.CodexPopup = { open: openRef, enhance, annotate, frName, ready: () => ensureFr() };
 
 })();

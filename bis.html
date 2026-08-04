@@ -29265,8 +29265,10 @@ const CODEX = /(^|\.)laclauderie\.fr$/.test(location.hostname) ? "/codex/"
   : /^(localhost|127\.|0\.0\.0\.0)/.test(location.hostname) ? "/wocc-knowledge-base/site/index.html"
   : "https://reptile-new.github.io/wocc-knowledge-base/site/index.html";
 const ITEM_REG = {};
+// data-fr-name : codex-popup.js y accroche le nom français officiel de l'objet
+// (discret, entre parenthèses) sans toucher au clic, qui ouvre la fiche BiS.
 const ilink = it => { ITEM_REG[it.id] = it;
-  return `<a class="ilink" href="${CODEX}#item/${it.id}" data-iid="${it.id}" title="${LANG === "en" ? "View item details" : "Voir le détail de l'objet"}">${it.name}</a>`; };
+  return `<a class="ilink" href="${CODEX}#item/${it.id}" data-iid="${it.id}" data-fr-name="item|${it.id}" title="${LANG === "en" ? "View item details" : "Voir le détail de l'objet"}">${it.name}</a>`; };
 
 const QUALITY_FR2 = LANG === "en"
   ? { poor:"Poor", common:"Common", uncommon:"Uncommon", rare:"Rare", epic:"Epic", legendary:"Legendary" }
@@ -29278,6 +29280,16 @@ function openItemModal(it) {
     [QUALITY_FR2[it.q] || it.q, SLOT_FR[it.slot] || it.slot].filter(Boolean).join(" · ");
   const t = document.getElementById("imTitle");
   t.textContent = it.name;
+  // Nom français officiel sous le titre (même source que les fiches du Codex).
+  const frn = window.CodexPopup && CodexPopup.frName && CodexPopup.frName("item", it.id);
+  let sub = document.getElementById("imTitleFr");
+  if (!sub) {
+    sub = document.createElement("div");
+    sub.id = "imTitleFr";
+    sub.style.cssText = "font-size:.85rem;font-weight:400;color:var(--dim);font-style:italic;margin-top:2px";
+    t.parentNode.insertBefore(sub, t.nextSibling);
+  }
+  sub.textContent = (frn && frn.toLowerCase() !== it.name.toLowerCase()) ? frn : "";
   t.style.color = ({ epic:"var(--q-epic)", legendary:"var(--q-legendary)", rare:"var(--q-rare)", uncommon:"var(--q-uncommon)" })[it.q] || "var(--text)";
   const st = Object.entries(it.stats || {}).map(([k,v]) => `+${v} ${STAT_FR[k]||k}`);
   if (it.sp) st.push(`+${it.sp} ${T({ fr: "Puissance des sorts", en: "Spell power" })}`);
