@@ -518,15 +518,23 @@ const qColor = q => ({ poor:'#9d9d9d', uncommon:'#1eff00', rare:'#2f8bff', epic:
 function itemSheet(it) {
   const q = it.quality || 'common';
   const body = [];
-  // Art peint officiel du jeu, embarqué par le site sous assets/items/<id>.webp
-  // (une jumelle héroïque partage l'art de sa base). L'image se retire toute
-  // seule si l'objet n'a pas encore d'art — un 404 ne casse rien.
-  const artId = String(it.id || '').replace(/^heroic_/, '');
+  // Art peint officiel du jeu, embarqué par le site sous assets/items/<id>.webp.
+  // Une jumelle héroïque a son PROPRE art (aucune ne reprend celui de sa base,
+  // vérifié au tag v0.34.0) : on demande son id d'abord, la base ne sert que
+  // de repli. L'image se retire toute seule si l'objet n'a pas encore d'art —
+  // un 404 ne casse rien.
+  const artId = String(it.id || '');
+  const artBase = artId.replace(/^heroic_/, '');
   // Les ARMES n'ont pas d'art par id : le jeu leur rend une vignette partagée
   // par modèle 3D (data/ICONS.json). Sans ça, aucune arme n'avait d'image.
-  const wmodel = (D.ICONS && D.ICONS.weapons) ? (D.ICONS.weapons[it.id] || D.ICONS.weapons[artId]) : null;
+  const wmodel = (D.ICONS && D.ICONS.weapons) ? (D.ICONS.weapons[it.id] || D.ICONS.weapons[artBase]) : null;
   if (wmodel) body.push(`<img class="cxp-art" src="${SITE_BASE}assets/weapons/${wmodel}.jpg" alt="" loading="lazy" onerror="this.remove()">`);
-  else if (artId && !it.weapon) body.push(`<img class="cxp-art" src="${SITE_BASE}assets/items/${artId}.webp" alt="" loading="lazy" onerror="this.remove()">`);
+  else if (artId && !it.weapon) {
+    const onFail = artBase !== artId
+      ? `this.onerror=null;this.src='${SITE_BASE}assets/items/${artBase}.webp';this.addEventListener('error',()=>this.remove())`
+      : 'this.remove()';
+    body.push(`<img class="cxp-art" src="${SITE_BASE}assets/items/${artId}.webp" alt="" loading="lazy" onerror="${onFail}">`);
+  }
   if (it.weapon) body.push(`<div class="cxp-dps">${((it.weapon.min + it.weapon.max) / 2 / (it.weapon.speed || 1)).toFixed(1)} DPS — ${it.weapon.min}–${it.weapon.max} ${T({ fr: 'dégâts, vitesse', en: 'damage, speed' })} ${it.weapon.speed ?? '—'}</div>`);
   const stats = Object.entries(it.stats || {}).map(([k,v]) => `+${v} ${STAT_FR[k] || k}`);
   // Combat ratings + puissance des sorts : stockés HORS de it.stats dans les

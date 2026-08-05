@@ -34059,33 +34059,44 @@ withCodex(() => {
   }).catch(() => {});
 });
 
+// Repli d'image en cascade : chaque `<img>` porte la liste des sources
+// suivantes, et passe à la suivante à chaque échec — puis se retire. Plus
+// lisible (et moins fragile) qu'une pile d'onerror imbriqués dans l'attribut.
+function nextArt(img) {
+  const rest = (img.dataset.fallback || "").split("|").filter(Boolean);
+  if (!rest.length) { img.remove(); return; }
+  img.dataset.fallback = rest.slice(1).join("|");
+  img.src = rest[0];
+}
+
 function iconFor(item) {
-  // L'art officiel est nommé par id d'objet ; une jumelle héroïque partage
-  // l'art de sa base. Les ARMES passent par la table des modèles rendus
-  // (assets/weapons/<modèle>.jpg) — sans elle, toutes les armes du BiS
-  // s'affichaient en case vide. Si tout manque, on retombe sur l'ancienne
-  // table nom → fichier, et sinon l'image se retire proprement.
-  const base = String(item.id || "").replace(/^heroic_/, "");
-  const model = WEAPON_ICONS && (WEAPON_ICONS[item.id] || WEAPON_ICONS[base]);
-  const legacy = ITEM_IMG[item.name];
-  // Une ARME n'a jamais d'art « <id>.webp » : tant que la table des modèles
-  // n'est pas chargée, on n'affiche rien plutôt que d'aller chercher un
-  // fichier qui n'existe pas (404 au premier rendu). Le re-rendu la posera.
-  // Une ARME n'a jamais d'art « <id>.webp » : sans modèle connu on prend
-  // directement l'ancienne vignette si elle existe, sinon rien — au lieu de
-  // demander un fichier inexistant (404 visible au premier rendu).
-  if (!model && item.w)
-    return legacy ? `<img src="assets/items/${legacy}" onerror="this.remove()" alt="" loading="lazy" width="128" height="128">` : "";
-  if (model) {
-    const alt = legacy ? `this.onerror=null;this.src='assets/items/${legacy}'` : "this.remove()";
-    return `<img src="assets/weapons/${model}.jpg" onerror="${alt}" alt="" loading="lazy" width="128" height="128">`;
+  // L'art officiel est nommé par id d'objet — y compris les jumelles
+  // héroïques, qui ont le LEUR : sur les 47 objets héroïques du jeu, aucun ne
+  // reprend l'art de sa base (vérifié au tag v0.34.0, signalé par un joueur
+  // sur la Direfang Crown, qui affichait l'art de la version normale). On
+  // demande donc « heroic_x.webp » d'abord, la base ne servant que de repli.
+  // Les ARMES, elles, n'ont jamais d'art par id : le jeu leur rend une
+  // vignette partagée par modèle 3D (assets/weapons/<modèle>.jpg) — sans
+  // elle, toutes les armes du BiS s'affichaient en case vide.
+  const id = String(item.id || "");
+  const base = id.replace(/^heroic_/, "");
+  const model = WEAPON_ICONS && (WEAPON_ICONS[id] || WEAPON_ICONS[base]);
+  const legacy = ITEM_IMG[item.name] ? `assets/items/${ITEM_IMG[item.name]}` : null;
+
+  const sources = [];
+  if (model) sources.push(`assets/weapons/${model}.jpg`);
+  // Tant que la table des modèles n'est pas chargée, une arme ne demande
+  // aucun « <id>.webp » : ce fichier n'existe pas, ce serait un 404 visible
+  // au premier rendu. Le re-rendu posera la vignette.
+  else if (!item.w) {
+    if (id) sources.push(`assets/items/${id}.webp`);
+    if (base && base !== id) sources.push(`assets/items/${base}.webp`);
   }
-  if (!base && !legacy) return "";
-  const fallback = legacy
-    ? `this.onerror=null;this.src='assets/items/${legacy}'`
-    : "this.remove()";
-  const src = base ? `assets/items/${base}.webp` : `assets/items/${legacy}`;
-  return `<img src="${src}" onerror="${base ? fallback : 'this.remove()'}" alt="" loading="lazy" width="128" height="128">`;
+  if (legacy) sources.push(legacy);
+  if (!sources.length) return "";
+
+  const rest = sources.slice(1).join("|");
+  return `<img src="${sources[0]}" data-fallback="${rest}" onerror="nextArt(this)" alt="" loading="lazy" width="128" height="128">`;
 }
 
 // Badge « héroïque » (v0.25) : la version montée en ilvl d'un objet porte le

@@ -85,8 +85,13 @@ se limite à la partie rédactionnelle des « Nouveautés » :
    notes), resynchroniser l'art embarqué : `bash scripts/sync_item_art.sh`
    puis commit d'`assets/items/`, `assets/mobs/`, `assets/weapons/` et
    `assets/skills/`. Trois conventions distinctes, à ne pas confondre :
-   - **objets** : `assets/items/<id>.webp` (les jumelles `heroic_` réutilisent
-     l'art de leur base) ;
+   - **objets** : `assets/items/<id>.webp` — **y compris les jumelles
+     `heroic_`, qui ont leur PROPRE art**. Cette ligne affirmait le contraire
+     jusqu'au 5 août 2026 ; c'était faux, et le code le suivait : les 46
+     objets héroïques du site affichaient l'art de leur version normale
+     (signalé par un joueur sur la Direfang Crown). Au tag v0.34.0, sur 47
+     `heroic_*.webp` livrés par le jeu, **zéro** reprend l'art de sa base.
+     Demander `<id>.webp` d'abord, la base ne servant que de repli ;
    - **armes** : PAS d'art par id — le jeu rend une vignette partagée par
      modèle 3D, `assets/weapons/<modèle>.jpg`, via la table publiée dans
      `data/ICONS.json` (`weapons`). Sans elle, toutes les armes du BiS
