@@ -8,20 +8,20 @@
 # Les deux étaient invisibles à la relecture du code et visibles en une seconde
 # dans un navigateur : d'où l'ouverture réelle des pages ci-dessous.
 #
-# Ce workflow tourne sur chaque push et chaque PR. Les deux workflows de
-# déploiement (Pages et OVH) l'appellent AVANT de publier : un site cassé ne
-# part plus en ligne.
+# Ce workflow tourne sur chaque push et chaque PR. La publication (deploy.yml)
+# l'appelle AVANT de publier, une seule fois pour les deux destinations : un
+# site cassé ne part plus en ligne.
 
 name: Vérifier le site
 
 on:
-  # Sur main, ce sont les workflows de déploiement qui appellent ces
-  # vérifications (voir workflow_call plus bas) : inutile de les jouer deux fois.
+  # Sur main, c'est la publication qui appelle ces vérifications (voir
+  # workflow_call plus bas) : inutile de les jouer deux fois.
   push:
     branches-ignore: [main]
   pull_request:
   workflow_dispatch: {}
-  workflow_call: {}   # appelé par deploy-pages.yml et deploy-ovh.yml
+  workflow_call: {}   # appelé une seule fois par deploy.yml
 
 jobs:
   check:

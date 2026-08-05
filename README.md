@@ -128,13 +128,19 @@ modification est enregistrée dans le fichier JSON correspondant (`events.json`,
 ## Mise en ligne
 
 L'adresse officielle du site est **<https://laclauderie.fr>** (domaine +
-hébergement web 100 Mo chez OVH). Deux workflows publient le site à chaque
-push sur `main` :
+hébergement web 100 Mo chez OVH). Un seul workflow,
+`.github/workflows/deploy.yml`, publie le site à chaque push sur `main` : il
+vérifie d'abord le site (une seule fois), puis envoie les deux destinations en
+parallèle.
 
-| Workflow | Destination |
+| Job de `deploy.yml` | Destination |
 |---|---|
-| `.github/workflows/deploy-ovh.yml` | **laclauderie.fr** (hébergement OVH, envoi par FTP — le serveur OVH refuse le FTPS explicite, vérifié le 19/07/2026) |
-| `.github/workflows/deploy-pages.yml` | `https://reptile-new.github.io/La-Clauderie/` (miroir GitHub Pages, utile en secours) |
+| `checks` | aucune — appelle `check-site.yml` et bloque la publication si le site est cassé |
+| `ovh` | **laclauderie.fr** (hébergement OVH, envoi par FTP — le serveur OVH refuse le FTPS explicite, vérifié le 19/07/2026) |
+| `pages` | `https://reptile-new.github.io/La-Clauderie/` (miroir GitHub Pages, utile en secours) |
+
+Les deux déploiements sont indépendants : si le FTP OVH échoue, le miroir
+Pages part quand même, et « Re-run failed jobs » relance le seul qui a échoué.
 
 Les mises à jour faites depuis l'espace officiers arrivent donc sur
 laclauderie.fr toutes seules, comme avant (~1 à 2 min).
@@ -145,11 +151,12 @@ Le **Codex WoCC** reste développé dans son propre repo
 ([wocc-knowledge-base](https://github.com/Reptile-New/wocc-knowledge-base)),
 mais il est **servi sur le domaine** : cliquer « 📚 Codex » dans la barre de
 navigation reste sur <https://laclauderie.fr/codex/>, sans détour par GitHub.
-Concrètement, le workflow `deploy-ovh.yml` embarque à chaque passage une copie
+Concrètement, le job `ovh` de `deploy.yml` embarque à chaque passage une copie
 du repo du Codex (public) : sa page sous `www/codex/` et ses données JSON sous
 `www/data/`. Comme le Codex se met à jour tout seul à chaque release du jeu,
 le workflow tourne aussi périodiquement (toutes les 6 h) pour rafraîchir la
-copie — et un lancement manuel (**Actions → Deploy La Clauderie sur OVH →
+copie — ce passage-là ne republie que chez OVH, le miroir Pages ne servant pas
+`/data/`. Un lancement manuel (**Actions → Publier le site (OVH + Pages) →
 Run workflow**) la rafraîchit immédiatement si besoin. Sur le miroir GitHub
 Pages et en dev local, les liens « Codex » sont repointés automatiquement
 (par `assets/codex-popup.js`) vers l'adresse du Codex propre à cet
