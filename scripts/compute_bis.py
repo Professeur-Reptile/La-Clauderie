@@ -335,7 +335,14 @@ def sheet(cls, role, equip, extra=None):
     ap = max(0, ap_stats + ap_bonus)
     rap = max(0, 2*s['agi'] + ap_bonus) if cls=='hunter' else 0
     sp = max(0, jround(s['int']*0.5 + sp_flat))
+    # Le jeu a DEUX crits distincts (sim.ts spellCrit / entity.ts critChance) :
+    # le crit physique vient de l'AGILITÉ, celui des SORTS de l'INTELLIGENCE —
+    # l'agilité n'apporte rien aux sorts. Modéliser un crit unique nourri à
+    # l'agilité surévaluait les objets et enchantements d'agilité pour les
+    # casters (d'où « bottes : enchant Agilité » conseillé à un mage, signalé
+    # par la guilde le 4 août 2026). Le crit d'objet (rating) alimente les deux.
     crit = 0.05 + s['agi']*0.0005 + crit_r/1000
+    crit_spell = 0.05 + s['int']*0.0008 + crit_r/1000
     haste = haste_r/1000
     # Hit (v0.26, port de types.ts/entity.ts) : hitFractionFromRating = rating /
     # (HIT_RATING_PER_PCT × 100) = rating/1000. La fraction se SOUSTRAIT du miss
@@ -346,7 +353,7 @@ def sheet(cls, role, equip, extra=None):
     if bear: hp = jround(hp*1.15)
     mana = cd['mana'][0] + cd['mana'][1]*(LVL-1) + min(s['int'],20) + max(0,s['int']-20)*15
     w = ITEMS[equip['mainhand']]['weapon'] if equip.get('mainhand') and ITEMS[equip['mainhand']].get('weapon') else {'min':1,'max':2,'speed':2}
-    return dict(stats=s, ap=ap, rap=rap, sp=sp, crit=crit, haste=haste, hit=hit, hp=hp, mana=mana, w=w, procs=procs, counts=counts)
+    return dict(stats=s, ap=ap, rap=rap, sp=sp, crit=crit, crit_spell=crit_spell, haste=haste, hit=hit, hp=hp, mana=mana, w=w, procs=procs, counts=counts)
 
 # --- valorisation des procs de set (espérance, hypothèses documentées) -------
 def proc_value(p, sh, kind):
@@ -394,14 +401,14 @@ def objective(cls, role, sh):
     land_s = min(1.0, (1 - RESIST_HEROIC) + sh['hit'])  # sorts non résistés
     if role=='dps':
         if cls in ('mage','warlock') or (cls=='priest'):
-            spd=(60+(sh['sp']+bonus['sp'])*0.714)/2.5*(1+haste)*(1+0.5*crit)
+            spd=(60+(sh['sp']+bonus['sp'])*0.714)/2.5*(1+haste)*(1+0.5*sh['crit_spell'])
             return spd*land_s
         if cls=='hunter':
             w=sh['w']; avg=0.6*(w['min']+w['max'])/2
             per=avg+(sh['rap']+bonus['ap'])/14*w['speed']
             return ((per/w['speed'])*(1+haste)*(1+crit)+bonus['dps'])*land_m
         if cls=='druid':  # Moongrove : caster en Moonwing Form (+20 %) × Moonrage (+15 %)
-            spd=(60+(sh['sp']+bonus['sp'])*0.714)/2.5*(1+haste+0.10)*(1+0.5*crit)*1.20*1.15
+            spd=(60+(sh['sp']+bonus['sp'])*0.714)/2.5*(1+haste+0.10)*(1+0.5*sh['crit_spell'])*1.20*1.15
             return spd*land_s
         w=sh['w']; avg=(w['min']+w['max'])/2
         per=avg+(sh['ap']+bonus['ap'])/14*w['speed']
@@ -413,7 +420,7 @@ def objective(cls, role, sh):
         threat=(avg+(sh['ap']+bonus['ap'])/14*w['speed'])/w['speed']*(1+haste)*(1+crit)*land_m
         return ehp + 6.0*threat   # l'EHP domine, la menace départage
     if role=='heal':
-        hps=(80+(sh['sp']+bonus['sp'])*0.714)/2.5*(1+haste)*(1+0.5*crit)
+        hps=(80+(sh['sp']+bonus['sp'])*0.714)/2.5*(1+haste)*(1+0.5*sh['crit_spell'])
         sustain=sh['mana']+15*sh['stats']['spi']
         sustain*= (1+bonus['mana_pct'])
         return hps*(0.7+0.3*sustain/2500)
