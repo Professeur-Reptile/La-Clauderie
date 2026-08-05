@@ -698,6 +698,10 @@ def item_export(iid, cls):
         'sp': it.get('spellPower'), 'id': iid, 'score': round(sc,1),
         'xclass': bool(it.get('armorType') and it.get('requiredClass') and cls not in it['requiredClass']),
         'slot': it.get('slot'), 'src': SOURCES.get(iid, []),
+        # Une arme à deux mains interdit la main gauche : le classement des
+        # alternatives l'évalue déjà SANS l'objet de main gauche, et la page le
+        # signale au lecteur (sinon la ligne semblait comparable à confort égal).
+        'twohand': it.get('hand') == 'twohand',
     }
 
 FR={'warrior':'Guerrier','paladin':'Paladin','shaman':'Chaman','druid':'Druide','priest':'Prêtre','mage':'Mage','warlock':'Démoniste','rogue':'Voleur','hunter':'Chasseur'}
