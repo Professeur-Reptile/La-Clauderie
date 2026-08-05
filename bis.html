@@ -34043,12 +34043,43 @@ const ITEM_IMG = {
   "Zyzz's Deathless Signet": "zyzzs_deathless_signet.png"
 };
 
+// Table des vignettes d'ARMES (id → modèle rendu), publiée par la KB dans
+// data/ICONS.json : une arme n'a PAS d'art nommé par son id, le jeu lui rend
+// une image partagée par modèle 3D. Chargée à la volée ; tant qu'elle n'est
+// pas là, on tente quand même le webp par id (les armures, elles, en ont un).
+let WEAPON_ICONS = null;
+withCodex(() => {
+  const base = /(^|\.)laclauderie\.fr$/.test(location.hostname) ? "/data"
+    : /^(localhost|127\.|0\.0\.0\.0)/.test(location.hostname) ? "/wocc-knowledge-base/data"
+    : "https://reptile-new.github.io/wocc-knowledge-base/data";
+  fetch(base + "/ICONS.json").then(r => r.ok ? r.json() : null).then(d => {
+    if (!d) return;
+    WEAPON_ICONS = d.weapons || {};
+    render();                      // re-rendu : les armes récupèrent leur image
+  }).catch(() => {});
+});
+
 function iconFor(item) {
   // L'art officiel est nommé par id d'objet ; une jumelle héroïque partage
-  // l'art de sa base. Si le webp manque (404), on retombe sur l'ancienne
+  // l'art de sa base. Les ARMES passent par la table des modèles rendus
+  // (assets/weapons/<modèle>.jpg) — sans elle, toutes les armes du BiS
+  // s'affichaient en case vide. Si tout manque, on retombe sur l'ancienne
   // table nom → fichier, et sinon l'image se retire proprement.
   const base = String(item.id || "").replace(/^heroic_/, "");
+  const model = WEAPON_ICONS && (WEAPON_ICONS[item.id] || WEAPON_ICONS[base]);
   const legacy = ITEM_IMG[item.name];
+  // Une ARME n'a jamais d'art « <id>.webp » : tant que la table des modèles
+  // n'est pas chargée, on n'affiche rien plutôt que d'aller chercher un
+  // fichier qui n'existe pas (404 au premier rendu). Le re-rendu la posera.
+  // Une ARME n'a jamais d'art « <id>.webp » : sans modèle connu on prend
+  // directement l'ancienne vignette si elle existe, sinon rien — au lieu de
+  // demander un fichier inexistant (404 visible au premier rendu).
+  if (!model && item.w)
+    return legacy ? `<img src="assets/items/${legacy}" onerror="this.remove()" alt="" loading="lazy" width="128" height="128">` : "";
+  if (model) {
+    const alt = legacy ? `this.onerror=null;this.src='assets/items/${legacy}'` : "this.remove()";
+    return `<img src="assets/weapons/${model}.jpg" onerror="${alt}" alt="" loading="lazy" width="128" height="128">`;
+  }
   if (!base && !legacy) return "";
   const fallback = legacy
     ? `this.onerror=null;this.src='assets/items/${legacy}'`

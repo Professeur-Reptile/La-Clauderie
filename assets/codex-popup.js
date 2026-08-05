@@ -52,7 +52,7 @@ const SITE_BASE = onLaclauderie ? '/' : '/La-Clauderie/';
 
 const FILES = ['ITEMS','MOBS','NPCS','QUESTS','DUNGEONS','DELVES','ITEM_SETS',
                'WORLD_BOSSES','ZONES','HEROIC_BOSS_LOOT','HEROIC_VENDOR_STOCK',
-               'DELVE_SHOPS','ABILITIES','TALENTS','_meta'];
+               'DELVE_SHOPS','ABILITIES','TALENTS','ICONS','_meta'];
 
 /* ---------- version française (depuis la v0.34.0, le jeu est traduit) ----
    Deux sources, chargées uniquement quand le site est en français :
@@ -522,7 +522,11 @@ function itemSheet(it) {
   // (une jumelle héroïque partage l'art de sa base). L'image se retire toute
   // seule si l'objet n'a pas encore d'art — un 404 ne casse rien.
   const artId = String(it.id || '').replace(/^heroic_/, '');
-  if (artId) body.push(`<img class="cxp-art" src="${SITE_BASE}assets/items/${artId}.webp" alt="" loading="lazy" onerror="this.remove()">`);
+  // Les ARMES n'ont pas d'art par id : le jeu leur rend une vignette partagée
+  // par modèle 3D (data/ICONS.json). Sans ça, aucune arme n'avait d'image.
+  const wmodel = (D.ICONS && D.ICONS.weapons) ? (D.ICONS.weapons[it.id] || D.ICONS.weapons[artId]) : null;
+  if (wmodel) body.push(`<img class="cxp-art" src="${SITE_BASE}assets/weapons/${wmodel}.jpg" alt="" loading="lazy" onerror="this.remove()">`);
+  else if (artId && !it.weapon) body.push(`<img class="cxp-art" src="${SITE_BASE}assets/items/${artId}.webp" alt="" loading="lazy" onerror="this.remove()">`);
   if (it.weapon) body.push(`<div class="cxp-dps">${((it.weapon.min + it.weapon.max) / 2 / (it.weapon.speed || 1)).toFixed(1)} DPS — ${it.weapon.min}–${it.weapon.max} ${T({ fr: 'dégâts, vitesse', en: 'damage, speed' })} ${it.weapon.speed ?? '—'}</div>`);
   const stats = Object.entries(it.stats || {}).map(([k,v]) => `+${v} ${STAT_FR[k] || k}`);
   // Combat ratings + puissance des sorts : stockés HORS de it.stats dans les
@@ -608,6 +612,13 @@ function itemSheet(it) {
 
 function abilitySheet(a) {
   const body = [];
+  // Icône peinte du sort, quand le jeu en a une (assets/skills/<classe>/<id>.webp,
+  // liste ABILITY_IMAGE_IDS publiée dans ICONS.json). Les autres sont dessinés
+  // proceduralement par le client : on n'affiche alors rien plutôt qu'une image
+  // qui ne correspondrait pas.
+  const hasIcon = D.ICONS && (D.ICONS.abilityIcons || []).includes(a.id);
+  if (hasIcon && a.class)
+    body.push(`<img class="cxp-art cxp-art-sm" src="${SITE_BASE}assets/skills/${a.class}/${a.id}.webp" alt="" loading="lazy" onerror="this.remove()">`);
   const aDesc = frDesc('ability', a.id) || a.description;
   if (aDesc) body.push(`<p class="cxp-desc">${esc(aDesc)}</p>`);
   body.push(kvGrid([
@@ -881,6 +892,7 @@ const CSS = `
   .cxp-hero { color: #ff8000; font-size: .78rem; }
   .cxp-xp { color: #b58cf5; }
   .cxp-po { color: #ffd76e; } .cxp-pa { color: #c8ccd6; } .cxp-pc { color: #d29d6b; }
+  .cxp-art-sm { width: 96px; }
   .cxp-frn { font-style: italic; font-size: .84em; opacity: .62; }
   .cxp-title-fr { font-size: .85rem; font-weight: 400; color: #8b93a3; font-style: italic; margin-top: 2px; }
   .cxp-foot { padding: 10px 18px 14px; border-top: 1px solid rgba(200,160,75,.18); font-size: .82rem; }

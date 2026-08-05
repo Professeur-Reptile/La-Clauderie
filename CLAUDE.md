@@ -65,11 +65,22 @@ se limite à la partie rédactionnelle des « Nouveautés » :
 3. **Ajouter une entrée en tête de `patch-notes.json`** (version, date, titre,
    resume, temps_forts, page + variantes `_en` et `page_en`). L'accueil et la
    page Nouveautés se mettent à jour tout seuls à partir de ce fichier.
-2bis. **Si la MAJ ajoute des icônes peintes d'objets** (« painted icons » dans
-   les notes), resynchroniser l'art embarqué :
-   `bash scripts/sync_item_art.sh` puis commit d'`assets/items/`. Cet art
-   (nommé `<id>.webp`) alimente les vignettes du BiS (`iconFor()` de
-   `bis.html`), les fiches d'objets de `codex-popup.js` et le guide Montures.
+2bis. **Si la MAJ ajoute des icônes peintes** (« painted icons » dans les
+   notes), resynchroniser l'art embarqué : `bash scripts/sync_item_art.sh`
+   puis commit d'`assets/items/`, `assets/mobs/`, `assets/weapons/` et
+   `assets/skills/`. Trois conventions distinctes, à ne pas confondre :
+   - **objets** : `assets/items/<id>.webp` (les jumelles `heroic_` réutilisent
+     l'art de leur base) ;
+   - **armes** : PAS d'art par id — le jeu rend une vignette partagée par
+     modèle 3D, `assets/weapons/<modèle>.jpg`, via la table publiée dans
+     `data/ICONS.json` (`weapons`). Sans elle, toutes les armes du BiS
+     s'affichaient en case vide (incident du 5 août 2026) ;
+   - **sorts** : `assets/skills/<classe>/<id>.webp`, uniquement pour les ids
+     listés dans `ICONS.json` (`abilityIcons`) — les autres sont dessinés
+     proceduralement par le client, donc **ne rien afficher** plutôt qu'une
+     image approchante.
+   Cet art alimente `iconFor()` de `bis.html`, les fiches de `codex-popup.js`
+   et le guide Montures.
 3bis. **Mettre à jour les badges « à jour de la version »** : `pvp.html`,
    `metiers.html`, `failles.html` et `montures.html` portent
    `data-version="vX.Y.Z"` sur leur inclusion de
