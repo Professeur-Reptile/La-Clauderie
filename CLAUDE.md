@@ -100,8 +100,11 @@ se limite à la partie rédactionnelle des « Nouveautés » :
    le bloc `const BIS` (l'équipement). Si la MAJ ajoute un rôle à une classe
    (ex. Mage soigneur en v0.27.0), ajouter aussi ce rôle dans `ROLES` de
    `scripts/compute_bis.py` pour que l'onglet et le BiS existent.
-3quater. **Avant tout push qui touche une page HTML**, lancer les deux
-   vérificateurs :
+3quater. **Les vérifications tournent en CI** (`check-site.yml`, appelé par les
+   deux workflows de déploiement : un site cassé ne part plus en ligne). Pour
+   un retour immédiat avant de pousser, les lancer à la main —
+   `node scripts/check_pages.mjs` ouvre en plus chaque page dans un navigateur
+   (erreurs JS, requêtes en échec, images cassées, zones vides) :
    - `python3 scripts/check_inline_js.py` — syntaxe de tous les scripts
      embarqués. Une apostrophe droite dans une chaîne JS à apostrophes
      simples a déjà vidé l'onglet Métiers en production (4 août 2026) : dans

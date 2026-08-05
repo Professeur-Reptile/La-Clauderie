@@ -20,7 +20,13 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Un site cassé ne doit pas partir en ligne : les vérifications (syntaxe des
+  # scripts, références du Codex, ouverture réelle des pages) tournent d'abord.
+  checks:
+    uses: ./.github/workflows/check-site.yml
+
   deploy:
+    needs: checks
     runs-on: ubuntu-latest
     environment:
       name: github-pages

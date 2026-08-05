@@ -1,0 +1,70 @@
+# Vérifications du site — le filet de sécurité avant publication.
+#
+# Deux incidents en production ont motivé ce workflow :
+#   - 4 août 2026 : une apostrophe droite dans une chaîne JS a tué le script de
+#     metiers.html — la page s'affichait, l'onglet Métiers restait VIDE ;
+#   - 5 août 2026 : toutes les armes du BiS s'affichaient en case vide, leur art
+#     n'étant pas embarqué.
+# Les deux étaient invisibles à la relecture du code et visibles en une seconde
+# dans un navigateur : d'où l'ouverture réelle des pages ci-dessous.
+#
+# Ce workflow tourne sur chaque push et chaque PR. Les deux workflows de
+# déploiement (Pages et OVH) l'appellent AVANT de publier : un site cassé ne
+# part plus en ligne.
+
+name: Vérifier le site
+
+on:
+  # Sur main, ce sont les workflows de déploiement qui appellent ces
+  # vérifications (voir workflow_call plus bas) : inutile de les jouer deux fois.
+  push:
+    branches-ignore: [main]
+  pull_request:
+  workflow_dispatch: {}
+  workflow_call: {}   # appelé par deploy-pages.yml et deploy-ovh.yml
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du site
+        uses: actions/checkout@v4
+
+      # Les pages lisent les données du Codex ; sans elles, la moitié des
+      # contrôles (noms français, références, icônes) ne voudrait rien dire.
+      - name: Checkout de la knowledge base
+        uses: actions/checkout@v4
+        with:
+          repository: Reptile-New/wocc-knowledge-base
+          path: wocc-knowledge-base
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Syntaxe des scripts embarqués
+        run: python3 scripts/check_inline_js.py
+
+      - name: Références du Codex (existence et non-ambiguïté)
+        run: python3 scripts/check_codex_refs.py wocc-knowledge-base/data
+
+      # Non bloquant : une description non traduite dégrade l'affichage (repli
+      # sur l'anglais) mais ne casse rien. C'est un rappel pour la Routine
+      # éditoriale, pas un motif de refuser une publication.
+      - name: Traductions françaises des fiches (rappel)
+        continue-on-error: true
+        run: python3 scripts/check_codex_fr.py wocc-knowledge-base/data
+
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Installer Chromium
+        run: |
+          npm install --no-save playwright@1.62.1
+          npx playwright install --with-deps chromium
+
+      - name: Ouvrir les pages dans un navigateur
+        run: node scripts/check_pages.mjs --kb wocc-knowledge-base

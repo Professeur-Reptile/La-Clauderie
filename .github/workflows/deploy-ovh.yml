@@ -42,7 +42,12 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Même garde-fou que pour GitHub Pages : on ne publie pas un site cassé.
+  checks:
+    uses: ./.github/workflows/check-site.yml
+
   deploy:
+    needs: checks
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
