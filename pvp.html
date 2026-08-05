@@ -482,6 +482,16 @@ const CLS_EN = { warrior:"Warrior", paladin:"Paladin", shaman:"Shaman", druid:"D
 const loc = v => (v && typeof v === "object" && !Array.isArray(v)) ? v[LANG] : v;
 const TREE_LBL = t => LANG === "en" ? ({ "posture": "stance" }[t] || t.replace(/^niv\./, "lvl")) : t;
 
+// Le script du Codex est chargé en « defer » : il s'exécute APRÈS ce bloc.
+// withCodex() attend donc son arrivée (DOMContentLoaded suit les defer) au lieu
+// de tester window.CodexPopup tout de suite — sans ça, la liaison automatique
+// des noms ne tournait pas au premier affichage, seulement après un clic
+// d'onglet (signalé le 5 août 2026).
+function withCodex(fn) {
+  if (window.CodexPopup) { fn(); return; }
+  document.addEventListener("DOMContentLoaded", () => { if (window.CodexPopup) fn(); }, { once: true });
+}
+
 // Rend les noms de talents / sorts cliquables (fiches du Codex).
 // `kind` force le type : "talent" pour la rangée de talents, sinon un talent
 // qui accorde un sort homonyme ouvrirait la fiche du SORT — et afficherait son
@@ -524,7 +534,12 @@ function render() {
       <p class="bpartner">🤝 ${loc(b.partner)}</p>
     </div>`;
   document.querySelectorAll("[data-cls]").forEach(btn => btn.addEventListener("click", () => { curCls = btn.dataset.cls; render(); }));
-  if (window.CodexPopup) CodexPopup.enhance(box);
+  // Même traitement que la page Builds : les noms de sorts et de talents cités
+  // dans les textes deviennent cliquables et annotés du nom français.
+  withCodex(() => CodexPopup.readyData().then(() => {
+    CodexPopup.enhance(box);
+    CodexPopup.autolink(box, curCls);
+  }));
 }
 render();
 </script>

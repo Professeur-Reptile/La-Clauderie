@@ -1037,10 +1037,87 @@ const boot = () => {
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
 else boot();
 
-// `frName` et `annotate` sont exposés pour les pages qui rendent des noms du
-// jeu hors [data-codex] (liste d'équipement du BiS, titres de leurs propres
-// fiches) : elles obtiennent le nom français officiel sans réimplémenter la
-// résolution ni recharger les données.
-window.CodexPopup = { open: openRef, enhance, annotate, frName, ready: () => ensureFr() };
+/* ---------- liaison automatique des noms cités dans les textes ----------
+   Les guides du site citent des sorts et des talents EN CLAIR dans leurs
+   phrases (« 2 charges d'Icebind indépendantes… ») : seuls les libellés de
+   rangée étaient cliquables, pas ces mentions. autolink() parcourt les nœuds
+   de TEXTE d'un conteneur et transforme ces noms en [data-codex] — donc
+   cliquables ET annotés du nom français, comme partout ailleurs.
+
+   Pour ne rien lier à tort, on ne retient que : les capacités et talents de
+   la CLASSE affichée, plus les noms en PLUSIEURS MOTS de n'importe quelle
+   classe (« Storm Chorus » cité dans un guide de mage). Les noms les plus
+   longs sont essayés d'abord, et les sous-arbres déjà balisés sont ignorés. */
+const RX_ESC = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+function linkIndexFor(cls) {
+  const entries = [];   // [nom, "type|ref"]
+  for (const a of asList(D.ABILITIES)) {
+    if (!a || !a.name) continue;
+    if (a.class === cls || /\s/.test(a.name)) entries.push([a.name, `ability|${a.id}`]);
+  }
+  for (const [key, hit] of Object.entries(talentIndex || {})) {
+    const name = hit.choice ? hit.choice.name : hit.node.name;
+    if (!name || key !== fold(name)) continue;
+    if (hit.cls === cls || /\s/.test(name)) entries.push([name, `talent|${name}`]);
+  }
+  // Un même libellé peut désigner deux entités (deux « Aether Surge ») : on
+  // ne lie que les noms sans ambiguïté, comme pour les noms français.
+  const seen = new Map();
+  for (const [name, ref] of entries) {
+    const k = fold(name);
+    if (seen.has(k) && seen.get(k) !== ref) seen.set(k, null);
+    else if (!seen.has(k)) seen.set(k, ref);
+  }
+  const kept = entries.filter(([n]) => seen.get(fold(n)));
+  kept.sort((a, b) => b[0].length - a[0].length);
+  return kept;
+}
+
+function autolink(root, cls) {
+  if (!root || !D.ABILITIES) return;
+  const index = linkIndexFor(cls);
+  if (!index.length) return;
+  const rx = new RegExp('(^|[^\\w-])(' + index.map(e => RX_ESC(e[0])).join('|') + ')(?![\\w-])', 'g');
+  const refOfName = new Map(index.map(([n, r]) => [fold(n), r]));
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+      // Ne jamais toucher à ce qui est déjà balisé (ni au nom français ajouté).
+      if (node.parentElement?.closest('[data-codex], [data-fr-name], .cxp-frn, script, style, a'))
+        return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    },
+  });
+  const targets = [];
+  for (let n = walker.nextNode(); n; n = walker.nextNode()) if (rx.test(n.nodeValue)) { rx.lastIndex = 0; targets.push(n); }
+  for (const node of targets) {
+    const frag = document.createDocumentFragment();
+    let last = 0;
+    node.nodeValue.replace(rx, (m, pre, name, off) => {
+      frag.appendChild(document.createTextNode(node.nodeValue.slice(last, off) + pre));
+      const span = document.createElement('span');
+      span.dataset.codex = refOfName.get(fold(name));
+      span.textContent = name;
+      frag.appendChild(span);
+      last = off + m.length;
+      return m;
+    });
+    frag.appendChild(document.createTextNode(node.nodeValue.slice(last)));
+    node.parentNode.replaceChild(frag, node);
+  }
+  enhance(root);
+}
+
+// `frName`, `annotate` et `autolink` sont exposés pour les pages qui rendent
+// des noms du jeu hors [data-codex] (liste d'équipement du BiS, textes des
+// guides, titres de leurs propres fiches) : elles obtiennent le nom français
+// officiel et les fiches sans réimplémenter la résolution ni recharger les
+// données.
+window.CodexPopup = {
+  open: openRef, enhance, annotate, frName, autolink,
+  ready: () => ensureFr(),
+  readyData: () => Promise.all([ensureData(), ensureFr()]),
+};
 
 })();

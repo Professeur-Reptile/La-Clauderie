@@ -34111,7 +34111,7 @@ function openItemModal(it) {
   document.getElementById("imBody").innerHTML = body;
   // Les sources citent des monstres/PNJ : les rendre cliquables (fiche Codex)
   // et leur accrocher leur nom français, comme partout ailleurs.
-  if (window.CodexPopup) CodexPopup.ready().then(() => CodexPopup.enhance(document.getElementById("imBody")));
+  withCodex(() => CodexPopup.ready().then(() => CodexPopup.enhance(document.getElementById("imBody"))));
   document.getElementById("imCodex").href = `${CODEX}#item/${it.id}`;
   if (typeof imodal.showModal === "function") imodal.showModal();
   else imodal.setAttribute("open", "");
@@ -34145,6 +34145,16 @@ const CX_REF = {
   "aether surge": "ability|arcane_surge",
   "patch up": "ability|mend_pet",
 };
+
+// Le script du Codex est chargé en « defer » : il s'exécute APRÈS ce bloc.
+// withCodex() attend donc son arrivée (DOMContentLoaded suit les defer) au lieu
+// de tester window.CodexPopup tout de suite — sans ça, la liaison automatique
+// des noms ne tournait pas au premier affichage, seulement après un clic
+// d'onglet (signalé le 5 août 2026).
+function withCodex(fn) {
+  if (window.CodexPopup) { fn(); return; }
+  document.addEventListener("DOMContentLoaded", () => { if (window.CodexPopup) fn(); }, { once: true });
+}
 
 // Rend chaque nom de talent / sort cliquable (fiche incrustée du Codex),
 // en découpant les libellés composés : « A → B », « A + B », « A / B », « A ×2 ».
@@ -34211,7 +34221,13 @@ function renderBuild() {
   box.querySelectorAll("[data-spec]").forEach(btn => btn.addEventListener("click", () => {
     curSpec = +btn.dataset.spec; renderBuild();
   }));
-  if (window.CodexPopup) CodexPopup.enhance(box);
+  // Changer de spécialisation re-rend CE bloc seul (sans repasser par render())
+  // : il faut y relancer la liaison automatique des noms cités dans les textes,
+  // sinon seuls les libellés de rangée restaient cliquables.
+  withCodex(() => CodexPopup.readyData().then(() => {
+    CodexPopup.enhance(box);
+    CodexPopup.autolink(box, curCls);
+  }));
 }
 
 function render() {
@@ -34283,7 +34299,12 @@ function render() {
   // de rôle reconstruit toute la liste, et compter sur l'observateur de
   // codex-popup.js s'était révélé fragile (les noms disparaissaient au premier
   // clic d'onglet — signalé le 4 août 2026). Appel direct, donc déterministe.
-  if (window.CodexPopup) CodexPopup.ready().then(() => CodexPopup.enhance());
+  withCodex(() => CodexPopup.readyData().then(() => {
+    CodexPopup.enhance();
+    // Les textes des guides citent des sorts et talents en clair : les rendre
+    // cliquables et annotés eux aussi (demande de la guilde, 5 août 2026).
+    CodexPopup.autolink(document.getElementById("buildBox"), curCls);
+  }));
 }
 render();
 </script>
