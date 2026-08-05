@@ -74,7 +74,7 @@
   .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
 
   /* Sections */
-  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); }
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
   section:first-of-type { border-top: none; }
   .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
   .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
@@ -91,6 +91,28 @@
   .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
   .card ul li { margin: 4px 0; }
   .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
 
   /* Clickable cards */
   .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
@@ -158,8 +180,46 @@
     <div class="hint">💡 Clique sur une carte pour le détail — et sur un nom souligné pour sa fiche Codex.</div>
   </header>
 
+  <!-- Bandeau constant : mêmes rubriques, même ordre, à chaque version. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">En un coup d’œil</h2>
+    <p class="sec-sub">Les mêmes rubriques à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
+    <ol>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <a class="d-name" href="#classes">Classes &amp; sorts</a>
+        <span class="d-say"><b class="down">Mage ↓</b> son rez de groupe passe à 5 min de cooldown · <b class="up">Voleur ↑</b> trois réparations · <b class="eq">Druide =</b> l’ours est cosmétique · <b class="down">Toutes ↓</b> la faiblesse de résurrection ne se dissipe plus</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <a class="d-name" href="#metiers">Métiers &amp; récolte</a>
+        <span class="d-say">Le plus gros patch de leur histoire : charmes d’outils, vraie cuisine du poisson, deux fois plus de nœuds.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#donjons">Donjons, failles &amp; boss</a>
+        <span class="d-say">Les grosses attaques de boss s’annoncent enfin ; le coffre de Delve ne se bloque plus.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <a class="d-name" href="#monde">Monde &amp; quêtes</a>
+        <span class="d-say">Les Drakelands reconstruites (couvée Dragonkin, deux hauts faits) ; respawns et quêtes resserrés.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <a class="d-name" href="#guilde">Guilde &amp; social</a>
+        <span class="d-say">La banque de guilde arrive — réservée aux officiers — et les montures s’échangent entre joueurs.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#confort">Confort &amp; technique</a>
+        <span class="d-say">Interface, vendeurs plus malins, et une pile de correctifs.</span>
+      </li>
+    </ol>
+  </nav>
+
   <!-- 1 BANQUE DE GUILDE -->
-  <section>
+  <section id="guilde">
     <div class="sec-head"><span class="sec-num">01</span><h2>La banque de guilde est là</h2></div>
     <p class="sec-sub">Un coffre commun pour la guilde : de l'or et des objets partagés, des extensions à acheter, et un journal qui trace tout. Une grosse nuance à connaître avant de s'enthousiasmer.</p>
     <div class="grid cols-2">
@@ -180,7 +240,7 @@
   </section>
 
   <!-- 2 MONTURES -->
-  <section>
+  <section id="guilde-montures">
     <div class="sec-head"><span class="sec-num">02</span><h2>Les montures s'échangent</h2></div>
     <p class="sec-sub">Le changement d'économie le plus visible : les rênes ne sont plus liées. Une monture se vend, s'offre, se poste — comme n'importe quel objet. Détails et pièges dans le <a href="../montures.html">guide Montures</a>, mis à jour.</p>
     <div class="grid cols-3">
@@ -206,7 +266,7 @@
   </section>
 
   <!-- 3 DRAKELANDS -->
-  <section>
+  <section id="monde">
     <div class="sec-head"><span class="sec-num">03</span><h2>Les Drakelands, reconstruites</h2></div>
     <p class="sec-sub">Les vieux drakes ont disparu : la zone <span data-codex="zone|The Drakelands">The Drakelands</span> est repeuplée par la couvée Dragonkin, avec deux nouveaux hauts faits de Chronique à la clé.</p>
     <div class="grid cols-3">
@@ -232,7 +292,7 @@
   </section>
 
   <!-- 4 MÉTIERS -->
-  <section>
+  <section id="metiers">
     <div class="sec-head"><span class="sec-num">04</span><h2>Les métiers : le plus gros patch de leur histoire</h2></div>
     <p class="sec-sub">Des charmes d'outils fabriqués par les enchanteurs, une pêche qui passe par la cuisine, et une récolte deux fois plus dense. La page <a href="../metiers.html">Récolte &amp; Métiers</a> est à jour.</p>
     <div class="grid cols-3">
@@ -255,7 +315,7 @@
   </section>
 
   <!-- 5 FAILLES & DELVES -->
-  <section>
+  <section id="donjons">
     <div class="sec-head"><span class="sec-num">05</span><h2>Failles : des boss enfin lisibles</h2></div>
     <p class="sec-sub">Fini les dégâts inévitables : tout se télégraphie, tout s'esquive. Le <a href="../failles.html">guide Failles</a> est à jour.</p>
     <div class="grid cols-2">
@@ -273,7 +333,7 @@
   </section>
 
   <!-- 6 MONDE -->
-  <section>
+  <section id="monde-suite">
     <div class="sec-head"><span class="sec-num">06</span><h2>Le monde : farm, quêtes, villes</h2></div>
     <p class="sec-sub">La v0.33 avait ralenti le farm ; la v0.34 rebat encore les cartes — dans les deux sens. Et les quêtes trichent moins.</p>
     <div class="grid cols-3">
@@ -299,7 +359,7 @@
   </section>
 
   <!-- 7 CLASSES -->
-  <section>
+  <section id="classes">
     <div class="sec-head"><span class="sec-num">07</span><h2>Pour ta classe</h2></div>
     <p class="sec-sub">Un gros nerf mage, trois réparations voleur, et une précision importante sur l'ours du druide.</p>
     <div class="grid cols-3">
@@ -327,7 +387,7 @@
   </section>
 
   <!-- 8 INTERFACE -->
-  <section>
+  <section id="confort">
     <div class="sec-head"><span class="sec-num">08</span><h2>Confort, interface et le reste</h2></div>
     <p class="sec-sub">Beaucoup de petites choses qui font une grosse différence au quotidien.</p>
     <div class="grid cols-3">

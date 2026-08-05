@@ -41,7 +41,23 @@ se limite à la partie rédactionnelle des « Nouveautés » :
 2. **Créer `notes/vX.Y.Z.html` + `notes/vX.Y.Z.en.html`** en copiant la structure
    EXACTE de la version la plus récente du dossier `notes/` (même `<style>`, même
    scaffolding modal, mêmes classes). N'adapter que : version, méta, hero,
-   sections (bulles + fiches détaillées au clic) et le dict `DETAILS`.
+   bandeau « En un coup d'œil », sections (bulles + fiches détaillées au clic)
+   et le dict `DETAILS`.
+   - **Le bandeau `<nav class="digest">` est OBLIGATOIRE et son sommaire ne
+     varie JAMAIS** (décision d'août 2026 : les titres de sections sont
+     narratifs et changent à chaque version, le lecteur ne savait plus où
+     regarder). Toujours ces six rubriques, toujours dans cet ordre :
+     ⚔️ Classes & sorts · 🔨 Métiers & récolte · 🐉 Donjons, failles & boss ·
+     🗺️ Monde & quêtes · 🏰 Guilde & social · ⚙️ Confort & technique.
+     Chaque rubrique renvoie par `href="#ancre"` à la section qui la traite
+     (ancres `id=` sur les `<section>`) ; si la MAJ ne touche pas une rubrique,
+     garder la ligne avec `class="none"` et un `—` plutôt que de la supprimer.
+     La ligne Classes porte le sens du changement PAR CLASSE, avec
+     `<b class="up">Classe ↑</b>` (amélioration), `<b class="down">Classe ↓</b>`
+     (nerf) ou `<b class="eq">Classe =</b>` (inchangé / cosmétique) — c'est la
+     question n°1 des joueurs. Ces flèches suivent la même règle de
+     vérification que le reste (étape 1bis) : elles se justifient par le code
+     du jeu, pas par le ton des notes officielles.
    - Marquer les termes/objets/sorts/monstres cliquables avec
      `<span data-codex="type|Nom">…</span>` (types usuels : `term|ability|item|mob|npc` ;
      `codex-popup.js` accepte aussi `talent|spec|quest|dungeon|delve|set|zone`).
