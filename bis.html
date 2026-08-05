@@ -147,6 +147,11 @@
   .im-head { display: flex; align-items: flex-start; gap: 14px; padding: 18px 20px 14px; border-bottom: 1px solid var(--line-soft); }
   .im-head .kick { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); margin: 0 0 5px; }
   .im-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; margin: 0; line-height: 1.15; }
+  /* Vignette de l'objet, à gauche du titre — la fiche n'en montrait
+     aucune alors que la liste en avait une (signalé le 5 août 2026). */
+  .im-head .im-art { flex: none; }
+  .im-head .im-art:empty { display: none; }
+  .im-head .im-art img { display: block; width: 58px; height: 58px; border-radius: 9px; border: 1px solid var(--line); background: #0d1017; }
   .im-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 32px; height: 32px; border-radius: 8px; cursor: pointer; font-size: 1rem; line-height: 1; }
   .im-head .close:hover { color: var(--text); border-color: var(--gold); }
   .im-body { padding: 16px 20px 20px; }
@@ -223,6 +228,7 @@
 
 <dialog id="itemModal" aria-labelledby="imTitle">
   <div class="im-head">
+    <div class="im-art" id="imArt"></div>
     <div>
       <p class="kick" id="imKick"></p>
       <h3 id="imTitle"></h3>
@@ -34125,6 +34131,8 @@ const QUALITY_FR2 = LANG === "en"
 const imodal = document.getElementById("itemModal");
 
 function openItemModal(it) {
+  // Même art que dans la liste (iconFor gère héroïques, armes et replis).
+  document.getElementById("imArt").innerHTML = iconFor(it);
   document.getElementById("imKick").textContent =
     [QUALITY_FR2[it.q] || it.q, SLOT_FR[it.slot] || it.slot].filter(Boolean).join(" · ");
   const t = document.getElementById("imTitle");
