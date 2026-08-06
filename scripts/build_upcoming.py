@@ -11,9 +11,12 @@ Sortie : upcoming.json sur la sortie standard.
 
     python3 scripts/build_upcoming.py <dépôt-du-jeu> <tag-de-base> <branche> > upcoming.json
 
-Rien n'est rédigé ici : les sujets de commit sont repris tels quels (en
-anglais, ce sont les messages des développeurs). La page le dit clairement —
-c'est un aperçu de travaux en cours, pas des notes de version.
+Rien n'est rédigé ici, et la liste produite N'EST PLUS AFFICHÉE (retirée le
+6 août 2026 : le site est fait pour les joueurs, pas pour les développeurs).
+La page ne lit plus que trois choses dans ce JSON : le numéro de version, la
+fraîcheur du relevé (last_commit) et le compteur de commits qui fait expirer
+la partie rédigée. Les sections classées restent produites comme matière
+première pour la Routine de réécriture et pour le débogage.
 """
 import hashlib
 import json
@@ -115,10 +118,9 @@ def main():
             continue
         text = text[0].upper() + text[1:]
         buckets[classify(scope, text)].append({
-            # Empreinte du texte anglais : c'est la clé de la traduction dans
-            # assets/upcoming-fr.json. Si les développeurs reformulent leur
-            # message, l'empreinte change et la ligne repasse en anglais —
-            # mieux vaut ça qu'une traduction qui ne dit plus la même chose.
+            # Empreinte du texte anglais. Servait de clé au dispositif de
+            # traduction ligne à ligne, retiré le 6 août 2026 avec la liste ;
+            # conservée car stable et utile pour dédupliquer si besoin.
             "h": hashlib.sha1(text.encode("utf-8")).hexdigest()[:8],
             "kind": "feat" if typ == "feat" else ("perf" if typ == "perf" else "fix"),
             "scope": scope,
