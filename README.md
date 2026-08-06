@@ -141,6 +141,9 @@ parallèle.
 
 Les deux déploiements sont indépendants : si le FTP OVH échoue, le miroir
 Pages part quand même, et « Re-run failed jobs » relance le seul qui a échoué.
+L'inverse n'est pas symétrique : le job `pages` est en `continue-on-error`,
+parce qu'une file d'attente côté GitHub Pages ne doit pas faire passer la
+publication en échec alors que **laclauderie.fr**, le vrai site, est en ligne.
 
 Les mises à jour faites depuis l'espace officiers arrivent donc sur
 laclauderie.fr toutes seules, comme avant (~1 à 2 min).

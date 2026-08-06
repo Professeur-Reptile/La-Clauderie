@@ -55,6 +55,11 @@ jobs:
     # republier le miroir Pages toutes les 6 h ne servirait à rien.
     if: github.event_name != 'schedule'
     needs: checks
+    # laclauderie.fr est le site ; Pages n'en est que le miroir de secours.
+    # Une file d'attente côté GitHub ne doit donc pas marquer la publication
+    # en échec ni déclencher une alerte, alors que le vrai site est en ligne.
+    # L'échec du job reste visible dans le détail du passage.
+    continue-on-error: true
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -86,6 +91,12 @@ jobs:
       - name: Déployer sur GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # 10 min par défaut, atteintes 4 fois sur 12 le 6 août 2026 : le
+          # déploiement restait en « deployment_queued » puis l'action
+          # l'ANNULAIT — ce qui pénalise le passage suivant. On laisse 25 min
+          # à la file de GitHub avant d'abandonner.
+          timeout: 1500000
 
   ovh:
     needs: checks
