@@ -161,6 +161,7 @@ avant de t'appuyer dessus pour le BiS ou les liens Codex.
 | Classement guilde (`guild.json`) | `update-guild-rank.yml` | toutes les 3 h |
 | Déploiement (OVH) | `deploy.yml` (vérifie, puis envoie par FTP) | à chaque push `main` (+ cron 6 h pour rafraîchir la copie du Codex) |
 | **Aperçu de la version à venir** (`a-venir.html`) | `update-upcoming.yml` → `build_upcoming.py` lit la branche `release/vX.Y.Z` du jeu | toutes les 2 h |
+| **Réécriture de l'aperçu** (partie rédigée d'`a-venir.html`) | Routine Claude « Page « À venir » (WoCC) » : ne réécrit QUE si la version change ou si la branche a pris ≥ 25 commits depuis `data-commits` | 1×/jour, 5 h UTC |
 | Pré-alerte « sortie imminente » | même workflow : ouvre une issue dès que `package.json` monte de version sur la branche de release | toutes les 2 h |
 | Rappel « version manquante » (filet de secours) | `check-game-version.yml` ouvre une issue | toutes les heures |
 
@@ -170,7 +171,11 @@ avant de t'appuyer dessus pour le BiS ou les liens Codex.
 > la page habituelle, juste pour à venir ». Elle porte `data-for="vX.Y.Z"`
 > sur `#editorial` : dès que `upcoming.json` annonce une autre version (ou
 > plus rien), cette partie se masque toute seule et le dit. À réécrire quand
-> le jeu passe à préparer une nouvelle version. Ne JAMAIS y mettre de chiffre
+> le jeu passe à préparer une nouvelle version — c'est le travail de la
+> Routine quotidienne, qui se déclenche sur `data-commits` (le nombre de
+> commits à partir duquel le texte a été écrit) : la branche grossit vite,
+> 99 → 256 commits en une journée le 6 août 2026, donc un texte figé se
+> périme en quelques heures. Ne JAMAIS y mettre de chiffre
 > non vérifié : c'est du travail en cours, les durées et valeurs bougent — la
 > fiche « craft » dit explicitement pourquoi elle n'en donne pas.
 >
