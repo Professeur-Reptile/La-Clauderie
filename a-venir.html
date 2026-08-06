@@ -562,6 +562,26 @@
   // La liste des commits a été retirée le 6 août 2026 : le site s'adresse aux
   // joueurs, qui veulent un ordre de grandeur, pas un journal de développement.
   function esc(s) { return String(s || "").replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c])); }
+  // « Résumé écrit le … » : la date est stockée en ISO avec son décalage sur
+  // #editorial, et rendue ici dans le FUSEAU ET LE FORMAT DU LECTEUR — un
+  // joueur en Australie doit lire son heure à lui, pas celle de Paris. Le
+  // texte en dur dans le HTML reste comme repli si JavaScript est coupé.
+  (function () {
+    const ed = document.getElementById("editorial");
+    const out = document.getElementById("written");
+    const iso = ed && ed.dataset.written;
+    if (!ed || !out || !iso) return;
+    const t = new Date(iso);
+    if (isNaN(t)) return;
+    // La LANGUE suit celle du site (bouton FR/EN, mémorisé en localStorage) ;
+    // seul le FUSEAU est celui du lecteur — sinon on obtenait « Résumé écrit
+    // August 6, 2026 » sur une page française.
+    let en = false;
+    try { en = localStorage.getItem("lang") === "en"; } catch (e) { /* stockage refusé */ }
+    const quand = t.toLocaleString(en ? "en-GB" : "fr-FR", { dateStyle: "long", timeStyle: "short" });
+    out.innerHTML = "<b>" + (en ? "Summary written" : "Résumé écrit") + "</b> " + quand;
+  })();
+
   function since(iso) {
     const t = Date.parse(iso || ""); if (!t) return "";
     const m = Math.max(0, Math.round((Date.now() - t) / 60000));
