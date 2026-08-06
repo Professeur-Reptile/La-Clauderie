@@ -157,12 +157,12 @@ avant de t'appuyer dessus pour le BiS ou les liens Codex.
 | Quoi | Mécanisme | Fréquence |
 |---|---|---|
 | Données du Codex | `wocc-knowledge-base` → `update-knowledge-base.yml` | ~5 min après chaque tag du jeu |
-| **Builds / BiS** (`bis.html`) | `update-bis.yml` → `compute_bis.py` + `inject_bis.py` | cron 15 min (throttlé ~1 h par GitHub ; commit seulement si les données changent) |
+| **Builds / BiS** (`bis.html`) | `update-bis.yml` → `compute_bis.py` + `inject_bis.py` | cron horaire ; s'arrête en ~10 s si la KB n'a pas bougé (`scripts/.kb-state`) — elle ne change qu'à chaque version du jeu |
 | **Récolte & Métiers** (`metiers.html`) | `update-bis.yml` → `build_craft.py` + `inject_craft.py` | idem |
 | **Rédaction des « Nouveautés »** | Routine Claude « Nouvelle version WoCC — rédaction » : compare le dernier tag du jeu à `patch-notes.json[0]`, ne fait rien s'ils concordent, sinon déroule la procédure ⚡ et ferme l'issue | toutes les heures |
 | Classement guilde (`guild.json`) | `update-guild-rank.yml` | toutes les 3 h |
 | Déploiement (OVH) | `deploy.yml` (vérifie, puis envoie par FTP) | à chaque push `main` (+ cron 6 h pour rafraîchir la copie du Codex) |
-| **Aperçu de la version à venir** (`a-venir.html`) | `update-upcoming.yml` → `build_upcoming.py` lit la branche `release/vX.Y.Z` du jeu | toutes les 2 h |
+| **Aperçu de la version à venir** (`a-venir.html`) | `update-upcoming.yml` → `build_upcoming.py` lit la branche `release/vX.Y.Z` du jeu | toutes les 2 h ; ne commite/republie que si version, imminence, ou ≥ 25 commits de plus |
 | **Réécriture de l'aperçu** (partie rédigée d'`a-venir.html`) | Routine Claude « Page « À venir » (WoCC) » : ne réécrit QUE si la version change ou si la branche a pris ≥ 25 commits depuis `data-commits` | 2×/jour, 03 h et 15 h UTC (annoncées sur la page) |
 | Pré-alerte « sortie imminente » | même workflow : ouvre une issue dès que `package.json` monte de version sur la branche de release | toutes les 2 h |
 | Rappel « version manquante » (filet de secours) | `check-game-version.yml` ouvre une issue | toutes les heures |

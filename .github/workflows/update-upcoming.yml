@@ -82,12 +82,18 @@ jobs:
           python3 scripts/build_upcoming.py game "$base" "${branch#refs/heads/}" > upcoming.new.json
           rm -rf game
 
-          # Le champ « generated » change à chaque passage : le retirer de la
-          # comparaison, sinon on committerait toutes les 2 h pour rien.
-          norm() { python3 -c "import json,sys; d=json.load(open(sys.argv[1])); d.pop('generated',None); print(json.dumps(d,sort_keys=True))" "$1"; }
-          if [ -f upcoming.json ] && [ "$(norm upcoming.json)" = "$(norm upcoming.new.json)" ]; then
+          # Ne commiter (donc republier le site) que si quelque chose que la
+          # page ou la Routine UTILISE a bougé : la version, le passage en
+          # « sortie imminente », ou au moins 25 commits de plus — le seuil de
+          # réécriture de la Routine. Avant le 6 août 2026, le moindre commit
+          # du jeu changeait last_commit/commits et déclenchait un commit +
+          # une publication toutes les 2 h pendant toute la préparation d'une
+          # version (~12 déploiements/jour pour un compteur que la page
+          # n'affiche même plus).
+          decide=$(python3 -c "import json,os;o=json.load(open('upcoming.json')) if os.path.exists('upcoming.json') else {};n=json.load(open('upcoming.new.json'));print('commit' if o.get('version')!=n.get('version') or o.get('imminent')!=n.get('imminent') or (n.get('commits') or 0)-(o.get('commits') or 0)>=25 else 'skip')" || echo commit)
+          if [ "$decide" = "skip" ]; then
             rm -f upcoming.new.json
-            echo "Rien de neuf sur $branch."
+            echo "Rien de significatif sur $branch (ni version, ni imminence, ni +25 commits)."
             echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0
           fi
 

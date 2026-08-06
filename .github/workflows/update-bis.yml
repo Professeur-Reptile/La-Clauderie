@@ -12,7 +12,12 @@ name: Recalcul BiS + Récolte/Métiers
 
 on:
   schedule:
-    - cron: '11,26,41,56 * * * *'   # toutes les 15 min, décalé des autres crons ; ne commite que si les données ont changé
+    # Horaire, plus toutes les 15 min (6 août 2026) : les données ne changent
+    # qu'à chaque version du jeu, soit tous les 1 à 3 jours — 96 lancements
+    # par jour pour ça n'avaient pas de sens. Le vrai garde-fou est l'étape
+    # « la KB a-t-elle changé ? » ci-dessous : sans nouveauté, le passage
+    # s'arrête en quelques secondes, sans Python ni checkout de la KB.
+    - cron: '41 * * * *'
   workflow_dispatch: {}
 
 # Concurrence partagée avec les autres écritures sur main pour éviter les
@@ -32,23 +37,61 @@ jobs:
       - name: Checkout du site
         uses: actions/checkout@v4
 
+      # La KB ne change qu'à chaque tag du jeu (ou montée de kbSchema). On
+      # compare son _meta.json au dernier recalcul consigné dans
+      # scripts/.kb-state : identiques → rien à faire, on s'arrête là.
+      # Appel AUTHENTIFIÉ (leçon du 6 août : sans token, 60 req/h par IP
+      # partagée entre tous les runners GitHub).
+      - name: La knowledge base a-t-elle changé ?
+        id: kb
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          meta=$(curl -s --max-time 20 \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github.raw+json" \
+            "https://api.github.com/repos/Reptile-New/wocc-knowledge-base/contents/data/_meta.json?ref=main" || true)
+          cur=$(printf '%s' "$meta" | python3 -c "import sys,json;d=json.load(sys.stdin);print(str(d['tag'])+'/'+str(d.get('schema',0)))" 2>/dev/null || true)
+          if [ -z "$cur" ]; then
+            # _meta illisible (API en panne ?) : on tente le recalcul complet,
+            # il est idempotent — mieux vaut un passage pour rien qu'un site
+            # qui prend du retard en silence.
+            echo "Impossible de lire _meta.json — recalcul complet par prudence."
+            echo "run=true" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          last=$(cat scripts/.kb-state 2>/dev/null || echo "(aucun)")
+          echo "KB : $cur · dernier recalcul : $last"
+          if [ "$cur" = "$last" ]; then
+            echo "Rien de neuf côté KB — on s'arrête là."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
       # La knowledge base vit dans son propre repo public ; on la lit telle
       # quelle (mêmes données que celles servies sous /codex/ et /data/).
       - name: Checkout de la knowledge base
+        if: steps.kb.outputs.run == 'true'
         uses: actions/checkout@v4
         with:
           repository: Reptile-New/wocc-knowledge-base
           path: wocc-knowledge-base
 
       - name: Python
+        if: steps.kb.outputs.run == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Régénérer bis.html et metiers.html
         id: gen
+        if: steps.kb.outputs.run == 'true'
         run: |
           set -euo pipefail
+          # Consigner l'état de la KB utilisé — c'est lui que le pré-contrôle
+          # comparera au prochain passage.
+          python3 -c "import json;d=json.load(open('wocc-knowledge-base/data/_meta.json'));open('scripts/.kb-state','w').write(str(d['tag'])+'/'+str(d.get('schema',0)))"
           # BiS (Builds)
           python3 scripts/compute_bis.py wocc-knowledge-base/data > bis_new.json
           python3 scripts/inject_bis.py wocc-knowledge-base/data bis.html bis_new.json
@@ -62,16 +105,27 @@ jobs:
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+          # .kb-state peut avoir changé même si les pages n'ont pas bougé
+          # (ex. montée de kbSchema qui n'ajoute que des données Codex).
+          if git diff --quiet -- scripts/.kb-state 2>/dev/null && git ls-files --error-unmatch scripts/.kb-state >/dev/null 2>&1; then
+            echo "state_changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "state_changed=true" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Commiter les pages régénérées
-        if: steps.gen.outputs.changed == 'true'
+        if: steps.gen.outputs.changed == 'true' || steps.gen.outputs.state_changed == 'true'
         run: |
           set -euo pipefail
           tag=$(python3 -c "import json;print(json.load(open('wocc-knowledge-base/data/_meta.json'))['tag'])")
           git config user.name "clauderie-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add bis.html metiers.html
-          git commit -m "Builds + Récolte/Métiers : recalcul automatique sur les données $tag"
+          git add bis.html metiers.html scripts/.kb-state
+          if [ "${{ steps.gen.outputs.changed }}" = "true" ]; then
+            git commit -m "Builds + Récolte/Métiers : recalcul automatique sur les données $tag"
+          else
+            git commit -m "BiS : relevé de la KB consigné ($tag, calculs inchangés)"
+          fi
           # Secours si un autre workflow a poussé sur main entre-temps.
           # Le job doit ÉCHOUER si aucune tentative n'aboutit — sans le
           # « exit 1 », la boucle se terminait sur le pull --rebase réussi et
