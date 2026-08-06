@@ -6,11 +6,20 @@ traduction française dans assets/upcoming-fr.json.
 
 Sort en code 1 s'il en manque, pour servir de rappel (non bloquant) en CI.
 
-CHARTE DE TRADUCTION — la même que pour codex-fr.json :
-  - écrire pour un JOUEUR : ce que le changement fait EN JEU, pas comment il
-    est codé. « Rate-limit DELETE /api/assets/:id » devient « limitation de
-    débit ajoutée à la suppression de ressources côté serveur », pas une
-    transposition mot à mot ;
+CHARTE — on ne TRADUIT pas, on RÉÉCRIT (correction du 6 août 2026 : une
+première passe avait produit du jargon de développeur en français, que ni les
+joueurs ni le chef de guilde ne comprenaient) :
+  - la phrase doit dire ce que le joueur va CONSTATER EN JEU. Test : « est-ce
+    qu'un membre de la guilde qui n'a jamais lu une ligne de code comprend ce
+    que ça change pour lui ? » Si non, c'est à réécrire ;
+  - partir de l'effet, pas du mécanisme. « Scale mastery and talent damage
+    percent over the whole hit » ne devient pas « la maîtrise s'applique à la
+    frappe entière » (exact mais creux) : « tes dégâts montent, les bonus
+    s'appliquent désormais à tout le coup » ;
+  - si un changement n'a AUCUN effet visible pour un joueur (plomberie
+    serveur, dette technique, limitation de débit d'une API), mettre `null` :
+    la ligne est masquée. Mieux vaut une liste plus courte qu'une ligne que
+    personne ne comprend ;
   - ne jamais recopier une traduction automatique : les messages sont du
     jargon de développeur, une traduction littérale ne veut rien dire ;
   - les noms propres du jeu (zones, sorts, monstres) restent tels quels s'ils
@@ -46,6 +55,8 @@ def main():
 
     known = json.loads(fr.read_text()) if fr.exists() else {}
     items = [i for s in data.get("sections", []) for i in s.get("items", [])]
+    # Une entrée à null est une DÉCISION éditoriale (« invisible pour un
+    # joueur, on la masque »), pas un oubli : elle ne doit pas revenir ici.
     missing = [i for i in items if i.get("h") and i["h"] not in known]
 
     total = len(items)

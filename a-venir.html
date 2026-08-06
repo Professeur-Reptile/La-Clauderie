@@ -228,12 +228,18 @@
         <div class="facts">
           <span><b>${T({ fr: "Version", en: "Version" })}</b> ${esc(d.version)}</span>
           <span><b>${T({ fr: "Depuis", en: "Since" })}</b> ${esc(d.base_tag)}</span>
-          <span><b>${T({ fr: "Changements retenus", en: "Changes shown" })}</b> ${d.shown} / ${d.commits}</span>
+          <span><b>${T({ fr: "Changements retenus", en: "Changes shown" })}</b> <span id="nShown">${d.shown}</span> / ${d.commits}</span>
           <span><b>${T({ fr: "Dernier commit", en: "Last commit" })}</b> ${esc(since(d.last_commit))}</span>
           ${imminent}
         </div>`;
+      // Une entrée mise à null dans upcoming-fr.json n'a aucun effet visible
+      // pour un joueur : on la masque plutôt que d'afficher du jargon. En
+      // anglais, tout reste affiché — c'est la langue d'origine des messages.
+      const keep = i => LANG === "en" || !(i.h in FR) || FR[i.h] !== null;
+      let visible = 0;
       const rubs = (d.sections || []).map(s => {
-        const items = s.items || [];
+        const items = (s.items || []).filter(keep);
+        visible += items.length;
         const head = `<div class="rub-head"><span aria-hidden="true">${esc(s.icon)}</span><h2>${esc(LANG === "en" ? s.en : s.fr)}</h2><span class="n">${items.length || ""}</span></div>`;
         if (!items.length) {
           return `<section class="rub none">${head}<p class="nothing">${T({ fr: "Rien pour l'instant.", en: "Nothing yet." })}</p></section>`;
@@ -249,6 +255,8 @@
         return `<section class="rub">${head}<ul>${lis}</ul></section>`;
       }).join("");
       box.innerHTML = warn + facts + rubs;
+      const n = document.getElementById("nShown");
+      if (n) n.textContent = visible;
     })
     .catch(() => {
       document.getElementById("box").innerHTML = '<div class="empty">' +

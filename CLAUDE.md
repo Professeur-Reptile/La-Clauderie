@@ -165,8 +165,13 @@ avant de t'appuyer dessus pour le BiS ou les liens Codex.
 
 > **`upcoming.json`** ne se rédige pas : `scripts/build_upcoming.py` range les
 > messages de commit du jeu dans les six rubriques du bandeau. En revanche
-> **leurs libellés SE TRADUISENT à la main** — décision du 6 août 2026, après
-> une première version laissée en anglais : « personne ne lit l'anglais ».
+> **leurs libellés SE RÉÉCRIVENT à la main** — décision du 6 août 2026, en
+> deux temps : d'abord parce qu'une page laissée en anglais ne se lit pas
+> (« personne ne lit l'anglais »), puis parce que la première passe avait
+> produit du jargon de développeur en français, tout aussi incompréhensible.
+> On ne traduit donc pas le message : on écrit ce que le JOUEUR va constater
+> en jeu, et on met `null` (ligne masquée) quand un changement n'a aucun
+> effet visible pour lui.
 > `python3 scripts/check_upcoming_fr.py` liste les manquants ;
 > `assets/upcoming-fr.json` les accueille, clé = empreinte du texte anglais
 > (charte dans l'en-tête du script). À faire à CHAQUE passage de la Routine,
