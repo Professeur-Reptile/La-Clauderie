@@ -156,6 +156,7 @@ avant de t'appuyer dessus pour le BiS ou les liens Codex.
 | **Builds / BiS** (`bis.html`) | `update-bis.yml` → `compute_bis.py` + `inject_bis.py` | cron 15 min (throttlé ~1 h par GitHub ; commit seulement si les données changent) |
 | **Récolte & Métiers** (`metiers.html`) | `update-bis.yml` → `build_craft.py` + `inject_craft.py` | idem |
 | **Rédaction des « Nouveautés »** | Routine Claude « Veille nouvelle version WoCC » (session fraîche qui suit la procédure ⚡ ci-dessus) | toutes les heures |
+| **Traduction des libellés « À venir »** | Routine Claude « Traduction « À venir » (WoCC) » → `check_upcoming_fr.py` puis traduction à la main dans `assets/upcoming-fr.json` | 7 h, 13 h et 19 h |
 | Classement guilde (`guild.json`) | `update-guild-rank.yml` | toutes les 3 h |
 | Déploiement (OVH + Pages) | `deploy.yml` (vérifie une fois, publie les deux en parallèle) | à chaque push `main` (+ cron 6 h, OVH seul, pour rafraîchir la copie du Codex) |
 | **Aperçu de la version à venir** (`a-venir.html`) | `update-upcoming.yml` → `build_upcoming.py` lit la branche `release/vX.Y.Z` du jeu | toutes les 2 h |
