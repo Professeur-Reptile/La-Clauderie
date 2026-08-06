@@ -156,7 +156,6 @@ avant de t'appuyer dessus pour le BiS ou les liens Codex.
 | **Builds / BiS** (`bis.html`) | `update-bis.yml` → `compute_bis.py` + `inject_bis.py` | cron 15 min (throttlé ~1 h par GitHub ; commit seulement si les données changent) |
 | **Récolte & Métiers** (`metiers.html`) | `update-bis.yml` → `build_craft.py` + `inject_craft.py` | idem |
 | **Rédaction des « Nouveautés »** | Routine Claude « Veille nouvelle version WoCC » (session fraîche qui suit la procédure ⚡ ci-dessus) | toutes les heures |
-| **Traduction des libellés « À venir »** | Routine Claude « Traduction « À venir » (WoCC) » → `check_upcoming_fr.py` puis traduction à la main dans `assets/upcoming-fr.json` | 7 h, 13 h et 19 h |
 | Classement guilde (`guild.json`) | `update-guild-rank.yml` | toutes les 3 h |
 | Déploiement (OVH + Pages) | `deploy.yml` (vérifie une fois, publie les deux en parallèle) | à chaque push `main` (+ cron 6 h, OVH seul, pour rafraîchir la copie du Codex) |
 | **Aperçu de la version à venir** (`a-venir.html`) | `update-upcoming.yml` → `build_upcoming.py` lit la branche `release/vX.Y.Z` du jeu | toutes les 2 h |
@@ -174,25 +173,16 @@ avant de t'appuyer dessus pour le BiS ou les liens Codex.
 > fiche « craft » dit explicitement pourquoi elle n'en donne pas.
 >
 > Le bas de la page (`#tout`) est la liste brute automatique.
-> **`upcoming.json`** ne se rédige pas : `scripts/build_upcoming.py` range les
-> messages de commit du jeu dans les six rubriques du bandeau. En revanche
-> **leurs libellés SE RÉÉCRIVENT à la main** — décision du 6 août 2026, en
-> deux temps : d'abord parce qu'une page laissée en anglais ne se lit pas
-> (« personne ne lit l'anglais »), puis parce que la première passe avait
-> produit du jargon de développeur en français, tout aussi incompréhensible.
-> On ne traduit donc pas le message : on écrit ce que le JOUEUR va constater
-> en jeu, et on met `null` (ligne masquée) quand un changement n'a aucun
-> effet visible pour lui.
-> `python3 scripts/check_upcoming_fr.py` liste les manquants ;
-> `assets/upcoming-fr.json` les accueille, clé = empreinte du texte anglais
-> (charte dans l'en-tête du script). À faire à CHAQUE passage de la Routine,
-> pas seulement à la sortie d'une version : la branche du jeu bouge tous les
-> jours. Une ligne non traduite reste en anglais avec un marqueur « (en) ».
-> Traduire n'est PAS vérifier : la page dit explicitement que rien n'est
-> définitif, et les vraies notes se rédigent à la sortie, vérifiées contre le
-> code (procédure ⚡). Le jeu GARDE ses vieilles branches `release/*` après
-> le tag : le workflow se fie donc au fait que la branche la plus haute ne
-> dépasse plus le dernier tag, et vide alors la page tout seul.
+> **`upcoming.json`** ne se rédige pas et ne s'affiche PLUS : c'est
+> `scripts/build_upcoming.py` qui range les commits du jeu par rubrique, et
+> la page ne s'en sert que pour trois choses — le numéro de version, la
+> fraîcheur du relevé, et l'expiration de la partie rédigée. La liste des
+> commits a été RETIRÉE de la page le 6 août 2026, avec tout son dispositif
+> de traduction : « le site est fait pour les joueurs, pas pour les
+> développeurs ». Un joueur ne veut pas un journal de développement, il veut
+> un ordre de grandeur — un ou deux nerfs de classe, ou une nouvelle zone ?
+> La précision viendra des vraies notes à la sortie. Ne jamais réintroduire
+> de libellés de commit bruts sur une page publique.
 >
 > Le **BiS est déterministe** : il ne se rédige pas, il se calcule. Ne jamais
 > éditer le bloc `const BIS = {…}` de `bis.html` à la main — c'est

@@ -65,7 +65,7 @@ const PAGES = [
   // ne pas l'exiger rempli, sinon la publication se bloquerait toute seule
   // dès que le jeu n'a rien en chantier.
   { path: '/patch-notes.html', filled: [] },
-  { path: '/a-venir.html', filled: ['#box'] },
+  { path: '/a-venir.html', filled: ['#editorial'] },
   { path: '/notes/v0.34.0.html', filled: [] },
   { path: '/notes/v0.34.0.en.html', filled: [] },
 ];

@@ -180,19 +180,6 @@
   .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
   @media (max-width: 620px) { .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; } .d-say { grid-column: 2; } }
 
-  /* Liste brute, en fin de page : volontairement plus sobre que les cartes. */
-  .rub { margin-top: 18px; }
-  .rub-head { display: flex; align-items: baseline; gap: 11px; margin-bottom: 8px; }
-  .rub-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; margin: 0; }
-  .rub-head .n { font-family: var(--font-mono); font-size: 0.72rem; color: var(--faint); margin-left: auto; }
-  .rub ul { list-style: none; margin: 0; padding: 0; }
-  .rub li { display: grid; grid-template-columns: 74px 1fr; gap: 3px 12px; align-items: baseline; padding: 7px 0; border-top: 1px dashed var(--line-soft); }
-  .rub li:first-child { border-top: none; }
-  .tag { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 700; }
-  .t-feat { color: var(--heal); } .t-fix { color: var(--q-rare); } .t-perf { color: var(--gold); }
-  .rub li span.txt { color: var(--dim); font-size: 0.88rem; }
-  .untr { font-family: var(--font-mono); font-size: 0.66rem; color: var(--faint); }
-  @media (max-width: 560px) { .rub li { grid-template-columns: 1fr; gap: 2px; } .rub li span.txt { grid-column: 1; } }
 </style></head><body>
 
 <div class="topbar">
@@ -218,8 +205,7 @@
 
     <div class="meta">
       <span><b>Depuis</b> la v0.34.0</span>
-      <span><b id="nCommits">99</b> commits déjà mergés</span>
-      <span id="freshness"><b>Relevé</b> à l’instant</span>
+        <span id="freshness"><b>Relevé</b> à l’instant</span>
     </div>
     <div class="hint">💡 Clique sur une carte pour le détail — et sur un nom souligné pour sa fiche Codex.</div>
   </header>
@@ -442,12 +428,6 @@
 
   <div id="staleNote"></div>
 
-  <!-- 7 LISTE COMPLÈTE -->
-  <section id="tout">
-    <div class="sec-head"><span class="sec-num">07</span><h2>Tout le reste, sans filtre</h2></div>
-    <p class="sec-sub">La liste complète des changements déjà mergés, relevée automatiquement sur la branche du jeu et rafraîchie toutes les deux heures. C’est la matière brute qui a servi à écrire ce qui précède.</p>
-    <div id="box"><p class="sec-sub">Chargement…</p></div>
-  </section>
 </div>
 <footer>
   <div class="wrap">
@@ -575,11 +555,11 @@
   modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
   modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
 
-  // Liste brute + chiffres du hero : lus dans upcoming.json, régénéré toutes
-  // les 2 h par le workflow « La prochaine version du jeu ». Les libellés
-  // français viennent d'assets/upcoming-fr.json (null = masqué : sans effet
-  // visible pour un joueur).
-  const KIND = { feat: ["t-feat","Nouveau"], perf: ["t-perf","Perfs"], fix: ["t-fix","Correctif"] };
+  // upcoming.json (régénéré toutes les 2 h par « La prochaine version du jeu »)
+  // ne sert plus qu'à trois choses ici : dater le relevé, afficher le numéro de
+  // version, et faire EXPIRER la partie rédigée quand elle ne correspond plus.
+  // La liste des commits a été retirée le 6 août 2026 : le site s'adresse aux
+  // joueurs, qui veulent un ordre de grandeur, pas un journal de développement.
   function esc(s) { return String(s || "").replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c])); }
   function since(iso) {
     const t = Date.parse(iso || ""); if (!t) return "";
@@ -587,41 +567,33 @@
     if (m < 60) return `il y a ${m} min`;
     const h = Math.round(m / 60); return h < 24 ? `il y a ${h} h` : `il y a ${Math.round(h / 24)} j`;
   }
-  Promise.all([
-    fetch("upcoming.json?_=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null),
-    fetch("assets/upcoming-fr.json?_=" + Date.now()).then(r => r.ok ? r.json() : {}).catch(() => ({})),
-  ]).then(([d, FR]) => {
-    const box = document.getElementById("box");
+  fetch("upcoming.json?_=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null).then(d => {
     const ed = document.getElementById("editorial");
+    const warn = document.querySelector(".warn");
     if (!d || !d.version) {
-      // La version annoncée est sortie : le résumé rédigé ne vaut plus rien,
-      // on le retire au lieu de présenter comme « à venir » du déjà-publié.
+      // La version décrite est sortie : le résumé ne vaut plus rien.
       if (ed) ed.style.display = "none";
-      document.querySelector(".warn").style.display = "none";
+      if (warn) warn.style.display = "none";
       document.getElementById("vNum").textContent = "";
-      box.innerHTML = '<p class="sec-sub">Aucune version en préparation pour le moment — la dernière sortie est la plus récente. Retrouve-la dans <a href="patch-notes.html">Nouveautés</a>.</p>';
+      document.getElementById("staleNote").innerHTML =
+        '<p class="sec-sub">Aucune version en préparation pour le moment — la dernière sortie est la plus récente. Retrouve-la dans <a href="patch-notes.html">Nouveautés</a>.</p>';
       return;
     }
-    // Le jeu prépare une version plus récente que celle décrite ici : la liste
-    // brute reste juste, le résumé non. On le dit plutôt que de laisser croire.
+    document.getElementById("vNum").textContent = d.version;
+    const fresh = document.getElementById("freshness");
+    if (fresh) fresh.innerHTML = "<b>Relevé</b> " + esc(since(d.last_commit) || "à l'instant");
+    if (d.imminent) {
+      const b = document.createElement("span");
+      b.innerHTML = "<b style='color:var(--q-legendary)'>⏳ sortie imminente</b>";
+      document.querySelector(".meta").appendChild(b);
+    }
+    // Le jeu prépare une version plus récente que celle décrite ici.
     if (ed && ed.dataset.for && ed.dataset.for !== d.version) {
       ed.style.display = "none";
+      if (warn) warn.style.display = "none";
       document.getElementById("staleNote").innerHTML =
-        `<div class="warn"><span class="ico" aria-hidden="true">🕗</span><div><p>Le résumé rédigé de cette page portait sur la <b>${esc(ed.dataset.for)}</b>, déjà sortie ou remplacée. Le jeu prépare maintenant la <b>${esc(d.version)}</b> : la liste ci-dessous est à jour, le résumé sera réécrit.</p></div></div>`;
+        `<div class="warn"><span class="ico" aria-hidden="true">🕗</span><div><p>Le résumé de cette page portait sur la <b>${esc(ed.dataset.for)}</b>, déjà sortie ou remplacée. Le jeu prépare maintenant la <b>${esc(d.version)}</b> — le résumé sera réécrit sous peu.</p></div></div>`;
     }
-    document.getElementById("vNum").textContent = d.version;
-    document.getElementById("nCommits").textContent = d.commits;
-    document.getElementById("freshness").innerHTML = "<b>Relevé</b> " + esc(since(d.last_commit) || "à l'instant");
-    box.innerHTML = (d.sections || []).map(s => {
-      const items = (s.items || []).filter(i => !(i.h in FR) || FR[i.h] !== null);
-      if (!items.length) return "";
-      const lis = items.map(i => {
-        const [cls, lab] = KIND[i.kind] || KIND.fix;
-        const txt = FR[i.h] ? esc(FR[i.h]) : `${esc(i.text)} <span class="untr">(en)</span>`;
-        return `<li><span class="tag ${cls}">${lab}</span><span class="txt">${txt}</span></li>`;
-      }).join("");
-      return `<div class="rub"><div class="rub-head"><span aria-hidden="true">${esc(s.icon)}</span><h3>${esc(s.fr)}</h3><span class="n">${items.length}</span></div><ul>${lis}</ul></div>`;
-    }).join("") || '<p class="sec-sub">Rien à afficher pour le moment.</p>';
   });
 </script>
 <!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
