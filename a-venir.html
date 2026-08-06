@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
-<title data-en="Coming next — La Clauderie">La prochaine version — La Clauderie</title>
-<meta name="description" content="Ce qui est déjà mergé sur la branche de la prochaine version de World of ClaudeCraft — un aperçu, pas des notes officielles.">
+<title>La prochaine version — La Clauderie</title>
+<meta name="description" content="Ce que les développeurs préparent pour la prochaine version de World of ClaudeCraft, expliqué simplement — fabrication à l'incantation, commandes entre joueurs, légendaires uniques. Rien n'est définitif : la version n'est pas sortie.">
 <meta name="theme-color" content="#c8a04b">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="La Clauderie">
 <meta property="og:title" content="La prochaine version — La Clauderie">
-<meta property="og:description" content="Ce qui est déjà mergé sur la branche de la prochaine version — un aperçu, pas des notes officielles.">
+<meta property="og:description" content="Ce que les développeurs préparent pour la prochaine version de World of ClaudeCraft, expliqué simplement — fabrication à l'incantation, commandes entre joueurs, légendaires uniques. Rien n'est définitif : la version n'est pas sortie.">
 <meta property="og:url" content="https://laclauderie.fr/a-venir.html">
 <link rel="canonical" href="https://laclauderie.fr/a-venir.html">
 <meta property="og:image" content="https://laclauderie.fr/assets/og.png">
@@ -27,11 +27,12 @@
 <script src="assets/pwa.js" defer></script>
 <style>
   :root {
-    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b;
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
     --line: #262c3a; --line-soft: #1e2431;
     --gold: #c8a04b; --gold-bright: #e6c37a;
     --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
-    --heal: #58c46a; --warn: #e0a33a; --q-rare: #2f8bff;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
     --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
     --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
@@ -47,11 +48,11 @@
       radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
   }
   a { color: inherit; }
-  .wrap { max-width: 820px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
 
   /* Topbar */
   .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
-  .topbar .row { max-width: 820px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
   .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
   .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
   .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
@@ -62,81 +63,137 @@
   @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
 
   /* Hero */
-  .hero { padding: clamp(40px, 7vw, 64px) 0 clamp(22px, 4vw, 34px); }
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
   .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
-  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.2rem, 6.5vw, 3.2rem); line-height: 1.05; margin: 0 0 12px; }
-  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.15rem); max-width: 58ch; margin: 0; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
 
-  /* Liste des versions */
-  .versions { display: grid; gap: 16px; padding: clamp(8px, 2vw, 16px) 0 clamp(36px, 6vw, 56px); }
-  .version {
-    display: block; text-decoration: none;
-    background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 13px;
-    padding: clamp(18px, 3.5vw, 26px);
-    transition: border-color .15s, transform .15s, background .15s;
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
   }
-  .version:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
-  .version:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
-  .v-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 12px; margin-bottom: 4px; }
-  .v-num { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 4vw, 1.9rem); color: var(--gold-bright); line-height: 1.1; }
-  .v-date { font-family: var(--font-mono); font-size: 0.78rem; color: var(--faint); }
-  .badge-last { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--heal); border: 1px solid color-mix(in srgb, var(--heal) 45%, transparent); padding: 3px 8px; border-radius: 5px; }
-  .v-titre { font-family: var(--font); font-weight: 600; font-size: 1.05rem; margin: 6px 0 6px; color: var(--text); }
-  .v-resume { color: var(--dim); font-size: 0.93rem; margin: 0; }
-  .v-forts { margin: 12px 0 0; padding-left: 1.1em; color: var(--dim); font-size: 0.9rem; }
-  .v-forts li { margin: 4px 0; }
-  .v-forts li::marker { color: var(--gold); }
-  .v-go { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.85rem; font-weight: 600; }
-  .v-go::after { content: "→"; transition: transform .15s; }
-  .version:hover .v-go::after { transform: translateX(3px); }
 
-  .empty { color: var(--faint); text-align: center; padding: 34px; border: 1px dashed var(--line); border-radius: 13px; }
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
 
   footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
   footer a { color: var(--dim); text-decoration: none; }
   footer a:hover { color: var(--gold-bright); }
 
-  /* --- Propre à « la prochaine version » -------------------------------- */
-
-  /* L'avertissement doit être impossible à manquer : cette page montre des
-     travaux EN COURS, qui peuvent encore changer ou ne jamais sortir. */
-  .warn {
-    display: flex; gap: 13px; align-items: flex-start;
-    background: color-mix(in srgb, var(--warn) 11%, transparent);
-    border: 1px solid color-mix(in srgb, var(--warn) 42%, transparent);
-    border-radius: 12px; padding: 15px 17px; margin: 0 0 26px;
-  }
+  /* Avertissement « version non sortie » — dans le hero, impossible à rater. */
+  .warn { display: flex; gap: 13px; align-items: flex-start; background: color-mix(in srgb, var(--q-legendary) 10%, transparent); border: 1px solid color-mix(in srgb, var(--q-legendary) 42%, transparent); border-radius: 12px; padding: 15px 17px; margin: 22px 0 0; max-width: 66ch; }
   .warn .ico { font-size: 1.15rem; line-height: 1.35; flex: none; }
-  .warn p { margin: 0; font-size: 0.92rem; color: var(--text); }
-  .warn p + p { margin-top: 7px; color: var(--dim); font-size: 0.88rem; }
+  .warn p { margin: 0; font-size: 0.93rem; color: var(--text); }
+  .warn p + p { margin-top: 7px; color: var(--dim); font-size: 0.89rem; }
+  .warn a { color: var(--gold-bright); }
 
-  .facts { display: flex; flex-wrap: wrap; gap: 8px 26px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); margin: 0 0 26px; }
-  .facts b { color: var(--dim); font-weight: 400; }
-  .facts .imminent { color: var(--warn); font-weight: 700; }
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque version. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) { .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; } .d-say { grid-column: 2; } }
 
-  .rub { border-top: 1px solid var(--line-soft); padding: 22px 0 4px; }
-  .rub:first-of-type { border-top: none; }
-  .rub-head { display: flex; align-items: baseline; gap: 11px; margin-bottom: 12px; }
-  .rub-head h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; margin: 0; }
-  .rub-head .n { font-family: var(--font-mono); font-size: 0.74rem; color: var(--faint); margin-left: auto; }
-  .rub.none .rub-head h2, .rub.none .rub-head .n { color: var(--faint); font-weight: 400; }
+  /* Liste brute, en fin de page : volontairement plus sobre que les cartes. */
+  .rub { margin-top: 18px; }
+  .rub-head { display: flex; align-items: baseline; gap: 11px; margin-bottom: 8px; }
+  .rub-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; margin: 0; }
+  .rub-head .n { font-family: var(--font-mono); font-size: 0.72rem; color: var(--faint); margin-left: auto; }
   .rub ul { list-style: none; margin: 0; padding: 0; }
-  .rub li { display: grid; grid-template-columns: 74px 1fr; gap: 4px 12px; align-items: baseline; padding: 8px 0; border-top: 1px dashed var(--line-soft); }
+  .rub li { display: grid; grid-template-columns: 74px 1fr; gap: 3px 12px; align-items: baseline; padding: 7px 0; border-top: 1px dashed var(--line-soft); }
   .rub li:first-child { border-top: none; }
-  .tag { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 700; padding: 2px 0; }
-  .t-feat { color: var(--heal); }
-  .t-fix { color: var(--q-rare); }
-  .t-perf { color: var(--gold); }
-  .rub li span.txt { color: var(--dim); font-size: 0.91rem; }
-  .untr { font-family: var(--font-mono); font-size: 0.66rem; color: var(--faint); vertical-align: 1px; }
-  .rub .nothing { color: var(--faint); font-size: 0.89rem; font-style: italic; padding: 2px 0 6px; }
-  @media (max-width: 560px) {
-    .rub li { grid-template-columns: 1fr; gap: 2px; }
-    .rub li span.txt { grid-column: 1; }
-  }
-</style>
-</head>
-<body>
+  .tag { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 700; }
+  .t-feat { color: var(--heal); } .t-fix { color: var(--q-rare); } .t-perf { color: var(--gold); }
+  .rub li span.txt { color: var(--dim); font-size: 0.88rem; }
+  .untr { font-family: var(--font-mono); font-size: 0.66rem; color: var(--faint); }
+  @media (max-width: 560px) { .rub li { grid-template-columns: 1fr; gap: 2px; } .rub li span.txt { grid-column: 1; } }
+</style></head><body>
 
 <div class="topbar">
   <div class="row">
@@ -147,122 +204,429 @@
 
 <div class="wrap">
   <header class="hero">
-    <p class="eyebrow" data-en="World of ClaudeCraft · Work in progress">World of ClaudeCraft · Travaux en cours</p>
-    <h1 data-en="Coming next">La prochaine version</h1>
-    <p class="lede" data-en="What is already merged on the branch the developers are preparing the next version on. Not a release: a look over their shoulder.">Ce qui est déjà mergé sur la branche où les développeurs préparent la prochaine version. Ce n'est pas une sortie : c'est un coup d'œil par-dessus leur épaule.</p>
+    <p class="eyebrow">World of ClaudeCraft · En préparation</p>
+    <h1>La prochaine version <span class="v" id="vNum">v0.35.0</span></h1>
+    <p class="lede">La mise à jour des métiers. Fabriquer cesse d’être un clic pour devenir un vrai geste, avec un temps d’incantation et une barre de progression. Un tableau de commandes permet de faire travailler les artisans de la guilde. Et les légendaires deviennent uniques : fini les deux mêmes armes légendaires en main.</p>
+
+    <div class="warn">
+      <span class="ico" aria-hidden="true">⚠️</span>
+      <div>
+        <p><strong>Cette version n’est pas sortie.</strong> Tout ce qui suit est déjà mergé sur la branche que les développeurs préparent, mais peut encore être modifié, retiré, ou repoussé à plus tard.</p>
+        <p>Les vraies notes de version — vérifiées ligne à ligne dans le code du jeu — arriveront dans <a href="patch-notes.html">Nouveautés</a> le jour de la sortie. Celles-ci sont écrites d’après le travail en cours.</p>
+      </div>
+    </div>
+
+    <div class="meta">
+      <span><b>Depuis</b> la v0.34.0</span>
+      <span><b id="nCommits">99</b> commits déjà mergés</span>
+      <span id="freshness"><b>Relevé</b> à l’instant</span>
+    </div>
+    <div class="hint">💡 Clique sur une carte pour le détail — et sur un nom souligné pour sa fiche Codex.</div>
   </header>
 
-  <div id="box">
-    <div class="empty" data-en="Loading…">Chargement…</div>
-  </div>
-</div>
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">En un coup d’œil</h2>
+    <p class="sec-sub">Les mêmes rubriques qu’à chaque version, dans le même ordre.</p>
+    <ol>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <a class="d-name" href="#classes">Classes &amp; sorts</a>
+        <span class="d-say"><b class="up">Toutes ↑</b> maîtrise et talents s’appliquent enfin à tout le coup, pas à une partie · <b class="eq">Mage =</b> nouvelles animations d’incantation</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <a class="d-name" href="#metiers">Métiers &amp; récolte</a>
+        <span class="d-say">Le gros chantier de la version : la fabrication devient une incantation, un tableau de commandes arrive, griffes et défenses deviennent récupérables.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#donjons">Donjons, failles &amp; boss</a>
+        <span class="d-say">Les Failles entrent au Livre des hauts faits, et le Chercheur de donjon prévient des mécaniques avant d’entrer.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <a class="d-name" href="#monde">Monde &amp; quêtes</a>
+        <span class="d-say">Les légendaires deviennent uniques à l’équipement ; deux quêtes de Galecrest impossibles à finir sont réparées.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <a class="d-name" href="#guilde">Guilde &amp; social</a>
+        <span class="d-say">Les commandes d’artisanat se passent entre joueurs, et les classements affichent enfin les bons chiffres.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#confort">Confort &amp; technique</a>
+        <span class="d-say">Manger se cumule avec la régénération, le jeu consomme moins sur mobile, le zoom passe à la manette.</span>
+      </li>
+    </ol>
+  </nav>
 
+  <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
+       s'efface d'elle-même quand cette version sort, et se signale périmée si
+       le jeu passe à préparer la suivante. -->
+  <div id="editorial" data-for="v0.35.0">
+
+  <!-- 1 MÉTIERS -->
+  <section id="metiers">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Fabriquer devient un vrai geste</h2></div>
+    <p class="sec-sub">C’est le chantier principal de cette version. L’artisanat abandonne son système de quota et se met à fonctionner comme un sort : on lance, ça prend du temps, et on peut annuler.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="craft" tabindex="0" role="button" aria-label="Détails : la fabrication à l’incantation">
+        <h3>Fini le quota d’actions <span class="chip c-new">Majeur</span></h3>
+        <p>Jusqu’ici, tes actions de métier étaient <strong class="hl">limitées à 10 par minute</strong>, toutes confondues. Ce plafond disparaît : fabriquer, désenchanter, enchanter, recycler et recharger un outil ont désormais chacun un <strong class="hl">temps d’incantation</strong>. Matériaux, or et compétence ne sont retirés qu’à la <strong class="hl">réussite</strong> — annuler ne coûte rien.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="commission" tabindex="0" role="button" aria-label="Détails : le tableau de commandes">
+        <h3>Le tableau de commandes <span class="chip c-new">Nouveau</span></h3>
+        <p>Tu veux une pièce que tu ne sais pas fabriquer ? Tu ouvres une <strong class="hl">commande</strong> en nommant la recette, ouverte à tous ou réservée à un artisan précis. Il accepte, fabrique, et te <strong class="hl">livre en main propre</strong>.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Griffes et défenses <span class="chip c-bal">Récolte</span></h3>
+        <ul>
+          <li>Trois nouvelles matières — <strong class="hl">griffe acérée, défense recourbée, griffe immaculée</strong> — deviennent récupérables sur les cadavres.</li>
+          <li>Jusqu’ici, un monstre marqué « griffe » ou « défense » était <strong class="hl">silencieusement inrécoltable</strong> : la matière n’existait pas. Les trolls des fens en font partie.</li>
+        </ul>
+      </div>
+      <div class="card more" data-detail="peche" tabindex="0" role="button" aria-label="Détails : la pêche">
+        <h3>Pêche : la fin du clic frénétique <span class="chip c-bal">Équilibrage</span></h3>
+        <p>Relancer la canne <strong class="hl">avant que ça morde</strong> met fin à la session de pêche. Un délai de tolérance évite de te punir pour un double-clic involontaire.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 CLASSES -->
+  <section id="classes">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Ce qui change pour ta classe</h2></div>
+    <p class="sec-sub">Un gain de dégâts qui concerne tout le monde, et deux corrections de ciblage qui changent le confort au quotidien.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Tes dégâts montent <span class="chip c-new">Toutes classes</span></h3>
+        <ul>
+          <li>Les bonus de <strong class="hl">maîtrise</strong> et de <strong class="hl">talents</strong> ne s’appliquaient qu’à une partie du coup. Ils s’appliquent maintenant à <strong class="hl">la frappe entière</strong>.</li>
+          <li>C’est une hausse silencieuse mais réelle, pour toutes les classes qui ont de la maîtrise ou des talents en pourcentage de dégâts.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Ciblage plus malin <span class="chip c-util">Confort</span></h3>
+        <ul>
+          <li>Lancer un sort <strong class="hl">sans cible</strong> vise automatiquement ce qui t’attaque.</li>
+          <li>Au clic, un <strong class="hl">monstre vivant passe avant un cadavre</strong> — fini de cibler le mort au milieu du tas.</li>
+          <li>Nouvelle option : <strong class="hl">ne plus enchaîner l’attaque automatique</strong> quand tu changes de cible.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Bonus de groupe <span class="chip c-bal">Correctif</span></h3>
+        <ul>
+          <li><span data-codex="ability|Mass Barrier">Mass Barrier</span> et Fureur de la nature pouvaient être <strong class="hl">posées deux fois</strong> sur le même groupe. Elles suivent maintenant la règle commune à tous les bonus de groupe.</li>
+          <li>Le mage reçoit de <strong class="hl">nouvelles animations</strong> d’incantation, et les attaques élémentaires aussi — purement visuel.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 DONJONS -->
+  <section id="donjons">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Failles, donjons et delves</h2></div>
+    <p class="sec-sub">Moins de surprises avant d’entrer, et les Failles rejoignent enfin la collection de hauts faits.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Les Failles au Livre <span class="chip c-new">Hauts faits</span></h3>
+        <ul>
+          <li>Les Failles générées aléatoirement n’avaient <strong class="hl">aucun haut fait</strong> associé. Elles entrent au Livre des hauts faits.</li>
+          <li>La carte du monde affiche le <strong class="hl">nom de l’étage</strong> de Faille où tu te trouves.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Savoir avant d’entrer <span class="chip c-util">Pratique</span></h3>
+        <ul>
+          <li>Le Chercheur de donjon annonce la <strong class="hl">Malédiction d’effroi</strong> de <span data-codex="mob|Nythraxis, Scourge of Thornpeak">Nythraxis</span> héroïque dans son aperçu des mécaniques.</li>
+          <li>L’infobulle au survol d’un monstre indique s’il est <strong class="hl">élite ou boss</strong>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Delves <span class="chip c-bal">Règle</span></h3>
+        <ul>
+          <li>Acheter à la boutique de delve ou améliorer son compagnon exige désormais d’être <strong class="hl">à proximité</strong> — plus d’achats à distance.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 MONDE -->
+  <section id="monde">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Le monde, les quêtes et le butin</h2></div>
+    <p class="sec-sub">Un changement de règle qui touche tous ceux qui visent le haut du panier, et deux quêtes qu’on ne pouvait pas finir.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="legendary" tabindex="0" role="button" aria-label="Détails : les légendaires uniques">
+        <h3>Les légendaires deviennent uniques <span class="chip c-bal">Majeur</span></h3>
+        <p>Tu ne peux plus porter <strong class="hl">deux exemplaires du même légendaire</strong> — deux <span data-codex="item|Thronebane, Last Oath of Thornpeak">Thronebane</span> en double arme, c’est terminé. Les anneaux aussi.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Quêtes réparées <span class="chip c-new">Fix</span></h3>
+        <ul>
+          <li>Deux quêtes de <strong class="hl">Galecrest</strong> étaient <strong class="hl">impossibles à terminer</strong> : elles visaient des monstres qui n’apparaissaient jamais.</li>
+          <li>Les hauts faits « première récolte » et « premier sort » existent maintenant dans <strong class="hl">toutes les zones de départ</strong>, pas seulement les premières.</li>
+          <li>L’aurore de <strong class="hl">Frostveil</strong> ne déborde plus sur les zones voisines.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 GUILDE -->
+  <section id="guilde">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Guilde et social</h2></div>
+    <p class="sec-sub">L’artisanat entre joueurs, et des classements qui affichent enfin les bons chiffres.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Faire travailler la guilde <span class="chip c-new">Nouveau</span></h3>
+        <ul>
+          <li>Le tableau de commandes (voir plus haut) est <strong class="hl">le vrai apport social</strong> de la version : un membre commande, un artisan livre.</li>
+          <li>Une commande peut être <strong class="hl">réservée à une personne</strong> — pratique pour faire tourner l’or dans la guilde.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Classements <span class="chip c-bal">Correctif</span></h3>
+        <ul>
+          <li>Rang, niveau et prestige s’affichaient <strong class="hl">comme du texte</strong> dans les classements : le tri était faux. Corrigé.</li>
+          <li>Le chat rappelle les <strong class="hl">commandes de communauté</strong>, accessibles en tapant « ! ».</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Discord <span class="chip c-util">Bot</span></h3>
+        <ul>
+          <li>Une commande qui échoue <strong class="hl">te le dit</strong>, au lieu de rester muette.</li>
+          <li><code class="kbd">/whoami</code> ne renvoie plus vers <code class="kbd">/flex</code>, qui n’existe plus.</li>
+          <li>Les actions de modération laissent désormais une <strong class="hl">trace complète</strong>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 CONFORT -->
+  <section id="confort">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Confort et technique</h2></div>
+    <p class="sec-sub">Beaucoup de petites choses, dont deux qui comptent vraiment si tu joues sur téléphone.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Survie <span class="chip c-bal">Équilibrage</span></h3>
+        <ul>
+          <li><strong class="hl">Manger se cumule</strong> avec la régénération naturelle — les deux ne s’annulent plus.</li>
+          <li>Les <strong class="hl">paliers de potions</strong> sont rééquilibrés.</li>
+          <li>Un <strong class="hl">blocage au bouclier</strong> apparaît enfin dans les dégâts flottants et le journal de combat.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Mobile et tablette <span class="chip c-util">Important</span></h3>
+        <ul>
+          <li>Le jeu <strong class="hl">consomme moins de mémoire</strong> et règle la qualité graphique selon ton appareil.</li>
+          <li>La zone de déplacement <strong class="hl">mordait sur le bord de l’écran</strong> : recalée.</li>
+          <li>Le réglage « vitesse de caméra tactile » est enfin respecté ; le mode gaucher inclut la barre du familier.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Interface <span class="chip c-util">Pratique</span></h3>
+        <ul>
+          <li>Le <strong class="hl">zoom de caméra</strong> peut être assigné à un bouton de manette.</li>
+          <li>Le cadre de vie du <strong class="hl">familier</strong> devient cliquable.</li>
+          <li>« Réinitialiser » remet <strong class="hl">vraiment</strong> tout par défaut dans Interface, Raccourcis et Graphismes.</li>
+          <li>La page des commandes liste enfin <strong class="hl">tous</strong> les raccourcis.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /editorial -->
+
+  <div id="staleNote"></div>
+
+  <!-- 7 LISTE COMPLÈTE -->
+  <section id="tout">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Tout le reste, sans filtre</h2></div>
+    <p class="sec-sub">La liste complète des changements déjà mergés, relevée automatiquement sur la branche du jeu et rafraîchie toutes les deux heures. C’est la matière brute qui a servi à écrire ce qui précède.</p>
+    <div id="box"><p class="sec-sub">Chargement…</p></div>
+  </section>
+</div>
 <footer>
   <div class="wrap">
-    <p data-en="Compiled for <strong>La Clauderie</strong> — from the game's release branch.">Compilé pour <strong>La Clauderie</strong> — d'après la branche de release du jeu.</p>
-    <p style="margin-top:8px"><a href="patch-notes.html" data-en="← All released versions">← Toutes les versions sorties</a></p>
+    <p>Compilé pour <strong>La Clauderie</strong> — d'après la branche de préparation du jeu. <strong>Version non sortie</strong> : rien n'est définitif.</p>
+    <p style="margin-top:8px"><a href="patch-notes.html">← Toutes les mises à jour</a> · <a href="index.html">Accueil</a></p>
   </div>
 </footer>
 
-<script src="assets/nav.js"></script>
-<script src="assets/lang.js"></script>
+<!-- MODAL -->
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
 <script>
-  function esc(s) {
-    return String(s || "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  }
-  // « il y a 3 h », sans dépendance : la fraîcheur compte plus que la date
-  // exacte sur une page qui bouge plusieurs fois par jour.
-  function since(iso) {
-    const t = Date.parse(iso || "");
-    if (!t) return "";
-    const min = Math.max(0, Math.round((Date.now() - t) / 60000));
-    if (min < 60) return T({ fr: `il y a ${min} min`, en: `${min} min ago` });
-    const h = Math.round(min / 60);
-    if (h < 24) return T({ fr: `il y a ${h} h`, en: `${h} h ago` });
-    const j = Math.round(h / 24);
-    return T({ fr: `il y a ${j} j`, en: `${j} d ago` });
-  }
-  const KIND = {
-    feat: { cls: "t-feat", fr: "Nouveau", en: "New" },
-    fix:  { cls: "t-fix",  fr: "Correctif", en: "Fix" },
-    perf: { cls: "t-perf", fr: "Perfs", en: "Perf" },
+  const DETAILS = {
+    craft: {
+      title: "La fabrication devient une incantation",
+      summary: "Le quota de 10 actions par minute disparaît. Chaque geste de métier a maintenant sa durée.",
+      body: `
+        <h4>Ce qui disparaît</h4>
+        <ul>
+          <li>Un <b>quota commun de 10 actions par tranche de 60 secondes</b> couvrait tous les métiers. Il servait à empêcher l'abus, mais il punissait surtout le joueur honnête qui enchaînait des fabrications bon marché.</li>
+        </ul>
+        <h4>Ce qui le remplace</h4>
+        <ul>
+          <li>Un <b>temps d'incantation</b> propre à chaque action : fabriquer, désenchanter, appliquer un enchantement, recycler, recharger un outil.</li>
+          <li><b>Rien n'est prélevé tant que ça n'a pas abouti</b> — matériaux, or, compétence et jet de chef-d'œuvre ne se résolvent qu'à la fin. Annuler en cours de route est sans conséquence.</li>
+          <li>La fenêtre d'artisanat gagne les <b>durées affichées</b> sur chaque recette, une <b>barre de progression</b>, la <b>fabrication en série</b> et un son au lancement.</li>
+        </ul>
+        <h4>Ce que ça change pour toi</h4>
+        <ul>
+          <li>Plus de mur invisible au bout de dix objets. En contrepartie, une grosse série se planifie : elle prend du temps réel, et il faut rester devant.</li>
+        </ul>
+        <p class="summary" style="margin-top:18px;border:0;padding:0"><b>Attention</b> : les durées exactes ne sont pas encore figées et ne figurent pas ici volontairement — elles peuvent changer d'ici la sortie.</p>`
+    },
+    commission: {
+      title: "Le tableau de commandes",
+      summary: "Commander une pièce à un artisan, ou prendre les commandes des autres.",
+      body: `
+        <h4>Le principe</h4>
+        <ul>
+          <li>Tu ouvres une <b>commande</b> en désignant la recette voulue, et qui a le droit de l'accepter : <b>le tableau public</b>, ou <b>un artisan nommé</b>.</li>
+          <li>Un artisan l'accepte, fabrique la pièce, puis te la <b>livre en main propre</b> — la remise se fait face à face.</li>
+          <li>L'objet livré arrive <b>lié à toi</b>, comme une fabrication sur commande classique.</li>
+        </ul>
+        <h4>Pourquoi c'est intéressant pour la guilde</h4>
+        <ul>
+          <li>C'est le premier vrai circuit d'artisanat <b>entre joueurs</b> : jusqu'ici, faire fabriquer une pièce par quelqu'un d'autre relevait de l'arrangement verbal.</li>
+          <li>Une commande réservée à une personne permet de faire <b>tourner l'or à l'intérieur de la guilde</b> plutôt que chez un inconnu.</li>
+        </ul>`
+    },
+    legendary: {
+      title: "Un seul légendaire du même type",
+      summary: "Deux exemplaires de la même arme légendaire, c'est fini — anneaux compris.",
+      body: `
+        <h4>La règle</h4>
+        <ul>
+          <li>Un personnage porte au maximum <b>un exemplaire d'un légendaire donné</b>. L'équipement refuse le second, que ce soit en double arme ou aux deux doigts.</li>
+          <li>La règle se déduit de la <b>qualité de l'objet</b> : un légendaire ajouté plus tard y sera soumis automatiquement, sans risque d'oubli.</li>
+          <li>L'unicité porte sur la <b>famille</b> de l'objet : la version héroïque et la version normale du même légendaire comptent comme le même objet.</li>
+        </ul>
+        <h4>Ce qui reste permis</h4>
+        <ul>
+          <li>Deux exemplaires d'une <b>arme à deux mains non légendaire</b> avec Poigne de Titan restent parfaitement légaux. Seuls les légendaires sont visés.</li>
+        </ul>
+        <h4>Et si tu en portes déjà deux ?</h4>
+        <ul>
+          <li>Rien n'est détruit. À la connexion, le doublon est <b>déplacé dans tes sacs</b>, intact.</li>
+          <li>L'infobulle affiche une mention dorée <b>« Unique à l'équipement »</b>.</li>
+        </ul>`
+    },
+    peche: {
+      title: "Pêche : le clic frénétique ne paie plus",
+      summary: "Relancer avant la touche met fin à la session, avec un garde-fou contre les fausses manœuvres.",
+      body: `
+        <h4>Le problème</h4>
+        <ul>
+          <li>Relancer la canne en boucle avant que le poisson morde permettait de <b>tourner les tables de butin</b> plus vite que prévu.</li>
+        </ul>
+        <h4>La règle</h4>
+        <ul>
+          <li>Une relance <b>avant la touche</b> met fin à la session de pêche en cours.</li>
+        </ul>
+        <h4>Le garde-fou</h4>
+        <ul>
+          <li>Appliquée telle quelle, la règle punissait des gestes involontaires : un <b>double-clic dans les sacs</b> ou une <b>touche maintenue</b> qui se répète toute seule consommaient le lancer.</li>
+          <li>Un <b>délai de tolérance</b> a donc été ajouté juste après le lancer. Tu ne perds ta session que si tu relances vraiment trop tôt, pas parce que ton clavier a bégayé.</li>
+        </ul>`
+    },
   };
 
-  // Les libellés sont les messages des développeurs, en anglais. La version
-  // française est traduite à la main (assets/upcoming-fr.json), clé =
-  // empreinte du texte anglais. Une ligne pas encore traduite reste en
-  // anglais, signalée comme telle — plutôt qu'invisible.
-  Promise.all([
-    fetch("upcoming.json?_=" + Date.now()).then(r => r.ok ? r.json() : null),
-    LANG === "en"
-      ? Promise.resolve({})
-      : fetch("assets/upcoming-fr.json?_=" + Date.now()).then(r => r.ok ? r.json() : {}).catch(() => ({})),
-  ])
-    .then(([d, FR]) => {
-      const box = document.getElementById("box");
-      if (!d || !d.version) {
-        box.innerHTML = '<div class="empty">' + T({
-          fr: "Aucune version en préparation pour le moment — la dernière sortie est la plus récente.",
-          en: "No version in preparation right now — the latest release is the most recent one.",
-        }) + "</div>";
-        return;
-      }
-      const imminent = d.imminent
-        ? `<span class="imminent">${T({ fr: "⏳ sortie imminente", en: "⏳ release imminent" })}</span>`
-        : "";
-      const warn = `
-        <div class="warn">
-          <span class="ico" aria-hidden="true">⚠️</span>
-          <div>
-            <p>${T({
-              fr: `Ce n'est <strong>pas</strong> la ${esc(d.version)} officielle. Ces changements sont mergés sur la branche de préparation : ils peuvent encore être modifiés, retirés, ou repoussés à une version suivante.`,
-              en: `This is <strong>not</strong> the official ${esc(d.version)}. These changes are merged on the preparation branch: they can still be changed, dropped, or pushed to a later version.`,
-            })}</p>
-            <p>${T({
-              fr: "Les libellés résument les messages des développeurs, traduits ici mais pas vérifiés contre le code. Les vraies notes de version, elles, le sont — elles arrivent dans « Nouveautés » à la sortie.",
-              en: "The wording is the developers' raw commit messages, unreviewed. The real release notes, checked against the game code, land in “Game updates” at release.",
-            })}</p>
-          </div>
-        </div>`;
-      const facts = `
-        <div class="facts">
-          <span><b>${T({ fr: "Version", en: "Version" })}</b> ${esc(d.version)}</span>
-          <span><b>${T({ fr: "Depuis", en: "Since" })}</b> ${esc(d.base_tag)}</span>
-          <span><b>${T({ fr: "Changements retenus", en: "Changes shown" })}</b> <span id="nShown">${d.shown}</span> / ${d.commits}</span>
-          <span><b>${T({ fr: "Dernier commit", en: "Last commit" })}</b> ${esc(since(d.last_commit))}</span>
-          ${imminent}
-        </div>`;
-      // Une entrée mise à null dans upcoming-fr.json n'a aucun effet visible
-      // pour un joueur : on la masque plutôt que d'afficher du jargon. En
-      // anglais, tout reste affiché — c'est la langue d'origine des messages.
-      const keep = i => LANG === "en" || !(i.h in FR) || FR[i.h] !== null;
-      let visible = 0;
-      const rubs = (d.sections || []).map(s => {
-        const items = (s.items || []).filter(keep);
-        visible += items.length;
-        const head = `<div class="rub-head"><span aria-hidden="true">${esc(s.icon)}</span><h2>${esc(LANG === "en" ? s.en : s.fr)}</h2><span class="n">${items.length || ""}</span></div>`;
-        if (!items.length) {
-          return `<section class="rub none">${head}<p class="nothing">${T({ fr: "Rien pour l'instant.", en: "Nothing yet." })}</p></section>`;
-        }
-        const lis = items.map(i => {
-          const k = KIND[i.kind] || KIND.fix;
-          const tr = LANG === "en" ? null : FR[i.h];
-          const txt = tr
-            ? esc(tr)
-            : `${esc(i.text)}${LANG === "en" ? "" : ` <span class="untr" title="${T({ fr: "Pas encore traduit", en: "Not translated yet" })}">${T({ fr: "(en)", en: "" })}</span>`}`;
-          return `<li><span class="tag ${k.cls}">${T({ fr: k.fr, en: k.en })}</span><span class="txt">${txt}</span></li>`;
-        }).join("");
-        return `<section class="rub">${head}<ul>${lis}</ul></section>`;
-      }).join("");
-      box.innerHTML = warn + facts + rubs;
-      const n = document.getElementById("nShown");
-      if (n) n.textContent = visible;
-    })
-    .catch(() => {
-      document.getElementById("box").innerHTML = '<div class="empty">' +
-        T({ fr: "Impossible de charger l'aperçu de la prochaine version.", en: "Could not load the preview of the next version." }) + "</div>";
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
     });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+
+  // Liste brute + chiffres du hero : lus dans upcoming.json, régénéré toutes
+  // les 2 h par le workflow « La prochaine version du jeu ». Les libellés
+  // français viennent d'assets/upcoming-fr.json (null = masqué : sans effet
+  // visible pour un joueur).
+  const KIND = { feat: ["t-feat","Nouveau"], perf: ["t-perf","Perfs"], fix: ["t-fix","Correctif"] };
+  function esc(s) { return String(s || "").replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c])); }
+  function since(iso) {
+    const t = Date.parse(iso || ""); if (!t) return "";
+    const m = Math.max(0, Math.round((Date.now() - t) / 60000));
+    if (m < 60) return `il y a ${m} min`;
+    const h = Math.round(m / 60); return h < 24 ? `il y a ${h} h` : `il y a ${Math.round(h / 24)} j`;
+  }
+  Promise.all([
+    fetch("upcoming.json?_=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null),
+    fetch("assets/upcoming-fr.json?_=" + Date.now()).then(r => r.ok ? r.json() : {}).catch(() => ({})),
+  ]).then(([d, FR]) => {
+    const box = document.getElementById("box");
+    const ed = document.getElementById("editorial");
+    if (!d || !d.version) {
+      // La version annoncée est sortie : le résumé rédigé ne vaut plus rien,
+      // on le retire au lieu de présenter comme « à venir » du déjà-publié.
+      if (ed) ed.style.display = "none";
+      document.querySelector(".warn").style.display = "none";
+      document.getElementById("vNum").textContent = "";
+      box.innerHTML = '<p class="sec-sub">Aucune version en préparation pour le moment — la dernière sortie est la plus récente. Retrouve-la dans <a href="patch-notes.html">Nouveautés</a>.</p>';
+      return;
+    }
+    // Le jeu prépare une version plus récente que celle décrite ici : la liste
+    // brute reste juste, le résumé non. On le dit plutôt que de laisser croire.
+    if (ed && ed.dataset.for && ed.dataset.for !== d.version) {
+      ed.style.display = "none";
+      document.getElementById("staleNote").innerHTML =
+        `<div class="warn"><span class="ico" aria-hidden="true">🕗</span><div><p>Le résumé rédigé de cette page portait sur la <b>${esc(ed.dataset.for)}</b>, déjà sortie ou remplacée. Le jeu prépare maintenant la <b>${esc(d.version)}</b> : la liste ci-dessous est à jour, le résumé sera réécrit.</p></div></div>`;
+    }
+    document.getElementById("vNum").textContent = d.version;
+    document.getElementById("nCommits").textContent = d.commits;
+    document.getElementById("freshness").innerHTML = "<b>Relevé</b> " + esc(since(d.last_commit) || "à l'instant");
+    box.innerHTML = (d.sections || []).map(s => {
+      const items = (s.items || []).filter(i => !(i.h in FR) || FR[i.h] !== null);
+      if (!items.length) return "";
+      const lis = items.map(i => {
+        const [cls, lab] = KIND[i.kind] || KIND.fix;
+        const txt = FR[i.h] ? esc(FR[i.h]) : `${esc(i.text)} <span class="untr">(en)</span>`;
+        return `<li><span class="tag ${cls}">${lab}</span><span class="txt">${txt}</span></li>`;
+      }).join("");
+      return `<div class="rub"><div class="rub-head"><span aria-hidden="true">${esc(s.icon)}</span><h3>${esc(s.fr)}</h3><span class="n">${items.length}</span></div><ul>${lis}</ul></div>`;
+    }).join("") || '<p class="sec-sub">Rien à afficher pour le moment.</p>';
+  });
 </script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
 <script src="assets/codex-popup.js" defer></script>
+<script src="assets/nav.js"></script>
+<script src="assets/lang.js"></script>
 </body>
 </html>

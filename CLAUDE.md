@@ -163,6 +163,17 @@ avant de t'appuyer dessus pour le BiS ou les liens Codex.
 | Pré-alerte « sortie imminente » | même workflow : ouvre une issue dès que `package.json` monte de version sur la branche de release | toutes les 2 h |
 | Rappel « version manquante » (filet de secours) | `check-game-version.yml` ouvre une issue | toutes les heures |
 
+> **`a-venir.html` a deux moitiés.** Le haut est une VRAIE page de notes,
+> rédigée à la main sur le gabarit de `notes/vX.Y.Z.html` (même bandeau,
+> mêmes cartes, mêmes fiches au clic) — demande du 6 août 2026 : « fais-moi
+> la page habituelle, juste pour à venir ». Elle porte `data-for="vX.Y.Z"`
+> sur `#editorial` : dès que `upcoming.json` annonce une autre version (ou
+> plus rien), cette partie se masque toute seule et le dit. À réécrire quand
+> le jeu passe à préparer une nouvelle version. Ne JAMAIS y mettre de chiffre
+> non vérifié : c'est du travail en cours, les durées et valeurs bougent — la
+> fiche « craft » dit explicitement pourquoi elle n'en donne pas.
+>
+> Le bas de la page (`#tout`) est la liste brute automatique.
 > **`upcoming.json`** ne se rédige pas : `scripts/build_upcoming.py` range les
 > messages de commit du jeu dans les six rubriques du bandeau. En revanche
 > **leurs libellés SE RÉÉCRIVENT à la main** — décision du 6 août 2026, en
