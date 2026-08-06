@@ -90,13 +90,14 @@ jobs:
 
       - name: Déployer sur GitHub Pages
         id: deployment
+        # Pas de réglage « timeout » : 10 minutes sont un MAXIMUM DUR de
+        # l'action, pas un défaut. Toute valeur supérieure est ramenée à
+        # 600000 ms avec un avertissement (essayé le 6 août 2026, sans effet).
+        # Or l'artefact du site pèse ~17 Mo (tout l'art des objets, monstres,
+        # armes et sorts), et GitHub Pages dépasse parfois ces 10 minutes pour
+        # le publier : l'action abandonne alors et ANNULE le déploiement.
+        # D'où le continue-on-error du job — ce miroir n'est pas le site.
         uses: actions/deploy-pages@v4
-        with:
-          # 10 min par défaut, atteintes 4 fois sur 12 le 6 août 2026 : le
-          # déploiement restait en « deployment_queued » puis l'action
-          # l'ANNULAIT — ce qui pénalise le passage suivant. On laisse 25 min
-          # à la file de GitHub avant d'abandonner.
-          timeout: 1500000
 
   ovh:
     needs: checks
