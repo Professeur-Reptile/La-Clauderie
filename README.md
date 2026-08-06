@@ -82,8 +82,8 @@ site) :
 - **Toujours à jour, zéro maintenance** : les fiches lisent les JSON du
   [Codex](https://github.com/Reptile-New/wocc-knowledge-base). Sur
   laclauderie.fr ils sont servis par le domaine lui-même (`/data/`, copiés par
-  le déploiement — voir « Mise en ligne ») ; ailleurs (miroir GitHub Pages,
-  dev local) ils sont lus directement sur le GitHub Pages du Codex. Le Codex
+  le déploiement — voir « Mise en ligne ») ; ailleurs (dev local) ils sont lus
+  directement sur le GitHub Pages du Codex. Le Codex
   se régénère tout seul à chaque release du jeu. Rien à copier, rien à
   synchroniser.
 - Le script est inclus sur toutes les pages ; la fiche s'ouvre au-dessus des
@@ -127,23 +127,23 @@ modification est enregistrée dans le fichier JSON correspondant (`events.json`,
 
 ## Mise en ligne
 
-L'adresse officielle du site est **<https://laclauderie.fr>** (domaine +
-hébergement web 100 Mo chez OVH). Un seul workflow,
-`.github/workflows/deploy.yml`, publie le site à chaque push sur `main` : il
-vérifie d'abord le site (une seule fois), puis envoie les deux destinations en
-parallèle.
+Le site vit à **<https://laclauderie.fr>** (domaine + hébergement web 100 Mo
+chez OVH) — et nulle part ailleurs. Un seul workflow,
+`.github/workflows/deploy.yml`, le publie à chaque push sur `main` : il vérifie
+d'abord le site, puis l'envoie par FTP.
 
-| Job de `deploy.yml` | Destination |
+| Job de `deploy.yml` | Rôle |
 |---|---|
-| `checks` | aucune — appelle `check-site.yml` et bloque la publication si le site est cassé |
-| `ovh` | **laclauderie.fr** (hébergement OVH, envoi par FTP — le serveur OVH refuse le FTPS explicite, vérifié le 19/07/2026) |
-| `pages` | `https://reptile-new.github.io/La-Clauderie/` (miroir GitHub Pages, utile en secours) |
+| `checks` | appelle `check-site.yml` et bloque la publication si le site est cassé |
+| `ovh` | envoie **laclauderie.fr** (FTP simple — le serveur OVH refuse le FTPS explicite, vérifié le 19/07/2026) |
 
-Les deux déploiements sont indépendants : si le FTP OVH échoue, le miroir
-Pages part quand même, et « Re-run failed jobs » relance le seul qui a échoué.
-L'inverse n'est pas symétrique : le job `pages` est en `continue-on-error`,
-parce qu'une file d'attente côté GitHub Pages ne doit pas faire passer la
-publication en échec alors que **laclauderie.fr**, le vrai site, est en ligne.
+> **Il n'y a plus de miroir.** Le site était aussi publié sur GitHub Pages en
+> secours ; ce miroir a été retiré le 6 août 2026. Depuis que tout l'art du jeu
+> est embarqué, l'artefact pèse ~17 Mo et GitHub Pages dépassait régulièrement
+> les 10 minutes que `actions/deploy-pages` accorde au maximum : 2 publications
+> sur 3 échouaient. Un secours indisponible deux fois sur trois n'en est pas
+> un. Si OVH tombe, le site tombe — c'est assumé. Le job `pages` reste
+> récupérable dans l'historique de `deploy.yml` si l'envie revient.
 
 Les mises à jour faites depuis l'espace officiers arrivent donc sur
 laclauderie.fr toutes seules, comme avant (~1 à 2 min).

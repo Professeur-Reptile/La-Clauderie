@@ -1,16 +1,15 @@
-# Publication du site — vérification unique, puis les deux destinations.
+# Publication du site sur laclauderie.fr (hébergement OVH, par FTP).
 #
-# Le site vit à deux endroits : laclauderie.fr (hébergement OVH, par FTP) et
-# un miroir GitHub Pages. Les deux partaient autrefois de deux workflows
-# séparés, qui appelaient chacun les vérifications : le navigateur de contrôle
-# tournait donc DEUX fois par publication, pour un résultat identique. Ici la
-# vérification est un seul job dont les deux déploiements dépendent.
+# Le site a longtemps été publié AUSSI sur un miroir GitHub Pages, en secours.
+# Ce miroir a été retiré le 6 août 2026 : depuis que tout l'art du jeu est
+# embarqué, l'artefact pèse ~17 Mo et GitHub Pages dépassait régulièrement les
+# 10 minutes que actions/deploy-pages accorde au maximum — 2 publications sur 3
+# échouaient. Un secours indisponible deux fois sur trois n'en est pas un, et
+# la décision a été prise d'assumer : si OVH tombe, le site tombe.
+# Si un miroir redevient souhaitable un jour, ressusciter le job `pages` depuis
+# l'historique de ce fichier (commit « Publication : retirer le miroir »).
 #
-# Les deux déploiements restent indépendants l'un de l'autre : si le FTP OVH
-# échoue, le miroir Pages part quand même (et « Re-run failed jobs » relance
-# le seul qui a échoué).
-#
-# Prérequis OVH (une seule fois) : créer 3 secrets dans
+# Prérequis (une seule fois) : créer 3 secrets dans
 # Settings → Secrets and variables → Actions → « New repository secret » :
 #
 #   OVH_FTP_SERVER    → l'« Adresse du serveur FTP » (ex: ftp.cluster0XX.hosting.ovh.net),
@@ -19,85 +18,31 @@
 #   OVH_FTP_USERNAME  → l'« identifiant principal » du même onglet (ex: laclaudp)
 #   OVH_FTP_PASSWORD  → le mot de passe FTP (bouton « Modifier le mot de passe »
 #                       dans le même onglet si vous ne l'avez pas encore défini)
-#
-# Prérequis Pages (une seule fois) : Settings → Pages → « Build and deployment »
-# → Source : « GitHub Actions ».
 
-name: Publier le site (OVH + Pages)
+name: Publier le site
 
 on:
   push:
     branches: [main]
   schedule:
     # Rafraîchit la copie du Codex embarquée chez OVH (les données sont
-    # régénérées de leur côté, dans wocc-knowledge-base). Le miroir Pages n'en
-    # a pas besoin : il ne sert pas /data/.
+    # régénérées de leur côté, dans wocc-knowledge-base).
     - cron: '23 */6 * * *'
   workflow_dispatch: {}
 
 permissions:
   contents: read
 
-# Une publication à la fois : le déploiement Pages passe par l'environnement
-# github-pages, qui n'accepte pas deux envois simultanés.
+# Une publication à la fois : deux envois FTP simultanés sur le même dossier
+# se marcheraient dessus.
 concurrency:
   group: publish
   cancel-in-progress: false
 
 jobs:
-  # Un site cassé ne doit pas partir en ligne. Une seule exécution, partagée
-  # par les deux déploiements ci-dessous.
+  # Un site cassé ne doit pas partir en ligne.
   checks:
     uses: ./.github/workflows/check-site.yml
-
-  pages:
-    # Le passage périodique ne sert qu'à rafraîchir le Codex chez OVH ;
-    # republier le miroir Pages toutes les 6 h ne servirait à rien.
-    if: github.event_name != 'schedule'
-    needs: checks
-    # laclauderie.fr est le site ; Pages n'en est que le miroir de secours.
-    # Une file d'attente côté GitHub ne doit donc pas marquer la publication
-    # en échec ni déclencher une alerte, alors que le vrai site est en ligne.
-    # L'échec du job reste visible dans le détail du passage.
-    continue-on-error: true
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Assembler le site
-        run: |
-          mkdir -p _site
-          cp *.html *.json _site/   # toutes les pages et données de la racine — une nouvelle page ne peut plus être oubliée du déploiement
-          cp sw.js _site/           # service worker de l'app installable (manifest.json est déjà pris par *.json ci-dessus)
-          cp -r assets _site/assets
-          cp -r notes _site/notes
-
-      - name: Configurer Pages
-        uses: actions/configure-pages@v5
-
-      - name: Uploader l'artefact du site
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-
-      - name: Déployer sur GitHub Pages
-        id: deployment
-        # Pas de réglage « timeout » : 10 minutes sont un MAXIMUM DUR de
-        # l'action, pas un défaut. Toute valeur supérieure est ramenée à
-        # 600000 ms avec un avertissement (essayé le 6 août 2026, sans effet).
-        # Or l'artefact du site pèse ~17 Mo (tout l'art des objets, monstres,
-        # armes et sorts), et GitHub Pages dépasse parfois ces 10 minutes pour
-        # le publier : l'action abandonne alors et ANNULE le déploiement.
-        # D'où le continue-on-error du job — ce miroir n'est pas le site.
-        uses: actions/deploy-pages@v4
 
   ovh:
     needs: checks
@@ -124,8 +69,8 @@ jobs:
           repository: Reptile-New/wocc-knowledge-base
           path: wocc-knowledge-base
 
-      # Mêmes fichiers que le miroir Pages, plus le .htaccess (redirections
-      # HTTPS/www, utile seulement chez OVH) et la copie du Codex.
+      # Toutes les pages et données de la racine, plus le .htaccess
+      # (redirections HTTPS/www) et la copie du Codex.
       - name: Assembler le site
         run: |
           mkdir -p _site

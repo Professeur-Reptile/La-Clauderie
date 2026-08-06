@@ -4,7 +4,9 @@
 > l'essentiel, pas de longs exposés ni de listes exhaustives.
 
 Site statique de guilde pour *World of ClaudeCraft*. Déployé sur
-**laclauderie.fr** (OVH) et GitHub Pages **à chaque push sur `main`**.
+**laclauderie.fr** (OVH) **à chaque push sur `main`**. Il n'y a plus de
+miroir GitHub Pages : retiré le 6 août 2026, il échouait 2 fois sur 3 (voir
+`README.md`).
 
 ## ⚡ Quand l'utilisateur dit « il y a une nouvelle MAJ »
 
@@ -157,7 +159,7 @@ avant de t'appuyer dessus pour le BiS ou les liens Codex.
 | **Récolte & Métiers** (`metiers.html`) | `update-bis.yml` → `build_craft.py` + `inject_craft.py` | idem |
 | **Rédaction des « Nouveautés »** | Routine Claude « Veille nouvelle version WoCC » (session fraîche qui suit la procédure ⚡ ci-dessus) | toutes les heures |
 | Classement guilde (`guild.json`) | `update-guild-rank.yml` | toutes les 3 h |
-| Déploiement (OVH + Pages) | `deploy.yml` (vérifie une fois, publie les deux en parallèle) | à chaque push `main` (+ cron 6 h, OVH seul, pour rafraîchir la copie du Codex) |
+| Déploiement (OVH) | `deploy.yml` (vérifie, puis envoie par FTP) | à chaque push `main` (+ cron 6 h pour rafraîchir la copie du Codex) |
 | **Aperçu de la version à venir** (`a-venir.html`) | `update-upcoming.yml` → `build_upcoming.py` lit la branche `release/vX.Y.Z` du jeu | toutes les 2 h |
 | Pré-alerte « sortie imminente » | même workflow : ouvre une issue dès que `package.json` monte de version sur la branche de release | toutes les 2 h |
 | Rappel « version manquante » (filet de secours) | `check-game-version.yml` ouvre une issue | toutes les heures |
