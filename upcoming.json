@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-06T09:47:54Z",
+ "generated": "2026-08-06T12:28:27Z",
  "base_tag": "v0.34.0",
  "version": "v0.35.0",
  "branch": "release/v0.35.0",
  "declared_version": "0.34.0",
  "imminent": false,
- "commits": 99,
- "shown": 56,
- "last_commit": "2026-08-06T15:30:56+08:00",
+ "commits": 256,
+ "shown": 134,
+ "last_commit": "2026-08-06T07:22:39-05:00",
  "sections": [
   {
    "key": "classes",
@@ -23,11 +23,25 @@
      "date": "2026-08-06"
     },
     {
+     "h": "9072ebb6",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Scale hunter pets from their owner, and fix the sweep that mismeasured hunters",
+     "date": "2026-08-05"
+    },
+    {
      "h": "366a20bb",
      "kind": "feat",
      "scope": "sim",
      "text": "Add setting to stop auto-attack on target switch",
      "date": "2026-08-05"
+    },
+    {
+     "h": "8ad7b212",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Roll spell resist on player pet ranged bolts",
+     "date": "2026-08-06"
     },
     {
      "h": "6a73d14f",
@@ -101,11 +115,60 @@
      "date": "2026-08-05"
     },
     {
+     "h": "30b72e10",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Explain tool charms with clear tooltips",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "a11d1737",
+     "kind": "feat",
+     "scope": "map",
+     "text": "Show gather nodes on the zone map",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "3ad6b768",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Toast when gathering and craft skills level up",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "a51a2449",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Tag profession materials with Used-by craft affinity",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "3ab8659a",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Harden the fine-material bag mark from review",
+     "date": "2026-08-04"
+    },
+    {
      "h": "2b6bbc29",
      "kind": "fix",
      "scope": "content",
      "text": "Update stale mob names in zone1 profession quests",
      "date": "2026-08-06"
+    },
+    {
+     "h": "b927299b",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Give the #2905 claw/tusk harvest materials their craft consumers",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "1884b87e",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Calm anchors for gather nodes, NPCs, point-camps, and the maze lawn",
+     "date": "2026-08-05"
     },
     {
      "h": "9be42c48",
@@ -162,6 +225,27 @@
      "scope": "ui",
      "text": "Null-guard the cached crafting elements; re-hunt the skill-cap seed",
      "date": "2026-08-05"
+    },
+    {
+     "h": "c88393e3",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Harden tool charm tooltips from review",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "390253c8",
+     "kind": "fix",
+     "scope": "map",
+     "text": "Review pass on the zone-map gather layer",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "0c26facc",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Review hardening for the Used-by material tooltip line",
+     "date": "2026-08-04"
     }
    ]
   },
@@ -184,6 +268,13 @@
      "scope": "content",
      "text": "Show Heroic Nythraxis' Dread Curse in the Dungeon Finder mechanics preview",
      "date": "2026-08-06"
+    },
+    {
+     "h": "d29e118a",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Fix the delve minimap arrow direction and locale relocalize",
+     "date": "2026-08-05"
     },
     {
      "h": "9776536a",
@@ -236,6 +327,41 @@
      "date": "2026-08-06"
     },
     {
+     "h": "c0b4517d",
+     "kind": "feat",
+     "scope": "items",
+     "text": "Give hunters an off-hand with the quiver ladder",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "4c31cbef",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Make a zone's atmosphere and weather readable from outside it",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "79e97e5c",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Tune the zone air up to a genuine light fog",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "f1df90e0",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Light the world at night with town streetlamps and a mob glow",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "d2fa43b9",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Show a zone's own atmosphere from across the world",
+     "date": "2026-08-03"
+    },
+    {
      "h": "a94c95e1",
      "kind": "fix",
      "scope": "render",
@@ -257,6 +383,13 @@
      "date": "2026-08-06"
     },
     {
+     "h": "2e064342",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Make the threat meter report what the mob actually compares",
+     "date": "2026-08-05"
+    },
+    {
      "h": "d4eeb985",
      "kind": "fix",
      "scope": "content",
@@ -269,6 +402,13 @@
      "scope": "styles",
      "text": "Fix mobile move-zone safe-area-inset and tablet left-handed frame nudge",
      "date": "2026-08-05"
+    },
+    {
+     "h": "fde06136",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Unblock zone streaming and keep the night vista readable",
+     "date": "2026-08-03"
     }
    ]
   },
@@ -326,6 +466,13 @@
      "scope": "server",
      "text": "Report the correct too-long password error on register",
      "date": "2026-08-05"
+    },
+    {
+     "h": "a1d568b2",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Allow Discord CDN avatars under the Electron CSP",
+     "date": "2026-08-04"
     }
    ]
   },
@@ -336,6 +483,13 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "0eeb7546",
+     "kind": "feat",
+     "scope": "graphics",
+     "text": "Update graphics settings",
+     "date": "2026-08-06"
+    },
+    {
      "h": "cb7348c7",
      "kind": "feat",
      "scope": "input",
@@ -343,11 +497,186 @@
      "date": "2026-08-06"
     },
     {
+     "h": "da849c41",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Make streetlamps solid, so you cannot walk into or through one",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "167063ba",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Give the moon a lit sphere, real maria, and a dark unlit side",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "ab7226af",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Natural-relief terrain: warped eroded hills, ridged crags, calm field",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "326d3dc6",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Rugged texture variation and the far-vista drape fix",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "b47fad5b",
+     "kind": "feat",
+     "scope": "sim,render",
+     "text": "Altitude roughening and distance-proof texture variety",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "2884edcc",
+     "kind": "feat",
+     "scope": "render",
+     "text": "AAA graphics polish batch: night light field, water waves, foliage shadows, far-terrain detail",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "de9f767d",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Calm pads for every placed thing, divergence-sized skirts",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "8e13d029",
+     "kind": "feat",
+     "scope": "battleground",
+     "text": "Thornhollow Fields, the ranked 5v5 capture-the-flag battleground",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "08f452fe",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add a toggle to hide unused action-bar slots",
+     "date": "2026-08-05"
+    },
+    {
      "h": "1a1264c2",
      "kind": "feat",
      "scope": "ui",
      "text": "Selectable pet health frame, clustered with the pet bar",
      "date": "2026-08-05"
+    },
+    {
+     "h": "4634a2c3",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Mark fine materials in the bag grid",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "88ccb8a2",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Remove the outdoor fog, see the whole world from anywhere",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "6bbcf170",
+     "kind": "feat",
+     "scope": "render",
+     "text": "The fog-free aesthetic pass, mountains, towns, life",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "bfff1e88",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Melt the sea horizon, remove the ambient life layer",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "dc52f954",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Meadow continuum first pass, baked grass ground plus blade band",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "ceea8dd1",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Lengthen grass fade ramps and unify the paint tier gate",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "d77c01d8",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Water overhaul, wrapped clock, swell, open-sea swim",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "e2ab6eb0",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Day-night celestial sprites, sky grade, HUD clock",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "c1a75644",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Warmer standing daylight and a bolder golden hour",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "a29e1e6b",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Move the water wave field to the fragment stage",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "5dffcb84",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Thin the water to a translucent film at the waterline",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "3855d353",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Map-wide night accents and a higher night ambient floor",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "b7d64324",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Plain ground inside the blade carpet, painted meadow beyond",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "7a97e788",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Replace far-tree cones with baked sprite impostors",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "35cb6aaa",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Share one height lattice per terrain chunk, fade far fragment detail",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "b8e5a62c",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Repair AAA branch regressions",
+     "date": "2026-08-06"
     },
     {
      "h": "336e98b9",
@@ -390,6 +719,62 @@
      "scope": "ui",
      "text": "Fix Reset to Defaults gaps in Interface, Key Bindings, and Graphics options",
      "date": "2026-08-06"
+    },
+    {
+     "h": "65e2259d",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.35.0 into AAA-enhancements",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "8bbee5c5",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.35.0 into feature/ci-merge-queue",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "0b098f05",
+     "kind": "fix",
+     "scope": "release/v0.35.0",
+     "text": "Integrate the release into the AAA graphics branch",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "1da27433",
+     "kind": "fix",
+     "scope": "release/v0.35.0",
+     "text": "Bring the release into AAA-enhancements",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "5df1ca05",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stand the far vista up before entry under production latency",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "9a70830c",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Let a pet heel while its owner is mounted",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "533841fd",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "A pet that enters an arena match alive returns alive",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "a4f46355",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Give Wraithwood's permanent drizzle its visible rain",
+     "date": "2026-08-05"
     },
     {
      "h": "eeb75120",
@@ -446,6 +831,167 @@
      "scope": "styles",
      "text": "Include the pet strip in the tablet left-handed column mirror",
      "date": "2026-08-05"
+    },
+    {
+     "h": "116b8198",
+     "kind": "fix",
+     "scope": "",
+     "text": "Origin/release/v0.34.0 (43fca1deb) into feature/env-combined-v0.34",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "6225c8e7",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Pack the splat albedo photos into one sampler2DArray",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "590a1e2b",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Reprice training Learn rows when the purse moves",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "d68adbcc",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Show masterwork seal on bank item cells",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "737a4f8b",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Harden bank instance-mark tests from review",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "0830a970",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Settle the train fee reserve on the mirror and unify service repaints",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "5f8c8677",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Milestone-gate the skill plate and close the review findings",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "f988aa34",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Close the fix-round review gaps on charm hover cards",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "a18eddd8",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Fog-free follow-ups from the full gate",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "ee2224d1",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Close the water plane/apron swell seam, cull the apron on its live grid",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "4a5b093f",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Forced idle slots work the full batch, not a quarter",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "8d7f73d2",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Open the apron to the side columns, calm-stripe and horizon-slab fixes",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "4b6095fe",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Fade the strip-flank carve and green-seam edges past their windows",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "1247da45",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Light foliage sprites from the sun, not the ground plane",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "794314c6",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Gate the swell on a baked neighbourhood minimum, not the vertex",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "48aa25f6",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Unfacet the far vista mountainsides, bring the haze closer",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "03eb476c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Buy the sunset amber with saturation, not radiance",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "72bce731",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Restore the sprite impostor diffuse that vertexColors zeroed",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "b03cada8",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Fade the painted grass blades out underfoot",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "5064003b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep the night visibility layers outdoors",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "049a1192",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Fail-safe the splat photo binds against unresolved textures",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "a60c9ad9",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Release the previous impostor atlas on world rebuild",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "a73d8bc3",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Review fixes for the sprite impostor handoff",
+     "date": "2026-08-02"
     }
    ]
   }
