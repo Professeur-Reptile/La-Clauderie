@@ -158,12 +158,10 @@ Concrètement, le job `ovh` de `deploy.yml` embarque à chaque passage une copie
 du repo du Codex (public) : sa page sous `www/codex/` et ses données JSON sous
 `www/data/`. Comme le Codex se met à jour tout seul à chaque release du jeu,
 le workflow tourne aussi périodiquement (toutes les 6 h) pour rafraîchir la
-copie — ce passage-là ne republie que chez OVH, le miroir Pages ne servant pas
-`/data/`. Un lancement manuel (**Actions → Publier le site (OVH + Pages) →
-Run workflow**) la rafraîchit immédiatement si besoin. Sur le miroir GitHub
-Pages et en dev local, les liens « Codex » sont repointés automatiquement
-(par `assets/codex-popup.js`) vers l'adresse du Codex propre à cet
-environnement.
+copie. Un lancement manuel (**Actions → Publier le site → Run workflow**) la
+rafraîchit immédiatement si besoin. En dev local, les liens « Codex » sont
+repointés automatiquement (par `assets/codex-popup.js`) vers l'adresse du
+Codex propre à cet environnement.
 
 ### Configuration OVH (une seule fois)
 
