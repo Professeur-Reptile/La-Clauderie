@@ -15,6 +15,7 @@ Rien n'est rédigé ici : les sujets de commit sont repris tels quels (en
 anglais, ce sont les messages des développeurs). La page le dit clairement —
 c'est un aperçu de travaux en cours, pas des notes de version.
 """
+import hashlib
 import json
 import re
 import subprocess
@@ -112,10 +113,16 @@ def main():
         text = text.strip()
         if not text:
             continue
+        text = text[0].upper() + text[1:]
         buckets[classify(scope, text)].append({
+            # Empreinte du texte anglais : c'est la clé de la traduction dans
+            # assets/upcoming-fr.json. Si les développeurs reformulent leur
+            # message, l'empreinte change et la ligne repasse en anglais —
+            # mieux vaut ça qu'une traduction qui ne dit plus la même chose.
+            "h": hashlib.sha1(text.encode("utf-8")).hexdigest()[:8],
             "kind": "feat" if typ == "feat" else ("perf" if typ == "perf" else "fix"),
             "scope": scope,
-            "text": text[0].upper() + text[1:],
+            "text": text,
             "date": when[:10],
         })
 

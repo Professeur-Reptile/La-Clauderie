@@ -56,6 +56,13 @@ jobs:
         continue-on-error: true
         run: python3 scripts/check_codex_fr.py wocc-knowledge-base/data
 
+      # Même logique que ci-dessus : une ligne non traduite s'affiche en
+      # anglais avec un marqueur, ce n'est pas un motif de refuser une
+      # publication — juste un rappel pour la Routine éditoriale.
+      - name: Traductions françaises de la page « À venir » (rappel)
+        continue-on-error: true
+        run: python3 scripts/check_upcoming_fr.py
+
       - name: Node
         uses: actions/setup-node@v4
         with:

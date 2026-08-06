@@ -128,6 +128,7 @@
   .t-fix { color: var(--q-rare); }
   .t-perf { color: var(--gold); }
   .rub li span.txt { color: var(--dim); font-size: 0.91rem; }
+  .untr { font-family: var(--font-mono); font-size: 0.66rem; color: var(--faint); vertical-align: 1px; }
   .rub .nothing { color: var(--faint); font-size: 0.89rem; font-style: italic; padding: 2px 0 6px; }
   @media (max-width: 560px) {
     .rub li { grid-template-columns: 1fr; gap: 2px; }
@@ -187,9 +188,17 @@
     perf: { cls: "t-perf", fr: "Perfs", en: "Perf" },
   };
 
-  fetch("upcoming.json?_=" + Date.now())
-    .then(r => r.ok ? r.json() : null)
-    .then(d => {
+  // Les libellés sont les messages des développeurs, en anglais. La version
+  // française est traduite à la main (assets/upcoming-fr.json), clé =
+  // empreinte du texte anglais. Une ligne pas encore traduite reste en
+  // anglais, signalée comme telle — plutôt qu'invisible.
+  Promise.all([
+    fetch("upcoming.json?_=" + Date.now()).then(r => r.ok ? r.json() : null),
+    LANG === "en"
+      ? Promise.resolve({})
+      : fetch("assets/upcoming-fr.json?_=" + Date.now()).then(r => r.ok ? r.json() : {}).catch(() => ({})),
+  ])
+    .then(([d, FR]) => {
       const box = document.getElementById("box");
       if (!d || !d.version) {
         box.innerHTML = '<div class="empty">' + T({
@@ -210,8 +219,8 @@
               en: `This is <strong>not</strong> the official ${esc(d.version)}. These changes are merged on the preparation branch: they can still be changed, dropped, or pushed to a later version.`,
             })}</p>
             <p>${T({
-              fr: "Les libellés sont les messages bruts des développeurs, en anglais et non relus. Les vraies notes de version, vérifiées contre le code du jeu, arrivent dans « Nouveautés » à la sortie.",
-              en: "The wording is the developers' raw commit messages, in English and unreviewed. The real release notes, checked against the game code, land in “Game updates” at release.",
+              fr: "Les libellés résument les messages des développeurs, traduits ici mais pas vérifiés contre le code. Les vraies notes de version, elles, le sont — elles arrivent dans « Nouveautés » à la sortie.",
+              en: "The wording is the developers' raw commit messages, unreviewed. The real release notes, checked against the game code, land in “Game updates” at release.",
             })}</p>
           </div>
         </div>`;
@@ -231,7 +240,11 @@
         }
         const lis = items.map(i => {
           const k = KIND[i.kind] || KIND.fix;
-          return `<li><span class="tag ${k.cls}">${T({ fr: k.fr, en: k.en })}</span><span class="txt">${esc(i.text)}</span></li>`;
+          const tr = LANG === "en" ? null : FR[i.h];
+          const txt = tr
+            ? esc(tr)
+            : `${esc(i.text)}${LANG === "en" ? "" : ` <span class="untr" title="${T({ fr: "Pas encore traduit", en: "Not translated yet" })}">${T({ fr: "(en)", en: "" })}</span>`}`;
+          return `<li><span class="tag ${k.cls}">${T({ fr: k.fr, en: k.en })}</span><span class="txt">${txt}</span></li>`;
         }).join("");
         return `<section class="rub">${head}<ul>${lis}</ul></section>`;
       }).join("");

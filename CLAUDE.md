@@ -162,11 +162,17 @@ avant de t'appuyer dessus pour le BiS ou les liens Codex.
 | Pré-alerte « sortie imminente » | même workflow : ouvre une issue dès que `package.json` monte de version sur la branche de release | toutes les 2 h |
 | Rappel « version manquante » (filet de secours) | `check-game-version.yml` ouvre une issue | toutes les heures |
 
-> **`upcoming.json` et `a-venir.html`** ne se rédigent pas non plus : les
-> libellés sont les messages de commit bruts du jeu, en anglais, rangés par
-> `scripts/build_upcoming.py` dans les six rubriques du bandeau. La page dit
-> explicitement que rien n'est définitif. Ne jamais y écrire de prose
-> éditoriale : les vraies notes se rédigent à la sortie, vérifiées contre le
+> **`upcoming.json`** ne se rédige pas : `scripts/build_upcoming.py` range les
+> messages de commit du jeu dans les six rubriques du bandeau. En revanche
+> **leurs libellés SE TRADUISENT à la main** — décision du 6 août 2026, après
+> une première version laissée en anglais : « personne ne lit l'anglais ».
+> `python3 scripts/check_upcoming_fr.py` liste les manquants ;
+> `assets/upcoming-fr.json` les accueille, clé = empreinte du texte anglais
+> (charte dans l'en-tête du script). À faire à CHAQUE passage de la Routine,
+> pas seulement à la sortie d'une version : la branche du jeu bouge tous les
+> jours. Une ligne non traduite reste en anglais avec un marqueur « (en) ».
+> Traduire n'est PAS vérifier : la page dit explicitement que rien n'est
+> définitif, et les vraies notes se rédigent à la sortie, vérifiées contre le
 > code (procédure ⚡). Le jeu GARDE ses vieilles branches `release/*` après
 > le tag : le workflow se fie donc au fait que la branche la plus haute ne
 > dépasse plus le dernier tag, et vide alors la page tout seul.

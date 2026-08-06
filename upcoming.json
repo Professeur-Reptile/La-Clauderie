@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-06T09:15:39Z",
+ "generated": "2026-08-06T09:47:54Z",
  "base_tag": "v0.34.0",
  "version": "v0.35.0",
  "branch": "release/v0.35.0",
@@ -16,36 +16,42 @@
    "en": "Classes & spells",
    "items": [
     {
+     "h": "b06c5668",
      "kind": "feat",
      "scope": "render",
      "text": "Pose-sample-and-blend animation pipeline, mage casts plus elemental attack",
      "date": "2026-08-06"
     },
     {
+     "h": "366a20bb",
      "kind": "feat",
      "scope": "sim",
      "text": "Add setting to stop auto-attack on target switch",
      "date": "2026-08-05"
     },
     {
+     "h": "6a73d14f",
      "kind": "fix",
      "scope": "sim",
      "text": "Scale mastery and talent damage percent over the whole hit",
      "date": "2026-08-05"
     },
     {
+     "h": "fcb8a2b6",
      "kind": "fix",
      "scope": "sim",
      "text": "Auto-acquire attacker on cast, prefer live mob on click-pick",
      "date": "2026-08-05"
     },
     {
+     "h": "8a59d474",
      "kind": "fix",
      "scope": "sim",
      "text": "Dedupe Mass Barrier and Nature's Fury like every other group buff",
      "date": "2026-08-05"
     },
     {
+     "h": "44637ff4",
      "kind": "fix",
      "scope": "ui",
      "text": "Render the cast strip before the focus ladder runs, from round-two review",
@@ -60,84 +66,98 @@
    "en": "Professions & gathering",
    "items": [
     {
+     "h": "0fc544a8",
      "kind": "feat",
      "scope": "content",
      "text": "Wire the claw and tusk corpse-harvest material families",
      "date": "2026-08-06"
     },
     {
+     "h": "ffe6ec88",
      "kind": "feat",
      "scope": "sim",
      "text": "Add per-craft rare-tier profession deeds",
      "date": "2026-08-05"
     },
     {
+     "h": "1fb15289",
      "kind": "feat",
      "scope": "professions",
      "text": "Commission order board (open, accept, deliver, cancel)",
      "date": "2026-08-05"
     },
     {
+     "h": "6dd82c25",
      "kind": "feat",
      "scope": "professions",
      "text": "Cast-paced craft, enchant family, and tool recharge",
      "date": "2026-08-05"
     },
     {
+     "h": "73b19225",
      "kind": "feat",
      "scope": "ui",
      "text": "Single-surface craft cast strip on the painter family from review",
      "date": "2026-08-05"
     },
     {
+     "h": "2b6bbc29",
      "kind": "fix",
      "scope": "content",
      "text": "Update stale mob names in zone1 profession quests",
      "date": "2026-08-06"
     },
     {
+     "h": "9be42c48",
      "kind": "fix",
      "scope": "render",
      "text": "Dispose the shadowform/moonkin/metamorph material clone caches",
      "date": "2026-08-05"
     },
     {
+     "h": "74899f52",
      "kind": "fix",
      "scope": "content",
      "text": "Add a base Enchant Offhand so shields are not enchant-dead",
      "date": "2026-08-05"
     },
     {
+     "h": "c30ee042",
      "kind": "fix",
      "scope": "ui",
      "text": "Trap focus and mark the dialog role on the crafting window",
      "date": "2026-08-05"
     },
     {
+     "h": "2dbff52d",
      "kind": "fix",
      "scope": "professions",
      "text": "Complete craft-window deps and format after release merge",
      "date": "2026-08-05"
     },
     {
+     "h": "530f630b",
      "kind": "fix",
      "scope": "professions",
      "text": "Harden craft-cast entry points and mid-cast pins from review",
      "date": "2026-08-05"
     },
     {
+     "h": "4a687d0a",
      "kind": "fix",
      "scope": "fishing",
      "text": "End the session on a pre-bite pole re-press (spam-click exploit)",
      "date": "2026-08-05"
     },
     {
+     "h": "0cc98b43",
      "kind": "fix",
      "scope": "fishing",
      "text": "Add the early-reel grace and document the new rule from review",
      "date": "2026-08-05"
     },
     {
+     "h": "6857f9df",
      "kind": "fix",
      "scope": "ui",
      "text": "Null-guard the cached crafting elements; re-hunt the skill-cap seed",
@@ -152,36 +172,42 @@
    "en": "Dungeons, rifts & bosses",
    "items": [
     {
+     "h": "3c421321",
      "kind": "feat",
      "scope": "content",
      "text": "Author Book of Deeds coverage for the Rift procedural",
      "date": "2026-08-05"
     },
     {
+     "h": "c56e0b0d",
      "kind": "fix",
      "scope": "content",
      "text": "Show Heroic Nythraxis' Dread Curse in the Dungeon Finder mechanics preview",
      "date": "2026-08-06"
     },
     {
+     "h": "9776536a",
      "kind": "fix",
      "scope": "sim",
      "text": "Gate delve-shop purchases and companion upgrades on proximity",
      "date": "2026-08-05"
     },
     {
+     "h": "43046d96",
      "kind": "fix",
      "scope": "ui",
      "text": "Give vendor and delve lockpick/rite/board windows an accessible dialog name",
      "date": "2026-08-05"
     },
     {
+     "h": "f4534917",
      "kind": "fix",
      "scope": "ui",
      "text": "Show Elite/Boss status on the mob hover tooltip",
      "date": "2026-08-05"
     },
     {
+     "h": "670f1f33",
      "kind": "fix",
      "scope": "ui",
      "text": "Show the Rift floor name on the World Map and fix Show on Map zoom/pan",
@@ -196,42 +222,49 @@
    "en": "World & quests",
    "items": [
     {
+     "h": "8107e72c",
      "kind": "feat",
      "scope": "content",
      "text": "Extend the zone Chronicle gatherer/first-cast deed pair to remaining starter zones",
      "date": "2026-08-06"
     },
     {
+     "h": "7c70e9f3",
      "kind": "feat",
      "scope": "items",
      "text": "Make every legendary item unique-equipped",
      "date": "2026-08-06"
     },
     {
+     "h": "a94c95e1",
      "kind": "fix",
      "scope": "render",
      "text": "Stop Frostveil's aurora from bleeding into neighboring zones",
      "date": "2026-08-06"
     },
     {
+     "h": "c30b6fec",
      "kind": "fix",
      "scope": "sim",
      "text": "Exclude soulbound items from vendor bulk-buy quantity",
      "date": "2026-08-06"
     },
     {
+     "h": "4550566d",
      "kind": "fix",
      "scope": "content",
      "text": "Give Avatar of War's fiesta augment its spell-damage half",
      "date": "2026-08-06"
     },
     {
+     "h": "d4eeb985",
      "kind": "fix",
      "scope": "content",
      "text": "Fix two Galecrest quests that target mobs which never spawn",
      "date": "2026-08-05"
     },
     {
+     "h": "eb262d5b",
      "kind": "fix",
      "scope": "styles",
      "text": "Fix mobile move-zone safe-area-inset and tablet left-handed frame nudge",
@@ -246,42 +279,49 @@
    "en": "Guild & social",
    "items": [
     {
+     "h": "4600b5f9",
      "kind": "feat",
      "scope": "ui",
      "text": "Surface the chat \"!\" community-commands hint",
      "date": "2026-08-05"
     },
     {
+     "h": "4e37ea5e",
      "kind": "feat",
      "scope": "server",
      "text": "Retire the per-endpoint internal Discord GET pickups",
      "date": "2026-08-05"
     },
     {
+     "h": "5be245c6",
      "kind": "fix",
      "scope": "bot",
      "text": "Drop the dead /flex reference from the /whoami reply",
      "date": "2026-08-06"
     },
     {
+     "h": "0ee771a7",
      "kind": "fix",
      "scope": "ui",
      "text": "Format rank/level/prestige as numbers in High Scores and Leaderboard",
      "date": "2026-08-06"
     },
     {
+     "h": "a3cead14",
      "kind": "fix",
      "scope": "server",
      "text": "Close moderation audit-trail gaps for /spectate and chat-mute report resolution",
      "date": "2026-08-05"
     },
     {
+     "h": "98c5820f",
      "kind": "fix",
      "scope": "bot",
      "text": "Tell the player when a slash-command reply fails instead of hanging",
      "date": "2026-08-05"
     },
     {
+     "h": "fac9af51",
      "kind": "fix",
      "scope": "server",
      "text": "Report the correct too-long password error on register",
@@ -296,96 +336,112 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "cb7348c7",
      "kind": "feat",
      "scope": "input",
      "text": "Let a gamepad button be bound to camera zoom",
      "date": "2026-08-06"
     },
     {
+     "h": "1a1264c2",
      "kind": "feat",
      "scope": "ui",
      "text": "Selectable pet health frame, clustered with the pet bar",
      "date": "2026-08-05"
     },
     {
+     "h": "336e98b9",
      "kind": "fix",
      "scope": "ui",
      "text": "Give icon-only dialog close controls real button semantics and labels",
      "date": "2026-08-06"
     },
     {
+     "h": "90748fd2",
      "kind": "fix",
      "scope": "server",
      "text": "Rate-limit DELETE /api/assets/:id like its DELETE /api/maps/:id sibling",
      "date": "2026-08-06"
     },
     {
+     "h": "a7b5ecb2",
      "kind": "fix",
      "scope": "guide",
      "text": "Document the missing keybinds on the Controls reference page",
      "date": "2026-08-06"
     },
     {
+     "h": "dab8ec09",
      "kind": "fix",
      "scope": "android",
      "text": "Point the Solana wallet-adapter connection icon at a favicon that exists",
      "date": "2026-08-06"
     },
     {
+     "h": "8f0a8d14",
      "kind": "fix",
      "scope": "ui",
      "text": "Give the bags window an accessible dialog role and name",
      "date": "2026-08-06"
     },
     {
+     "h": "df39ad11",
      "kind": "fix",
      "scope": "ui",
      "text": "Fix Reset to Defaults gaps in Interface, Key Bindings, and Graphics options",
      "date": "2026-08-06"
     },
     {
+     "h": "eeb75120",
      "kind": "fix",
      "scope": "render",
      "text": "Bound mobile character/object reuse pools and cap auto graphics tier by device memory",
      "date": "2026-08-05"
     },
     {
+     "h": "4a795649",
      "kind": "fix",
      "scope": "sim",
      "text": "Stack eating with natural hp regen, retune potion ladder",
      "date": "2026-08-05"
     },
     {
+     "h": "a989607b",
      "kind": "fix",
      "scope": "render",
      "text": "Soften the model-sharing class skins' tint wash",
      "date": "2026-08-05"
     },
     {
+     "h": "5a8186a6",
      "kind": "fix",
      "scope": "render",
      "text": "Sort the point-light budget by the live budget, not just visible-slot count",
      "date": "2026-08-05"
     },
     {
+     "h": "87db948a",
      "kind": "fix",
      "scope": "ui",
      "text": "Give a shield block its own floating combat text and log line",
      "date": "2026-08-05"
     },
     {
+     "h": "e2df655b",
      "kind": "fix",
      "scope": "render",
      "text": "Stop ground-object pooling from nulling its own key on a fresh build",
      "date": "2026-08-05"
     },
     {
+     "h": "a2ffc362",
      "kind": "fix",
      "scope": "input",
      "text": "Make swipe-look honor the Touch Look Speed setting",
      "date": "2026-08-05"
     },
     {
+     "h": "80d183db",
      "kind": "fix",
      "scope": "styles",
      "text": "Include the pet strip in the tablet left-handed column mirror",
