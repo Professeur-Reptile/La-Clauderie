@@ -164,6 +164,12 @@
   .warn p + p { margin-top: 7px; color: var(--dim); font-size: 0.89rem; }
   .warn a { color: var(--gold-bright); }
 
+  /* « Prochaine mise à jour » : c'est l'information qui dit quand revenir,
+     elle ne doit pas se perdre dans le gris de la ligne de méta. */
+  #next { color: var(--gold-bright); }
+  #next b { color: var(--gold-bright); }
+  #next .a { color: var(--faint); }
+
   /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque version. */
   .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
   .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
@@ -603,12 +609,13 @@
     if (!next) return;
     let en = false;
     try { en = localStorage.getItem("lang") === "en"; } catch (e) { /* stockage refusé */ }
-    const meme = next.toDateString() === now.toDateString();
     const heure = next.toLocaleTimeString(en ? "en-GB" : "fr-FR", { hour: "2-digit", minute: "2-digit" });
-    const quand = en
-      ? (meme ? "today at " : "tomorrow at ") + heure
-      : (meme ? "aujourd’hui à " : "demain à ") + heure;
-    out.innerHTML = "<b>" + (en ? "Next update" : "Prochaine mise à jour") + "</b> " + quand;
+    const min = Math.max(1, Math.round((next - now) / 60000));
+    const dans = min < 60
+      ? (en ? `in ${min} min` : `dans ${min} min`)
+      : (en ? `in ${Math.round(min / 60)} h` : `dans ${Math.round(min / 60)} h`);
+    out.innerHTML = "<b>" + (en ? "Next update" : "Prochaine mise à jour") + "</b> "
+      + dans + " <span class=\"a\">(" + heure + ")</span>";
   })();
 
   function since(iso) {
