@@ -61,7 +61,10 @@ const PAGES = [
   { path: '/pvp.html', filled: ['#buildBox'] },
   { path: '/failles.html', filled: [] },
   { path: '/montures.html', filled: [] },
-  { path: '/patch-notes.html', filled: ['#soonBox'] },
+  // #soonBox est VOLONTAIREMENT vide entre deux préparations de version :
+  // ne pas l'exiger rempli, sinon la publication se bloquerait toute seule
+  // dès que le jeu n'a rien en chantier.
+  { path: '/patch-notes.html', filled: [] },
   { path: '/a-venir.html', filled: ['#box'] },
   { path: '/notes/v0.34.0.html', filled: [] },
   { path: '/notes/v0.34.0.en.html', filled: [] },

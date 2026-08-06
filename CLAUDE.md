@@ -167,8 +167,9 @@ avant de t'appuyer dessus pour le BiS ou les liens Codex.
 > `scripts/build_upcoming.py` dans les six rubriques du bandeau. La page dit
 > explicitement que rien n'est définitif. Ne jamais y écrire de prose
 > éditoriale : les vraies notes se rédigent à la sortie, vérifiées contre le
-> code (procédure ⚡). Quand la version sort, la branche de release
-> disparaît et le workflow vide la page tout seul.
+> code (procédure ⚡). Le jeu GARDE ses vieilles branches `release/*` après
+> le tag : le workflow se fie donc au fait que la branche la plus haute ne
+> dépasse plus le dernier tag, et vide alors la page tout seul.
 >
 > Le **BiS est déterministe** : il ne se rédige pas, il se calcule. Ne jamais
 > éditer le bloc `const BIS = {…}` de `bis.html` à la main — c'est

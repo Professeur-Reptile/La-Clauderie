@@ -59,6 +59,16 @@ jobs:
           want=$(printf '%s\n%s\n' "$base" "${branch##*/}" | sort -V | tail -1)
           if [ -z "$branch" ] || [ "$want" = "$base" ]; then
             echo "Aucune branche de release au-dessus de $base — rien à annoncer."
+            # La version précédemment annoncée vient de sortir : vider la page,
+            # sinon elle continuerait de présenter comme « à venir » quelque
+            # chose de déjà publié.
+            if [ -f upcoming.json ] && [ "$(python3 -c "import json;print(json.load(open('upcoming.json')).get('version') or '')")" != "" ]; then
+              python3 -c "import json,sys; json.dump({'generated':'','base_tag':sys.argv[1],'version':None,'sections':[]}, open('upcoming.json','w'), ensure_ascii=False, indent=1)" "$base"
+              echo "changed=true" >> "$GITHUB_OUTPUT"
+              echo "version=(aucune)" >> "$GITHUB_OUTPUT"
+              echo "alert=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
             echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0
           fi
           echo "Base $base · branche $branch"
@@ -67,8 +77,7 @@ jobs:
           # (package.json sera récupéré à la demande par git show).
           git clone --quiet --filter=tree:0 --no-checkout --single-branch \
             --branch "${branch#refs/heads/}" "$GAME" game
-          git -C game fetch --quiet --filter=tree:0 origin "tag $base" 2>/dev/null \
-            || git -C game fetch --quiet --filter=tree:0 origin "refs/tags/$base:refs/tags/$base"
+          git -C game fetch --quiet --filter=tree:0 origin "refs/tags/$base:refs/tags/$base"
 
           python3 scripts/build_upcoming.py game "$base" "${branch#refs/heads/}" > upcoming.new.json
           rm -rf game
@@ -101,7 +110,11 @@ jobs:
           git config user.name "clauderie-bot"
           git config user.email "actions@users.noreply.github.com"
           git add upcoming.json
-          git commit -m "À venir : aperçu de la ${{ steps.read.outputs.version }} en préparation"
+          if [ "${{ steps.read.outputs.version }}" = "(aucune)" ]; then
+            git commit -m "À venir : plus rien en préparation, la version annoncée est sortie"
+          else
+            git commit -m "À venir : aperçu de la ${{ steps.read.outputs.version }} en préparation"
+          fi
           pushed=false
           for i in 1 2 3 4; do
             if git push; then pushed=true; break; fi
