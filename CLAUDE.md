@@ -11,7 +11,9 @@ miroir GitHub Pages : retiré le 6 août 2026, il échouait 2 fois sur 3 (voir
 ## ⚡ Quand l'utilisateur dit « il y a une nouvelle MAJ »
 
 > **Normalement, même ça, c'est automatique** : une Routine Claude horaire
-> (« Veille nouvelle version WoCC ») détecte toute version absente de
+> (« Nouvelle version WoCC — rédaction », créée le 6 août 2026 — la précédente
+> n'existait plus, d'où huit issues « Nouveautés à ajouter » restées ouvertes
+> depuis le 23 juillet) détecte toute version absente de
 > `patch-notes.json` et déroule elle-même la procédure ci-dessous. Si
 > l'utilisateur le demande à la main, c'est pour publier tout de suite sans
 > attendre le prochain passage — même procédure. Avant de commencer, vérifier
@@ -157,11 +159,11 @@ avant de t'appuyer dessus pour le BiS ou les liens Codex.
 | Données du Codex | `wocc-knowledge-base` → `update-knowledge-base.yml` | ~5 min après chaque tag du jeu |
 | **Builds / BiS** (`bis.html`) | `update-bis.yml` → `compute_bis.py` + `inject_bis.py` | cron 15 min (throttlé ~1 h par GitHub ; commit seulement si les données changent) |
 | **Récolte & Métiers** (`metiers.html`) | `update-bis.yml` → `build_craft.py` + `inject_craft.py` | idem |
-| **Rédaction des « Nouveautés »** | Routine Claude « Veille nouvelle version WoCC » (session fraîche qui suit la procédure ⚡ ci-dessus) | toutes les heures |
+| **Rédaction des « Nouveautés »** | Routine Claude « Nouvelle version WoCC — rédaction » : compare le dernier tag du jeu à `patch-notes.json[0]`, ne fait rien s'ils concordent, sinon déroule la procédure ⚡ et ferme l'issue | toutes les heures |
 | Classement guilde (`guild.json`) | `update-guild-rank.yml` | toutes les 3 h |
 | Déploiement (OVH) | `deploy.yml` (vérifie, puis envoie par FTP) | à chaque push `main` (+ cron 6 h pour rafraîchir la copie du Codex) |
 | **Aperçu de la version à venir** (`a-venir.html`) | `update-upcoming.yml` → `build_upcoming.py` lit la branche `release/vX.Y.Z` du jeu | toutes les 2 h |
-| **Réécriture de l'aperçu** (partie rédigée d'`a-venir.html`) | Routine Claude « Page « À venir » (WoCC) » : ne réécrit QUE si la version change ou si la branche a pris ≥ 25 commits depuis `data-commits` | 1×/jour, 5 h UTC |
+| **Réécriture de l'aperçu** (partie rédigée d'`a-venir.html`) | Routine Claude « Page « À venir » (WoCC) » : ne réécrit QUE si la version change ou si la branche a pris ≥ 25 commits depuis `data-commits` | 2×/jour, 03 h et 15 h UTC (annoncées sur la page) |
 | Pré-alerte « sortie imminente » | même workflow : ouvre une issue dès que `package.json` monte de version sur la branche de release | toutes les 2 h |
 | Rappel « version manquante » (filet de secours) | `check-game-version.yml` ouvre une issue | toutes les heures |
 

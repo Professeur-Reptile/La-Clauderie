@@ -207,6 +207,7 @@
       <span><b>Depuis</b> la v0.34.0</span>
         <span id="freshness"><b>Relevé</b> à l’instant</span>
       <span id="written"><b>Résumé écrit</b> le 6 août 2026 à 19 h 15</span>
+      <span id="next"></span>
     </div>
     <div class="hint">💡 Clique sur une carte pour le détail — et sur un nom souligné pour sa fiche Codex.</div>
   </header>
@@ -580,6 +581,34 @@
     try { en = localStorage.getItem("lang") === "en"; } catch (e) { /* stockage refusé */ }
     const quand = t.toLocaleString(en ? "en-GB" : "fr-FR", { dateStyle: "long", timeStyle: "short" });
     out.innerHTML = "<b>" + (en ? "Summary written" : "Résumé écrit") + "</b> " + quand;
+  })();
+
+  // « Prochaine mise à jour » : le résumé est réécrit deux fois par jour, à
+  // 03:00 et 15:00 UTC (5 h et 17 h à Paris l'été). On l'annonce pour que le
+  // lecteur sache quand revenir, au lieu de rafraîchir dans le vide — et dans
+  // SON fuseau, comme la date de rédaction.
+  const MAJ_UTC = [3, 15];
+  (function () {
+    const out = document.getElementById("next");
+    if (!out) return;
+    const now = new Date();
+    let next = null;
+    for (let jour = 0; jour <= 1 && !next; jour++) {
+      for (const h of MAJ_UTC) {
+        const t = new Date(Date.UTC(
+          now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + jour, h, 0, 0));
+        if (t > now) { next = t; break; }
+      }
+    }
+    if (!next) return;
+    let en = false;
+    try { en = localStorage.getItem("lang") === "en"; } catch (e) { /* stockage refusé */ }
+    const meme = next.toDateString() === now.toDateString();
+    const heure = next.toLocaleTimeString(en ? "en-GB" : "fr-FR", { hour: "2-digit", minute: "2-digit" });
+    const quand = en
+      ? (meme ? "today at " : "tomorrow at ") + heure
+      : (meme ? "aujourd’hui à " : "demain à ") + heure;
+    out.innerHTML = "<b>" + (en ? "Next update" : "Prochaine mise à jour") + "</b> " + quand;
   })();
 
   function since(iso) {
