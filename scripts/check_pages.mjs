@@ -61,7 +61,8 @@ const PAGES = [
   { path: '/pvp.html', filled: ['#buildBox'] },
   { path: '/failles.html', filled: [] },
   { path: '/montures.html', filled: [] },
-  { path: '/patch-notes.html', filled: [] },
+  { path: '/patch-notes.html', filled: ['#soonBox'] },
+  { path: '/a-venir.html', filled: ['#box'] },
   { path: '/notes/v0.34.0.html', filled: [] },
   { path: '/notes/v0.34.0.en.html', filled: [] },
 ];

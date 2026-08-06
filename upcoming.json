@@ -1,0 +1,397 @@
+{
+ "generated": "2026-08-06T09:15:39Z",
+ "base_tag": "v0.34.0",
+ "version": "v0.35.0",
+ "branch": "release/v0.35.0",
+ "declared_version": "0.34.0",
+ "imminent": false,
+ "commits": 99,
+ "shown": 56,
+ "last_commit": "2026-08-06T15:30:56+08:00",
+ "sections": [
+  {
+   "key": "classes",
+   "icon": "⚔️",
+   "fr": "Classes & sorts",
+   "en": "Classes & spells",
+   "items": [
+    {
+     "kind": "feat",
+     "scope": "render",
+     "text": "Pose-sample-and-blend animation pipeline, mage casts plus elemental attack",
+     "date": "2026-08-06"
+    },
+    {
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Add setting to stop auto-attack on target switch",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Scale mastery and talent damage percent over the whole hit",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Auto-acquire attacker on cast, prefer live mob on click-pick",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Dedupe Mass Barrier and Nature's Fury like every other group buff",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Render the cast strip before the focus ladder runs, from round-two review",
+     "date": "2026-08-05"
+    }
+   ]
+  },
+  {
+   "key": "metiers",
+   "icon": "🔨",
+   "fr": "Métiers & récolte",
+   "en": "Professions & gathering",
+   "items": [
+    {
+     "kind": "feat",
+     "scope": "content",
+     "text": "Wire the claw and tusk corpse-harvest material families",
+     "date": "2026-08-06"
+    },
+    {
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Add per-craft rare-tier profession deeds",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "feat",
+     "scope": "professions",
+     "text": "Commission order board (open, accept, deliver, cancel)",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "feat",
+     "scope": "professions",
+     "text": "Cast-paced craft, enchant family, and tool recharge",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Single-surface craft cast strip on the painter family from review",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "content",
+     "text": "Update stale mob names in zone1 profession quests",
+     "date": "2026-08-06"
+    },
+    {
+     "kind": "fix",
+     "scope": "render",
+     "text": "Dispose the shadowform/moonkin/metamorph material clone caches",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "content",
+     "text": "Add a base Enchant Offhand so shields are not enchant-dead",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Trap focus and mark the dialog role on the crafting window",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "professions",
+     "text": "Complete craft-window deps and format after release merge",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "professions",
+     "text": "Harden craft-cast entry points and mid-cast pins from review",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "fishing",
+     "text": "End the session on a pre-bite pole re-press (spam-click exploit)",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "fishing",
+     "text": "Add the early-reel grace and document the new rule from review",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Null-guard the cached crafting elements; re-hunt the skill-cap seed",
+     "date": "2026-08-05"
+    }
+   ]
+  },
+  {
+   "key": "donjons",
+   "icon": "🐉",
+   "fr": "Donjons, failles & boss",
+   "en": "Dungeons, rifts & bosses",
+   "items": [
+    {
+     "kind": "feat",
+     "scope": "content",
+     "text": "Author Book of Deeds coverage for the Rift procedural",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "content",
+     "text": "Show Heroic Nythraxis' Dread Curse in the Dungeon Finder mechanics preview",
+     "date": "2026-08-06"
+    },
+    {
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Gate delve-shop purchases and companion upgrades on proximity",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Give vendor and delve lockpick/rite/board windows an accessible dialog name",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Show Elite/Boss status on the mob hover tooltip",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Show the Rift floor name on the World Map and fix Show on Map zoom/pan",
+     "date": "2026-08-05"
+    }
+   ]
+  },
+  {
+   "key": "monde",
+   "icon": "🗺️",
+   "fr": "Monde & quêtes",
+   "en": "World & quests",
+   "items": [
+    {
+     "kind": "feat",
+     "scope": "content",
+     "text": "Extend the zone Chronicle gatherer/first-cast deed pair to remaining starter zones",
+     "date": "2026-08-06"
+    },
+    {
+     "kind": "feat",
+     "scope": "items",
+     "text": "Make every legendary item unique-equipped",
+     "date": "2026-08-06"
+    },
+    {
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stop Frostveil's aurora from bleeding into neighboring zones",
+     "date": "2026-08-06"
+    },
+    {
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Exclude soulbound items from vendor bulk-buy quantity",
+     "date": "2026-08-06"
+    },
+    {
+     "kind": "fix",
+     "scope": "content",
+     "text": "Give Avatar of War's fiesta augment its spell-damage half",
+     "date": "2026-08-06"
+    },
+    {
+     "kind": "fix",
+     "scope": "content",
+     "text": "Fix two Galecrest quests that target mobs which never spawn",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "styles",
+     "text": "Fix mobile move-zone safe-area-inset and tablet left-handed frame nudge",
+     "date": "2026-08-05"
+    }
+   ]
+  },
+  {
+   "key": "guilde",
+   "icon": "🏰",
+   "fr": "Guilde & social",
+   "en": "Guild & social",
+   "items": [
+    {
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Surface the chat \"!\" community-commands hint",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "feat",
+     "scope": "server",
+     "text": "Retire the per-endpoint internal Discord GET pickups",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "bot",
+     "text": "Drop the dead /flex reference from the /whoami reply",
+     "date": "2026-08-06"
+    },
+    {
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Format rank/level/prestige as numbers in High Scores and Leaderboard",
+     "date": "2026-08-06"
+    },
+    {
+     "kind": "fix",
+     "scope": "server",
+     "text": "Close moderation audit-trail gaps for /spectate and chat-mute report resolution",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "bot",
+     "text": "Tell the player when a slash-command reply fails instead of hanging",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "server",
+     "text": "Report the correct too-long password error on register",
+     "date": "2026-08-05"
+    }
+   ]
+  },
+  {
+   "key": "confort",
+   "icon": "⚙️",
+   "fr": "Confort & technique",
+   "en": "Comfort & technical",
+   "items": [
+    {
+     "kind": "feat",
+     "scope": "input",
+     "text": "Let a gamepad button be bound to camera zoom",
+     "date": "2026-08-06"
+    },
+    {
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Selectable pet health frame, clustered with the pet bar",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Give icon-only dialog close controls real button semantics and labels",
+     "date": "2026-08-06"
+    },
+    {
+     "kind": "fix",
+     "scope": "server",
+     "text": "Rate-limit DELETE /api/assets/:id like its DELETE /api/maps/:id sibling",
+     "date": "2026-08-06"
+    },
+    {
+     "kind": "fix",
+     "scope": "guide",
+     "text": "Document the missing keybinds on the Controls reference page",
+     "date": "2026-08-06"
+    },
+    {
+     "kind": "fix",
+     "scope": "android",
+     "text": "Point the Solana wallet-adapter connection icon at a favicon that exists",
+     "date": "2026-08-06"
+    },
+    {
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Give the bags window an accessible dialog role and name",
+     "date": "2026-08-06"
+    },
+    {
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Fix Reset to Defaults gaps in Interface, Key Bindings, and Graphics options",
+     "date": "2026-08-06"
+    },
+    {
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bound mobile character/object reuse pools and cap auto graphics tier by device memory",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Stack eating with natural hp regen, retune potion ladder",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "render",
+     "text": "Soften the model-sharing class skins' tint wash",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "render",
+     "text": "Sort the point-light budget by the live budget, not just visible-slot count",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Give a shield block its own floating combat text and log line",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stop ground-object pooling from nulling its own key on a fresh build",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "input",
+     "text": "Make swipe-look honor the Touch Look Speed setting",
+     "date": "2026-08-05"
+    },
+    {
+     "kind": "fix",
+     "scope": "styles",
+     "text": "Include the pet strip in the tablet left-handed column mirror",
+     "date": "2026-08-05"
+    }
+   ]
+  }
+ ]
+}

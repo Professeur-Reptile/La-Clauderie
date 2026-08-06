@@ -31,7 +31,7 @@
     --line: #262c3a; --line-soft: #1e2431;
     --gold: #c8a04b; --gold-bright: #e6c37a;
     --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
-    --heal: #58c46a;
+    --heal: #58c46a; --warn: #e0a33a;
     --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
     --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
@@ -90,6 +90,17 @@
   .v-go::after { content: "→"; transition: transform .15s; }
   .version:hover .v-go::after { transform: translateX(3px); }
 
+  /* Carte « en préparation » : la version que les développeurs assemblent en
+     ce moment. Volontairement distincte des versions sorties — bordure
+     pointillée et teinte d'avertissement — pour qu'on ne la confonde pas. */
+  .soon { display: block; text-decoration: none; border: 1px dashed color-mix(in srgb, var(--warn) 55%, transparent); background: color-mix(in srgb, var(--warn) 7%, transparent); border-radius: 13px; padding: clamp(16px, 3vw, 22px); transition: border-color .15s, background .15s; }
+  .soon:hover { border-color: var(--warn); background: color-mix(in srgb, var(--warn) 12%, transparent); }
+  .soon .s-kick { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--warn); margin: 0 0 6px; }
+  .soon .s-num { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.3rem, 3.4vw, 1.6rem); color: var(--text); }
+  .soon p { margin: 6px 0 0; color: var(--dim); font-size: 0.92rem; }
+  .soon .s-go { display: inline-flex; align-items: center; gap: 5px; margin-top: 12px; color: var(--warn); font-size: 0.85rem; font-weight: 600; }
+  .soon .s-go::after { content: "→"; }
+
   .empty { color: var(--faint); text-align: center; padding: 34px; border: 1px dashed var(--line); border-radius: 13px; }
 
   footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
@@ -112,6 +123,8 @@
     <h1 data-en="Game updates">Nouveautés du jeu</h1>
     <p class="lede" data-en="Every game update, explained in detail for the guild. Most recent first — click a version to read all its changes and the exact rules.">Chaque mise à jour du jeu, expliquée en détail pour la guilde. La plus récente en premier — clique sur une version pour lire toutes ses nouveautés et les règles exactes.</p>
   </header>
+
+  <div id="soonBox"></div>
 
   <div class="versions" id="versions">
     <div class="empty" data-en="Loading…">Chargement…</div>
@@ -140,6 +153,27 @@
   function esc(s) {
     return String(s || "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   }
+
+  // Version en préparation (upcoming.json, régénéré par « La prochaine
+  // version du jeu »). Silencieux si rien n'est en cours.
+  fetch("upcoming.json?_=" + Date.now())
+    .then(r => r.ok ? r.json() : null)
+    .then(d => {
+      if (!d || !d.version || !d.shown) return;
+      document.getElementById("soonBox").innerHTML = `
+        <a class="soon" href="a-venir.html">
+          <p class="s-kick">${d.imminent
+            ? T({ fr: "Sortie imminente", en: "Release imminent" })
+            : T({ fr: "En préparation", en: "In preparation" })}</p>
+          <span class="s-num">${esc(d.version)}</span>
+          <p>${T({
+            fr: `${d.shown} changements déjà mergés sur la branche de préparation. Rien n'est définitif — ni la liste, ni la date.`,
+            en: `${d.shown} changes already merged on the preparation branch. Nothing is final — neither the list nor the date.`,
+          })}</p>
+          <span class="s-go">${T({ fr: "Voir ce qui arrive", en: "See what's coming" })}</span>
+        </a>`;
+    })
+    .catch(() => {});
 
   fetch("patch-notes.json?_=" + Date.now())
     .then(r => r.ok ? r.json() : { versions: [] })

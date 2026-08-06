@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title data-en="Coming next — La Clauderie">La prochaine version — La Clauderie</title>
+<meta name="description" content="Ce qui est déjà mergé sur la branche de la prochaine version de World of ClaudeCraft — un aperçu, pas des notes officielles.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="La prochaine version — La Clauderie">
+<meta property="og:description" content="Ce qui est déjà mergé sur la branche de la prochaine version — un aperçu, pas des notes officielles.">
+<meta property="og:url" content="https://laclauderie.fr/a-venir.html">
+<link rel="canonical" href="https://laclauderie.fr/a-venir.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="assets/pwa.js" defer></script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --heal: #58c46a; --warn: #e0a33a; --q-rare: #2f8bff;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 820px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 64px) 0 clamp(22px, 4vw, 34px); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.2rem, 6.5vw, 3.2rem); line-height: 1.05; margin: 0 0 12px; }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.15rem); max-width: 58ch; margin: 0; }
+
+  /* Liste des versions */
+  .versions { display: grid; gap: 16px; padding: clamp(8px, 2vw, 16px) 0 clamp(36px, 6vw, 56px); }
+  .version {
+    display: block; text-decoration: none;
+    background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 13px;
+    padding: clamp(18px, 3.5vw, 26px);
+    transition: border-color .15s, transform .15s, background .15s;
+  }
+  .version:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .version:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .v-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 12px; margin-bottom: 4px; }
+  .v-num { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 4vw, 1.9rem); color: var(--gold-bright); line-height: 1.1; }
+  .v-date { font-family: var(--font-mono); font-size: 0.78rem; color: var(--faint); }
+  .badge-last { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--heal); border: 1px solid color-mix(in srgb, var(--heal) 45%, transparent); padding: 3px 8px; border-radius: 5px; }
+  .v-titre { font-family: var(--font); font-weight: 600; font-size: 1.05rem; margin: 6px 0 6px; color: var(--text); }
+  .v-resume { color: var(--dim); font-size: 0.93rem; margin: 0; }
+  .v-forts { margin: 12px 0 0; padding-left: 1.1em; color: var(--dim); font-size: 0.9rem; }
+  .v-forts li { margin: 4px 0; }
+  .v-forts li::marker { color: var(--gold); }
+  .v-go { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.85rem; font-weight: 600; }
+  .v-go::after { content: "→"; transition: transform .15s; }
+  .version:hover .v-go::after { transform: translateX(3px); }
+
+  .empty { color: var(--faint); text-align: center; padding: 34px; border: 1px dashed var(--line); border-radius: 13px; }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+
+  /* --- Propre à « la prochaine version » -------------------------------- */
+
+  /* L'avertissement doit être impossible à manquer : cette page montre des
+     travaux EN COURS, qui peuvent encore changer ou ne jamais sortir. */
+  .warn {
+    display: flex; gap: 13px; align-items: flex-start;
+    background: color-mix(in srgb, var(--warn) 11%, transparent);
+    border: 1px solid color-mix(in srgb, var(--warn) 42%, transparent);
+    border-radius: 12px; padding: 15px 17px; margin: 0 0 26px;
+  }
+  .warn .ico { font-size: 1.15rem; line-height: 1.35; flex: none; }
+  .warn p { margin: 0; font-size: 0.92rem; color: var(--text); }
+  .warn p + p { margin-top: 7px; color: var(--dim); font-size: 0.88rem; }
+
+  .facts { display: flex; flex-wrap: wrap; gap: 8px 26px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); margin: 0 0 26px; }
+  .facts b { color: var(--dim); font-weight: 400; }
+  .facts .imminent { color: var(--warn); font-weight: 700; }
+
+  .rub { border-top: 1px solid var(--line-soft); padding: 22px 0 4px; }
+  .rub:first-of-type { border-top: none; }
+  .rub-head { display: flex; align-items: baseline; gap: 11px; margin-bottom: 12px; }
+  .rub-head h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; margin: 0; }
+  .rub-head .n { font-family: var(--font-mono); font-size: 0.74rem; color: var(--faint); margin-left: auto; }
+  .rub.none .rub-head h2, .rub.none .rub-head .n { color: var(--faint); font-weight: 400; }
+  .rub ul { list-style: none; margin: 0; padding: 0; }
+  .rub li { display: grid; grid-template-columns: 74px 1fr; gap: 4px 12px; align-items: baseline; padding: 8px 0; border-top: 1px dashed var(--line-soft); }
+  .rub li:first-child { border-top: none; }
+  .tag { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 700; padding: 2px 0; }
+  .t-feat { color: var(--heal); }
+  .t-fix { color: var(--q-rare); }
+  .t-perf { color: var(--gold); }
+  .rub li span.txt { color: var(--dim); font-size: 0.91rem; }
+  .rub .nothing { color: var(--faint); font-size: 0.89rem; font-style: italic; padding: 2px 0 6px; }
+  @media (max-width: 560px) {
+    .rub li { grid-template-columns: 1fr; gap: 2px; }
+    .rub li span.txt { grid-column: 1; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow" data-en="World of ClaudeCraft · Work in progress">World of ClaudeCraft · Travaux en cours</p>
+    <h1 data-en="Coming next">La prochaine version</h1>
+    <p class="lede" data-en="What is already merged on the branch the developers are preparing the next version on. Not a release: a look over their shoulder.">Ce qui est déjà mergé sur la branche où les développeurs préparent la prochaine version. Ce n'est pas une sortie : c'est un coup d'œil par-dessus leur épaule.</p>
+  </header>
+
+  <div id="box">
+    <div class="empty" data-en="Loading…">Chargement…</div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p data-en="Compiled for <strong>La Clauderie</strong> — from the game's release branch.">Compilé pour <strong>La Clauderie</strong> — d'après la branche de release du jeu.</p>
+    <p style="margin-top:8px"><a href="patch-notes.html" data-en="← All released versions">← Toutes les versions sorties</a></p>
+  </div>
+</footer>
+
+<script src="assets/nav.js"></script>
+<script src="assets/lang.js"></script>
+<script>
+  function esc(s) {
+    return String(s || "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  }
+  // « il y a 3 h », sans dépendance : la fraîcheur compte plus que la date
+  // exacte sur une page qui bouge plusieurs fois par jour.
+  function since(iso) {
+    const t = Date.parse(iso || "");
+    if (!t) return "";
+    const min = Math.max(0, Math.round((Date.now() - t) / 60000));
+    if (min < 60) return T({ fr: `il y a ${min} min`, en: `${min} min ago` });
+    const h = Math.round(min / 60);
+    if (h < 24) return T({ fr: `il y a ${h} h`, en: `${h} h ago` });
+    const j = Math.round(h / 24);
+    return T({ fr: `il y a ${j} j`, en: `${j} d ago` });
+  }
+  const KIND = {
+    feat: { cls: "t-feat", fr: "Nouveau", en: "New" },
+    fix:  { cls: "t-fix",  fr: "Correctif", en: "Fix" },
+    perf: { cls: "t-perf", fr: "Perfs", en: "Perf" },
+  };
+
+  fetch("upcoming.json?_=" + Date.now())
+    .then(r => r.ok ? r.json() : null)
+    .then(d => {
+      const box = document.getElementById("box");
+      if (!d || !d.version) {
+        box.innerHTML = '<div class="empty">' + T({
+          fr: "Aucune version en préparation pour le moment — la dernière sortie est la plus récente.",
+          en: "No version in preparation right now — the latest release is the most recent one.",
+        }) + "</div>";
+        return;
+      }
+      const imminent = d.imminent
+        ? `<span class="imminent">${T({ fr: "⏳ sortie imminente", en: "⏳ release imminent" })}</span>`
+        : "";
+      const warn = `
+        <div class="warn">
+          <span class="ico" aria-hidden="true">⚠️</span>
+          <div>
+            <p>${T({
+              fr: `Ce n'est <strong>pas</strong> la ${esc(d.version)} officielle. Ces changements sont mergés sur la branche de préparation : ils peuvent encore être modifiés, retirés, ou repoussés à une version suivante.`,
+              en: `This is <strong>not</strong> the official ${esc(d.version)}. These changes are merged on the preparation branch: they can still be changed, dropped, or pushed to a later version.`,
+            })}</p>
+            <p>${T({
+              fr: "Les libellés sont les messages bruts des développeurs, en anglais et non relus. Les vraies notes de version, vérifiées contre le code du jeu, arrivent dans « Nouveautés » à la sortie.",
+              en: "The wording is the developers' raw commit messages, in English and unreviewed. The real release notes, checked against the game code, land in “Game updates” at release.",
+            })}</p>
+          </div>
+        </div>`;
+      const facts = `
+        <div class="facts">
+          <span><b>${T({ fr: "Version", en: "Version" })}</b> ${esc(d.version)}</span>
+          <span><b>${T({ fr: "Depuis", en: "Since" })}</b> ${esc(d.base_tag)}</span>
+          <span><b>${T({ fr: "Changements retenus", en: "Changes shown" })}</b> ${d.shown} / ${d.commits}</span>
+          <span><b>${T({ fr: "Dernier commit", en: "Last commit" })}</b> ${esc(since(d.last_commit))}</span>
+          ${imminent}
+        </div>`;
+      const rubs = (d.sections || []).map(s => {
+        const items = s.items || [];
+        const head = `<div class="rub-head"><span aria-hidden="true">${esc(s.icon)}</span><h2>${esc(LANG === "en" ? s.en : s.fr)}</h2><span class="n">${items.length || ""}</span></div>`;
+        if (!items.length) {
+          return `<section class="rub none">${head}<p class="nothing">${T({ fr: "Rien pour l'instant.", en: "Nothing yet." })}</p></section>`;
+        }
+        const lis = items.map(i => {
+          const k = KIND[i.kind] || KIND.fix;
+          return `<li><span class="tag ${k.cls}">${T({ fr: k.fr, en: k.en })}</span><span class="txt">${esc(i.text)}</span></li>`;
+        }).join("");
+        return `<section class="rub">${head}<ul>${lis}</ul></section>`;
+      }).join("");
+      box.innerHTML = warn + facts + rubs;
+    })
+    .catch(() => {
+      document.getElementById("box").innerHTML = '<div class="empty">' +
+        T({ fr: "Impossible de charger l'aperçu de la prochaine version.", en: "Could not load the preview of the next version." }) + "</div>";
+    });
+</script>
+<script src="assets/codex-popup.js" defer></script>
+</body>
+</html>

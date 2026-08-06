@@ -158,8 +158,18 @@ avant de t'appuyer dessus pour le BiS ou les liens Codex.
 | **Rédaction des « Nouveautés »** | Routine Claude « Veille nouvelle version WoCC » (session fraîche qui suit la procédure ⚡ ci-dessus) | toutes les heures |
 | Classement guilde (`guild.json`) | `update-guild-rank.yml` | toutes les 3 h |
 | Déploiement (OVH + Pages) | `deploy.yml` (vérifie une fois, publie les deux en parallèle) | à chaque push `main` (+ cron 6 h, OVH seul, pour rafraîchir la copie du Codex) |
+| **Aperçu de la version à venir** (`a-venir.html`) | `update-upcoming.yml` → `build_upcoming.py` lit la branche `release/vX.Y.Z` du jeu | toutes les 2 h |
+| Pré-alerte « sortie imminente » | même workflow : ouvre une issue dès que `package.json` monte de version sur la branche de release | toutes les 2 h |
 | Rappel « version manquante » (filet de secours) | `check-game-version.yml` ouvre une issue | toutes les heures |
 
+> **`upcoming.json` et `a-venir.html`** ne se rédigent pas non plus : les
+> libellés sont les messages de commit bruts du jeu, en anglais, rangés par
+> `scripts/build_upcoming.py` dans les six rubriques du bandeau. La page dit
+> explicitement que rien n'est définitif. Ne jamais y écrire de prose
+> éditoriale : les vraies notes se rédigent à la sortie, vérifiées contre le
+> code (procédure ⚡). Quand la version sort, la branche de release
+> disparaît et le workflow vide la page tout seul.
+>
 > Le **BiS est déterministe** : il ne se rédige pas, il se calcule. Ne jamais
 > éditer le bloc `const BIS = {…}` de `bis.html` à la main — c'est
 > `scripts/compute_bis.py` (données réelles de la KB) réinjecté par

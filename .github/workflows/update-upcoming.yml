@@ -1,0 +1,137 @@
+# Alimente la page « La prochaine version » à partir du dépôt du jeu.
+#
+# Le jeu prépare chaque version sur une branche `release/vX.Y.Z` pendant un à
+# trois jours avant de la taguer. Ce workflow lit les commits déjà mergés sur
+# cette branche et régénère upcoming.json, que la page rend telle quelle.
+#
+# Il sert AUSSI de pré-alerte : le tout dernier geste avant un tag est la
+# montée de version dans package.json. Quand elle apparaît sur la branche de
+# release, la sortie est imminente — le workflow ouvre alors une issue, pour
+# que la rédaction des « Nouveautés » puisse commencer avant la sortie plutôt
+# qu'après (« Alerte nouvelle version du jeu » reste le filet APRÈS le tag).
+#
+# Toutes les 2 h : la branche bouge en continu pendant la préparation, mais
+# republier le site à chaque commit du jeu n'apporterait rien.
+
+name: La prochaine version du jeu
+
+on:
+  schedule:
+    - cron: '37 */2 * * *'   # décalé des autres crons du dépôt
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+  actions: write   # pour relancer la publication après le commit
+
+concurrency:
+  group: bis-update   # même groupe que les autres écritures sur main
+  cancel-in-progress: false
+
+jobs:
+  upcoming:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du site
+        uses: actions/checkout@v4
+
+      - name: Lire la branche de release du jeu
+        id: read
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GAME: https://github.com/levy-street/world-of-claudecraft
+        run: |
+          set -euo pipefail
+
+          # Dernier tag publié = la base à partir de laquelle compter.
+          base=$(git ls-remote --tags --refs "$GAME" 'v*' | awk -F/ '{print $NF}' | sort -V | tail -1)
+          if [ -z "$base" ]; then
+            echo "Dépôt du jeu injoignable — on réessaiera au prochain passage."
+            echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+
+          # La branche de release la plus haute AU-DESSUS de ce tag. Le jeu
+          # garde toutes ses vieilles branches release/* : on ne veut que celle
+          # qui prépare la suite.
+          branch=$(git ls-remote --heads "$GAME" 'refs/heads/release/v*' \
+            | awk -F'refs/heads/' '{print $2}' | sort -V | tail -1)
+          want=$(printf '%s\n%s\n' "$base" "${branch##*/}" | sort -V | tail -1)
+          if [ -z "$branch" ] || [ "$want" = "$base" ]; then
+            echo "Aucune branche de release au-dessus de $base — rien à annoncer."
+            echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          echo "Base $base · branche $branch"
+
+          # Clone sans arbres ni blobs : on ne veut que les messages de commit
+          # (package.json sera récupéré à la demande par git show).
+          git clone --quiet --filter=tree:0 --no-checkout --single-branch \
+            --branch "${branch#refs/heads/}" "$GAME" game
+          git -C game fetch --quiet --filter=tree:0 origin "tag $base" 2>/dev/null \
+            || git -C game fetch --quiet --filter=tree:0 origin "refs/tags/$base:refs/tags/$base"
+
+          python3 scripts/build_upcoming.py game "$base" "${branch#refs/heads/}" > upcoming.new.json
+          rm -rf game
+
+          # Le champ « generated » change à chaque passage : le retirer de la
+          # comparaison, sinon on committerait toutes les 2 h pour rien.
+          norm() { python3 -c "import json,sys; d=json.load(open(sys.argv[1])); d.pop('generated',None); print(json.dumps(d,sort_keys=True))" "$1"; }
+          if [ -f upcoming.json ] && [ "$(norm upcoming.json)" = "$(norm upcoming.new.json)" ]; then
+            rm -f upcoming.new.json
+            echo "Rien de neuf sur $branch."
+            echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+
+          was_imminent=false
+          if [ -f upcoming.json ]; then
+            was_imminent=$(python3 -c "import json;print(str(json.load(open('upcoming.json')).get('imminent',False)).lower())")
+          fi
+          mv upcoming.new.json upcoming.json
+          now_imminent=$(python3 -c "import json;print(str(json.load(open('upcoming.json')).get('imminent',False)).lower())")
+          version=$(python3 -c "import json;print(json.load(open('upcoming.json'))['version'])")
+
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "alert=$([ "$was_imminent" = "false" ] && [ "$now_imminent" = "true" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+
+      - name: Commiter upcoming.json
+        if: steps.read.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          git config user.name "clauderie-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add upcoming.json
+          git commit -m "À venir : aperçu de la ${{ steps.read.outputs.version }} en préparation"
+          pushed=false
+          for i in 1 2 3 4; do
+            if git push; then pushed=true; break; fi
+            echo "push échoué, rebase et nouvelle tentative ($i)…"
+            git pull --rebase origin main
+          done
+          if [ "$pushed" != "true" ]; then
+            echo "::error::Impossible de pousser après 4 tentatives."; exit 1
+          fi
+
+      # La montée de version dans package.json est le dernier geste avant le
+      # tag : à partir de là, la sortie se compte en heures.
+      - name: Prévenir que la sortie est imminente
+        if: steps.read.outputs.alert == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          title="⏳ ${{ steps.read.outputs.version }} imminente — préparer les Nouveautés"
+          if gh issue list --state open --limit 200 --json title --jq '.[].title' | grep -qF "$title"; then
+            echo "Issue déjà ouverte."; exit 0
+          fi
+          gh issue create --title "$title" --body "La branche \`release/${{ steps.read.outputs.version }}\` vient de monter sa version dans \`package.json\` — c'est le dernier geste avant le tag, la sortie se compte désormais en heures.
+
+          Les changements déjà mergés sont visibles sur <https://laclauderie.fr/a-venir.html> et dans \`upcoming.json\`.
+
+          La rédaction peut commencer maintenant : suivre la procédure ⚡ de \`CLAUDE.md\`, en gardant à l'esprit que la branche peut encore bouger jusqu'au tag."
+
+      - name: Publier le site
+        if: steps.read.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref main
