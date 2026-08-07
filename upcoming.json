@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-07T09:35:19Z",
+ "generated": "2026-08-07T11:25:11Z",
  "base_tag": "v0.34.0",
  "version": "v0.35.0",
  "branch": "release/v0.35.0",
- "declared_version": "0.34.0",
- "imminent": false,
- "commits": 809,
+ "declared_version": "0.35.0",
+ "imminent": true,
+ "commits": 816,
  "shown": 489,
- "last_commit": "2026-08-07T09:21:53Z",
+ "last_commit": "2026-08-07T22:41:23+12:00",
  "sections": [
   {
    "key": "classes",
