@@ -93,6 +93,7 @@
   /* Carte « en préparation » : la version que les développeurs assemblent en
      ce moment. Volontairement distincte des versions sorties — bordure
      pointillée et teinte d'avertissement — pour qu'on ne la confonde pas. */
+  #soonBox:not(:empty) { display: grid; gap: 12px; margin: 0 0 16px; }
   .soon { display: block; text-decoration: none; border: 1px dashed color-mix(in srgb, var(--warn) 55%, transparent); background: color-mix(in srgb, var(--warn) 7%, transparent); border-radius: 13px; padding: clamp(16px, 3vw, 22px); transition: border-color .15s, background .15s; }
   .soon:hover { border-color: var(--warn); background: color-mix(in srgb, var(--warn) 12%, transparent); }
   .soon .s-kick { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--warn); margin: 0 0 6px; }
@@ -159,19 +160,37 @@
   fetch("upcoming.json?_=" + Date.now())
     .then(r => r.ok ? r.json() : null)
     .then(d => {
-      if (!d || !d.version || !d.shown) return;
-      document.getElementById("soonBox").innerHTML = `
+      if (!d || !d.version) return;
+      // Tous les chantiers en cours (correctif ET grande version), du plus
+      // haut au plus bas — ils s'empilent au-dessus de la dernière sortie,
+      // comme une frise : v0.36.0, puis v0.35.1, puis les versions sorties.
+      const chantiers = (d.versions || [d]).filter(v => v.version)
+        .sort((a, b) => (b.version || "").localeCompare(a.version || "", undefined, { numeric: true }));
+      if (!chantiers.length) return;
+      document.getElementById("soonBox").innerHTML = chantiers.map(v => {
+        const patch = !/\.0$/.test(v.version);
+        const kick = v.imminent
+          ? T({ fr: "Sortie imminente", en: "Release imminent" })
+          : patch
+            ? T({ fr: "Correctif en préparation", en: "Hotfix in preparation" })
+            : T({ fr: "En préparation", en: "In preparation" });
+        const body = patch
+          ? T({
+              fr: `${v.shown} retouches déjà mergées sur sa branche. Un correctif sort en général en quelques jours.`,
+              en: `${v.shown} fixes already merged on its branch. Hotfixes usually ship within days.`,
+            })
+          : T({
+              fr: `${v.shown} changements déjà mergés sur la branche de préparation. Rien n'est définitif — ni la liste, ni la date.`,
+              en: `${v.shown} changes already merged on the preparation branch. Nothing is final — neither the list nor the date.`,
+            });
+        return `
         <a class="soon" href="a-venir.html">
-          <p class="s-kick">${d.imminent
-            ? T({ fr: "Sortie imminente", en: "Release imminent" })
-            : T({ fr: "En préparation", en: "In preparation" })}</p>
-          <span class="s-num">${esc(d.version)}</span>
-          <p>${T({
-            fr: `${d.shown} changements déjà mergés sur la branche de préparation. Rien n'est définitif — ni la liste, ni la date.`,
-            en: `${d.shown} changes already merged on the preparation branch. Nothing is final — neither the list nor the date.`,
-          })}</p>
+          <p class="s-kick">${kick}</p>
+          <span class="s-num">${esc(v.version)}</span>
+          <p>${body}</p>
           <span class="s-go">${T({ fr: "Voir ce qui arrive", en: "See what's coming" })}</span>
         </a>`;
+      }).join("");
     })
     .catch(() => {});
 
