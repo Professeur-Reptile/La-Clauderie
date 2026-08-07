@@ -162,11 +162,22 @@ avant de t'appuyer dessus pour le BiS ou les liens Codex.
 | **Rédaction des « Nouveautés »** | Routine Claude « Nouvelle version WoCC — rédaction » : compare le dernier tag du jeu à `patch-notes.json[0]`, ne fait rien s'ils concordent, sinon déroule la procédure ⚡ et ferme l'issue | toutes les heures |
 | Classement guilde (`guild.json`) | `update-guild-rank.yml` | toutes les 3 h |
 | Déploiement (OVH) | `deploy.yml` (vérifie, puis envoie par FTP) | à chaque push `main` (+ cron 6 h pour rafraîchir la copie du Codex) |
-| **Aperçu de la version à venir** (`a-venir.html`) | `update-upcoming.yml` → `build_upcoming.py` lit la branche `release/vX.Y.Z` du jeu | toutes les 2 h ; ne commite/republie que si version, imminence, ou ≥ 25 commits de plus |
+| **Aperçu de la version à venir** (`a-venir.html`) | `update-upcoming.yml` → `build_upcoming.py` lit TOUTES les branches `release/*` au-dessus du dernier tag (le jeu mène parfois un correctif v0.35.1 ET la v0.36.0 en parallèle — les deux comptent, demande du 7 août 2026) | toutes les 2 h ; ne commite/republie que si l'ensemble des chantiers, une imminence, ou ≥ 25 commits bougent |
 | **Réécriture de l'aperçu** (partie rédigée d'`a-venir.html`) | Routine Claude « Page « À venir » (WoCC) » : ne réécrit QUE si la version change ou si la branche a pris ≥ 25 commits depuis `data-commits` | 2×/jour, 03 h et 15 h UTC (annoncées sur la page) |
 | Pré-alerte « sortie imminente » | même workflow : ouvre une issue dès que `package.json` monte de version sur la branche de release | toutes les 2 h |
 | Rappel « version manquante » (filet de secours) | `check-game-version.yml` ouvre une issue | toutes les heures |
 
+> **`a-venir.html` suit TOUS les chantiers en parallèle.** `upcoming.json`
+> garde à sa racine la prochaine version à sortir (compatibilité) et liste
+> chaque branche dans `versions[]` ; quand il y en a plusieurs, la page
+> affiche un bandeau par chantier (commits, fraîcheur, imminence) tout seul.
+> L'ÉDITORIAL, lui, couvre toujours la version LA PLUS HAUTE (la grande),
+> avec une courte section « Le correctif vX.Y.Z » en tête si un correctif se
+> prépare aussi — c'est la Routine qui l'écrit, guidée par `data-for`,
+> `data-commits` et `data-chantiers` sur `#editorial`. Les NOTES d'un
+> correctif sorti, elles, ne changent pas de circuit : la Routine de
+> rédaction se déclenche sur tout nouveau tag, x.1 compris.
+>
 > **`a-venir.html` a deux moitiés.** Le haut est une VRAIE page de notes,
 > rédigée à la main sur le gabarit de `notes/vX.Y.Z.html` (même bandeau,
 > mêmes cartes, mêmes fiches au clic) — demande du 6 août 2026 : « fais-moi

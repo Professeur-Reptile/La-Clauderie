@@ -6,10 +6,16 @@ taguer. Ce script lit les commits déjà mergés sur cette branche et les range
 dans les SIX MÊMES rubriques que le bandeau des notes de version, pour que le
 lecteur retrouve ses repères entre « ce qui est sorti » et « ce qui arrive ».
 
-Entrée : un dépôt du jeu où la branche de release est fetchée.
+Entrée : un dépôt du jeu où les branches de release sont fetchées.
 Sortie : upcoming.json sur la sortie standard.
 
-    python3 scripts/build_upcoming.py <dépôt-du-jeu> <tag-de-base> <branche> > upcoming.json
+    python3 scripts/build_upcoming.py <dépôt-du-jeu> <tag-de-base> <branche> [branche2 …] > upcoming.json
+
+Le jeu mène parfois DEUX chantiers en parallèle (un correctif v0.35.1 et la
+v0.36.0, constaté le 7 août 2026) : passer toutes les branches au-dessus du
+dernier tag, de la plus basse à la plus haute. Le JSON garde à sa racine les
+champs de la PREMIÈRE branche (la prochaine à sortir — compatibilité avec la
+page et les décisions du workflow), et liste chaque chantier dans `versions`.
 
 Rien n'est rédigé ici, et la liste produite N'EST PLUS AFFICHÉE (retirée le
 6 août 2026 : le site est fait pour les joueurs, pas pour les développeurs).
@@ -84,11 +90,7 @@ def classify(scope, subject):
     return SCOPE_FALLBACK.get(scope, "confort")
 
 
-def main():
-    if len(sys.argv) < 4:
-        sys.exit(__doc__)
-    repo, base_tag, branch = sys.argv[1], sys.argv[2], sys.argv[3]
-
+def analyse(repo, base_tag, branch):
     raw = git(repo, "log", "--format=%H%x1f%aI%x1f%s", f"{branch}", f"^{base_tag}")
     lines = [l for l in raw.splitlines() if l.strip()]
 
@@ -150,9 +152,7 @@ def main():
 
     last = git(repo, "log", "-1", "--format=%aI", branch)
     shown = sum(len(v) for v in buckets.values())
-    out = {
-        "generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "base_tag": base_tag,
+    return {
         "version": upcoming,
         "branch": branch,
         "declared_version": declared,
@@ -164,6 +164,25 @@ def main():
             {"key": key, "icon": icon, "fr": fr, "en": en, "items": buckets[key]}
             for key, icon, fr, en in SECTIONS
         ],
+    }
+
+
+def main():
+    if len(sys.argv) < 4:
+        sys.exit(__doc__)
+    repo, base_tag, branches = sys.argv[1], sys.argv[2], sys.argv[3:]
+
+    versions = [analyse(repo, base_tag, b) for b in branches]
+    # De la plus basse à la plus haute — la première est la prochaine à sortir.
+    versions.sort(key=lambda v: [int(x) for x in v["version"].lstrip("v").split(".")])
+
+    out = {
+        "generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "base_tag": base_tag,
+        # Compatibilité : la racine décrit la prochaine version à sortir.
+        **{k: versions[0][k] for k in
+           ("version", "branch", "declared_version", "imminent", "commits", "shown", "last_commit", "sections")},
+        "versions": versions,
     }
     json.dump(out, sys.stdout, ensure_ascii=False, indent=1)
     sys.stdout.write("\n")

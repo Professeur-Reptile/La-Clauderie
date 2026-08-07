@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-07T15:03:42Z",
+ "generated": "2026-08-07T15:13:28Z",
  "base_tag": "v0.35.0",
  "version": "v0.36.0",
  "branch": "release/v0.36.0",
@@ -177,6 +177,190 @@
      "scope": "sim",
      "text": "Close three ranked/Fiesta arena gaps",
      "date": "2026-08-04"
+    }
+   ]
+  }
+ ],
+ "versions": [
+  {
+   "version": "v0.36.0",
+   "branch": "release/v0.36.0",
+   "declared_version": "0.35.0",
+   "imminent": false,
+   "commits": 37,
+   "shown": 18,
+   "last_commit": "2026-08-07T22:41:20+08:00",
+   "sections": [
+    {
+     "key": "classes",
+     "icon": "⚔️",
+     "fr": "Classes & sorts",
+     "en": "Classes & spells",
+     "items": [
+      {
+       "h": "50fe4bff",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Hunter ability attacks plus ghost spirit attack",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "e1a74b76",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Preserve hunter self-buff gesture under a displayed bow skin",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "2c203e8d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep the hunter's melee swing under a displayed bow skin",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "4c68f0e1",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep bow-skin draw clip precedence over hunter attackByAbility",
+       "date": "2026-08-05"
+      }
+     ]
+    },
+    {
+     "key": "metiers",
+     "icon": "🔨",
+     "fr": "Métiers & récolte",
+     "en": "Professions & gathering",
+     "items": []
+    },
+    {
+     "key": "donjons",
+     "icon": "🐉",
+     "fr": "Donjons, failles & boss",
+     "en": "Dungeons, rifts & bosses",
+     "items": []
+    },
+    {
+     "key": "monde",
+     "icon": "🗺️",
+     "fr": "Monde & quêtes",
+     "en": "World & quests",
+     "items": []
+    },
+    {
+     "key": "guilde",
+     "icon": "🏰",
+     "fr": "Guilde & social",
+     "en": "Guild & social",
+     "items": [
+      {
+       "h": "3342ab5a",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Rebase onto release/v0.35.0, close the 2v2 party level gap",
+       "date": "2026-08-05"
+      }
+     ]
+    },
+    {
+     "key": "confort",
+     "icon": "⚙️",
+     "fr": "Confort & technique",
+     "en": "Comfort & technical",
+     "items": [
+      {
+       "h": "53aaab4d",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Bespoke Vineclaw Stalker attack clip",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "2b2a40a5",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Mob_yeti bespoke icy roar-and-swipe attack",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "59c1de4f",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Greyjaw howl-then-pounce bespoke attack (issue #2889)",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "4a392cd1",
+       "kind": "perf",
+       "scope": "main",
+       "text": "Overlap boot-time locale fetch with deferred asset preload",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "bd0581f3",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Resolve merge conflict with release/v0.35.0",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "b80ab982",
+       "kind": "fix",
+       "scope": "",
+       "text": "Bring release/v0.35.0 into fix/arena-pvp-fixes",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "3145e254",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Repair the arena test fixtures the level gate broke",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "88341c9d",
+       "kind": "fix",
+       "scope": "deeds",
+       "text": "Re-baseline the frozen catalog hash left as a placeholder by an earlier rebase",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "a8933215",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Index the player_reports and chat_violations retention prunes",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "b2ee46b1",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Stop hand-editing non-English overlays for arena gate note",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "72494241",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Restore arena gate minLevelNote non-Latin fills",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "0d20dadf",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Add retention sweeps for player_reports, bug_reports, and chat_violations",
+       "date": "2026-08-04"
+      },
+      {
+       "h": "72fe32cf",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Close three ranked/Fiesta arena gaps",
+       "date": "2026-08-04"
+      }
+     ]
     }
    ]
   }

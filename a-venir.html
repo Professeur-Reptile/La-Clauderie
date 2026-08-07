@@ -93,6 +93,10 @@
 
   /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
      version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  #chantiers:not(:empty) { margin: 14px 0 0; display: flex; flex-direction: column; gap: 8px; }
+  .chantier { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 10px; padding: 10px 15px; font-size: 0.9rem; color: var(--dim); }
+  .chantier b { color: var(--text); }
+  .chantier .v { color: var(--gold-bright); font-weight: 700; }
   .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
   .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
   .digest .sec-sub { margin: 0 0 16px; }
@@ -215,6 +219,7 @@
       <span id="written"><b>Résumé écrit</b> le 7 août 2026 à 17 h 45</span>
       <span id="next"></span>
     </div>
+    <div id="chantiers"></div>
     <div class="hint">💡 Clique sur une carte pour le détail — et sur un nom souligné pour sa fiche Codex.</div>
   </header>
 
@@ -258,7 +263,7 @@
   <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
        s'efface d'elle-même quand cette version sort, et se signale périmée si
        le jeu passe à préparer la suivante. -->
-  <div id="editorial" data-for="v0.36.0" data-commits="37" data-written="2026-08-07T17:45+02:00">
+  <div id="editorial" data-for="v0.36.0" data-commits="37" data-chantiers="v0.36.0" data-written="2026-08-07T17:45+02:00">
 
   <!-- 1 CLASSES -->
   <section id="classes">
@@ -442,6 +447,10 @@
         '<p class="sec-sub">Aucune version en préparation pour le moment — la dernière sortie est la plus récente. Retrouve-la dans <a href="patch-notes.html">Nouveautés</a>.</p>';
       return;
     }
+    // Le jeu mène parfois plusieurs chantiers en parallèle (un correctif et
+    // la version d'après) : `versions` les liste tous, la racine reste la
+    // prochaine à sortir. Les anciens JSON n'ont pas `versions`.
+    const chantiers = d.versions || [d];
     document.getElementById("vNum").textContent = d.version;
     const fresh = document.getElementById("freshness");
     if (fresh) fresh.innerHTML = "<b>Relevé</b> " + esc(since(d.last_commit) || "à l'instant");
@@ -450,8 +459,22 @@
       b.innerHTML = "<b style='color:var(--q-legendary)'>⏳ sortie imminente</b>";
       document.querySelector(".meta").appendChild(b);
     }
-    // Le jeu prépare une version plus récente que celle décrite ici.
-    if (ed && ed.dataset.for && ed.dataset.for !== d.version) {
+    // Deux chantiers ou plus : les afficher tous, chacun avec son état.
+    const strip = document.getElementById("chantiers");
+    if (strip && chantiers.length > 1) {
+      strip.innerHTML = chantiers.map(v => {
+        const patch = !/\.0$/.test(v.version);
+        const badge = v.imminent ? " · <b style='color:var(--q-legendary)'>⏳ sortie imminente</b>" : "";
+        return `<div class="chantier"><span class="v">${esc(v.version)}</span>` +
+          `<span>${patch ? "correctif en préparation" : "la grande version d’après"}</span>` +
+          `<span><b>${v.commits}</b> commits</span>` +
+          `<span>dernier mouvement ${esc(since(v.last_commit) || "à l’instant")}</span>${badge}</div>`;
+      }).join("");
+    }
+    // L'éditorial expire quand SA version n'est plus en préparation — pas
+    // quand elle cesse d'être la prochaine : un correctif v0.35.1 qui passe
+    // devant la v0.36.0 ne doit pas masquer le résumé de la v0.36.0.
+    if (ed && ed.dataset.for && !chantiers.some(v => v.version === ed.dataset.for)) {
       ed.style.display = "none";
       if (warn) warn.style.display = "none";
       // Le bandeau et le chapeau parlent de la même version que l'éditorial :

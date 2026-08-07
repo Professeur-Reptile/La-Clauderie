@@ -51,13 +51,12 @@ jobs:
             echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0
           fi
 
-          # La PLUS BASSE branche de release au-dessus de ce tag : c'est elle
-          # qui sortira ensuite. Le jeu garde ses vieilles branches release/*
-          # (d'où « au-dessus du tag ») et ouvre parfois celle d'APRÈS en
-          # parallèle — release/v0.36.0 pendant que la v0.35.0 se terminait,
-          # le 7 août 2026 : « la plus haute » aurait annoncé la mauvaise
-          # version dans les deux sens.
-          branch=$(git ls-remote --heads "$GAME" 'refs/heads/release/v*' \
+          # TOUTES les branches de release au-dessus de ce tag, de la plus
+          # basse à la plus haute. Le jeu garde ses vieilles branches (d'où
+          # « au-dessus du tag ») et mène parfois deux chantiers en parallèle
+          # — un correctif v0.35.1 et la v0.36.0 : la page les montre tous,
+          # demande du 7 août 2026 (« il faut à venir pour les deux »).
+          branches=$(git ls-remote --heads "$GAME" 'refs/heads/release/v*' \
             | awk -F'refs/heads/' '{print $2}' | sort -V \
             | python3 -c "
           import sys
@@ -65,9 +64,9 @@ jobs:
           for line in sys.stdin:
               b = line.strip()
               if b and key(b.rsplit('/', 1)[-1]) > key(sys.argv[1]):
-                  print(b); break
+                  print(b)
           " "$base")
-          if [ -z "$branch" ]; then
+          if [ -z "$branches" ]; then
             echo "Aucune branche de release au-dessus de $base — rien à annoncer."
             # La version précédemment annoncée vient de sortir : vider la page,
             # sinon elle continuerait de présenter comme « à venir » quelque
@@ -81,15 +80,20 @@ jobs:
             fi
             echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0
           fi
-          echo "Base $base · branche $branch"
+          echo "Base $base · branches :" $branches
 
           # Clone sans arbres ni blobs : on ne veut que les messages de commit
           # (package.json sera récupéré à la demande par git show).
+          first=$(echo "$branches" | head -1)
           git clone --quiet --filter=tree:0 --no-checkout --single-branch \
-            --branch "${branch#refs/heads/}" "$GAME" game
+            --branch "$first" "$GAME" game
           git -C game fetch --quiet --filter=tree:0 origin "refs/tags/$base:refs/tags/$base"
+          for b in $branches; do
+            [ "$b" = "$first" ] && continue
+            git -C game fetch --quiet --filter=tree:0 origin "refs/heads/$b:refs/heads/$b"
+          done
 
-          python3 scripts/build_upcoming.py game "$base" "${branch#refs/heads/}" > upcoming.new.json
+          python3 scripts/build_upcoming.py game "$base" $branches > upcoming.new.json
           rm -rf game
 
           # Ne commiter (donc republier le site) que si quelque chose que la
@@ -100,24 +104,45 @@ jobs:
           # une publication toutes les 2 h pendant toute la préparation d'une
           # version (~12 déploiements/jour pour un compteur que la page
           # n'affiche même plus).
-          decide=$(python3 -c "import json,os;o=json.load(open('upcoming.json')) if os.path.exists('upcoming.json') else {};n=json.load(open('upcoming.new.json'));print('commit' if o.get('version')!=n.get('version') or o.get('imminent')!=n.get('imminent') or (n.get('commits') or 0)-(o.get('commits') or 0)>=25 else 'skip')" || echo commit)
+          # Par chantier : ensemble de versions changé, imminence qui bascule,
+          # ou +25 commits quelque part.
+          decide=$(python3 -c "
+          import json, os
+          o = json.load(open('upcoming.json')) if os.path.exists('upcoming.json') else {}
+          n = json.load(open('upcoming.new.json'))
+          old = {v['version']: v for v in (o.get('versions') or ([o] if o.get('version') else []))}
+          new = {v['version']: v for v in n['versions']}
+          changed = set(old) != set(new) \
+            or any(old[k].get('imminent') != new[k].get('imminent') for k in new if k in old) \
+            or any((new[k].get('commits') or 0) - (old[k].get('commits') or 0) >= 25 for k in new if k in old)
+          print('commit' if changed else 'skip')
+          " || echo commit)
           if [ "$decide" = "skip" ]; then
             rm -f upcoming.new.json
             echo "Rien de significatif sur $branch (ni version, ni imminence, ni +25 commits)."
             echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0
           fi
 
-          was_imminent=false
-          if [ -f upcoming.json ]; then
-            was_imminent=$(python3 -c "import json;print(str(json.load(open('upcoming.json')).get('imminent',False)).lower())")
-          fi
+          newly=$(python3 -c "
+          import json, os
+          o = json.load(open('upcoming.json')) if os.path.exists('upcoming.json') else {}
+          n = json.load(open('upcoming.new.json'))
+          old = {v['version']: v for v in (o.get('versions') or ([o] if o.get('version') else []))}
+          hit = [v['version'] for v in n['versions']
+                 if v.get('imminent') and not old.get(v['version'], {}).get('imminent')]
+          print(hit[0] if hit else '')
+          " || true)
           mv upcoming.new.json upcoming.json
-          now_imminent=$(python3 -c "import json;print(str(json.load(open('upcoming.json')).get('imminent',False)).lower())")
-          version=$(python3 -c "import json;print(json.load(open('upcoming.json'))['version'])")
+          version=$(python3 -c "import json;d=json.load(open('upcoming.json'));print(' + '.join(v['version'] for v in d['versions']))")
 
           echo "changed=true" >> "$GITHUB_OUTPUT"
           echo "version=$version" >> "$GITHUB_OUTPUT"
-          echo "alert=$([ "$was_imminent" = "false" ] && [ "$now_imminent" = "true" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+          if [ -n "$newly" ]; then
+            echo "alert=true" >> "$GITHUB_OUTPUT"
+            echo "alert_version=$newly" >> "$GITHUB_OUTPUT"
+          else
+            echo "alert=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Commiter upcoming.json
         if: steps.read.outputs.changed == 'true'
@@ -149,11 +174,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          title="⏳ ${{ steps.read.outputs.version }} imminente — préparer les Nouveautés"
+          title="⏳ ${{ steps.read.outputs.alert_version }} imminente — préparer les Nouveautés"
           if gh issue list --state open --limit 200 --json title --jq '.[].title' | grep -qF "$title"; then
             echo "Issue déjà ouverte."; exit 0
           fi
-          gh issue create --title "$title" --body "La branche \`release/${{ steps.read.outputs.version }}\` vient de monter sa version dans \`package.json\` — c'est le dernier geste avant le tag, la sortie se compte désormais en heures.
+          gh issue create --title "$title" --body "La branche \`release/${{ steps.read.outputs.alert_version }}\` vient de monter sa version dans \`package.json\` — c'est le dernier geste avant le tag, la sortie se compte désormais en heures.
 
           Les changements déjà mergés sont visibles sur <https://laclauderie.fr/a-venir.html> et dans \`upcoming.json\`.
 
