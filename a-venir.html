@@ -657,7 +657,7 @@
     out.innerHTML = "<b>" + (en ? "Summary written" : "Résumé écrit") + "</b> " + quand;
   })();
 
-  // « Prochaine mise à jour » : le résumé est réécrit deux fois par jour, à
+  // « Prochaine relecture » : le résumé est réécrit deux fois par jour, à
   // 03:00 et 15:00 UTC (5 h et 17 h à Paris l'été). On l'annonce pour que le
   // lecteur sache quand revenir, au lieu de rafraîchir dans le vide — et dans
   // SON fuseau, comme la date de rédaction.
@@ -682,7 +682,10 @@
     const dans = min < 60
       ? (en ? `in ${min} min` : `dans ${min} min`)
       : (en ? `in ${Math.round(min / 60)} h` : `dans ${Math.round(min / 60)} h`);
-    out.innerHTML = "<b>" + (en ? "Next update" : "Prochaine mise à jour") + "</b> "
+    // Dire « de la page » : « prochaine mise à jour » se lisait comme la
+    // sortie du jeu lui-même (remarque du 7 août 2026). La sortie du jeu, elle,
+    // est annoncée par le badge « sortie imminente » quand le jeu la déclare.
+    out.innerHTML = "<b>" + (en ? "Page re-checked" : "Prochaine relecture de la page") + "</b> "
       + dans + " <span class=\"a\">(" + heure + ")</span>";
   })();
 
