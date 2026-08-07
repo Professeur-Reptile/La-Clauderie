@@ -3770,7 +3770,7 @@ const CRAFT = {
 </script>
 
 <script src="assets/lang.js"></script>
-<script src="assets/version.js" data-version="v0.34.0" defer></script>
+<script src="assets/version.js" data-version="v0.35.0" defer></script>
 <script>
 (function () {
   const T = (fr, en) => (window.LANG === 'en' ? en : fr);
@@ -4008,7 +4008,7 @@ const CRAFT = {
 
   function renderEnchant() {
     return `<div class="block">
-      <div class="block-head"><h2>🪄 ${T('Enchantement', 'Enchanting')}</h2><span class="lvl">${T('guide v0.34', 'v0.34 guide')}</span><span class="sub">${T('les enchants sont connus d’office — seuls les 2 charmes d’outils s’apprennent', 'enchants are known from the start — only the 2 tool charms are taught')}</span></div>
+      <div class="block-head"><h2>🪄 ${T('Enchantement', 'Enchanting')}</h2><span class="lvl">${T('guide v0.35', 'v0.35 guide')}</span><span class="sub">${T('les enchants sont connus d’office — seuls les 2 charmes d’outils s’apprennent', 'enchants are known from the start — only the 2 tool charms are taught')}</span></div>
       <p style="color:var(--dim);font-size:0.93rem;margin:8px 0 0">✅ ${T(
         '<b style="color:var(--text)">Tout le monde peut enchanter</b>, sans rien apprendre. Deux actions, depuis le menu d’un objet : <b style="color:var(--text)">Désenchanter</b> (détruit l’objet et donne des matériaux) et <b style="color:var(--text)">Appliquer un enchant</b> (dépense ces matériaux pour ajouter un bonus à une pièce — le sélecteur affiche le bonus exact de chaque choix). Ça marche directement sur l’équipement porté. À quoi s’attendre : un jeu complet d’enchants ajoute les 15-25 derniers % au-dessus du meilleur équipement — la touche finale, pas un remplacement.',
         '<b style="color:var(--text)">Everyone can enchant</b>, nothing to learn. Two actions, from an item’s menu: <b style="color:var(--text)">Disenchant</b> (destroys the item for materials) and <b style="color:var(--text)">Apply Enchant</b> (spends those materials to add a bonus to a piece — the picker shows each choice’s exact bonus). It works directly on equipped gear. What to expect: a full set of enchants adds the last 15-25% on top of best-in-slot gear — the finishing touch, not a replacement.')}</p>
@@ -4028,8 +4028,8 @@ const CRAFT = {
           <h3><span class="ico">🔁</span>${T('La boucle efficace', 'The efficient loop')}</h3>
           <div class="meta">${T('la qualité de l’entrée fait le gain', 'input quality drives the gain')}</div>
           <p style="margin:0;color:var(--dim);font-size:0.9rem">${T(
-            '1. Désenchante la meilleure qualité abordable — les bleus de donjon sont le vrai carburant, garde tes épiques inutiles.<br>2. Pose un enchant de base — 3-5 poussières — sur une pièce de tes sacs.<br>3. Trois paliers : base (poussières), <b style="color:var(--text)">Runed</b> (2 Essences + 1 Resonant), Greater (1 Shard + 2-3 Essences, 5 gros slots).',
-            '1. Disenchant the best quality you can afford — dungeon blues are the real fuel, keep your spare epics.<br>2. Apply a base enchant — 3-5 dust — on a bagged item.<br>3. Three tiers: base (dust), <b style="color:var(--text)">Runed</b> (2 Essences + 1 Resonant), Greater (1 Shard + 2-3 Essences, the 5 key slots).')}</p>
+            '1. Désenchante la meilleure qualité abordable — les bleus de donjon sont le vrai carburant, garde tes épiques inutiles.<br>2. Pose un enchant de base — 3-5 poussières — sur une pièce de tes sacs.<br>3. Trois paliers : base (poussières), <b style="color:var(--text)">Runed</b> (2 Essences + 1 Resonant), Greater (1 Shard + 2-3 Essences, 5 gros slots).<br>Depuis la v0.35 : la <b style="color:var(--text)">main gauche s’enchante aussi</b> (boucliers et focalisateurs, enchant de base Endurance) — et enchanter prend désormais un <b style="color:var(--text)">temps d’incantation</b>, comme la fabrication : plus d’enchant instantané en plein combat.',
+            '1. Disenchant the best quality you can afford — dungeon blues are the real fuel, keep your spare epics.<br>2. Apply a base enchant — 3-5 dust — on a bagged item.<br>3. Three tiers: base (dust), <b style="color:var(--text)">Runed</b> (2 Essences + 1 Resonant), Greater (1 Shard + 2-3 Essences, the 5 key slots).<br>Since v0.35: the <b style="color:var(--text)">off-hand can be enchanted too</b> (shields and held focuses, a base Stamina enchant) — and enchanting now takes a <b style="color:var(--text)">cast time</b>, like crafting: no more instant enchants mid-fight.')}</p>
           <div class="meta" style="margin-top:8px">${T('Palier 75 : spécialisation (haut fait + bonus Masterwork). Plafond : 125.', 'Skill 75: specialization (deed + Masterwork bonus). Cap: 125.')}</div>
         </div>
         <div class="node fish">

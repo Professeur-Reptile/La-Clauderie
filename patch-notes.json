@@ -1,469 +1,495 @@
 {
-  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
-  "versions": [
-    {
-      "version": "v0.34.0",
-      "date": "2026-08-04",
-      "titre": "La banque de guilde, les montures qui s'échangent, et le plus gros patch métiers de l'histoire du jeu",
-      "resume": "La mise à jour de l'économie. La banque de guilde arrive — coffre d'or et d'objets commun, extensible jusqu'à 60 emplacements — mais attention : seuls le chef et les officiers y ont accès, les membres ne voient même pas l'onglet (vérifié dans le code). Les rênes de montures ne sont plus liées : toutes les montures s'échangent, se postent et se vendent au Marché, y compris celles déjà dans vos sacs. Les Drakelands sont reconstruites autour de la couvée Dragonkin (œufs qui éclosent, broodguards, quatre Broodlords élites et une Matriarche refaite) — mais la monture Drakemaw Raptor annoncée n'est PAS obtenable : son drop a été retiré juste avant la sortie, ne la farmez pas (la Terrorspark non plus, toujours pas). Les métiers reçoivent leur plus gros patch : charmes d'outils d'enchanteur qui ne s'usent que quand ils servent, poissons crus à cuisiner (6 recettes), récolte passée de 99 à 156 nœuds mais repousse doublée à 4 minutes, et outils qui exigent un niveau de métier pour être utilisés. En Faille, les grosses attaques de boss se télégraphient au sol 1,2 s à l'avance et les balayages s'esquivent dans le dos. Enfin, les monstres du monde réapparaissent en 60 s partout (le farm ré-accélère), le rez de groupe du Mage gagne un cooldown de 5 minutes, et le Smokestep du Voleur marche enfin.",
-      "temps_forts": [
-        "La banque de guilde : or et objets partagés, jusqu'à 60 emplacements — mais réservée au chef et aux officiers, les membres ne la voient même pas",
-        "Les rênes de montures ne sont plus liées : échange, courrier, Marché, banque de guilde — celui qui tient les rênes possède la monture",
-        "⚠️ La monture Drakemaw Raptor annoncée n'est PAS obtenable (drop retiré avant la sortie) — et la Terrorspark toujours pas non plus, vérifié dans le code",
-        "Les Drakelands reconstruites : œufs qui éclosent, broodguards, quatre Broodlords élites, Cindraleth refaite — et deux hauts faits de Chronique (dont un rétroactif)",
-        "Charmes d'outils d'enchanteur : récolte doublée ou grade fin, et une charge n'est dépensée que si le bonus a vraiment servi",
-        "La pêche passe à table : les prises sont crues, 6 recettes de cuisine les transforment — et chaque eau a un plafond d'apprentissage (200 seulement à Thornpeak)",
-        "Récolte : 99 → 156 nœuds, mais repousse doublée (4 min) et outils soumis à un niveau de métier pour être utilisés",
-        "Boss de Faille : cercle au sol 1,2 s avant chaque détonation, balayages esquivables dans le dos, contrôles suspendus pendant la fuite",
-        "Les monstres du monde réapparaissent en 60 s partout (le farm ré-accélère) — mais Drogmar est nerfé : 3 min de respawn et 3× moins d'or",
-        "Mage : le rez de groupe Collective Reversal gagne un CD de 5 min ; Voleur : Smokestep réparé, Borrowed Tempo vraiment gratuit, le stun verrouille l'orientation",
-        "Plus de 230 images peintes à la main, un bot Discord officiel, et le jeu traduit en 21 langues"
-      ],
-      "page": "notes/v0.34.0.html",
-      "titre_en": "The guild bank, tradable mounts, and the biggest professions patch in the game's history",
-      "resume_en": "The economy update. The guild bank arrives — a shared gold-and-item chest, expandable to 60 slots — but beware: only the guild master and officers can access it, members don't even see the tab (verified in the code). Mount reins are no longer soulbound: every mount can be traded, mailed and sold on the Market, including the ones already in your bags. The Drakelands are rebuilt around the Dragonkin brood (hatching eggs, broodguards, four elite Broodlords and a reworked Matriarch) — but the announced Drakemaw Raptor mount is NOT obtainable: its drop was pulled right before release, don't farm for it (the Terrorspark still isn't either). Professions get their biggest patch yet: enchanter-crafted tool charms that only wear down when they help, raw fish that must be cooked (6 recipes), gathering grown from 99 to 156 nodes but with regrowth doubled to 4 minutes, and tools that now require a profession level to use. In Rifts, big boss attacks telegraph on the ground 1.2s ahead and sweeps can be dodged behind the boss. Finally, world mobs respawn in 60s everywhere (farming speeds back up), the Mage's group res gains a 5-minute cooldown, and the Rogue's Smokestep finally works.",
-      "temps_forts_en": [
-        "The guild bank: shared gold and items, up to 60 slots — but officer-only, members don't even see the tab",
-        "Mount reins are no longer soulbound: trade, mail, Market, guild bank — whoever holds the reins owns the mount",
-        "⚠️ The announced Drakemaw Raptor mount is NOT obtainable (drop pulled before release) — and the Terrorspark still isn't either, verified in the code",
-        "The Drakelands rebuilt: hatching eggs, broodguards, four elite Broodlords, a reworked Cindraleth — and two chronicle deeds (one retroactive)",
-        "Enchanter tool charms: doubled harvests or fine grade, and a charge is only spent when the bonus actually helped",
-        "Fishing goes to the kitchen: catches are raw, 6 cooking recipes transform them — and every water has a teaching ceiling (200 only at Thornpeak)",
-        "Gathering: 99 → 156 nodes, but regrowth doubled (4 min) and tools now gated by profession level to use",
-        "Rift bosses: a ground ring 1.2s before every detonation, sweeps dodgeable behind the boss, control suspended while you escape",
-        "World mobs respawn in 60s everywhere (farming speeds back up) — but Drogmar is nerfed: 3-min respawn and 3× less gold",
-        "Mage: the Collective Reversal group res gains a 5-min CD; Rogue: Smokestep fixed, Borrowed Tempo truly free, stuns lock facing",
-        "Over 230 hand-painted images, an official Discord bot, and the game translated into 21 languages"
-      ],
-      "page_en": "notes/v0.34.0.en.html"
-    },
-    {
-      "version": "v0.33.1",
-      "date": "2026-08-02",
-      "titre": "Le jeu est plus beau, chaque sort a son effet, et fini de tuer les monstres coincés",
-      "resume": "La grosse mise à jour graphique. Le jeu est plus beau et plus fluide, avec un nouveau niveau de graphismes « Insane » tout en haut — et si ça rame, le jeu baisse un peu la netteté tout seul au lieu de saccader. 296 sorts ont maintenant chacun leur propre apparence et leur propre son. Côté jeu : un monstre vraiment coincé (derrière un mur, sous une corniche) abandonne au bout de 5 secondes, rentre chez lui et récupère toute sa vie — fini de tuer les monstres bloqués sans risque, et le stun ne remet pas le chrono à zéro. Le joueur qui tank un boss n'est plus affecté par sa peur de zone, et les boss de Faille laissent toujours 5 secondes entre deux grosses attaques. À Cœur-Sauvage : tirer le boss trop tôt réveille vraiment tout le donjon, un portail de sortie apparaît à sa mort, et du nouveau butin arrive (4 objets en normal, 6 épiques en héroïque, plus les deux montures rares). Attention : la monture-tank Terrorspark annoncée dans les notes n'est PAS obtenable — on a vérifié dans le code, aucun monstre ni vendeur ne la donne pour l'instant. Enfin, les monstres réapparaissent moins vite (1 à 3 minutes selon la zone, contre 25 secondes avant) : le farm en boucle rapporte moins.",
-      "temps_forts": [
-        "Le jeu est plus beau et plus fluide : nouveau niveau de graphismes « Insane », terrain et herbe refaits, et un anti-rame automatique",
-        "296 sorts ont chacun leur propre apparence et leur propre son",
-        "Un monstre coincé 5 secondes abandonne, rentre chez lui et récupère toute sa vie — fini de tuer les monstres bloqués sans risque",
-        "Le tank n'est plus affecté par la peur de zone de son boss, et les boss de Faille ne font plus deux grosses attaques à la fois",
-        "Cœur-Sauvage : le pull trop tôt réveille vraiment tout le donjon, portail de sortie à la mort du boss, et du nouveau butin (dont 6 épiques en héroïque)",
-        "⚠️ La monture-tank Terrorspark annoncée n'est PAS obtenable — vérifié dans le code, ne la farmez pas",
-        "Les monstres réapparaissent moins vite (1 à 3 min selon la zone) : le farm en boucle rapporte moins",
-        "Une boîte aux lettres dans chaque village, et le nom de guilde dans les classements",
-        "Guerrier : Seething Fury (20 rage d'un coup, niveau 10) était bloqué par un bug, tout le monde l'a maintenant",
-        "Mage : Greater Invisibility protège seulement à la sortie de l'invisibilité (2 s), plus pendant"
-      ],
-      "page": "notes/v0.33.1.html",
-      "titre_en": "The game looks better, every spell has its own effect, and no more killing stuck mobs",
-      "resume_en": "The big graphics update. The game looks better and runs smoother, with a new top graphics level called Insane — and if things slow down, the game softens the picture slightly on its own instead of stuttering. 296 abilities now each have their own look and their own sound. On the gameplay side: a mob that's genuinely stuck (behind a wall, under a ledge) gives up after 5 seconds, walks home and heals back to full — no more risk-free kills on stuck mobs, and stunning it doesn't reset the timer. The player tanking a boss is no longer affected by its area fear, and rift bosses always leave 5 seconds between two big attacks. In Wildheart Basin: pulling the boss too early really does wake the whole dungeon, an exit portal appears when he dies, and new loot arrives (4 items on normal, 6 epics on heroic, plus both rare mounts). Heads up: the Terrorspark tank mount announced in the notes is NOT obtainable — we checked the code, no mob or vendor gives it for now. Finally, mobs respawn more slowly (1 to 3 minutes depending on the zone, versus 25 seconds before): loop-farming pays less.",
-      "temps_forts_en": [
-        "The game looks better and runs smoother: new Insane graphics level, reworked terrain and grass, and automatic anti-stutter",
-        "296 abilities each have their own look and their own sound",
-        "A mob stuck for 5 seconds gives up, walks home and heals to full — no more risk-free kills on stuck mobs",
-        "The tank is no longer affected by their boss's area fear, and rift bosses never throw two big attacks at once",
-        "Wildheart: an early pull really wakes the whole dungeon, an exit portal opens when the boss dies, and new loot arrives (including 6 heroic epics)",
-        "⚠️ The announced Terrorspark tank mount is NOT obtainable — checked in the code, don't farm for it",
-        "Mobs respawn more slowly (1 to 3 min by zone): loop-farming pays less",
-        "A mailbox in every village, and guild names on the leaderboards",
-        "Warrior: Seething Fury (20 instant rage, level 10) was blocked by a bug — everyone has it now",
-        "Mage: Greater Invisibility only protects when the invisibility ends (2s), no longer during"
-      ],
-      "page_en": "notes/v0.33.1.en.html"
-    },
-    {
-      "version": "v0.32.4",
-      "date": "2026-07-31",
-      "titre": "Hotfix desktop : le gel au « Chargement du monde » est corrigé",
-      "resume": "Un hotfix d'urgence, sans aucun changement de gameplay. Depuis le passage aux textures compressées KTX2 de la v0.32.2, l'application de bureau (Windows, macOS, Linux) pouvait geler sans fin sur l'écran « Chargement du monde » : le décodeur de textures générait du code à la volée, ce que la politique de sécurité stricte du client interdit. Il a été reconstruit sans génération dynamique de code — la sécurité n'a pas été assouplie, les textures ne changent pas d'un octet et les gains mémoire d'iOS sont préservés. Deux nouvelles suites de tests verrouillent le tout pour qu'une future montée de version ne recasse pas le desktop en silence. L'application se met à jour toute seule ; navigateur et mobile n'ont jamais été concernés.",
-      "temps_forts": [
-        "Le gel du client de bureau au « Chargement du monde » (v0.32.2 et v0.32.3) est corrigé — Windows, macOS et Linux",
-        "Le décodeur de textures est reconstruit sans génération dynamique de code : la sécurité du client reste intacte",
-        "Textures et gains mémoire iOS inchangés : le décodeur corrigé produit un résultat identique à l'octet près",
-        "Rien à faire : l'application se met à jour toute seule — navigateur et mobile n'ont jamais gelé"
-      ],
-      "page": "notes/v0.32.4.html",
-      "titre_en": "Desktop hotfix: the \"Loading world\" freeze is fixed",
-      "resume_en": "An emergency hotfix with zero gameplay changes. Since the v0.32.2 switch to KTX2 compressed textures, the desktop app (Windows, macOS, Linux) could freeze forever on the \"Loading world\" screen: the texture decoder generated code on the fly, which the client's strict security policy forbids. It was rebuilt without dynamic code generation — security was not loosened, the textures do not change by a single byte, and the iOS memory gains are preserved. Two new test suites lock it all down so a future upgrade can't silently re-break the desktop. The app updates itself; browser and mobile were never affected.",
-      "temps_forts_en": [
-        "The desktop client's \"Loading world\" freeze (v0.32.2 and v0.32.3) is fixed — Windows, macOS and Linux",
-        "The texture decoder is rebuilt without dynamic code generation: client security stays intact",
-        "Textures and iOS memory gains unchanged: the patched decoder produces byte-identical output",
-        "Nothing to do: the app updates itself — browser and mobile never froze"
-      ],
-      "page_en": "notes/v0.32.4.en.html"
-    },
-    {
-      "version": "v0.32.3",
-      "date": "2026-07-31",
-      "titre": "Le respawn se cale sur le niveau de la zone — et les meilleurs spots de farm passent à la caisse",
-      "resume": "Un correctif d'économie et de monde ouvert. Tout le trash revenait sur un même minuteur de 25 secondes quel que soit le niveau de la zone : désormais 60 s dans les zones de départ, 120 s dans la tranche du Mirefen Marsh, 180 s au-dessus — les monstres rares nommés et les minuteurs écrits à la main ne changent pas. Les vagues d'embuscade des quêtes d'escorte (Frostveil Reach, Wraithwood, Palmreach, Farshore) arrêtent de laisser des monstres traîner en boucle. Quinze gabarits de bêtes, araignées et reptiles sans pièces de cuivre reçoivent des composants récoltables. Et les deux itinéraires les plus rentables du jeu encaissent la baisse : le couloir du Glimmermere passe de 189,2 à 27,5 pièces d'or/h, les gardiens du Veiled Hollow de 42,3 à 11,8.",
-      "temps_forts": [
-        "Le respawn du trash suit le niveau de la zone : 60 s / 120 s / 180 s selon le palier — rares et minuteurs écrits à la main inchangés",
-        "Les vagues d'embuscade d'escorte ne laissent plus de monstres traîner en boucle (Frostveil, Wraithwood, Palmreach, Farshore)",
-        "Quinze gabarits de bêtes/araignées/reptiles sans cuivre deviennent dépeçables",
-        "Le couloir du Glimmermere tombe de 189,2 à 27,5 pièces d'or/h, les gardiens du Veiled Hollow de 42,3 à 11,8"
-      ],
-      "page": "notes/v0.32.3.html",
-      "titre_en": "Respawn now scales with zone level — and the best farm spots take a real hit",
-      "resume_en": "An economy-and-open-world patch. Every trash mob used to come back on the same flat 25-second timer regardless of zone level: now 60s in starter zones, 120s in the Mirefen Marsh band, 180s above that — named rares and hand-authored timers are unchanged. Escort quest ambush waves (Frostveil Reach, Wraithwood, Palmreach, Farshore) stop letting mobs linger in a loop. Fifteen beast, spider and reptile templates with no coin gain harvestable components. And the game's two most profitable routes take the hit: the Glimmermere corridor drops from 189.2 to 27.5 gold/hr, the Veiled Hollow guardians from 42.3 to 11.8.",
-      "temps_forts_en": [
-        "Trash respawn now follows zone level: 60s / 120s / 180s by tier — named rares and hand-authored timers unchanged",
-        "Escort ambush waves stop leaving mobs to linger in a loop (Frostveil, Wraithwood, Palmreach, Farshore)",
-        "Fifteen coinless beast/spider/reptile templates become skinnable",
-        "The Glimmermere corridor drops from 189.2 to 27.5 gold/hr, the Veiled Hollow guardians from 42.3 to 11.8"
-      ],
-      "page_en": "notes/v0.32.3.en.html"
-    },
-    {
-      "version": "v0.32.2",
-      "date": "2026-07-31",
-      "titre": "Portails de Faille équitables, suivi d'étage en jeu — et un vainqueur en cas de duel simultané",
-      "resume": "Un correctif de confort et d'équité. Les portails de Faille respawnent désormais à la première heure pile suivant la vraie fermeture du précédent (scellé par un clear ou effondré après 2 h) — plus jamais pendant qu'une descente tourne encore ; leur durée de vie passe d'ailleurs à 2 h. Un repère affiche l'étage en cours et un compte à rebours pendant la descente, les membres du groupe apparaissent enfin sur la carte, et deux coups fatals portés au même tic en duel ne finissent plus en double mort — un seul vainqueur, laissé à 1 PV. Six monstres rares rejoignent les hauts faits de chronique, les vagues d'embuscade des escortes se réengagent correctement, et toutes les textures du jeu passent à un format compressé pour GPU — la suite des optimisations mobiles de la v0.32.1.",
-      "temps_forts": [
-        "Failles : le respawn attend la vraie fermeture du portail précédent (jamais pendant une descente en cours), durée de vie portée à 2 h",
-        "Un suivi d'étage et un compte à rebours s'affichent pendant la descente en Faille",
-        "Les membres du groupe s'affichent sur la carte — et un duel à égalité parfaite désigne un vainqueur au lieu d'une double mort",
-        "Textures du jeu compressées pour GPU (KTX2/Basis) : la suite des optimisations mobiles de la v0.32.1"
-      ],
-      "page": "notes/v0.32.2.html",
-      "titre_en": "Fair rift portals, an in-rift floor tracker — and a winner on simultaneous duels",
-      "resume_en": "A comfort-and-fairness patch. Rift portals now respawn at the first hourly boundary right after the previous one truly closes (sealed by a clear or collapsed after 2h) — never while a descent is still running; their lifetime also grows to 2h. A tracker shows the current floor and a countdown while you descend, party members finally appear on the map, and two lethal blows landing on the same duel tick no longer end in a double death — a single winner, left at 1 HP. Six rare mobs join the chronicle deeds, escort ambush waves re-engage correctly, and every texture in the game switches to a GPU-compressed format — continuing v0.32.1's mobile optimization work.",
-      "temps_forts_en": [
-        "Rifts: respawn waits for the previous portal's real closure (never mid-descent), lifetime extended to 2h",
-        "An in-rift floor tracker and countdown show while you descend",
-        "Party members show up on the map — and a perfectly-tied duel now picks a winner instead of a double death",
-        "Game textures GPU-compressed (KTX2/Basis): continuing v0.32.1's mobile optimization work"
-      ],
-      "page_en": "notes/v0.32.2.en.html"
-    },
-    {
-      "version": "v0.32.1",
-      "date": "2026-07-30",
-      "titre": "/unstuck ne tue plus, un portail de Faille par zone — et les escortes enfin finissables",
-      "resume": "Le correctif qui tient les promesses de la v0.32.0. La commande /unstuck cesse d'exécuter : elle téléporte au cimetière le plus proche contre cinq minutes d'Affliction d'Instabilité (−75 % d'attributs). Les Failles changent d'échelle : fini les trois portails mondiaux, chaque zone garde le sien en rotation horaire, la descente se lie au groupe façon raid dès le premier kill, et un first-clear adverse ne t'éjecte plus — tu finis ta descente avec le butin de parcours. Les quatre quêtes d'escorte, impossibles depuis la sortie (les escortés étaient des monstres, pas des PNJ), deviennent finissables. Le Wildheart Basin est recalibré sur le modèle du Gravewyrm Sanctum, 34 créatures des nouveaux royaumes reçoivent enfin butin et objets de famille, et les iPhone 4 Go entrent dans le monde sans mourir.",
-      "temps_forts": [
-        "/unstuck téléporte au cimetière au lieu de tuer — contre 5 minutes d'Affliction d'Instabilité (−75 % d'attributs)",
-        "Failles : un portail par zone en rotation horaire, liaison de groupe façon raid, et les perdants de la course finissent leur descente",
-        "Les quatre quêtes d'escorte (Wren, Mosley, Suli, Bram) enfin finissables — les escortés étaient des monstres, pas des PNJ",
-        "Wildheart Basin recalibré (santé doublée, vrais dégâts) et du butin pour 34 créatures des nouveaux royaumes"
-      ],
-      "page": "notes/v0.32.1.html",
-      "titre_en": "/unstuck stops killing, one rift portal per zone — and the escorts finally completable",
-      "resume_en": "The patch that keeps v0.32.0's promises. The /unstuck command stops executing people: it teleports to the nearest graveyard for five minutes of Instability Affliction (−75% attributes). Rifts change scale: the three worldwide portals are gone, every zone keeps its own on an hourly rotation, the descent binds to the group raid-style on the first kill, and a rival first-clear no longer ejects you — you finish your descent with the mid-run loot. The four escort quests, impossible since release (the escortees were mobs, not NPCs), become completable. The Wildheart Basin is retuned on the Gravewyrm Sanctum model, 34 creatures of the new realms finally receive loot and heirlooms, and 4 GB iPhones enter the world without dying.",
-      "temps_forts_en": [
-        "/unstuck teleports to the graveyard instead of killing — for 5 minutes of Instability Affliction (−75% attributes)",
-        "Rifts: one portal per zone on an hourly rotation, raid-style group binding, and race losers finish their descent",
-        "The four escort quests (Wren, Mosley, Suli, Bram) finally completable — the escortees were mobs, not NPCs",
-        "Wildheart Basin retuned (health doubled, real damage) and loot for 34 creatures of the new realms"
-      ],
-      "page_en": "notes/v0.32.1.en.html"
-    },
-    {
-      "version": "v0.32.0",
-      "date": "2026-07-29",
-      "titre": "Les Failles : des donjons sans fin nés d'une graine — et onze royaumes à explorer",
-      "resume": "La plus grosse version depuis longtemps. Les Failles arrivent : des donjons instanciés entièrement procéduraux, générés depuis une simple graine et classés de C à S — plus le rang monte, plus les boss dévoilent de mécaniques, jusqu'aux deux légendaires exclusifs du rang S. Le continent s'agrandit de onze royaumes d'un coup, avec 105 quêtes, 48 PNJ et le donjon de plein air Wildheart Basin. Les montures deviennent de vrais objets : les rênes se rangent au sac, se glissent en barre d'action et se montent d'un clic. Et le monde se charge désormais par morceaux — distance de vue accrue, terrain comblé entre les zones, carte de continent interactive — pendant que les compteurs de combat se déplacent, se redimensionnent et se détaillent au survol.",
-      "temps_forts": [
-        "Les Failles : des donjons générés à l'infini depuis graine + niveau + étage, classés de C à S — et 15 % des graines C cachent l'Infernal Citadel",
-        "Onze nouveaux royaumes, 105 quêtes, 48 PNJ — et le donjon Wildheart Basin, caché derrière la Sunken Idol au Palmreach",
-        "Les montures deviennent des objets : rênes au sac, barre d'action, montage en un clic — les épiques ne tombent qu'en Faille de rang S",
-        "Le monde se charge par morceaux : vue plus loin, terrain entre les zones, carte de continent interactive — et compteurs de combat déplaçables"
-      ],
-      "page": "notes/v0.32.0.html",
-      "titre_en": "Rifts: endless dungeons born from a seed — and eleven realms to explore",
-      "resume_en": "The biggest patch in a long while. Rifts arrive: fully procedural instanced dungeons, generated from nothing but a seed and ranked C to S — the higher the rank, the more mechanics bosses reveal, up to the two S-rank exclusive legendaries. The continent grows by eleven realms at once, with 105 quests, 48 NPCs and the open-field Wildheart Basin dungeon. Mounts become real items: reins live in a bag, drag to an action bar and mount in one click. And the world now streams in chunks — greater view distance, terrain filled in between zones, an interactive continent map — while the combat meters become movable, resizable and hover-detailed.",
-      "temps_forts_en": [
-        "Rifts: dungeons generated endlessly from seed + level + floor, ranked C to S — and 15% of C-rank seeds hide the Infernal Citadel",
-        "Eleven new realms, 105 quests, 48 NPCs — and the Wildheart Basin dungeon, hidden behind the Sunken Idol in the Palmreach",
-        "Mounts become items: reins in your bag, on your action bar, mounted in one click — the epics only drop from S-rank rifts",
-        "The world streams in chunks: greater view distance, terrain between zones, an interactive continent map — and movable combat meters"
-      ],
-      "page_en": "notes/v0.32.0.en.html"
-    },
-    {
-      "version": "v0.31.0",
-      "date": "2026-07-27",
-      "titre": "Le monde devient solide : moteur physique, escalade — et un marché mieux rangé",
-      "resume": "Le jeu se dote d'un vrai moteur physique, calculé à l'identique hors ligne, sur le serveur et dans la prédiction du client : les collisions suivent enfin ce que l'œil voit, et selon la hauteur de l'obstacle on l'enjambe, on le franchit d'un saut, on se hisse sur le rebord ou on escalade le mur. Étals, chapelles, quais et mobilier de donjon deviennent solides — les raccourcis qui passaient au travers sont morts. À côté, le dépeçage de cadavres est blindé contre les requêtes malformées, les sacs gagnent leur propre rayon au World Market, l'enchant qui en écraserait un autre s'affiche en rouge (et le désenchantement détruit la copie cliquée), l'empilement vertical des plaques de nom fait marche arrière, et les bannissements déconnectent immédiatement.",
-      "temps_forts": [
-        "Un vrai moteur physique — collisions balayées en continu, glissade, montée de marche — identique hors ligne, serveur et client",
-        "Enjamber, franchir d'un saut, se hisser, escalader : la hauteur de l'obstacle décide — et le mobilier de donjon devient praticable",
-        "Étals, chapelles, quais, caisses : les décors deviennent solides, les raccourcis à travers les murs ne passent plus",
-        "Rayon Sacs au World Market, enchant « écraseur » marqué en rouge, désenchantement sur la copie cliquée — et dépeçage blindé"
-      ],
-      "page": "notes/v0.31.0.html",
-      "titre_en": "The world turns solid: a physics engine, climbing — and a tidier market",
-      "resume_en": "The game gets a real physics engine, resolved identically offline, on the server and in client prediction: collisions finally match what the eye sees, and depending on an obstacle's height you stride over it, vault it, pull up onto the ledge or climb the wall. Market stalls, chapels, docks and dungeon furniture become solid — shortcuts that clipped through are dead. Alongside, corpse harvesting is hardened against malformed requests, bags get their own aisle on the World Market, an enchant that would crush another shows up in red (and disenchanting destroys the copy you clicked), vertical nameplate stacking is rolled back, and bans disconnect immediately.",
-      "temps_forts_en": [
-        "A real physics engine — continuous swept collision, sliding, step-up — identical offline, server and client",
-        "Stride, vault, pull up, climb: obstacle height decides — and dungeon furniture becomes standable",
-        "Market stalls, chapels, docks, crates: scenery turns solid, through-the-wall shortcuts no longer work",
-        "A Bags aisle on the World Market, overwriting enchants flagged in red, disenchant on the clicked copy — and hardened corpse harvest"
-      ],
-      "page_en": "notes/v0.31.0.en.html"
-    },
-    {
-      "version": "v0.30.0",
-      "date": "2026-07-26",
-      "titre": "Enchante ton équipement, crit et hâte recalibrés — et une deuxième arène",
-      "resume": "L'enchantement se pose enfin directement sur l'équipement porté, remplacement compris (derrière une confirmation qui nomme ce qui sera détruit), avec une interface qui affiche le bonus de chaque enchant. Le critique et la hâte demandent désormais 20 points de score pour 1 % au lieu de 10 — l'équipement n'a pas bougé, il rend moitié moins. La Drowned Court rejoint l'Ashen Coliseum reconstruite en rotation classée, la récolte exige l'outil du métier dès le niveau 1, et le jeu s'offre une refonte audiovisuelle : 259 icônes peintes, le bourg d'Eastbrook Vale rebâti, 47 vrais enregistrements sonores. Le Gravewyrm Sanctum normal devient finissable en équipement de quête et le Grave Inferno de Korzul se déclenche enfin sous 50 % de santé.",
-      "temps_forts": [
-        "Enchantement sur l'équipement porté, remplacement possible — et des écrans qui expliquent enfin chaque bonus",
-        "Critique et hâte à 20 points pour 1 % (au lieu de 10) : chaque pièce rend moitié moins, rien à re-gemmer",
-        "La Drowned Court, deuxième arène classée en rotation 1v1/2v2 avec l'Ashen Coliseum reconstruite",
-        "Refonte audiovisuelle : 259 icônes peintes, Eastbrook Vale rebâti, 47 vrais sons — et la récolte exige ses outils dès le niveau 1"
-      ],
-      "page": "notes/v0.30.0.html",
-      "titre_en": "Enchant your gear, crit and haste retuned — and a second arena",
-      "resume_en": "Enchanting finally lands directly on equipped gear, replacement included (behind a confirmation naming what gets destroyed), with an interface that shows each enchant's bonus. Crit and haste now take 20 rating points per 1% instead of 10 — gear was left untouched, it simply yields half. The Drowned Court joins the rebuilt Ashen Coliseum in the ranked rotation, gathering requires the trade's tool from level 1, and the game gets an audiovisual overhaul: 259 painted icons, Eastbrook Vale's town center rebuilt, 47 real sound recordings. Normal Gravewyrm Sanctum becomes finishable in quest gear and Korzul's Grave Inferno finally fires below 50% health.",
-      "temps_forts_en": [
-        "Enchant equipped gear, replacement included — and screens that finally explain each bonus",
-        "Crit and haste at 20 rating per 1% (up from 10): every piece yields half, nothing to re-gem",
-        "The Drowned Court, a second ranked arena rotating 1v1/2v2 with the rebuilt Ashen Coliseum",
-        "Audiovisual overhaul: 259 painted icons, Eastbrook Vale rebuilt, 47 real sounds — and gathering demands its tools from level 1"
-      ],
-      "page_en": "notes/v0.30.0.en.html"
-    },
-    {
-      "version": "v0.29.1",
-      "date": "2026-07-23",
-      "titre": "Hotfix d'équilibrage : soigneurs, tanks et héroïque recalibrés",
-      "resume": "Un hotfix cible le grand recalibrage héroïque de la v0.29.0. Les soins reprennent le rythme : chaque sort gagne un rang supérieur au niveau 20 et profite d'une double puissance des sorts (1 point d'Intelligence = 1 point de soin). Les tanks engagés — guerrier Protection, paladin Protection, druide en Forme de Paresse — deviennent immunisés aux critiques, et la robustesse du paladin et de la Forme de Paresse remonte au niveau du guerrier. Côté PvE, le Gravebreaker de Nythraxis devient une attaque chargée qui n'assomme plus à l'ouverture, l'héroïque du raid comme les adds de Gravewyrm Sanctum tapent bien moins fort, et Korzul gagne le Grave Inferno, un anneau de feu dont il faut sortir.",
-      "temps_forts": [
-        "Soins rééquilibrés : rang supérieur au niveau 20 pour chaque sort et double puissance des sorts (1 Intelligence = 1 soin)",
-        "Les tanks engagés ne peuvent plus être critiqués — guerrier Prot, paladin Prot et druide en Forme de Paresse, robustesse harmonisée",
-        "Nythraxis : le Gravebreaker se charge et n'assomme plus au pull, l'esquive le retarde ; héroïque et adds de cour nettement allégés",
-        "Gravewyrm Sanctum recentré pour les groupes fraîchement au niveau ; Korzul canalise le Grave Inferno, un anneau de feu à fuir"
-      ],
-      "page": "notes/v0.29.1.html",
-      "titre_en": "Balance hotfix: healers, tanks and heroic retuned",
-      "resume_en": "A hotfix targets the v0.29.0 heroic retune. Healing keeps up again: every spell gains a stronger top rank at level 20 and now benefits from double Spell Power (1 Intellect = 1 healing). Committed tanks — Protection warrior, Protection paladin, Feral druid in Sloth Form — become immune to critical strikes, and paladin and Sloth Form durability rises to the warrior's level. On the PvE side, Nythraxis's Gravebreaker becomes a charged attack that no longer stuns at the opener, the heroic raid and Gravewyrm Sanctum adds hit far softer, and Korzul gains Grave Inferno, a fire ring you have to leave.",
-      "temps_forts_en": [
-        "Healing rebalanced: a stronger top rank at level 20 for every spell and double Spell Power (1 Intellect = 1 healing)",
-        "Committed tanks can no longer be crit — Prot warrior, Prot paladin and Feral in Sloth Form, durability harmonized",
-        "Nythraxis: Gravebreaker charges up and no longer stuns at the pull, dodging delays it; heroic and court adds much softer",
-        "Gravewyrm Sanctum re-centered for freshly capped groups; Korzul channels Grave Inferno, a fire ring to escape"
-      ],
-      "page_en": "notes/v0.29.1.en.html"
-    },
-    {
-      "version": "v0.29.0",
-      "date": "2026-07-23",
-      "titre": "La grande remise à zéro des métiers — et l'enchantement s'active",
-      "resume": "Les Métiers 2.0 s'achèvent sur une remise à zéro générale : toutes les compétences repartent de 0 (objets, recettes et or conservés — une lettre l'explique en jeu), la montée suit une courbe de maîtrise à quatre états avec plafonds par métier, la récolte se lance comme un sort et la pêche gagne son minijeu. L'enchantement, construit dans le moteur depuis la v0.24, est enfin jouable — avec des valeurs divisées par deux et un nouveau palier Runed. Côté combat, donjons et raid doublent leur santé avec des planchers de dégâts, les élites héroïques chargent (Onrush) et 41 objets bouchent les trous d'équipement, le tout servi par une interface largement redessinée.",
-      "temps_forts": [
-        "Toutes les compétences de métier remises à zéro (une seule fois, lettre à l'appui) — courbe de maîtrise orange/jaune/vert/gris et plafonds 100 / 125 / 200",
-        "L'enchantement s'active enfin en jeu : désenchantement et pose d'enchants dans le menu du sac, magnitudes divisées par deux, nouveau palier Runed",
-        "Donjons et raid recalibrés : santé doublée, planchers de dégâts (300 à 1 200), Onrush en héroïque et boss immunisés aux contrôles — 41 objets pour boucher les trous",
-        "L'archétype se gagne en quête chez les quatre maîtres, avec quêtes de commande régulières et 26 hauts faits de métier"
-      ],
-      "page": "notes/v0.29.0.html",
-      "titre_en": "The great professions reset — and enchanting goes live",
-      "resume_en": "Professions 2.0 wraps up with a global reset: every skill returns to 0 (items, recipes and gold are kept — an in-game letter explains), leveling follows a four-state mastery curve with per-profession caps, gathering casts like a spell and fishing gets its minigame. Enchanting, built into the engine since v0.24, is finally playable — with its numbers cut in half and a new Runed tier. On the combat side, dungeons and the raid double their health with per-swing damage floors, heroic elites charge (Onrush) and 41 items plug the gear gaps, all wrapped in a broadly redesigned interface.",
-      "temps_forts_en": [
-        "Every profession skill reset to zero (once, letter included) — an orange/yellow/green/gray mastery curve and 100 / 125 / 200 caps",
-        "Enchanting finally goes live: disenchanting and enchant application in the bag menu, magnitudes cut in half, new Runed tier",
-        "Dungeons and raid retuned: health doubled, damage floors (300 to 1,200), Onrush on heroic and CC-immune bosses — 41 items to plug the gaps",
-        "Archetypes are earned by quest at the four masters, with recurring work orders and 26 profession deeds"
-      ],
-      "page_en": "notes/v0.29.0.en.html"
-    },
-    {
-      "version": "v0.28.0",
-      "date": "2026-07-20",
-      "titre": "Les Métiers 2.0 complets et le Givre recalibré",
-      "resume": "La boucle des métiers est enfin complète : la récolte produit de vrais matériaux (veines immaculées et événements rares compris), 54 recettes arrivent avec six maîtres de métier, des paliers de formation et une Guilde des Métiers qui se présente par lettre. Côté classes, la Cryomancie du Mage voit ses multiplicateurs empilés dégonfler et les barrières scalent désormais avec la puissance des sorts, pendant que l'interface gagne une troisième barre d'action, des tooltips de joueurs, un chat coloré par classe et des confirmations bienvenues.",
-      "temps_forts": [
-        "Métiers 2.0 : la récolte donne de vrais matériaux, le registre passe de 21 à 75 recettes, six maîtres de métier s'installent",
-        "Givre : Frozen Orb à 45 s de cooldown, plus de +30 % sur le Winterlash instantané ni de +20 % de crit sur Brittle Ruin",
-        "Les barrières du Mage re-budgétées : 50 en base mais +50 % de la puissance des sorts, en trois rangs — Shifting Ward remplace Temporal Rift",
-        "Interface : 3e barre d'action, tooltips de joueurs, chat coloré par classe, confirmations et ready-check détaillé"
-      ],
-      "page": "notes/v0.28.0.html",
-      "titre_en": "Professions 2.0 complete and Frost recalibrated",
-      "resume_en": "The professions loop is finally complete: gathering yields real materials (pristine veins and rare events included), 54 recipes arrive with six profession masters, training tiers and a Professions Guild that introduces itself by letter. On the class side, the Mage's Cryomancy sees its stacked multipliers deflate and barriers now scale with spell power, while the interface gains a third action bar, player tooltips, class-colored chat and welcome confirmations.",
-      "temps_forts_en": [
-        "Professions 2.0: gathering yields real materials, the registry grows from 21 to 75 recipes, six profession masters settle in",
-        "Frost: Frozen Orb on a 45s cooldown, no more +30% on instant Winterlash or +20% crit damage on Brittle Ruin",
-        "Mage barriers re-budgeted: 50 base but +50% of spell power, across three ranks — Shifting Ward replaces Temporal Rift",
-        "Interface: 3rd action bar, player tooltips, class-colored chat, confirmations and a detailed ready check"
-      ],
-      "page_en": "notes/v0.28.0.en.html"
-    },
-    {
-      "version": "v0.27.2",
-      "date": "2026-07-19",
-      "titre": "Le Guerrier Fureur recalibré et l'iPhone stabilisé",
-      "resume": "Patch d'équilibrage et de stabilité qui regroupe tout depuis la v0.27.0 : la fin de l'incident « fury overpower » (rage réduite, deux-mains re-budgétées, Titan's Grip à -12 %, Colossal Might plafonné), la hâte de mêlée qui devient additive, le crash d'entrée en jeu sur iPhone corrigé avec un garde-fou anti-boucle, le corpse-run réparé vers la Crypte abandonnée et deux gros gains de performance serveur.",
-      "temps_forts": [
-        "Fureur : Twinstrike à 4 de rage, Bladed Gyre sans rage, Anger Management réduit, Colossal Might plafonné",
-        "Deux-mains re-budgétées pour toutes les classes (1,3× les stats, +15 % de DPS d'arme) — 4 épiques re-stattées",
-        "iPhone : plus de crash d'entrée en jeu — profil mémoire contraint, préchauffage borné et garde-fou",
-        "Les fantômes peuvent de nouveau rejoindre leur corps dans la Crypte abandonnée (raid Nythraxis)"
-      ],
-      "page": "notes/v0.27.2.html",
-      "titre_en": "The Fury Warrior recalibrated and the iPhone stabilized",
-      "resume_en": "A balance and stability patch rolling up everything since v0.27.0: the end of the fury overpower incident (reduced rage income, re-budgeted two-handers, Titan's Grip at -12%, Colossal Might capped), melee haste turning additive, the iOS world-entry crash fixed with an anti-loop crash guard, the corpse-run into the Abandoned Crypt repaired, and two big server performance wins.",
-      "temps_forts_en": [
-        "Fury: Twinstrike at 4 rage, Bladed Gyre generates none, Anger Management trimmed, Colossal Might capped",
-        "Two-handers re-budgeted for every class (1.3× stats, +15% weapon DPS premium) — 4 epics re-statted",
-        "iPhone: no more world-entry crash — constrained-memory profile, bounded prewarm and crash guard",
-        "Ghosts can corpse-run back into the Abandoned Crypt (the Nythraxis raid)"
-      ],
-      "page_en": "notes/v0.27.2.en.html"
-    },
-    {
-      "version": "v0.27.0",
-      "date": "2026-07-18",
-      "titre": "Le Guerrier refondu, le Mage soigneur et les Métiers 2.0",
-      "resume": "La plus grosse mise à jour à ce jour (440 commits) : le Guerrier reconstruit avec trois spécialisations et ses postures, le Mage réinventé — dont la Chronomancie, une vraie spé de soin —, les rangées de choix des Talents 2.0 pour les neuf classes, les Métiers 2.0 (archétypes, qualité déterministe, Masterwork, enchants Greater), le mini-jeu Card Duel, le wallet Solana/USDC et des donjons héroïques rééquilibrés.",
-      "temps_forts": [
-        "Guerrier : 3 spécialisations (Battlecraft, Bloodrush, Ironguard) et le retour des postures",
-        "Mage : la Chronomancie soigne en infligeant des dégâts — Cryomancie et Pyromancie refaites",
-        "Métiers 2.0 : archétypes par paires, craft déterministe, proc Masterwork et enchants Greater",
-        "Card Duel chez le Card Master, wallet Solana/USDC, trash héroïque -25 %"
-      ],
-      "page": "notes/v0.27.0.html",
-      "titre_en": "The Warrior redesign, the healer Mage and Professions 2.0",
-      "resume_en": "The biggest update to date (440 commits): the Warrior rebuilt with three specializations and stances, the Mage reworked — including Chronomancy, a true healing spec —, Talents 2.0 choice rows for all nine classes, Professions 2.0 (archetypes, deterministic quality, Masterwork, Greater enchants), the Card Duel minigame, the Solana/USDC wallet and rebalanced heroic dungeons.",
-      "temps_forts_en": [
-        "Warrior: 3 specializations (Battlecraft, Bloodrush, Ironguard) and the return of stances",
-        "Mage: Chronomancy heals by dealing damage — Cryomancy and Pyromancy rebuilt",
-        "Professions 2.0: paired archetypes, deterministic crafting, Masterwork proc and Greater enchants",
-        "Card Duel at the Card Master, Solana/USDC wallet, heroic trash hits 25% softer"
-      ],
-      "page_en": "notes/v0.27.0.en.html"
-    },
-    {
-      "version": "v0.26.0",
-      "date": "2026-07-15",
-      "titre": "Le Dungeon Finder, le Hit Rating et un cooldown de tank par classe",
-      "resume": "Mise à jour « files & confort » : le Dungeon Finder (Maj+I) pour se grouper d'un clic sur les donjons et le raid, la stat Hit Rating et un butin héroïque enrichi, un vrai cooldown défensif pour chaque tank, le client Windows signé, la récolte cliquable et le rengainement d'arme.",
-      "temps_forts": [
-        "Dungeon Finder : file par rôle FIFO sur les 4 donjons, l'héroïque et Nythraxis",
-        "Hit Rating (10 = +1 % de touche) et pénalités héroïques ramenées à ~26 % / 25 %",
-        "Un cooldown de tank par classe : Ironhold, Sacred Bulwark, Primal Reflexes",
-        "Client Windows signé, récolte cliquable et rengainement d'arme (Z)"
-      ],
-      "page": "notes/v0.26.0.html",
-      "titre_en": "The Dungeon Finder, Hit Rating and a tank cooldown per class",
-      "resume_en": "A “queues & comfort” update: the Dungeon Finder (Shift+I) to group up in one click for dungeons and the raid, the Hit Rating stat and beefed-up heroic loot, a real defensive cooldown for every tank, the signed Windows client, clickable gathering and weapon sheathing.",
-      "temps_forts_en": [
-        "Dungeon Finder: role-based FIFO queue for the 4 dungeons, heroic and Nythraxis",
-        "Hit Rating (10 = +1% hit) and heroic penalties cut to ~26% / 25%",
-        "A tank cooldown per class: Ironhold, Sacred Bulwark, Primal Reflexes",
-        "Signed Windows client, clickable gathering and weapon sheathing (Z)"
-      ],
-      "page_en": "notes/v0.26.0.en.html"
-    },
-    {
-      "version": "v0.25.0",
-      "date": "2026-07-14",
-      "titre": "Le raid héroïque Nythraxis, les 27 sorts signature et le Book of Deeds",
-      "resume": "Grosse mise à jour progression & endgame : le palier héroïque du raid Nythraxis et sa Cour Immortelle, un vrai sort signature et une maîtrise pour chaque spé (Talents 2.0), 192 succès dans le Book of Deeds, l'Honor PvP avec le quartier-maître FURY, et l'Armurerie Saison 1.",
-      "temps_forts": [
-        "Raid héroïque : la Cour Immortelle, sets ilvl 33, légendaires ilvl 37",
-        "Talents 2.0 : sort signature + maîtrise pour les 27 spés, un interrupt par classe",
-        "Book of Deeds : 192 succès, 2 365 Renown, 19 titres",
-        "PvP : Honor persistant et 40 pièces épiques ilvl 28 chez FURY"
-      ],
-      "page": "notes/v0.25.0.html",
-      "titre_en": "The heroic Nythraxis raid, the 27 signature abilities and the Book of Deeds",
-      "resume_en": "A big progression & endgame update: the Nythraxis raid's heroic tier and its Deathless Court, a real signature ability and mastery for every spec (Talents 2.0), 192 achievements in the Book of Deeds, PvP Honor with quartermaster FURY, and the Season 1 Armory.",
-      "temps_forts_en": [
-        "Heroic raid: the Deathless Court, ilvl 33 sets, ilvl 37 legendaries",
-        "Talents 2.0: signature ability + mastery for all 27 specs, an interrupt for every class",
-        "Book of Deeds: 192 achievements, 2,365 Renown, 19 titles",
-        "PvP: persistent Honor and 40 ilvl 28 epic pieces from FURY"
-      ],
-      "page_en": "notes/v0.25.0.en.html"
-    },
-    {
-      "version": "v0.24.2",
-      "date": "2026-07-12",
-      "titre": "Récompenses héroïques fiabilisées et butin mobile réparé",
-      "resume": "Patch de fiabilité : un kill de boss final héroïque ne peut plus poser un verrou sans payer la Heroic Mark, le butin du corps ou le jet Need/Greed — les Marks tombent à la mort du boss, l'éligibilité est gelée avant la sauvegarde. Les invites de jet se réconcilient côté serveur, l'écran court des téléphones n'affiche que l'actionnable, et les positions de cadres héritées de la refonte annulée sont nettoyées une bonne fois.",
-      "temps_forts": [
-        "Heroic Marks payées directement à la mort du boss final, sur la même frontière de reset que le lockout",
-        "Plus aucun scénario « verrouillé sans récompense » : relâche, changement de groupe, déconnexion couverts",
-        "Jets Need/Greed fiables sur mobile — et le bouton Sacs au-dessus du rail de jets",
-        "Reset unique des positions de cadres sauvées pendant la refonte v0.24.0"
-      ],
-      "page": "notes/v0.24.2.html",
-      "titre_en": "Heroic rewards made reliable and mobile loot repaired",
-      "resume_en": "A reliability patch: a heroic final-boss kill can no longer persist a lockout while losing the Heroic Mark, corpse loot or Need/Greed award — Marks are paid at boss death and eligibility is frozen before the save. Roll prompts reconcile server-side, short phone screens show only what's actionable, and frame positions left over from the reverted overhaul are cleaned up once and for all.",
-      "temps_forts_en": [
-        "Heroic Marks awarded directly at final-boss death, on the same reset boundary as the lockout",
-        "No more lockout-without-reward scenarios: releasing, party changes and logout all covered",
-        "Reliable Need/Greed rolls on mobile — with Bags above the roll rail",
-        "One-time reset of frame positions saved during the v0.24.0 overhaul"
-      ],
-      "page_en": "notes/v0.24.2.en.html"
-    },
-    {
-      "version": "v0.24.1",
-      "date": "2026-07-11",
-      "titre": "Le retour de l'interface classique (rollback de la refonte)",
-      "resume": "Hotfix de stabilité desktop : la refonte d'interface embarquée dans la v0.24.0 avait sérieusement dégradé l'expérience sur ordinateur. Ses 195 commits sont annulés d'un bloc — fenêtres, réglages, marchands, talents et HUD reviennent à l'identique — tout en préservant le travail postérieur comme le désencombrement des nameplates.",
-      "temps_forts": [
-        "La refonte d'interface (195 commits) annulée en un seul rollback cohérent",
-        "Retour à l'identique des fenêtres, réglages, marchands, talents et du HUD d'avant",
-        "Nameplates poolées et améliorations de rendu préservées"
-      ],
-      "page": "notes/v0.24.1.html",
-      "titre_en": "The classic interface returns (overhaul rollback)",
-      "resume_en": "A desktop stability hotfix: the interface overhaul that shipped with v0.24.0 significantly regressed the desktop experience. Its 195 commits are rolled back as one block — windows, settings, vendors, talents and the HUD return exactly as before — while preserving later work such as the pooled nameplate decluttering.",
-      "temps_forts_en": [
-        "The interface overhaul (195 commits) undone in one coherent rollback",
-        "Windows, settings, vendors, talents and the HUD return exactly as before",
-        "Pooled nameplates and rendering improvements preserved"
-      ],
-      "page_en": "notes/v0.24.1.en.html"
-    },
-    {
-      "version": "v0.24.0",
-      "date": "2026-07-11",
-      "titre": "L'interface refaite, le butin héroïque renforcé et la file de sorts",
-      "resume": "Mise à jour « polish & infrastructure » : 19 fenêtres unifiées et nouveau menu Échap, drops héroïques améliorés [HEROIC] avec marks liées et lockout durci, file de sorts, ready checks, +35 % de fps en foule et chargement bien plus rapide.",
-      "temps_forts": [
-        "Butin héroïque ilvl 28, Heroic Marks liées, lockout pour tout le groupe",
-        "File de sorts : le sort suivant part sans délai",
-        "Interface refaite : 19 fenêtres, menu Échap, vendeurs à onglets",
-        "Ready checks /ready et +35 % de fps dans les foules"
-      ],
-      "page": "notes/v0.24.0.html",
-      "titre_en": "The UI overhaul, beefed-up heroic loot and spell queueing",
-      "resume_en": "A “polish & infrastructure” update: 19 unified windows and a new Escape menu, improved heroic drops [HEROIC] with soulbound marks and a stricter lockout, spell queueing, ready checks, +35% fps in crowds and much faster loading.",
-      "temps_forts_en": [
-        "Heroic loot at ilvl 28, soulbound Heroic Marks, group-wide lockout",
-        "Spell queueing: your next spell fires without delay",
-        "UI overhaul: 19 windows, Escape menu, tabbed vendors",
-        "/ready ready checks and +35% fps in crowds"
-      ],
-      "page_en": "notes/v0.24.0.en.html"
-    },
-    {
-      "version": "v0.23.0",
-      "date": "2026-07-09",
-      "titre": "La Vale Cup, les donjons héroïques et les 10 sets épiques",
-      "resume": "Grosse mise à jour endgame : deux nouveaux modes de jeu, la difficulté Héroïque avec sa monnaie Heroic Marks, dix sets épiques, les stats Crit & Haste, les métiers finalisés et la banque personnelle.",
-      "temps_forts": [
-        "The Vale Cup (boarball) et Protect Yumi, deux nouveaux modes",
-        "Difficulté Héroïque des 4 donjons + Heroic Marks",
-        "10 sets épiques, stats Crit Rating & Haste Rating",
-        "Métiers finalisés et banque The Gilded Strongbox"
-      ],
-      "page": "notes/v0.23.0.html",
-      "titre_en": "The Vale Cup, heroic dungeons and the 10 epic sets",
-      "resume_en": "A big endgame update: two new game modes, Heroic difficulty with its Heroic Marks currency, ten epic sets, the Crit & Haste stats, finalised professions and the personal bank.",
-      "temps_forts_en": [
-        "The Vale Cup (boarball) and Protect Yumi, two new game modes",
-        "Heroic difficulty for all 4 dungeons + Heroic Marks",
-        "10 epic sets, Crit Rating & Haste Rating stats",
-        "Finalised professions and The Gilded Strongbox bank"
-      ],
-      "page_en": "notes/v0.23.0.en.html"
-    }
-  ]
+ "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
+ "versions": [
+  {
+   "version": "v0.35.0",
+   "date": "2026-08-07",
+   "titre": "La version PvP : Thornhollow Fields, l’Honneur — et un monde qui vit jour et nuit",
+   "resume": "Le premier champ de bataille du jeu ouvre : Thornhollow Fields, un 5 contre 5 classé à capture de drapeau, avec files qui gardent les groupes ensemble, Elo d’équipe, économie d’Honneur (rangs à vie : Sergeant, Knight-Lieutenant, Field Marshal) et le catalogue WARFARE reconstruit au niveau d’objet des donjons héroïques — cinq panoplies désormais, la Thornhide du druide en plus — montez l’équipe de la guilde. Autour : la refonte des métiers promise (fabriquer et enchanter deviennent des incantations, tableau de commandes entre joueurs, nœuds de récolte sur la carte), la natation complète avec jauge de respiration et noyade, un créateur de personnage, et le plus gros lifting visuel de l’histoire du jeu : cycle jour/nuit, lampadaires la nuit, fin du brouillard extérieur. Le chasseur remplit enfin sa main gauche (quatre carquois) et son familier hérite de son équipement. Attention aux nouvelles règles : mouliner avant la touche termine la session de pêche, et les légendaires sont désormais uniques à l’équipement.",
+   "temps_forts": [
+    "Thornhollow Fields : 5c5 classé à capture de drapeau — la file garde les groupes ensemble, montez une équipe de guilde (dès le niveau 20)",
+    "L’Honneur : victoire 60 (80 la première du jour), rangs à vie, titre Flagbearer — et le catalogue WARFARE reconstruit au niveau d’objet 31, cinq familles, armures de 450 à 1 200 points",
+    "Fabriquer devient une incantation, avec tableau de commandes entre joueurs et nœuds de récolte affichés sur la carte",
+    "Le monde vit : cycle jour/nuit avec horloge, villes éclairées aux lampadaires, plus aucun brouillard extérieur — et on nage pour de vrai, noyade comprise",
+    "Chasseur : quatre carquois pour la main gauche (Mogger 20 %, Old Cragmaw 25 %, Korzul 5 %, raid Nythraxis 14 %) et un familier qui hérite de vos statistiques",
+    "⚠️ Nouvelles règles : mouliner avant la touche termine la pêche, les légendaires deviennent uniques à l’équipement, et réattribuer le Focus de ville se paie"
+   ],
+   "page": "notes/v0.35.0.html",
+   "titre_en": "The PvP release: Thornhollow Fields, honor — and a world that lives day and night",
+   "resume_en": "The game’s first battleground opens: Thornhollow Fields, a ranked 5v5 capture-the-flag with a queue that keeps parties together, team Elo, an honor economy (lifetime ranks: Sergeant, Knight-Lieutenant, Field Marshal) and the WARFARE catalogue rebuilt at heroic-dungeon item level — five sets now, adding the druid’s Thornhide — bring a guild team. Around it: the promised professions overhaul (crafting and enchanting become casts, a player-to-player commission board, gather nodes on the zone map), full swimming with a breath gauge and drowning, a character creator, and the biggest visual overhaul in the game’s history: a day-night cycle, streetlamps at night, no more outdoor fog. Hunters finally fill their off-hand (four quivers) and their pet now inherits their gear. Mind the new rules: reeling before the bite ends the fishing session, and legendaries are now unique-equipped.",
+   "temps_forts_en": [
+    "Thornhollow Fields: ranked 5v5 capture-the-flag — the queue keeps parties together, bring a guild team (from level 20)",
+    "Honor: 60 per win (80 for the day’s first), lifetime ranks, the Flagbearer title — and the WARFARE catalogue rebuilt at item level 31, five families, armor from 450 to 1,200 honor",
+    "Crafting becomes a cast, with a player-to-player commission board and gather nodes shown on the zone map",
+    "The world lives: a day-night cycle with a HUD clock, streetlamp-lit towns, no more outdoor fog — and real swimming, drowning included",
+    "Hunter: four off-hand quivers (Mogger 20%, Old Cragmaw 25%, Korzul 5%, Nythraxis raid 14%) and a pet that inherits your stats",
+    "⚠️ New rules: reeling before the bite ends the fishing session, legendaries become unique-equipped, and reallocating Town Focus now costs"
+   ],
+   "page_en": "notes/v0.35.0.en.html"
+  },
+  {
+   "version": "v0.34.0",
+   "date": "2026-08-04",
+   "titre": "La banque de guilde, les montures qui s'échangent, et le plus gros patch métiers de l'histoire du jeu",
+   "resume": "La mise à jour de l'économie. La banque de guilde arrive — coffre d'or et d'objets commun, extensible jusqu'à 60 emplacements — mais attention : seuls le chef et les officiers y ont accès, les membres ne voient même pas l'onglet (vérifié dans le code). Les rênes de montures ne sont plus liées : toutes les montures s'échangent, se postent et se vendent au Marché, y compris celles déjà dans vos sacs. Les Drakelands sont reconstruites autour de la couvée Dragonkin (œufs qui éclosent, broodguards, quatre Broodlords élites et une Matriarche refaite) — mais la monture Drakemaw Raptor annoncée n'est PAS obtenable : son drop a été retiré juste avant la sortie, ne la farmez pas (la Terrorspark non plus, toujours pas). Les métiers reçoivent leur plus gros patch : charmes d'outils d'enchanteur qui ne s'usent que quand ils servent, poissons crus à cuisiner (6 recettes), récolte passée de 99 à 156 nœuds mais repousse doublée à 4 minutes, et outils qui exigent un niveau de métier pour être utilisés. En Faille, les grosses attaques de boss se télégraphient au sol 1,2 s à l'avance et les balayages s'esquivent dans le dos. Enfin, les monstres du monde réapparaissent en 60 s partout (le farm ré-accélère), le rez de groupe du Mage gagne un cooldown de 5 minutes, et le Smokestep du Voleur marche enfin.",
+   "temps_forts": [
+    "La banque de guilde : or et objets partagés, jusqu'à 60 emplacements — mais réservée au chef et aux officiers, les membres ne la voient même pas",
+    "Les rênes de montures ne sont plus liées : échange, courrier, Marché, banque de guilde — celui qui tient les rênes possède la monture",
+    "⚠️ La monture Drakemaw Raptor annoncée n'est PAS obtenable (drop retiré avant la sortie) — et la Terrorspark toujours pas non plus, vérifié dans le code",
+    "Les Drakelands reconstruites : œufs qui éclosent, broodguards, quatre Broodlords élites, Cindraleth refaite — et deux hauts faits de Chronique (dont un rétroactif)",
+    "Charmes d'outils d'enchanteur : récolte doublée ou grade fin, et une charge n'est dépensée que si le bonus a vraiment servi",
+    "La pêche passe à table : les prises sont crues, 6 recettes de cuisine les transforment — et chaque eau a un plafond d'apprentissage (200 seulement à Thornpeak)",
+    "Récolte : 99 → 156 nœuds, mais repousse doublée (4 min) et outils soumis à un niveau de métier pour être utilisés",
+    "Boss de Faille : cercle au sol 1,2 s avant chaque détonation, balayages esquivables dans le dos, contrôles suspendus pendant la fuite",
+    "Les monstres du monde réapparaissent en 60 s partout (le farm ré-accélère) — mais Drogmar est nerfé : 3 min de respawn et 3× moins d'or",
+    "Mage : le rez de groupe Collective Reversal gagne un CD de 5 min ; Voleur : Smokestep réparé, Borrowed Tempo vraiment gratuit, le stun verrouille l'orientation",
+    "Plus de 230 images peintes à la main, un bot Discord officiel, et le jeu traduit en 21 langues"
+   ],
+   "page": "notes/v0.34.0.html",
+   "titre_en": "The guild bank, tradable mounts, and the biggest professions patch in the game's history",
+   "resume_en": "The economy update. The guild bank arrives — a shared gold-and-item chest, expandable to 60 slots — but beware: only the guild master and officers can access it, members don't even see the tab (verified in the code). Mount reins are no longer soulbound: every mount can be traded, mailed and sold on the Market, including the ones already in your bags. The Drakelands are rebuilt around the Dragonkin brood (hatching eggs, broodguards, four elite Broodlords and a reworked Matriarch) — but the announced Drakemaw Raptor mount is NOT obtainable: its drop was pulled right before release, don't farm for it (the Terrorspark still isn't either). Professions get their biggest patch yet: enchanter-crafted tool charms that only wear down when they help, raw fish that must be cooked (6 recipes), gathering grown from 99 to 156 nodes but with regrowth doubled to 4 minutes, and tools that now require a profession level to use. In Rifts, big boss attacks telegraph on the ground 1.2s ahead and sweeps can be dodged behind the boss. Finally, world mobs respawn in 60s everywhere (farming speeds back up), the Mage's group res gains a 5-minute cooldown, and the Rogue's Smokestep finally works.",
+   "temps_forts_en": [
+    "The guild bank: shared gold and items, up to 60 slots — but officer-only, members don't even see the tab",
+    "Mount reins are no longer soulbound: trade, mail, Market, guild bank — whoever holds the reins owns the mount",
+    "⚠️ The announced Drakemaw Raptor mount is NOT obtainable (drop pulled before release) — and the Terrorspark still isn't either, verified in the code",
+    "The Drakelands rebuilt: hatching eggs, broodguards, four elite Broodlords, a reworked Cindraleth — and two chronicle deeds (one retroactive)",
+    "Enchanter tool charms: doubled harvests or fine grade, and a charge is only spent when the bonus actually helped",
+    "Fishing goes to the kitchen: catches are raw, 6 cooking recipes transform them — and every water has a teaching ceiling (200 only at Thornpeak)",
+    "Gathering: 99 → 156 nodes, but regrowth doubled (4 min) and tools now gated by profession level to use",
+    "Rift bosses: a ground ring 1.2s before every detonation, sweeps dodgeable behind the boss, control suspended while you escape",
+    "World mobs respawn in 60s everywhere (farming speeds back up) — but Drogmar is nerfed: 3-min respawn and 3× less gold",
+    "Mage: the Collective Reversal group res gains a 5-min CD; Rogue: Smokestep fixed, Borrowed Tempo truly free, stuns lock facing",
+    "Over 230 hand-painted images, an official Discord bot, and the game translated into 21 languages"
+   ],
+   "page_en": "notes/v0.34.0.en.html"
+  },
+  {
+   "version": "v0.33.1",
+   "date": "2026-08-02",
+   "titre": "Le jeu est plus beau, chaque sort a son effet, et fini de tuer les monstres coincés",
+   "resume": "La grosse mise à jour graphique. Le jeu est plus beau et plus fluide, avec un nouveau niveau de graphismes « Insane » tout en haut — et si ça rame, le jeu baisse un peu la netteté tout seul au lieu de saccader. 296 sorts ont maintenant chacun leur propre apparence et leur propre son. Côté jeu : un monstre vraiment coincé (derrière un mur, sous une corniche) abandonne au bout de 5 secondes, rentre chez lui et récupère toute sa vie — fini de tuer les monstres bloqués sans risque, et le stun ne remet pas le chrono à zéro. Le joueur qui tank un boss n'est plus affecté par sa peur de zone, et les boss de Faille laissent toujours 5 secondes entre deux grosses attaques. À Cœur-Sauvage : tirer le boss trop tôt réveille vraiment tout le donjon, un portail de sortie apparaît à sa mort, et du nouveau butin arrive (4 objets en normal, 6 épiques en héroïque, plus les deux montures rares). Attention : la monture-tank Terrorspark annoncée dans les notes n'est PAS obtenable — on a vérifié dans le code, aucun monstre ni vendeur ne la donne pour l'instant. Enfin, les monstres réapparaissent moins vite (1 à 3 minutes selon la zone, contre 25 secondes avant) : le farm en boucle rapporte moins.",
+   "temps_forts": [
+    "Le jeu est plus beau et plus fluide : nouveau niveau de graphismes « Insane », terrain et herbe refaits, et un anti-rame automatique",
+    "296 sorts ont chacun leur propre apparence et leur propre son",
+    "Un monstre coincé 5 secondes abandonne, rentre chez lui et récupère toute sa vie — fini de tuer les monstres bloqués sans risque",
+    "Le tank n'est plus affecté par la peur de zone de son boss, et les boss de Faille ne font plus deux grosses attaques à la fois",
+    "Cœur-Sauvage : le pull trop tôt réveille vraiment tout le donjon, portail de sortie à la mort du boss, et du nouveau butin (dont 6 épiques en héroïque)",
+    "⚠️ La monture-tank Terrorspark annoncée n'est PAS obtenable — vérifié dans le code, ne la farmez pas",
+    "Les monstres réapparaissent moins vite (1 à 3 min selon la zone) : le farm en boucle rapporte moins",
+    "Une boîte aux lettres dans chaque village, et le nom de guilde dans les classements",
+    "Guerrier : Seething Fury (20 rage d'un coup, niveau 10) était bloqué par un bug, tout le monde l'a maintenant",
+    "Mage : Greater Invisibility protège seulement à la sortie de l'invisibilité (2 s), plus pendant"
+   ],
+   "page": "notes/v0.33.1.html",
+   "titre_en": "The game looks better, every spell has its own effect, and no more killing stuck mobs",
+   "resume_en": "The big graphics update. The game looks better and runs smoother, with a new top graphics level called Insane — and if things slow down, the game softens the picture slightly on its own instead of stuttering. 296 abilities now each have their own look and their own sound. On the gameplay side: a mob that's genuinely stuck (behind a wall, under a ledge) gives up after 5 seconds, walks home and heals back to full — no more risk-free kills on stuck mobs, and stunning it doesn't reset the timer. The player tanking a boss is no longer affected by its area fear, and rift bosses always leave 5 seconds between two big attacks. In Wildheart Basin: pulling the boss too early really does wake the whole dungeon, an exit portal appears when he dies, and new loot arrives (4 items on normal, 6 epics on heroic, plus both rare mounts). Heads up: the Terrorspark tank mount announced in the notes is NOT obtainable — we checked the code, no mob or vendor gives it for now. Finally, mobs respawn more slowly (1 to 3 minutes depending on the zone, versus 25 seconds before): loop-farming pays less.",
+   "temps_forts_en": [
+    "The game looks better and runs smoother: new Insane graphics level, reworked terrain and grass, and automatic anti-stutter",
+    "296 abilities each have their own look and their own sound",
+    "A mob stuck for 5 seconds gives up, walks home and heals to full — no more risk-free kills on stuck mobs",
+    "The tank is no longer affected by their boss's area fear, and rift bosses never throw two big attacks at once",
+    "Wildheart: an early pull really wakes the whole dungeon, an exit portal opens when the boss dies, and new loot arrives (including 6 heroic epics)",
+    "⚠️ The announced Terrorspark tank mount is NOT obtainable — checked in the code, don't farm for it",
+    "Mobs respawn more slowly (1 to 3 min by zone): loop-farming pays less",
+    "A mailbox in every village, and guild names on the leaderboards",
+    "Warrior: Seething Fury (20 instant rage, level 10) was blocked by a bug — everyone has it now",
+    "Mage: Greater Invisibility only protects when the invisibility ends (2s), no longer during"
+   ],
+   "page_en": "notes/v0.33.1.en.html"
+  },
+  {
+   "version": "v0.32.4",
+   "date": "2026-07-31",
+   "titre": "Hotfix desktop : le gel au « Chargement du monde » est corrigé",
+   "resume": "Un hotfix d'urgence, sans aucun changement de gameplay. Depuis le passage aux textures compressées KTX2 de la v0.32.2, l'application de bureau (Windows, macOS, Linux) pouvait geler sans fin sur l'écran « Chargement du monde » : le décodeur de textures générait du code à la volée, ce que la politique de sécurité stricte du client interdit. Il a été reconstruit sans génération dynamique de code — la sécurité n'a pas été assouplie, les textures ne changent pas d'un octet et les gains mémoire d'iOS sont préservés. Deux nouvelles suites de tests verrouillent le tout pour qu'une future montée de version ne recasse pas le desktop en silence. L'application se met à jour toute seule ; navigateur et mobile n'ont jamais été concernés.",
+   "temps_forts": [
+    "Le gel du client de bureau au « Chargement du monde » (v0.32.2 et v0.32.3) est corrigé — Windows, macOS et Linux",
+    "Le décodeur de textures est reconstruit sans génération dynamique de code : la sécurité du client reste intacte",
+    "Textures et gains mémoire iOS inchangés : le décodeur corrigé produit un résultat identique à l'octet près",
+    "Rien à faire : l'application se met à jour toute seule — navigateur et mobile n'ont jamais gelé"
+   ],
+   "page": "notes/v0.32.4.html",
+   "titre_en": "Desktop hotfix: the \"Loading world\" freeze is fixed",
+   "resume_en": "An emergency hotfix with zero gameplay changes. Since the v0.32.2 switch to KTX2 compressed textures, the desktop app (Windows, macOS, Linux) could freeze forever on the \"Loading world\" screen: the texture decoder generated code on the fly, which the client's strict security policy forbids. It was rebuilt without dynamic code generation — security was not loosened, the textures do not change by a single byte, and the iOS memory gains are preserved. Two new test suites lock it all down so a future upgrade can't silently re-break the desktop. The app updates itself; browser and mobile were never affected.",
+   "temps_forts_en": [
+    "The desktop client's \"Loading world\" freeze (v0.32.2 and v0.32.3) is fixed — Windows, macOS and Linux",
+    "The texture decoder is rebuilt without dynamic code generation: client security stays intact",
+    "Textures and iOS memory gains unchanged: the patched decoder produces byte-identical output",
+    "Nothing to do: the app updates itself — browser and mobile never froze"
+   ],
+   "page_en": "notes/v0.32.4.en.html"
+  },
+  {
+   "version": "v0.32.3",
+   "date": "2026-07-31",
+   "titre": "Le respawn se cale sur le niveau de la zone — et les meilleurs spots de farm passent à la caisse",
+   "resume": "Un correctif d'économie et de monde ouvert. Tout le trash revenait sur un même minuteur de 25 secondes quel que soit le niveau de la zone : désormais 60 s dans les zones de départ, 120 s dans la tranche du Mirefen Marsh, 180 s au-dessus — les monstres rares nommés et les minuteurs écrits à la main ne changent pas. Les vagues d'embuscade des quêtes d'escorte (Frostveil Reach, Wraithwood, Palmreach, Farshore) arrêtent de laisser des monstres traîner en boucle. Quinze gabarits de bêtes, araignées et reptiles sans pièces de cuivre reçoivent des composants récoltables. Et les deux itinéraires les plus rentables du jeu encaissent la baisse : le couloir du Glimmermere passe de 189,2 à 27,5 pièces d'or/h, les gardiens du Veiled Hollow de 42,3 à 11,8.",
+   "temps_forts": [
+    "Le respawn du trash suit le niveau de la zone : 60 s / 120 s / 180 s selon le palier — rares et minuteurs écrits à la main inchangés",
+    "Les vagues d'embuscade d'escorte ne laissent plus de monstres traîner en boucle (Frostveil, Wraithwood, Palmreach, Farshore)",
+    "Quinze gabarits de bêtes/araignées/reptiles sans cuivre deviennent dépeçables",
+    "Le couloir du Glimmermere tombe de 189,2 à 27,5 pièces d'or/h, les gardiens du Veiled Hollow de 42,3 à 11,8"
+   ],
+   "page": "notes/v0.32.3.html",
+   "titre_en": "Respawn now scales with zone level — and the best farm spots take a real hit",
+   "resume_en": "An economy-and-open-world patch. Every trash mob used to come back on the same flat 25-second timer regardless of zone level: now 60s in starter zones, 120s in the Mirefen Marsh band, 180s above that — named rares and hand-authored timers are unchanged. Escort quest ambush waves (Frostveil Reach, Wraithwood, Palmreach, Farshore) stop letting mobs linger in a loop. Fifteen beast, spider and reptile templates with no coin gain harvestable components. And the game's two most profitable routes take the hit: the Glimmermere corridor drops from 189.2 to 27.5 gold/hr, the Veiled Hollow guardians from 42.3 to 11.8.",
+   "temps_forts_en": [
+    "Trash respawn now follows zone level: 60s / 120s / 180s by tier — named rares and hand-authored timers unchanged",
+    "Escort ambush waves stop leaving mobs to linger in a loop (Frostveil, Wraithwood, Palmreach, Farshore)",
+    "Fifteen coinless beast/spider/reptile templates become skinnable",
+    "The Glimmermere corridor drops from 189.2 to 27.5 gold/hr, the Veiled Hollow guardians from 42.3 to 11.8"
+   ],
+   "page_en": "notes/v0.32.3.en.html"
+  },
+  {
+   "version": "v0.32.2",
+   "date": "2026-07-31",
+   "titre": "Portails de Faille équitables, suivi d'étage en jeu — et un vainqueur en cas de duel simultané",
+   "resume": "Un correctif de confort et d'équité. Les portails de Faille respawnent désormais à la première heure pile suivant la vraie fermeture du précédent (scellé par un clear ou effondré après 2 h) — plus jamais pendant qu'une descente tourne encore ; leur durée de vie passe d'ailleurs à 2 h. Un repère affiche l'étage en cours et un compte à rebours pendant la descente, les membres du groupe apparaissent enfin sur la carte, et deux coups fatals portés au même tic en duel ne finissent plus en double mort — un seul vainqueur, laissé à 1 PV. Six monstres rares rejoignent les hauts faits de chronique, les vagues d'embuscade des escortes se réengagent correctement, et toutes les textures du jeu passent à un format compressé pour GPU — la suite des optimisations mobiles de la v0.32.1.",
+   "temps_forts": [
+    "Failles : le respawn attend la vraie fermeture du portail précédent (jamais pendant une descente en cours), durée de vie portée à 2 h",
+    "Un suivi d'étage et un compte à rebours s'affichent pendant la descente en Faille",
+    "Les membres du groupe s'affichent sur la carte — et un duel à égalité parfaite désigne un vainqueur au lieu d'une double mort",
+    "Textures du jeu compressées pour GPU (KTX2/Basis) : la suite des optimisations mobiles de la v0.32.1"
+   ],
+   "page": "notes/v0.32.2.html",
+   "titre_en": "Fair rift portals, an in-rift floor tracker — and a winner on simultaneous duels",
+   "resume_en": "A comfort-and-fairness patch. Rift portals now respawn at the first hourly boundary right after the previous one truly closes (sealed by a clear or collapsed after 2h) — never while a descent is still running; their lifetime also grows to 2h. A tracker shows the current floor and a countdown while you descend, party members finally appear on the map, and two lethal blows landing on the same duel tick no longer end in a double death — a single winner, left at 1 HP. Six rare mobs join the chronicle deeds, escort ambush waves re-engage correctly, and every texture in the game switches to a GPU-compressed format — continuing v0.32.1's mobile optimization work.",
+   "temps_forts_en": [
+    "Rifts: respawn waits for the previous portal's real closure (never mid-descent), lifetime extended to 2h",
+    "An in-rift floor tracker and countdown show while you descend",
+    "Party members show up on the map — and a perfectly-tied duel now picks a winner instead of a double death",
+    "Game textures GPU-compressed (KTX2/Basis): continuing v0.32.1's mobile optimization work"
+   ],
+   "page_en": "notes/v0.32.2.en.html"
+  },
+  {
+   "version": "v0.32.1",
+   "date": "2026-07-30",
+   "titre": "/unstuck ne tue plus, un portail de Faille par zone — et les escortes enfin finissables",
+   "resume": "Le correctif qui tient les promesses de la v0.32.0. La commande /unstuck cesse d'exécuter : elle téléporte au cimetière le plus proche contre cinq minutes d'Affliction d'Instabilité (−75 % d'attributs). Les Failles changent d'échelle : fini les trois portails mondiaux, chaque zone garde le sien en rotation horaire, la descente se lie au groupe façon raid dès le premier kill, et un first-clear adverse ne t'éjecte plus — tu finis ta descente avec le butin de parcours. Les quatre quêtes d'escorte, impossibles depuis la sortie (les escortés étaient des monstres, pas des PNJ), deviennent finissables. Le Wildheart Basin est recalibré sur le modèle du Gravewyrm Sanctum, 34 créatures des nouveaux royaumes reçoivent enfin butin et objets de famille, et les iPhone 4 Go entrent dans le monde sans mourir.",
+   "temps_forts": [
+    "/unstuck téléporte au cimetière au lieu de tuer — contre 5 minutes d'Affliction d'Instabilité (−75 % d'attributs)",
+    "Failles : un portail par zone en rotation horaire, liaison de groupe façon raid, et les perdants de la course finissent leur descente",
+    "Les quatre quêtes d'escorte (Wren, Mosley, Suli, Bram) enfin finissables — les escortés étaient des monstres, pas des PNJ",
+    "Wildheart Basin recalibré (santé doublée, vrais dégâts) et du butin pour 34 créatures des nouveaux royaumes"
+   ],
+   "page": "notes/v0.32.1.html",
+   "titre_en": "/unstuck stops killing, one rift portal per zone — and the escorts finally completable",
+   "resume_en": "The patch that keeps v0.32.0's promises. The /unstuck command stops executing people: it teleports to the nearest graveyard for five minutes of Instability Affliction (−75% attributes). Rifts change scale: the three worldwide portals are gone, every zone keeps its own on an hourly rotation, the descent binds to the group raid-style on the first kill, and a rival first-clear no longer ejects you — you finish your descent with the mid-run loot. The four escort quests, impossible since release (the escortees were mobs, not NPCs), become completable. The Wildheart Basin is retuned on the Gravewyrm Sanctum model, 34 creatures of the new realms finally receive loot and heirlooms, and 4 GB iPhones enter the world without dying.",
+   "temps_forts_en": [
+    "/unstuck teleports to the graveyard instead of killing — for 5 minutes of Instability Affliction (−75% attributes)",
+    "Rifts: one portal per zone on an hourly rotation, raid-style group binding, and race losers finish their descent",
+    "The four escort quests (Wren, Mosley, Suli, Bram) finally completable — the escortees were mobs, not NPCs",
+    "Wildheart Basin retuned (health doubled, real damage) and loot for 34 creatures of the new realms"
+   ],
+   "page_en": "notes/v0.32.1.en.html"
+  },
+  {
+   "version": "v0.32.0",
+   "date": "2026-07-29",
+   "titre": "Les Failles : des donjons sans fin nés d'une graine — et onze royaumes à explorer",
+   "resume": "La plus grosse version depuis longtemps. Les Failles arrivent : des donjons instanciés entièrement procéduraux, générés depuis une simple graine et classés de C à S — plus le rang monte, plus les boss dévoilent de mécaniques, jusqu'aux deux légendaires exclusifs du rang S. Le continent s'agrandit de onze royaumes d'un coup, avec 105 quêtes, 48 PNJ et le donjon de plein air Wildheart Basin. Les montures deviennent de vrais objets : les rênes se rangent au sac, se glissent en barre d'action et se montent d'un clic. Et le monde se charge désormais par morceaux — distance de vue accrue, terrain comblé entre les zones, carte de continent interactive — pendant que les compteurs de combat se déplacent, se redimensionnent et se détaillent au survol.",
+   "temps_forts": [
+    "Les Failles : des donjons générés à l'infini depuis graine + niveau + étage, classés de C à S — et 15 % des graines C cachent l'Infernal Citadel",
+    "Onze nouveaux royaumes, 105 quêtes, 48 PNJ — et le donjon Wildheart Basin, caché derrière la Sunken Idol au Palmreach",
+    "Les montures deviennent des objets : rênes au sac, barre d'action, montage en un clic — les épiques ne tombent qu'en Faille de rang S",
+    "Le monde se charge par morceaux : vue plus loin, terrain entre les zones, carte de continent interactive — et compteurs de combat déplaçables"
+   ],
+   "page": "notes/v0.32.0.html",
+   "titre_en": "Rifts: endless dungeons born from a seed — and eleven realms to explore",
+   "resume_en": "The biggest patch in a long while. Rifts arrive: fully procedural instanced dungeons, generated from nothing but a seed and ranked C to S — the higher the rank, the more mechanics bosses reveal, up to the two S-rank exclusive legendaries. The continent grows by eleven realms at once, with 105 quests, 48 NPCs and the open-field Wildheart Basin dungeon. Mounts become real items: reins live in a bag, drag to an action bar and mount in one click. And the world now streams in chunks — greater view distance, terrain filled in between zones, an interactive continent map — while the combat meters become movable, resizable and hover-detailed.",
+   "temps_forts_en": [
+    "Rifts: dungeons generated endlessly from seed + level + floor, ranked C to S — and 15% of C-rank seeds hide the Infernal Citadel",
+    "Eleven new realms, 105 quests, 48 NPCs — and the Wildheart Basin dungeon, hidden behind the Sunken Idol in the Palmreach",
+    "Mounts become items: reins in your bag, on your action bar, mounted in one click — the epics only drop from S-rank rifts",
+    "The world streams in chunks: greater view distance, terrain between zones, an interactive continent map — and movable combat meters"
+   ],
+   "page_en": "notes/v0.32.0.en.html"
+  },
+  {
+   "version": "v0.31.0",
+   "date": "2026-07-27",
+   "titre": "Le monde devient solide : moteur physique, escalade — et un marché mieux rangé",
+   "resume": "Le jeu se dote d'un vrai moteur physique, calculé à l'identique hors ligne, sur le serveur et dans la prédiction du client : les collisions suivent enfin ce que l'œil voit, et selon la hauteur de l'obstacle on l'enjambe, on le franchit d'un saut, on se hisse sur le rebord ou on escalade le mur. Étals, chapelles, quais et mobilier de donjon deviennent solides — les raccourcis qui passaient au travers sont morts. À côté, le dépeçage de cadavres est blindé contre les requêtes malformées, les sacs gagnent leur propre rayon au World Market, l'enchant qui en écraserait un autre s'affiche en rouge (et le désenchantement détruit la copie cliquée), l'empilement vertical des plaques de nom fait marche arrière, et les bannissements déconnectent immédiatement.",
+   "temps_forts": [
+    "Un vrai moteur physique — collisions balayées en continu, glissade, montée de marche — identique hors ligne, serveur et client",
+    "Enjamber, franchir d'un saut, se hisser, escalader : la hauteur de l'obstacle décide — et le mobilier de donjon devient praticable",
+    "Étals, chapelles, quais, caisses : les décors deviennent solides, les raccourcis à travers les murs ne passent plus",
+    "Rayon Sacs au World Market, enchant « écraseur » marqué en rouge, désenchantement sur la copie cliquée — et dépeçage blindé"
+   ],
+   "page": "notes/v0.31.0.html",
+   "titre_en": "The world turns solid: a physics engine, climbing — and a tidier market",
+   "resume_en": "The game gets a real physics engine, resolved identically offline, on the server and in client prediction: collisions finally match what the eye sees, and depending on an obstacle's height you stride over it, vault it, pull up onto the ledge or climb the wall. Market stalls, chapels, docks and dungeon furniture become solid — shortcuts that clipped through are dead. Alongside, corpse harvesting is hardened against malformed requests, bags get their own aisle on the World Market, an enchant that would crush another shows up in red (and disenchanting destroys the copy you clicked), vertical nameplate stacking is rolled back, and bans disconnect immediately.",
+   "temps_forts_en": [
+    "A real physics engine — continuous swept collision, sliding, step-up — identical offline, server and client",
+    "Stride, vault, pull up, climb: obstacle height decides — and dungeon furniture becomes standable",
+    "Market stalls, chapels, docks, crates: scenery turns solid, through-the-wall shortcuts no longer work",
+    "A Bags aisle on the World Market, overwriting enchants flagged in red, disenchant on the clicked copy — and hardened corpse harvest"
+   ],
+   "page_en": "notes/v0.31.0.en.html"
+  },
+  {
+   "version": "v0.30.0",
+   "date": "2026-07-26",
+   "titre": "Enchante ton équipement, crit et hâte recalibrés — et une deuxième arène",
+   "resume": "L'enchantement se pose enfin directement sur l'équipement porté, remplacement compris (derrière une confirmation qui nomme ce qui sera détruit), avec une interface qui affiche le bonus de chaque enchant. Le critique et la hâte demandent désormais 20 points de score pour 1 % au lieu de 10 — l'équipement n'a pas bougé, il rend moitié moins. La Drowned Court rejoint l'Ashen Coliseum reconstruite en rotation classée, la récolte exige l'outil du métier dès le niveau 1, et le jeu s'offre une refonte audiovisuelle : 259 icônes peintes, le bourg d'Eastbrook Vale rebâti, 47 vrais enregistrements sonores. Le Gravewyrm Sanctum normal devient finissable en équipement de quête et le Grave Inferno de Korzul se déclenche enfin sous 50 % de santé.",
+   "temps_forts": [
+    "Enchantement sur l'équipement porté, remplacement possible — et des écrans qui expliquent enfin chaque bonus",
+    "Critique et hâte à 20 points pour 1 % (au lieu de 10) : chaque pièce rend moitié moins, rien à re-gemmer",
+    "La Drowned Court, deuxième arène classée en rotation 1v1/2v2 avec l'Ashen Coliseum reconstruite",
+    "Refonte audiovisuelle : 259 icônes peintes, Eastbrook Vale rebâti, 47 vrais sons — et la récolte exige ses outils dès le niveau 1"
+   ],
+   "page": "notes/v0.30.0.html",
+   "titre_en": "Enchant your gear, crit and haste retuned — and a second arena",
+   "resume_en": "Enchanting finally lands directly on equipped gear, replacement included (behind a confirmation naming what gets destroyed), with an interface that shows each enchant's bonus. Crit and haste now take 20 rating points per 1% instead of 10 — gear was left untouched, it simply yields half. The Drowned Court joins the rebuilt Ashen Coliseum in the ranked rotation, gathering requires the trade's tool from level 1, and the game gets an audiovisual overhaul: 259 painted icons, Eastbrook Vale's town center rebuilt, 47 real sound recordings. Normal Gravewyrm Sanctum becomes finishable in quest gear and Korzul's Grave Inferno finally fires below 50% health.",
+   "temps_forts_en": [
+    "Enchant equipped gear, replacement included — and screens that finally explain each bonus",
+    "Crit and haste at 20 rating per 1% (up from 10): every piece yields half, nothing to re-gem",
+    "The Drowned Court, a second ranked arena rotating 1v1/2v2 with the rebuilt Ashen Coliseum",
+    "Audiovisual overhaul: 259 painted icons, Eastbrook Vale rebuilt, 47 real sounds — and gathering demands its tools from level 1"
+   ],
+   "page_en": "notes/v0.30.0.en.html"
+  },
+  {
+   "version": "v0.29.1",
+   "date": "2026-07-23",
+   "titre": "Hotfix d'équilibrage : soigneurs, tanks et héroïque recalibrés",
+   "resume": "Un hotfix cible le grand recalibrage héroïque de la v0.29.0. Les soins reprennent le rythme : chaque sort gagne un rang supérieur au niveau 20 et profite d'une double puissance des sorts (1 point d'Intelligence = 1 point de soin). Les tanks engagés — guerrier Protection, paladin Protection, druide en Forme de Paresse — deviennent immunisés aux critiques, et la robustesse du paladin et de la Forme de Paresse remonte au niveau du guerrier. Côté PvE, le Gravebreaker de Nythraxis devient une attaque chargée qui n'assomme plus à l'ouverture, l'héroïque du raid comme les adds de Gravewyrm Sanctum tapent bien moins fort, et Korzul gagne le Grave Inferno, un anneau de feu dont il faut sortir.",
+   "temps_forts": [
+    "Soins rééquilibrés : rang supérieur au niveau 20 pour chaque sort et double puissance des sorts (1 Intelligence = 1 soin)",
+    "Les tanks engagés ne peuvent plus être critiqués — guerrier Prot, paladin Prot et druide en Forme de Paresse, robustesse harmonisée",
+    "Nythraxis : le Gravebreaker se charge et n'assomme plus au pull, l'esquive le retarde ; héroïque et adds de cour nettement allégés",
+    "Gravewyrm Sanctum recentré pour les groupes fraîchement au niveau ; Korzul canalise le Grave Inferno, un anneau de feu à fuir"
+   ],
+   "page": "notes/v0.29.1.html",
+   "titre_en": "Balance hotfix: healers, tanks and heroic retuned",
+   "resume_en": "A hotfix targets the v0.29.0 heroic retune. Healing keeps up again: every spell gains a stronger top rank at level 20 and now benefits from double Spell Power (1 Intellect = 1 healing). Committed tanks — Protection warrior, Protection paladin, Feral druid in Sloth Form — become immune to critical strikes, and paladin and Sloth Form durability rises to the warrior's level. On the PvE side, Nythraxis's Gravebreaker becomes a charged attack that no longer stuns at the opener, the heroic raid and Gravewyrm Sanctum adds hit far softer, and Korzul gains Grave Inferno, a fire ring you have to leave.",
+   "temps_forts_en": [
+    "Healing rebalanced: a stronger top rank at level 20 for every spell and double Spell Power (1 Intellect = 1 healing)",
+    "Committed tanks can no longer be crit — Prot warrior, Prot paladin and Feral in Sloth Form, durability harmonized",
+    "Nythraxis: Gravebreaker charges up and no longer stuns at the pull, dodging delays it; heroic and court adds much softer",
+    "Gravewyrm Sanctum re-centered for freshly capped groups; Korzul channels Grave Inferno, a fire ring to escape"
+   ],
+   "page_en": "notes/v0.29.1.en.html"
+  },
+  {
+   "version": "v0.29.0",
+   "date": "2026-07-23",
+   "titre": "La grande remise à zéro des métiers — et l'enchantement s'active",
+   "resume": "Les Métiers 2.0 s'achèvent sur une remise à zéro générale : toutes les compétences repartent de 0 (objets, recettes et or conservés — une lettre l'explique en jeu), la montée suit une courbe de maîtrise à quatre états avec plafonds par métier, la récolte se lance comme un sort et la pêche gagne son minijeu. L'enchantement, construit dans le moteur depuis la v0.24, est enfin jouable — avec des valeurs divisées par deux et un nouveau palier Runed. Côté combat, donjons et raid doublent leur santé avec des planchers de dégâts, les élites héroïques chargent (Onrush) et 41 objets bouchent les trous d'équipement, le tout servi par une interface largement redessinée.",
+   "temps_forts": [
+    "Toutes les compétences de métier remises à zéro (une seule fois, lettre à l'appui) — courbe de maîtrise orange/jaune/vert/gris et plafonds 100 / 125 / 200",
+    "L'enchantement s'active enfin en jeu : désenchantement et pose d'enchants dans le menu du sac, magnitudes divisées par deux, nouveau palier Runed",
+    "Donjons et raid recalibrés : santé doublée, planchers de dégâts (300 à 1 200), Onrush en héroïque et boss immunisés aux contrôles — 41 objets pour boucher les trous",
+    "L'archétype se gagne en quête chez les quatre maîtres, avec quêtes de commande régulières et 26 hauts faits de métier"
+   ],
+   "page": "notes/v0.29.0.html",
+   "titre_en": "The great professions reset — and enchanting goes live",
+   "resume_en": "Professions 2.0 wraps up with a global reset: every skill returns to 0 (items, recipes and gold are kept — an in-game letter explains), leveling follows a four-state mastery curve with per-profession caps, gathering casts like a spell and fishing gets its minigame. Enchanting, built into the engine since v0.24, is finally playable — with its numbers cut in half and a new Runed tier. On the combat side, dungeons and the raid double their health with per-swing damage floors, heroic elites charge (Onrush) and 41 items plug the gear gaps, all wrapped in a broadly redesigned interface.",
+   "temps_forts_en": [
+    "Every profession skill reset to zero (once, letter included) — an orange/yellow/green/gray mastery curve and 100 / 125 / 200 caps",
+    "Enchanting finally goes live: disenchanting and enchant application in the bag menu, magnitudes cut in half, new Runed tier",
+    "Dungeons and raid retuned: health doubled, damage floors (300 to 1,200), Onrush on heroic and CC-immune bosses — 41 items to plug the gaps",
+    "Archetypes are earned by quest at the four masters, with recurring work orders and 26 profession deeds"
+   ],
+   "page_en": "notes/v0.29.0.en.html"
+  },
+  {
+   "version": "v0.28.0",
+   "date": "2026-07-20",
+   "titre": "Les Métiers 2.0 complets et le Givre recalibré",
+   "resume": "La boucle des métiers est enfin complète : la récolte produit de vrais matériaux (veines immaculées et événements rares compris), 54 recettes arrivent avec six maîtres de métier, des paliers de formation et une Guilde des Métiers qui se présente par lettre. Côté classes, la Cryomancie du Mage voit ses multiplicateurs empilés dégonfler et les barrières scalent désormais avec la puissance des sorts, pendant que l'interface gagne une troisième barre d'action, des tooltips de joueurs, un chat coloré par classe et des confirmations bienvenues.",
+   "temps_forts": [
+    "Métiers 2.0 : la récolte donne de vrais matériaux, le registre passe de 21 à 75 recettes, six maîtres de métier s'installent",
+    "Givre : Frozen Orb à 45 s de cooldown, plus de +30 % sur le Winterlash instantané ni de +20 % de crit sur Brittle Ruin",
+    "Les barrières du Mage re-budgétées : 50 en base mais +50 % de la puissance des sorts, en trois rangs — Shifting Ward remplace Temporal Rift",
+    "Interface : 3e barre d'action, tooltips de joueurs, chat coloré par classe, confirmations et ready-check détaillé"
+   ],
+   "page": "notes/v0.28.0.html",
+   "titre_en": "Professions 2.0 complete and Frost recalibrated",
+   "resume_en": "The professions loop is finally complete: gathering yields real materials (pristine veins and rare events included), 54 recipes arrive with six profession masters, training tiers and a Professions Guild that introduces itself by letter. On the class side, the Mage's Cryomancy sees its stacked multipliers deflate and barriers now scale with spell power, while the interface gains a third action bar, player tooltips, class-colored chat and welcome confirmations.",
+   "temps_forts_en": [
+    "Professions 2.0: gathering yields real materials, the registry grows from 21 to 75 recipes, six profession masters settle in",
+    "Frost: Frozen Orb on a 45s cooldown, no more +30% on instant Winterlash or +20% crit damage on Brittle Ruin",
+    "Mage barriers re-budgeted: 50 base but +50% of spell power, across three ranks — Shifting Ward replaces Temporal Rift",
+    "Interface: 3rd action bar, player tooltips, class-colored chat, confirmations and a detailed ready check"
+   ],
+   "page_en": "notes/v0.28.0.en.html"
+  },
+  {
+   "version": "v0.27.2",
+   "date": "2026-07-19",
+   "titre": "Le Guerrier Fureur recalibré et l'iPhone stabilisé",
+   "resume": "Patch d'équilibrage et de stabilité qui regroupe tout depuis la v0.27.0 : la fin de l'incident « fury overpower » (rage réduite, deux-mains re-budgétées, Titan's Grip à -12 %, Colossal Might plafonné), la hâte de mêlée qui devient additive, le crash d'entrée en jeu sur iPhone corrigé avec un garde-fou anti-boucle, le corpse-run réparé vers la Crypte abandonnée et deux gros gains de performance serveur.",
+   "temps_forts": [
+    "Fureur : Twinstrike à 4 de rage, Bladed Gyre sans rage, Anger Management réduit, Colossal Might plafonné",
+    "Deux-mains re-budgétées pour toutes les classes (1,3× les stats, +15 % de DPS d'arme) — 4 épiques re-stattées",
+    "iPhone : plus de crash d'entrée en jeu — profil mémoire contraint, préchauffage borné et garde-fou",
+    "Les fantômes peuvent de nouveau rejoindre leur corps dans la Crypte abandonnée (raid Nythraxis)"
+   ],
+   "page": "notes/v0.27.2.html",
+   "titre_en": "The Fury Warrior recalibrated and the iPhone stabilized",
+   "resume_en": "A balance and stability patch rolling up everything since v0.27.0: the end of the fury overpower incident (reduced rage income, re-budgeted two-handers, Titan's Grip at -12%, Colossal Might capped), melee haste turning additive, the iOS world-entry crash fixed with an anti-loop crash guard, the corpse-run into the Abandoned Crypt repaired, and two big server performance wins.",
+   "temps_forts_en": [
+    "Fury: Twinstrike at 4 rage, Bladed Gyre generates none, Anger Management trimmed, Colossal Might capped",
+    "Two-handers re-budgeted for every class (1.3× stats, +15% weapon DPS premium) — 4 epics re-statted",
+    "iPhone: no more world-entry crash — constrained-memory profile, bounded prewarm and crash guard",
+    "Ghosts can corpse-run back into the Abandoned Crypt (the Nythraxis raid)"
+   ],
+   "page_en": "notes/v0.27.2.en.html"
+  },
+  {
+   "version": "v0.27.0",
+   "date": "2026-07-18",
+   "titre": "Le Guerrier refondu, le Mage soigneur et les Métiers 2.0",
+   "resume": "La plus grosse mise à jour à ce jour (440 commits) : le Guerrier reconstruit avec trois spécialisations et ses postures, le Mage réinventé — dont la Chronomancie, une vraie spé de soin —, les rangées de choix des Talents 2.0 pour les neuf classes, les Métiers 2.0 (archétypes, qualité déterministe, Masterwork, enchants Greater), le mini-jeu Card Duel, le wallet Solana/USDC et des donjons héroïques rééquilibrés.",
+   "temps_forts": [
+    "Guerrier : 3 spécialisations (Battlecraft, Bloodrush, Ironguard) et le retour des postures",
+    "Mage : la Chronomancie soigne en infligeant des dégâts — Cryomancie et Pyromancie refaites",
+    "Métiers 2.0 : archétypes par paires, craft déterministe, proc Masterwork et enchants Greater",
+    "Card Duel chez le Card Master, wallet Solana/USDC, trash héroïque -25 %"
+   ],
+   "page": "notes/v0.27.0.html",
+   "titre_en": "The Warrior redesign, the healer Mage and Professions 2.0",
+   "resume_en": "The biggest update to date (440 commits): the Warrior rebuilt with three specializations and stances, the Mage reworked — including Chronomancy, a true healing spec —, Talents 2.0 choice rows for all nine classes, Professions 2.0 (archetypes, deterministic quality, Masterwork, Greater enchants), the Card Duel minigame, the Solana/USDC wallet and rebalanced heroic dungeons.",
+   "temps_forts_en": [
+    "Warrior: 3 specializations (Battlecraft, Bloodrush, Ironguard) and the return of stances",
+    "Mage: Chronomancy heals by dealing damage — Cryomancy and Pyromancy rebuilt",
+    "Professions 2.0: paired archetypes, deterministic crafting, Masterwork proc and Greater enchants",
+    "Card Duel at the Card Master, Solana/USDC wallet, heroic trash hits 25% softer"
+   ],
+   "page_en": "notes/v0.27.0.en.html"
+  },
+  {
+   "version": "v0.26.0",
+   "date": "2026-07-15",
+   "titre": "Le Dungeon Finder, le Hit Rating et un cooldown de tank par classe",
+   "resume": "Mise à jour « files & confort » : le Dungeon Finder (Maj+I) pour se grouper d'un clic sur les donjons et le raid, la stat Hit Rating et un butin héroïque enrichi, un vrai cooldown défensif pour chaque tank, le client Windows signé, la récolte cliquable et le rengainement d'arme.",
+   "temps_forts": [
+    "Dungeon Finder : file par rôle FIFO sur les 4 donjons, l'héroïque et Nythraxis",
+    "Hit Rating (10 = +1 % de touche) et pénalités héroïques ramenées à ~26 % / 25 %",
+    "Un cooldown de tank par classe : Ironhold, Sacred Bulwark, Primal Reflexes",
+    "Client Windows signé, récolte cliquable et rengainement d'arme (Z)"
+   ],
+   "page": "notes/v0.26.0.html",
+   "titre_en": "The Dungeon Finder, Hit Rating and a tank cooldown per class",
+   "resume_en": "A “queues & comfort” update: the Dungeon Finder (Shift+I) to group up in one click for dungeons and the raid, the Hit Rating stat and beefed-up heroic loot, a real defensive cooldown for every tank, the signed Windows client, clickable gathering and weapon sheathing.",
+   "temps_forts_en": [
+    "Dungeon Finder: role-based FIFO queue for the 4 dungeons, heroic and Nythraxis",
+    "Hit Rating (10 = +1% hit) and heroic penalties cut to ~26% / 25%",
+    "A tank cooldown per class: Ironhold, Sacred Bulwark, Primal Reflexes",
+    "Signed Windows client, clickable gathering and weapon sheathing (Z)"
+   ],
+   "page_en": "notes/v0.26.0.en.html"
+  },
+  {
+   "version": "v0.25.0",
+   "date": "2026-07-14",
+   "titre": "Le raid héroïque Nythraxis, les 27 sorts signature et le Book of Deeds",
+   "resume": "Grosse mise à jour progression & endgame : le palier héroïque du raid Nythraxis et sa Cour Immortelle, un vrai sort signature et une maîtrise pour chaque spé (Talents 2.0), 192 succès dans le Book of Deeds, l'Honor PvP avec le quartier-maître FURY, et l'Armurerie Saison 1.",
+   "temps_forts": [
+    "Raid héroïque : la Cour Immortelle, sets ilvl 33, légendaires ilvl 37",
+    "Talents 2.0 : sort signature + maîtrise pour les 27 spés, un interrupt par classe",
+    "Book of Deeds : 192 succès, 2 365 Renown, 19 titres",
+    "PvP : Honor persistant et 40 pièces épiques ilvl 28 chez FURY"
+   ],
+   "page": "notes/v0.25.0.html",
+   "titre_en": "The heroic Nythraxis raid, the 27 signature abilities and the Book of Deeds",
+   "resume_en": "A big progression & endgame update: the Nythraxis raid's heroic tier and its Deathless Court, a real signature ability and mastery for every spec (Talents 2.0), 192 achievements in the Book of Deeds, PvP Honor with quartermaster FURY, and the Season 1 Armory.",
+   "temps_forts_en": [
+    "Heroic raid: the Deathless Court, ilvl 33 sets, ilvl 37 legendaries",
+    "Talents 2.0: signature ability + mastery for all 27 specs, an interrupt for every class",
+    "Book of Deeds: 192 achievements, 2,365 Renown, 19 titles",
+    "PvP: persistent Honor and 40 ilvl 28 epic pieces from FURY"
+   ],
+   "page_en": "notes/v0.25.0.en.html"
+  },
+  {
+   "version": "v0.24.2",
+   "date": "2026-07-12",
+   "titre": "Récompenses héroïques fiabilisées et butin mobile réparé",
+   "resume": "Patch de fiabilité : un kill de boss final héroïque ne peut plus poser un verrou sans payer la Heroic Mark, le butin du corps ou le jet Need/Greed — les Marks tombent à la mort du boss, l'éligibilité est gelée avant la sauvegarde. Les invites de jet se réconcilient côté serveur, l'écran court des téléphones n'affiche que l'actionnable, et les positions de cadres héritées de la refonte annulée sont nettoyées une bonne fois.",
+   "temps_forts": [
+    "Heroic Marks payées directement à la mort du boss final, sur la même frontière de reset que le lockout",
+    "Plus aucun scénario « verrouillé sans récompense » : relâche, changement de groupe, déconnexion couverts",
+    "Jets Need/Greed fiables sur mobile — et le bouton Sacs au-dessus du rail de jets",
+    "Reset unique des positions de cadres sauvées pendant la refonte v0.24.0"
+   ],
+   "page": "notes/v0.24.2.html",
+   "titre_en": "Heroic rewards made reliable and mobile loot repaired",
+   "resume_en": "A reliability patch: a heroic final-boss kill can no longer persist a lockout while losing the Heroic Mark, corpse loot or Need/Greed award — Marks are paid at boss death and eligibility is frozen before the save. Roll prompts reconcile server-side, short phone screens show only what's actionable, and frame positions left over from the reverted overhaul are cleaned up once and for all.",
+   "temps_forts_en": [
+    "Heroic Marks awarded directly at final-boss death, on the same reset boundary as the lockout",
+    "No more lockout-without-reward scenarios: releasing, party changes and logout all covered",
+    "Reliable Need/Greed rolls on mobile — with Bags above the roll rail",
+    "One-time reset of frame positions saved during the v0.24.0 overhaul"
+   ],
+   "page_en": "notes/v0.24.2.en.html"
+  },
+  {
+   "version": "v0.24.1",
+   "date": "2026-07-11",
+   "titre": "Le retour de l'interface classique (rollback de la refonte)",
+   "resume": "Hotfix de stabilité desktop : la refonte d'interface embarquée dans la v0.24.0 avait sérieusement dégradé l'expérience sur ordinateur. Ses 195 commits sont annulés d'un bloc — fenêtres, réglages, marchands, talents et HUD reviennent à l'identique — tout en préservant le travail postérieur comme le désencombrement des nameplates.",
+   "temps_forts": [
+    "La refonte d'interface (195 commits) annulée en un seul rollback cohérent",
+    "Retour à l'identique des fenêtres, réglages, marchands, talents et du HUD d'avant",
+    "Nameplates poolées et améliorations de rendu préservées"
+   ],
+   "page": "notes/v0.24.1.html",
+   "titre_en": "The classic interface returns (overhaul rollback)",
+   "resume_en": "A desktop stability hotfix: the interface overhaul that shipped with v0.24.0 significantly regressed the desktop experience. Its 195 commits are rolled back as one block — windows, settings, vendors, talents and the HUD return exactly as before — while preserving later work such as the pooled nameplate decluttering.",
+   "temps_forts_en": [
+    "The interface overhaul (195 commits) undone in one coherent rollback",
+    "Windows, settings, vendors, talents and the HUD return exactly as before",
+    "Pooled nameplates and rendering improvements preserved"
+   ],
+   "page_en": "notes/v0.24.1.en.html"
+  },
+  {
+   "version": "v0.24.0",
+   "date": "2026-07-11",
+   "titre": "L'interface refaite, le butin héroïque renforcé et la file de sorts",
+   "resume": "Mise à jour « polish & infrastructure » : 19 fenêtres unifiées et nouveau menu Échap, drops héroïques améliorés [HEROIC] avec marks liées et lockout durci, file de sorts, ready checks, +35 % de fps en foule et chargement bien plus rapide.",
+   "temps_forts": [
+    "Butin héroïque ilvl 28, Heroic Marks liées, lockout pour tout le groupe",
+    "File de sorts : le sort suivant part sans délai",
+    "Interface refaite : 19 fenêtres, menu Échap, vendeurs à onglets",
+    "Ready checks /ready et +35 % de fps dans les foules"
+   ],
+   "page": "notes/v0.24.0.html",
+   "titre_en": "The UI overhaul, beefed-up heroic loot and spell queueing",
+   "resume_en": "A “polish & infrastructure” update: 19 unified windows and a new Escape menu, improved heroic drops [HEROIC] with soulbound marks and a stricter lockout, spell queueing, ready checks, +35% fps in crowds and much faster loading.",
+   "temps_forts_en": [
+    "Heroic loot at ilvl 28, soulbound Heroic Marks, group-wide lockout",
+    "Spell queueing: your next spell fires without delay",
+    "UI overhaul: 19 windows, Escape menu, tabbed vendors",
+    "/ready ready checks and +35% fps in crowds"
+   ],
+   "page_en": "notes/v0.24.0.en.html"
+  },
+  {
+   "version": "v0.23.0",
+   "date": "2026-07-09",
+   "titre": "La Vale Cup, les donjons héroïques et les 10 sets épiques",
+   "resume": "Grosse mise à jour endgame : deux nouveaux modes de jeu, la difficulté Héroïque avec sa monnaie Heroic Marks, dix sets épiques, les stats Crit & Haste, les métiers finalisés et la banque personnelle.",
+   "temps_forts": [
+    "The Vale Cup (boarball) et Protect Yumi, deux nouveaux modes",
+    "Difficulté Héroïque des 4 donjons + Heroic Marks",
+    "10 sets épiques, stats Crit Rating & Haste Rating",
+    "Métiers finalisés et banque The Gilded Strongbox"
+   ],
+   "page": "notes/v0.23.0.html",
+   "titre_en": "The Vale Cup, heroic dungeons and the 10 epic sets",
+   "resume_en": "A big endgame update: two new game modes, Heroic difficulty with its Heroic Marks currency, ten epic sets, the Crit & Haste stats, finalised professions and the personal bank.",
+   "temps_forts_en": [
+    "The Vale Cup (boarball) and Protect Yumi, two new game modes",
+    "Heroic difficulty for all 4 dungeons + Heroic Marks",
+    "10 epic sets, Crit Rating & Haste Rating stats",
+    "Finalised professions and The Gilded Strongbox bank"
+   ],
+   "page_en": "notes/v0.23.0.en.html"
+  }
+ ]
 }

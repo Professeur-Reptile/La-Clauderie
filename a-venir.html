@@ -198,8 +198,8 @@
 <div class="wrap">
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · En préparation</p>
-    <h1>La prochaine version <span class="v" id="vNum">v0.35.0</span></h1>
-    <p class="lede">Elle a beaucoup grossi depuis hier. Toujours la grande refonte des métiers — fabriquer devient un vrai geste, un tableau de commandes arrive — mais s’y ajoutent un <strong class="hl">champ de bataille classé en 5 contre 5</strong>, un <strong class="hl">vrai cycle jour/nuit</strong> avec un monde débarrassé de son brouillard, et une main gauche enfin remplie pour le chasseur.</p>
+    <h1>La prochaine version <span class="v" id="vNum">v0.36.0</span></h1>
+    <p class="lede">La v0.35.0 est sortie ce matin — ses notes complètes sont dans <a href="patch-notes.html">Nouveautés</a>. La branche de la v0.36.0 vient d’ouvrir, et son programme est déjà annoncé : une <strong class="hl">refonte de cinq classes</strong> — Chasseur, Chaman, Prêtre, Druide, Démoniste — accompagnée d’un programme d’équilibrage. Elle se prépare en intégration et n’est <strong class="hl">pas encore mergée</strong> : la page s’étoffera à mesure que la branche se remplit.</p>
 
     <div class="warn">
       <span class="ico" aria-hidden="true">⚠️</span>
@@ -210,9 +210,9 @@
     </div>
 
     <div class="meta">
-      <span><b>Depuis</b> la v0.34.0</span>
+      <span><b>Depuis</b> la v0.35.0</span>
         <span id="freshness"><b>Relevé</b> à l’instant</span>
-      <span id="written"><b>Résumé écrit</b> le 7 août 2026 à 9 h 25</span>
+      <span id="written"><b>Résumé écrit</b> le 7 août 2026 à 17 h 45</span>
       <span id="next"></span>
     </div>
     <div class="hint">💡 Clique sur une carte pour le détail — et sur un nom souligné pour sa fiche Codex.</div>
@@ -220,37 +220,37 @@
 
   <nav class="digest" aria-labelledby="digest-title">
     <h2 id="digest-title">En un coup d’œil</h2>
-    <p class="sec-sub">Les mêmes rubriques qu’à chaque version, dans le même ordre.</p>
+    <p class="sec-sub">Les mêmes rubriques qu’à chaque version, dans le même ordre. La branche vient d’ouvrir : la plupart sont encore vides.</p>
     <ol>
       <li>
         <span class="d-ico" aria-hidden="true">⚔️</span>
         <a class="d-name" href="#classes">Classes &amp; sorts</a>
-        <span class="d-say"><b class="up">Chasseur ↑</b> un carquois en main gauche et un familier qui hérite enfin de ton équipement · <b class="up">Toutes ↑</b> maîtrise et talents s’appliquent à tout le coup · <b class="eq">Toutes =</b> nouvelles animations de sorts</span>
+        <span class="d-say"><strong class="hl">Refonte annoncée de cinq classes</strong> (Chasseur, Chaman, Prêtre, Druide, Démoniste) — en intégration, pas encore mergée · <b class="eq">Chasseur =</b> animations d’attaque en cours</span>
       </li>
-      <li>
+      <li class="none">
         <span class="d-ico" aria-hidden="true">🔨</span>
-        <a class="d-name" href="#metiers">Métiers &amp; récolte</a>
-        <span class="d-say">La fabrication devient une incantation, un tableau de commandes arrive — et la carte de zone affiche enfin les nœuds de récolte.</span>
+        <span class="d-name">Métiers &amp; récolte</span>
+        <span class="d-say">—</span>
       </li>
-      <li>
+      <li class="none">
         <span class="d-ico" aria-hidden="true">🐉</span>
-        <a class="d-name" href="#donjons">Donjons, failles &amp; boss</a>
-        <span class="d-say">Les Failles entrent au Livre des hauts faits, et le Chercheur de donjon prévient des mécaniques avant d’entrer.</span>
+        <span class="d-name">Donjons, failles &amp; boss</span>
+        <span class="d-say">—</span>
       </li>
-      <li>
+      <li class="none">
         <span class="d-ico" aria-hidden="true">🗺️</span>
-        <a class="d-name" href="#monde">Monde &amp; quêtes</a>
-        <span class="d-say">Le monde change de peau : cycle jour/nuit, nuits éclairées aux lampadaires, fin du brouillard, eau et reliefs refaits. Et les légendaires deviennent uniques.</span>
+        <span class="d-name">Monde &amp; quêtes</span>
+        <span class="d-say">—</span>
       </li>
-      <li>
+      <li class="none">
         <span class="d-ico" aria-hidden="true">🏰</span>
-        <a class="d-name" href="#guilde">Guilde &amp; social</a>
-        <span class="d-say"><strong class="hl">Thornhollow Fields</strong>, un champ de bataille classé en 5c5 : capture de drapeau, files en groupe, Elo d’équipe. Et les commandes d’artisanat entre joueurs.</span>
+        <span class="d-name">Guilde &amp; social</span>
+        <span class="d-say">—</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">⚙️</span>
         <a class="d-name" href="#confort">Confort &amp; technique</a>
-        <span class="d-say">Manger se cumule avec la régénération, le jeu consomme moins sur mobile, le zoom passe à la manette.</span>
+        <span class="d-say">Un démarrage plus rapide : la langue se charge en même temps que les décors.</span>
       </li>
     </ol>
   </nav>
@@ -258,202 +258,37 @@
   <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
        s'efface d'elle-même quand cette version sort, et se signale périmée si
        le jeu passe à préparer la suivante. -->
-  <div id="editorial" data-for="v0.35.0" data-commits="717" data-written="2026-08-07T09:25+02:00">
+  <div id="editorial" data-for="v0.36.0" data-commits="37" data-written="2026-08-07T17:45+02:00">
 
-  <!-- 1 MÉTIERS -->
-  <section id="metiers">
-    <div class="sec-head"><span class="sec-num">01</span><h2>Fabriquer devient un vrai geste</h2></div>
-    <p class="sec-sub">C’est le chantier principal de cette version. L’artisanat abandonne son système de quota et se met à fonctionner comme un sort : on lance, ça prend du temps, et on peut annuler.</p>
-    <div class="grid cols-2">
-      <div class="card more" data-detail="craft" tabindex="0" role="button" aria-label="Détails : la fabrication à l’incantation">
-        <h3>Fini le quota d’actions <span class="chip c-new">Majeur</span></h3>
-        <p>Jusqu’ici, tes actions de métier étaient <strong class="hl">limitées à 10 par minute</strong>, toutes confondues. Ce plafond disparaît : fabriquer, désenchanter, enchanter, recycler et recharger un outil ont désormais chacun un <strong class="hl">temps d’incantation</strong>. Matériaux, or et compétence ne sont retirés qu’à la <strong class="hl">réussite</strong> — annuler ne coûte rien.</p>
-        <span class="more-link">Voir le détail</span>
-      </div>
-      <div class="card more" data-detail="commission" tabindex="0" role="button" aria-label="Détails : le tableau de commandes">
-        <h3>Le tableau de commandes <span class="chip c-new">Nouveau</span></h3>
-        <p>Tu veux une pièce que tu ne sais pas fabriquer ? Tu ouvres une <strong class="hl">commande</strong> en nommant la recette, ouverte à tous ou réservée à un artisan précis. Il accepte, fabrique, et te <strong class="hl">livre en main propre</strong>.</p>
-        <span class="more-link">Voir le détail</span>
-      </div>
-      <div class="card">
-        <h3>Griffes et défenses <span class="chip c-bal">Récolte</span></h3>
-        <ul>
-          <li>Trois nouvelles matières — <strong class="hl">griffe acérée, défense recourbée, griffe immaculée</strong> — deviennent récupérables sur les cadavres.</li>
-          <li>Jusqu’ici, un monstre marqué « griffe » ou « défense » était <strong class="hl">silencieusement inrécoltable</strong> : la matière n’existait pas. Les trolls des fens en font partie.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>La carte te montre où récolter <span class="chip c-util">Pratique</span></h3>
-        <ul>
-          <li>Les <strong class="hl">nœuds de récolte s’affichent sur la carte de zone</strong> — fini de quadriller au hasard pour trouver le minerai ou les herbes.</li>
-          <li>Les <strong class="hl">charmes d’outils</strong> ont enfin des infobulles qui expliquent ce qu’ils font.</li>
-        </ul>
-      </div>
-      <div class="card more" data-detail="peche" tabindex="0" role="button" aria-label="Détails : la pêche">
-        <h3>Pêche : la fin du clic frénétique <span class="chip c-bal">Équilibrage</span></h3>
-        <p>Relancer la canne <strong class="hl">avant que ça morde</strong> met fin à la session de pêche. Un délai de tolérance évite de te punir pour un double-clic involontaire.</p>
-        <span class="more-link">Voir le détail</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2 CLASSES -->
+  <!-- 1 CLASSES -->
   <section id="classes">
-    <div class="sec-head"><span class="sec-num">02</span><h2>Ce qui change pour ta classe</h2></div>
-    <p class="sec-sub">Un gain de dégâts qui concerne tout le monde, et deux corrections de ciblage qui changent le confort au quotidien.</p>
-    <div class="grid cols-3">
-      <div class="card">
-        <h3>Tes dégâts montent <span class="chip c-new">Toutes classes</span></h3>
-        <ul>
-          <li>Les bonus de <strong class="hl">maîtrise</strong> et de <strong class="hl">talents</strong> ne s’appliquaient qu’à une partie du coup. Ils s’appliquent maintenant à <strong class="hl">la frappe entière</strong>.</li>
-          <li>C’est une hausse silencieuse mais réelle, pour toutes les classes qui ont de la maîtrise ou des talents en pourcentage de dégâts.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Ciblage plus malin <span class="chip c-util">Confort</span></h3>
-        <ul>
-          <li>Lancer un sort <strong class="hl">sans cible</strong> vise automatiquement ce qui t’attaque.</li>
-          <li>Au clic, un <strong class="hl">monstre vivant passe avant un cadavre</strong> — fini de cibler le mort au milieu du tas.</li>
-          <li>Nouvelle option : <strong class="hl">ne plus enchaîner l’attaque automatique</strong> quand tu changes de cible.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Chasseur : la main gauche se remplit <span class="chip c-new">Enfin</span></h3>
-        <ul>
-          <li>Le chasseur était la <strong class="hl">seule classe</strong> qui ne pouvait rien mettre en main gauche. Trois <strong class="hl">carquois</strong> arrivent, du vert à l’épique — le premier sur <span data-codex="mob|Mogger">Mogger</span>, le rare sur <span data-codex="mob|Korzul the Gravewyrm">Korzul</span>, l’épique au raid <span data-codex="mob|Nythraxis, Scourge of Thornpeak">Nythraxis</span>.</li>
-          <li>Ton <strong class="hl">familier hérite de ton équipement</strong> : vie, armure et puissance suivent les tiennes. Jusqu’ici il restait figé au moment de l’apprivoisement, et le choix de la bête décidait de tes dégâts.</li>
-          <li>Il <strong class="hl">suit ta vitesse réelle</strong>, monture comprise — fini le familier largué qui se téléporte.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Bonus de groupe <span class="chip c-bal">Correctif</span></h3>
-        <ul>
-          <li><span data-codex="ability|Mass Barrier">Mass Barrier</span> et Fureur de la nature pouvaient être <strong class="hl">posées deux fois</strong> sur le même groupe. Elles suivent maintenant la règle commune à tous les bonus de groupe.</li>
-          <li>Le mage reçoit de <strong class="hl">nouvelles animations</strong> d’incantation, et les attaques élémentaires aussi — purement visuel.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3 DONJONS -->
-  <section id="donjons">
-    <div class="sec-head"><span class="sec-num">03</span><h2>Failles, donjons et delves</h2></div>
-    <p class="sec-sub">Moins de surprises avant d’entrer, et les Failles rejoignent enfin la collection de hauts faits.</p>
-    <div class="grid cols-3">
-      <div class="card">
-        <h3>Les Failles au Livre <span class="chip c-new">Hauts faits</span></h3>
-        <ul>
-          <li>Les Failles générées aléatoirement n’avaient <strong class="hl">aucun haut fait</strong> associé. Elles entrent au Livre des hauts faits.</li>
-          <li>La carte du monde affiche le <strong class="hl">nom de l’étage</strong> de Faille où tu te trouves.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Savoir avant d’entrer <span class="chip c-util">Pratique</span></h3>
-        <ul>
-          <li>Le Chercheur de donjon annonce la <strong class="hl">Malédiction d’effroi</strong> de <span data-codex="mob|Nythraxis, Scourge of Thornpeak">Nythraxis</span> héroïque dans son aperçu des mécaniques.</li>
-          <li>L’infobulle au survol d’un monstre indique s’il est <strong class="hl">élite ou boss</strong>.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Delves <span class="chip c-bal">Règle</span></h3>
-        <ul>
-          <li>Acheter à la boutique de delve ou améliorer son compagnon exige désormais d’être <strong class="hl">à proximité</strong> — plus d’achats à distance.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4 MONDE -->
-  <section id="monde">
-    <div class="sec-head"><span class="sec-num">04</span><h2>Le monde, les quêtes et le butin</h2></div>
-    <p class="sec-sub">Un changement de règle qui touche tous ceux qui visent le haut du panier, et deux quêtes qu’on ne pouvait pas finir.</p>
+    <div class="sec-head"><span class="sec-num">01</span><h2>La refonte des cinq classes</h2></div>
+    <p class="sec-sub">Le programme affiché de la version — préparé à part, en intégration, avec un programme d’équilibrage. Pas encore mergé sur la branche : tout peut bouger.</p>
     <div class="grid cols-2">
-      <div class="card more" data-detail="nuit" tabindex="0" role="button" aria-label="Détails : le cycle jour-nuit et la refonte graphique">
-        <h3>Le monde change de peau <span class="chip c-new">Majeur</span></h3>
-        <p>Un <strong class="hl">vrai cycle jour/nuit</strong> — soleil et lune dans le ciel, horloge à l’écran, villes éclairées aux <strong class="hl">lampadaires</strong> la nuit. Le <strong class="hl">brouillard extérieur disparaît</strong> : on voit le monde entier depuis n’importe où. Eau, prairies et reliefs refaits.</p>
-        <span class="more-link">Voir le détail</span>
-      </div>
-      <div class="card more" data-detail="legendary" tabindex="0" role="button" aria-label="Détails : les légendaires uniques">
-        <h3>Les légendaires deviennent uniques <span class="chip c-bal">Majeur</span></h3>
-        <p>Tu ne peux plus porter <strong class="hl">deux exemplaires du même légendaire</strong> — deux <span data-codex="item|Thronebane, Last Oath of Thornpeak">Thronebane</span> en double arme, c’est terminé. Les anneaux aussi.</p>
+      <div class="card more" data-detail="refonte" tabindex="0" role="button" aria-label="Détails : la refonte des cinq classes">
+        <h3>Chasseur, Chaman, Prêtre, Druide, Démoniste <span class="chip c-new">Annoncée</span></h3>
+        <p>Cinq refontes de classes composées ensemble sur la base de la version, puis passées par un <strong class="hl">programme d’équilibrage</strong> que les développeurs annoncent comme « l’écart entre classes le plus serré jamais mesuré ». C’est le chantier d’intégration visible côté jeu.</p>
         <span class="more-link">Voir le détail</span>
       </div>
       <div class="card">
-        <h3>Quêtes réparées <span class="chip c-new">Fix</span></h3>
+        <h3>Déjà sur la branche <span class="chip c-eq">Visuel</span></h3>
         <ul>
-          <li>Deux quêtes de <strong class="hl">Galecrest</strong> étaient <strong class="hl">impossibles à terminer</strong> : elles visaient des monstres qui n’apparaissaient jamais.</li>
-          <li>Les hauts faits « première récolte » et « premier sort » existent maintenant dans <strong class="hl">toutes les zones de départ</strong>, pas seulement les premières.</li>
-          <li>L’aurore de <strong class="hl">Frostveil</strong> ne déborde plus sur les zones voisines.</li>
+          <li>Les <strong class="hl">attaques du chasseur</strong> reçoivent leurs animations dédiées, dans la continuité du chantier v0.35.0 — l’esprit fantôme aussi.</li>
+          <li>Quatre monstres gagnent leurs attaques signature (yéti, greyjaw, vineclaw, esprit).</li>
+          <li>Purement visuel : aucune valeur de combat ne change pour l’instant.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- 5 GUILDE -->
-  <section id="guilde">
-    <div class="sec-head"><span class="sec-num">05</span><h2>Guilde et social</h2></div>
-    <p class="sec-sub">L’artisanat entre joueurs, et des classements qui affichent enfin les bons chiffres.</p>
-    <div class="grid cols-3">
-      <div class="card more" data-detail="bg" tabindex="0" role="button" aria-label="Détails : Thornhollow Fields, le champ de bataille 5 contre 5">
-        <h3>Thornhollow Fields <span class="chip c-pvp">5c5 classé</span></h3>
-        <p>Le premier <strong class="hl">champ de bataille</strong> du jeu : capture de drapeau en <strong class="hl">5 contre 5</strong>, file d’attente qui <strong class="hl">garde les groupes ensemble</strong>, classement Elo par équipe et Honneur à la clé. Monte ton équipe de guilde.</p>
-        <span class="more-link">Voir le détail</span>
-      </div>
-      <div class="card">
-        <h3>Faire travailler la guilde <span class="chip c-new">Nouveau</span></h3>
-        <ul>
-          <li>Le tableau de commandes (voir plus haut) est <strong class="hl">le vrai apport social</strong> de la version : un membre commande, un artisan livre.</li>
-          <li>Une commande peut être <strong class="hl">réservée à une personne</strong> — pratique pour faire tourner l’or dans la guilde.</li>
-          <li>Réattribuer le <strong class="hl">Focus de ville</strong> n’est plus gratuit : pièces et poussière arcanique selon le palier choisi, avec le coût affiché avant de valider.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Classements <span class="chip c-bal">Correctif</span></h3>
-        <ul>
-          <li>Rang, niveau et prestige s’affichaient <strong class="hl">comme du texte</strong> dans les classements : le tri était faux. Corrigé.</li>
-          <li>Le chat rappelle les <strong class="hl">commandes de communauté</strong>, accessibles en tapant « ! ».</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Discord <span class="chip c-util">Bot</span></h3>
-        <ul>
-          <li>Une commande qui échoue <strong class="hl">te le dit</strong>, au lieu de rester muette.</li>
-          <li><code class="kbd">/whoami</code> ne renvoie plus vers <code class="kbd">/flex</code>, qui n’existe plus.</li>
-          <li>Les actions de modération laissent désormais une <strong class="hl">trace complète</strong>.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6 CONFORT -->
+  <!-- 2 CONFORT -->
   <section id="confort">
-    <div class="sec-head"><span class="sec-num">06</span><h2>Confort et technique</h2></div>
-    <p class="sec-sub">Beaucoup de petites choses, dont deux qui comptent vraiment si tu joues sur téléphone.</p>
-    <div class="grid cols-3">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Confort &amp; technique</h2></div>
+    <p class="sec-sub">Peu de choses pour l’instant — la branche a trente-sept commits.</p>
+    <div class="grid cols-2">
       <div class="card">
-        <h3>Survie <span class="chip c-bal">Équilibrage</span></h3>
-        <ul>
-          <li><strong class="hl">Manger se cumule</strong> avec la régénération naturelle — les deux ne s’annulent plus.</li>
-          <li>Les <strong class="hl">paliers de potions</strong> sont rééquilibrés.</li>
-          <li>Un <strong class="hl">blocage au bouclier</strong> apparaît enfin dans les dégâts flottants et le journal de combat.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Mobile et tablette <span class="chip c-util">Important</span></h3>
-        <ul>
-          <li>Le jeu <strong class="hl">consomme moins de mémoire</strong> et règle la qualité graphique selon ton appareil.</li>
-          <li>La zone de déplacement <strong class="hl">mordait sur le bord de l’écran</strong> : recalée.</li>
-          <li>Le réglage « vitesse de caméra tactile » est enfin respecté ; le mode gaucher inclut la barre du familier.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Interface <span class="chip c-util">Pratique</span></h3>
-        <ul>
-          <li>Le <strong class="hl">zoom de caméra</strong> peut être assigné à un bouton de manette.</li>
-          <li>Le cadre de vie du <strong class="hl">familier</strong> devient cliquable.</li>
-          <li>« Réinitialiser » remet <strong class="hl">vraiment</strong> tout par défaut dans Interface, Raccourcis et Graphismes.</li>
-          <li>La page des commandes liste enfin <strong class="hl">tous</strong> les raccourcis.</li>
-        </ul>
+        <h3>Démarrage plus rapide <span class="chip c-util">Performance</span></h3>
+        <p>Le chargement de la langue se fait désormais <strong class="hl">en même temps</strong> que le préchargement des décors, au lieu de l’attendre — le jeu s’ouvre plus vite, surtout sur mobile.</p>
       </div>
     </div>
   </section>
@@ -481,121 +316,21 @@
 
 <script>
   const DETAILS = {
-    craft: {
-      title: "La fabrication devient une incantation",
-      summary: "Le quota de 10 actions par minute disparaît. Chaque geste de métier a maintenant sa durée.",
+    refonte: {
+      title: "La refonte des cinq classes, ce qu’on en sait",
+      summary: "Annoncée pour la v0.36.0, préparée en intégration — pas encore mergée sur la branche.",
       body: `
-        <h4>Ce qui disparaît</h4>
+        <h4>Le chantier</h4>
         <ul>
-          <li>Un <b>quota commun de 10 actions par tranche de 60 secondes</b> couvrait tous les métiers. Il servait à empêcher l'abus, mais il punissait surtout le joueur honnête qui enchaînait des fabrications bon marché.</li>
+          <li>Cinq classes refondues : <b>Chasseur, Chaman, Prêtre, Druide, Démoniste</b> — chacune préparée séparément depuis des semaines, puis composées ensemble sur la base actuelle du jeu.</li>
+          <li>Par-dessus, un <b>programme d’équilibrage</b> a réglé l’ensemble ; les développeurs le décrivent comme « l’écart entre classes le plus serré que le jeu ait mesuré », chiffré sur des simulations de raid.</li>
         </ul>
-        <h4>Ce qui le remplace</h4>
+        <h4>Ce qu’on ne sait pas encore</h4>
         <ul>
-          <li>Un <b>temps d'incantation</b> propre à chaque action : fabriquer, désenchanter, appliquer un enchantement, recycler, recharger un outil.</li>
-          <li><b>Rien n'est prélevé tant que ça n'a pas abouti</b> — matériaux, or, compétence et jet de chef-d'œuvre ne se résolvent qu'à la fin. Annuler en cours de route est sans conséquence.</li>
-          <li>La fenêtre d'artisanat gagne les <b>durées affichées</b> sur chaque recette, une <b>barre de progression</b>, la <b>fabrication en série</b> et un son au lancement.</li>
+          <li>Le <b>détail par classe</b> : quels talents, quelles rotations, quels chiffres. Rien de tout cela n’est mergé — le travail est visible mais peut changer entièrement avant la sortie.</li>
+          <li>C’est précisément le genre de version où cette page prendra de l’ampleur : reviens après les premiers gros merges.</li>
         </ul>
-        <h4>Ce que ça change pour toi</h4>
-        <ul>
-          <li>Plus de mur invisible au bout de dix objets. En contrepartie, une grosse série se planifie : elle prend du temps réel, et il faut rester devant.</li>
-        </ul>
-        <p class="summary" style="margin-top:18px;border:0;padding:0"><b>Attention</b> : les durées exactes ne sont pas encore figées et ne figurent pas ici volontairement — elles peuvent changer d'ici la sortie.</p>`
-    },
-    commission: {
-      title: "Le tableau de commandes",
-      summary: "Commander une pièce à un artisan, ou prendre les commandes des autres.",
-      body: `
-        <h4>Le principe</h4>
-        <ul>
-          <li>Tu ouvres une <b>commande</b> en désignant la recette voulue, et qui a le droit de l'accepter : <b>le tableau public</b>, ou <b>un artisan nommé</b>.</li>
-          <li>Un artisan l'accepte, fabrique la pièce, puis te la <b>livre en main propre</b> — la remise se fait face à face.</li>
-          <li>L'objet livré arrive <b>lié à toi</b>, comme une fabrication sur commande classique.</li>
-        </ul>
-        <h4>Pourquoi c'est intéressant pour la guilde</h4>
-        <ul>
-          <li>C'est le premier vrai circuit d'artisanat <b>entre joueurs</b> : jusqu'ici, faire fabriquer une pièce par quelqu'un d'autre relevait de l'arrangement verbal.</li>
-          <li>Une commande réservée à une personne permet de faire <b>tourner l'or à l'intérieur de la guilde</b> plutôt que chez un inconnu.</li>
-        </ul>`
-    },
-    legendary: {
-      title: "Un seul légendaire du même type",
-      summary: "Deux exemplaires de la même arme légendaire, c'est fini — anneaux compris.",
-      body: `
-        <h4>La règle</h4>
-        <ul>
-          <li>Un personnage porte au maximum <b>un exemplaire d'un légendaire donné</b>. L'équipement refuse le second, que ce soit en double arme ou aux deux doigts.</li>
-          <li>La règle se déduit de la <b>qualité de l'objet</b> : un légendaire ajouté plus tard y sera soumis automatiquement, sans risque d'oubli.</li>
-          <li>L'unicité porte sur la <b>famille</b> de l'objet : la version héroïque et la version normale du même légendaire comptent comme le même objet.</li>
-        </ul>
-        <h4>Ce qui reste permis</h4>
-        <ul>
-          <li>Deux exemplaires d'une <b>arme à deux mains non légendaire</b> avec Poigne de Titan restent parfaitement légaux. Seuls les légendaires sont visés.</li>
-        </ul>
-        <h4>Et si tu en portes déjà deux ?</h4>
-        <ul>
-          <li>Rien n'est détruit. À la connexion, le doublon est <b>déplacé dans tes sacs</b>, intact.</li>
-          <li>L'infobulle affiche une mention dorée <b>« Unique à l'équipement »</b>.</li>
-        </ul>`
-    },
-    bg: {
-      title: "Thornhollow Fields, le 5 contre 5 classé",
-      summary: "Capture de drapeau, files en groupe, Elo d'équipe — le premier champ de bataille du jeu.",
-      body: `
-        <h4>Le mode</h4>
-        <ul>
-          <li>Deux équipes de <b>cinq</b>, chacune son drapeau : va chercher celui d'en face et rapporte-le pendant que le tien est encore chez toi.</li>
-          <li>La file d'attente <b>garde les groupes ensemble</b> — tu peux monter une équipe de guilde complète et affronter cinq inconnus, ou une autre guilde.</li>
-          <li>Ramasser un drapeau est un <b>geste volontaire</b>, et le rendre se fait à l'approche — pas de course au clic.</li>
-        </ul>
-        <h4>Le rythme</h4>
-        <ul>
-          <li>Les morts reviennent <b>par vagues</b>, avec une courte protection à la réapparition — qui saute dès ta première action hostile.</li>
-          <li>Garder le drapeau trop longtemps rend le porteur <b>de plus en plus vulnérable</b> : camper n'est pas un plan.</li>
-          <li>Des <b>runes de sprint</b> sur la carte pour forcer le destin.</li>
-        </ul>
-        <h4>Ce que ça rapporte</h4>
-        <ul>
-          <li>Un <b>classement Elo par équipe</b> — ce que l'une gagne, l'autre le perd — et de l'<b>Honneur</b>, avec des gains qui s'amenuisent contre les mêmes adversaires enchaînés.</li>
-        </ul>
-        <p class="summary" style="margin-top:18px;border:0;padding:0"><b>Attention</b> : les durées et valeurs exactes ne sont pas figées — c'est du travail en cours, elles peuvent bouger d'ici la sortie.</p>`
-    },
-    nuit: {
-      title: "Le cycle jour-nuit et la refonte du monde",
-      summary: "Le plus gros lifting visuel de l'histoire du jeu — et il change la façon de s'orienter.",
-      body: `
-        <h4>Le temps passe pour de vrai</h4>
-        <ul>
-          <li>Un <b>soleil et une lune</b> traversent le ciel — la lune a ses cratères et sa face sombre — avec aubes et crépuscules, et une <b>horloge</b> dans l'interface pour savoir où en est la journée.</li>
-          <li>La nuit, les villes s'allument : <b>lampadaires</b> dans les rues (solides — on ne passe plus au travers), monstres légèrement luminescents pour rester lisibles.</li>
-        </ul>
-        <h4>Le brouillard disparaît</h4>
-        <ul>
-          <li>Le voile qui bouchait l'horizon est <b>retiré</b> : on voit désormais les montagnes, les villes et la météo des zones voisines depuis n'importe où. S'orienter à vue devient possible.</li>
-        </ul>
-        <h4>Et le reste du lifting</h4>
-        <ul>
-          <li>L'<b>eau</b> est refaite : houle, vagues, nage en pleine mer, horizon marin fondu.</li>
-          <li><b>Prairies et reliefs</b> retravaillés — herbes denses près de toi, collines érodées et crêtes au loin.</li>
-          <li>Chaque classe reçoit de <b>vraies animations d'incantation</b>, et plusieurs monstres des attaques à eux. Purement visuel : aucune valeur de combat ne change.</li>
-        </ul>`
-    },
-    peche: {
-      title: "Pêche : le clic frénétique ne paie plus",
-      summary: "Relancer avant la touche met fin à la session, avec un garde-fou contre les fausses manœuvres.",
-      body: `
-        <h4>Le problème</h4>
-        <ul>
-          <li>Relancer la canne en boucle avant que le poisson morde permettait de <b>tourner les tables de butin</b> plus vite que prévu.</li>
-        </ul>
-        <h4>La règle</h4>
-        <ul>
-          <li>Une relance <b>avant la touche</b> met fin à la session de pêche en cours.</li>
-        </ul>
-        <h4>Le garde-fou</h4>
-        <ul>
-          <li>Appliquée telle quelle, la règle punissait des gestes involontaires : un <b>double-clic dans les sacs</b> ou une <b>touche maintenue</b> qui se répète toute seule consommaient le lancer.</li>
-          <li>Un <b>délai de tolérance</b> a donc été ajouté juste après le lancer. Tu ne perds ta session que si tu relances vraiment trop tôt, pas parce que ton clavier a bégayé.</li>
-        </ul>`
+        <p class="summary" style="margin-top:18px;border:0;padding:0"><b>Attention</b> : aucune valeur n’est donnée ici, à dessein — c’est du travail en cours, tout peut bouger d’ici la sortie.</p>`
     },
   };
 
@@ -719,6 +454,10 @@
     if (ed && ed.dataset.for && ed.dataset.for !== d.version) {
       ed.style.display = "none";
       if (warn) warn.style.display = "none";
+      // Le bandeau et le chapeau parlent de la même version que l'éditorial :
+      // ils expirent avec lui (oubli repéré le 7 août 2026).
+      const dg = document.querySelector(".digest"); if (dg) dg.style.display = "none";
+      const ld = document.querySelector(".hero .lede"); if (ld) ld.style.display = "none";
       document.getElementById("staleNote").innerHTML =
         `<div class="warn"><span class="ico" aria-hidden="true">🕗</span><div><p>Le résumé de cette page portait sur la <b>${esc(ed.dataset.for)}</b>, déjà sortie ou remplacée. Le jeu prépare maintenant la <b>${esc(d.version)}</b> — le résumé sera réécrit sous peu.</p></div></div>`;
     }

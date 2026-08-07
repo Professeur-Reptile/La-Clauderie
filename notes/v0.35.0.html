@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Nouveautés v0.35.0 — La Clauderie</title>
+<meta name="description" content="Les nouveautés de la v0.35.0 de World of ClaudeCraft, expliquées simplement : Thornhollow Fields, le premier champ de bataille classé 5c5, l’Honneur et les panoplies WARFARE, la fabrication qui devient une incantation, la natation, le créateur de personnage — et un monde qui vit jour et nuit, sans brouillard.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Nouveautés v0.35.0 — La Clauderie">
+<meta property="og:description" content="Les nouveautés de la v0.35.0 de World of ClaudeCraft, expliquées simplement : Thornhollow Fields, le premier champ de bataille classé 5c5, l’Honneur et les panoplies WARFARE, la fabrication qui devient une incantation, la natation, le créateur de personnage — et un monde qui vit jour et nuit, sans brouillard.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.35.0.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.35.0.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') === 'en') location.replace('v0.35.0.en.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Notes de version</p>
+    <h1>Nouveautés <span class="v">v0.35.0</span></h1>
+    <p class="lede">La version PvP. <strong class="hl">Thornhollow Fields</strong> ouvre ses portes : le premier champ de bataille du jeu, un 5 contre 5 classé à capture de drapeau, avec son économie d’Honneur, ses rangs à vie et cinq panoplies épiques chez l’intendant. Autour : la refonte des métiers promise (fabriquer devient un vrai geste), la natation complète — jauge de respiration et noyade incluses —, un créateur de personnage, et un monde qui vit enfin jour et nuit, débarrassé de son brouillard.</p>
+    <div class="meta">
+      <span><b>Publiée</b> le 7 août 2026</span>
+      <span><b>Depuis</b> la v0.34.0</span>
+      <span><b>817</b> commits</span>
+    </div>
+    <div class="hint">💡 Clique sur une carte pour le détail — et sur un nom souligné pour sa fiche Codex.</div>
+  </header>
+
+  <!-- Bandeau constant : mêmes rubriques, même ordre, à chaque version. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">En un coup d’œil</h2>
+    <p class="sec-sub">Les mêmes rubriques à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
+    <ol>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <a class="d-name" href="#classes">Classes &amp; sorts</a>
+        <span class="d-say"><b class="up">Chasseur ↑</b> une main gauche enfin remplie et un familier qui hérite de ton équipement · <b class="up">Toutes ↑</b> maîtrise et talents comptent désormais sur tout le coup · <b class="eq">Toutes =</b> vraies animations d’incantation, purement visuelles</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <a class="d-name" href="#metiers">Métiers &amp; récolte</a>
+        <span class="d-say">Fabriquer et enchanter deviennent des incantations, un tableau de commandes entre joueurs arrive, et la carte affiche les nœuds de récolte.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#donjons">Donjons, failles &amp; boss</a>
+        <span class="d-say">Les Failles entrent au Livre des hauts faits, et on ne perd plus son butin ramassé en descendant d’étage.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <a class="d-name" href="#monde">Monde &amp; quêtes</a>
+        <span class="d-say">Le soleil se couche pour de vrai, le brouillard disparaît, on nage — et on se noie. Et un créateur de personnage complet.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <a class="d-name" href="#guilde">Guilde &amp; social</a>
+        <span class="d-say"><strong class="hl">Thornhollow Fields</strong>, le 5c5 classé : monte l’équipe de la guilde. Et la banque de guilde s’ouvre en lecture à tous les membres.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#confort">Confort &amp; technique</a>
+        <span class="d-say">Sous-menu graphique, infobulles plus honnêtes, accessibilité revue — et un préréglage léger par défaut sur mobile.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="guilde">
+    <h2><span class="num">01</span>Thornhollow Fields — le premier champ de bataille</h2>
+    <p class="sec-sub">Crimson contre Azure, 5 contre 5, trois captures pour gagner. File classée, Honneur, panoplies. C’est LA nouveauté de la version — et elle se joue en équipe de guilde.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="bg" tabindex="0" role="button" aria-label="Détails : le champ de bataille">
+        <h3>Le mode <span class="chip c-pvp">5c5 classé</span></h3>
+        <p>Capture de drapeau à <strong class="hl">trois prises gagnantes</strong>, douze minutes maximum. La file garde les <strong class="hl">groupes ensemble</strong> — une équipe de guilde complète entre ensemble, dès le niveau 20.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="honneur" tabindex="0" role="button" aria-label="Détails : l’Honneur et les rangs">
+        <h3>L’Honneur et les rangs <span class="chip c-new">Nouveau</span></h3>
+        <p>Chaque victoire, coup de grâce ou assistance paie de l’<strong class="hl">Honneur</strong>. Il se dépense chez l’intendant — et il se compte à vie : <strong class="hl">trois rangs</strong> et un titre à gagner.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="warfare" tabindex="0" role="button" aria-label="Détails : les panoplies WARFARE">
+        <h3>L’intendant WARFARE <span class="chip c-loot">Équipement</span></h3>
+        <p>Le catalogue FURY est <strong class="hl">reconstruit au niveau d’objet 31</strong> — celui des donjons héroïques — et passe à <strong class="hl">cinq familles</strong> : la Thornhide du druide s’ajoute. Prix revus en conséquence.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>La banque de guilde s’ouvre <span class="chip c-util">Enfin</span></h3>
+        <ul>
+          <li>Tous les membres voient désormais la banque de guilde <strong class="hl">en lecture seule</strong> — fini l’onglet invisible pour tout le monde sauf les officiers (le retrait, lui, reste réservé).</li>
+          <li>L’indice des commandes communautaires s’affiche là où on le cherche.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Autour du champ de bataille</h3>
+        <ul>
+          <li>Tableau des scores en direct pendant le match, écran de fin figé le temps de souffler, <strong class="hl">fil des morts</strong> façon arène.</li>
+          <li>Un titre <strong class="hl">« Flagbearer »</strong> à 25 victoires — comptez vos soirées.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="objets">
+    <h2><span class="num">02</span>Les nouveaux objets, et où les trouver</h2>
+    <p class="sec-sub">Le catalogue PvP reconstruit — trente-cinq pièces d’armure, armes et bijoux — et quatre carquois. Les taux et prix viennent du code, pas des rumeurs.</p>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>Le catalogue WARFARE, reconstruit <span class="chip c-loot">Intendant</span></h3>
+        <ul>
+          <li><span data-codex="set|warfare_furyforged">Furyforged Battlegear</span> — mailles, Force : le guerrier.</li>
+          <li><span data-codex="set|warfare_stormbound">Stormbound Vestments</span> — mailles, incantateur : le chaman.</li>
+          <li><span data-codex="set|warfare_ashstalker">Ashstalker Kit</span> — cuir, Agilité : voleur et chasseur.</li>
+          <li><span data-codex="set|warfare_cinderweave">Cinderweave Regalia</span> — tissu, incantateur : mage, démoniste, prêtre.</li>
+          <li><span data-codex="set|warfare_thornhide">Thornhide Garb</span> — cuir, incantateur : le druide.</li>
+        </ul>
+        <p>Épiques, niveau 20 requis, <strong class="hl">liées quand ramassées</strong> : armures de 450 à 1 200 points d’Honneur la pièce, armes à 1 200, anneaux et colliers de 275 à 400. La <span data-codex="set|warfare_thornhide">Thornhide Garb</span> est la nouveauté ; les quatre autres familles existaient et sont remises au niveau.</p>
+      </div>
+      <div class="card">
+        <h3>Les quatre carquois du chasseur <span class="chip c-loot">Butin</span></h3>
+        <ul>
+          <li><span data-codex="item|Mogger's Hide Quiver">Mogger’s Hide Quiver</span> (vert) — sur <span data-codex="mob|Mogger">Mogger</span>, l’élite rare de la zone de départ : <strong class="hl">20 %</strong>.</li>
+          <li><span data-codex="item|Cragmaw Huntquiver">Cragmaw Huntquiver</span> (rare) — sur <span data-codex="mob|Old Cragmaw">Old Cragmaw</span>, la bête de Thornpeak : <strong class="hl">25 %</strong>.</li>
+          <li><span data-codex="item|Gravewyrm Bone Quiver">Gravewyrm Bone Quiver</span> (rare) — sur <span data-codex="mob|Korzul the Gravewyrm">Korzul the Gravewyrm</span> : <strong class="hl">5 %</strong>, en jet bonus qui ne vole rien aux autres drops.</li>
+          <li><span data-codex="item|Direfang Quiver">Direfang Quiver</span> (épique) — au raid <span data-codex="mob|Nythraxis, Scourge of Thornpeak">Nythraxis</span> : <strong class="hl">14 %</strong>.</li>
+        </ul>
+        <p>Le chasseur était la seule classe dont la main gauche restait vide — détail dans la section <a href="#classes">Classes</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="monde">
+    <h2><span class="num">03</span>Un monde qui vit</h2>
+    <p class="sec-sub">Le plus gros lifting visuel de l’histoire du jeu — et deux systèmes complets : la natation et le créateur de personnage.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="monde" tabindex="0" role="button" aria-label="Détails : le cycle jour-nuit et la refonte du monde">
+        <h3>Jour, nuit, et plus de brouillard <span class="chip c-new">Majeur</span></h3>
+        <p>Soleil et lune traversent le ciel, une <strong class="hl">horloge</strong> s’ajoute à l’interface, les villes s’allument aux <strong class="hl">lampadaires</strong> — et le brouillard extérieur disparaît : on voit le monde entier.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>On nage pour de vrai <span class="chip c-new">Nouveau</span></h3>
+        <ul>
+          <li>Vraies brasses, plongée caméra comprise, houle en mer ouverte.</li>
+          <li>Une <strong class="hl">jauge de respiration</strong> — qui se vide jusqu’à la <strong class="hl">noyade</strong>. Remontez.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Le créateur de personnage <span class="chip c-new">Nouveau</span></h3>
+        <ul>
+          <li>Cheveux, barbes, boucles d’oreilles, maquillage, tenues, matériaux de bijoux — par onglets, avec présets et couleurs libres.</li>
+          <li>Un <strong class="hl">Fit Studio</strong> pour essayer l’équipement avant de le porter, aperçu du casque compris.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>Les légendaires deviennent uniques <span class="chip c-bal">Règle</span></h3>
+        <p>Chaque objet légendaire est désormais <strong class="hl">unique à l’équipement, par famille</strong> : fini les deux mêmes lames légendaires en main. Si vous en portiez deux, la seconde reste dans le sac.</p>
+      </div>
+      <div class="card">
+        <h3>Réparations de monde <span class="chip c-fix">Correctifs</span></h3>
+        <ul>
+          <li>Deux quêtes de <span data-codex="zone|Galecrest">Galecrest</span> impossibles à finir sont réparées, la caisse des Scorched Stores aussi.</li>
+          <li>Des noms de monstres périmés remis à jour, des nœuds de récolte sortis de l’eau.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="metiers">
+    <h2><span class="num">04</span>Les métiers passent à l’acte</h2>
+    <p class="sec-sub">La refonte annoncée est là : fabriquer n’est plus un clic, c’est un geste qui prend du temps — et qui se commande entre joueurs.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="craft" tabindex="0" role="button" aria-label="Détails : la fabrication incantée et les commandes">
+        <h3>Fabriquer devient une incantation <span class="chip c-new">Refonte</span></h3>
+        <p>Chaque fabrication et chaque enchantement a un <strong class="hl">temps d’incantation</strong> affiché sur la recette, avec barre de progression et file de lots. Les outils se <strong class="hl">rechargent</strong>.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>La carte te montre où récolter <span class="chip c-util">Pratique</span></h3>
+        <ul>
+          <li>Les <strong class="hl">nœuds de récolte</strong> s’affichent sur la carte de zone — fini le quadrillage au hasard.</li>
+          <li>Les montées de compétence s’annoncent en toast, et les matériaux affichent leur <strong class="hl">affinité de métier</strong> en infobulle.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Griffes et défenses <span class="chip c-new">Récolte</span></h3>
+        <p>Les bêtes de <span data-codex="zone|The Drakelands">Drakelands</span>, <span data-codex="zone|Willowfen">Willowfen</span> et <span data-codex="zone|Evergarden">Evergarden</span> se <strong class="hl">dépècent</strong> désormais en griffes et défenses, deux nouvelles familles de matériaux.</p>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>Bon à savoir <span class="chip c-bal">Règles</span></h3>
+        <ul>
+          <li>À la pêche, <strong class="hl">mouliner avant la touche termine la session</strong> — le spam du bouton ne paie plus, attendez la morsure.</li>
+          <li>Réattribuer le <strong class="hl">Focus de ville</strong> n’est plus gratuit : gratuit mais lent (1 min par point), ou payé en pièces et en <span data-codex="item|Chime Dust">Chime Dust</span> pour aller vite — coût affiché avant de valider.</li>
+          <li>Les coûts de formation se recalculent quand la bourse bouge.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Pour les enchanteurs <span class="chip c-new">Nouveau</span></h3>
+        <ul>
+          <li>Un enchantement de base pour la <strong class="hl">main gauche</strong> arrive (boucliers et focalisateurs) : +3 Endurance, 5 <span data-codex="item|Chime Dust">Chime Dust</span> — l’emplacement refusait tout enchantement jusqu’ici.</li>
+          <li>Le <strong class="hl">sceau de chef-d’œuvre</strong> s’affiche sur les objets rangés en banque.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="classes">
+    <h2><span class="num">05</span>Classes &amp; sorts</h2>
+    <p class="sec-sub">Une vraie amélioration pour tout le monde, une classe transformée, et des animations pour toutes.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="chasseur" tabindex="0" role="button" aria-label="Détails : le chasseur">
+        <h3>Chasseur : la main gauche et le familier <span class="chip c-new">Enfin</span></h3>
+        <p>Quatre <strong class="hl">carquois</strong> remplissent un emplacement qui n’avait jamais servi, et le <strong class="hl">familier hérite de ton équipement</strong> au lieu de rester figé à l’apprivoisement.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Maîtrise et talents : tout le coup <span class="chip c-bal">Toutes ↑</span></h3>
+        <p>Les pourcentages de maîtrise et de talents s’appliquent désormais à <strong class="hl">l’ensemble du coup</strong>, plus seulement à une partie. Vos fiches de personnage disent enfin la vérité — et vos dégâts montent d’autant.</p>
+      </div>
+      <div class="card">
+        <h3>Chaque classe a ses gestes <span class="chip c-eq">Visuel</span></h3>
+        <p>Nouvelles <strong class="hl">animations d’incantation</strong> pour les six classes de lanceurs, et des attaques dédiées pour une dizaine de monstres. Purement cosmétique : aucune valeur de combat ne change.</p>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>Réglages fins <span class="chip c-fix">Correctifs</span></h3>
+        <ul>
+          <li><span data-codex="ability|mass_barrier">Mass Barrier</span> et Nature’s Fury ne se cumulent plus en double sur la même cible.</li>
+          <li>L’<span data-codex="ability|avatar">Avatar</span> du guerrier reçoit correctement sa réduction de moitié des dégâts de sorts.</li>
+          <li>Lancer un sort <strong class="hl">acquiert automatiquement</strong> une cible attaquante ; manger reste compatible avec la régénération naturelle.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Nouveau réglage <span class="chip c-util">Confort</span></h3>
+        <p>Une option pour <strong class="hl">arrêter l’attaque automatique au changement de cible</strong> — les précautionneux du mouton apprécieront.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="donjons">
+    <h2><span class="num">06</span>Donjons, failles &amp; boss</h2>
+    <p class="sec-sub">Pas de nouveau boss cette fois — la vedette PvP a pris la place — mais des Failles plus lisibles et moins punitives.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Les Failles au Livre <span class="chip c-new">Hauts faits</span></h3>
+        <p>Le <strong class="hl">Livre des hauts faits</strong> couvre désormais les donjons procéduraux : les Failles comptent, collectionnez-les.</p>
+      </div>
+      <div class="card">
+        <h3>On garde son butin <span class="chip c-fix">Correctif</span></h3>
+        <p>Le <strong class="hl">cadavre qu’on transporte</strong> suit à la descente d’étage de Faille — plus de butin abandonné derrière soi.</p>
+      </div>
+      <div class="card">
+        <h3>Plus lisible <span class="chip c-util">Confort</span></h3>
+        <ul>
+          <li>Le <strong class="hl">nom de l’étage</strong> de Faille s’affiche sur la carte du monde.</li>
+          <li>Boutique de fouille et améliorations de compagnon exigent d’être <strong class="hl">à proximité</strong> — fini les achats à distance involontaires.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="confort">
+    <h2><span class="num">07</span>Confort &amp; technique</h2>
+    <p class="sec-sub">Des infobulles qui disent tout, une interface qui se range, et un jeu qui tourne mieux sur téléphone.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Des infobulles honnêtes <span class="chip c-util">Interface</span></h3>
+        <ul>
+          <li>Plafond de pile <strong class="hl">par emplacement</strong> sur les objets, ligne « Utiliser » sur les élixirs.</li>
+          <li>Statut <strong class="hl">Élite</strong> ou <strong class="hl">Boss</strong> affiché sur les monstres, jauge de menace en <strong class="hl">comparaison réelle</strong>.</li>
+          <li>Le blocage au bouclier a son texte flottant et sa ligne de journal.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Une interface qui se range <span class="chip c-util">Réglages</span></h3>
+        <ul>
+          <li>Nouveau <strong class="hl">sous-menu graphique</strong>, et un vrai « réinitialiser aux valeurs par défaut ».</li>
+          <li>Les emplacements de barre d’action inutilisés peuvent se <strong class="hl">masquer</strong>.</li>
+          <li>Manette : le zoom caméra s’assigne à un bouton ; mobile : balayage pour regarder, zones sûres respectées, cadre gauche pour tablette.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Ça tourne mieux <span class="chip c-fix">Performance</span></h3>
+        <ul>
+          <li>Sur mobile, le jeu démarre en <strong class="hl">préréglage graphique léger</strong> — montez-le si votre téléphone suit.</li>
+          <li>Accessibilité revue : vrais boutons, noms accessibles, navigation clavier dans les dialogues.</li>
+          <li>La pluie se voit à Wraithwood, l’aurore de Frostveil sait rester discrète.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    bg: {
+      title: "Thornhollow Fields, mode d’emploi",
+      summary: "Tout est vérifié dans le code du champ de bataille — pas dans la plaquette.",
+      body: `
+        <h4>La partie</h4>
+        <ul>
+          <li>Crimson contre Azure, <b>5 contre 5</b>, dès le <b>niveau 20</b>. Trois captures gagnent le match ; douze minutes maximum, avec avertissements à 2 min et 1 min de la fin.</li>
+          <li>La file garde les <b>groupes ensemble</b> : une équipe de guilde complète affronte cinq autres joueurs — jamais éparpillée.</li>
+          <li>Huit secondes de mise en place aux bastions avant que les drapeaux ne s’activent.</li>
+        </ul>
+        <h4>Le drapeau</h4>
+        <ul>
+          <li>Le ramassage est un <b>geste volontaire</b> ; le retour de votre drapeau se fait à l’approche — et il <b>bat</b> un ramassage adverse joué au même instant.</li>
+          <li>Porter le drapeau trop longtemps rend <b>vulnérable</b> : au-delà de 75 secondes de possession d’équipe, le porteur encaisse +10 % de dégâts par palier, un palier toutes les 15 secondes, sans plafond. Camper n’est pas un plan.</li>
+          <li>Des <b>runes de vitesse</b> sur la carte, à ramasser au contact.</li>
+        </ul>
+        <h4>La mort</h4>
+        <ul>
+          <li>Réapparition par <b>vagues d’équipe toutes les 10 secondes</b>, les deux camps décalés de 5 secondes — mourir juste après une vague coûte cher.</li>
+          <li>Une courte protection à la réapparition, qui saute à votre première action hostile.</li>
+        </ul>
+        <h4>Le classement</h4>
+        <ul>
+          <li>Un <b>Elo d’équipe</b> : tout le monde part à 1 500, plancher à 100 — ce que l’une gagne, l’autre le perd. Le top 10 s’affiche au tableau des scores.</li>
+        </ul>`
+    },
+    honneur: {
+      title: "L’Honneur : ce que ça paie, et comment le grind respire",
+      summary: "Les montants sortent du code — et la règle anti-farm mérite d’être connue avant de s’étonner.",
+      body: `
+        <h4>Ce qui rapporte</h4>
+        <ul>
+          <li>Victoire : <b>60</b> — et la <b>première victoire du jour</b> paie 80. Défaite ou égalité jouée jusqu’au bout : <b>20</b>.</li>
+          <li>Coup de grâce : <b>5</b> ; assistance : <b>2</b>. De quoi rendre les escarmouches loin du drapeau rentables aussi.</li>
+        </ul>
+        <h4>La règle anti-farm</h4>
+        <ul>
+          <li>Rejouer <b>contre la même équipe</b> paie de moins en moins — mais jamais zéro : le gain de victoire plancher à 25 % (15 points). Sur un royaume calme où la file recolle souvent les mêmes adversaires, un match honnête paie toujours quelque chose.</li>
+          <li>Acharner un même joueur au cimetière, en revanche, ne paie plus rien après quatre coups de grâce sur lui.</li>
+          <li>Un forfait ne paie <b>rien du tout</b>.</li>
+        </ul>
+        <h4>Les rangs, à vie</h4>
+        <ul>
+          <li>L’Honneur gagné se cumule à vie et débloque des titres : <b>Sergeant</b> à 10 000, <b>Knight-Lieutenant</b> à 40 000, <b>Field Marshal</b> à 150 000. Et <b>Flagbearer</b> à 25 victoires de champ de bataille.</li>
+          <li>Dépenser chez l’intendant n’y change rien : le compteur des rangs ne redescend jamais.</li>
+        </ul>`
+    },
+    warfare: {
+      title: "Le catalogue WARFARE, reconstruit pièce par pièce",
+      summary: "L’équipement d’Honneur existait déjà — il est reconstruit au niveau d’objet des donjons héroïques, avec une cinquième famille.",
+      body: `
+        <h4>Les cinq familles</h4>
+        <ul>
+          <li><b>Furyforged Battlegear</b> — mailles, Force et Endurance : guerrier.</li>
+          <li><b>Stormbound Vestments</b> — mailles d’incantateur : chaman.</li>
+          <li><b>Ashstalker Kit</b> — cuir, Agilité : voleur et chasseur.</li>
+          <li><b>Cinderweave Regalia</b> — tissu : mage, démoniste, prêtre.</li>
+          <li><b>Thornhide Garb</b> — cuir d’incantateur : druide.</li>
+        </ul>
+        <h4>Ce qui change vraiment</h4>
+        <ul>
+          <li>Tout l’étage passe au <b>niveau d’objet 31</b> — le niveau des donjons héroïques : l’équipement d’Honneur redevient compétitif.</li>
+          <li>La <b>Thornhide Garb</b> (cuir d’incantateur) s’ajoute : le druide caster a enfin sa famille dédiée.</li>
+          <li>Sept pièces d’armure par famille — cou, anneaux et armes restent hors panoplie, mais le catalogue en vend aussi (armes à 1 200, bijoux 275–400).</li>
+          <li>Épique, <b>niveau 20 requis</b>, lié quand ramassé. Armures de <b>450</b> à <b>1 200</b> points d’Honneur la pièce.</li>
+          <li>Chaque pièce porte de l’<b>attaque et de la défense PvP</b> en plus de ses statistiques — leur raison d’être face à l’équipement de donjon.</li>
+        </ul>
+        <p class="summary" style="margin-top:18px;border:0;padding:0">Le détail chiffré de chaque pièce est dans le <a href="../codex/">Codex</a>, et le BiS PvP par classe arrive sur la page <a href="../bis.html">Builds</a> au prochain recalcul.</p>`
+    },
+    monde: {
+      title: "Le cycle jour-nuit et la refonte du monde",
+      summary: "Le plus gros lifting visuel de l’histoire du jeu — et il change la façon de s’orienter.",
+      body: `
+        <h4>Le temps passe pour de vrai</h4>
+        <ul>
+          <li>Un <b>soleil et une lune</b> traversent le ciel — la lune a ses cratères, son terminateur et sa face sombre — avec de vraies aubes, de vrais crépuscules, et une <b>horloge</b> dans l’interface.</li>
+          <li>La nuit, les villes s’allument aux <b>lampadaires</b> — solides, d’ailleurs : on ne marche plus au travers — et les monstres gagnent une légère luminescence pour rester lisibles.</li>
+        </ul>
+        <h4>Le brouillard disparaît</h4>
+        <ul>
+          <li>Le voile qui bouchait l’horizon est <b>retiré</b> : montagnes, villes et météo des zones voisines se voient depuis n’importe où. Chaque zone garde son atmosphère propre, visible même de loin.</li>
+        </ul>
+        <h4>Et le reste</h4>
+        <ul>
+          <li>L’<b>eau</b> est refaite : houle, vagues, films translucides à la ligne de flottaison, nage en pleine mer.</li>
+          <li><b>Prairies et reliefs</b> retravaillés — herbe dense sous vos pieds, collines érodées et crêtes au loin, arbres lointains nets.</li>
+          <li>Une lumière de jour plus chaude, une heure dorée plus franche.</li>
+        </ul>`
+    },
+    craft: {
+      title: "La fabrication incantée et le tableau de commandes",
+      summary: "Fabriquer n’est plus un clic : c’est un geste qui prend du temps, qui s’interrompt, et qui se commande.",
+      body: `
+        <h4>Le geste</h4>
+        <ul>
+          <li>Chaque recette affiche désormais sa <b>durée d’incantation</b> sur une puce ; la fabrication a sa barre de progression, les lots s’enchaînent en file, bouger interrompt.</li>
+          <li>L’<b>enchantement</b> suit le même rythme — fini l’enchantement instantané en plein combat d’enchères.</li>
+          <li>Les <b>outils se rechargent</b> au lieu de s’user en silence, et leurs charmes expliquent enfin ce qu’ils font en infobulle.</li>
+        </ul>
+        <h4>Le tableau de commandes</h4>
+        <ul>
+          <li><b>Publier, accepter, livrer, annuler</b> : vous commandez un objet à un artisan — le vôtre ou celui d’une autre guilde — avec les matériaux et le paiement posés d’avance.</li>
+          <li>Une commande peut être <b>réservée à une personne</b> : pratique pour faire tourner l’or dans la guilde.</li>
+        </ul>
+        <h4>Pourquoi c’est une bonne nouvelle</h4>
+        <p>Fabriquer redevient un métier qu’on <b>exerce</b>, pas un onglet qu’on vide. Les artisans se voient en ville, les commandes créent du commerce entre joueurs, et le temps d’incantation donne enfin un prix au travail — pas seulement aux matériaux.</p>`
+    },
+    chasseur: {
+      title: "Le chasseur : la main gauche, et un familier qui te suit vraiment",
+      summary: "Deux réparations d’anomalies historiques — vérifiées dans le code du familier.",
+      body: `
+        <h4>La main gauche</h4>
+        <ul>
+          <li>Le chasseur était la <b>seule classe</b> sans rien à mettre en main gauche : pas d’ambidextrie, aucun bouclier ni focalisateur ne l’acceptait. Tout ce budget de statistiques était perdu.</li>
+          <li>Quatre <b>carquois réservés chasseur</b> le récupèrent, un par palier : vert (Mogger, 20 %), rare (Old Cragmaw, 25 %), rare de donjon (Korzul, 5 %), épique (raid Nythraxis, 14 %) — les deux derniers avec leur version héroïque — orientés Agilité, assortis au cuir.</li>
+        </ul>
+        <h4>Le familier</h4>
+        <ul>
+          <li>Il <b>hérite de ton équipement</b> : 25 % de tes points de vie, 35 % de ton armure, 22 % de ta puissance à distance. Jusqu’ici il restait figé aux statistiques du monstre apprivoisé — la bête choisie décidait de tes dégâts, ton équipement n’y faisait rien.</li>
+          <li>Bonus : l’héritage <b>resserre l’écart entre les bêtes</b> — une part fixe pèse proportionnellement plus pour un petit familier de départ.</li>
+          <li>Il <b>suit ta vitesse réelle</b>, monture comprise, au lieu de courir à vitesse fixe et de se téléporter en catastrophe.</li>
+          <li>Sa santé s’affiche sur les cadres de groupe, ses coups arrivent dans ton journal de combat, et il <b>survit en arène</b>.</li>
+        </ul>`
+    },
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

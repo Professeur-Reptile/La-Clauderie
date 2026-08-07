@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Patch notes v0.35.0 — La Clauderie</title>
+<meta name="description" content="World of ClaudeCraft v0.35.0, explained simply: Thornhollow Fields, the first ranked 5v5 battleground, honor and the WARFARE sets, cast-paced crafting, swimming, the character creator — and a world that finally lives through day and night, fog-free.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Patch notes v0.35.0 — La Clauderie">
+<meta property="og:description" content="World of ClaudeCraft v0.35.0, explained simply: Thornhollow Fields, the first ranked 5v5 battleground, honor and the WARFARE sets, cast-paced crafting, swimming, the character creator — and a world that finally lives through day and night, fog-free.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.35.0.en.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.35.0.en.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') !== 'en') location.replace('v0.35.0.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Site navigation"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Patch notes</p>
+    <h1>Patch notes <span class="v">v0.35.0</span></h1>
+    <p class="lede">The PvP release. <strong class="hl">Thornhollow Fields</strong> opens its gates: the game’s first battleground, a ranked 5v5 capture-the-flag with its own honor economy, lifetime ranks and five epic sets at the quartermaster. Around it: the promised professions overhaul (crafting becomes a real gesture), full swimming — breath gauge and drowning included —, a character creator, and a world that finally lives through day and night, fog-free.</p>
+    <div class="meta">
+      <span><b>Released</b> August 7, 2026</span>
+      <span><b>Since</b> v0.34.0</span>
+      <span><b>817</b> commits</span>
+    </div>
+    <div class="hint">💡 Click a card for details — and any underlined name for its Codex sheet.</div>
+  </header>
+
+  <!-- Constant digest: same sections, same order, every release. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">At a glance</h2>
+    <p class="sec-sub">The same six sections every release, in the same order. Click one to jump to it.</p>
+    <ol>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <a class="d-name" href="#classes">Classes &amp; spells</a>
+        <span class="d-say"><b class="up">Hunter ↑</b> a filled off-hand at last, and a pet that inherits your gear · <b class="up">All ↑</b> mastery and talents now count on the whole hit · <b class="eq">All =</b> real casting animations, purely visual</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <a class="d-name" href="#metiers">Professions &amp; gathering</a>
+        <span class="d-say">Crafting and enchanting become casts, a player-to-player commission board arrives, and gather nodes show on the zone map.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#donjons">Dungeons, rifts &amp; bosses</a>
+        <span class="d-say">Rifts enter the Book of Deeds, and loot you carry no longer stays behind when you descend a floor.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <a class="d-name" href="#monde">World &amp; quests</a>
+        <span class="d-say">The sun actually sets, the fog is gone, you can swim — and drown. Plus a full character creator.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <a class="d-name" href="#guilde">Guild &amp; social</a>
+        <span class="d-say"><strong class="hl">Thornhollow Fields</strong>, the ranked 5v5: bring a guild team. And the guild bank opens read-only to every member.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#confort">Comfort &amp; technical</a>
+        <span class="d-say">A graphics submenu, honest tooltips, an accessibility pass — and a light default preset on mobile.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="guilde">
+    <h2><span class="num">01</span>Thornhollow Fields — the first battleground</h2>
+    <p class="sec-sub">Crimson versus Azure, 5 versus 5, three captures to win. Ranked queue, honor, gear sets. THE headline of this release — and it plays as a guild team.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="bg" tabindex="0" role="button" aria-label="Details: the battleground">
+        <h3>The mode <span class="chip c-pvp">Ranked 5v5</span></h3>
+        <p>Capture the flag, <strong class="hl">first to three caps</strong>, twelve minutes tops. The queue keeps <strong class="hl">parties together</strong> — a full guild team enters as one, from level 20.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card more" data-detail="honneur" tabindex="0" role="button" aria-label="Details: honor and ranks">
+        <h3>Honor and ranks <span class="chip c-new">New</span></h3>
+        <p>Every win, killing blow and assist pays <strong class="hl">honor</strong>. Spend it at the quartermaster — and it also counts for life: <strong class="hl">three ranks</strong> and a title to earn.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card more" data-detail="warfare" tabindex="0" role="button" aria-label="Details: the WARFARE sets">
+        <h3>The WARFARE quartermaster <span class="chip c-loot">Gear</span></h3>
+        <p>The FURY catalogue is <strong class="hl">rebuilt at item level 31</strong> — heroic-dungeon level — and grows to <strong class="hl">five families</strong>: the druid’s Thornhide joins. Prices revised accordingly.</p>
+        <span class="more-link">See details</span>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>The guild bank opens up <span class="chip c-util">At last</span></h3>
+        <ul>
+          <li>Every member now sees the guild bank <strong class="hl">read-only</strong> — no more invisible tab for everyone but the officers (withdrawing stays restricted).</li>
+          <li>The community commissions hint shows where you actually look for it.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Around the battleground</h3>
+        <ul>
+          <li>Live scoreboard during the match, a frozen end screen to catch your breath, and an arena-style <strong class="hl">death feed</strong>.</li>
+          <li>A <strong class="hl">“Flagbearer”</strong> title at 25 wins — count your evenings.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="objets">
+    <h2><span class="num">02</span>The new items, and where they drop</h2>
+    <p class="sec-sub">The rebuilt PvP catalogue — thirty-five armor pieces, weapons and jewelry — plus four quivers. Rates and prices come from the code, not from rumors.</p>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>The WARFARE catalogue, rebuilt <span class="chip c-loot">Quartermaster</span></h3>
+        <ul>
+          <li><span data-codex="set|warfare_furyforged">Furyforged Battlegear</span> — mail, Strength: the warrior.</li>
+          <li><span data-codex="set|warfare_stormbound">Stormbound Vestments</span> — caster mail: the shaman.</li>
+          <li><span data-codex="set|warfare_ashstalker">Ashstalker Kit</span> — leather, Agility: rogue and hunter.</li>
+          <li><span data-codex="set|warfare_cinderweave">Cinderweave Regalia</span> — cloth: mage, warlock, priest.</li>
+          <li><span data-codex="set|warfare_thornhide">Thornhide Garb</span> — caster leather: the druid.</li>
+        </ul>
+        <p>Epic, level 20 required, <strong class="hl">bind on pickup</strong>: armor from 450 to 1,200 honor per piece, weapons at 1,200, rings and necklaces 275 to 400. <span data-codex="set|warfare_thornhide">Thornhide Garb</span> is the newcomer; the other four families existed and get re-leveled.</p>
+      </div>
+      <div class="card">
+        <h3>The hunter’s four quivers <span class="chip c-loot">Drops</span></h3>
+        <ul>
+          <li><span data-codex="item|Mogger's Hide Quiver">Mogger’s Hide Quiver</span> (uncommon) — off <span data-codex="mob|Mogger">Mogger</span>, the starter-zone rare elite: <strong class="hl">20%</strong>.</li>
+          <li><span data-codex="item|Cragmaw Huntquiver">Cragmaw Huntquiver</span> (rare) — off <span data-codex="mob|Old Cragmaw">Old Cragmaw</span>, the Thornpeak beast: <strong class="hl">25%</strong>.</li>
+          <li><span data-codex="item|Gravewyrm Bone Quiver">Gravewyrm Bone Quiver</span> (rare) — off <span data-codex="mob|Korzul the Gravewyrm">Korzul the Gravewyrm</span>: <strong class="hl">5%</strong>, as a bonus roll that steals nothing from other drops.</li>
+          <li><span data-codex="item|Direfang Quiver">Direfang Quiver</span> (epic) — from the <span data-codex="mob|Nythraxis, Scourge of Thornpeak">Nythraxis</span> raid: <strong class="hl">14%</strong>.</li>
+        </ul>
+        <p>Hunters were the only class whose off-hand stayed empty — details in the <a href="#classes">Classes</a> section.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="monde">
+    <h2><span class="num">03</span>A living world</h2>
+    <p class="sec-sub">The biggest visual overhaul in the game’s history — plus two complete systems: swimming and the character creator.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="monde" tabindex="0" role="button" aria-label="Details: the day-night cycle and world overhaul">
+        <h3>Day, night, and no more fog <span class="chip c-new">Major</span></h3>
+        <p>Sun and moon cross the sky, a <strong class="hl">clock</strong> joins the HUD, towns light their <strong class="hl">streetlamps</strong> — and the outdoor fog is gone: you can see the whole world.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card">
+        <h3>Real swimming <span class="chip c-new">New</span></h3>
+        <ul>
+          <li>Real strokes, camera diving, open-sea swell.</li>
+          <li>A <strong class="hl">breath gauge</strong> — that runs out, all the way to <strong class="hl">drowning</strong>. Surface in time.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>The character creator <span class="chip c-new">New</span></h3>
+        <ul>
+          <li>Hair, beards, earrings, makeup, outfits, jewelry materials — tabbed, with presets and free colors.</li>
+          <li>A <strong class="hl">Fit Studio</strong> to try gear on before wearing it, helmet preview included.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>Legendaries become unique <span class="chip c-bal">Rule</span></h3>
+        <p>Every legendary item is now <strong class="hl">unique-equipped, per family</strong>: no more twin legendary blades in both hands. If you were wearing two, the second one stays in the bag.</p>
+      </div>
+      <div class="card">
+        <h3>World repairs <span class="chip c-fix">Fixes</span></h3>
+        <ul>
+          <li>Two uncompletable <span data-codex="zone|Galecrest">Galecrest</span> quests are fixed, and so is the Scorched Stores crate.</li>
+          <li>Stale mob names refreshed, gathering nodes pulled out of the water.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="metiers">
+    <h2><span class="num">04</span>Professions get physical</h2>
+    <p class="sec-sub">The promised overhaul is here: crafting is no longer a click, it’s a gesture that takes time — and that players can commission from each other.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="craft" tabindex="0" role="button" aria-label="Details: cast-paced crafting and commissions">
+        <h3>Crafting becomes a cast <span class="chip c-new">Overhaul</span></h3>
+        <p>Every craft and every enchant now has a <strong class="hl">cast time</strong> shown on the recipe, with a progress bar and batch queue. Tools <strong class="hl">recharge</strong>.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card">
+        <h3>The map shows where to gather <span class="chip c-util">Handy</span></h3>
+        <ul>
+          <li><strong class="hl">Gather nodes</strong> now show on the zone map — no more blind grid-walking.</li>
+          <li>Skill-ups announce themselves as toasts, and materials show their <strong class="hl">profession affinity</strong> in tooltips.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Claws and tusks <span class="chip c-new">Gathering</span></h3>
+        <p>Beasts in <span data-codex="zone|The Drakelands">the Drakelands</span>, <span data-codex="zone|Willowfen">Willowfen</span> and <span data-codex="zone|Evergarden">Evergarden</span> can now be <strong class="hl">harvested</strong> for claws and tusks, two new material families.</p>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>Worth knowing <span class="chip c-bal">Rules</span></h3>
+        <ul>
+          <li>When fishing, <strong class="hl">reeling before the bite ends the session</strong> — button-mashing no longer pays, wait for the bite.</li>
+          <li>Reallocating your <strong class="hl">Town Focus</strong> is no longer free: free but slow (1 min per point), or paid in coin and <span data-codex="item|Chime Dust">Chime Dust</span> to go fast — cost shown before you confirm.</li>
+          <li>Training costs re-price when the market moves.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>For enchanters <span class="chip c-new">New</span></h3>
+        <ul>
+          <li>A basic <strong class="hl">off-hand</strong> enchant arrives (shields and held focuses): +3 Stamina, 5 <span data-codex="item|Chime Dust">Chime Dust</span> — the slot refused every enchant until now.</li>
+          <li>The <strong class="hl">masterwork seal</strong> now shows on items stored in the bank.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="classes">
+    <h2><span class="num">05</span>Classes &amp; spells</h2>
+    <p class="sec-sub">A real buff for everyone, one transformed class, and animations for all.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="chasseur" tabindex="0" role="button" aria-label="Details: the hunter">
+        <h3>Hunter: the off-hand and the pet <span class="chip c-new">At last</span></h3>
+        <p>Four <strong class="hl">quivers</strong> fill a slot that never served, and your <strong class="hl">pet inherits your gear</strong> instead of staying frozen at tame time.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card">
+        <h3>Mastery and talents: the whole hit <span class="chip c-bal">All ↑</span></h3>
+        <p>Mastery and talent percentages now apply to <strong class="hl">the entire hit</strong>, not just part of it. Your character sheet finally tells the truth — and your damage rises accordingly.</p>
+      </div>
+      <div class="card">
+        <h3>Every class gets its gestures <span class="chip c-eq">Visual</span></h3>
+        <p>New <strong class="hl">casting animations</strong> for the six caster classes, and bespoke attacks for a dozen monsters. Purely cosmetic: no combat value changes.</p>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>Fine tuning <span class="chip c-fix">Fixes</span></h3>
+        <ul>
+          <li><span data-codex="ability|mass_barrier">Mass Barrier</span> and Nature’s Fury no longer double-stack on the same target.</li>
+          <li>The warrior’s <span data-codex="ability|avatar">Avatar</span> correctly gets its half spell-damage reduction.</li>
+          <li>Casting <strong class="hl">auto-acquires</strong> an attacking target; eating stays compatible with natural regeneration.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>New setting <span class="chip c-util">Comfort</span></h3>
+        <p>An option to <strong class="hl">stop auto-attack on target switch</strong> — sheep-carers will appreciate it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="donjons">
+    <h2><span class="num">06</span>Dungeons, rifts &amp; bosses</h2>
+    <p class="sec-sub">No new boss this time — the PvP headliner took the slot — but rifts get more readable and less punishing.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Rifts enter the Book <span class="chip c-new">Deeds</span></h3>
+        <p>The <strong class="hl">Book of Deeds</strong> now covers procedural dungeons: rifts count, go collect them.</p>
+      </div>
+      <div class="card">
+        <h3>You keep your loot <span class="chip c-fix">Fix</span></h3>
+        <p>The <strong class="hl">corpse you carry</strong> follows you down rift floors — no more loot left behind.</p>
+      </div>
+      <div class="card">
+        <h3>More readable <span class="chip c-util">Comfort</span></h3>
+        <ul>
+          <li>The rift <strong class="hl">floor name</strong> shows on the world map.</li>
+          <li>Delve shop purchases and companion upgrades now require <strong class="hl">proximity</strong> — no more accidental remote buys.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="confort">
+    <h2><span class="num">07</span>Comfort &amp; technical</h2>
+    <p class="sec-sub">Tooltips that tell everything, an interface that tidies up, and a game that runs better on phones.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Honest tooltips <span class="chip c-util">Interface</span></h3>
+        <ul>
+          <li><strong class="hl">Per-slot</strong> stack caps on items, a “Use” line on elixirs.</li>
+          <li><strong class="hl">Elite</strong> and <strong class="hl">Boss</strong> status shown on monsters, threat gauge as a <strong class="hl">real comparison</strong>.</li>
+          <li>Shield block gets its own floating text and combat-log line.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>An interface that tidies up <span class="chip c-util">Settings</span></h3>
+        <ul>
+          <li>A new <strong class="hl">graphics submenu</strong>, and a real “reset to defaults”.</li>
+          <li>Unused action-bar slots can be <strong class="hl">hidden</strong>.</li>
+          <li>Gamepad: camera zoom is bindable; mobile: swipe-look, safe-area insets, a left frame for tablets.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>It runs better <span class="chip c-fix">Performance</span></h3>
+        <ul>
+          <li>On mobile the game starts on a <strong class="hl">light graphics preset</strong> — raise it if your phone keeps up.</li>
+          <li>Accessibility pass: real buttons, accessible names, keyboard focus in dialogs.</li>
+          <li>Rain is visible in Wraithwood, and Frostveil’s aurora learned some restraint.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    bg: {
+      title: "Thornhollow Fields, how it works",
+      summary: "Everything below is verified in the battleground code — not in the brochure.",
+      body: `
+        <h4>The match</h4>
+        <ul>
+          <li>Crimson versus Azure, <b>5 versus 5</b>, from <b>level 20</b>. Three captures win the match; twelve minutes maximum, with warnings at 2 min and 1 min left.</li>
+          <li>The queue keeps <b>parties together</b>: a full guild team faces five other players — never split up.</li>
+          <li>An eight-second form-up at the keeps before the flags go live.</li>
+        </ul>
+        <h4>The flag</h4>
+        <ul>
+          <li>Picking up is a <b>deliberate action</b>; returning your own flag happens by proximity — and it <b>beats</b> an enemy pickup played the same instant.</li>
+          <li>Holding too long makes the carrier <b>vulnerable</b>: past 75 seconds of team possession, they take +10% damage per stack, one stack every 15 seconds, uncapped. Camping is not a plan.</li>
+          <li><b>Speed runes</b> on the map, claimed on contact.</li>
+        </ul>
+        <h4>Death</h4>
+        <ul>
+          <li>Respawns come in <b>team waves every 10 seconds</b>, the two sides staggered by 5 — dying right after a wave is expensive.</li>
+          <li>A short spawn protection, broken by your first hostile action.</li>
+        </ul>
+        <h4>The ladder</h4>
+        <ul>
+          <li>A <b>team Elo</b>: everyone starts at 1,500, floored at 100 — what one side wins, the other loses. The top 10 shows on the scoreboard.</li>
+        </ul>`
+    },
+    honneur: {
+      title: "Honor: what pays, and how the grind breathes",
+      summary: "The amounts come from the code — and the anti-farm rule is worth knowing before you wonder.",
+      body: `
+        <h4>What pays</h4>
+        <ul>
+          <li>A win: <b>60</b> — and the <b>first win of the day</b> pays 80. A played-out loss or draw: <b>20</b>.</li>
+          <li>Killing blow: <b>5</b>; assist: <b>2</b>. Enough to make skirmishes away from the flag worth fighting.</li>
+        </ul>
+        <h4>The anti-farm rule</h4>
+        <ul>
+          <li>Replaying <b>against the same team</b> pays less and less — but never zero: the win award floors at 25% (15 points). On a quiet realm where the queue keeps pairing the same opponents, an honest match always pays something.</li>
+          <li>Farming the same player at the graveyard, though, stops paying after four killing blows on them.</li>
+          <li>A forfeit pays <b>nothing at all</b>.</li>
+        </ul>
+        <h4>Ranks, for life</h4>
+        <ul>
+          <li>Lifetime honor unlocks titles: <b>Sergeant</b> at 10,000, <b>Knight-Lieutenant</b> at 40,000, <b>Field Marshal</b> at 150,000. And <b>Flagbearer</b> at 25 battleground wins.</li>
+          <li>Spending at the quartermaster changes nothing: the rank meter never goes down.</li>
+        </ul>`
+    },
+    warfare: {
+      title: "The WARFARE catalogue, rebuilt piece by piece",
+      summary: "Honor gear already existed — it is rebuilt at heroic-dungeon item level, with a fifth family.",
+      body: `
+        <h4>The five families</h4>
+        <ul>
+          <li><b>Furyforged Battlegear</b> — mail, Strength and Stamina: warrior.</li>
+          <li><b>Stormbound Vestments</b> — caster mail: shaman.</li>
+          <li><b>Ashstalker Kit</b> — leather, Agility: rogue and hunter.</li>
+          <li><b>Cinderweave Regalia</b> — cloth: mage, warlock, priest.</li>
+          <li><b>Thornhide Garb</b> — caster leather: druid.</li>
+        </ul>
+        <h4>What actually changes</h4>
+        <ul>
+          <li>The whole tier moves to <b>item level 31</b> — heroic-dungeon level: honor gear is competitive again.</li>
+          <li><b>Thornhide Garb</b> (caster leather) joins: the caster druid finally gets a dedicated family.</li>
+          <li>Seven armor pieces per family — neck, rings and weapons stay outside the sets, but the catalogue sells those too (weapons at 1,200, jewelry 275–400).</li>
+          <li>Epic, <b>level 20 required</b>, bind on pickup. Armor from <b>450</b> to <b>1,200</b> honor per piece.</li>
+          <li>Every piece carries <b>PvP offense and defense</b> on top of its stats — their edge over dungeon gear.</li>
+        </ul>
+        <p class="summary" style="margin-top:18px;border:0;padding:0">Full per-piece numbers are in the <a href="../codex/">Codex</a>, and per-class PvP BiS lands on the <a href="../bis.html">Builds</a> page at the next recompute.</p>`
+    },
+    monde: {
+      title: "The day-night cycle and the world overhaul",
+      summary: "The biggest visual overhaul in the game’s history — and it changes how you navigate.",
+      body: `
+        <h4>Time actually passes</h4>
+        <ul>
+          <li>A <b>sun and a moon</b> cross the sky — the moon has craters, a terminator and a dark side — with real dawns, real dusks, and a <b>clock</b> in the HUD.</li>
+          <li>At night, towns light their <b>streetlamps</b> — solid ones, too: you no longer walk through them — and monsters gain a soft glow to stay readable.</li>
+        </ul>
+        <h4>The fog is gone</h4>
+        <ul>
+          <li>The veil that blocked the horizon is <b>removed</b>: mountains, towns and neighboring zones’ weather are visible from anywhere. Each zone keeps its own atmosphere, visible even from afar.</li>
+        </ul>
+        <h4>And the rest</h4>
+        <ul>
+          <li>The <b>water</b> is redone: swell, waves, a translucent film at the waterline, open-sea swimming.</li>
+          <li><b>Meadows and terrain</b> reworked — dense grass underfoot, eroded hills and ridged crags in the distance, crisp far trees.</li>
+          <li>Warmer standing daylight, a bolder golden hour.</li>
+        </ul>`
+    },
+    craft: {
+      title: "Cast-paced crafting and the commission board",
+      summary: "Crafting is no longer a click: it’s a gesture that takes time, can be interrupted, and can be commissioned.",
+      body: `
+        <h4>The gesture</h4>
+        <ul>
+          <li>Every recipe now shows its <b>cast time</b> on a chip; crafting has a progress bar, batches queue up, moving interrupts.</li>
+          <li><b>Enchanting</b> follows the same pace — no more instant enchants mid-auction-war.</li>
+          <li><b>Tools recharge</b> instead of silently wearing out, and their charms finally explain themselves in tooltips.</li>
+        </ul>
+        <h4>The commission board</h4>
+        <ul>
+          <li><b>Post, accept, deliver, cancel</b>: you commission an item from a crafter — yours or another guild’s — with materials and payment escrowed up front.</li>
+          <li>A commission can be <b>reserved for one person</b>: handy for circulating gold inside the guild.</li>
+        </ul>
+        <h4>Why this is good news</h4>
+        <p>Crafting becomes a trade you <b>practice</b>, not a tab you empty. Crafters are visible in town, commissions create player-to-player commerce, and cast time finally puts a price on the work — not just the materials.</p>`
+    },
+    chasseur: {
+      title: "The hunter: an off-hand, and a pet that actually follows you",
+      summary: "Two historical anomalies repaired — verified in the pet code.",
+      body: `
+        <h4>The off-hand</h4>
+        <ul>
+          <li>Hunters were the <b>only class</b> with nothing to put in the off-hand: no dual wield, and no shield or held focus accepted them. That whole stat budget was lost.</li>
+          <li>Four <b>hunter-only quivers</b> reclaim it, one per tier: uncommon (Mogger, 20%), rare (Old Cragmaw, 25%), dungeon rare (Korzul, 5%), epic (Nythraxis raid, 14%) — the last two with heroic versions — Agility-led, matched to leather.</li>
+        </ul>
+        <h4>The pet</h4>
+        <ul>
+          <li>It <b>inherits your gear</b>: 25% of your health, 35% of your armor, 22% of your ranged attack power. Until now it stayed frozen at the tamed mob’s stats — the beast you picked decided your damage, your gear did nothing.</li>
+          <li>Bonus: inheritance <b>narrows the gap between beasts</b> — a flat share is worth proportionally more to a small starter pet.</li>
+          <li>It <b>tracks your actual speed</b>, mounts included, instead of running at a fixed pace and emergency-teleporting.</li>
+          <li>Its health shows on group frames, its hits reach your combat log, and it <b>survives in arenas</b>.</li>
+        </ul>`
+    },
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

@@ -628,6 +628,31 @@
   },
   "boundstone_vanguard": {
    "3": "Augmente la vitesse d'attaque et d'incantation de 7,5 %."
+  },
+  "warfare_furyforged": {
+   "2": "Augmente la défense WARFARE de 40.",
+   "4": "Augmente l'attaque WARFARE de 40, et le contrôle des foules que les joueurs ennemis te lancent dure 15 % de moins.",
+   "7": "Augmente l'attaque et la défense WARFARE de 80. Tuer un joueur ennemi confère Unbroken Oath, qui absorbe 200 points de dégâts pendant 10 s."
+  },
+  "warfare_stormbound": {
+   "2": "Augmente la défense WARFARE de 40.",
+   "4": "Augmente l'attaque WARFARE de 40, et le contrôle des foules que les joueurs ennemis te lancent dure 15 % de moins.",
+   "7": "Augmente l'attaque et la défense WARFARE de 80. Tes sorts ont 15 % de chances de conférer Emberward, qui absorbe 120 points de dégâts pendant 8 s."
+  },
+  "warfare_ashstalker": {
+   "2": "Augmente la défense WARFARE de 40.",
+   "4": "Augmente l'attaque WARFARE de 40, et le contrôle des foules que les joueurs ennemis te lancent dure 15 % de moins.",
+   "7": "Augmente l'attaque et la défense WARFARE de 80. Tuer un joueur ennemi confère Ashen Step, qui augmente ta vitesse de déplacement de 40 % pendant 6 s."
+  },
+  "warfare_cinderweave": {
+   "2": "Augmente la défense WARFARE de 40.",
+   "4": "Augmente l'attaque WARFARE de 40, et le contrôle des foules que les joueurs ennemis te lancent dure 15 % de moins.",
+   "7": "Augmente l'attaque et la défense WARFARE de 80. Tes sorts ont 15 % de chances de conférer Emberward, qui absorbe 120 points de dégâts pendant 8 s."
+  },
+  "warfare_thornhide": {
+   "2": "Augmente la défense WARFARE de 40.",
+   "4": "Augmente l'attaque WARFARE de 40, et le contrôle des foules que les joueurs ennemis te lancent dure 15 % de moins.",
+   "7": "Augmente l'attaque et la défense WARFARE de 80. Tes sorts ont 15 % de chances de conférer Thornguard, qui augmente ton esquive de 15 % pendant 6 s."
   }
  },
  "_src": {
@@ -1178,6 +1203,21 @@
   "talent\thunter/hun_r8_frost_trap": "cbbdbef7",
   "talent\twarlock/wlk_r8_curse_of_exhaustion": "f9f40f03",
   "talent\tpriest/pri_r20_prayer_of_healing": "eff27362",
-  "talent\tpriest/pri_r8_silence": "c9561b22"
+  "talent\tpriest/pri_r8_silence": "c9561b22",
+  "set\twarfare_furyforged\t2": "cdb1e4a2",
+  "set\twarfare_furyforged\t4": "9b759dad",
+  "set\twarfare_furyforged\t7": "0790155a",
+  "set\twarfare_stormbound\t2": "cdb1e4a2",
+  "set\twarfare_stormbound\t4": "9b759dad",
+  "set\twarfare_stormbound\t7": "5d0e376f",
+  "set\twarfare_ashstalker\t2": "cdb1e4a2",
+  "set\twarfare_ashstalker\t4": "9b759dad",
+  "set\twarfare_ashstalker\t7": "882b618a",
+  "set\twarfare_cinderweave\t2": "cdb1e4a2",
+  "set\twarfare_cinderweave\t4": "9b759dad",
+  "set\twarfare_cinderweave\t7": "5d0e376f",
+  "set\twarfare_thornhide\t2": "cdb1e4a2",
+  "set\twarfare_thornhide\t4": "9b759dad",
+  "set\twarfare_thornhide\t7": "5026422c"
  }
 }
