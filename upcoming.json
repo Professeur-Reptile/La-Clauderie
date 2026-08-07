@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-07T03:33:07Z",
+ "generated": "2026-08-07T09:35:19Z",
  "base_tag": "v0.34.0",
  "version": "v0.35.0",
  "branch": "release/v0.35.0",
  "declared_version": "0.34.0",
  "imminent": false,
- "commits": 710,
- "shown": 443,
- "last_commit": "2026-08-07T03:14:08Z",
+ "commits": 809,
+ "shown": 489,
+ "last_commit": "2026-08-07T09:21:53Z",
  "sections": [
   {
    "key": "classes",
@@ -114,6 +114,13 @@
      "date": "2026-08-06"
     },
     {
+     "h": "7ba106fd",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Gate the bow cast pose, and land the aim predicate it needs",
+     "date": "2026-08-06"
+    },
+    {
      "h": "6a73d14f",
      "kind": "fix",
      "scope": "sim",
@@ -132,6 +139,13 @@
      "kind": "fix",
      "scope": "sim",
      "text": "Dedupe Mass Barrier and Nature's Fury like every other group buff",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "5b128b4b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Aim a bow only for a drawn SHOT, not every cast",
      "date": "2026-08-05"
     },
     {
@@ -332,6 +346,13 @@
      "date": "2026-08-05"
     },
     {
+     "h": "66e41947",
+     "kind": "fix",
+     "scope": "test",
+     "text": "Supply the crafting window's onOpenOrders dep",
+     "date": "2026-08-05"
+    },
+    {
      "h": "4a687d0a",
      "kind": "fix",
      "scope": "fishing",
@@ -522,6 +543,13 @@
      "date": "2026-08-05"
     },
     {
+     "h": "44cadb5b",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "Carry a corpse forward when the party descends a floor",
+     "date": "2026-08-05"
+    },
+    {
      "h": "f4534917",
      "kind": "fix",
      "scope": "ui",
@@ -568,6 +596,13 @@
      "kind": "fix",
      "scope": "content",
      "text": "Show Heroic Nythraxis' Dread Curse in the Dungeon Finder mechanics preview",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "83b9b9c9",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Wire the pet keybind label, exclude delve companions",
      "date": "2026-08-04"
     },
     {
@@ -684,6 +719,13 @@
      "date": "2026-08-03"
     },
     {
+     "h": "9b2c372b",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Match the crate comment to what the guard proves, pin test thresholds",
+     "date": "2026-08-07"
+    },
+    {
      "h": "a94c95e1",
      "kind": "fix",
      "scope": "render",
@@ -768,6 +810,13 @@
      "date": "2026-08-05"
     },
     {
+     "h": "cacc8782",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Lift the Scorched Stores crate off the Last Keep curtain wall",
+     "date": "2026-08-05"
+    },
+    {
      "h": "a00b8f50",
      "kind": "fix",
      "scope": "ui",
@@ -846,6 +895,13 @@
    "en": "Guild & social",
    "items": [
     {
+     "h": "1cd79475",
+     "kind": "feat",
+     "scope": "guild-bank",
+     "text": "Give every guild member a read-only bank view",
+     "date": "2026-08-06"
+    },
+    {
      "h": "4600b5f9",
      "kind": "feat",
      "scope": "ui",
@@ -860,6 +916,20 @@
      "date": "2026-08-05"
     },
     {
+     "h": "705715a2",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Pet health slivers on party frames",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "5ed406f9",
+     "kind": "fix",
+     "scope": "guild-bank",
+     "text": "Address PR review on the member read-only view",
+     "date": "2026-08-07"
+    },
+    {
      "h": "5be245c6",
      "kind": "fix",
      "scope": "bot",
@@ -871,6 +941,20 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Format rank/level/prestige as numbers in High Scores and Leaderboard",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "bbca6e1d",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Re-emit the party pet label on a language switch",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "7c17a24c",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Fold the pet name into the party frame signature",
      "date": "2026-08-06"
     },
     {
@@ -994,6 +1078,27 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "f486841e",
+     "kind": "feat",
+     "scope": "creator",
+     "text": "Modular character creator, tabbed appearance UI, and the Fit Studio",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "fa7a4322",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Add Thornhide Garb, the leather caster WARFARE family",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "18cf3452",
+     "kind": "feat",
+     "scope": "sim,render,game,ui",
+     "text": "Swimming update - strokes, diving, breath, wakes",
+     "date": "2026-08-07"
+    },
+    {
      "h": "0eeb7546",
      "kind": "feat",
      "scope": "graphics",
@@ -1005,6 +1110,48 @@
      "kind": "feat",
      "scope": "input",
      "text": "Let a gamepad button be bound to camera zoom",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "3f845371",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "WARFARE set-bonus engine seams for the PvP tier refactor",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "76b6bef5",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Rebuild the WARFARE honor tier at item level 31 with four sets",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "9d72b3ce",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Drop the owned-count line from the WARFARE shop",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "d7f58d7a",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Drop the set bonus lines from the WARFARE shop",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "1371ba55",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Persistent stunned-star band over any stunned entity",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "a1977186",
+     "kind": "feat",
+     "scope": "render",
+     "text": "One uniform yellow for the stunned-star band",
      "date": "2026-08-06"
     },
     {
@@ -1103,6 +1250,27 @@
      "kind": "feat",
      "scope": "ui",
      "text": "Mark fine materials in the bag grid",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "aad3a192",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Pet health frame under the player frame",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "813486d4",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Move the pet frame above the player frame",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "574ac25e",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Put the pet bar and pet health in one cluster row",
      "date": "2026-08-04"
     },
     {
@@ -1232,6 +1400,13 @@
      "date": "2026-08-07"
     },
     {
+     "h": "736e810c",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Stop the weapon-skin VFX connection freeze (re-land of #2983)",
+     "date": "2026-08-07"
+    },
+    {
      "h": "35cb6aaa",
      "kind": "perf",
      "scope": "render",
@@ -1251,6 +1426,90 @@
      "scope": "render",
      "text": "Stop the weapon-skin VFX connection freeze",
      "date": "2026-08-05"
+    },
+    {
+     "h": "62950c6e",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Make the pet sliver informational where it is too small to hit",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "36307865",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stun-band cap must not silence a dropped band, and must rank on-screen first",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "582b353f",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Close the WARFARE review findings, mostly the Thornhide catch-up",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "b01270cf",
+     "kind": "fix",
+     "scope": "creator",
+     "text": "Mount the customizer on /play, drop the device-wide helm store",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "2ae8ad2d",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2978 into integration/pr-batch-v0350",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "054a5d4c",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3025 into integration/pr-batch-v0350",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "1e88544f",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3030 into integration/pr-batch-v0350",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "8f826032",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2951 into integration/pr-batch-v0350",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "484a4ec9",
+     "kind": "fix",
+     "scope": "sim,render",
+     "text": "Reachable breath reset, anim sweep weight, fall clamp",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "0180d758",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.35.0 into feature/swimming-strokes-and-ripples",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "8a72a1e6",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.35.0 into feature/character-creator-modular",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "8a72a1e6",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.35.0 into feature/character-creator-modular",
+     "date": "2026-08-07"
     },
     {
      "h": "60f34140",
@@ -1617,6 +1876,27 @@
      "date": "2026-08-06"
     },
     {
+     "h": "9514e469",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Resize the battleground daily bonus and floor its result decay",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "574afc8e",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Apply review findings from the determinism and coverage passes",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "5272e263",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Close nine review findings in the WARFARE shop window",
+     "date": "2026-08-06"
+    },
+    {
      "h": "59b98345",
      "kind": "fix",
      "scope": "",
@@ -1729,6 +2009,13 @@
      "date": "2026-08-06"
     },
     {
+     "h": "58e877d5",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bound, hand off, and pin the stunned-star band per QA review",
+     "date": "2026-08-06"
+    },
+    {
      "h": "e580c82e",
      "kind": "fix",
      "scope": "",
@@ -1796,6 +2083,13 @@
      "kind": "fix",
      "scope": "ui",
      "text": "QA round for the max-stack tooltip line",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "ccaf9fb3",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Apply the review findings, less the three deferred to their own pass",
      "date": "2026-08-06"
     },
     {
@@ -1908,6 +2202,13 @@
      "kind": "fix",
      "scope": "",
      "text": "Sync release base into ossbrain-release/v0.35.0",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "20f7a13a",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Nudge the pet strip with every bottom-column rule",
      "date": "2026-08-05"
     },
     {
@@ -2251,6 +2552,13 @@
      "kind": "fix",
      "scope": "",
      "text": "Bring release/v0.35.0 into the mobile low-graphics default",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "3267eb92",
+     "kind": "fix",
+     "scope": "",
+     "text": "Take release's inherited-CI repair",
      "date": "2026-08-05"
     },
     {
@@ -2877,6 +3185,13 @@
      "date": "2026-08-04"
     },
     {
+     "h": "122c0271",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Aim a bow when shooting, not whenever any one-shot plays",
+     "date": "2026-08-04"
+    },
+    {
      "h": "1e0c04be",
      "kind": "fix",
      "scope": "",
@@ -2944,6 +3259,13 @@
      "kind": "fix",
      "scope": "render",
      "text": "Default every mobile device to the low graphics preset",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "48e54568",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Align the pet frame to the player frame and carry it on drag",
      "date": "2026-08-04"
     },
     {
