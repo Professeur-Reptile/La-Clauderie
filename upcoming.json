@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-06T12:28:27Z",
+ "generated": "2026-08-07T00:26:06Z",
  "base_tag": "v0.34.0",
  "version": "v0.35.0",
  "branch": "release/v0.35.0",
  "declared_version": "0.34.0",
  "imminent": false,
- "commits": 256,
- "shown": 134,
- "last_commit": "2026-08-06T07:22:39-05:00",
+ "commits": 303,
+ "shown": 136,
+ "last_commit": "2026-08-06T19:13:06-05:00",
  "sections": [
   {
    "key": "classes",
@@ -665,6 +665,13 @@
      "date": "2026-08-02"
     },
     {
+     "h": "5f07c1b4",
+     "kind": "perf",
+     "scope": "market",
+     "text": "Memoize the browse sort and gate the market wire on change + cadence",
+     "date": "2026-08-07"
+    },
+    {
      "h": "35cb6aaa",
      "kind": "perf",
      "scope": "render",
@@ -732,6 +739,13 @@
      "kind": "fix",
      "scope": "",
      "text": "Release/v0.35.0 into feature/ci-merge-queue",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "af6d5944",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Give elixirs a Use line in item tooltips",
      "date": "2026-08-06"
     },
     {
