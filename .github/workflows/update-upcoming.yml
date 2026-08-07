@@ -51,13 +51,23 @@ jobs:
             echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0
           fi
 
-          # La branche de release la plus haute AU-DESSUS de ce tag. Le jeu
-          # garde toutes ses vieilles branches release/* : on ne veut que celle
-          # qui prépare la suite.
+          # La PLUS BASSE branche de release au-dessus de ce tag : c'est elle
+          # qui sortira ensuite. Le jeu garde ses vieilles branches release/*
+          # (d'où « au-dessus du tag ») et ouvre parfois celle d'APRÈS en
+          # parallèle — release/v0.36.0 pendant que la v0.35.0 se terminait,
+          # le 7 août 2026 : « la plus haute » aurait annoncé la mauvaise
+          # version dans les deux sens.
           branch=$(git ls-remote --heads "$GAME" 'refs/heads/release/v*' \
-            | awk -F'refs/heads/' '{print $2}' | sort -V | tail -1)
-          want=$(printf '%s\n%s\n' "$base" "${branch##*/}" | sort -V | tail -1)
-          if [ -z "$branch" ] || [ "$want" = "$base" ]; then
+            | awk -F'refs/heads/' '{print $2}' | sort -V \
+            | python3 -c "
+          import sys
+          def key(v): return [int(x) for x in v.lstrip('v').split('.')]
+          for line in sys.stdin:
+              b = line.strip()
+              if b and key(b.rsplit('/', 1)[-1]) > key(sys.argv[1]):
+                  print(b); break
+          " "$base")
+          if [ -z "$branch" ]; then
             echo "Aucune branche de release au-dessus de $base — rien à annoncer."
             # La version précédemment annoncée vient de sortir : vider la page,
             # sinon elle continuerait de présenter comme « à venir » quelque
