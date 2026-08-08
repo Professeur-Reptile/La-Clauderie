@@ -168,12 +168,6 @@
   .warn p + p { margin-top: 7px; color: var(--dim); font-size: 0.89rem; }
   .warn a { color: var(--gold-bright); }
 
-  /* « Prochaine mise à jour » : c'est l'information qui dit quand revenir,
-     elle ne doit pas se perdre dans le gris de la ligne de méta. */
-  #next { color: var(--gold-bright); }
-  #next b { color: var(--gold-bright); }
-  #next .a { color: var(--faint); }
-
   /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque version. */
   .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
   .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
@@ -217,7 +211,6 @@
       <span><b>Depuis</b> la v0.35.1</span>
         <span id="freshness"><b>Relevé</b> à l’instant</span>
     <span id="written"><b>Résumé écrit</b> le 8 août 2026 à 10 h 55</span>
-      <span id="next"></span>
     </div>
     <div id="chantiers"></div>
     <div class="hint">💡 Clique sur une carte pour le détail — et sur un nom souligné pour sa fiche Codex.</div>
@@ -503,37 +496,11 @@
     out.innerHTML = "<b>" + (en ? "Summary written" : "Résumé écrit") + "</b> " + quand;
   })();
 
-  // « Prochaine relecture » : le résumé est réécrit deux fois par jour, à
-  // 03:00 et 15:00 UTC (5 h et 17 h à Paris l'été). On l'annonce pour que le
-  // lecteur sache quand revenir, au lieu de rafraîchir dans le vide — et dans
-  // SON fuseau, comme la date de rédaction.
-  const MAJ_UTC = [3, 15];
-  (function () {
-    const out = document.getElementById("next");
-    if (!out) return;
-    const now = new Date();
-    let next = null;
-    for (let jour = 0; jour <= 1 && !next; jour++) {
-      for (const h of MAJ_UTC) {
-        const t = new Date(Date.UTC(
-          now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + jour, h, 0, 0));
-        if (t > now) { next = t; break; }
-      }
-    }
-    if (!next) return;
-    let en = false;
-    try { en = localStorage.getItem("lang") === "en"; } catch (e) { /* stockage refusé */ }
-    const heure = next.toLocaleTimeString(en ? "en-GB" : "fr-FR", { hour: "2-digit", minute: "2-digit" });
-    const min = Math.max(1, Math.round((next - now) / 60000));
-    const dans = min < 60
-      ? (en ? `in ${min} min` : `dans ${min} min`)
-      : (en ? `in ${Math.round(min / 60)} h` : `dans ${Math.round(min / 60)} h`);
-    // Dire « de la page » : « prochaine mise à jour » se lisait comme la
-    // sortie du jeu lui-même (remarque du 7 août 2026). La sortie du jeu, elle,
-    // est annoncée par le badge « sortie imminente » quand le jeu la déclare.
-    out.innerHTML = "<b>" + (en ? "Page re-checked" : "Prochaine relecture de la page") + "</b> "
-      + dans + " <span class=\"a\">(" + heure + ")</span>";
-  })();
+  // Il y avait ici un « Prochaine relecture de la page dans X h », calé sur
+  // les passages 03:00 / 15:00 UTC d'une Routine Claude. Cette Routine a été
+  // supprimée le 8 août 2026 : le résumé est maintenant réécrit à la main,
+  // donc plus aucune heure à promettre au lecteur. La date de rédaction
+  // (« Résumé écrit ») suffit — elle, elle reste vraie.
 
   function since(iso) {
     const t = Date.parse(iso || ""); if (!t) return "";
