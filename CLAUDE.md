@@ -10,15 +10,13 @@ miroir GitHub Pages : retiré le 6 août 2026, il échouait 2 fois sur 3 (voir
 
 ## ⚡ Quand l'utilisateur dit « il y a une nouvelle MAJ »
 
-> **Normalement, même ça, c'est automatique** : une Routine Claude horaire
-> (« Nouvelle version WoCC — rédaction », créée le 6 août 2026 — la précédente
-> n'existait plus, d'où huit issues « Nouveautés à ajouter » restées ouvertes
-> depuis le 23 juillet) détecte toute version absente de
-> `patch-notes.json` et déroule elle-même la procédure ci-dessous. Si
-> l'utilisateur le demande à la main, c'est pour publier tout de suite sans
-> attendre le prochain passage — même procédure. Avant de commencer, vérifier
-> que la version n'est pas déjà en tête de `patch-notes.json` sur `origin/main`
-> (la Routine est peut-être passée avant toi) ; si c'est le cas, ne rien refaire.
+> **Ce n'est plus automatique.** La Routine Claude « Nouvelle version WoCC —
+> rédaction » a été SUPPRIMÉE le 8 août 2026 : elle tournait toutes les heures
+> et consommait des tokens. C'est donc l'utilisateur qui déclenche, et la
+> procédure ci-dessous est le seul circuit. Avant de commencer, vérifier
+> que la version n'est pas déjà en tête de `patch-notes.json` sur `origin/main`.
+> Penser aussi à fermer l'issue « Nouveautés à ajouter » que
+> `check-game-version.yml` ouvre de son côté — plus personne ne le fait.
 
 Tout le reste est automatisé (voir plus bas) — **ne le refais pas**. Ta tâche
 se limite à la partie rédactionnelle des « Nouveautés » :
@@ -159,11 +157,9 @@ avant de t'appuyer dessus pour le BiS ou les liens Codex.
 | Données du Codex | `wocc-knowledge-base` → `update-knowledge-base.yml` | ~5 min après chaque tag du jeu |
 | **Builds / BiS** (`bis.html`) | `update-bis.yml` → `compute_bis.py` + `inject_bis.py` | cron horaire ; s'arrête en ~10 s si la KB n'a pas bougé (`scripts/.kb-state`) — elle ne change qu'à chaque version du jeu |
 | **Récolte & Métiers** (`metiers.html`) | `update-bis.yml` → `build_craft.py` + `inject_craft.py` | idem |
-| **Rédaction des « Nouveautés »** | Routine Claude « Nouvelle version WoCC — rédaction » : compare le dernier tag du jeu à `patch-notes.json[0]`, ne fait rien s'ils concordent, sinon déroule la procédure ⚡ et ferme l'issue | toutes les heures |
 | Classement guilde (`guild.json`) | `update-guild-rank.yml` | toutes les 3 h |
 | Déploiement (OVH) | `deploy.yml` (vérifie, puis envoie par FTP) | à chaque push `main` (+ cron 6 h pour rafraîchir la copie du Codex) |
 | **Aperçu de la version à venir** (`a-venir.html`) | `update-upcoming.yml` → `build_upcoming.py` lit TOUTES les branches `release/*` au-dessus du dernier tag (le jeu mène parfois un correctif v0.35.1 ET la v0.36.0 en parallèle — les deux comptent, demande du 7 août 2026) | toutes les 2 h ; ne commite/republie que si l'ensemble des chantiers, une imminence, ou ≥ 25 commits bougent |
-| **Réécriture de l'aperçu** (partie rédigée d'`a-venir.html`) | Routine Claude « Page « À venir » (WoCC) » : ne réécrit QUE si la version change ou si la branche a pris ≥ 25 commits depuis `data-commits` | 2×/jour, 03 h et 15 h UTC (annoncées sur la page) |
 | Pré-alerte « sortie imminente » | même workflow : ouvre une issue dès que `package.json` monte de version sur la branche de release | toutes les 2 h |
 | Rappel « version manquante » (filet de secours) | `check-game-version.yml` ouvre une issue | toutes les heures |
 
@@ -173,19 +169,19 @@ avant de t'appuyer dessus pour le BiS ou les liens Codex.
 > affiche un bandeau par chantier (commits, fraîcheur, imminence) tout seul.
 > L'ÉDITORIAL, lui, couvre toujours la version LA PLUS HAUTE (la grande),
 > avec une courte section « Le correctif vX.Y.Z » en tête si un correctif se
-> prépare aussi — c'est la Routine qui l'écrit, guidée par `data-for`,
+> prépare aussi — à écrire à la main, guidé par `data-for`,
 > `data-commits` et `data-chantiers` sur `#editorial`. Les NOTES d'un
-> correctif sorti, elles, ne changent pas de circuit : la Routine de
-> rédaction se déclenche sur tout nouveau tag, x.1 compris.
+> correctif sorti, elles, passent par la procédure ⚡ ci-dessus,
+> x.1 compris.
 >
 > **`a-venir.html` a deux moitiés.** Le haut est une VRAIE page de notes,
 > rédigée à la main sur le gabarit de `notes/vX.Y.Z.html` (même bandeau,
 > mêmes cartes, mêmes fiches au clic) — demande du 6 août 2026 : « fais-moi
 > la page habituelle, juste pour à venir ». Elle porte `data-for="vX.Y.Z"`
 > sur `#editorial` : dès que `upcoming.json` annonce une autre version (ou
-> plus rien), cette partie se masque toute seule et le dit. À réécrire quand
-> le jeu passe à préparer une nouvelle version — c'est le travail de la
-> Routine quotidienne, qui se déclenche sur `data-commits` (le nombre de
+> plus rien), cette partie se masque toute seule et le dit. À réécrire à la
+> main quand le jeu passe à préparer une nouvelle version, ou quand la
+> branche a beaucoup grossi depuis `data-commits` (le nombre de
 > commits à partir duquel le texte a été écrit) : la branche grossit vite,
 > 99 → 256 commits en une journée le 6 août 2026, donc un texte figé se
 > périme en quelques heures. Ne JAMAIS y mettre de chiffre
