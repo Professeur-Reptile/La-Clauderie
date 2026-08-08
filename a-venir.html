@@ -203,7 +203,7 @@
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · En préparation</p>
     <h1>La prochaine version <span class="v" id="vNum">v0.36.0</span></h1>
-    <p class="lede">La v0.35.0 est sortie ce matin — ses notes complètes sont dans <a href="patch-notes.html">Nouveautés</a>. La branche de la v0.36.0 vient d’ouvrir, et son programme est déjà annoncé : une <strong class="hl">refonte de cinq classes</strong> — Chasseur, Chaman, Prêtre, Druide, Démoniste — accompagnée d’un programme d’équilibrage. Elle se prépare en intégration et n’est <strong class="hl">pas encore mergée</strong> : la page s’étoffera à mesure que la branche se remplit.</p>
+    <p class="lede">La v0.35.1 est sortie ce matin — une version d’entretien, ses notes sont dans <a href="patch-notes.html">Nouveautés</a>. La branche de la v0.36.0, elle, s’est bien remplie : <strong class="hl">près de deux cents commits</strong> déjà mergés. Au programme visible pour l’instant : le chasseur qui récupère son arme à deux mains sous son carquois, une file d’arène classée qui ferme enfin ses portes ouvertes, et une longue liste de confort — tri des sacs, temps de jeu, chiffres d’absorption, musique de retour sur le client de bureau.</p>
 
     <div class="warn">
       <span class="ico" aria-hidden="true">⚠️</span>
@@ -214,9 +214,9 @@
     </div>
 
     <div class="meta">
-      <span><b>Depuis</b> la v0.35.0</span>
+      <span><b>Depuis</b> la v0.35.1</span>
         <span id="freshness"><b>Relevé</b> à l’instant</span>
-      <span id="written"><b>Résumé écrit</b> le 7 août 2026 à 17 h 45</span>
+    <span id="written"><b>Résumé écrit</b> le 8 août 2026 à 10 h 55</span>
       <span id="next"></span>
     </div>
     <div id="chantiers"></div>
@@ -225,17 +225,17 @@
 
   <nav class="digest" aria-labelledby="digest-title">
     <h2 id="digest-title">En un coup d’œil</h2>
-    <p class="sec-sub">Les mêmes rubriques qu’à chaque version, dans le même ordre. La branche vient d’ouvrir : la plupart sont encore vides.</p>
+    <p class="sec-sub">Les mêmes rubriques qu’à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
     <ol>
       <li>
         <span class="d-ico" aria-hidden="true">⚔️</span>
         <a class="d-name" href="#classes">Classes &amp; sorts</a>
-        <span class="d-say"><strong class="hl">Refonte annoncée de cinq classes</strong> (Chasseur, Chaman, Prêtre, Druide, Démoniste) — en intégration, pas encore mergée · <b class="eq">Chasseur =</b> animations d’attaque en cours</span>
+        <span class="d-say"><b class="up">Chasseur ↑</b> arme à deux mains et carquois enfin compatibles — au prix d’un carquois moins généreux en statistiques · <b class="eq">Toutes =</b> une dizaine de monstres gagnent leurs attaques signature, purement visuel</span>
       </li>
-      <li class="none">
+      <li>
         <span class="d-ico" aria-hidden="true">🔨</span>
-        <span class="d-name">Métiers &amp; récolte</span>
-        <span class="d-say">—</span>
+        <a class="d-name" href="#confort">Métiers &amp; récolte</a>
+        <span class="d-say">La marque « matériau fin » enfin peinte dans les cases de la banque et de la banque de guilde.</span>
       </li>
       <li class="none">
         <span class="d-ico" aria-hidden="true">🐉</span>
@@ -247,15 +247,15 @@
         <span class="d-name">Monde &amp; quêtes</span>
         <span class="d-say">—</span>
       </li>
-      <li class="none">
+      <li>
         <span class="d-ico" aria-hidden="true">🏰</span>
-        <span class="d-name">Guilde &amp; social</span>
-        <span class="d-say">—</span>
+        <a class="d-name" href="#pvp">Guilde &amp; social</a>
+        <span class="d-say">L’arène classée reçoit un niveau minimum et cesse de payer l’Honneur sur un forfait ; les quotidiennes se remettent à zéro avec le royaume, plus à minuit UTC.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">⚙️</span>
         <a class="d-name" href="#confort">Confort &amp; technique</a>
-        <span class="d-say">Un démarrage plus rapide : la langue se charge en même temps que les décors.</span>
+        <span class="d-say">Tri des sacs en un clic, temps de jeu à vie sur la fiche, chiffres d’absorption enfin visibles côté attaquant — et la musique revient sur le client de bureau.</span>
       </li>
     </ol>
   </nav>
@@ -263,37 +263,102 @@
   <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
        s'efface d'elle-même quand cette version sort, et se signale périmée si
        le jeu passe à préparer la suivante. -->
-  <div id="editorial" data-for="v0.36.0" data-commits="37" data-chantiers="v0.36.0" data-written="2026-08-07T17:45+02:00">
+  <div id="editorial" data-for="v0.36.0" data-commits="198" data-chantiers="v0.36.0" data-written="2026-08-08T10:55+02:00">
 
   <!-- 1 CLASSES -->
   <section id="classes">
-    <div class="sec-head"><span class="sec-num">01</span><h2>La refonte des cinq classes</h2></div>
-    <p class="sec-sub">Le programme affiché de la version — préparé à part, en intégration, avec un programme d’équilibrage. Pas encore mergé sur la branche : tout peut bouger.</p>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Le chasseur récupère son arme à deux mains</h2></div>
+    <p class="sec-sub">Une anomalie née avec les carquois de la v0.35.0, corrigée à la racine — et une dizaine de monstres qui apprennent enfin à frapper autrement.</p>
     <div class="grid cols-2">
-      <div class="card more" data-detail="refonte" tabindex="0" role="button" aria-label="Détails : la refonte des cinq classes">
-        <h3>Chasseur, Chaman, Prêtre, Druide, Démoniste <span class="chip c-new">Annoncée</span></h3>
-        <p>Cinq refontes de classes composées ensemble sur la base de la version, puis passées par un <strong class="hl">programme d’équilibrage</strong> que les développeurs annoncent comme « l’écart entre classes le plus serré jamais mesuré ». C’est le chantier d’intégration visible côté jeu.</p>
+      <div class="card more" data-detail="carquois" tabindex="0" role="button" aria-label="Détails : le carquois et l’arme à deux mains">
+        <h3>Carquois et deux mains, enfin ensemble <span class="chip c-new">Correctif de fond</span></h3>
+        <p>Équiper un carquois <strong class="hl">déséquipait votre arme à deux mains</strong> : le jeu la traitait comme une main gauche ordinaire. Le carquois se porte dans le dos — il sort donc de la règle. Contrepartie assumée : un emplacement qui ne coûte plus votre arme ne peut plus en garder le prix, et le budget de statistiques des carquois baisse.</p>
         <span class="more-link">Voir le détail</span>
       </div>
       <div class="card">
-        <h3>Déjà sur la branche <span class="chip c-eq">Visuel</span></h3>
+        <h3>Chaque monstre a son geste <span class="chip c-mob">Visuel</span></h3>
         <ul>
-          <li>Les <strong class="hl">attaques du chasseur</strong> reçoivent leurs animations dédiées, dans la continuité du chantier v0.35.0 — l’esprit fantôme aussi.</li>
-          <li>Quatre monstres gagnent leurs attaques signature (yéti, greyjaw, vineclaw, esprit).</li>
-          <li>Purement visuel : aucune valeur de combat ne change pour l’instant.</li>
+          <li>Attaques signature pour l’ours, le crabe, le murloc, le tréant, le yéti, le greyjaw, le glub, le Vineclaw Stalker et le Sunbone Hexcaller.</li>
+          <li>Deux nouvelles <strong class="hl">réactions aux coups lourds</strong>, pour que la différence entre une pichenette et un gros coup se voie.</li>
+          <li>Côté chasseur, les gestes propres — dégainer, frapper au corps à corps, se donner un bonus — ne sont plus écrasés par l’apparence d’arc affichée.</li>
+          <li>Purement visuel : aucune valeur de combat ne change.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- 2 CONFORT -->
-  <section id="confort">
-    <div class="sec-head"><span class="sec-num">02</span><h2>Confort &amp; technique</h2></div>
-    <p class="sec-sub">Peu de choses pour l’instant — la branche a trente-sept commits.</p>
-    <div class="grid cols-2">
+  <!-- 2 PVP -->
+  <section id="pvp">
+    <div class="sec-head"><span class="sec-num">02</span><h2>L’arène classée se discipline</h2></div>
+    <p class="sec-sub">Pas de nouveau mode : la file classée existante ferme des portes qu’elle laissait ouvertes, et le calendrier des quotidiennes se recale sur le royaume.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="arene" tabindex="0" role="button" aria-label="Détails : l’arène classée">
+        <h3>Un niveau minimum en file <span class="chip c-pvp">Classé</span></h3>
+        <p>La file classée était de l’Elo pur, <strong class="hl">sans aucun plancher de niveau</strong> : un personnage fraîchement créé pouvait entrer en 1c1 ou en 2c2. Un niveau minimum s’applique désormais — et il vaut pour <strong class="hl">chaque membre</strong> d’un groupe 2c2, pas seulement pour le chef.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
       <div class="card">
-        <h3>Démarrage plus rapide <span class="chip c-util">Performance</span></h3>
-        <p>Le chargement de la langue se fait désormais <strong class="hl">en même temps</strong> que le préchargement des décors, au lieu de l’attendre — le jeu s’ouvre plus vite, surtout sur mobile.</p>
+        <h3>Le forfait ne paie plus <span class="chip c-bal">Règle</span></h3>
+        <p>Gagner par forfait rapportait <strong class="hl">autant d’Honneur qu’un vrai match</strong>. Ce n’est plus le cas. La cote et les hauts faits, eux, continuent de compter le forfait — c’est volontaire.</p>
+      </div>
+      <div class="card">
+        <h3>Les quotidiennes suivent le royaume <span class="chip c-bal">Calendrier</span></h3>
+        <p>La « première victoire du jour » se ré-armait à <strong class="hl">minuit UTC</strong>, en pleine soirée pour beaucoup, sans rapport avec la remise à zéro des raids. Les deux horloges n’en font plus qu’une.</p>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card more" data-detail="soins" tabindex="0" role="button" aria-label="Détails : les cadres de groupe et l’absorption">
+        <h3>Les soigneurs y voient enfin clair <span class="chip c-util">Interface</span></h3>
+        <p>Un compagnon affiché comme joignable refusait le soin : le badge « hors de portée » se déclenchait <strong class="hl">bien trop loin</strong>. Et frapper une cible sous bouclier ne montrait rien du tout, comme si vos coups ne faisaient rien.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Au champ de bataille <span class="chip c-pvp">Lisibilité</span></h3>
+        <ul>
+          <li>L’anneau d’identité d’équipe passe en <strong class="hl">pointillés fins</strong> — il se lisait comme un cercle de ciblage.</li>
+          <li>L’anneau du porteur de drapeau disparaît, devenu redondant.</li>
+          <li>Une <strong class="hl">peur</strong> ne vous fait plus traverser le plancher sur lequel vous vous tenez : les remparts de Thornhollow Fields ne piègent plus les joueurs sous le décor.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 CONFORT -->
+  <section id="confort">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Confort &amp; technique</h2></div>
+    <p class="sec-sub">C’est le gros du volume de la branche : beaucoup de petites choses qu’on remarque au quotidien.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Ranger ses sacs en un clic <span class="chip c-util">Inventaire</span></h3>
+        <ul>
+          <li>Un bouton <strong class="hl">Trier</strong> dans les sacs, avec une petite animation de remise en place.</li>
+          <li>Une commande équivalente pour ceux qui préfèrent taper (<span class="kbd">inv_sort</span>).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Sur la fiche de personnage <span class="chip c-new">Nouveau</span></h3>
+        <p>Votre <strong class="hl">temps de jeu à vie</strong> s’affiche — avec un œil pour le masquer si vous préférez ne pas savoir, ou ne pas montrer.</p>
+      </div>
+      <div class="card">
+        <h3>Le Wiki à portée de clic <span class="chip c-util">Interface</span></h3>
+        <p>Un raccourci vers le wiki du jeu dans la micro-barre et le menu, avec une <strong class="hl">confirmation avant d’ouvrir</strong> — on ne quitte pas le jeu par accident.</p>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>Des détails qui comptent <span class="chip c-util">Interface</span></h3>
+        <ul>
+          <li>La marque « <strong class="hl">matériau fin</strong> » est enfin peinte dans les cases de la banque et de la banque de guilde — elle ne s’affichait que dans les sacs.</li>
+          <li>Un coup <strong class="hl">entièrement absorbé</strong> n’affiche plus un « 0 » trompeur : le montant absorbé apparaît entre parenthèses.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Sous le capot <span class="chip c-util">Technique</span></h3>
+        <ul>
+          <li>La <strong class="hl">musique revient sur le client de bureau</strong> : toutes les ambiances streamées restaient muettes, seuls les bruitages passaient.</li>
+          <li>Le chargement de la langue se fait <strong class="hl">en même temps</strong> que le préchargement des décors — le jeu s’ouvre plus vite.</li>
+          <li>Tout l’allègement serveur de la v0.35.1 (courrier, commandes d’artisanat, effets d’arme) est déjà intégré ici.</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -321,21 +386,62 @@
 
 <script>
   const DETAILS = {
-    refonte: {
-      title: "La refonte des cinq classes, ce qu’on en sait",
-      summary: "Annoncée pour la v0.36.0, préparée en intégration — pas encore mergée sur la branche.",
+    carquois: {
+      title: "Le carquois, l’arme à deux mains, et le prix d’un emplacement",
+      summary: "Lu dans les commits de la branche : le raisonnement du correctif est aussi intéressant que le correctif.",
       body: `
-        <h4>Le chantier</h4>
+        <h4>Le bug</h4>
         <ul>
-          <li>Cinq classes refondues : <b>Chasseur, Chaman, Prêtre, Druide, Démoniste</b> — chacune préparée séparément depuis des semaines, puis composées ensemble sur la base actuelle du jeu.</li>
-          <li>Par-dessus, un <b>programme d’équilibrage</b> a réglé l’ensemble ; les développeurs le décrivent comme « l’écart entre classes le plus serré que le jeu ait mesuré », chiffré sur des simulations de raid.</li>
+          <li>Un chasseur portant l’une de ses armes à deux mains <b>la perdait à l’instant où il équipait un carquois</b>. Le jeu applique une règle simple — une arme à deux mains occupe les deux mains, donc rien d’autre ne peut y tenir — et le carquois, rangé en main gauche, tombait dedans.</li>
+          <li>Personne ne l’avait vu parce qu’aucun test n’avait essayé d’équiper un carquois avec quelque chose dans la main droite. Les carquois sont arrivés en v0.35.0.</li>
         </ul>
-        <h4>Ce qu’on ne sait pas encore</h4>
+        <h4>Le correctif</h4>
         <ul>
-          <li>Le <b>détail par classe</b> : quels talents, quelles rotations, quels chiffres. Rien de tout cela n’est mergé — le travail est visible mais peut changer entièrement avant la sortie.</li>
-          <li>C’est précisément le genre de version où cette page prendra de l’ampleur : reviens après les premiers gros merges.</li>
+          <li>La bonne question n’était pas « à quelle classe cet objet est-il réservé » mais « <b>cet objet occupe-t-il une main</b> ». Orbes, grimoires, lanternes et boucliers sont tenus : la règle continue de s’appliquer. Un carquois se porte dans le dos — le modèle du chasseur l’a toujours dessiné là — donc il en sort.</li>
+          <li>C’est une propriété de l’objet, pas une exception chasseur : tout futur objet « porté » plutôt que « tenu » en héritera.</li>
         </ul>
-        <p class="summary" style="margin-top:18px;border:0;padding:0"><b>Attention</b> : aucune valeur n’est donnée ici, à dessein — c’est du travail en cours, tout peut bouger d’ici la sortie.</p>`
+        <h4>La contrepartie</h4>
+        <ul>
+          <li>Le budget de statistiques d’une main gauche est calculé <b>en supposant qu’elle vous coûte l’arme à deux mains</b>. Un emplacement qui ne coûte plus ce sacrifice ne peut pas en garder le prix : les carquois voient donc leur budget revu à la baisse, pour que deux mains + carquois rentre dans le plafond que le jeu s’impose au lieu de le dépasser.</li>
+          <li>Conséquence discrète : un carquois et un orbe d’incantateur ne sont plus rangés dans le même panier de comparaison — « tenu » et « porté » sont désormais deux réponses différentes.</li>
+        </ul>
+        <p class="summary" style="margin-top:18px;border:0;padding:0"><b>Aucun chiffre ici</b>, à dessein : le nouveau budget est du travail en cours et peut encore bouger d’ici la sortie. Les valeurs exactes seront dans les vraies notes.</p>`
+    },
+    arene: {
+      title: "L’arène classée : trois portes qui se ferment",
+      summary: "Rien de nouveau dans le mode lui-même — que des trous rebouchés, lus dans les commits de la branche.",
+      body: `
+        <h4>Le plancher de niveau</h4>
+        <ul>
+          <li>La file classée reposait sur l’Elo seul, <b>sans aucune condition de niveau</b> : un personnage tout juste créé pouvait se mettre en file en 1c1 ou en 2c2 et y affronter n’importe qui.</li>
+          <li>Un niveau minimum s’applique désormais, repris de ce qui existait déjà pour la zone de PvP libre. Il est <b>affiché dans la note de la fenêtre d’arène</b>, et il vaut pour chaque membre d’un groupe 2c2.</li>
+          <li>Le détail qui a demandé un second passage : la fenêtre ne vérifiait que <i>votre</i> niveau, si bien qu’un chef éligible avec un coéquipier trop bas voyait un bouton actif que le serveur refusait ensuite. Le bouton se désactive maintenant dans ce cas aussi.</li>
+        </ul>
+        <h4>Le forfait</h4>
+        <ul>
+          <li>Une victoire par forfait payait <b>autant d’Honneur qu’un match joué</b>. Elle n’en paie plus. La cote et les hauts faits, eux, continuent de la compter — c’est un choix, pas un oubli.</li>
+        </ul>
+        <h4>Le retrait silencieux</h4>
+        <ul>
+          <li>Le nettoyage automatique des files pouvait <b>vous sortir de la file sans rien dire</b> — vous, ou votre coéquipier qui n’y était pour rien. Le retrait est désormais annoncé comme si vous aviez quitté la file vous-même.</li>
+        </ul>`
+    },
+    soins: {
+      title: "Deux angles morts d’interface, côté soins et côté dégâts",
+      summary: "Deux plaintes de joueurs remontées jusqu’au code — surtout en champ de bataille.",
+      body: `
+        <h4>Le badge « hors de portée » mentait</h4>
+        <ul>
+          <li>Il ne s’allumait qu’à une distance proche du rayon d’intérêt du jeu, alors que <b>tous les sorts visant un allié ont une portée bien plus courte</b>. Entre les deux, le cadre du coéquipier avait l’air parfaitement joignable — et chaque soin rebondissait sur un « hors de portée ».</li>
+          <li>C’est exactement ce que remontaient les soigneurs de champ de bataille. Le seuil du badge est maintenant tiré de la <b>vraie table des sorts</b> plutôt que recopié à la main : si la portée des soins est retouchée un jour, c’est le test qui casse, pas le badge qui dérive en silence.</li>
+          <li>Le badge ne dit toujours rien de la ligne de vue — c’est un autre sujet.</li>
+        </ul>
+        <h4>Frapper un bouclier ne montrait rien</h4>
+        <ul>
+          <li>Taper une cible protégée par une absorption ne produisait <b>aucun retour visuel</b> : cela se lisait comme des attaques qui ne font rien du tout.</li>
+          <li>Le jeu connaissait pourtant le montant absorbé depuis toujours et l’envoyait déjà à votre client ; seul l’affichage était à sens unique, réservé à la cible. L’attaquant voit désormais le chiffre lui aussi.</li>
+          <li>Et un coup <b>totalement absorbé</b> n’affiche plus un « 0 » sec : le montant apparaît entre parenthèses.</li>
+        </ul>`
     },
   };
 

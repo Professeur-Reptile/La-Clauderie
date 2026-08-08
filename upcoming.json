@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-07T15:13:28Z",
- "base_tag": "v0.35.0",
+ "generated": "2026-08-08T08:41:37Z",
+ "base_tag": "v0.35.1",
  "version": "v0.36.0",
  "branch": "release/v0.36.0",
- "declared_version": "0.35.0",
+ "declared_version": "0.35.1",
  "imminent": false,
- "commits": 37,
- "shown": 18,
- "last_commit": "2026-08-07T22:41:20+08:00",
+ "commits": 198,
+ "shown": 67,
+ "last_commit": "2026-08-08T16:25:19+08:00",
  "sections": [
   {
    "key": "classes",
@@ -15,6 +15,13 @@
    "fr": "Classes & sorts",
    "en": "Classes & spells",
    "items": [
+    {
+     "h": "87a7ac52",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Bespoke Sunbone Hexcaller attack/cast clip",
+     "date": "2026-08-06"
+    },
     {
      "h": "50fe4bff",
      "kind": "feat",
@@ -27,6 +34,13 @@
      "kind": "fix",
      "scope": "render",
      "text": "Preserve hunter self-buff gesture under a displayed bow skin",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "ec22284b",
+     "kind": "fix",
+     "scope": "test",
+     "text": "Repair the stale manifest anchors in the hunter anim contract test",
      "date": "2026-08-07"
     },
     {
@@ -50,7 +64,15 @@
    "icon": "🔨",
    "fr": "Métiers & récolte",
    "en": "Professions & gathering",
-   "items": []
+   "items": [
+    {
+     "h": "e79b2bd8",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Paint the fine-material mark in the bank and guild bank grids",
+     "date": "2026-08-07"
+    }
+   ]
   },
   {
    "key": "donjons",
@@ -73,6 +95,20 @@
    "en": "Guild & social",
    "items": [
     {
+     "h": "11de411c",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Group quality/name view ties with the canonical clean-up ladder",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "8eb9daf6",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Badge party frames at the range a heal actually reaches",
+     "date": "2026-08-07"
+    },
+    {
      "h": "3342ab5a",
      "kind": "fix",
      "scope": "sim",
@@ -87,6 +123,34 @@
    "fr": "Confort & technique",
    "en": "Comfort & technical",
    "items": [
+    {
+     "h": "7a3d6eb0",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add a confirm-first Wiki launcher to the micro bar and game menu",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "65f6b72b",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Add the one-shot bag clean-up command (inv_sort)",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "e04b6496",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add the bags Sort button with a one-shot settle ripple",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "1148d70e",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Show lifetime playtime on the character sheet with a privacy eye",
+     "date": "2026-08-07"
+    },
     {
      "h": "53aaab4d",
      "kind": "feat",
@@ -109,10 +173,164 @@
      "date": "2026-08-06"
     },
     {
+     "h": "ddbac359",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Second BIPED14 hit-reaction clip, HitReact_Heavy",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "f777b556",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Mob_crab bespoke claw-snap flourish attack (issue #2889)",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "cbb49dba",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Second ENEMY7 hit-reaction clip, HitRecieve_Heavy",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "32dbe27f",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Mob_glub bespoke spore-burst attack",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "96089bf0",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Mob_treant bespoke slam/root-grab attack (issue #2889)",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "54f1fd69",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Mob_murloc bespoke slap/flop combo attack",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "217a9ede",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Mob_bear bespoke ground-swipe maul attack",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "c881eef5",
+     "kind": "perf",
+     "scope": "sim",
+     "text": "Index the Ravenpost book by recipient so mail reads stop scanning it",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "f57ee41a",
+     "kind": "perf",
+     "scope": "server",
+     "text": "Gate the mail self field on cadence plus the mail revision",
+     "date": "2026-08-08"
+    },
+    {
      "h": "4a392cd1",
      "kind": "perf",
      "scope": "main",
      "text": "Overlap boot-time locale fetch with deferred asset preload",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "8a5578d8",
+     "kind": "perf",
+     "scope": "server",
+     "text": "Gate the corder snapshot read on change + cadence",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "3b16f992",
+     "kind": "perf",
+     "scope": "mail",
+     "text": "Harden the mail gate: conditional take bump, shared viewer gate",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "77cc1d2f",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Cut the per-frame cost of combat and weapon-skin VFX",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "72ff011e",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.35.1 into release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "8c7a59ef",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Merge mob_yeti's duplicate animUrls key, fix its BIPED14 pin",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "6a352594",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Resolve rebase conflicts and stale FLOATING/animUrls pins",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "be026bb5",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Resolve rebase conflicts and duplicate animUrls keys",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "fcf04117",
+     "kind": "fix",
+     "scope": "anim",
+     "text": "Rebase Sunbone Hexcaller clip PR onto release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "65f0056b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Resolve rebase conflicts against release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "b521d92d",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Resolve rebase conflicts for bear ground-swipe maul attack",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "5c3a2d89",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Re-resolve rebase conflicts against moved release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "91bd7921",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Reconcile ENEMY7 hit-variety merge with kobold ability anims",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "6729f101",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Resolve mob_troll animUrls collision after release merge",
      "date": "2026-08-07"
     },
     {
@@ -130,6 +348,125 @@
      "date": "2026-08-07"
     },
     {
+     "h": "4da03378",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Apply the first review round on the snapshot-gate PR",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "43c833ba",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Dash the battleground identity ring so it stops reading as a target",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "7dbfcdcb",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Apply the second review round on the snapshot-gate PR",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "3427e8cd",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Let a worn offhand coexist with a two-hander, and price it for it",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "38e62a02",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Show an absorb floater to the attacker, not just the defender",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "910612ef",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Drop the unread shed probe and state the scratch-sharing rule",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "6abade8e",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Suppress the zero on a fully absorbed hit, and parenthesise the amount",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "a0d7b1bb",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Thin the identity dashes, and drop the flag carrier ring",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "dc1fec19",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Serve app:// byte-range requests so game music plays",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "ddcc544c",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Harden app:// range edge cases and wiring pins",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "dd1037db",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Review-round hardening for the bag sort",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "56e271f9",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Roll dailies on the realm reset, not midnight UTC",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "2fd89af2",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Harden the playtime line per review (focus ring, contrast, NaN load guard)",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "1aa8867f",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Stop a fear dropping a player through the floor they stand on",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "0e9308f2",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Second review round, executed server arms and totality hardening",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "2cce3cce",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Wire showPlaytime into the options doctrine and harden the review pins",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "18b6f7b4",
+     "kind": "fix",
+     "scope": "deeds",
+     "text": "Re-cut the three honor titles off the classic PvP ladder",
+     "date": "2026-08-07"
+    },
+    {
      "h": "3145e254",
      "kind": "fix",
      "scope": "sim",
@@ -141,6 +478,13 @@
      "kind": "fix",
      "scope": "deeds",
      "text": "Re-baseline the frozen catalog hash left as a placeholder by an earlier rebase",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "6373aec1",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bake the Treant_Attack slam and sway channels that fell silently null",
      "date": "2026-08-06"
     },
     {
@@ -185,11 +529,11 @@
   {
    "version": "v0.36.0",
    "branch": "release/v0.36.0",
-   "declared_version": "0.35.0",
+   "declared_version": "0.35.1",
    "imminent": false,
-   "commits": 37,
-   "shown": 18,
-   "last_commit": "2026-08-07T22:41:20+08:00",
+   "commits": 198,
+   "shown": 67,
+   "last_commit": "2026-08-08T16:25:19+08:00",
    "sections": [
     {
      "key": "classes",
@@ -197,6 +541,13 @@
      "fr": "Classes & sorts",
      "en": "Classes & spells",
      "items": [
+      {
+       "h": "87a7ac52",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Bespoke Sunbone Hexcaller attack/cast clip",
+       "date": "2026-08-06"
+      },
       {
        "h": "50fe4bff",
        "kind": "feat",
@@ -209,6 +560,13 @@
        "kind": "fix",
        "scope": "render",
        "text": "Preserve hunter self-buff gesture under a displayed bow skin",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "ec22284b",
+       "kind": "fix",
+       "scope": "test",
+       "text": "Repair the stale manifest anchors in the hunter anim contract test",
        "date": "2026-08-07"
       },
       {
@@ -232,7 +590,15 @@
      "icon": "🔨",
      "fr": "Métiers & récolte",
      "en": "Professions & gathering",
-     "items": []
+     "items": [
+      {
+       "h": "e79b2bd8",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Paint the fine-material mark in the bank and guild bank grids",
+       "date": "2026-08-07"
+      }
+     ]
     },
     {
      "key": "donjons",
@@ -255,6 +621,20 @@
      "en": "Guild & social",
      "items": [
       {
+       "h": "11de411c",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Group quality/name view ties with the canonical clean-up ladder",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "8eb9daf6",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Badge party frames at the range a heal actually reaches",
+       "date": "2026-08-07"
+      },
+      {
        "h": "3342ab5a",
        "kind": "fix",
        "scope": "sim",
@@ -269,6 +649,34 @@
      "fr": "Confort & technique",
      "en": "Comfort & technical",
      "items": [
+      {
+       "h": "7a3d6eb0",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add a confirm-first Wiki launcher to the micro bar and game menu",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "65f6b72b",
+       "kind": "feat",
+       "scope": "sim",
+       "text": "Add the one-shot bag clean-up command (inv_sort)",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "e04b6496",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add the bags Sort button with a one-shot settle ripple",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "1148d70e",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Show lifetime playtime on the character sheet with a privacy eye",
+       "date": "2026-08-07"
+      },
       {
        "h": "53aaab4d",
        "kind": "feat",
@@ -291,10 +699,164 @@
        "date": "2026-08-06"
       },
       {
+       "h": "ddbac359",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Second BIPED14 hit-reaction clip, HitReact_Heavy",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "f777b556",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Mob_crab bespoke claw-snap flourish attack (issue #2889)",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "cbb49dba",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Second ENEMY7 hit-reaction clip, HitRecieve_Heavy",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "32dbe27f",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Mob_glub bespoke spore-burst attack",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "96089bf0",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Mob_treant bespoke slam/root-grab attack (issue #2889)",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "54f1fd69",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Mob_murloc bespoke slap/flop combo attack",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "217a9ede",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Mob_bear bespoke ground-swipe maul attack",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "c881eef5",
+       "kind": "perf",
+       "scope": "sim",
+       "text": "Index the Ravenpost book by recipient so mail reads stop scanning it",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "f57ee41a",
+       "kind": "perf",
+       "scope": "server",
+       "text": "Gate the mail self field on cadence plus the mail revision",
+       "date": "2026-08-08"
+      },
+      {
        "h": "4a392cd1",
        "kind": "perf",
        "scope": "main",
        "text": "Overlap boot-time locale fetch with deferred asset preload",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "8a5578d8",
+       "kind": "perf",
+       "scope": "server",
+       "text": "Gate the corder snapshot read on change + cadence",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "3b16f992",
+       "kind": "perf",
+       "scope": "mail",
+       "text": "Harden the mail gate: conditional take bump, shared viewer gate",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "77cc1d2f",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Cut the per-frame cost of combat and weapon-skin VFX",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "72ff011e",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.35.1 into release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "8c7a59ef",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Merge mob_yeti's duplicate animUrls key, fix its BIPED14 pin",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "6a352594",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Resolve rebase conflicts and stale FLOATING/animUrls pins",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "be026bb5",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Resolve rebase conflicts and duplicate animUrls keys",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "fcf04117",
+       "kind": "fix",
+       "scope": "anim",
+       "text": "Rebase Sunbone Hexcaller clip PR onto release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "65f0056b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Resolve rebase conflicts against release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "b521d92d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Resolve rebase conflicts for bear ground-swipe maul attack",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "5c3a2d89",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Re-resolve rebase conflicts against moved release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "91bd7921",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Reconcile ENEMY7 hit-variety merge with kobold ability anims",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "6729f101",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Resolve mob_troll animUrls collision after release merge",
        "date": "2026-08-07"
       },
       {
@@ -312,6 +874,125 @@
        "date": "2026-08-07"
       },
       {
+       "h": "4da03378",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Apply the first review round on the snapshot-gate PR",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "43c833ba",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Dash the battleground identity ring so it stops reading as a target",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "7dbfcdcb",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Apply the second review round on the snapshot-gate PR",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "3427e8cd",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Let a worn offhand coexist with a two-hander, and price it for it",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "38e62a02",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Show an absorb floater to the attacker, not just the defender",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "910612ef",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Drop the unread shed probe and state the scratch-sharing rule",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "6abade8e",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Suppress the zero on a fully absorbed hit, and parenthesise the amount",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "a0d7b1bb",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Thin the identity dashes, and drop the flag carrier ring",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "dc1fec19",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Serve app:// byte-range requests so game music plays",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "ddcc544c",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Harden app:// range edge cases and wiring pins",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "dd1037db",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Review-round hardening for the bag sort",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "56e271f9",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Roll dailies on the realm reset, not midnight UTC",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "2fd89af2",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Harden the playtime line per review (focus ring, contrast, NaN load guard)",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "1aa8867f",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Stop a fear dropping a player through the floor they stand on",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "0e9308f2",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Second review round, executed server arms and totality hardening",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "2cce3cce",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Wire showPlaytime into the options doctrine and harden the review pins",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "18b6f7b4",
+       "kind": "fix",
+       "scope": "deeds",
+       "text": "Re-cut the three honor titles off the classic PvP ladder",
+       "date": "2026-08-07"
+      },
+      {
        "h": "3145e254",
        "kind": "fix",
        "scope": "sim",
@@ -323,6 +1004,13 @@
        "kind": "fix",
        "scope": "deeds",
        "text": "Re-baseline the frozen catalog hash left as a placeholder by an earlier rebase",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "6373aec1",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Bake the Treant_Attack slam and sway channels that fell silently null",
        "date": "2026-08-06"
       },
       {
