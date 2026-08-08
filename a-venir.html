@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
 <title>La prochaine version — La Clauderie</title>
-<meta name="description" content="Ce que les développeurs préparent pour la prochaine version de World of ClaudeCraft, expliqué simplement — fabrication à l'incantation, commandes entre joueurs, légendaires uniques. Rien n'est définitif : la version n'est pas sortie.">
+<meta name="description" content="Ce que les développeurs préparent pour la prochaine version de World of ClaudeCraft, expliqué simplement — la chasse aux gels d'affichage, l'arène classée qui se discipline, le chasseur et son carquois, le confort au quotidien. Rien n'est définitif : la version n'est pas sortie.">
 <meta name="theme-color" content="#c8a04b">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="La Clauderie">
 <meta property="og:title" content="La prochaine version — La Clauderie">
-<meta property="og:description" content="Ce que les développeurs préparent pour la prochaine version de World of ClaudeCraft, expliqué simplement — fabrication à l'incantation, commandes entre joueurs, légendaires uniques. Rien n'est définitif : la version n'est pas sortie.">
+<meta property="og:description" content="Ce que les développeurs préparent pour la prochaine version de World of ClaudeCraft, expliqué simplement — la chasse aux gels d'affichage, l'arène classée qui se discipline, le chasseur et son carquois, le confort au quotidien. Rien n'est définitif : la version n'est pas sortie.">
 <meta property="og:url" content="https://laclauderie.fr/a-venir.html">
 <link rel="canonical" href="https://laclauderie.fr/a-venir.html">
 <meta property="og:image" content="https://laclauderie.fr/assets/og.png">
@@ -197,7 +197,7 @@
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · En préparation</p>
     <h1>La prochaine version <span class="v" id="vNum">v0.36.0</span></h1>
-    <p class="lede">La v0.35.1 est sortie ce matin — une version d’entretien, ses notes sont dans <a href="patch-notes.html">Nouveautés</a>. La branche de la v0.36.0, elle, s’est bien remplie : <strong class="hl">près de deux cents commits</strong> déjà mergés. Au programme visible pour l’instant : le chasseur qui récupère son arme à deux mains sous son carquois, une file d’arène classée qui ferme enfin ses portes ouvertes, et une longue liste de confort — tri des sacs, temps de jeu, chiffres d’absorption, musique de retour sur le client de bureau.</p>
+    <p class="lede">La v0.35.1 est sortie ce matin — une version d’entretien, ses notes sont dans <a href="patch-notes.html">Nouveautés</a>. La branche de la v0.36.0, elle, a doublé dans la journée : <strong class="hl">plus de trois cent cinquante commits</strong> déjà mergés. Le gros du volume est désormais une <strong class="hl">chasse aux gels d’affichage</strong> — ces secondes figées quand une bande de joueurs équipés débarque en ville, ou quand on franchit une frontière de zone. À côté : le chasseur qui récupère son arme à deux mains sous son carquois, une file d’arène classée qui ferme ses portes ouvertes, une file de champ de bataille qui ne s’efface plus quand on meurt, et une longue liste de confort.</p>
 
     <div class="warn">
       <span class="ico" aria-hidden="true">⚠️</span>
@@ -210,7 +210,7 @@
     <div class="meta">
       <span><b>Depuis</b> la v0.35.1</span>
         <span id="freshness"><b>Relevé</b> à l’instant</span>
-    <span id="written"><b>Résumé écrit</b> le 8 août 2026 à 10 h 55</span>
+    <span id="written"><b>Résumé écrit</b> le 8 août 2026 à 23 h 40</span>
     </div>
     <div id="chantiers"></div>
     <div class="hint">💡 Clique sur une carte pour le détail — et sur un nom souligné pour sa fiche Codex.</div>
@@ -223,17 +223,17 @@
       <li>
         <span class="d-ico" aria-hidden="true">⚔️</span>
         <a class="d-name" href="#classes">Classes &amp; sorts</a>
-        <span class="d-say"><b class="up">Chasseur ↑</b> arme à deux mains et carquois enfin compatibles — au prix d’un carquois moins généreux en statistiques · <b class="eq">Toutes =</b> une dizaine de monstres gagnent leurs attaques signature, purement visuel</span>
+        <span class="d-say"><b class="up">Chasseur ↑</b> arme à deux mains et carquois enfin compatibles — au prix d’un carquois moins généreux en statistiques · <b class="eq">Toutes =</b> gestes d’incantation du chaman, attaques signature d’une dizaine de monstres : purement visuel, aucune valeur de combat ne bouge</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🔨</span>
         <a class="d-name" href="#confort">Métiers &amp; récolte</a>
         <span class="d-say">La marque « matériau fin » enfin peinte dans les cases de la banque et de la banque de guilde.</span>
       </li>
-      <li class="none">
+      <li>
         <span class="d-ico" aria-hidden="true">🐉</span>
-        <span class="d-name">Donjons, failles &amp; boss</span>
-        <span class="d-say">—</span>
+        <a class="d-name" href="#pvp">Donjons, failles &amp; boss</a>
+        <span class="d-say">Aucun nouveau contenu, mais entrer en donjon n’annule plus votre file de champ de bataille : quand elle éclate, le jeu vous sort proprement de l’instance et vous ramène à la porte à la fin du match.</span>
       </li>
       <li class="none">
         <span class="d-ico" aria-hidden="true">🗺️</span>
@@ -243,12 +243,12 @@
       <li>
         <span class="d-ico" aria-hidden="true">🏰</span>
         <a class="d-name" href="#pvp">Guilde &amp; social</a>
-        <span class="d-say">L’arène classée reçoit un niveau minimum et cesse de payer l’Honneur sur un forfait ; les quotidiennes se remettent à zéro avec le royaume, plus à minuit UTC.</span>
+        <span class="d-say">L’arène classée reçoit un niveau minimum et cesse de payer l’Honneur sur un forfait ; les quotidiennes se remettent à zéro avec le royaume, plus à minuit UTC ; et mourir ne vous fait plus perdre votre place en file de champ de bataille.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">⚙️</span>
-        <a class="d-name" href="#confort">Confort &amp; technique</a>
-        <span class="d-say">Tri des sacs en un clic, temps de jeu à vie sur la fiche, chiffres d’absorption enfin visibles côté attaquant — et la musique revient sur le client de bureau.</span>
+        <a class="d-name" href="#perf">Confort &amp; technique</a>
+        <span class="d-say">La grosse affaire de la branche : la chasse aux gels d’affichage (arrivée de joueurs équipés, traversée de frontière) et aux redémarrages sur iPhone. Plus tri des sacs, temps de jeu à vie, wiki du jeu remis à jour et musique de retour sur le client de bureau.</span>
       </li>
     </ol>
   </nav>
@@ -256,7 +256,7 @@
   <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
        s'efface d'elle-même quand cette version sort, et se signale périmée si
        le jeu passe à préparer la suivante. -->
-  <div id="editorial" data-for="v0.36.0" data-commits="198" data-chantiers="v0.36.0" data-written="2026-08-08T10:55+02:00">
+  <div id="editorial" data-for="v0.36.0" data-commits="351" data-chantiers="v0.36.0" data-written="2026-08-08T23:40+02:00">
 
   <!-- 1 CLASSES -->
   <section id="classes">
@@ -272,8 +272,8 @@
         <h3>Chaque monstre a son geste <span class="chip c-mob">Visuel</span></h3>
         <ul>
           <li>Attaques signature pour l’ours, le crabe, le murloc, le tréant, le yéti, le greyjaw, le glub, le Vineclaw Stalker et le Sunbone Hexcaller.</li>
-          <li>Deux nouvelles <strong class="hl">réactions aux coups lourds</strong>, pour que la différence entre une pichenette et un gros coup se voie.</li>
-          <li>Côté chasseur, les gestes propres — dégainer, frapper au corps à corps, se donner un bonus — ne sont plus écrasés par l’apparence d’arc affichée.</li>
+          <li>De nouvelles <strong class="hl">réactions aux coups lourds</strong> — quatre familles de créatures en ont désormais deux, pour que la différence entre une pichenette et un gros coup se voie.</li>
+          <li>Côté joueurs : le <strong class="hl">chaman</strong> a ses propres gestes d’incantation, et chez le chasseur les gestes propres — dégainer, frapper au corps à corps, se donner un bonus — ne sont plus écrasés par l’apparence d’arc affichée.</li>
           <li>Purement visuel : aucune valeur de combat ne change.</li>
         </ul>
       </div>
@@ -282,8 +282,8 @@
 
   <!-- 2 PVP -->
   <section id="pvp">
-    <div class="sec-head"><span class="sec-num">02</span><h2>L’arène classée se discipline</h2></div>
-    <p class="sec-sub">Pas de nouveau mode : la file classée existante ferme des portes qu’elle laissait ouvertes, et le calendrier des quotidiennes se recale sur le royaume.</p>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Les files se disciplinent</h2></div>
+    <p class="sec-sub">Pas de nouveau mode : la file d’arène classée ferme des portes qu’elle laissait ouvertes, celle du champ de bataille cesse de s’effacer dans votre dos, et le calendrier des quotidiennes se recale sur le royaume.</p>
     <div class="grid cols-3">
       <div class="card more" data-detail="arene" tabindex="0" role="button" aria-label="Détails : l’arène classée">
         <h3>Un niveau minimum en file <span class="chip c-pvp">Classé</span></h3>
@@ -299,7 +299,12 @@
         <p>La « première victoire du jour » se ré-armait à <strong class="hl">minuit UTC</strong>, en pleine soirée pour beaucoup, sans rapport avec la remise à zéro des raids. Les deux horloges n’en font plus qu’une.</p>
       </div>
     </div>
-    <div class="grid cols-2" style="margin-top:14px">
+    <div class="grid cols-3" style="margin-top:14px">
+      <div class="card more" data-detail="file" tabindex="0" role="button" aria-label="Détails : la file de champ de bataille">
+        <h3>Votre place en file survit à votre mort <span class="chip c-new">Nouveau</span></h3>
+        <p>Mourir ou entrer en donjon vous <strong class="hl">sortait de la file de Thornhollow Fields sans un mot</strong> — la façon la plus courante de perdre sa place sans s’en apercevoir. Attendre n’est pas une activité : la file survit désormais aux deux. Trois causes seulement y mettent fin : se déconnecter, être déjà placé, ou entrer en match d’arène.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
       <div class="card more" data-detail="soins" tabindex="0" role="button" aria-label="Détails : les cadres de groupe et l’absorption">
         <h3>Les soigneurs y voient enfin clair <span class="chip c-util">Interface</span></h3>
         <p>Un compagnon affiché comme joignable refusait le soin : le badge « hors de portée » se déclenchait <strong class="hl">bien trop loin</strong>. Et frapper une cible sous bouclier ne montrait rien du tout, comme si vos coups ne faisaient rien.</p>
@@ -316,10 +321,49 @@
     </div>
   </section>
 
-  <!-- 3 CONFORT -->
+  <!-- 3 PERFORMANCE -->
+  <section id="perf">
+    <div class="sec-head"><span class="sec-num">03</span><h2>La chasse aux gels</h2></div>
+    <p class="sec-sub">C’est devenu le gros du volume de la branche, et de loin : depuis le 8 août, l’essentiel des commits traque les secondes figées. Trois symptômes distincts, trois enquêtes séparées — et, pour une fois, des mesures avant/après plutôt que des impressions.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="gels" tabindex="0" role="button" aria-label="Détails : le gel à l’arrivée de joueurs équipés">
+        <h3>Quand la ville se remplit <span class="chip c-new">Enquête</span></h3>
+        <p>Le symptôme que tout le monde connaît : une bande de joueurs <strong class="hl">bien équipés</strong> débarque à Eastbrook, et le jeu se fige plusieurs secondes. Les développeurs ont d’abord construit de quoi le <strong class="hl">reproduire à la demande</strong> avant de corriger quoi que ce soit — puis ont trouvé une cause bien plus bête que prévu du côté des lumières.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Les à-coups de traversée <span class="chip c-util">En cours</span></h3>
+        <ul>
+          <li>L’autre gel classique : franchir une <strong class="hl">frontière de zone</strong> à pied, des pics vers le marais, et rester planté le temps que le décor suivant se prépare.</li>
+          <li>Là encore, un banc d’essai d’abord — qui refuse de mesurer si la carte graphique n’est pas vraiment sollicitée, pour ne pas se raconter d’histoires.</li>
+          <li>Le verdict des développeurs est honnête : ça va <strong class="hl">nettement mieux mais ce n’est pas réglé</strong>, la préparation du terrain et de l’eau court toujours après le joueur qui marche.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Les iPhone qui redémarraient <span class="chip c-new">Correctif</span></h3>
+        <p>Le jeu se coupait en pleine partie sur iPhone, <strong class="hl">quels que soient les réglages graphiques</strong> — baisser la qualité ne faisait que retarder. En cause : le mode « mémoire contenue » ne s’activait que dans l’application installée, alors que Safari et les autres navigateurs iOS tournent sur le même moteur, avec le même plafond. Il s’applique maintenant à <strong class="hl">tout iOS</strong>. Android n’était pas concerné.</p>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>Et pendant qu’on y est <span class="chip c-util">Chargement</span></h3>
+        <ul>
+          <li>Les <strong class="hl">apparences de personnage</strong> sont enfin compressées comme le reste : leurs images se décompressaient une par une en mémoire, pour un coût que le jeu avait déjà supprimé partout ailleurs.</li>
+          <li>Les <strong class="hl">voix des PNJ et la musique</strong> se gardent désormais en cache d’une session à l’autre — jusqu’ici, le navigateur redemandait poliment chaque piste au serveur à chaque partie.</li>
+          <li>Côté serveur, le profil de combat d’un monstre n’est plus recalculé plusieurs fois par seconde et par créature.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Un gel qui explique d’où il vient <span class="chip c-util">Coulisses</span></h3>
+        <p>Jusqu’ici, un à-coup chez un joueur arrivait chez les développeurs <strong class="hl">sans aucun contexte</strong> — impossible de savoir s’il fallait blâmer une arrivée de joueurs, un décor qui se charge, ou le navigateur lui-même. Le jeu prend maintenant régulièrement une photo de son propre état et joint la <strong class="hl">différence entre les deux photos qui encadrent l’à-coup</strong>. Rien à faire de votre côté : c’est ce qui rendra les prochains correctifs plus rapides.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 CONFORT -->
   <section id="confort">
-    <div class="sec-head"><span class="sec-num">03</span><h2>Confort &amp; technique</h2></div>
-    <p class="sec-sub">C’est le gros du volume de la branche : beaucoup de petites choses qu’on remarque au quotidien.</p>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Confort &amp; technique</h2></div>
+    <p class="sec-sub">Le quotidien : beaucoup de petites choses qu’on remarque tout de suite.</p>
     <div class="grid cols-3">
       <div class="card">
         <h3>Ranger ses sacs en un clic <span class="chip c-util">Inventaire</span></h3>
@@ -333,8 +377,11 @@
         <p>Votre <strong class="hl">temps de jeu à vie</strong> s’affiche — avec un œil pour le masquer si vous préférez ne pas savoir, ou ne pas montrer.</p>
       </div>
       <div class="card">
-        <h3>Le Wiki à portée de clic <span class="chip c-util">Interface</span></h3>
-        <p>Un raccourci vers le wiki du jeu dans la micro-barre et le menu, avec une <strong class="hl">confirmation avant d’ouvrir</strong> — on ne quitte pas le jeu par accident.</p>
+        <h3>Le Wiki, raccourci et remis à jour <span class="chip c-new">Nouveau</span></h3>
+        <ul>
+          <li>Un raccourci vers le wiki du jeu dans la micro-barre et le menu, avec une <strong class="hl">confirmation avant d’ouvrir</strong> — on ne quitte pas le jeu par accident.</li>
+          <li>Son dernier examen complet datait du 11 juillet : des systèmes entiers y manquaient. <strong class="hl">Cinq pages nouvelles</strong> — Failles, Montures, Interface, Commandes, Éditeur de monde — et des corrections partout ailleurs (les talents s’ouvrent au niveau 5, le monde compte quatorze zones, la troisième spécialisation du mage soigne).</li>
+        </ul>
       </div>
     </div>
     <div class="grid cols-2" style="margin-top:14px">
@@ -418,6 +465,40 @@
         <ul>
           <li>Le nettoyage automatique des files pouvait <b>vous sortir de la file sans rien dire</b> — vous, ou votre coéquipier qui n’y était pour rien. Le retrait est désormais annoncé comme si vous aviez quitté la file vous-même.</li>
         </ul>`
+    },
+    file: {
+      title: "La file de champ de bataille cesse de s’effacer dans votre dos",
+      summary: "Lu dans les commits de la branche : le raisonnement tient en une phrase, la mise en œuvre beaucoup moins.",
+      body: `
+        <h4>Le constat</h4>
+        <ul>
+          <li>Se mettre en file pour <b>Thornhollow Fields</b>, puis mourir, ou entrer en donjon : dans les deux cas, la file vous <b>retirait sans rien dire</b>. C’était, de l’aveu des développeurs, la façon la plus courante de perdre sa place sans s’en apercevoir.</li>
+          <li>Le principe retenu : <b>attendre n’est pas une activité</b>. Une file doit survivre à ce que vous faites de votre attente. La liste des causes d’exclusion se réduit à trois — être déconnecté, être déjà placé dans un match, être en match d’arène.</li>
+        </ul>
+        <h4>La partie facile, et la partie difficile</h4>
+        <ul>
+          <li>La mort ne demandait rien : la mise en place sur le champ de bataille <b>ressuscite déjà</b> le joueur et coupe la forme d’esprit. Le refus de se mettre en file en étant mort n’avait donc pas de raison d’être.</li>
+          <li>Le donjon, si. Quand la file éclate, le jeu doit vous <b>détacher de l’instance</b> proprement : vous retirer des tables de haine des monstres qui vous ciblent (on ne garde pas son aggro en partant), couper une récolte en cours, et surtout retenir <b>la porte extérieure</b> comme point de retour — vos coordonnées à l’intérieur pointeraient vers une instance qui n’existera peut-être plus à la fin du match.</li>
+          <li>Un garde-fou a dû être écrit explicitement : il tenait jusque-là à un détail de position. Sans lui, une file de champ de bataille qui éclate aurait pu <b>arracher un joueur à un match d’arène classé en cours</b>.</li>
+        </ul>`
+    },
+    gels: {
+      title: "Le gel quand une bande de joueurs équipés débarque",
+      summary: "Trois jours de mesures dans les commits de la branche — l’enquête est plus instructive que le correctif.",
+      body: `
+        <h4>D’abord reproduire, ensuite corriger</h4>
+        <ul>
+          <li>Le symptôme venait des relevés de production : le nombre de joueurs affichés monte d’un coup, le jeu doit préparer une centaine de nouveaux rendus d’équipement, et il <b>s’arrête plusieurs secondes</b>.</li>
+          <li>Plutôt que de corriger à l’aveugle, les développeurs ont écrit de quoi le <b>déclencher à volonté</b> : des vagues de personnages arrivent par téléportation sur un observateur à Eastbrook, chacun monté en niveau, armé différemment et habillé d’une apparence d’Armurerie. Le banc mesure les pires à-coups, ce qui a été préparé pendant, et à quoi l’attribuer.</li>
+          <li>Premier résultat, et c’est tout l’intérêt : <b>même avec les correctifs déjà en place</b>, la première arrivée d’un équipement jamais vu figeait encore le jeu. La seconde, non. Il restait donc un chemin non couvert.</li>
+        </ul>
+        <h4>La cause : un budget de lumières qui comptait mal</h4>
+        <ul>
+          <li>Le jeu s’impose un nombre maximum de lumières dessinées. Mais une lumière <b>cachée par autre chose</b> — un décor déchargé au loin, un groupe masqué — gardait sa place dans le compte tout en n’étant pas dessinée.</li>
+          <li>Résultat : le nombre réel de lumières <b>oscillait sans arrêt</b> pendant l’arrivée des joueurs. Et chaque changement de ce nombre oblige le jeu à re-préparer <b>toutes les surfaces éclairées à l’écran</b>. D’où le gel.</li>
+          <li>Le budget tient maintenant compte de ce qui est réellement visible. Sur le banc, la différence est de l’ordre du gel de plusieurs secondes ramené à un à-coup à peine perceptible — et rien du tout à la vague suivante.</li>
+        </ul>
+        <p class="summary" style="margin-top:18px;border:0;padding:0"><b>Aucun chiffre repris ici</b>, volontairement : ce sont des mesures de banc d’essai, sur une machine de développement et une version non sortie. Elles disent le sens du changement, pas ce que vous verrez chez vous.</p>`
     },
     soins: {
       title: "Deux angles morts d’interface, côté soins et côté dégâts",

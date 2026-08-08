@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-08T08:41:37Z",
+ "generated": "2026-08-08T21:26:43Z",
  "base_tag": "v0.35.1",
  "version": "v0.36.0",
  "branch": "release/v0.36.0",
  "declared_version": "0.35.1",
  "imminent": false,
- "commits": 198,
- "shown": 67,
- "last_commit": "2026-08-08T16:25:19+08:00",
+ "commits": 351,
+ "shown": 116,
+ "last_commit": "2026-08-09T08:56:55+12:00",
  "sections": [
   {
    "key": "classes",
@@ -30,6 +30,27 @@
      "date": "2026-08-05"
     },
     {
+     "h": "cce70d34",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Shaman ability casts plus a bespoke flying demon attack",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "61905906",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Pool per-cast mage ground-fx materials by kind",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "6cc76cbf",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Prewarm every real weapon-skin VFX spec, gate offhand payloads",
+     "date": "2026-08-08"
+    },
+    {
      "h": "e1a74b76",
      "kind": "fix",
      "scope": "render",
@@ -48,6 +69,13 @@
      "kind": "fix",
      "scope": "render",
      "text": "Keep the hunter's melee swing under a displayed bow skin",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "11fa8384",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Fix demon dive channel coverage, wire shaman gesture release",
      "date": "2026-08-06"
     },
     {
@@ -79,14 +107,86 @@
    "icon": "🐉",
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
-   "items": []
+   "items": [
+    {
+     "h": "6d83d056",
+     "kind": "feat",
+     "scope": "battleground",
+     "text": "Hold the queue spot through death and dungeon pulls",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "b98d23db",
+     "kind": "fix",
+     "scope": "guide",
+     "text": "Correct the talents model on two new pages and pin the rift gate",
+     "date": "2026-08-08"
+    }
+   ]
   },
   {
    "key": "monde",
    "icon": "🗺️",
    "fr": "Monde & quêtes",
    "en": "World & quests",
-   "items": []
+   "items": [
+    {
+     "h": "cb59870d",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Second Wildheart hit-reaction clip, Hit_Stagger",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "11e7b5c2",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Gate zone-feature attaches and keep haze on slab clones",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "17803542",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Split the zone-prewarm child upload into bounded units",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "b8e0dade",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Stop far zone features casting into the sun shadow map",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "a626185b",
+     "kind": "fix",
+     "scope": "guide",
+     "text": "Keep placeholder parity when the zone-count copy was reworded",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "4e1d278f",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Rebase Wildheart Hit_Stagger PR onto release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "50725ec9",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Re-rebase Wildheart Hit_Stagger PR onto moved release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "b48b246f",
+     "kind": "fix",
+     "scope": "guide",
+     "text": "Retire the three-zone journey copy and name the cap-only content",
+     "date": "2026-08-08"
+    }
+   ]
   },
   {
    "key": "guilde",
@@ -123,6 +223,20 @@
    "fr": "Confort & technique",
    "en": "Comfort & technical",
    "items": [
+    {
+     "h": "cbb195f9",
+     "kind": "feat",
+     "scope": "guide",
+     "text": "Refresh the wiki against the live game and add the missing systems",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "5ef5f2f8",
+     "kind": "feat",
+     "scope": "guide",
+     "text": "Document the account, calendar, achievement and click-to-move gaps",
+     "date": "2026-08-08"
+    },
     {
      "h": "7a3d6eb0",
      "kind": "feat",
@@ -215,6 +329,13 @@
      "date": "2026-08-06"
     },
     {
+     "h": "deb46458",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Second ENEMY_BITE hit-reaction clip, HitRecieve_Dazed",
+     "date": "2026-08-06"
+    },
+    {
      "h": "217a9ede",
      "kind": "feat",
      "scope": "render",
@@ -233,6 +354,139 @@
      "kind": "perf",
      "scope": "server",
      "text": "Gate the mail self field on cadence plus the mail revision",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "4c5ea95a",
+     "kind": "perf",
+     "scope": "sim",
+     "text": "Memoize combatProfileForMob per templateId/scale",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "0d13ca9b",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Pool frozen orb and ring of frost materials",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "2f268c13",
+     "kind": "perf",
+     "scope": "render",
+     "text": "KTX2-compress the standalone player skin atlases",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "de5667ef",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Link the live view gate's real program variants",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "4939282d",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Stop first-draw program links for shadow rows and interiors",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "87538138",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Time and label every shared GPU queue unit",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "379d3269",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Add the disciplined border-crossing stall benchmark",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "371732fa",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Census hook and boot-timeout env for the crowd bench",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "00466b77",
+     "kind": "perf",
+     "scope": "render",
+     "text": "CROWD_AT option to run the crowd bench at a named spot",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "4e2e8ac2",
+     "kind": "perf",
+     "scope": "game",
+     "text": "Hitch forensics, a snapshot diff that diagnoses its own hitch",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "35ada4f8",
+     "kind": "perf",
+     "scope": "game",
+     "text": "Add the day-night dimension to the hitch forensics vector",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "5c1d16e0",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Geared-arrival benchmark, reproducing the crowd-gear freeze",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "1c9b70ff",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Catalog program census, the deciding first-sight measurement",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "162feaff",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Hook-preserving clones for town ghosts and independent kits",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "ac0d6447",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Prewarm the camera-ghost transparent program variants",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "7e498ced",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Program-diff and light-audit probes for the arrival bench",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "34b3a869",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Ancestry-aware point-light budget pins the drawn count",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "c58a2804",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Close the QA gate findings on the light-budget fix",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "723c0cc8",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Close the first review round on the freeze-hunt branch",
      "date": "2026-08-08"
     },
     {
@@ -262,6 +516,13 @@
      "scope": "render",
      "text": "Cut the per-frame cost of combat and weapon-skin VFX",
      "date": "2026-08-07"
+    },
+    {
+     "h": "b2363198",
+     "kind": "fix",
+     "scope": "dev",
+     "text": "Stop the dev server reloading for agent worktree files",
+     "date": "2026-08-08"
     },
     {
      "h": "72ff011e",
@@ -306,6 +567,27 @@
      "date": "2026-08-08"
     },
     {
+     "h": "18e2a8ea",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Resolve rebase conflicts and scope stale global glb counts",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "3c886027",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Merge mob_crab's duplicate animUrls key after base moved",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "dfdc7de0",
+     "kind": "fix",
+     "scope": "guide",
+     "text": "Clear the verbatim-name denylist in the new wiki copy",
+     "date": "2026-08-08"
+    },
+    {
      "h": "b521d92d",
      "kind": "fix",
      "scope": "render",
@@ -317,6 +599,62 @@
      "kind": "fix",
      "scope": "render",
      "text": "Re-resolve rebase conflicts against moved release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "31d8fffc",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bound iOS memory profile to every WebKit host, not just the native app",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "d8354d29",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stop foliage's frozen boot-tier guess from crashing world entry",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "77cda0da",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Close two more native-only iOS memory gates a fresh review found",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "14cf1f8d",
+     "kind": "fix",
+     "scope": "test",
+     "text": "Re-rebase onto latest release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "7669a673",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Bound the combatProfileForMob cache size",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "0a6a301f",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Resolve release/v0.36.0 conflict for ENEMY_BITE hit-dazed clip",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "305984e6",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Scope ENEMY_BITE occurrence pin past treant's own variant",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "35acee77",
+     "kind": "fix",
+     "scope": "guide",
+     "text": "Correct the mechanical claims the headline pass did not check",
      "date": "2026-08-08"
     },
     {
@@ -467,6 +805,13 @@
      "date": "2026-08-07"
     },
     {
+     "h": "939085f3",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Regenerate stale demon-flying media manifest hash",
+     "date": "2026-08-07"
+    },
+    {
      "h": "3145e254",
      "kind": "fix",
      "scope": "sim",
@@ -531,9 +876,9 @@
    "branch": "release/v0.36.0",
    "declared_version": "0.35.1",
    "imminent": false,
-   "commits": 198,
-   "shown": 67,
-   "last_commit": "2026-08-08T16:25:19+08:00",
+   "commits": 351,
+   "shown": 116,
+   "last_commit": "2026-08-09T08:56:55+12:00",
    "sections": [
     {
      "key": "classes",
@@ -556,6 +901,27 @@
        "date": "2026-08-05"
       },
       {
+       "h": "cce70d34",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Shaman ability casts plus a bespoke flying demon attack",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "61905906",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Pool per-cast mage ground-fx materials by kind",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "6cc76cbf",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Prewarm every real weapon-skin VFX spec, gate offhand payloads",
+       "date": "2026-08-08"
+      },
+      {
        "h": "e1a74b76",
        "kind": "fix",
        "scope": "render",
@@ -574,6 +940,13 @@
        "kind": "fix",
        "scope": "render",
        "text": "Keep the hunter's melee swing under a displayed bow skin",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "11fa8384",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Fix demon dive channel coverage, wire shaman gesture release",
        "date": "2026-08-06"
       },
       {
@@ -605,14 +978,86 @@
      "icon": "🐉",
      "fr": "Donjons, failles & boss",
      "en": "Dungeons, rifts & bosses",
-     "items": []
+     "items": [
+      {
+       "h": "6d83d056",
+       "kind": "feat",
+       "scope": "battleground",
+       "text": "Hold the queue spot through death and dungeon pulls",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "b98d23db",
+       "kind": "fix",
+       "scope": "guide",
+       "text": "Correct the talents model on two new pages and pin the rift gate",
+       "date": "2026-08-08"
+      }
+     ]
     },
     {
      "key": "monde",
      "icon": "🗺️",
      "fr": "Monde & quêtes",
      "en": "World & quests",
-     "items": []
+     "items": [
+      {
+       "h": "cb59870d",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Second Wildheart hit-reaction clip, Hit_Stagger",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "11e7b5c2",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Gate zone-feature attaches and keep haze on slab clones",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "17803542",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Split the zone-prewarm child upload into bounded units",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "b8e0dade",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Stop far zone features casting into the sun shadow map",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "a626185b",
+       "kind": "fix",
+       "scope": "guide",
+       "text": "Keep placeholder parity when the zone-count copy was reworded",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "4e1d278f",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Rebase Wildheart Hit_Stagger PR onto release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "50725ec9",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Re-rebase Wildheart Hit_Stagger PR onto moved release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "b48b246f",
+       "kind": "fix",
+       "scope": "guide",
+       "text": "Retire the three-zone journey copy and name the cap-only content",
+       "date": "2026-08-08"
+      }
+     ]
     },
     {
      "key": "guilde",
@@ -649,6 +1094,20 @@
      "fr": "Confort & technique",
      "en": "Comfort & technical",
      "items": [
+      {
+       "h": "cbb195f9",
+       "kind": "feat",
+       "scope": "guide",
+       "text": "Refresh the wiki against the live game and add the missing systems",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "5ef5f2f8",
+       "kind": "feat",
+       "scope": "guide",
+       "text": "Document the account, calendar, achievement and click-to-move gaps",
+       "date": "2026-08-08"
+      },
       {
        "h": "7a3d6eb0",
        "kind": "feat",
@@ -741,6 +1200,13 @@
        "date": "2026-08-06"
       },
       {
+       "h": "deb46458",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Second ENEMY_BITE hit-reaction clip, HitRecieve_Dazed",
+       "date": "2026-08-06"
+      },
+      {
        "h": "217a9ede",
        "kind": "feat",
        "scope": "render",
@@ -759,6 +1225,139 @@
        "kind": "perf",
        "scope": "server",
        "text": "Gate the mail self field on cadence plus the mail revision",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "4c5ea95a",
+       "kind": "perf",
+       "scope": "sim",
+       "text": "Memoize combatProfileForMob per templateId/scale",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "0d13ca9b",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Pool frozen orb and ring of frost materials",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "2f268c13",
+       "kind": "perf",
+       "scope": "render",
+       "text": "KTX2-compress the standalone player skin atlases",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "de5667ef",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Link the live view gate's real program variants",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "4939282d",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Stop first-draw program links for shadow rows and interiors",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "87538138",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Time and label every shared GPU queue unit",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "379d3269",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Add the disciplined border-crossing stall benchmark",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "371732fa",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Census hook and boot-timeout env for the crowd bench",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "00466b77",
+       "kind": "perf",
+       "scope": "render",
+       "text": "CROWD_AT option to run the crowd bench at a named spot",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "4e2e8ac2",
+       "kind": "perf",
+       "scope": "game",
+       "text": "Hitch forensics, a snapshot diff that diagnoses its own hitch",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "35ada4f8",
+       "kind": "perf",
+       "scope": "game",
+       "text": "Add the day-night dimension to the hitch forensics vector",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "5c1d16e0",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Geared-arrival benchmark, reproducing the crowd-gear freeze",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "1c9b70ff",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Catalog program census, the deciding first-sight measurement",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "162feaff",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Hook-preserving clones for town ghosts and independent kits",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "ac0d6447",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Prewarm the camera-ghost transparent program variants",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "7e498ced",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Program-diff and light-audit probes for the arrival bench",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "34b3a869",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Ancestry-aware point-light budget pins the drawn count",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "c58a2804",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Close the QA gate findings on the light-budget fix",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "723c0cc8",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Close the first review round on the freeze-hunt branch",
        "date": "2026-08-08"
       },
       {
@@ -788,6 +1387,13 @@
        "scope": "render",
        "text": "Cut the per-frame cost of combat and weapon-skin VFX",
        "date": "2026-08-07"
+      },
+      {
+       "h": "b2363198",
+       "kind": "fix",
+       "scope": "dev",
+       "text": "Stop the dev server reloading for agent worktree files",
+       "date": "2026-08-08"
       },
       {
        "h": "72ff011e",
@@ -832,6 +1438,27 @@
        "date": "2026-08-08"
       },
       {
+       "h": "18e2a8ea",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Resolve rebase conflicts and scope stale global glb counts",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "3c886027",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Merge mob_crab's duplicate animUrls key after base moved",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "dfdc7de0",
+       "kind": "fix",
+       "scope": "guide",
+       "text": "Clear the verbatim-name denylist in the new wiki copy",
+       "date": "2026-08-08"
+      },
+      {
        "h": "b521d92d",
        "kind": "fix",
        "scope": "render",
@@ -843,6 +1470,62 @@
        "kind": "fix",
        "scope": "render",
        "text": "Re-resolve rebase conflicts against moved release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "31d8fffc",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Bound iOS memory profile to every WebKit host, not just the native app",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "d8354d29",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Stop foliage's frozen boot-tier guess from crashing world entry",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "77cda0da",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Close two more native-only iOS memory gates a fresh review found",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "14cf1f8d",
+       "kind": "fix",
+       "scope": "test",
+       "text": "Re-rebase onto latest release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "7669a673",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Bound the combatProfileForMob cache size",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "0a6a301f",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Resolve release/v0.36.0 conflict for ENEMY_BITE hit-dazed clip",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "305984e6",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Scope ENEMY_BITE occurrence pin past treant's own variant",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "35acee77",
+       "kind": "fix",
+       "scope": "guide",
+       "text": "Correct the mechanical claims the headline pass did not check",
        "date": "2026-08-08"
       },
       {
@@ -990,6 +1673,13 @@
        "kind": "fix",
        "scope": "deeds",
        "text": "Re-cut the three honor titles off the classic PvP ladder",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "939085f3",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Regenerate stale demon-flying media manifest hash",
        "date": "2026-08-07"
       },
       {
