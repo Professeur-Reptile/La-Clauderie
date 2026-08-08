@@ -2,6 +2,32 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.35.1",
+   "date": "2026-08-08",
+   "titre": "Version d’entretien : le courrier allégé, les effets d’arme au loin — et rien qui change dans le jeu",
+   "resume": "Une mise à jour purement technique : aucun contenu nouveau, aucun changement d’équilibrage. Le gros morceau est côté serveur — toutes les lettres du royaume vivaient dans un registre unique que chaque joueur parcourait en entier à chaque tick, et se tenir devant un pilier à corbeaux réexpédiait votre boîte complète, corps des lettres compris, vingt fois par seconde ; un index par destinataire remplace ce parcours, et l’affichage passe à quatre fois par seconde sur changement seulement. Le tableau des commandes d’artisanat, lu en entier pour chaque session à chaque tick, reçoit le même traitement. Côté client, les effets visuels des apparences d’arme s’estompent avec la distance (pleine intensité jusqu’à ~23 yards, 40 % à 58 yards) sans jamais disparaître ni toucher le porteur, sa plaque de nom, sa barre d’incantation ni le modèle d’arme, et les marques au sol mesurent moins de points au loin sans que leur empreinte ne bouge. Enfin, une dépendance vulnérable (nanoid) est épinglée. Vos builds, vos rotations et vos guides restent valables tels quels.",
+   "temps_forts": [
+    "Aucun changement de jeu : pas un sort, pas un talent, pas une maîtrise, pas un taux de butin — vérifié fichier par fichier",
+    "Le courrier ne fait plus travailler tout le royaume : un casier par destinataire au lieu d’un registre commun, et l’affichage passe de 20 à 4 fois par seconde, sur changement seulement",
+    "Le tableau des commandes d’artisanat, relu en entier pour chaque session à chaque tick, passe au même régime",
+    "Les effets d’arme s’estompent au loin (100 % jusqu’à ~23 yards, 40 % à 58 yards, jamais zéro) — le porteur, sa plaque de nom, sa barre d’incantation et le modèle d’arme restent intacts",
+    "Les marques au sol coûtent moins d’un tiers de leurs mesures au loin, à empreinte inchangée (écart médian sous 0,02 yard)",
+    "🔒 Une dépendance vulnérable (nanoid) épinglée à une version corrigée"
+   ],
+   "page": "notes/v0.35.1.html",
+   "titre_en": "A maintenance release: lighter mail, weapon effects at range — and nothing that changes in game",
+   "resume_en": "A purely technical update: no new content, no balance changes. The big piece is server-side — every letter in the realm lived in one book that each player walked in full every tick, and standing at a raven pillar re-sent your entire mailbox, letter bodies included, twenty times a second; a per-recipient index replaces that walk, and the view drops to four times a second on change only. The commission order board, read in full for every session every tick, gets the same treatment. On the client, weapon-skin visual effects now fade with distance (full strength within ~23 yards, 40% at 58 yards) without ever disappearing or touching the wearer, their nameplate, their cast bar or the weapon model, and ground marks take fewer measurements at range without their footprint moving. Finally, a vulnerable dependency (nanoid) is pinned. Your builds, rotations and guides all still hold as they are.",
+   "temps_forts_en": [
+    "No game changes at all: not a spell, not a talent, not a mastery, not a drop rate — checked file by file",
+    "Mail stops making the whole realm work: a pigeonhole per recipient instead of one shared book, and the view drops from 20 to 4 times a second, on change only",
+    "The commission order board, read in full for every session every tick, moves to the same regime",
+    "Weapon effects fade at range (100% within ~23 yards, 40% at 58 yards, never zero) — the wearer, their nameplate, their cast bar and the weapon model stay untouched",
+    "Ground marks cost less than a third of their measurements at range, with an unchanged footprint (median error under 0.02 yards)",
+    "🔒 A vulnerable dependency (nanoid) pinned to a fixed version"
+   ],
+   "page_en": "notes/v0.35.1.en.html"
+  },
+  {
    "version": "v0.35.0",
    "date": "2026-08-07",
    "titre": "La version PvP : Thornhollow Fields, l’Honneur — et un monde qui vit jour et nuit",

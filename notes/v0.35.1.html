@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Nouveautés v0.35.1 — La Clauderie</title>
+<meta name="description" content="Les nouveautés de la v0.35.1 de World of ClaudeCraft, expliquées simplement : une version d’entretien sans aucun changement de jeu — le courrier qui cesse de peser sur le serveur, les effets d’arme et les marques au sol qui s’allègent au loin, un profileur plus précis et une faille de sécurité bouchée.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Nouveautés v0.35.1 — La Clauderie">
+<meta property="og:description" content="Les nouveautés de la v0.35.1 de World of ClaudeCraft, expliquées simplement : une version d’entretien sans aucun changement de jeu — le courrier qui cesse de peser sur le serveur, les effets d’arme et les marques au sol qui s’allègent au loin, un profileur plus précis et une faille de sécurité bouchée.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.35.1.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.35.1.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') === 'en') location.replace('v0.35.1.en.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Notes de version</p>
+    <h1>Nouveautés <span class="v">v0.35.1</span></h1>
+    <p class="lede">Une version d’entretien, et elle l’assume : <strong class="hl">aucun contenu nouveau, aucun changement d’équilibrage</strong>. Vingt commits entièrement consacrés à la performance — le courrier qui arrête de faire travailler tout le royaume, les effets d’arme et les marques au sol qui allègent la note au loin, et un profileur capable de nommer le prochain coupable. Rien à réapprendre : mêmes builds, mêmes rotations, même butin. Juste un serveur et un client qui respirent.</p>
+    <div class="meta">
+      <span><b>Publiée</b> le 8 août 2026</span>
+      <span><b>Depuis</b> la v0.35.0</span>
+      <span><b>20</b> commits</span>
+    </div>
+    <div class="hint">💡 Clique sur une carte pour le détail.</div>
+  </header>
+
+  <!-- Bandeau constant : mêmes rubriques, même ordre, à chaque version. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">En un coup d’œil</h2>
+    <p class="sec-sub">Les mêmes rubriques à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
+    <ol>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <span class="d-name">Classes &amp; sorts</span>
+        <span class="d-say"><b class="eq">Toutes =</b> aucune valeur de combat ne bouge : ni sort, ni talent, ni maîtrise, ni coefficient.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <span class="d-name">Métiers &amp; récolte</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <span class="d-name">Donjons, failles &amp; boss</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <span class="d-name">Monde &amp; quêtes</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <span class="d-name">Guilde &amp; social</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#confort">Confort &amp; technique</a>
+        <span class="d-say">Toute la version est là : le courrier cesse de peser sur le serveur, les effets d’arme et les marques au sol s’allègent au loin, et une faille de sécurité est bouchée.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="confort">
+    <h2><span class="num">01</span>Confort &amp; technique</h2>
+    <p class="sec-sub">Toute la mise à jour tient dans cette rubrique — assez rare pour le dire. Trois chantiers de performance, dont deux se voient à l’écran sans rien coûter en lisibilité.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="courrier" tabindex="0" role="button" aria-label="Détails : le courrier">
+        <h3>Le courrier cesse de peser sur le royaume <span class="chip c-fix">Serveur</span></h3>
+        <p>Se tenir devant un pilier à corbeaux réexpédiait votre boîte <strong class="hl">entière, corps des lettres compris, vingt fois par seconde</strong>. C’est désormais quatre fois par seconde, et seulement si quelque chose a bougé.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="armes" tabindex="0" role="button" aria-label="Détails : le fondu des effets d’arme">
+        <h3>Les effets d’arme s’estompent au loin <span class="chip c-util">Rendu</span></h3>
+        <p>Les effets visuels des <strong class="hl">apparences d’arme</strong> perdent en éclat avec la distance, jusqu’à 40 % de leur intensité d’origine. Un fondu, jamais une disparition — et rien de ce qui compte en combat n’est touché.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="marques" tabindex="0" role="button" aria-label="Détails : les marques au sol">
+        <h3>Les marques au sol allègent la note <span class="chip c-util">Rendu</span></h3>
+        <p>Auras de sort et décalques épousent le relief point par point. De loin, le jeu en mesure <strong class="hl">moins d’un tiers</strong> — sans que l’empreinte de la marque ne bouge d’un pouce.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>Sous le capot <span class="chip c-fix">Performance</span></h3>
+        <ul>
+          <li>Le <strong class="hl">tableau des commandes d’artisanat</strong> était relu en entier, pour chaque session, à chaque tick : lui aussi passe à quatre fois par seconde et sur changement seulement.</li>
+          <li>Les ancres d’effets se calculent désormais <strong class="hl">sans allouer à chaque image</strong>, et les envois de géométrie n’envoient plus que ce que l’image a réellement écrit au lieu de la capacité entière du tampon.</li>
+          <li>Un effet d’arme déjà masqué par le passage en silhouette lointaine <strong class="hl">ne consomme plus de temps de calcul</strong> à chaque image pour quelque chose qu’aucun pixel n’affiche.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Coulisses <span class="chip c-util">Maintenance</span></h3>
+        <ul>
+          <li>Le <strong class="hl">profileur de tick</strong> découpe enfin l’envoi des données joueur par groupe de champs : la prochaine dérive de ce genre sera nommée par une capture au lieu d’être devinée. Coût nul hors capture.</li>
+          <li>Une dépendance vulnérable (<span class="kbd">nanoid</span>) est épinglée à une version corrigée.</li>
+          <li>La <strong class="hl">console d’administration</strong> est complète dans ses 21 langues — c’est bien l’outil des administrateurs, pas le client de jeu.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="jeu">
+    <h2><span class="num">02</span>Et le jeu, dans tout ça ?</h2>
+    <p class="sec-sub">Rien. Et c’est vérifié, pas supposé : entre la v0.35.0 et la v0.35.1, aucun fichier de contenu du jeu — sorts, talents, objets, monstres, zones, recettes — n’est touché.</p>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>Vos builds ne bougent pas <span class="chip c-bal">Équilibrage</span></h3>
+        <p>Pas un sort, pas un talent, pas une maîtrise, pas un taux de butin. Les rotations de la page <a href="../bis.html">Builds</a> et les panoplies WARFARE arrivées en v0.35.0 restent exactement ce qu’elles étaient hier.</p>
+      </div>
+      <div class="card">
+        <h3>Nos guides restent valables <span class="chip c-util">Site</span></h3>
+        <p>PvP, Métiers, Failles et Montures passent au badge <strong class="hl">v0.35.1</strong> sans une ligne à corriger : il n’y avait rien à corriger.</p>
+      </div>
+    </div>
+  </section>
+
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    courrier: {
+      title: "Le Ravenpost : un casier par joueur, au lieu d’un sac commun",
+      summary: "Vérifié dans le code du serveur et ses tests — pas dans le résumé des notes officielles.",
+      body: `
+        <h4>Le problème</h4>
+        <ul>
+          <li>Toutes les lettres du royaume vivaient dans <b>un seul registre</b>. Lire sa boîte, compter ses non-lus ou vérifier qu’un objet y dormait revenait à <b>parcourir le registre entier</b> — pour chaque joueur, à chaque tick. Sur un royaume vivant le registre grossit, et le coût avec lui : le profil processeur de la production le désignait comme le premier poste de dépense.</li>
+          <li>Pire à l’arrêt devant un pilier à corbeaux : la boîte complète, <b>corps des lettres compris</b>, était re-sérialisée <b>vingt fois par seconde</b>. Le cache n’évitait que l’envoi, jamais le travail.</li>
+        </ul>
+        <h4>Ce qui change</h4>
+        <ul>
+          <li>Un index par destinataire : chacun a son casier. Lire sa boîte, c’est ouvrir son casier — plus fouiller le sac commun.</li>
+          <li>L’affichage passe à <b>quatre fois par seconde</b>, reconstruit uniquement quand le courrier a réellement bougé, avec un filet de sécurité toutes les <b>deux secondes</b> — et une remise à jour immédiate dès que vous touchez vous-même à votre boîte. Le petit compteur d’enveloppes, lui, reste rafraîchi à chaque tick.</li>
+          <li>Un retrait qui ne change rien (re-cliquer sur une lettre déjà vidée) ne force plus de reconstruction chez tous les joueurs postés près d’un pilier.</li>
+        </ul>
+        <h4>Ce qui ne change pas</h4>
+        <ul>
+          <li>Ordre des lettres, expiration, notification d’arrivée : identiques. Le test compare, après chaque opération, l’index au parcours complet qu’il remplace — il ne peut pas dériver en silence.</li>
+        </ul>`
+    },
+    armes: {
+      title: "Le fondu des effets d’arme, et pourquoi il ne change rien au combat",
+      summary: "Un réglage graphique ne doit jamais donner d’avantage. Tout ce qui suit est épinglé par les tests du module.",
+      body: `
+        <h4>Le fondu</h4>
+        <ul>
+          <li>Pleine intensité tant que le porteur est à moins de <b>~23 yards</b> de vous. Au-delà, l’éclat descend régulièrement jusqu’à <b>40 %</b> à 58 yards — la portée d’affichage des personnages — et s’y tient.</li>
+          <li>Quand la machine peine, le régulateur de budget d’image peut assombrir davantage, sans jamais descendre sous <b>35 %</b> de l’intensité prévue.</li>
+        </ul>
+        <h4>Ce n’est jamais une disparition</h4>
+        <ul>
+          <li>Même au plus bas, l’effet reste très au-dessus du seuil auquel une pièce cesserait d’être dessinée. Ce qui retire un effet d’arme, c’est le passage du personnage en silhouette lointaine — comme avant, et sur des critères que tout le rendu partage déjà.</li>
+          <li>Ce qui est atténué, c’est <b>la décoration posée sur l’arme</b>. Le porteur, sa plaque de nom, sa barre d’incantation, ses auras, sa position et le modèle d’arme lui-même sont intacts à toutes les valeurs : vous ne perdez aucune information de combat.</li>
+        </ul>
+        <h4>Le détail qui a demandé deux essais</h4>
+        <ul>
+          <li>Un premier jet par paliers — 100 % puis 70 % d’un coup à la frontière — a échoué en test de jeu : ça se lisait comme un effet qui s’éteint. Le fondu est donc continu.</li>
+          <li>Il est accroché à une <b>portée fixe</b>, et non au bord de bande qui varie avec le nombre de personnages à l’écran : sinon l’effet aurait pulsé quand des joueurs entrent et sortent du champ, et deux joueurs côte à côte n’auraient pas vu la même chose.</li>
+        </ul>`
+    },
+    marques: {
+      title: "Les marques au sol : moins de points, la même empreinte",
+      summary: "Trois garanties écrites dans le test, et un écart mesuré sur le terrain réel du jeu.",
+      body: `
+        <h4>De quoi on parle</h4>
+        <ul>
+          <li>Les disques posés au sol — auras de sort, décalques — ne sont pas plats : ils épousent le relief en mesurant la hauteur du terrain sous chaque point de leur contour. C’est ce qui les empêche de flotter ou de s’enfoncer dans une pente.</li>
+        </ul>
+        <h4>Ce qui change</h4>
+        <ul>
+          <li>Loin de la caméra, un point sur deux, trois ou quatre suffit : le reste est rempli en ligne droite. Une marque lointaine coûte ainsi <b>moins d’un tiers</b> des mesures qu’elle prenait de près.</li>
+        </ul>
+        <h4>Les trois garanties</h4>
+        <ul>
+          <li>Chaque point mesuré est un point que la version exacte aurait mesuré aussi : <b>l’empreinte de la marque ne bouge pas</b>, elle est seulement décrite plus grossièrement.</li>
+          <li>Jamais moins de <b>huit points</b> sur un contour — en dessous, un disque cesse de se lire comme un disque. Et les marques larges, les ondes de choc, sont exclues du dégrossissage.</li>
+          <li>L’écart mesuré sur le terrain praticable du jeu : moins de <b>0,02 yard</b> (~2 cm) dans la moitié des cas, moins de 0,15 yard au 95<sup>e</sup> centile, moins de 0,3 yard au pire centième.</li>
+        </ul>`
+    },
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>
