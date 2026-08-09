@@ -31,6 +31,8 @@ import subprocess
 import sys
 from datetime import datetime, timezone
 
+from pick_release_branches import version_key
+
 # Les six rubriques, dans l'ordre imposé du bandeau (voir CLAUDE.md).
 SECTIONS = [
     ("classes",  "⚔️", "Classes & sorts",           "Classes & spells"),
@@ -174,7 +176,9 @@ def main():
 
     versions = [analyse(repo, base_tag, b) for b in branches]
     # De la plus basse à la plus haute — la première est la prochaine à sortir.
-    versions.sort(key=lambda v: [int(x) for x in v["version"].lstrip("v").split(".")])
+    # Un nom sans numéro exploitable passe en fin de liste plutôt que de faire
+    # planter le script (voir l'en-tête de pick_release_branches.py).
+    versions.sort(key=lambda v: version_key(v["version"]) or (10**9, 0, 0))
 
     out = {
         "generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),

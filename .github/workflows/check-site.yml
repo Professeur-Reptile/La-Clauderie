@@ -49,6 +49,13 @@ jobs:
       - name: Références du Codex (existence et non-ambiguïté)
         run: python3 scripts/check_codex_refs.py wocc-knowledge-base/data
 
+      # 7-9 août 2026 : le choix des branches de release du jeu, écrit en ligne
+      # dans update-upcoming.yml, plantait sur les vieilles branches sans
+      # numéro de version — panne toutes les 2 h, découverte deux jours plus
+      # tard par mail. Le code vit maintenant dans un script, rejoué ici.
+      - name: Sélection des branches de release (auto-test)
+        run: python3 scripts/pick_release_branches.py --self-test
+
       # Non bloquant : une description non traduite dégrade l'affichage (repli
       # sur l'anglais) mais ne casse rien. C'est un rappel pour la Routine
       # éditoriale, pas un motif de refuser une publication.

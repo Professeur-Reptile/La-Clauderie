@@ -44,28 +44,24 @@ jobs:
         run: |
           set -euo pipefail
 
-          # Dernier tag publié = la base à partir de laquelle compter.
-          base=$(git ls-remote --tags --refs "$GAME" 'v*' | awk -F/ '{print $NF}' | sort -V | tail -1)
-          if [ -z "$base" ]; then
+          # Dernier tag publié (la base à partir de laquelle compter), puis
+          # TOUTES les branches de release au-dessus, de la plus basse à la
+          # plus haute : le jeu mène parfois deux chantiers en parallèle — un
+          # correctif v0.35.1 et la v0.36.0 : la page les montre tous, demande
+          # du 7 août 2026 (« il faut à venir pour les deux »).
+          #
+          # Le choix vit dans un script, pas dans ce YAML : la version en
+          # ligne ici plantait sur les vieilles branches du jeu qui ne portent
+          # pas un numéro (release/v0.6-headline…) et n'a été jouée qu'en
+          # production — deux jours de panne toutes les 2 h, du 7 au 9 août
+          # 2026. `--self-test` la rejoue désormais dans check-site.yml.
+          if ! sel=$(python3 scripts/pick_release_branches.py "$GAME"); then
             echo "Dépôt du jeu injoignable — on réessaiera au prochain passage."
             echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0
           fi
+          base=$(echo "$sel" | head -1)
+          branches=$(echo "$sel" | tail -n +2)
 
-          # TOUTES les branches de release au-dessus de ce tag, de la plus
-          # basse à la plus haute. Le jeu garde ses vieilles branches (d'où
-          # « au-dessus du tag ») et mène parfois deux chantiers en parallèle
-          # — un correctif v0.35.1 et la v0.36.0 : la page les montre tous,
-          # demande du 7 août 2026 (« il faut à venir pour les deux »).
-          branches=$(git ls-remote --heads "$GAME" 'refs/heads/release/v*' \
-            | awk -F'refs/heads/' '{print $2}' | sort -V \
-            | python3 -c "
-          import sys
-          def key(v): return [int(x) for x in v.lstrip('v').split('.')]
-          for line in sys.stdin:
-              b = line.strip()
-              if b and key(b.rsplit('/', 1)[-1]) > key(sys.argv[1]):
-                  print(b)
-          " "$base")
           if [ -z "$branches" ]; then
             echo "Aucune branche de release au-dessus de $base — rien à annoncer."
             # La version précédemment annoncée vient de sortir : vider la page,
@@ -119,7 +115,7 @@ jobs:
           " || echo commit)
           if [ "$decide" = "skip" ]; then
             rm -f upcoming.new.json
-            echo "Rien de significatif sur $branch (ni version, ni imminence, ni +25 commits)."
+            echo "Rien de significatif sur $branches (ni version, ni imminence, ni +25 commits)."
             echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0
           fi
 
