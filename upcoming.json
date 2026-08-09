@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-08T21:26:43Z",
+ "generated": "2026-08-09T14:35:46Z",
  "base_tag": "v0.35.1",
  "version": "v0.36.0",
  "branch": "release/v0.36.0",
  "declared_version": "0.35.1",
  "imminent": false,
- "commits": 351,
- "shown": 116,
- "last_commit": "2026-08-09T08:56:55+12:00",
+ "commits": 638,
+ "shown": 193,
+ "last_commit": "2026-08-09T19:37:27+08:00",
  "sections": [
   {
    "key": "classes",
@@ -16,6 +16,13 @@
    "en": "Classes & spells",
    "items": [
     {
+     "h": "78958e96",
+     "kind": "feat",
+     "scope": "talents",
+     "text": "Replace Double Charge with Intervene on the warrior level-5 row",
+     "date": "2026-08-07"
+    },
+    {
      "h": "87a7ac52",
      "kind": "feat",
      "scope": "render",
@@ -23,10 +30,31 @@
      "date": "2026-08-06"
     },
     {
+     "h": "ccba73e0",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Warlock demon pet family bespoke nod-and-slash attack",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "55acedba",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Bespoke Zulgar, Voice of the Basin attack/cast clip",
+     "date": "2026-08-06"
+    },
+    {
      "h": "50fe4bff",
      "kind": "feat",
      "scope": "render",
      "text": "Hunter ability attacks plus ghost spirit attack",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "9e595ffe",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Druid caster casts plus dragonkin attack (issue #2889)",
      "date": "2026-08-05"
     },
     {
@@ -51,6 +79,34 @@
      "date": "2026-08-08"
     },
     {
+     "h": "245055a4",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Keep clearing a duel aura whose source has despawned",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "04581865",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Rebase Zulgar attack/cast clip onto release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "a1454012",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Rebase druid caster + dragonkin anim PR onto release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "6c40ef21",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Reconcile wildheart high priest clip with release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
      "h": "e1a74b76",
      "kind": "fix",
      "scope": "render",
@@ -62,6 +118,20 @@
      "kind": "fix",
      "scope": "test",
      "text": "Repair the stale manifest anchors in the hunter anim contract test",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "7a83abc1",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Stop re-scaling white auto-attack damage by weapon speed",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "cbdd50d0",
+     "kind": "fix",
+     "scope": "warrior",
+     "text": "Put Heroic Leap and Intervene on 30 sec cooldowns",
      "date": "2026-08-07"
     },
     {
@@ -94,11 +164,46 @@
    "en": "Professions & gathering",
    "items": [
     {
+     "h": "2a7a4e2a",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep weapon fresnel shells out of the material re-apply pass",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "2fa93961",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Fill non-Latin locales for profession progress chat lines",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "d30a97f8",
+     "kind": "fix",
+     "scope": "professions",
+     "text": "Salvage the copy the player selected, not a guess",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "ec415f69",
+     "kind": "fix",
+     "scope": "professions",
+     "text": "Align the salvage session, and tighten the guard sweep",
+     "date": "2026-08-08"
+    },
+    {
      "h": "e79b2bd8",
      "kind": "fix",
      "scope": "ui",
      "text": "Paint the fine-material mark in the bank and guild bank grids",
      "date": "2026-08-07"
+    },
+    {
+     "h": "a2d3ca24",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Register the profession-service progress countdown lines",
+     "date": "2026-08-06"
     }
    ]
   },
@@ -130,6 +235,13 @@
    "fr": "Monde & quêtes",
    "en": "World & quests",
    "items": [
+    {
+     "h": "b2c38ab4",
+     "kind": "feat",
+     "scope": "vendor",
+     "text": "One Warfare shop row, ordered by armor class, confirm-gated",
+     "date": "2026-08-07"
+    },
     {
      "h": "cb59870d",
      "kind": "feat",
@@ -180,11 +292,32 @@
      "date": "2026-08-08"
     },
     {
+     "h": "8fdfd665",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Reconcile wildheart ravager clip with release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "6d6aa449",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Avoid per-mob player roster scans",
+     "date": "2026-08-08"
+    },
+    {
      "h": "b48b246f",
      "kind": "fix",
      "scope": "guide",
      "text": "Retire the three-zone journey copy and name the cap-only content",
      "date": "2026-08-08"
+    },
+    {
+     "h": "d2896fec",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Frame the demon attack before/after shots so the mob is visible",
+     "date": "2026-08-06"
     }
    ]
   },
@@ -194,6 +327,34 @@
    "fr": "Guilde & social",
    "en": "Guild & social",
    "items": [
+    {
+     "h": "ea34ae4c",
+     "kind": "perf",
+     "scope": "server",
+     "text": "Cache the guild roster JOIN behind a per-guild TTL",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "ce9ccacb",
+     "kind": "perf",
+     "scope": "server",
+     "text": "TTL-cache the admin activity bundle and moderation queue",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "5e46bfa4",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Fix a readonly-array type error in the moderation queue cache",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "2486e02f",
+     "kind": "fix",
+     "scope": "battleground",
+     "text": "A live offer makes a party member unavailable to queue",
+     "date": "2026-08-08"
+    },
     {
      "h": "11de411c",
      "kind": "fix",
@@ -238,6 +399,69 @@
      "date": "2026-08-08"
     },
     {
+     "h": "8d23deba",
+     "kind": "feat",
+     "scope": "game",
+     "text": "Detect and warn on likely hybrid-GPU integrated rendering",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "d26cede5",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Add the per-copy item addressing leaf",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "4da073cf",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Accept a copy selection in the remaining item resolvers",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "757e1eef",
+     "kind": "feat",
+     "scope": "",
+     "text": "Wire the copy selection through IWorld, the wire, and the UI",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "7ca48b46",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Add the gear-set planner for saved loadouts",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "4e1843bc",
+     "kind": "feat",
+     "scope": "talents",
+     "text": "Capture and restore a loadout's gear set",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "435bf405",
+     "kind": "feat",
+     "scope": "talents",
+     "text": "Expose the gear opt-in through IWorld, the wire, and the HUD",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "05b8570f",
+     "kind": "feat",
+     "scope": "talents",
+     "text": "Let fighters respec inside a battleground out of combat",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "4da02a42",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Held crowd-control bands for rooted and feared, beside the stun tell",
+     "date": "2026-08-07"
+    },
+    {
      "h": "7a3d6eb0",
      "kind": "feat",
      "scope": "ui",
@@ -263,6 +487,20 @@
      "kind": "feat",
      "scope": "ui",
      "text": "Show lifetime playtime on the character sheet with a privacy eye",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "a7e817e8",
+     "kind": "feat",
+     "scope": "battleground",
+     "text": "Confirm a queue pop before seating the match",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "735be775",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Paint the Intervene skill icon and clear its art debt",
      "date": "2026-08-07"
     },
     {
@@ -336,11 +574,46 @@
      "date": "2026-08-06"
     },
     {
+     "h": "972ab491",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Second KayKit hit-reaction clip, Hit_B_Stagger",
+     "date": "2026-08-06"
+    },
+    {
      "h": "217a9ede",
      "kind": "feat",
      "scope": "render",
      "text": "Mob_bear bespoke ground-swipe maul attack",
      "date": "2026-08-06"
+    },
+    {
+     "h": "6726238f",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Bespoke Bloodmane Ravager attack clip",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "f42ab6ef",
+     "kind": "perf",
+     "scope": "malware-scan",
+     "text": "Skip the local Turborepo cache directory",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "2f8af0e5",
+     "kind": "perf",
+     "scope": "malware-scan",
+     "text": "Stop scanning docs/**, matching its own contract",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "9756ef27",
+     "kind": "perf",
+     "scope": "server",
+     "text": "Poll faster in the DB-boot retry loop",
+     "date": "2026-08-09"
     },
     {
      "h": "c881eef5",
@@ -375,6 +648,34 @@
      "kind": "perf",
      "scope": "render",
      "text": "KTX2-compress the standalone player skin atlases",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "b0463661",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Tier the deferred asset preload lane by necessity",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "0b4c866e",
+     "kind": "perf",
+     "scope": "",
+     "text": "Add browser diagnostics and eliminate frame hitches",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "7f13d1a2",
+     "kind": "perf",
+     "scope": "server",
+     "text": "Gate the self record's static combat/progression scalars behind maybe()",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "09e15e98",
+     "kind": "perf",
+     "scope": "server",
+     "text": "Cache the per-character lifetime-XP rank read",
      "date": "2026-08-08"
     },
     {
@@ -518,6 +819,62 @@
      "date": "2026-08-07"
     },
     {
+     "h": "1c4ab73e",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Skip tint on materials without a color",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "ee7b6c8c",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.36.0 (PR 3161) into fix/three-compileasync-race",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "f34ed066",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Return colorless materials unchanged from tintedMaterial",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "5841eb5a",
+     "kind": "fix",
+     "scope": "perf",
+     "text": "Address diagnostics review findings",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "a897b5a2",
+     "kind": "fix",
+     "scope": "perf",
+     "text": "Enforce prewarm hard ceiling",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "1c1a2cde",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Resolve duplicate animUrls after release/v0.36.0 merge",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "f62ea099",
+     "kind": "fix",
+     "scope": "anim",
+     "text": "Reformat pre-existing merge debt to clear pre-push biome floor",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "4506d1d3",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Silence unused nodeId param in legacy spendTalentPoint shim",
+     "date": "2026-08-09"
+    },
+    {
      "h": "b2363198",
      "kind": "fix",
      "scope": "dev",
@@ -581,10 +938,24 @@
      "date": "2026-08-08"
     },
     {
+     "h": "86e3bc84",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Resolve rebase conflicts onto release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
      "h": "dfdc7de0",
      "kind": "fix",
      "scope": "guide",
      "text": "Clear the verbatim-name denylist in the new wiki copy",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "d91f576a",
+     "kind": "fix",
+     "scope": "mobile",
+     "text": "Keep rewards in vertical flow",
      "date": "2026-08-08"
     },
     {
@@ -595,10 +966,24 @@
      "date": "2026-08-08"
     },
     {
+     "h": "732c637f",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Re-pin BIPED14 remaining-count after release rebase conflict",
+     "date": "2026-08-08"
+    },
+    {
      "h": "5c3a2d89",
      "kind": "fix",
      "scope": "render",
      "text": "Re-resolve rebase conflicts against moved release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "691e53de",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Rescope BIPED14/ENEMY7 hit-variety counts after re-rebase",
      "date": "2026-08-08"
     },
     {
@@ -630,10 +1015,31 @@
      "date": "2026-08-08"
     },
     {
+     "h": "62286c41",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Re-rebase Bloodmane Ravager PR onto moved release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
      "h": "7669a673",
      "kind": "fix",
      "scope": "sim",
      "text": "Bound the combatProfileForMob cache size",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "2a70c0eb",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Reconcile demon nod-and-slash attack with release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "c3e0f3b6",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Reconcile KayKit hit-variety clip with release/v0.36.0",
      "date": "2026-08-08"
     },
     {
@@ -651,10 +1057,108 @@
      "date": "2026-08-08"
     },
     {
+     "h": "5af0b859",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Unstick rogue-troll BIPED14 pin from mob_demon's own migration",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "f7603e8a",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Reflow shareable player card layout to prevent overflow",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "5e7a1bd7",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Dismiss loot-roll tooltip when its row disappears",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "17b5abb5",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Give Cauterize its own self-inflicted death recap sentence",
+     "date": "2026-08-08"
+    },
+    {
      "h": "35acee77",
      "kind": "fix",
      "scope": "guide",
      "text": "Correct the mechanical claims the headline pass did not check",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "1c5d910b",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Localize diagnostics panel chrome",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "32760cd6",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Refuse a bad copy selection before anything mutates",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "69503c83",
+     "kind": "fix",
+     "scope": "talents",
+     "text": "Restore the right copy for every slot, including crafted",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "5b7ea843",
+     "kind": "fix",
+     "scope": "perf",
+     "text": "Harden diagnostics review contracts",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "56874e13",
+     "kind": "fix",
+     "scope": "perf",
+     "text": "Align diagnostics fixtures with release",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "de9ecc3f",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Close the despawned-pet gap by recording what a duel controlled",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "85a2ab55",
+     "kind": "fix",
+     "scope": "talents",
+     "text": "Validate saved slots by the shared rule, and count real swaps",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "d2686257",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Scale PvP fear DR from the ability's own duration",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "247f6e23",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Refuse a charge while rooted instead of consuming it",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "a50220ae",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Refuse a friendly rush onto the caster and enforce its minRange",
      "date": "2026-08-08"
     },
     {
@@ -718,6 +1222,20 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Show an absorb floater to the attacker, not just the defender",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "f108e658",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Stop the battleground kill feed shearing player names",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "bc411173",
+     "kind": "fix",
+     "scope": "pet",
+     "text": "Assist against hostile players, and stop out-detecting mobs on stealth",
      "date": "2026-08-07"
     },
     {
@@ -805,10 +1323,31 @@
      "date": "2026-08-07"
     },
     {
+     "h": "47d89e59",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Clear a duel opponent's PET debuffs when the duel ends",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "35154a91",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Merge hit-variety and ability-anim donor clips per class",
+     "date": "2026-08-07"
+    },
+    {
      "h": "939085f3",
      "kind": "fix",
      "scope": "render",
      "text": "Regenerate stale demon-flying media manifest hash",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "616f5087",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Drop the duplicated range line from the Intervene tooltip",
      "date": "2026-08-07"
     },
     {
@@ -876,9 +1415,9 @@
    "branch": "release/v0.36.0",
    "declared_version": "0.35.1",
    "imminent": false,
-   "commits": 351,
-   "shown": 116,
-   "last_commit": "2026-08-09T08:56:55+12:00",
+   "commits": 638,
+   "shown": 193,
+   "last_commit": "2026-08-09T19:37:27+08:00",
    "sections": [
     {
      "key": "classes",
@@ -887,6 +1426,13 @@
      "en": "Classes & spells",
      "items": [
       {
+       "h": "78958e96",
+       "kind": "feat",
+       "scope": "talents",
+       "text": "Replace Double Charge with Intervene on the warrior level-5 row",
+       "date": "2026-08-07"
+      },
+      {
        "h": "87a7ac52",
        "kind": "feat",
        "scope": "render",
@@ -894,10 +1440,31 @@
        "date": "2026-08-06"
       },
       {
+       "h": "ccba73e0",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Warlock demon pet family bespoke nod-and-slash attack",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "55acedba",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Bespoke Zulgar, Voice of the Basin attack/cast clip",
+       "date": "2026-08-06"
+      },
+      {
        "h": "50fe4bff",
        "kind": "feat",
        "scope": "render",
        "text": "Hunter ability attacks plus ghost spirit attack",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "9e595ffe",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Druid caster casts plus dragonkin attack (issue #2889)",
        "date": "2026-08-05"
       },
       {
@@ -922,6 +1489,34 @@
        "date": "2026-08-08"
       },
       {
+       "h": "245055a4",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Keep clearing a duel aura whose source has despawned",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "04581865",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Rebase Zulgar attack/cast clip onto release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "a1454012",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Rebase druid caster + dragonkin anim PR onto release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "6c40ef21",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Reconcile wildheart high priest clip with release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
        "h": "e1a74b76",
        "kind": "fix",
        "scope": "render",
@@ -933,6 +1528,20 @@
        "kind": "fix",
        "scope": "test",
        "text": "Repair the stale manifest anchors in the hunter anim contract test",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "7a83abc1",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Stop re-scaling white auto-attack damage by weapon speed",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "cbdd50d0",
+       "kind": "fix",
+       "scope": "warrior",
+       "text": "Put Heroic Leap and Intervene on 30 sec cooldowns",
        "date": "2026-08-07"
       },
       {
@@ -965,11 +1574,46 @@
      "en": "Professions & gathering",
      "items": [
       {
+       "h": "2a7a4e2a",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep weapon fresnel shells out of the material re-apply pass",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "2fa93961",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Fill non-Latin locales for profession progress chat lines",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "d30a97f8",
+       "kind": "fix",
+       "scope": "professions",
+       "text": "Salvage the copy the player selected, not a guess",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "ec415f69",
+       "kind": "fix",
+       "scope": "professions",
+       "text": "Align the salvage session, and tighten the guard sweep",
+       "date": "2026-08-08"
+      },
+      {
        "h": "e79b2bd8",
        "kind": "fix",
        "scope": "ui",
        "text": "Paint the fine-material mark in the bank and guild bank grids",
        "date": "2026-08-07"
+      },
+      {
+       "h": "a2d3ca24",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Register the profession-service progress countdown lines",
+       "date": "2026-08-06"
       }
      ]
     },
@@ -1001,6 +1645,13 @@
      "fr": "Monde & quêtes",
      "en": "World & quests",
      "items": [
+      {
+       "h": "b2c38ab4",
+       "kind": "feat",
+       "scope": "vendor",
+       "text": "One Warfare shop row, ordered by armor class, confirm-gated",
+       "date": "2026-08-07"
+      },
       {
        "h": "cb59870d",
        "kind": "feat",
@@ -1051,11 +1702,32 @@
        "date": "2026-08-08"
       },
       {
+       "h": "8fdfd665",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Reconcile wildheart ravager clip with release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "6d6aa449",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Avoid per-mob player roster scans",
+       "date": "2026-08-08"
+      },
+      {
        "h": "b48b246f",
        "kind": "fix",
        "scope": "guide",
        "text": "Retire the three-zone journey copy and name the cap-only content",
        "date": "2026-08-08"
+      },
+      {
+       "h": "d2896fec",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Frame the demon attack before/after shots so the mob is visible",
+       "date": "2026-08-06"
       }
      ]
     },
@@ -1065,6 +1737,34 @@
      "fr": "Guilde & social",
      "en": "Guild & social",
      "items": [
+      {
+       "h": "ea34ae4c",
+       "kind": "perf",
+       "scope": "server",
+       "text": "Cache the guild roster JOIN behind a per-guild TTL",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "ce9ccacb",
+       "kind": "perf",
+       "scope": "server",
+       "text": "TTL-cache the admin activity bundle and moderation queue",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "5e46bfa4",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Fix a readonly-array type error in the moderation queue cache",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "2486e02f",
+       "kind": "fix",
+       "scope": "battleground",
+       "text": "A live offer makes a party member unavailable to queue",
+       "date": "2026-08-08"
+      },
       {
        "h": "11de411c",
        "kind": "fix",
@@ -1109,6 +1809,69 @@
        "date": "2026-08-08"
       },
       {
+       "h": "8d23deba",
+       "kind": "feat",
+       "scope": "game",
+       "text": "Detect and warn on likely hybrid-GPU integrated rendering",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "d26cede5",
+       "kind": "feat",
+       "scope": "sim",
+       "text": "Add the per-copy item addressing leaf",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "4da073cf",
+       "kind": "feat",
+       "scope": "sim",
+       "text": "Accept a copy selection in the remaining item resolvers",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "757e1eef",
+       "kind": "feat",
+       "scope": "",
+       "text": "Wire the copy selection through IWorld, the wire, and the UI",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "7ca48b46",
+       "kind": "feat",
+       "scope": "sim",
+       "text": "Add the gear-set planner for saved loadouts",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "4e1843bc",
+       "kind": "feat",
+       "scope": "talents",
+       "text": "Capture and restore a loadout's gear set",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "435bf405",
+       "kind": "feat",
+       "scope": "talents",
+       "text": "Expose the gear opt-in through IWorld, the wire, and the HUD",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "05b8570f",
+       "kind": "feat",
+       "scope": "talents",
+       "text": "Let fighters respec inside a battleground out of combat",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "4da02a42",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Held crowd-control bands for rooted and feared, beside the stun tell",
+       "date": "2026-08-07"
+      },
+      {
        "h": "7a3d6eb0",
        "kind": "feat",
        "scope": "ui",
@@ -1134,6 +1897,20 @@
        "kind": "feat",
        "scope": "ui",
        "text": "Show lifetime playtime on the character sheet with a privacy eye",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "a7e817e8",
+       "kind": "feat",
+       "scope": "battleground",
+       "text": "Confirm a queue pop before seating the match",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "735be775",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Paint the Intervene skill icon and clear its art debt",
        "date": "2026-08-07"
       },
       {
@@ -1207,11 +1984,46 @@
        "date": "2026-08-06"
       },
       {
+       "h": "972ab491",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Second KayKit hit-reaction clip, Hit_B_Stagger",
+       "date": "2026-08-06"
+      },
+      {
        "h": "217a9ede",
        "kind": "feat",
        "scope": "render",
        "text": "Mob_bear bespoke ground-swipe maul attack",
        "date": "2026-08-06"
+      },
+      {
+       "h": "6726238f",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Bespoke Bloodmane Ravager attack clip",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "f42ab6ef",
+       "kind": "perf",
+       "scope": "malware-scan",
+       "text": "Skip the local Turborepo cache directory",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "2f8af0e5",
+       "kind": "perf",
+       "scope": "malware-scan",
+       "text": "Stop scanning docs/**, matching its own contract",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "9756ef27",
+       "kind": "perf",
+       "scope": "server",
+       "text": "Poll faster in the DB-boot retry loop",
+       "date": "2026-08-09"
       },
       {
        "h": "c881eef5",
@@ -1246,6 +2058,34 @@
        "kind": "perf",
        "scope": "render",
        "text": "KTX2-compress the standalone player skin atlases",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "b0463661",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Tier the deferred asset preload lane by necessity",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "0b4c866e",
+       "kind": "perf",
+       "scope": "",
+       "text": "Add browser diagnostics and eliminate frame hitches",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "7f13d1a2",
+       "kind": "perf",
+       "scope": "server",
+       "text": "Gate the self record's static combat/progression scalars behind maybe()",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "09e15e98",
+       "kind": "perf",
+       "scope": "server",
+       "text": "Cache the per-character lifetime-XP rank read",
        "date": "2026-08-08"
       },
       {
@@ -1389,6 +2229,62 @@
        "date": "2026-08-07"
       },
       {
+       "h": "1c4ab73e",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Skip tint on materials without a color",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "ee7b6c8c",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.36.0 (PR 3161) into fix/three-compileasync-race",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "f34ed066",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Return colorless materials unchanged from tintedMaterial",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "5841eb5a",
+       "kind": "fix",
+       "scope": "perf",
+       "text": "Address diagnostics review findings",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "a897b5a2",
+       "kind": "fix",
+       "scope": "perf",
+       "text": "Enforce prewarm hard ceiling",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "1c1a2cde",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Resolve duplicate animUrls after release/v0.36.0 merge",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "f62ea099",
+       "kind": "fix",
+       "scope": "anim",
+       "text": "Reformat pre-existing merge debt to clear pre-push biome floor",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "4506d1d3",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Silence unused nodeId param in legacy spendTalentPoint shim",
+       "date": "2026-08-09"
+      },
+      {
        "h": "b2363198",
        "kind": "fix",
        "scope": "dev",
@@ -1452,10 +2348,24 @@
        "date": "2026-08-08"
       },
       {
+       "h": "86e3bc84",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Resolve rebase conflicts onto release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
        "h": "dfdc7de0",
        "kind": "fix",
        "scope": "guide",
        "text": "Clear the verbatim-name denylist in the new wiki copy",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "d91f576a",
+       "kind": "fix",
+       "scope": "mobile",
+       "text": "Keep rewards in vertical flow",
        "date": "2026-08-08"
       },
       {
@@ -1466,10 +2376,24 @@
        "date": "2026-08-08"
       },
       {
+       "h": "732c637f",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Re-pin BIPED14 remaining-count after release rebase conflict",
+       "date": "2026-08-08"
+      },
+      {
        "h": "5c3a2d89",
        "kind": "fix",
        "scope": "render",
        "text": "Re-resolve rebase conflicts against moved release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "691e53de",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Rescope BIPED14/ENEMY7 hit-variety counts after re-rebase",
        "date": "2026-08-08"
       },
       {
@@ -1501,10 +2425,31 @@
        "date": "2026-08-08"
       },
       {
+       "h": "62286c41",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Re-rebase Bloodmane Ravager PR onto moved release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
        "h": "7669a673",
        "kind": "fix",
        "scope": "sim",
        "text": "Bound the combatProfileForMob cache size",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "2a70c0eb",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Reconcile demon nod-and-slash attack with release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "c3e0f3b6",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Reconcile KayKit hit-variety clip with release/v0.36.0",
        "date": "2026-08-08"
       },
       {
@@ -1522,10 +2467,108 @@
        "date": "2026-08-08"
       },
       {
+       "h": "5af0b859",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Unstick rogue-troll BIPED14 pin from mob_demon's own migration",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "f7603e8a",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Reflow shareable player card layout to prevent overflow",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "5e7a1bd7",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Dismiss loot-roll tooltip when its row disappears",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "17b5abb5",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Give Cauterize its own self-inflicted death recap sentence",
+       "date": "2026-08-08"
+      },
+      {
        "h": "35acee77",
        "kind": "fix",
        "scope": "guide",
        "text": "Correct the mechanical claims the headline pass did not check",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "1c5d910b",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Localize diagnostics panel chrome",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "32760cd6",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Refuse a bad copy selection before anything mutates",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "69503c83",
+       "kind": "fix",
+       "scope": "talents",
+       "text": "Restore the right copy for every slot, including crafted",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "5b7ea843",
+       "kind": "fix",
+       "scope": "perf",
+       "text": "Harden diagnostics review contracts",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "56874e13",
+       "kind": "fix",
+       "scope": "perf",
+       "text": "Align diagnostics fixtures with release",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "de9ecc3f",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Close the despawned-pet gap by recording what a duel controlled",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "85a2ab55",
+       "kind": "fix",
+       "scope": "talents",
+       "text": "Validate saved slots by the shared rule, and count real swaps",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "d2686257",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Scale PvP fear DR from the ability's own duration",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "247f6e23",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Refuse a charge while rooted instead of consuming it",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "a50220ae",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Refuse a friendly rush onto the caster and enforce its minRange",
        "date": "2026-08-08"
       },
       {
@@ -1589,6 +2632,20 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Show an absorb floater to the attacker, not just the defender",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "f108e658",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stop the battleground kill feed shearing player names",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "bc411173",
+       "kind": "fix",
+       "scope": "pet",
+       "text": "Assist against hostile players, and stop out-detecting mobs on stealth",
        "date": "2026-08-07"
       },
       {
@@ -1676,10 +2733,31 @@
        "date": "2026-08-07"
       },
       {
+       "h": "47d89e59",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Clear a duel opponent's PET debuffs when the duel ends",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "35154a91",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Merge hit-variety and ability-anim donor clips per class",
+       "date": "2026-08-07"
+      },
+      {
        "h": "939085f3",
        "kind": "fix",
        "scope": "render",
        "text": "Regenerate stale demon-flying media manifest hash",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "616f5087",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Drop the duplicated range line from the Intervene tooltip",
        "date": "2026-08-07"
       },
       {
