@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-10T14:30:47Z",
+ "generated": "2026-08-10T16:07:21Z",
  "base_tag": "v0.35.1",
  "version": "v0.36.0",
  "branch": "release/v0.36.0",
  "declared_version": "0.36.0",
  "imminent": true,
- "commits": 1478,
- "shown": 619,
- "last_commit": "2026-08-10T22:12:24+12:00",
+ "commits": 1726,
+ "shown": 739,
+ "last_commit": "2026-08-10T10:47:34-05:00",
  "sections": [
   {
    "key": "classes",
@@ -1389,6 +1389,13 @@
    "en": "Professions & gathering",
    "items": [
     {
+     "h": "94fa6170",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Warfare gallery and fishing trophies",
+     "date": "2026-08-09"
+    },
+    {
      "h": "5120fa80",
      "kind": "fix",
      "scope": "render",
@@ -1436,6 +1443,13 @@
      "scope": "i18n",
      "text": "Register the profession-service progress countdown lines",
      "date": "2026-08-06"
+    },
+    {
+     "h": "3c452c50",
+     "kind": "fix",
+     "scope": "release/v0.35.0",
+     "text": "Integrate craft-cast into feature/reliquary",
+     "date": "2026-08-05"
     }
    ]
   },
@@ -1450,6 +1464,13 @@
      "kind": "feat",
      "scope": "render",
      "text": "Readable rift death-zone telegraph with a timer sweep",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "af5edfce",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "The Rift page with clear meters",
      "date": "2026-08-09"
     },
     {
@@ -1537,6 +1558,13 @@
      "date": "2026-08-08"
     },
     {
+     "h": "c395374d",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Read delve page clears through the tiered delveClears keys",
+     "date": "2026-08-06"
+    },
+    {
      "h": "06068a77",
      "kind": "fix",
      "scope": "classes",
@@ -1551,6 +1579,13 @@
    "fr": "Monde & quêtes",
    "en": "World & quests",
    "items": [
+    {
+     "h": "0d869c95",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Illumination marquee, border-deed feed, and achievement map entries",
+     "date": "2026-08-08"
+    },
     {
      "h": "b2c38ab4",
      "kind": "feat",
@@ -1629,6 +1664,13 @@
      "date": "2026-08-09"
     },
     {
+     "h": "c21f7f8d",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Restore the hasCrestRecipe import in the deed icons gate",
+     "date": "2026-08-09"
+    },
+    {
      "h": "a626185b",
      "kind": "fix",
      "scope": "guide",
@@ -1678,6 +1720,13 @@
      "date": "2026-08-08"
     },
     {
+     "h": "2212225f",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Give pristine_claw its Reliquary specimen slot",
+     "date": "2026-08-06"
+    },
+    {
      "h": "d2896fec",
      "kind": "fix",
      "scope": "render",
@@ -1712,6 +1761,20 @@
      "scope": "chat",
      "text": "Add /bg, a battleground channel reaching both teams",
      "date": "2026-08-07"
+    },
+    {
+     "h": "82acdd35",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "OpenWithPage deep link and clickable reliquary chat lines",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "fcdf9158",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Phase 9 social sheet, wiki catalog, polish",
+     "date": "2026-08-05"
     },
     {
      "h": "e2f82e88",
@@ -1760,6 +1823,13 @@
      "kind": "fix",
      "scope": "server",
      "text": "Fix a readonly-array type error in the moderation queue cache",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "7ae8b4fc",
+     "kind": "fix",
+     "scope": "guide",
+     "text": "File the reliquary wiki page in the endgame sidebar group",
      "date": "2026-08-08"
     },
     {
@@ -1841,10 +1911,59 @@
      "date": "2026-08-09"
     },
     {
+     "h": "86c78067",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Validated activeBorder state on the deeds seam",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "ebba8667",
+     "kind": "feat",
+     "scope": "net",
+     "text": "ActiveBorder on the facet, command, and entity wire",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "c2f7921e",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Border accents on nameplates and unit portraits",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "aaad18eb",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Border picker, wear surfaces, and copy",
+     "date": "2026-08-09"
+    },
+    {
      "h": "b9523afb",
      "kind": "feat",
      "scope": "render",
      "text": "Make a wedged background GPU queue unit observable",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "32a65688",
+     "kind": "feat",
+     "scope": "net",
+     "text": "Curator standing on the entity identity wire",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "e757c1e1",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Reliquary line, border accent, and rank sigil on inspect",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "aeed806c",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Recent relics on the public sheet and the privacy note",
      "date": "2026-08-09"
     },
     {
@@ -1855,6 +1974,13 @@
      "date": "2026-08-09"
     },
     {
+     "h": "62ed4873",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Rares of the realm with slain marks and signature drops",
+     "date": "2026-08-09"
+    },
+    {
      "h": "4a233ce2",
      "kind": "feat",
      "scope": "battleground",
@@ -1862,10 +1988,31 @@
      "date": "2026-08-09"
     },
     {
+     "h": "ac388fc4",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Retired vault of ages outside completion math",
+     "date": "2026-08-09"
+    },
+    {
      "h": "c5c9ec63",
      "kind": "feat",
      "scope": "art",
      "text": "Unify inventory item paintings",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "fd65b888",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Realm relic rarity aggregation on the records cadence",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "873f82c0",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Rarity lines on relic tooltips and page headers",
      "date": "2026-08-09"
     },
     {
@@ -1880,6 +2027,20 @@
      "kind": "feat",
      "scope": "guide",
      "text": "Document the account, calendar, achievement and click-to-move gaps",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "ea329742",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Painted crown chrome art for the Reliquary launcher",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "73d0b79d",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Per-kind owned-cell art for mounts, skins, titles, and marks",
      "date": "2026-08-08"
     },
     {
@@ -1932,6 +2093,34 @@
      "date": "2026-08-08"
     },
     {
+     "h": "aa732f5c",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Grant-time obtain counts on catalogued relics",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "e96c7518",
+     "kind": "feat",
+     "scope": "deeds",
+     "text": "Reliquary completion ladder with capstone and flagship illumination deeds",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "c8301bbd",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Persist the illuminated-pages set and wire the completion ladder",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "43164176",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Reliquary Overview flagship, Illumination celebration, and refresh-elide cleanup",
+     "date": "2026-08-07"
+    },
+    {
      "h": "05b8570f",
      "kind": "feat",
      "scope": "talents",
@@ -1971,6 +2160,20 @@
      "kind": "feat",
      "scope": "battleground",
      "text": "Give a fighter their pet back on the way out",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "62b4eb29",
+     "kind": "feat",
+     "scope": "guide",
+     "text": "Index reliquary pages and relics in wiki search",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "ebe5784a",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Always-on Reliquary tracker with pinned pages",
      "date": "2026-08-07"
     },
     {
@@ -2065,6 +2268,41 @@
      "date": "2026-08-06"
     },
     {
+     "h": "adb180c5",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Add the three omitted instance drops",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "8dff14a0",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Authored source hints on every resolvable relic",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "b86e6fb6",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Page descs, search, owned filter, and list semantics in the window",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "0d3e9560",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Extend the source vocabulary and author every resolvable hint",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "76175d41",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Multi-source lines in the tooltip and aria, collection-log style",
+     "date": "2026-08-06"
+    },
+    {
      "h": "32dbe27f",
      "kind": "feat",
      "scope": "render",
@@ -2114,6 +2352,20 @@
      "date": "2026-08-06"
     },
     {
+     "h": "90913e42",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Phase 8 Horizons shelf (mounts, skins, titles)",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "edb2de6a",
+     "kind": "feat",
+     "scope": "i18n",
+     "text": "Reliquary_i18n page-name channel and render-site routing",
+     "date": "2026-08-05"
+    },
+    {
      "h": "9164a523",
      "kind": "feat",
      "scope": "sfx",
@@ -2126,6 +2378,55 @@
      "scope": "sfx",
      "text": "Wire Emboldening Roar, Defiant Bellow, and Valor Roar",
      "date": "2026-08-05"
+    },
+    {
+     "h": "2e8efdb6",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Phase 1 sim foundation (catalog, sparse state, mark hook)",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "d6c82fc8",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Phase 2 Conqueror catalog with live loot pins",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "bcb05eda",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Phase 3 IWorld facet and wire thrift",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "930e9011",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Reliquary cold window shell and Overview",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "153af5f9",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Page grids, live unlock UX, and Illumination",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "bb9aff09",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Curator ranks, seal chrome, and zero-Renown bridges",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "f48312ce",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Professions shelf with lifetime marks and field notes",
+     "date": "2026-08-04"
     },
     {
      "h": "a4bf902b",
@@ -2555,6 +2856,13 @@
      "date": "2026-08-07"
     },
     {
+     "h": "6fbb7f3b",
+     "kind": "fix",
+     "scope": "",
+     "text": "Origin/release/v0.36.0 (ossbrain 3140) into the locale fill",
+     "date": "2026-08-11"
+    },
+    {
      "h": "7d74cb46",
      "kind": "fix",
      "scope": "render",
@@ -2765,6 +3073,13 @@
      "date": "2026-08-10"
     },
     {
+     "h": "a73bba35",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Give the reliquary account-scope fact a screen-reader arm",
+     "date": "2026-08-10"
+    },
+    {
      "h": "4dab370d",
      "kind": "fix",
      "scope": "server",
@@ -2853,6 +3168,48 @@
      "kind": "fix",
      "scope": "",
      "text": "Sync release base into ossbrain-release/v0.36.0 (second pass)",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "578587b0",
+     "kind": "fix",
+     "scope": "guide",
+     "text": "Regenerate the wiki content after the v0.36.0 merge",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "3d8055eb",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Re-bless the portrait source manifest for this branch's bundle",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "84f87513",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Make the portrait acceptance cwd-proof and its staleness legible",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "6d43f5c7",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Mirror the release's new ClientWorld defaults in the bare client",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "516056c2",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Catalog the release's new daggers and true up the pins",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "20e53320",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.36.0 into feature/reliquary",
      "date": "2026-08-10"
     },
     {
@@ -2996,6 +3353,13 @@
      "date": "2026-08-09"
     },
     {
+     "h": "f0419793",
+     "kind": "fix",
+     "scope": "release/v0.36.0",
+     "text": "Sync after phase 19 commits",
+     "date": "2026-08-09"
+    },
+    {
      "h": "fa788b7d",
      "kind": "fix",
      "scope": "",
@@ -3024,6 +3388,27 @@
      "date": "2026-08-09"
     },
     {
+     "h": "fbd28b18",
+     "kind": "fix",
+     "scope": "release/v0.36.0",
+     "text": "Sync at phase 19 QA start",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "09cb60e9",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Guard grantDeed and recomputeRenown against prototype-keyed ids",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "030d46cc",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Freeze the border palette and gate the portrait ring on it",
+     "date": "2026-08-09"
+    },
+    {
      "h": "d67509d9",
      "kind": "fix",
      "scope": "creator",
@@ -3031,10 +3416,24 @@
      "date": "2026-08-09"
     },
     {
+     "h": "0d15d23f",
+     "kind": "fix",
+     "scope": "scripts",
+     "text": "Loopback-guard the profile capture rig",
+     "date": "2026-08-09"
+    },
+    {
      "h": "1ed8d57e",
      "kind": "fix",
      "scope": "pvp",
      "text": "Carry the arena draw onto the public profile too",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "846ec4de",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Harden the Phase 20 surfaces from the QA fix rounds",
      "date": "2026-08-09"
     },
     {
@@ -3049,6 +3448,20 @@
      "kind": "fix",
      "scope": "battleground",
      "text": "Re-resolve a backfill seat when the offer is answered",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "97b9164d",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Harden the Phase 21 pages from the skeptic round",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "3a0a9516",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Move the class-personal riftbound bands to a horizons showcase page",
      "date": "2026-08-09"
     },
     {
@@ -3101,10 +3514,45 @@
      "date": "2026-08-09"
     },
     {
+     "h": "94cdb5cf",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Polish the fix round per its fresh review",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "7f519157",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Apply the Phase 21 QA round findings",
+     "date": "2026-08-09"
+    },
+    {
      "h": "79c1d127",
      "kind": "fix",
      "scope": "render",
      "text": "Preload mount engine clips at view creation, not just on edge",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "321b3344",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Close the fix-round review and perf-leg findings",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "347857a8",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Polish from the round-two fresh review",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "150b3667",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Apply the five-reviewer round on the rarity feature",
      "date": "2026-08-09"
     },
     {
@@ -3430,10 +3878,38 @@
      "date": "2026-08-08"
     },
     {
+     "h": "e628dc7d",
+     "kind": "fix",
+     "scope": "release/v0.36.0",
+     "text": "Sync before phase 16 QA",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "bd963e8e",
+     "kind": "fix",
+     "scope": "tests",
+     "text": "Give the playtime focus rig the reliquary launcher dep",
+     "date": "2026-08-08"
+    },
+    {
      "h": "613e9381",
      "kind": "fix",
      "scope": "",
      "text": "PR #3006 into release",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "4bd26266",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Key the reliquary missing-state carve-out on art opacity",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "a7b268fa",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Close the fix-round review on the opacity carve-out",
      "date": "2026-08-08"
     },
     {
@@ -3455,6 +3931,13 @@
      "kind": "fix",
      "scope": "",
      "text": "PR #3095 into release",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "16dd6088",
+     "kind": "fix",
+     "scope": "release/v0.36.0",
+     "text": "Catch up before the phase 16 QA push",
      "date": "2026-08-08"
     },
     {
@@ -3521,6 +4004,13 @@
      "date": "2026-08-08"
     },
     {
+     "h": "cbb86796",
+     "kind": "fix",
+     "scope": "release/v0.36.0",
+     "text": "Catch up after the phase 17 commits",
+     "date": "2026-08-08"
+    },
+    {
      "h": "718d3d26",
      "kind": "fix",
      "scope": "",
@@ -3532,6 +4022,13 @@
      "kind": "fix",
      "scope": "sim",
      "text": "Refuse a bad copy selection before anything mutates",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "29071284",
+     "kind": "fix",
+     "scope": "release/v0.36.0",
+     "text": "Sync before phase 17 QA",
      "date": "2026-08-08"
     },
     {
@@ -3584,10 +4081,31 @@
      "date": "2026-08-08"
     },
     {
+     "h": "d4a98111",
+     "kind": "fix",
+     "scope": "release/v0.36.0",
+     "text": "Sync at phase 18 close",
+     "date": "2026-08-08"
+    },
+    {
      "h": "85a2ab55",
      "kind": "fix",
      "scope": "talents",
      "text": "Validate saved slots by the shared rule, and count real swaps",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "358cb321",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Harden the ladder dispatch and close the QA-found pin gaps",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "66140791",
+     "kind": "fix",
+     "scope": "release/v0.36.0",
+     "text": "Sync at phase 18 QA",
      "date": "2026-08-08"
     },
     {
@@ -3668,6 +4186,27 @@
      "date": "2026-08-07"
     },
     {
+     "h": "062b8508",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Apply the Phase 13b QA round across content, rendering, and copy",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "21694f09",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Close the fix-round review findings",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "5fce9517",
+     "kind": "fix",
+     "scope": "release/v0.35.0",
+     "text": "Pre-push sync at the warfare-tier tip",
+     "date": "2026-08-07"
+    },
+    {
      "h": "e9837e5e",
      "kind": "fix",
      "scope": "compose",
@@ -3679,6 +4218,20 @@
      "kind": "fix",
      "scope": "",
      "text": "Release/v0.35.0 into integration/v031-class-overhauls (pre-PR top-up)",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "7982532e",
+     "kind": "fix",
+     "scope": "release/v0.36.0",
+     "text": "Sync before phase 14",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "4074109a",
+     "kind": "fix",
+     "scope": "release/v0.36.0",
+     "text": "Sync before phase 14 QA",
      "date": "2026-08-07"
     },
     {
@@ -3710,6 +4263,13 @@
      "date": "2026-08-07"
     },
     {
+     "h": "fe8ddeeb",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Apply the Phase 14 QA findings across two reviewed rounds",
+     "date": "2026-08-07"
+    },
+    {
      "h": "38e62a02",
      "kind": "fix",
      "scope": "ui",
@@ -3738,6 +4298,13 @@
      "date": "2026-08-07"
     },
     {
+     "h": "8f9515b2",
+     "kind": "fix",
+     "scope": "release/v0.36.0",
+     "text": "Sync before phase 15",
+     "date": "2026-08-07"
+    },
+    {
      "h": "6abade8e",
      "kind": "fix",
      "scope": "ui",
@@ -3752,10 +4319,38 @@
      "date": "2026-08-07"
     },
     {
+     "h": "12b1ed6f",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Apply the phase 15 review round",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "d9bca6e6",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Apply the fix-round review findings",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "aa25b8c9",
+     "kind": "fix",
+     "scope": "release/v0.36.0",
+     "text": "Sync before phase 15 QA",
+     "date": "2026-08-07"
+    },
+    {
      "h": "dc1fec19",
      "kind": "fix",
      "scope": "desktop",
      "text": "Serve app:// byte-range requests so game music plays",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "40817c0a",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Apply the phase 15 QA round findings",
      "date": "2026-08-07"
     },
     {
@@ -3780,10 +4375,31 @@
      "date": "2026-08-07"
     },
     {
+     "h": "18a96b7d",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Close the fix-round review gaps",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "e2cdf4a5",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Settle the round-two review notes",
+     "date": "2026-08-07"
+    },
+    {
      "h": "2fd89af2",
      "kind": "fix",
      "scope": "ui",
      "text": "Harden the playtime line per review (focus ring, contrast, NaN load guard)",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "32a2afdd",
+     "kind": "fix",
+     "scope": "release/v0.36.0",
+     "text": "Catch the moved base so PR CI can build the merge ref",
      "date": "2026-08-07"
     },
     {
@@ -3819,6 +4435,13 @@
      "kind": "fix",
      "scope": "sim",
      "text": "Clear a duel opponent's PET debuffs when the duel ends",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "a96c9488",
+     "kind": "fix",
+     "scope": "release/v0.36.0",
+     "text": "Sync before phase 16",
      "date": "2026-08-07"
     },
     {
@@ -3899,6 +4522,104 @@
      "date": "2026-08-06"
     },
     {
+     "h": "de31a5b4",
+     "kind": "fix",
+     "scope": "release/v0.35.0",
+     "text": "Sync before phase 11 QA",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "eada12fb",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Close the Phase 11 QA i18n hygiene findings",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "eb843eaf",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Esc the reliquary focus-key attributes and harden the name pin",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "a00fb39e",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Apply the fresh review of the QA fix round",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "b1172505",
+     "kind": "fix",
+     "scope": "release/v0.35.0",
+     "text": "Sync the AAA-enhancements landing before push",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "5afdac50",
+     "kind": "fix",
+     "scope": "release/v0.35.0",
+     "text": "Sync before phase 12",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "fd51288d",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Name both Drowned Temple loot sources in the page desc",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "26d9f58b",
+     "kind": "fix",
+     "scope": "release/v0.35.0",
+     "text": "Sync before the Phase 12 QA push",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "bddcb32e",
+     "kind": "fix",
+     "scope": "release/v0.35.0",
+     "text": "Sync before the Phase 13 QA push",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "be0b3f9b",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Retire the wyrmcult robe hint and sweep competing award routes",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "8b00f120",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Honest narrowing, IME safety, and open silence for the reliquary window",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "9e824409",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Close the fix-round review findings on IME, floors, and contracts",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "1f73a029",
+     "kind": "fix",
+     "scope": "release/v0.35.0",
+     "text": "Sync before phase 13b",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "50308568",
+     "kind": "fix",
+     "scope": "release/v0.35.0",
+     "text": "Sync before phase 13b QA",
+     "date": "2026-08-06"
+    },
+    {
      "h": "6373aec1",
      "kind": "fix",
      "scope": "render",
@@ -3969,10 +4690,115 @@
      "date": "2026-08-05"
     },
     {
+     "h": "68e33da5",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Phase 8 QA rank sync and Horizons pins",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "d028ffa7",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Clear biome errors on release-merge changed files",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "0c15101f",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Harden mount ownership and re-pin seed tests",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "c47eec4f",
+     "kind": "fix",
+     "scope": "release/v0.35.0",
+     "text": "Sync before phase 10",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "e257b1c4",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Remove hidden deeds from the catalog and guard the wiki",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "46ad25de",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Make join-time retro silent, flagged, and provenance-honest",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "e39c1d6f",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Restore ownedMounts strictness and give masterwork marks a ledger home",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "9b0e50b2",
+     "kind": "fix",
+     "scope": "release/v0.35.0",
+     "text": "Sync before phase 10 QA",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "4b9c9541",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Apply the phase 10 QA round",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "4bf90189",
+     "kind": "fix",
+     "scope": "release/v0.35.0",
+     "text": "Re-sync after the base moved during phase 10 QA",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "85fa9ed3",
+     "kind": "fix",
+     "scope": "release/v0.35.0",
+     "text": "Sync the CI gate and change-classifier work",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "1e4d8870",
+     "kind": "fix",
+     "scope": "release/v0.35.0",
+     "text": "Sync before phase 11",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "121e4d69",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Drop the dead pageStubNote key and its fills",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "801a0b4a",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Align reliquary shelf terminology across wiki and window",
+     "date": "2026-08-05"
+    },
+    {
      "h": "a8933215",
      "kind": "fix",
      "scope": "server",
      "text": "Index the player_reports and chat_violations retention prunes",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "9dd0c528",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Pluralize both retro catch-up summaries through tPlural",
      "date": "2026-08-05"
     },
     {
@@ -4002,6 +4828,20 @@
      "scope": "render",
      "text": "Reset engine-mount audio state on every mountKey transition",
      "date": "2026-08-05"
+    },
+    {
+     "h": "8336a3b9",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Close Phase 4 Reliquary QA gaps",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "af3fda72",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Phase 6 QA same-event Illumination and rank pins",
+     "date": "2026-08-04"
     },
     {
      "h": "0d20dadf",
@@ -4397,9 +5237,9 @@
    "branch": "release/v0.36.0",
    "declared_version": "0.36.0",
    "imminent": true,
-   "commits": 1478,
-   "shown": 619,
-   "last_commit": "2026-08-10T22:12:24+12:00",
+   "commits": 1726,
+   "shown": 739,
+   "last_commit": "2026-08-10T10:47:34-05:00",
    "sections": [
     {
      "key": "classes",
@@ -5781,6 +6621,13 @@
      "en": "Professions & gathering",
      "items": [
       {
+       "h": "94fa6170",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Warfare gallery and fishing trophies",
+       "date": "2026-08-09"
+      },
+      {
        "h": "5120fa80",
        "kind": "fix",
        "scope": "render",
@@ -5828,6 +6675,13 @@
        "scope": "i18n",
        "text": "Register the profession-service progress countdown lines",
        "date": "2026-08-06"
+      },
+      {
+       "h": "3c452c50",
+       "kind": "fix",
+       "scope": "release/v0.35.0",
+       "text": "Integrate craft-cast into feature/reliquary",
+       "date": "2026-08-05"
       }
      ]
     },
@@ -5842,6 +6696,13 @@
        "kind": "feat",
        "scope": "render",
        "text": "Readable rift death-zone telegraph with a timer sweep",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "af5edfce",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "The Rift page with clear meters",
        "date": "2026-08-09"
       },
       {
@@ -5929,6 +6790,13 @@
        "date": "2026-08-08"
       },
       {
+       "h": "c395374d",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Read delve page clears through the tiered delveClears keys",
+       "date": "2026-08-06"
+      },
+      {
        "h": "06068a77",
        "kind": "fix",
        "scope": "classes",
@@ -5943,6 +6811,13 @@
      "fr": "Monde & quêtes",
      "en": "World & quests",
      "items": [
+      {
+       "h": "0d869c95",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Illumination marquee, border-deed feed, and achievement map entries",
+       "date": "2026-08-08"
+      },
       {
        "h": "b2c38ab4",
        "kind": "feat",
@@ -6021,6 +6896,13 @@
        "date": "2026-08-09"
       },
       {
+       "h": "c21f7f8d",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Restore the hasCrestRecipe import in the deed icons gate",
+       "date": "2026-08-09"
+      },
+      {
        "h": "a626185b",
        "kind": "fix",
        "scope": "guide",
@@ -6070,6 +6952,13 @@
        "date": "2026-08-08"
       },
       {
+       "h": "2212225f",
+       "kind": "fix",
+       "scope": "content",
+       "text": "Give pristine_claw its Reliquary specimen slot",
+       "date": "2026-08-06"
+      },
+      {
        "h": "d2896fec",
        "kind": "fix",
        "scope": "render",
@@ -6104,6 +6993,20 @@
        "scope": "chat",
        "text": "Add /bg, a battleground channel reaching both teams",
        "date": "2026-08-07"
+      },
+      {
+       "h": "82acdd35",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "OpenWithPage deep link and clickable reliquary chat lines",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "fcdf9158",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Phase 9 social sheet, wiki catalog, polish",
+       "date": "2026-08-05"
       },
       {
        "h": "e2f82e88",
@@ -6152,6 +7055,13 @@
        "kind": "fix",
        "scope": "server",
        "text": "Fix a readonly-array type error in the moderation queue cache",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "7ae8b4fc",
+       "kind": "fix",
+       "scope": "guide",
+       "text": "File the reliquary wiki page in the endgame sidebar group",
        "date": "2026-08-08"
       },
       {
@@ -6233,10 +7143,59 @@
        "date": "2026-08-09"
       },
       {
+       "h": "86c78067",
+       "kind": "feat",
+       "scope": "sim",
+       "text": "Validated activeBorder state on the deeds seam",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "ebba8667",
+       "kind": "feat",
+       "scope": "net",
+       "text": "ActiveBorder on the facet, command, and entity wire",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "c2f7921e",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Border accents on nameplates and unit portraits",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "aaad18eb",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Border picker, wear surfaces, and copy",
+       "date": "2026-08-09"
+      },
+      {
        "h": "b9523afb",
        "kind": "feat",
        "scope": "render",
        "text": "Make a wedged background GPU queue unit observable",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "32a65688",
+       "kind": "feat",
+       "scope": "net",
+       "text": "Curator standing on the entity identity wire",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "e757c1e1",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Reliquary line, border accent, and rank sigil on inspect",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "aeed806c",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Recent relics on the public sheet and the privacy note",
        "date": "2026-08-09"
       },
       {
@@ -6247,6 +7206,13 @@
        "date": "2026-08-09"
       },
       {
+       "h": "62ed4873",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Rares of the realm with slain marks and signature drops",
+       "date": "2026-08-09"
+      },
+      {
        "h": "4a233ce2",
        "kind": "feat",
        "scope": "battleground",
@@ -6254,10 +7220,31 @@
        "date": "2026-08-09"
       },
       {
+       "h": "ac388fc4",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Retired vault of ages outside completion math",
+       "date": "2026-08-09"
+      },
+      {
        "h": "c5c9ec63",
        "kind": "feat",
        "scope": "art",
        "text": "Unify inventory item paintings",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "fd65b888",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Realm relic rarity aggregation on the records cadence",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "873f82c0",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Rarity lines on relic tooltips and page headers",
        "date": "2026-08-09"
       },
       {
@@ -6272,6 +7259,20 @@
        "kind": "feat",
        "scope": "guide",
        "text": "Document the account, calendar, achievement and click-to-move gaps",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "ea329742",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Painted crown chrome art for the Reliquary launcher",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "73d0b79d",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Per-kind owned-cell art for mounts, skins, titles, and marks",
        "date": "2026-08-08"
       },
       {
@@ -6324,6 +7325,34 @@
        "date": "2026-08-08"
       },
       {
+       "h": "aa732f5c",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Grant-time obtain counts on catalogued relics",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "e96c7518",
+       "kind": "feat",
+       "scope": "deeds",
+       "text": "Reliquary completion ladder with capstone and flagship illumination deeds",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "c8301bbd",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Persist the illuminated-pages set and wire the completion ladder",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "43164176",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Reliquary Overview flagship, Illumination celebration, and refresh-elide cleanup",
+       "date": "2026-08-07"
+      },
+      {
        "h": "05b8570f",
        "kind": "feat",
        "scope": "talents",
@@ -6363,6 +7392,20 @@
        "kind": "feat",
        "scope": "battleground",
        "text": "Give a fighter their pet back on the way out",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "62b4eb29",
+       "kind": "feat",
+       "scope": "guide",
+       "text": "Index reliquary pages and relics in wiki search",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "ebe5784a",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Always-on Reliquary tracker with pinned pages",
        "date": "2026-08-07"
       },
       {
@@ -6457,6 +7500,41 @@
        "date": "2026-08-06"
       },
       {
+       "h": "adb180c5",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Add the three omitted instance drops",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "8dff14a0",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Authored source hints on every resolvable relic",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "b86e6fb6",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Page descs, search, owned filter, and list semantics in the window",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "0d3e9560",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Extend the source vocabulary and author every resolvable hint",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "76175d41",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Multi-source lines in the tooltip and aria, collection-log style",
+       "date": "2026-08-06"
+      },
+      {
        "h": "32dbe27f",
        "kind": "feat",
        "scope": "render",
@@ -6506,6 +7584,20 @@
        "date": "2026-08-06"
       },
       {
+       "h": "90913e42",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Phase 8 Horizons shelf (mounts, skins, titles)",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "edb2de6a",
+       "kind": "feat",
+       "scope": "i18n",
+       "text": "Reliquary_i18n page-name channel and render-site routing",
+       "date": "2026-08-05"
+      },
+      {
        "h": "9164a523",
        "kind": "feat",
        "scope": "sfx",
@@ -6518,6 +7610,55 @@
        "scope": "sfx",
        "text": "Wire Emboldening Roar, Defiant Bellow, and Valor Roar",
        "date": "2026-08-05"
+      },
+      {
+       "h": "2e8efdb6",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Phase 1 sim foundation (catalog, sparse state, mark hook)",
+       "date": "2026-08-04"
+      },
+      {
+       "h": "d6c82fc8",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Phase 2 Conqueror catalog with live loot pins",
+       "date": "2026-08-04"
+      },
+      {
+       "h": "bcb05eda",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Phase 3 IWorld facet and wire thrift",
+       "date": "2026-08-04"
+      },
+      {
+       "h": "930e9011",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Reliquary cold window shell and Overview",
+       "date": "2026-08-04"
+      },
+      {
+       "h": "153af5f9",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Page grids, live unlock UX, and Illumination",
+       "date": "2026-08-04"
+      },
+      {
+       "h": "bb9aff09",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Curator ranks, seal chrome, and zero-Renown bridges",
+       "date": "2026-08-04"
+      },
+      {
+       "h": "f48312ce",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Professions shelf with lifetime marks and field notes",
+       "date": "2026-08-04"
       },
       {
        "h": "a4bf902b",
@@ -6947,6 +8088,13 @@
        "date": "2026-08-07"
       },
       {
+       "h": "6fbb7f3b",
+       "kind": "fix",
+       "scope": "",
+       "text": "Origin/release/v0.36.0 (ossbrain 3140) into the locale fill",
+       "date": "2026-08-11"
+      },
+      {
        "h": "7d74cb46",
        "kind": "fix",
        "scope": "render",
@@ -7157,6 +8305,13 @@
        "date": "2026-08-10"
       },
       {
+       "h": "a73bba35",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Give the reliquary account-scope fact a screen-reader arm",
+       "date": "2026-08-10"
+      },
+      {
        "h": "4dab370d",
        "kind": "fix",
        "scope": "server",
@@ -7245,6 +8400,48 @@
        "kind": "fix",
        "scope": "",
        "text": "Sync release base into ossbrain-release/v0.36.0 (second pass)",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "578587b0",
+       "kind": "fix",
+       "scope": "guide",
+       "text": "Regenerate the wiki content after the v0.36.0 merge",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "3d8055eb",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Re-bless the portrait source manifest for this branch's bundle",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "84f87513",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Make the portrait acceptance cwd-proof and its staleness legible",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "6d43f5c7",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Mirror the release's new ClientWorld defaults in the bare client",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "516056c2",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Catalog the release's new daggers and true up the pins",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "20e53320",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.36.0 into feature/reliquary",
        "date": "2026-08-10"
       },
       {
@@ -7388,6 +8585,13 @@
        "date": "2026-08-09"
       },
       {
+       "h": "f0419793",
+       "kind": "fix",
+       "scope": "release/v0.36.0",
+       "text": "Sync after phase 19 commits",
+       "date": "2026-08-09"
+      },
+      {
        "h": "fa788b7d",
        "kind": "fix",
        "scope": "",
@@ -7416,6 +8620,27 @@
        "date": "2026-08-09"
       },
       {
+       "h": "fbd28b18",
+       "kind": "fix",
+       "scope": "release/v0.36.0",
+       "text": "Sync at phase 19 QA start",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "09cb60e9",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Guard grantDeed and recomputeRenown against prototype-keyed ids",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "030d46cc",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Freeze the border palette and gate the portrait ring on it",
+       "date": "2026-08-09"
+      },
+      {
        "h": "d67509d9",
        "kind": "fix",
        "scope": "creator",
@@ -7423,10 +8648,24 @@
        "date": "2026-08-09"
       },
       {
+       "h": "0d15d23f",
+       "kind": "fix",
+       "scope": "scripts",
+       "text": "Loopback-guard the profile capture rig",
+       "date": "2026-08-09"
+      },
+      {
        "h": "1ed8d57e",
        "kind": "fix",
        "scope": "pvp",
        "text": "Carry the arena draw onto the public profile too",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "846ec4de",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Harden the Phase 20 surfaces from the QA fix rounds",
        "date": "2026-08-09"
       },
       {
@@ -7441,6 +8680,20 @@
        "kind": "fix",
        "scope": "battleground",
        "text": "Re-resolve a backfill seat when the offer is answered",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "97b9164d",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Harden the Phase 21 pages from the skeptic round",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "3a0a9516",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Move the class-personal riftbound bands to a horizons showcase page",
        "date": "2026-08-09"
       },
       {
@@ -7493,10 +8746,45 @@
        "date": "2026-08-09"
       },
       {
+       "h": "94cdb5cf",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Polish the fix round per its fresh review",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "7f519157",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Apply the Phase 21 QA round findings",
+       "date": "2026-08-09"
+      },
+      {
        "h": "79c1d127",
        "kind": "fix",
        "scope": "render",
        "text": "Preload mount engine clips at view creation, not just on edge",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "321b3344",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Close the fix-round review and perf-leg findings",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "347857a8",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Polish from the round-two fresh review",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "150b3667",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Apply the five-reviewer round on the rarity feature",
        "date": "2026-08-09"
       },
       {
@@ -7822,10 +9110,38 @@
        "date": "2026-08-08"
       },
       {
+       "h": "e628dc7d",
+       "kind": "fix",
+       "scope": "release/v0.36.0",
+       "text": "Sync before phase 16 QA",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "bd963e8e",
+       "kind": "fix",
+       "scope": "tests",
+       "text": "Give the playtime focus rig the reliquary launcher dep",
+       "date": "2026-08-08"
+      },
+      {
        "h": "613e9381",
        "kind": "fix",
        "scope": "",
        "text": "PR #3006 into release",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "4bd26266",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Key the reliquary missing-state carve-out on art opacity",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "a7b268fa",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Close the fix-round review on the opacity carve-out",
        "date": "2026-08-08"
       },
       {
@@ -7847,6 +9163,13 @@
        "kind": "fix",
        "scope": "",
        "text": "PR #3095 into release",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "16dd6088",
+       "kind": "fix",
+       "scope": "release/v0.36.0",
+       "text": "Catch up before the phase 16 QA push",
        "date": "2026-08-08"
       },
       {
@@ -7913,6 +9236,13 @@
        "date": "2026-08-08"
       },
       {
+       "h": "cbb86796",
+       "kind": "fix",
+       "scope": "release/v0.36.0",
+       "text": "Catch up after the phase 17 commits",
+       "date": "2026-08-08"
+      },
+      {
        "h": "718d3d26",
        "kind": "fix",
        "scope": "",
@@ -7924,6 +9254,13 @@
        "kind": "fix",
        "scope": "sim",
        "text": "Refuse a bad copy selection before anything mutates",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "29071284",
+       "kind": "fix",
+       "scope": "release/v0.36.0",
+       "text": "Sync before phase 17 QA",
        "date": "2026-08-08"
       },
       {
@@ -7976,10 +9313,31 @@
        "date": "2026-08-08"
       },
       {
+       "h": "d4a98111",
+       "kind": "fix",
+       "scope": "release/v0.36.0",
+       "text": "Sync at phase 18 close",
+       "date": "2026-08-08"
+      },
+      {
        "h": "85a2ab55",
        "kind": "fix",
        "scope": "talents",
        "text": "Validate saved slots by the shared rule, and count real swaps",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "358cb321",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Harden the ladder dispatch and close the QA-found pin gaps",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "66140791",
+       "kind": "fix",
+       "scope": "release/v0.36.0",
+       "text": "Sync at phase 18 QA",
        "date": "2026-08-08"
       },
       {
@@ -8060,6 +9418,27 @@
        "date": "2026-08-07"
       },
       {
+       "h": "062b8508",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Apply the Phase 13b QA round across content, rendering, and copy",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "21694f09",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Close the fix-round review findings",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "5fce9517",
+       "kind": "fix",
+       "scope": "release/v0.35.0",
+       "text": "Pre-push sync at the warfare-tier tip",
+       "date": "2026-08-07"
+      },
+      {
        "h": "e9837e5e",
        "kind": "fix",
        "scope": "compose",
@@ -8071,6 +9450,20 @@
        "kind": "fix",
        "scope": "",
        "text": "Release/v0.35.0 into integration/v031-class-overhauls (pre-PR top-up)",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "7982532e",
+       "kind": "fix",
+       "scope": "release/v0.36.0",
+       "text": "Sync before phase 14",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "4074109a",
+       "kind": "fix",
+       "scope": "release/v0.36.0",
+       "text": "Sync before phase 14 QA",
        "date": "2026-08-07"
       },
       {
@@ -8102,6 +9495,13 @@
        "date": "2026-08-07"
       },
       {
+       "h": "fe8ddeeb",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Apply the Phase 14 QA findings across two reviewed rounds",
+       "date": "2026-08-07"
+      },
+      {
        "h": "38e62a02",
        "kind": "fix",
        "scope": "ui",
@@ -8130,6 +9530,13 @@
        "date": "2026-08-07"
       },
       {
+       "h": "8f9515b2",
+       "kind": "fix",
+       "scope": "release/v0.36.0",
+       "text": "Sync before phase 15",
+       "date": "2026-08-07"
+      },
+      {
        "h": "6abade8e",
        "kind": "fix",
        "scope": "ui",
@@ -8144,10 +9551,38 @@
        "date": "2026-08-07"
       },
       {
+       "h": "12b1ed6f",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Apply the phase 15 review round",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "d9bca6e6",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Apply the fix-round review findings",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "aa25b8c9",
+       "kind": "fix",
+       "scope": "release/v0.36.0",
+       "text": "Sync before phase 15 QA",
+       "date": "2026-08-07"
+      },
+      {
        "h": "dc1fec19",
        "kind": "fix",
        "scope": "desktop",
        "text": "Serve app:// byte-range requests so game music plays",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "40817c0a",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Apply the phase 15 QA round findings",
        "date": "2026-08-07"
       },
       {
@@ -8172,10 +9607,31 @@
        "date": "2026-08-07"
       },
       {
+       "h": "18a96b7d",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Close the fix-round review gaps",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "e2cdf4a5",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Settle the round-two review notes",
+       "date": "2026-08-07"
+      },
+      {
        "h": "2fd89af2",
        "kind": "fix",
        "scope": "ui",
        "text": "Harden the playtime line per review (focus ring, contrast, NaN load guard)",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "32a2afdd",
+       "kind": "fix",
+       "scope": "release/v0.36.0",
+       "text": "Catch the moved base so PR CI can build the merge ref",
        "date": "2026-08-07"
       },
       {
@@ -8211,6 +9667,13 @@
        "kind": "fix",
        "scope": "sim",
        "text": "Clear a duel opponent's PET debuffs when the duel ends",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "a96c9488",
+       "kind": "fix",
+       "scope": "release/v0.36.0",
+       "text": "Sync before phase 16",
        "date": "2026-08-07"
       },
       {
@@ -8291,6 +9754,104 @@
        "date": "2026-08-06"
       },
       {
+       "h": "de31a5b4",
+       "kind": "fix",
+       "scope": "release/v0.35.0",
+       "text": "Sync before phase 11 QA",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "eada12fb",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Close the Phase 11 QA i18n hygiene findings",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "eb843eaf",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Esc the reliquary focus-key attributes and harden the name pin",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "a00fb39e",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Apply the fresh review of the QA fix round",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "b1172505",
+       "kind": "fix",
+       "scope": "release/v0.35.0",
+       "text": "Sync the AAA-enhancements landing before push",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "5afdac50",
+       "kind": "fix",
+       "scope": "release/v0.35.0",
+       "text": "Sync before phase 12",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "fd51288d",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Name both Drowned Temple loot sources in the page desc",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "26d9f58b",
+       "kind": "fix",
+       "scope": "release/v0.35.0",
+       "text": "Sync before the Phase 12 QA push",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "bddcb32e",
+       "kind": "fix",
+       "scope": "release/v0.35.0",
+       "text": "Sync before the Phase 13 QA push",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "be0b3f9b",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Retire the wyrmcult robe hint and sweep competing award routes",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "8b00f120",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Honest narrowing, IME safety, and open silence for the reliquary window",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "9e824409",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Close the fix-round review findings on IME, floors, and contracts",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "1f73a029",
+       "kind": "fix",
+       "scope": "release/v0.35.0",
+       "text": "Sync before phase 13b",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "50308568",
+       "kind": "fix",
+       "scope": "release/v0.35.0",
+       "text": "Sync before phase 13b QA",
+       "date": "2026-08-06"
+      },
+      {
        "h": "6373aec1",
        "kind": "fix",
        "scope": "render",
@@ -8361,10 +9922,115 @@
        "date": "2026-08-05"
       },
       {
+       "h": "68e33da5",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Phase 8 QA rank sync and Horizons pins",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "d028ffa7",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Clear biome errors on release-merge changed files",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "0c15101f",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Harden mount ownership and re-pin seed tests",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "c47eec4f",
+       "kind": "fix",
+       "scope": "release/v0.35.0",
+       "text": "Sync before phase 10",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "e257b1c4",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Remove hidden deeds from the catalog and guard the wiki",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "46ad25de",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Make join-time retro silent, flagged, and provenance-honest",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "e39c1d6f",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Restore ownedMounts strictness and give masterwork marks a ledger home",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "9b0e50b2",
+       "kind": "fix",
+       "scope": "release/v0.35.0",
+       "text": "Sync before phase 10 QA",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "4b9c9541",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Apply the phase 10 QA round",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "4bf90189",
+       "kind": "fix",
+       "scope": "release/v0.35.0",
+       "text": "Re-sync after the base moved during phase 10 QA",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "85fa9ed3",
+       "kind": "fix",
+       "scope": "release/v0.35.0",
+       "text": "Sync the CI gate and change-classifier work",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "1e4d8870",
+       "kind": "fix",
+       "scope": "release/v0.35.0",
+       "text": "Sync before phase 11",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "121e4d69",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Drop the dead pageStubNote key and its fills",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "801a0b4a",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Align reliquary shelf terminology across wiki and window",
+       "date": "2026-08-05"
+      },
+      {
        "h": "a8933215",
        "kind": "fix",
        "scope": "server",
        "text": "Index the player_reports and chat_violations retention prunes",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "9dd0c528",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Pluralize both retro catch-up summaries through tPlural",
        "date": "2026-08-05"
       },
       {
@@ -8394,6 +10060,20 @@
        "scope": "render",
        "text": "Reset engine-mount audio state on every mountKey transition",
        "date": "2026-08-05"
+      },
+      {
+       "h": "8336a3b9",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Close Phase 4 Reliquary QA gaps",
+       "date": "2026-08-04"
+      },
+      {
+       "h": "af3fda72",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Phase 6 QA same-event Illumination and rank pins",
+       "date": "2026-08-04"
       },
       {
        "h": "0d20dadf",
