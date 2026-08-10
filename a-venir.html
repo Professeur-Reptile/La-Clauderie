@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
 <title>La prochaine version — La Clauderie</title>
-<meta name="description" content="Ce que les développeurs préparent pour la prochaine version de World of ClaudeCraft, expliqué simplement — les coups d'arme automatiques enfin calculés juste, la mobilité du guerrier recoupée, les peurs PvP ramenées à leur durée annoncée, la chasse aux gels d'affichage. Rien n'est définitif : la version n'est pas sortie.">
+<meta name="description" content="Ce que les développeurs préparent pour la prochaine version de World of ClaudeCraft, expliqué simplement — sept classes remises à plat, un remplaçant appelé quand quelqu'un déserte un champ de bataille, un changement d'apparence offert, les cercles rouges des Failles enfin lisibles. Rien n'est définitif : la version n'est pas sortie.">
 <meta name="theme-color" content="#c8a04b">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="La Clauderie">
 <meta property="og:title" content="La prochaine version — La Clauderie">
-<meta property="og:description" content="Ce que les développeurs préparent pour la prochaine version de World of ClaudeCraft, expliqué simplement — les coups d'arme automatiques enfin calculés juste, la mobilité du guerrier recoupée, les peurs PvP ramenées à leur durée annoncée, la chasse aux gels d'affichage. Rien n'est définitif : la version n'est pas sortie.">
+<meta property="og:description" content="Ce que les développeurs préparent pour la prochaine version de World of ClaudeCraft, expliqué simplement — sept classes remises à plat, un remplaçant appelé quand quelqu'un déserte un champ de bataille, un changement d'apparence offert, les cercles rouges des Failles enfin lisibles. Rien n'est définitif : la version n'est pas sortie.">
 <meta property="og:url" content="https://laclauderie.fr/a-venir.html">
 <link rel="canonical" href="https://laclauderie.fr/a-venir.html">
 <meta property="og:image" content="https://laclauderie.fr/assets/og.png">
@@ -197,7 +197,7 @@
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · En préparation</p>
     <h1>La prochaine version <span class="v" id="vNum">v0.36.0</span></h1>
-    <p class="lede">La branche de la v0.36.0 a encore doublé depuis hier : <strong class="hl">plus de six cents commits</strong> déjà mergés, à peine deux jours après la sortie de la v0.35.1. Deux nouvelles têtes d’affiche sont apparues dans la nuit — le calcul des <strong class="hl">coups d’arme automatiques</strong>, faux depuis la v0.30.0, qui faisait frapper les armes lentes près de deux fois trop fort ; et une <strong class="hl">mobilité du guerrier recoupée</strong> en PvP, où les peurs cessent au passage de durer 8 secondes quelle que soit leur infobulle. Le gros du volume, lui, reste la <strong class="hl">chasse aux gels d’affichage</strong>. À côté : des ensembles d’équipement sauvegardés avec les talents, une file de champ de bataille qui demande votre accord avant de vous asseoir, et une longue liste de confort.</p>
+    <p class="lede">En vingt-quatre heures, la branche de la v0.36.0 a encore doublé : <strong class="hl">près de mille cinq cents commits</strong> depuis la v0.35.1 — et le jeu vient de monter son propre numéro de version, le tout dernier geste avant une sortie. Ce qui a basculé dans la nuit n’est pas un correctif : c’est <strong class="hl">la plus grosse refonte de classes depuis le lancement</strong>. Sept classes — paladin, chasseur, voleur, prêtre, chaman, démoniste, druide — arrivent avec de nouveaux moteurs de spécialisation, de nouvelles ressources, et pour certaines de nouveaux noms de spés. À côté : un <strong class="hl">remplaçant appelé en cours de match</strong> quand quelqu’un déserte, un <strong class="hl">changement d’apparence offert</strong> à tout personnage déjà créé, les cercles rouges des Failles enfin lisibles — et tout ce qui était déjà là : les coups d’arme automatiques recalculés, la mobilité du guerrier recoupée, la chasse aux gels.</p>
 
     <div class="warn">
       <span class="ico" aria-hidden="true">⚠️</span>
@@ -210,7 +210,7 @@
     <div class="meta">
       <span><b>Depuis</b> la v0.35.1</span>
         <span id="freshness"><b>Relevé</b> à l’instant</span>
-    <span id="written"><b>Résumé écrit</b> le 9 août 2026 à 16 h 45</span>
+    <span id="written"><b>Résumé écrit</b> le 10 août 2026 à 16 h 30</span>
     </div>
     <div id="chantiers"></div>
     <div class="hint">💡 Clique sur une carte pour le détail — et sur un nom souligné pour sa fiche Codex.</div>
@@ -223,32 +223,32 @@
       <li>
         <span class="d-ico" aria-hidden="true">⚔️</span>
         <a class="d-name" href="#classes">Classes &amp; sorts</a>
-        <span class="d-say"><b class="down">Guerrier ↓</b> mobilité PvP recoupée (Double Charge remplacée par un secours à un allié, Heroic Leap à 30 s) et cri de terreur ramené de 8 à 4 s · <b class="down">Prêtre ↓</b> <b class="down">Démoniste ↓</b> leurs peurs ne durent plus 8 s en PvP mais ce qu’annonce leur infobulle · <b class="up">Voleur ↑</b> les dagues rapides récupèrent les coups blancs qu’elles perdaient — à l’inverse, toute arme lente (deux mains, bâton) en perd beaucoup, quelle que soit la classe · <b class="eq">Toutes =</b> gestes d’incantation du chaman et du druide, attaques signature d’une dizaine de monstres : purement visuel</span>
+        <span class="d-say"><b>Sept classes refondues.</b> <b class="up">Paladin ↑</b> reconstruit autour de la Dévotion, et son tank cesse d’être en dessous du guerrier · <b class="up">Voleur ↑</b> ses trois spés étaient au fond du tableau, leur socle est relevé d’un bloc · <b class="up">Druide ↑</b> la maîtrise de l’ours et du félin passe à plus du triple (l’Équilibre, lui, est raboté) · <b class="up">Chaman ↑</b> transe élémentaire et imprégnation d’arme partagée · <b class="down">Chasseur ↓</b> dégâts du familier et amplification de l’archer revus à la baisse · <b class="down">Prêtre ↓</b> <b class="down">Démoniste ↓</b> refondus, mais leurs spés qui dépassaient redescendent sous le plafond commun · <b class="down">Guerrier ↓</b> mobilité PvP recoupée, et les armes lentes perdent les coups blancs qu’elles comptaient deux fois · <b class="eq">Mage =</b> seul à traverser la refonte sans une ligne de changement</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🔨</span>
         <a class="d-name" href="#equipement">Métiers &amp; récolte</a>
-        <span class="d-say">Récupérer des matériaux détruisait un exemplaire au hasard plutôt que celui que vous aviez cliqué — c’est réparé, et irréversible pour irréversible, ça comptait. La marque « matériau fin » est enfin peinte dans les cases de la banque et de la banque de guilde.</span>
+        <span class="d-say">Récupérer des matériaux détruisait un exemplaire au hasard plutôt que celui que vous aviez cliqué — c’est réparé, et irréversible pour irréversible, ça comptait. La marque « matériau fin » est enfin peinte dans les cases de la banque, et une dague d’artisanat aux dégâts manifestement faux est remise d’aplomb.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🐉</span>
-        <a class="d-name" href="#pvp">Donjons, failles &amp; boss</a>
-        <span class="d-say">Aucun nouveau contenu, mais entrer en donjon n’annule plus votre file de champ de bataille : quand elle éclate, le jeu vous sort proprement de l’instance et vous ramène à la porte à la fin du match.</span>
+        <a class="d-name" href="#donjons">Donjons, failles &amp; boss</a>
+        <span class="d-say">Les zones mortelles des boss de Faille cessent d’être un trait d’un pixel : bordure large, fond teinté, et un disque qui se remplit à mesure que la mèche brûle. Trois boss dont la mèche était trop courte pour être esquivée l’ont vue rallongée, et chaque mécanique de Faille a enfin son propre son.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🗺️</span>
-        <a class="d-name" href="#pvp">Monde &amp; quêtes</a>
-        <span class="d-say">Les quartiers-maîtres Warfare n’ouvrent plus qu’une seule boutique, rangée par classe d’armure et avec confirmation à l’achat : l’autre rangée dépensait votre Honneur — non remboursable — sans rien demander.</span>
+        <a class="d-name" href="#donjons">Monde &amp; quêtes</a>
+        <span class="d-say">Aucune nouvelle zone, mais du butin : quatre dagues à effet, chacune avec son modèle, tombent en Faille, dans les Drakelands, chez un boss des Wildheart et dans le Bassin — le vivier de fin de jeu n’était que quatre objets identiques sans le moindre effet.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🏰</span>
         <a class="d-name" href="#pvp">Guilde &amp; social</a>
-        <span class="d-say">Une file qui éclate demande maintenant l’accord des dix joueurs avant de former le match, et on peut se respécialiser dans le champ de bataille hors combat. L’arène classée reçoit un niveau minimum et cesse de payer l’Honneur sur un forfait.</span>
+        <span class="d-say">Un déserteur ne condamne plus son équipe : son siège est repris par un joueur de la file, qui joue en non classé. Nouveau canal <span class="kbd">/bg</span> pour parler aux deux camps d’un match. Et les matchs nuls, qui disparaissaient purement du bilan, comptent enfin — les records s’affichent en victoires-défaites-nuls.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">⚙️</span>
         <a class="d-name" href="#perf">Confort &amp; technique</a>
-        <span class="d-say">La grosse affaire de la branche : la chasse aux gels d’affichage (arrivée de joueurs équipés, traversée de frontière), les redémarrages sur iPhone, et un avis au démarrage quand le navigateur a choisi la mauvaise carte graphique. Plus tri des sacs, temps de jeu à vie et wiki du jeu remis à jour.</span>
+        <span class="d-say">Un changement d’apparence offert à tout personnage déjà créé. Toujours la chasse aux gels d’affichage, avec cette fois un banc d’essai dédié aux images figées. Plus une grande passe de peinture sur les icônes, les portraits de monstres et les sons.</span>
       </li>
     </ol>
   </nav>
@@ -256,12 +256,62 @@
   <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
        s'efface d'elle-même quand cette version sort, et se signale périmée si
        le jeu passe à préparer la suivante. -->
-  <div id="editorial" data-for="v0.36.0" data-commits="638" data-chantiers="v0.36.0" data-written="2026-08-09T16:45+02:00">
+  <div id="editorial" data-for="v0.36.0" data-commits="1478" data-chantiers="v0.36.0" data-written="2026-08-10T16:30+02:00">
 
   <!-- 1 CLASSES -->
   <section id="classes">
-    <div class="sec-head"><span class="sec-num">01</span><h2>Les armes lentes cessent de frapper deux fois trop fort</h2></div>
-    <p class="sec-sub">Le plus gros changement d’équilibre de la branche ne se lit dans aucune option de talent : il est dans le calcul des coups blancs, faux depuis la v0.30.0. Et le guerrier, lui, voit sa mobilité PvP recoupée.</p>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Sept classes remises à plat</h2></div>
+    <p class="sec-sub">Préparée pendant des mois sur une branche à part, la grande refonte des classes vient de basculer d’un coup dans la v0.36.0. Paladin, chasseur, voleur, prêtre, chaman, démoniste et druide arrivent avec de nouveaux moteurs de spécialisation — de nouvelles ressources, de nouveaux enchaînements, et pour certains de nouveaux noms de spés. Le guerrier et le mage gardent leurs arbres.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="paladin" tabindex="0" role="button" aria-label="Détails : le paladin refondu">
+        <h3>Paladin : tout, du sol au plafond <span class="chip c-new">Refonte</span></h3>
+        <p>La classe est rebâtie autour d’une ressource propre, la <strong class="hl">Dévotion</strong>, dépensée en auras — et d’une <strong class="hl">Ascension divine</strong> qui la convertit en charges : pendant la fenêtre, les capacités marquées consomment une charge et gagnent un effet supplémentaire. Les <strong class="hl">trois spécialisations changent de nom</strong> au passage.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="demoniste" tabindex="0" role="button" aria-label="Détails : le démoniste et la Nécromancie">
+        <h3>Démoniste : une spé remplacée par une armée <span class="chip c-new">Refonte</span></h3>
+        <p>La spé de résistance démoniaque disparaît au profit de la <strong class="hl">Nécromancie</strong> : un gardien mort-vivant permanent qui encaisse à votre place, et des squelettes, mages d’os et ailes de tombe appelés en renfort. Les deux autres spés changent de moteur — l’une accumule une ressource de <strong class="hl">condamnation</strong>, l’autre une charge de siège.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+    </div>
+    <div class="grid cols-3" style="margin-top:14px">
+      <div class="card more" data-detail="moteurs" tabindex="0" role="button" aria-label="Détails : voleur et druide">
+        <h3>Voleur et druide : chaque spé a son moteur <span class="chip c-new">Refonte</span></h3>
+        <p>Fini les trois spés qui jouent pareil en changeant les chiffres. Le voleur empoisonne, brutalise ou se cache — trois boucles distinctes. Le druide accumule une ressource <strong class="hl">dans les deux formes</strong> côté combattant, et une réserve à récolter côté soigneur.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Prêtre et chaman <span class="chip c-new">Refonte</span></h3>
+        <ul>
+          <li>Le prêtre reçoit <strong class="hl">trois boucles écrites une par une</strong> — un pacte pour la spé de boucliers, une veille pour la spé de soins directs, une effigie pour l’ombre — et son arbre de classe est remplacé.</li>
+          <li>Le chaman gagne une <strong class="hl">transe élémentaire</strong> au niveau 20 et une imprégnation d’arme partagée par les trois spés. Ses maîtrises, elles, ne bougent pas.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Chasseur : le seul à perdre au change <span class="chip c-bal">Nerf</span></h3>
+        <ul>
+          <li>Les trois spés sont réécrites — la spé de bête accumule une <strong class="hl">férocité de meute</strong>, l’archer une <strong class="hl">concentration</strong> qu’il dépense en tirs de précision, et le survivaliste devient un <strong class="hl">corps à corps</strong> qui ouvre une plaie et contrôle la distance.</li>
+          <li>Mais ses deux maîtrises chiffrées <strong class="hl">baissent</strong> : les dégâts du familier et l’amplification de l’archer sont l’une et l’autre revues à la baisse. C’est la seule classe où le code dit clairement « moins ».</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card more" data-detail="bande" tabindex="0" role="button" aria-label="Détails : la remise à niveau commune">
+        <h3>Toutes ramenées dans la même fourchette <span class="chip c-bal">Équilibrage</span></h3>
+        <p>Refondre sept classes d’un coup casse forcément l’équilibre. La branche se termine par une longue série de passes de calage : les spés qui dépassaient sont <strong class="hl">rabotées</strong>, celles qui traînaient au fond sont <strong class="hl">remontées</strong>, toutes vers une <strong class="hl">même cible commune</strong> mesurée sur le même banc d’essai.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Le mage, seul intact <span class="chip c-util">Repère</span></h3>
+        <p>Le mage traverse la refonte <strong class="hl">sans une ligne de changement</strong> sur ses trois spécialisations — y compris la spé de soins arrivée en v0.27.0. Le guerrier garde lui aussi son arbre, mais il a son propre chantier, juste en dessous.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 GUERRIER & COUPS BLANCS -->
+  <section id="guerrier">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Et pendant ce temps, les armes lentes cessent de frapper deux fois trop fort</h2></div>
+    <p class="sec-sub">Le chantier de la semaine dernière n’a pas disparu sous la refonte : il touche toutes les classes, y compris celles qui ne changent pas. Le calcul des coups automatiques était faux depuis la v0.30.0 — et la mobilité du guerrier, elle, est recoupée.</p>
     <div class="grid cols-2">
       <div class="card more" data-detail="blanches" tabindex="0" role="button" aria-label="Détails : le calcul des coups blancs">
         <h3>Un coup blanc compté deux fois <span class="chip c-bal">Correctif de fond</span></h3>
@@ -296,70 +346,55 @@
         <span class="more-link">Voir le détail</span>
       </div>
     </div>
-    <div class="grid cols-2" style="margin-top:14px">
-      <div class="card">
-        <h3>Chaque monstre a son geste <span class="chip c-mob">Visuel</span></h3>
-        <ul>
-          <li>Attaques signature pour l’ours, le crabe, le murloc, le tréant, le yéti, le greyjaw, le glub, le <span data-codex="mob|wildheart_stalker">Vineclaw Stalker</span>, le <span data-codex="mob|wildheart_hexcaller">Sunbone Hexcaller</span>, le Bloodmane Ravager, les dragonkins et le démon familier du démoniste.</li>
-          <li>De nouvelles <strong class="hl">réactions aux coups lourds</strong> — plusieurs familles de créatures en ont maintenant deux, pour que la différence entre une pichenette et un gros coup se voie.</li>
-          <li>Côté joueurs : gestes d’incantation propres au <strong class="hl">chaman</strong> et au <strong class="hl">druide</strong>, et chez le chasseur les gestes propres — dégainer, frapper au corps à corps, se donner un bonus — ne sont plus écrasés par l’apparence d’arc affichée.</li>
-          <li>Purement visuel : aucune valeur de combat ne change.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Deux trous rebouchés <span class="chip c-util">Correctifs</span></h3>
-        <ul>
-          <li>Une <strong class="hl">charge lancée alors qu’on est enraciné</strong> était consommée sans rien faire : elle est maintenant refusée, et la recharge reste disponible.</li>
-          <li>Les effets d’un <strong class="hl">duel</strong> qui restaient collés à la fin — sur vous, ou sur un familier disparu entre-temps — sont enfin nettoyés dans tous les cas.</li>
-        </ul>
-      </div>
-    </div>
   </section>
 
-  <!-- 2 PVP -->
+  <!-- 3 CHAMP DE BATAILLE -->
   <section id="pvp">
-    <div class="sec-head"><span class="sec-num">02</span><h2>Les files se disciplinent</h2></div>
-    <p class="sec-sub">Pas de nouveau mode : la file d’arène classée ferme des portes qu’elle laissait ouvertes, celle du champ de bataille cesse de s’effacer dans votre dos — et arrête d’asseoir des absents.</p>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Un déserteur ne condamne plus son équipe</h2></div>
+    <p class="sec-sub">Le champ de bataille se joue à cinq contre cinq : un joueur qui part, c’est un cinquième de l’équipe, plus près d’une défaite d’arène que du creux qu’un absent fait dans une mêlée à quinze. La branche s’attaque aux deux bouts — celui qui part, et ceux qui restent.</p>
     <div class="grid cols-3">
+      <div class="card more" data-detail="remplacant" tabindex="0" role="button" aria-label="Détails : le remplaçant appelé en cours de match">
+        <h3>Un remplaçant appelé depuis la file <span class="chip c-new">Nouveau</span></h3>
+        <p>Le siège vide d’un déserteur est maintenant <strong class="hl">repris par un joueur de la file</strong>. Il arrive avec un score qu’il n’a pas fait, donc il joue en <strong class="hl">non classé</strong> : un siège qui coûterait de la cote est un siège que tout le monde apprend à fuir. Et on ne va pas le chercher si le match est presque fini ou déjà plié.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Parler aux deux camps : <span class="kbd">/bg</span> <span class="chip c-new">Nouveau</span></h3>
+        <p>Il n’existait <strong class="hl">aucun moyen de s’adresser à l’équipe d’en face</strong> — les joueurs se rabattaient sur le canal Général, qui hurle dans tout le royaume. <span class="kbd">/bg</span> ne parle qu’aux combattants du match, les dix. Vrai canal à onglet, avec sa couleur, et il <strong class="hl">suit la liste réelle des combattants</strong> : celui qui déserte en sort avec le match.</p>
+      </div>
+      <div class="card">
+        <h3>Les matchs nuls existent enfin <span class="chip c-pvp">Classé</span></h3>
+        <p>Un match nul <strong class="hl">bougeait la cote mais n’incrémentait rien</strong> : il disparaissait purement du bilan, si bien qu’un joueur avec une victoire et un nul lisait « 1–0 ». Les nuls sont désormais comptés, conservés et affichés — les bilans passent en <strong class="hl">victoires–défaites–nuls</strong>, dans les deux modes classés et sur le profil public.</p>
+      </div>
+    </div>
+    <div class="grid cols-3" style="margin-top:14px">
       <div class="card more" data-detail="pop" tabindex="0" role="button" aria-label="Détails : la confirmation de file">
         <h3>Une file qui éclate demande votre accord <span class="chip c-new">Nouveau</span></h3>
         <p>Jusqu’ici, la file asseyait qui le tirage désignait, <strong class="hl">présent ou pas</strong> : un joueur parti se faire un café gardait sa place et son équipe jouait à quatre contre cinq. C’est devenu une <strong class="hl">offre de 30 secondes</strong>, et le match ne se forme que si les dix acceptent. Le silence vaut refus.</p>
         <span class="more-link">Voir le détail</span>
       </div>
-      <div class="card">
-        <h3>Changer de talents une fois dedans <span class="chip c-new">Nouveau</span></h3>
-        <p>Une file qui éclate vous attrapait parfois <strong class="hl">en build de farm</strong>, et Thornhollow Fields est classé : on perdait de la cote sans recours. L’équipement, lui, n’a jamais été bloqué là-dedans. C’est <strong class="hl">le combat qui fait la règle</strong>, plus le lieu : hors combat, on se respécialise dans le champ de bataille. L’arène reste verrouillée.</p>
-      </div>
-      <div class="card more" data-detail="arene" tabindex="0" role="button" aria-label="Détails : l’arène classée">
-        <h3>Un niveau minimum en file <span class="chip c-pvp">Classé</span></h3>
-        <p>La file classée était de l’Elo pur, <strong class="hl">sans aucun plancher de niveau</strong> : un personnage fraîchement créé pouvait entrer en 1c1 ou en 2c2. Un niveau minimum s’applique désormais — et il vaut pour <strong class="hl">chaque membre</strong> d’un groupe 2c2, pas seulement pour le chef.</p>
-        <span class="more-link">Voir le détail</span>
-      </div>
-    </div>
-    <div class="grid cols-3" style="margin-top:14px">
       <div class="card more" data-detail="file" tabindex="0" role="button" aria-label="Détails : la file de champ de bataille">
         <h3>Votre place en file survit à votre mort <span class="chip c-new">Nouveau</span></h3>
-        <p>Mourir ou entrer en donjon vous <strong class="hl">sortait de la file de Thornhollow Fields sans un mot</strong> — la façon la plus courante de perdre sa place sans s’en apercevoir. Attendre n’est pas une activité : la file survit désormais aux deux. Trois causes seulement y mettent fin : se déconnecter, être déjà placé, ou entrer en match d’arène.</p>
+        <p>Mourir ou entrer en donjon vous <strong class="hl">sortait de la file sans un mot</strong> — la façon la plus courante de perdre sa place sans s’en apercevoir. Attendre n’est pas une activité : la file survit désormais aux deux. Trois causes seulement y mettent fin : se déconnecter, être déjà placé, ou entrer en match d’arène.</p>
         <span class="more-link">Voir le détail</span>
       </div>
-      <div class="card">
-        <h3>Le forfait ne paie plus <span class="chip c-bal">Règle</span></h3>
-        <p>Gagner par forfait rapportait <strong class="hl">autant d’Honneur qu’un vrai match</strong>. Ce n’est plus le cas. La cote et les hauts faits, eux, continuent de compter le forfait — c’est volontaire. Et la « première victoire du jour » se remet à zéro <strong class="hl">avec le royaume</strong>, plus à minuit UTC.</p>
-      </div>
-      <div class="card">
-        <h3>La boutique Warfare, une seule porte <span class="chip c-util">Marchands</span></h3>
-        <ul>
-          <li>Les quartiers-maîtres ouvraient <strong class="hl">deux rangées sur le même stock</strong> — et la rangée générique achetait <strong class="hl">sans confirmation</strong>. L’Honneur ne se rembourse pas, une pièce de panoplie en coûte des dizaines de milliers : cette porte-là se ferme.</li>
-          <li>Les familles sont rangées par classe d’armure — <span data-codex="set|warfare_thornhide">Thornhide Garb</span> ne se retrouve plus sous les tissus.</li>
-        </ul>
+      <div class="card more" data-detail="arene" tabindex="0" role="button" aria-label="Détails : l’arène classée">
+        <h3>Un niveau minimum en arène <span class="chip c-pvp">Classé</span></h3>
+        <p>La file classée était de l’Elo pur, <strong class="hl">sans aucun plancher de niveau</strong> : un personnage fraîchement créé pouvait entrer en 1c1 ou en 2c2. Un niveau minimum s’applique désormais — et il vaut pour <strong class="hl">chaque membre</strong> d’un groupe 2c2, pas seulement pour le chef. Gagner par forfait, lui, cesse de payer l’Honneur.</p>
+        <span class="more-link">Voir le détail</span>
       </div>
     </div>
     <div class="grid cols-3" style="margin-top:14px">
+      <div class="card">
+        <h3>Changer de talents une fois dedans <span class="chip c-new">Nouveau</span></h3>
+        <p>Une file qui éclate vous attrapait parfois <strong class="hl">en build de farm</strong>, et Thornhollow Fields est classé : on perdait de la cote sans recours. C’est <strong class="hl">le combat qui fait la règle</strong>, plus le lieu : hors combat, on se respécialise dans le champ de bataille. L’arène reste verrouillée.</p>
+      </div>
       <div class="card">
         <h3>On voit enfin qui est contrôlé <span class="chip c-util">Lisibilité</span></h3>
         <ul>
-          <li>Les étoiles jaunes de l’étourdissement avaient un défaut : elles s’allumaient aussi sur une <strong class="hl">racine</strong> ou une <strong class="hl">peur</strong>. Chacune a maintenant son signe — étoiles pour l’étourdissement, volutes violettes pour la peur, éclats verts aux chevilles pour la racine.</li>
-          <li>Un seul signe à la fois par victime, le plus grave.</li>
+          <li>Les étoiles jaunes de l’étourdissement s’allumaient aussi sur une <strong class="hl">racine</strong> ou une <strong class="hl">peur</strong>. Chacune a maintenant son signe — étoiles, volutes violettes, éclats verts aux chevilles — et un seul à la fois par victime, le plus grave.</li>
+          <li>Une <strong class="hl">peur</strong> ne vous fait plus traverser le plancher : les remparts ne piègent plus les joueurs sous le décor.</li>
+          <li>Votre familier vous est <strong class="hl">rendu</strong> à la résurrection, à la vague de renfort et à la sortie du match.</li>
         </ul>
       </div>
       <div class="card more" data-detail="soins" tabindex="0" role="button" aria-label="Détails : les cadres de groupe et l’absorption">
@@ -367,20 +402,53 @@
         <p>Un compagnon affiché comme joignable refusait le soin : le badge « hors de portée » se déclenchait <strong class="hl">bien trop loin</strong>. Et frapper une cible sous bouclier ne montrait rien du tout, comme si vos coups ne faisaient rien.</p>
         <span class="more-link">Voir le détail</span>
       </div>
+    </div>
+  </section>
+
+  <!-- 4 FAILLES & BUTIN -->
+  <section id="donjons">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Les cercles rouges des Failles, enfin lisibles</h2></div>
+    <p class="sec-sub">Aucun nouveau donjon, aucune nouvelle Faille : la branche s’attaque à ce qui rendait les combats existants injustes ou muets. Et le butin de dague, resté au point mort, reçoit enfin de la variété.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="cercles" tabindex="0" role="button" aria-label="Détails : les zones mortelles des Failles">
+        <h3>Un trait d’un pixel devient un compte à rebours <span class="chip c-new">Refonte visuelle</span></h3>
+        <p>La zone mortelle d’un boss de Faille était un <strong class="hl">cercle d’un pixel de large</strong> — les navigateurs refusent de tracer plus épais — qui en prime s’effaçait presque en pulsant. Elle devient une <strong class="hl">bordure épaisse posée sur le terrain</strong>, un fond teinté, et un disque qui grandit du centre vers le bord à mesure que la mèche brûle.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
       <div class="card">
-        <h3>Au champ de bataille <span class="chip c-pvp">Lisibilité</span></h3>
+        <h3>Trois boss dont la mèche était trop courte <span class="chip c-bal">Correctif</span></h3>
         <ul>
-          <li>L’anneau d’identité d’équipe passe en <strong class="hl">pointillés fins</strong> — il se lisait comme un cercle de ciblage — et celui du porteur de drapeau disparaît, devenu redondant.</li>
-          <li>Une <strong class="hl">peur</strong> ne vous fait plus traverser le plancher sur lequel vous vous tenez : les remparts de Thornhollow Fields ne piègent plus les joueurs sous le décor.</li>
-          <li>Le journal des victimes ne <strong class="hl">coupe plus les noms</strong> en deux.</li>
+          <li>Un test de jeu a désigné trois boss dont les cercles rouges étaient jugés <strong class="hl">inesquivables</strong>, et trois autres jugés justes. Le partage était net : les mauvais lançaient <strong class="hl">nettement plus vite</strong> — et leur panoplie étourdit, enracine ou ralentit celui qui court.</li>
+          <li>Leurs mèches sont allongées, et une garde vérifie désormais que <strong class="hl">tout futur boss</strong> à zone mortelle laisse le temps d’en sortir, contrôles compris.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Les Failles ont enfin un son <span class="chip c-new">Audio</span></h3>
+        <p>Portails, dangers au sol, grilles, glissades sur la glace : les mécaniques de Faille étaient <strong class="hl">muettes</strong> ou empruntaient un bruitage générique. Chacune reçoit son propre son. Un contrôle lancé par un coéquipier ne vous <strong class="hl">arrache plus à une esquive</strong> pendant l’annonce d’un boss.</p>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card more" data-detail="dagues" tabindex="0" role="button" aria-label="Détails : les nouvelles dagues">
+        <h3>Des dagues qui font enfin quelque chose <span class="chip c-new">Butin</span></h3>
+        <p>Le vivier de dagues de fin de jeu, c’était <strong class="hl">quatre bâtons de statistiques quasi identiques, au même modèle 3D, sans le moindre effet</strong>. Quatre nouvelles arrivent, chacune avec son effet au coup et son propre modèle : une en Faille, une dans les Drakelands, une chez un boss des Wildheart, une dernière en rareté ordinaire pour combler le trou des niveaux 17 à 19.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Où les trouver <span class="chip c-util">Sources</span></h3>
+        <ul>
+          <li><strong class="hl">Rimefang</strong> — épique de Faille, lance un trait de givre.</li>
+          <li><strong class="hl">Marrowpoint</strong> — sur Cindraleth, dans les Drakelands ; ouvre une plaie.</li>
+          <li><strong class="hl">Duskwhisper</strong> — sur le Fanglord Beastmaster des Wildheart ; trait d’ombre. Sa version héroïque tombe du même boss en héroïque.</li>
+          <li><strong class="hl">Boneglass Shiv</strong> — rare du Bassin, petite plaie, pour la tranche de niveaux qui n’avait rien.</li>
+          <li>Les dagues de Faille et de donjon déjà en place sont <strong class="hl">réalignées</strong> sur l’échelle de puissance, et les nouvelles sont calées pour ne pas dépasser le meilleur équipement actuel.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- 3 ÉQUIPEMENT -->
+  <!-- 5 OBJETS & SACS -->
   <section id="equipement">
-    <div class="sec-head"><span class="sec-num">03</span><h2>Vos objets, enfin désignés un par un</h2></div>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Vos objets, enfin désignés un par un</h2></div>
     <p class="sec-sub">Une même pièce peut exister en plusieurs exemplaires dans vos sacs — l’une enchantée, l’autre non. Le jeu ne les distinguait pas. Toute une famille de commandes apprend à le faire, et les ensembles d’équipement en découlent.</p>
     <div class="grid cols-2">
       <div class="card more" data-detail="ensembles" tabindex="0" role="button" aria-label="Détails : les ensembles d’équipement">
@@ -394,10 +462,10 @@
         <span class="more-link">Voir le détail</span>
       </div>
     </div>
-    <div class="grid cols-2" style="margin-top:14px">
+    <div class="grid cols-3" style="margin-top:14px">
       <div class="card more" data-detail="carquois" tabindex="0" role="button" aria-label="Détails : le carquois et l’arme à deux mains">
         <h3>Carquois et deux mains, enfin ensemble <span class="chip c-new">Correctif de fond</span></h3>
-        <p>Équiper un carquois <strong class="hl">déséquipait votre arme à deux mains</strong> : le jeu la traitait comme une main gauche ordinaire. Le carquois se porte dans le dos — il sort donc de la règle. Contrepartie assumée : un emplacement qui ne coûte plus votre arme ne peut plus en garder le prix, et le budget de statistiques des carquois baisse.</p>
+        <p>Équiper un carquois <strong class="hl">déséquipait votre arme à deux mains</strong> : le jeu la traitait comme une main gauche ordinaire. Le carquois se porte dans le dos — il sort donc de la règle. Contrepartie assumée : un emplacement qui ne coûte plus votre arme ne peut plus en garder le prix.</p>
         <span class="more-link">Voir le détail</span>
       </div>
       <div class="card">
@@ -408,13 +476,17 @@
           <li>L’infobulle d’un jet de butin disparaît <strong class="hl">avec sa ligne</strong> au lieu de rester accrochée à l’écran.</li>
         </ul>
       </div>
+      <div class="card">
+        <h3>Côté forge <span class="chip c-util">Métiers</span></h3>
+        <p>Une <strong class="hl">dague d’artisanat</strong> dont les dégâts étaient manifestement faux — très en dessous de tout ce qui se fabrique à son niveau — est remise d’aplomb. Et la <strong class="hl">boutique Warfare</strong> n’ouvre plus qu’une seule porte, rangée par classe d’armure et avec confirmation à l’achat : l’autre rangée dépensait votre Honneur, non remboursable, sans rien demander (<span data-codex="set|warfare_thornhide">Thornhide Garb</span> ne se retrouve plus sous les tissus).</p>
+      </div>
     </div>
   </section>
 
-  <!-- 4 PERFORMANCE -->
+  <!-- 6 PERFORMANCE -->
   <section id="perf">
-    <div class="sec-head"><span class="sec-num">04</span><h2>La chasse aux gels</h2></div>
-    <p class="sec-sub">C’est le gros du volume de la branche, et de loin : depuis le 8 août, l’essentiel des commits traque les secondes figées. Plusieurs symptômes distincts, plusieurs enquêtes séparées — et, pour une fois, des mesures avant/après plutôt que des impressions.</p>
+    <div class="sec-head"><span class="sec-num">06</span><h2>La chasse aux gels</h2></div>
+    <p class="sec-sub">Toujours le gros du volume, refonte de classes mise à part : plusieurs symptômes distincts, plusieurs enquêtes séparées — et, pour une fois, des mesures avant/après plutôt que des impressions.</p>
     <div class="grid cols-3">
       <div class="card more" data-detail="gels" tabindex="0" role="button" aria-label="Détails : le gel à l’arrivée de joueurs équipés">
         <h3>Quand la ville se remplit <span class="chip c-new">Enquête</span></h3>
@@ -422,75 +494,85 @@
         <span class="more-link">Voir le détail</span>
       </div>
       <div class="card">
-        <h3>Les à-coups de traversée <span class="chip c-util">En cours</span></h3>
+        <h3>Un arbitre pour les saccades <span class="chip c-new">Coulisses</span></h3>
         <ul>
-          <li>L’autre gel classique : franchir une <strong class="hl">frontière de zone</strong> à pied, des pics vers le marais, et rester planté le temps que le décor suivant se prépare.</li>
-          <li>Là encore, un banc d’essai d’abord — qui refuse de mesurer si la carte graphique n’est pas vraiment sollicitée, pour ne pas se raconter d’histoires.</li>
-          <li>Le verdict des développeurs est honnête : ça va <strong class="hl">nettement mieux mais ce n’est pas réglé</strong>, la préparation du terrain et de l’eau court toujours après le joueur qui marche.</li>
+          <li>Un banc d’essai dédié aux <strong class="hl">images figées</strong> est arrivé, avec sa collection de scénarios : il rejoue les situations connues pour saccader et refuse de valider une version qui saccade plus que la précédente.</li>
+          <li>Le jeu prend aussi régulièrement une <strong class="hl">photo de son propre état</strong> et joint la différence entre les deux photos qui encadrent l’à-coup : un gel qui remonte chez les développeurs arrive maintenant avec son contexte.</li>
         </ul>
       </div>
       <div class="card">
-        <h3>Les iPhone qui redémarraient <span class="chip c-new">Correctif</span></h3>
-        <p>Le jeu se coupait en pleine partie sur iPhone, <strong class="hl">quels que soient les réglages graphiques</strong> — baisser la qualité ne faisait que retarder. En cause : le mode « mémoire contenue » ne s’activait que dans l’application installée, alors que Safari et les autres navigateurs iOS tournent sur le même moteur, avec le même plafond. Il s’applique maintenant à <strong class="hl">tout iOS</strong>. Android n’était pas concerné.</p>
+        <h3>Ce qui a été gratté <span class="chip c-util">Affichage</span></h3>
+        <ul>
+          <li>L’herbe se construit désormais <strong class="hl">par tranches</strong> tenues dans le budget d’une image, et les caches de personnages sont bornés.</li>
+          <li>Les textures libèrent leur pile de <strong class="hl">niveaux de détail</strong> après envoi à la carte graphique, sur ordinateur.</li>
+          <li>Les chemins d’affichage les plus chauds — plaques de noms, texte, traductions — cessent de <strong class="hl">créer des objets à chaque image</strong>.</li>
+          <li>La préparation d’avant-partie ne se lance plus <strong class="hl">sur le chemin critique</strong> du démarrage.</li>
+        </ul>
       </div>
     </div>
     <div class="grid cols-3" style="margin-top:14px">
       <div class="card">
+        <h3>Les iPhone qui redémarraient <span class="chip c-new">Correctif</span></h3>
+        <p>Le jeu se coupait en pleine partie sur iPhone, <strong class="hl">quels que soient les réglages graphiques</strong>. En cause : le mode « mémoire contenue » ne s’activait que dans l’application installée, alors que Safari et les autres navigateurs iOS tournent sur le même moteur, avec le même plafond. Il s’applique maintenant à <strong class="hl">tout iOS</strong>. Android n’était pas concerné.</p>
+      </div>
+      <div class="card">
         <h3>« Vous jouez sur la mauvaise carte » <span class="chip c-new">Nouveau</span></h3>
-        <p>Sur un portable à <strong class="hl">deux cartes graphiques</strong>, le navigateur choisit parfois la petite — et le joueur passe des heures à baisser ses réglages sans comprendre. Le jeu le détecte maintenant <strong class="hl">au démarrage</strong> et le dit, avec la marche à suivre selon le système. L’avis se ferme définitivement d’un clic, et ne s’affiche jamais dans le client de bureau, qui force déjà la bonne carte.</p>
+        <p>Sur un portable à <strong class="hl">deux cartes graphiques</strong>, le navigateur choisit parfois la petite — et le joueur passe des heures à baisser ses réglages sans comprendre. Le jeu le détecte maintenant <strong class="hl">au démarrage</strong> et le dit, avec la marche à suivre selon le système. L’avis se ferme définitivement d’un clic, et ne s’affiche jamais dans le client de bureau.</p>
       </div>
       <div class="card">
         <h3>Et pendant qu’on y est <span class="chip c-util">Chargement</span></h3>
         <ul>
-          <li>Les <strong class="hl">apparences de personnage</strong> sont enfin compressées comme le reste : leurs images se décompressaient une par une en mémoire, pour un coût que le jeu avait déjà supprimé partout ailleurs.</li>
-          <li>Les <strong class="hl">voix des PNJ et la musique</strong> se gardent en cache d’une session à l’autre — jusqu’ici, le navigateur redemandait poliment chaque piste à chaque partie.</li>
+          <li>Les <strong class="hl">apparences de personnage</strong> sont enfin compressées comme le reste.</li>
+          <li>Les <strong class="hl">voix des PNJ et la musique</strong> se gardent en cache d’une session à l’autre.</li>
           <li>Côté serveur : le profil de combat d’un monstre n’est plus recalculé plusieurs fois par seconde, la liste des membres d’une guilde et le temps de jeu à vie ne sont plus relus à chaque demande.</li>
         </ul>
-      </div>
-      <div class="card">
-        <h3>Un gel qui explique d’où il vient <span class="chip c-util">Coulisses</span></h3>
-        <p>Jusqu’ici, un à-coup chez un joueur arrivait chez les développeurs <strong class="hl">sans aucun contexte</strong>. Le jeu prend maintenant régulièrement une photo de son propre état et joint la <strong class="hl">différence entre les deux photos qui encadrent l’à-coup</strong>. Rien à faire de votre côté : c’est ce qui rendra les prochains correctifs plus rapides.</p>
       </div>
     </div>
   </section>
 
-  <!-- 5 CONFORT -->
+  <!-- 7 CONFORT -->
   <section id="confort">
-    <div class="sec-head"><span class="sec-num">05</span><h2>Confort &amp; technique</h2></div>
-    <p class="sec-sub">Le quotidien : beaucoup de petites choses qu’on remarque tout de suite.</p>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Confort &amp; technique</h2></div>
+    <p class="sec-sub">Le quotidien : beaucoup de petites choses qu’on remarque tout de suite — dont une qui touche tout le monde.</p>
     <div class="grid cols-3">
+      <div class="card more" data-detail="apparence" tabindex="0" role="button" aria-label="Détails : le changement d’apparence offert">
+        <h3>Un changement d’apparence offert <span class="chip c-new">Nouveau</span></h3>
+        <p>Un bouton <strong class="hl">Nouveau look</strong> apparaît sur l’écran de choix des personnages : il rouvre l’éditeur de création, aperçu 3D compris, et enregistre le nouveau visage. <strong class="hl">Une fois</strong>, et <strong class="hl">offert à tout personnage déjà créé</strong> — ceux qui existaient avant la sortie n’ont jamais eu l’occasion de choisir.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Une grande passe de peinture <span class="chip c-new">Art</span></h3>
+        <ul>
+          <li>Les icônes des <strong class="hl">objets d’inventaire</strong> sont unifiées, les dernières icônes provisoires remplacées, et une nouvelle vague d’icônes de capacités est peinte à la main.</li>
+          <li>Les <strong class="hl">portraits de monstres</strong> sont re-rendus, et chaque spécialisation reçoit son propre pictogramme.</li>
+          <li>Nouveaux effets : tempêtes de météores démoniaques pour le démoniste, et le <strong class="hl">bruit de moteur de la monture blindée</strong> — démarrage, régime, extinction.</li>
+        </ul>
+      </div>
       <div class="card">
         <h3>Sur la fiche de personnage <span class="chip c-new">Nouveau</span></h3>
         <p>Votre <strong class="hl">temps de jeu à vie</strong> s’affiche — avec un œil pour le masquer si vous préférez ne pas savoir, ou ne pas montrer. Et la carte de personnage partageable ne <strong class="hl">déborde plus</strong> de son cadre.</p>
       </div>
+    </div>
+    <div class="grid cols-3" style="margin-top:14px">
       <div class="card">
         <h3>Le Wiki, raccourci et remis à jour <span class="chip c-new">Nouveau</span></h3>
         <ul>
           <li>Un raccourci vers le wiki du jeu dans la micro-barre et le menu, avec une <strong class="hl">confirmation avant d’ouvrir</strong> — on ne quitte pas le jeu par accident.</li>
-          <li>Son dernier examen complet datait du 11 juillet : des systèmes entiers y manquaient. <strong class="hl">Cinq pages nouvelles</strong> — Failles, Montures, Interface, Commandes, Éditeur de monde — et des corrections partout ailleurs (les talents s’ouvrent au niveau 5, le monde compte quatorze zones, la troisième spécialisation du mage soigne).</li>
+          <li>Son dernier examen complet datait du 11 juillet : des systèmes entiers y manquaient. <strong class="hl">Cinq pages nouvelles</strong> — Failles, Montures, Interface, Commandes, Éditeur de monde — et des corrections partout ailleurs.</li>
         </ul>
       </div>
       <div class="card">
         <h3>Des détails qui comptent <span class="chip c-util">Interface</span></h3>
         <ul>
           <li>Un coup <strong class="hl">entièrement absorbé</strong> n’affiche plus un « 0 » trompeur : le montant absorbé apparaît entre parenthèses.</li>
-          <li>Mourir de sa <strong class="hl">propre brûlure</strong> a enfin sa phrase dans le récapitulatif de mort, au lieu de laisser croire qu’un ennemi vous a achevé.</li>
+          <li>Mourir de sa <strong class="hl">propre brûlure</strong> a enfin sa phrase dans le récapitulatif de mort.</li>
+          <li>Les infobulles de capacités deviennent <strong class="hl">conscientes de votre spécialisation</strong> et sont réécrites en langage clair — indispensable avec sept classes refondues.</li>
           <li>Sur téléphone, les récompenses de quête restent <strong class="hl">dans le fil</strong> au lieu de sortir de l’écran.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="grid cols-2" style="margin-top:14px">
-      <div class="card">
-        <h3>Sous le capot <span class="chip c-util">Technique</span></h3>
-        <ul>
-          <li>La <strong class="hl">musique revient sur le client de bureau</strong> : toutes les ambiances streamées restaient muettes, seuls les bruitages passaient.</li>
-          <li>Le chargement de la langue se fait <strong class="hl">en même temps</strong> que le préchargement des décors — le jeu s’ouvre plus vite.</li>
-          <li>Tout l’allègement serveur de la v0.35.1 (courrier, commandes d’artisanat, effets d’arme) est déjà intégré ici.</li>
         </ul>
       </div>
       <div class="card">
         <h3>Traductions <span class="chip c-util">Langues</span></h3>
-        <p>Les lignes de progression des métiers, l’avis carte graphique et le nouveau talent du guerrier sont <strong class="hl">traduits dans toutes les langues du jeu</strong>, y compris celles à alphabet non latin, avant même la sortie. Le français fait partie du lot depuis la v0.34.0.</p>
+        <p>Les libellés des sept classes refondues, l’avis carte graphique et les nouvelles dagues sont <strong class="hl">traduits dans toutes les langues du jeu</strong>, y compris celles à alphabet non latin, avant même la sortie. Le français fait partie du lot depuis la v0.34.0.</p>
       </div>
     </div>
   </section>
@@ -518,6 +600,165 @@
 
 <script>
   const DETAILS = {
+    paladin: {
+      title: "Le paladin, rebâti autour de la Dévotion",
+      summary: "Lu dans le code de la branche : c’est la classe la plus profondément touchée des sept.",
+      body: `
+        <h4>Une ressource, et une fenêtre pour la dépenser</h4>
+        <ul>
+          <li>Le paladin garde le mana, mais gagne par-dessus une réserve qui lui est propre, la <b>Dévotion</b>. Elle sert à poser des <b>auras</b> — protection, dégâts, soins, célérité — dont une seule peut être active à la fois : le choix d’aura devient une décision de combat, pas une case cochée au départ.</li>
+          <li><b>Ascension divine</b> convertit une part de cette Dévotion en <b>charges</b>, pour une fenêtre limitée. Pendant qu’elles durent, les capacités marquées en consomment une et <b>gagnent un effet supplémentaire</b> — c’est le cœur du nouveau rythme de la classe.</li>
+          <li>Une capacité de groupe <b>amplifie toutes les auras actives</b> de vos coéquipiers pendant quelques secondes, et le soigneur reçoit un rite qui <b>rappelle tout le groupe à la vie d’un coup</b>.</li>
+        </ul>
+        <h4>Les trois spés changent de nom</h4>
+        <ul>
+          <li>La spé de soins, la spé de bouclier et la spé de dégâts sont rebaptisées <b>Sunmender</b>, <b>Faithwarden</b> et <b>Dawnreaver</b>. Leurs identifiants internes ne bougent pas : les personnages, les configurations et les builds sauvegardés survivent tels quels.</li>
+          <li>Chacune reçoit une nouvelle capacité signature, et une trentaine de capacités de classe apparaissent au total — kit de dégâts, kit de bouclier, chaînes de soins.</li>
+        </ul>
+        <h4>Le paladin protection cesse d’être un tank de seconde classe</h4>
+        <ul>
+          <li>Une mesure interne le situait <b>nettement en dessous du guerrier protection</b> en points de vie effectifs, à équipement comparable. Sa maîtrise de tank porte désormais, en plus de la menace et de l’armure, un <b>gain de Vigueur</b> qui referme l’écart.</li>
+          <li>Le choix de le poser sur la maîtrise plutôt qu’ailleurs est assumé : une classe refondue garde son plancher de puissance <b>là où on peut le voir</b>, pas dans une couche héritée.</li>
+        </ul>
+        <p class="summary" style="margin-top:18px;border:0;padding:0"><b>Aucun chiffre repris ici</b>, à dessein : le coût de l’Ascension, le nombre de charges et la durée de la fenêtre existent dans le code, mais ce sont exactement les valeurs qui bougent jusqu’au dernier jour.</p>`
+    },
+    demoniste: {
+      title: "Le démoniste : une spé disparaît, une armée arrive",
+      summary: "Le remaniement le plus visible à l’écran — et celui qui change le plus la façon de jouer.",
+      body: `
+        <h4>La Nécromancie remplace la résistance démoniaque</h4>
+        <ul>
+          <li>L’ancienne spé « pacte » vivait d’un principe unique : une part de ce que vous encaissiez partait sur votre démon, et vous gagniez de la Vigueur. Elle laisse la place à la <b>Nécromancie</b>, bâtie sur des <b>fragments d’âme</b> dépensés à relever des morts.</li>
+          <li>Un <b>gardien de tombe</b> permanent tient le devant : il encaisse une part de ce qui vous vise et peut provoquer les monstres. Autour de lui, des renforts <b>temporaires</b> — guerrier squelette qui frappe en cercle, mage d’os qui tire à distance, aile de tombe — appelés puis rendus à la terre.</li>
+          <li>La maîtrise suit : elle amplifie les dégâts de vos morts-vivants <b>et</b> la part interceptée par le gardien.</li>
+        </ul>
+        <h4>Les deux autres spés changent de moteur</h4>
+        <ul>
+          <li>La spé de malédictions ne se contente plus d’amplifier ses poisons : elle transforme <b>les actions des ennemis et des alliés</b> en une ressource de condamnation, qu’elle dépense. Sa maîtrise passe d’un bonus large sur tous les effets de durée à un bonus <b>ciblé sur trois capacités</b>.</li>
+          <li>La spé de destruction accumule une <b>charge de siège</b> et la dépense en gros dégâts de feu. Sa maîtrise n’est plus un multiplicateur passif mais un <b>effet déclenché</b> : après un embrasement, le prochain gros sort part beaucoup plus vite, ou la première vague de pluie de feu tombe immédiatement.</li>
+        </ul>
+        <h4>La contrepartie</h4>
+        <ul>
+          <li>Le démoniste sortait de la mesure interne <b>au-dessus du reste du jeu</b>, surtout sur sa capacité à se relancer indéfiniment en fin de partie. Les rendements de mana et de vie de haut niveau ont été <b>revus à la baisse</b>, puis à moitié rendus, et les trois spés ramenées sous le plafond commun.</li>
+        </ul>`
+    },
+    moteurs: {
+      title: "Voleur et druide : trois spés, trois façons de jouer",
+      summary: "Le principe de toute la refonte, visible ici à l’état pur.",
+      body: `
+        <h4>Le voleur</h4>
+        <ul>
+          <li><b>Poison</b> : vos coups empilent un rituel de venin ; une fois plein, votre finisseur change de nature — il <b>encaisse d’un coup tout ce que vos plaies auraient encore infligé</b> et en rouvre une fraîche.</li>
+          <li><b>Bagarre</b> : un finisseur lancé avec assez de points de combo ouvre une fenêtre de quelques secondes pendant laquelle vos coups <b>changent de nom et alimentent une jauge</b> — qu’une seconde capacité vide entièrement avant que le temps ne tombe.</li>
+          <li><b>Ombre</b> : vos ouvertures depuis la discrétion accumulent une pénombre ; à trois, vos ouvertures <b>fonctionnent sans être caché</b>, la suivante est gratuite et lance un voile qui double votre premier coup à l’intérieur.</li>
+          <li>Le voleur partait de très bas : ses trois spés étaient au <b>fond du tableau</b> de puissance. Leur socle a été relevé d’un bloc — c’est la classe qui gagne le plus au change.</li>
+        </ul>
+        <h4>Le druide</h4>
+        <ul>
+          <li><b>Équilibre</b> : vos incantations remplissent une marée lunaire ; à trois, vous <b>choisissez comment la dépenser</b> — une poussée de dégâts, ou un retour de mana.</li>
+          <li><b>Farouche</b> : vos coups qui touchent accumulent une réserve <b>dans les deux formes</b>. Le loup la dépense en dégâts, l’ours à encaisser. Sa maîtrise, qui n’amplifiait ses dégâts physiques et ses saignements que d’un petit pourcentage, passe <b>à plus du triple</b> — le plus gros coup de pouce chiffré de toute la branche.</li>
+          <li><b>Restauration</b> : chaque soin sur la durée mené à terme fait pousser un jardin, qu’une capacité vient <b>récolter d’un coup</b>.</li>
+          <li>La spé Équilibre, elle, a été <b>rabotée</b> : ses coefficients ont été reposés sur la puissance des sorts, puis redescendus. Elle gagne un moteur, pas de la puissance.</li>
+        </ul>`
+    },
+    bande: {
+      title: "Comment on rééquilibre sept classes d’un coup",
+      summary: "La méthode est écrite dans la branche — et le document de référence prévient lui-même qu’il est déjà périmé.",
+      body: `
+        <h4>Une cible commune, mesurée</h4>
+        <ul>
+          <li>Chaque spécialisation est jouée par un simulateur sur un mannequin, <b>en boucle et sur de nombreux tirages</b>, avec le meilleur équipement épique atteignable sans objet légendaire. La valeur qui en sort est la référence : toutes les spés de dégâts doivent atterrir dans la <b>même fourchette</b>.</li>
+          <li>Les fenêtres courtes et longues sont mesurées séparément — une spé qui explose sur quinze secondes et s’écroule sur cinq minutes n’est pas la même que l’inverse.</li>
+        </ul>
+        <h4>Ce que ça a donné</h4>
+        <ul>
+          <li><b>Rabotées</b> parce qu’au-dessus : l’ombre du prêtre, l’équilibre du druide, les malédictions du démoniste, et deux des trois spés du voleur.</li>
+          <li><b>Remontées</b> parce qu’en dessous : les deux spés de dégâts du chasseur, et la spé d’arme du chaman — elles restent, à ce stade, sous les autres.</li>
+          <li>Les hausses sont posées avec soin : sur le chasseur survivaliste, le gain passe par la puissance d’attaque plutôt que par l’Agilité, pour ne pas gonfler en prime l’armure, l’esquive et les coups critiques de la spé qui esquive déjà le plus.</li>
+        </ul>
+        <h4>Pourquoi aucun chiffre ici</h4>
+        <ul>
+          <li>Le document de référence du jeu porte, en tête, son propre <b>avertissement de péremption</b> : ses valeurs ont été mesurées plusieurs centaines de commits avant l’état actuel de la branche, avant plusieurs vagues de rabotage. Les reprendre serait publier des nombres que leurs auteurs eux-mêmes ne défendent plus.</li>
+          <li>Les vraies valeurs seront dans les notes de version, vérifiées à la sortie.</li>
+        </ul>`
+    },
+    remplacant: {
+      title: "Le siège vide d’un déserteur, repris par la file",
+      summary: "Le raisonnement des développeurs tient à la taille des équipes.",
+      body: `
+        <h4>Pourquoi c’était grave</h4>
+        <ul>
+          <li>Le champ de bataille se joue à <b>cinq contre cinq</b>. Un joueur qui part, c’est <b>un cinquième de son camp</b> : plus proche d’une défaite d’arène que du creux qu’un absent laisse dans une mêlée à quinze. Le match était mort pour les quatre qui restaient, et il continuait quand même.</li>
+          <li>Le jeu savait déjà <b>sanctionner celui qui part</b> ; il ne savait pas <b>réparer pour les autres</b>.</li>
+        </ul>
+        <h4>La règle retenue</h4>
+        <ul>
+          <li>Le siège est proposé à un joueur <b>en file</b>, et le remplaçant joue <b>en non classé</b> : il hérite d’un score qu’il n’a pas fait, et un siège qui coûterait de la cote est un siège que tout le monde apprendrait à fuir.</li>
+          <li>On ne l’envoie pas dans un match <b>presque terminé</b> ni <b>déjà décidé</b> — arriver pour perdre en trente secondes n’est pas une offre.</li>
+          <li>Seuls des <b>joueurs seuls</b> sont tirés : un groupe en file ne doit jamais être coupé en deux pour boucher un trou.</li>
+          <li><b>Refuser ne coûte rien</b>, et le remplaçant récupère son familier en entrant comme en sortant.</li>
+        </ul>
+        <h4>Le canal qui va avec</h4>
+        <ul>
+          <li>Il n’existait aucun moyen de parler à l’équipe adverse : les joueurs se rabattaient sur le canal Général, entendu de tout le royaume. <b>/bg</b> parle aux dix combattants du match, les deux camps confondus — l’équipe, elle, a déjà le canal de groupe, puisqu’un camp est un groupe.</li>
+          <li>C’est un vrai canal à onglet, avec sa couleur et son préfixe, et il lit la <b>liste réelle des combattants</b> : un déserteur en sort avec le match. Hors match, il refuse poliment.</li>
+        </ul>`
+    },
+    cercles: {
+      title: "Les zones mortelles des Failles : un pixel, puis un compte à rebours",
+      summary: "Un défaut d’affichage que les navigateurs rendaient inévitable — et un test de jeu qui a désigné les coupables.",
+      body: `
+        <h4>Le problème d’affichage</h4>
+        <ul>
+          <li>Le cercle d’avertissement était tracé comme une <b>ligne</b>. Or les navigateurs refusent, tous, de dessiner une ligne plus épaisse qu’un pixel : le danger le plus grave du combat s’annonçait par un trait de cheveu. Et il <b>pulsait</b>, tombant à un tiers d’opacité une fois sur deux.</li>
+          <li>Il devient une <b>bordure large plaquée sur le relief</b>, avec un fond teinté à l’intérieur et un <b>disque qui grandit du centre vers le bord</b> au fil de la mèche, clignotant plus vite dans la dernière seconde et demie.</li>
+          <li>La règle de lisibilité est <b>tenue par un test</b> : l’anneau ne peut plus descendre sous un seuil d’opacité, et le disque ne peut que grandir. Les fonds sont fondus les uns dans les autres pour que <b>deux barrages qui se recouvrent</b> restent lisibles.</li>
+        </ul>
+        <h4>Les mèches trop courtes</h4>
+        <ul>
+          <li>Un test de jeu a désigné <b>trois boss</b> dont les cercles étaient jugés impossibles à éviter, et trois autres jugés justes. Le partage était net : les mauvais lançaient <b>nettement plus vite</b>, et leur panoplie étourdit, enracine ou ralentit celui qui court.</li>
+          <li>Leurs mèches sont allongées. Surtout, une garde vérifie désormais que <b>tout boss à zone mortelle</b> — y compris ceux à venir — laisse le temps d’en sortir, en tenant compte des contrôles de son propre kit. La peur fait exception : un joueur apeuré se déplace, la compter comme un blocage doublerait la mise.</li>
+        </ul>`
+    },
+    dagues: {
+      title: "Quatre dagues, quatre effets, quatre modèles",
+      summary: "Le constat des développeurs sur le butin de fin de jeu était sans appel.",
+      body: `
+        <h4>Le constat</h4>
+        <ul>
+          <li>Le vivier de dagues épiques de fin de jeu, c’était <b>quatre objets quasi identiques</b>, partageant le <b>même modèle 3D</b>, et <b>aucune dague du jeu n’avait le moindre effet au coup</b>. Rien à choisir, rien à reconnaître en main.</li>
+        </ul>
+        <h4>Ce qui arrive</h4>
+        <ul>
+          <li><b>Rimefang</b> — épique de Faille : déclenche un trait de givre.</li>
+          <li><b>Marrowpoint</b> — sur Cindraleth, dans les Drakelands : ouvre une plaie.</li>
+          <li><b>Duskwhisper</b> — sur le Fanglord Beastmaster des Wildheart : trait d’ombre. Sa version <b>héroïque</b> est dérivée automatiquement de la version normale et tombe du même boss en héroïque.</li>
+          <li><b>Boneglass Shiv</b> — une rare du Bassin, plaie légère, qui vient combler la <b>tranche de niveaux 17 à 19</b>, jusqu’ici vide.</li>
+          <li>Chacune a son <b>propre modèle</b>, repris de modèles jamais utilisés, avec un réglage de prise en main pour les lames dont l’origine du maillage tombe au milieu de la lame — sans quoi le voleur tenait sa dague par le tranchant.</li>
+        </ul>
+        <h4>Sans casser l’équilibre</h4>
+        <ul>
+          <li>Les quatre sont calées <b>au niveau ou en dessous</b> du meilleur équipement actuel, vérifié par comparaison : de la variété, pas une montée de puissance.</li>
+          <li>Dans le même geste, les dagues de Faille et de donjon déjà en place sont <b>réalignées</b> sur l’échelle de puissance et les budgets de statistiques, et une dague d’artisanat aux dégâts manifestement faux est remise d’aplomb.</li>
+        </ul>`
+    },
+    apparence: {
+      title: "Un changement d’apparence, offert une fois",
+      summary: "Une réparation autant qu’un nouveau service : beaucoup de personnages n’ont jamais eu l’occasion de choisir.",
+      body: `
+        <h4>Ce que ça fait</h4>
+        <ul>
+          <li>Un bouton <b>Nouveau look</b> apparaît sur la ligne de chaque personnage, à l’écran de sélection. Il rouvre <b>l’éditeur de création</b> — le même, avec les mêmes réglages — et pilote le mannequin 3D avec un <b>brouillon</b> : rien n’est écrit tant que vous n’avez pas enregistré.</li>
+          <li>Annuler, changer de personnage ou quitter l’écran <b>jette le brouillon</b> et le personnage garde son visage. À l’enregistrement, le serveur écrit le nouveau look <b>et consomme le jeton dans le même geste</b>, pour que deux enregistrements lancés en même temps ne puissent pas passer tous les deux.</li>
+          <li>Le réglage « casque masqué » voyage avec : c’est une <b>préférence de garde-robe</b>, pas un angle de vue, et il est appliqué à la volée si le personnage est déjà en jeu.</li>
+        </ul>
+        <h4>Qui y a droit</h4>
+        <ul>
+          <li>La règle est une <b>date de création</b> : tout personnage créé avant la limite reçoit <b>un</b> changement offert, qu’il ait déjà un look choisi ou non. La date est calée <b>après</b> la sortie, pour laisser de la marge.</li>
+          <li>Un filet de sécurité s’ajoute par-dessous : un personnage <b>sans aucun look enregistré</b> y a droit de toute façon. Sans lui, un personnage créé après la limite par un client trop ancien se retrouverait sans visage et sans moyen d’en choisir un.</li>
+          <li>C’est <b>une fois</b>, définitivement — pas un salon de coiffure.</li>
+        </ul>`
+    },
     blanches: {
       title: "Le coup blanc, compté deux fois depuis la v0.30.0",
       summary: "Lu dans les commits et les tests de la branche : la démonstration est plus parlante que le correctif.",

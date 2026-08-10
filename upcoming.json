@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-10T08:41:22Z",
+ "generated": "2026-08-10T14:30:47Z",
  "base_tag": "v0.35.1",
  "version": "v0.36.0",
  "branch": "release/v0.36.0",
- "declared_version": "0.35.1",
- "imminent": false,
- "commits": 1378,
- "shown": 557,
- "last_commit": "2026-08-10T16:22:03+08:00",
+ "declared_version": "0.36.0",
+ "imminent": true,
+ "commits": 1478,
+ "shown": 619,
+ "last_commit": "2026-08-10T22:12:24+12:00",
  "sections": [
   {
    "key": "classes",
@@ -1389,6 +1389,13 @@
    "en": "Professions & gathering",
    "items": [
     {
+     "h": "5120fa80",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Release the tinted-material leases when the visual constructor throws",
+     "date": "2026-08-10"
+    },
+    {
      "h": "2a7a4e2a",
      "kind": "fix",
      "scope": "render",
@@ -1700,6 +1707,13 @@
      "date": "2026-08-09"
     },
     {
+     "h": "51bf2542",
+     "kind": "feat",
+     "scope": "chat",
+     "text": "Add /bg, a battleground channel reaching both teams",
+     "date": "2026-08-07"
+    },
+    {
      "h": "e2f82e88",
      "kind": "perf",
      "scope": "render",
@@ -1718,6 +1732,20 @@
      "kind": "perf",
      "scope": "server",
      "text": "TTL-cache the admin activity bundle and moderation queue",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "ebbd252d",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Harden battleground chat membership",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "0fcc598a",
+     "kind": "fix",
+     "scope": "chat",
+     "text": "Drop the sticky /bg on match end, and document the channel",
      "date": "2026-08-08"
     },
     {
@@ -1740,6 +1768,13 @@
      "scope": "battleground",
      "text": "A live offer makes a party member unavailable to queue",
      "date": "2026-08-08"
+    },
+    {
+     "h": "343ed8ef",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Make battleground chat orange, not green",
+     "date": "2026-08-07"
     },
     {
      "h": "11de411c",
@@ -1770,6 +1805,20 @@
    "fr": "Confort & technique",
    "en": "Comfort & technical",
    "items": [
+    {
+     "h": "e2fb6e09",
+     "kind": "feat",
+     "scope": "creator",
+     "text": "Make the free redesign a creation-date window",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "1ff8cb51",
+     "kind": "feat",
+     "scope": "creator",
+     "text": "Give the free-redesign window a week of slack",
+     "date": "2026-08-10"
+    },
     {
      "h": "a8a608e3",
      "kind": "feat",
@@ -1908,6 +1957,27 @@
      "kind": "feat",
      "scope": "pvp",
      "text": "Record draws, and show records as W-L-D",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "2b301c9e",
+     "kind": "feat",
+     "scope": "pet",
+     "text": "Hand a pet back when its owner is resurrected",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "750ec6f2",
+     "kind": "feat",
+     "scope": "battleground",
+     "text": "Give a fighter their pet back on the way out",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "a307e9d7",
+     "kind": "feat",
+     "scope": "battleground",
+     "text": "Hand the pet back on the wave respawn too",
      "date": "2026-08-07"
     },
     {
@@ -2485,6 +2555,27 @@
      "date": "2026-08-07"
     },
     {
+     "h": "7d74cb46",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stop eviction freeing geometry the variant does not own",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "5a68d187",
+     "kind": "fix",
+     "scope": "creator",
+     "text": "Third-pass review — wire hardening, live look, coverage",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "a81f3c3b",
+     "kind": "fix",
+     "scope": "creator",
+     "text": "Register the two error codes in the append-only snapshot",
+     "date": "2026-08-10"
+    },
+    {
      "h": "a0d67bf1",
      "kind": "fix",
      "scope": "i18n",
@@ -2496,6 +2587,27 @@
      "kind": "fix",
      "scope": "",
      "text": "Release/v0.36.0 (6e1ead1fea) into perf/render-caches",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "d192ddf6",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep the composed far LOD's slots and bake groups on one list",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "ca3462d8",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Bound the authored look's values and re-validate it at read",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "069cf522",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Return redesign focus to the row that opened the editor",
      "date": "2026-08-10"
     },
     {
@@ -2611,10 +2723,52 @@
      "date": "2026-08-10"
     },
     {
+     "h": "4c3c836c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Apply effect state to the minted far mesh and recompose on a live redesign",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "bf89ceee",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Raise the appearance wire ceiling to its true 1489-byte maximum",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "7e79b472",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Sanitize the roster's appearance echo and complete the row reads",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "f67c2392",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Reroll error flow, three-button mobile rows, and the panel's aria region",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "a93faf7a",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Opener-based focus return, Escape, panel reveal, crest re-arm, live title",
+     "date": "2026-08-10"
+    },
+    {
      "h": "39b3be74",
      "kind": "fix",
      "scope": "deploy",
      "text": "Preserve the postgres healthcheck cold-boot ceiling",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "4dab370d",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Keep appearance off the public sheet read, honest ceiling prose",
      "date": "2026-08-10"
     },
     {
@@ -2667,6 +2821,41 @@
      "date": "2026-08-10"
     },
     {
+     "h": "871c3698",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release base into ossbrain-release/v0.36.0",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "086248af",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Re-bless the portrait seal on the maintainer render after the fenbridge re-mint",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "b4bda06e",
+     "kind": "fix",
+     "scope": "pet",
+     "text": "Restore the release stealth-detection band lost in the base merge",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "f4f4f312",
+     "kind": "fix",
+     "scope": "battleground",
+     "text": "Snapshot a backfilled fighter's pet too",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "bb374e21",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release base into ossbrain-release/v0.36.0 (second pass)",
+     "date": "2026-08-10"
+    },
+    {
      "h": "1c4ab73e",
      "kind": "fix",
      "scope": "render",
@@ -2702,10 +2891,31 @@
      "date": "2026-08-09"
     },
     {
+     "h": "8f9e663d",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3137 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "3b54febe",
+     "kind": "fix",
+     "scope": "",
+     "text": "Allow battleground unstuck recovery",
+     "date": "2026-08-09"
+    },
+    {
      "h": "f34ed066",
      "kind": "fix",
      "scope": "render",
      "text": "Return colorless materials unchanged from tintedMaterial",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "94332110",
+     "kind": "fix",
+     "scope": "",
+     "text": "Block unstuck for battleground flag carriers",
      "date": "2026-08-09"
     },
     {
@@ -2730,6 +2940,13 @@
      "date": "2026-08-09"
     },
     {
+     "h": "f4170d4f",
+     "kind": "fix",
+     "scope": "",
+     "text": "Drop unverified i1 repair",
+     "date": "2026-08-09"
+    },
+    {
      "h": "a897b5a2",
      "kind": "fix",
      "scope": "perf",
@@ -2737,10 +2954,52 @@
      "date": "2026-08-09"
     },
     {
+     "h": "871c3698",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release base into ossbrain-release/v0.36.0",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "abc8f790",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3098 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "71240268",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3095 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "ae708327",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3112 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "3b54febe",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Allow battleground unstuck recovery",
+     "date": "2026-08-09"
+    },
+    {
      "h": "1c1a2cde",
      "kind": "fix",
      "scope": "render",
      "text": "Resolve duplicate animUrls after release/v0.36.0 merge",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "fa788b7d",
+     "kind": "fix",
+     "scope": "",
+     "text": "Restore pet PvP assist behavior",
      "date": "2026-08-09"
     },
     {
@@ -2755,6 +3014,20 @@
      "kind": "fix",
      "scope": "sim",
      "text": "Silence unused nodeId param in legacy spendTalentPoint shim",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "635bbac1",
+     "kind": "fix",
+     "scope": "",
+     "text": "Drop battleground unstuck repair",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "d67509d9",
+     "kind": "fix",
+     "scope": "creator",
+     "text": "Address the appearance-persistence review",
      "date": "2026-08-09"
     },
     {
@@ -2884,6 +3157,13 @@
      "date": "2026-08-08"
     },
     {
+     "h": "6d00386f",
+     "kind": "fix",
+     "scope": "",
+     "text": "Exclude OSS Brain worktrees from malware scan",
+     "date": "2026-08-08"
+    },
+    {
      "h": "b3173693",
      "kind": "fix",
      "scope": "",
@@ -2926,6 +3206,13 @@
      "date": "2026-08-08"
     },
     {
+     "h": "7a246093",
+     "kind": "fix",
+     "scope": "",
+     "text": "Exclude OSS Brain worktrees from test discovery",
+     "date": "2026-08-08"
+    },
+    {
      "h": "18e2a8ea",
      "kind": "fix",
      "scope": "render",
@@ -2944,6 +3231,20 @@
      "kind": "fix",
      "scope": "render",
      "text": "Resolve rebase conflicts onto release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "8f8aa422",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3009 into release",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "e1ca91ad",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3005 into release",
      "date": "2026-08-08"
     },
     {
@@ -3031,6 +3332,13 @@
      "date": "2026-08-08"
     },
     {
+     "h": "871c3698",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release base into ossbrain-release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
      "h": "62286c41",
      "kind": "fix",
      "scope": "render",
@@ -3080,10 +3388,24 @@
      "date": "2026-08-08"
     },
     {
+     "h": "619c69a8",
+     "kind": "fix",
+     "scope": "",
+     "text": "Guard tracked root worktree scan skips",
+     "date": "2026-08-08"
+    },
+    {
      "h": "f7603e8a",
      "kind": "fix",
      "scope": "ui",
      "text": "Reflow shareable player card layout to prevent overflow",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "871c3698",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release base into ossbrain-release/v0.36.0",
      "date": "2026-08-08"
     },
     {
@@ -3101,10 +3423,45 @@
      "date": "2026-08-08"
     },
     {
+     "h": "871c3698",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release base into ossbrain-release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "613e9381",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3006 into release",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "75ef214d",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2996 into release",
+     "date": "2026-08-08"
+    },
+    {
      "h": "35acee77",
      "kind": "fix",
      "scope": "guide",
      "text": "Correct the mechanical claims the headline pass did not check",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "71240268",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3095 into release",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "8a589da1",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3101 into release",
      "date": "2026-08-08"
     },
     {
@@ -3115,10 +3472,59 @@
      "date": "2026-08-08"
     },
     {
+     "h": "1ac72286",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3109 into release",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "ae708327",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3112 into release",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "3b54febe",
+     "kind": "fix",
+     "scope": "",
+     "text": "Allow battleground unstuck recovery",
+     "date": "2026-08-08"
+    },
+    {
      "h": "ddb6df65",
      "kind": "fix",
      "scope": "battleground",
      "text": "Unbreak backfill after the queue-hygiene change, and stop it starving",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "f718adb5",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Clear the /bg send-stickiness client-side on match end",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "8b15bccd",
+     "kind": "fix",
+     "scope": "",
+     "text": "Drop carried flag before unstuck teleport",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "48dbf908",
+     "kind": "fix",
+     "scope": "",
+     "text": "Gate battleground unstuck by collision",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "718d3d26",
+     "kind": "fix",
+     "scope": "",
+     "text": "Detect close stealthed duel targets",
      "date": "2026-08-08"
     },
     {
@@ -3147,6 +3553,27 @@
      "kind": "fix",
      "scope": "perf",
      "text": "Align diagnostics fixtures with release",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "c0a00756",
+     "kind": "fix",
+     "scope": "",
+     "text": "Drop unverified PR 3112",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "75767e59",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Drop unverified battleground unstuck repair",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "871c3698",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release base into ossbrain-release/v0.36.0",
      "date": "2026-08-08"
     },
     {
@@ -3182,6 +3609,13 @@
      "kind": "fix",
      "scope": "combat",
      "text": "Refuse a friendly rush onto the caster and enforce its minRange",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "81342417",
+     "kind": "fix",
+     "scope": "creator",
+     "text": "Persist the authored look per character and replicate it",
      "date": "2026-08-08"
     },
     {
@@ -3961,11 +4395,11 @@
   {
    "version": "v0.36.0",
    "branch": "release/v0.36.0",
-   "declared_version": "0.35.1",
-   "imminent": false,
-   "commits": 1378,
-   "shown": 557,
-   "last_commit": "2026-08-10T16:22:03+08:00",
+   "declared_version": "0.36.0",
+   "imminent": true,
+   "commits": 1478,
+   "shown": 619,
+   "last_commit": "2026-08-10T22:12:24+12:00",
    "sections": [
     {
      "key": "classes",
@@ -5347,6 +5781,13 @@
      "en": "Professions & gathering",
      "items": [
       {
+       "h": "5120fa80",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Release the tinted-material leases when the visual constructor throws",
+       "date": "2026-08-10"
+      },
+      {
        "h": "2a7a4e2a",
        "kind": "fix",
        "scope": "render",
@@ -5658,6 +6099,13 @@
        "date": "2026-08-09"
       },
       {
+       "h": "51bf2542",
+       "kind": "feat",
+       "scope": "chat",
+       "text": "Add /bg, a battleground channel reaching both teams",
+       "date": "2026-08-07"
+      },
+      {
        "h": "e2f82e88",
        "kind": "perf",
        "scope": "render",
@@ -5676,6 +6124,20 @@
        "kind": "perf",
        "scope": "server",
        "text": "TTL-cache the admin activity bundle and moderation queue",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "ebbd252d",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Harden battleground chat membership",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "0fcc598a",
+       "kind": "fix",
+       "scope": "chat",
+       "text": "Drop the sticky /bg on match end, and document the channel",
        "date": "2026-08-08"
       },
       {
@@ -5698,6 +6160,13 @@
        "scope": "battleground",
        "text": "A live offer makes a party member unavailable to queue",
        "date": "2026-08-08"
+      },
+      {
+       "h": "343ed8ef",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Make battleground chat orange, not green",
+       "date": "2026-08-07"
       },
       {
        "h": "11de411c",
@@ -5728,6 +6197,20 @@
      "fr": "Confort & technique",
      "en": "Comfort & technical",
      "items": [
+      {
+       "h": "e2fb6e09",
+       "kind": "feat",
+       "scope": "creator",
+       "text": "Make the free redesign a creation-date window",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "1ff8cb51",
+       "kind": "feat",
+       "scope": "creator",
+       "text": "Give the free-redesign window a week of slack",
+       "date": "2026-08-10"
+      },
       {
        "h": "a8a608e3",
        "kind": "feat",
@@ -5866,6 +6349,27 @@
        "kind": "feat",
        "scope": "pvp",
        "text": "Record draws, and show records as W-L-D",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "2b301c9e",
+       "kind": "feat",
+       "scope": "pet",
+       "text": "Hand a pet back when its owner is resurrected",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "750ec6f2",
+       "kind": "feat",
+       "scope": "battleground",
+       "text": "Give a fighter their pet back on the way out",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "a307e9d7",
+       "kind": "feat",
+       "scope": "battleground",
+       "text": "Hand the pet back on the wave respawn too",
        "date": "2026-08-07"
       },
       {
@@ -6443,6 +6947,27 @@
        "date": "2026-08-07"
       },
       {
+       "h": "7d74cb46",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Stop eviction freeing geometry the variant does not own",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "5a68d187",
+       "kind": "fix",
+       "scope": "creator",
+       "text": "Third-pass review — wire hardening, live look, coverage",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "a81f3c3b",
+       "kind": "fix",
+       "scope": "creator",
+       "text": "Register the two error codes in the append-only snapshot",
+       "date": "2026-08-10"
+      },
+      {
        "h": "a0d67bf1",
        "kind": "fix",
        "scope": "i18n",
@@ -6454,6 +6979,27 @@
        "kind": "fix",
        "scope": "",
        "text": "Release/v0.36.0 (6e1ead1fea) into perf/render-caches",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "d192ddf6",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep the composed far LOD's slots and bake groups on one list",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "ca3462d8",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Bound the authored look's values and re-validate it at read",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "069cf522",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Return redesign focus to the row that opened the editor",
        "date": "2026-08-10"
       },
       {
@@ -6569,10 +7115,52 @@
        "date": "2026-08-10"
       },
       {
+       "h": "4c3c836c",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Apply effect state to the minted far mesh and recompose on a live redesign",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "bf89ceee",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Raise the appearance wire ceiling to its true 1489-byte maximum",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "7e79b472",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Sanitize the roster's appearance echo and complete the row reads",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "f67c2392",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Reroll error flow, three-button mobile rows, and the panel's aria region",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "a93faf7a",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Opener-based focus return, Escape, panel reveal, crest re-arm, live title",
+       "date": "2026-08-10"
+      },
+      {
        "h": "39b3be74",
        "kind": "fix",
        "scope": "deploy",
        "text": "Preserve the postgres healthcheck cold-boot ceiling",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "4dab370d",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Keep appearance off the public sheet read, honest ceiling prose",
        "date": "2026-08-10"
       },
       {
@@ -6625,6 +7213,41 @@
        "date": "2026-08-10"
       },
       {
+       "h": "871c3698",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release base into ossbrain-release/v0.36.0",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "086248af",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Re-bless the portrait seal on the maintainer render after the fenbridge re-mint",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "b4bda06e",
+       "kind": "fix",
+       "scope": "pet",
+       "text": "Restore the release stealth-detection band lost in the base merge",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "f4f4f312",
+       "kind": "fix",
+       "scope": "battleground",
+       "text": "Snapshot a backfilled fighter's pet too",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "bb374e21",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release base into ossbrain-release/v0.36.0 (second pass)",
+       "date": "2026-08-10"
+      },
+      {
        "h": "1c4ab73e",
        "kind": "fix",
        "scope": "render",
@@ -6660,10 +7283,31 @@
        "date": "2026-08-09"
       },
       {
+       "h": "8f9e663d",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3137 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "3b54febe",
+       "kind": "fix",
+       "scope": "",
+       "text": "Allow battleground unstuck recovery",
+       "date": "2026-08-09"
+      },
+      {
        "h": "f34ed066",
        "kind": "fix",
        "scope": "render",
        "text": "Return colorless materials unchanged from tintedMaterial",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "94332110",
+       "kind": "fix",
+       "scope": "",
+       "text": "Block unstuck for battleground flag carriers",
        "date": "2026-08-09"
       },
       {
@@ -6688,6 +7332,13 @@
        "date": "2026-08-09"
       },
       {
+       "h": "f4170d4f",
+       "kind": "fix",
+       "scope": "",
+       "text": "Drop unverified i1 repair",
+       "date": "2026-08-09"
+      },
+      {
        "h": "a897b5a2",
        "kind": "fix",
        "scope": "perf",
@@ -6695,10 +7346,52 @@
        "date": "2026-08-09"
       },
       {
+       "h": "871c3698",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release base into ossbrain-release/v0.36.0",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "abc8f790",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3098 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "71240268",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3095 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "ae708327",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3112 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "3b54febe",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Allow battleground unstuck recovery",
+       "date": "2026-08-09"
+      },
+      {
        "h": "1c1a2cde",
        "kind": "fix",
        "scope": "render",
        "text": "Resolve duplicate animUrls after release/v0.36.0 merge",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "fa788b7d",
+       "kind": "fix",
+       "scope": "",
+       "text": "Restore pet PvP assist behavior",
        "date": "2026-08-09"
       },
       {
@@ -6713,6 +7406,20 @@
        "kind": "fix",
        "scope": "sim",
        "text": "Silence unused nodeId param in legacy spendTalentPoint shim",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "635bbac1",
+       "kind": "fix",
+       "scope": "",
+       "text": "Drop battleground unstuck repair",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "d67509d9",
+       "kind": "fix",
+       "scope": "creator",
+       "text": "Address the appearance-persistence review",
        "date": "2026-08-09"
       },
       {
@@ -6842,6 +7549,13 @@
        "date": "2026-08-08"
       },
       {
+       "h": "6d00386f",
+       "kind": "fix",
+       "scope": "",
+       "text": "Exclude OSS Brain worktrees from malware scan",
+       "date": "2026-08-08"
+      },
+      {
        "h": "b3173693",
        "kind": "fix",
        "scope": "",
@@ -6884,6 +7598,13 @@
        "date": "2026-08-08"
       },
       {
+       "h": "7a246093",
+       "kind": "fix",
+       "scope": "",
+       "text": "Exclude OSS Brain worktrees from test discovery",
+       "date": "2026-08-08"
+      },
+      {
        "h": "18e2a8ea",
        "kind": "fix",
        "scope": "render",
@@ -6902,6 +7623,20 @@
        "kind": "fix",
        "scope": "render",
        "text": "Resolve rebase conflicts onto release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "8f8aa422",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3009 into release",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "e1ca91ad",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3005 into release",
        "date": "2026-08-08"
       },
       {
@@ -6989,6 +7724,13 @@
        "date": "2026-08-08"
       },
       {
+       "h": "871c3698",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release base into ossbrain-release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
        "h": "62286c41",
        "kind": "fix",
        "scope": "render",
@@ -7038,10 +7780,24 @@
        "date": "2026-08-08"
       },
       {
+       "h": "619c69a8",
+       "kind": "fix",
+       "scope": "",
+       "text": "Guard tracked root worktree scan skips",
+       "date": "2026-08-08"
+      },
+      {
        "h": "f7603e8a",
        "kind": "fix",
        "scope": "ui",
        "text": "Reflow shareable player card layout to prevent overflow",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "871c3698",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release base into ossbrain-release/v0.36.0",
        "date": "2026-08-08"
       },
       {
@@ -7059,10 +7815,45 @@
        "date": "2026-08-08"
       },
       {
+       "h": "871c3698",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release base into ossbrain-release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "613e9381",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3006 into release",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "75ef214d",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2996 into release",
+       "date": "2026-08-08"
+      },
+      {
        "h": "35acee77",
        "kind": "fix",
        "scope": "guide",
        "text": "Correct the mechanical claims the headline pass did not check",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "71240268",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3095 into release",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "8a589da1",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3101 into release",
        "date": "2026-08-08"
       },
       {
@@ -7073,10 +7864,59 @@
        "date": "2026-08-08"
       },
       {
+       "h": "1ac72286",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3109 into release",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "ae708327",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3112 into release",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "3b54febe",
+       "kind": "fix",
+       "scope": "",
+       "text": "Allow battleground unstuck recovery",
+       "date": "2026-08-08"
+      },
+      {
        "h": "ddb6df65",
        "kind": "fix",
        "scope": "battleground",
        "text": "Unbreak backfill after the queue-hygiene change, and stop it starving",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "f718adb5",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Clear the /bg send-stickiness client-side on match end",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "8b15bccd",
+       "kind": "fix",
+       "scope": "",
+       "text": "Drop carried flag before unstuck teleport",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "48dbf908",
+       "kind": "fix",
+       "scope": "",
+       "text": "Gate battleground unstuck by collision",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "718d3d26",
+       "kind": "fix",
+       "scope": "",
+       "text": "Detect close stealthed duel targets",
        "date": "2026-08-08"
       },
       {
@@ -7105,6 +7945,27 @@
        "kind": "fix",
        "scope": "perf",
        "text": "Align diagnostics fixtures with release",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "c0a00756",
+       "kind": "fix",
+       "scope": "",
+       "text": "Drop unverified PR 3112",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "75767e59",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Drop unverified battleground unstuck repair",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "871c3698",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release base into ossbrain-release/v0.36.0",
        "date": "2026-08-08"
       },
       {
@@ -7140,6 +8001,13 @@
        "kind": "fix",
        "scope": "combat",
        "text": "Refuse a friendly rush onto the caster and enforce its minRange",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "81342417",
+       "kind": "fix",
+       "scope": "creator",
+       "text": "Persist the authored look per character and replicate it",
        "date": "2026-08-08"
       },
       {
