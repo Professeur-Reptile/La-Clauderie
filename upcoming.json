@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-10T02:54:02Z",
+ "generated": "2026-08-10T06:34:12Z",
  "base_tag": "v0.35.1",
  "version": "v0.36.0",
  "branch": "release/v0.36.0",
  "declared_version": "0.35.1",
  "imminent": false,
- "commits": 770,
- "shown": 247,
- "last_commit": "2026-08-10T14:44:37+12:00",
+ "commits": 1298,
+ "shown": 538,
+ "last_commit": "2026-08-10T13:37:35+08:00",
  "sections": [
   {
    "key": "classes",
@@ -16,11 +16,32 @@
    "en": "Classes & spells",
    "items": [
     {
+     "h": "668c7418",
+     "kind": "feat",
+     "scope": "warlock",
+     "text": "Rename the Wrack resource off the armed Ruin denylist entry",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "33583a8d",
+     "kind": "feat",
+     "scope": "warlock",
+     "text": "Trim the demon roster satellites to the shipped three",
+     "date": "2026-08-08"
+    },
+    {
      "h": "78958e96",
      "kind": "feat",
      "scope": "talents",
      "text": "Replace Double Charge with Intervene on the warrior level-5 row",
      "date": "2026-08-07"
+    },
+    {
+     "h": "342e9d24",
+     "kind": "feat",
+     "scope": "rogue",
+     "text": "Re-band the base kit to the ~200 BiS-epic DPS target",
+     "date": "2026-08-06"
     },
     {
      "h": "87a7ac52",
@@ -42,6 +63,27 @@
      "scope": "render",
      "text": "Bespoke Zulgar, Voice of the Basin attack/cast clip",
      "date": "2026-08-06"
+    },
+    {
+     "h": "af7888ad",
+     "kind": "feat",
+     "scope": "shaman",
+     "text": "Stonebound crit immunity, Galeheart echo tooltip, and Elemental Trance",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "9ca33a64",
+     "kind": "feat",
+     "scope": "content",
+     "text": "New rogue daggers with on-hit procs, distinct models, grips",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "87ce9ecf",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Seat druid Balance at the 200 DPS BiS anchor and trim Feral cat",
+     "date": "2026-08-05"
     },
     {
      "h": "50fe4bff",
@@ -72,6 +114,419 @@
      "date": "2026-08-05"
     },
     {
+     "h": "0f45fe55",
+     "kind": "feat",
+     "scope": "warlock",
+     "text": "Polish Affliction resource UI",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "10e40633",
+     "kind": "feat",
+     "scope": "warlock",
+     "text": "Refine specialization balance and minions",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "dfd124cc",
+     "kind": "feat",
+     "scope": "warlock",
+     "text": "Add bone mage projectile visuals",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "dc6ef365",
+     "kind": "feat",
+     "scope": "warlock",
+     "text": "Complete pets and presentation",
+     "date": "2026-08-01"
+    },
+    {
+     "h": "3d36eb57",
+     "kind": "feat",
+     "scope": "warlock",
+     "text": "Finalize combat kits",
+     "date": "2026-08-01"
+    },
+    {
+     "h": "a900974b",
+     "kind": "feat",
+     "scope": "warlock",
+     "text": "Overhaul all three specializations",
+     "date": "2026-07-31"
+    },
+    {
+     "h": "a149925e",
+     "kind": "feat",
+     "scope": "warlock",
+     "text": "Close the three specialization viability gaps",
+     "date": "2026-07-31"
+    },
+    {
+     "h": "94d1e150",
+     "kind": "feat",
+     "scope": "rogue",
+     "text": "Rename the Redline pair to Haymaker and Lights Out",
+     "date": "2026-07-30"
+    },
+    {
+     "h": "32bf8996",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Spirit regenerates mana in combat like WoW's mp5 (community port, credit @Furyogen)",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "114b468f",
+     "kind": "feat",
+     "scope": "rogue",
+     "text": "Scale Armor Breach and Bleed Out with combo points spent",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "16db1c91",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Describe each druid payoff on the button that transforms",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "a6069752",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Describe rogue payoffs on their transform buttons too",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "0079db2b",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Scale Bloodrift with combo points, classic Rip style",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "65e9cd1d",
+     "kind": "feat",
+     "scope": "rogue",
+     "text": "V0.29 spec engines, themed rows, and the teaching layer",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "65e9cd1d",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "V0.29 spec engines, themed rows, and the teaching layer",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "65e9cd1d",
+     "kind": "feat",
+     "scope": "rogue",
+     "text": "V0.29 spec engines, themed rows, and the teaching layer",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "65e9cd1d",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "V0.29 spec engines, themed rows, and the teaching layer",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "fee542d5",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Improve protection survivability",
+     "date": "2026-07-26"
+    },
+    {
+     "h": "4f878711",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Move the tank-parity stamina floor onto the Oathward mastery",
+     "date": "2026-07-25"
+    },
+    {
+     "h": "ef316ad1",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Teach Holy Ground at specialization for both melee specs",
+     "date": "2026-07-25"
+    },
+    {
+     "h": "e9a118f4",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Teach Solar Step and Last Rite at their upgrade rows",
+     "date": "2026-07-25"
+    },
+    {
+     "h": "db0f0ba7",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Pin the authored spec progression and its two guard exceptions",
+     "date": "2026-07-25"
+    },
+    {
+     "h": "1036502c",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Ramp the early damage on the three overtuned openers",
+     "date": "2026-07-25"
+    },
+    {
+     "h": "46a30876",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Rework Faithforged Guard into Reckoning, a one-blow answer",
+     "date": "2026-07-25"
+    },
+    {
+     "h": "a0cfac4e",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Let a Sunmender's rite call back the whole group from 16",
+     "date": "2026-07-25"
+    },
+    {
+     "h": "48bb3829",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Rank Requital Aura so its reflect keeps its weight",
+     "date": "2026-07-25"
+    },
+    {
+     "h": "155cf0d1",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Finalize class presentation",
+     "date": "2026-07-24"
+    },
+    {
+     "h": "a727b605",
+     "kind": "feat",
+     "scope": "shaman",
+     "text": "Add Spiritmend Unleash Weapon",
+     "date": "2026-07-24"
+    },
+    {
+     "h": "83973eab",
+     "kind": "feat",
+     "scope": "shaman",
+     "text": "Share Unleash Weapon across specs",
+     "date": "2026-07-24"
+    },
+    {
+     "h": "65e9cd1d",
+     "kind": "feat",
+     "scope": "rogue",
+     "text": "V0.29 spec engines, themed rows, and the teaching layer",
+     "date": "2026-07-23"
+    },
+    {
+     "h": "f985b5a2",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Complete class overhaul",
+     "date": "2026-07-23"
+    },
+    {
+     "h": "aa768a59",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Add Rhythm of Dawn",
+     "date": "2026-07-23"
+    },
+    {
+     "h": "18f5ad87",
+     "kind": "feat",
+     "scope": "i18n",
+     "text": "Localize Shaman v0.29 abilities",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "ed4f61c5",
+     "kind": "feat",
+     "scope": "prototype",
+     "text": "Align Shaman v0.29 talent preview",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "84581158",
+     "kind": "feat",
+     "scope": "shaman",
+     "text": "Surface v0.29 combat cues",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "6752cfb8",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Seed safe level 20 spec bars",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "af5101b3",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Add custom ability icons",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "692c9aa9",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Add retribution and protection combat kit",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "24224c2c",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Specialize core ability kits",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "2564961a",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Align Devotion class identity",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "9c40f596",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Accelerate devotion with avenging wrath",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "ca0bc465",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Add veilbound march",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "e14e52da",
+     "kind": "feat",
+     "scope": "priest",
+     "text": "Implement Doctrine covenant loop",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "df43857c",
+     "kind": "feat",
+     "scope": "priest",
+     "text": "Implement Benison vigil loop",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "c3fec6d1",
+     "kind": "feat",
+     "scope": "priest",
+     "text": "Implement Vespers effigy loop",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "3f947c3e",
+     "kind": "feat",
+     "scope": "priest",
+     "text": "Replace class talent tree",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "b0afbf11",
+     "kind": "feat",
+     "scope": "priest",
+     "text": "Integrate v0.29 class redesign",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "1e849c4d",
+     "kind": "feat",
+     "scope": "shaman",
+     "text": "Implement Thundercall engine",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "3556089c",
+     "kind": "feat",
+     "scope": "shaman",
+     "text": "Implement Warspirit engine",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "04576e29",
+     "kind": "feat",
+     "scope": "shaman",
+     "text": "Implement Spiritmend engine",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "9bf65a32",
+     "kind": "feat",
+     "scope": "shaman",
+     "text": "Integrate v0.29 spec engines",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "ddf62d38",
+     "kind": "feat",
+     "scope": "shaman",
+     "text": "Implement v0.29 talent grid",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "3d95a3cd",
+     "kind": "feat",
+     "scope": "hunter",
+     "text": "Implement v0.29 class redesign",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "f7dd0c0b",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Sun Cleric Devotion and Divine Ascension core (WIP)",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "c2ff22e0",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Universal choice-row talents (levels 5-20)",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "2023a19b",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Integrate talents with Divine Ascension (Amanecer)",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "e72ef73e",
+     "kind": "perf",
+     "scope": "net",
+     "text": "Omit idle paladin ascension charges from the wire",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "ef595449",
+     "kind": "perf",
+     "scope": "sim",
+     "text": "Run the paladin despawn cleanups only for a despawning paladin",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "f0ff86dd",
+     "kind": "perf",
+     "scope": "ui",
+     "text": "Hoist the affliction fate-thread walk behind the spec check",
+     "date": "2026-08-09"
+    },
+    {
      "h": "61905906",
      "kind": "perf",
      "scope": "render",
@@ -83,6 +538,139 @@
      "kind": "perf",
      "scope": "render",
      "text": "Prewarm every real weapon-skin VFX spec, gate offhand payloads",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "a10e5301",
+     "kind": "fix",
+     "scope": "balance",
+     "text": "Scope the Moongrove trim to the Moonwing-only spenders",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "c3816685",
+     "kind": "fix",
+     "scope": "balance",
+     "text": "Drop the dead Galeheart imbue edit and ride the Warspirit AP raise on apPct",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "194dd5f1",
+     "kind": "fix",
+     "scope": "balance",
+     "text": "Ride part of the Survival raise on agility instead of a flat percent",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "ba2fbbda",
+     "kind": "fix",
+     "scope": "balance",
+     "text": "Make Needle rank 3 a real upgrade and pin the subtlety AP wiring exactly",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "4e96af66",
+     "kind": "fix",
+     "scope": "balance",
+     "text": "Make the Survival percent arm damage-only (apPct, not agiPct)",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "dd1ac047",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Wire persistent engine-bank stacks on the stable aura wire",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "e0e5673c",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Keep hunter talent mods on the Pack Rally transform; codepoint sort tiebreaks",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "0a37e873",
+     "kind": "fix",
+     "scope": "balance",
+     "text": "Trim Shadow (Vespers) to 190.8 (120s BiS)",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "586a5838",
+     "kind": "fix",
+     "scope": "balance",
+     "text": "Trim Balance (Moongrove) to 189.4 (120s BiS)",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "d4c86c21",
+     "kind": "fix",
+     "scope": "balance",
+     "text": "Trim Affliction (Hexcraft) to 191.2 (120s BiS)",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "957f663e",
+     "kind": "fix",
+     "scope": "balance",
+     "text": "Trim Subtlety (Skulduggery) to 190.5 (120s BiS)",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "1a8c9615",
+     "kind": "fix",
+     "scope": "balance",
+     "text": "Trim Assassination (Knifework) to 190.8 (120s BiS)",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "1b553d23",
+     "kind": "fix",
+     "scope": "balance",
+     "text": "Raise Marksmanship (Coldsight) to 167.6 (120s BiS)",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "9389a8b7",
+     "kind": "fix",
+     "scope": "balance",
+     "text": "Raise Survival (Fieldcraft) to 163.7 (120s BiS)",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "154bc274",
+     "kind": "fix",
+     "scope": "balance",
+     "text": "Raise Enhancement (Warspirit) to 166.8 (120s BiS)",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "1dd0dde5",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Drop the release fill's rows for the four retired paladin abilities",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "dc4afe91",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Retranslate the last nine stale-token rows (ja/ko/ru paladin trio)",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "d7e71fdd",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Synthesize the paladin verdict and sweep clips for the modular key too",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "6530d171",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Defer the warlock preloads, drop retired VFX spec ids, register the new daggers",
      "date": "2026-08-08"
     },
     {
@@ -114,6 +702,34 @@
      "date": "2026-08-08"
     },
     {
+     "h": "03424469",
+     "kind": "fix",
+     "scope": "priest",
+     "text": "Re-band the Vespers percent rows for the full-hit riders",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "d95129aa",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Trim the Ruination base magnitudes toward the 215 anchor",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "6118bd15",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Walk the Demonology sustain compensation halfway back",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "eab6fed6",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Land Ruination and Pactbound inside the 205-215 band",
+     "date": "2026-08-07"
+    },
+    {
      "h": "e1a74b76",
      "kind": "fix",
      "scope": "render",
@@ -142,10 +758,52 @@
      "date": "2026-08-07"
     },
     {
+     "h": "f09350d1",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2568 druid Balance coefficient re-calibration to the 200 BiS anchor (@patrick261) into integration/v031-class-overhauls",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "8ad7b212",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Roll spell resist on player pet ranged bolts",
+     "date": "2026-08-06"
+    },
+    {
      "h": "2c203e8d",
      "kind": "fix",
      "scope": "render",
      "text": "Keep the hunter's melee swing under a displayed bow skin",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "1c22419c",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Land all three specs at or under the 200 BiS anchor at 120s",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "9f05a412",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Ship the gated Army copy to players and pin the QA gaps",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "ac9cb6cc",
+     "kind": "fix",
+     "scope": "",
+     "text": "The warlock overhaul head (v0.35.0 catch-up + sub-200 tuning) into integration/v031-class-overhauls",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "9e1a4601",
+     "kind": "fix",
+     "scope": "",
+     "text": "The rogue base-kit re-band (~200 BiS-epic target) into integration/v031-class-overhauls",
      "date": "2026-08-06"
     },
     {
@@ -156,11 +814,571 @@
      "date": "2026-08-06"
     },
     {
+     "h": "192d2e34",
+     "kind": "fix",
+     "scope": "",
+     "text": "The updated rogue head (v0.34.0 catch-up) into feature/druid-talent-update",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "24536972",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2218 feat(classes): integrate Hunter, Shaman, and Priest v0.29 redesigns (@ryan-foo) into integration/v031-class-overhauls",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "163d700a",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2428 feat(paladin): rebuild the Paladin around Devotion and Divine Ascension (@blaine1705) into integration/v031-class-overhauls",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "046c23f3",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2328 rogue v0.29 spec engines, themed rows, and the teaching layer (@patrick261) into integration/v031-class-overhauls",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "61ebe8ae",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2568 druid v0.29 spec engines, themed rows, and the teaching layer (@patrick261) into integration/v031-class-overhauls",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "4a8a67dc",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2742 feat(warlock): overhaul all three specializations (@blaine1705) into integration/v031-class-overhauls",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "8f1d1623",
+     "kind": "fix",
+     "scope": "rogue",
+     "text": "Tame the Thronebane energy runaway, normalize Wicked Slash",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "fc77f6ec",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2328 rogue Thronebane energy fix and new dagger content (@patrick261) into integration/v031-class-overhauls",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "8405a9bf",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2568 druid Balance spell-power seating and Feral cat trim (@patrick261) into integration/v031-class-overhauls",
+     "date": "2026-08-05"
+    },
+    {
      "h": "4c68f0e1",
      "kind": "fix",
      "scope": "render",
      "text": "Keep bow-skin draw clip precedence over hunter attackByAbility",
      "date": "2026-08-05"
+    },
+    {
+     "h": "5359c8d6",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Tune endgame sustain balance",
+     "date": "2026-08-04"
+    },
+    {
+     "h": "dce234ee",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2742 Warlock balance and minion refinements (@blaine1705) into integration/v031-class-overhauls",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "612574bd",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Stabilize release integration",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "cbb67f70",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Close release QA regressions",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "76975378",
+     "kind": "fix",
+     "scope": "priest",
+     "text": "Keep the Gloomtithe bank until Vespers consumes it",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "8552d864",
+     "kind": "fix",
+     "scope": "",
+     "text": "The updated rogue head (v0.33.0 catch-up) into feature/druid-talent-update",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "b2d4b2ca",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2218 Hunter/Shaman/Priest v0.29 redesigns (@ryan-foo) v0.33.0 catch-up into integration/v031-class-overhauls",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "83b659c6",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2428 Paladin Devotion and Divine Ascension (@blaine1705) v0.33.0 catch-up into integration/v031-class-overhauls",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "a17ea900",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2328 Rogue Knifework, Thuggery and Skulduggery (@patrick261) v0.33.0 catch-up into integration/v031-class-overhauls",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "34fe31db",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2568 Druid Moongrove, Wildfang and Groveheart (@patrick261) v0.33.0 catch-up into integration/v031-class-overhauls",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "4bc6b1ff",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2742 Warlock three-spec overhaul (@blaine1705) into integration/v031-class-overhauls",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "39f3bbb9",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Sync release v0.33.0",
+     "date": "2026-08-01"
+    },
+    {
+     "h": "efdee3b4",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Restore release VFX extensions",
+     "date": "2026-08-01"
+    },
+    {
+     "h": "9d8771a8",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Wire class renderer systems",
+     "date": "2026-08-01"
+    },
+    {
+     "h": "f18ac54d",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Wire class particle effects",
+     "date": "2026-08-01"
+    },
+    {
+     "h": "e4a83584",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep paladin talent art out of the procedural icon prewarm plan",
+     "date": "2026-07-31"
+    },
+    {
+     "h": "b626ceea",
+     "kind": "fix",
+     "scope": "",
+     "text": "The updated rogue head (v0.32.1 main catch-up) into feature/druid-talent-update",
+     "date": "2026-07-31"
+    },
+    {
+     "h": "96d14657",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2218 Hunter/Shaman/Priest v0.29 redesigns (@ryan-foo) v0.32.1 catch-up into integration/v031-class-overhauls",
+     "date": "2026-07-31"
+    },
+    {
+     "h": "76941680",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2428 Paladin Devotion and Divine Ascension (@blaine1705) v0.32.1 catch-up into integration/v031-class-overhauls",
+     "date": "2026-07-31"
+    },
+    {
+     "h": "bdd82797",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2328 Rogue Knifework, Thuggery and Skulduggery (@patrick261) v0.32.1 catch-up into integration/v031-class-overhauls",
+     "date": "2026-07-31"
+    },
+    {
+     "h": "682861b4",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2568 Druid Moongrove, Wildfang and Groveheart (@patrick261) v0.32.1 catch-up into integration/v031-class-overhauls",
+     "date": "2026-07-31"
+    },
+    {
+     "h": "592882af",
+     "kind": "fix",
+     "scope": "paladin",
+     "text": "Grant each party aura once across Paladins, not once per caster",
+     "date": "2026-07-31"
+    },
+    {
+     "h": "5d2bf60f",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Make the Nythraxis benchmark play the Warlock specs correctly",
+     "date": "2026-07-31"
+    },
+    {
+     "h": "e8334269",
+     "kind": "fix",
+     "scope": "dev",
+     "text": "Dress the BIS-20 kit by spec role, not a spec-blind stat sum",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "c6cf67b7",
+     "kind": "fix",
+     "scope": "",
+     "text": "#2218 Hunter/Shaman/Priest v0.29 redesigns (@ryan-foo) mp5 catch-up into integration/v031-class-overhauls",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "73635bc6",
+     "kind": "fix",
+     "scope": "",
+     "text": "#2428 Paladin Devotion and Divine Ascension (@blaine1705) mp5 catch-up into integration/v031-class-overhauls",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "c43faa61",
+     "kind": "fix",
+     "scope": "",
+     "text": "#2328 Rogue Knifework, Thuggery and Skulduggery (@patrick261) mp5 catch-up into integration/v031-class-overhauls",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "fe00b13b",
+     "kind": "fix",
+     "scope": "",
+     "text": "#2568 Druid Moongrove, Wildfang and Groveheart (@patrick261) mp5 catch-up into integration/v031-class-overhauls",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "ed402f0a",
+     "kind": "fix",
+     "scope": "rogue",
+     "text": "Retag the two remaining internal spec names in tooltips",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "5c2569dc",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Rogue tooltip feedback round one",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "afa3113e",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Druid tooltip feedback round one and spec-gated spellbook rows",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "30261299",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Druid AAA pass, latent duplicate lines, payoff numbers, stale locale reconciliation",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "9a13132d",
+     "kind": "fix",
+     "scope": "paladin",
+     "text": "Reconcile the origin/main catch-up",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "51e85867",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2218 Hunter/Shaman/Priest v0.29 redesigns (@ryan-foo) into integration/v031-class-overhauls",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "d04bee0f",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2428 Paladin Devotion and Divine Ascension (@blaine1705) into integration/v031-class-overhauls",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "2a545889",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2328 Rogue Knifework, Thuggery and Skulduggery (@patrick261) into integration/v031-class-overhauls",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "1cd52711",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2568 Druid Moongrove, Wildfang and Groveheart (@patrick261) into integration/v031-class-overhauls",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "92cf83d4",
+     "kind": "fix",
+     "scope": "",
+     "text": "Reconcile the druid merge",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "35f9abcf",
+     "kind": "fix",
+     "scope": "",
+     "text": "Log the #2568 druid landing in the runbook",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "51e85867",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2218 Hunter/Shaman/Priest v0.29 redesigns (@ryan-foo) into integration/v031-class-overhauls",
+     "date": "2026-07-26"
+    },
+    {
+     "h": "d04bee0f",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2428 Paladin Devotion and Divine Ascension (@blaine1705) into integration/v031-class-overhauls",
+     "date": "2026-07-26"
+    },
+    {
+     "h": "660d4df5",
+     "kind": "fix",
+     "scope": "",
+     "text": "Repin the F1 rate-buff mastery case on Subtlety, not Protection",
+     "date": "2026-07-26"
+    },
+    {
+     "h": "2a545889",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2328 Rogue Knifework, Thuggery and Skulduggery (@patrick261) into integration/v031-class-overhauls",
+     "date": "2026-07-26"
+    },
+    {
+     "h": "6257572f",
+     "kind": "fix",
+     "scope": "",
+     "text": "Fix the import artifacts the paladin union merge left in two tests",
+     "date": "2026-07-26"
+    },
+    {
+     "h": "f9925423",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.30.0 into paladin v030-draft freeze",
+     "date": "2026-07-25"
+    },
+    {
+     "h": "9cc4092f",
+     "kind": "fix",
+     "scope": "paladin",
+     "text": "Light the action bar on Radiant Resonance",
+     "date": "2026-07-25"
+    },
+    {
+     "h": "39895985",
+     "kind": "fix",
+     "scope": "paladin",
+     "text": "Rename Reckoning to Debt of Light and ship its icon",
+     "date": "2026-07-25"
+    },
+    {
+     "h": "3ad233cb",
+     "kind": "fix",
+     "scope": "paladin",
+     "text": "Show Debt of Light's real number in its tooltip",
+     "date": "2026-07-25"
+    },
+    {
+     "h": "5cfadb15",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.31.0 into the paladin overhaul",
+     "date": "2026-07-25"
+    },
+    {
+     "h": "8f521819",
+     "kind": "fix",
+     "scope": "hunter",
+     "text": "Restore v0.31 balance bands",
+     "date": "2026-07-25"
+    },
+    {
+     "h": "525e8e45",
+     "kind": "fix",
+     "scope": "paladin",
+     "text": "Harden release integration",
+     "date": "2026-07-23"
+    },
+    {
+     "h": "d9c0ebc8",
+     "kind": "fix",
+     "scope": "classes",
+     "text": "Preserve and verify owned talent effects",
+     "date": "2026-07-23"
+    },
+    {
+     "h": "1580cdbf",
+     "kind": "fix",
+     "scope": "hunter",
+     "text": "Complete ferocity and lifecycle cleanup",
+     "date": "2026-07-22"
+    },
+    {
+     "h": "004b1e43",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Translate Pack Ferocity aura",
+     "date": "2026-07-22"
+    },
+    {
+     "h": "940fddb1",
+     "kind": "fix",
+     "scope": "priest",
+     "text": "Preserve published audit history",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "a2739d0f",
+     "kind": "fix",
+     "scope": "shaman",
+     "text": "Harden v0.29 combat contracts",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "9445f46f",
+     "kind": "fix",
+     "scope": "hunter",
+     "text": "Integrate v0.29 class slice",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "9445f46f",
+     "kind": "fix",
+     "scope": "shaman",
+     "text": "Integrate v0.29 class slice",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "9445f46f",
+     "kind": "fix",
+     "scope": "priest",
+     "text": "Integrate v0.29 class slice",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "b425adf4",
+     "kind": "fix",
+     "scope": "hunter",
+     "text": "Rebalance Fieldcraft around Bloodhook",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "cda2e329",
+     "kind": "fix",
+     "scope": "priest",
+     "text": "Lift Vespers damage without infinite mana",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "0b1f1404",
+     "kind": "fix",
+     "scope": "hunter",
+     "text": "Align Bloodhook across gear levels",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "93c7f715",
+     "kind": "fix",
+     "scope": "priest",
+     "text": "Audit talent tooltip numbers",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "85f67acf",
+     "kind": "fix",
+     "scope": "paladin",
+     "text": "Clarify aura exclusivity text",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "37b09ff5",
+     "kind": "fix",
+     "scope": "priest",
+     "text": "Consume Gloomtithe and complete locales",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "82da819d",
+     "kind": "fix",
+     "scope": "priest",
+     "text": "Sync release v0.29.0",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "1c780261",
+     "kind": "fix",
+     "scope": "hunter",
+     "text": "Close Focus release guard gaps",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "77b70fb2",
+     "kind": "fix",
+     "scope": "hunter",
+     "text": "Align redesign release contracts",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "039fe747",
+     "kind": "fix",
+     "scope": "priest",
+     "text": "Complete v0.29 lifecycle contracts",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "18729f63",
+     "kind": "fix",
+     "scope": "priest",
+     "text": "Integrate v0.29 acceptance fixes",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "b023dd4a",
+     "kind": "fix",
+     "scope": "paladin",
+     "text": "Show the rebuilt choice-row talents in the UI",
+     "date": "2026-07-20"
     }
    ]
   },
@@ -291,6 +1509,13 @@
      "date": "2026-08-09"
     },
     {
+     "h": "972c6981",
+     "kind": "fix",
+     "scope": "items",
+     "text": "Conform the rift and dungeon daggers to the rating ladder and stat budgets",
+     "date": "2026-08-08"
+    },
+    {
      "h": "b98d23db",
      "kind": "fix",
      "scope": "guide",
@@ -303,6 +1528,13 @@
      "scope": "battleground",
      "text": "Detach a dungeon-standing backfill at the door",
      "date": "2026-08-08"
+    },
+    {
+     "h": "06068a77",
+     "kind": "fix",
+     "scope": "classes",
+     "text": "Tune owned specs for raid targets",
+     "date": "2026-07-26"
     }
    ]
   },
@@ -355,6 +1587,13 @@
      "date": "2026-08-10"
     },
     {
+     "h": "fde149bf",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Restore the id-less mob throw invariant with a pet signature allowlist",
+     "date": "2026-08-09"
+    },
+    {
      "h": "71504322",
      "kind": "fix",
      "scope": "scripts",
@@ -390,6 +1629,13 @@
      "date": "2026-08-08"
     },
     {
+     "h": "492d7246",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.36.0 into integration/v031-class-overhauls (bespoke mob attacks, playtime)",
+     "date": "2026-08-08"
+    },
+    {
      "h": "8fdfd665",
      "kind": "fix",
      "scope": "render",
@@ -416,6 +1662,13 @@
      "scope": "render",
      "text": "Frame the demon attack before/after shots so the mob is visible",
      "date": "2026-08-06"
+    },
+    {
+     "h": "950fb756",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Import localizeSimAuraName for the owned-mob display name path",
+     "date": "2026-07-31"
     }
    ]
   },
@@ -503,6 +1756,20 @@
    "fr": "Confort & technique",
    "en": "Comfort & technical",
    "items": [
+    {
+     "h": "cc902587",
+     "kind": "feat",
+     "scope": "art",
+     "text": "Paint the four integration daggers and re-bless the composed art record",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "137fd464",
+     "kind": "feat",
+     "scope": "icons",
+     "text": "Generate the missing painted ability wave and the bespoke Elemental Trance",
+     "date": "2026-08-09"
+    },
     {
      "h": "b9523afb",
      "kind": "feat",
@@ -777,6 +2044,69 @@
      "date": "2026-08-04"
     },
     {
+     "h": "ec94976b",
+     "kind": "feat",
+     "scope": "sfx",
+     "text": "Windup/loop/winddown engine audio for the tank mount",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "82174307",
+     "kind": "feat",
+     "scope": "vfx",
+     "text": "Unleash powerful fel meteor storms",
+     "date": "2026-08-01"
+    },
+    {
+     "h": "e93a89ca",
+     "kind": "feat",
+     "scope": "i18n",
+     "text": "Non-Latin fills for the tooltip-clarity branch",
+     "date": "2026-07-30"
+    },
+    {
+     "h": "a6627ab0",
+     "kind": "feat",
+     "scope": "dev",
+     "text": "Bigger item picker, staff-only Spawns tab, and the BIS-20 kit",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "3dc9508a",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Spec-aware ability tooltips and a plain-language pass",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "6de74c9d",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add owned-class ability artwork",
+     "date": "2026-07-25"
+    },
+    {
+     "h": "0d3daa1a",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Complete owned-class spellbook artwork",
+     "date": "2026-07-25"
+    },
+    {
+     "h": "5a8afed1",
+     "kind": "feat",
+     "scope": "classes",
+     "text": "Refine owned class combat loops",
+     "date": "2026-07-23"
+    },
+    {
+     "h": "84814293",
+     "kind": "feat",
+     "scope": "classes",
+     "text": "Add approved v0.29 follow-ups",
+     "date": "2026-07-22"
+    },
+    {
      "h": "627d374a",
      "kind": "perf",
      "scope": "referee",
@@ -840,6 +2170,13 @@
      "date": "2026-08-09"
     },
     {
+     "h": "ca42b560",
+     "kind": "perf",
+     "scope": "malware-scan",
+     "text": "Add dist-bot to the skip list",
+     "date": "2026-08-09"
+    },
+    {
      "h": "2f8af0e5",
      "kind": "perf",
      "scope": "malware-scan",
@@ -847,10 +2184,31 @@
      "date": "2026-08-09"
     },
     {
+     "h": "481bea68",
+     "kind": "perf",
+     "scope": "build",
+     "text": "Run build_server.mjs's two esbuild.build() calls concurrently",
+     "date": "2026-08-09"
+    },
+    {
      "h": "9756ef27",
      "kind": "perf",
      "scope": "server",
      "text": "Poll faster in the DB-boot retry loop",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "7e8cba45",
+     "kind": "perf",
+     "scope": "sfx",
+     "text": "Skip re-measuring ffmpeg true-peak for unchanged SFX takes",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "33f13725",
+     "kind": "perf",
+     "scope": "i18n",
+     "text": "Skip rewriting resolved-locale slices that are already byte-identical",
      "date": "2026-08-09"
     },
     {
@@ -1085,6 +2443,13 @@
      "date": "2026-08-07"
     },
     {
+     "h": "a0d67bf1",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Update the Dirge of Decay tooltip to the 10% Vespers rider",
+     "date": "2026-08-10"
+    },
+    {
      "h": "cd3b3801",
      "kind": "fix",
      "scope": "",
@@ -1120,10 +2485,73 @@
      "date": "2026-08-10"
     },
     {
+     "h": "1b9b5e69",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.36.0 into feature/tank-mount-sfx-v035",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "febd7da7",
+     "kind": "fix",
+     "scope": "sfx",
+     "text": "Correct the re-mint pin mapping and the pending-loop shape pin",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "1b9b5e69",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.36.0 into feature/tank-mount-sfx-v035",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "8d32146d",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Halve doubled sparkle, dispose GPU leaks, cache meteor lookups, drop comment artifacts",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "15ed7ae7",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Stop aria-valuetext masking the live count; use focus_restore helpers; clamp keyboard nudge",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "16b709f0",
+     "kind": "fix",
+     "scope": "tests",
+     "text": "Pin the nightly Playwright cache key line itself",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "d7de3bb5",
+     "kind": "fix",
+     "scope": "sfx",
+     "text": "Key the gain-ceiling cache fingerprint on content, not mtime",
+     "date": "2026-08-10"
+    },
+    {
      "h": "1c4ab73e",
      "kind": "fix",
      "scope": "render",
      "text": "Skip tint on materials without a color",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "f7ff7450",
+     "kind": "fix",
+     "scope": "pipeline",
+     "text": "Form Windows drive URLs on POSIX, give the downsize test a synthetic fixture",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "8edfd240",
+     "kind": "fix",
+     "scope": "dev",
+     "text": "Demote the dual-wield dev kit's mainhand to a one-hander",
      "date": "2026-08-09"
     },
     {
@@ -1134,10 +2562,31 @@
      "date": "2026-08-09"
     },
     {
+     "h": "786e30e8",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.36.0 into integration/v031-class-overhauls (fill wave, gesture release)",
+     "date": "2026-08-09"
+    },
+    {
      "h": "f34ed066",
      "kind": "fix",
      "scope": "render",
      "text": "Return colorless materials unchanged from tintedMaterial",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "fffe7193",
+     "kind": "fix",
+     "scope": "guide",
+     "text": "Register the focus resource name and ledger the orphaned ability hooks",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "02ec2ee8",
+     "kind": "fix",
+     "scope": "",
+     "text": "Move the class balance harnesses into the long-sims lane",
      "date": "2026-08-09"
     },
     {
@@ -1218,11 +2667,60 @@
      "date": "2026-08-09"
     },
     {
+     "h": "d12cd08c",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Fix cold-start and timing bugs in the tank mount's engine audio",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "043008fa",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stop engine-mount loop leaks and hold phase while airborne",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "d531639e",
+     "kind": "fix",
+     "scope": "sfx",
+     "text": "Mark the tank mount's sustain clip loop:true in the manifest",
+     "date": "2026-08-09"
+    },
+    {
      "h": "59170def",
      "kind": "fix",
      "scope": "art",
      "text": "Refresh portraits for release renderer",
      "date": "2026-08-09"
+    },
+    {
+     "h": "79c1d127",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Preload mount engine clips at view creation, not just on edge",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "d81ecb3b",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.36.0 into integration/v031-class-overhauls (v0.35.0 final: locale fill, js-yaml pin)",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "81037eea",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Union the CJK/RU overlays: the v0.35.0 fill plus this branch's rows",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "3678c1d3",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Close the release-tier sim, token, and copied-item gaps",
+     "date": "2026-08-08"
     },
     {
      "h": "b2363198",
@@ -1232,10 +2730,31 @@
      "date": "2026-08-08"
     },
     {
+     "h": "e9631042",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Drop same-as-base es_ES rows and re-pin the Warded Elements tooltip",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "fd9901f3",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.36.0 into integration/v031-class-overhauls",
+     "date": "2026-08-08"
+    },
+    {
      "h": "72ff011e",
      "kind": "fix",
      "scope": "",
      "text": "Release/v0.35.1 into release/v0.36.0",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "b3173693",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.36.0 into integration/v031-class-overhauls (v0.35.1 merge-down)",
      "date": "2026-08-08"
     },
     {
@@ -1299,6 +2818,13 @@
      "kind": "fix",
      "scope": "guide",
      "text": "Clear the verbatim-name denylist in the new wiki copy",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "9108d45b",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Wire Hexcraft over Litany, unstick the Vigil probe, calm the march (owner rulings)",
      "date": "2026-08-08"
     },
     {
@@ -1547,10 +3073,45 @@
      "date": "2026-08-07"
     },
     {
+     "h": "e63b5d18",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Trim Balance spell-power coefficients for the owner balance pass",
+     "date": "2026-08-07"
+    },
+    {
      "h": "b80ab982",
      "kind": "fix",
      "scope": "",
      "text": "Bring release/v0.35.0 into fix/arena-pvp-fixes",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "3704f25b",
+     "kind": "fix",
+     "scope": "",
+     "text": "The Balance spell-power coefficient trim (owner balance pass) into integration/v031-class-overhauls",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "c2ba6a22",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.35.0 into integration/v031-class-overhauls (pre-landing catch-up)",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "e9837e5e",
+     "kind": "fix",
+     "scope": "compose",
+     "text": "Close the three true merge casualties from the full-suite attribution",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "adda24d3",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.35.0 into integration/v031-class-overhauls (pre-PR top-up)",
      "date": "2026-08-07"
     },
     {
@@ -1715,6 +3276,13 @@
      "date": "2026-08-07"
     },
     {
+     "h": "a3da5d83",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Re-calibrate Balance spell-power coefficients to the 200 BiS anchor",
+     "date": "2026-08-06"
+    },
+    {
      "h": "3145e254",
      "kind": "fix",
      "scope": "sim",
@@ -1729,11 +3297,109 @@
      "date": "2026-08-06"
     },
     {
+     "h": "c3fd3fc8",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.35.0 into integration/v031-class-overhauls",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "f72b13cf",
+     "kind": "fix",
+     "scope": "",
+     "text": "Fix/player-pet-spell-resist into integration/v031-class-overhauls",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "6d017d4c",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.35.0 into feature/warlock-overhaul-v033",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "4685a37e",
+     "kind": "fix",
+     "scope": "",
+     "text": "Fix/player-pet-spell-resist into feature/warlock-overhaul-v033",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "9ae23e06",
+     "kind": "fix",
+     "scope": "tests",
+     "text": "Close the twelve catch-up regressions the full gate surfaced",
+     "date": "2026-08-06"
+    },
+    {
      "h": "6373aec1",
      "kind": "fix",
      "scope": "render",
      "text": "Bake the Treant_Attack slam and sway channels that fell silently null",
      "date": "2026-08-06"
+    },
+    {
+     "h": "1f5bd0c6",
+     "kind": "fix",
+     "scope": "",
+     "text": "Origin/main (v0.34.0) into integration/v029-owned-classes",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "bb1bdf76",
+     "kind": "fix",
+     "scope": "merge",
+     "text": "Repair the v0.34.0 catch-up composition and re-hunt shifted seeds",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "82ed2d3a",
+     "kind": "fix",
+     "scope": "",
+     "text": "Origin/main (v0.34.0) into feature/paladin-sun-cleric-overhaul",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "bb1bdf76",
+     "kind": "fix",
+     "scope": "merge",
+     "text": "Repair the v0.34.0 catch-up composition and re-hunt shifted seeds",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "64dac737",
+     "kind": "fix",
+     "scope": "",
+     "text": "Origin/main (v0.34.0) into feature/warlock-overhaul-v033",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "bb1bdf76",
+     "kind": "fix",
+     "scope": "merge",
+     "text": "Repair the v0.34.0 catch-up composition and re-hunt shifted seeds",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "6c09ca88",
+     "kind": "fix",
+     "scope": "",
+     "text": "The updated #2218 head (v0.34.0 catch-up) into feature/rogue-talent-update",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "9f057d32",
+     "kind": "fix",
+     "scope": "",
+     "text": "Origin/main (v0.34.0) into integration/v031-class-overhauls",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "8695f8dd",
+     "kind": "fix",
+     "scope": "merge",
+     "text": "Repair the v0.34.0 refresh composition",
+     "date": "2026-08-05"
     },
     {
      "h": "a8933215",
@@ -1764,6 +3430,13 @@
      "date": "2026-08-05"
     },
     {
+     "h": "ae45201c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Reset engine-mount audio state on every mountKey transition",
+     "date": "2026-08-05"
+    },
+    {
      "h": "0d20dadf",
      "kind": "fix",
      "scope": "server",
@@ -1783,6 +3456,370 @@
      "scope": "scripts",
      "text": "Give ci:changed a real --since instead of the origin/main default",
      "date": "2026-08-04"
+    },
+    {
+     "h": "88a1b1a2",
+     "kind": "fix",
+     "scope": "",
+     "text": "Origin/main (v0.32.2, v0.32.3, v0.33.0 waves) into integration/v029-owned-classes",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "23adb911",
+     "kind": "fix",
+     "scope": "",
+     "text": "Origin/main into feature/warlock-overhaul-v033",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "780a9851",
+     "kind": "fix",
+     "scope": "",
+     "text": "Origin/main (v0.32.2, v0.32.3, v0.33.0 waves) into feature/paladin-sun-cleric-overhaul",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "70b4ceef",
+     "kind": "fix",
+     "scope": "",
+     "text": "The updated #2218 head (v0.33.0 catch-up) into feature/rogue-talent-update",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "8a985fc8",
+     "kind": "fix",
+     "scope": "",
+     "text": "Origin/main (v0.32.2, v0.32.3, v0.33.0 waves) into integration/v031-class-overhauls",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "b083eb26",
+     "kind": "fix",
+     "scope": "merge",
+     "text": "Repair four silent clashes the five-class merge left behind",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "ebd43187",
+     "kind": "fix",
+     "scope": "merge",
+     "text": "Restore two more silently overwritten hunks",
+     "date": "2026-08-02"
+    },
+    {
+     "h": "cce05a75",
+     "kind": "fix",
+     "scope": "",
+     "text": "Origin/main (v0.32.1 wave) into integration/v029-owned-classes",
+     "date": "2026-07-31"
+    },
+    {
+     "h": "950d6718",
+     "kind": "fix",
+     "scope": "",
+     "text": "Origin/main (v0.32.1 wave) into feature/paladin-sun-cleric-overhaul",
+     "date": "2026-07-31"
+    },
+    {
+     "h": "0441104c",
+     "kind": "fix",
+     "scope": "",
+     "text": "The updated #2218 head (v0.32.1 main catch-up) into feature/rogue-talent-update",
+     "date": "2026-07-31"
+    },
+    {
+     "h": "c9abd386",
+     "kind": "fix",
+     "scope": "",
+     "text": "Origin/main (v0.32.1 wave) into integration/v031-class-overhauls",
+     "date": "2026-07-31"
+    },
+    {
+     "h": "9ec698e8",
+     "kind": "fix",
+     "scope": "probes",
+     "text": "Re-hunt the open-field anchor for the v0.32.1 world; repair the drive registry and stale fills",
+     "date": "2026-07-31"
+    },
+    {
+     "h": "1743b3a6",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Trim the Wildbolt teaser, number the Redline empowered forms",
+     "date": "2026-07-30"
+    },
+    {
+     "h": "46375e8b",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Satisfy the iterable-return lint in the requirement mapper",
+     "date": "2026-07-30"
+    },
+    {
+     "h": "9ed51878",
+     "kind": "fix",
+     "scope": "talents",
+     "text": "Document the per-stage constants the clarity prose states",
+     "date": "2026-07-30"
+    },
+    {
+     "h": "76acb3c5",
+     "kind": "fix",
+     "scope": "scripts",
+     "text": "Make the profiler's online crowd harness work again",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "f9c09de0",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.31.0 post-ship commits (in-combat Spirit mp5, profiler harness fix) into integration/v031-class-overhauls",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "33d2b0cb",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.31.0 post-ship commits (in-combat Spirit mp5) into integration/v029-owned-classes",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "5da143f2",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.31.0 post-ship commits (in-combat Spirit mp5) into feature/paladin-sun-cleric-overhaul",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "9c25ded9",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.31.0 post-ship commits (in-combat Spirit mp5) into feature/rogue-talent-update",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "c20ecd9c",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.31.0 post-ship commits (in-combat Spirit mp5) into feature/druid-talent-update",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "3626342b",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Scope the stealth-bypass requirement line to Skulduggery",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "8b1e8be3",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Hard numbers in every transform announcement",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "86c5c137",
+     "kind": "fix",
+     "scope": "",
+     "text": "Origin/main (v0.31.0 final) into integration/v029-owned-classes",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "e74fb226",
+     "kind": "fix",
+     "scope": "",
+     "text": "Updated PR #2218 head (with origin/main v0.31.0 final) into feature/rogue-talent-update",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "5c477f62",
+     "kind": "fix",
+     "scope": "",
+     "text": "Origin/main (v0.31.0 final) into integration/v031-class-overhauls",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "5b671c50",
+     "kind": "fix",
+     "scope": "",
+     "text": "Regen i18n and wiki after the #2218 re-merge",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "97427d2f",
+     "kind": "fix",
+     "scope": "",
+     "text": "Regen i18n, wiki and parity goldens after the #2428 and #2328 re-merges",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "a7e90f96",
+     "kind": "fix",
+     "scope": "",
+     "text": "Log the 2026-07-28 full-branch main catch-up in the runbook",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "cc4b9b4a",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2428 catch-up test reconciliation (@blaine1705) into integration/v031-class-overhauls",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "2711eea8",
+     "kind": "fix",
+     "scope": "",
+     "text": "Cross-PR reconciliation for the full-suite gate",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "59bcfdca",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2428 legacy-suite removal and pacing re-pin (@blaine1705) into integration/v031-class-overhauls",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "c1bad095",
+     "kind": "fix",
+     "scope": "",
+     "text": "Record the post-catch-up full-suite state in the runbook",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "e24dd26c",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Always wire the persistent engine bank stages",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "ee0cfb94",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2568 wire fix for engine bank stages (@patrick261) into integration/v031-class-overhauls",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "eecaabab",
+     "kind": "fix",
+     "scope": "build",
+     "text": "Drop a stranded sfx-security test symlink that breaks the host build",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "9800879a",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #2428 protection survivability follow-up (@blaine1705) into integration/v031-class-overhauls",
+     "date": "2026-07-27"
+    },
+    {
+     "h": "5ed3b82d",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.31.0 into integration/v029-owned-classes",
+     "date": "2026-07-26"
+    },
+    {
+     "h": "355eeaff",
+     "kind": "fix",
+     "scope": "tests",
+     "text": "Anchor the class combat probes clear of Eastbrook's rebuilt town",
+     "date": "2026-07-26"
+    },
+    {
+     "h": "a10cd2da",
+     "kind": "fix",
+     "scope": "",
+     "text": "Ryan-foo's owned-class artwork commits into the v0.31.0 catch-up",
+     "date": "2026-07-26"
+    },
+    {
+     "h": "f8803e03",
+     "kind": "fix",
+     "scope": "",
+     "text": "Repair saved bars for every class the v0.31 wave redesigned",
+     "date": "2026-07-26"
+    },
+    {
+     "h": "9d2166be",
+     "kind": "fix",
+     "scope": "tooltips",
+     "text": "Clarify owned class mechanics",
+     "date": "2026-07-25"
+    },
+    {
+     "h": "fb228fcf",
+     "kind": "fix",
+     "scope": "classes",
+     "text": "Complete passive presentation",
+     "date": "2026-07-23"
+    },
+    {
+     "h": "5f778bfb",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Aim class portraits at the body, not the held weapon",
+     "date": "2026-07-23"
+    },
+    {
+     "h": "f46a007e",
+     "kind": "fix",
+     "scope": "classes",
+     "text": "Close v0.29 review regressions",
+     "date": "2026-07-22"
+    },
+    {
+     "h": "acf24c34",
+     "kind": "fix",
+     "scope": "classes",
+     "text": "Close final review edge cases",
+     "date": "2026-07-22"
+    },
+    {
+     "h": "82da819d",
+     "kind": "fix",
+     "scope": "classes",
+     "text": "Sync release v0.29.0",
+     "date": "2026-07-22"
+    },
+    {
+     "h": "139fa49f",
+     "kind": "fix",
+     "scope": "classes",
+     "text": "Sync integration with release v0.29.0",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "e6e2ab4a",
+     "kind": "fix",
+     "scope": "classes",
+     "text": "Address initial PBE correctness issues",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "99c16f3b",
+     "kind": "fix",
+     "scope": "tooltips",
+     "text": "Explain owned class mechanics",
+     "date": "2026-07-21"
+    },
+    {
+     "h": "5ad6b00d",
+     "kind": "fix",
+     "scope": "",
+     "text": "Preserve draft PR history",
+     "date": "2026-07-20"
+    },
+    {
+     "h": "815ef6cb",
+     "kind": "fix",
+     "scope": "prototype",
+     "text": "Satisfy design review checks",
+     "date": "2026-07-20"
     }
    ]
   }
@@ -1793,9 +3830,9 @@
    "branch": "release/v0.36.0",
    "declared_version": "0.35.1",
    "imminent": false,
-   "commits": 770,
-   "shown": 247,
-   "last_commit": "2026-08-10T14:44:37+12:00",
+   "commits": 1298,
+   "shown": 538,
+   "last_commit": "2026-08-10T13:37:35+08:00",
    "sections": [
     {
      "key": "classes",
@@ -1804,11 +3841,32 @@
      "en": "Classes & spells",
      "items": [
       {
+       "h": "668c7418",
+       "kind": "feat",
+       "scope": "warlock",
+       "text": "Rename the Wrack resource off the armed Ruin denylist entry",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "33583a8d",
+       "kind": "feat",
+       "scope": "warlock",
+       "text": "Trim the demon roster satellites to the shipped three",
+       "date": "2026-08-08"
+      },
+      {
        "h": "78958e96",
        "kind": "feat",
        "scope": "talents",
        "text": "Replace Double Charge with Intervene on the warrior level-5 row",
        "date": "2026-08-07"
+      },
+      {
+       "h": "342e9d24",
+       "kind": "feat",
+       "scope": "rogue",
+       "text": "Re-band the base kit to the ~200 BiS-epic DPS target",
+       "date": "2026-08-06"
       },
       {
        "h": "87a7ac52",
@@ -1830,6 +3888,27 @@
        "scope": "render",
        "text": "Bespoke Zulgar, Voice of the Basin attack/cast clip",
        "date": "2026-08-06"
+      },
+      {
+       "h": "af7888ad",
+       "kind": "feat",
+       "scope": "shaman",
+       "text": "Stonebound crit immunity, Galeheart echo tooltip, and Elemental Trance",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "9ca33a64",
+       "kind": "feat",
+       "scope": "content",
+       "text": "New rogue daggers with on-hit procs, distinct models, grips",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "87ce9ecf",
+       "kind": "feat",
+       "scope": "sim",
+       "text": "Seat druid Balance at the 200 DPS BiS anchor and trim Feral cat",
+       "date": "2026-08-05"
       },
       {
        "h": "50fe4bff",
@@ -1860,6 +3939,419 @@
        "date": "2026-08-05"
       },
       {
+       "h": "0f45fe55",
+       "kind": "feat",
+       "scope": "warlock",
+       "text": "Polish Affliction resource UI",
+       "date": "2026-08-02"
+      },
+      {
+       "h": "10e40633",
+       "kind": "feat",
+       "scope": "warlock",
+       "text": "Refine specialization balance and minions",
+       "date": "2026-08-02"
+      },
+      {
+       "h": "dfd124cc",
+       "kind": "feat",
+       "scope": "warlock",
+       "text": "Add bone mage projectile visuals",
+       "date": "2026-08-02"
+      },
+      {
+       "h": "dc6ef365",
+       "kind": "feat",
+       "scope": "warlock",
+       "text": "Complete pets and presentation",
+       "date": "2026-08-01"
+      },
+      {
+       "h": "3d36eb57",
+       "kind": "feat",
+       "scope": "warlock",
+       "text": "Finalize combat kits",
+       "date": "2026-08-01"
+      },
+      {
+       "h": "a900974b",
+       "kind": "feat",
+       "scope": "warlock",
+       "text": "Overhaul all three specializations",
+       "date": "2026-07-31"
+      },
+      {
+       "h": "a149925e",
+       "kind": "feat",
+       "scope": "warlock",
+       "text": "Close the three specialization viability gaps",
+       "date": "2026-07-31"
+      },
+      {
+       "h": "94d1e150",
+       "kind": "feat",
+       "scope": "rogue",
+       "text": "Rename the Redline pair to Haymaker and Lights Out",
+       "date": "2026-07-30"
+      },
+      {
+       "h": "32bf8996",
+       "kind": "feat",
+       "scope": "sim",
+       "text": "Spirit regenerates mana in combat like WoW's mp5 (community port, credit @Furyogen)",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "114b468f",
+       "kind": "feat",
+       "scope": "rogue",
+       "text": "Scale Armor Breach and Bleed Out with combo points spent",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "16db1c91",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Describe each druid payoff on the button that transforms",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "a6069752",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Describe rogue payoffs on their transform buttons too",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "0079db2b",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Scale Bloodrift with combo points, classic Rip style",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "65e9cd1d",
+       "kind": "feat",
+       "scope": "rogue",
+       "text": "V0.29 spec engines, themed rows, and the teaching layer",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "65e9cd1d",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "V0.29 spec engines, themed rows, and the teaching layer",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "65e9cd1d",
+       "kind": "feat",
+       "scope": "rogue",
+       "text": "V0.29 spec engines, themed rows, and the teaching layer",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "65e9cd1d",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "V0.29 spec engines, themed rows, and the teaching layer",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "fee542d5",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Improve protection survivability",
+       "date": "2026-07-26"
+      },
+      {
+       "h": "4f878711",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Move the tank-parity stamina floor onto the Oathward mastery",
+       "date": "2026-07-25"
+      },
+      {
+       "h": "ef316ad1",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Teach Holy Ground at specialization for both melee specs",
+       "date": "2026-07-25"
+      },
+      {
+       "h": "e9a118f4",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Teach Solar Step and Last Rite at their upgrade rows",
+       "date": "2026-07-25"
+      },
+      {
+       "h": "db0f0ba7",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Pin the authored spec progression and its two guard exceptions",
+       "date": "2026-07-25"
+      },
+      {
+       "h": "1036502c",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Ramp the early damage on the three overtuned openers",
+       "date": "2026-07-25"
+      },
+      {
+       "h": "46a30876",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Rework Faithforged Guard into Reckoning, a one-blow answer",
+       "date": "2026-07-25"
+      },
+      {
+       "h": "a0cfac4e",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Let a Sunmender's rite call back the whole group from 16",
+       "date": "2026-07-25"
+      },
+      {
+       "h": "48bb3829",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Rank Requital Aura so its reflect keeps its weight",
+       "date": "2026-07-25"
+      },
+      {
+       "h": "155cf0d1",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Finalize class presentation",
+       "date": "2026-07-24"
+      },
+      {
+       "h": "a727b605",
+       "kind": "feat",
+       "scope": "shaman",
+       "text": "Add Spiritmend Unleash Weapon",
+       "date": "2026-07-24"
+      },
+      {
+       "h": "83973eab",
+       "kind": "feat",
+       "scope": "shaman",
+       "text": "Share Unleash Weapon across specs",
+       "date": "2026-07-24"
+      },
+      {
+       "h": "65e9cd1d",
+       "kind": "feat",
+       "scope": "rogue",
+       "text": "V0.29 spec engines, themed rows, and the teaching layer",
+       "date": "2026-07-23"
+      },
+      {
+       "h": "f985b5a2",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Complete class overhaul",
+       "date": "2026-07-23"
+      },
+      {
+       "h": "aa768a59",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Add Rhythm of Dawn",
+       "date": "2026-07-23"
+      },
+      {
+       "h": "18f5ad87",
+       "kind": "feat",
+       "scope": "i18n",
+       "text": "Localize Shaman v0.29 abilities",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "ed4f61c5",
+       "kind": "feat",
+       "scope": "prototype",
+       "text": "Align Shaman v0.29 talent preview",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "84581158",
+       "kind": "feat",
+       "scope": "shaman",
+       "text": "Surface v0.29 combat cues",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "6752cfb8",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Seed safe level 20 spec bars",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "af5101b3",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Add custom ability icons",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "692c9aa9",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Add retribution and protection combat kit",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "24224c2c",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Specialize core ability kits",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "2564961a",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Align Devotion class identity",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "9c40f596",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Accelerate devotion with avenging wrath",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "ca0bc465",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Add veilbound march",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "e14e52da",
+       "kind": "feat",
+       "scope": "priest",
+       "text": "Implement Doctrine covenant loop",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "df43857c",
+       "kind": "feat",
+       "scope": "priest",
+       "text": "Implement Benison vigil loop",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "c3fec6d1",
+       "kind": "feat",
+       "scope": "priest",
+       "text": "Implement Vespers effigy loop",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "3f947c3e",
+       "kind": "feat",
+       "scope": "priest",
+       "text": "Replace class talent tree",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "b0afbf11",
+       "kind": "feat",
+       "scope": "priest",
+       "text": "Integrate v0.29 class redesign",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "1e849c4d",
+       "kind": "feat",
+       "scope": "shaman",
+       "text": "Implement Thundercall engine",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "3556089c",
+       "kind": "feat",
+       "scope": "shaman",
+       "text": "Implement Warspirit engine",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "04576e29",
+       "kind": "feat",
+       "scope": "shaman",
+       "text": "Implement Spiritmend engine",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "9bf65a32",
+       "kind": "feat",
+       "scope": "shaman",
+       "text": "Integrate v0.29 spec engines",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "ddf62d38",
+       "kind": "feat",
+       "scope": "shaman",
+       "text": "Implement v0.29 talent grid",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "3d95a3cd",
+       "kind": "feat",
+       "scope": "hunter",
+       "text": "Implement v0.29 class redesign",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "f7dd0c0b",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Sun Cleric Devotion and Divine Ascension core (WIP)",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "c2ff22e0",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Universal choice-row talents (levels 5-20)",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "2023a19b",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Integrate talents with Divine Ascension (Amanecer)",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "e72ef73e",
+       "kind": "perf",
+       "scope": "net",
+       "text": "Omit idle paladin ascension charges from the wire",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "ef595449",
+       "kind": "perf",
+       "scope": "sim",
+       "text": "Run the paladin despawn cleanups only for a despawning paladin",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "f0ff86dd",
+       "kind": "perf",
+       "scope": "ui",
+       "text": "Hoist the affliction fate-thread walk behind the spec check",
+       "date": "2026-08-09"
+      },
+      {
        "h": "61905906",
        "kind": "perf",
        "scope": "render",
@@ -1871,6 +4363,139 @@
        "kind": "perf",
        "scope": "render",
        "text": "Prewarm every real weapon-skin VFX spec, gate offhand payloads",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "a10e5301",
+       "kind": "fix",
+       "scope": "balance",
+       "text": "Scope the Moongrove trim to the Moonwing-only spenders",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "c3816685",
+       "kind": "fix",
+       "scope": "balance",
+       "text": "Drop the dead Galeheart imbue edit and ride the Warspirit AP raise on apPct",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "194dd5f1",
+       "kind": "fix",
+       "scope": "balance",
+       "text": "Ride part of the Survival raise on agility instead of a flat percent",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "ba2fbbda",
+       "kind": "fix",
+       "scope": "balance",
+       "text": "Make Needle rank 3 a real upgrade and pin the subtlety AP wiring exactly",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "4e96af66",
+       "kind": "fix",
+       "scope": "balance",
+       "text": "Make the Survival percent arm damage-only (apPct, not agiPct)",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "dd1ac047",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Wire persistent engine-bank stacks on the stable aura wire",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "e0e5673c",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Keep hunter talent mods on the Pack Rally transform; codepoint sort tiebreaks",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "0a37e873",
+       "kind": "fix",
+       "scope": "balance",
+       "text": "Trim Shadow (Vespers) to 190.8 (120s BiS)",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "586a5838",
+       "kind": "fix",
+       "scope": "balance",
+       "text": "Trim Balance (Moongrove) to 189.4 (120s BiS)",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "d4c86c21",
+       "kind": "fix",
+       "scope": "balance",
+       "text": "Trim Affliction (Hexcraft) to 191.2 (120s BiS)",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "957f663e",
+       "kind": "fix",
+       "scope": "balance",
+       "text": "Trim Subtlety (Skulduggery) to 190.5 (120s BiS)",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "1a8c9615",
+       "kind": "fix",
+       "scope": "balance",
+       "text": "Trim Assassination (Knifework) to 190.8 (120s BiS)",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "1b553d23",
+       "kind": "fix",
+       "scope": "balance",
+       "text": "Raise Marksmanship (Coldsight) to 167.6 (120s BiS)",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "9389a8b7",
+       "kind": "fix",
+       "scope": "balance",
+       "text": "Raise Survival (Fieldcraft) to 163.7 (120s BiS)",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "154bc274",
+       "kind": "fix",
+       "scope": "balance",
+       "text": "Raise Enhancement (Warspirit) to 166.8 (120s BiS)",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "1dd0dde5",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Drop the release fill's rows for the four retired paladin abilities",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "dc4afe91",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Retranslate the last nine stale-token rows (ja/ko/ru paladin trio)",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "d7e71fdd",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Synthesize the paladin verdict and sweep clips for the modular key too",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "6530d171",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Defer the warlock preloads, drop retired VFX spec ids, register the new daggers",
        "date": "2026-08-08"
       },
       {
@@ -1902,6 +4527,34 @@
        "date": "2026-08-08"
       },
       {
+       "h": "03424469",
+       "kind": "fix",
+       "scope": "priest",
+       "text": "Re-band the Vespers percent rows for the full-hit riders",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "d95129aa",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Trim the Ruination base magnitudes toward the 215 anchor",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "6118bd15",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Walk the Demonology sustain compensation halfway back",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "eab6fed6",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Land Ruination and Pactbound inside the 205-215 band",
+       "date": "2026-08-07"
+      },
+      {
        "h": "e1a74b76",
        "kind": "fix",
        "scope": "render",
@@ -1930,10 +4583,52 @@
        "date": "2026-08-07"
       },
       {
+       "h": "f09350d1",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2568 druid Balance coefficient re-calibration to the 200 BiS anchor (@patrick261) into integration/v031-class-overhauls",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "8ad7b212",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Roll spell resist on player pet ranged bolts",
+       "date": "2026-08-06"
+      },
+      {
        "h": "2c203e8d",
        "kind": "fix",
        "scope": "render",
        "text": "Keep the hunter's melee swing under a displayed bow skin",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "1c22419c",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Land all three specs at or under the 200 BiS anchor at 120s",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "9f05a412",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Ship the gated Army copy to players and pin the QA gaps",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "ac9cb6cc",
+       "kind": "fix",
+       "scope": "",
+       "text": "The warlock overhaul head (v0.35.0 catch-up + sub-200 tuning) into integration/v031-class-overhauls",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "9e1a4601",
+       "kind": "fix",
+       "scope": "",
+       "text": "The rogue base-kit re-band (~200 BiS-epic target) into integration/v031-class-overhauls",
        "date": "2026-08-06"
       },
       {
@@ -1944,11 +4639,571 @@
        "date": "2026-08-06"
       },
       {
+       "h": "192d2e34",
+       "kind": "fix",
+       "scope": "",
+       "text": "The updated rogue head (v0.34.0 catch-up) into feature/druid-talent-update",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "24536972",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2218 feat(classes): integrate Hunter, Shaman, and Priest v0.29 redesigns (@ryan-foo) into integration/v031-class-overhauls",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "163d700a",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2428 feat(paladin): rebuild the Paladin around Devotion and Divine Ascension (@blaine1705) into integration/v031-class-overhauls",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "046c23f3",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2328 rogue v0.29 spec engines, themed rows, and the teaching layer (@patrick261) into integration/v031-class-overhauls",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "61ebe8ae",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2568 druid v0.29 spec engines, themed rows, and the teaching layer (@patrick261) into integration/v031-class-overhauls",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "4a8a67dc",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2742 feat(warlock): overhaul all three specializations (@blaine1705) into integration/v031-class-overhauls",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "8f1d1623",
+       "kind": "fix",
+       "scope": "rogue",
+       "text": "Tame the Thronebane energy runaway, normalize Wicked Slash",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "fc77f6ec",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2328 rogue Thronebane energy fix and new dagger content (@patrick261) into integration/v031-class-overhauls",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "8405a9bf",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2568 druid Balance spell-power seating and Feral cat trim (@patrick261) into integration/v031-class-overhauls",
+       "date": "2026-08-05"
+      },
+      {
        "h": "4c68f0e1",
        "kind": "fix",
        "scope": "render",
        "text": "Keep bow-skin draw clip precedence over hunter attackByAbility",
        "date": "2026-08-05"
+      },
+      {
+       "h": "5359c8d6",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Tune endgame sustain balance",
+       "date": "2026-08-04"
+      },
+      {
+       "h": "dce234ee",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2742 Warlock balance and minion refinements (@blaine1705) into integration/v031-class-overhauls",
+       "date": "2026-08-03"
+      },
+      {
+       "h": "612574bd",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Stabilize release integration",
+       "date": "2026-08-02"
+      },
+      {
+       "h": "cbb67f70",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Close release QA regressions",
+       "date": "2026-08-02"
+      },
+      {
+       "h": "76975378",
+       "kind": "fix",
+       "scope": "priest",
+       "text": "Keep the Gloomtithe bank until Vespers consumes it",
+       "date": "2026-08-02"
+      },
+      {
+       "h": "8552d864",
+       "kind": "fix",
+       "scope": "",
+       "text": "The updated rogue head (v0.33.0 catch-up) into feature/druid-talent-update",
+       "date": "2026-08-02"
+      },
+      {
+       "h": "b2d4b2ca",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2218 Hunter/Shaman/Priest v0.29 redesigns (@ryan-foo) v0.33.0 catch-up into integration/v031-class-overhauls",
+       "date": "2026-08-02"
+      },
+      {
+       "h": "83b659c6",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2428 Paladin Devotion and Divine Ascension (@blaine1705) v0.33.0 catch-up into integration/v031-class-overhauls",
+       "date": "2026-08-02"
+      },
+      {
+       "h": "a17ea900",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2328 Rogue Knifework, Thuggery and Skulduggery (@patrick261) v0.33.0 catch-up into integration/v031-class-overhauls",
+       "date": "2026-08-02"
+      },
+      {
+       "h": "34fe31db",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2568 Druid Moongrove, Wildfang and Groveheart (@patrick261) v0.33.0 catch-up into integration/v031-class-overhauls",
+       "date": "2026-08-02"
+      },
+      {
+       "h": "4bc6b1ff",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2742 Warlock three-spec overhaul (@blaine1705) into integration/v031-class-overhauls",
+       "date": "2026-08-02"
+      },
+      {
+       "h": "39f3bbb9",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Sync release v0.33.0",
+       "date": "2026-08-01"
+      },
+      {
+       "h": "efdee3b4",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Restore release VFX extensions",
+       "date": "2026-08-01"
+      },
+      {
+       "h": "9d8771a8",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Wire class renderer systems",
+       "date": "2026-08-01"
+      },
+      {
+       "h": "f18ac54d",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Wire class particle effects",
+       "date": "2026-08-01"
+      },
+      {
+       "h": "e4a83584",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep paladin talent art out of the procedural icon prewarm plan",
+       "date": "2026-07-31"
+      },
+      {
+       "h": "b626ceea",
+       "kind": "fix",
+       "scope": "",
+       "text": "The updated rogue head (v0.32.1 main catch-up) into feature/druid-talent-update",
+       "date": "2026-07-31"
+      },
+      {
+       "h": "96d14657",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2218 Hunter/Shaman/Priest v0.29 redesigns (@ryan-foo) v0.32.1 catch-up into integration/v031-class-overhauls",
+       "date": "2026-07-31"
+      },
+      {
+       "h": "76941680",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2428 Paladin Devotion and Divine Ascension (@blaine1705) v0.32.1 catch-up into integration/v031-class-overhauls",
+       "date": "2026-07-31"
+      },
+      {
+       "h": "bdd82797",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2328 Rogue Knifework, Thuggery and Skulduggery (@patrick261) v0.32.1 catch-up into integration/v031-class-overhauls",
+       "date": "2026-07-31"
+      },
+      {
+       "h": "682861b4",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2568 Druid Moongrove, Wildfang and Groveheart (@patrick261) v0.32.1 catch-up into integration/v031-class-overhauls",
+       "date": "2026-07-31"
+      },
+      {
+       "h": "592882af",
+       "kind": "fix",
+       "scope": "paladin",
+       "text": "Grant each party aura once across Paladins, not once per caster",
+       "date": "2026-07-31"
+      },
+      {
+       "h": "5d2bf60f",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Make the Nythraxis benchmark play the Warlock specs correctly",
+       "date": "2026-07-31"
+      },
+      {
+       "h": "e8334269",
+       "kind": "fix",
+       "scope": "dev",
+       "text": "Dress the BIS-20 kit by spec role, not a spec-blind stat sum",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "c6cf67b7",
+       "kind": "fix",
+       "scope": "",
+       "text": "#2218 Hunter/Shaman/Priest v0.29 redesigns (@ryan-foo) mp5 catch-up into integration/v031-class-overhauls",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "73635bc6",
+       "kind": "fix",
+       "scope": "",
+       "text": "#2428 Paladin Devotion and Divine Ascension (@blaine1705) mp5 catch-up into integration/v031-class-overhauls",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "c43faa61",
+       "kind": "fix",
+       "scope": "",
+       "text": "#2328 Rogue Knifework, Thuggery and Skulduggery (@patrick261) mp5 catch-up into integration/v031-class-overhauls",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "fe00b13b",
+       "kind": "fix",
+       "scope": "",
+       "text": "#2568 Druid Moongrove, Wildfang and Groveheart (@patrick261) mp5 catch-up into integration/v031-class-overhauls",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "ed402f0a",
+       "kind": "fix",
+       "scope": "rogue",
+       "text": "Retag the two remaining internal spec names in tooltips",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "5c2569dc",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Rogue tooltip feedback round one",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "afa3113e",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Druid tooltip feedback round one and spec-gated spellbook rows",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "30261299",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Druid AAA pass, latent duplicate lines, payoff numbers, stale locale reconciliation",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "9a13132d",
+       "kind": "fix",
+       "scope": "paladin",
+       "text": "Reconcile the origin/main catch-up",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "51e85867",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2218 Hunter/Shaman/Priest v0.29 redesigns (@ryan-foo) into integration/v031-class-overhauls",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "d04bee0f",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2428 Paladin Devotion and Divine Ascension (@blaine1705) into integration/v031-class-overhauls",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "2a545889",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2328 Rogue Knifework, Thuggery and Skulduggery (@patrick261) into integration/v031-class-overhauls",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "1cd52711",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2568 Druid Moongrove, Wildfang and Groveheart (@patrick261) into integration/v031-class-overhauls",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "92cf83d4",
+       "kind": "fix",
+       "scope": "",
+       "text": "Reconcile the druid merge",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "35f9abcf",
+       "kind": "fix",
+       "scope": "",
+       "text": "Log the #2568 druid landing in the runbook",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "51e85867",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2218 Hunter/Shaman/Priest v0.29 redesigns (@ryan-foo) into integration/v031-class-overhauls",
+       "date": "2026-07-26"
+      },
+      {
+       "h": "d04bee0f",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2428 Paladin Devotion and Divine Ascension (@blaine1705) into integration/v031-class-overhauls",
+       "date": "2026-07-26"
+      },
+      {
+       "h": "660d4df5",
+       "kind": "fix",
+       "scope": "",
+       "text": "Repin the F1 rate-buff mastery case on Subtlety, not Protection",
+       "date": "2026-07-26"
+      },
+      {
+       "h": "2a545889",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2328 Rogue Knifework, Thuggery and Skulduggery (@patrick261) into integration/v031-class-overhauls",
+       "date": "2026-07-26"
+      },
+      {
+       "h": "6257572f",
+       "kind": "fix",
+       "scope": "",
+       "text": "Fix the import artifacts the paladin union merge left in two tests",
+       "date": "2026-07-26"
+      },
+      {
+       "h": "f9925423",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.30.0 into paladin v030-draft freeze",
+       "date": "2026-07-25"
+      },
+      {
+       "h": "9cc4092f",
+       "kind": "fix",
+       "scope": "paladin",
+       "text": "Light the action bar on Radiant Resonance",
+       "date": "2026-07-25"
+      },
+      {
+       "h": "39895985",
+       "kind": "fix",
+       "scope": "paladin",
+       "text": "Rename Reckoning to Debt of Light and ship its icon",
+       "date": "2026-07-25"
+      },
+      {
+       "h": "3ad233cb",
+       "kind": "fix",
+       "scope": "paladin",
+       "text": "Show Debt of Light's real number in its tooltip",
+       "date": "2026-07-25"
+      },
+      {
+       "h": "5cfadb15",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.31.0 into the paladin overhaul",
+       "date": "2026-07-25"
+      },
+      {
+       "h": "8f521819",
+       "kind": "fix",
+       "scope": "hunter",
+       "text": "Restore v0.31 balance bands",
+       "date": "2026-07-25"
+      },
+      {
+       "h": "525e8e45",
+       "kind": "fix",
+       "scope": "paladin",
+       "text": "Harden release integration",
+       "date": "2026-07-23"
+      },
+      {
+       "h": "d9c0ebc8",
+       "kind": "fix",
+       "scope": "classes",
+       "text": "Preserve and verify owned talent effects",
+       "date": "2026-07-23"
+      },
+      {
+       "h": "1580cdbf",
+       "kind": "fix",
+       "scope": "hunter",
+       "text": "Complete ferocity and lifecycle cleanup",
+       "date": "2026-07-22"
+      },
+      {
+       "h": "004b1e43",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Translate Pack Ferocity aura",
+       "date": "2026-07-22"
+      },
+      {
+       "h": "940fddb1",
+       "kind": "fix",
+       "scope": "priest",
+       "text": "Preserve published audit history",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "a2739d0f",
+       "kind": "fix",
+       "scope": "shaman",
+       "text": "Harden v0.29 combat contracts",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "9445f46f",
+       "kind": "fix",
+       "scope": "hunter",
+       "text": "Integrate v0.29 class slice",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "9445f46f",
+       "kind": "fix",
+       "scope": "shaman",
+       "text": "Integrate v0.29 class slice",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "9445f46f",
+       "kind": "fix",
+       "scope": "priest",
+       "text": "Integrate v0.29 class slice",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "b425adf4",
+       "kind": "fix",
+       "scope": "hunter",
+       "text": "Rebalance Fieldcraft around Bloodhook",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "cda2e329",
+       "kind": "fix",
+       "scope": "priest",
+       "text": "Lift Vespers damage without infinite mana",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "0b1f1404",
+       "kind": "fix",
+       "scope": "hunter",
+       "text": "Align Bloodhook across gear levels",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "93c7f715",
+       "kind": "fix",
+       "scope": "priest",
+       "text": "Audit talent tooltip numbers",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "85f67acf",
+       "kind": "fix",
+       "scope": "paladin",
+       "text": "Clarify aura exclusivity text",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "37b09ff5",
+       "kind": "fix",
+       "scope": "priest",
+       "text": "Consume Gloomtithe and complete locales",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "82da819d",
+       "kind": "fix",
+       "scope": "priest",
+       "text": "Sync release v0.29.0",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "1c780261",
+       "kind": "fix",
+       "scope": "hunter",
+       "text": "Close Focus release guard gaps",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "77b70fb2",
+       "kind": "fix",
+       "scope": "hunter",
+       "text": "Align redesign release contracts",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "039fe747",
+       "kind": "fix",
+       "scope": "priest",
+       "text": "Complete v0.29 lifecycle contracts",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "18729f63",
+       "kind": "fix",
+       "scope": "priest",
+       "text": "Integrate v0.29 acceptance fixes",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "b023dd4a",
+       "kind": "fix",
+       "scope": "paladin",
+       "text": "Show the rebuilt choice-row talents in the UI",
+       "date": "2026-07-20"
       }
      ]
     },
@@ -2079,6 +5334,13 @@
        "date": "2026-08-09"
       },
       {
+       "h": "972c6981",
+       "kind": "fix",
+       "scope": "items",
+       "text": "Conform the rift and dungeon daggers to the rating ladder and stat budgets",
+       "date": "2026-08-08"
+      },
+      {
        "h": "b98d23db",
        "kind": "fix",
        "scope": "guide",
@@ -2091,6 +5353,13 @@
        "scope": "battleground",
        "text": "Detach a dungeon-standing backfill at the door",
        "date": "2026-08-08"
+      },
+      {
+       "h": "06068a77",
+       "kind": "fix",
+       "scope": "classes",
+       "text": "Tune owned specs for raid targets",
+       "date": "2026-07-26"
       }
      ]
     },
@@ -2143,6 +5412,13 @@
        "date": "2026-08-10"
       },
       {
+       "h": "fde149bf",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Restore the id-less mob throw invariant with a pet signature allowlist",
+       "date": "2026-08-09"
+      },
+      {
        "h": "71504322",
        "kind": "fix",
        "scope": "scripts",
@@ -2178,6 +5454,13 @@
        "date": "2026-08-08"
       },
       {
+       "h": "492d7246",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.36.0 into integration/v031-class-overhauls (bespoke mob attacks, playtime)",
+       "date": "2026-08-08"
+      },
+      {
        "h": "8fdfd665",
        "kind": "fix",
        "scope": "render",
@@ -2204,6 +5487,13 @@
        "scope": "render",
        "text": "Frame the demon attack before/after shots so the mob is visible",
        "date": "2026-08-06"
+      },
+      {
+       "h": "950fb756",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Import localizeSimAuraName for the owned-mob display name path",
+       "date": "2026-07-31"
       }
      ]
     },
@@ -2291,6 +5581,20 @@
      "fr": "Confort & technique",
      "en": "Comfort & technical",
      "items": [
+      {
+       "h": "cc902587",
+       "kind": "feat",
+       "scope": "art",
+       "text": "Paint the four integration daggers and re-bless the composed art record",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "137fd464",
+       "kind": "feat",
+       "scope": "icons",
+       "text": "Generate the missing painted ability wave and the bespoke Elemental Trance",
+       "date": "2026-08-09"
+      },
       {
        "h": "b9523afb",
        "kind": "feat",
@@ -2565,6 +5869,69 @@
        "date": "2026-08-04"
       },
       {
+       "h": "ec94976b",
+       "kind": "feat",
+       "scope": "sfx",
+       "text": "Windup/loop/winddown engine audio for the tank mount",
+       "date": "2026-08-03"
+      },
+      {
+       "h": "82174307",
+       "kind": "feat",
+       "scope": "vfx",
+       "text": "Unleash powerful fel meteor storms",
+       "date": "2026-08-01"
+      },
+      {
+       "h": "e93a89ca",
+       "kind": "feat",
+       "scope": "i18n",
+       "text": "Non-Latin fills for the tooltip-clarity branch",
+       "date": "2026-07-30"
+      },
+      {
+       "h": "a6627ab0",
+       "kind": "feat",
+       "scope": "dev",
+       "text": "Bigger item picker, staff-only Spawns tab, and the BIS-20 kit",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "3dc9508a",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Spec-aware ability tooltips and a plain-language pass",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "6de74c9d",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add owned-class ability artwork",
+       "date": "2026-07-25"
+      },
+      {
+       "h": "0d3daa1a",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Complete owned-class spellbook artwork",
+       "date": "2026-07-25"
+      },
+      {
+       "h": "5a8afed1",
+       "kind": "feat",
+       "scope": "classes",
+       "text": "Refine owned class combat loops",
+       "date": "2026-07-23"
+      },
+      {
+       "h": "84814293",
+       "kind": "feat",
+       "scope": "classes",
+       "text": "Add approved v0.29 follow-ups",
+       "date": "2026-07-22"
+      },
+      {
        "h": "627d374a",
        "kind": "perf",
        "scope": "referee",
@@ -2628,6 +5995,13 @@
        "date": "2026-08-09"
       },
       {
+       "h": "ca42b560",
+       "kind": "perf",
+       "scope": "malware-scan",
+       "text": "Add dist-bot to the skip list",
+       "date": "2026-08-09"
+      },
+      {
        "h": "2f8af0e5",
        "kind": "perf",
        "scope": "malware-scan",
@@ -2635,10 +6009,31 @@
        "date": "2026-08-09"
       },
       {
+       "h": "481bea68",
+       "kind": "perf",
+       "scope": "build",
+       "text": "Run build_server.mjs's two esbuild.build() calls concurrently",
+       "date": "2026-08-09"
+      },
+      {
        "h": "9756ef27",
        "kind": "perf",
        "scope": "server",
        "text": "Poll faster in the DB-boot retry loop",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "7e8cba45",
+       "kind": "perf",
+       "scope": "sfx",
+       "text": "Skip re-measuring ffmpeg true-peak for unchanged SFX takes",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "33f13725",
+       "kind": "perf",
+       "scope": "i18n",
+       "text": "Skip rewriting resolved-locale slices that are already byte-identical",
        "date": "2026-08-09"
       },
       {
@@ -2873,6 +6268,13 @@
        "date": "2026-08-07"
       },
       {
+       "h": "a0d67bf1",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Update the Dirge of Decay tooltip to the 10% Vespers rider",
+       "date": "2026-08-10"
+      },
+      {
        "h": "cd3b3801",
        "kind": "fix",
        "scope": "",
@@ -2908,10 +6310,73 @@
        "date": "2026-08-10"
       },
       {
+       "h": "1b9b5e69",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.36.0 into feature/tank-mount-sfx-v035",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "febd7da7",
+       "kind": "fix",
+       "scope": "sfx",
+       "text": "Correct the re-mint pin mapping and the pending-loop shape pin",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "1b9b5e69",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.36.0 into feature/tank-mount-sfx-v035",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "8d32146d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Halve doubled sparkle, dispose GPU leaks, cache meteor lookups, drop comment artifacts",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "15ed7ae7",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stop aria-valuetext masking the live count; use focus_restore helpers; clamp keyboard nudge",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "16b709f0",
+       "kind": "fix",
+       "scope": "tests",
+       "text": "Pin the nightly Playwright cache key line itself",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "d7de3bb5",
+       "kind": "fix",
+       "scope": "sfx",
+       "text": "Key the gain-ceiling cache fingerprint on content, not mtime",
+       "date": "2026-08-10"
+      },
+      {
        "h": "1c4ab73e",
        "kind": "fix",
        "scope": "render",
        "text": "Skip tint on materials without a color",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "f7ff7450",
+       "kind": "fix",
+       "scope": "pipeline",
+       "text": "Form Windows drive URLs on POSIX, give the downsize test a synthetic fixture",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "8edfd240",
+       "kind": "fix",
+       "scope": "dev",
+       "text": "Demote the dual-wield dev kit's mainhand to a one-hander",
        "date": "2026-08-09"
       },
       {
@@ -2922,10 +6387,31 @@
        "date": "2026-08-09"
       },
       {
+       "h": "786e30e8",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.36.0 into integration/v031-class-overhauls (fill wave, gesture release)",
+       "date": "2026-08-09"
+      },
+      {
        "h": "f34ed066",
        "kind": "fix",
        "scope": "render",
        "text": "Return colorless materials unchanged from tintedMaterial",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "fffe7193",
+       "kind": "fix",
+       "scope": "guide",
+       "text": "Register the focus resource name and ledger the orphaned ability hooks",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "02ec2ee8",
+       "kind": "fix",
+       "scope": "",
+       "text": "Move the class balance harnesses into the long-sims lane",
        "date": "2026-08-09"
       },
       {
@@ -3006,11 +6492,60 @@
        "date": "2026-08-09"
       },
       {
+       "h": "d12cd08c",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Fix cold-start and timing bugs in the tank mount's engine audio",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "043008fa",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Stop engine-mount loop leaks and hold phase while airborne",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "d531639e",
+       "kind": "fix",
+       "scope": "sfx",
+       "text": "Mark the tank mount's sustain clip loop:true in the manifest",
+       "date": "2026-08-09"
+      },
+      {
        "h": "59170def",
        "kind": "fix",
        "scope": "art",
        "text": "Refresh portraits for release renderer",
        "date": "2026-08-09"
+      },
+      {
+       "h": "79c1d127",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Preload mount engine clips at view creation, not just on edge",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "d81ecb3b",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.36.0 into integration/v031-class-overhauls (v0.35.0 final: locale fill, js-yaml pin)",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "81037eea",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Union the CJK/RU overlays: the v0.35.0 fill plus this branch's rows",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "3678c1d3",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Close the release-tier sim, token, and copied-item gaps",
+       "date": "2026-08-08"
       },
       {
        "h": "b2363198",
@@ -3020,10 +6555,31 @@
        "date": "2026-08-08"
       },
       {
+       "h": "e9631042",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Drop same-as-base es_ES rows and re-pin the Warded Elements tooltip",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "fd9901f3",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.36.0 into integration/v031-class-overhauls",
+       "date": "2026-08-08"
+      },
+      {
        "h": "72ff011e",
        "kind": "fix",
        "scope": "",
        "text": "Release/v0.35.1 into release/v0.36.0",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "b3173693",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.36.0 into integration/v031-class-overhauls (v0.35.1 merge-down)",
        "date": "2026-08-08"
       },
       {
@@ -3087,6 +6643,13 @@
        "kind": "fix",
        "scope": "guide",
        "text": "Clear the verbatim-name denylist in the new wiki copy",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "9108d45b",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Wire Hexcraft over Litany, unstick the Vigil probe, calm the march (owner rulings)",
        "date": "2026-08-08"
       },
       {
@@ -3335,10 +6898,45 @@
        "date": "2026-08-07"
       },
       {
+       "h": "e63b5d18",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Trim Balance spell-power coefficients for the owner balance pass",
+       "date": "2026-08-07"
+      },
+      {
        "h": "b80ab982",
        "kind": "fix",
        "scope": "",
        "text": "Bring release/v0.35.0 into fix/arena-pvp-fixes",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "3704f25b",
+       "kind": "fix",
+       "scope": "",
+       "text": "The Balance spell-power coefficient trim (owner balance pass) into integration/v031-class-overhauls",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "c2ba6a22",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.35.0 into integration/v031-class-overhauls (pre-landing catch-up)",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "e9837e5e",
+       "kind": "fix",
+       "scope": "compose",
+       "text": "Close the three true merge casualties from the full-suite attribution",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "adda24d3",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.35.0 into integration/v031-class-overhauls (pre-PR top-up)",
        "date": "2026-08-07"
       },
       {
@@ -3503,6 +7101,13 @@
        "date": "2026-08-07"
       },
       {
+       "h": "a3da5d83",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Re-calibrate Balance spell-power coefficients to the 200 BiS anchor",
+       "date": "2026-08-06"
+      },
+      {
        "h": "3145e254",
        "kind": "fix",
        "scope": "sim",
@@ -3517,11 +7122,109 @@
        "date": "2026-08-06"
       },
       {
+       "h": "c3fd3fc8",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.35.0 into integration/v031-class-overhauls",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "f72b13cf",
+       "kind": "fix",
+       "scope": "",
+       "text": "Fix/player-pet-spell-resist into integration/v031-class-overhauls",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "6d017d4c",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.35.0 into feature/warlock-overhaul-v033",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "4685a37e",
+       "kind": "fix",
+       "scope": "",
+       "text": "Fix/player-pet-spell-resist into feature/warlock-overhaul-v033",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "9ae23e06",
+       "kind": "fix",
+       "scope": "tests",
+       "text": "Close the twelve catch-up regressions the full gate surfaced",
+       "date": "2026-08-06"
+      },
+      {
        "h": "6373aec1",
        "kind": "fix",
        "scope": "render",
        "text": "Bake the Treant_Attack slam and sway channels that fell silently null",
        "date": "2026-08-06"
+      },
+      {
+       "h": "1f5bd0c6",
+       "kind": "fix",
+       "scope": "",
+       "text": "Origin/main (v0.34.0) into integration/v029-owned-classes",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "bb1bdf76",
+       "kind": "fix",
+       "scope": "merge",
+       "text": "Repair the v0.34.0 catch-up composition and re-hunt shifted seeds",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "82ed2d3a",
+       "kind": "fix",
+       "scope": "",
+       "text": "Origin/main (v0.34.0) into feature/paladin-sun-cleric-overhaul",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "bb1bdf76",
+       "kind": "fix",
+       "scope": "merge",
+       "text": "Repair the v0.34.0 catch-up composition and re-hunt shifted seeds",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "64dac737",
+       "kind": "fix",
+       "scope": "",
+       "text": "Origin/main (v0.34.0) into feature/warlock-overhaul-v033",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "bb1bdf76",
+       "kind": "fix",
+       "scope": "merge",
+       "text": "Repair the v0.34.0 catch-up composition and re-hunt shifted seeds",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "6c09ca88",
+       "kind": "fix",
+       "scope": "",
+       "text": "The updated #2218 head (v0.34.0 catch-up) into feature/rogue-talent-update",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "9f057d32",
+       "kind": "fix",
+       "scope": "",
+       "text": "Origin/main (v0.34.0) into integration/v031-class-overhauls",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "8695f8dd",
+       "kind": "fix",
+       "scope": "merge",
+       "text": "Repair the v0.34.0 refresh composition",
+       "date": "2026-08-05"
       },
       {
        "h": "a8933215",
@@ -3552,6 +7255,13 @@
        "date": "2026-08-05"
       },
       {
+       "h": "ae45201c",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Reset engine-mount audio state on every mountKey transition",
+       "date": "2026-08-05"
+      },
+      {
        "h": "0d20dadf",
        "kind": "fix",
        "scope": "server",
@@ -3571,6 +7281,370 @@
        "scope": "scripts",
        "text": "Give ci:changed a real --since instead of the origin/main default",
        "date": "2026-08-04"
+      },
+      {
+       "h": "88a1b1a2",
+       "kind": "fix",
+       "scope": "",
+       "text": "Origin/main (v0.32.2, v0.32.3, v0.33.0 waves) into integration/v029-owned-classes",
+       "date": "2026-08-02"
+      },
+      {
+       "h": "23adb911",
+       "kind": "fix",
+       "scope": "",
+       "text": "Origin/main into feature/warlock-overhaul-v033",
+       "date": "2026-08-02"
+      },
+      {
+       "h": "780a9851",
+       "kind": "fix",
+       "scope": "",
+       "text": "Origin/main (v0.32.2, v0.32.3, v0.33.0 waves) into feature/paladin-sun-cleric-overhaul",
+       "date": "2026-08-02"
+      },
+      {
+       "h": "70b4ceef",
+       "kind": "fix",
+       "scope": "",
+       "text": "The updated #2218 head (v0.33.0 catch-up) into feature/rogue-talent-update",
+       "date": "2026-08-02"
+      },
+      {
+       "h": "8a985fc8",
+       "kind": "fix",
+       "scope": "",
+       "text": "Origin/main (v0.32.2, v0.32.3, v0.33.0 waves) into integration/v031-class-overhauls",
+       "date": "2026-08-02"
+      },
+      {
+       "h": "b083eb26",
+       "kind": "fix",
+       "scope": "merge",
+       "text": "Repair four silent clashes the five-class merge left behind",
+       "date": "2026-08-02"
+      },
+      {
+       "h": "ebd43187",
+       "kind": "fix",
+       "scope": "merge",
+       "text": "Restore two more silently overwritten hunks",
+       "date": "2026-08-02"
+      },
+      {
+       "h": "cce05a75",
+       "kind": "fix",
+       "scope": "",
+       "text": "Origin/main (v0.32.1 wave) into integration/v029-owned-classes",
+       "date": "2026-07-31"
+      },
+      {
+       "h": "950d6718",
+       "kind": "fix",
+       "scope": "",
+       "text": "Origin/main (v0.32.1 wave) into feature/paladin-sun-cleric-overhaul",
+       "date": "2026-07-31"
+      },
+      {
+       "h": "0441104c",
+       "kind": "fix",
+       "scope": "",
+       "text": "The updated #2218 head (v0.32.1 main catch-up) into feature/rogue-talent-update",
+       "date": "2026-07-31"
+      },
+      {
+       "h": "c9abd386",
+       "kind": "fix",
+       "scope": "",
+       "text": "Origin/main (v0.32.1 wave) into integration/v031-class-overhauls",
+       "date": "2026-07-31"
+      },
+      {
+       "h": "9ec698e8",
+       "kind": "fix",
+       "scope": "probes",
+       "text": "Re-hunt the open-field anchor for the v0.32.1 world; repair the drive registry and stale fills",
+       "date": "2026-07-31"
+      },
+      {
+       "h": "1743b3a6",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Trim the Wildbolt teaser, number the Redline empowered forms",
+       "date": "2026-07-30"
+      },
+      {
+       "h": "46375e8b",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Satisfy the iterable-return lint in the requirement mapper",
+       "date": "2026-07-30"
+      },
+      {
+       "h": "9ed51878",
+       "kind": "fix",
+       "scope": "talents",
+       "text": "Document the per-stage constants the clarity prose states",
+       "date": "2026-07-30"
+      },
+      {
+       "h": "76acb3c5",
+       "kind": "fix",
+       "scope": "scripts",
+       "text": "Make the profiler's online crowd harness work again",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "f9c09de0",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.31.0 post-ship commits (in-combat Spirit mp5, profiler harness fix) into integration/v031-class-overhauls",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "33d2b0cb",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.31.0 post-ship commits (in-combat Spirit mp5) into integration/v029-owned-classes",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "5da143f2",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.31.0 post-ship commits (in-combat Spirit mp5) into feature/paladin-sun-cleric-overhaul",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "9c25ded9",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.31.0 post-ship commits (in-combat Spirit mp5) into feature/rogue-talent-update",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "c20ecd9c",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.31.0 post-ship commits (in-combat Spirit mp5) into feature/druid-talent-update",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "3626342b",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Scope the stealth-bypass requirement line to Skulduggery",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "8b1e8be3",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Hard numbers in every transform announcement",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "86c5c137",
+       "kind": "fix",
+       "scope": "",
+       "text": "Origin/main (v0.31.0 final) into integration/v029-owned-classes",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "e74fb226",
+       "kind": "fix",
+       "scope": "",
+       "text": "Updated PR #2218 head (with origin/main v0.31.0 final) into feature/rogue-talent-update",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "5c477f62",
+       "kind": "fix",
+       "scope": "",
+       "text": "Origin/main (v0.31.0 final) into integration/v031-class-overhauls",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "5b671c50",
+       "kind": "fix",
+       "scope": "",
+       "text": "Regen i18n and wiki after the #2218 re-merge",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "97427d2f",
+       "kind": "fix",
+       "scope": "",
+       "text": "Regen i18n, wiki and parity goldens after the #2428 and #2328 re-merges",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "a7e90f96",
+       "kind": "fix",
+       "scope": "",
+       "text": "Log the 2026-07-28 full-branch main catch-up in the runbook",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "cc4b9b4a",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2428 catch-up test reconciliation (@blaine1705) into integration/v031-class-overhauls",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "2711eea8",
+       "kind": "fix",
+       "scope": "",
+       "text": "Cross-PR reconciliation for the full-suite gate",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "59bcfdca",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2428 legacy-suite removal and pacing re-pin (@blaine1705) into integration/v031-class-overhauls",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "c1bad095",
+       "kind": "fix",
+       "scope": "",
+       "text": "Record the post-catch-up full-suite state in the runbook",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "e24dd26c",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Always wire the persistent engine bank stages",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "ee0cfb94",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2568 wire fix for engine bank stages (@patrick261) into integration/v031-class-overhauls",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "eecaabab",
+       "kind": "fix",
+       "scope": "build",
+       "text": "Drop a stranded sfx-security test symlink that breaks the host build",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "9800879a",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #2428 protection survivability follow-up (@blaine1705) into integration/v031-class-overhauls",
+       "date": "2026-07-27"
+      },
+      {
+       "h": "5ed3b82d",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.31.0 into integration/v029-owned-classes",
+       "date": "2026-07-26"
+      },
+      {
+       "h": "355eeaff",
+       "kind": "fix",
+       "scope": "tests",
+       "text": "Anchor the class combat probes clear of Eastbrook's rebuilt town",
+       "date": "2026-07-26"
+      },
+      {
+       "h": "a10cd2da",
+       "kind": "fix",
+       "scope": "",
+       "text": "Ryan-foo's owned-class artwork commits into the v0.31.0 catch-up",
+       "date": "2026-07-26"
+      },
+      {
+       "h": "f8803e03",
+       "kind": "fix",
+       "scope": "",
+       "text": "Repair saved bars for every class the v0.31 wave redesigned",
+       "date": "2026-07-26"
+      },
+      {
+       "h": "9d2166be",
+       "kind": "fix",
+       "scope": "tooltips",
+       "text": "Clarify owned class mechanics",
+       "date": "2026-07-25"
+      },
+      {
+       "h": "fb228fcf",
+       "kind": "fix",
+       "scope": "classes",
+       "text": "Complete passive presentation",
+       "date": "2026-07-23"
+      },
+      {
+       "h": "5f778bfb",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Aim class portraits at the body, not the held weapon",
+       "date": "2026-07-23"
+      },
+      {
+       "h": "f46a007e",
+       "kind": "fix",
+       "scope": "classes",
+       "text": "Close v0.29 review regressions",
+       "date": "2026-07-22"
+      },
+      {
+       "h": "acf24c34",
+       "kind": "fix",
+       "scope": "classes",
+       "text": "Close final review edge cases",
+       "date": "2026-07-22"
+      },
+      {
+       "h": "82da819d",
+       "kind": "fix",
+       "scope": "classes",
+       "text": "Sync release v0.29.0",
+       "date": "2026-07-22"
+      },
+      {
+       "h": "139fa49f",
+       "kind": "fix",
+       "scope": "classes",
+       "text": "Sync integration with release v0.29.0",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "e6e2ab4a",
+       "kind": "fix",
+       "scope": "classes",
+       "text": "Address initial PBE correctness issues",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "99c16f3b",
+       "kind": "fix",
+       "scope": "tooltips",
+       "text": "Explain owned class mechanics",
+       "date": "2026-07-21"
+      },
+      {
+       "h": "5ad6b00d",
+       "kind": "fix",
+       "scope": "",
+       "text": "Preserve draft PR history",
+       "date": "2026-07-20"
+      },
+      {
+       "h": "815ef6cb",
+       "kind": "fix",
+       "scope": "prototype",
+       "text": "Satisfy design review checks",
+       "date": "2026-07-20"
       }
      ]
     }
