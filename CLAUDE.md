@@ -1,7 +1,15 @@
 # Runbook — site de La Clauderie
 
-> **Style de réponse** : l'utilisateur veut des réponses COURTES. Aller à
-> l'essentiel, pas de longs exposés ni de listes exhaustives.
+> **Style de réponse : DEUX PHRASES.** L'utilisateur ne lit pas les réponses
+> longues — il l'a dit explicitement le 10 août 2026. Pas de récapitulatif, pas
+> de liste à puces, pas de « prochaines étapes ». Deux phrases, et c'est tout.
+>
+> **« Mets à jour » = tout de suite, avec les données de l'instant.** D'abord
+> regarder si le dernier tag du jeu a bougé (`git ls-remote --tags`) : s'il a
+> bougé, c'est la procédure ⚡ « nouvelle MAJ » ci-dessous ; sinon, c'est la
+> page `a-venir.html`. Dans les deux cas, refaire le relevé à la seconde
+> (`bash scripts/refresh_upcoming.sh`) et écrire d'après CE relevé — jamais
+> d'après un `upcoming.json` vieux de deux heures.
 
 Site statique de guilde pour *World of ClaudeCraft*. Déployé sur
 **laclauderie.fr** (OVH) **à chaque push sur `main`**. Il n'y a plus de
