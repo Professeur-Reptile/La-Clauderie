@@ -175,17 +175,25 @@ avant de t'appuyer dessus pour le BiS ou les liens Codex.
 > x.1 compris.
 >
 > **Quand l'utilisateur demande « mets à jour la page à venir », le RELEVÉ
-> fait partie du travail.** Ne jamais se contenter du `upcoming.json` du dépôt :
-> il date du dernier passage du cron (jusqu'à 2 h) et la branche du jeu bouge
-> vite. Refetcher la branche de release dans `../world-of-claudecraft`
-> (`git fetch --filter=blob:none origin refs/heads/release/vX.Y.Z:refs/heads/release/vX.Y.Z --force`,
-> `--unshallow` d'abord si le clone du hook est superficiel, sinon `v<tag>..branche`
-> compte toute l'histoire du dépôt), puis régénérer le JSON avec le script
-> officiel — `python3 scripts/build_upcoming.py ../world-of-claudecraft <tag> release/vX.Y.Z > upcoming.json`
-> — et le commiter avec la page. Sinon la page annonce « relevé il y a 2 h »
-> à côté d'un « résumé écrit à l'instant », et surtout le texte peut rater ce
-> qui vient d'atterrir : le 10 août 2026, le Reliquaire (une fonctionnalité
-> entière, ~110 commits) a atterri entre la rédaction et la relecture.
+> fait partie du travail — et il se fait DEUX fois :**
+>
+> ```sh
+> bash scripts/refresh_upcoming.sh   # avant de rédiger
+> …rédaction…
+> bash scripts/refresh_upcoming.sh   # juste avant de committer
+> ```
+>
+> Le script demande au dépôt du jeu son dernier tag et ses chantiers en cours
+> (même choix que `update-upcoming.yml`), fetche les branches, régénère
+> `upcoming.json`, et surtout **liste les nouveautés arrivées depuis le relevé
+> précédent** — c'est cette sortie qu'il faut lire avant d'écrire. Le
+> `upcoming.json` du dépôt ne suffit JAMAIS : il date du dernier passage du
+> cron (jusqu'à 2 h) et la branche du jeu bouge vite.
+>
+> Le second passage n'est pas une précaution de principe : le 10 août 2026, le
+> Reliquaire (une fonctionnalité entière, ~110 commits) a atterri **entre** la
+> rédaction du résumé et sa relecture, et seul le second relevé l'a vu.
+> Commiter `upcoming.json` avec la page.
 >
 > Deux dates distinctes dans le bandeau, à ne pas confondre (elles l'étaient
 > jusqu'au 10 août 2026) : **« Relevé »** = `generated`, quand le JSON a été

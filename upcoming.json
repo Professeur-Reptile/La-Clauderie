@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-10T16:07:21Z",
+ "generated": "2026-08-10T17:01:05Z",
  "base_tag": "v0.35.1",
  "version": "v0.36.0",
  "branch": "release/v0.36.0",
  "declared_version": "0.36.0",
  "imminent": true,
- "commits": 1726,
- "shown": 739,
- "last_commit": "2026-08-10T10:47:34-05:00",
+ "commits": 1734,
+ "shown": 740,
+ "last_commit": "2026-08-10T11:42:33-05:00",
  "sections": [
   {
    "key": "classes",
@@ -3213,6 +3213,13 @@
      "date": "2026-08-10"
     },
     {
+     "h": "abc56bc9",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.36.0 into feature/ci-stall-rerun",
+     "date": "2026-08-10"
+    },
+    {
      "h": "1c4ab73e",
      "kind": "fix",
      "scope": "render",
@@ -5237,9 +5244,9 @@
    "branch": "release/v0.36.0",
    "declared_version": "0.36.0",
    "imminent": true,
-   "commits": 1726,
-   "shown": 739,
-   "last_commit": "2026-08-10T10:47:34-05:00",
+   "commits": 1734,
+   "shown": 740,
+   "last_commit": "2026-08-10T11:42:33-05:00",
    "sections": [
     {
      "key": "classes",
@@ -8442,6 +8449,13 @@
        "kind": "fix",
        "scope": "",
        "text": "Release/v0.36.0 into feature/reliquary",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "abc56bc9",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.36.0 into feature/ci-stall-rerun",
        "date": "2026-08-10"
       },
       {
