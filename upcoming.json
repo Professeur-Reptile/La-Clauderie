@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-10T06:34:12Z",
+ "generated": "2026-08-10T08:41:22Z",
  "base_tag": "v0.35.1",
  "version": "v0.36.0",
  "branch": "release/v0.36.0",
  "declared_version": "0.35.1",
  "imminent": false,
- "commits": 1298,
- "shown": 538,
- "last_commit": "2026-08-10T13:37:35+08:00",
+ "commits": 1378,
+ "shown": 557,
+ "last_commit": "2026-08-10T16:22:03+08:00",
  "sections": [
   {
    "key": "classes",
@@ -1587,6 +1587,20 @@
      "date": "2026-08-10"
     },
     {
+     "h": "ef941fb1",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Re-render stale mob portrait manifest after release drift",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "c3903918",
+     "kind": "fix",
+     "scope": "portraits",
+     "text": "Resync mob portrait manifest after release branch merge",
+     "date": "2026-08-10"
+    },
+    {
      "h": "fde149bf",
      "kind": "fix",
      "scope": "render",
@@ -1756,6 +1770,13 @@
    "fr": "Confort & technique",
    "en": "Comfort & technical",
    "items": [
+    {
+     "h": "a8a608e3",
+     "kind": "feat",
+     "scope": "game",
+     "text": "Boot load profiler and repeatable load probe",
+     "date": "2026-08-10"
+    },
     {
      "h": "cc902587",
      "kind": "feat",
@@ -2163,6 +2184,20 @@
      "date": "2026-08-10"
     },
     {
+     "h": "eaea0c83",
+     "kind": "perf",
+     "scope": "ui",
+     "text": "Move char and armory preview prewarm off the boot critical path",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "8fba45c8",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Submit prewarm compiles early and dedupe roots by program signature",
+     "date": "2026-08-10"
+    },
+    {
      "h": "f42ab6ef",
      "kind": "perf",
      "scope": "malware-scan",
@@ -2202,6 +2237,13 @@
      "kind": "perf",
      "scope": "sfx",
      "text": "Skip re-measuring ffmpeg true-peak for unchanged SFX takes",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "e99098f4",
+     "kind": "perf",
+     "scope": "dev",
+     "text": "Tighten the postgres service healthcheck cadence",
      "date": "2026-08-09"
     },
     {
@@ -2520,6 +2562,20 @@
      "date": "2026-08-10"
     },
     {
+     "h": "d783a51d",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Skip fine water sheets over open-sea gaps",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "f9836bcf",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Submerge the vale northwest coast spit so water meets the cliff",
+     "date": "2026-08-10"
+    },
+    {
      "h": "16b709f0",
      "kind": "fix",
      "scope": "tests",
@@ -2531,6 +2587,83 @@
      "kind": "fix",
      "scope": "sfx",
      "text": "Key the gain-ceiling cache fingerprint on content, not mtime",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "944ae19c",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.36.0 into fix/eastbrook-vale-water-seam",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "15abe784",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Close the mid-flight races in the post-entry preview prewarm",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "c17cfba6",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bound the compile await and publish pools on an empty remainder",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "39b3be74",
+     "kind": "fix",
+     "scope": "deploy",
+     "text": "Preserve the postgres healthcheck cold-boot ceiling",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "18358fd2",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Re-mint Eastbrook polish provenance after the wrapAngle dedupe",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "3d535dfb",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.36.0 into perf/loading-time",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "f138923c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Merge release into the wrapAngle dedupe and re-mint provenance",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "b5799387",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Revert the unneeded portrait rerender, take upstream's fresh set",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "48ba6956",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Re-pin portrait provenance after the rerender introduced drift",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "b5799387",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Revert the unneeded portrait rerender, take upstream's fresh set",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "374d6c2c",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Merge release again and re-mint eastbrook/portrait provenance",
      "date": "2026-08-10"
     },
     {
@@ -3830,9 +3963,9 @@
    "branch": "release/v0.36.0",
    "declared_version": "0.35.1",
    "imminent": false,
-   "commits": 1298,
-   "shown": 538,
-   "last_commit": "2026-08-10T13:37:35+08:00",
+   "commits": 1378,
+   "shown": 557,
+   "last_commit": "2026-08-10T16:22:03+08:00",
    "sections": [
     {
      "key": "classes",
@@ -5412,6 +5545,20 @@
        "date": "2026-08-10"
       },
       {
+       "h": "ef941fb1",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Re-render stale mob portrait manifest after release drift",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "c3903918",
+       "kind": "fix",
+       "scope": "portraits",
+       "text": "Resync mob portrait manifest after release branch merge",
+       "date": "2026-08-10"
+      },
+      {
        "h": "fde149bf",
        "kind": "fix",
        "scope": "render",
@@ -5581,6 +5728,13 @@
      "fr": "Confort & technique",
      "en": "Comfort & technical",
      "items": [
+      {
+       "h": "a8a608e3",
+       "kind": "feat",
+       "scope": "game",
+       "text": "Boot load profiler and repeatable load probe",
+       "date": "2026-08-10"
+      },
       {
        "h": "cc902587",
        "kind": "feat",
@@ -5988,6 +6142,20 @@
        "date": "2026-08-10"
       },
       {
+       "h": "eaea0c83",
+       "kind": "perf",
+       "scope": "ui",
+       "text": "Move char and armory preview prewarm off the boot critical path",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "8fba45c8",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Submit prewarm compiles early and dedupe roots by program signature",
+       "date": "2026-08-10"
+      },
+      {
        "h": "f42ab6ef",
        "kind": "perf",
        "scope": "malware-scan",
@@ -6027,6 +6195,13 @@
        "kind": "perf",
        "scope": "sfx",
        "text": "Skip re-measuring ffmpeg true-peak for unchanged SFX takes",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "e99098f4",
+       "kind": "perf",
+       "scope": "dev",
+       "text": "Tighten the postgres service healthcheck cadence",
        "date": "2026-08-09"
       },
       {
@@ -6345,6 +6520,20 @@
        "date": "2026-08-10"
       },
       {
+       "h": "d783a51d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Skip fine water sheets over open-sea gaps",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "f9836bcf",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Submerge the vale northwest coast spit so water meets the cliff",
+       "date": "2026-08-10"
+      },
+      {
        "h": "16b709f0",
        "kind": "fix",
        "scope": "tests",
@@ -6356,6 +6545,83 @@
        "kind": "fix",
        "scope": "sfx",
        "text": "Key the gain-ceiling cache fingerprint on content, not mtime",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "944ae19c",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.36.0 into fix/eastbrook-vale-water-seam",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "15abe784",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Close the mid-flight races in the post-entry preview prewarm",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "c17cfba6",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Bound the compile await and publish pools on an empty remainder",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "39b3be74",
+       "kind": "fix",
+       "scope": "deploy",
+       "text": "Preserve the postgres healthcheck cold-boot ceiling",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "18358fd2",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Re-mint Eastbrook polish provenance after the wrapAngle dedupe",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "3d535dfb",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.36.0 into perf/loading-time",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "f138923c",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Merge release into the wrapAngle dedupe and re-mint provenance",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "b5799387",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Revert the unneeded portrait rerender, take upstream's fresh set",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "48ba6956",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Re-pin portrait provenance after the rerender introduced drift",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "b5799387",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Revert the unneeded portrait rerender, take upstream's fresh set",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "374d6c2c",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Merge release again and re-mint eastbrook/portrait provenance",
        "date": "2026-08-10"
       },
       {
