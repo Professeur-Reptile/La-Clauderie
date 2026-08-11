@@ -1,20 +1,28 @@
 {
- "generated": "2026-08-11T05:38:10Z",
+ "generated": "2026-08-11T07:48:07Z",
  "base_tag": "v0.36.0",
  "version": "v0.37.0",
  "branch": "release/v0.37.0",
  "declared_version": "0.36.0",
  "imminent": false,
- "commits": 0,
- "shown": 0,
- "last_commit": "2026-08-11T15:21:40+12:00",
+ "commits": 160,
+ "shown": 99,
+ "last_commit": "2026-08-11T18:44:24+12:00",
  "sections": [
   {
    "key": "classes",
    "icon": "⚔️",
    "fr": "Classes & sorts",
    "en": "Classes & spells",
-   "items": []
+   "items": [
+    {
+     "h": "c81aa0da",
+     "kind": "fix",
+     "scope": "",
+     "text": "Restore pet stat aura direction",
+     "date": "2026-08-10"
+    }
+   ]
   },
   {
    "key": "metiers",
@@ -35,7 +43,64 @@
    "icon": "🗺️",
    "fr": "Monde & quêtes",
    "en": "World & quests",
-   "items": []
+   "items": [
+    {
+     "h": "f4afe6e1",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Recover battleground unstuck to clear spawn",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "7f38ef00",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Rerender mob portraits and refresh the source manifest",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "7f38ef00",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Rerender mob portraits and refresh the source manifest",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "7f38ef00",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Rerender mob portraits and refresh the source manifest",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "9a4ce989",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Rerender mob portraits after resolving the release merge conflict",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "c1f7fc94",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Resync mob portrait manifest after release branch drift",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "5c59a98f",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Re-mint mob portrait manifest after release drift",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "4f257aaa",
+     "kind": "fix",
+     "scope": "",
+     "text": "Refresh mob portrait receipt artifacts",
+     "date": "2026-08-10"
+    }
+   ]
   },
   {
    "key": "guilde",
@@ -49,7 +114,638 @@
    "icon": "⚙️",
    "fr": "Confort & technique",
    "en": "Comfort & technical",
-   "items": []
+   "items": [
+    {
+     "h": "a0326766",
+     "kind": "feat",
+     "scope": "targeting",
+     "text": "Add a backward Tab target cycle on Shift+Tab",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "a0326766",
+     "kind": "feat",
+     "scope": "targeting",
+     "text": "Add a backward Tab target cycle on Shift+Tab",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "daf4ec6a",
+     "kind": "perf",
+     "scope": "dev",
+     "text": "Make db:up wait for the postgres healthcheck",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "016deb46",
+     "kind": "perf",
+     "scope": "types",
+     "text": "Give check:ts:bot incremental output and run it before svelte-check",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "962d837d",
+     "kind": "perf",
+     "scope": "build",
+     "text": "Run build:bundle's independent pregen steps concurrently",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "6a8b3f73",
+     "kind": "fix",
+     "scope": "build",
+     "text": "Record PR 3188 drop",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "307d7e76",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3182 into release",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "5618d642",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.37.0 into ossbrain-release/v0.36.0",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "871c3698",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release base into ossbrain-release/v0.36.0",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "4e7735b1",
+     "kind": "fix",
+     "scope": "",
+     "text": "Base-health into release",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "7f5a1928",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Address PR #3198 review nits and clean up merge dead code",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "2bfa2c71",
+     "kind": "fix",
+     "scope": "",
+     "text": "Refresh placeholder art manifest pin",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "fb9ed494",
+     "kind": "fix",
+     "scope": "",
+     "text": "Bring in latest release/v0.36.0",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "2c36472d",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync with release/v0.36.0",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "53a6dc32",
+     "kind": "fix",
+     "scope": "tests",
+     "text": "Correct root-cause claim and harden the exclude-flag retry",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "c70fdb6f",
+     "kind": "fix",
+     "scope": "",
+     "text": "Satisfy battleground biome gate",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "d2dc8ff0",
+     "kind": "fix",
+     "scope": "test",
+     "text": "Re-pin Fenbridge source fingerprint after check:ts:bot script edit",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "89712dd7",
+     "kind": "fix",
+     "scope": "",
+     "text": "Restore reverse tab targeting",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "3c15a5a2",
+     "kind": "fix",
+     "scope": "",
+     "text": "Drop failed PR 3215 reverse tab repair",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "b5799387",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Revert the unneeded portrait rerender, take upstream's fresh set",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "b5799387",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Revert the unneeded portrait rerender, take upstream's fresh set",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "75dab771",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Rerender portraits after this branch's own bundle-fingerprint shift",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "5e6da6b5",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Merge release and repin portrait provenance",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "e32a39f8",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release base",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "7bd4cad5",
+     "kind": "fix",
+     "scope": "",
+     "text": "Satisfy base sync biome gate",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "c3914853",
+     "kind": "fix",
+     "scope": "",
+     "text": "Restore turbo gate step contract",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "beecc590",
+     "kind": "fix",
+     "scope": "",
+     "text": "Refresh portrait source manifest",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "d05e2f21",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync base gate pins",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "e783712c",
+     "kind": "fix",
+     "scope": "",
+     "text": "Repair base sync test regressions",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "fc967a12",
+     "kind": "fix",
+     "scope": "",
+     "text": "Declare vite test env for turbo",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "5229e13d",
+     "kind": "fix",
+     "scope": "",
+     "text": "Declare gate preflight module",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "871c3698",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release base into ossbrain-release/v0.36.0",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "87c86aca",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3191 into release",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "ef4d92bf",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3198 into release",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "427e0a77",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3188 into release",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "1ea6484b",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3183 into release",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "ef4d92bf",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3198 into release",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "35242279",
+     "kind": "fix",
+     "scope": "battleground",
+     "text": "Allow unstuck from wall traps",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "043d5d65",
+     "kind": "fix",
+     "scope": "",
+     "text": "Scan tracked root wt files",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "8b39633d",
+     "kind": "fix",
+     "scope": "",
+     "text": "Drop PR 3188 pregen changes",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "118b5d43",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3215 into release",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "29967554",
+     "kind": "fix",
+     "scope": "",
+     "text": "Fill target previous translations",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "871c3698",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release base into ossbrain-release/v0.36.0",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "597e3bc5",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3199 into release",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "bd3905d2",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release branch with base",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "79104dd7",
+     "kind": "fix",
+     "scope": "",
+     "text": "Stabilize vitest in linked worktrees",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "26e8f789",
+     "kind": "fix",
+     "scope": "tests",
+     "text": "Harden two gate-blocking flaky tests found during a refactor PR batch",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "390cdec5",
+     "kind": "fix",
+     "scope": "",
+     "text": "Disable unsafe vitest cache in ossbrain gates",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "613e9381",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3006 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "abc8f790",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3098 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "613e9381",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3006 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "8a589da1",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3101 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "8a589da1",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3101 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "69d04b80",
+     "kind": "fix",
+     "scope": "",
+     "text": "Recover battleground unstuck traps",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "337549b2",
+     "kind": "fix",
+     "scope": "",
+     "text": "Drop PR 3006",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "c757718a",
+     "kind": "fix",
+     "scope": "multiplayer",
+     "text": "Drop PR 3098",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "8ffb9e1c",
+     "kind": "fix",
+     "scope": "",
+     "text": "Align pet stealth detection range",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "94332110",
+     "kind": "fix",
+     "scope": "",
+     "text": "Block unstuck for battleground flag carriers",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "148fcf32",
+     "kind": "fix",
+     "scope": "battleground",
+     "text": "Relocate unstuck to graveyard",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "56f9a134",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3194 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "d3076b10",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3196 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "c43a3ab6",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3197 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "597e3bc5",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3199 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "87c86aca",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3191 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "a6190c63",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3189 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "56f9a134",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3194 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "c43a3ab6",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3197 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "597e3bc5",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3199 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "427e0a77",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3188 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "2a3840f9",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3195 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "de39866c",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3192 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "ef4d92bf",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3198 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "87c86aca",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3191 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "a6190c63",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3189 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "8348a6ce",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3186 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "2a3840f9",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3195 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "de39866c",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3192 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "427e0a77",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3188 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "8348a6ce",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3186 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "7b3db739",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3187 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "eda1312f",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3193 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "307d7e76",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3182 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "7b3db739",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3187 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "307d7e76",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3182 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "eda1312f",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3193 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "404ccd69",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3181 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "ef4d92bf",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3198 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "118b5d43",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3215 into release",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "cedb0a7e",
+     "kind": "fix",
+     "scope": "",
+     "text": "Keep battleground unstuck destinations clear",
+     "date": "2026-08-09"
+    },
+    {
+     "h": "81ec95e7",
+     "kind": "fix",
+     "scope": "",
+     "text": "Use sim config seed for battleground unstuck",
+     "date": "2026-08-09"
+    }
+   ]
   }
  ],
  "versions": [
@@ -58,16 +754,24 @@
    "branch": "release/v0.37.0",
    "declared_version": "0.36.0",
    "imminent": false,
-   "commits": 0,
-   "shown": 0,
-   "last_commit": "2026-08-11T15:21:40+12:00",
+   "commits": 160,
+   "shown": 99,
+   "last_commit": "2026-08-11T18:44:24+12:00",
    "sections": [
     {
      "key": "classes",
      "icon": "⚔️",
      "fr": "Classes & sorts",
      "en": "Classes & spells",
-     "items": []
+     "items": [
+      {
+       "h": "c81aa0da",
+       "kind": "fix",
+       "scope": "",
+       "text": "Restore pet stat aura direction",
+       "date": "2026-08-10"
+      }
+     ]
     },
     {
      "key": "metiers",
@@ -88,7 +792,64 @@
      "icon": "🗺️",
      "fr": "Monde & quêtes",
      "en": "World & quests",
-     "items": []
+     "items": [
+      {
+       "h": "f4afe6e1",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Recover battleground unstuck to clear spawn",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "7f38ef00",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Rerender mob portraits and refresh the source manifest",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "7f38ef00",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Rerender mob portraits and refresh the source manifest",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "7f38ef00",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Rerender mob portraits and refresh the source manifest",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "9a4ce989",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Rerender mob portraits after resolving the release merge conflict",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "c1f7fc94",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Resync mob portrait manifest after release branch drift",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "5c59a98f",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Re-mint mob portrait manifest after release drift",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "4f257aaa",
+       "kind": "fix",
+       "scope": "",
+       "text": "Refresh mob portrait receipt artifacts",
+       "date": "2026-08-10"
+      }
+     ]
     },
     {
      "key": "guilde",
@@ -102,7 +863,638 @@
      "icon": "⚙️",
      "fr": "Confort & technique",
      "en": "Comfort & technical",
-     "items": []
+     "items": [
+      {
+       "h": "a0326766",
+       "kind": "feat",
+       "scope": "targeting",
+       "text": "Add a backward Tab target cycle on Shift+Tab",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "a0326766",
+       "kind": "feat",
+       "scope": "targeting",
+       "text": "Add a backward Tab target cycle on Shift+Tab",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "daf4ec6a",
+       "kind": "perf",
+       "scope": "dev",
+       "text": "Make db:up wait for the postgres healthcheck",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "016deb46",
+       "kind": "perf",
+       "scope": "types",
+       "text": "Give check:ts:bot incremental output and run it before svelte-check",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "962d837d",
+       "kind": "perf",
+       "scope": "build",
+       "text": "Run build:bundle's independent pregen steps concurrently",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "6a8b3f73",
+       "kind": "fix",
+       "scope": "build",
+       "text": "Record PR 3188 drop",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "307d7e76",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3182 into release",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "5618d642",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.37.0 into ossbrain-release/v0.36.0",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "871c3698",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release base into ossbrain-release/v0.36.0",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "4e7735b1",
+       "kind": "fix",
+       "scope": "",
+       "text": "Base-health into release",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "7f5a1928",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Address PR #3198 review nits and clean up merge dead code",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "2bfa2c71",
+       "kind": "fix",
+       "scope": "",
+       "text": "Refresh placeholder art manifest pin",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "fb9ed494",
+       "kind": "fix",
+       "scope": "",
+       "text": "Bring in latest release/v0.36.0",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "2c36472d",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync with release/v0.36.0",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "53a6dc32",
+       "kind": "fix",
+       "scope": "tests",
+       "text": "Correct root-cause claim and harden the exclude-flag retry",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "c70fdb6f",
+       "kind": "fix",
+       "scope": "",
+       "text": "Satisfy battleground biome gate",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "d2dc8ff0",
+       "kind": "fix",
+       "scope": "test",
+       "text": "Re-pin Fenbridge source fingerprint after check:ts:bot script edit",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "89712dd7",
+       "kind": "fix",
+       "scope": "",
+       "text": "Restore reverse tab targeting",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "3c15a5a2",
+       "kind": "fix",
+       "scope": "",
+       "text": "Drop failed PR 3215 reverse tab repair",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "b5799387",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Revert the unneeded portrait rerender, take upstream's fresh set",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "b5799387",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Revert the unneeded portrait rerender, take upstream's fresh set",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "75dab771",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Rerender portraits after this branch's own bundle-fingerprint shift",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "5e6da6b5",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Merge release and repin portrait provenance",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "e32a39f8",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release base",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "7bd4cad5",
+       "kind": "fix",
+       "scope": "",
+       "text": "Satisfy base sync biome gate",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "c3914853",
+       "kind": "fix",
+       "scope": "",
+       "text": "Restore turbo gate step contract",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "beecc590",
+       "kind": "fix",
+       "scope": "",
+       "text": "Refresh portrait source manifest",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "d05e2f21",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync base gate pins",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "e783712c",
+       "kind": "fix",
+       "scope": "",
+       "text": "Repair base sync test regressions",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "fc967a12",
+       "kind": "fix",
+       "scope": "",
+       "text": "Declare vite test env for turbo",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "5229e13d",
+       "kind": "fix",
+       "scope": "",
+       "text": "Declare gate preflight module",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "871c3698",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release base into ossbrain-release/v0.36.0",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "87c86aca",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3191 into release",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "ef4d92bf",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3198 into release",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "427e0a77",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3188 into release",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "1ea6484b",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3183 into release",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "ef4d92bf",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3198 into release",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "35242279",
+       "kind": "fix",
+       "scope": "battleground",
+       "text": "Allow unstuck from wall traps",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "043d5d65",
+       "kind": "fix",
+       "scope": "",
+       "text": "Scan tracked root wt files",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "8b39633d",
+       "kind": "fix",
+       "scope": "",
+       "text": "Drop PR 3188 pregen changes",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "118b5d43",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3215 into release",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "29967554",
+       "kind": "fix",
+       "scope": "",
+       "text": "Fill target previous translations",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "871c3698",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release base into ossbrain-release/v0.36.0",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "597e3bc5",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3199 into release",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "bd3905d2",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release branch with base",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "79104dd7",
+       "kind": "fix",
+       "scope": "",
+       "text": "Stabilize vitest in linked worktrees",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "26e8f789",
+       "kind": "fix",
+       "scope": "tests",
+       "text": "Harden two gate-blocking flaky tests found during a refactor PR batch",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "390cdec5",
+       "kind": "fix",
+       "scope": "",
+       "text": "Disable unsafe vitest cache in ossbrain gates",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "613e9381",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3006 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "abc8f790",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3098 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "613e9381",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3006 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "8a589da1",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3101 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "8a589da1",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3101 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "69d04b80",
+       "kind": "fix",
+       "scope": "",
+       "text": "Recover battleground unstuck traps",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "337549b2",
+       "kind": "fix",
+       "scope": "",
+       "text": "Drop PR 3006",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "c757718a",
+       "kind": "fix",
+       "scope": "multiplayer",
+       "text": "Drop PR 3098",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "8ffb9e1c",
+       "kind": "fix",
+       "scope": "",
+       "text": "Align pet stealth detection range",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "94332110",
+       "kind": "fix",
+       "scope": "",
+       "text": "Block unstuck for battleground flag carriers",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "148fcf32",
+       "kind": "fix",
+       "scope": "battleground",
+       "text": "Relocate unstuck to graveyard",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "56f9a134",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3194 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "d3076b10",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3196 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "c43a3ab6",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3197 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "597e3bc5",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3199 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "87c86aca",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3191 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "a6190c63",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3189 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "56f9a134",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3194 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "c43a3ab6",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3197 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "597e3bc5",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3199 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "427e0a77",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3188 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "2a3840f9",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3195 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "de39866c",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3192 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "ef4d92bf",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3198 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "87c86aca",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3191 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "a6190c63",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3189 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "8348a6ce",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3186 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "2a3840f9",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3195 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "de39866c",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3192 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "427e0a77",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3188 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "8348a6ce",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3186 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "7b3db739",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3187 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "eda1312f",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3193 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "307d7e76",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3182 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "7b3db739",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3187 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "307d7e76",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3182 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "eda1312f",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3193 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "404ccd69",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3181 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "ef4d92bf",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3198 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "118b5d43",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3215 into release",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "cedb0a7e",
+       "kind": "fix",
+       "scope": "",
+       "text": "Keep battleground unstuck destinations clear",
+       "date": "2026-08-09"
+      },
+      {
+       "h": "81ec95e7",
+       "kind": "fix",
+       "scope": "",
+       "text": "Use sim config seed for battleground unstuck",
+       "date": "2026-08-09"
+      }
+     ]
     }
    ]
   }
