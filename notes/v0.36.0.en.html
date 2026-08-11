@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Patch notes v0.36.0 — La Clauderie</title>
+<meta name="description" content="World of ClaudeCraft v0.36.0, explained simply: the class overhaul (eight classes out of nine, 110 spells, the paladin rebuilt, the warlock and its three pets, the hunter moving to Focus), the 150–200 DPS retune, the Reliquary the official notes never mention, draws recorded in PvP and rift death zones you can finally see.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Patch notes v0.36.0 — La Clauderie">
+<meta property="og:description" content="World of ClaudeCraft v0.36.0, explained simply: the class overhaul (eight classes out of nine, 110 spells, the paladin rebuilt, the warlock and its three pets, the hunter moving to Focus), the 150–200 DPS retune, the Reliquary the official notes never mention, draws recorded in PvP and rift death zones you can finally see.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.36.0.en.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.36.0.en.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') !== 'en') location.replace('v0.36.0.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Site navigation"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Patch notes</p>
+    <h1>Patch notes <span class="v">v0.36.0</span></h1>
+    <p class="lede">The class overhaul. <strong class="hl">Eight classes out of nine</strong> get brand-new talents from level 5 to level 20: the paladin gains a resource, a resurrection and thirty-one spells; the warlock trades its demons for one pet per specialization; the hunter leaves mana behind for Focus. Behind that, a numbers-only retune brings eight specs into the 150–200 DPS band. And one whole feature the official notes never mention: <strong class="hl">the Reliquary</strong>, the game’s collection cabinet.</p>
+    <div class="meta">
+      <span><b>Released</b> August 11, 2026</span>
+      <span><b>Since</b> v0.35.1</span>
+      <span><b>1,553</b> files touched</span>
+    </div>
+    <div class="hint">💡 Click a card for details — and any underlined name for its Codex sheet.</div>
+  </header>
+
+  <!-- Constant digest: same sections, same order, every release. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">At a glance</h2>
+    <p class="sec-sub">The same six sections every release, in the same order. Click one to jump to it.</p>
+    <ol>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <a class="d-name" href="#classes">Classes &amp; spells</a>
+        <span class="d-say"><b class="up">Paladin ↑</b> rebuilt from scratch, a Devotion resource and a group resurrection · <b class="up">Warlock ↑</b> one pet per spec, the classic demons are gone · <b class="up">Rogue ↑</b> a large attack-power gain · <b class="up">Shaman ↑</b> Stormstrike more than tripled · <b class="up">Druid ↑</b> the Wildfang mastery goes from 15% to 50% · <b class="up">Hunter ↑</b> Marksmanship and Survival lifted (but <b class="down">Packlord ↓</b>, pet damage 35% → 25%) · <b class="down">Shadow priest ↓</b> pulled back into the band · <b class="down">Warrior ↓</b> in PvP: Intervene replaces Double Charge · <b class="eq">Mage =</b> the only class untouched</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <a class="d-name" href="#monde">Professions &amp; gathering</a>
+        <span class="d-say">No recipe, no node and no enchant changes — but the Reliquary opens three crafter shelves (masterworks, field notes, key specimens).</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#donjons">Dungeons, rifts &amp; bosses</a>
+        <span class="d-say">Rift death zones finally read at a glance — and their fuse stretches when you are slowed, so a zone always stays escapable.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <a class="d-name" href="#monde">World &amp; quests</a>
+        <span class="d-say"><strong class="hl">The Reliquary</strong>: 375 slots, 35 pages, five Curator ranks — purely cosmetic. Plus two quests that teach the paladin to raise the dead.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <a class="d-name" href="#guilde">Guild &amp; social</a>
+        <span class="d-say">Draws are finally recorded (W-L-D everywhere), deserted seats backfill from the queue, and you can respec inside the battleground.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#confort">Comfort &amp; tech</a>
+        <span class="d-say">The frame-hitch campaign, a Sort button for bags, lifetime Time Played on the character sheet — and all 21 locales complete.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="classes">
+    <h2><span class="num">01</span>The class overhaul</h2>
+    <p class="sec-sub">This is THE release: eight classes out of nine have all six talent rows (levels 5, 8, 11, 14, 17 and 20) rewritten, and a hundred and ten spells land. Only the mage crosses this patch without a single change.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="paladin" tabindex="0" role="button" aria-label="Details: the paladin">
+        <h3>Paladin: rebuilt from scratch <span class="chip c-new">Major</span></h3>
+        <p><strong class="hl">Thirty-one spells</strong> land, a <strong class="hl">Devotion</strong> resource appears, and all three specs are renamed. In exchange, <strong class="hl">Judgement</strong>, Divine Shield and Holy Wrath leave the game.</p>
+        <span class="more-link">See the details</span>
+      </div>
+      <div class="card more" data-detail="demoniste" tabindex="0" role="button" aria-label="Details: the warlock">
+        <h3>Warlock: one pet per spec <span class="chip c-new">Overhaul</span></h3>
+        <p>Succubus, Felhunter and Felguard are <strong class="hl">gone</strong>. In their place: the <span data-codex="ability|evil_eye">Evil Eye</span> for Hexcraft, a <strong class="hl">court of undead</strong> for Necromancy, the fire demons for Ruination.</p>
+        <span class="more-link">See the details</span>
+      </div>
+      <div class="card more" data-detail="chasseur" tabindex="0" role="button" aria-label="Details: the hunter">
+        <h3>Hunter: no more mana <span class="chip c-new">Resource</span></h3>
+        <p>The hunter moves to <strong class="hl">Focus</strong> (100 points, nothing per level) and gains fifteen spells, including <span data-codex="ability|pack_command">Pack Command</span> and <span data-codex="ability|stampede">Stampede</span>.</p>
+        <span class="more-link">See the details</span>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>Warrior: Intervene <span class="chip c-pvp">Warrior ↓</span></h3>
+        <p>The level-5 row swaps <strong class="hl">Double Charge</strong> for <span data-codex="ability|intervene">Intervene</span>: a rush to a <strong class="hl">friendly</strong> player that shields them for 6 sec. It mints <strong class="hl">no rage</strong> and never flags you into combat.</p>
+        <p>Why: charges recharge in parallel, so Double Charge handed you two 25-yard gap closers <em>and</em> two 1-second stuns per cooldown — the mandatory PvP pick. Your saved choice carries over: it is the same slot with new content.</p>
+      </div>
+      <div class="card">
+        <h3>And the other four <span class="chip c-bal">Talents</span></h3>
+        <ul>
+          <li><strong class="hl">Rogue ↑</strong>: all three specs finally gain percentage attack power (up to +55% for Thuggery) and crit — the white swing, which is half their damage, scales with it.</li>
+          <li><strong class="hl">Shaman ↑</strong>: <span data-codex="ability|stormstrike">Stormstrike</span> goes from +25% to <strong class="hl">+80%</strong>, and Warspirit gains <span data-codex="ability|unleash_weapon">Unleash Weapon</span> and its cadence.</li>
+          <li><strong class="hl">Druid ↑</strong>: the <span data-codex="spec|Wildfang">Wildfang</span> mastery triples both damage lines — physical and bleeds go from +15% to <strong class="hl">+50%</strong>.</li>
+          <li><strong class="hl">Priest</strong>: Shadow comes down (see the band below), but Heal costs 30% less mana for Benison, and all three signatures change.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card more" data-detail="bande" tabindex="0" role="button" aria-label="Details: the 150-200 DPS retune">
+        <h3>The 150–200 band <span class="chip c-bal">Balance</span></h3>
+        <p>A numbers-only pass brings <strong class="hl">eight specs</strong> into the same damage band over 120 seconds in best-in-slot gear. A ninth, the shaman’s Elemental, stays <strong class="hl">below the band</strong> and is tracked separately.</p>
+        <span class="more-link">See the details</span>
+      </div>
+      <div class="card">
+        <h3>Honest white damage <span class="chip c-fix">Fix</span></h3>
+        <p>Auto-attack damage is no longer re-scaled by <strong class="hl">weapon speed</strong>: that figure was already baked into the weapon’s numbers, and counting it twice threw everything off.</p>
+        <p>The scale of it, measured in code: four weapons authored at an <strong class="hl">identical 15.0 dps</strong> actually delivered 12.9 / 15.0 / 22.7 / 25.6 depending on their speed. The bug alone had pushed sustained Fury from 147.2 to 186.3 DPS with no warrior change in between.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="objets">
+    <h2><span class="num">02</span>The new items, and where to find them</h2>
+    <p class="sec-sub">Four daggers for rogues and hunters, plus the warlock’s soul stone. The rates come from the game’s own loot tables.</p>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>Four proc daggers <span class="chip c-loot">Loot</span></h3>
+        <ul>
+          <li><span data-codex="item|boneglass_shiv">Boneglass Shiv</span> (rare) — from <span data-codex="mob|old_cragmaw">Old Cragmaw</span>, in Thornpeak: <strong class="hl">20%</strong>. Agility 7, Stamina 3, and a 6% chance to open a wound that bleeds for 6 sec.</li>
+          <li><span data-codex="item|duskwhisper">Duskwhisper</span> (epic) — from the <span data-codex="mob|wildheart_beastmaster">Fanglord Beastmaster</span> in the Wildheart Basin: <strong class="hl">12%</strong>. Agility 12, with a shadow bolt on 8% of hits. Its heroic twin exists too.</li>
+          <li><span data-codex="item|marrowpoint">Marrowpoint</span> (epic) — from <span data-codex="mob|cindraleth_maw_matriarch">Cindraleth the Maw Matriarch</span> in the Drakelands: <strong class="hl">15%</strong>. Agility 13 and a heavy bleed.</li>
+          <li><span data-codex="item|rimefang">Rimefang</span> (epic) — from the <a href="../failles.html">Rifts</a>, at epic rank. Agility 14, Stamina 8 and 40 crit: the most complete of the four.</li>
+        </ul>
+        <p>All main-hand, <strong class="hl">rogue and hunter only</strong>, level 20 for the epics.</p>
+      </div>
+      <div class="card">
+        <h3>The <span data-codex="item|soul_stone">Soul Stone</span> <span class="chip c-new">Warlock</span></h3>
+        <ul>
+          <li>The warlock plants a <span data-codex="ability|soulwell">Soulwell</span> (3 sec cast, out of combat, 5 min cooldown) that stays on the ground for <strong class="hl">3 minutes</strong>.</li>
+          <li>Every party member helps themselves and walks away with <strong class="hl">three stones</strong>, each restoring <strong class="hl">25% of maximum health</strong>.</li>
+          <li>Soulbound, unsellable, not listable on the market: it is a raid consumable, not a currency.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="monde">
+    <h2><span class="num">03</span>The Reliquary — the feature the notes forgot</h2>
+    <p class="sec-sub">The official v0.36.0 notes do not say a word about it. The code ships twenty-seven files and nearly ten thousand lines: a complete collection cabinet, very much present in the released build.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="reliquaire" tabindex="0" role="button" aria-label="Details: the Reliquary">
+        <h3>The cabinet <span class="chip c-new">New</span></h3>
+        <p><strong class="hl">375 slots</strong> across <strong class="hl">35 pages</strong> and three shelves: Conquerors (dungeons, raid, rifts, PvP), Professions, Horizons (mounts, weapon skins, titles).</p>
+        <span class="more-link">See the details</span>
+      </div>
+      <div class="card">
+        <h3>Five Curator ranks <span class="chip c-util">Cosmetic</span></h3>
+        <ul>
+          <li>1, 10, 25, 50 and <strong class="hl">100 unique relics</strong>: Apprentice, Keeper, Master, Grand, Eternal.</li>
+          <li><strong class="hl">No power at all</strong>: the rank touches no stat, no drop rate, nothing. It is a seal, and it scores no Renown either.</li>
+          <li>Veterans are credited retroactively for what they already own.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>The paladin learns to raise <span class="chip c-new">Quests</span></h3>
+        <p>A two-quest chain — <span data-codex="quest|q_divine_tome">The Dawnbound Tome</span> then <span data-codex="quest|q_rite_of_redemption">The Rite of Recall</span> — teaches <span data-codex="ability|recall_the_fallen">Recall the Fallen</span>: six Restless Bones returned to the earth, then eight Drowned Dead laid to rest in the mire.</p>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>The world remembers you <span class="chip c-util">Server</span></h3>
+        <ul>
+          <li>Your <strong class="hl">character-creator look</strong> finally persists per character and replicates to other players — until now it did not survive a login.</li>
+          <li>Retention sweeps arrive for player reports, bug reports and chat violations: they no longer pile up forever.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>The game speaks 21 languages <span class="chip c-new">Localization</span></h3>
+        <p>The release ships <strong class="hl">fully localized</strong>: 12,412 keys at zero pending rows, 10,970 of them filled for this release alone. On the Codex side, French names for the new content arrive on their own.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="guilde">
+    <h2><span class="num">04</span>PvP: draws count, seats refill</h2>
+    <p class="sec-sub">No new battleground — but half the complaints raised about Thornhollow Fields since it opened get an answer.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="pvp" tabindex="0" role="button" aria-label="Details: the PvP changes">
+        <h3>The draw exists <span class="chip c-pvp">Finally</span></h3>
+        <p>Draws are <strong class="hl">recorded</strong> and your records read <strong class="hl">W-L-D</strong> on every surface. Careful: they count in the denominator — your win percentage drops mechanically.</p>
+        <span class="more-link">See the details</span>
+      </div>
+      <div class="card">
+        <h3>Deserters get replaced <span class="chip c-new">Queue</span></h3>
+        <ul>
+          <li>An empty seat is <strong class="hl">refilled from the queue</strong> — but only while more than two minutes remain on the clock.</li>
+          <li>A queued group is <strong class="hl">never split in two</strong>: failing that, it is the solo who has waited longest.</li>
+          <li>You are not thrown into a lost cause: if the enemy team is one capture from winning, the seat stays empty.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Queue comfort <span class="chip c-util">Handy</span></h3>
+        <ul>
+          <li>The queue <strong class="hl">asks for confirmation</strong> before seating you in a match.</li>
+          <li>Your spot <strong class="hl">survives death</strong> and a dungeon pull.</li>
+          <li>You can <strong class="hl">respec inside the battleground</strong>, while out of combat.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>The three honor titles are renamed <span class="chip c-bal">Renaming</span></h3>
+        <p>Sergeant, Knight-Lieutenant and Field Marshal were lifted verbatim from another game. They become <strong class="hl">Linebreaker</strong>, <strong class="hl">Fieldreaver</strong> and <strong class="hl">Warcrowned</strong>.</p>
+        <p>The thresholds do not move: 10,000, 40,000 and 150,000 lifetime honor — roughly 11, 44 and 167 committed days, and spending at the quartermaster still costs you nothing.</p>
+      </div>
+      <div class="card">
+        <h3>Pets in PvP <span class="chip c-bal">Rules</span></h3>
+        <ul>
+          <li>Pets now <strong class="hl">assist against hostile players</strong>, not just against mobs.</li>
+          <li>They no longer <strong class="hl">out-detect their owner on stealth</strong> — the rogue is invisible to them again.</li>
+          <li>Finishing a duel <strong class="hl">clears the debuffs</strong> left on the opponent’s pet.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="donjons">
+    <h2><span class="num">05</span>Rifts: red circles you can actually see</h2>
+    <p class="sec-sub">“Very hard to see the red circles”: the player feedback on rift death zones was taken at its word, and the answer is measurable.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>The telegraph never fades out <span class="chip c-fix">Readability</span></h3>
+        <ul>
+          <li>The ring still pulses, but its opacity <strong class="hl">never drops below half</strong>.</li>
+          <li>The <strong class="hl">interior is always filled</strong>: what you read is the dangerous area, not just its rim.</li>
+          <li>A sweep shows the fuse burning down; it switches to urgent at <strong class="hl">1.5 seconds</strong> from detonation.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>A genuinely escapable fuse <span class="chip c-bal">Rule</span></h3>
+        <p>A zone’s duration was solved for a player at full run speed. Slowed or rooted, you could therefore be caught in a zone that was <strong class="hl">mathematically inescapable</strong>.</p>
+        <p>The fuse now stretches with your movement impairment — <strong class="hl">up to double</strong>, never more, so a permanent slow cannot freeze a zone forever.</p>
+      </div>
+      <div class="card">
+        <h3>Around the boss <span class="chip c-util">Comfort</span></h3>
+        <ul>
+          <li>While a telegraph is live, the boss’s control effects (roots, knockbacks, the anti-kite snare) <strong class="hl">no longer take your legs</strong>.</li>
+          <li>A detonation and a melee swing can no longer land in the <strong class="hl">same instant</strong>.</li>
+          <li>Rift boss cleave becomes a <strong class="hl">180° frontal arc</strong>: standing behind means something again.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="confort">
+    <h2><span class="num">06</span>Comfort &amp; tech</h2>
+    <p class="sec-sub">The biggest performance campaign in a long while, and a handful of small things asked for over months.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Hunting the hitches <span class="chip c-fix">Performance</span></h3>
+        <ul>
+          <li><strong class="hl">Frame hitches</strong> are tracked by a frozen, calibrated referee, and world-entry link stalls are gone.</li>
+          <li>Loading times move preview prewarms and shader links off the critical path.</li>
+          <li>Compressed player skin atlases, frame-budgeted grass, bounded character caches, cheaper combat effects.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Two long-standing asks <span class="chip c-util">Interface</span></h3>
+        <ul>
+          <li>A <strong class="hl">Sort</strong> button in the bags: one press, everything tidied, filter and search reset.</li>
+          <li><strong class="hl">Lifetime Time Played</strong> lands on the character sheet, hideable behind an eye for screenshots and streaming.</li>
+          <li>Party frames badge who is <strong class="hl">at heal range</strong>, and the attacker sees absorb floaters.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>It sounds right <span class="chip c-new">Art &amp; audio</span></h3>
+        <ul>
+          <li>The v0.36 artwork overhaul, and real attack animations for several mob families.</li>
+          <li>Recorded SFX, including all <strong class="hl">six warrior shouts</strong> — and the Flamestrike/Meteor mix-up is fixed.</li>
+          <li>Real sound for rift portals, hazards, gates and ice slides; an audible engine on the tank mount.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    paladin: {
+      title: "The paladin, rebuilt from the ground up",
+      summary: "Thirty-one spells added, five removed, a brand-new resource: this is the most transformed class of the release.",
+      body: `
+        <h4>A resource: Devotion</h4>
+        <ul>
+          <li>Nearly every new attack <b>generates 1 Devotion</b> — <b>Mercy Lance</b> and <b>Hammer of Wrath</b> for the healer and the DPS, <b>Sunward Disc</b> for the tank (it bounces between enemies and pays out on every impact).</li>
+          <li><b>Divine Ascension</b> consumes <b>20 Devotion</b> and grants <b>5 charges</b> for up to 45 sec: marked abilities spend a charge for an upgraded effect — Mercy Lance becomes a guaranteed critical.</li>
+        </ul>
+        <h4>Three renamed specs</h4>
+        <ul>
+          <li><b>Sunmender</b> (was Sacrament, healing) — signature <b>Mercy Lance</b> instead of Holy Shock.</li>
+          <li><b>Faithwarden</b> (was Vigil, tank) — signature <b>Sunward Disc</b>. Its mastery gains <b>+35% Stamina</b> on top of its +50% threat and +20% armor: without it the paladin tank sat at <b>76%</b> of the protection warrior’s effective health.</li>
+          <li><b>Dawnreaver</b> (was Requital, DPS) — signature <b>Final Edict</b>, and a mastery worth <b>+20% physical AND spell damage</b>.</li>
+        </ul>
+        <h4>Raising the dead</h4>
+        <ul>
+          <li>A two-quest chain with Brother Aldric teaches <b>Recall the Fallen</b>: bring a group member back at <b>35% health and mana</b>.</li>
+          <li>A <b>Sunmender of level 16 or higher</b> instead calls back <b>the entire group</b> at once — mass resurrection finally lands in the game.</li>
+        </ul>
+        <h4>What goes away</h4>
+        <p><b>Judgement</b>, <b>Divine Shield</b>, <b>Holy Wrath</b>, Cleansing Verdict and Aura Surge are removed from the game. Rebuild your action bars.</p>`
+    },
+    demoniste: {
+      title: "The warlock: three specs, three pets",
+      summary: "The historical demons are no longer summonable — each specialization receives its own companion instead.",
+      body: `
+        <h4>What leaves</h4>
+        <p><b>Summon Succubus</b>, <b>Summon Felhunter</b>, <b>Summon Felguard</b> and <b>Summon Doomguard</b> are removed, along with the four creatures behind them.</p>
+        <h4>Hexcraft — the Eye</h4>
+        <ul>
+          <li><b>Evil Eye</b> marks one enemy as the focus of your curses; moving it preserves the Condemnation you built but does not refresh its <b>20 sec</b> expiry.</li>
+          <li><b>Coven</b> plants up to <b>4 secondary eyes</b> for 15 sec: they feed the shared pool at <b>50%</b>, and <b>Sentence</b> echoes to them for <b>35%</b> damage.</li>
+          <li>The mastery is no longer Creeping Rot but <b>Sentence</b>: the verdict replaces the slow poison.</li>
+        </ul>
+        <h4>Necromancy — the court of the dead</h4>
+        <ul>
+          <li>The former Pactbound spec raises permanent servants: the <b>Graveguard</b> (it taunts on its own and <b>intercepts 20%</b> of your damage), the Skeletal Warrior, the Bone Mage and the Gravewing.</li>
+          <li><b>Reaping Command</b> makes it taunt and take <b>30% less damage</b> for 4 sec; <b>Army of the Dead</b> tears a grave portal and raises the other three for <b>20 sec</b>.</li>
+          <li>Mastery renamed <b>Grave Dominion</b>.</li>
+        </ul>
+        <h4>Ruination — the fire</h4>
+        <ul>
+          <li>The <b>Gloomshade</b> (the old Voidwalker) and the <b>Pyre Colossus</b> stay: the colossus falls for <b>30 sec</b> without replacing your demon.</li>
+          <li>The mastery changes shape entirely: <b>Conflagrate</b> now grants Desolation, which sharply shortens your next Ruinbolt cast or calls down the first wave of Rain of Fire immediately.</li>
+          <li><b>Cinderhide</b> arrives: <b>−25% damage taken</b> for 10 sec. The warlock needed a survival button, and now has one.</li>
+        </ul>`
+    },
+    chasseur: {
+      title: "The hunter moves to Focus",
+      summary: "A resource change — the first time a class has swapped resources in this game.",
+      body: `
+        <h4>No more mana</h4>
+        <ul>
+          <li>The hunter starts at <b>100 Focus</b> and gains <b>none per level</b>: the resource no longer grows, it cycles. The engine treats it exactly like rogue energy.</li>
+          <li>The starting water flasks are gone with it; they no longer had a purpose.</li>
+        </ul>
+        <h4>The pet becomes a button again</h4>
+        <ul>
+          <li><b>Pack Command</b> sends your beast in for 36 to 48 damage; a hit restores <b>20 Focus</b> and stacks <b>Pack Ferocity</b> (up to 3, 30 sec), which raises all your damage.</li>
+          <li><b>Stampede</b> summons <b>3 beasts for 12 sec</b>, striking every 2 sec and snapshotting your Pack Ferocity as they are summoned.</li>
+        </ul>
+        <h4>The three specs</h4>
+        <ul>
+          <li><b>Coldsight</b> (Marksmanship): new signature <b>Cold Focus</b> — 12 sec during which Measured Shot restores <b>50% more Focus</b> and Long Draw costs 25% less and casts 30% faster. Mastery renamed <b>Cold Read</b>.</li>
+          <li><b>Fieldcraft</b> (Survival): signature <b>Bloodhook</b>, a charge that leaves a wound worth 34 base damage plus <b>26% of your ranged attack power</b> over 12 sec in 4 ticks.</li>
+          <li><b>Packlord</b> (Beast Mastery): the only one going <b>down</b> — the pet damage bonus drops from <b>+35% to +25%</b>. It was far ahead (200.7 DPS against 141 and 136.8), and the other two were lifted to meet it rather than it being cut to them.</li>
+        </ul>`
+    },
+    bande: {
+      title: "The 150–200 DPS retune",
+      summary: "A numbers-only pass, measured over 120 seconds in best-in-slot gear — with one acknowledged exception.",
+      body: `
+        <h4>How it is measured</h4>
+        <p>Every spec is simulated for <b>120 seconds</b> against the raid boss, in the best gear available, across five fixed seeds. The target: everyone lands between <b>150 and 200 DPS</b>.</p>
+        <h4>What moves, as measured</h4>
+        <ul>
+          <li><b>Hunter Marksmanship</b>: 141 → <b>167.6</b>. <b>Hunter Survival</b>: 136.8 → <b>167.7</b>. <b>Packlord</b> does not move, at 200.7.</li>
+          <li><b>Shadow priest</b>: it was coming out at <b>215</b>, above the ceiling. Its three damage rows are trimmed (0.3 / 0.34 / 0.4 → 0.2 / 0.2 / 0.15) to bring it back inside.</li>
+          <li><b>Rogue</b>: all three specs gain percentage attack power, because <b>54 to 73% of their damage</b> comes from white swings, which per-ability bonuses never touched.</li>
+        </ul>
+        <h4>The exception worth knowing</h4>
+        <p>The code says it plainly: the <b>Elemental shaman</b> stays <b>below the band</b> and is tracked separately, pending a pass on its kit. So do not read “eight specs in the band” as “everyone is level”: Thundercall is still waiting its turn.</p>`
+    },
+    reliquaire: {
+      title: "The Reliquary, page by page",
+      summary: "Absent from the official notes, present in the build: here is exactly what the code ships.",
+      body: `
+        <h4>Three shelves, 35 pages, 375 slots</h4>
+        <ul>
+          <li><b>Conquerors</b> (27 pages): one page per dungeon in normal and heroic, the Nythraxis raid, Thunzharr, the Rifts, the world rares, the sets and the two WARFARE galleries.</li>
+          <li><b>Professions</b> (3 pages): the Masterwork Gallery, Rare Field Notes, Key Specimens.</li>
+          <li><b>Horizons</b> (5 pages): mounts, weapon skins, titles, the Vault of Ages, Riftbound.</li>
+        </ul>
+        <h4>The rules</h4>
+        <ul>
+          <li>The catalog is <b>hand-curated</b>: rare and signature pieces only, never every loot row. <b>240</b> distinct items are attached to a page.</li>
+          <li><b>Heroic twins</b> do not count twice: finding the heroic version credits the base slot.</li>
+          <li>Every slot names <b>where to hunt it</b> through a structured source id — and when a piece has several real routes, <b>all of them</b> are listed rather than a guess at the best one.</li>
+        </ul>
+        <h4>The Curator ranks</h4>
+        <ul>
+          <li><b>1, 10, 25, 50, 100</b> unique relics: the Apprentice, Keeper, Master, Grand and Eternal seals.</li>
+          <li>It is <b>strictly decorative</b>. The code is explicit: nothing reads this rank for power, drop rate or luck. No Renown is scored either.</li>
+          <li>The rank <b>never goes back down</b>: if the catalog grows later, the record you earned stays earned.</li>
+        </ul>`
+    },
+    pvp: {
+      title: "PvP: what actually changes in the queue",
+      summary: "All of it read out of the battleground and queue code — including the thresholds written down nowhere else.",
+      body: `
+        <h4>The draw</h4>
+        <ul>
+          <li>Draws are recorded and shown everywhere as <b>wins-losses-draws</b>, in 1v1 and 2v2 arena as well as the battleground.</li>
+          <li><b>Mind the percentage</b>: draws count toward matches played. A player with 10 wins, 10 losses and 5 draws does not read 50% but <b>40%</b> win rate.</li>
+        </ul>
+        <h4>Backfilling deserters</h4>
+        <ul>
+          <li>A seat is only refilled while <b>more than two minutes</b> remain — exactly the threshold of the match’s first time warning.</li>
+          <li>During form-up, on the other hand, the seat <b>always</b> refills: the match has neither clock nor score yet.</li>
+          <li>The queue <b>never breaks a group</b> to plug a hole: with no solo available, the seat stays empty. Otherwise it is the solo who has waited longest.</li>
+          <li>If the other side is <b>one capture</b> from winning, nobody is sent in. Being about to <b>win</b>, however, is no reason to refuse the help.</li>
+        </ul>
+        <h4>The renamed titles</h4>
+        <p>Sergeant, Knight-Lieutenant and Field Marshal were ranks lifted word for word from another game. They become <b>Linebreaker</b>, <b>Fieldreaver</b> and <b>Warcrowned</b>, in this world’s own voice. The thresholds do not change: <b>10,000</b>, <b>40,000</b> and <b>150,000</b> lifetime honor, roughly <b>11, 44 and 167 committed days</b> at Thornhollow Fields. Linebreaker deliberately lands <b>after</b> the 7,550 honor of the complete kit: the first title rewards finishing the gear grind rather than being a step along the way.</p>`
+    },
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

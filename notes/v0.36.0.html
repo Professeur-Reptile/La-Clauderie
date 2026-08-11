@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Nouveautés v0.36.0 — La Clauderie</title>
+<meta name="description" content="Les nouveautés de la v0.36.0 de World of ClaudeCraft, expliquées simplement : la refonte des classes (huit classes sur neuf, 110 sorts, le paladin reconstruit, le démoniste et ses trois familiers, le chasseur qui passe à la Concentration), le ré-étalonnage 150–200 DPS, le Reliquaire absent des notes officielles, les matchs nuls comptés en PvP et des cercles rouges enfin lisibles dans les Failles.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Nouveautés v0.36.0 — La Clauderie">
+<meta property="og:description" content="Les nouveautés de la v0.36.0 de World of ClaudeCraft, expliquées simplement : la refonte des classes (huit classes sur neuf, 110 sorts, le paladin reconstruit, le démoniste et ses trois familiers, le chasseur qui passe à la Concentration), le ré-étalonnage 150–200 DPS, le Reliquaire absent des notes officielles, les matchs nuls comptés en PvP et des cercles rouges enfin lisibles dans les Failles.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.36.0.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.36.0.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') === 'en') location.replace('v0.36.0.en.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Notes de version</p>
+    <h1>Nouveautés <span class="v">v0.36.0</span></h1>
+    <p class="lede">La refonte des classes. <strong class="hl">Huit classes sur neuf</strong> repartent avec de nouveaux talents du niveau 5 au niveau 20 : le paladin gagne une ressource, une résurrection et trente et un sorts ; le démoniste échange ses démons contre un familier par spécialisation ; le chasseur quitte le mana pour la Concentration. Derrière, un ré-étalonnage chiffré ramène huit spés dans la fourchette 150–200 DPS. Et une nouveauté entière que les notes officielles ne mentionnent nulle part : <strong class="hl">le Reliquaire</strong>, le cabinet de collection du jeu.</p>
+    <div class="meta">
+      <span><b>Publiée</b> le 11 août 2026</span>
+      <span><b>Depuis</b> la v0.35.1</span>
+      <span><b>1 553</b> fichiers touchés</span>
+    </div>
+    <div class="hint">💡 Clique sur une carte pour le détail — et sur un nom souligné pour sa fiche Codex.</div>
+  </header>
+
+  <!-- Bandeau constant : mêmes rubriques, même ordre, à chaque version. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">En un coup d’œil</h2>
+    <p class="sec-sub">Les mêmes rubriques à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
+    <ol>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <a class="d-name" href="#classes">Classes &amp; sorts</a>
+        <span class="d-say"><b class="up">Paladin ↑</b> refonte complète, ressource Dévotion et résurrection de groupe · <b class="up">Démoniste ↑</b> un familier par spé, les démons classiques disparaissent · <b class="up">Voleur ↑</b> gros gain de puissance d’attaque · <b class="up">Chaman ↑</b> Stormstrike triplé · <b class="up">Druide ↑</b> maîtrise Wildfang de 15 % à 50 % · <b class="up">Chasseur ↑</b> Tir assuré et Survie relevés (mais <b class="down">Packlord ↓</b>, familier 35 % → 25 %) · <b class="down">Prêtre Ombre ↓</b> ramené dans la fourchette · <b class="down">Guerrier ↓</b> en PvP : Intervention remplace Double Charge · <b class="eq">Mage =</b> seul à ne pas bouger</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <a class="d-name" href="#monde">Métiers &amp; récolte</a>
+        <span class="d-say">Aucune recette, aucun nœud, aucun enchantement ne change — mais le Reliquaire ouvre trois rayons d’artisan (chefs-d’œuvre, notes de terrain, spécimens).</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#donjons">Donjons, failles &amp; boss</a>
+        <span class="d-say">Les cercles rouges des Failles deviennent lisibles — et leur mèche s’allonge quand on vous a ralenti, pour qu’une zone reste toujours fuyable.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <a class="d-name" href="#monde">Monde &amp; quêtes</a>
+        <span class="d-say"><strong class="hl">Le Reliquaire</strong> : 375 emplacements, 35 pages, cinq rangs de Conservateur — purement cosmétique. Et deux quêtes qui apprennent au paladin à relever les morts.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <a class="d-name" href="#guilde">Guilde &amp; social</a>
+        <span class="d-say">Les matchs nuls sont enfin comptés (V-D-N partout), les places désertées se remplissent depuis la file, et on peut changer de spé à l’intérieur du champ de bataille.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#confort">Confort &amp; technique</a>
+        <span class="d-say">La campagne anti-saccades, un bouton Ranger pour les sacs, le temps de jeu à vie sur la fiche — et les 21 langues complètes.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="classes">
+    <h2><span class="num">01</span>La refonte des classes</h2>
+    <p class="sec-sub">C’est LA version : huit classes sur neuf voient leurs six rangées de talents (niveaux 5, 8, 11, 14, 17 et 20) entièrement réécrites, et cent dix sorts arrivent. Seul le mage traverse la MAJ sans une ligne de changement.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="paladin" tabindex="0" role="button" aria-label="Détails : le paladin">
+        <h3>Paladin : la refonte totale <span class="chip c-new">Majeur</span></h3>
+        <p><strong class="hl">Trente et un sorts</strong> arrivent, une ressource de <strong class="hl">Dévotion</strong> apparaît, et les trois spés sont rebaptisées. En échange, <strong class="hl">Judgement</strong>, Divine Shield et Holy Wrath quittent le jeu.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="demoniste" tabindex="0" role="button" aria-label="Détails : le démoniste">
+        <h3>Démoniste : un familier par spé <span class="chip c-new">Refonte</span></h3>
+        <p>Succube, Chasseur de sorts et Gardien de Néant <strong class="hl">disparaissent</strong>. À la place : l’<span data-codex="ability|evil_eye">Evil Eye</span> pour Hexcraft, une <strong class="hl">cour de morts-vivants</strong> pour Necromancy, les démons de feu pour Ruination.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="chasseur" tabindex="0" role="button" aria-label="Détails : le chasseur">
+        <h3>Chasseur : adieu le mana <span class="chip c-new">Ressource</span></h3>
+        <p>Le chasseur passe à la <strong class="hl">Concentration</strong> (100 points, plus rien par niveau) et gagne quinze sorts, dont <span data-codex="ability|pack_command">Pack Command</span> et <span data-codex="ability|stampede">Stampede</span>.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>Guerrier : Intervention <span class="chip c-pvp">Guerrier ↓</span></h3>
+        <p>La rangée de niveau 5 troque <strong class="hl">Double Charge</strong> contre <span data-codex="ability|intervene">Intervene</span> : une ruée vers un <strong class="hl">allié</strong> qui le protège d’un montant de dégâts pendant 6 s. Elle ne rapporte <strong class="hl">aucune rage</strong> et ne vous met pas en combat.</p>
+        <p>Pourquoi : les charges se rechargent en parallèle, donc Double Charge offrait deux rush de 25 mètres <em>et</em> deux étourdissements d’1 s par recharge — le choix imposé en PvP. Votre sélection enregistrée est conservée : c’est la même case qui change de contenu.</p>
+      </div>
+      <div class="card">
+        <h3>Et les quatre autres <span class="chip c-bal">Talents</span></h3>
+        <ul>
+          <li><strong class="hl">Voleur ↑</strong> : les trois spés gagnent enfin de la puissance d’attaque en pourcentage (jusqu’à +55 % pour Thuggery) et du critique — le coup blanc, qui fait la moitié de leurs dégâts, monte avec.</li>
+          <li><strong class="hl">Chaman ↑</strong> : <span data-codex="ability|stormstrike">Stormstrike</span> passe de +25 % à <strong class="hl">+80 %</strong>, et Warspirit gagne <span data-codex="ability|unleash_weapon">Unleash Weapon</span> et sa cadence.</li>
+          <li><strong class="hl">Druide ↑</strong> : la maîtrise de <span data-codex="spec|Wildfang">Wildfang</span> triple ses deux lignes de dégâts — physiques et saignements passent de +15 % à <strong class="hl">+50 %</strong>.</li>
+          <li><strong class="hl">Prêtre</strong> : Ombre redescend (voir la fourchette ci-dessous), mais Heal coûte 30 % de mana en moins pour Benison, et trois signatures changent.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card more" data-detail="bande" tabindex="0" role="button" aria-label="Détails : le ré-étalonnage 150-200 DPS">
+        <h3>La fourchette 150–200 <span class="chip c-bal">Équilibrage</span></h3>
+        <p>Un passage « chiffres seulement » ramène <strong class="hl">huit spés</strong> dans la même fourchette de dégâts sur 120 secondes en équipement optimal. Une neuvième, l’Élémentaire du chaman, reste <strong class="hl">sous la fourchette</strong> et est suivie à part.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Le coup blanc rendu honnête <span class="chip c-fix">Correctif</span></h3>
+        <p>Les dégâts d’attaque automatique ne sont plus remultipliés par la <strong class="hl">vitesse de l’arme</strong> : cette valeur était déjà comprise dans les chiffres de l’arme, et la compter deux fois faussait tout.</p>
+        <p>L’ampleur, mesurée dans le code : quatre armes écrites à un DPS <strong class="hl">identique de 15,0</strong> délivraient en réalité 12,9 / 15,0 / 22,7 / 25,6 selon leur vitesse. Le bug avait à lui seul poussé la Furie de 147,2 à 186,3 DPS soutenus sans qu’aucun guerrier ne change.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="objets">
+    <h2><span class="num">02</span>Les nouveaux objets, et où les trouver</h2>
+    <p class="sec-sub">Quatre dagues pour voleurs et chasseurs, plus la pierre d’âme du démoniste. Les taux viennent des tables de butin du jeu.</p>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>Quatre dagues à effet <span class="chip c-loot">Butin</span></h3>
+        <ul>
+          <li><span data-codex="item|boneglass_shiv">Boneglass Shiv</span> (rare) — sur <span data-codex="mob|old_cragmaw">Old Cragmaw</span>, à Thornpeak : <strong class="hl">20 %</strong>. Agilité 7, Endurance 3, et 6 % de chance d’ouvrir une plaie qui saigne 6 s.</li>
+          <li><span data-codex="item|duskwhisper">Duskwhisper</span> (épique) — sur le <span data-codex="mob|wildheart_beastmaster">Fanglord Beastmaster</span> du Wildheart Basin : <strong class="hl">12 %</strong>. Agilité 12, avec un éclair d’ombre sur 8 % des coups. Sa jumelle héroïque existe aussi.</li>
+          <li><span data-codex="item|marrowpoint">Marrowpoint</span> (épique) — sur <span data-codex="mob|cindraleth_maw_matriarch">Cindraleth the Maw Matriarch</span>, aux Drakelands : <strong class="hl">15 %</strong>. Agilité 13 et une déchirure qui saigne fort.</li>
+          <li><span data-codex="item|rimefang">Rimefang</span> (épique) — dans les <a href="../failles.html">Failles</a>, au rang épique. Agilité 14, Endurance 8 et 40 de critique : la plus complète des quatre.</li>
+        </ul>
+        <p>Toutes en main droite, réservées <strong class="hl">voleur et chasseur</strong>, niveau 20 pour les épiques.</p>
+      </div>
+      <div class="card">
+        <h3>La <span data-codex="item|soul_stone">Soul Stone</span> <span class="chip c-new">Démoniste</span></h3>
+        <ul>
+          <li>Le démoniste plante un <span data-codex="ability|soulwell">Soulwell</span> (incantation 3 s, hors combat, 5 min de recharge) qui reste <strong class="hl">3 minutes</strong> au sol.</li>
+          <li>Chaque membre du groupe s’y sert et repart avec <strong class="hl">trois pierres</strong>, chacune rendant <strong class="hl">25 % des points de vie maximum</strong>.</li>
+          <li>Liée, invendable, non échangeable sur l’hôtel des ventes : c’est un consommable de raid, pas une monnaie.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="monde">
+    <h2><span class="num">03</span>Le Reliquaire — la nouveauté que les notes ont oubliée</h2>
+    <p class="sec-sub">Les notes officielles de la v0.36.0 n’en disent pas un mot. Le code, lui, en livre vingt-sept fichiers et près de dix mille lignes : un cabinet de collection complet, qui existe bel et bien dans la version publiée.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="reliquaire" tabindex="0" role="button" aria-label="Détails : le Reliquaire">
+        <h3>Le cabinet <span class="chip c-new">Nouveau</span></h3>
+        <p><strong class="hl">375 emplacements</strong> répartis en <strong class="hl">35 pages</strong> et trois rayons : Conquérants (donjons, raid, Failles, PvP), Métiers, Horizons (montures, apparences d’armes, titres).</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Cinq rangs de Conservateur <span class="chip c-util">Cosmétique</span></h3>
+        <ul>
+          <li>1, 10, 25, 50 et <strong class="hl">100 reliques uniques</strong> : Apprenti, Gardien, Maître, Grand, Éternel.</li>
+          <li><strong class="hl">Aucune puissance</strong> : le rang ne touche ni les statistiques, ni les taux de butin, ni rien d’autre. C’est un sceau, et il ne rapporte aucun Renom.</li>
+          <li>Les vétérans sont crédités rétroactivement de ce qu’ils possèdent déjà.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Le paladin apprend à relever <span class="chip c-new">Quêtes</span></h3>
+        <p>Deux quêtes en chaîne — <span data-codex="quest|q_divine_tome">The Dawnbound Tome</span> puis <span data-codex="quest|q_rite_of_redemption">The Rite of Recall</span> — enseignent <span data-codex="ability|recall_the_fallen">Recall the Fallen</span> : six Restless Bones à rendre à la terre, puis huit Drowned Dead à apaiser dans le marais.</p>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>Le monde vous reconnaît <span class="chip c-util">Serveur</span></h3>
+        <ul>
+          <li>Le <strong class="hl">look du créateur de personnage</strong> est enfin sauvegardé par personnage et vu par les autres joueurs — jusqu’ici il ne survivait pas à la connexion.</li>
+          <li>Le nettoyage automatique arrive sur les signalements, rapports de bug et sanctions de discussion : ils ne s’accumulent plus indéfiniment.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Le jeu parle 21 langues <span class="chip c-new">Traduction</span></h3>
+        <p>La version est <strong class="hl">entièrement localisée</strong> : 12 412 clés à zéro ligne en attente, dont 10 970 remplies pour cette seule version. Côté Codex, les noms français des nouveautés arrivent tout seuls.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="guilde">
+    <h2><span class="num">04</span>PvP : les nuls comptent, les places se remplissent</h2>
+    <p class="sec-sub">Pas de nouveau champ de bataille — mais la moitié des reproches faits à <strong class="hl">Thornhollow Fields</strong> depuis son ouverture trouvent une réponse.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="pvp" tabindex="0" role="button" aria-label="Détails : les changements PvP">
+        <h3>Le match nul existe <span class="chip c-pvp">Enfin</span></h3>
+        <p>Les nuls sont <strong class="hl">enregistrés</strong> et vos records s’affichent en <strong class="hl">V-D-N</strong> partout. Attention : ils comptent dans le dénominateur — votre pourcentage de victoires baisse mécaniquement.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Les déserteurs remplacés <span class="chip c-new">File</span></h3>
+        <ul>
+          <li>Une place laissée vide est <strong class="hl">reprise depuis la file</strong> — mais seulement tant qu’il reste plus de deux minutes au chrono.</li>
+          <li>Un groupe en attente n’est <strong class="hl">jamais coupé en deux</strong> : à défaut, c’est le joueur seul qui patiente depuis le plus longtemps.</li>
+          <li>On ne vous jette pas dans un match perdu d’avance : si l’équipe adverse est à une capture de la victoire, la place reste vide.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Confort de file <span class="chip c-util">Pratique</span></h3>
+        <ul>
+          <li>La file <strong class="hl">demande confirmation</strong> avant de vous asseoir dans un match.</li>
+          <li>Votre place <strong class="hl">survit à la mort</strong> et à une entrée en donjon.</li>
+          <li>On peut <strong class="hl">changer de spécialisation dans le champ de bataille</strong>, hors combat.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>Les trois titres d’Honneur changent de nom <span class="chip c-bal">Renommage</span></h3>
+        <p>Sergeant, Knight-Lieutenant et Field Marshal étaient repris tels quels d’un autre jeu. Ils deviennent <strong class="hl">Linebreaker</strong>, <strong class="hl">Fieldreaver</strong> et <strong class="hl">Warcrowned</strong>.</p>
+        <p>Les seuils ne bougent pas : 10 000, 40 000 et 150 000 points d’Honneur à vie — soit environ 11, 44 et 167 journées engagées, et dépenser chez l’intendant n’y change toujours rien.</p>
+      </div>
+      <div class="card">
+        <h3>Familiers en PvP <span class="chip c-bal">Règles</span></h3>
+        <ul>
+          <li>Les familiers <strong class="hl">assistent contre les joueurs hostiles</strong>, plus seulement contre les monstres.</li>
+          <li>Ils ne <strong class="hl">détectent plus la furtivité mieux que leur maître</strong> — le voleur redevient invisible pour eux.</li>
+          <li>Finir un duel <strong class="hl">nettoie les affaiblissements</strong> posés sur le familier adverse.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="donjons">
+    <h2><span class="num">05</span>Failles : des cercles rouges qu’on voit</h2>
+    <p class="sec-sub">« Très difficile de voir les cercles rouges » : le retour de joueurs sur les zones mortelles des Failles a été pris au mot, et la réponse est mesurable.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Le télégraphe ne disparaît plus <span class="chip c-fix">Lisibilité</span></h3>
+        <ul>
+          <li>L’anneau pulse toujours, mais son opacité ne descend <strong class="hl">jamais sous la moitié</strong>.</li>
+          <li>L’<strong class="hl">intérieur du cercle est rempli</strong> en permanence : c’est la zone dangereuse qu’on lit, pas seulement son bord.</li>
+          <li>Un balayage montre la mèche qui brûle ; il passe en mode urgent à <strong class="hl">1,5 seconde</strong> de l’explosion.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Une mèche vraiment fuyable <span class="chip c-bal">Règle</span></h3>
+        <p>La durée d’une zone était calculée pour un joueur à pleine vitesse. Ralenti ou immobilisé, on pouvait donc se retrouver dans une zone <strong class="hl">mathématiquement inéchappable</strong>.</p>
+        <p>Désormais la mèche s’allonge en fonction de votre entrave — <strong class="hl">jusqu’au double</strong>, jamais plus, pour qu’un ralentissement permanent ne fige pas la zone indéfiniment.</p>
+      </div>
+      <div class="card">
+        <h3>Autour du boss <span class="chip c-util">Confort</span></h3>
+        <ul>
+          <li>Pendant un télégraphe, les entraves du boss (racines, projections, ralentissement anti-kite) <strong class="hl">ne vous privent plus de vos jambes</strong>.</li>
+          <li>Une détonation et une attaque au corps à corps ne peuvent plus tomber <strong class="hl">dans le même instant</strong>.</li>
+          <li>Le cleave des boss de Faille devient un arc <strong class="hl">frontal de 180°</strong> : rester derrière veut à nouveau dire quelque chose.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="confort">
+    <h2><span class="num">06</span>Confort &amp; technique</h2>
+    <p class="sec-sub">La plus grosse campagne de performance depuis longtemps, et une poignée de petites choses qu’on réclamait depuis des mois.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>La chasse aux saccades <span class="chip c-fix">Performance</span></h3>
+        <ul>
+          <li>Les <strong class="hl">à-coups d’image</strong> sont traqués par un juge de mesure calibré, et les blocages à l’entrée dans le monde ont sauté.</li>
+          <li>Les temps de chargement sortent les préchauffages et la compilation de shaders du chemin critique.</li>
+          <li>Textures compressées pour les peaux de personnages, herbe construite dans un budget par image, effets de combat allégés.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Deux vieilles demandes <span class="chip c-util">Interface</span></h3>
+        <ul>
+          <li>Un bouton <strong class="hl">Ranger</strong> dans les sacs : un appui, tout est trié, filtre et recherche remis à zéro.</li>
+          <li>Le <strong class="hl">temps de jeu à vie</strong> arrive sur la fiche de personnage, masquable d’un œil pour les captures d’écran et le direct.</li>
+          <li>Les cadres de groupe signalent qui est <strong class="hl">à portée de soin</strong>, et l’attaquant voit ses absorptions.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Ça sonne juste <span class="chip c-new">Son &amp; art</span></h3>
+        <ul>
+          <li>Refonte artistique v0.36 et vraies animations d’attaque pour plusieurs familles de monstres.</li>
+          <li>Sons enregistrés, dont les <strong class="hl">six cris du guerrier</strong> — et l’inversion entre Flamestrike et Meteor est corrigée.</li>
+          <li>Vrais bruits pour les portails de Faille, les pièges, les grilles et les glissades ; moteur audible sur la monture blindée.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    paladin: {
+      title: "Le paladin, reconstruit de zéro",
+      summary: "Trente et un sorts ajoutés, cinq retirés, une ressource inédite : c’est la classe la plus transformée de la version.",
+      body: `
+        <h4>Une ressource : la Dévotion</h4>
+        <ul>
+          <li>Presque toutes les nouvelles attaques <b>génèrent 1 Dévotion</b> — <b>Mercy Lance</b> et <b>Hammer of Wrath</b> chez le soigneur et le DPS, <b>Sunward Disc</b> chez le tank (il rebondit d’ennemi en ennemi et paie à chaque impact).</li>
+          <li><b>Divine Ascension</b> consomme <b>20 Dévotion</b> et rend <b>5 charges</b> pendant 45 s : les sorts marqués dépensent une charge pour un effet renforcé — Mercy Lance devient un critique garanti.</li>
+        </ul>
+        <h4>Trois spés rebaptisées</h4>
+        <ul>
+          <li><b>Sunmender</b> (ex-Sacrament, soins) — signature <b>Mercy Lance</b> à la place de Holy Shock.</li>
+          <li><b>Faithwarden</b> (ex-Vigil, tank) — signature <b>Sunward Disc</b>. Sa maîtrise gagne <b>+35 % d’Endurance</b> en plus de ses +50 % de menace et +20 % d’armure : sans ce bonus le paladin tank plafonnait à <b>76 %</b> des points de vie effectifs du guerrier de protection.</li>
+          <li><b>Dawnreaver</b> (ex-Requital, DPS) — signature <b>Final Edict</b>, et une maîtrise à <b>+20 % de dégâts physiques ET magiques</b>.</li>
+        </ul>
+        <h4>Relever les morts</h4>
+        <ul>
+          <li>Une chaîne de deux quêtes chez Brother Aldric enseigne <b>Recall the Fallen</b> : ramener un membre du groupe à <b>35 % de vie et de mana</b>.</li>
+          <li>Un <b>Sunmender de niveau 16 ou plus</b> rappelle à la place <b>tout le groupe</b> d’un coup — la résurrection de masse arrive enfin dans le jeu.</li>
+        </ul>
+        <h4>Ce qui disparaît</h4>
+        <p><b>Judgement</b>, <b>Divine Shield</b>, <b>Holy Wrath</b>, Cleansing Verdict et Aura Surge sont retirés du jeu. Vos barres d’action seront à refaire.</p>`
+    },
+    demoniste: {
+      title: "Le démoniste : trois spés, trois familiers",
+      summary: "Les démons historiques ne sont plus invocables — chaque spécialisation reçoit à la place son propre compagnon.",
+      body: `
+        <h4>Ce qui part</h4>
+        <p><b>Summon Succubus</b>, <b>Summon Felhunter</b>, <b>Summon Felguard</b> et <b>Summon Doomguard</b> sont retirés, avec les quatre créatures correspondantes.</p>
+        <h4>Hexcraft — l’Œil</h4>
+        <ul>
+          <li><b>Evil Eye</b> marque un ennemi comme cible de vos malédictions ; le déplacer conserve la Condamnation accumulée mais ne relance pas ses <b>20 s</b>.</li>
+          <li><b>Coven</b> pose jusqu’à <b>4 yeux secondaires</b> pendant 15 s : ils alimentent la réserve commune à <b>50 %</b>, et <b>Sentence</b> se répercute sur eux pour <b>35 %</b> des dégâts.</li>
+          <li>La maîtrise ne s’appelle plus Creeping Rot mais <b>Sentence</b> : le verdict remplace le poison lent.</li>
+        </ul>
+        <h4>Necromancy — la cour des morts</h4>
+        <ul>
+          <li>La spé ex-Pactbound lève des serviteurs permanents : le <b>Graveguard</b> (il provoque tout seul et <b>intercepte 20 %</b> de vos dégâts), le Guerrier squelette, le Mage d’os et la Gravewing.</li>
+          <li><b>Reaping Command</b> le fait provoquer et encaisser <b>30 % de dégâts en moins</b> pendant 4 s ; <b>Army of the Dead</b> ouvre une brèche et lève les trois autres pour <b>20 s</b>.</li>
+          <li>Maîtrise renommée <b>Grave Dominion</b>.</li>
+        </ul>
+        <h4>Ruination — le feu</h4>
+        <ul>
+          <li>Le <b>Gloomshade</b> (l’ancien Voidwalker) et le <b>Pyre Colossus</b> restent : le colosse tombe du ciel pour <b>30 s</b> sans remplacer votre démon.</li>
+          <li>La maîtrise change de nature : <b>Conflagrate</b> accorde désormais Désolation, qui raccourcit fortement votre prochain Ruinbolt ou fait tomber la première vague de Rain of Fire immédiatement.</li>
+          <li><b>Cinderhide</b> arrive : <b>−25 % de dégâts subis</b> pendant 10 s. Le démoniste avait besoin d’un bouton de survie, il l’a.</li>
+        </ul>`
+    },
+    chasseur: {
+      title: "Le chasseur passe à la Concentration",
+      summary: "Changement de ressource — c’est la première fois qu’une classe en change dans ce jeu.",
+      body: `
+        <h4>Plus de mana</h4>
+        <ul>
+          <li>Le chasseur démarre à <b>100 points</b> de Concentration et n’en gagne <b>plus un seul par niveau</b> : la ressource ne grandit plus, elle circule. Le jeu la traite comme l’énergie du voleur.</li>
+          <li>La gourde d’eau des objets de départ disparaît, elle ne servait plus à rien.</li>
+        </ul>
+        <h4>Le familier redevient un bouton</h4>
+        <ul>
+          <li><b>Pack Command</b> lance votre bête pour 36 à 48 dégâts ; un coup réussi vous rend <b>20 Concentration</b> et empile <b>Pack Ferocity</b> (jusqu’à 3, 30 s) qui augmente tous vos dégâts.</li>
+          <li><b>Stampede</b> appelle <b>3 bêtes pendant 12 s</b>, qui frappent toutes les 2 s et figent votre Pack Ferocity à l’invocation.</li>
+        </ul>
+        <h4>Les trois spés</h4>
+        <ul>
+          <li><b>Coldsight</b> (Tir assuré) : nouvelle signature <b>Cold Focus</b> — 12 s pendant lesquelles Measured Shot rend <b>50 % de Concentration en plus</b> et Long Draw coûte 25 % de moins et s’incante 30 % plus vite. Maîtrise renommée <b>Cold Read</b>.</li>
+          <li><b>Fieldcraft</b> (Survie) : signature <b>Bloodhook</b>, une charge qui pose une plaie de 34 dégâts de base plus <b>26 % de votre puissance d’attaque à distance</b> sur 12 s en 4 ticks.</li>
+          <li><b>Packlord</b> (Maîtrise des bêtes) : c’est la seule à <b>descendre</b> — le bonus de dégâts du familier passe de <b>+35 % à +25 %</b>. Elle était largement en tête (200,7 DPS contre 141 et 136,8), les deux autres ont été montées à sa hauteur au lieu de la couper.</li>
+        </ul>`
+    },
+    bande: {
+      title: "Le ré-étalonnage 150–200 DPS",
+      summary: "Un passage « chiffres seulement », mesuré sur 120 secondes en équipement optimal — et une exception assumée.",
+      body: `
+        <h4>Comment c’est mesuré</h4>
+        <p>Chaque spé est simulée sur <b>120 secondes</b> contre le boss de raid, en meilleur équipement possible, sur cinq graines aléatoires fixes. La cible : que tout le monde atterrisse entre <b>150 et 200 DPS</b>.</p>
+        <h4>Ce qui bouge, chiffres mesurés</h4>
+        <ul>
+          <li><b>Chasseur Tir assuré</b> : 141 → <b>167,6</b>. <b>Chasseur Survie</b> : 136,8 → <b>167,7</b>. <b>Packlord</b> ne bouge pas, à 200,7.</li>
+          <li><b>Prêtre Ombre</b> : il sortait à <b>215</b>, au-dessus du plafond. Ses trois lignes de dégâts sont rabotées (0,3 / 0,34 / 0,4 → 0,2 / 0,2 / 0,15) pour le ramener dans la fourchette.</li>
+          <li><b>Voleur</b> : les trois spés gagnent de la puissance d’attaque en pourcentage, parce que <b>54 à 73 % de leurs dégâts</b> viennent des coups blancs, que les bonus par sort ne touchaient pas.</li>
+        </ul>
+        <h4>L’exception à connaître</h4>
+        <p>Le code le dit franchement : le <b>chaman Élémentaire</b> reste <b>sous la fourchette</b> et est suivi à part, en attendant un passage sur son équipement. Ne comptez donc pas sur « huit spés dans la fourchette » pour signifier « tout le monde est à égalité » : Thundercall attend encore son tour.</p>`
+    },
+    reliquaire: {
+      title: "Le Reliquaire, page par page",
+      summary: "Absent des notes officielles, présent dans la version : voici ce que le code livre exactement.",
+      body: `
+        <h4>Trois rayons, 35 pages, 375 emplacements</h4>
+        <ul>
+          <li><b>Conquérants</b> (27 pages) : une page par donjon en normal et en héroïque, le raid Nythraxis, Thunzharr, les Failles, les rares du monde, les panoplies et les deux vitrines WARFARE.</li>
+          <li><b>Métiers</b> (3 pages) : galerie des chefs-d’œuvre, notes de terrain rares, spécimens clés.</li>
+          <li><b>Horizons</b> (5 pages) : montures, apparences d’armes, titres, Chambre des âges, Riftbound.</li>
+        </ul>
+        <h4>Les règles</h4>
+        <ul>
+          <li>Le catalogue est <b>trié à la main</b> : uniquement les pièces rares et signatures, jamais toutes les lignes de butin. <b>240 objets</b> distincts sont rattachés à une page.</li>
+          <li>Les <b>jumelles héroïques</b> ne comptent pas deux fois : trouver la version héroïque crédite la case de base.</li>
+          <li>Chaque case indique <b>où la chercher</b> par un identifiant de source — et quand une pièce a plusieurs portes d’entrée, elles sont <b>toutes</b> listées plutôt qu’une supposition.</li>
+        </ul>
+        <h4>Les rangs de Conservateur</h4>
+        <ul>
+          <li><b>1, 10, 25, 50, 100</b> reliques uniques : sceaux Apprenti, Gardien, Maître, Grand et Éternel.</li>
+          <li>C’est <b>strictement décoratif</b>. Le code est explicite : rien ne lit ce rang pour la puissance, les taux de butin ou la chance. Aucun Renom n’est marqué non plus.</li>
+          <li>Le rang <b>ne redescend jamais</b> : si le catalogue s’agrandit plus tard, votre record acquis reste acquis.</li>
+        </ul>`
+    },
+    pvp: {
+      title: "PvP : ce qui change vraiment dans la file",
+      summary: "Tout est tiré du code du champ de bataille et de la file — y compris les seuils qui ne sont écrits nulle part.",
+      body: `
+        <h4>Le match nul</h4>
+        <ul>
+          <li>Les nuls sont enregistrés et affichés partout en <b>victoires-défaites-nuls</b>, en arène 1c1 et 2c2 comme au champ de bataille.</li>
+          <li><b>Attention au pourcentage</b> : les nuls entrent dans le total des matchs joués. Un joueur avec 10 victoires, 10 défaites et 5 nuls n’affiche pas 50 % mais <b>40 %</b> de victoires.</li>
+        </ul>
+        <h4>Le remplacement des déserteurs</h4>
+        <ul>
+          <li>Une place ne se remplit que s’il reste <b>plus de deux minutes</b> — exactement le seuil du premier avertissement de fin de match.</li>
+          <li>Pendant la mise en place, en revanche, la place se remplit <b>toujours</b> : le match n’a encore ni chrono ni score.</li>
+          <li>La file <b>ne casse jamais un groupe</b> pour boucher un trou : à défaut de solo disponible, la place reste vide. Sinon, c’est le solo qui attend depuis le plus longtemps.</li>
+          <li>Si l’équipe d’en face est à <b>une capture</b> de gagner, on n’envoie plus personne. En revanche, être sur le point de <b>gagner</b> n’empêche pas de recevoir du renfort.</li>
+        </ul>
+        <h4>Les titres renommés</h4>
+        <p>Sergeant, Knight-Lieutenant et Field Marshal étaient des rangs repris mot pour mot d’un autre jeu. Ils deviennent <b>Linebreaker</b>, <b>Fieldreaver</b> et <b>Warcrowned</b>, dans le vocabulaire maison. Les seuils ne changent pas : <b>10 000</b>, <b>40 000</b> et <b>150 000</b> points d’Honneur à vie, soit à peu près <b>11, 44 et 167 journées</b> engagées à Thornhollow Fields. Linebreaker tombe volontairement <b>après</b> les 7 550 points du kit complet : le premier titre récompense d’avoir fini l’équipement, il n’est pas une étape sur le chemin.</p>`
+    },
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

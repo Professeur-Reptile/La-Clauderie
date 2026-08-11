@@ -196,7 +196,7 @@
     <div class="grid cols-3">
       <div class="card more" data-detail="sigs" tabindex="0" role="button" aria-label="Détails : Les 27 sorts signature">
         <h3>27 signatures <span class="chip c-new">Classes</span></h3>
-        <p>De <span data-codex="ability|Holy Shock">Holy Shock</span> à <span data-codex="ability|Chain Heal">Chain Heal</span> en passant par <span data-codex="ability|Dread Aspect">Dread Aspect</span> : le sort emblématique de ta spé, direct dans le grimoire.</p>
+        <p>De <span data-codex="ability|Holy Shock">Holy Shock</span> à <span data-codex="ability|chain_heal">Chain Heal</span> en passant par Dread Aspect : le sort emblématique de ta spé, direct dans le grimoire.</p>
         <span class="more-link">La liste complète par classe</span>
       </div>
       <div class="card more" data-detail="kicks" tabindex="0" role="button" aria-label="Détails : Un interrupt par classe">
@@ -430,14 +430,14 @@
         <h4>Paladin</h4>
         <ul>
           <li><b>Sacrament (Heal)</b> — <span data-codex="ability|Holy Shock">Holy Shock</span> · maîtrise Kindled Faith : les soins critiques soignent double.</li>
-          <li><b>Vigil (Tank)</b> — <span data-codex="ability|Hallowed Wall">Hallowed Wall</span> · maîtrise Oathward : +50 % menace, +20 % armure. Et <span data-codex="ability|Sacred Goad">Sacred Goad</span>, le taunt à 30 yards.</li>
+          <li><b>Vigil (Tank)</b> — <span data-codex="ability|Hallowed Wall">Hallowed Wall</span> · maîtrise Oathward : +50 % menace, +20 % armure. Et <span data-codex="ability|holy_taunt">Sacred Goad</span>, le taunt à 30 yards.</li>
           <li><b>Requital (DPS)</b> — <span data-codex="ability|Crusader Strike">Crusader Strike</span> · maîtrise Blood Debt : +20 % dégâts sacrés et physiques.</li>
         </ul>
         <h4>Chaman</h4>
         <ul>
           <li><b>Thundercall (DPS)</b> — <span data-codex="ability|Primal Mastery">Primal Mastery</span> (le prochain sort devient instantané) · maîtrise Earthen Fury.</li>
           <li><b>Warspirit (DPS)</b> — <span data-codex="ability|Ancestral Strike">Ancestral Strike</span> · maîtrise Skyrend : +10 % vitesse d'attaque et dégâts physiques.</li>
-          <li><b>Spiritmend (Heal)</b> — <span data-codex="ability|Chain Heal">Chain Heal</span>, avec des rebonds déterministes vers les blessés · maîtrise Cleansing Tides : -20 % coût en mana des soins.</li>
+          <li><b>Spiritmend (Heal)</b> — <span data-codex="ability|chain_heal">Chain Heal</span>, avec des rebonds déterministes vers les blessés · maîtrise Cleansing Tides : -20 % coût en mana des soins.</li>
         </ul>
         <h4>Druide</h4>
         <ul>
@@ -448,7 +448,7 @@
         <h4>Prêtre</h4>
         <ul>
           <li><b>Doctrine (Heal)</b> — <span data-codex="ability|Anointing">Anointing</span> · maîtrise Fixed Purpose : +30 % d'absorption des boucliers, +8 % PV max.</li>
-          <li><b>Benison (Heal)</b> — <span data-codex="ability|Holy Nova">Holy Nova</span> · maîtrise Grave Mercy : +20 % à tous les soins.</li>
+          <li><b>Benison (Heal)</b> — <span data-codex="ability|holy_nova">Holy Nova</span> · maîtrise Grave Mercy : +20 % à tous les soins.</li>
           <li><b>Vespers (DPS)</b> — <span data-codex="ability|shadowform">Gloamveil Form</span> · maîtrise Gloamveil : +15 % dégâts périodiques, +10 % dégâts des sorts.</li>
         </ul>
         <h4>Mage</h4>
@@ -460,7 +460,7 @@
         <h4>Démoniste</h4>
         <ul>
           <li><b>Hexcraft (DPS)</b> — <span data-codex="ability|Veinleech">Veinleech</span> · maîtrise Creeping Rot : +20 % sur les dégâts périodiques.</li>
-          <li><b>Pactbound (DPS)</b> — <span data-codex="ability|Dread Aspect">Dread Aspect</span> (métamorphose démoniaque, 20 s) · maîtrise Fiendlore : 20 % des dégâts subis redirigés vers le démon.</li>
+          <li><b>Pactbound (DPS)</b> — Dread Aspect (métamorphose démoniaque, 20 s) · maîtrise Fiendlore : 20 % des dégâts subis redirigés vers le démon.</li>
           <li><b>Ruination (DPS)</b> — <span data-codex="ability|Conflagrate">Conflagrate</span> · maîtrise Desolation : critiques de Feu à double dégâts, +2 % critique.</li>
         </ul>
         <h4>Voleur</h4>
@@ -489,7 +489,7 @@
           <li><b>Chasseur</b> — <span data-codex="ability|Hushing Shot">Hushing Shot</span> : tir sec qui interrompt à distance, <b>4 s</b>.</li>
           <li><b>Paladin</b> — <span data-codex="ability|Reproach">Reproach</span> : interrompt et verrouille l'école <b>4 s</b>.</li>
           <li><b>Druide</b> — <span data-codex="ability|Headbutt">Headbutt</span> : coup de tête bondissant, <b>4 s</b>.</li>
-          <li><b>Démoniste</b> — <span data-codex="ability|Gag Order">Gag Order</span> : silence en pleine incantation, <b>5 s</b>.</li>
+          <li><b>Démoniste</b> — <span data-codex="ability|spell_lock">Gag Order</span> : silence en pleine incantation, <b>5 s</b>.</li>
         </ul>
         <p style="color:var(--faint);font-size:0.86rem">Pour la guilde : sur <span data-codex="mob|Spirit of Malric">Malric</span>, établir l'ordre de la rotation d'interrupts avant le pull — le soin canalisé monte en puissance tant qu'il n'est pas coupé.</p>`
     },

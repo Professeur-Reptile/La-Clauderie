@@ -2,6 +2,38 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.36.0",
+   "date": "2026-08-11",
+   "titre": "La refonte des classes : huit classes sur neuf, 110 sorts — et le Reliquaire, absent des notes officielles",
+   "resume": "La grande refonte des classes est là. Huit classes sur neuf voient leurs six rangées de talents (niveaux 5 à 20) entièrement réécrites et cent dix sorts arrivent ; seul le mage ne bouge pas. Le paladin est reconstruit de zéro : ressource de Dévotion, trente et un sorts, trois spés rebaptisées (Sunmender, Faithwarden, Dawnreaver), une résurrection de groupe apprise en quête — mais Judgement, Divine Shield et Holy Wrath quittent le jeu. Le démoniste perd Succube, Chasseur de sorts et Gardien de Néant : chaque spé reçoit son propre familier, l’Evil Eye pour Hexcraft, une cour de morts-vivants pour Necromancy, les démons de feu pour Ruination. Le chasseur quitte le mana pour la Concentration, une première dans le jeu. Derrière, un ré-étalonnage chiffré ramène huit spés entre 150 et 200 DPS sur 120 secondes en équipement optimal — avec une exception assumée dans le code, le chaman Élémentaire qui reste sous la fourchette. Le coup blanc cesse d’être remultiplié par la vitesse d’arme (quatre armes écrites au même DPS en délivraient 12,9 à 25,6). Et une fonctionnalité entière que les notes officielles ne mentionnent nulle part existe pourtant dans la version : le Reliquaire, un cabinet de collection de 375 emplacements sur 35 pages, avec cinq rangs de Conservateur strictement décoratifs. Côté PvP, les matchs nuls sont enfin comptés (records en V-D-N), les places désertées se remplissent depuis la file, on peut changer de spé dans le champ de bataille, et les trois titres d’Honneur deviennent Linebreaker, Fieldreaver et Warcrowned à seuils inchangés. Dans les Failles, les cercles rouges ne s’effacent plus et leur mèche s’allonge quand on vous ralentit.",
+   "temps_forts": [
+    "Refonte des classes : huit classes sur neuf, toutes les rangées de talents des niveaux 5 à 20 réécrites, 110 sorts ajoutés — le mage est le seul à ne pas bouger",
+    "Paladin reconstruit : ressource Dévotion, 31 sorts, spés renommées Sunmender / Faithwarden / Dawnreaver (+35 % d’Endurance sur la maîtrise tank), résurrection de groupe — Judgement, Divine Shield et Holy Wrath retirés",
+    "Démoniste : les démons classiques disparaissent, un familier par spé (Evil Eye, cour de morts-vivants, démons de feu) et Cinderhide, −25 % de dégâts subis",
+    "Chasseur : passage du mana à la Concentration (100 points, rien par niveau), Pack Command et Stampede — Packlord seule en baisse (familier 35 % → 25 %)",
+    "Fourchette 150–200 DPS sur 120 s : Tir assuré 141 → 167,6, Survie 136,8 → 167,7, Prêtre Ombre ramené de 215 — le chaman Élémentaire reste sous la fourchette, le code le dit",
+    "Le coup blanc n’est plus remultiplié par la vitesse d’arme : quatre armes écrites à 15,0 DPS en délivraient 12,9 / 15,0 / 22,7 / 25,6",
+    "🗄️ Le Reliquaire (absent des notes officielles) : 375 emplacements, 35 pages, 3 rayons, cinq rangs de Conservateur à 1/10/25/50/100 reliques — aucune puissance, aucun Renom",
+    "PvP : matchs nuls enregistrés (V-D-N, et ils comptent dans le pourcentage), remplacement des déserteurs tant qu’il reste plus de 2 min, respécialisation dans le champ de bataille, titres renommés Linebreaker / Fieldreaver / Warcrowned",
+    "Failles : le télégraphe ne descend plus sous la moitié d’opacité, l’intérieur du cercle est toujours rempli, et la mèche s’allonge jusqu’au double si vous êtes entravé"
+   ],
+   "page": "notes/v0.36.0.html",
+   "titre_en": "The class overhaul: eight classes out of nine, 110 spells — and the Reliquary, missing from the official notes",
+   "resume_en": "The big class overhaul has landed. Eight classes out of nine have all six talent rows (levels 5 to 20) rewritten and a hundred and ten spells arrive; only the mage is untouched. The paladin is rebuilt from scratch: a Devotion resource, thirty-one spells, three renamed specs (Sunmender, Faithwarden, Dawnreaver) and a group resurrection learned through a quest chain — but Judgement, Divine Shield and Holy Wrath leave the game. The warlock loses Succubus, Felhunter and Felguard: each spec gets its own pet, the Evil Eye for Hexcraft, a court of undead for Necromancy, the fire demons for Ruination. The hunter leaves mana for Focus, a first in this game. Behind that, a numbers-only retune brings eight specs between 150 and 200 DPS over 120 seconds in best-in-slot gear — with one exception the code owns up to, the Elemental shaman still below the band. White damage is no longer re-scaled by weapon speed (four weapons authored at the same dps were delivering 12.9 to 25.6). And one whole feature the official notes never mention does ship in this build: the Reliquary, a 375-slot collection cabinet across 35 pages, with five strictly cosmetic Curator ranks. On the PvP side, draws are finally recorded (W-L-D records), deserted seats backfill from the queue, you can respec inside the battleground, and the three honor titles become Linebreaker, Fieldreaver and Warcrowned at unchanged thresholds. In the Rifts, red circles no longer fade out and their fuse stretches when you are slowed.",
+   "temps_forts_en": [
+    "Class overhaul: eight classes out of nine, every talent row from level 5 to 20 rewritten, 110 spells added — the mage is the only one untouched",
+    "Paladin rebuilt: a Devotion resource, 31 spells, specs renamed Sunmender / Faithwarden / Dawnreaver (+35% Stamina on the tank mastery), group resurrection — Judgement, Divine Shield and Holy Wrath removed",
+    "Warlock: the classic demons are gone, one pet per spec (Evil Eye, a court of undead, the fire demons) and Cinderhide, −25% damage taken",
+    "Hunter: mana replaced by Focus (100 points, none per level), Pack Command and Stampede — Packlord the only one down (pet damage 35% → 25%)",
+    "150–200 DPS band over 120s: Marksmanship 141 → 167.6, Survival 136.8 → 167.7, Shadow priest pulled back from 215 — the Elemental shaman stays below the band, and the code says so",
+    "White damage is no longer re-scaled by weapon speed: four weapons authored at 15.0 dps were delivering 12.9 / 15.0 / 22.7 / 25.6",
+    "🗄️ The Reliquary (absent from the official notes): 375 slots, 35 pages, 3 shelves, five Curator ranks at 1/10/25/50/100 relics — no power, no Renown",
+    "PvP: draws recorded (W-L-D, and they count toward your win rate), backfill while more than 2 min remain, respec inside the battleground, titles renamed Linebreaker / Fieldreaver / Warcrowned",
+    "Rifts: the telegraph never drops below half opacity, the circle interior is always filled, and the fuse stretches up to double if you are impaired"
+   ],
+   "page_en": "notes/v0.36.0.en.html"
+  },
+  {
    "version": "v0.35.1",
    "date": "2026-08-08",
    "titre": "Version d’entretien : le courrier allégé, les effets d’arme au loin — et rien qui change dans le jeu",
