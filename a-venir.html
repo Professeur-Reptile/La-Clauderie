@@ -208,10 +208,11 @@
 
     <div class="meta">
       <span id="depuis"><b>Depuis</b> la dernière version sortie</span>
-      <span id="freshness"><b>Relevé</b> à l’instant</span>
+      <span id="freshness"><b>Dernière vérification</b> à l’instant</span>
       <span id="moved"></span>
       <span id="written"><b>Résumé écrit</b> le 10 août 2026 à 18 h 10</span>
     </div>
+    <p class="sec-sub" style="margin:6px 0 0;font-size:0.85rem">« Dernière vérification » = la dernière fois que cette page est allée voir où en sont les développeurs. « Dernier changement du jeu » = quand ils ont touché à cette version pour la dernière fois.</p>
     <div id="chantiers"></div>
     <div class="hint">💡 Clique sur une carte pour le détail — et sur un nom souligné pour sa fiche Codex.</div>
   </header>
@@ -431,10 +432,10 @@
       try { enDep = localStorage.getItem("lang") === "en"; } catch (e) { /* stockage refuse */ }
       dep.innerHTML = "<b>" + (enDep ? "Since" : "Depuis") + "</b> " + esc(d.base_tag);
     }
-    if (fresh) fresh.innerHTML = "<b>Relevé</b> " + esc(since(d.generated) || "à l’instant");
+    if (fresh) fresh.innerHTML = "<b>Dernière vérification</b> " + esc(since(d.generated) || "à l’instant");
     const moved = document.getElementById("moved");
     if (moved && d.last_commit) {
-      moved.innerHTML = "<b>Dernier commit du jeu</b> " + esc(since(d.last_commit) || "à l’instant");
+      moved.innerHTML = "<b>Dernier changement du jeu</b> " + esc(since(d.last_commit) || "à l’instant");
     }
     if (d.imminent) {
       const b = document.createElement("span");
@@ -450,7 +451,7 @@
         return `<div class="chantier"><span class="v">${esc(v.version)}</span>` +
           `<span>${patch ? "correctif en préparation" : "la grande version d’après"}</span>` +
           `<span><b>${v.commits}</b> commits</span>` +
-          `<span>dernier mouvement ${esc(since(v.last_commit) || "à l’instant")}</span>${badge}</div>`;
+          `<span>dernier changement ${esc(since(v.last_commit) || "à l’instant")}</span>${badge}</div>`;
       }).join("");
     }
     // L'éditorial expire quand SA version n'est plus en préparation — pas
