@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
 <title>La prochaine version — La Clauderie</title>
-<meta name="description" content="Ce que les développeurs préparent pour la prochaine version de World of ClaudeCraft, expliqué simplement — sept classes remises à plat, le Reliquaire, un remplaçant appelé quand quelqu'un déserte un champ de bataille, un changement d'apparence offert. Rien n'est définitif : la version n'est pas sortie.">
+<meta name="description" content="Ce que les développeurs préparent pour la prochaine version de World of ClaudeCraft, expliqué simplement — Shift+Tab pour revenir en arrière dans les cibles, Se décoincer enfin utilisable en champ de bataille, Grix et ses kobolds avec leur propre corps, et l'application mobile qui montre ses mises à jour. Aucune classe touchée à ce stade.">
 <meta name="theme-color" content="#c8a04b">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="La Clauderie">
 <meta property="og:title" content="La prochaine version — La Clauderie">
-<meta property="og:description" content="Ce que les développeurs préparent pour la prochaine version de World of ClaudeCraft, expliqué simplement — sept classes remises à plat, le Reliquaire, un remplaçant appelé quand quelqu'un déserte un champ de bataille, un changement d'apparence offert. Rien n'est définitif : la version n'est pas sortie.">
+<meta property="og:description" content="Ce que les développeurs préparent pour la prochaine version de World of ClaudeCraft, expliqué simplement — Shift+Tab pour revenir en arrière dans les cibles, Se décoincer enfin utilisable en champ de bataille, Grix et ses kobolds avec leur propre corps, et l'application mobile qui montre ses mises à jour. Aucune classe touchée à ce stade.">
 <meta property="og:url" content="https://laclauderie.fr/a-venir.html">
 <link rel="canonical" href="https://laclauderie.fr/a-venir.html">
 <meta property="og:image" content="https://laclauderie.fr/assets/og.png">
@@ -197,20 +197,21 @@
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · En préparation</p>
     <h1>La prochaine version <span class="v" id="vNum">v0.37.0</span></h1>
-    <p class="lede">La branche vient tout juste d’ouvrir : <strong class="hl">160 commits</strong> depuis la sortie de la v0.36.0, et l’immense majorité sont des travaux internes — fusions, outillage, tests, re-rendus d’images. Côté joueurs, trois choses seulement pour l’instant : la commande <strong class="hl">/unstuck</strong> qui fonctionne enfin en champ de bataille, la touche <strong class="hl">Maj+Tab</strong> qui remonte la liste des cibles, et les <strong class="hl">portraits de monstres</strong> redessinés. C’est peu, et c’est normal : la version précédente est sortie ce matin. Cette page grossira au fil des semaines.</p>
+    <p class="lede">La v0.36.0 est sortie, et la branche de la v0.37.0 vient tout juste de s’ouvrir : <strong class="hl">180 commits</strong> en quatre jours, là où la précédente en comptait plus de mille sept cents au même endroit de cette page. Autant le dire tout de suite, parce que c’est la question n°1 : <strong class="hl">aucune classe n’est touchée</strong> à ce stade — pas un sort, pas un talent, pas une maîtrise, pas une ligne d’équilibrage. Ce qui est déjà là tient en quatre choses, toutes du côté du confort : <strong class="hl">Tab cycle enfin dans les deux sens</strong>, <strong class="hl">Se décoincer fonctionne à l’intérieur d’un champ de bataille</strong>, <strong class="hl">Grix et ses kobolds reçoivent leur propre corps</strong> au lieu d’emprunter celui des gobelins, et <strong class="hl">l’application mobile apprend à montrer ses mises à jour</strong> — avec, au passage, la levée de ce qui bloquait les sorties sur le Play Store depuis plusieurs versions.</p>
+
     <div class="warn">
       <span class="ico" aria-hidden="true">⚠️</span>
       <div>
         <p><strong>Cette version n’est pas sortie.</strong> Tout ce qui suit est déjà mergé sur la branche que les développeurs préparent, mais peut encore être modifié, retiré, ou repoussé à plus tard.</p>
-        <p>Les vraies notes de version — vérifiées ligne à ligne dans le code du jeu — arriveront dans <a href="patch-notes.html">Nouveautés</a> le jour de la sortie. Celles-ci sont écrites d’après le travail en cours.</p>
+        <p>Et la branche est <strong>jeune</strong> : à quatre jours, elle ne dit encore presque rien de ce que sera la version finale. Les vraies notes — vérifiées ligne à ligne dans le code du jeu — arriveront dans <a href="patch-notes.html">Nouveautés</a> le jour de la sortie.</p>
       </div>
     </div>
 
     <div class="meta">
-      <span id="depuis"><b>Depuis</b> la dernière version sortie</span>
+      <span><b>Depuis</b> la v0.36.0</span>
       <span id="freshness"><b>Dernière vérification</b> à l’instant</span>
       <span id="moved"></span>
-      <span id="written"><b>Résumé écrit</b> le 10 août 2026 à 18 h 10</span>
+      <span id="written"><b>Résumé écrit</b> le 11 août 2026 à 14 h 45</span>
     </div>
     <p class="sec-sub" style="margin:6px 0 0;font-size:0.85rem">« Dernière vérification » = la dernière fois que cette page est allée voir où en sont les développeurs. « Dernier changement du jeu » = quand ils ont touché à cette version pour la dernière fois.</p>
     <div id="chantiers"></div>
@@ -221,83 +222,209 @@
     <h2 id="digest-title">En un coup d’œil</h2>
     <p class="sec-sub">Les mêmes rubriques qu’à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
     <ol>
-      <li>
+      <li class="none">
         <span class="d-ico" aria-hidden="true">⚔️</span>
-        <a class="d-name" href="#confort">Classes &amp; sorts</a>
-        <span class="d-say"><b class="eq">Toutes =</b> aucune classe ne bouge pour l’instant. Seul détail relevé : les familiers cessent de repérer les joueurs furtifs de plus loin que leur maître, une correction commencée en v0.36.0 et finie ici.</span>
+        <span class="d-name">Classes &amp; sorts</span>
+        <span class="d-say">— <b class="eq">Guerrier =</b> <b class="eq">Paladin =</b> <b class="eq">Chasseur =</b> <b class="eq">Voleur =</b> <b class="eq">Prêtre =</b> <b class="eq">Mage =</b> <b class="eq">Chaman =</b> <b class="eq">Démoniste =</b> <b class="eq">Druide =</b> · Les neuf classes ressortent de la v0.36.0 <b>exactement telles quelles</b>. Le seul fichier de contrôles PvP qui a bougé a changé de dossier sans changer une valeur, et la seule correction de familier de la branche répare une bêtise que la branche s’était faite à elle-même.</span>
       </li>
       <li class="none">
         <span class="d-ico" aria-hidden="true">🔨</span>
         <span class="d-name">Métiers &amp; récolte</span>
-        <span class="d-say">—</span>
+        <span class="d-say">— Rien pour l’instant : aucune recette, aucun gisement, aucun banc de pêche touché.</span>
       </li>
       <li class="none">
         <span class="d-ico" aria-hidden="true">🐉</span>
         <span class="d-name">Donjons, failles &amp; boss</span>
-        <span class="d-say">—</span>
+        <span class="d-say">— Rien pour l’instant. Le seul monstre modifié est un rare de plein air, juste en dessous.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🗺️</span>
-        <a class="d-name" href="#confort">Monde &amp; quêtes</a>
-        <span class="d-say">Les portraits de tous les monstres sont redessinés — c’est l’image qui apparaît dans les fiches et les infobulles, pas la créature elle-même.</span>
+        <a class="d-name" href="#monstres">Monde &amp; quêtes</a>
+        <span class="d-say"><b>Grix le Roi des tunnels a enfin un corps à lui.</b> Ce rare élite d’Eastbrook Vale rendait <b>exactement comme les Terrassiers qu’il appelle</b> : seule la bordure de sa plaque de nom disait lequel était le boss. Lui et ses kobolds quittent le corps de gobelin qu’ils empruntaient, et il grandit d’un cran au passage. Les portraits de monstres sont re-rendus dans la foulée.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🏰</span>
-        <a class="d-name" href="#pvp">Guilde &amp; social</a>
-        <span class="d-say">Rester coincé dans un décor du champ de bataille ne condamne plus votre match : <span class="kbd">/unstuck</span> vous sort du piège et vous renvoie au cimetière. Interdit au porteur de drapeau, évidemment.</span>
+        <a class="d-name" href="#bg">Guilde &amp; social</a>
+        <span class="d-say"><b>Se décoincer marche enfin dans un champ de bataille.</b> La commande y était refusée d’office — rangée avec les duels et l’arène — et un joueur pris dans un mur de Thornhollow Fields n’avait que la déconnexion. Elle s’ouvre, avec ses garde-fous : vous êtes reposé au cimetière de votre camp sans quitter le match, et jamais pendant que vous portez le drapeau.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">⚙️</span>
-        <a class="d-name" href="#confort">Confort &amp; technique</a>
-        <span class="d-say"><span class="kbd">Maj</span>+<span class="kbd">Tab</span> parcourt les cibles en sens inverse. Le reste des 160 commits est du travail de coulisses : fusions de branches, tests, compilation.</span>
+        <a class="d-name" href="#ciblage">Confort &amp; technique</a>
+        <span class="d-say"><b>Shift+Tab</b> parcourt la liste de cibles à l’envers — la touche qui manquait depuis le début. Et l’application mobile montre enfin ses mises à jour au lieu de les télécharger en cachette, ne récupère plus que les fichiers qui ont changé, et repasse sous le plafond de taille du Play Store, qui bloquait ses sorties Android depuis plusieurs versions.</span>
       </li>
-    </ol>
     </ol>
   </nav>
 
   <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
        s'efface d'elle-même quand cette version sort, et se signale périmée si
        le jeu passe à préparer la suivante. -->
-  <div id="editorial" data-for="v0.37.0" data-commits="160" data-chantiers="v0.37.0" data-written="2026-08-11T10:05+02:00">
+  <div id="editorial" data-for="v0.37.0" data-commits="180" data-chantiers="v0.37.0" data-written="2026-08-11T14:45+02:00">
 
-  <!-- 1 PVP -->
-  <section id="pvp">
-    <div class="sec-head"><span class="sec-num">01</span><h2>Coincé dans un mur : la sortie de secours marche enfin en champ de bataille</h2></div>
-    <p class="sec-sub">C’est le seul vrai changement de jeu de la branche pour l’instant, et il répare une frustration précise : rester bloqué dans un décor de Thornhollow Fields, sans aucun moyen d’en sortir, pendant que l’équipe joue à quatre.</p>
+  <!-- 1 CIBLAGE -->
+  <section id="ciblage">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Tab, enfin, dans les deux sens</h2></div>
+    <p class="sec-sub">Une touche manquait depuis le premier jour : celle qui revient en arrière. On dépasse d’un cran l’ennemi qu’on visait, et il fallait refaire tout le tour du paquet pour retomber dessus. <span class="kbd">Shift+Tab</span> comble le trou — et la façon dont elle a été écrite mérite un mot, parce qu’elle n’est pas tout à fait le miroir de <span class="kbd">Tab</span>.</p>
     <div class="grid cols-2">
+      <div class="card more" data-detail="tabprev" tabindex="0" role="button" aria-label="Détails : le cycle de cible arrière">
+        <h3>Revenir sur la cible qu’on vient de dépasser <span class="chip c-new">Nouveau</span></h3>
+        <p><span class="kbd">Shift+Tab</span> parcourt <strong class="hl">la même liste ordonnée</strong> que <span class="kbd">Tab</span>, à l’envers. C’est un vrai raccourci à part entière, listé dans les options sous <strong class="hl">Ciblage</strong> et <strong class="hl">réassignable</strong> : les deux touches ne se marchent pas dessus, parce que le jeu compare l’accord complet et non la seule touche Tab.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
       <div class="card">
-        <h3>La sortie de secours <span class="chip c-new">Réparé</span></h3>
+        <h3>Ce que ce n’est pas <span class="chip c-util">Précision</span></h3>
         <ul>
-          <li>La commande <span class="kbd">/unstuck</span> refusait de fonctionner en champ de bataille. Elle marche désormais, y compris depuis les pièges de décor où l’on se retrouvait enfermé.</li>
-          <li>Elle vous replace <strong class="hl">au cimetière de votre camp</strong>, sur un emplacement dégagé — pas au milieu de la mêlée, et pas dans un autre mur.</li>
+          <li>Ce n’est <strong class="hl">pas une mémoire de « dernière cible »</strong>. La touche ne retient rien : elle recule d’un cran dans la liste que <span class="kbd">Tab</span> avance. Le libellé anglais dit d’ailleurs « cycle », délibérément.</li>
+          <li>Le français, lui, l’annonce « <strong class="hl">Revenir à la cible précédente</strong> » — plus court, mais un peu moins exact que l’anglais : c’est bien un cycle, pas un retour en arrière dans votre historique.</li>
+          <li>Sans cible, les deux touches attrapent <strong class="hl">la même</strong> : l’ennemi prioritaire du groupe proche.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>Une asymétrie assumée <span class="chip c-util">Détail</span></h3>
+        <p>Dans la mêlée où vous vous battez, avancer puis reculer vous <strong class="hl">ramène exactement où vous étiez</strong> — c’est là que se passent 99 % des cycles. En revanche, aux deux bords du paquet, les deux touches ne se répondent volontairement pas : <strong class="hl">ni l’une ni l’autre ne peut vous faire sortir</strong> de la mêlée proche vers un ennemi lointain qui traîne dans le décor. C’est ce qui garde <span class="kbd">Tab</span> loin des monstres qui ne vous concernent pas.</p>
+      </div>
+      <div class="card">
+        <h3>Et dans le guide <span class="chip c-util">Aide en jeu</span></h3>
+        <p>La ligne <span class="kbd">Shift+Tab</span> est ajoutée à la page <strong class="hl">Commandes</strong> du guide intégré, juste sous <span class="kbd">Tab</span>, et le libellé est <strong class="hl">traduit dans toutes les langues du jeu</strong> — français compris — avant même la sortie.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 CHAMP DE BATAILLE -->
+  <section id="bg">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Se décoincer sans quitter le champ de bataille</h2></div>
+    <p class="sec-sub">La commande <strong class="hl">Se décoincer</strong> refusait de s’exécuter dans un champ de bataille : le jeu la rangeait avec les duels et l’arène, où l’on ne se téléporte pas. Sauf qu’un joueur pris dans un mur de Thornhollow Fields n’a alors <strong class="hl">plus rien du tout</strong> — sinon se déconnecter, ce qui abandonne l’équipe à quatre. La porte s’ouvre, avec ses verrous posés un par un.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="unstuck" tabindex="0" role="button" aria-label="Détails : Se décoincer en champ de bataille">
+        <h3>Une sortie de secours qui reste dans le match <span class="chip c-new">Nouveau</span></h3>
+        <p>Vous ne quittez pas la partie : vous êtes reposé au <strong class="hl">cimetière de votre camp</strong>, tourné vers le terrain. Le jeu essaie plusieurs points autour du cimetière, puis se rabat sur les apparitions du fort, et <strong class="hl">vérifie que la case est réellement libre</strong> avant de vous y poser — se décoincer dans un autre mur n’aurait servi à rien.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Ce qui la refuse encore <span class="chip c-pvp">Garde-fous</span></h3>
+        <ul>
+          <li><strong class="hl">Porteur de drapeau, jamais</strong> — ni pour lancer la commande, ni pendant le décompte : ramasser le drapeau en cours de route annule la tentative. Une téléportation gratuite avec l’objectif sous le bras n’aurait pas tenu une soirée.</li>
+          <li>Le <strong class="hl">combat</strong>, l’incantation, l’étourdissement, la racine : les règles habituelles ne bougent pas.</li>
+          <li>Une fois le match <strong class="hl">terminé</strong> et les combattants renvoyés chez eux, il n’y a plus de destination — la commande redevient celle du monde ouvert.</li>
         </ul>
       </div>
       <div class="card">
-        <h3>Sauf si vous portez le drapeau <span class="chip c-bal">Règle</span></h3>
+        <h3>Ce que ça coûte <span class="chip c-bal">Contrepartie</span></h3>
         <ul>
-          <li>Le <strong class="hl">porteur de drapeau ne peut pas l’utiliser</strong> : ce serait un téléport gratuit vers son propre camp, donc une capture offerte.</li>
-          <li>Attention, c’est du travail en cours : ces règles peuvent encore bouger d’ici la sortie.</li>
+          <li>Un joueur <strong class="hl">vivant</strong> repart avec le <strong class="hl">Mal du décoincement</strong>, exactement comme ailleurs, et la commande se recharge sur le même palier de <strong class="hl">cinq minutes</strong>.</li>
+          <li>Un joueur <strong class="hl">mort</strong> voit son corps déplacé au cimetière <strong class="hl">sans être ressuscité</strong> — c’est la différence avec le monde ouvert, où la commande relève. Ici, la vague de renfort garde son rôle.</li>
+          <li>Vous arrivez <strong class="hl">sans cible, sans attaque automatique</strong> et sans sort en attente : la commande vous repose à zéro.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card more" data-detail="mur" tabindex="0" role="button" aria-label="Détails : le cas du joueur pris dans un mur">
+        <h3>Le cas précis du joueur pris dans un mur <span class="chip c-new">Correctif de fond</span></h3>
+        <p>Il y avait un piège : la commande refuse de se lancer sur un joueur <strong class="hl">en mouvement</strong> — et un personnage écrasé dans un décor est justement <strong class="hl">repoussé en permanence</strong> par la géométrie. La commande se serait donc refusée exactement dans le cas où elle sert. Le jeu reconnaît maintenant cette situation et <strong class="hl">lève la condition de mouvement</strong> quand il constate lui-même que votre position est corrigée par un obstacle.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Et pendant qu’on y est <span class="chip c-util">Détails</span></h3>
+        <ul>
+          <li>Le décompte ne s’annule plus <strong class="hl">parce que le décor vous pousse</strong> : dans un champ de bataille, seule votre propre commande de déplacement compte comme un mouvement.</li>
+          <li>Mais le <strong class="hl">combat annule toujours</strong> — être coincé n’est pas un abri.</li>
+          <li>Être <strong class="hl">chargé, tiré ou apeuré</strong> reste un mouvement subi qui bloque : la commande n’est pas une échappatoire aux contrôles.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- 2 CONFORT -->
-  <section id="confort">
-    <div class="sec-head"><span class="sec-num">02</span><h2>Deux petits conforts, et beaucoup de coulisses</h2></div>
-    <p class="sec-sub">Le reste de la branche ne se verra pas en jeu : ce sont des fusions de branches, de l’outillage de compilation et des tests. Voilà ce qui se verra.</p>
+  <!-- 3 MONSTRES -->
+  <section id="monstres">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Grix cesse de ressembler à ses propres sbires</h2></div>
+    <p class="sec-sub"><span data-codex="mob|Grix the Tunnelking">Grix the Tunnelking</span> est le rare élite d’<span data-codex="zone|Eastbrook Vale">Eastbrook Vale</span>, celui qui appelle des <span data-codex="mob|Deeprock Digger">Deeprock Digger</span> autour de lui. Jusqu’ici, il avait <strong class="hl">exactement le même corps qu’eux</strong> — un corps de gobelin emprunté, faute d’avoir le sien — et seule la bordure dorée de sa plaque de nom disait au joueur lequel des cinq était le boss. C’était le cas le plus flagrant du genre dans tout le jeu.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="grix" tabindex="0" role="button" aria-label="Détails : le corps de Grix">
+        <h3>Un corps à lui, couronne et pelle comprises <span class="chip c-mob">Art</span></h3>
+        <p>Grix reçoit un modèle <strong class="hl">dessiné pour lui</strong> : couronne, robes, et une <strong class="hl">pelle accrochée à sa main</strong>, qui le suit à travers toutes ses animations. Il garde son ambre d’origine sur la mini-carte et sa plaque de nom, mais le corps lui-même n’est <strong class="hl">plus teinté</strong> — on ne badigeonne pas une couleur unie sur une pièce peinte à la main.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="kobolds" tabindex="0" role="button" aria-label="Détails : les Deeprock Diggers et le périmètre">
+        <h3>Ses kobolds aussi — mais eux seuls <span class="chip c-mob">Art</span></h3>
+        <p>Les <span data-codex="mob|Deeprock Digger">Deeprock Digger</span> passent au <strong class="hl">vrai corps de kobold</strong> livré par l’artiste. Le changement s’arrête là, <strong class="hl">volontairement</strong> : la famille de monstres qui les contient rassemble aussi des lutins de haie et des sprites, et repointer la famille entière les aurait <strong class="hl">tous transformés en rats géants</strong>.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>Et il grandit d’un cran <span class="chip c-bal">Pas que cosmétique</span></h3>
+        <p>Grix passe à <strong class="hl">une fois et demie la taille d’un Digger</strong> — la proportion est calculée sur eux, pas choisie à l’œil. Attention, ce n’est pas purement visuel : dans ce jeu, <strong class="hl">l’allonge au corps à corps d’un monstre suit sa taille</strong> dès qu’elle dépasse la normale. Grix gagne donc, avec sa stature, <strong class="hl">une fraction de yard de portée</strong> — de quoi toucher un poil plus loin qu’avant.</p>
+      </div>
+      <div class="card">
+        <h3>Les portraits, dans la foulée <span class="chip c-util">Interface</span></h3>
+        <p>Les <strong class="hl">portraits de monstres</strong> — les vignettes du cadre de cible — sont re-rendus à partir des modèles à jour, et leur inventaire de provenance remis d’aplomb. C’est le gros du volume « art » de la branche, et c’est du <strong class="hl">rafraîchissement</strong> : rien de nouveau à débloquer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 APPLICATION MOBILE -->
+  <section id="app">
+    <div class="sec-head"><span class="sec-num">04</span><h2>L’application mobile apprend à montrer ses mises à jour</h2></div>
+    <p class="sec-sub">L’application iOS et Android sait déjà se mettre à jour sans repasser par la boutique : le jeu y est du web empaqueté, et le contenu peut être remplacé à la volée. Le problème, c’est que tout ça se faisait <strong class="hl">entièrement en silence</strong> — et qu’un joueur avec une installation périmée tombait sur un « version incompatible » sans savoir que le correctif était en train de se télécharger derrière lui.</p>
     <div class="grid cols-3">
-      <div class="card">
-        <h3>Maj+Tab, enfin <span class="chip c-util">Ciblage</span></h3>
-        <p><span class="kbd">Tab</span> passe à la cible suivante depuis toujours ; <span class="kbd">Maj</span>+<span class="kbd">Tab</span> permet maintenant de <strong class="hl">revenir en arrière</strong> dans la liste. De quoi rattraper la cible qu’on vient de dépasser.</p>
+      <div class="card more" data-detail="ota" tabindex="0" role="button" aria-label="Détails : la mise à jour visible">
+        <h3>Une barre de progression, et une porte de sortie <span class="chip c-new">Nouveau</span></h3>
+        <p>Au lancement, si une mise à jour se télécharge, un <strong class="hl">bandeau l’affiche avec son pourcentage</strong>, et un bouton « <strong class="hl">continuer sans mettre à jour</strong> » reste offert. Une fois le téléchargement fini, le jeu <strong class="hl">l’applique tout de suite</strong> au lieu d’attendre que vous quittiez l’application.</p>
+        <span class="more-link">Voir le détail</span>
       </div>
       <div class="card">
-        <h3>Les portraits redessinés <span class="chip c-new">Images</span></h3>
-        <p>Toutes les vignettes de monstres sont refaites. C’est l’image qui s’affiche dans les fiches et les infobulles : les créatures, elles, ne changent pas.</p>
+        <h3>Jamais en pleine partie <span class="chip c-util">Règle</span></h3>
+        <p>La règle est posée noir sur blanc : <strong class="hl">une session en cours n’est jamais interrompue</strong>. Tant que vous êtes dans le monde, le bandeau reste caché et la mise à jour attend sagement que vous refermiez le jeu. Le seul cas où elle s’impose, c’est le <strong class="hl">cul-de-sac</strong> : quand le serveur refuse votre version, il n’y a rien à préserver derrière.</p>
       </div>
       <div class="card">
-        <h3>Les familiers et la furtivité <span class="chip c-bal">Suite</span></h3>
-        <p>La v0.36.0 avait empêché les familiers de repérer un voleur furtif <strong class="hl">de plus loin que leur maître</strong> ; la portée est ici alignée pour de bon.</p>
+        <h3>Ne plus retélécharger le jeu entier <span class="chip c-new">Réseau</span></h3>
+        <p>Jusqu’ici chaque mise à jour tirait <strong class="hl">l’archive complète</strong>. Le jeu publie désormais aussi un <strong class="hl">inventaire fichier par fichier</strong>, ce qui permet à l’application de ne récupérer que <strong class="hl">ce qui a réellement changé</strong>. Et si le moindre élément de cet inventaire est douteux, tout l’inventaire est jeté et l’on retombe sur l’archive complète — jamais sur une liste à moitié vérifiée.</p>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card more" data-detail="play" tabindex="0" role="button" aria-label="Détails : le plafond du Play Store">
+        <h3>Ce qui bloquait le Play Store <span class="chip c-new">Débloqué</span></h3>
+        <p>Voilà <strong class="hl">plusieurs versions</strong> que les sorties Android étaient à l’arrêt, et la cause tient en un chiffre : l’application pesait <strong class="hl">555 Mo compressés</strong>, pour un plafond Google de <strong class="hl">500 Mo</strong>. Les médias et l’audio déménagent dans un paquet séparé, installé en même temps que l’application : le corps principal retombe à <strong class="hl">68 Mo</strong>.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Ce que ça ne change pas <span class="chip c-util">Repère</span></h3>
+        <ul>
+          <li><strong class="hl">Rien sur navigateur</strong> : tout ce chantier ne concerne que les applications iOS et Android installées.</li>
+          <li>Une mise à jour de ce type ne remplace que le <strong class="hl">contenu</strong> du jeu. Ce qui touche à l’application elle-même passe toujours par la boutique, avec son avis habituel.</li>
+          <li>Un filet de sécurité existant reste en place : une mise à jour qui <strong class="hl">ne démarre pas</strong> est automatiquement annulée et rend la main à la précédente.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 COULISSES -->
+  <section id="coulisses">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Et le reste, honnêtement, c’est de la plomberie</h2></div>
+    <p class="sec-sub">Sur les 180 commits de la branche, la très grande majorité sont des fusions avec la v0.36.0, des réparations de tests instables et de l’outillage de compilation. Rien de tout cela ne se voit en jeu — mais deux points valent d’être dits, parce qu’ils ressemblent à des changements et n’en sont pas.</p>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>Les contrôles en PvP : rien n’a bougé <span class="chip c-util">Fausse alerte</span></h3>
+        <p>Le calcul qui réduit la durée des peurs, métamorphoses, racines et coupures d’école en duel a bien été <strong class="hl">réécrit</strong> dans la branche — mais il a seulement <strong class="hl">changé de fichier</strong>. Pas une valeur, pas un palier, pas une catégorie n’a été modifié. Les étourdissements restent exemptés de cette réduction, comme depuis la v0.36.0.</p>
+      </div>
+      <div class="card">
+        <h3>Le familier : une réparation à somme nulle <span class="chip c-util">Fausse alerte</span></h3>
+        <p>La branche contient une correction sur les auras de familier. Elle <strong class="hl">annule une bêtise que la branche s’était faite à elle-même</strong> quelques jours plus tôt : au bout du compte, le comportement est identique à celui de la v0.36.0. Rien à relire dans votre build de chasseur ou de démoniste.</p>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card">
+        <h3>Ce qui occupe vraiment les développeurs <span class="chip c-util">Coulisses</span></h3>
+        <ul>
+          <li>Un <strong class="hl">va-et-vient permanent</strong> avec la branche de la v0.36.0, qui continue de recevoir des correctifs : c’est le gros du compte de commits.</li>
+          <li>Des <strong class="hl">tests instables</strong> traqués et durcis, et des étapes de compilation lancées en parallèle pour raccourcir l’attente.</li>
+          <li>Une <strong class="hl">infobulle de capacité</strong> qui pouvait s’écrouler quand il lui manquait une donnée affiche désormais une ligne de repli propre.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>À quoi s’attendre pour la suite <span class="chip c-util">Prudence</span></h3>
+        <p>Quatre jours de branche, ce n’est <strong class="hl">rien</strong> à l’échelle d’une version de ce jeu : la v0.36.0 est passée de 99 à plus de 1 700 commits en quelques jours, et sa refonte de sept classes a atterri d’un seul coup, en une après-midi. Cette page sera donc <strong class="hl">réécrite</strong> — probablement de fond en comble. Ce qui y est écrit aujourd’hui décrit ce qui est déjà posé, pas ce que sera la v0.37.0.</p>
       </div>
     </div>
   </section>
@@ -324,9 +451,149 @@
 </dialog>
 
 <script>
-  // Aucune carte ne s’ouvre pour l’instant : la branche de la v0.37.0 est
-  // trop jeune pour qu’une fiche détaillée dise autre chose que la carte.
   const DETAILS = {
+    tabprev: {
+      title: "Shift+Tab : le cycle de cible, à l’envers",
+      summary: "Lu dans le code de la branche — la touche est simple, sa règle de bord l’est moins, et c’est volontaire.",
+      body: `
+        <h4>Ce qu’elle fait</h4>
+        <ul>
+          <li><b>Shift+Tab</b> reprend la liste d’ennemis que <b>Tab</b> parcourt — même ordre, même priorités, même portée — et y recule d’un cran au lieu d’avancer.</li>
+          <li>C’est un <b>raccourci à part entière</b> : il apparaît dans les options sous la rubrique Ciblage, sous le nom « Cycle Target Backward », et se réassigne comme n’importe quel autre.</li>
+          <li>Il ne peut pas entrer en conflit avec <b>Tab</b> : le jeu compare l’accord de touches complet, donc <b>Shift+Tab</b> et <b>Tab</b> sont deux entrées distinctes, et aucune ne masque l’autre.</li>
+          <li>Sans cible en cours — ou si votre cible n’est plus valable — les deux directions donnent <b>le même résultat</b> : l’ennemi prioritaire du groupe proche.</li>
+        </ul>
+        <h4>La règle de bord, et pourquoi elle n’est pas symétrique</h4>
+        <ul>
+          <li>Le jeu range les ennemis en deux paquets : la <b>mêlée proche</b> (ceux que vous voyez, ceux qui vous combattent) et une <b>réserve lointaine</b> d’ennemis encore à portée mais qui ne vous concernent pas.</li>
+          <li><b>À l’intérieur de la mêlée</b>, les deux touches sont exactement inverses l’une de l’autre : avancer de trois crans puis reculer de trois vous ramène sur l’ennemi de départ. C’est là que se joue l’immense majorité des cycles, et c’est la propriété que la branche vérifie explicitement.</li>
+          <li><b>Au bord de la mêlée</b>, en revanche, aucune des deux directions ne vous en fait sortir : Tab revient au premier de la mêlée, Shift+Tab revient au dernier. Le code dit pourquoi et prévient de ne pas « réparer » cette asymétrie : c’est elle qui empêche <b>Tab de vous coller sur un monstre lointain</b> qui ne fait que passer.</li>
+          <li>Un seul ennemi à portée ? Les deux touches vous laissent dessus, sans clignoter.</li>
+        </ul>
+        <h4>Le mot juste</h4>
+        <p>Le libellé anglais — « Cycle Target Backward » — a été choisi pour ne <b>pas</b> se lire comme une mémoire de dernière cible : la touche ne retient rien, elle recule dans une liste recalculée à chaque pression. La traduction française retenue, « Revenir à la cible précédente », est plus courte et plus naturelle, mais elle promet un peu plus que ce que le code fait : si le paquet d’ennemis a changé entre-temps, « précédente » n’a pas de sens — le cycle, lui, en a toujours un.</p>`
+    },
+    unstuck: {
+      title: "Se décoincer, à l’intérieur d’un champ de bataille",
+      summary: "Une commande qui existait mais s’interdisait le seul endroit où l’on ne peut pas se déconnecter sans trahir son équipe.",
+      body: `
+        <h4>Pourquoi elle était refusée</h4>
+        <ul>
+          <li>La commande vérifie que vous n’êtes pas dans une situation « compétitive » — duel, arène, match de tournoi — parce qu’une téléportation gratuite y règle un combat. Le <b>champ de bataille tombait dans le même sac</b>.</li>
+          <li>Sauf que les trois autres se quittent : on peut abandonner un duel. Thornhollow Fields se joue à <b>cinq contre cinq</b>, et un joueur qui se déconnecte pour se libérer d’un mur laisse son équipe à quatre — exactement le trou que la v0.36.0 s’employait à boucher avec son remplaçant appelé depuis la file.</li>
+        </ul>
+        <h4>Où elle vous dépose</h4>
+        <ul>
+          <li>Au <b>cimetière de votre camp</b>, tourné vers le terrain. Le jeu essaie d’abord le centre de la parcelle, puis huit points autour, puis les points d’apparition du fort.</li>
+          <li>Chaque candidat est <b>testé contre les obstacles</b> : la position doit ressortir intacte du calcul de collision, et rester à l’intérieur de la parcelle du cimetière ou du fort. Une destination qui glisserait dans un mur est écartée plutôt que servie.</li>
+          <li>Si aucun point ne convient — cas théorique — la commande ne fait rien plutôt que de vous poser n’importe où.</li>
+        </ul>
+        <h4>Ce qu’elle vous prend</h4>
+        <ul>
+          <li>Vivant, vous repartez avec le <b>Mal du décoincement</b>, la même pénalité de caractéristiques qu’ailleurs, et la commande se recharge sur le même palier de <b>cinq minutes</b>.</li>
+          <li>Mort, votre corps est <b>déplacé sans être ressuscité</b> : c’est la différence nette avec le monde ouvert, où la commande relève au cimetière. Ici, c’est la vague de renfort qui vous rend au match — la commande ne la court-circuite pas.</li>
+          <li>Vous arrivez <b>cible effacée, attaque automatique coupée</b>, sorts en attente annulés et vitesse remise à zéro.</li>
+        </ul>
+        <h4>Le verrou du drapeau</h4>
+        <p>Un porteur de drapeau ne peut ni lancer la commande, ni la mener à terme : si vous ramassez le drapeau <b>pendant</b> le décompte, la tentative est annulée sur place. Les deux vérifications existent séparément, et c’est délibéré — la seconde ferme la fenêtre que la première laisserait ouverte.</p>`
+    },
+    mur: {
+      title: "Le piège du joueur écrasé dans un décor",
+      summary: "Un cas où la condition de sécurité de la commande interdisait précisément la situation qu’elle est censée résoudre.",
+      body: `
+        <h4>Le nœud</h4>
+        <ul>
+          <li>Se décoincer refuse de démarrer sur un joueur <b>en mouvement</b> : sinon, la commande deviendrait une téléportation de repositionnement, lancée en courant.</li>
+          <li>Mais un personnage coincé dans de la géométrie est en permanence <b>repoussé</b> par elle : le moteur corrige sa position à chaque image, ce qui compte comme du mouvement. La commande se serait donc refusée <b>exactement</b> dans le seul cas où un joueur de champ de bataille en a besoin.</li>
+        </ul>
+        <h4>Comment c’est tranché</h4>
+        <ul>
+          <li>Le jeu <b>distingue maintenant deux choses</b> qu’il confondait : le mouvement <b>subi</b> (charge en cours, poursuite d’un allié, peur) et la simple présence de vitesse.</li>
+          <li>Le premier bloque toujours — se décoincer n’est pas une porte de sortie aux contrôles.</li>
+          <li>Le second est <b>levé dans un champ de bataille quand le jeu constate lui-même que votre position est corrigée par un obstacle</b> : autrement dit, quand vous êtes vraiment dans le mur, pas quand vous courez.</li>
+          <li>Dans la foulée, le décompte ne s’annule plus parce que le décor vous a déplacé : dans un champ de bataille, seule <b>votre propre commande de déplacement</b> compte comme un abandon. Le combat, lui, annule toujours.</li>
+        </ul>
+        <p class="summary" style="margin-top:18px;border:0;padding:0">Ce cas est couvert par des tests dédiés dans la branche — le joueur vivant pris au piège, le corps pris au piège, le porteur de drapeau refusé, le cimetière obstrué et le point d’apparition occupé ont chacun le leur.</p>`
+    },
+    grix: {
+      title: "Grix le Roi des tunnels, enfin reconnaissable",
+      summary: "Le cas d’école du problème que cette vague d’art vient corriger.",
+      body: `
+        <h4>Le problème, dit sans détour</h4>
+        <p>Grix est un <b>rare élite</b>. Il appelle autour de lui des Terrassiers ordinaires — et il rendait à l’écran <b>exactement comme eux</b>, avec le même corps de gobelin emprunté. Le seul indice donné au joueur était le <b>cadre de sa plaque de nom</b>. Un boss qu’on ne distingue pas de ses propres renforts, dans un jeu où l’on apprend à lire une mêlée d’un coup d’œil, c’était le manque le plus criant de la liste.</p>
+        <h4>Ce qu’il reçoit</h4>
+        <ul>
+          <li>Un <b>modèle dessiné pour lui</b> : couronne, robes, et une <b>pelle tenue en main</b> — un accessoire réellement accroché à son squelette, qui suit sa main à travers toutes ses animations plutôt que d’être animé à part.</li>
+          <li>Ses animations sont <b>mesurées sur le modèle</b> plutôt que laissées aux valeurs par défaut : sans ça, un monstre qui vous charge à pleine vitesse patine, le pied planté glissant sur le sol.</li>
+          <li>Il garde de sa fiche une <b>réaction de coup</b> reprise d’ailleurs : son modèle n’en dessine pas, et la branche préfère emprunter la bonne animation plutôt que d’en réclamer une qui n’existe pas.</li>
+          <li><b>Pas de teinte</b> sur le corps, à dessein. Sur les modèles partagés, la couleur est ce qui distingue un monstre d’un autre ; ici, l’art est peint, et un lavis d’ambre par-dessus ne ferait que le salir. Sa couleur d’origine continue de servir à la mini-carte et à sa plaque.</li>
+        </ul>
+        <h4>La taille, qui n’est pas qu’une question d’allure</h4>
+        <ul>
+          <li>Il passe à <b>une fois et demie la taille d’un Terrassier</b> — une proportion calculée sur eux, pas choisie à l’œil.</li>
+          <li>Le code prévient lui-même : ce n’est <b>pas neutre en combat</b>. L’allonge au corps à corps d’un monstre grandit avec sa taille dès qu’elle dépasse la normale, donc Grix gagne une <b>fraction de yard de portée</b>, et la distance à laquelle il cherche à se tenir suit.</li>
+          <li>C’est présenté comme voulu : un rare élite planté au milieu de ses propres renforts doit <b>dominer la scène</b>, y compris de quelques centimètres d’allonge.</li>
+        </ul>`
+    },
+    kobolds: {
+      title: "Les Terrassiers, et pourquoi le changement s’arrête là",
+      summary: "Une décision de périmètre expliquée dans le code — instructive sur la façon dont le jeu range ses monstres.",
+      body: `
+        <h4>Ce qui change</h4>
+        <ul>
+          <li>Les <b>Deeprock Digger</b> d’Eastbrook Vale quittent le corps de gobelin qu’ils empruntaient pour le <b>vrai corps de kobold</b> livré par l’artiste, avec ses propres animations de marche, de course, d’attaque et de mort.</li>
+          <li>Leurs cadences de pas sont <b>mesurées</b> sur les animations réelles, à la taille à laquelle ces monstres apparaissent le plus souvent. Sans cette mesure, un kobold qui vous poursuit à pleine vitesse joue son cycle de marche trop lentement et glisse visiblement sur le sol.</li>
+          <li>Une teinte très légère est conservée : le modèle arrive avec sa propre peau brune, et la couche de couleur prévue pour les corps partagés ne ferait que la ternir.</li>
+        </ul>
+        <h4>Pourquoi les autres n’y ont pas droit</h4>
+        <ul>
+          <li>Le jeu range ses monstres par <b>familles</b>, et attribue un corps par défaut à chaque famille. Les kobolds appartiennent à la famille des « fouisseurs ».</li>
+          <li>Sauf que cette famille contient aussi une dizaine d’autres créatures — des lutins de haie, des sprites des saules et des marais, des misérables — qui n’ont <b>rien de kobold</b>. Repointer la famille entière les aurait tous transformés en rats géants.</li>
+          <li>Le changement est donc appliqué <b>monstre par monstre</b>, aux deux seuls concernés de la zone de départ. Le code désigne nommément les prochains candidats — les kobolds d’une zone plus haute et une paire de creuseurs des mines — mais s’arrête là : chacun est une décision à prendre, pas une conséquence automatique.</li>
+        </ul>
+        <p class="summary" style="margin-top:18px;border:0;padding:0">Aucune statistique de ces monstres n’est modifiée : niveaux, points de vie, dégâts, butin, tout est identique. Seul Grix change de taille, et c’est traité juste à côté.</p>`
+    },
+    ota: {
+      title: "Des mises à jour qu’on voit passer",
+      summary: "La première moitié d’un chantier annoncé en deux temps sur l’application mobile.",
+      body: `
+        <h4>Le problème de départ</h4>
+        <ul>
+          <li>L’application peut remplacer le contenu du jeu <b>sans repasser par la boutique</b> — c’est ce qui permet à un correctif d’atteindre les téléphones en quelques minutes au lieu d’une semaine de validation.</li>
+          <li>Mais tout se passait <b>en silence</b> : la vérification, le téléchargement, et même l’installation, qui attendait que vous refermiez l’application. Un joueur avec une version périmée touchait le mur « version incompatible » <b>sans le moindre indice</b> que la solution était en train d’arriver dans son dos.</li>
+        </ul>
+        <h4>Ce qui s’affiche maintenant</h4>
+        <ul>
+          <li><b>Avant d’entrer dans le monde</b> : un bandeau avec le pourcentage en direct, et un bouton « continuer sans mettre à jour » pour ceux qui veulent jouer tout de suite. Si le téléchargement se termine avant que vous entriez en jeu, il est <b>appliqué immédiatement</b> plutôt que remis à plus tard.</li>
+          <li><b>Sur le refus de version</b> : le cul-de-sac est remplacé par le même bandeau, en version « obligatoire » — la progression s’affiche, la mise à jour s’applique dès qu’elle est prête, et il n’y a pas de bouton pour passer outre. Il n’y a rien de jouable derrière, donc rien à préserver.</li>
+          <li><b>En pleine partie</b> : rien. La règle est explicite dans le code — une session en cours n’est jamais interrompue, et le téléchargement terminé retombe sur l’ancien comportement, c’est-à-dire s’installer quand vous quitterez.</li>
+        </ul>
+        <h4>Et le téléchargement lui-même</h4>
+        <ul>
+          <li>Le jeu publie désormais, à côté de l’archive complète, un <b>inventaire fichier par fichier</b> avec l’empreinte de chacun — ce qui permet à l’application de ne récupérer que <b>ce qui a bougé</b> depuis sa version.</li>
+          <li>La vérification est <b>fermée par défaut</b> : chaque adresse doit être sécurisée et venir du même hébergeur que l’inventaire, l’empreinte est obligatoire, et la moindre entrée douteuse fait <b>jeter l’inventaire entier</b> au profit de l’archive complète. Jamais une liste à moitié validée.</li>
+          <li>Le filet de sécurité existant ne bouge pas : une mise à jour qui n’arrive pas à démarrer est <b>automatiquement annulée</b> et la version précédente reprend la main.</li>
+        </ul>
+        <p class="summary" style="margin-top:18px;border:0;padding:0">Rien de tout cela ne concerne le jeu dans un navigateur, ni le client de bureau : c’est propre aux applications iOS et Android installées.</p>`
+    },
+    play: {
+      title: "555 Mo contre un plafond de 500 : le blocage Android",
+      summary: "Le genre de détail invisible qui empêche pourtant une version entière d’atteindre ses joueurs.",
+      body: `
+        <h4>Le chiffre</h4>
+        <ul>
+          <li>L’application Android, avec tout son contenu embarqué, pesait <b>555 Mo compressés</b>.</li>
+          <li>Google Play impose un plafond de <b>500 Mo</b> sur le corps principal d’une application. Au-dessus, la publication est refusée — et c’est ce qui <b>bloquait les sorties Android depuis plusieurs versions</b>.</li>
+        </ul>
+        <h4>La solution</h4>
+        <ul>
+          <li>Les <b>médias et l’audio</b> déménagent dans un paquet séparé, prévu par Android pour exactement ce cas, et <b>installé en même temps</b> que l’application : le joueur ne voit aucune différence, il n’y a pas de second téléchargement au premier lancement.</li>
+          <li>Le corps principal retombe à <b>68 Mo</b> ; le paquet en pèse <b>460</b>, contre son propre plafond d’un gigaoctet. La marge redevient confortable.</li>
+          <li>Le paquet est <b>fusionné automatiquement</b> avec le reste au moment où le jeu lit ses fichiers, donc rien à changer côté jeu.</li>
+          <li>La découpe ne s’applique qu’aux versions destinées à la boutique : une installation directe, elle, garde tout au même endroit.</li>
+        </ul>
+        <p class="summary" style="margin-top:18px;border:0;padding:0">Rien à faire de votre côté, et rien à réinstaller : cela concerne la façon dont l’application est publiée, pas la façon dont elle fonctionne.</p>`
+    },
   };
 
   const modal = document.getElementById("modal");
@@ -423,15 +690,6 @@
     // jeu n'avait pas bougé de la nuit. Ce sont deux faits distincts, et le
     // second a maintenant sa propre mention juste à côté.
     const fresh = document.getElementById("freshness");
-    // « Depuis la vX » était écrit EN DUR dans la page : elle est restée sur
-    // « Depuis la v0.35.1 » après la sortie de la v0.36.0, ce qui n'avait aucun
-    // sens en face d'un titre annonçant la v0.37.0 (signalé le 11 août 2026).
-    const dep = document.getElementById("depuis");
-    if (dep && d.base_tag) {
-      let enDep = false;
-      try { enDep = localStorage.getItem("lang") === "en"; } catch (e) { /* stockage refuse */ }
-      dep.innerHTML = "<b>" + (enDep ? "Since" : "Depuis") + "</b> " + esc(d.base_tag);
-    }
     if (fresh) fresh.innerHTML = "<b>Dernière vérification</b> " + esc(since(d.generated) || "à l’instant");
     const moved = document.getElementById("moved");
     if (moved && d.last_commit) {
@@ -464,9 +722,6 @@
       // ils expirent avec lui (oubli repéré le 7 août 2026).
       const dg = document.querySelector(".digest"); if (dg) dg.style.display = "none";
       const ld = document.querySelector(".hero .lede"); if (ld) ld.style.display = "none";
-      // …et la date d'écriture du résumé avec eux : elle datait un texte que
-      // le lecteur ne voit plus (même signalement du 11 août 2026).
-      const wr = document.getElementById("written"); if (wr) wr.style.display = "none";
       document.getElementById("staleNote").innerHTML =
         `<div class="warn"><span class="ico" aria-hidden="true">🕗</span><div><p>Le résumé de cette page portait sur la <b>${esc(ed.dataset.for)}</b>, déjà sortie ou remplacée. Le jeu prépare maintenant la <b>${esc(d.version)}</b> — le résumé sera réécrit sous peu.</p></div></div>`;
     }

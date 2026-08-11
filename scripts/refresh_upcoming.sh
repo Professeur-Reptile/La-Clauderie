@@ -75,7 +75,12 @@ import json, os, sys
 here = sys.argv[1]
 new = json.load(open(os.path.join(here, "upcoming.new.json"), encoding="utf-8"))
 old_path = os.path.join(here, "upcoming.json")
-old = json.load(open(old_path, encoding="utf-8")) if os.path.exists(old_path) else {}
+try:
+    old = json.load(open(old_path, encoding="utf-8"))
+except Exception:
+    # Absent, ou laissé en conflit par un rebase : on repart de zéro plutôt
+    # que de planter au milieu d'un relevé.
+    old = {}
 
 print()
 for v in new["versions"]:
