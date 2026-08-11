@@ -1,8 +1,17 @@
 # Runbook — site de La Clauderie
 
-> **Style de réponse : DEUX PHRASES.** L'utilisateur ne lit pas les réponses
-> longues — il l'a dit explicitement le 10 août 2026. Pas de récapitulatif, pas
-> de liste à puces, pas de « prochaines étapes ». Deux phrases, et c'est tout.
+> **Style de réponse : DEUX PHRASES, EN FRANÇAIS SIMPLE.** L'utilisateur ne lit
+> pas les réponses longues — il l'a dit explicitement le 10 août 2026. Pas de
+> récapitulatif, pas de liste à puces, pas de « prochaines étapes ». Deux
+> phrases, et c'est tout.
+>
+> Et en langage NORMAL : le 11 août 2026, après une réponse pleine de noms de
+> commits, de branches et de workflows, il a répondu « rien compris », puis
+> « mais écris-moi comme ça à chaque fois » sur la reformulation simple. Donc :
+> dire ce qui a été fait et ce que ça change pour LUI, pas comment c'est fait.
+> Pas de sha, pas de nom de fichier ni de workflow, pas de vocabulaire git —
+> sauf s'il en demande. « Le BiS s'est mis à jour tout seul » plutôt que « le
+> robot horaire a réinjecté const BIS via inject_bis.py dans c40a2a9 ».
 >
 > **« Mets à jour » = tout de suite, avec les données de l'instant.** D'abord
 > regarder si le dernier tag du jeu a bougé (`git ls-remote --tags`) : s'il a
