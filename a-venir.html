@@ -197,13 +197,13 @@
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · En préparation</p>
     <h1>La prochaine version <span class="v" id="vNum">v0.37.0</span></h1>
-    <p class="lede">La v0.36.0 est sortie, et la branche de la v0.37.0 vient tout juste de s’ouvrir : <strong class="hl">180 commits</strong> en quatre jours, là où la précédente en comptait plus de mille sept cents au même endroit de cette page. Autant le dire tout de suite, parce que c’est la question n°1 : <strong class="hl">aucune classe n’est touchée</strong> à ce stade — pas un sort, pas un talent, pas une maîtrise, pas une ligne d’équilibrage. Ce qui est déjà là tient en quatre choses, toutes du côté du confort : <strong class="hl">Tab cycle enfin dans les deux sens</strong>, <strong class="hl">Se décoincer fonctionne à l’intérieur d’un champ de bataille</strong>, <strong class="hl">Grix et ses kobolds reçoivent leur propre corps</strong> au lieu d’emprunter celui des gobelins, et <strong class="hl">l’application mobile apprend à montrer ses mises à jour</strong> — avec, au passage, la levée de ce qui bloquait les sorties sur le Play Store depuis plusieurs versions.</p>
+    <p class="lede">La v0.36.0 est sortie, et la branche de la v0.37.0 grossit vite : <strong class="hl">235 commits</strong> en cinq jours, et le jeu vient d’<strong class="hl">inscrire le numéro 0.37.0 dans ses fichiers</strong> — le geste qu’il fait juste avant de publier. Autant le dire tout de suite, parce que c’est la question n°1 : <strong class="hl">aucune classe n’est touchée</strong> à ce stade — pas un sort, pas un talent, pas une maîtrise, pas une ligne d’équilibrage. Ce qui est là tient au confort, et la plus grosse pièce est arrivée hier : <strong class="hl">le jeu arrête de se figer</strong> — entrer dans un village, changer de tenue à l’armurerie ou voir un gros sort pour la première fois coûtait jusqu’à une demi-seconde de gel, et cette famille de blocages est traitée d’un bloc. Le reste : <strong class="hl">Tab cycle enfin dans les deux sens</strong>, <strong class="hl">Se décoincer fonctionne à l’intérieur d’un champ de bataille</strong>, <strong class="hl">Grix et ses kobolds reçoivent leur propre corps</strong>, <strong class="hl">l’application mobile apprend à montrer ses mises à jour</strong>, et une <strong class="hl">forge des Failles</strong> encore sans interface vient d’être fermée à clé.</p>
 
     <div class="warn">
       <span class="ico" aria-hidden="true">⚠️</span>
       <div>
         <p><strong>Cette version n’est pas sortie.</strong> Tout ce qui suit est déjà mergé sur la branche que les développeurs préparent, mais peut encore être modifié, retiré, ou repoussé à plus tard.</p>
-        <p>Et la branche est <strong>jeune</strong> : à quatre jours, elle ne dit encore presque rien de ce que sera la version finale. Les vraies notes — vérifiées ligne à ligne dans le code du jeu — arriveront dans <a href="patch-notes.html">Nouveautés</a> le jour de la sortie.</p>
+        <p>Le jeu a en revanche <strong>fixé son numéro de version</strong>, ce qu’il fait d’habitude peu avant de publier : la sortie peut arriver vite, mais elle peut aussi attendre — et une refonte de classes peut encore atterrir d’un seul coup, comme en v0.36.0. Les vraies notes — vérifiées ligne à ligne dans le code du jeu — arriveront dans <a href="patch-notes.html">Nouveautés</a> le jour de la sortie.</p>
       </div>
     </div>
 
@@ -211,7 +211,7 @@
       <span><b>Depuis</b> la v0.36.0</span>
       <span id="freshness"><b>Dernière vérification</b> à l’instant</span>
       <span id="moved"></span>
-      <span id="written"><b>Résumé écrit</b> le 11 août 2026 à 14 h 45</span>
+      <span id="written"><b>Résumé écrit</b> le 12 août 2026 à 10 h 30</span>
     </div>
     <p class="sec-sub" style="margin:6px 0 0;font-size:0.85rem">« Dernière vérification » = la dernière fois que cette page est allée voir où en sont les développeurs. « Dernier changement du jeu » = quand ils ont touché à cette version pour la dernière fois.</p>
     <div id="chantiers"></div>
@@ -225,17 +225,17 @@
       <li class="none">
         <span class="d-ico" aria-hidden="true">⚔️</span>
         <span class="d-name">Classes &amp; sorts</span>
-        <span class="d-say">— <b class="eq">Guerrier =</b> <b class="eq">Paladin =</b> <b class="eq">Chasseur =</b> <b class="eq">Voleur =</b> <b class="eq">Prêtre =</b> <b class="eq">Mage =</b> <b class="eq">Chaman =</b> <b class="eq">Démoniste =</b> <b class="eq">Druide =</b> · Les neuf classes ressortent de la v0.36.0 <b>exactement telles quelles</b>. Le seul fichier de contrôles PvP qui a bougé a changé de dossier sans changer une valeur, et la seule correction de familier de la branche répare une bêtise que la branche s’était faite à elle-même.</span>
+        <span class="d-say">— <b class="eq">Guerrier =</b> <b class="eq">Paladin =</b> <b class="eq">Chasseur =</b> <b class="eq">Voleur =</b> <b class="eq">Prêtre =</b> <b class="eq">Mage =</b> <b class="eq">Chaman =</b> <b class="eq">Démoniste =</b> <b class="eq">Druide =</b> · Les neuf classes ressortent de la v0.36.0 <b>exactement telles quelles</b> : aucun dégât, aucune durée, aucun coût n’a bougé en combat réel. Le seul changement qui touche un sort ne concerne <b>que le mannequin d’entraînement</b>, où <span data-codex="ability|sentence">Sentence</span> affolait le compteur de dégâts (<a href="#mannequin">plus bas</a>).</span>
       </li>
       <li class="none">
         <span class="d-ico" aria-hidden="true">🔨</span>
         <span class="d-name">Métiers &amp; récolte</span>
         <span class="d-say">— Rien pour l’instant : aucune recette, aucun gisement, aucun banc de pêche touché.</span>
       </li>
-      <li class="none">
+      <li>
         <span class="d-ico" aria-hidden="true">🐉</span>
-        <span class="d-name">Donjons, failles &amp; boss</span>
-        <span class="d-say">— Rien pour l’instant. Le seul monstre modifié est un rare de plein air, juste en dessous.</span>
+        <a class="d-name" href="#forge">Donjons, failles &amp; boss</a>
+        <span class="d-say">— Rien à jouer de plus, mais une <b>porte dérobée fermée</b> : une « forge des Failles » dort dans le jeu sans interface, et des joueurs s’en servaient quand même pour améliorer leurs <span data-codex="item|riftbound_band_of_might">anneaux Riftbound</span> en avance. Le serveur la refuse désormais. Aucun donjon, aucune faille, aucun boss n’est modifié par ailleurs.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🗺️</span>
@@ -245,12 +245,12 @@
       <li>
         <span class="d-ico" aria-hidden="true">🏰</span>
         <a class="d-name" href="#bg">Guilde &amp; social</a>
-        <span class="d-say"><b>Se décoincer marche enfin dans un champ de bataille.</b> La commande y était refusée d’office — rangée avec les duels et l’arène — et un joueur pris dans un mur de Thornhollow Fields n’avait que la déconnexion. Elle s’ouvre, avec ses garde-fous : vous êtes reposé au cimetière de votre camp sans quitter le match, et jamais pendant que vous portez le drapeau.</span>
+        <span class="d-say"><b>Le canal Général peut être bridé compte par compte</b> — un outil de modération, illimité par défaut, et qui ne touche <a href="#chat">ni la guilde ni le groupe</a>. Et surtout : <b>Se décoincer marche enfin dans un champ de bataille.</b> La commande y était refusée d’office — rangée avec les duels et l’arène — et un joueur pris dans un mur de Thornhollow Fields n’avait que la déconnexion. Elle s’ouvre, avec ses garde-fous : vous êtes reposé au cimetière de votre camp sans quitter le match, et jamais pendant que vous portez le drapeau.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">⚙️</span>
         <a class="d-name" href="#ciblage">Confort &amp; technique</a>
-        <span class="d-say"><b>Shift+Tab</b> parcourt la liste de cibles à l’envers — la touche qui manquait depuis le début. Et l’application mobile montre enfin ses mises à jour au lieu de les télécharger en cachette, ne récupère plus que les fichiers qui ont changé, et repasse sous le plafond de taille du Play Store, qui bloquait ses sorties Android depuis plusieurs versions.</span>
+        <span class="d-say"><b>Le jeu arrête de se figer</b> : les gels d’une demi-seconde en entrant dans une ville, en changeant de tenue ou en voyant un sort pour la première fois sont pris en charge d’un bloc, et les machines modestes retrouvent une <b>ombre sous les pieds</b> (<a href="#perf">le détail</a>). <b>Shift+Tab</b> parcourt la liste de cibles à l’envers. Et l’application mobile montre enfin ses mises à jour au lieu de les télécharger en cachette, ne récupère plus que les fichiers qui ont changé, et repasse sous le plafond de taille du Play Store.</span>
       </li>
     </ol>
   </nav>
@@ -258,7 +258,7 @@
   <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
        s'efface d'elle-même quand cette version sort, et se signale périmée si
        le jeu passe à préparer la suivante. -->
-  <div id="editorial" data-for="v0.37.0" data-commits="180" data-chantiers="v0.37.0" data-written="2026-08-11T14:45+02:00">
+  <div id="editorial" data-for="v0.37.0" data-commits="235" data-chantiers="v0.37.0" data-written="2026-08-12T10:30+02:00">
 
   <!-- 1 CIBLAGE -->
   <section id="ciblage">
@@ -399,10 +399,89 @@
     </div>
   </section>
 
-  <!-- 5 COULISSES -->
+  <!-- 5 PERFORMANCE -->
+  <section id="perf">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Le jeu arrête de se figer</h2></div>
+    <p class="sec-sub">C’est le gros morceau des deux derniers jours, et c’est celui qui se sentira le plus à la manette : une <strong class="hl">passe complète sur le moteur 3D</strong>. Le principe est toujours le même — le jeu préparait certaines choses <strong class="hl">au moment précis où il fallait les montrer</strong>, et l’image se bloquait le temps que ce soit prêt. Les durées citées ici sont celles <strong class="hl">relevées par les développeurs sur de vraies machines</strong> pendant l’audit ; elles disent l’ordre de grandeur du problème corrigé, pas ce que vous gagnerez exactement.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="villes" tabindex="0" role="button" aria-label="Détails : les gels à l’approche des villes">
+        <h3>Marcher vers une ville sans à-coup <span class="chip c-new">Correctif de fond</span></h3>
+        <p>En avançant vers un village ou une ville jamais visitée depuis le lancement, l’écran pouvait se figer <strong class="hl">le temps d’une demi-seconde bien pleine</strong> — de 0,6 à 0,7 seconde relevées. Le jeu <strong class="hl">retarde maintenant l’apparition</strong> de la ville jusqu’à ce qu’elle soit vraiment prête en coulisses, et prépare <strong class="hl">d’abord ce qui est le plus près de vous</strong> plutôt que dans un ordre quelconque.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="armurerie" tabindex="0" role="button" aria-label="Détails : l’aperçu de personnage">
+        <h3>Changer de tenue sans coup de frein <span class="chip c-new">Confort</span></h3>
+        <p>Afficher un nouvel équipement dans l’aperçu de personnage chargeait <strong class="hl">toutes ses textures d’un coup</strong>, dans l’image même où il apparaissait : de 0,14 à 0,87 seconde de gel à chaque essayage, le fameux à-coup qui revenait comme un métronome après l’entrée en jeu. Ces chargements sont désormais <strong class="hl">étalés par petites tranches</strong>, entre deux images, et l’aperçu ne s’affiche qu’une fois tout prêt.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="ombres" tabindex="0" role="button" aria-label="Détails : les ombres de contact">
+        <h3>Une ombre sous les pieds, enfin <span class="chip c-new">Machines modestes</span></h3>
+        <p>Sur les configurations où les ombres dynamiques sont coupées — petites machines, iPhone, profils bridés — les personnages <strong class="hl">semblaient flotter</strong> au-dessus du sol, sans rien pour les y poser. Une <strong class="hl">tache d’ombre douce</strong> est maintenant peinte sous chaque personnage visible. Elle s’atténue quand on saute, s’efface avec la distance, et les machines qui ont déjà de vraies ombres <strong class="hl">ne paient rien</strong>.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card more" data-detail="memoire" tabindex="0" role="button" aria-label="Détails : la mémoire des ciels">
+        <h3>La mémoire ne gonfle plus toute la soirée <span class="chip c-new">Stabilité</span></h3>
+        <p>Chaque région traversée gardait son <strong class="hl">ciel en mémoire jusqu’à la fermeture du jeu</strong>, sans jamais rien rendre — environ 17 Mo côté processeur et autant côté carte graphique <strong class="hl">par région</strong>, et le jeu en compte dix-neuf. Les ciels des régions lointaines sont désormais <strong class="hl">libérés</strong>, puis rechargés en douce quand on s’en rapproche. C’est aussi ce genre d’excès qui faisait <strong class="hl">fermer l’application iPhone</strong> à l’entrée dans le monde.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Deux lumières qui bloquaient le combat <span class="chip c-util">Détail</span></h3>
+        <ul>
+          <li>La chute du <span data-codex="ability|summon_infernal">Pyre Colossus</span> du démoniste ajoutait ses lumières <strong class="hl">hors du budget</strong> prévu : la première invocation d’un combat forçait le jeu à <strong class="hl">tout recalculer d’un coup</strong>, en plein affrontement. Elles rentrent dans le rang.</li>
+          <li>Même défaut pour les <strong class="hl">torches de Thornhollow Fields</strong> — jusqu’à quatorze lumières qui arrivaient sans prévenir quand le terrain finissait de se construire, et qui brillaient au passage <strong class="hl">bien plus fort</strong> que ce que l’auteur du décor avait demandé.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 FAILLES -->
+  <section id="forge">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Une forge des Failles, fermée à clé</h2></div>
+    <p class="sec-sub">Rien de jouable ici — c’est même l’inverse : une fonction <strong class="hl">jamais annoncée</strong> était accessible à qui savait s’adresser au serveur directement, et elle vient d’être verrouillée. On en parle parce que ça dit quelque chose de ce qui se prépare dans les Failles, et parce qu’une poignée de joueurs s’en servait pour <strong class="hl">prendre de l’avance sur l’équipement</strong>.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="forge" tabindex="0" role="button" aria-label="Détails : la forge des Failles">
+        <h3>Améliorer, enchanter, sertir — mais pas encore <span class="chip c-bal">Verrouillé</span></h3>
+        <p>Le jeu sait déjà <strong class="hl">améliorer, enchanter et sertir</strong> l’équipement gagné dans les Failles : la mécanique est écrite et testée, seule <strong class="hl">l’interface manque</strong>. Faute de bouton, on la croyait hors d’atteinte — c’était faux, et des joueurs faisaient monter leurs <span data-codex="item|riftbound_band_of_might">anneaux Riftbound</span> par ce chemin. Le serveur <strong class="hl">refuse maintenant ces trois demandes</strong> tant que la fonction n’est pas ouverte pour de bon.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card" id="mannequin">
+        <h3>Le mannequin ne fausse plus le compteur <span class="chip c-new">Correctif</span></h3>
+        <p>Sur le <span data-codex="mob|training_dummy">mannequin d’entraînement</span>, le coup final de <span data-codex="ability|sentence">Sentence</span> — celui qui achève net un monstre ordinaire descendu sous 20 % de vie — s’appliquait <strong class="hl">aussi au mannequin</strong>. Après une longue séance de test, il affichait donc d’un coup <strong class="hl">toute la vie restante du mannequin</strong> : un coup à 149 298 au milieu de coups à quelques centaines, et un relevé de dégâts bon à jeter. Le mannequin en est exclu ; <strong class="hl">sur les vrais monstres, rien ne change</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 CANAL GÉNÉRAL -->
+  <section id="chat">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Le canal Général peut désormais être bridé, compte par compte</h2></div>
+    <p class="sec-sub">Arrivé ce matin sur la branche, donc tout frais : les administrateurs du serveur peuvent limiter le nombre de messages qu’un <strong class="hl">compte donné</strong> peut envoyer dans le canal <strong class="hl">Général</strong>, sur une durée donnée. Ce n’est pas une limite pour tout le monde : par défaut, chaque compte reste <strong class="hl">illimité</strong>, et la bride se pose <strong class="hl">un compte à la fois</strong>, comme une sanction.</p>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>Ce que ça change pour un joueur normal <span class="chip c-util">Repère</span></h3>
+        <ul>
+          <li><strong class="hl">Rien</strong>, tant qu’aucune limite n’est posée sur votre compte : l’état par défaut est « illimité ».</li>
+          <li>Si une limite est posée et atteinte, votre message <strong class="hl">n’est pas envoyé</strong>, et vous seul voyez un avis vous disant <strong class="hl">dans combien de temps</strong> réessayer. Personne d’autre ne le voit.</li>
+          <li>L’avis ne se répète pas à chaque tentative : il est <strong class="hl">espacé de quelques secondes</strong> pour ne pas noyer votre propre fenêtre de discussion.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Le périmètre exact <span class="chip c-util">Précision</span></h3>
+        <ul>
+          <li><strong class="hl">Le canal Général seulement.</strong> La guilde, le groupe, le murmure, le canal de zone : <strong class="hl">aucun n’est concerné</strong>. C’est écrit noir sur blanc dans l’écran d’administration.</li>
+          <li>La limite s’applique au <strong class="hl">compte</strong>, pas au personnage : changer de personnage ne la contourne pas.</li>
+          <li>Un réglage modifié <strong class="hl">prend effet tout de suite</strong>, sans reconnexion ni redémarrage du serveur.</li>
+          <li>À ce stade, le message d’avertissement est <strong class="hl">encore en anglais</strong> dans la branche, y compris en français — ça se traduit généralement avant la sortie.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 COULISSES -->
   <section id="coulisses">
-    <div class="sec-head"><span class="sec-num">05</span><h2>Et le reste, honnêtement, c’est de la plomberie</h2></div>
-    <p class="sec-sub">Sur les 180 commits de la branche, la très grande majorité sont des fusions avec la v0.36.0, des réparations de tests instables et de l’outillage de compilation. Rien de tout cela ne se voit en jeu — mais deux points valent d’être dits, parce qu’ils ressemblent à des changements et n’en sont pas.</p>
+    <div class="sec-head"><span class="sec-num">08</span><h2>Et le reste, honnêtement, c’est de la plomberie</h2></div>
+    <p class="sec-sub">Sur les 235 commits de la branche, la très grande majorité sont des fusions avec la v0.36.0, des réparations de tests instables, du réglage d’outillage et des portraits de monstres re-calculés. Rien de tout cela ne se voit en jeu — mais deux points valent d’être dits, parce qu’ils ressemblent à des changements et n’en sont pas.</p>
     <div class="grid cols-2">
       <div class="card">
         <h3>Les contrôles en PvP : rien n’a bougé <span class="chip c-util">Fausse alerte</span></h3>
@@ -420,11 +499,12 @@
           <li>Un <strong class="hl">va-et-vient permanent</strong> avec la branche de la v0.36.0, qui continue de recevoir des correctifs : c’est le gros du compte de commits.</li>
           <li>Des <strong class="hl">tests instables</strong> traqués et durcis, et des étapes de compilation lancées en parallèle pour raccourcir l’attente.</li>
           <li>Une <strong class="hl">infobulle de capacité</strong> qui pouvait s’écrouler quand il lui manquait une donnée affiche désormais une ligne de repli propre.</li>
+          <li>Un <strong class="hl">relevé de mesures</strong> plus complet pendant les combats — vie, ressources et menace des monstres. C’est un outil de développeur : rien à voir dans le jeu.</li>
         </ul>
       </div>
       <div class="card">
         <h3>À quoi s’attendre pour la suite <span class="chip c-util">Prudence</span></h3>
-        <p>Quatre jours de branche, ce n’est <strong class="hl">rien</strong> à l’échelle d’une version de ce jeu : la v0.36.0 est passée de 99 à plus de 1 700 commits en quelques jours, et sa refonte de sept classes a atterri d’un seul coup, en une après-midi. Cette page sera donc <strong class="hl">réécrite</strong> — probablement de fond en comble. Ce qui y est écrit aujourd’hui décrit ce qui est déjà posé, pas ce que sera la v0.37.0.</p>
+        <p>Le jeu a <strong class="hl">inscrit son numéro de version</strong> dans ses fichiers, ce qu’il fait peu avant de publier — mais cinq jours de branche, ce n’est <strong class="hl">rien</strong> à l’échelle d’une version de ce jeu : la v0.36.0 est passée de 99 à plus de 1 700 commits en quelques jours, et sa refonte de sept classes a atterri en une après-midi. Cette page sera donc <strong class="hl">réécrite</strong> tant que la version n’est pas sortie. Ce qui y est écrit décrit ce qui est déjà posé, pas ce que sera la v0.37.0.</p>
       </div>
     </div>
   </section>
@@ -575,6 +655,90 @@
           <li>Le filet de sécurité existant ne bouge pas : une mise à jour qui n’arrive pas à démarrer est <b>automatiquement annulée</b> et la version précédente reprend la main.</li>
         </ul>
         <p class="summary" style="margin-top:18px;border:0;padding:0">Rien de tout cela ne concerne le jeu dans un navigateur, ni le client de bureau : c’est propre aux applications iOS et Android installées.</p>`
+    },
+    villes: {
+      title: "Pourquoi une ville faisait geler l’écran",
+      summary: "Relevé dans le code de la branche — le blocage était mesuré, sa cause est simple, et le remède l’est aussi.",
+      body: `
+        <h4>Ce qui se passait</h4>
+        <ul>
+          <li>Avant de dessiner quelque chose pour la première fois, le jeu doit <b>préparer la recette d’affichage</b> de chaque décor. Cette préparation peut se faire tranquillement en arrière-plan… à condition d’avoir le temps.</li>
+          <li>Le jeu s’y mettait bien après votre entrée en jeu, dans une file d’attente — et <b>la caméra allait plus vite qu’elle</b>. En marchant vers un village ou une ville pas encore préparés, l’affichage était forcé de tout préparer <b>d’un coup, dans l’image en cours</b>.</li>
+          <li>Les relevés de l’audit parlent de <b>0,63 à 0,68 seconde</b> d’image figée. Sur un joueur qui court vers un point de quête, cela se voit.</li>
+        </ul>
+        <h4>Les deux corrections</h4>
+        <ul>
+          <li>La file de préparation est <b>réordonnée du plus proche au plus lointain</b> : ce que la caméra atteindra en premier est préparé en premier.</li>
+          <li>Une <b>retenue à la première apparition</b> : la première fois qu’une ville sort du brouillard, ou qu’un décor lointain passe en version détaillée, le jeu <b>attend que la recette soit prête</b> en coulisses. Un décor lointain garde entre-temps son image de loin, qui est <b>pixel pour pixel la même</b> — vous ne voyez donc pas l’attente, elle remplace juste le gel.</li>
+          <li>Sur les machines qui ne savent pas préparer en arrière-plan, rien ne change : l’affichage reste immédiat, comme avant.</li>
+        </ul>`
+    },
+    armurerie: {
+      title: "L’essayage qui coûtait presque une seconde",
+      summary: "Le fameux à-coup qui revenait sans cesse après l’entrée en jeu avait une seule cause, et elle est traitée.",
+      body: `
+        <h4>Le problème</h4>
+        <ul>
+          <li>Afficher un personnage ou un équipement dans un aperçu suppose d’<b>envoyer ses textures à la carte graphique</b>. Le jeu le faisait <b>au premier dessin</b>, donc toutes d’un bloc.</li>
+          <li>Coût relevé : <b>de 140 à 870 millisecondes</b> par aperçu affiché. Les développeurs l’appellent « le métronome des à-coups d’après-entrée », parce qu’il revenait à chaque nouvelle tenue.</li>
+        </ul>
+        <h4>Ce qui change</h4>
+        <ul>
+          <li>Les textures sont désormais <b>envoyées une par une</b>, par tranches d’environ 8 millisecondes, avec une pause entre chaque tranche pour laisser l’image respirer.</li>
+          <li>Quand le dessin arrive, <b>tout est déjà en place</b> : il n’a plus rien à charger.</li>
+          <li>L’aperçu attend d’être complet avant de se montrer, plutôt que de s’afficher en se construisant.</li>
+        </ul>
+        <p class="summary" style="margin-top:18px;border:0;padding:0">C’est du confort pur : aucune image n’est plus belle, mais le jeu cesse de trébucher.</p>`
+    },
+    ombres: {
+      title: "La tache d’ombre sous les personnages",
+      summary: "Une addition modeste, mais qui vise précisément les machines où joue le public le plus large.",
+      body: `
+        <h4>Pourquoi</h4>
+        <ul>
+          <li>Sur les réglages bas, sur iPhone et sur tous les profils bridés, les <b>ombres dynamiques sont coupées</b>. Sans elles, plus rien ne dit où un personnage touche le sol : les corps <b>paraissent flotter</b>.</li>
+          <li>C’est exactement sur ces machines-là que se trouvent le plus de joueurs occasionnels.</li>
+        </ul>
+        <h4>Comment</h4>
+        <ul>
+          <li>Une <b>tache sombre et floue</b> est peinte sous chaque personnage visible à portée. Tout est dessiné <b>en un seul passage</b> pour l’ensemble des personnages : le coût est négligeable.</li>
+          <li>Elle est posée <b>à la hauteur des pieds</b> réellement dessinés, s’<b>atténue en hauteur</b> — un saut la fait pâlir doucement plutôt que clignoter — et <b>s’efface progressivement</b> au bord de la portée.</li>
+          <li>Elle n’existe <b>que si les ombres dynamiques sont éteintes</b> : les machines qui ont déjà de vraies ombres ne dessinent rien de plus.</li>
+        </ul>`
+    },
+    memoire: {
+      title: "Dix-neuf ciels qui ne repartaient jamais",
+      summary: "Une fuite de mémoire ordinaire, avec une conséquence très concrète sur iPhone.",
+      body: `
+        <h4>Le compte</h4>
+        <ul>
+          <li>Chaque région a son <b>ciel</b> : un grand dôme, l’éclairage d’ambiance qu’il projette, et l’arrière-plan. Une fois chargé, il <b>restait en mémoire jusqu’à la fermeture du jeu</b>, sans aucune façon d’être rendu.</li>
+          <li>Environ <b>17 Mo côté processeur et autant côté carte graphique</b> par région, pour <b>dix-neuf régions</b> — et tout cela <b>en dehors</b> de tous les plafonds de mémoire que le jeu s’impose par ailleurs.</li>
+        </ul>
+        <h4>Le remède</h4>
+        <ul>
+          <li>Les ciels des régions <b>trop lointaines</b> sont libérés, au même rythme que le jeu vérifie déjà ce qu’il doit charger autour de vous.</li>
+          <li>Une <b>marge est gardée</b> autour de vous, pour qu’un aller-retour à la frontière ne fasse pas décharger et recharger sans arrêt.</li>
+          <li>Revenir dans une région dont le ciel a été libéré le <b>recharge en douce</b> ; une téléportation attend derrière l’écran de chargement, comme d’habitude.</li>
+        </ul>
+        <p class="summary" style="margin-top:18px;border:0;padding:0">Même sujet, autre chantier : les textures des nouveaux monstres sont passées au format compressé du jeu, parce que l’ancien format était justement ce qui faisait <b>tuer l’application iPhone</b> à l’entrée dans le monde.</p>`
+    },
+    forge: {
+      title: "La forge des Failles : ce qu’on en sait, et pourquoi elle est fermée",
+      summary: "Une fonction complète côté serveur, sans interface — et donc, pendant un temps, un raccourci pour qui savait la demander.",
+      body: `
+        <h4>Ce qui existe déjà</h4>
+        <ul>
+          <li>L’équipement des Failles n’est pas figé : le jeu prévoit de pouvoir l’<b>améliorer</b>, l’<b>enchanter</b> et le <b>sertir</b>, et de le <b>recycler</b> en essence. Ces règles sont écrites, testées, et fonctionnent.</li>
+          <li>Ce qui manque, c’est le <b>bouton</b> : aucune fenêtre de forge n’existe dans le jeu.</li>
+        </ul>
+        <h4>Le problème</h4>
+        <ul>
+          <li>Une fonction sans bouton n’est <b>pas une fonction inaccessible</b> : les demandes du jeu au serveur peuvent être fabriquées à la main. Des joueurs l’ont fait, et ont <b>fait monter leurs anneaux Riftbound en avance</b> par ce chemin.</li>
+          <li>Le serveur <b>refuse désormais ces trois demandes</b> par défaut, et compte les tentatives — pour voir si quelqu’un continue d’essayer.</li>
+          <li>Les parties <b>hors ligne</b> ne sont pas concernées : rien de ce qui s’y gagne n’existe sur le serveur.</li>
+        </ul>
+        <p class="summary" style="margin-top:18px;border:0;padding:0">À retenir : ce n’est <b>pas</b> une fonctionnalité de la v0.37.0. C’est un chantier ouvert, verrouillé en attendant son interface — et le signe que les Failles ont encore de la marge devant elles.</p>`
     },
     play: {
       title: "555 Mo contre un plafond de 500 : le blocage Android",

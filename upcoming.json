@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-11T12:45:13Z",
+ "generated": "2026-08-12T08:26:46Z",
  "base_tag": "v0.36.0",
  "version": "v0.37.0",
  "branch": "release/v0.37.0",
- "declared_version": "0.36.0",
- "imminent": false,
- "commits": 180,
- "shown": 109,
- "last_commit": "2026-08-11T21:07:47+12:00",
+ "declared_version": "0.37.0",
+ "imminent": true,
+ "commits": 235,
+ "shown": 138,
+ "last_commit": "2026-08-12T20:22:12+12:00",
  "sections": [
   {
    "key": "classes",
@@ -21,6 +21,13 @@
      "scope": "",
      "text": "Restore pet stat aura direction",
      "date": "2026-08-10"
+    },
+    {
+     "h": "0f6460b2",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Route warlock meteor and battleground field lights through the point-light budget",
+     "date": "2026-08-10"
     }
    ]
   },
@@ -29,14 +36,30 @@
    "icon": "🔨",
    "fr": "Métiers & récolte",
    "en": "Professions & gathering",
-   "items": []
+   "items": [
+    {
+     "h": "a7296c92",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Preserve shader layers on overlay-material clones",
+     "date": "2026-08-10"
+    }
+   ]
   },
   {
    "key": "donjons",
    "icon": "🐉",
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
-   "items": []
+   "items": [
+    {
+     "h": "cda7e40a",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Close the rift forge wire commands behind RIFT_FORGE_ENABLED",
+     "date": "2026-08-12"
+    }
+   ]
   },
   {
    "key": "monde",
@@ -107,7 +130,29 @@
    "icon": "🏰",
    "fr": "Guilde & social",
    "en": "Guild & social",
-   "items": []
+   "items": [
+    {
+     "h": "d09cbc1c",
+     "kind": "feat",
+     "scope": "chat",
+     "text": "Add account general chat quotas",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "ae9a7d9b",
+     "kind": "fix",
+     "scope": "chat",
+     "text": "Address the general chat quota review findings",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "57979acf",
+     "kind": "fix",
+     "scope": "chat",
+     "text": "Guard the quota pool error hook for partial pg mocks",
+     "date": "2026-08-12"
+    }
+   ]
   },
   {
    "key": "confort",
@@ -151,6 +196,55 @@
      "date": "2026-08-11"
     },
     {
+     "h": "7bf85b36",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Budgeted texture-residency prewarm module",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "cc5315fa",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Async staged portrait prewarm behind a pure orchestration core",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "22041a14",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Stage the preview prewarm lane and hold the armory warmup buffer",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "5e708b5d",
+     "kind": "feat",
+     "scope": "render",
+     "text": "First-reveal compile gates and near-first compile debt",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "445016ac",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Ship terrain and surface-detail textures as standalone KTX2",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "f45cbfdf",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Bound the per-biome sky HDR stores with distance eviction",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "0ba85354",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Contact blob shadows for characters on shadowless tiers",
+     "date": "2026-08-10"
+    },
+    {
      "h": "a0326766",
      "kind": "feat",
      "scope": "targeting",
@@ -184,6 +278,27 @@
      "scope": "build",
      "text": "Run build:bundle's independent pregen steps concurrently",
      "date": "2026-08-09"
+    },
+    {
+     "h": "920378a4",
+     "kind": "fix",
+     "scope": "",
+     "text": "Upstream/release/v0.37.0 (Three.js audit batch 1) into the branch",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "cffc7546",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Fill the OTA update strings and untangle the Intervene row title",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "c9a957b3",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Let the dialect overlays inherit the OTA update strings",
+     "date": "2026-08-12"
     },
     {
      "h": "6a8b3f73",
@@ -239,6 +354,76 @@
      "kind": "fix",
      "scope": "",
      "text": "Release/v0.37.0 into feature/kobold-grix-models",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "258c5985",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Never let a training dummy execute for its full remaining hp",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "303cad90",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Address review round 1 on the audit batch",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "3c535b12",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bound the compileAsync isReady poll pass in the three patch",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "da8ae378",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Pay dropped prewarm debt promptly instead of losing it to the reveal",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "a523e295",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Address review round 2, sky recovery, flip staging, ratchet",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "7f3387ec",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Move the armory pending-selection writes out of expressions",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "1347cbb5",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Harden the reveal gates per the QA review round",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "f5457b99",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Address review round 3, light budget recovery and sky lifecycle",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "1202a274",
+     "kind": "fix",
+     "scope": "",
+     "text": "Upstream/release/v0.37.0 into feature/hitch-login-storm",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "5d6d1dc0",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Preserve prewarm program and instance identity",
      "date": "2026-08-11"
     },
     {
@@ -400,6 +585,27 @@
      "kind": "fix",
      "scope": "",
      "text": "Declare gate preflight module",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "e769d463",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Fold the previous live key into the surface-detail program cache key",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "855152bd",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep the splat colour layers canvas-drawable, they are pack sources",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "a788de5b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Close the QA follow-ups on the audit batch",
      "date": "2026-08-10"
     },
     {
@@ -822,11 +1028,11 @@
   {
    "version": "v0.37.0",
    "branch": "release/v0.37.0",
-   "declared_version": "0.36.0",
-   "imminent": false,
-   "commits": 180,
-   "shown": 109,
-   "last_commit": "2026-08-11T21:07:47+12:00",
+   "declared_version": "0.37.0",
+   "imminent": true,
+   "commits": 235,
+   "shown": 138,
+   "last_commit": "2026-08-12T20:22:12+12:00",
    "sections": [
     {
      "key": "classes",
@@ -840,6 +1046,13 @@
        "scope": "",
        "text": "Restore pet stat aura direction",
        "date": "2026-08-10"
+      },
+      {
+       "h": "0f6460b2",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Route warlock meteor and battleground field lights through the point-light budget",
+       "date": "2026-08-10"
       }
      ]
     },
@@ -848,14 +1061,30 @@
      "icon": "🔨",
      "fr": "Métiers & récolte",
      "en": "Professions & gathering",
-     "items": []
+     "items": [
+      {
+       "h": "a7296c92",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Preserve shader layers on overlay-material clones",
+       "date": "2026-08-10"
+      }
+     ]
     },
     {
      "key": "donjons",
      "icon": "🐉",
      "fr": "Donjons, failles & boss",
      "en": "Dungeons, rifts & bosses",
-     "items": []
+     "items": [
+      {
+       "h": "cda7e40a",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Close the rift forge wire commands behind RIFT_FORGE_ENABLED",
+       "date": "2026-08-12"
+      }
+     ]
     },
     {
      "key": "monde",
@@ -926,7 +1155,29 @@
      "icon": "🏰",
      "fr": "Guilde & social",
      "en": "Guild & social",
-     "items": []
+     "items": [
+      {
+       "h": "d09cbc1c",
+       "kind": "feat",
+       "scope": "chat",
+       "text": "Add account general chat quotas",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "ae9a7d9b",
+       "kind": "fix",
+       "scope": "chat",
+       "text": "Address the general chat quota review findings",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "57979acf",
+       "kind": "fix",
+       "scope": "chat",
+       "text": "Guard the quota pool error hook for partial pg mocks",
+       "date": "2026-08-12"
+      }
+     ]
     },
     {
      "key": "confort",
@@ -970,6 +1221,55 @@
        "date": "2026-08-11"
       },
       {
+       "h": "7bf85b36",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Budgeted texture-residency prewarm module",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "cc5315fa",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Async staged portrait prewarm behind a pure orchestration core",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "22041a14",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Stage the preview prewarm lane and hold the armory warmup buffer",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "5e708b5d",
+       "kind": "feat",
+       "scope": "render",
+       "text": "First-reveal compile gates and near-first compile debt",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "445016ac",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Ship terrain and surface-detail textures as standalone KTX2",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "f45cbfdf",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Bound the per-biome sky HDR stores with distance eviction",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "0ba85354",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Contact blob shadows for characters on shadowless tiers",
+       "date": "2026-08-10"
+      },
+      {
        "h": "a0326766",
        "kind": "feat",
        "scope": "targeting",
@@ -1003,6 +1303,27 @@
        "scope": "build",
        "text": "Run build:bundle's independent pregen steps concurrently",
        "date": "2026-08-09"
+      },
+      {
+       "h": "920378a4",
+       "kind": "fix",
+       "scope": "",
+       "text": "Upstream/release/v0.37.0 (Three.js audit batch 1) into the branch",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "cffc7546",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Fill the OTA update strings and untangle the Intervene row title",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "c9a957b3",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Let the dialect overlays inherit the OTA update strings",
+       "date": "2026-08-12"
       },
       {
        "h": "6a8b3f73",
@@ -1058,6 +1379,76 @@
        "kind": "fix",
        "scope": "",
        "text": "Release/v0.37.0 into feature/kobold-grix-models",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "258c5985",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Never let a training dummy execute for its full remaining hp",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "303cad90",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Address review round 1 on the audit batch",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "3c535b12",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Bound the compileAsync isReady poll pass in the three patch",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "da8ae378",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Pay dropped prewarm debt promptly instead of losing it to the reveal",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "a523e295",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Address review round 2, sky recovery, flip staging, ratchet",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "7f3387ec",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Move the armory pending-selection writes out of expressions",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "1347cbb5",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Harden the reveal gates per the QA review round",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "f5457b99",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Address review round 3, light budget recovery and sky lifecycle",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "1202a274",
+       "kind": "fix",
+       "scope": "",
+       "text": "Upstream/release/v0.37.0 into feature/hitch-login-storm",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "5d6d1dc0",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Preserve prewarm program and instance identity",
        "date": "2026-08-11"
       },
       {
@@ -1219,6 +1610,27 @@
        "kind": "fix",
        "scope": "",
        "text": "Declare gate preflight module",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "e769d463",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Fold the previous live key into the surface-detail program cache key",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "855152bd",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep the splat colour layers canvas-drawable, they are pack sources",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "a788de5b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Close the QA follow-ups on the audit batch",
        "date": "2026-08-10"
       },
       {
