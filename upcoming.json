@@ -1,20 +1,28 @@
 {
- "generated": "2026-08-13T08:02:34Z",
- "base_tag": "v0.37.0",
- "version": "v0.37.1",
- "branch": "release/v0.37.1",
- "declared_version": "0.37.1",
- "imminent": true,
- "commits": 3,
- "shown": 1,
- "last_commit": "2026-08-13T19:41:16+12:00",
+ "generated": "2026-08-13T09:30:51Z",
+ "base_tag": "v0.37.1",
+ "version": "v0.38.0",
+ "branch": "release/v0.38.0",
+ "declared_version": "0.37.0",
+ "imminent": false,
+ "commits": 6,
+ "shown": 3,
+ "last_commit": "2026-08-13T13:48:29+12:00",
  "sections": [
   {
    "key": "classes",
    "icon": "⚔️",
    "fr": "Classes & sorts",
    "en": "Classes & spells",
-   "items": []
+   "items": [
+    {
+     "h": "f85a42f7",
+     "kind": "fix",
+     "scope": "rogue",
+     "text": "Re-band combat to the 200 DPS band top",
+     "date": "2026-08-13"
+    }
+   ]
   },
   {
    "key": "metiers",
@@ -28,7 +36,15 @@
    "icon": "🐉",
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
-   "items": []
+   "items": [
+    {
+     "h": "aea4914d",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Add the one-off rift forge rollback data migration",
+     "date": "2026-08-13"
+    }
+   ]
   },
   {
    "key": "monde",
@@ -51,77 +67,16 @@
    "en": "Comfort & technical",
    "items": [
     {
-     "h": "ae571cf2",
+     "h": "f9e41c8e",
      "kind": "fix",
-     "scope": "ui",
-     "text": "Arm the queue-pop popups until the offer snapshot arrives",
+     "scope": "docker",
+     "text": "Allowlist build_bundle_pregen.mjs in the image build context",
      "date": "2026-08-13"
     }
    ]
   }
  ],
  "versions": [
-  {
-   "version": "v0.37.1",
-   "branch": "release/v0.37.1",
-   "declared_version": "0.37.1",
-   "imminent": true,
-   "commits": 3,
-   "shown": 1,
-   "last_commit": "2026-08-13T19:41:16+12:00",
-   "sections": [
-    {
-     "key": "classes",
-     "icon": "⚔️",
-     "fr": "Classes & sorts",
-     "en": "Classes & spells",
-     "items": []
-    },
-    {
-     "key": "metiers",
-     "icon": "🔨",
-     "fr": "Métiers & récolte",
-     "en": "Professions & gathering",
-     "items": []
-    },
-    {
-     "key": "donjons",
-     "icon": "🐉",
-     "fr": "Donjons, failles & boss",
-     "en": "Dungeons, rifts & bosses",
-     "items": []
-    },
-    {
-     "key": "monde",
-     "icon": "🗺️",
-     "fr": "Monde & quêtes",
-     "en": "World & quests",
-     "items": []
-    },
-    {
-     "key": "guilde",
-     "icon": "🏰",
-     "fr": "Guilde & social",
-     "en": "Guild & social",
-     "items": []
-    },
-    {
-     "key": "confort",
-     "icon": "⚙️",
-     "fr": "Confort & technique",
-     "en": "Comfort & technical",
-     "items": [
-      {
-       "h": "ae571cf2",
-       "kind": "fix",
-       "scope": "ui",
-       "text": "Arm the queue-pop popups until the offer snapshot arrives",
-       "date": "2026-08-13"
-      }
-     ]
-    }
-   ]
-  },
   {
    "version": "v0.38.0",
    "branch": "release/v0.38.0",
