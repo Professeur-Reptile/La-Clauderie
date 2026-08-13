@@ -2,6 +2,36 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.37.1",
+   "date": "2026-08-13",
+   "titre": "Correctif : la file des champs de bataille remarche (la fenêtre Accepter ne s’affichait plus depuis la v0.36.0)",
+   "resume": "Un correctif, un seul sujet. Depuis la mise en ligne de la v0.36.0, quand la file des champs de bataille trouvait un match, le son se déclenchait et la ligne apparaissait bien dans la discussion — mais la fenêtre Accepter / Refuser ne s’ouvrait jamais chez une partie des joueurs. Au bout des 30 secondes de réponse, ce silence était compté comme un refus. Et comme Thornhollow Fields est un 5 contre 5 qui a besoin de dix acceptations pour asseoir un match, il suffisait de quelques joueurs touchés pour que la proposition entière échoue et que tout le monde reparte dans la file : celle-ci tournait en boucle sans jamais rien lancer. La cause n’était pas dans la file mais dans l’ordre d’arrivée de deux messages du serveur : l’annonce « ta file a trouvé un match » voyage un cran devant le message qui porte le contenu de la proposition, et quand le jeu redessinait son image pile entre les deux, la fenêtre ne trouvait rien à afficher, interprétait ce vide comme une offre déjà résolue, et se refermait définitivement — le son, lui, était déjà parti. Désormais la fenêtre s’arme sur l’annonce (le son part toujours immédiatement) et ne s’ouvre qu’à la première image où elle peut vraiment lire la proposition, avec une attente bornée à environ 5 secondes pour qu’une offre morte trop tôt ne laisse pas une fenêtre invisible coincée. La fenêtre « groupe trouvé » de la recherche de donjon portait exactement le même défaut, avec une fenêtre de tir plus large encore : elle reçoit son état deux fois par seconde là où l’interface se rafraîchit quatre fois par seconde, soit jusqu’à une demi-seconde de retard. Elle est corrigée de la même façon. Rien d’autre ne bouge : aucune valeur de combat, aucun objet, aucune donnée, aucun changement d’apparence, et les 21 langues sont inchangées — les textes de la fenêtre étaient déjà traduits, ils ne s’affichaient simplement pas.",
+   "temps_forts": [
+    "🏳️ La file des champs de bataille remarche : la fenêtre Accepter / Refuser s’affiche à nouveau, après avoir disparu chez une partie des joueurs depuis la v0.36.0",
+    "⏱️ Le silence valait refus au bout de 30 s — et un refus bloque 30 s de plus avant de pouvoir se remettre en file",
+    "🔟 Pourquoi plus rien ne partait : un 5c5 a besoin de dix acceptations, donc quelques joueurs touchés suffisaient à faire échouer chaque proposition",
+    "🐉 Même correction pour la fenêtre « groupe trouvé » de la recherche de donjon, qui avait une fenêtre de tir encore plus large (état reçu 2 fois/s contre 4 rafraîchissements/s de l’interface)",
+    "🔊 Le son de proposition part toujours immédiatement : c’est seulement l’affichage qui attend d’avoir la vraie proposition en main",
+    "⏳ L’attente est bornée à ~5 secondes, pour qu’une offre morte avant d’être lisible ne laisse pas une fenêtre invisible coincée",
+    "🧪 De nouveaux tests figent l’ordre d’envoi des deux messages côté serveur : le modifier casse un test, donc ce sera un choix assumé",
+    "⚔️ Aucune valeur de combat, aucun objet, aucune donnée, aucune migration — les 21 langues sont inchangées"
+   ],
+   "page": "notes/v0.37.1.html",
+   "titre_en": "Hotfix: the battleground queue works again (the Accept prompt had been missing since v0.36.0)",
+   "resume_en": "One hotfix, one subject. Since the v0.36.0 deploy, when the battleground queue found a match the cue fired and the chat line arrived — but the Accept / Decline prompt never opened for some players. After the 30 second answer window, that silence was counted as a decline. And since Thornhollow Fields is a 5v5 needing ten acceptances to seat a match, it only took a handful of affected players for the whole offer to fail and everyone to be dropped back into the queue: it churned endlessly without ever seating anything. The cause was not the queue but the arrival order of two server messages: the “your queue found a match” announcement travels one step ahead of the message carrying the offer's contents, and when the game redrew its frame exactly between the two, the prompt found nothing to show, read that gap as an already-resolved offer, and closed for good — while the cue had already fired. The prompt now arms on the announcement (the cue still fires immediately) and only opens on the first frame where it can genuinely read the offer, with the wait bounded to about 5 seconds so an offer that dies early cannot leave an invisible prompt stuck. The dungeon finder's “group found” prompt carried exactly the same flaw, with an even wider window: it receives its state twice a second while the interface refreshes four times a second, so up to half a second of lag. It gets the same fix. Nothing else moves: no combat value, no item, no data, no visual change, and all 21 locales are unchanged — the prompt's strings were already translated, they simply were not being shown.",
+   "temps_forts_en": [
+    "🏳️ The battleground queue works again: the Accept / Decline prompt shows up once more, after going missing for some players since v0.36.0",
+    "⏱️ Silence counted as a decline after 30s — and a decline holds you out of the queue for another 30s",
+    "🔟 Why nothing would seat: a 5v5 needs ten acceptances, so a handful of affected players was enough to fail every offer",
+    "🐉 The same fix for the dungeon finder's “group found” prompt, which had an even wider window (state received 2×/s against the interface's 4 refreshes/s)",
+    "🔊 The offer cue still fires immediately: only the display waits until it actually holds the real offer",
+    "⏳ That wait is bounded to ~5 seconds, so an offer that dies before it can be read cannot leave an invisible prompt stuck",
+    "🧪 New tests pin the server's send order for the two messages: changing it breaks a test, making it a conscious decision",
+    "⚔️ No combat value, no item, no data, no migration — all 21 locales unchanged"
+   ],
+   "page_en": "notes/v0.37.1.en.html"
+  },
+  {
    "version": "v0.37.0",
    "date": "2026-08-13",
    "titre": "La version qui ne touche à aucune classe : trois chiffres modifiés, et tout le reste réparé autour",
