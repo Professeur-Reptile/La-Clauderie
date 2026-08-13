@@ -66,8 +66,8 @@ const PAGES = [
   // dès que le jeu n'a rien en chantier.
   { path: '/patch-notes.html', filled: [] },
   { path: '/a-venir.html', filled: ['#editorial'] },
-  { path: '/notes/v0.36.0.html', filled: [] },
-  { path: '/notes/v0.36.0.en.html', filled: [] },
+  { path: '/notes/v0.37.0.html', filled: [] },
+  { path: '/notes/v0.37.0.en.html', filled: [] },
 ];
 
 // En CI, `npx playwright install chromium` fournit le navigateur ; en local

@@ -167,6 +167,7 @@
     <h1 data-en="Gathering &amp; Professions">Récolte &amp; Métiers</h1>
     <p class="lede" data-en="Where to gather — ore, wood, herbs and fishing — by zone, and every crafting recipe by profession. Straight from the game's real data (the Codex), kept up to date each patch.">Où récolter — minerai, bois, herbes et pêche — zone par zone, et toutes les recettes d'artisanat métier par métier. Directement issu des données réelles du jeu (le Codex), à jour à chaque version.</p>
     <p class="lede" style="font-size:0.92rem;margin-top:10px" data-en="Current caps: crafting 125 for every profession (tier 5 — nothing unlocks more for now, the cap will rise with future zones), gathering 100, fishing 200. At cap you keep crafting normally (Masterwork included): only skill gain stops.">Plafonds actuels : artisanat <b>125</b> pour tous les métiers (palier 5 — rien ne permet d'aller au-delà pour l'instant, le cap montera avec les futures zones), récolte <b>100</b>, pêche <b>200</b>. Au cap, on continue de crafter normalement (Masterwork compris) : seule la montée de compétence s'arrête.</p>
+    <p class="lede" style="font-size:0.92rem;margin-top:10px" data-en="<b>New in v0.37.0 — the item lock.</b> Right-click any item in your bags, your bank or the guild bank to put a padlock on it: it can then no longer be sold to a vendor (single or bulk), salvaged, or consumed as a crafting reagent. The detail that matters here: a recipe now counts only your UNLOCKED copies. If it needs 10 units and you hold 12 with four of them locked, it refuses to start — and it tells you the lock is the reason before mentioning bag space. A locked item is also kept out of stack merging, so it stays visible. Nothing else changed for professions in v0.37.0: no recipe, no node, no fishing table and no enchant."><b>Nouveau en v0.37.0 — le verrou d’objet.</b> Un clic droit sur n’importe quel objet de tes sacs, de ta banque ou de la banque de guilde y pose un cadenas : il ne peut alors plus être vendu au marchand (à l’unité comme en groupé), recyclé, ni consommé comme composant d’artisanat. Le détail qui compte ici : une recette ne compte plus que tes exemplaires <b>NON verrouillés</b>. S’il lui faut 10 unités et que tu en as 12 dont quatre verrouillées, elle refuse de partir — et elle t’annonce le verrou <b>avant</b> de parler de place dans les sacs. Un objet verrouillé est aussi tenu à l’écart des fusions de piles, donc il reste visible. Rien d’autre ne change côté métiers en v0.37.0 : aucune recette, aucun nœud, aucune table de pêche, aucun enchantement.</p>
   </header>
 
   <div class="tabs" role="tablist">
@@ -3788,7 +3789,7 @@ const CRAFT = {
 </script>
 
 <script src="assets/lang.js"></script>
-<script src="assets/version.js" data-version="v0.36.0" defer></script>
+<script src="assets/version.js" data-version="v0.37.0" defer></script>
 <script>
 (function () {
   const T = (fr, en) => (window.LANG === 'en' ? en : fr);

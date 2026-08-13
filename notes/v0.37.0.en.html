@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Patch notes v0.37.0 — La Clauderie</title>
+<meta name="description" content="The v0.37.0 release of World of ClaudeCraft in plain language: a patch that touches no class at all (zero spells, talents or sets changed), the new item lock, Bonelord Xarreth's two death zones finally dodgeable, the end of the hitches, the iPhone crash loop fixed and the Android install down from 555 MB to 68 MB.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Patch notes v0.37.0 — La Clauderie">
+<meta property="og:description" content="The v0.37.0 release of World of ClaudeCraft in plain language: a patch that touches no class at all (zero spells, talents or sets changed), the new item lock, Bonelord Xarreth's two death zones finally dodgeable, the end of the hitches, the iPhone crash loop fixed and the Android install down from 555 MB to 68 MB.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.37.0.en.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.37.0.en.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') !== 'en') location.replace('v0.37.0.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Site navigation"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Patch notes</p>
+    <h1>Patch notes <span class="v">v0.37.0</span></h1>
+    <p class="lede">The release that leaves your character alone — and fixes everything around it. <strong class="hl">No spell, no talent, no set, no recipe changes</strong>: across everything the Codex publishes, this patch moves exactly <strong class="hl">three numbers</strong>. The rest is machinery, and you will feel it: the <strong class="hl">hitches</strong> at login and on the character preview are gone, the game <strong class="hl">no longer reloads itself on iPhone</strong> after a long session, the Android install drops from 555 MB to 68 MB, and an <strong class="hl">item lock</strong> finally stops you salvaging away the thing you meant to keep.</p>
+    <div class="meta">
+      <span><b>Released</b> August 13, 2026</span>
+      <span><b>Since</b> v0.36.0</span>
+      <span><b>677</b> files touched</span>
+    </div>
+    <div class="hint">💡 Click a card for details — and any underlined name for its Codex sheet.</div>
+  </header>
+
+  <!-- Constant digest: same sections, same order, every release. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">At a glance</h2>
+    <p class="sec-sub">The same six sections every release, in the same order. Click one to jump to it.</p>
+    <ol>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <a class="d-name" href="#classes">Classes &amp; spells</a>
+        <span class="d-say"><b class="eq">Warrior =</b> · <b class="eq">Paladin =</b> · <b class="eq">Hunter =</b> · <b class="eq">Rogue =</b> · <b class="eq">Priest =</b> · <b class="eq">Shaman =</b> · <b class="eq">Mage =</b> · <b class="eq">Warlock =</b> · <b class="eq">Druid =</b> — for the first time in a long while, <strong class="hl">no class moves at all</strong>: not one talent row, not one spell, not one set bonus. Your build and your action bars are untouched.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <a class="d-name" href="#metiers">Professions &amp; gathering</a>
+        <span class="d-say">The <strong class="hl">item lock</strong>: anything you mark can no longer be sold, salvaged, or eaten as a crafting reagent. No recipe, no node and no enchant changes.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#donjons">Dungeons, rifts &amp; bosses</a>
+        <span class="d-say"><span data-codex="mob|rift_boss_necro">Bonelord Xarreth</span>’s two death zones become <strong class="hl">genuinely dodgeable</strong> at S rank (0.46s of reaction → 1.16s). <span data-codex="mob|grix_the_tunnelking">Grix the Tunnelking</span> grows — and gains reach along the way. The Rift forge is closed off.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <a class="d-name" href="#monde">World &amp; quests</a>
+        <span class="d-say">Eastbrook Vale’s kobolds finally get <strong class="hl">bodies of their own</strong> instead of the shared goblin stand-in. No quest, no zone and no NPC changes.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <a class="d-name" href="#guilde">Guild &amp; social</a>
+        <span class="d-say">The <strong class="hl">General</strong> channel moves to a per-account send quota. And the <strong class="hl">Unstuck</strong> button finally works inside a battleground — unless you are carrying the flag.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#confort">Comfort &amp; technical</a>
+        <span class="d-say">The bulk of the release: the anti-hitch campaign closes out (754ms → 42ms on the preview), no more iOS crash loop, Android from 555 MB to 68 MB, updates that only re-download what changed, price sorting on the market and <strong class="hl">Shift+Tab</strong> to step back through targets.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="classes">
+    <h2><span class="num">01</span>Your characters do not move</h2>
+    <p class="sec-sub">That is the most important news in the release, and it fits in one sentence: there is nothing to redo. After the total overhaul of v0.36.0, this one touches no class at all.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="rien" tabindex="0" role="button" aria-label="Details: what does not change">
+        <h3>Zero balance changes <span class="chip c-util">Verified</span></h3>
+        <p>Across the thousands of values the game publishes — spells, talents, specs, items, sets, recipes, quests — this patch changes exactly <strong class="hl">three</strong>, and all three are on monsters.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card more" data-detail="mannequin" tabindex="0" role="button" aria-label="Details: the training dummy">
+        <h3>The dummy no longer wrecks your DPS <span class="chip c-fix">Fix</span></h3>
+        <p>The warlock’s <span data-codex="ability|sentence">Sentence</span> executes a target below 20% health. On a training dummy it was reporting <strong class="hl">the million health it had left as a single hit</strong>, ruining the parse.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card more" data-detail="dr" tabindex="0" role="button" aria-label="Details: PvP crowd control">
+        <h3>PvP fear and control: nothing new <span class="chip c-util">Clarification</span></h3>
+        <p>The official notes announce a fix to fear diminishing returns. <strong class="hl">Nothing changes for you</strong>: v0.36.0 was already correct. Here is the exact ladder anyway, read straight from the code.</p>
+        <span class="more-link">See details</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="metiers">
+    <h2><span class="num">02</span>Professions &amp; gathering</h2>
+    <p class="sec-sub">No recipe, no gathering node, no fishing table and no enchant changes. What does arrive is an old request: protecting what you do not want to lose.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="verrou" tabindex="0" role="button" aria-label="Details: the item lock">
+        <h3>The item lock <span class="chip c-new">New</span></h3>
+        <p>Right-click any item in your bags, your bank or the guild bank: a <strong class="hl">padlock</strong> appears, and the item refuses to be sold, salvaged or consumed as a reagent.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card">
+        <h3>What the lock changes for crafting <span class="chip c-util">Worth knowing</span></h3>
+        <ul>
+          <li>A recipe needing 10 units of a material <strong class="hl">only counts your unlocked copies</strong>: with 8 free and 4 locked, the recipe refuses to start.</li>
+          <li>The denial reaches you <strong class="hl">before</strong> any bag-space message — so you immediately know it is the lock, not the space.</li>
+          <li>Each block (sell, salvage, craft) has <strong class="hl">its own message</strong>, so there is never any doubt about what stopped you.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>The rest of professions is intact <span class="chip c-util">Unchanged</span></h3>
+        <ul>
+          <li>No recipe added, removed or retuned.</li>
+          <li>No change to gathering nodes, fishing or enchants.</li>
+          <li>Your v0.36.0 profession-levelling plans still hold exactly as written.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="donjons">
+    <h2><span class="num">03</span>Dungeons, rifts &amp; bosses</h2>
+    <p class="sec-sub">Three changes, and the first is the only real rebalance of the release: a rift boss whose two mechanics were killing players who had, in fact, reacted.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="xarreth" tabindex="0" role="button" aria-label="Details: Bonelord Xarreth">
+        <h3>Xarreth: two zones finally dodgeable <span class="chip c-new">Major</span></h3>
+        <p>On <span data-codex="mob|rift_boss_necro">Bonelord Xarreth</span>, <strong class="hl">Soul Grave</strong> goes from 2.5s to 3.5s of cast time and <strong class="hl">Death Sentence</strong> from 3s to 4s. At S rank your real reaction window goes from <strong class="hl">0.46s to 1.16s</strong>.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card more" data-detail="grix" tabindex="0" role="button" aria-label="Details: Grix the Tunnelking">
+        <h3>Grix grows — and gains reach <span class="chip c-util">Careful</span></h3>
+        <p><span data-codex="mob|grix_the_tunnelking">Grix the Tunnelking</span> is now exactly half again the size of the <span data-codex="mob|tunnel_rat">Deeprock Diggers</span> he summons. This is not only cosmetic: his <strong class="hl">melee reach grows too</strong>.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card more" data-detail="forge" tabindex="0" role="button" aria-label="Details: the Rift forge">
+        <h3>The Rift forge closed off <span class="chip c-fix">Security</span></h3>
+        <p>Three Riftbound forge commands — upgrade, enchant, socket — answered anyone who knew how to call them, even though the interface never shipped. They are now <strong class="hl">off by default</strong>.</p>
+        <span class="more-link">See details</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="monde">
+    <h2><span class="num">04</span>World &amp; quests</h2>
+    <p class="sec-sub">Nothing to redo on the quest side: no quest, no NPC and no zone is modified. The only change is visual, and it is in the very first zone of the game.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>The kobolds finally have bodies <span class="chip c-new">Art</span></h3>
+        <ul>
+          <li>In Eastbrook Vale, the <span data-codex="mob|tunnel_rat">Deeprock Diggers</span> had been wearing a <strong class="hl">goblin stand-in model</strong>. They now get their real rat-kobold body.</li>
+          <li><span data-codex="mob|grix_the_tunnelking">Grix the Tunnelking</span> gains a <strong class="hl">crown and a shovel</strong>, and his animation skeleton is repaired.</li>
+          <li>Their textures ship compressed: the raw versions were the ones implicated in the iOS memory kills on world entry.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>No quest changes <span class="chip c-util">Unchanged</span></h3>
+        <ul>
+          <li>Not one quest added, removed or retuned in this release.</li>
+          <li>No NPC, no zone and no mob loot table moves.</li>
+          <li>Your quest chains in progress continue exactly as before.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Two atmosphere fixes <span class="chip c-fix">Fix</span></h3>
+        <ul>
+          <li>Mage ground runes and rift boss windup telegraphs finally take <strong class="hl">the colour of their spell school</strong>: a fire boss no longer announces its cast in arcane violet.</li>
+          <li>Dyed armour keeps its colour across a zone change, and the arena walls keep their stone detail.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="guilde">
+    <h2><span class="num">05</span>Guild &amp; social</h2>
+    <p class="sec-sub">Two changes: a guard rail on the General channel, and an emergency button that did nothing in the one place you most needed it.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="unstuck" tabindex="0" role="button" aria-label="Details: Unstuck in battlegrounds">
+        <h3>Unstuck finally works in battlegrounds <span class="chip c-new">New</span></h3>
+        <p>Wedged in a wall at Thornhollow Fields, the <strong class="hl">Unstuck</strong> button refused to fire: it counted you as “competitive”. It now works, with guard rails.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card more" data-detail="quota" tabindex="0" role="button" aria-label="Details: the General channel quota">
+        <h3>The General channel gets a quota <span class="chip c-util">Moderation</span></h3>
+        <p>Each account gets a <strong class="hl">send ceiling</strong> on the General channel, configurable per realm. Denials are explained in the chat window, in your own language.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card">
+        <h3>The lock protects the guild bank too <span class="chip c-util">Guild</span></h3>
+        <ul>
+          <li>The new lock applies to <strong class="hl">guild bank items</strong> just as it does to your own bags.</li>
+          <li>Handy for shared deposits: a material reserved for a specific craft will not be salvaged by a guildmate in a hurry.</li>
+          <li>A locked item is also <strong class="hl">excluded from stack merging</strong>, so it stays identifiable.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="confort">
+    <h2><span class="num">06</span>Comfort &amp; technical</h2>
+    <p class="sec-sub">This is the heart of the release. Almost everything below shows up without you changing a thing about how you play — especially on a phone.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="saccades" tabindex="0" role="button" aria-label="Details: the end of the hitches">
+        <h3>The anti-hitch campaign closes out <span class="chip c-fix">Performance</span></h3>
+        <p>The last big stalls fall: the armory character preview goes from <strong class="hl">754ms to 42ms</strong>, and its queue sync from <strong class="hl">10.2s to 1.6s</strong>.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card more" data-detail="memoire" tabindex="0" role="button" aria-label="Details: memory and iOS crashes">
+        <h3>No more crash-reload on iPhone <span class="chip c-fix">Mobile</span></h3>
+        <p>Far-away zones are released when memory runs short: a live iPhone test freed <strong class="hl">141 terrain chunks out of 261</strong>. Terrain textures drop from 212 MB to 41 MB resident.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card more" data-detail="ota" tabindex="0" role="button" aria-label="Details: updates and install size">
+        <h3>Light updates, lighter Android <span class="chip c-new">Apps</span></h3>
+        <p>The app now re-downloads only <strong class="hl">the files that changed</strong>, behind a visible progress gate. And the Android install drops from <strong class="hl">555 MB to 68 MB</strong>.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card more" data-detail="interface" tabindex="0" role="button" aria-label="Details: market and interface">
+        <h3>Market, Shift+Tab and small comforts <span class="chip c-util">Interface</span></h3>
+        <p>The market sorts <strong class="hl">cheapest first</strong> and shows armor class. <strong class="hl">Shift+Tab</strong> steps back one target. Two missing arena messages return.</p>
+        <span class="more-link">See details</span>
+      </div>
+      <div class="card">
+        <h3>The graphics options move <span class="chip c-util">Heads-up</span></h3>
+        <ul>
+          <li>The <strong class="hl">“Insane” rung of Shadow Quality is retired</strong>: its single 8192×8192 shadow map cost roughly 256 MB of GPU memory redrawn every frame for barely visible gain. If you were on it, you are clamped to “High”.</li>
+          <li>Shadows drop to <strong class="hl">half rate</strong> under sustained render pressure, with hysteresis so they do not flicker back and forth.</li>
+          <li>Sun shadows no longer “swim” as the camera moves.</li>
+          <li>The overall “Insane” graphics preset still exists.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>And also <span class="chip c-util">Various</span></h3>
+        <ul>
+          <li>On phones, the action-page indicator <strong class="hl">no longer collapses into a garbled stack</strong> in locales with longer page words.</li>
+          <li>Ability tooltips print “self only” instead of going blank when a piece of data is missing.</li>
+          <li>The combat log now samples everyone’s health and primary resource once per second, plus each mob’s top threat entries: parses can finally show <strong class="hl">why</strong> a boss turned around.</li>
+          <li>All <strong class="hl">21 locales</strong> ship complete, with zero pending rows.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    rien: {
+      title: "What does not change (which is nearly everything)",
+      summary: "Between v0.36.0 and v0.37.0, the whole body of published game data moves by exactly three values — and none of them is on a class.",
+      body: `
+        <h4>The only three values that moved</h4>
+        <ul>
+          <li>The cast time of <b>Soul Grave</b> on <span data-codex="mob|rift_boss_necro">Bonelord Xarreth</span>: 2.5s → <b>3.5s</b>.</li>
+          <li>The cast time of <b>Death Sentence</b> on the same boss: 3s → <b>4s</b>.</li>
+          <li>The size of <span data-codex="mob|grix_the_tunnelking">Grix the Tunnelking</span>: 1.15 → <b>1.275</b>.</li>
+        </ul>
+        <h4>So, concretely</h4>
+        <ul>
+          <li>No spell added, removed, renamed or retuned.</li>
+          <li>No talent row modified, no specialization mastery retouched.</li>
+          <li>No item, no set, no gear stat changed — <b>your BiS stays the same</b>.</li>
+          <li>No recipe, no gathering node, no enchant.</li>
+          <li>No quest, no NPC, no zone.</li>
+        </ul>
+        <h4>Why we are saying it this loudly</h4>
+        <p>After a v0.36.0 that rewrote eight classes out of nine, the natural question is “what do I have to redo now?”. The answer is <b>nothing</b>. This is an engine release: it spends its time under the hood, not in your talent tree.</p>`
+    },
+    mannequin: {
+      title: "The training dummy and the warlock’s execute",
+      summary: "Sentence finishes off ordinary mobs below 20% health. The dummy, with its near-infinite health pool, turned that execute into an absurd number.",
+      body: `
+        <h4>What was happening</h4>
+        <ul>
+          <li><span data-codex="ability|sentence">Sentence</span> carries a finisher that <b>instantly kills</b> an ordinary mob dropped below 20% health.</li>
+          <li>A training dummy carries a pool of roughly <b>999,999 health</b>, precisely so it can never be killed.</li>
+          <li>After a long testing session it would nevertheless slip under 20% — and the finisher then reported <b>its entire remaining health as one single hit</b>.</li>
+        </ul>
+        <h4>The result</h4>
+        <p>A single several-hundred-thousand-damage hit landed in the combat log and blew up the average for the whole session. In other words: <b>the object that exists to measure your damage was corrupting the measurement</b>.</p>
+        <h4>The fix</h4>
+        <p>Dummies are now excluded from that finisher, exactly as bosses and elites already were. Your dummy parses are finally usable all the way to the end of a session.</p>
+        <p><b>Note:</b> nothing changes in real combat. Against an actual mob, Sentence behaves exactly as before.</p>`
+    },
+    dr: {
+      title: "PvP fear and control: the exact ladder",
+      summary: "The official notes announce the “restoration” of proportional fear diminishing returns. Checked against the code: v0.36.0 already had it. Nothing changes for you.",
+      body: `
+        <h4>Why this card exists</h4>
+        <p>The game’s notes describe a fix: fear diminishing returns supposedly moving back from a fixed duration to a percentage of the spell’s own duration. Comparing the two releases <b>as they actually shipped</b>, the maths is identical character for character: the regression was introduced <b>and</b> fixed between two public releases. Nobody ever played it. All v0.37.0 does is move that code into its own file.</p>
+        <h4>The real ladder, as it runs today</h4>
+        <ul>
+          <li><b>Fear</b>: 100% → 50% → 25% → 12.5% of the spell’s duration, then holds at 12.5%. Fear <b>never</b> becomes fully immune. Resets after <b>60s</b>.</li>
+          <li><b>Polymorph</b>: fixed durations of <b>10s → 5s → 1s</b>, then holds at 1s. Resets after <b>60s</b>.</li>
+          <li><b>Root</b> and <b>school lockout</b>: 100% → 50% → 25% → <b>immune</b>. Resets after <b>18s</b>.</li>
+          <li><b>Stuns</b>: <b>no diminishing returns at all</b>. That is a deliberate balance choice — short durations behind real cooldowns.</li>
+        </ul>
+        <h4>Two useful details</h4>
+        <ul>
+          <li>All of this applies only <b>between hostile players</b>. In PvE, against a mob, no duration is ever reduced.</li>
+          <li>The crowd-control duration reduction from certain item sets applies <b>on top of</b> this ladder — unless the target is already immune, in which case nothing is applied at all.</li>
+        </ul>`
+    },
+    verrou: {
+      title: "The item lock, in detail",
+      summary: "A padlock you place yourself on a specific item, blocking the three ways to lose it by accident.",
+      body: `
+        <h4>How it works</h4>
+        <ul>
+          <li>Right-click an item in your <b>bags</b>, your <b>bank</b> or the <b>guild bank</b>.</li>
+          <li>A <b>padlock badge</b> appears on the icon: the item is protected.</li>
+          <li>The lock is placed <b>by you</b> and removed by you. It is not a game rule imposed on certain items, it is your own choice.</li>
+        </ul>
+        <h4>What the lock blocks</h4>
+        <ul>
+          <li><b>Vendor selling</b>, both single and bulk.</li>
+          <li><b>Salvaging</b>.</li>
+          <li><b>Consumption as a crafting reagent</b>.</li>
+        </ul>
+        <p>Each of those three denials has its own message, so you always know which one fired.</p>
+        <h4>The detail that matters for crafters</h4>
+        <p>A recipe no longer looks at how many copies you own, but at how many are <b>unlocked</b>. If a recipe asks for 10 units and you hold 12, four of them locked, it refuses to start: only 8 are available. And that denial reaches you <b>before</b> any bag-space message, so you do not go looking in the wrong place.</p>
+        <h4>Two intended side effects</h4>
+        <ul>
+          <li>A locked item <b>no longer merges</b> into stacks of the same item: it stays separate and visible.</li>
+          <li>The lock travels with the item, including through saves and the online wire.</li>
+        </ul>`
+    },
+    xarreth: {
+      title: "Bonelord Xarreth: the full arithmetic",
+      summary: "Two ground zones were killing players who had in fact reacted. The reason: cast time was being mistaken for reaction time.",
+      body: `
+        <h4>The trap in the maths</h4>
+        <p>A death zone appears <b>the instant the boss starts casting</b>, and it anchors <b>under a player’s feet</b>. So the cast time is not your reaction window: you first have to subtract the time it takes to <b>run a full radius</b> out of it. At the game’s run speed (7 yards per second), a radius-9 zone already costs 1.29s just to leave.</p>
+        <h4>At S rank the fuse is 30% shorter</h4>
+        <p>That is where it became untenable. Before this patch, at S rank:</p>
+        <ul>
+          <li><b>Soul Grave</b> (radius 9): 2.5s cast × 0.7 = 1.75s of fuse, minus 1.29s of running = <b>0.46s to react</b>.</li>
+          <li><b>Death Sentence</b> (radius 11): 3s × 0.7 = 2.10s, minus 1.57s = <b>0.53s to react</b>.</li>
+        </ul>
+        <p>For comparison: human visual reaction alone is around a quarter of a second before the body even moves — and network latency stacks on top. These two were the <b>only unreactable zones in the game</b>; the rest of the roster was already above 1.16s.</p>
+        <h4>After the fix</h4>
+        <ul>
+          <li><b>Soul Grave</b>: 3.5s × 0.7 = 2.45s of fuse, minus 1.29s = <b>1.16s to react</b>.</li>
+          <li><b>Death Sentence</b>: 4s × 0.7 = 2.80s, minus 1.57s = <b>1.23s to react</b>.</li>
+        </ul>
+        <p>Below S rank the fuse is the whole cast time: 3.5s and 4s, so more comfortable still.</p>
+        <h4>What does not change</h4>
+        <p>The <b>radii</b> (9 and 11), the <b>frequency</b> (every 22s and 26s) and the <b>Shadow school</b> are untouched. The boss does not hit softer: it simply gives you time to walk out.</p>
+        <h4>And for the future</h4>
+        <p>A guard rail was added: <b>every</b> death zone on <b>every</b> rift boss at <b>every</b> rank must leave at least <b>1 second</b> of reaction once the run-out is deducted. A fix on one boss can no longer let the others drift.</p>`
+    },
+    grix: {
+      title: "Grix the Tunnelking: bigger, and longer-armed",
+      summary: "The change is announced as a visual rescale. In the code, it also touches his attack reach.",
+      body: `
+        <h4>The new size</h4>
+        <p><span data-codex="mob|grix_the_tunnelking">Grix the Tunnelking</span> goes from <b>1.15 to 1.275</b>. That is not an arbitrary number: the <span data-codex="mob|tunnel_rat">Deeprock Diggers</span> he summons sit at 0.85, and 0.85 × 1.5 = 1.275. He is therefore exactly <b>half again</b> the size of his own escort — the intended read for a rare elite standing in the middle of its pack.</p>
+        <h4>What the official notes leave out</h4>
+        <p>In this game a mob’s melee reach <b>follows its size</b>: above size 1, each unit adds 3 yards of reach. So Grix gains <b>0.375 yards of reach</b> on top of his new silhouette, and the distance at which he tries to position follows.</p>
+        <h4>What that means for you</h4>
+        <ul>
+          <li>If you fight him at range hugging the edge of his reach, <b>back off slightly</b>: that edge has moved.</li>
+          <li>It is small in absolute terms, but it is a real combat change, not just a change of appearance.</li>
+        </ul>
+        <p>The size relationship is now pinned by a test that checks the <b>ratio</b> between Grix and his adds rather than the hard-coded number: if they are ever resized, he follows.</p>`
+    },
+    forge: {
+      title: "The Rift forge: an open door, closed",
+      summary: "Three commands meant for an interface that never shipped were answering anyone who knew how to call them.",
+      body: `
+        <h4>The problem</h4>
+        <ul>
+          <li>The game carried three Riftbound forge commands: <b>item upgrade</b>, <b>enchant</b> and <b>gem socketing</b>.</li>
+          <li>The interface meant to use them <b>never shipped</b> — but the commands themselves were fully wired on the server.</li>
+          <li>Any connected player able to craft the right network message could therefore fire them, and hand themselves <b>Riftbound gear progression ahead of everyone else</b>.</li>
+        </ul>
+        <h4>The fix</h4>
+        <p>The three commands are now <b>refused by default on every realm</b>. A realm has to explicitly opt in for them to answer — which targets test servers, not the live game.</p>
+        <p>Offline mode and simulations stay deliberately open: they never touch your online character.</p>
+        <h4>Should you worry?</h4>
+        <p>For the overwhelming majority of players this is a non-event: the hole required talking to the server by hand. But it did grant a real gear advantage, which makes it the only security fix in the release.</p>`
+    },
+    unstuck: {
+      title: "Unstuck inside a battleground",
+      summary: "The emergency button refused to work in exactly the place people get wedged the most: inside a match.",
+      body: `
+        <h4>Why it did not work</h4>
+        <p>The <b>Unstuck</b> button refuses to fire in “competitive” situations — duels, arenas — so it cannot be used as an escape. A battleground fell into that bucket, so a player wedged in the scenery at Thornhollow Fields could only wait out the match.</p>
+        <h4>What happens now</h4>
+        <ul>
+          <li>A <b>living</b> player recovers to their <b>team graveyard</b>.</li>
+          <li>A <b>dead</b> player recovers to their graveyard as well.</li>
+          <li>The graveyard was chosen over the spawn point because the spawn point <b>can itself be the trapping spot</b>.</li>
+          <li>It can also trigger when a <b>wall collision</b> leaves you in an unsettled motion state — the classic wedged-in-geometry case.</li>
+        </ul>
+        <h4>The guard rails</h4>
+        <ul>
+          <li><b>A flag carrier can never use it.</b> Otherwise the button became a free teleport back to your own base, flag in hand.</li>
+          <li>If you pick up the flag <b>during</b> the Unstuck countdown, the attempt is cancelled.</li>
+          <li>As everywhere else, it costs <b>Unstuck Sickness</b> (reduced stats for 5 minutes) and sets a <b>5 minute</b> cooldown.</li>
+          <li>It does not work before the fighters are released, nor in combat.</li>
+        </ul>
+        <p>Thornhollow Fields’ recovery points are additionally validated against the collision geometry: Unstuck can no longer drop you back inside a wall.</p>`
+    },
+    quota: {
+      title: "The General channel quota",
+      summary: "A per-account send ceiling on the General channel, with a denial explained in your own language.",
+      body: `
+        <h4>What you will see</h4>
+        <ul>
+          <li>Each account gets a <b>maximum number of sends</b> on the General channel.</li>
+          <li>Beyond it the message is refused and a <b>notice appears in the chat window</b>, translated into your language.</li>
+          <li><b>Staff accounts</b> are exempt.</li>
+        </ul>
+        <h4>The setting</h4>
+        <p>The limit is not a number carved into the game: it is configured <b>per realm</b> from an admin dashboard, available on desktop and mobile, with an audited history of changes. That is why this sheet gives you no figure: it depends on the realm you play on.</p>
+        <h4>Who it is for</h4>
+        <p>This is an anti-spam and anti-advertising measure, not a constraint aimed at normal conversation. Guild channels, party chat and whispers are unaffected.</p>`
+    },
+    saccades: {
+      title: "The anti-hitch campaign, final round",
+      summary: "The hunt that started in v0.36.0 takes on its worst remaining cases: login and the character preview.",
+      body: `
+        <h4>The measured numbers</h4>
+        <ul>
+          <li>The <b>armory character preview</b>: the worst measured stall goes from <b>754ms to 42ms</b>.</li>
+          <li>Its <b>queue synchronisation</b>: from <b>10.2s to 1.6s</b>.</li>
+          <li><b>Character textures</b> prewarm in 8ms slices ahead of first draw, instead of costing 140 to 870ms in one block.</li>
+          <li><b>Portraits</b> no longer pay their 150 to 248ms of shader compilation on first view.</li>
+        </ul>
+        <h4>The principle</h4>
+        <p>Rather than preparing everything at the moment it is needed, the game spreads the work into small slices under a per-frame budget, and <b>waits for shaders to finish linking in the background</b> before revealing a scene. Two cases are held this way: a far cell’s first appearance, and a town’s first fog reveal — two stalls measured between 632 and 681ms.</p>
+        <h4>What the review rounds caught</h4>
+        <ul>
+          <li>A camera <b>already inside</b> a town is never held by this mechanism.</li>
+          <li>Weapon visual effects are no longer skipped by mistake during compilation.</li>
+          <li>Point lights are budgeted: warlock meteors and the Thornhollow Fields lamps no longer stall mid-combat or over-brighten the scene.</li>
+        </ul>`
+    },
+    memoire: {
+      title: "Memory, iOS crashes and textures",
+      summary: "The game was dying on iPhone after a long session. The cause: it never released what it had loaded.",
+      body: `
+        <h4>The iPhone crash-reload loop</h4>
+        <p>On long sessions, iOS’s browser would eventually kill the game, which reloaded, climbed back up in memory, and got killed again. Terrain and water geometry for <b>far-away zones</b> now evict when memory gets tight: a test on a real iPhone freed <b>141 terrain chunks out of 261</b>. Teleporting back into a zone freed this way reloads behind the loading curtain, without a stutter.</p>
+        <h4>The terrain textures</h4>
+        <ul>
+          <li>The <b>38 terrain and structure textures</b> move to a GPU-compressed format.</li>
+          <li>The memory they occupy drops from about <b>212 MB to 41 MB</b>.</li>
+          <li>Their download weight drops by about <b>a third</b>.</li>
+          <li>Six colour layers deliberately stay on the old format: converting them crashed low-tier machines. A guard degrades the display rather than crashing.</li>
+        </ul>
+        <h4>Sky and shadows</h4>
+        <ul>
+          <li>Each biome’s sky was kept for <b>the whole session</b>, at roughly 17 MB apiece across 19 biomes. They now evict with distance.</li>
+          <li>Characters on modest machines get a <b>simplified ground shadow</b> rather than no shadow at all.</li>
+        </ul>`
+    },
+    ota: {
+      title: "Differential updates and install size",
+      summary: "The phone apps no longer re-download the whole game on every update — and the Android install finally fits inside the Play Store’s limits.",
+      body: `
+        <h4>Updates only fetch what is needed</h4>
+        <ul>
+          <li>Every file is identified by its <b>fingerprint</b>; the device only fetches the ones it is missing.</li>
+          <li>A <b>visible update gate</b> shows the progress, and offers to <b>continue without updating</b>.</li>
+          <li>A finished update applies immediately.</li>
+          <li>The “incompatible version” case, silent until now, is finally surfaced.</li>
+        </ul>
+        <h4>The built-in caution</h4>
+        <p>At the slightest irregularity — a suspicious fingerprint, an odd file path, an unexpected origin — the system <b>gives up and falls back to the full download</b>, which is the proven path. In other words, the worst case is the old behaviour, never a damaged install.</p>
+        <h4>Android: 555 MB → 68 MB</h4>
+        <p>The install was over the Play Store ceiling. Media and audio now ship in a <b>separate pack installed alongside the app</b>: the base module drops from <b>555 MB to 68 MB</b> compressed. Nothing changes for you in use — except that the app can finally be published normally.</p>`
+    },
+    interface: {
+      title: "Market, targeting and small comforts",
+      summary: "A handful of interface additions that had been asked for a while.",
+      body: `
+        <h4>The market</h4>
+        <ul>
+          <li>The Browse tab can sort <b>cheapest first</b>, across the whole matched set — not just the page on screen. Name sorting stays the default.</li>
+          <li>The sort is computed <b>server-side</b> and cached, with stable tie-breaking: two listings at the same price do not jump between pages on refresh.</li>
+          <li>Armor listings carry a <b>cloth / leather / mail badge</b>: no need to open the tooltip to know whether it is for you.</li>
+        </ul>
+        <h4>Targeting</h4>
+        <p><b>Shift+Tab</b> walks the target list <b>backwards</b>, through the same order Tab walks forwards. If you cycled one enemy too far, you step straight back onto it instead of going all the way around. It is a <b>rebindable key</b>, listed in the controls guide.</p>
+        <h4>The rest</h4>
+        <ul>
+          <li>Two missing arena messages return in every locale: the Ashen Coliseum auto-leave notice and the level-requirement error.</li>
+          <li>On phones, the action bar page indicator <b>fits on one line</b> instead of collapsing into a garbled stack in locales with longer words.</li>
+          <li>An ability tooltip with no form or health-threshold requirement to show now prints <b>“self only”</b> instead of going blank.</li>
+        </ul>`
+    },
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>
