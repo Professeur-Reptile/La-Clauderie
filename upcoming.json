@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-13T09:30:51Z",
+ "generated": "2026-08-14T03:16:56Z",
  "base_tag": "v0.37.1",
  "version": "v0.38.0",
  "branch": "release/v0.38.0",
  "declared_version": "0.37.0",
  "imminent": false,
- "commits": 6,
- "shown": 3,
- "last_commit": "2026-08-13T13:48:29+12:00",
+ "commits": 82,
+ "shown": 33,
+ "last_commit": "2026-08-13T21:39:13-05:00",
  "sections": [
   {
    "key": "classes",
@@ -38,6 +38,13 @@
    "en": "Dungeons, rifts & bosses",
    "items": [
     {
+     "h": "2a4cc8b5",
+     "kind": "perf",
+     "scope": "map",
+     "text": "Reuse Rift marker slots across redraws",
+     "date": "2026-08-13"
+    },
+    {
      "h": "aea4914d",
      "kind": "fix",
      "scope": "server",
@@ -67,11 +74,214 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "73bf7d17",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Readable moon-lit nights and a longer day/night cycle",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "a2fe80b2",
+     "kind": "feat",
+     "scope": "ota",
+     "text": "Remove the cancel action from the OTA update overlay",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "9c102388",
+     "kind": "feat",
+     "scope": "perf",
+     "text": "Add reproducible GPU hitch captures",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "a4602fde",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Adapt prewarm shader link pressure",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "078f09bd",
+     "kind": "feat",
+     "scope": "perf",
+     "text": "Parameterize GPU hitch viewport",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "332e6094",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Enable adaptive shader pacing by default",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "624b2a27",
+     "kind": "feat",
+     "scope": "map",
+     "text": "Add curated marker art and bounded raster cache",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "68f607fe",
+     "kind": "feat",
+     "scope": "world",
+     "text": "Expose civic service map placements",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "05542410",
+     "kind": "feat",
+     "scope": "map",
+     "text": "Overhaul marker states and instance schematics",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "da4e0cf7",
+     "kind": "feat",
+     "scope": "perf",
+     "text": "Attribute GPU hitch stalls to program identity",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "6554dc9c",
+     "kind": "perf",
+     "scope": "map",
+     "text": "Cache tooltip projection geometry",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "6e4b4dad",
+     "kind": "fix",
+     "scope": "perf",
+     "text": "Make the GPU hitch artifact say only what it measured",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "5abc4f88",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Far vista night dim tracks the ambient floor (review)",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "319a1c06",
+     "kind": "fix",
+     "scope": "ota",
+     "text": "Hide the gate overlay before the fatal dead-end hand-back",
+     "date": "2026-08-14"
+    },
+    {
      "h": "f9e41c8e",
      "kind": "fix",
      "scope": "docker",
      "text": "Allowlist build_bundle_pregen.mjs in the image build context",
      "date": "2026-08-13"
+    },
+    {
+     "h": "1c4a7046",
+     "kind": "fix",
+     "scope": "tests",
+     "text": "Accept grouped reduced-motion selector, adopt ariaDescription proc convention",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "405b33a7",
+     "kind": "fix",
+     "scope": "styles",
+     "text": "Drop the inert mobile proc selector from hud.css reduced motion",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "babdbc17",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Derive the Temporal Echo tooltip area rate from the sim constants",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "a9cadaf5",
+     "kind": "fix",
+     "scope": "map",
+     "text": "Relocalize crowded marker tooltips",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "fa77580d",
+     "kind": "fix",
+     "scope": "map",
+     "text": "Keep compact map windows separated",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "29017e32",
+     "kind": "fix",
+     "scope": "map",
+     "text": "Address review feedback",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "0ffdff64",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Pin the point-light count through one adoption seam",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "b1b4ef1d",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Lift budgeted lights out of cull-toggled groups",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "1f09d3ca",
+     "kind": "fix",
+     "scope": "perf",
+     "text": "Close the GPU hitch capture guardrail gaps",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "186e6ad8",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Make the light-registry seam answer for itself",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "d9e61b2d",
+     "kind": "fix",
+     "scope": "chronomancy",
+     "text": "Ready healing ranks for release v0.36",
+     "date": "2026-08-08"
+    },
+    {
+     "h": "4648bc14",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.35.0 into fix/chronomancer-rank4-heal-tuning",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "0039b551",
+     "kind": "fix",
+     "scope": "chronomancy",
+     "text": "Hold the derived Aether Surge cost and re-derive the DPS band",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "0bf64408",
+     "kind": "fix",
+     "scope": "chronomancy",
+     "text": "Resolve level 20 healing review",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "aeda9aca",
+     "kind": "fix",
+     "scope": "chronomancy",
+     "text": "Restore level 20 healing ranks",
+     "date": "2026-08-02"
     }
    ]
   }
@@ -82,9 +292,9 @@
    "branch": "release/v0.38.0",
    "declared_version": "0.37.0",
    "imminent": false,
-   "commits": 6,
-   "shown": 3,
-   "last_commit": "2026-08-13T13:48:29+12:00",
+   "commits": 82,
+   "shown": 33,
+   "last_commit": "2026-08-13T21:39:13-05:00",
    "sections": [
     {
      "key": "classes",
@@ -115,6 +325,13 @@
      "en": "Dungeons, rifts & bosses",
      "items": [
       {
+       "h": "2a4cc8b5",
+       "kind": "perf",
+       "scope": "map",
+       "text": "Reuse Rift marker slots across redraws",
+       "date": "2026-08-13"
+      },
+      {
        "h": "aea4914d",
        "kind": "fix",
        "scope": "server",
@@ -144,11 +361,214 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "73bf7d17",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Readable moon-lit nights and a longer day/night cycle",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "a2fe80b2",
+       "kind": "feat",
+       "scope": "ota",
+       "text": "Remove the cancel action from the OTA update overlay",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "9c102388",
+       "kind": "feat",
+       "scope": "perf",
+       "text": "Add reproducible GPU hitch captures",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "a4602fde",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Adapt prewarm shader link pressure",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "078f09bd",
+       "kind": "feat",
+       "scope": "perf",
+       "text": "Parameterize GPU hitch viewport",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "332e6094",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Enable adaptive shader pacing by default",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "624b2a27",
+       "kind": "feat",
+       "scope": "map",
+       "text": "Add curated marker art and bounded raster cache",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "68f607fe",
+       "kind": "feat",
+       "scope": "world",
+       "text": "Expose civic service map placements",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "05542410",
+       "kind": "feat",
+       "scope": "map",
+       "text": "Overhaul marker states and instance schematics",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "da4e0cf7",
+       "kind": "feat",
+       "scope": "perf",
+       "text": "Attribute GPU hitch stalls to program identity",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "6554dc9c",
+       "kind": "perf",
+       "scope": "map",
+       "text": "Cache tooltip projection geometry",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "6e4b4dad",
+       "kind": "fix",
+       "scope": "perf",
+       "text": "Make the GPU hitch artifact say only what it measured",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "5abc4f88",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Far vista night dim tracks the ambient floor (review)",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "319a1c06",
+       "kind": "fix",
+       "scope": "ota",
+       "text": "Hide the gate overlay before the fatal dead-end hand-back",
+       "date": "2026-08-14"
+      },
+      {
        "h": "f9e41c8e",
        "kind": "fix",
        "scope": "docker",
        "text": "Allowlist build_bundle_pregen.mjs in the image build context",
        "date": "2026-08-13"
+      },
+      {
+       "h": "1c4a7046",
+       "kind": "fix",
+       "scope": "tests",
+       "text": "Accept grouped reduced-motion selector, adopt ariaDescription proc convention",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "405b33a7",
+       "kind": "fix",
+       "scope": "styles",
+       "text": "Drop the inert mobile proc selector from hud.css reduced motion",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "babdbc17",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Derive the Temporal Echo tooltip area rate from the sim constants",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "a9cadaf5",
+       "kind": "fix",
+       "scope": "map",
+       "text": "Relocalize crowded marker tooltips",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "fa77580d",
+       "kind": "fix",
+       "scope": "map",
+       "text": "Keep compact map windows separated",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "29017e32",
+       "kind": "fix",
+       "scope": "map",
+       "text": "Address review feedback",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "0ffdff64",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Pin the point-light count through one adoption seam",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "b1b4ef1d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Lift budgeted lights out of cull-toggled groups",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "1f09d3ca",
+       "kind": "fix",
+       "scope": "perf",
+       "text": "Close the GPU hitch capture guardrail gaps",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "186e6ad8",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Make the light-registry seam answer for itself",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "d9e61b2d",
+       "kind": "fix",
+       "scope": "chronomancy",
+       "text": "Ready healing ranks for release v0.36",
+       "date": "2026-08-08"
+      },
+      {
+       "h": "4648bc14",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.35.0 into fix/chronomancer-rank4-heal-tuning",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "0039b551",
+       "kind": "fix",
+       "scope": "chronomancy",
+       "text": "Hold the derived Aether Surge cost and re-derive the DPS band",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "0bf64408",
+       "kind": "fix",
+       "scope": "chronomancy",
+       "text": "Resolve level 20 healing review",
+       "date": "2026-08-03"
+      },
+      {
+       "h": "aeda9aca",
+       "kind": "fix",
+       "scope": "chronomancy",
+       "text": "Restore level 20 healing ranks",
+       "date": "2026-08-02"
       }
      ]
     }
