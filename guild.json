@@ -2,77 +2,77 @@
   "guilde": {
     "classementServeur": 7,
     "classement": {
-      "releveLe": "2026-08-13T16:18:30Z",
+      "releveLe": "2026-08-14T05:39:55Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Monarchs",
-          "memberCount": 90,
-          "totalLifetimeXp": 54162259,
+          "memberCount": 89,
+          "totalLifetimeXp": 53949075,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "HUMANITY",
-          "memberCount": 99,
-          "totalLifetimeXp": 50907198,
+          "memberCount": 100,
+          "totalLifetimeXp": 51505666,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Look Good Play Good",
-          "memberCount": 97,
-          "totalLifetimeXp": 40149913,
+          "memberCount": 96,
+          "totalLifetimeXp": 39781616,
           "topLevel": 20
         },
         {
           "rank": 4,
           "name": "Raiders United",
-          "memberCount": 84,
-          "totalLifetimeXp": 33886913,
+          "memberCount": 86,
+          "totalLifetimeXp": 34650915,
           "topLevel": 20
         },
         {
           "rank": 5,
           "name": "Vis Absoluta",
           "memberCount": 45,
-          "totalLifetimeXp": 18459944,
+          "totalLifetimeXp": 18645200,
           "topLevel": 20
         },
         {
           "rank": 6,
           "name": "Ehren Nuggets",
           "memberCount": 95,
-          "totalLifetimeXp": 15696786,
+          "totalLifetimeXp": 15724386,
           "topLevel": 20
         },
         {
           "rank": 7,
           "name": "La Clauderie",
           "memberCount": 42,
-          "totalLifetimeXp": 13009573,
+          "totalLifetimeXp": 13011180,
           "topLevel": 20
         },
         {
           "rank": 8,
           "name": "Holy Order",
-          "memberCount": 54,
-          "totalLifetimeXp": 12151119,
+          "memberCount": 53,
+          "totalLifetimeXp": 11876112,
           "topLevel": 20
         },
         {
           "rank": 9,
           "name": "OTUKEN",
           "memberCount": 34,
-          "totalLifetimeXp": 9089828,
+          "totalLifetimeXp": 9091194,
           "topLevel": 20
         },
         {
           "rank": 10,
           "name": "A Guilda",
           "memberCount": 20,
-          "totalLifetimeXp": 8718310,
+          "totalLifetimeXp": 8773162,
           "topLevel": 20
         }
       ],
@@ -80,7 +80,7 @@
         "rank": 7,
         "name": "La Clauderie",
         "memberCount": 42,
-        "totalLifetimeXp": 13009573,
+        "totalLifetimeXp": 13011180,
         "topLevel": 20
       }
     }
