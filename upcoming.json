@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-14T03:16:56Z",
+ "generated": "2026-08-14T07:58:46Z",
  "base_tag": "v0.37.1",
  "version": "v0.38.0",
  "branch": "release/v0.38.0",
  "declared_version": "0.37.0",
  "imminent": false,
- "commits": 82,
- "shown": 33,
- "last_commit": "2026-08-13T21:39:13-05:00",
+ "commits": 180,
+ "shown": 67,
+ "last_commit": "2026-08-14T19:39:32+12:00",
  "sections": [
   {
    "key": "classes",
@@ -16,10 +16,38 @@
    "en": "Classes & spells",
    "items": [
     {
+     "h": "89eef0a4",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Key tank crit immunity on the attacker so pets crit tanks in PvP",
+     "date": "2026-08-14"
+    },
+    {
      "h": "f85a42f7",
      "kind": "fix",
      "scope": "rogue",
      "text": "Re-band combat to the 200 DPS band top",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "025ce574",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Never zero a Cheater budget from an absent aura list",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "169e38ed",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Route the Cheater mark apply and lift through the ordinary aura paths",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "8fc6158a",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Derive the Cheater wire flag from the aura, and pin the dead pause",
      "date": "2026-08-13"
     }
    ]
@@ -58,14 +86,65 @@
    "icon": "🗺️",
    "fr": "Monde & quêtes",
    "en": "World & quests",
-   "items": []
+   "items": [
+    {
+     "h": "d52c305b",
+     "kind": "fix",
+     "scope": "scripts",
+     "text": "Spawn git without the cmd shell in ci:changed",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "d7d3c332",
+     "kind": "fix",
+     "scope": "scripts",
+     "text": "Extend the shell-free git spawn to gate_select and gate_shadow",
+     "date": "2026-08-14"
+    }
+   ]
   },
   {
    "key": "guilde",
    "icon": "🏰",
    "fr": "Guilde & social",
    "en": "Guild & social",
-   "items": []
+   "items": [
+    {
+     "h": "1801a208",
+     "kind": "feat",
+     "scope": "moderation",
+     "text": "Give the Cheater mark a coded admin API",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "505f5084",
+     "kind": "feat",
+     "scope": "moderation",
+     "text": "Add the Cheater mark sim core",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "9c5a7d59",
+     "kind": "fix",
+     "scope": "test",
+     "text": "Apply the chat-quota DDL in the admin guilds integration fixture",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "0a7fad75",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Keep the Cheater mark off party frames and off the dispel table",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "514eb2cb",
+     "kind": "fix",
+     "scope": "moderation",
+     "text": "Cheater mark server persistence and admin API",
+     "date": "2026-08-12"
+    }
+   ]
   },
   {
    "key": "confort",
@@ -74,10 +153,38 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "cbad931d",
+     "kind": "feat",
+     "scope": "analytics",
+     "text": "Append-only level-up and FTUE event logs",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "e2dc3492",
+     "kind": "feat",
+     "scope": "analytics",
+     "text": "Persist first-touch signup attribution and profile",
+     "date": "2026-08-14"
+    },
+    {
      "h": "73bf7d17",
      "kind": "feat",
      "scope": "render",
      "text": "Readable moon-lit nights and a longer day/night cycle",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "d38404bf",
+     "kind": "feat",
+     "scope": "client",
+     "text": "First-touch attribution capture and marketing opt-in at signup",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "b45fb204",
+     "kind": "feat",
+     "scope": "meta",
+     "text": "ReachedLevel2 and D7Retained conversions with email match quality",
      "date": "2026-08-14"
     },
     {
@@ -86,6 +193,20 @@
      "scope": "ota",
      "text": "Remove the cancel action from the OTA update overlay",
      "date": "2026-08-14"
+    },
+    {
+     "h": "e1ab40db",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Per-feature design values and import/export in the character creator",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "eb477894",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Render the Cheater tag on the nameplate and target frame",
+     "date": "2026-08-13"
     },
     {
      "h": "9c102388",
@@ -172,10 +293,94 @@
      "date": "2026-08-14"
     },
     {
+     "h": "26a148f5",
+     "kind": "fix",
+     "scope": "analytics",
+     "text": "Review fixes for the UA instrumentation (PR 3374)",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "cf301c05",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Grix and Digger hit clips, swing timing, and grounding",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "864c5453",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Refuse a garbage budget instead of lifting a live mark",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "df414c61",
+     "kind": "fix",
+     "scope": "",
+     "text": "Pick up the sim-core lifecycle fixes from feature/cheater-title",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "df414c61",
+     "kind": "fix",
+     "scope": "",
+     "text": "Pick up the sim-core lifecycle fixes from feature/cheater-title",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "71c7bdf5",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Review fixes for the design code share tab",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "c907c61f",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Address review on the design code share tab and gate fix",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "2dcf0e9a",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Fill auth.marketingOptIn across the remaining 13 locales",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "797a89fa",
+     "kind": "fix",
+     "scope": "",
+     "text": "Add the admin-cheater-mark screenshot subtree to the sparse cones",
+     "date": "2026-08-14"
+    },
+    {
      "h": "f9e41c8e",
      "kind": "fix",
      "scope": "docker",
      "text": "Allowlist build_bundle_pregen.mjs in the image build context",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "45f8bc20",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Restore the release portrait seal, the re-bless chased corrupt deps",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "45f8bc20",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Restore the release portrait seal, the re-bless chased corrupt deps",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "45f8bc20",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Restore the release portrait seal, the re-bless chased corrupt deps",
      "date": "2026-08-13"
     },
     {
@@ -197,6 +402,41 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Derive the Temporal Echo tooltip area rate from the sim constants",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "0b8dfa68",
+     "kind": "fix",
+     "scope": "scripts",
+     "text": "Point the cheater mark capture at the committed shots dir",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "e71d74e3",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Push the Cheater budget the mark write itself returned",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "74000da0",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Clear the Cheater wire flag when the mark expires naturally",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "d8341bdf",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Keep the Cheater mark through death, arena entry, and Fiesta down",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "c0d9c9cf",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Refuse a Cheater mark on a missing account with a code",
      "date": "2026-08-13"
     },
     {
@@ -292,9 +532,9 @@
    "branch": "release/v0.38.0",
    "declared_version": "0.37.0",
    "imminent": false,
-   "commits": 82,
-   "shown": 33,
-   "last_commit": "2026-08-13T21:39:13-05:00",
+   "commits": 180,
+   "shown": 67,
+   "last_commit": "2026-08-14T19:39:32+12:00",
    "sections": [
     {
      "key": "classes",
@@ -303,10 +543,38 @@
      "en": "Classes & spells",
      "items": [
       {
+       "h": "89eef0a4",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Key tank crit immunity on the attacker so pets crit tanks in PvP",
+       "date": "2026-08-14"
+      },
+      {
        "h": "f85a42f7",
        "kind": "fix",
        "scope": "rogue",
        "text": "Re-band combat to the 200 DPS band top",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "025ce574",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Never zero a Cheater budget from an absent aura list",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "169e38ed",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Route the Cheater mark apply and lift through the ordinary aura paths",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "8fc6158a",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Derive the Cheater wire flag from the aura, and pin the dead pause",
        "date": "2026-08-13"
       }
      ]
@@ -345,14 +613,65 @@
      "icon": "🗺️",
      "fr": "Monde & quêtes",
      "en": "World & quests",
-     "items": []
+     "items": [
+      {
+       "h": "d52c305b",
+       "kind": "fix",
+       "scope": "scripts",
+       "text": "Spawn git without the cmd shell in ci:changed",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "d7d3c332",
+       "kind": "fix",
+       "scope": "scripts",
+       "text": "Extend the shell-free git spawn to gate_select and gate_shadow",
+       "date": "2026-08-14"
+      }
+     ]
     },
     {
      "key": "guilde",
      "icon": "🏰",
      "fr": "Guilde & social",
      "en": "Guild & social",
-     "items": []
+     "items": [
+      {
+       "h": "1801a208",
+       "kind": "feat",
+       "scope": "moderation",
+       "text": "Give the Cheater mark a coded admin API",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "505f5084",
+       "kind": "feat",
+       "scope": "moderation",
+       "text": "Add the Cheater mark sim core",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "9c5a7d59",
+       "kind": "fix",
+       "scope": "test",
+       "text": "Apply the chat-quota DDL in the admin guilds integration fixture",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "0a7fad75",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Keep the Cheater mark off party frames and off the dispel table",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "514eb2cb",
+       "kind": "fix",
+       "scope": "moderation",
+       "text": "Cheater mark server persistence and admin API",
+       "date": "2026-08-12"
+      }
+     ]
     },
     {
      "key": "confort",
@@ -361,10 +680,38 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "cbad931d",
+       "kind": "feat",
+       "scope": "analytics",
+       "text": "Append-only level-up and FTUE event logs",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "e2dc3492",
+       "kind": "feat",
+       "scope": "analytics",
+       "text": "Persist first-touch signup attribution and profile",
+       "date": "2026-08-14"
+      },
+      {
        "h": "73bf7d17",
        "kind": "feat",
        "scope": "render",
        "text": "Readable moon-lit nights and a longer day/night cycle",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "d38404bf",
+       "kind": "feat",
+       "scope": "client",
+       "text": "First-touch attribution capture and marketing opt-in at signup",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "b45fb204",
+       "kind": "feat",
+       "scope": "meta",
+       "text": "ReachedLevel2 and D7Retained conversions with email match quality",
        "date": "2026-08-14"
       },
       {
@@ -373,6 +720,20 @@
        "scope": "ota",
        "text": "Remove the cancel action from the OTA update overlay",
        "date": "2026-08-14"
+      },
+      {
+       "h": "e1ab40db",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Per-feature design values and import/export in the character creator",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "eb477894",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Render the Cheater tag on the nameplate and target frame",
+       "date": "2026-08-13"
       },
       {
        "h": "9c102388",
@@ -459,10 +820,94 @@
        "date": "2026-08-14"
       },
       {
+       "h": "26a148f5",
+       "kind": "fix",
+       "scope": "analytics",
+       "text": "Review fixes for the UA instrumentation (PR 3374)",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "cf301c05",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Grix and Digger hit clips, swing timing, and grounding",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "864c5453",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Refuse a garbage budget instead of lifting a live mark",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "df414c61",
+       "kind": "fix",
+       "scope": "",
+       "text": "Pick up the sim-core lifecycle fixes from feature/cheater-title",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "df414c61",
+       "kind": "fix",
+       "scope": "",
+       "text": "Pick up the sim-core lifecycle fixes from feature/cheater-title",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "71c7bdf5",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Review fixes for the design code share tab",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "c907c61f",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Address review on the design code share tab and gate fix",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "2dcf0e9a",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Fill auth.marketingOptIn across the remaining 13 locales",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "797a89fa",
+       "kind": "fix",
+       "scope": "",
+       "text": "Add the admin-cheater-mark screenshot subtree to the sparse cones",
+       "date": "2026-08-14"
+      },
+      {
        "h": "f9e41c8e",
        "kind": "fix",
        "scope": "docker",
        "text": "Allowlist build_bundle_pregen.mjs in the image build context",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "45f8bc20",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Restore the release portrait seal, the re-bless chased corrupt deps",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "45f8bc20",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Restore the release portrait seal, the re-bless chased corrupt deps",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "45f8bc20",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Restore the release portrait seal, the re-bless chased corrupt deps",
        "date": "2026-08-13"
       },
       {
@@ -484,6 +929,41 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Derive the Temporal Echo tooltip area rate from the sim constants",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "0b8dfa68",
+       "kind": "fix",
+       "scope": "scripts",
+       "text": "Point the cheater mark capture at the committed shots dir",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "e71d74e3",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Push the Cheater budget the mark write itself returned",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "74000da0",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Clear the Cheater wire flag when the mark expires naturally",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "d8341bdf",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Keep the Cheater mark through death, arena entry, and Fiesta down",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "c0d9c9cf",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Refuse a Cheater mark on a missing account with a code",
        "date": "2026-08-13"
       },
       {
