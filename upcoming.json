@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-14T07:58:46Z",
+ "generated": "2026-08-14T10:02:57Z",
  "base_tag": "v0.37.1",
  "version": "v0.38.0",
  "branch": "release/v0.38.0",
- "declared_version": "0.37.0",
- "imminent": false,
- "commits": 180,
- "shown": 67,
- "last_commit": "2026-08-14T19:39:32+12:00",
+ "declared_version": "0.38.0",
+ "imminent": true,
+ "commits": 263,
+ "shown": 91,
+ "last_commit": "2026-08-14T09:45:38+00:00",
  "sections": [
   {
    "key": "classes",
@@ -73,6 +73,13 @@
      "date": "2026-08-13"
     },
     {
+     "h": "083ab915",
+     "kind": "fix",
+     "scope": "db",
+     "text": "Harden Rift rollback migration",
+     "date": "2026-08-14"
+    },
+    {
      "h": "aea4914d",
      "kind": "fix",
      "scope": "server",
@@ -87,6 +94,20 @@
    "fr": "Monde & quêtes",
    "en": "World & quests",
    "items": [
+    {
+     "h": "812f156e",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Only spawn quest collectables while their quest is active",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "8d39b453",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Keep the interact key off hidden quest collectables",
+     "date": "2026-08-14"
+    },
     {
      "h": "d52c305b",
      "kind": "fix",
@@ -265,11 +286,32 @@
      "date": "2026-08-13"
     },
     {
+     "h": "59989fd3",
+     "kind": "feat",
+     "scope": "market",
+     "text": "Show current lowest listing price on the Sell tab",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "49713245",
+     "kind": "feat",
+     "scope": "market",
+     "text": "Add a Browse toggle to show only the lowest price per item",
+     "date": "2026-08-11"
+    },
+    {
      "h": "6554dc9c",
      "kind": "perf",
      "scope": "map",
      "text": "Cache tooltip projection geometry",
      "date": "2026-08-13"
+    },
+    {
+     "h": "319dbf93",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Dedupe compileAsync isReady queries by program per pass",
+     "date": "2026-08-12"
     },
     {
      "h": "6e4b4dad",
@@ -307,6 +349,34 @@
      "date": "2026-08-14"
     },
     {
+     "h": "693581ce",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Preserve lowest-price identities",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "c3ab730d",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Align sell price reference rounding",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "642fd462",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Avoid stale offscreen heal glows",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "ec30e133",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Localize bag property refusal",
+     "date": "2026-08-14"
+    },
+    {
      "h": "864c5453",
      "kind": "fix",
      "scope": "sim",
@@ -321,6 +391,13 @@
      "date": "2026-08-14"
     },
     {
+     "h": "a5e4d53b",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Preserve input edges under backpressure",
+     "date": "2026-08-14"
+    },
+    {
      "h": "df414c61",
      "kind": "fix",
      "scope": "",
@@ -332,6 +409,13 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Review fixes for the design code share tab",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "059732d5",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Repair Vale Cup reference receipt",
      "date": "2026-08-14"
     },
     {
@@ -356,10 +440,38 @@
      "date": "2026-08-14"
     },
     {
+     "h": "80a2824e",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Fill v0.38 release locales",
+     "date": "2026-08-14"
+    },
+    {
+     "h": "97fea531",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Align Danish cheater-mark term",
+     "date": "2026-08-14"
+    },
+    {
      "h": "f9e41c8e",
      "kind": "fix",
      "scope": "docker",
      "text": "Allowlist build_bundle_pregen.mjs in the image build context",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "5a33002a",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Reconcile the collapseLowest field with sibling market PRs",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "45e72894",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Pin collapseLowest in the keyboard-nav price-sort assertion",
      "date": "2026-08-13"
     },
     {
@@ -402,6 +514,27 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Derive the Temporal Echo tooltip area rate from the sim constants",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "0567504e",
+     "kind": "fix",
+     "scope": "scripts",
+     "text": "Reject browser bundle metadata drift in portrait manifest check",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "f7105c1f",
+     "kind": "fix",
+     "scope": "tests",
+     "text": "Update pinned command/facet counts for market_sell_price_check",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "5375f489",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Regenerate pending-locale rows against release/v0.38.0",
      "date": "2026-08-13"
     },
     {
@@ -489,6 +622,41 @@
      "date": "2026-08-13"
     },
     {
+     "h": "5a9d85f7",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Shed input sends once the local socket buffer is backed up",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "dd5c92e1",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Keep the training dummy from being dragged by Oath Chain",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "bf85541b",
+     "kind": "fix",
+     "scope": "sim,server",
+     "text": "Close two dropped-provenance container boundaries",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "c32ed932",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Evict healGlowAt entries when a view is dropped",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "47785e81",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Regenerate pending-locale rows for market sort strings",
+     "date": "2026-08-12"
+    },
+    {
      "h": "d9e61b2d",
      "kind": "fix",
      "scope": "chronomancy",
@@ -530,11 +698,11 @@
   {
    "version": "v0.38.0",
    "branch": "release/v0.38.0",
-   "declared_version": "0.37.0",
-   "imminent": false,
-   "commits": 180,
-   "shown": 67,
-   "last_commit": "2026-08-14T19:39:32+12:00",
+   "declared_version": "0.38.0",
+   "imminent": true,
+   "commits": 263,
+   "shown": 91,
+   "last_commit": "2026-08-14T09:45:38+00:00",
    "sections": [
     {
      "key": "classes",
@@ -600,6 +768,13 @@
        "date": "2026-08-13"
       },
       {
+       "h": "083ab915",
+       "kind": "fix",
+       "scope": "db",
+       "text": "Harden Rift rollback migration",
+       "date": "2026-08-14"
+      },
+      {
        "h": "aea4914d",
        "kind": "fix",
        "scope": "server",
@@ -614,6 +789,20 @@
      "fr": "Monde & quêtes",
      "en": "World & quests",
      "items": [
+      {
+       "h": "812f156e",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Only spawn quest collectables while their quest is active",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "8d39b453",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Keep the interact key off hidden quest collectables",
+       "date": "2026-08-14"
+      },
       {
        "h": "d52c305b",
        "kind": "fix",
@@ -792,11 +981,32 @@
        "date": "2026-08-13"
       },
       {
+       "h": "59989fd3",
+       "kind": "feat",
+       "scope": "market",
+       "text": "Show current lowest listing price on the Sell tab",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "49713245",
+       "kind": "feat",
+       "scope": "market",
+       "text": "Add a Browse toggle to show only the lowest price per item",
+       "date": "2026-08-11"
+      },
+      {
        "h": "6554dc9c",
        "kind": "perf",
        "scope": "map",
        "text": "Cache tooltip projection geometry",
        "date": "2026-08-13"
+      },
+      {
+       "h": "319dbf93",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Dedupe compileAsync isReady queries by program per pass",
+       "date": "2026-08-12"
       },
       {
        "h": "6e4b4dad",
@@ -834,6 +1044,34 @@
        "date": "2026-08-14"
       },
       {
+       "h": "693581ce",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Preserve lowest-price identities",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "c3ab730d",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Align sell price reference rounding",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "642fd462",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Avoid stale offscreen heal glows",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "ec30e133",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Localize bag property refusal",
+       "date": "2026-08-14"
+      },
+      {
        "h": "864c5453",
        "kind": "fix",
        "scope": "sim",
@@ -848,6 +1086,13 @@
        "date": "2026-08-14"
       },
       {
+       "h": "a5e4d53b",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Preserve input edges under backpressure",
+       "date": "2026-08-14"
+      },
+      {
        "h": "df414c61",
        "kind": "fix",
        "scope": "",
@@ -859,6 +1104,13 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Review fixes for the design code share tab",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "059732d5",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Repair Vale Cup reference receipt",
        "date": "2026-08-14"
       },
       {
@@ -883,10 +1135,38 @@
        "date": "2026-08-14"
       },
       {
+       "h": "80a2824e",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Fill v0.38 release locales",
+       "date": "2026-08-14"
+      },
+      {
+       "h": "97fea531",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Align Danish cheater-mark term",
+       "date": "2026-08-14"
+      },
+      {
        "h": "f9e41c8e",
        "kind": "fix",
        "scope": "docker",
        "text": "Allowlist build_bundle_pregen.mjs in the image build context",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "5a33002a",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Reconcile the collapseLowest field with sibling market PRs",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "45e72894",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Pin collapseLowest in the keyboard-nav price-sort assertion",
        "date": "2026-08-13"
       },
       {
@@ -929,6 +1209,27 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Derive the Temporal Echo tooltip area rate from the sim constants",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "0567504e",
+       "kind": "fix",
+       "scope": "scripts",
+       "text": "Reject browser bundle metadata drift in portrait manifest check",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "f7105c1f",
+       "kind": "fix",
+       "scope": "tests",
+       "text": "Update pinned command/facet counts for market_sell_price_check",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "5375f489",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Regenerate pending-locale rows against release/v0.38.0",
        "date": "2026-08-13"
       },
       {
@@ -1014,6 +1315,41 @@
        "scope": "render",
        "text": "Make the light-registry seam answer for itself",
        "date": "2026-08-13"
+      },
+      {
+       "h": "5a9d85f7",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Shed input sends once the local socket buffer is backed up",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "dd5c92e1",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Keep the training dummy from being dragged by Oath Chain",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "bf85541b",
+       "kind": "fix",
+       "scope": "sim,server",
+       "text": "Close two dropped-provenance container boundaries",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "c32ed932",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Evict healGlowAt entries when a view is dropped",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "47785e81",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Regenerate pending-locale rows for market sort strings",
+       "date": "2026-08-12"
       },
       {
        "h": "d9e61b2d",
