@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-14T10:02:57Z",
+ "generated": "2026-08-14T13:56:44Z",
  "base_tag": "v0.37.1",
  "version": "v0.38.0",
  "branch": "release/v0.38.0",
  "declared_version": "0.38.0",
  "imminent": true,
- "commits": 263,
- "shown": 91,
- "last_commit": "2026-08-14T09:45:38+00:00",
+ "commits": 295,
+ "shown": 109,
+ "last_commit": "2026-08-14T13:43:14Z",
  "sections": [
   {
    "key": "classes",
@@ -454,6 +454,13 @@
      "date": "2026-08-14"
     },
     {
+     "h": "c590ae13",
+     "kind": "fix",
+     "scope": "portraits",
+     "text": "Restore PR 3307 behavior",
+     "date": "2026-08-14"
+    },
+    {
      "h": "f9e41c8e",
      "kind": "fix",
      "scope": "docker",
@@ -538,6 +545,104 @@
      "date": "2026-08-13"
     },
     {
+     "h": "30a9cd42",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3339 into release",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "b38a1b17",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3340 into release",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "754efb44",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3343 into release",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "5930719c",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3338 into release",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "778a79b1",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3307 into release",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "30a9cd42",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3339 into release",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "754efb44",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3343 into release",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "df475173",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3333 into release",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "778a79b1",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3307 into release",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "5930719c",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3338 into release",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "df475173",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3333 into release",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "b5d55de1",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Fill market lowest price locales",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "0d6d2d2f",
+     "kind": "fix",
+     "scope": "",
+     "text": "Drop PR 3307 portrait manifest changes",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "f08b40a8",
+     "kind": "fix",
+     "scope": "",
+     "text": "Drop PR 3340 gate selection changes",
+     "date": "2026-08-13"
+    },
+    {
      "h": "0b8dfa68",
      "kind": "fix",
      "scope": "scripts",
@@ -587,6 +692,20 @@
      "date": "2026-08-13"
     },
     {
+     "h": "819d6f94",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release base into ossbrain-release/v0.38.0",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "3358dde2",
+     "kind": "fix",
+     "scope": "",
+     "text": "PR #3341 into release",
+     "date": "2026-08-13"
+    },
+    {
      "h": "29017e32",
      "kind": "fix",
      "scope": "map",
@@ -598,6 +717,13 @@
      "kind": "fix",
      "scope": "render",
      "text": "Pin the point-light count through one adoption seam",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "315597db",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release branch with current base",
      "date": "2026-08-13"
     },
     {
@@ -700,9 +826,9 @@
    "branch": "release/v0.38.0",
    "declared_version": "0.38.0",
    "imminent": true,
-   "commits": 263,
-   "shown": 91,
-   "last_commit": "2026-08-14T09:45:38+00:00",
+   "commits": 295,
+   "shown": 109,
+   "last_commit": "2026-08-14T13:43:14Z",
    "sections": [
     {
      "key": "classes",
@@ -1149,6 +1275,13 @@
        "date": "2026-08-14"
       },
       {
+       "h": "c590ae13",
+       "kind": "fix",
+       "scope": "portraits",
+       "text": "Restore PR 3307 behavior",
+       "date": "2026-08-14"
+      },
+      {
        "h": "f9e41c8e",
        "kind": "fix",
        "scope": "docker",
@@ -1233,6 +1366,104 @@
        "date": "2026-08-13"
       },
       {
+       "h": "30a9cd42",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3339 into release",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "b38a1b17",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3340 into release",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "754efb44",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3343 into release",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "5930719c",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3338 into release",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "778a79b1",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3307 into release",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "30a9cd42",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3339 into release",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "754efb44",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3343 into release",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "df475173",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3333 into release",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "778a79b1",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3307 into release",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "5930719c",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3338 into release",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "df475173",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3333 into release",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "b5d55de1",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Fill market lowest price locales",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "0d6d2d2f",
+       "kind": "fix",
+       "scope": "",
+       "text": "Drop PR 3307 portrait manifest changes",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "f08b40a8",
+       "kind": "fix",
+       "scope": "",
+       "text": "Drop PR 3340 gate selection changes",
+       "date": "2026-08-13"
+      },
+      {
        "h": "0b8dfa68",
        "kind": "fix",
        "scope": "scripts",
@@ -1282,6 +1513,20 @@
        "date": "2026-08-13"
       },
       {
+       "h": "819d6f94",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release base into ossbrain-release/v0.38.0",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "3358dde2",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3341 into release",
+       "date": "2026-08-13"
+      },
+      {
        "h": "29017e32",
        "kind": "fix",
        "scope": "map",
@@ -1293,6 +1538,13 @@
        "kind": "fix",
        "scope": "render",
        "text": "Pin the point-light count through one adoption seam",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "315597db",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release branch with current base",
        "date": "2026-08-13"
       },
       {
