@@ -157,6 +157,13 @@
 
   // Version en préparation (upcoming.json, régénéré par « La prochaine
   // version du jeu »). Silencieux si rien n'est en cours.
+  //
+  // Appelée APRÈS le chargement de patch-notes.json, avec l'ensemble des
+  // versions déjà SORTIES : c'est le garde-fou du filtre ci-dessous, et il ne
+  // vaut que si la liste est connue au moment du rendu. En cas d'échec du
+  // chargement des notes, on rend quand même le bandeau avec un ensemble vide
+  // (comportement d'avant) plutôt que de faire disparaître l'information.
+  function renderSoon(SORTIES) {
   fetch("upcoming.json?_=" + Date.now())
     .then(r => r.ok ? r.json() : null)
     .then(d => {
@@ -165,6 +172,14 @@
       // haut au plus bas — ils s'empilent au-dessus de la dernière sortie,
       // comme une frise : v0.36.0, puis v0.35.1, puis les versions sorties.
       const chantiers = (d.versions || [d]).filter(v => v.version)
+        // Garde-fou : ne JAMAIS annoncer comme « à venir » une version déjà
+        // sortie. Entre la publication des notes et le passage du robot (2 h),
+        // le relevé continue de désigner la version qui vient d'être taguée —
+        // la page affichait donc « SORTIE IMMINENTE v0.38.0 » juste au-dessus
+        // des notes de la v0.38.0 (signalé le 15 août 2026). patch-notes.json
+        // est la source de vérité de ce qui est SORTI : ce qui y figure ne
+        // peut pas être à venir, quel que soit l'âge du relevé.
+        .filter(v => !SORTIES.has(v.version))
         .sort((a, b) => (b.version || "").localeCompare(a.version || "", undefined, { numeric: true }));
       if (!chantiers.length) return;
       document.getElementById("soonBox").innerHTML = chantiers.map(v => {
@@ -193,10 +208,12 @@
       }).join("");
     })
     .catch(() => {});
+  }
 
   fetch("patch-notes.json?_=" + Date.now())
     .then(r => r.ok ? r.json() : { versions: [] })
     .then(data => {
+      renderSoon(new Set((data.versions || []).map(v => v.version)));
       const list = (data.versions || [])
         .slice()
         // Tri par date, puis par numéro de version (semver) : deux versions
@@ -222,6 +239,7 @@
         </a>`).join("");
     })
     .catch(() => {
+      renderSoon(new Set());
       document.getElementById("versions").innerHTML =
         '<div class="empty">' + T({ fr: "Impossible de charger les notes de version.", en: "Could not load the patch notes." }) + '</div>';
     });

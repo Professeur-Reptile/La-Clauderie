@@ -48,7 +48,18 @@ branches=$(echo "$sel" | tail -n +2)
 
 if [ -z "$branches" ]; then
   echo "Aucune branche de release au-dessus de $base : rien en préparation."
-  echo "La page se videra d'elle-même au prochain passage du workflow."
+  # La version annoncée vient de sortir. On VIDE le fichier tout de suite,
+  # exactement comme `update-upcoming.yml` (même forme de JSON) : ce script se
+  # lance juste après la publication d'une version, et laisser le relevé en
+  # l'état affichait « SORTIE IMMINENTE v0.38.0 » sur la page Nouveautés alors
+  # que la v0.38.0 était publiée depuis dix minutes (signalé le 15 août 2026).
+  # Attendre le cron de 2 h, c'est jusqu'à 2 h de bandeau qui ment.
+  if [ "$(python3 -c "import json;print(json.load(open('upcoming.json')).get('version') or '')" 2>/dev/null)" != "" ]; then
+    python3 -c "import json,sys; json.dump({'generated':'','base_tag':sys.argv[1],'version':None,'sections':[]}, open('upcoming.json','w'), ensure_ascii=False, indent=1)" "$base"
+    echo "✓ upcoming.json vidé. Le commiter — sinon le bandeau reste en ligne."
+  else
+    echo "upcoming.json est déjà vide : rien à faire."
+  fi
   exit 0
 fi
 echo "  base $base · chantiers :" $branches

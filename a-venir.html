@@ -827,7 +827,24 @@
     if (m < 60) return `il y a ${m} min`;
     const h = Math.round(m / 60); return h < 24 ? `il y a ${h} h` : `il y a ${Math.round(h / 24)} j`;
   }
-  fetch("upcoming.json?_=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null).then(d => {
+  // On lit AUSSI les versions déjà sorties : entre la publication des notes
+  // d'une version et le passage du robot (2 h), le relevé continue de désigner
+  // la version qui vient d'être taguée, et cette page la présentait comme « à
+  // venir » alors qu'elle était en ligne (signalé le 15 août 2026).
+  // patch-notes.json fait foi sur ce qui est SORTI : une version qui y figure
+  // est retirée des chantiers, quel que soit l'âge du relevé.
+  Promise.all([
+    fetch("upcoming.json?_=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null),
+    fetch("patch-notes.json?_=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null),
+  ]).then(([raw, notes]) => {
+    const SORTIES = new Set(((notes || {}).versions || []).map(v => v.version));
+    let d = raw;
+    if (d && d.version) {
+      const restants = (d.versions || [d]).filter(v => v.version && !SORTIES.has(v.version));
+      // Plus rien qui ne soit déjà sorti : on retombe sur le cas « rien en
+      // préparation » ci-dessous, celui que le robot écrira de toute façon.
+      d = restants.length ? { ...d, ...restants[0], versions: restants } : null;
+    }
     const ed = document.getElementById("editorial");
     const warn = document.querySelector(".warn");
     if (!d || !d.version) {
