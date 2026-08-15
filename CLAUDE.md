@@ -158,6 +158,12 @@ se limite à la partie rédactionnelle des « Nouveautés » :
 4. **Commit sur `claude/site-update-6uhdmv`, puis merge direct sur `main`**
    (fast-forward : `git push origin claude/site-update-6uhdmv:main`). Le déploiement
    part tout seul. **Ne pas ouvrir de PR** sauf demande explicite.
+   - **Le merge se fait SANS demander, à la fin de chaque tâche** (consigne du
+     15 août 2026 : « et à la fin tu merges, n'attends pas que je te le dise »).
+     Ça vaut aussi quand la session impose une AUTRE branche de travail que
+     `claude/site-update-6uhdmv` : on développe sur celle qu'on nous donne,
+     puis on la fast-forward sur `main` comme ici. Une page de notes qui reste
+     sur une branche n'est pas publiée, donc le travail n'est pas fini.
 
 ### Si la MAJ vient de sortir (à la minute près)
 Les robots (Codex + BiS) tournent sur cron ; pour publier tout d'un coup sans
@@ -309,6 +315,8 @@ ce clone est la façon officielle d'y accéder.
 
 ## Branche & déploiement
 - Développer sur `claude/site-update-6uhdmv`, merger sur `main` (source du déploiement).
+  Si la session impose une autre branche de travail, développer sur celle-là —
+  mais le merge sur `main` reste dû, et **sans le demander** (voir l'étape 4).
 - La knowledge base (`Reptile-New/wocc-knowledge-base`, repo public) fournit `data/`
   (servi sous `/data/`) et `site/` (le Codex sous `/codex/`).
 
