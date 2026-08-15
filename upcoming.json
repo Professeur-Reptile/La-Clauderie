@@ -1,6 +1,110 @@
 {
- "generated": "",
- "base_tag": "v0.38.0",
- "version": null,
- "sections": []
+ "generated": "2026-08-15T08:46:44Z",
+ "base_tag": "v0.38.1",
+ "version": "v0.39.0",
+ "branch": "release/v0.39.0",
+ "declared_version": "0.38.1",
+ "imminent": false,
+ "commits": 0,
+ "shown": 0,
+ "last_commit": "2026-08-15T20:39:02+12:00",
+ "sections": [
+  {
+   "key": "classes",
+   "icon": "⚔️",
+   "fr": "Classes & sorts",
+   "en": "Classes & spells",
+   "items": []
+  },
+  {
+   "key": "metiers",
+   "icon": "🔨",
+   "fr": "Métiers & récolte",
+   "en": "Professions & gathering",
+   "items": []
+  },
+  {
+   "key": "donjons",
+   "icon": "🐉",
+   "fr": "Donjons, failles & boss",
+   "en": "Dungeons, rifts & bosses",
+   "items": []
+  },
+  {
+   "key": "monde",
+   "icon": "🗺️",
+   "fr": "Monde & quêtes",
+   "en": "World & quests",
+   "items": []
+  },
+  {
+   "key": "guilde",
+   "icon": "🏰",
+   "fr": "Guilde & social",
+   "en": "Guild & social",
+   "items": []
+  },
+  {
+   "key": "confort",
+   "icon": "⚙️",
+   "fr": "Confort & technique",
+   "en": "Comfort & technical",
+   "items": []
+  }
+ ],
+ "versions": [
+  {
+   "version": "v0.39.0",
+   "branch": "release/v0.39.0",
+   "declared_version": "0.38.1",
+   "imminent": false,
+   "commits": 0,
+   "shown": 0,
+   "last_commit": "2026-08-15T20:39:02+12:00",
+   "sections": [
+    {
+     "key": "classes",
+     "icon": "⚔️",
+     "fr": "Classes & sorts",
+     "en": "Classes & spells",
+     "items": []
+    },
+    {
+     "key": "metiers",
+     "icon": "🔨",
+     "fr": "Métiers & récolte",
+     "en": "Professions & gathering",
+     "items": []
+    },
+    {
+     "key": "donjons",
+     "icon": "🐉",
+     "fr": "Donjons, failles & boss",
+     "en": "Dungeons, rifts & bosses",
+     "items": []
+    },
+    {
+     "key": "monde",
+     "icon": "🗺️",
+     "fr": "Monde & quêtes",
+     "en": "World & quests",
+     "items": []
+    },
+    {
+     "key": "guilde",
+     "icon": "🏰",
+     "fr": "Guilde & social",
+     "en": "Guild & social",
+     "items": []
+    },
+    {
+     "key": "confort",
+     "icon": "⚙️",
+     "fr": "Confort & technique",
+     "en": "Comfort & technical",
+     "items": []
+    }
+   ]
+  }
+ ]
 }

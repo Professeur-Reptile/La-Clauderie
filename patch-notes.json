@@ -2,6 +2,38 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.38.1",
+   "date": "2026-08-15",
+   "titre": "Correctif : la caméra te garde au centre quand tu tournes (et la v0.38.0 devient installable)",
+   "resume": "Un correctif, deux bugs, tous deux hérités de la grosse v0.38.0 sortie le matin même. Le seul qui se voyait : dès que tu tournais au clavier, ton personnage glissait hors du centre de l’écran. À l’arrêt, rien d’anormal — la caméra gelée visait depuis la position qu’elle occupait à l’image précédente, ce qui ne change rien tant qu’elle ne bouge pas. Mais une rotation la déplace à chaque image, donc elle visait systématiquement depuis un point qu’elle venait de quitter, avec exactement une image de rotation de retard. La rotation valant 180° par seconde, ça faisait 3° d’écart à 60 images par seconde — un décalage constant tant que tu tournais, qui empirait quand le jeu ramait (moins d’images par seconde, c’est plus de rotation dans chaque image) et se corrigeait tout seul dès l’arrêt. La cause vient de la mise à jour du moteur 3D de la v0.38.0 : la nouvelle version lit la position de la caméra ailleurs qu’avant, et le jeu gèle justement cette caméra pour gagner en performance. La correction dégèle brièvement la caméra le temps de la viser, ce que l’ancien moteur faisait naturellement. Le second bug ne se voyait pas du tout en jeu, mais explique pourquoi cette version existe : la v0.38.0 ne pouvait produire aucune installation valide, un petit outil interne ajouté par la version manquant à la liste de ce qu’il faut emporter. Les vérifications automatiques travaillent avec tous les fichiers sous la main et ne passent jamais par cette liste, donc elles ne pouvaient pas s’en apercevoir. C’était la deuxième panne du même genre en une semaine : la correction ajoute un contrôle qui reconstitue tout seul ce dont l’installation a besoin et refuse le changement si la liste en oublie un. Rien d’autre ne bouge : aucune valeur de combat, aucun objet, aucune donnée, aucune migration, et les 21 langues sont inchangées — pas un seul texte modifié.",
+   "temps_forts": [
+    "🎥 La caméra recadre à nouveau correctement quand tu tournes : ton personnage ne glisse plus hors du centre de l’écran",
+    "📐 L’ampleur exacte : 3° d’écart à 60 images par seconde (la rotation vaut 180°/s, le retard était d’une image pile)",
+    "🐌 Le défaut empirait quand le jeu ramait — moins d’images par seconde, c’est plus de rotation dans chaque image",
+    "🧍 Invisible à l’arrêt : une caméra qui ne bouge pas vise pareil depuis sa position d’avant ou d’après",
+    "🔁 L’écart ne s’accumulait pas : il restait constant et disparaissait dès que tu arrêtais de tourner",
+    "🧩 La cause : le nouveau moteur 3D de la v0.38.0 lit la position de la caméra ailleurs qu’avant, et le jeu gèle cette caméra pour gagner en performance",
+    "📦 La v0.38.0 ne pouvait pas être installée sur les serveurs — c’est la raison d’être de cette version",
+    "🧪 Deux garde-fous ajoutés : un test fige le comportement de la caméra en rotation, un contrôle vérifie que l’installation emporte bien tout ce dont elle a besoin",
+    "⚔️ Aucune valeur de combat, aucun objet, aucune donnée, aucune migration — les 21 langues sont inchangées"
+   ],
+   "page": "notes/v0.38.1.html",
+   "titre_en": "Hotfix: the camera keeps you centred while you turn (and v0.38.0 becomes installable)",
+   "resume_en": "One hotfix, two bugs, both inherited from the big v0.38.0 that shipped the same morning. The one you could see: the moment you turned with the keyboard, your character slid off screen centre. Standing still, nothing looked wrong — the frozen camera aimed from the position it held on the previous frame, which changes nothing as long as it does not move. But a turn moves it every frame, so it was always aiming from a point it had just left, off by exactly one frame of turn. At a turn speed of 180° per second, that is 3° of error at 60 frames per second — a constant offset for as long as you kept turning, worse when the game ran slowly (fewer frames per second means more turn packed into each one), and self-correcting the moment you stopped. The cause traces back to v0.38.0's 3D engine upgrade: the new version reads the camera's position from a different place than before, and the game freezes that very camera for performance. The fix briefly unfreezes the camera for the aim, which is what the old engine did naturally. The second bug was invisible in play, but explains why this release exists at all: v0.38.0 could not produce a valid install, because a small internal tool the release introduced was missing from the list of what has to be carried along. The automated checks work with every file already to hand and never go through that list, so they could not notice. This was the second failure of that kind in a week: the fix adds a check that works out on its own everything the install needs and rejects the change if the list forgets one. Nothing else moves: no combat value, no item, no data, no migration, and all 21 locales are unchanged — not one string modified.",
+   "temps_forts_en": [
+    "🎥 The camera frames you correctly again while turning: your character no longer slides off screen centre",
+    "📐 The exact scale: 3° of error at 60 frames per second (turn speed is 180°/s, and the lag was exactly one frame)",
+    "🐌 It got worse when the game ran slowly — fewer frames per second means more turn packed into each one",
+    "🧍 Invisible standing still: a camera that does not move aims the same from its before or after position",
+    "🔁 The error did not accumulate: it held constant and cleared the moment you stopped turning",
+    "🧩 The cause: v0.38.0's new 3D engine reads the camera's position from a different place than before, and the game freezes that camera for performance",
+    "📦 v0.38.0 could not be installed on the servers — which is this release's entire reason to exist",
+    "🧪 Two guards added: a test pins the camera's behaviour through a turn, and a check verifies the install carries everything it needs",
+    "⚔️ No combat value, no item, no data, no migration — all 21 locales unchanged"
+   ],
+   "page_en": "notes/v0.38.1.en.html"
+  },
+  {
    "version": "v0.38.0",
    "date": "2026-08-15",
    "titre": "Les quatre tanks repassent par l’atelier — et Bruin Form récupère deux techniques qui lui manquaient",
