@@ -255,8 +255,8 @@ const BUILDS = {
  warrior: {
   tank: {
    spec: "Ironguard (prot)",
-   mastery: { fr: "Recompense (v0.27) : +30 % menace, +10 % armure, +40 % Endurance, et 70 % de ta Force convertie en armure",
-              en: "Recompense (v0.27): +30% threat, +10% armor, +40% Stamina, and 70% of your Strength converted to armor" },
+   mastery: { fr: "Recompense (v0.38) : +80 % menace (contre +30 % avant), +10 % armure, +40 % Endurance, et 70 % de ta Force convertie en armure",
+              en: "Recompense (v0.38): +80% threat (up from +30%), +10% armor, +40% Stamina, and 70% of your Strength converted to armor" },
    pourquoi: { fr: "La refonte v0.27 fait d'Ironguard un vrai tank à bouclier : la maîtrise convertit ta Force en armure et gonfle ton Endurance, et Iron Resolve transforme ta rage en absorption.",
                en: "The v0.27 rework makes Ironguard a true shield tank: the mastery turns your Strength into armor and inflates your Stamina, and Iron Resolve turns your rage into absorption." },
    stats: { fr: "Endurance > Force (armure + parade) > Esquive > Crit", en: "Stamina > Strength (armor + parry) > Dodge > Crit" },
@@ -351,7 +351,7 @@ const BUILDS = {
  paladin: {
   tank: {
    spec: "Faithwarden (protection)",
-   mastery: { fr: "Oathward (v0.36) : +50 % menace, +20 % armure, +35 % Endurance", en: "Oathward (v0.36): +50% threat, +20% armor, +35% Stamina" },
+   mastery: { fr: "Oathward (v0.38) : +40 % menace (rabotée depuis +50 %), +20 % armure, +35 % Endurance", en: "Oathward (v0.38): +40% threat (trimmed from +50%), +20% armor, +35% Stamina" },
    pourquoi: { fr: "Le tank à aura, refondu en v0.36 : sa maîtrise Oathward ajoute +35 % d’Endurance (il plafonnait à 76 % des PV effectifs du guerrier prot), et Sunward Disc lui donne enfin un moteur de menace multi-cible.",
                en: "The aura tank, rebuilt in v0.36: its Oathward mastery adds +35% Stamina (it used to sit at 76% of the prot warrior's effective health), and Sunward Disc finally gives it a multi-target threat engine." },
    stats: { fr: "Armure > Endurance > Esquive > Force", en: "Armor > Stamina > Dodge > Strength" },
@@ -475,8 +475,8 @@ const BUILDS = {
     ["Earthen Jolt", { fr: "le filler instantané entre deux coups blancs.", en: "the instant filler between auto-attacks." }],
     ["Rime Jolt", { fr: "pour ralentir ce qui fuit.", en: "to slow whatever runs away." }]
    ],
-   astuce: { fr: "Mending Waters dépanne le heal en urgence — et un /ready avant le pull pour vérifier imbues et buffs, c'est gratuit.",
-             en: "Mending Waters can bail out the healer in a pinch — and a /ready before the pull to check imbues and buffs costs nothing." }
+   astuce: { fr: "Mending Waters dépanne le heal en urgence — et un /ready avant le pull pour vérifier imbues et buffs, c'est gratuit. Et si ton groupe n'a pas de tank : depuis la v0.38, l'imbue Stonebound Weapon (à la place de Galeheart) fait de toi un vrai tank de dépannage — +40 % d'armure, +20 % d'Endurance, −15 % de dégâts subis, l'immunité aux coups critiques des créatures et ×2,75 de menace. Tu tiendras moins qu'un guerrier Protection, mais assez pour un héroïque. En échange, tu perds le débit de dégâts de Galeheart : c'est un plan B, pas ton mode par défaut.",
+             en: "Mending Waters can bail out the healer in a pinch — and a /ready before the pull to check imbues and buffs costs nothing. And if your group has no tank: since v0.38, the Stonebound Weapon imbue (instead of Galeheart) turns you into a genuine stand-in tank — +40% armor, +20% Stamina, −15% damage taken, immunity to critical strikes from creatures, and ×2.75 threat. You will hold less than a Protection warrior, but enough for a heroic. In exchange you give up Galeheart's sustained damage: it is a plan B, not your default." }
   },
   {
    tag: "Thundercall (elemental)",
@@ -512,9 +512,9 @@ const BUILDS = {
  druid: {
   tank: {
    spec: { fr: "Wildfang (feral) — ours", en: "Wildfang (feral) — bear" },
-   mastery: { fr: "Primal Heart (v0.36) : +50 % dégâts physiques et saignements, +20 % menace, +15 % armure", en: "Primal Heart (v0.36): +50% physical & bleed damage, +20% threat, +15% armor" },
-   pourquoi: { fr: "Le tank à esquive : moins d'armure de plaques, mais une réserve de PV et une agilité énormes en forme de Bruin.",
-               en: "The dodge tank: less plate armor, but a huge HP pool and massive agility in Bruin form." },
+   mastery: { fr: "Primal Heart (v0.38) : +50 % dégâts physiques et saignements, +45 % menace (contre +20 % avant), +15 % armure", en: "Primal Heart (v0.38): +50% physical & bleed damage, +45% threat (up from +20%), +15% armor" },
+   pourquoi: { fr: "Le tank à grosse barre de vie : la v0.38 échange de l'armure de forme (×2,3 → ×2,1) contre beaucoup plus de PV (×1,15 → ×1,3), et rend enfin accessibles Baleful Roar (provocation de zone) et Savage Mending (le seul soin de l'ours).",
+               en: "The big-health-pool tank: v0.38 trades form armor (×2.3 → ×2.1) for a lot more HP (×1.15 → ×1.3), and finally makes Baleful Roar (area taunt) and Savage Mending (the bear's only heal) reachable." },
    stats: { fr: "Armure > Endurance > Agilité > Force", en: "Armor > Stamina > Agility > Strength" },
    talents: [
     ["Wildshift", "niv. 5", { fr: "changer de forme brise racines et ralentissements : ton anti-contrôle, gratuit, en un bouton.", en: "shapeshifting breaks roots and slows: free anti-control on one button." }],
@@ -532,7 +532,9 @@ const BUILDS = {
     ["Sweeping Claws", { fr: "dès 2 cibles.", en: "at 2+ targets." }],
     ["Craven Roar", { fr: "−20 PA à tout le pack : de la mitigation gratuite.", en: "−20 AP on the whole pack: free mitigation." }],
     ["Headbutt", { fr: "l'interrupt (v0.25) : coup de tête bondissant, verrouille l'école 4 s.", en: "the interrupt (v0.25): a lunging headbutt that locks the school for 4s." }],
-    ["Menace", { fr: "le taunt.", en: "the taunt." }],
+    ["Menace", { fr: "le taunt mono-cible.", en: "the single-target taunt." }],
+    ["Baleful Roar", { fr: "NOUVEAU v0.38 : le taunt de ZONE que l'ours n'avait pas — tous les ennemis dans 10 m, leur menace envers toi montée au niveau de leur cible actuelle, contraints 3 s. Récupère un pack qui part sur le heal.", en: "NEW in v0.38: the AREA taunt the bear never had — every enemy within 10 yd, their threat on you raised to match their current target, compelled for 3s. Grabs a pack heading for the healer." }],
+    ["Savage Mending", { fr: "NOUVEAU v0.38 : 180 PV sur 10 s, en ours uniquement. Le sort existait depuis des mois sans qu'aucun talent ne le donne — c'est le SEUL soin lançable en forme d'ours.", en: "NEW in v0.38: 180 health over 10s, bear only. The spell had existed for months with no talent granting it — it is the ONLY heal castable in bear form." }],
     ["Oakhide + Stoke", { fr: "survie (+150 armure) et rage de secours.", en: "survival (+150 armor) and backup rage." }]
    ],
    astuce: { fr: "Witchlight sur le boss (−10 % d'armure) aide tout le groupe et ne coûte qu'un GCD. Et non, la Wraithfire Orb en main gauche n'est pas une erreur : le jeu ne propose que TROIS mains gauches à un druide, c'est la seule avec de l'Endurance (+3) et du crit, et ces stats comptent en forme d'ours même si l'objet a l'air d'un objet de caster — le reste de sa ligne (Intelligence, Esprit) est simplement perdu. Même logique pour le bâton : à ce niveau, aucune arme de mêlée n'approche son Endurance, et pour un tank les points de vie passent avant les dégâts. Et non, une arme à deux mains « qui tape » ne tiendrait pas mieux l'aggro — on a comparé : contre le meilleur 2 mains du palier (Maul of the Scourged Wilds), le duo bâton + orbe gagne sur les DEUX tableaux, <b>+5 % de points de vie effectifs ET +8 % de menace</b>. En forme d'ours, la cadence vient de la VITESSE de l'arme portée : le bâton (3,2 s) frappe plus souvent que le maillet (3,7 s), l'orbe ajoute 20 de crit, et la puissance d'attaque de l'ours vient surtout de la forme et de ton agilité d'armure — pas des quelques points de Force du 2 mains.",
@@ -733,8 +735,8 @@ const BUILDS = {
   heal: {
    spec: "Chronomancy (arcane)",
    mastery: { fr: "Maîtrise Chronomancie (v0.27) : +15 % à tous tes soins, +5 % de mana max, +20 % de régénération de mana", en: "Chronomancy mastery (v0.27): +15% to all your healing, +5% max mana, +20% mana regeneration" },
-   pourquoi: { fr: "L'Arcane devient une spé de SOIN en v0.27 : tu soignes en faisant des dégâts (Temporal Echo), et tu apportes un rez de combat ET un Bloodlust — l'utilité maximale en donjon.",
-               en: "Arcane becomes a HEALING spec in v0.27: you heal by dealing damage (Temporal Echo), and you bring a combat res AND a Bloodlust — maximum utility in dungeons." },
+   pourquoi: { fr: "L'Arcane devient une spé de SOIN en v0.27 : tu soignes en faisant des dégâts (Temporal Echo), et tu apportes un rez de combat ET un Bloodlust — l'utilité maximale en donjon. La v0.38 lui rend enfin ses rangs de niveau 20, restés bloqués sur ceux du niveau 15 : Temporal Mend passe de 150-178 à 218-258, Temporal Barrier absorbe 232, et Temporal Echo soigne 84-102 à la pose.",
+               en: "Arcane becomes a HEALING spec in v0.27: you heal by dealing damage (Temporal Echo), and you bring a combat res AND a Bloodlust — maximum utility in dungeons. v0.38 finally gives it back its level-20 ranks, which had been stuck on the level-15 ones: Temporal Mend goes from 150-178 to 218-258, Temporal Barrier absorbs 232, and Temporal Echo heals 84-102 on application." },
    stats: { fr: "Intelligence > Hâte > Esprit", en: "Intellect > Haste > Spirit" },
    talents: [
     ["Blink While Casting", "niv. 5", { fr: "Flickerstep en plein cast sans l'interrompre : sors de l'AoE sans perdre ton soin.", en: "Flickerstep mid-cast without interrupting it: get out of the AoE without losing your heal." }],
@@ -745,7 +747,7 @@ const BUILDS = {
     ["Aetherwell", "niv. 20", { fr: "canalise pour rendre ta mana (et gagner de la puissance des sorts en canalisant plus longtemps) : ta pause mana entre deux packs.", en: "channel to restore mana (gaining spell power the longer you channel): your mana break between packs." }]
    ],
    rotation: [
-    ["Temporal Echo", { fr: "sur le tank, toujours : 35 % de tes dégâts Arcane monocibles deviennent des soins sur lui (15 % en AoE).", en: "on the tank, always: 35% of your single-target Arcane damage becomes healing on them (15% in AoE)." }],
+    ["Temporal Echo", { fr: "sur le tank, toujours : 40 % de tes dégâts Arcane monocibles deviennent des soins sur lui depuis la v0.38 (35 % avant ; 15 % en AoE, inchangé).", en: "on the tank, always: 40% of your single-target Arcane damage becomes healing on them since v0.38 (was 35%; 15% in AoE, unchanged)." }],
     ["Aether Surge", { fr: "le builder : chaque cast pose une charge Arcane (max 4) et soigne via l'écho.", en: "the builder: each cast adds an Arcane Charge (max 4) and heals through the echo." }],
     ["Aether Darts", { fr: "le spender : consomme toutes tes charges — 5 missiles à pleine charge, le gros de ton débit de soin.", en: "the spender: consumes all your charges — 5 missiles at full charge, the bulk of your healing throughput." }],
     ["Temporal Cascade", { fr: "avant les dégâts de groupe : l'écho se propage sur 5 alliés.", en: "before group damage: the echo spreads to 5 allies." }],
@@ -942,8 +944,8 @@ const BUILDS = {
    tag: "Thuggery (combat)",
    spec: "Thuggery (combat)",
    mastery: { fr: "Scrapper's Edge (v0.27) : +10 % vitesse d'attaque + Sword Specialization (5 % de chance d'un coup bonus sur les autos)", en: "Scrapper's Edge (v0.27): +10% attack speed + Sword Specialization (5% chance of a bonus swing on autos)" },
-   pourquoi: { fr: "Le DPS soutenu le plus régulier — et depuis la v0.27, la maîtrise n'a plus de malus : que du gain. Les alternatives sont dans les onglets Knifework (dagues) et Skulduggery (ombres) ci-dessus.",
-               en: "The steadiest sustained DPS — and since v0.27, the mastery has no downside anymore: pure gain. The alternatives live in the Knifework (daggers) and Skulduggery (shadows) tabs above." },
+   pourquoi: { fr: "Le DPS soutenu le plus régulier — et depuis la v0.27, la maîtrise n'a plus de malus : que du gain. La v0.38 raboté sérieusement les bonus de la spé (puissance d'attaque +55 % → +20 %, dégâts de mêlée +36 % → +16 %) : mesuré en épique complet, Thuggery tombe à ~203 DPS, devant Knifework (~186) et Skulduggery (~179). Ça reste la meilleure spé de dégâts du voleur, mais l'écart n'est plus un gouffre. Les alternatives sont dans les onglets Knifework (dagues) et Skulduggery (ombres) ci-dessus.",
+               en: "The steadiest sustained DPS — and since v0.27, the mastery has no downside anymore: pure gain. v0.38 cuts the spec bonuses hard (attack power +55% → +20%, melee damage +36% → +16%): measured on a full epic loadout, Thuggery drops to ~203 DPS, ahead of Knifework (~186) and Skulduggery (~179). It stays the rogue's best damage spec, but the gap is no longer a chasm. The alternatives live in the Knifework (daggers) and Skulduggery (shadows) tabs above." },
    stats: { fr: "Agilité > Crit > Hâte > Force", en: "Agility > Crit > Haste > Strength" },
    talents: [
     ["Killer's Pace", "niv. 5", { fr: "+40 % de vitesse 6 s à chaque coup fatal : en donjon, tu ne t’arrêtes jamais entre deux cibles.", en: "+40% speed for 6s on every killing blow: in dungeons you never stop between targets." }],

@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Nouveautés v0.38.0 — La Clauderie</title>
+<meta name="description" content="Les nouveautés de la v0.38.0 de World of ClaudeCraft, expliquées simplement : les quatre tanks repassent par la case équilibrage (menace du Guerrier ×1,8, Bruin Form gagne un vrai soin et une provocation de zone, Warspirit devient un vrai tank, Faithwarden perd de la menace), la Chronomancie récupère ses rangs 20, Grix the Tunnelking réapparaît toutes les 15 à 30 minutes, une défaite d’arène classée rapporte enfin de l’honneur, et la nuit redevient lisible sur un cycle de 45 minutes.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Nouveautés v0.38.0 — La Clauderie">
+<meta property="og:description" content="Les nouveautés de la v0.38.0 de World of ClaudeCraft, expliquées simplement : les quatre tanks repassent par la case équilibrage (menace du Guerrier ×1,8, Bruin Form gagne un vrai soin et une provocation de zone, Warspirit devient un vrai tank, Faithwarden perd de la menace), la Chronomancie récupère ses rangs 20, Grix the Tunnelking réapparaît toutes les 15 à 30 minutes, une défaite d’arène classée rapporte enfin de l’honneur, et la nuit redevient lisible sur un cycle de 45 minutes.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.38.0.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.38.0.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') === 'en') location.replace('v0.38.0.en.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Notes de version</p>
+    <h1>Nouveautés <span class="v">v0.38.0</span></h1>
+    <p class="lede">Une grosse version, et un sujet qui domine tous les autres : <strong class="hl">les quatre tanks repassent par la case équilibrage</strong>. Le Guerrier et le Druide voient leur menace monter nettement, le Chaman <span data-codex="spec|Warspirit">Warspirit</span> devient un vrai tank au lieu d’un second couteau, et le Paladin <span data-codex="spec|Faithwarden">Faithwarden</span> — jusqu’ici loin devant — redescend. <strong class="hl">Bruin Form</strong> récupère au passage deux techniques qui lui manquaient depuis toujours. Ailleurs : la Chronomancie retrouve ses rangs de niveau 20, <span data-codex="mob|grix_the_tunnelking">Grix the Tunnelking</span> passe de 3 heures à 15–30 minutes de réapparition, une défaite en arène classée rapporte enfin quelque chose, et la nuit redevient lisible.</p>
+    <div class="meta">
+      <span><b>Publiée</b> le 15 août 2026</span>
+      <span><b>Depuis</b> la v0.37.1</span>
+      <span><b>1 696</b> fichiers touchés</span>
+      <span><b>21</b> langues complètes</span>
+    </div>
+    <div class="hint">💡 Clique sur une carte pour le détail.</div>
+  </header>
+
+  <!-- Bandeau constant : mêmes rubriques, même ordre, à chaque version. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">En un coup d’œil</h2>
+    <p class="sec-sub">Les mêmes rubriques à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
+    <ol>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <a class="d-name" href="#classes">Classes &amp; sorts</a>
+        <span class="d-say"><b class="up">Guerrier Protection ↑</b> · <b class="up">Druide Wildfang ↑</b> · <b class="up">Chaman Warspirit ↑</b> · <b class="down">Paladin Protection ↓</b> · <b class="up">Mage Chronomancie ↑</b> · <b class="down">Voleur Thuggery ↓</b> · <b class="eq">Chasseur =</b> · <b class="eq">Prêtre =</b> · <b class="eq">Démoniste =</b>. La refonte porte sur <strong class="hl">la menace des tanks</strong> : celle du Guerrier est presque doublée, celle du Paladin rabotée sur deux étages. Bruin Form échange un peu d’armure contre <strong class="hl">beaucoup plus de vie</strong>.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <span class="d-name">Métiers &amp; récolte</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#donjons">Donjons, failles &amp; boss</a>
+        <span class="d-say"><span data-codex="mob|grix_the_tunnelking">Grix the Tunnelking</span> réapparaît désormais <strong class="hl">toutes les 15 à 30 minutes</strong> au lieu de toutes les 3 heures. Les cartes de Failles et de Delves affichent enfin <strong class="hl">le vrai plan</strong> des salles.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <a class="d-name" href="#monde">Monde &amp; quêtes</a>
+        <span class="d-say">Les objets à ramasser d’une quête <strong class="hl">n’apparaissent que si tu as la quête</strong>. Et la nuit redevient lisible : journée de 45 minutes au lieu de 20, clair de lune qui dépend vraiment de la phase.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <a class="d-name" href="#guilde">Guilde &amp; social</a>
+        <span class="d-say">Une <strong class="hl">défaite en arène classée rapporte enfin de l’honneur</strong> — un tiers du gain d’une victoire, match nul compris. Et une sanction publique apparaît pour les tricheurs, sans aucun effet sur les combats.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#confort">Confort &amp; technique</a>
+        <span class="d-say">L’<strong class="hl">Hôtel des ventes</strong> se refait une tête : un seul prix par objet, poids d’armure visible, prix lisible d’un coup d’œil. Application de bureau : Discord, mode fenêtré, la fenêtre retrouve sa place.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="classes">
+    <h2><span class="num">01</span>Les quatre tanks repassent par l’atelier</h2>
+    <p class="sec-sub">C’est le cœur de la version. Pendant longtemps, un même pack tenu par quatre tanks différents donnait quatre résultats très différents — et le Paladin gagnait toujours. Cette MAJ resserre tout le monde : la menace du Guerrier monte fort, celle du Paladin descend, le Druide et le Chaman remontent.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="menace" tabindex="0" role="button" aria-label="Détails : la menace de chaque tank">
+        <h3>Qui gagne, qui perd <span class="chip c-bal">Équilibrage</span></h3>
+        <p>La menace passive de chaque tank a été retouchée : <strong class="hl">Guerrier +30 % → +80 %</strong>, <strong class="hl">Druide +20 % → +45 %</strong>, <strong class="hl">Chaman ×2 → ×2,75</strong>, <strong class="hl">Paladin +50 % → +40 %</strong>. Le Paladin perd en plus la moitié de son bonus passif sur les dégâts sacrés.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="bruin" tabindex="0" role="button" aria-label="Détails : le nouveau kit de Bruin Form">
+        <h3>Bruin Form récupère deux techniques <span class="chip c-new">Nouveau</span></h3>
+        <p><span data-codex="ability|challenging_roar">Baleful Roar</span> provoque <strong class="hl">tous les ennemis dans 10 m</strong> d’un coup. <span data-codex="ability|frenzied_regeneration">Savage Mending</span>, le seul soin que l’ours puisse lancer, devient réellement accessible : il existait dans le jeu mais <strong class="hl">aucun talent ne le donnait</strong>.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Moins d’armure, beaucoup plus de vie <span class="chip c-bal">Druide</span></h3>
+        <ul>
+          <li><span data-codex="ability|bear_form">Bruin Form</span> : armure <strong class="hl">+130 % → +110 %</strong>, mais PV max <strong class="hl">+15 % → +30 %</strong>.</li>
+          <li>Au total, l’ours encaisse à peu près pareil — c’est l’identité qui change : il redevient <strong class="hl">le tank au plus gros réservoir de vie</strong>, plutôt que celui qui compte sur son armure.</li>
+          <li><span data-codex="ability|maul">Bonecrush</span> et <span data-codex="ability|demoralizing_roar">Craven Roar</span> génèrent maintenant de la menace <strong class="hl">proportionnelle aux dégâts</strong> (×2,5), et plus seulement un forfait.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Warspirit devient un vrai tank <span class="chip c-bal">Chaman</span></h3>
+        <ul>
+          <li><span data-codex="ability|rockbiter_weapon">Rockbiter Weapon</span> donne désormais <strong class="hl">+40 % d’armure</strong> (au lieu de 30) <strong class="hl">et +20 % d’Endurance</strong>.</li>
+          <li>Dégâts subis <strong class="hl">−15 %</strong> au lieu de −10 %, et surtout <strong class="hl">immunité aux coups critiques des créatures</strong> — l’assurance-vie qu’un tank doit avoir.</li>
+          <li>Menace <strong class="hl">×2,75</strong> au lieu de ×2.</li>
+          <li>Objectif assumé : pouvoir tanker Nythraxis héroïque sans se faire pulvériser en un coup.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Le Guerrier reprend la tête <span class="chip c-bal">Guerrier</span></h3>
+        <ul>
+          <li>Menace passive <strong class="hl">+30 % → +80 %</strong> : c’est le plus gros mouvement de la version.</li>
+          <li><span data-codex="ability|sunder_armor">Armor Shear</span> : menace forfaitaire <strong class="hl">100 → 120</strong> (et <strong class="hl">130 → 160</strong> au rang 2).</li>
+          <li><span data-codex="ability|shield_slam">Shieldcrack</span> ne donne plus un forfait fixe : sa menace <strong class="hl">grandit avec tes dégâts</strong> (×3,5 plus 110). Autrement dit, ton stuff compte enfin pour tenir l’aggro.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="grp-title">Et hors du sujet tank</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="chrono" tabindex="0" role="button" aria-label="Détails : les rangs manquants de la Chronomancie">
+        <h3>La Chronomancie récupère ses rangs 20 <span class="chip c-fix">Correction</span></h3>
+        <p>Au niveau 20, <span data-codex="ability|temporal_mend">Temporal Mend</span>, <span data-codex="ability|temporal_barrier">Temporal Barrier</span> et <span data-codex="ability|temporal_echo">Temporal Echo</span> <strong class="hl">restaient bloqués sur leur rang du niveau 15</strong>. Le rang manquant existe enfin — et il fait très mal.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Thuggery redescend <span class="chip c-pvp">Voleur</span></h3>
+        <ul>
+          <li>Les bonus de spé du Voleur Combat sont sévèrement rabotés : puissance d’attaque <strong class="hl">+55 % → +20 %</strong>, dégâts de mêlée <strong class="hl">+36 % → +16 %</strong>.</li>
+          <li>Résultat mesuré en équipement épique complet : <strong class="hl">environ 203 DPS</strong>, contre 186 pour <span data-codex="spec|Knifework">Knifework</span> et 179 pour <span data-codex="spec|Skulduggery">Skulduggery</span>.</li>
+          <li>Thuggery reste donc la spé de dégâts n°1 du Voleur — mais avec un écart raisonnable au lieu d’un gouffre.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Les familiers peuvent à nouveau critiquer un tank <span class="chip c-fix">Correction PvP</span></h3>
+        <ul>
+          <li>Un tank engagé (Protection, ou Druide en Bruin Form) est immunisé aux coups critiques… <strong class="hl">des créatures hostiles uniquement</strong>.</li>
+          <li>Avant, la règle s’appliquait aussi aux <strong class="hl">familiers de joueurs</strong>, qui passent par le même chemin de code : en PvP, un tank était donc immunisé aux crits de ton démon ou de ton loup.</li>
+          <li>C’est corrigé — le joueur et son familier frappent à nouveau à la même enseigne.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="donjons">
+    <h2><span class="num">02</span>Grix arrête de se faire attendre</h2>
+    <p class="sec-sub">Un élite nommé que presque personne ne croisait, et deux cartes qui montraient enfin la vérité.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="grix" tabindex="0" role="button" aria-label="Détails : la réapparition de Grix">
+        <h3>3 heures → 15 à 30 minutes <span class="chip c-mob">Monstre</span></h3>
+        <p><span data-codex="mob|grix_the_tunnelking">Grix the Tunnelking</span> est un élite de niveau 7. Avec une réapparition fixe de <strong class="hl">3 heures</strong>, la plupart des joueurs traversaient sa zone sans jamais le voir.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Les cartes montrent le vrai plan <span class="chip c-new">Nouveau</span></h3>
+        <ul>
+          <li>Les cartes de <strong class="hl">Failles</strong> et de <strong class="hl">Delves</strong> dessinaient jusqu’ici une forme générique.</li>
+          <li>Elles affichent maintenant le <strong class="hl">plan réellement construit</strong> : les salles, les couloirs et leurs proportions correspondent à ce que tu parcours.</li>
+          <li>Les marqueurs (coffres, PNJ, objectifs) ont reçu une vraie illustration, avec un état visible : <strong class="hl">prêt</strong>, <strong class="hl">en recharge</strong>, ou <strong class="hl">outil manquant</strong>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Le mannequin reste à sa place <span class="chip c-fix">Correction</span></h3>
+        <ul>
+          <li>Les techniques qui tirent une cible à soi (<span data-codex="ability|oath_chain">Oath Chain</span>, Abyssal Chain) <strong class="hl">déplaçaient le mannequin d’entraînement</strong> hors de son emplacement.</li>
+          <li>Un mannequin est un décor fixe : il ne bouge plus, quelle que soit la traction employée.</li>
+          <li>Les contrôles ordinaires (racine, étourdissement, métamorphose) continuent de fonctionner dessus, comme avant.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="monde">
+    <h2><span class="num">03</span>Le monde ne montre plus que ce qui te concerne</h2>
+    <p class="sec-sub">Deux changements de fond : les objets de quête des autres disparaissent de ta vue, et la nuit cesse d’être soit un mur noir, soit un jour tamisé.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Fini les brillances inutiles <span class="chip c-new">Nouveau</span></h3>
+        <ul>
+          <li>Les objets à <strong class="hl">ramasser</strong> pour une quête (caisses scintillantes, sceaux, caches) ne s’affichent plus que si tu as la quête — <strong class="hl">en cours ou prête à rendre</strong>.</li>
+          <li>Le serveur refusait déjà le ramassage hors quête : ces objets n’étaient donc que du décor frustrant, une brillance vers laquelle on marche pour rien.</li>
+          <li>Les objets avec lesquels on <strong class="hl">interagit</strong> — cloches, huttes, pierres runiques — restent visibles : ce sont de vrais éléments de décor.</li>
+        </ul>
+      </div>
+      <div class="card more" data-detail="nuit" tabindex="0" role="button" aria-label="Détails : la nuit et le cycle du jour">
+        <h3>La nuit redevient lisible <span class="chip c-util">Rendu</span></h3>
+        <p>La journée complète passe de <strong class="hl">20 à 45 minutes</strong>. Et la lumière de nuit est coupée en deux réglages séparés : ce qui te permet de <strong class="hl">voir où tu marches</strong>, et le <strong class="hl">clair de lune</strong> qui donne l’ambiance.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>La carte pour tout le monde <span class="chip c-util">Accessibilité</span></h3>
+        <ul>
+          <li>Un <strong class="hl">résumé lu par les lecteurs d’écran</strong> regroupe les marqueurs entassés au lieu de les énumérer un par un.</li>
+          <li>Sur téléphone en <strong class="hl">mode paysage</strong>, la carte et sa légende se placent côte à côte au lieu de s’empiler.</li>
+          <li>Tous les boutons de la carte gardent <strong class="hl">au moins 40 px</strong> de zone tactile, quelle que soit la taille d’interface choisie.</li>
+          <li>Quand plusieurs marqueurs se superposent, <strong class="hl">le symbole de quête passe devant</strong> les marqueurs de service et de navigation.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="guilde">
+    <h2><span class="num">04</span>Perdre en arène rapporte enfin quelque chose</h2>
+    <p class="sec-sub">Jusqu’ici, un match classé perdu ne payait rien du tout. Et une nouvelle sanction publique apparaît, volontairement sans le moindre effet sur les combats.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Un tiers du gain d’une victoire <span class="chip c-pvp">PvP</span></h3>
+        <ul>
+          <li>Une défaite en arène classée rapporte désormais <strong class="hl">un tiers de l’honneur d’une victoire</strong>, arrondi.</li>
+          <li>En <strong class="hl">1c1</strong> : 25 d’honneur pour le vainqueur, <strong class="hl">8</strong> pour le perdant. En <strong class="hl">2c2</strong> : 50 contre <strong class="hl">17</strong>, et chaque membre de l’équipe perdante touche sa part.</li>
+          <li>Un <strong class="hl">match nul</strong> (temps écoulé) paie le montant « défaite » <strong class="hl">aux deux camps</strong>.</li>
+          <li>Une victoire par <strong class="hl">forfait</strong> (adversaire déconnecté) ne paie toujours aucun honneur — mais le classement et le compteur de victoires, eux, bougent.</li>
+        </ul>
+      </div>
+      <div class="card more" data-detail="marque" tabindex="0" role="button" aria-label="Détails : la marque de tricheur">
+        <h3>Une marque pour les tricheurs <span class="chip c-new">Nouveau</span></h3>
+        <p>Une sanction <strong class="hl">publique, indissipable, et sans le moindre effet sur tes statistiques</strong>. Elle ne se décompte que pendant que tu joues — se déconnecter ne la fait pas passer.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Ce qui ne change pas <span class="chip c-util">Inchangé</span></h3>
+        <ul>
+          <li>Aucune règle de file, de composition ni de classement d’arène n’est modifiée.</li>
+          <li>Les gains d’honneur des <strong class="hl">champs de bataille</strong> et de la Fiesta ne bougent pas.</li>
+          <li>La fenêtre Accepter / Refuser réparée en v0.37.1 fonctionne toujours.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="confort">
+    <h2><span class="num">05</span>L’Hôtel des ventes, l’appli de bureau, et le reste</h2>
+    <p class="sec-sub">La plus grosse part du volume de cette version, même si elle se voit moins : achat-revente, application de bureau, et une bonne série de saccades supprimées.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="marche" tabindex="0" role="button" aria-label="Détails : l’Hôtel des ventes">
+        <h3>Un seul prix par objet <span class="chip c-util">Marché</span></h3>
+        <p>Un bouton replie la liste pour ne garder que <strong class="hl">l’offre la moins chère de chaque objet</strong>. Fini les trente lignes du même consommable pour trouver la bonne.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Application de bureau <span class="chip c-new">Nouveau</span></h3>
+        <ul>
+          <li><strong class="hl">Discord</strong> affiche ta zone et ton activité en cours, si tu le veux.</li>
+          <li>Nouveaux modes d’affichage : <strong class="hl">sans bordure</strong> ou <strong class="hl">fenêtré</strong>, en plus du plein écran.</li>
+          <li>La fenêtre <strong class="hl">retrouve sa taille, sa position et son écran</strong> au lancement suivant.</li>
+          <li>Des <strong class="hl">notifications système</strong>, limitées en fréquence pour ne pas te noyer.</li>
+          <li>Manette branchée : l’écran <strong class="hl">ne se met plus en veille</strong> pendant que tu joues.</li>
+          <li>Un drapeau de secours au lancement permet de <strong class="hl">démarrer sans accélération graphique</strong> quand le pilote pose problème.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Moins de saccades <span class="chip c-util">Performance</span></h3>
+        <ul>
+          <li>Le jeu maintient désormais un <strong class="hl">nombre constant de lumières</strong> à l’écran : chaque changement obligeait à recompiler tous les matériaux visibles, soit <strong class="hl">100 à 200 ms de blocage</strong> à chaque fois.</li>
+          <li>Le gel au premier sort dans l’arène de <strong class="hl">Nythraxis</strong> est supprimé : les effets sont préparés avant que tu en aies besoin.</li>
+          <li>Le catalogue de la boutique <strong class="hl">ne se charge plus au moment de la connexion</strong>.</li>
+          <li>Fenêtre réduite : le jeu <strong class="hl">ne dessine plus rien du tout</strong> au lieu de continuer à travailler dans le vide.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    menace: {
+      title: "La menace de chaque tank, chiffre par chiffre",
+      summary: "Quatre tanks, quatre bonus passifs de menace retouchés le même jour. Le Guerrier prend le plus gros coup de pouce, le Paladin la seule baisse.",
+      body: `
+        <h4>Le bonus passif de spécialisation</h4>
+        <ul>
+          <li><b>Guerrier Protection</b> (Recompense) : menace <b>+30 % → +80 %</b>.</li>
+          <li><b>Druide Wildfang</b> (Primal Heart) : menace <b>+20 % → +45 %</b>.</li>
+          <li><b>Chaman Warspirit</b> (Rockbiter Weapon) : menace <b>×2 → ×2,75</b>.</li>
+          <li><b>Paladin Faithwarden</b> (Oathward) : menace <b>+50 % → +40 %</b>. C’est la seule baisse.</li>
+        </ul>
+        <h4>Le Paladin perd sur deux étages</h4>
+        <p>En plus de sa maîtrise, le passif <b>Burning Oath</b> — qui multiplie la menace de tes dégâts sacrés — passe de <b>+60 % à +30 %</b>. Le Faithwarden empilait trois multiplicateurs (la technique, la maîtrise, le passif) et se retrouvait très loin devant les autres ; un étage a été rogné pour que le total composé retombe près du reste du groupe.</p>
+        <h4>Le Guerrier voit son stuff compter</h4>
+        <p>Deux techniques de Protection changent de nature. <b>Armor Shear</b> passe de 100 à <b>120</b> de menace forfaitaire (130 → <b>160</b> au rang 2). Surtout, <b>Shieldcrack</b> ne donne plus un simple forfait : sa menace vaut désormais <b>tes dégâts ×3,5, plus 110</b>. Même traitement pour <b>Bonecrush</b> et <b>Craven Roar</b> côté ours (×2,5 plus le forfait). Concrètement : mieux tu es équipé, plus tu tiens l’aggro — ce qui n’était pas le cas avant.</p>
+        <h4>Où en est vraiment l’écart</h4>
+        <p>Les notes officielles annoncent « les quatre tanks à moins de 17 % les uns des autres ». Le code, lui, garantit deux choses <b>mesurées différemment</b>, et il vaut mieux les connaître :</p>
+        <ul>
+          <li>Sur un équipement Endurance choisi à la main, le Paladin et le Druide tiennent entre <b>88 % et 108 %</b> des points de vie effectifs du Guerrier Protection.</li>
+          <li>Le Chaman Warspirit est mesuré sur son propre banc d’essai : <b>0,83</b> du Guerrier avec l’équipement automatique, <b>0,99</b> sur un équipement Endurance optimisé.</li>
+        </ul>
+        <p>Autrement dit, l’écart réel dépend de ton stuff, et le Guerrier Protection reste le plafond de survie dans les deux cas. Le resserrement est réel, le chiffre unique de « 17 % » ne l’est pas.</p>`
+    },
+    bruin: {
+      title: "Bruin Form retrouve ses deux techniques manquantes",
+      summary: "Une provocation de zone toute neuve, et un soin qui existait dans le jeu depuis des mois sans qu’aucun talent ne le donne.",
+      body: `
+        <h4>Baleful Roar — la provocation de zone</h4>
+        <ul>
+          <li>Tous les ennemis dans <b>10 mètres</b> sont provoqués d’un coup.</li>
+          <li>La menace de chacun envers toi <b>rejoint celle de son ennemi le plus haï</b> : tu ne repars pas de zéro, tu passes en tête.</li>
+          <li>Ils sont <b>contraints de t’attaquer pendant 3 secondes</b>.</li>
+          <li>Uniquement en Bruin Form. C’est l’outil de récupération de pack que l’ours n’avait pas.</li>
+        </ul>
+        <h4>Savage Mending — le soin fantôme</h4>
+        <p>Ce sort était <b>entièrement écrit, illustré et branché dans l’interface</b>… et <b>accessible par rien</b>. Il avait été prévu pour une rangée de talents de niveau 17 qui, à la livraison, a donné Gladesong à la place. Le sort restait donc dans le jeu sans qu’aucun druide au monde ne puisse le lancer.</p>
+        <ul>
+          <li>Il est désormais une technique de spécialisation <b>Wildfang</b>, sans rangée de talent à dépenser.</li>
+          <li><b>180 points de vie sur 10 secondes</b>, en soin progressif.</li>
+          <li>Uniquement en Bruin Form — et c’est bien tout l’intérêt : un druide métamorphosé <b>ne peut lancer aucun de ses vrais soins</b>. C’est le seul que l’ours ait.</li>
+          <li>Il a une recharge réelle : impossible de le relancer pendant qu’il agit.</li>
+        </ul>
+        <h4>L’échange armure contre vie</h4>
+        <p>Bruin Form multipliait ton armure par 2,3 et tes points de vie par 1,15. C’est maintenant <b>×2,1 d’armure et ×1,3 de points de vie</b>. Le total encaissé reste dans la même fourchette que les autres tanks — mais l’ours redevient <b>celui qui a la plus grosse barre de vie</b>, ce qui change beaucoup la sensation en jeu et le travail de tes soigneurs.</p>`
+    },
+    chrono: {
+      title: "Les rangs manquants de la Chronomancie",
+      summary: "Trois sorts de soin s’arrêtaient de progresser au niveau 15. Au niveau 20, tu lançais donc encore la version d’il y a cinq niveaux.",
+      body: `
+        <h4>Ce qui manquait</h4>
+        <p>Les sorts gagnent des <b>rangs</b> à mesure que tu montes en niveau : le sort reste le même, ses valeurs augmentent. Les trois soins signature de la Chronomancie s’arrêtaient à leur rang du niveau 15 et ne recevaient plus rien jusqu’au niveau 20 inclus.</p>
+        <h4>Le rang 20, enfin là</h4>
+        <ul>
+          <li><b>Temporal Mend</b> : le soin direct passe de <b>150–178</b> à <b>218–258</b>.</li>
+          <li><b>Temporal Barrier</b> : le bouclier absorbe désormais <b>232</b> dégâts pendant 10 secondes.</li>
+          <li><b>Temporal Echo</b> : le soin initial passe à <b>84–102</b>.</li>
+        </ul>
+        <h4>Et l’écho lui-même monte</h4>
+        <p>Pendant qu’un allié porte l’écho, une partie de tes dégâts d’Arcanes en cible unique le soigne. Cette conversion passe de <b>35 % à 40 %</b>. La version de groupe (Temporal Cascade) garde sa conversion réduite : elle reste volontairement moins rentable que l’écho posé sur une seule personne.</p>
+        <h4>Un mot sur Aether Surge</h4>
+        <p>Le sort d’attaque de base de la spé n’avait, lui non plus, <b>aucun rang</b> : au niveau 20, tu lançais encore le paquet de dégâts du niveau 5. Il reçoit trois rangs (niveaux 10, 15 et 20). Le gain est modeste — <b>10–13 → 12–14</b> — et son coût en mana n’a délibérément pas bougé, pour ne pas déplacer le moment où tu tombes à sec.</p>`
+    },
+    grix: {
+      title: "Pourquoi Grix change de rythme",
+      summary: "Un élite nommé de niveau 7 avec une réapparition de trois heures : la plupart des joueurs finissaient la zone sans jamais l’avoir vu.",
+      body: `
+        <h4>Le problème</h4>
+        <p><b>Grix the Tunnelking</b> est un contenu pensé pour les joueurs qui traversent la première zone. Or un joueur expérimenté monte un personnage jusqu’au niveau maximum en <b>environ quatre heures</b> : avec une réapparition fixe de trois heures, l’essentiel de son public ne pouvait tout simplement pas le rencontrer.</p>
+        <h4>Le nouveau rythme</h4>
+        <ul>
+          <li>Réapparition <b>tirée au hasard entre 15 et 30 minutes</b>, et retirée à chaque mort.</li>
+          <li>Un passage dans la zone contient donc <b>deux à quatre</b> de ses apparitions, au lieu d’une fraction d’une seule.</li>
+          <li>Le <b>hasard est volontaire</b> : c’est ce qui empêche de camper son point d’apparition avec un chronomètre.</li>
+        </ul>
+        <h4>Il reste rare</h4>
+        <p>L’échelle des rares de la zone va de Mogger et Old Greyjaw (les plus fréquents) jusqu’à <b>Wraithbinder Maldrec</b>, toujours à trois heures. Grix se place entre les deux : nettement plus rare qu’un monstre ordinaire, nettement plus rare que les rares communs — mais enfin rencontrable. Son butin et ses taux de drop ne changent pas.</p>`
+    },
+    nuit: {
+      title: "La nuit, la lune, et la journée de 45 minutes",
+      summary: "La nuit était devenue soit un mur noir en forêt, soit un jour tamisé partout. Les deux réglages ont été séparés.",
+      body: `
+        <h4>La journée dure plus longtemps</h4>
+        <p>Le cycle complet jour → nuit → jour passe de <b>20 à 45 minutes</b>. Vingt minutes donnaient une impression de course : le ciel changeait plus vite qu’on ne traversait une zone. Quarante-cinq laisse le temps de vivre une ambiance, tout en gardant plusieurs levers et couchers par session.</p>
+        <p><b>Attention à une confusion</b> : ces 45 minutes sont celles de la <b>journée</b>, pas du cycle lunaire. Le mois lunaire vaut <b>huit journées</b>, soit environ <b>six heures</b> de temps réel — c’est lui qui fait passer la lune de nouvelle à pleine.</p>
+        <h4>Deux lumières au lieu d’une</h4>
+        <p>Un seul réglage pilotait toute la lumière nocturne, et il ne pouvait pas gagner : monté, la nuit ressemblait à un jour gris ; baissé, une forêt sans lampadaire devenait une silhouette noire.</p>
+        <ul>
+          <li>La <b>lumière ambiante</b> — celle qui te permet de distinguer le sol et les corps — est remontée haut. C’est elle qui rend la nuit jouable, avec ou sans réverbère.</li>
+          <li>La <b>lumière de lune</b> — celle qui projette les ombres longues — reste volontairement faible, à environ un tiers de l’ambiante. C’est le contraste entre les deux qui fait « nuit », pas le niveau absolu.</li>
+        </ul>
+        <h4>La phase de lune se voit vraiment</h4>
+        <p>La phase fait varier les deux, mais <b>pas également</b> : le clair de lune bouge beaucoup plus que l’ambiante. Une pleine lune se ressent comme une lumière plus franche et des ombres plus longues, pas comme un éclairage général plus plat. Et même par nouvelle lune, un minimum de lumière directionnelle est conservé, pour que les formes gardent une direction d’éclairage.</p>`
+    },
+    marque: {
+      title: "La marque de tricheur, et pourquoi elle ne touche à rien",
+      summary: "Une sanction visible par tous, impossible à retirer, qui ne modifie aucune statistique et ne s’écoule qu’en jeu.",
+      body: `
+        <h4>Le principe</h4>
+        <ul>
+          <li>Elle s’applique au <b>compte</b>, donc tous tes personnages la portent.</li>
+          <li>Elle est <b>publique</b> : visible sur la plaque de nom et sur la fenêtre de cible des autres joueurs.</li>
+          <li>Elle est <b>indissipable</b> — ni dissipation, ni purification, ni clic droit ne l’enlèvent.</li>
+          <li>Elle <b>survit</b> à la mort, à la résurrection, à l’entrée en arène et à la remise à zéro d’une Fiesta.</li>
+        </ul>
+        <h4>Elle ne change absolument rien à ton personnage</h4>
+        <p>C’est un choix explicite et verrouillé dans le code : la marque a une <b>valeur nulle</b> et un type inerte. Elle ne modifie aucune statistique, aucune recharge, aucun résultat de combat. La sanction est <b>la visibilité</b>, jamais un handicap.</p>
+        <h4>Elle se décompte en temps joué</h4>
+        <p>Le compteur ne descend que <b>pendant que tu es en jeu</b>, jamais quand tu es déconnecté. La raison est simple : une sanction en temps réel s’attend hors ligne, ce qui est exactement la fenêtre qu’un joueur sanctionné laisse passer. Ici, la marque est portée devant les autres joueurs pour toute sa durée — c’est tout son objet.</p>
+        <p>Le plafond d’une marque est de <b>100 heures jouées</b>. Ce n’est pas une durée courante : c’est une limite de sécurité, pour qu’une valeur mal saisie ne puisse pas produire une sanction absurde.</p>`
+    },
+    marche: {
+      title: "L’Hôtel des ventes se refait une tête",
+      summary: "Chercher un consommable ordinaire, c’était trente lignes identiques à comparer une par une. Plus maintenant.",
+      body: `
+        <h4>Un seul prix par objet</h4>
+        <ul>
+          <li>Un bouton replie la liste sur <b>l’offre la moins chère de chaque objet</b>.</li>
+          <li>Le tri est fait <b>côté serveur</b> : c’est le vrai prix le plus bas du marché, pas seulement le plus bas de la page affichée.</li>
+          <li>Les objets <b>uniques</b> — enchantés, aux statistiques tirées au sort, signés — restent affichés séparément : ce ne sont pas des copies interchangeables.</li>
+          <li>À prix égal, c’est <b>la plus ancienne annonce</b> qui est montrée.</li>
+        </ul>
+        <h4>Vendre en connaissance de cause</h4>
+        <p>L’onglet Vente affiche maintenant <b>le prix le plus bas actuellement en vente</b> pour l’objet que tu t’apprêtes à mettre en ligne. Plus besoin d’aller vérifier dans l’autre onglet avant de fixer ton prix.</p>
+        <h4>Des lignes qui se lisent d’un coup d’œil</h4>
+        <ul>
+          <li>Le prix s’affiche sur <b>une seule unité</b>, la plus grande présente, avec une décimale : « 1.5g », « 10.5s », « 80c ».</li>
+          <li>La décimale est <b>toujours tronquée vers le bas</b>, jamais arrondie vers le haut : le prix affiché n’est jamais supérieur au vrai. Le montant exact reste disponible au survol et pour les lecteurs d’écran.</li>
+          <li>Le <b>poids d’armure</b> (tissu, cuir, mailles) apparaît directement sur la ligne.</li>
+          <li>Les objets <b>héroïques</b> portent une étoile dorée dans le coin.</li>
+        </ul>`
+    },
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

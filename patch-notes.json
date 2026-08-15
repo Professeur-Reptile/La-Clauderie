@@ -2,6 +2,44 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.38.0",
+   "date": "2026-08-15",
+   "titre": "Les quatre tanks repassent par l’atelier — et Bruin Form récupère deux techniques qui lui manquaient",
+   "resume": "Une grosse version, dominée par un seul sujet : la menace des tanks. Pendant longtemps, le même pack tenu par quatre tanks différents donnait quatre résultats très différents, et le Paladin gagnait toujours. C’est corrigé sur les quatre à la fois : le Guerrier Protection passe de +30 % à +80 % de menace passive, le Druide Wildfang de +20 % à +45 %, le Chaman Warspirit de ×2 à ×2,75 — et le Paladin Faithwarden, lui, redescend de +50 % à +40 %, avec en plus son passif sur les dégâts sacrés réduit de moitié (+60 % → +30 %). Deux techniques changent aussi de nature : Shieldcrack côté Guerrier et Bonecrush côté ours ne paient plus un forfait fixe, leur menace grandit avec tes dégâts — autrement dit, ton équipement compte enfin pour tenir l’aggro. Bruin Form récupère au passage deux outils qui lui manquaient depuis toujours : Baleful Roar, une provocation qui prend tous les ennemis dans 10 mètres d’un coup, et Savage Mending, un soin de 180 points de vie sur 10 secondes qui existait déjà dans le jeu, entièrement écrit et illustré, mais qu’aucun talent ne donnait — aucun druide au monde ne pouvait le lancer. La forme échange enfin un peu d’armure (×2,3 → ×2,1) contre beaucoup plus de vie (×1,15 → ×1,3) : l’ours redevient le tank à la plus grosse barre. Le Chaman Warspirit, lui, devient un vrai tank : +40 % d’armure, +20 % d’Endurance, −15 % de dégâts subis et l’immunité aux coups critiques des créatures. Hors du sujet tank : la Chronomancie récupère ses rangs de niveau 20, restés bloqués sur ceux du niveau 15 — Temporal Mend passe de 150–178 à 218–258 de soin. Le Voleur Thuggery est nettement raboté et redescend autour de 203 DPS. Grix the Tunnelking réapparaît toutes les 15 à 30 minutes au lieu de toutes les 3 heures. Une défaite en arène classée rapporte enfin de l’honneur (un tiers d’une victoire, match nul compris). Les objets à ramasser d’une quête ne s’affichent plus que si tu as la quête. Et la nuit redevient lisible, sur une journée de 45 minutes au lieu de 20.",
+   "temps_forts": [
+    "⚔️ Menace passive des tanks : Guerrier +30 % → +80 %, Druide +20 % → +45 %, Chaman ×2 → ×2,75, Paladin +50 % → +40 % (la seule baisse, doublée d’un passif sacré réduit de 60 % à 30 %)",
+    "🛡️ Shieldcrack et Bonecrush ne paient plus un forfait fixe : leur menace grandit avec tes dégâts — ton équipement compte enfin pour tenir l’aggro",
+    "🐻 Bruin Form gagne Baleful Roar (provocation de tous les ennemis dans 10 m pendant 3 s) et Savage Mending (180 PV sur 10 s), un soin qui existait dans le jeu mais qu’aucun talent ne donnait",
+    "❤️ Bruin Form échange de l’armure contre de la vie (×2,3 → ×2,1 d’armure, ×1,15 → ×1,3 de PV) : l’ours redevient le tank à la plus grosse barre",
+    "⚡ Warspirit devient un vrai tank : +40 % d’armure, +20 % d’Endurance, −15 % de dégâts subis, immunité aux coups critiques des créatures",
+    "⏳ La Chronomancie récupère ses rangs de niveau 20, restés bloqués sur ceux du niveau 15 : Temporal Mend passe de 150–178 à 218–258",
+    "🗡️ Le Voleur Thuggery est raboté (puissance d’attaque +55 % → +20 %) et redescend autour de 203 DPS, devant Knifework (186) et Skulduggery (179)",
+    "🐀 Grix the Tunnelking réapparaît toutes les 15 à 30 minutes au lieu de toutes les 3 heures — deux à quatre apparitions par passage dans la zone",
+    "🏳️ Une défaite en arène classée rapporte un tiers de l’honneur d’une victoire (1c1 : 8 contre 25 ; 2c2 : 17 contre 50), match nul compris",
+    "✨ Les objets à ramasser d’une quête n’apparaissent que si tu as la quête ; cloches, huttes et pierres runiques restent visibles",
+    "🌙 Journée de 45 minutes au lieu de 20, et nuit relisible : la lumière qui te fait voir et le clair de lune sont enfin réglés séparément",
+    "💰 Hôtel des ventes : un bouton ne garde que l’offre la moins chère de chaque objet, le poids d’armure s’affiche, et le prix se lit sur une seule unité"
+   ],
+   "page": "notes/v0.38.0.html",
+   "titre_en": "All four tanks go back through the workshop — and Bruin Form gets two long-missing abilities",
+   "resume_en": "A big release, dominated by a single subject: tank threat. For a long time, the same pack held by four different tanks gave four very different results, and the Paladin always won. That is fixed on all four at once: the Protection Warrior goes from +30% to +80% passive threat, the Wildfang Druid from +20% to +45%, the Warspirit Shaman from ×2 to ×2.75 — while the Faithwarden Paladin comes down from +50% to +40%, with its Holy-damage passive halved on top (+60% → +30%). Two abilities also change nature: Shieldcrack on the Warrior and Bonecrush on the bear no longer pay a fixed flat amount, their threat grows with your damage — meaning your gear finally counts toward holding aggro. Bruin Form picks up two tools it had always been missing: Baleful Roar, a taunt that catches every enemy within 10 yards at once, and Savage Mending, a 180-health heal over 10 seconds that already existed in the game, fully written and painted, but that no talent granted — no druid anywhere could cast it. The form finally trades a little armor (×2.3 → ×2.1) for a lot more health (×1.15 → ×1.3): the bear goes back to being the tank with the biggest bar. The Warspirit Shaman, meanwhile, becomes a genuine tank: +40% armor, +20% Stamina, −15% damage taken, and immunity to critical strikes from creatures. Outside the tank subject: Chronomancy gets its level-20 ranks back, having been stuck on the level-15 ones — Temporal Mend goes from 150–178 to 218–258 healing. The Thuggery rogue is cut hard and settles around 203 DPS. Grix the Tunnelking respawns every 15 to 30 minutes instead of every 3 hours. A ranked arena loss finally pays Honor (a third of a win, draws included). Quest collectables only show up if you are on the quest. And night is readable again, on a 45-minute day instead of 20.",
+   "temps_forts_en": [
+    "⚔️ Tank passive threat: Warrior +30% → +80%, Druid +20% → +45%, Shaman ×2 → ×2.75, Paladin +50% → +40% (the only cut, alongside a Holy passive dropped from 60% to 30%)",
+    "🛡️ Shieldcrack and Bonecrush no longer pay a fixed flat amount: their threat grows with your damage — your gear finally counts toward holding aggro",
+    "🐻 Bruin Form gains Baleful Roar (taunts every enemy within 10 yards for 3 sec) and Savage Mending (180 health over 10 sec), a heal that existed in the game but that no talent granted",
+    "❤️ Bruin Form trades armor for health (×2.3 → ×2.1 armor, ×1.15 → ×1.3 health): the bear is the biggest-pool tank again",
+    "⚡ Warspirit becomes a genuine tank: +40% armor, +20% Stamina, −15% damage taken, immunity to critical strikes from creatures",
+    "⏳ Chronomancy gets its level-20 ranks back, having been stuck on the level-15 ones: Temporal Mend goes from 150–178 to 218–258",
+    "🗡️ The Thuggery rogue is cut (attack power +55% → +20%) and settles around 203 DPS, ahead of Knifework (186) and Skulduggery (179)",
+    "🐀 Grix the Tunnelking respawns every 15 to 30 minutes instead of every 3 hours — two to four spawns per visit to the zone",
+    "🏳️ A ranked arena loss pays a third of a win's Honor (1v1: 8 against 25; 2v2: 17 against 50), draws included",
+    "✨ Quest collectables only appear if you are on the quest; bells, huts and wardstones stay visible",
+    "🌙 A 45-minute day instead of 20, and readable nights: the light that lets you see and the moonlight are finally tuned separately",
+    "💰 World Market: a toggle keeps only the cheapest listing of each item, armor weight shows on the row, and prices read in a single unit"
+   ],
+   "page_en": "notes/v0.38.0.en.html"
+  },
+  {
    "version": "v0.37.1",
    "date": "2026-08-13",
    "titre": "Correctif : la file des champs de bataille remarche (la fenêtre Accepter ne s’affichait plus depuis la v0.36.0)",
