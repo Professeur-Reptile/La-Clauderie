@@ -154,6 +154,22 @@ se limite à la partie rédactionnelle des « Nouveautés » :
      n'existent que pour l'une des trois (Sunward Disc est Faithwarden, Mercy
      Lance est Sunmender). Une rotation de tank qui cite un sort de heal est
      aussi fausse qu'un sort supprimé.
+   - **Toutes les classes, toutes les spés, à chaque fois** (consigne du
+     16 août 2026 : « il faut que tu t'assures tout le temps que toutes les
+     rotations sont bonnes sur toutes les classes »). Ça ne se fait plus à la
+     main : `node scripts/check_builds.mjs` relit les **36 builds** des deux
+     guides (`const BUILDS` de `bis.html` + `const PVP` de `pvp.html`) et
+     tourne en CI. Attention au piège qui a laissé passer dix mois d'erreurs :
+     une classe à plusieurs spés pour un rôle range ses builds dans une
+     **LISTE** (Mage, Voleur, Chasseur, Démoniste, Prêtre, Chaman, Guerrier),
+     et une vérification écrite à la va-vite ne regarde que la première.
+   - Le script contrôle, par build : la spé et son rôle, le nom de la
+     maîtrise, le niveau de rangée de chaque talent, et chaque nom de rotation
+     — existence, `hiddenFromPlayer`, spé autorisée, **accordabilité** (kit de
+     classe, talent, signature de spé ou remplacement d'action) et présence de
+     la signature de la spé. Il signale en plus, sans bloquer, une rotation qui
+     ignore la moitié des capacités propres à sa spé : c'est le symptôme d'une
+     refonte passée à côté du guide.
 3quater. **Les vérifications tournent en CI** (`check-site.yml`, appelé par les
    deux workflows de déploiement : un site cassé ne part plus en ligne). Pour
    un retour immédiat avant de pousser, les lancer à la main —
@@ -174,9 +190,8 @@ se limite à la partie rédactionnelle des « Nouveautés » :
      `bis.html` — ils ne sont pas écrits en dur dans la page, c'est
      `cxNames()` qui en fabrique un `data-codex` à l'affichage, donc rien ne
      les vérifiait : il refuse un sort introuvable, ambigu, ou retiré du
-     grimoire. **Le `const PVP` de `pvp.html` n'est PAS encore couvert** :
-     ses builds citent, classe par classe, des talents qui n'existent plus
-     (audit du 16 août 2026 — seul le Paladin a été repris).
+     grimoire. Le contrôle des guides eux-mêmes (rotations, talents, spés) est
+     allé vivre dans `scripts/check_builds.mjs` — voir l'étape 3ter.
 4. **Commit sur `claude/site-update-6uhdmv`, puis merge direct sur `main`**
    (fast-forward : `git push origin claude/site-update-6uhdmv:main`). Le déploiement
    part tout seul. **Ne pas ouvrir de PR** sauf demande explicite.

@@ -294,7 +294,7 @@
 
 <script src="assets/nav.js"></script>
 <script src="assets/lang.js"></script>
-<script src="assets/version.js" data-version="v0.38.1" defer></script>
+<script src="assets/version.js" data-version="v0.38.2" defer></script>
 <script>
 // Builds PvP par classe — éditorial La Clauderie, mêmes rangées de talents que
 // la page Builds (TALENTS.json de la knowledge base), re-choisies pour l'arène.
@@ -348,12 +348,12 @@ const PVP = {
   gear: { fr: "Stuff : set <b>Furyforged</b> + <b>Final Argument Greatblade</b> (Stormbound si tu bascules soigneur).", en: "Gear: <b>Furyforged</b> set + <b>Final Argument Greatblade</b> (Stormbound if you swap to healing)." },
   pourquoi: { fr: "Le mêlée à outils : kick à distance, slows, HoTs de poche, et LE bouton d'équipe — Storm Chorus. En 2v2 tu peux aussi passer Spiritmend et soigner : le chaman est la classe la plus flexible de l'arène.", en: "The toolbox melee: a ranged kick, slows, pocket HoTs, and THE team button — Storm Chorus. In 2v2 you can also go Spiritmend and heal: the shaman is the arena's most flexible class." },
   talents: [
-   ["Imbued Lifeblood", "niv. 5", { fr: "8 PV par coup blanc imbué : le sustain qui gagne les matchs longs.", en: "8 HP per imbued auto: the sustain that wins long matches." }],
-   ["Fault Rebuke", "niv. 8", { fr: "Earthen Jolt interrompt : ton kick, instantané.", en: "Earthen Jolt interrupts: your kick, instant." }],
-   ["Springwell", "niv. 11", { fr: "un HoT de 120 PV à entretenir sur toi ou le partenaire.", en: "a 120 HP HoT to keep on yourself or your partner." }],
-   ["Imbued Tempo", "niv. 14", { fr: "les autos raccourcissent tes Jolts : plus de kicks, plus de slows.", en: "autos shorten your Jolt cooldowns: more kicks, more slows." }],
-   ["Ancestral Mending", "niv. 17", { fr: "12 % PV max rendus quand tu encaisses un gros coup.", en: "12% max HP back when you eat a big hit." }],
-   ["Storm Chorus", "niv. 20", { fr: "+30 % de vitesse pour l'équipe 15 s : LA fenêtre de kill du 2v2.", en: "+30% speed for the team for 15s: THE 2v2 kill window." }]
+   ["Wolfstep", "niv. 5", { fr: "Shadewolf devient instantané et te libère des racines et des ralentissements : la sortie de contrôle du chaman.", en: "Shadewolf becomes instant and clears roots and slows: the shaman's escape from control." }],
+   ["Ancestral Mending", "niv. 8", { fr: "12 % de tes PV max rendus quand tu encaisses au moins 15 % de ta vie d’un coup (toutes les 20 s).", en: "12% of your max health back whenever you eat a hit worth 15% of it (every 20s)." }],
+   ["Fault Rebuke", "niv. 11", { fr: "Earthen Jolt interrompt et verrouille l’école 4 s : ton kick, instantané.", en: "Earthen Jolt interrupts and locks the school for 4s: your kick, instant." }],
+   ["Imbue Mastery", "niv. 14", { fr: "tes échos de Galeheart frappent 25 % plus fort : la pression de fond du Warspirit.", en: "your Galeheart echoes hit 25% harder: the Warspirit's background pressure." }],
+   ["Ancestral Bulwark", "niv. 17", { fr: "activer Thunder Ward te donne −40 % de dégâts subis pendant 6 s : le bouton anti-burst.", en: "activating Thunder Ward grants −40% damage taken for 6s: the anti-burst button." }],
+   ["Echoing Elements", "niv. 20", { fr: "chaque sort qui consomme Stormcast se répète à 40 % : ta fenêtre de dégâts double.", en: "every spell that consumes Stormcast repeats at 40%: your damage window doubles." }]
   ],
   plan: [
    { fr: "<b>Rime Jolt</b> en boucle sur la mêlée adverse (−50 % pendant 8 s) : ton partenaire kite gratuitement.", en: "<b>Rime Jolt</b> on loop on the enemy melee (−50% for 8s): your partner kites for free." },
@@ -368,17 +368,17 @@ const PVP = {
   gear: { fr: "Stuff : set <b>Ashstalker</b> (cuir) — <b>Cinderweave</b> + <b>Emberglass Warstaff</b> si tu joues Groveheart.", en: "Gear: <b>Ashstalker</b> set (leather) — <b>Cinderweave</b> + <b>Emberglass Warstaff</b> if you play Groveheart." },
   pourquoi: { fr: "Le 1v1 le plus sûr du jeu : tu ne tues pas vite, mais tu ne meurs jamais — armure d'ours, stuns en boucle, et des soins dans toutes les poches. En 2v2, bascule Groveheart si ton duo a déjà du DPS.", en: "The safest 1v1 in the game: you don't kill fast, but you never die — bear armor, looping stuns, heals in every pocket. In 2v2, swap to Groveheart if your duo already has damage." },
   talents: [
-   ["Bloom's End", "niv. 5", { fr: "un Wildmend instantané après chaque Wildbloom complet : soigne-toi sans fenêtre de cast.", en: "an instant Wildmend after each full Wildbloom: heal yourself with no cast window." }],
-   ["Bruin Rebound", "niv. 8", { fr: "Concuss rend 15 rage et revient 20 s plus vite : le stun en boucle.", en: "Concuss refunds 15 rage and comes back 20s sooner: the looping stun." }],
-   ["Lifesap", "niv. 11", { fr: "de la rage dans toutes les formes : jamais à sec.", en: "rage in every form: never dry." }],
-   ["Mercy Seed", "niv. 14", { fr: "Wildmend stocke un soin de 60 qui part sous 35 % PV : le filet.", en: "Wildmend stores a 60 heal that fires below 35% HP: the net." }],
-   ["Ironhide Reflex", "niv. 17", { fr: "gros coup encaissé = absorption de 15 % PV max + 20 rage en ours.", en: "eat a big hit = a 15% max HP absorb + 20 rage in bear." }],
-   ["Red Haze", "niv. 20", { fr: "+70 PA pendant 15 s : ta seule vraie fenêtre de kill — choisis-la bien.", en: "+70 AP for 15s: your only real kill window — pick it well." }]
+   ["Wildshift", "niv. 5", { fr: "changer de forme te libère des racines et des ralentissements cassables : le druide sort de tout, deux fois par pull.", en: "shapeshifting clears breakable roots and slows: the druid escapes anything, twice a pull." }],
+   ["Ironhide Reflex", "niv. 8", { fr: "un coup encaissé d’au moins 20 % de ta vie te blinde de 15 % de tes PV max pendant 6 s (toutes les 20 s).", en: "a hit worth 20% of your health shields you for 15% of your max health for 6s (every 20s)." }],
+   ["Concussive Economy", "niv. 11", { fr: "Concuss rend 15 rage et revient 20 s plus tôt : c’est LE stun en boucle du 1v1.", en: "Concuss refunds 15 rage and comes back 20s sooner: THE looping 1v1 stun." }],
+   ["Blooddrunk", "niv. 14", { fr: "chaque tic de tes saignements ajoute 1 Old Blood : tes grosses frappes tombent bien plus souvent.", en: "each of your bleed ticks adds 1 Old Blood: your heavy strikes come around far more often." }],
+   ["Red Haze", "niv. 17", { fr: "ta seule vraie fenêtre de kill — choisis-la bien.", en: "your only real kill window — pick it well." }],
+   ["Nature's Echo", "niv. 20", { fr: "après avoir dépensé ton Old Blood, la jauge repart avec 1 déjà acquis : les frappes s’enchaînent.", en: "after spending your Old Blood, the gauge restarts with 1 already banked: the strikes chain." }]
   ],
   plan: [
    { fr: "<b>Bruin Rush</b> + <b>Concuss</b> en alternance : la cible passe sa vie stun ou ralentie.", en: "<b>Bruin Rush</b> + <b>Concuss</b> alternating: the target lives stunned or slowed." },
    { fr: "<b>Craven Roar</b> (−20 PA) en continu : la mêlée adverse tape dans du coton.", en: "<b>Craven Roar</b> (−20 AP) at all times: the enemy melee hits cotton." },
-   { fr: "Sors de forme, <b>Wildbloom</b> + Wildmend instantané (Bloom's End), retourne en ours. Répète jusqu'à ce que l'autre craque.", en: "Shift out, <b>Wildbloom</b> + instant Wildmend (Bloom's End), back to bear. Repeat until they crack." },
+   { fr: "Sors de forme, <b>Wildbloom</b> puis <b>Wildmend</b>, retourne en ours — et si on t’enracine, c’est le changement de forme lui-même qui te libère (Wildshift).", en: "Shift out, <b>Wildbloom</b> then <b>Wildmend</b>, back to bear — and if they root you, the shift itself frees you (Wildshift)." },
    { fr: "<b>Headbutt</b> les soins — l'interrupt verrouille 4 s.", en: "<b>Headbutt</b> their heals — the interrupt locks for 4s." }
   ],
   partner: { fr: "Partenaire 2v2 : Pactbound (« l'Increvable », toi en Groveheart) ou Hexcraft.", en: "2v2 partner: Pactbound (“the Unkillable”, you as Groveheart) or Hexcraft." }
@@ -388,18 +388,18 @@ const PVP = {
   gear: { fr: "Stuff : set <b>Cinderweave</b> + <b>Emberglass Warstaff</b>.", en: "Gear: <b>Cinderweave</b> set + <b>Emberglass Warstaff</b>." },
   pourquoi: { fr: "LE soigneur d'arène : les boucliers agissent PENDANT le stun (pas besoin de caster), la maîtrise donne +8 % de PV, et Hushword fait taire le camp d'en face. Un burst qui rencontre un disci préparé rencontre un mur.", en: "THE arena healer: shields work DURING stuns (no cast needed), the mastery grants +8% health, and Hushword silences the other side. Burst that meets a prepared disc priest meets a wall." },
   talents: [
-   ["Warding Refrain", "niv. 5", { fr: "un bouclier gratuit tous les 3 Whispered Prayer.", en: "a free ward every 3rd Whispered Prayer." }],
-   ["Hushword", "niv. 8", { fr: "SILENCE 4 s : le sort qui gagne les 2v2 — sur le soigneur ou le caster adverse.", en: "a 4s SILENCE: the spell that wins 2v2s — on the enemy healer or caster." }],
-   ["Measured Mercy", "niv. 11", { fr: "la mana : un match d'arène est un marathon.", en: "mana: an arena match is a marathon." }],
-   ["Mercy Deferred", "niv. 14", { fr: "l'écho de Solemn Prayer rattrape les 35 % — même si tu es CC au mauvais moment.", en: "Solemn Prayer's echo catches the 35% dip — even if you're CC'd at the wrong moment." }],
-   ["Wounded Halo", "niv. 17", { fr: "un gros coup encaissé te blinde de 15 % PV max : le focus sur toi se paie.", en: "eating a big hit wards you for 15% max HP: focusing you has a price." }],
-   ["Halo Aftershock", "niv. 20", { fr: "chaque soin critique pose 50 d'absorption en plus.", en: "every critical heal adds a 50 absorb." }]
+   ["Veil Unbound", "niv. 5", { fr: "Veilstep te libère des racines et des ralentissements, puis te donne 50 % de vitesse 3 s : la sortie de mêlée.", en: "Veilstep clears roots and slows, then grants 50% movement speed for 3s: your way out of melee." }],
+   ["Wounded Halo", "niv. 8", { fr: "un coup d’au moins 15 % de ta vie te blinde de 15 % pendant 10 s : le focus sur toi se paie.", en: "a hit worth 15% of your health wards you for 15% for 10s: focusing you has a price." }],
+   ["Hushword", "niv. 11", { fr: "SILENCE 4 s (CD 30 s) : le sort qui gagne les 2v2 — sur le soigneur ou le caster adverse.", en: "a 4s SILENCE (30s CD): the spell that wins 2v2s — on the enemy healer or caster." }],
+   ["Living Covenant", "niv. 14", { fr: "tes soins par les dégâts rechargent Psalm of Warding de 20 % du soin fait : le moteur de la spé, et ta mana.", en: "your damage-healing refills Psalm of Warding by 20% of the healing done: the spec engine, and your mana." }],
+   ["Anointing", "niv. 17", { fr: "+20 % de dégâts, de soins et de vitesse d’incantation sur un allié pendant 15 s (CD 120 s) : à coller sur la fenêtre de kill.", en: "+20% damage, healing and casting speed on one ally for 15s (120s CD): glue it to the kill window." }],
+   ["Incarnate Spirit", "niv. 20", { fr: "un Psalm of Warding entièrement consommé soigne sa cible de 40 % de l’absorption : le bouclier paie deux fois.", en: "a fully consumed Psalm of Warding heals its target for 40% of the absorb: the shield pays twice." }]
   ],
   plan: [
    { fr: "<b>Psalm of Warding</b> AVANT le swap ennemi — les boucliers se posent en marchant, pas besoin de fenêtre.", en: "<b>Psalm of Warding</b> BEFORE the enemy swap — shields go up while moving, no window needed." },
    { fr: "<b>Hushword</b> le soigneur adverse au moment où TON partenaire ouvre sa fenêtre de kill.", en: "<b>Hushword</b> the enemy healer exactly when YOUR partner opens a kill window." },
    { fr: "<b>Anointing</b> sur le partenaire pendant le burst — ou sur toi pour rattraper un retard de soins.", en: "<b>Anointing</b> on your partner during burst — or on yourself to catch up on healing." },
-   { fr: "Sous focus : Wounded Halo + Psalm sur toi, et marche — un disci qui tourne autour d'un pilier est insoignable… et intuable.", en: "Under focus: Wounded Halo + self-Psalm, and keep walking — a disc priest orbiting a pillar can't be healed through… or killed." }
+   { fr: "Sous focus : Psalm sur toi (Wounded Halo se déclenche tout seul), et marche — un disci qui tourne autour d'un pilier est insoignable… et intuable.", en: "Under focus: Wounded Halo + self-Psalm, and keep walking — a disc priest orbiting a pillar can't be healed through… or killed." }
   ],
   partner: { fr: "Partenaire 2v2 : Skulduggery (« le Tribunal ») ou Battlecraft.", en: "2v2 partner: Skulduggery (“the Tribunal”) or Battlecraft." }
  },
@@ -417,7 +417,7 @@ const PVP = {
   ],
   plan: [
    { fr: "<b>Rimelance</b> en continu : le slow de 40 % EST le gameplay — les procs sont un bonus.", en: "<b>Rimelance</b> at all times: the 40% slow IS the gameplay — procs are a bonus." },
-   { fr: "La chaîne de kill : <b>Deadfrost</b> (stun, hors DR) → <b>Winterlash</b> → <b>Ice Lance ×2</b> → <b>Glacial Spike</b> instantané.", en: "The kill chain: <b>Deadfrost</b> (stun, no DR) → <b>Winterlash</b> → <b>Ice Lance ×2</b> → instant <b>Glacial Spike</b>." },
+   { fr: "La chaîne de kill : <b>Icebind</b> (la cible est gelée sur place) → <b>Winterlash</b> → <b>Ice Lance ×2</b> → <b>Glacial Spike</b> instantané. Deadfrost, lui, n’est plus donné par aucun talent : ne l’attends pas dans ta barre.", en: "The kill chain: <b>Icebind</b> (the target is frozen in place) → <b>Winterlash</b> → <b>Ice Lance ×2</b> → instant <b>Glacial Spike</b>. Deadfrost itself is no longer granted by any talent: do not wait for it in your bar." },
    { fr: "<b>Snap Bewitch</b> le soigneur pendant la chaîne — attention, le poly casse au moindre dégât : annonce-le.", en: "<b>Snap Bewitch</b> the healer during the chain — careful, poly breaks on any damage: call it." },
    { fr: "<b>Icebind</b> la mêlée qui te colle, <b>Cold Coffin</b> pour annuler leur burst — 8 s d'immunité, gratuites.", en: "<b>Icebind</b> the melee glued to you, <b>Cold Coffin</b> to cancel their burst — 8s of immunity, free." }
   ],
@@ -428,17 +428,18 @@ const PVP = {
   gear: { fr: "Stuff : set <b>Cinderweave</b> + <b>Emberglass Warstaff</b>.", en: "Gear: <b>Cinderweave</b> set + <b>Emberglass Warstaff</b>." },
   pourquoi: { fr: "La pression qui ne s'arrête jamais : quatre DoTs sur deux cibles, des peurs en boucle, et chaque point de dégâts te revient en vie via Veinleech et Consume. Le temps joue toujours pour toi.", en: "Pressure that never stops: four DoTs across two targets, looping fears, and every point of damage comes back as your health through Veinleech and Consume. Time is always on your side." },
   talents: [
-   ["Blacktide", "niv. 5", { fr: "Blackrot ralentit de 30 % : un slow que tu poses de toute façon.", en: "Blackrot slows by 30%: a slow you were applying anyway." }],
-   ["Voidfeast", "niv. 8", { fr: "dévore un buff ennemi (ou un debuff allié) et te soigne : la purge offensive.", en: "devours an enemy buff (or an ally's debuff) and heals you: the offensive purge." }],
-   ["Walking Hunger", "niv. 11", { fr: "Consume en marchant : tu draines en kitant.", en: "Consume while walking: you drain while you kite." }],
-   ["Deepened Hex", "niv. 14", { fr: "+20 % sur Gloom Bolt sous DoTs — c'est-à-dire toujours.", en: "+20% on Gloom Bolt under DoTs — which is to say, always." }],
-   ["Snapdread", "niv. 17", { fr: "Harrow instantané (CD 16 s) : la peur sans cast, le cœur du contrôle.", en: "instant Harrow (16s CD): the no-cast fear, the heart of your control." }],
-   ["Hexstorm", "niv. 20", { fr: "des Gloom Bolt instantanés : du burst en mouvement.", en: "instant Gloom Bolts: burst on the move." }]
+   ["Sacrilegious March", "niv. 5", { fr: "35 % de vitesse en permanence contre 2 % de ta vie par seconde : le démoniste kite enfin sans monture.", en: "a permanent 35% movement speed for 2% of your health per second: the warlock finally kites without a mount." }],
+   ["Abyssal Gag", "niv. 8", { fr: "l’interruption AVANT l’heure : elle coupe et fait taire TOUS les sorts de la cible 4 s.", en: "the interrupt EARLY: it cuts and silences ALL of the target's spells for 4s." }],
+   ["Sanguine Covenant", "niv. 11", { fr: "10 % de ta vie actuelle contre une absorption de 30 % de tes PV max pendant 8 s : ta réponse au train de mêlée.", en: "10% of your current health for an absorb worth 30% of your max health for 8s: your answer to a melee train." }],
+   ["Shadow Credit", "niv. 14", { fr: "chaque grosse dépense de Condamnation te rend un générateur gratuit : Sentence relance la boucle toute seule.", en: "every big Condemnation spend hands you a free generator: Sentence restarts the loop by itself." }],
+   ["Grand Malediction", "niv. 17", { fr: "−25 % de cooldown sur Hex of Violence : la mise en place revient toutes les 11 s au lieu de 15.", en: "−25% cooldown on Hex of Violence: your setup comes back every 11s instead of 15." }],
+   ["Abyssal Rift", "niv. 20", { fr: "aspire les ennemis dans 8 m vers un point choisi, gros dégâts d’Ombre et étourdissement 2 s : ta fenêtre de kill en 2v2.", en: "pulls enemies within 8m to a chosen spot, heavy Shadow damage and a 2s stun: your 2v2 kill window." }]
   ],
   plan: [
-   { fr: "DoT LES DEUX adversaires (<b>Hex of Anguish</b>, <b>Blackrot</b>, <b>Veinleech</b>) : le soigneur adverse doit soigner partout à la fois.", en: "DoT BOTH opponents (<b>Hex of Anguish</b>, <b>Blackrot</b>, <b>Veinleech</b>): the enemy healer has to heal everywhere at once." },
-   { fr: "<b>Snapdread</b> en boucle sur la cible libre — les peurs subissent les DR : alterne avec les stuns de ton partenaire.", en: "<b>Snapdread</b> on loop on the free target — fears suffer DR: alternate with your partner's stuns." },
-   { fr: "<b>Gag Order</b> les soins, <b>Voidfeast</b> leurs buffs (et les DoTs sur ton partenaire).", en: "<b>Gag Order</b> their heals, <b>Voidfeast</b> their buffs (and the DoTs on your partner)." },
+   { fr: "DoT LES DEUX adversaires (<b>Hex of Anguish</b>, <b>Blackrot</b>) : le soigneur adverse doit soigner partout à la fois.", en: "DoT BOTH opponents (<b>Hex of Anguish</b>, <b>Blackrot</b>): the enemy healer has to heal everywhere at once." },
+   { fr: "Pose ton <b>Evil Eye</b> sur la cible à tuer, monte la Condamnation avec <b>Needle of Fate</b> et <b>Hex of Violence</b>, puis lâche <b>Sentence</b> pendant le contrôle de ton partenaire.", en: "Put your <b>Evil Eye</b> on the kill target, build Condemnation with <b>Needle of Fate</b> and <b>Hex of Violence</b>, then unload <b>Sentence</b> inside your partner's control." },
+   { fr: "<b>Harrow</b> en boucle sur la cible libre — les peurs subissent les rendements décroissants : alterne avec les stuns de ton partenaire.", en: "<b>Harrow</b> on loop on the free target — fears suffer diminishing returns: alternate with your partner's stuns." },
+   { fr: "<b>Abyssal Gag</b> les soins : 4 s sans un seul sort, école par école.", en: "<b>Abyssal Gag</b> their heals: 4s without a single spell, school by school." },
    { fr: "<b>Consume</b> en kitant (Walking Hunger) : chaque mètre parcouru te soigne.", en: "<b>Consume</b> while kiting (Walking Hunger): every meter you cover heals you." }
   ],
   partner: { fr: "Partenaire 2v2 : Wildfang ou Groveheart — tout ce qui fait durer le match.", en: "2v2 partner: Wildfang or Groveheart — anything that makes the match last." }
@@ -448,17 +449,17 @@ const PVP = {
   gear: { fr: "Stuff : set <b>Ashstalker</b> + <b>First-Blood Razor</b>.", en: "Gear: <b>Ashstalker</b> set + <b>First-Blood Razor</b>." },
   pourquoi: { fr: "Le duelliste-né : +15 % d'Agilité, de l'esquive partout, un slow à −70 % et le seul CC à distance qui vise le soigneur sans cast — Wyvern Sting. Personne ne te rattrape, et ce qui te rattrape le regrette (Counterfang).", en: "The born duelist: +15% Agility, dodge everywhere, a −70% slow, and the only ranged no-cast CC that reaches the healer — Wyvern Sting. Nothing catches you, and what does regrets it (Counterfang)." },
   talents: [
-   ["Deepvenom", "niv. 5", { fr: "+20 % sur le poison de Venom Barb : ta pression de fond.", en: "+20% on Venom Barb's poison: your background pressure." }],
-   ["Pinning Barb", "niv. 8", { fr: "Rattling Shot ralentit à 70 % : le kite absolu.", en: "Rattling Shot slows by 70%: absolute kiting." }],
-   ["Deathless Will", "niv. 11", { fr: "+40 % de vitesse après un gros coup : encaisser, c'est repartir.", en: "+40% speed after a big hit: taking a hit means getting away." }],
-   ["Viperfletch", "niv. 14", { fr: "Fell Shot envenime : encore du poison.", en: "Fell Shot envenoms: more poison." }],
-   ["Bristleguard", "niv. 17", { fr: "+25 pts d'esquive et −30 % de dégâts 10 s : le burst mêlée adverse tombe dans le vide.", en: "+25 points of dodge and −30% damage for 10s: enemy melee burst hits thin air." }],
-   ["Redline Draw", "niv. 20", { fr: "Fevered Draw revient sans arrêt : du burst en boucle.", en: "Fevered Draw keeps coming back: burst on a loop." }]
+   ["Tactical Retreat", "niv. 5", { fr: "Trailbreak stocke 2 bonds et te libère des racines et des ralentissements : deux sorties de mêlée d’avance.", en: "Trailbreak stores 2 leaps and clears roots and slows: two escapes from melee in the bank." }],
+   ["Shared Recovery", "niv. 8", { fr: "Wildheart soigne aussi ton familier de 30 % et vous donne −20 % de dégâts subis 4 s à tous les deux.", en: "Wildheart also heals your pet for 30% and grants you both −20% damage taken for 4s." }],
+   ["Binding Payload", "niv. 11", { fr: "Frostjaw Trap enracine 3 s tout ce qui la déclenche, puis ralentit de 40 % : ton vrai contrôle.", en: "Frostjaw Trap roots everything that triggers it for 3s, then slows by 40%: your real control." }],
+   ["Trapcraft", "niv. 14", { fr: "−20 % de cooldown sur le piège, et son déclenchement te rend 20 Concentration et 5 s de Trailbreak.", en: "−20% cooldown on the trap, and triggering it returns 20 Focus and 5s of Trailbreak." }],
+   ["Apex Instinct", "niv. 17", { fr: "Bloodtrail Assault rend 40 Concentration et rend tes 3 dépenses suivantes 50 % moins chères et 20 % plus fortes.", en: "Bloodtrail Assault restores 40 Focus and makes your next 3 spenders 50% cheaper and 20% stronger." }],
+   ["Overdraw", "niv. 20", { fr: "1 Fell Shot / Long Draw / Woundrend sur 3 frappe 35 % plus fort et éclabousse 2 ennemis proches.", en: "every 3rd Fell Shot / Long Draw / Woundrend hits 35% harder and splashes 2 nearby enemies." }]
   ],
   plan: [
    { fr: "<b>Rattling Shot</b> et <b>Fettering Slash</b> en boucle : l'adversaire joue à 30 % de sa vitesse.", en: "<b>Rattling Shot</b> and <b>Fettering Slash</b> on loop: the opponent plays at 30% speed." },
-   { fr: "<b>Wyvern Sting</b> sur le soigneur — cible PROPRE (sans ton Venom Barb), sinon le CC casse tout seul.", en: "<b>Wyvern Sting</b> on the healer — a CLEAN target (no Venom Barb of yours), or the CC breaks itself." },
-   { fr: "<b>Bristleguard</b> à l'ouverture du train ennemi, <b>Deathless Will</b> fait le reste.", en: "<b>Bristleguard</b> when the enemy train opens, <b>Deathless Will</b> does the rest." },
+   { fr: "Le contrôle passe par le piège, pas par Wyvern Sting (que plus aucun talent ne donne) : pose-le sur une cible PROPRE, sans ton Venom Barb, sinon l’enracinement saute tout seul.", en: "Your control comes from the trap, not from Wyvern Sting (which no talent grants any more): lay it for a CLEAN target, with no Venom Barb of yours on it, or the root breaks by itself." },
+   { fr: "<b>Frostjaw Trap</b> sous leurs pieds à l’ouverture (3 s d’enracinement avec Binding Payload), puis <b>Shellskin</b> si le train continue.", en: "<b>Frostjaw Trap</b> under their feet as they open (a 3s root with Binding Payload), then <b>Shellskin</b> if the train keeps coming." },
    { fr: "<b>Hushing Shot</b> les soins à distance — le seul interrupt ranged du jeu, encore.", en: "<b>Hushing Shot</b> their heals from range — still the game's only ranged interrupt." }
   ],
   partner: { fr: "Partenaire 2v2 : Requital (« la Cour Martiale ») ou Doctrine.", en: "2v2 partner: Requital (“the Field Court”) or Doctrine." }
@@ -468,12 +469,12 @@ const PVP = {
   gear: { fr: "Stuff : set <b>Ashstalker</b> + <b>First-Blood Razor</b>.", en: "Gear: <b>Ashstalker</b> set + <b>First-Blood Razor</b>." },
   pourquoi: { fr: "La reine de l'arène : tu choisis quand le combat commence (Sap, Shadeslip), tu le mets en pause (Smokestep), et tes stuns — hors rendements décroissants — dictent chaque fenêtre. False Face te fait courir à +50 % en furtivité.", en: "The queen of the arena: you choose when the fight starts (Sap, Shadeslip), you pause it (Smokestep), and your stuns — exempt from diminishing returns — dictate every window. False Face makes you run 50% faster while stealthed." },
   talents: [
-   ["Dusk Dividend", "niv. 5", { fr: "les ouvertures furtives rendent 20 énergie.", en: "stealth openers refund 20 energy." }],
-   ["Smoke Screen", "niv. 8", { fr: "+30 % d'esquive 8 s : à claquer sur le burst adverse.", en: "+30% dodge for 8s: pop it on enemy burst." }],
-   ["Borrowed Tempo", "niv. 11", { fr: "Cutthroat Tempo gratuit un coup sur trois — et depuis la v0.34, « gratuit » veut enfin tout dire : les points de combo ne sont plus consommés (ils comptent quand même dans la durée).", en: "free Cutthroat Tempo every third builder — and since v0.34, “free” finally means it: combo points are no longer spent (they still count toward the duration)." }],
-   ["Final Notice", "niv. 14", { fr: "chaque finisher remise le builder suivant : la boucle tourne.", en: "each finisher discounts the next builder: the loop spins." }],
-   ["Shadecloak", "niv. 17", { fr: "420 d'absorption : le bouclier pour traverser un focus.", en: "a 420 absorb: the shield to walk through focus fire." }],
-   ["Shadeslip", "niv. 20", { fr: "le pas d'ombre SANS casser Duskveil : l'ouverture parfaite, toutes les 24 s.", en: "the shadow-step WITHOUT breaking Duskveil: the perfect opener, every 24s." }]
+   ["Shadeslip", "niv. 5", { fr: "le pas de l’ombre : la mobilité qui te remet dans le dos de la cible, et qui ouvre la fenêtre quand TU le décides.", en: "the shadow step: the mobility that puts you back behind the target, and opens the window when YOU decide." }],
+   ["Borrowed Breath", "niv. 8", { fr: "le coup qui devait te tuer te laisse à 1 PV (toutes les 120 s) : l’assurance-vie du 2v2.", en: "the blow that would kill you leaves you at 1 health (every 120s): the 2v2 life insurance." }],
+   ["Marked Prey", "niv. 11", { fr: "une cible que tu étourdis (Gut Punch, Low Blow) prend 10 % de dégâts en plus de TOUT LE MONDE pendant 6 s : la fenêtre du duo.", en: "a target you stun (Gut Punch, Low Blow) takes 10% more damage from EVERYONE for 6s: the duo's window." }],
+   ["Dusk Economy", "niv. 14", { fr: "−50 % d’énergie sous Duskveil et 6 s après en être sorti : l’ouverture ne coûte presque rien.", en: "−50% energy cost in Duskveil and for 6s after leaving it: the opener costs almost nothing." }],
+   ["Ghostfoot Gambit", "niv. 17", { fr: "Ghostfoot rend 30 énergie et rend ton prochain builder 50 % moins cher : la relance juste après une disparition.", en: "Ghostfoot returns 30 energy and makes your next builder 50% cheaper: the restart right after a vanish." }],
+   ["Grave Brand", "niv. 20", { fr: "tes ouvertures depuis Duskveil marquent la cible 20 s : +12 % de dégâts sur elle pour tout le reste du burst.", en: "your Duskveil openers brand the target for 20s: +12% damage on it for the rest of the burst." }]
   ],
   plan: [
    { fr: "Avant le combat : <b>Sap</b> le soigneur (hors combat), puis ouvre sur l'autre à <b>Gut Punch</b> (stun 4 s, hors DR). Bonus v0.34 : un joueur stun <b>ne peut plus pivoter</b> (même à la souris) — ton dos-à-dos est garanti pendant tout le stun.", en: "Before the fight: <b>Sap</b> the healer (out of combat), then open on the other with <b>Gut Punch</b> (4s stun, no DR). v0.34 bonus: a stunned player <b>can no longer turn</b> (even with the mouse) — your back position is guaranteed for the whole stun." },

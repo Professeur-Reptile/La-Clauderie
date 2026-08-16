@@ -455,6 +455,8 @@ const BUILDS = {
    ],
    rotation: [
     ["Mending Waters", { fr: "le soin mono-cible : rapide, pas cher, instantané après un crit avec Guiding Spirits.", en: "the single-target heal: fast, cheap, instant after a crit with Guiding Spirits." }],
+    ["Lifespring Weapon", { fr: "l’imbue de la spé, à renouveler toutes les 30 min : Mending Waters et Tidecall versent 20 % de soin en plus au Mending Current.", en: "the spec imbue, refresh every 30 min: Mending Waters and Tidecall add 20% more healing to your Mending Current." }],
+    ["Tidecall", { fr: "le soin à cooldown (12 s) : il verse aussi son soin complet au Mending Current AVANT tout surplus.", en: "the cooldown heal (12s): it also pours its full amount into Mending Current BEFORE any overhealing." }],
     ["Cascading Mend", { fr: "le sort signature (ex-Chain Heal) : soigne puis rebondit sur 2 alliés blessés (−50 % par rebond) — la réponse aux dégâts de raid.", en: "the signature spell (formerly Chain Heal): heals then jumps to 2 injured allies (−50% per jump) — the answer to raid damage." }],
     ["Thunder Ward", { fr: "sur toi en permanence — punit les mobs qui te tapent.", en: "on yourself at all times — punishes mobs that hit you." }],
     ["Cinder Jolt / Earthen Jolt", { fr: "en solo ou pendant les temps morts.", en: "when solo or during downtime." }]
@@ -478,12 +480,13 @@ const BUILDS = {
     ["Echoing Elements", "niv. 20", { fr: "chaque sort qui consomme Stormcast se répète à 40 % — la boucle Stormstrike devient nettement plus grosse.", en: "every spell that consumes Stormcast repeats at 40% — the Stormstrike loop gets a lot bigger." }]
    ],
    rotation: [
-    ["Stonebound Weapon", { fr: "l'imbue, à renouveler toutes les 5 min — il nourrit Imbued Lifeblood et Imbued Tempo.", en: "the imbue, refresh it every 5 min — it feeds Imbued Lifeblood and Imbued Tempo." }],
+    ["Galeheart Weapon", { fr: "l’imbue des DEUX armes, à renouveler toutes les 30 min : c’est lui qui active Warspirit Cadence, donc tes échos.", en: "the imbue on BOTH weapons, refresh every 30 min: it is what enables Warspirit Cadence, and therefore your echoes." }],
     ["Thunder Ward", { fr: "toujours actif.", en: "always on." }],
     ["Ancestral Strike", { fr: "à chaque cooldown — ton sort signature (appris au niveau 20).", en: "on every cooldown — your signature spell (learned at level 20)." }],
     ["Cinder Jolt", { fr: "l'instant + DoT, à entretenir.", en: "the instant + DoT, keep it rolling." }],
     ["Earthen Jolt", { fr: "le filler instantané entre deux coups blancs.", en: "the instant filler between auto-attacks." }],
-    ["Rime Jolt", { fr: "pour ralentir ce qui fuit.", en: "to slow whatever runs away." }]
+    ["Rime Jolt", { fr: "pour ralentir ce qui fuit.", en: "to slow whatever runs away." }],
+    ["Elemental Trance", { fr: "la signature (120 s, niv. 20) : 15 s à −30 % de dégâts subis, et 20 % de tes dégâts reviennent en mana.", en: "the signature (120s, lvl 20): 15s at −30% damage taken, with 20% of your damage coming back as mana." }]
    ],
    astuce: { fr: "Mending Waters dépanne le heal en urgence — et un /ready avant le pull pour vérifier imbues et buffs, c'est gratuit. Et si ton groupe n'a pas de tank : depuis la v0.38, l'imbue Stonebound Weapon (à la place de Galeheart) fait de toi un vrai tank de dépannage — +40 % d'armure, +20 % d'Endurance, −15 % de dégâts subis, l'immunité aux coups critiques des créatures et ×2,75 de menace. Tu tiendras moins qu'un guerrier Protection, mais assez pour un héroïque. En échange, tu perds le débit de dégâts de Galeheart : c'est un plan B, pas ton mode par défaut.",
              en: "Mending Waters can bail out the healer in a pinch — and a /ready before the pull to check imbues and buffs costs nothing. And if your group has no tank: since v0.38, the Stonebound Weapon imbue (instead of Galeheart) turns you into a genuine stand-in tank — +40% armor, +20% Stamina, −15% damage taken, immunity to critical strikes from creatures, and ×2.75 threat. You will hold less than a Protection warrior, but enough for a heroic. In exchange you give up Galeheart's sustained damage: it is a plan B, not your default." }
@@ -505,10 +508,12 @@ const BUILDS = {
     ["Echoing Elements", "niv. 20", { fr: "Earthen Jolt et Faultwake se répètent à 40 % après 1 s. Storm Chorus reste ton bouton d’équipe si personne ne l’apporte.", en: "Earthen Jolt and Faultwake repeat at 40% after 1s. Storm Chorus is still your team button if nobody else brings it." }]
    ],
    rotation: [
+    ["Pyrebrand Weapon", { fr: "l’imbue de la spé, à renouveler toutes les 30 min : chaque coup ajoute des dégâts de Feu, et Imbue Mastery en tire du Thunder.", en: "the spec imbue, refresh every 30 min: every swing adds Fire damage, and Imbue Mastery turns it into Thunder." }],
     ["Arc Bolt", { fr: "le spam : chaque 3e rend un Jolt gratuit, chaque crit nourrit Sky Echo et Storm Recall.", en: "the spam: every 3rd makes a Jolt free, every crit feeds Sky Echo and Storm Recall." }],
     ["Cinder Jolt", { fr: "l'instant + DoT — pose-le avant de le faire détoner.", en: "the instant + DoT — apply it before you detonate it." }],
     ["Earthen Jolt", { fr: "la détonation (Cinder Rupture) et l'interrupt (Fault Rebuke) : ton bouton à tout faire.", en: "the detonation (Cinder Rupture) and the interrupt (Fault Rebuke): your do-everything button." }],
     ["Primal Mastery", { fr: "le sort signature (CD 120 s) : ton prochain sort devient instantané — garde-le pour caster en pleine mécanique.", en: "the signature spell (120s CD): your next spell becomes instant — save it to cast through a mechanic." }],
+    ["Skybranch", { fr: "la frappe multi (6 s) : jusqu’à 3 ennemis à 10 m, et chaque touche rend 1 Thunder.", en: "the multi-strike (6s): up to 3 enemies within 10m, and each hit grants 1 Thunder." }],
     ["Faultwake", { fr: "l’AoE (ex-Earthquake, niv. 18) : 6 s de secousses sous le pack.", en: "the AoE (formerly Earthquake, lvl 18): 6s of tremors under the pack." }],
     ["Rime Jolt", { fr: "le slow (−50 % pendant 8 s) sur ce qui court.", en: "the slow (−50% for 8s) on anything that runs." }],
     ["Thunder Ward", { fr: "toujours actif — punit les mêlées qui te collent.", en: "always on — punishes melee that stick to you." }]
@@ -539,6 +544,7 @@ const BUILDS = {
     ["Bruin Rush", { fr: "l'engage : charge + étourdissement.", en: "the engage: charge + stun." }],
     ["Primal Surge", { fr: "le sort signature (v0.25) : 50 rage instantanée en ours — l'ouverture de pack rêvée.", en: "the signature spell (v0.25): an instant 50 Rage in Bruin form — the perfect pack opener." }],
     ["Bonecrush", { fr: "le spam de menace mono-cible.", en: "the single-target threat spam." }],
+    ["Marrowbreak / Redharvest", { fr: "à 3 Old Blood, ta frappe CHANGE de bouton : Marrowbreak en ours (grosse frappe à haute menace, et un bouclier de 18 % de tes PV sous la moitié de vie), Redharvest en félin (tous tes saignements restants infligés d’un coup).", en: "at 3 Old Blood your strike button CHANGES: Marrowbreak in bear (a heavy high-threat hit, plus a shield worth 18% of your health below half), Redharvest in cat (every remaining bleed tick dealt at once)." }],
     ["Sweeping Claws", { fr: "dès 2 cibles.", en: "at 2+ targets." }],
     ["Craven Roar", { fr: "−20 PA à tout le pack : de la mitigation gratuite.", en: "−20 AP on the whole pack: free mitigation." }],
     ["Headbutt", { fr: "l'interrupt (v0.25) : coup de tête bondissant, verrouille l'école 4 s.", en: "the interrupt (v0.25): a lunging headbutt that locks the school for 4s." }],
@@ -567,6 +573,7 @@ const BUILDS = {
    rotation: [
     ["Wildbloom", { fr: "le HoT, sur le tank en permanence, sur les DPS qui prennent cher.", en: "the HoT — on the tank at all times, on DPS who take a beating." }],
     ["Swiftmend", { fr: "le sort signature (v0.25) : consomme un HoT pour un gros soin instantané — le bouton d'urgence.", en: "the signature spell (v0.25): consumes a HoT for a big instant heal — the emergency button." }],
+    ["Overbloom", { fr: "à 5 Verdance, Swiftmend devient Overbloom : tous les alliés qui portent tes HoT sont soignés d’un coup de 60 % de ce que ces HoT devaient encore rendre. C’est ta réponse aux dégâts de raid.", en: "at 5 Verdance, Swiftmend becomes Overbloom: every ally carrying your HoTs is instantly healed for 60% of what those HoTs still owed them. This is your answer to raid damage." }],
     ["Second Bloom", { fr: "soin direct + HoT de 21 s : ton meilleur rapport mana/soin.", en: "direct heal + 21s HoT: your best healing per mana." }],
     ["Wildmend", { fr: "le gros soin quand ça descend vraiment.", en: "the big heal when health really drops." }],
     ["Wildward", { fr: "le buff +5 % toutes stats du groupe.", en: "the group's +5% all-stats buff." }],
@@ -593,6 +600,8 @@ const BUILDS = {
     ["Moonwing Form", { fr: "avant tout : +20 % de dégâts des sorts et +50 % d'armure, ça tient jusqu'à ce que tu la quittes.", en: "first of all: +20% spell damage and +50% armor, it lasts until you leave it." }],
     ["Lunar Tempest", { fr: "instantané, dégâts directs + effet périodique : à poser en ouverture et à entretenir.", en: "instant, direct damage + a DoT: open with it and keep it rolling." }],
     ["Stinging Swarm", { fr: "le second effet périodique (niv. 20) — deux DoT qui tournent pendant que tu incantes.", en: "your second DoT (lvl 20) — two DoTs ticking while you cast." }],
+    ["Moonseed", { fr: "en Moonwing (8 s) : il ajoute 1 Moontide (3 max) et prolonge Lunar Tempest de 6 s — c’est lui qui remplit la jauge.", en: "in Moonwing (8s): it adds 1 Moontide (3 max) and extends Lunar Tempest by 6s — it is what fills the gauge." }],
+    ["Moonsurge / Sunwake", { fr: "à 3 Moontide, tu choisis : Moonseed devient Moonsurge (la grosse frappe) et Skyfall devient Sunwake (un peu moins fort, mais 35 mana rendus). Les deux dépensent les MÊMES 3 Moontide.", en: "at 3 Moontide you choose: Moonseed becomes Moonsurge (the heavy hit) and Skyfall becomes Sunwake (a little weaker, but 35 mana back). Both spend the SAME 3 Moontide." }],
     ["Skyfall", { fr: "le gros coup (80-112) : ton remplissage entre deux DoT, instantané quand Moonspite s'allume.", en: "the big hit (80–112): your filler between DoTs, and instant whenever Moonspite lights up." }],
     ["Wildbolt", { fr: "l'incantation courte (1,5 s) quand tu dois bouger vite ou finir une cible.", en: "the short cast (1.5s) when you need to move or finish a target." }],
     ["Galeheart", { fr: "l'AoE (recharge 12 s) dès 3 cibles groupées.", en: "the AoE (12s CD) at 3+ clustered targets." }],
@@ -624,6 +633,7 @@ const BUILDS = {
     ["Lingering Grace", { fr: "le HoT d'entretien.", en: "the maintenance HoT." }],
     ["Urgent Prayer", { fr: "le soin rapide quand ça urge.", en: "the fast heal when it's urgent." }],
     ["Seraphic Vigil", { fr: "le sort signature (v0.36) : 30 s de garde sur un allié — le premier coup qui le passe sous 35 % la consomme et le soigne de 180. Sunburst Canticle (ex-Holy Nova) reste ton soin de zone.", en: "the signature spell (v0.36): a 30s vigil on one ally — the first hit that drops them below 35% consumes it and heals 180. Sunburst Canticle (formerly Holy Nova) is still your area heal." }],
+    ["Choirmend / Sunburst Canticle", { fr: "tes deux soins de zone : Choirmend porte à 30 m sur les alliés, Sunburst Canticle ne fait que 10 m mais frappe aussi les ennemis qui s’y trouvent.", en: "your two area heals: Choirmend reaches allies within 30m, Sunburst Canticle only 10m but it also damages the enemies standing in it." }],
     ["Solemn Prayer", { fr: "le très gros soin talenté, pour les trous d'un boss.", en: "the very big talented heal, for the scary dips on a boss." }],
     ["Litany of Resolve", { fr: "le buff +5 % Endurance du groupe.", en: "the group's +5% Stamina buff." }]
    ],
@@ -649,9 +659,10 @@ const BUILDS = {
    rotation: [
     ["Psalm of Warding", { fr: "toutes les 4,2 s (la spé raccourcit son CD de 30 %), sur celui qui va encaisser : +18 % d'absorption de spé, +30 % de maîtrise, et Shattered Psalm le fait soigner en cédant.", en: "every 4.2s (the spec shaves 30% off its CD), on whoever is about to take the hit: +18% absorption from the spec, +30% from the mastery, and Shattered Psalm makes it heal when it breaks." }],
     ["Anointing", { fr: "le sort signature (CD 120 s) : +20 % de hâte des sorts sur la cible 15 s — sur toi quand ça saigne, sur un DPS pour le burst.", en: "the signature spell (120s CD): +20% spell haste on the target for 15s — on yourself when things bleed, on a DPS for burst." }],
-    ["Whispered Prayer", { fr: "le filler — un bouclier gratuit tous les 3 casts avec Warding Refrain.", en: "the filler — a free ward every 3 casts with Warding Refrain." }],
+    ["Scouring Mercy", { fr: "la signature (8 s) : elle frappe un ennemi OU soigne un allié — c’est le sort qui fait tourner la spé, dégâts et soins dans le même bouton.", en: "the signature (8s): it damages an enemy OR heals an ally — the spell the spec runs on, damage and healing in the same button." }],
+    ["Whispered Prayer", { fr: "le filler entre deux boucliers.", en: "the filler between shields." }],
     ["Lingering Grace", { fr: "le HoT d'entretien sous les boucliers.", en: "the maintenance HoT beneath the shields." }],
-    ["Solemn Prayer", { fr: "le gros soin, écho de Mercy Deferred compris.", en: "the big heal, Mercy Deferred echo included." }],
+    ["Solemn Prayer", { fr: "le gros soin, quand le bouclier n’a pas suffi.", en: "the big heal, when the shield was not enough." }],
     ["Urgent Prayer", { fr: "l'urgence, quand l'absorption a déjà cédé.", en: "the emergency heal, once the absorption has already broken." }],
     ["Litany of Resolve", { fr: "le buff d'Endurance (+7,5 % talenté), toujours actif.", en: "the Stamina buff (+7.5% talented), always on." }]
    ],
@@ -677,6 +688,7 @@ const BUILDS = {
     ["Dirge of Decay", { fr: "le DoT, actif en permanence sur tout ce qui vit plus de 10 s.", en: "the DoT, always up on anything that lives longer than 10s." }],
     ["Mindfracture", { fr: "à chaque cooldown (8 s).", en: "on every cooldown (8s)." }],
     ["Litany of Woe", { fr: "le filler canalisé entre deux Mindfracture.", en: "the channeled filler between Mindfractures." }],
+    ["Call Tithefiend", { fr: "la signature (30 s) : consomme toute ta Gloomtithe pour appeler un Tithefiend — 6 s à 1 charge, 15 s à 5. C’est là que passe ton burst.", en: "the signature (30s): consumes all your Gloomtithe to summon a Tithefiend — 6s at 1 stack, 15s at 5. This is where your burst goes." }],
     ["Psalm of Warding", { fr: "sur toi avant un pull risqué.", en: "on yourself before a risky pull." }],
     ["Scouring Hymn", { fr: "en dessous du niveau 14, ton filler (ex-Smite).", en: "below level 14, your filler (formerly Smite)." }]
    ],
@@ -744,7 +756,7 @@ const BUILDS = {
   }],
   heal: {
    spec: "Chronomancy (arcane)",
-   mastery: { fr: "Maîtrise Chronomancie (v0.27) : +15 % à tous tes soins, +5 % de mana max, +20 % de régénération de mana", en: "Chronomancy mastery (v0.27): +15% to all your healing, +5% max mana, +20% mana regeneration" },
+   mastery: { fr: "Chronoweave (v0.27) : +15 % à tous tes soins, +5 % de mana max, +20 % de régénération de mana", en: "Chronoweave (v0.27): +15% to all your healing, +5% max mana, +20% mana regeneration" },
    pourquoi: { fr: "L'Arcane devient une spé de SOIN en v0.27 : tu soignes en faisant des dégâts (Temporal Echo), et tu apportes un rez de combat ET un Bloodlust — l'utilité maximale en donjon. La v0.38 lui rend enfin ses rangs de niveau 20, restés bloqués sur ceux du niveau 15 : Temporal Mend passe de 150-178 à 218-258, Temporal Barrier absorbe 232, et Temporal Echo soigne 84-102 à la pose.",
                en: "Arcane becomes a HEALING spec in v0.27: you heal by dealing damage (Temporal Echo), and you bring a combat res AND a Bloodlust — maximum utility in dungeons. v0.38 finally gives it back its level-20 ranks, which had been stuck on the level-15 ones: Temporal Mend goes from 150-178 to 218-258, Temporal Barrier absorbs 232, and Temporal Echo heals 84-102 on application." },
    stats: { fr: "Intelligence > Hâte > Esprit", en: "Intellect > Haste > Spirit" },
@@ -757,6 +769,7 @@ const BUILDS = {
     ["Aetherwell", "niv. 20", { fr: "canalise pour rendre ta mana (et gagner de la puissance des sorts en canalisant plus longtemps) : ta pause mana entre deux packs.", en: "channel to restore mana (gaining spell power the longer you channel): your mana break between packs." }]
    ],
    rotation: [
+    ["Temporal Mend", { fr: "le soin direct de la spé, sa signature : le bouton simple quand une seule barre descend, sans passer par les charges.", en: "the spec's direct heal, its signature: the simple button when a single bar drops, no charges involved." }],
     ["Temporal Echo", { fr: "sur le tank, toujours : 40 % de tes dégâts Arcane monocibles deviennent des soins sur lui depuis la v0.38 (35 % avant ; 15 % en AoE, inchangé).", en: "on the tank, always: 40% of your single-target Arcane damage becomes healing on them since v0.38 (was 35%; 15% in AoE, unchanged)." }],
     ["Aether Surge", { fr: "le builder : chaque cast pose une charge Arcane (max 4) et soigne via l'écho.", en: "the builder: each cast adds an Arcane Charge (max 4) and heals through the echo." }],
     ["Aether Darts", { fr: "le spender : consomme toutes tes charges — 5 missiles à pleine charge, le gros de ton débit de soin.", en: "the spender: consumes all your charges — 5 missiles at full charge, the bulk of your healing throughput." }],
@@ -787,12 +800,18 @@ const BUILDS = {
    ],
    rotation: [
     ["Summon Gloomshade", { fr: "le familier d’abord : Warfiend, Wraithborn, Succube et Chasseur de sorts sont retirés en v0.36 — il reste le Gloomshade (tank) et le Pyre Colossus.", en: "pet first: Warfiend, Wraithborn, Succubus and Felhunter are removed in v0.36 — what is left is the Gloomshade (tank) and the Pyre Colossus." }],
+    ["Evil Eye", { fr: "la signature, et le pivot de toute la spé : marque une cible, qui devient ta cible principale. Déplacer l’Œil garde la Condamnation accumulée, mais ne repousse pas son expiration à 20 s.", en: "the signature, and the pivot of the whole spec: it marks one enemy as your primary focus. Moving the Eye keeps the Condemnation you banked, but does not refresh its 20-sec expiry." }],
     ["Hex of Anguish", { fr: "DoT n°1, sur tout.", en: "DoT #1, on everything." }],
     ["Blackrot", { fr: "DoT n°2, il nourrit Hexstorm.", en: "DoT #2, it feeds Hexstorm." }],
-    ["Burning Pact", { fr: "DoT n°3 sur les cibles qui durent.", en: "DoT #3 on targets that last." }],
-    ["Veinleech", { fr: "le sort signature (v0.25) : DoT n°4 qui te soigne de ses dégâts — et la maîtrise le booste aussi.", en: "the signature spell (v0.25): DoT #4 that heals you for its damage — and the mastery boosts it too." }],
+    ["Needle of Fate", { fr: "ton générateur : 7 Condamnation à chaque fois qu’il pique la cible qui porte l’Œil — et chaque coup sur l’Œil principal ajoute un Fil du Destin.", en: "your generator: 7 Condemnation every time it pierces the target bearing the Eye — and each hit on the primary Eye adds a Fate Thread." }],
+    ["Maledict Gaze", { fr: "ton Œil Maudit frappe l’Œil principal tout seul, toutes les 2,5 s. Cursed Accomplice le lie à toi quand tu n’as pas d’allié sélectionné : 2 Condamnation par regard.", en: "your Maledict Eye attacks the primary Eye on its own, every 2.5s. Cursed Accomplice links it to you when no ally is selected: 2 Condemnation per gaze." }],
+    ["Hex of Violence", { fr: "toutes les 15 s : les 3 prochaines actions offensives de la cible te rendent 7 Condamnation chacune et la fouettent au passage.", en: "every 15s: the target's next 3 damaging actions each grant you 7 Condemnation and lash it in return." }],
+    ["Sentence", { fr: "le finisher : consomme TOUTE la Condamnation et tous les Fils du Destin, chaque Fil ajoutant 6 % de dégâts. La maîtrise Sentence lui donne +10 %.", en: "the finisher: consumes ALL your Condemnation and Fate Threads, each Thread adding 6% damage. The Sentence mastery gives it +10%." }],
+    ["Litany of Guilt", { fr: "toutes les 20 s : pendant 6 s, chaque gain de Condamnation envoie une vague sur 2 ennemis proches — ton AoE réelle.", en: "every 20s: for 6s, each Condemnation gain releases a wave onto 2 nearby enemies — your real AoE." }],
+    ["Cruel Pact", { fr: "12 % de tes PV contre 20 Condamnation et un peu de mana (impossible sous 20 % de vie) : le bouton qui accélère la sentence.", en: "12% of your health for 20 Condemnation and a little mana (not usable at or below 20% health): the button that brings the sentence forward." }],
+    ["Possess the Evil Eye / Hour of Judgment", { fr: "les deux grosses fenêtres : 35 Condamnation et un Needle of Fate en 1 s, puis (niv. 20) 40 Condamnation et 3 Fils du Destin d’un coup.", en: "your two big windows: 35 Condemnation and a 1-sec Needle of Fate, then (lvl 20) 40 Condemnation and 3 Fate Threads at once." }],
+    ["Coven", { fr: "sur les packs (niv. 17) : des Yeux secondaires sur 4 ennemis, qui alimentent la réserve à 50 % et reçoivent l’écho de Sentence.", en: "on packs (lvl 17): secondary Eyes on 4 enemies, feeding the shared pool at 50% and receiving the Sentence echo." }],
     ["Consume", { fr: "le filler : dégâts + vol de vie.", en: "the filler: damage + life steal." }],
-    ["Duskfire", { fr: "l'instant nuke à chaque cooldown.", en: "the instant nuke on every cooldown." }],
     ["Hard Bargain", { fr: "PV → mana pendant que les DoTs travaillent — Consume rembourse.", en: "HP → mana while the DoTs do the work — Consume pays it back." }],
     ["Abyssal Gag", { fr: "l’interrupt (ex-Gag Order) : silence en pleine incantation, école coupée 4 s.", en: "the interrupt (formerly Gag Order): silences mid-cast, school locked for 4s." }]
    ],
@@ -848,9 +867,14 @@ const BUILDS = {
     ["Raise Graveguard", { fr: "ton serviteur permanent : il provoque tout seul et intercepte 20 % des dégâts que tu prends. Toujours en premier.", en: "your permanent servant: it taunts on its own and intercepts 20% of the damage you take. Always first." }],
     ["Lich Form", { fr: "ta forme signature (ex-Dread Aspect) : 20 s de liche, +20 % de dégâts et de vitesse d’incantation, et tes morts-vivants frappent 50 % plus fort.", en: "your signature form (formerly Dread Aspect): 20s as a Lich, +20% spell damage and cast speed, and your undead hit 50% harder." }],
     ["Army of the Dead", { fr: "le burst d’invocation : Guerrier squelette, Mage d’os et Gravewing pour 20 s.", en: "the summoning burst: Skeletal Warrior, Bone Mage and Gravewing for 20s." }],
+    ["Essence Reap", { fr: "ton générateur de Fragments d’âme (5 au maximum) : c’est lui qui paie toute la nécromancie.", en: "your Soul Fragment generator (5 max): it pays for the whole necromancy." }],
+    ["Raise Skeletal Warrior / Raise Bone Mage / Raise Gravewing", { fr: "tes serviteurs permanents, dans un Domaine à 2 places : 1 fragment pour le guerrier, 2 pour le mage d’os ou le Gravewing.", en: "your permanent servants, in a 2-slot Dominion: 1 fragment for the warrior, 2 for the Bone Mage or the Gravewing." }],
+    ["Soul Lance", { fr: "ta frappe principale (8 s) : contre une cible marquée, la moitié de ses dégâts va grossir la marque.", en: "your main hit (8s): against a marked target, half its damage is added to the mark." }],
+    ["Ossuary Mark", { fr: "la marque (20 s) : elle stocke 20 % de TOUT ce que toi et tes morts-vivants infligez pendant 12 s, puis tu la fais détoner.", en: "the mark (20s): it banks 20% of EVERYTHING you and your undead deal for 12s, then you detonate it." }],
+    ["Reaping Command / Unholy Command", { fr: "les ordres : 2 fragments pour une frappe de tout le Domaine à l’unisson (8 s), 3 fragments pour +25 % de dégâts et +20 % de vitesse pendant 12 s.", en: "the commands: 2 fragments for the whole Dominion striking in unison (8s), 3 fragments for +25% damage and +20% speed for 12s." }],
     ["Hex of Anguish + Blackrot", { fr: "les deux DoTs, toujours actifs — ils arment Deepened Hex.", en: "both DoTs, always up — they arm Deepened Hex." }],
     ["Gloom Bolt", { fr: "le spam : +20 % sous DoTs, et chaque 3e rend Blackrot instantané.", en: "the spam: +20% under DoTs, and every 3rd makes Blackrot instant." }],
-    ["Duskfire", { fr: "l'instant toutes les 15 s.", en: "the instant every 15s." }],
+    ["Bone Armor / Sacrifice Undead", { fr: "tes deux façons de tenir : un bouclier de 20 % de tes PV max (45 s), ou sacrifier un serviteur pour récupérer 25 % de ta vie.", en: "your two ways to hold on: a shield worth 20% of your max health (45s), or sacrificing a servant to get 25% of your health back." }],
     ["Consume", { fr: "le filler-soin quand tu as pris des coups.", en: "the healing filler once you've taken hits." }],
     ["Abyssal Gag", { fr: "l’interrupt (ex-Gag Order).", en: "the interrupt (formerly Gag Order)." }]
    ],
@@ -876,14 +900,15 @@ const BUILDS = {
    ],
    rotation: [
     ["Harrier's Guise", { fr: "l'aspect PA, toujours actif.", en: "the AP aspect, always on." }],
-    ["Sureflight Aura", { fr: "le buff signature (v0.25) : +10 % de PA pour tout le groupe pendant 30 min.", en: "the signature buff (v0.25): +10% AP for the whole group for 30 min." }],
+    ["Measured Shot", { fr: "ton générateur : il rend 20 Concentration à chaque tir touché — c’est lui qui paie les Long Draw.", en: "your generator: it restores 20 Focus on every landed shot — it is what pays for your Long Draws." }],
     ["Wildbond", { fr: "apprivoise un familier tank (l'Auto Shot suit ton arme depuis la v0.23).", en: "tame a tanky pet (Auto Shot follows your weapon since v0.23)." }],
     ["Venom Barb", { fr: "le DoT, à entretenir.", en: "the DoT, keep it up." }],
     ["Long Draw", { fr: "à chaque cooldown — ta plus grosse flèche, très talentée.", en: "on every cooldown — your biggest arrow, heavily talented." }],
     ["Fell Shot", { fr: "l'instant entre deux.", en: "the instant in between." }],
     ["Volley", { fr: "l'AoE sur les packs.", en: "the AoE on packs." }],
     ["Hushing Shot", { fr: "l'interrupt (v0.25) : le seul qui coupe à distance — sur Malric, c'est toi.", en: "the interrupt (v0.25): the only ranged one — on Malric, that's you." }],
-    ["Fevered Draw", { fr: "+40 % de hâte pendant 15 s : le bouton burst des boss.", en: "+40% haste for 15s: the boss burst button." }]
+    ["Fevered Draw", { fr: "6 tirs en 2,4 s, EN MOUVEMENT (12 s) : la fenêtre à utiliser pendant les déplacements.", en: "6 shots over 2.4s, ON THE MOVE (12s): the window to use while repositioning." }],
+    ["Cold Focus", { fr: "la signature (CD 90 s) : 12 s où Measured Shot rend 50 % de Concentration en plus et où Long Draw coûte 25 % de moins et part 30 % plus vite.", en: "the signature (90s CD): 12s where Measured Shot restores 50% more Focus and Long Draw costs 25% less and casts 30% faster." }]
    ],
    astuce: { fr: "Garde tes 8 yards : en dessous de la portée minimale, la barre d'action te grise les tirs (nouveau en v0.24). Et depuis la v0.35, remplis ta main gauche : quatre carquois existent, du vert de Mogger (20 %) à l’épique du raid Nythraxis (14 %) — du budget de stats que le chasseur n’avait jamais eu.",
              en: "Keep your 8 yards: below minimum range, the action bar greys out your shots (new in v0.24). And since v0.35, fill your off-hand: four quivers exist, from Mogger’s uncommon (20%) to the Nythraxis raid epic (14%) — stat budget hunters never had." }
@@ -891,8 +916,8 @@ const BUILDS = {
   {
    tag: "Packlord (beast mastery)",
    spec: "Packlord (beast mastery)",
-   mastery: { fr: "Packbond : ton familier inflige +35 % de dégâts, et toi +8 % de PV max",
-              en: "Packbond: your pet deals +35% damage, and you gain +8% max health" },
+   mastery: { fr: "Packbond : ton familier inflige +25 % de dégâts, et toi +8 % de PV max",
+              en: "Packbond: your pet deals +25% damage, and you gain +8% max health" },
    pourquoi: { fr: "Le maître des bêtes : ton familier fait le gros du travail (et l'encaisse à ta place), Howling Rage double ses dégâts, et Wildfang Rally buffe tout le groupe. La spé confort — solo, leveling, et très honnête en donjon.",
                en: "The beast master: your pet does the heavy lifting (and takes the hits for you), Howling Rage doubles its damage, and Wildfang Rally buffs the whole group. The comfort spec — solo, leveling, and perfectly honest in dungeons." },
    stats: { fr: "Agilité > Crit > Hâte > Endurance", en: "Agility > Crit > Haste > Stamina" },
@@ -907,11 +932,12 @@ const BUILDS = {
    rotation: [
     ["Wildbond", { fr: "apprivoise une bête solide — c'est elle, ta spé.", en: "tame a sturdy beast — it IS your spec." }],
     ["Harrier's Guise", { fr: "l'aspect PA, toujours actif.", en: "the AP aspect, always on." }],
-    ["Wildfang Rally", { fr: "le buff de groupe, à renouveler toutes les 5 min.", en: "the group buff, refresh every 5 min." }],
+    ["Pack Command", { fr: "ta frappe de base (4 s) : le familier frappe, et le coup te rend 20 Concentration.", en: "your bread-and-butter (4s): the pet strikes, and the hit gives you 20 Focus back." }],
     ["Howling Rage", { fr: "ton sort signature (CD 120 s) : +20 % PA pour toi, +100 % de dégâts pour le familier pendant 15 s.", en: "your signature spell (120s CD): +20% AP for you, +100% pet damage for 15s." }],
     ["Venom Barb", { fr: "le DoT, à entretenir.", en: "the DoT, keep it up." }],
-    ["Fell Shot ×2", { fr: "les instants (+ venin de Viperfletch) entre deux autos.", en: "the instants (+ Viperfletch venom) between autos." }],
-    ["Long Draw", { fr: "quand tu es posé.", en: "when you can stand still." }],
+    ["Unleash Beast", { fr: "le dépensier : 3 Férocités de meute pour une frappe du familier suivie d’une claque sur tout ce qui est à 6 m. Howling Rage le renforce de 50 %.", en: "the spender: 3 Pack Ferocity for a pet strike followed by a clap on everything within 6m. Howling Rage empowers it by 50%." }],
+    ["Stampede", { fr: "le gros cooldown (90 s, niv. 17) : 3 bêtes pendant 12 s, chacune frappant toutes les 2 s.", en: "the big cooldown (90s, lvl 17): 3 beasts for 12s, each attacking every 2s." }],
+    ["Fell Shot ×2", { fr: "les instants entre deux autos.", en: "the instants between autos." }],
     ["Volley", { fr: "l'AoE sur les packs.", en: "the AoE on packs." }],
     ["Patch Up", { fr: "soigne (ou relève) le familier entre deux packs.", en: "heal (or revive) the pet between packs." }],
     ["Hushing Shot", { fr: "l'interrupt à distance.", en: "the ranged interrupt." }]
@@ -936,14 +962,16 @@ const BUILDS = {
     ["Chain Reaction", "niv. 20", { fr: "Frostjaw Trap marque tout dans 4 m, et tes 3 dépenses suivantes rebondissent à 40 % entre les cibles marquées.", en: "Frostjaw Trap marks everything within 4m, and your next 3 spenders echo 40% between marked targets." }]
    ],
    rotation: [
-    ["Venom Barb", { fr: "le DoT boosté par Deepvenom, à entretenir partout.", en: "the Deepvenom-boosted DoT, keep it up everywhere." }],
-    ["Fell Shot", { fr: "l'instant + venin de Viperfletch.", en: "the instant + Viperfletch venom." }],
+    ["Venom Barb", { fr: "le DoT, à entretenir partout.", en: "the DoT, keep it up everywhere." }],
+    ["Fell Shot", { fr: "l’instant entre deux frappes.", en: "the instant between strikes." }],
     ["Bloodhook", { fr: "ta nouvelle signature (v0.36) : une charge qui pose une plaie de 34 dégâts de base + 26 % de ta puissance à distance sur 12 s.", en: "your new signature (v0.36): a charge that leaves a wound worth 34 base damage + 26% of your ranged attack power over 12s." }],
-    ["Gutting Strike", { fr: "au corps à corps : la frappe chargée — et Predator’s Pace te rend 20 % de vitesse à chaque coup réussi.", en: "in melee: the loaded strike — and Predator’s Pace grants 20% speed on every landed hit." }],
-    ["Fettering Slash / Rattling Shot", { fr: "les slows (jusqu'à −70 % avec Pinning Barb) : le kite permanent.", en: "the slows (down to −70% with Pinning Barb): permanent kiting." }],
+    ["Gutting Strike", { fr: "au corps à corps : elle rend 15 Concentration et empile Hunting Momentum (3 max, 8 s) — et Predator’s Pace te rend 20 % de vitesse à chaque coup réussi.", en: "in melee: it restores 15 Focus and stacks Hunting Momentum (3 max, 8s) — and Predator’s Pace grants 20% speed on every landed hit." }],
+    ["Woundrend", { fr: "le dépensier : sur une cible qui porte ta plaie de Bloodhook, il déclenche un tic de plaie en plus — et à 3 Hunting Momentum, il frappe 45 % plus fort.", en: "the spender: against a target carrying your Bloodhook wound it triggers an extra wound tick — and at 3 Hunting Momentum it hits 45% harder." }],
+    ["Shrapnel Charge", { fr: "l’AoE courte (12 s) : la cible plus 4 ennemis à 6 m, qui saignent en prime.", en: "the short AoE (12s): the target plus 4 enemies within 6m, who bleed on top." }],
+    ["Fettering Slash / Rattling Shot", { fr: "les deux ralentissements : le kite permanent.", en: "your two slows: permanent kiting." }],
     ["Volley", { fr: "l'AoE.", en: "the AoE." }],
     ["Hushing Shot", { fr: "l'interrupt.", en: "the interrupt." }],
-    ["Fevered Draw", { fr: "le burst — en boucle grâce à Redline Draw.", en: "the burst — on a loop thanks to Redline Draw." }]
+    ["Bloodtrail Assault", { fr: "le gros cooldown (90 s, niv. 17) : 12 s où Bloodhook contamine 2 ennemis proches et où Woundrend commande une attaque du familier.", en: "the big cooldown (90s, lvl 17): 12s where Bloodhook spreads to 2 nearby enemies and Woundrend commands a pet attack." }]
    ],
    astuce: { fr: "Frostjaw Trap remplace Wyvern Sting comme contrôle : avec Binding Payload il immobilise 3 s puis ralentit de 40 %, et Trapcraft te rend 20 Concentration à chaque déclenchement. Pose-le AVANT le pull, pas après.",
              en: "Frostjaw Trap replaces Wyvern Sting as your control: with Binding Payload it roots for 3s then slows by 40%, and Trapcraft returns 20 Focus on every trigger. Lay it BEFORE the pull, not after." }

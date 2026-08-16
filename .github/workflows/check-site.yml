@@ -68,6 +68,15 @@ jobs:
         with:
           node-version: '20'
 
+      # 16 août 2026 : un joueur signale que la rotation du Paladin propose
+      # encore cinq sorts retirés du grimoire à la refonte v0.36. Rien ne
+      # pouvait le voir — les noms des guides sont rendus par JavaScript, et un
+      # sort retiré garde sa fiche Codex. Ce contrôle relit les 36 builds
+      # (Builds + PvP) : spé, maîtrise, niveau de chaque talent, et chaque nom
+      # de rotation confronté au kit réel de la spé.
+      - name: Rotations et talents des guides
+        run: node scripts/check_builds.mjs --kb wocc-knowledge-base
+
       - name: Installer Chromium
         run: |
           npm install --no-save playwright@1.62.1
