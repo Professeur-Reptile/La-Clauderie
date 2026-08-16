@@ -157,7 +157,7 @@ se limite à la partie rédactionnelle des « Nouveautés » :
    - **Toutes les classes, toutes les spés, à chaque fois** (consigne du
      16 août 2026 : « il faut que tu t'assures tout le temps que toutes les
      rotations sont bonnes sur toutes les classes »). Ça ne se fait plus à la
-     main : `node scripts/check_builds.mjs` relit les **36 builds** des deux
+     main : `node scripts/check_guides.mjs` relit les **36 builds** des deux
      guides (`const BUILDS` de `bis.html` + `const PVP` de `pvp.html`) et
      tourne en CI. Attention au piège qui a laissé passer dix mois d'erreurs :
      une classe à plusieurs spés pour un rôle range ses builds dans une
@@ -170,6 +170,14 @@ se limite à la partie rédactionnelle des « Nouveautés » :
      la signature de la spé. Il signale en plus, sans bloquer, une rotation qui
      ignore la moitié des capacités propres à sa spé : c'est le symptôme d'une
      refonte passée à côté du guide.
+   - Le même script couvre les deux autres pages écrites à la main : le tableau
+     d'**enchantements** de `metiers.html` (chaque bonus et chaque matériau
+     confrontés à `ENCHANTS.json`) et le tableau des **montures** (aucune rênes
+     du jeu ne doit manquer). Les deux avaient dérivé : il manquait
+     « Enchant Offhand - Stamina », et deux montures du catalogue (Drakemaw
+     Raptor, Terrorspark Groundshaker) — que le jeu, lui, n'attribue par
+     aucune table aujourd'hui, ce que la page dit maintenant au lieu de les
+     taire.
 3quater. **Les vérifications tournent en CI** (`check-site.yml`, appelé par les
    deux workflows de déploiement : un site cassé ne part plus en ligne). Pour
    un retour immédiat avant de pousser, les lancer à la main —

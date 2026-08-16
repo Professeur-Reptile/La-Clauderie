@@ -1,7 +1,9 @@
 // -----------------------------------------------------------------------------
 // Vérification des GUIDES RÉDIGÉS À LA MAIN contre les données du jeu :
-//   - `const BUILDS` de bis.html  (spé, maîtrise, talents, rotation)
-//   - `const PVP`    de pvp.html  (spé, talents, plan de match)
+//   - `const BUILDS` de bis.html      (spé, maîtrise, talents, rotation)
+//   - `const PVP`    de pvp.html      (spé, talents, plan de match)
+//   - `const ENCH`   de metiers.html  (enchantements : bonus et matériaux)
+//   - le tableau des montures de montures.html (aucune monture oubliée)
 //
 // Ce que ça contrôle, build par build — 18 dans bis.html, car une classe peut
 // avoir plusieurs spés pour un même rôle :
@@ -30,7 +32,7 @@
 // que le navigateur exécute, donc aucun risque de désaccord entre ce que voit
 // ce script et ce que voit le joueur.
 //
-// Usage :  node scripts/check_builds.mjs [--kb <dossier de la knowledge base>]
+// Usage :  node scripts/check_guides.mjs [--kb <dossier de la knowledge base>]
 // Tourne en CI (check-site.yml) : un guide périmé ne part plus en ligne.
 // -----------------------------------------------------------------------------
 import { readFile } from 'node:fs/promises';
@@ -44,8 +46,8 @@ const fold = (s) => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '')
   .replace(/[’‘]/g, "'").toLowerCase().trim();
 
 const readJson = async (name) => JSON.parse(await readFile(`${KB}/data/${name}.json`, 'utf8'));
-const [ABILITIES, TALENTS, CLASSES] = await Promise.all(
-  [readJson('ABILITIES'), readJson('TALENTS'), readJson('CLASSES')]);
+const [ABILITIES, TALENTS, CLASSES, ENCHANTS, ITEMS] = await Promise.all(
+  [readJson('ABILITIES'), readJson('TALENTS'), readJson('CLASSES'), readJson('ENCHANTS'), readJson('ITEMS')]);
 
 // Une capacité ACCORDABLE est dans le kit de classe, accordée par une option de
 // talent, ou signature d'une spé. Le reste existe dans les données sans qu'aucun
@@ -186,14 +188,32 @@ function checkCoverage(where, cls, spec, cited) {
   }
 }
 
-/** Le littéral `const X = {…};` d'une page, évalué comme le fait le navigateur. */
+/** Le littéral `const X = {…}` ou `const X = […]` d'une page, évalué comme le
+ *  fait le navigateur : on suit les accolades/crochets en ignorant ce qui est
+ *  entre guillemets, donc aucun risque de couper au milieu d'un texte. */
 async function guideBlock(page, constName) {
   const html = await readFile(page, 'utf8');
-  const start = html.indexOf(`const ${constName} = {`);
-  if (start === -1) throw new Error(`${page} : bloc ${constName} introuvable`);
-  const end = html.indexOf('\n};', start);
-  const literal = html.slice(html.indexOf('{', start), end + 2);
-  return new Function(`return ${literal};`)();
+  const decl = html.indexOf(`const ${constName} = `);
+  if (decl === -1) throw new Error(`${page} : bloc ${constName} introuvable`);
+  const open = decl + `const ${constName} = `.length;
+  const closing = { '{': '}', '[': ']' }[html[open]];
+  if (!closing) throw new Error(`${page} : ${constName} n'est ni un objet ni un tableau`);
+  let depth = 0, quote = '';
+  for (let i = open; i < html.length; i++) {
+    const c = html[i];
+    if (quote) {
+      if (c === '\\') i += 1;
+      else if (c === quote) quote = '';
+      continue;
+    }
+    if (c === '"' || c === "'" || c === '`') { quote = c; continue; }
+    if (c === html[open]) depth += 1;
+    else if (c === closing) {
+      depth -= 1;
+      if (depth === 0) return new Function(`return ${html.slice(open, i + 1)};`)();
+    }
+  }
+  throw new Error(`${page} : fin du bloc ${constName} introuvable`);
 }
 
 let count = 0;
@@ -223,9 +243,50 @@ for (const [cls, build] of Object.entries(PVP)) {
   checkBuild(`pvp.html ${cls}`, cls, null, { ...build, plan: bolds }, ['plan']);
 }
 
+// --- Enchantements (metiers.html) -------------------------------------------
+// Le guide Enchantement est rédigé à la main ; le jeu, lui, publie son registre
+// (src/sim/content/enchants.ts → data/ENCHANTS.json). Un enchantement ajouté par
+// une MAJ passait donc inaperçu : « Enchant Offhand - Stamina » manquait au
+// tableau (trouvé le 16 août 2026 en repassant tout le site).
+const ENCH = await guideBlock('metiers.html', 'ENCH');
+const enchByName = new Map(Object.values(ENCHANTS).map((e) => [e.name, e]));
+const listed = new Set(ENCH.map((e) => e.n));
+for (const e of Object.values(ENCHANTS)) {
+  if (!listed.has(e.name)) fail('metiers.html', `enchantement absent du guide : « ${e.name} »`);
+}
+for (const e of ENCH) {
+  const ref = enchByName.get(e.n);
+  if (!ref) { fail('metiers.html', `enchantement « ${e.n} » inconnu du jeu`); continue; }
+  const [stat, value] = Object.entries(ref.statBonus ?? {})[0] ?? [];
+  if (stat !== e.stat || value !== e.v) {
+    fail('metiers.html', `« ${e.n} » : le guide annonce ${e.stat} +${e.v}, le jeu ${stat} +${value}`);
+  }
+  if (ref.itemSlot !== e.slot) {
+    fail('metiers.html', `« ${e.n} » : emplacement ${e.slot} dans le guide, ${ref.itemSlot} dans le jeu`);
+  }
+  const want = (ref.reagents ?? []).map((r) => `${r.itemId}x${r.count}`).sort().join(',');
+  const got = (e.reg ?? []).map((r) => `${r.id}x${r.c}`).sort().join(',');
+  if (want !== got) fail('metiers.html', `« ${e.n} » : matériaux ${got || '(aucun)'} au lieu de ${want}`);
+}
+count += ENCH.length;
+
+// --- Montures (montures.html) -----------------------------------------------
+// Le catalogue du jeu compte 9 montures ; la page n'en listait que 7 (les deux
+// dernières n'ont pas encore de source, ce que la page doit dire plutôt que de
+// les passer sous silence). On vérifie donc que chaque rênes du jeu apparaît.
+const mountsPage = await readFile('montures.html', 'utf8');
+for (const [id, item] of Object.entries(ITEMS)) {
+  if (!item.mount) continue;
+  count += 1;
+  if (!mountsPage.includes(id)) {
+    fail('montures.html', `monture absente du guide : ${item.name} (${id})`);
+  }
+}
+
 if (problems.length) {
   for (const line of problems) console.log(line);
-  console.log(`\n${problems.length} problème(s) sur ${count} builds vérifiés.`);
+  console.log(`\n${problems.length} problème(s) sur ${count} entrées vérifiées.`);
   process.exit(1);
 }
-console.log(`✓ ${count} builds vérifiés : spés, maîtrises, talents et rotations collent aux données du jeu.`);
+console.log(`✓ ${count} entrées vérifiées (builds, enchantements, montures) : les guides `
+  + `écrits à la main collent aux données du jeu.`);
