@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Nouveautés v0.38.2 — La Clauderie</title>
+<meta name="description" content="Les nouveautés de la v0.38.2 de World of ClaudeCraft, expliquées simplement : un correctif de deux bugs hérités de la v0.38.0. Les trois pierres de garde de l’arène de Nythraxis étaient invisibles pour presque tout le raid — or elles sont le seul moyen de couper Deathless Rage, qui inflige 82 % de la vie maximale en normal et 115 % en héroïque. Et l’écran pouvait devenir entièrement noir en qualité Élevée ou Ultra sur Linux avec une carte NVIDIA. Aucune valeur de combat ne change.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Nouveautés v0.38.2 — La Clauderie">
+<meta property="og:description" content="Les nouveautés de la v0.38.2 de World of ClaudeCraft, expliquées simplement : un correctif de deux bugs hérités de la v0.38.0. Les trois pierres de garde de l’arène de Nythraxis étaient invisibles pour presque tout le raid — or elles sont le seul moyen de couper Deathless Rage, qui inflige 82 % de la vie maximale en normal et 115 % en héroïque. Et l’écran pouvait devenir entièrement noir en qualité Élevée ou Ultra sur Linux avec une carte NVIDIA. Aucune valeur de combat ne change.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.38.2.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.38.2.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') === 'en') location.replace('v0.38.2.en.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Notes de version</p>
+    <h1>Nouveautés <span class="v">v0.38.2</span></h1>
+    <p class="lede">Un correctif, deux bugs, tous deux hérités de la v0.38.0. Le plus grave touchait le raid : <strong class="hl">les trois pierres de garde de l’arène de Nythraxis étaient invisibles</strong> pour à peu près tout le monde — or ce sont elles, et elles seules, qui coupent <strong class="hl">Deathless Rage</strong>. Le second rendait <strong class="hl">l’écran entièrement noir</strong> en qualité graphique élevée sur certaines machines. Aucune valeur de combat, aucun objet, aucune donnée ne change.</p>
+    <div class="meta">
+      <span><b>Publiée</b> le 16 août 2026</span>
+      <span><b>Depuis</b> la v0.38.1</span>
+      <span><b>2</b> corrections</span>
+    </div>
+    <div class="hint">💡 Clique sur une carte pour le détail.</div>
+  </header>
+
+  <!-- Bandeau constant : mêmes rubriques, même ordre, à chaque version. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">En un coup d’œil</h2>
+    <p class="sec-sub">Les mêmes rubriques à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
+    <ol>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <span class="d-name">Classes &amp; sorts</span>
+        <span class="d-say"><b class="eq">Toutes =</b> aucune valeur de combat ne bouge : ni sort, ni talent, ni maîtrise, ni objet. Tout le rééquilibrage des tanks de la v0.38.0 reste en place.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <span class="d-name">Métiers &amp; récolte</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#nythraxis">Donjons, failles &amp; boss</a>
+        <span class="d-say"><strong class="hl">Les trois pierres de garde de l’arène de Nythraxis sont revenues</strong>. Invisibles depuis la v0.38.0 pour presque tout le raid, elles sont le seul moyen de couper Deathless Rage — la mort assurée en héroïque.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <span class="d-name">Monde &amp; quêtes</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <span class="d-name">Guilde &amp; social</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#ecran-noir">Confort &amp; technique</a>
+        <span class="d-say">Fini <strong class="hl">l’écran entièrement noir</strong> en qualité Élevée et Ultra sur Linux avec une carte NVIDIA et Chrome. Les qualités Basse et Moyenne n’ont jamais été touchées.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="nythraxis">
+    <h2><span class="num">01</span>Nythraxis : tes pierres de garde sont revenues</h2>
+    <p class="sec-sub">Si depuis la v0.38.0 ton raid ne voyait plus les pierres de l’arène et mangeait Deathless Rage en pleine figure sans pouvoir rien faire : ce n’était pas une nouvelle difficulté, c’était un bug. Il est corrigé.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="pierres" tabindex="0" role="button" aria-label="Détails : pourquoi les pierres avaient disparu">
+        <h3>Ce qui se passait <span class="chip c-fix">Corrigé</span></h3>
+        <p>Les trois pierres de l’arène partagent leur objet avec une vieille quête de zone 2, <span data-codex="quest|The Sunken Bastion">The Sunken Bastion</span>. Depuis la v0.38.0, le jeu <strong class="hl">masque les objets de quête à qui n’a pas la quête en cours</strong> — donc à tous ceux qui l’avaient finie ou jamais prise. Plus de pierre, plus de marque sur la minicarte, plus rien à activer.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="rage" tabindex="0" role="button" aria-label="Détails : Deathless Rage et le canal des pierres">
+        <h3>Pourquoi c’était grave <span class="chip c-raid">Raid</span></h3>
+        <ul>
+          <li>En seconde phase (sous <strong class="hl">70 %</strong> de sa vie), <span data-codex="mob|Nythraxis, Scourge of Thornpeak">Nythraxis</span> lance Deathless Rage <strong class="hl">toutes les 45 s</strong>, avec 10 s d’incantation.</li>
+          <li>Le seul contre, ce sont les <strong class="hl">trois pierres</strong> : trois joueurs différents, 5 s de canalisation chacun, avant la fin de l’incantation.</li>
+          <li>Réussi, le sort est coupé et le boss est <strong class="hl">étourdi 5 s</strong>. Raté, il touche tout le monde dans la salle pour <strong class="hl">82 % de la vie maximale</strong> — et <strong class="hl">115 % en héroïque</strong>, c’est-à-dire un wipe.</li>
+        </ul>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Ce qui ne change pas <span class="chip c-util">Portée</span></h3>
+        <ul>
+          <li>La <span data-codex="item|Bastion Ward Stone">Bastion Ward Stone</span> à ramasser dehors pour la quête reste <strong class="hl">masquée tant que tu n’as pas la quête</strong> : c’est le comportement voulu de la v0.38.0, et il est conservé.</li>
+          <li>Les reliques à ramasser de la crypte d’attunement restent elles aussi masquées hors quête.</li>
+          <li>Seuls les objets qu’un donjon déclare explicitement « on interagit, on ne ramasse pas » échappent au masquage — aujourd’hui, les trois pierres de l’arène.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="ecran-noir">
+    <h2><span class="num">02</span>L’écran noir en qualité élevée</h2>
+    <p class="sec-sub">Sur Linux avec une carte NVIDIA et Chrome, le jeu pouvait afficher une image entièrement noire en qualité Élevée ou Ultra depuis la v0.38.0. Basse et Moyenne n’ont jamais été concernées.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="ecran" tabindex="0" role="button" aria-label="Détails : d’où venait l’écran noir">
+        <h3>D’où ça venait <span class="chip c-fix">Corrigé</span></h3>
+        <p>Sur les touffes d’herbe et les arêtes de bâtiments vues de très biais, un calcul d’éclairage produisait une valeur <strong class="hl">invalide</strong>. Le flou lumineux (bloom) l’étalait ensuite sur <strong class="hl">toute l’image</strong>, et l’image entière virait au noir.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Qui était touché <span class="chip c-util">Périmètre</span></h3>
+        <ul>
+          <li>Uniquement les qualités <strong class="hl">Élevée et au-dessus</strong> : ce sont les seules à passer par le traitement d’image final qui ajoute le bloom.</li>
+          <li>En Basse et Moyenne, l’image part directement à l’écran dans un format qui <strong class="hl">écrase les valeurs invalides</strong> — d’où l’absence totale de symptôme.</li>
+          <li>Le défaut n’apparaissait que sur un pilote graphique précis, constaté sur <strong class="hl">Linux + NVIDIA + Chrome</strong>. Rien à voir avec ta configuration de jeu.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Pour que ça ne revienne pas <span class="chip c-new">Garde-fou</span></h3>
+        <ul>
+          <li>La correction est <strong class="hl">neutre visuellement</strong> : elle ne se déclenche que sur la valeur invalide, jamais sur une surface normale.</li>
+          <li>Deux tests figent le résultat : l’un vérifie la protection dans le moteur 3D lui-même, l’autre le nettoyage juste avant l’affichage.</li>
+          <li>Si une future mise à jour du moteur 3D retire l’un ou l’autre, <strong class="hl">le test échoue avant la sortie</strong>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="reste">
+    <h2><span class="num">03</span>Et rien d’autre</h2>
+    <p class="sec-sub">C’est un correctif au sens strict. Tout ce que la v0.38.0 a apporté la veille reste exactement en place.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Rien ne bouge côté jeu <span class="chip c-util">Portée</span></h3>
+        <ul>
+          <li>Aucune valeur de combat : ni sort, ni talent, ni maîtrise, ni panoplie.</li>
+          <li>Aucun objet, aucun monstre, aucune quête, aucune zone.</li>
+          <li>Aucune migration de données : rien à refaire sur ton personnage.</li>
+          <li>Aucun texte modifié dans aucune langue.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Les décors n’ont pas changé <span class="chip c-util">Coulisses</span></h3>
+        <ul>
+          <li>27 modèles 3D d’Eastbrook et de Fenbridge ont été <strong class="hl">re-tamponnés</strong> à l’occasion de la correction.</li>
+          <li>Seule leur empreinte interne change : <strong class="hl">géométrie et textures identiques</strong>, taille identique, aucune différence à l’écran.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>La v0.38.0 tient toujours <span class="chip c-util">Rappel</span></h3>
+        <ul>
+          <li>Le rééquilibrage des quatre tanks, <span data-codex="ability|challenging_roar">Baleful Roar</span> et <span data-codex="ability|frenzied_regeneration">Savage Mending</span> sur l’ours : tout est en place.</li>
+          <li>Les rangs 20 de la Chronomancie, le rabotage de <span data-codex="spec|Thuggery">Thuggery</span>, l’honneur de défaite en arène : idem.</li>
+          <li>Tout est détaillé sur la <a href="v0.38.0.html">page de la v0.38.0</a>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    pierres: {
+      title: "Pourquoi les pierres de l’arène avaient disparu",
+      summary: "Elles portent le même objet qu’une pierre de quête de zone 2. La v0.38.0 s’est mise à masquer les objets de quête hors quête — et a emporté les pierres du raid avec.",
+      body: `
+        <h4>Le point de départ</h4>
+        <p>La v0.38.0 a corrigé quelque chose de gênant : les objets à ramasser d’une quête traînaient au sol même pour les joueurs qui n’avaient pas la quête. Depuis, le jeu ne les affiche que si la quête est <b>en cours</b> — ni avant, ni après l’avoir rendue.</p>
+        <h4>La collision</h4>
+        <ul>
+          <li>Les trois pierres de l’arène de Nythraxis réutilisent l’objet <b>Bastion Ward Stone</b>, qui est aussi la pierre à rapporter pour la quête <b>The Sunken Bastion</b>, dans le fen de la zone 2.</li>
+          <li>Le masquage regarde l’objet, pas l’endroit. Il a donc conclu que les pierres de l’arène étaient des objets de quête, et les a cachées à tous ceux qui n’avaient pas cette quête au journal.</li>
+          <li>Autrement dit : à peu près <b>tout le raid</b>. La quête se prend au niveau 12 ; qui a fini de la rendre ne l’a plus au journal, et qui l’a sautée ne l’a jamais eue.</li>
+        </ul>
+        <h4>Ce qui disparaissait, exactement</h4>
+        <p>Tout, d’un coup : <b>pas de modèle</b> au sol, <b>pas de marque</b> sur la minicarte, et <b>rien à cibler</b> pour interagir. Impossible de deviner qu’une pierre se trouvait là, et donc impossible de canaliser.</p>
+        <h4>La correction</h4>
+        <ul>
+          <li>Un donjon peut désormais déclarer un objet comme « <b>on interagit avec, on ne le ramasse pas</b> » : c’est une mécanique de combat, pas une collecte.</li>
+          <li>Les trois pierres de l’arène sont déclarées ainsi, et le masquage ne les touche plus jamais, quelle que soit ta situation vis-à-vis de la quête.</li>
+          <li>Le reste ne bouge pas : la pierre à ramasser dehors <b>reste masquée</b> hors quête, et les reliques à ramasser de la crypte aussi. Seul un objet explicitement déclaré échappe à la règle.</li>
+        </ul>
+        <h4>Le garde-fou</h4>
+        <p>Une série de tests fige les deux moitiés du comportement : les trois pierres du raid doivent être visibles pour un joueur qui n’a jamais pris la quête <i>et</i> pour un joueur qui l’a rendue ; la pierre du dehors, elle, doit rester invisible hors quête et réapparaître dès qu’on prend la quête.</p>`
+    },
+    rage: {
+      title: "Deathless Rage, et le rôle exact des trois pierres",
+      summary: "Le sort le plus dangereux du combat. Sans les pierres, il n’existe aucun autre moyen de l’arrêter.",
+      body: `
+        <h4>Quand ça arrive</h4>
+        <ul>
+          <li>Le sort n’existe qu’en <b>seconde phase</b>, c’est-à-dire sous <b>70 %</b> de la vie du boss.</li>
+          <li>À partir de là, il revient <b>toutes les 45 secondes</b>, et son incantation dure <b>10 secondes</b>.</li>
+        </ul>
+        <h4>Le contre</h4>
+        <ul>
+          <li>Les trois pierres forment un large triangle devant le boss : le raid doit <b>se séparer</b> pour les atteindre.</li>
+          <li>Chacune demande <b>5 secondes de canalisation</b>, et il faut <b>trois joueurs différents</b> — une même personne ne peut pas en faire deux.</li>
+          <li>Il faut rester <b>à portée</b> (5 mètres) sans mourir ni se faire étourdir : la canalisation s’interrompt sinon, et la pierre repart à zéro.</li>
+          <li>Les trois doivent être terminées <b>avant la fin des 10 secondes</b>. À ce moment-là le sort est coupé net et Nythraxis est <b>étourdi 5 secondes</b>.</li>
+        </ul>
+        <h4>Si ça passe</h4>
+        <ul>
+          <li>Le sort frappe <b>tous les joueurs présents dans la salle</b>, sans exception ni réduction.</li>
+          <li>En difficulté normale : <b>82 % de la vie maximale</b> de chacun. Survivable seulement si le raid est proche du plein.</li>
+          <li>En héroïque : <b>115 % de la vie maximale</b>. Aucune barre de vie ne suffit — c’est un wipe.</li>
+          <li>En héroïque toujours, une Deathless Rage qui aboutit fait en plus <b>relever la cour</b> du boss dans la foulée.</li>
+        </ul>
+        <h4>Ce que ça donnait avec le bug</h4>
+        <p>Un raid qui ne voit aucune pierre n’a <b>aucun autre moyen</b> d’arrêter le sort : il n’est ni interruptible ni esquivable. Le combat devenait donc impossible en héroïque à partir de 70 % de la vie du boss, et très punitif en normal.</p>`
+    },
+    ecran: {
+      title: "L’écran noir en qualité Élevée et Ultra",
+      summary: "Une valeur de calcul invalide sur une touffe d’herbe, étalée par le flou lumineux sur l’image entière.",
+      body: `
+        <h4>Ce que voyaient les joueurs concernés</h4>
+        <p>Pas un scintillement ni un artefact dans un coin : <b>l’image entière en noir</b>, interface comprise dans la zone de rendu. Le jeu tournait, mais on ne voyait plus rien.</p>
+        <h4>La cause</h4>
+        <ul>
+          <li>Chaque surface a une orientation qui sert à calculer sa lumière. Sur les <b>touffes d’herbe</b> et les <b>arêtes de bâtiments vues de très biais</b>, cette orientation peut tomber à zéro.</li>
+          <li>Le moteur 3D la remet alors à l’échelle — une division par zéro, qui produit une valeur <b>invalide</b> (« pas un nombre »).</li>
+          <li>Cette valeur contamine l’éclairage du pixel, puis le <b>flou lumineux</b> l’étale de proche en proche sur toute l’image. Le dernier traitement, celui qui règle les contrastes, la traduit en noir sur la totalité de l’écran.</li>
+        </ul>
+        <h4>Pourquoi seulement en qualité élevée</h4>
+        <p>Les qualités Élevée et au-dessus font passer l’image par un <b>traitement final</b> (bloom, contrastes) dans un format capable de représenter des valeurs invalides. En Basse et Moyenne, l’image part directement à l’écran dans un format qui <b>écrase</b> ces valeurs — le défaut existait, mais il ne pouvait pas se voir.</p>
+        <h4>Pourquoi maintenant</h4>
+        <p>Le comportement vient de la mise à jour du moteur 3D livrée par la v0.38.0. L’ancienne version ne butait pas dessus sur ce pilote ; la nouvelle, si, sur la version OpenGL du pilote graphique — la combinaison constatée est <b>Linux + NVIDIA + Chrome</b>.</p>
+        <h4>La correction</h4>
+        <ul>
+          <li>Dans le moteur 3D, une orientation devenue nulle est <b>remplacée par une orientation valide</b> au lieu de partir en division par zéro. C’est sans effet sur toutes les surfaces normales, donc <b>sans changement visuel</b>.</li>
+          <li>Juste avant l’affichage, le jeu <b>nettoie</b> en plus les valeurs invalides restantes, sur l’image comme sur le flou lumineux — une ceinture en plus des bretelles, au cas où un autre pilote en produirait ailleurs.</li>
+        </ul>`
+    },
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

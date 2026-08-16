@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Patch notes v0.38.2 — La Clauderie</title>
+<meta name="description" content="The v0.38.2 release of World of ClaudeCraft in plain language: a two-bug hotfix inherited from v0.38.0. The three wardstones in the Nythraxis arena were invisible to nearly the whole raid — and they are the only counter to Deathless Rage, which hits for 82% of max health on normal and 115% on heroic. And the screen could go fully black on High or Ultra graphics on Linux with an NVIDIA card. No combat value changes.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Patch notes v0.38.2 — La Clauderie">
+<meta property="og:description" content="The v0.38.2 release of World of ClaudeCraft in plain language: a two-bug hotfix inherited from v0.38.0. The three wardstones in the Nythraxis arena were invisible to nearly the whole raid — and they are the only counter to Deathless Rage, which hits for 82% of max health on normal and 115% on heroic. And the screen could go fully black on High or Ultra graphics on Linux with an NVIDIA card. No combat value changes.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.38.2.en.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.38.2.en.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') !== 'en') location.replace('v0.38.2.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Site navigation"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Patch notes</p>
+    <h1>Patch notes <span class="v">v0.38.2</span></h1>
+    <p class="lede">One hotfix, two bugs, both inherited from v0.38.0. The serious one hit the raid: <strong class="hl">the three wardstones in the Nythraxis arena were invisible</strong> to just about everyone — and they are the only thing that stops <strong class="hl">Deathless Rage</strong>. The second turned <strong class="hl">the whole screen black</strong> on high graphics settings on some machines. No combat value, no item, no data changes.</p>
+    <div class="meta">
+      <span><b>Released</b> August 16, 2026</span>
+      <span><b>Since</b> v0.38.1</span>
+      <span><b>2</b> fixes</span>
+    </div>
+    <div class="hint">💡 Click a card for details.</div>
+  </header>
+
+  <!-- Constant digest: same sections, same order, every release. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">At a glance</h2>
+    <p class="sec-sub">The same six sections every release, in the same order. Click one to jump to it.</p>
+    <ol>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <span class="d-name">Classes &amp; spells</span>
+        <span class="d-say"><b class="eq">All =</b> no combat value moves: no spell, no talent, no mastery, no item. The whole v0.38.0 tank rebalance stays in place.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <span class="d-name">Professions &amp; gathering</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#nythraxis">Dungeons, rifts &amp; bosses</a>
+        <span class="d-say"><strong class="hl">The three wardstones in the Nythraxis arena are back</strong>. Invisible since v0.38.0 to nearly the whole raid, they are the only counter to Deathless Rage — a guaranteed wipe on heroic.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <span class="d-name">World &amp; quests</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <span class="d-name">Guild &amp; social</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#ecran-noir">Comfort &amp; technical</a>
+        <span class="d-say">No more <strong class="hl">fully black screen</strong> on High and Ultra graphics on Linux with an NVIDIA card and Chrome. Low and Medium were never affected.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="nythraxis">
+    <h2><span class="num">01</span>Nythraxis: your wardstones are back</h2>
+    <p class="sec-sub">If your raid stopped seeing the arena stones after v0.38.0 and took Deathless Rage to the face with nothing to do about it: that was not new difficulty, it was a bug. It is fixed.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="pierres" tabindex="0" role="button" aria-label="Details: why the wardstones vanished">
+        <h3>What was happening <span class="chip c-fix">Fixed</span></h3>
+        <p>The three arena stones share their item with an old zone 2 quest, <span data-codex="quest|The Sunken Bastion">The Sunken Bastion</span>. Since v0.38.0 the game <strong class="hl">hides quest collectables from anyone not currently on the quest</strong> — so from everyone who finished it or never took it. No stone, no minimap mark, nothing to interact with.</p>
+        <span class="more-link">See the details</span>
+      </div>
+      <div class="card more" data-detail="rage" tabindex="0" role="button" aria-label="Details: Deathless Rage and the ward channels">
+        <h3>Why it mattered <span class="chip c-raid">Raid</span></h3>
+        <ul>
+          <li>In phase two (below <strong class="hl">70%</strong> health), <span data-codex="mob|Nythraxis, Scourge of Thornpeak">Nythraxis</span> casts Deathless Rage <strong class="hl">every 45 sec</strong>, on a 10-second cast.</li>
+          <li>The only counter is the <strong class="hl">three stones</strong>: three different players, 5 seconds of channelling each, before the cast finishes.</li>
+          <li>Done in time, the cast is cut and the boss is <strong class="hl">stunned for 5 sec</strong>. Missed, it hits everyone in the room for <strong class="hl">82% of max health</strong> — and <strong class="hl">115% on heroic</strong>, which is a wipe.</li>
+        </ul>
+        <span class="more-link">See the details</span>
+      </div>
+      <div class="card">
+        <h3>What does not change <span class="chip c-util">Scope</span></h3>
+        <ul>
+          <li>The <span data-codex="item|Bastion Ward Stone">Bastion Ward Stone</span> you pick up outside for the quest stays <strong class="hl">hidden until you are on the quest</strong>: that is v0.38.0's intended behaviour, and it is kept.</li>
+          <li>The attunement crypt's quest relics stay hidden off-quest too.</li>
+          <li>Only objects a dungeon explicitly declares "interacted with, never picked up" escape the hiding — today, the three arena stones.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="ecran-noir">
+    <h2><span class="num">02</span>The black screen on high graphics</h2>
+    <p class="sec-sub">On Linux with an NVIDIA card and Chrome, the game could render a fully black frame on High or Ultra since v0.38.0. Low and Medium were never involved.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="ecran" tabindex="0" role="button" aria-label="Details: where the black screen came from">
+        <h3>Where it came from <span class="chip c-fix">Fixed</span></h3>
+        <p>On grass tufts and building edges seen at a grazing angle, a lighting computation produced an <strong class="hl">invalid</strong> value. The bloom blur then smeared it across <strong class="hl">the entire frame</strong>, and the whole picture went black.</p>
+        <span class="more-link">See the details</span>
+      </div>
+      <div class="card">
+        <h3>Who was affected <span class="chip c-util">Reach</span></h3>
+        <ul>
+          <li>Only <strong class="hl">High and above</strong>: they are the only tiers that run the final image pass which adds the bloom.</li>
+          <li>On Low and Medium the frame goes straight to the screen in a format that <strong class="hl">clamps invalid values away</strong> — hence no symptom at all.</li>
+          <li>The flaw only showed on one graphics driver path, observed on <strong class="hl">Linux + NVIDIA + Chrome</strong>. Nothing to do with your game settings.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>So it cannot come back <span class="chip c-new">Guard</span></h3>
+        <ul>
+          <li>The fix is <strong class="hl">visually neutral</strong>: it only triggers on the invalid value, never on a normal surface.</li>
+          <li>Two tests pin the result: one checks the guard inside the 3D engine itself, the other the scrub right before display.</li>
+          <li>If a future 3D engine update drops either one, <strong class="hl">the test fails before release</strong>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="reste">
+    <h2><span class="num">03</span>And nothing else</h2>
+    <p class="sec-sub">This is a hotfix in the strict sense. Everything v0.38.0 brought the day before stays exactly as it was.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Nothing moves in the game <span class="chip c-util">Scope</span></h3>
+        <ul>
+          <li>No combat value: no spell, no talent, no mastery, no set.</li>
+          <li>No item, no creature, no quest, no zone.</li>
+          <li>No data migration: nothing to redo on your character.</li>
+          <li>Not one string modified, in any locale.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>The scenery did not change <span class="chip c-util">Behind the scenes</span></h3>
+        <ul>
+          <li>27 Eastbrook and Fenbridge 3D models were <strong class="hl">re-stamped</strong> as part of the fix.</li>
+          <li>Only their internal fingerprint changes: <strong class="hl">geometry and textures identical</strong>, same file size, no visible difference.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>v0.38.0 still stands <span class="chip c-util">Reminder</span></h3>
+        <ul>
+          <li>The four-tank rebalance, <span data-codex="ability|challenging_roar">Baleful Roar</span> and <span data-codex="ability|frenzied_regeneration">Savage Mending</span> on the bear: all in place.</li>
+          <li>Chronomancy's level-20 ranks, the <span data-codex="spec|Thuggery">Thuggery</span> cut, Honor for arena losses: same.</li>
+          <li>It is all laid out on the <a href="v0.38.0.en.html">v0.38.0 page</a>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Close">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    pierres: {
+      title: "Why the arena wardstones vanished",
+      summary: "They carry the same item as a zone 2 quest stone. v0.38.0 started hiding quest collectables off-quest — and took the raid's stones with them.",
+      body: `
+        <h4>The starting point</h4>
+        <p>v0.38.0 fixed something annoying: quest collectables lay on the ground even for players who were not on the quest. Since then the game only shows them while the quest is <b>active</b> — not before, not after you turn it in.</p>
+        <h4>The collision</h4>
+        <ul>
+          <li>The three stones in the Nythraxis arena reuse the <b>Bastion Ward Stone</b> item, which is also the stone you bring back for <b>The Sunken Bastion</b>, in the zone 2 fen.</li>
+          <li>The hiding rule looks at the item, not the place. So it decided the arena stones were quest collectables, and hid them from everyone without that quest in their log.</li>
+          <li>Which is to say: just about <b>the whole raid</b>. The quest is taken at level 12; anyone who turned it in no longer has it in the log, and anyone who skipped it never did.</li>
+        </ul>
+        <h4>What disappeared, exactly</h4>
+        <p>Everything at once: <b>no model</b> on the ground, <b>no mark</b> on the minimap, and <b>nothing to target</b> for the interact. No way to guess a stone was even there, and therefore no way to channel it.</p>
+        <h4>The fix</h4>
+        <ul>
+          <li>A dungeon can now declare an object as "<b>interacted with, never picked up</b>": an encounter mechanic, not a collectable.</li>
+          <li>The three arena stones are declared that way, and the hiding rule never touches them again, whatever your standing with the quest.</li>
+          <li>The rest is unchanged: the pickup stone outside <b>stays hidden</b> off-quest, and so do the crypt's quest relics. Only an explicitly declared object is exempt.</li>
+        </ul>
+        <h4>The guard</h4>
+        <p>A test suite pins both halves of the behaviour: the raid's three stones must be visible to a player who never took the quest <i>and</i> to a player who turned it in; the outside stone must stay invisible off-quest and reappear the moment the quest is picked up.</p>`
+    },
+    rage: {
+      title: "Deathless Rage, and what the three stones actually do",
+      summary: "The most dangerous spell of the fight. Without the stones there is no other way to stop it.",
+      body: `
+        <h4>When it happens</h4>
+        <ul>
+          <li>The spell only exists in <b>phase two</b>, that is below <b>70%</b> of the boss's health.</li>
+          <li>From there it comes back <b>every 45 seconds</b>, on a <b>10-second</b> cast.</li>
+        </ul>
+        <h4>The counter</h4>
+        <ul>
+          <li>The three stones sit in a wide triangle in front of the boss: the raid has to <b>split up</b> to reach them.</li>
+          <li>Each takes <b>5 seconds of channelling</b>, and it must be <b>three different players</b> — one person cannot do two of them.</li>
+          <li>You have to stay <b>in range</b> (5 yards) without dying or being stunned: otherwise the channel breaks and that stone starts over.</li>
+          <li>All three must be finished <b>before the 10 seconds are up</b>. At that moment the cast is cut dead and Nythraxis is <b>stunned for 5 seconds</b>.</li>
+        </ul>
+        <h4>If it lands</h4>
+        <ul>
+          <li>The spell hits <b>every player in the room</b>, with no exception and no reduction.</li>
+          <li>On normal: <b>82% of each player's max health</b>. Survivable only if the raid is near full.</li>
+          <li>On heroic: <b>115% of max health</b>. No health pool is enough — it is a wipe.</li>
+          <li>Still on heroic, a Deathless Rage that resolves also <b>raises the boss's court</b> right after.</li>
+        </ul>
+        <h4>What that meant with the bug</h4>
+        <p>A raid that sees no stones has <b>no other way</b> to stop the cast: it cannot be interrupted or dodged. So the fight became impossible on heroic from 70% of the boss's health, and brutally punishing on normal.</p>`
+    },
+    ecran: {
+      title: "The black screen on High and Ultra",
+      summary: "One invalid computed value on a grass tuft, spread across the entire frame by the bloom blur.",
+      body: `
+        <h4>What affected players saw</h4>
+        <p>Not a flicker or an artifact in one corner: <b>the entire frame black</b>, including the interface inside the render area. The game was running, but nothing was visible.</p>
+        <h4>The cause</h4>
+        <ul>
+          <li>Every surface has an orientation used to compute its lighting. On <b>grass tufts</b> and <b>building edges seen at a grazing angle</b>, that orientation can fall to zero.</li>
+          <li>The 3D engine then rescales it — a division by zero, which produces an <b>invalid</b> value ("not a number").</li>
+          <li>That value poisons the pixel's lighting, and then the <b>bloom blur</b> spreads it outward across the whole frame. The final pass, the one that sets contrast, turns it into black over the entire screen.</li>
+        </ul>
+        <h4>Why only on high settings</h4>
+        <p>High and above run the frame through a <b>final image pass</b> (bloom, contrast) in a format able to represent invalid values. On Low and Medium the frame goes straight to the screen in a format that <b>clamps</b> them away — the flaw was there, but it could not show.</p>
+        <h4>Why now</h4>
+        <p>The behaviour comes from the 3D engine upgrade shipped in v0.38.0. The old version did not hit it on this driver; the new one does, on the driver's OpenGL path — the combination observed is <b>Linux + NVIDIA + Chrome</b>.</p>
+        <h4>The fix</h4>
+        <ul>
+          <li>Inside the 3D engine, an orientation that has fallen to zero is <b>replaced by a valid one</b> instead of going through the division by zero. It does nothing on any normal surface, so it is <b>visually neutral</b>.</li>
+          <li>Right before display, the game also <b>scrubs</b> any remaining invalid values, on the image and on the bloom alike — belt as well as braces, in case another driver produces them somewhere else.</li>
+        </ul>`
+    },
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Inline codex cards (glossary, creatures, spells…) built from the Codex data -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>
