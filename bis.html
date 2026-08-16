@@ -364,18 +364,20 @@ const BUILDS = {
     ["Sacred Concord", "niv. 20", { fr: "8 s où toutes les auras du groupe montent d’un cran : −15 % de dégâts subis pour tout le monde. Le vrai bouton de tank de raid.", en: "8s where every aura in the group steps up: −15% damage taken for everyone. The real raid-tank button." }]
    ],
    rotation: [
-    ["Burning Oath", { fr: "toujours actif : c'est lui qui génère ta menace.", en: "always on: it's what generates your threat." }],
-    ["Steadfast Aura", { fr: "l'aura de groupe (+10 % d'armure pour tout le monde).", en: "the group aura (+10% armor for everyone)." }],
-    ["Oathbrand", { fr: "l’imbue, toujours actif : c’est lui qui porte ta menace au corps à corps. Verdict (Judgement) est retiré en v0.36.", en: "the imbue, always on: it carries your melee threat. Verdict (Judgement) is removed in v0.36." }],
-    ["Holy Ground", { fr: "pose-le sous les packs — menace AoE énorme avec Hallowed Wall.", en: "drop it under packs — huge AoE threat with Hallowed Wall." }],
-    ["Sunward Disc", { fr: "la nouvelle signature (v0.36, bouclier requis) : un disque qui rebondit entre les ennemis et rend 1 Dévotion par impact — ta menace multi ET ton moteur de ressource.", en: "the new signature (v0.36, shield required): a disc that bounces between enemies and returns 1 Devotion per impact — your multi-target threat AND your resource engine." }],
-    ["Sacred Goad", { fr: "le taunt à 30 yards (v0.25) — enfin un vrai taunt de paladin.", en: "the 30-yard taunt (v0.25) — finally a real paladin taunt." }],
-    ["Reproach", { fr: "l'interrupt (v0.25) : coupe le cast et verrouille l'école 4 s.", en: "the interrupt (v0.25): cuts the cast and locks the school for 4s." }],
-    ["Sundering Gavel", { fr: "l'étourdissement — coupe un cast dangereux.", en: "the stun — cuts off a dangerous cast." }],
-    ["Ward of Faith / Last Rite", { fr: "les boutons de survie : absorption, puis 250 PV en urgence.", en: "the survival buttons: an absorb, then 250 HP in an emergency." }]
+    ["Burning Oath", { fr: "le passif de la spé : +30 % de menace sur tous tes dégâts sacrés. Rien à activer.", en: "the spec passive: +30% threat on all your Holy damage. Nothing to press." }],
+    ["Vowkeeper Strike", { fr: "ta frappe de base (5 s de cooldown, gratuite) : grosse menace, 1 Dévotion, et 20 % de chance d’ouvrir Solar Reprisal — 25 % sur chaque blocage réussi.", en: "your bread-and-butter strike (5s cooldown, free): high threat, 1 Devotion, and a 20% chance to open Solar Reprisal — 25% on every successful block." }],
+    ["Sunward Disc", { fr: "la signature (bouclier requis) : un disque qui rebondit entre les ennemis et rend 1 Dévotion par impact. Sous Solar Reprisal il ne coûte rien, ignore son cooldown et frappe 20 % plus fort.", en: "the signature (shield required): a disc that bounces between enemies and returns 1 Devotion per impact. Under Solar Reprisal it costs nothing, ignores its cooldown and hits 20% harder." }],
+    ["Holy Ground", { fr: "à poser sous chaque pack : dégâts sacrés à haute menace chaque seconde, et −10 % de dégâts subis tant que tu restes dedans.", en: "drop it under every pack: high-threat Holy damage every second, and −10% damage taken while you stand in it." }],
+    ["Bastion Sweep", { fr: "le cleave au bouclier (arc frontal, 6 s) : la menace de zone qui tient les packs, plus 1 Dévotion.", en: "the shield cleave (frontal arc, 6s): the AoE threat that holds packs, plus 1 Devotion." }],
+    ["Divine Ascension", { fr: "20 Dévotion pour 5 charges (45 s) : chaque capacité marquée frappe plus fort — et Sacred Goad y gagne −15 % de dégâts subis SANS consommer de charge.", en: "20 Devotion for 5 charges (45s): every marked ability hits harder — and Sacred Goad gains −15% damage taken WITHOUT spending a charge." }],
+    ["Hallowed Wall / Bastion Rite", { fr: "tes deux boutons d’encaissement : +30 % de blocage avec un bouclier et une impulsion de menace (8 s), ou −20 % de dégâts physiques et +20 % de blocage pendant 6 s.", en: "your two mitigation buttons: +30% block with a shield and a threat pulse (8s), or −20% physical damage taken and +20% block for 6s." }],
+    ["Sacred Goad / Oath Chain", { fr: "le taunt à 10 s, et la chaîne qui ramène de force un ennemi lointain avant de le ralentir de 50 %.", en: "the 10s taunt, and the chain that drags a distant enemy to you before slowing it by 50%." }],
+    ["Hushbrand / Sundering Gavel", { fr: "l’interruption (15 s, verrouille l’école 4 s) et l’étourdissement de 3 s (60 s). Reproach, lui, a quitté le grimoire à la refonte v0.36.", en: "the interrupt (15s, locks the school for 4s) and the 3s stun (60s). Reproach itself left the spellbook in the v0.36 rework." }],
+    ["Ward of Faith / Last Rite", { fr: "les boutons de survie : une absorption de 25 % de tes PV max (30 s), puis la TOTALITÉ de tes PV rendus en urgence (10 min).", en: "the survival buttons: an absorb worth 25% of your max HP (30s), then your ENTIRE health bar restored in an emergency (10 min)." }],
+    ["Bastion Devotion", { fr: "l’aura de groupe du tank : −5 % de dégâts subis pour tout le monde. Elle remplace ta propre Requital Aura.", en: "the tank's group aura: −5% damage taken for everyone. It replaces your own Requital Aura." }]
    ],
-   astuce: { fr: "Tu peux dépanner au heal entre deux packs avec Mending Light — le luxe du paladin. Et non, pas de stuff Intelligence (question fréquente) : vérifié dans le code, ta menace vient des coups d'arme (2× Force en puissance d'attaque) et du Sceau, qui frappe à valeur FIXE — seul Sunward Disc gagne un peu de puissance des sorts (0,5×Int × un coefficient d'instant de 0,43, toutes les 8-10 s) : ~4× moins de menace que la même valeur en Force, payée en Endurance/armure qui te gardent en vie. Le réflexe « paladin prot = stuff caster » des autres jeux ne s'applique pas ici.",
-             en: "You can spot-heal between packs with Mending Light — the paladin's luxury. And no, no Intellect gear (frequent question): verified in the code, your threat comes from weapon swings (2× Strength as attack power) and your Seal, which hits for a FIXED value — only Sunward Disc gains a little spell power (0.5×Int × a 0.43 instant coefficient, every 8-10s): ~4× less threat than the same budget in Strength, paid for with the Stamina/armor that keep you alive. The “prot paladin = caster gear” reflex from other games does not apply here." }
+   astuce: { fr: "Tu peux dépanner au heal entre deux packs avec Mending Light — le luxe du paladin. Et non, pas de stuff Intelligence (question fréquente) : vérifié dans le code, ta menace vient de tes coups d’arme (2× Force en puissance d’attaque, que Vowkeeper Strike multiplie) et de dégâts sacrés à valeur FIXE (Holy Ground, Bastion Sweep) — seul Sunward Disc ajoute un peu de puissance des sorts (0,5 × Int, avec le coefficient d’instant de 0,43, toutes les 10 s), une fraction dérisoire de ta menace, payée en Endurance et en armure qui te gardent en vie. Le réflexe « paladin prot = stuff caster » des autres jeux ne s’applique pas ici.",
+             en: "You can spot-heal between packs with Mending Light — the paladin's luxury. And no, no Intellect gear (frequent question): verified in the code, your threat comes from weapon swings (2× Strength as attack power, which Vowkeeper Strike multiplies) and from FIXED-value Holy damage (Holy Ground, Bastion Sweep) — only Sunward Disc adds a little spell power (0.5 × Int, at the 0.43 instant coefficient, every 10s), a negligible slice of your threat, paid for with the Stamina and armor that keep you alive. The “prot paladin = caster gear” reflex from other games does not apply here." }
   },
   heal: {
    spec: "Sunmender (holy)",
@@ -392,12 +394,16 @@ const BUILDS = {
     ["Perpetual Sun", "niv. 20", { fr: "ta dernière charge d’Ascension soigne 150 à tout le monde dans 20 m puis double ta Dévotion 5 s — l’enchaînement de fin de burst.", en: "your last Ascension charge heals everyone within 20m for 150 then doubles your Devotion for 5s — the burst finisher." }]
    ],
    rotation: [
-    ["Lightmend", { fr: "le soin de base : rapide, efficace, spammable.", en: "the bread-and-butter heal: fast, efficient, spammable." }],
-    ["Mending Light", { fr: "quand le tank prend cher — gros soin, instantané un coup sur trois avec Third Benediction.", en: "when the tank is taking a beating — a big heal, instant every third cast with Third Benediction." }],
-    ["Mercy Lance", { fr: "la nouvelle signature (v0.36) : dégâts sacrés qui rendent 1 Dévotion — et pendant Divine Ascension, un critique garanti.", en: "the new signature (v0.36): Holy damage that returns 1 Devotion — and during Divine Ascension, a guaranteed critical." }],
-    ["Last Rite", { fr: "le bouton panique : 250 PV instantanés (10 min de cooldown).", en: "the panic button: 250 instant HP (10 min cooldown)." }],
-    ["Ward of Faith", { fr: "l'absorption préventive avant un gros coup.", en: "the preventive absorb before a big hit." }],
-    ["Oath of Iron + Steadfast Aura", { fr: "tes deux buffs de groupe, toujours actifs.", en: "your two group buffs, always on." }]
+    ["Mending Light", { fr: "le soin de base (1,5 s) : rapide, efficace, et il rend 1 Dévotion. Radiant Resonance le rend instantané.", en: "the bread-and-butter heal (1.5s): fast, efficient, and it returns 1 Devotion. Radiant Resonance makes it instant." }],
+    ["Dawn's Embrace", { fr: "le gros soin (2,5 s, 90 mana) quand le tank prend cher. Sous Radiant Resonance il coûte 50 % de moins et tombe à 1,5 s ; sous Ascension il devient instantané et soigne 35 % de plus.", en: "the big heal (2.5s, 90 mana) when the tank is taking a beating. Under Radiant Resonance it costs 50% less and drops to 1.5s; under Ascension it goes instant and heals 35% more." }],
+    ["Radiant Chorus", { fr: "le soin de zone (12 s) : en touchant au moins 2 alliés, il te donne Radiant Resonance — c’est LUI qui lance la boucle.", en: "the group heal (12s): effectively healing at least 2 allies grants Radiant Resonance — this is what starts the loop." }],
+    ["Solar Invocation", { fr: "l’instantané à 8 s : soigne un allié ou frappe un ennemi, et rend 1 Dévotion dans les deux cas. Sous Ascension, le soin éclabousse à 10 m.", en: "the 8s instant: heals an ally or hits an enemy, and returns 1 Devotion either way. Under Ascension the heal splashes within 10m." }],
+    ["Beacon of Light", { fr: "à poser sur le tank : 50 % de tes soins directs sur quelqu’un d’autre le soignent aussi. Ni la zone ni les soins sur la durée ne se reportent.", en: "put it on the tank: 50% of your direct healing on someone else also heals them. Area and periodic healing do not transfer." }],
+    ["Mercy Lance", { fr: "la signature (v0.36) : dégâts sacrés qui rendent 1 Dévotion — et pendant Divine Ascension, un critique garanti.", en: "the signature (v0.36): Holy damage that returns 1 Devotion — and during Divine Ascension, a guaranteed critical." }],
+    ["Life Covenant", { fr: "−40 % de dégâts subis 6 s sur un allié (90 s) ; sous Ascension il ajoute un bouclier de 120 sans consommer de charge.", en: "−40% damage taken for 6s on an ally (90s); under Ascension it also grants a 120-point shield without spending a charge." }],
+    ["Ward of Faith / Last Rite / Aegis of the First Dawn", { fr: "l’absorption préventive, la remise à plein des PV en urgence, et le dôme de 5 s qui soigne et coupe la moitié des dégâts.", en: "the preventive absorb, the emergency full-health surge, and the 5s dome that heals and halves damage taken." }],
+    ["Sacred Form", { fr: "l’état permanent du Sunmender : +10 % de soins, +5 % de crit de sort, et surtout −50 % de menace.", en: "the Sunmender's permanent state: +10% healing, +5% spell crit, and above all −50% threat." }],
+    ["Radiant Devotion + Requital Aura", { fr: "tes deux buffs de groupe (+20 puissance des sorts, et les représailles sacrées). Oath of Iron et Steadfast Aura, eux, ont quitté le grimoire en v0.36.", en: "your two group buffs (+20 spell power, plus the Holy retaliation aura). Oath of Iron and Steadfast Aura left the spellbook in v0.36." }]
    ],
    astuce: { fr: "Garde Sundering Gavel en secours : un heal qui étourdit l’add parti sur lui, c’est un heal vivant. Et pense à Recall the Fallen : à partir du niveau 16, un Sunmender relève TOUT le groupe d’un coup.",
              en: "Keep Sundering Gavel in reserve: a healer who stuns the add coming at them is a healer who stays alive. And remember Recall the Fallen: from level 16 a Sunmender brings the WHOLE group back at once." }
@@ -411,21 +417,25 @@ const BUILDS = {
    talents: [
     ["Divine Steed", "niv. 5", { fr: "0,75 % de vitesse par Dévotion (15 % à 20), et Divine Ascension t’en donne 30 % pendant 5 s.", en: "0.75% speed per Devotion (15% at 20), and Divine Ascension grants 30% for 5s." }],
     ["Enduring Protection", "niv. 8", { fr: "+40 % d’absorption sur Ward of Faith : le seul vrai bouton défensif de la rangée.", en: "+40% absorb on Ward of Faith: the only genuinely defensive pick in the row." }],
-    ["Fist of Justice", "niv. 11", { fr: "−25 % de cooldown sur Sundering Gavel — ton interruption de fait sur les casters.", en: "−25% cooldown on Sundering Gavel — your de facto interrupt on casters." }],
+    ["Fist of Justice", "niv. 11", { fr: "−25 % de cooldown sur Sundering Gavel — ton étourdissement de secours, en plus de Hushbrand.", en: "−25% cooldown on Sundering Gavel — your backup stun, on top of Hushbrand." }],
     ["Zeal", "niv. 14", { fr: "1 capacité sur 3 rend 1 Dévotion de plus : plus de Dévotion = plus d’Ascension = plus de critiques garantis.", en: "every 3rd ability grants 1 extra Devotion: more Devotion = more Ascension = more guaranteed crits." }],
     ["Sanctified Fervor", "niv. 17", { fr: "Avenging Wrath ajoute +15 % de critique ET +15 % de hâte : c’est LE burst du Dawnreaver.", en: "Avenging Wrath also grants +15% crit AND +15% haste: this is the Dawnreaver burst." }],
     ["Dawn Echo", "niv. 20", { fr: "1 capacité directe sur 3 se répète à 40 % et rend 1 Dévotion — des dégâts gratuits qui relancent la boucle.", en: "every 3rd direct ability repeats at 40% and returns 1 Devotion — free damage that feeds the loop." }]
    ],
    rotation: [
-    ["Oathbrand", { fr: "l’imbue, toujours actif — la base de tes dégâts d’arme.", en: "the imbue, always on — the base of your weapon damage." }],
+    ["Final Edict", { fr: "la signature (v0.36) : une frappe d’arme qui rend 1 Dévotion et enlève 2 s au cooldown de Dawnfall. 15 % de chance d’ouvrir Dawn's Wrath.", en: "the signature (v0.36): a weapon strike that returns 1 Devotion and shaves 2s off Dawnfall's cooldown. 15% chance to open Dawn's Wrath." }],
+    ["Dawnfall", { fr: "l’explosion sacrée autour de toi (12 s) : 1 Dévotion, et elle enlève à son tour 2 s à Final Edict. Les deux se relancent mutuellement — c’est toute la boucle.", en: "the Holy blast around you (12s): 1 Devotion, and it takes 2s off Final Edict in return. The two feed each other — that is the whole loop." }],
+    ["Verdict of the Sun God", { fr: "le jugement de 30 s : Final Edict et Dawnfall y inscrivent une charge, et celle qui pose la 3e décide de la sentence — Final Edict pour des dégâts énormes sur la cible, Dawnfall pour une détonation qui étourdit 1,5 s autour.", en: "the 30s judgment: Final Edict and Dawnfall each inscribe a charge, and whichever lands the 3rd dictates the sentence — Final Edict for devastating single-target damage, Dawnfall for a blast that stuns nearby enemies for 1.5s." }],
     ["Divine Ascension", { fr: "20 Dévotion pour 5 charges (45 s) : chaque capacité marquée en consomme une et frappe beaucoup plus fort. C’est le cœur de la spé.", en: "20 Devotion for 5 charges (45s): every marked ability spends one and hits much harder. This is the heart of the spec." }],
-    ["Final Edict", { fr: "la nouvelle signature (v0.36) : une frappe d’arme qui rend 1 Dévotion et enlève 2 s au cooldown de Dawnfall.", en: "the new signature (v0.36): a weapon strike that returns 1 Devotion and shaves 2s off Dawnfall's cooldown." }],
-    ["Hammer of Wrath", { fr: "l’instant qui rend 1 Dévotion — utilisable sous 20 % des PV de la cible, ou pendant Ascension et Avenging Wrath.", en: "the instant that returns 1 Devotion — usable below 20% target health, or during Ascension and Avenging Wrath." }],
-    ["Holy Ground", { fr: "en AoE sous les packs.", en: "for AoE, under the packs." }],
-    ["Oath of Iron", { fr: "le buff +10 % PA du groupe si aucun autre paladin ne le pose.", en: "the group's +10% AP buff if no other paladin covers it." }]
+    ["Avenging Wrath", { fr: "les ailes (120 s) : 10 Dévotion d’un coup, Dévotion doublée et +20 % de dégâts pendant 15 s. Et elles débloquent Hammer of Wrath sur n’importe quelle cible.", en: "the wings (120s): 10 Devotion at once, doubled Devotion and +20% damage for 15s. And they unlock Hammer of Wrath against any target." }],
+    ["Hammer of Wrath", { fr: "l’instantané qui rend 1 Dévotion : sous 20 % de PV de la cible, ou pendant Ascension et Avenging Wrath. Dawn's Wrath t’en offre un gratuit, hors cooldown.", en: "the instant that returns 1 Devotion: below 20% target health, or during Ascension and Avenging Wrath. Dawn's Wrath grants a free extra cast, off cooldown." }],
+    ["Valkyr's Calling", { fr: "le saut (60 s) : tu es immunisé aux dégâts en vol, tu retombes sur la zone visée, et tu récupères 1 Dévotion. Sous Ascension, +50 % à l’impact.", en: "the leap (60s): immune to damage in flight, you land on the target area, and you get 1 Devotion back. Under Ascension, +50% impact damage." }],
+    ["Holy Ground", { fr: "en AoE, sous les packs — et le premier impact rend 1 Dévotion.", en: "for AoE, under the packs — and the first impact returns 1 Devotion." }],
+    ["Debt of Light / Guardian Covenant", { fr: "tes défensifs : renvoyer le prochain coup encaissé, ou −20 % de dégâts subis 8 s sur toi ou un allié.", en: "your defensives: deny and reflect the next blow you take, or −20% damage taken for 8s on you or an ally." }],
+    ["Dawn Devotion", { fr: "le buff de groupe : +40 de puissance d’attaque pour tout le monde, si aucun autre paladin ne le pose. Oath of Iron a quitté le grimoire en v0.36.", en: "the group buff: +40 attack power for everyone, if no other paladin covers it. Oath of Iron left the spellbook in v0.36." }]
    ],
-   astuce: { fr: "Tu restes un demi-soigneur : un Lightmend sur le heal en danger vaut plus que 3 secondes de DPS.",
-             en: "You're still half a healer: a Lightmend on an endangered healer is worth more than 3 seconds of DPS." }
+   astuce: { fr: "Tu restes un demi-soigneur : un Mending Light sur le heal en danger vaut plus que 3 secondes de DPS.",
+             en: "You're still half a healer: a Mending Light on an endangered healer is worth more than 3 seconds of DPS." }
   }
  },
  shaman: {
@@ -35180,6 +35190,7 @@ function fmtStats(it) {
 // confondre avec arcane_power (le buff 20 % dégâts, CD 90 s).
 const CX_REF = {
   "aether surge": "ability|arcane_surge",
+  "sacred goad": "ability|sacred_challenge",
   "patch up": "ability|mend_pet",
 };
 

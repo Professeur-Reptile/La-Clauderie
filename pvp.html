@@ -294,7 +294,7 @@
 
 <script src="assets/nav.js"></script>
 <script src="assets/lang.js"></script>
-<script src="assets/version.js" data-version="v0.38.2" defer></script>
+<script src="assets/version.js" data-version="v0.38.1" defer></script>
 <script>
 // Builds PvP par classe — éditorial La Clauderie, mêmes rangées de talents que
 // la page Builds (TALENTS.json de la knowledge base), re-choisies pour l'arène.
@@ -324,23 +324,24 @@ const PVP = {
   partner: { fr: "Partenaire 2v2 : Spiritmend (« l'Étau ») ou Doctrine.", en: "2v2 partner: Spiritmend (“the Vise”) or Doctrine." }
  },
  paladin: {
-  spec: "Requital (retribution)",
+  spec: "Dawnreaver (retribution)",
   gear: { fr: "Stuff : set <b>Furyforged</b> + <b>Final Argument Greatblade</b>.", en: "Gear: <b>Furyforged</b> set + <b>Final Argument Greatblade</b>." },
-  pourquoi: { fr: "Le DPS qui refuse de mourir : gros Verdicts, deux stuns, un cheat-death, et de vrais soins pour dépanner. En 2v2, tu es un demi-soigneur qui frappe comme un camion.", en: "The DPS that refuses to die: big Verdicts, two stuns, a cheat-death, and real off-heals. In 2v2 you're half a healer who hits like a truck." },
+  pourquoi: { fr: "Le DPS qui refuse de mourir : un jugement qui explose au bout de trois charges, deux stuns, et de vrais soins pour dépanner. En 2v2, tu es un demi-soigneur qui frappe comme un camion.", en: "The DPS that refuses to die: a judgment that detonates after three charges, two stuns, and real off-heals. In 2v2 you're half a healer who hits like a truck." },
   talents: [
-   ["Oath Returned", "niv. 5", { fr: "Verdict rend 25 mana : les longs matchs ne t'assèchent pas.", en: "Verdict refunds 25 mana: long matches don't drain you." }],
-   ["Twin Gavels", "niv. 8", { fr: "2 charges de Sundering Gavel : deux stuns (hors DR) pour la fenêtre de kill.", en: "2 charges of Sundering Gavel: two stuns (no DR) for the kill window." }],
-   ["Mercy from Ruin", "niv. 11", { fr: "chaque Ward of Faith consommé rend 120 s à Last Rite : le bouton panique revient.", en: "each consumed Ward of Faith refunds 120s of Last Rite: the panic button comes back." }],
-   ["Oathwheel", "niv. 14", { fr: "les coups blancs sous Oathbrand accélèrent Verdict : plus de burst.", en: "auto-attacks under Oathbrand speed up Verdict: more burst." }],
-   ["Deathless Ardor", "niv. 17", { fr: "le coup fatal te laisse à 1 PV (180 s) : l'assurance-vie.", en: "the killing blow leaves you at 1 HP (180s): life insurance." }],
-   ["Wrathwing", "niv. 20", { fr: "+60 PA / +30 SP pendant 20 s : à aligner sur le double stun.", en: "+60 AP / +30 SP for 20s: line it up with the double stun." }]
+   ["Divine Steed", "niv. 5", { fr: "0,75 % de vitesse par Dévotion (15 % à 20), et 30 % pendant 5 s quand tu lances Divine Ascension : c’est toute ta mobilité.", en: "0.75% movement speed per Devotion (15% at 20), and 30% for 5s when you pop Divine Ascension: that is your whole mobility." }],
+   ["Enduring Protection", "niv. 8", { fr: "Ward of Faith absorbe 40 % de plus et tient 5 s de plus : le bouclier qui te fait survivre au burst adverse.", en: "Ward of Faith absorbs 40% more and lasts 5s longer: the shield that carries you through their burst." }],
+   ["Double Sentence", "niv. 11", { fr: "2 charges de Sundering Gavel : deux étourdissements pour la fenêtre de kill (attention aux rendements décroissants).", en: "2 charges of Sundering Gavel: two stuns for the kill window (mind the diminishing returns)." }],
+   ["Zeal", "niv. 14", { fr: "1 capacité sur 3 rend 1 Dévotion de plus : c’est ce qui te paie une seconde Ascension dans le match.", en: "every 3rd ability grants 1 extra Devotion: that is what pays for a second Ascension in the match." }],
+   ["Sanctified Fervor", "niv. 17", { fr: "Avenging Wrath ajoute +15 % de critique ET +15 % de hâte : à aligner sur le double stun.", en: "Avenging Wrath also grants +15% crit AND +15% haste: line it up with the double stun." }],
+   ["Dawn Echo", "niv. 20", { fr: "1 capacité directe sur 3 se répète à 40 % : des dégâts gratuits pendant toute la pression.", en: "every 3rd direct ability repeats at 40%: free damage throughout the pressure." }]
   ],
   plan: [
-   { fr: "La fenêtre de kill : <b>Sundering Gavel</b> → <b>Wrathwing</b> → <b>Verdict + Crusader Strike</b> → second Gavel si ça survit.", en: "The kill window: <b>Sundering Gavel</b> → <b>Wrathwing</b> → <b>Verdict + Crusader Strike</b> → second Gavel if it survives." },
-   { fr: "<b>Reproach</b> sur les soins adverses — 4 s d'école verrouillée.", en: "<b>Reproach</b> on enemy heals — 4s school lockout." },
-   { fr: "Entre deux fenêtres : <b>Lightmend</b> et <b>Ward of Faith</b> sur ton partenaire. Un ret qui ne soigne jamais est un mauvais ret.", en: "Between windows: <b>Lightmend</b> and <b>Ward of Faith</b> on your partner. A ret who never heals is a bad ret." }
+   { fr: "La fenêtre de kill : <b>Sundering Gavel</b> → <b>Avenging Wrath</b> → <b>Final Edict</b> et <b>Dawnfall</b> pour inscrire les 3 charges du <b>Verdict of the Sun God</b> — pose la troisième avec Final Edict pour la sentence qui fait très mal, ou avec Dawnfall pour la détonation qui étourdit tout autour 1,5 s.", en: "The kill window: <b>Sundering Gavel</b> → <b>Avenging Wrath</b> → <b>Final Edict</b> and <b>Dawnfall</b> to inscribe the 3 charges of <b>Verdict of the Sun God</b> — land the third with Final Edict for the devastating sentence, or with Dawnfall for the blast that stuns everything nearby for 1.5s." },
+   { fr: "<b>Hushbrand</b> sur les soins adverses — 4 s d’école verrouillée. Reproach, lui, a quitté le grimoire à la refonte v0.36.", en: "<b>Hushbrand</b> on enemy heals — 4s school lockout. Reproach itself left the spellbook in the v0.36 rework." },
+   { fr: "<b>Hammer of Wrath</b> sous 20 % de leurs PV — et il est déjà utilisable sur n’importe quelle cible pendant Avenging Wrath et Divine Ascension.", en: "<b>Hammer of Wrath</b> below 20% of their health — and it is already usable against any target during Avenging Wrath and Divine Ascension." },
+   { fr: "Entre deux fenêtres : <b>Mending Light</b> et <b>Ward of Faith</b> sur ton partenaire. Un ret qui ne soigne jamais est un mauvais ret.", en: "Between windows: <b>Mending Light</b> and <b>Ward of Faith</b> on your partner. A ret who never heals is a bad ret." }
   ],
-  partner: { fr: "Partenaire 2v2 : Fieldcraft (« la Cour Martiale ») ou n'importe quel burst.", en: "2v2 partner: Fieldcraft (“the Field Court”) or any burst spec." }
+  partner: { fr: "Partenaire 2v2 : Fieldcraft (« la Cour Martiale ») ou n’importe quel burst.", en: "2v2 partner: Fieldcraft (“the Field Court”) or any burst spec." }
  },
  shaman: {
   spec: "Warspirit (enhancement)",

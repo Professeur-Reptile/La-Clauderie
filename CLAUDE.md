@@ -140,6 +140,20 @@ se limite à la partie rédactionnelle des « Nouveautés » :
    le bloc `const BIS` (l'équipement). Si la MAJ ajoute un rôle à une classe
    (ex. Mage soigneur en v0.27.0), ajouter aussi ce rôle dans `ROLES` de
    `scripts/compute_bis.py` pour que l'onglet et le BiS existent.
+   - **Exister dans `ABILITIES.json` ne veut PAS dire être lançable.** Le jeu
+     garde ses sorts retirés dans la table (pour reconnaître et jeter les
+     barres d'action enregistrées) et les marque `hiddenFromPlayer` : ils
+     disparaissent alors du grimoire du joueur. Un nom de rotation doit donc
+     être vérifié sur CE drapeau, pas sur la présence d'une fiche. Vécu le
+     16 août 2026 (signalé par un joueur) : la rotation du Paladin proposait
+     encore Oathbrand, Lightmend, Oath of Iron, Steadfast Aura et Reproach,
+     retirés à la refonte v0.36 — dix mois de guide faux sans que rien ne
+     sonne. `check_codex_refs.py` refuse désormais un `const BUILDS` qui cite
+     un sort retiré.
+   - Vérifier aussi la **spé** : beaucoup de capacités portent `specs` et
+     n'existent que pour l'une des trois (Sunward Disc est Faithwarden, Mercy
+     Lance est Sunmender). Une rotation de tank qui cite un sort de heal est
+     aussi fausse qu'un sort supprimé.
 3quater. **Les vérifications tournent en CI** (`check-site.yml`, appelé par les
    deux workflows de déploiement : un site cassé ne part plus en ligne). Pour
    un retour immédiat avant de pousser, les lancer à la main —
@@ -154,7 +168,15 @@ se limite à la partie rédactionnelle des « Nouveautés » :
      des entités différentes (deux sorts « Aether Surge ») : dans ce cas,
      référencer **l'id du jeu** (`ability|arcane_surge`), jamais le nom. Même
      réflexe pour tout ce qui est susceptible d'être renommé par une MAJ —
-     l'id, lui, ne bouge pas.
+     l'id, lui, ne bouge pas. Le nom réorienté se déclare dans `CX_REF`
+     (en-tête du script de `bis.html`), pas au cas par cas.
+     Le script relit aussi les noms cités par le `const BUILDS` de
+     `bis.html` — ils ne sont pas écrits en dur dans la page, c'est
+     `cxNames()` qui en fabrique un `data-codex` à l'affichage, donc rien ne
+     les vérifiait : il refuse un sort introuvable, ambigu, ou retiré du
+     grimoire. **Le `const PVP` de `pvp.html` n'est PAS encore couvert** :
+     ses builds citent, classe par classe, des talents qui n'existent plus
+     (audit du 16 août 2026 — seul le Paladin a été repris).
 4. **Commit sur `claude/site-update-6uhdmv`, puis merge direct sur `main`**
    (fast-forward : `git push origin claude/site-update-6uhdmv:main`). Le déploiement
    part tout seul. **Ne pas ouvrir de PR** sauf demande explicite.

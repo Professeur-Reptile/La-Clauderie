@@ -107,9 +107,85 @@ for page in sorted(glob.glob('*.html') + glob.glob('notes/*.html')):
         elif len(hits) > 1 and real_conflict(typ, hits):
             problems.append((page, raw, 'AMBIGU — viser un id : ' + ', '.join(sorted(x for x in hits if x))))
 
+# -----------------------------------------------------------------------------
+# 2e passe : les noms cités dans les GUIDES rédigés à la main (rotations et
+# rangées de talents de `const BUILDS`). Ces noms ne sont pas écrits en dur dans
+# le HTML — `cxNames()` en fabrique un `data-codex="auto|Nom"` à l'affichage —
+# donc la passe ci-dessus ne les voyait pas, et personne ne voyait un sort périmé.
+#
+# Incident fondateur (16 août 2026, signalé par un joueur) : la rotation du
+# paladin proposait encore Oathbrand, Lightmend, Oath of Iron, Steadfast Aura et
+# Reproach, cinq sorts RETIRÉS DU GRIMOIRE à la refonte v0.36. Ils existaient
+# toujours dans ABILITIES.json (le jeu les garde pour reconnaître et jeter les
+# barres d'action enregistrées), donc rien ne signalait le problème : c'est
+# `hiddenFromPlayer` qui fait foi, pas l'existence de la fiche.
+HIDDEN = {}          # id -> nom des capacités retirées du grimoire
+for entry in load_registry('ABILITIES'):
+    if isinstance(entry, dict) and entry.get('hiddenFromPlayer'):
+        HIDDEN[entry.get('id')] = entry.get('name')
+
+# Noms de talents et de spés, indexés comme le fait codex-popup.js.
+talent_spec_names = set()
+try:
+    for cls_block in load_registry('TALENTS'):
+        for spec in cls_block.get('specs', []):
+            talent_spec_names.add(fold(spec.get('name', '')))
+        for row in cls_block.get('rows', []):
+            for opt in row.get('options', []):
+                talent_spec_names.add(fold(opt.get('name', '')))
+except FileNotFoundError:
+    pass
+
+# `cxNames()` découpe une entrée sur →, / et +, et laisse tomber un « ×N » final.
+SPLIT_LABEL = re.compile(r'\s*(?:→|/|\+)\s*')
+BUILD_LABEL = re.compile(r'^\s*\["([^"]+)"', re.M)
+
+
+def auto_resolve(name):
+    """L'ordre d'essai de resolve('auto', …) dans codex-popup.js, réduit à ce
+    que ce script sait charger. Renvoie (type, ids) ou (None, [])."""
+    key = fold(name)
+    if key in talent_spec_names:
+        return 'talent/spec', []
+    for typ in ('ability', 'item', 'set', 'mob', 'npc', 'quest', 'dungeon', 'delve', 'zone'):
+        hits = resolve(typ, name)
+        if hits:
+            return typ, hits
+    return None, []
+
+
+for page in sorted(glob.glob('*.html')):
+    with open(page, encoding='utf-8') as f:
+        html = f.read()
+    block = re.search(r'const BUILDS = \{.*?\n\};', html, re.S)
+    if not block:
+        continue
+    # Les noms que la page réoriente déjà à la main (CX_REF, un nom → un id du
+    # jeu) sont résolus par cet id : ils ne passent pas par la devinette de type.
+    cx_ref = re.search(r'const CX_REF = \{(.*?)\n\};', html, re.S)
+    overrides = {fold(k) for k in re.findall(r'"([^"]+)":\s*"[a-z]+\|', cx_ref.group(1))} if cx_ref else set()
+    seen = set()
+    for label in BUILD_LABEL.findall(block.group(0)):
+        for part in SPLIT_LABEL.split(re.sub(r'\s*×\s*\d+\s*$', '', label)):
+            part = part.strip()
+            if not part or fold(part) in overrides or (page, fold(part)) in seen:
+                continue
+            seen.add((page, fold(part)))
+            typ, hits = auto_resolve(part)
+            if typ is None:
+                problems.append((page, f'BUILDS « {part} »', 'introuvable dans la KB'))
+            elif typ == 'ability' and all(h in HIDDEN for h in hits):
+                problems.append((page, f'BUILDS « {part} »',
+                                 'RETIRÉ DU GRIMOIRE (hiddenFromPlayer) — le joueur ne peut plus le lancer'))
+            elif len(hits) > 1 and real_conflict(typ, hits):
+                problems.append((page, f'BUILDS « {part} »',
+                                 'AMBIGU — ajouter une entrée CX_REF vers un id : '
+                                 + ', '.join(sorted(x for x in hits if x))))
+
 if problems:
     for page, raw, why in problems:
-        print(f'❌ {page} — data-codex="{raw}" : {why}')
+        label = raw if raw.startswith('BUILDS') else f'data-codex="{raw}"'
+        print(f'❌ {page} — {label} : {why}')
     print(f'\n{len(problems)} référence(s) à corriger.')
     sys.exit(1)
 print('✓ Toutes les références Codex des pages sont valides et sans ambiguïté.')
