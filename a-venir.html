@@ -196,8 +196,8 @@
 <div class="wrap">
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · En préparation</p>
-    <h1>La prochaine version <span class="v" id="vNum">v0.38.0</span></h1>
-    <p class="lede">La v0.37.1 est sortie, et la branche de la v0.38.0 porte déjà <strong class="hl">263 commits</strong> — le jeu a même <strong class="hl">inscrit le numéro 0.38.0 dans ses fichiers</strong>, le geste qu’il fait juste avant de publier. La question n°1 d’abord : cette fois, <strong class="hl">deux classes bougent pour de vrai</strong>. Le <strong class="hl">Voleur en spé Combat perd un gros sixième de ses dégâts</strong> — il tapait nettement au-dessus de ses deux sœurs, il redescend dans le rang — et le <strong class="hl">Mage soigneur reçoit enfin ses rangs de niveau 20</strong> : soin, bouclier et écho montent tous d’un cran. Le reste est du gros œuvre : <strong class="hl">la carte du monde est refaite</strong> et dit enfin ce qu’elle montre — gisements prêts ou en repousse, ateliers, boîtes aux lettres, quêtes à prendre ou à rendre, et pour la première fois <strong class="hl">l’intérieur des Failles et des Gouffres</strong>. <strong class="hl">Les nuits deviennent traversables</strong> et suivent les <strong class="hl">phases de la lune</strong>, pendant qu’une journée passe de 20 à <strong class="hl">45 minutes</strong>. Enfin, une <strong class="hl">marque « Tricheur »</strong> apparaît au-dessus des joueurs sanctionnés, et <strong class="hl">les objets améliorés en douce à la forge des Failles sont remis à zéro</strong> — avec remboursement.</p>
+    <h1>La prochaine version <span class="v" id="vNum">v0.39.0</span></h1>
+    <p class="lede">La v0.38.3 est sortie, et la v0.39.0 se prépare : <strong class="hl">177 commits</strong> déjà posés, et le jeu a <strong class="hl">inscrit le numéro 0.39.0 dans ses fichiers</strong> — le geste qu’il fait juste avant de publier. Le gros morceau ne touche pas les classes mais le décor : <strong class="hl">deux châteaux cessent d’être des façades</strong>. Dawnhold Castle, dans l’Evergarden, et l’Ashen Bulwark, dans les Drakelands, deviennent des lieux où l’on entre, où l’on monte sur les <strong class="hl">chemins de ronde</strong>, et dont l’intérieur a sa <strong class="hl">carte étage par étage</strong> — comme le Last Keep, qui en profite aussi. Côté raid, un changement qu’on sentira tout de suite : <strong class="hl">un wipe sur Nythraxis vous rend vos grands cooldowns</strong> au lieu de vous faire attendre entre deux essais. Côté classe, une seule bouge vraiment : le <strong class="hl">Démoniste</strong>, dont les deux peurs cessent d’être une loterie et absorbent un <strong class="hl">montant de dégâts fixe</strong> avant de céder.</p>
 
     <div class="warn">
       <span class="ico" aria-hidden="true">⚠️</span>
@@ -208,10 +208,10 @@
     </div>
 
     <div class="meta">
-      <span><b>Depuis</b> la v0.37.1</span>
+      <span><b>Depuis</b> la v0.38.3</span>
       <span id="freshness"><b>Dernière vérification</b> à l’instant</span>
       <span id="moved"></span>
-      <span id="written"><b>Résumé écrit</b> le 14 août 2026 à 12 h 00</span>
+      <span id="written"><b>Résumé écrit</b> le 17 août 2026 à 09 h 30</span>
     </div>
     <p class="sec-sub" style="margin:6px 0 0;font-size:0.85rem">« Dernière vérification » = la dernière fois que cette page est allée voir où en sont les développeurs. « Dernier changement du jeu » = quand ils ont touché à cette version pour la dernière fois.</p>
     <div id="chantiers"></div>
@@ -225,32 +225,32 @@
       <li>
         <span class="d-ico" aria-hidden="true">⚔️</span>
         <a class="d-name" href="#classes">Classes &amp; sorts</a>
-        <span class="d-say">— <b class="down">Guerrier ↓</b> <b class="down">Paladin ↓</b> <b class="up">Chasseur ↑</b> <b class="down">Voleur ↓</b> <b class="eq">Prêtre =</b> <b class="up">Mage ↑</b> <b class="eq">Chaman =</b> <b class="up">Démoniste ↑</b> <b class="down">Druide ↓</b> · Deux vrais changements. Le <b>Voleur en spé Combat</b> tapait trop fort et <b>redescend d’un sixième</b> ; le <b>Mage soigneur</b> gagne ses <b>rangs de niveau 20</b> et voit son écho soigner un peu plus. Les six autres flèches ne valent <b>qu’en JcJ</b>, et pour une seule raison : un <b>familier peut de nouveau faire un coup critique sur un tank</b> — bon pour le chasseur et le démoniste, mauvais pour qui tient le bouclier.</span>
+        <span class="d-say">— <b class="up">Démoniste ↑</b> <b class="up">Paladin ↑</b> <b class="eq">les sept autres =</b> · Une seule classe change pour de vrai. Les deux peurs du <b>Démoniste</b> — <b>Harrow</b> et <b>Dread Chorus</b> — cessent d’être une loterie : au lieu de pouvoir sauter au premier coup avec de la malchance, elles encaissent <b>8 % des PV maximum</b> de la cible, puis cèdent. Le <b>Paladin</b> récupère ses auras de groupe permanentes, qui ne suivaient pas toujours le groupe. Aucun chiffre de dégâts ni de soin ne bouge nulle part.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🔨</span>
-        <a class="d-name" href="#carte">Métiers &amp; récolte</a>
-        <span class="d-say">— Aucune recette, aucun gisement, aucun banc de pêche touché. En revanche la carte <b>ne vous fait plus courir pour rien</b> : chaque gisement y dit s’il est <b>prêt pour vous, déjà récolté, ou hors de portée de votre outil</b>, et les <b>six ateliers</b> (forge, cuisines, apothicaire, tannerie, métier à tisser, établi) ont chacun leur icône.</span>
+        <a class="d-name" href="#confort">Métiers &amp; récolte</a>
+        <span class="d-say">— Aucune recette, aucun gisement, aucun banc de pêche touché. Une seule correction, mais qui traînait : les objets <b>tenus en main gauche</b> se <b>désenchantent et se recyclent</b> comme n’importe quelle autre pièce, alors qu’ils étaient jusqu’ici les seuls à être refusés.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🐉</span>
-        <a class="d-name" href="#failles">Donjons, failles &amp; boss</a>
-        <span class="d-say">— Pour la première fois, <b>les Failles et les Gouffres ont une vraie carte d’intérieur</b> : la descente, les balises de retour, les coffres — pris, verrouillés ou déjà ouverts — et les mécanismes (pylônes, runes, blocs à pousser, grilles) avec leur état. Et la <b>forge des Failles</b>, fermée à clé en v0.37.0, a maintenant sa suite : tout ce qui avait été amélioré en douce est <b>remis à zéro et remboursé</b>.</span>
+        <a class="d-name" href="#raid">Donjons, failles &amp; boss</a>
+        <span class="d-say">— <b>Un wipe sur Nythraxis ne coûte plus vos grands cooldowns</b> : quand le boss se remet en place, tout ce qui dépasse <b>deux minutes</b> de recharge repart à zéro pour chaque participant. Côté Gouffres, la <b>salle finale ne donne plus sa récompense</b> tant qu’un add invoqué par le boss est encore debout.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🗺️</span>
-        <a class="d-name" href="#carte">Monde &amp; quêtes</a>
-        <span class="d-say"><b>La carte du monde est refaite de fond en comble.</b> Elle distingue enfin ce qu’elle montre : une quête <b>à prendre</b>, <b>à rendre</b>, <b>répétable</b> ou <b>en attente du lendemain</b>, les <b>boîtes aux lettres</b> et les <b>panneaux d’affichage</b>, les entrées et sorties de donjon. Et fin d’une vieille cruauté : les <b>objets de quête qui brillent au sol n’apparaissent plus tant que vous n’avez pas la quête</b> — on ne court plus vers un coffre que le serveur refusera d’ouvrir.</span>
+        <a class="d-name" href="#chateaux">Monde &amp; quêtes</a>
+        <span class="d-say"><b>Deux châteaux deviennent de vrais lieux.</b> <b>Dawnhold Castle</b> (Evergarden) et l’<b>Ashen Bulwark</b> (Drakelands) passent de décor à terrain praticable : cour, remparts où l’on marche, escaliers, intérieurs meublés, et une <b>carte d’intérieur étage par étage</b> que le Last Keep reçoit aussi. Et fin d’une vieille injustice : un monstre réservé à une quête <b>n’agresse plus ceux qui n’ont pas la quête</b>.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🏰</span>
-        <a class="d-name" href="#triche">Guilde &amp; social</a>
-        <span class="d-say"><b>Une marque « Tricheur » arrive</b>, posée par les administrateurs sur un <b>compte</b> — tous les personnages la portent, changer de perso n’y échappe pas. Elle s’affiche au-dessus de la tête et dans le cadre de cible, elle ne peut <b>ni se dissiper, ni se purger, ni se retirer</b>, et elle ne s’efface qu’après un certain temps <b>passé en jeu, vivant</b> — se déconnecter ne fait pas tourner le compteur. Point important : elle <b>ne change strictement aucune statistique</b>.</span>
+        <a class="d-name" href="#classes">Guilde &amp; social</a>
+        <span class="d-say">— Rien de neuf côté guilde. Une correction de groupe tout de même : le <b>puits d’âmes</b> du Démoniste accepte enfin ceux qui <b>rejoignent le groupe après</b> sa pose, au lieu de ne servir que les présents au moment du clic.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">⚙️</span>
-        <a class="d-name" href="#nuit">Confort &amp; technique</a>
-        <span class="d-say"><b>Les nuits redeviennent jouables</b> : hors des routes éclairées, il faisait presque noir ; le ciel éclaire maintenant assez pour se repérer, la lune garde les ombres longues, et sa <b>phase</b> décide de la clarté de la nuit. Une journée complète dure <b>45 minutes</b> au lieu de 20. À l’hôtel des ventes, l’onglet Vente affiche <b>le prix le plus bas déjà en ligne</b> et un bouton range le catalogue à <b>une seule offre par objet</b>. Enfin, votre apparence de personnage tient dans <b>une ligne de texte</b> à copier-coller.</span>
+        <a class="d-name" href="#confort">Confort &amp; technique</a>
+        <span class="d-say">— Le plus utile est invisible : <b>le gel d’une seconde à la première invocation d’une monture disparaît</b>, les intérieurs de Gouffre ne se reconstruisent plus à chaque passage, et un <b>lissage des contours arrive en qualité moyenne</b>. Côté texte, une passe sur les <b>infobulles françaises</b> et les derniers noms restés en anglais.</span>
       </li>
     </ol>
   </nav>
@@ -258,219 +258,163 @@
   <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
        s'efface d'elle-même quand cette version sort, et se signale périmée si
        le jeu passe à préparer la suivante. -->
-  <div id="editorial" data-for="v0.38.0" data-commits="263" data-chantiers="v0.38.0" data-written="2026-08-14T12:00+02:00">
+  <div id="editorial" data-for="v0.39.0" data-commits="177" data-chantiers="v0.39.0" data-written="2026-08-17T09:30+02:00">
 
-  <!-- 1 LA CARTE -->
-  <section id="carte">
-    <div class="sec-head"><span class="sec-num">01</span><h2>La carte apprend enfin à dire ce qu’elle montre</h2></div>
-    <p class="sec-sub">C’est le plus gros chantier de la branche, et de loin. Jusqu’ici, la carte et la mini-carte parlaient par points : un point pour un gisement, un point pour un coffre, un point pour un mécanisme — à vous de deviner lequel, et surtout <strong class="hl">s’il servait encore à quelque chose</strong>. Vingt-huit dessins distincts remplacent ces points, et la plupart portent en plus <strong class="hl">un état</strong>. Le résultat tient en une phrase : la carte cesse de vous faire courir pour rien.</p>
+  <!-- 1 LES CHÂTEAUX -->
+  <section id="chateaux">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Deux châteaux cessent d’être des façades</h2></div>
+    <p class="sec-sub">C’est de loin le plus gros chantier de la branche. Jusqu’ici, <strong class="hl">Dawnhold Castle</strong> dans l’Evergarden et l’<strong class="hl">Ashen Bulwark</strong> dans les Drakelands étaient des coquilles : jolies de loin, fermées de près. Les deux sont reconstruits sur le modèle du <strong class="hl">Last Keep</strong> — un terrain qu’on parcourt vraiment, murs compris. Comme toujours sur cette page : c’est du travail en cours, et la disposition peut encore bouger avant la sortie.</p>
     <div class="grid cols-3">
-      <div class="card more" data-detail="gisements" tabindex="0" role="button" aria-label="Détails : les gisements sur la carte">
-        <h3>Un gisement dit s’il est pour vous <span class="chip c-new">Récolte</span></h3>
-        <p>Minerai, bois et herbe ont chacun leur icône, et chacune a <strong class="hl">deux états indépendants</strong> : récoltable <strong class="hl">pour vous</strong> — deux joueurs côte à côte voient des choses différentes, la repousse est personnelle — et <strong class="hl">verrouillé faute d’outil assez bon</strong>. Un gisement épuisé rétrécit et se décolore ; un gisement prêt mais hors de portée de votre pioche le dit à part.</p>
+      <div class="card more" data-detail="chateaux" tabindex="0" role="button" aria-label="Détails : ce que veut dire « château praticable »">
+        <h3>On y entre, et on monte dessus <span class="chip c-new">Monde</span></h3>
+        <p>Les remparts ne sont plus un décor posé sur le sol : ce sont des <strong class="hl">reliefs du terrain</strong>, avec une <strong class="hl">plate-forme plate au sommet</strong> sur laquelle on marche. Les portes sont de vraies ouvertures alignées sur les arches, et le chemin de ronde <strong class="hl">laisse une trouée au-dessus de chaque porte</strong> au lieu de passer par-dessus comme si de rien n’était.</p>
         <span class="more-link">Voir le détail</span>
       </div>
-      <div class="card more" data-detail="quetes" tabindex="0" role="button" aria-label="Détails : les quêtes et les objets de quête">
-        <h3>Une quête dit où elle en est <span class="chip c-new">Quêtes</span></h3>
-        <p>Quatre états au lieu d’un seul point : <strong class="hl">à prendre</strong>, <strong class="hl">à rendre</strong>, <strong class="hl">répétable</strong>, et <strong class="hl">déjà faite aujourd’hui</strong> — celle qu’on refait chaque jour et qui n’est pas encore revenue. Et le changement dont on parlera le plus : les <strong class="hl">objets de quête qui brillent au sol</strong> n’apparaissent plus tant que vous n’avez pas accepté la quête.</p>
+      <div class="card more" data-detail="parkour" tabindex="0" role="button" aria-label="Détails : parapets et prises d’escalade">
+        <h3>Un parapet qui retient, des prises qui tiennent <span class="chip c-new">Escalade</span></h3>
+        <p>Deux ajouts qui vont ensemble : un <strong class="hl">parapet</strong> le long des chemins de ronde — pour ne plus tomber d’un mur en visant mal —, et des <strong class="hl">prises d’escalade</strong> dedans comme dehors, branchées sur le <strong class="hl">vrai système d’escalade</strong> du jeu et non sur un décor décoratif. Leur espacement a été refait pour coller au réglage d’escalade de la v0.35.</p>
         <span class="more-link">Voir le détail</span>
       </div>
-      <div class="card">
-        <h3>Les services, enfin sur la carte <span class="chip c-util">Confort</span></h3>
-        <ul>
-          <li>Les <strong class="hl">boîtes aux lettres</strong> et les <strong class="hl">panneaux d’affichage</strong> ont leur icône. C’est nouveau : jusqu’ici il fallait les connaître par cœur.</li>
-          <li>Les <strong class="hl">six ateliers de métier</strong> aussi — forge, cuisines, apothicaire, tannerie, métier à tisser, établi.</li>
-          <li>Les <strong class="hl">entrées et sorties de donjon</strong> sont deux dessins différents, et non plus le même.</li>
-        </ul>
+      <div class="card more" data-detail="plans" tabindex="0" role="button" aria-label="Détails : les cartes d’intérieur de château">
+        <h3>Une carte d’intérieur, étage par étage <span class="chip c-new">Interface</span></h3>
+        <p>Première fois pour un château : à l’intérieur du <strong class="hl">Last Keep</strong> et de <strong class="hl">Dawnhold</strong>, la mini-carte et la fenêtre de carte affichent un <strong class="hl">plan au sol</strong> dessiné depuis les vraies pièces — murs pleins, <strong class="hl">portes en trouées réelles</strong>, marches marquées à chaque changement de niveau. L’étage où vous êtes est net, les autres sont estompés pour situer.</p>
+        <span class="more-link">Voir le détail</span>
       </div>
     </div>
     <div class="grid cols-2" style="margin-top:14px">
-      <div class="card more" data-detail="carte" tabindex="0" role="button" aria-label="Détails : lisibilité et accessibilité de la carte">
-        <h3>Lisible sur un téléphone, lisible au lecteur d’écran <span class="chip c-new">Interface</span></h3>
-        <p>La mini-carte fait 162 pixels, et sur un téléphone en paysage l’interface la réduit encore de moitié : les icônes y étaient illisibles. Elles ont désormais une <strong class="hl">taille à part pour le tactile</strong>. En parallèle, la carte sait maintenant se <strong class="hl">résumer en mots</strong> — ce que contient la vue, où sont les objectifs — pour qui joue au lecteur d’écran.</p>
-        <span class="more-link">Voir le détail</span>
+      <div class="card">
+        <h3>Dawnhold, le château-jardin <span class="chip c-util">Evergarden</span></h3>
+        <ul>
+          <li>Une <strong class="hl">cour de garnison pavée</strong> unique, sans terrasses, avec le donjon composé contre son aile de grande salle au nord.</li>
+          <li>Une <strong class="hl">cour aux fleurs</strong> fermée le long du mur sud, où mènent les poternes : cinq parterres autour d’une <strong class="hl">statue de renard</strong>.</li>
+          <li><strong class="hl">Cinq nouvelles ailes</strong> et un <strong class="hl">second escalier</strong> vers l’étage, un intérieur meublé, et un <strong class="hl">haut fait</strong> pour qui vient flâner dans ses galeries.</li>
+        </ul>
       </div>
       <div class="card">
-        <h3>Et ce n’est pas payé en images par seconde <span class="chip c-util">Précision</span></h3>
-        <p>Tout ce dessin supplémentaire est <strong class="hl">préparé une fois puis réutilisé</strong> d’une image à l’autre, y compris les emplacements de marqueurs à l’intérieur d’une Faille. Les infobulles trop serrées se <strong class="hl">décalent</strong> pour ne plus se recouvrir, et deux fenêtres de carte ouvertes en mode compact <strong class="hl">ne se chevauchent plus</strong>. Rien de tout cela n’est réservé aux réglages graphiques élevés : le jeu s’interdit de donner un avantage d’information aux grosses machines.</p>
+        <h3>L’Ashen Bulwark, la caserne murée <span class="chip c-util">Drakelands</span></h3>
+        <ul>
+          <li>Bâtie sur un <strong class="hl">promontoire</strong> de la côte ouest — mer, baie et lagune autour, pas une plaine ouverte.</li>
+          <li>Murs, tours et portes <strong class="hl">habillés</strong>, cour de manœuvre à l’intérieur.</li>
+          <li>Les deux châteaux sont désormais <strong class="hl">dessinés sur la carte de zone</strong> : on les voit avant d’y aller.</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- 2 CLASSES -->
+  <!-- 2 LE RAID -->
+  <section id="raid">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Un wipe sur Nythraxis ne coûte plus vos grands cooldowns</h2></div>
+    <p class="sec-sub">Le changement qui se sentira le plus vite en raid. Jusqu’ici, rater un essai sur <span data-codex="mob|Nythraxis, Scourge of Thornpeak">Nythraxis</span> signifiait attendre — parfois dix minutes — que les gros boutons reviennent avant de pouvoir réessayer sérieusement.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="wipe" tabindex="0" role="button" aria-label="Détails : la remise à zéro des cooldowns après un wipe">
+        <h3>Ce qui repart à zéro <span class="chip c-new">Raid</span></h3>
+        <p>Quand le raid tombe et que le boss se remet en place, chaque participant retrouve <strong class="hl">toutes ses capacités dont la recharge dépasse deux minutes</strong>. Rien en dessous n’est touché : les petits cooldowns tournent déjà assez vite pour ne pas dicter le rythme des essais.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Une exception nommée <span class="chip c-util">Précision</span></h3>
+        <ul>
+          <li><span data-codex="ability|army_of_the_dead">Army of the Dead</span> repart à zéro <strong class="hl">quelle que soit</strong> sa recharge : elle est traitée à part, nommément.</li>
+          <li>Ça ne s’applique qu’aux <strong class="hl">participants de la tentative</strong>, pas à quelqu’un qui passait par là.</li>
+          <li>C’est <strong class="hl">le wipe sur Nythraxis</strong> qui déclenche, pas une mort ordinaire ni un wipe de donjon à cinq.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Et côté Gouffres <span class="chip c-new">Delves</span></h3>
+        <ul>
+          <li>La <strong class="hl">salle finale ne donne plus sa récompense</strong> tant qu’un <strong class="hl">add invoqué par le boss</strong> est encore vivant.</li>
+          <li>On pouvait donc encaisser la fin d’un Gouffre en laissant la salle à moitié nettoyée : c’est fermé.</li>
+          <li>Les intérieurs de Gouffre sont aussi <strong class="hl">mis en cache correctement</strong> — voir la partie technique.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 CLASSES -->
   <section id="classes">
-    <div class="sec-head"><span class="sec-num">02</span><h2>Le Voleur Combat redescend, le Mage soigneur finit sa montée</h2></div>
-    <p class="sec-sub">Deux changements de classe réels, et six flèches qui n’en sont pas vraiment une — elles viennent toutes du même correctif JcJ. Comme toujours sur cette page : ces chiffres sont ceux <strong class="hl">écrits aujourd’hui dans la branche</strong>, et une branche en préparation peut encore les rebouger avant la sortie.</p>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Le Démoniste : la peur cesse d’être une loterie</h2></div>
+    <p class="sec-sub">Une seule classe change pour de vrai, et c’est une question de <strong class="hl">fiabilité</strong> plus que de puissance. Le reste de la branche côté classes, ce sont des corrections — nombreuses, mais des corrections. Rappel d’usage : ces chiffres sont ceux <strong class="hl">écrits aujourd’hui dans la branche</strong>, et une version en préparation peut encore les rebouger.</p>
     <div class="grid cols-3">
-      <div class="card more" data-detail="voleur" tabindex="0" role="button" aria-label="Détails : le nerf du Voleur Combat">
-        <h3><span data-codex="spec|Thuggery">Thuggery</span> : un sixième en moins <span class="chip c-bal">Nerf</span></h3>
-        <p>La spé Combat du Voleur — <span data-codex="spec|Thuggery">Thuggery</span> — tapait environ <strong class="hl">un quart plus fort</strong> que les deux autres spés du Voleur sur le même boss de référence. Deux réglages cachés — ceux qui portent son jeu d’attaques automatiques — sont fortement rabotés. Elle atterrit <strong class="hl">au sommet de la fourchette commune</strong>, donc toujours la meilleure des trois, mais sans l’écart. <strong class="hl"><span data-codex="spec|Knifework">Knifework</span> et <span data-codex="spec|Skulduggery">Skulduggery</span> ne bougent pas d’un point.</strong></p>
+      <div class="card more" data-detail="peur" tabindex="0" role="button" aria-label="Détails : le budget de dégâts des peurs du Démoniste">
+        <h3>8 % des PV max, puis ça casse <span class="chip c-bal">Équilibrage</span></h3>
+        <p><span data-codex="ability|fear">Harrow</span> et <span data-codex="ability|howl_of_terror">Dread Chorus</span> ne se brisent plus <strong class="hl">au hasard</strong>. Elles encaissent désormais un montant fixe — <strong class="hl">8 % des points de vie maximum</strong> de la cible — puis cèdent. Avant, un petit coup pouvait les faire sauter tout de suite avec de la malchance ; maintenant on sait exactement ce qu’on peut se permettre.</p>
         <span class="more-link">Voir le détail</span>
       </div>
-      <div class="card more" data-detail="mage" tabindex="0" role="button" aria-label="Détails : les rangs 20 du Mage soigneur">
-        <h3>Mage : les rangs manquants du niveau 20 <span class="chip c-new">Buff</span></h3>
-        <p>La spé soigneur du Mage — <span data-codex="spec|Chronomancy">Chronomancy</span> — avait été livrée <strong class="hl">sans ses derniers rangs</strong> : au niveau 20, plusieurs sorts en étaient encore à leur puissance du niveau 14. Trois d’entre eux reçoivent leur rang de capstone, un quatrième récupère un <strong class="hl">palier intermédiaire au niveau 18</strong>, et le sort de base du soigneur gagne enfin une <strong class="hl">échelle de rangs</strong> au lieu de rester figé.</p>
-        <span class="more-link">Voir le détail</span>
-      </div>
-      <div class="card more" data-detail="tank" tabindex="0" role="button" aria-label="Détails : les familiers et les tanks en JcJ">
-        <h3>Les familiers recritiquent les tanks <span class="chip c-pvp">JcJ</span></h3>
-        <p>Un tank « engagé » — Guerrier <span data-codex="spec|Ironguard">Ironguard</span>, Paladin <span data-codex="spec|Faithwarden">Faithwarden</span>, Druide <span data-codex="spec|Wildfang">Wildfang</span> en Forme de paresse — est <strong class="hl">immunisé aux coups critiques des monstres</strong>. Par erreur, cette immunité couvrait aussi les <strong class="hl">familiers de joueurs</strong> : un loup de chasseur ne pouvait pas critiquer un tank en duel. C’est corrigé, et ça n’a jamais été voulu autrement.</p>
-        <span class="more-link">Voir le détail</span>
-      </div>
-    </div>
-    <div class="grid cols-2" style="margin-top:14px">
-      <div class="card">
-        <h3>Ce qui ne bouge pas <span class="chip c-util">Repère</span></h3>
+      <div class="card more" data-detail="warlock" tabindex="0" role="button" aria-label="Détails : le reste de la passe Démoniste">
+        <h3>Et une longue passe de corrections <span class="chip c-util">Démoniste</span></h3>
         <ul>
-          <li><strong class="hl">Prêtre et Chaman</strong> : rien du tout, pas une valeur.</li>
-          <li>Guerrier, Paladin et Druide n’ont <strong class="hl">aucun changement en JcE</strong> : leur flèche vers le bas ne concerne que le duel, l’arène et le champ de bataille, et uniquement face à un familier.</li>
-          <li>Chasseur et Démoniste ne gagnent <strong class="hl">rien de leur côté</strong> : c’est leur familier qui retrouve un coup qui lui revenait.</li>
-          <li>Aucun <strong class="hl">talent</strong>, aucune <strong class="hl">maîtrise</strong>, aucune <strong class="hl">rangée de choix</strong> n’est modifié dans la branche.</li>
+          <li>Le <span data-codex="ability|soulwell">Soulwell</span> sert enfin ceux qui <strong class="hl">rejoignent le groupe après</strong> sa pose.</li>
+          <li>La Nécromancie est mise <strong class="hl">en état de marche pour le raid</strong>, et le sacrifice vise en priorité le guerrier squelette.</li>
+          <li>Le <strong class="hl">Hexcraft</strong> voit son fil du destin lissé et ses trous de finition bouchés.</li>
         </ul>
+        <span class="more-link">Voir le détail</span>
       </div>
       <div class="card">
-        <h3>Le mannequin ne se fait plus traîner <span class="chip c-util">Détail</span></h3>
-        <p><span data-codex="ability|oath_chain">Oath Chain</span>, la chaîne du Paladin qui tire sa cible à lui, fonctionnait aussi sur le <span data-codex="mob|training_dummy">mannequin d’entraînement</span> — qui finissait <strong class="hl">arraché de son socle</strong> et porté disparu. Les mannequins sont désormais exclus de la traction, eux seuls : les autres contrôles continuent de s’y appliquer, puisque c’est justement à ça qu’ils servent. Aucun effet sur un vrai monstre.</p>
+        <h3>Le Paladin retrouve ses auras <span class="chip c-util">Paladin</span></h3>
+        <ul>
+          <li>Les <strong class="hl">auras de groupe permanentes</strong> se synchronisent correctement sur les membres du groupe.</li>
+          <li>Et elles <strong class="hl">s’effacent quand on quitte le groupe</strong>, au lieu de rester accrochées.</li>
+          <li>Aucun chiffre ne change : c’est l’aura qui manquait à l’appel, pas sa valeur.</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- 3 FAILLES -->
-  <section id="failles">
-    <div class="sec-head"><span class="sec-num">03</span><h2>Failles et Gouffres : une carte de l’intérieur, et la forge remise à zéro</h2></div>
-    <p class="sec-sub">Deux choses sans rapport, sauf qu’elles touchent au même endroit du jeu. D’un côté, l’intérieur des instances devient <strong class="hl">cartographiable</strong> pour la première fois. De l’autre, la <strong class="hl">forge des Failles</strong> — cette fonction sans interface que la v0.37.0 a fermée à clé après que des joueurs s’en soient servis — reçoit sa conclusion.</p>
-    <div class="grid cols-2">
-      <div class="card more" data-detail="instances" tabindex="0" role="button" aria-label="Détails : les cartes de Faille et de Gouffre">
-        <h3>Enfin une carte qui suit le donjon <span class="chip c-raid">Nouveau</span></h3>
-        <p>Dans une Faille, la carte montre maintenant la <strong class="hl">descente</strong>, les <strong class="hl">balises de retour</strong> et les <strong class="hl">deux sorties</strong>, les <strong class="hl">coffres</strong> avec leur état — à prendre, verrouillé, déjà ouvert, ou coincé — et les <strong class="hl">mécanismes</strong> : pylônes et runes allumés ou éteints, blocs poussables ou déjà en place, grilles ouvertes ou scellées, orbes actifs ou dormants. Les <strong class="hl">Gouffres</strong> ont leur propre jeu, jusqu’au <strong class="hl">Reliquaire</strong> et à son rite.</p>
-        <span class="more-link">Voir le détail</span>
-      </div>
-      <div class="card more" data-detail="forge" tabindex="0" role="button" aria-label="Détails : la remise à zéro de la forge des Failles">
-        <h3>Ce qui a été forgé en douce est défait <span class="chip c-bal">Remise à zéro</span></h3>
-        <p>La v0.37.0 avait <strong class="hl">verrouillé</strong> la forge des Failles ; la v0.38.0 <strong class="hl">annule ce qui avait été fait avec</strong>. Sur chaque objet concerné — sac, banque, rachat et équipement compris — le niveau d’amélioration, l’enchantement et les gemmes sont <strong class="hl">remis à zéro</strong>. Ce n’est pas une confiscation : <strong class="hl">l’essence dépensée est rendue au centime</strong>, et les <strong class="hl">gemmes serties reviennent en objets</strong> dans les poches.</p>
-        <span class="more-link">Voir le détail</span>
-      </div>
-    </div>
-    <div class="grid cols-2" style="margin-top:14px">
-      <div class="card">
-        <h3>Qui est concerné <span class="chip c-util">Repère</span></h3>
-        <ul>
-          <li>Uniquement les objets <strong class="hl">réellement passés par la forge</strong> pendant la fenêtre où elle répondait encore. Un objet de Faille normal, gagné et porté sans y toucher, n’est <strong class="hl">pas modifié</strong>.</li>
-          <li>La remise à zéro <strong class="hl">ne peut pas se produire deux fois</strong> : elle laisse une marque derrière elle, et toute exécution ultérieure se refuse d’elle-même. Le jour où la forge ouvrira pour de bon, les objets forgés légitimement ne risquent rien.</li>
-          <li>Elle se fait <strong class="hl">serveur à l’arrêt</strong>, personne connecté.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Et ce que ça dit de la suite <span class="chip c-util">Prudence</span></h3>
-        <p>Le jeu prend la peine d’écrire une remise à zéro <strong class="hl">réversible et remboursée</strong> plutôt que d’effacer les objets — c’est le geste qu’on fait quand on compte <strong class="hl">ouvrir la fonction pour de vrai</strong> plus tard. Amélioration, enchantement et sertissage de l’équipement de Faille existent, sont testés, et n’attendent qu’une fenêtre dans le jeu. Toujours <strong class="hl">rien d’annoncé</strong> pour autant : ne comptez pas dessus pour cette version.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4 NUITS -->
-  <section id="nuit">
-    <div class="sec-head"><span class="sec-num">04</span><h2>Des nuits qu’on peut traverser, et des journées qui durent</h2></div>
-    <p class="sec-sub">Le jeu a mis des lampadaires le long de toutes ses routes, puis a baissé l’éclairage général pour que ces lampadaires servent à quelque chose. Bien vu sur la route — sauf qu’en <strong class="hl">forêt, à dix mètres du chemin</strong>, il ne restait plus rien : une découpe noire. La nuit est reprise en deux moitiés séparées.</p>
+  <!-- 4 MONDE -->
+  <section id="monde">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Les Drakelands s’étoffent, et les monstres de quête vous laissent tranquille</h2></div>
+    <p class="sec-sub">Deux choses sans rapport, réunies ici parce qu’elles se voient au même endroit : en vous promenant.</p>
     <div class="grid cols-3">
-      <div class="card more" data-detail="nuit" tabindex="0" role="button" aria-label="Détails : la refonte de l’éclairage nocturne">
-        <h3>Voir le sol, sans perdre la nuit <span class="chip c-new">Éclairage</span></h3>
-        <p>Deux réglages là où il n’y en avait qu’un. La <strong class="hl">lueur du ciel</strong> — celle qui tient les reliefs et les silhouettes — remonte franchement, pour qu’on puisse <strong class="hl">se déplacer hors des routes</strong>. La <strong class="hl">lumière de la lune</strong>, elle, reste basse : c’est elle qui donne les ombres longues, et c’est le <strong class="hl">contraste entre les deux</strong> qui fait qu’une nuit ressemble à une nuit plutôt qu’à un jour terne.</p>
-        <span class="more-link">Voir le détail</span>
-      </div>
-      <div class="card more" data-detail="lune" tabindex="0" role="button" aria-label="Détails : les phases de lune">
-        <h3>La lune décide de la clarté <span class="chip c-new">Nouveau</span></h3>
-        <p>C’est nouveau, et c’est visible : la <strong class="hl">phase de la lune</strong> fait varier la clarté de la nuit. Pleine lune, la nuit est nettement plus claire et les ombres portées plus franches ; nouvelle lune, elle descend vers <strong class="hl">le plus sombre qui reste praticable</strong>. Le demi-croissant est la nuit « normale ». Tous les joueurs voient <strong class="hl">la même lune au même instant</strong>.</p>
+      <div class="card more" data-detail="aggro" tabindex="0" role="button" aria-label="Détails : les monstres réservés à une quête">
+        <h3>Un monstre de quête ne vous saute plus dessus <span class="chip c-new">Quêtes</span></h3>
+        <p>Un monstre réservé à une quête <strong class="hl">n’agresse plus les joueurs qui n’ont pas cette quête</strong> — jusqu’ici seule l’attaque directe était filtrée, pas l’agression. Et le <strong class="hl">soin</strong> ne colle plus de menace à un non-quêteur qui passait à côté.</p>
         <span class="more-link">Voir le détail</span>
       </div>
       <div class="card">
-        <h3>Une journée de 45 minutes <span class="chip c-bal">Rythme</span></h3>
-        <p>Le cycle complet jour → nuit → jour passe de <strong class="hl">20 à 45 minutes</strong>. La raison tient en une phrase des développeurs : à vingt minutes, <strong class="hl">traverser une zone était plus lent que le ciel</strong>, on partait au crépuscule et on arrivait en plein jour. Le <strong class="hl">mois lunaire s’étire automatiquement</strong> avec. Une soirée de jeu verra toujours plusieurs aubes, simplement moins précipitées.</p>
-      </div>
-    </div>
-    <div class="grid cols-2" style="margin-top:14px">
-      <div class="card">
-        <h3>La lune elle-même <span class="chip c-util">Détail</span></h3>
-        <p>Le disque lunaire est <strong class="hl">agrandi</strong>, son halo resserré et adouci, et la <strong class="hl">moitié dans l’ombre devient presque invisible</strong> au lieu de rester un gros rond gris. C’est ce qui rend la phase lisible d’un coup d’œil en levant les yeux — sinon, la mécanique du dessus se sentirait sans se comprendre.</p>
+        <h3>Les Drakelands <span class="chip c-util">Zone</span></h3>
+        <ul>
+          <li>Un <strong class="hl">vocabulaire de lave</strong> à trois éléments, décliné par secteur.</li>
+          <li>Les <strong class="hl">trésors de dragon</strong> passent au double, et les antres sont dégagés.</li>
+          <li>Des <strong class="hl">Nightbloom</strong> plantées, et un habillage de portes et de tours.</li>
+        </ul>
       </div>
       <div class="card">
-        <h3>Une inquiétude à écarter <span class="chip c-util">Équité</span></h3>
-        <p>Tout ceci est <strong class="hl">purement visuel et global</strong>. La nuit ne change ni la portée de vue en JcJ, ni la discrétion, ni un seul jet de dés — et personne ne peut se faire une nuit plus claire que les autres en baissant ses réglages graphiques : c’est une règle que le jeu s’impose partout.</p>
+        <h3>Deux petites justices <span class="chip c-util">Divers</span></h3>
+        <ul>
+          <li>Verrouiller un objet empilable <strong class="hl">verrouille toute la pile</strong>, et non le seul exemplaire visé.</li>
+          <li>Une teinte de mécha déséquipée <strong class="hl">ne révoque plus son déblocage</strong> sur tout le compte.</li>
+          <li>En champ de bataille, on peut enfin se <strong class="hl">décoincer d’un piège de mur</strong>.</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- 5 TRICHEUR -->
-  <section id="triche">
-    <div class="sec-head"><span class="sec-num">05</span><h2>Une marque « Tricheur », visible et impossible à enlever</h2></div>
-    <p class="sec-sub">C’est le nouveau système de sanction, et il est construit autour d’une règle unique que les développeurs ont écrite noir sur blanc : <strong class="hl">une sanction se voit, elle n’affaiblit jamais</strong>. Un opérateur qui pourrait, d’un clic, rendre un joueur plus faible ferait passer une modification d’équilibrage sans relecture — et rendrait injuste chacun de ses matchs suivants, pour ses adversaires comme pour ses coéquipiers.</p>
-    <div class="grid cols-3">
-      <div class="card more" data-detail="triche" tabindex="0" role="button" aria-label="Détails : la marque Tricheur">
-        <h3>Sur le compte, pas sur le personnage <span class="chip c-pvp">Sanction</span></h3>
-        <p>La marque est posée sur le <strong class="hl">compte</strong> : tous les personnages la portent, et <strong class="hl">se refaire un perso n’y échappe pas</strong>. Elle s’affiche au-dessus de la tête et dans le cadre de cible — donc les autres joueurs la voient, ce qui est tout l’objet.</p>
-        <span class="more-link">Voir le détail</span>
-      </div>
-      <div class="card">
-        <h3>Le compteur tourne en jouant <span class="chip c-bal">Durée</span></h3>
-        <ul>
-          <li>La marque s’efface après un certain <strong class="hl">temps passé en jeu, vivant</strong> — pas après un temps de calendrier.</li>
-          <li>Donc <strong class="hl">se déconnecter ne purge pas la peine</strong> : c’était précisément la façon de l’attendre sans la subir.</li>
-          <li>Elle est même <strong class="hl">en pause tant que vous êtes mort</strong>, cadavre ou fantôme. Une sanction qui doit se porter devant les autres ne se paie pas allongé.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Rien ne l’enlève <span class="chip c-util">Verrous</span></h3>
-        <ul>
-          <li>Ni <strong class="hl">dissipation</strong>, ni <strong class="hl">purification</strong>, ni clic droit : elle est protégée deux fois plutôt qu’une.</li>
-          <li>Elle <strong class="hl">survit à la mort</strong>, à toutes les résurrections, à l’entrée en <strong class="hl">arène</strong> et à la fin d’une Fiesta — tous les endroits où le jeu remet normalement les compteurs à zéro.</li>
-          <li>Elle ne passe pas non plus par le <strong class="hl">sélecteur de titres</strong>, où il aurait suffi de la décocher.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="grid cols-2" style="margin-top:14px">
-      <div class="card">
-        <h3>Zéro effet sur les statistiques <span class="chip c-util">La règle</span></h3>
-        <p>C’est vérifié à trois endroits du code, et gardé par des tests : la marque porte une <strong class="hl">valeur nulle</strong>, elle a sa <strong class="hl">propre catégorie inerte</strong> — pour qu’aucun réglage futur ne puisse lui donner un effet par ricochet — et <strong class="hl">aucun calcul de statistique ne la reconnaît</strong>. Pas un point d’attaque, pas une seconde de recharge, pas un butin.</p>
-      </div>
-      <div class="card">
-        <h3>Elle n’encombre pas le cadre de groupe <span class="chip c-util">Précision</span></h3>
-        <p>Un détail qui montre le sérieux de la règle : les cadres de groupe et de raid ne montrent <strong class="hl">qu’un nombre limité d’effets</strong>. Y afficher la marque aurait <strong class="hl">chassé un vrai malus dissipable</strong> de l’écran du soigneur — soit un handicap déguisé, exactement ce que la règle interdit. Elle en est donc exclue.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6 CONFORT -->
+  <!-- 5 CONFORT -->
   <section id="confort">
-    <div class="sec-head"><span class="sec-num">06</span><h2>Et pour le reste : l’hôtel des ventes, votre apparence, la mise à jour mobile</h2></div>
-    <p class="sec-sub">Trois petites choses qu’on remarquera plus vite que bien des grandes, plus une <strong class="hl">marche arrière assumée</strong> sur une nouveauté de la version précédente.</p>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Ce qui ne se voit pas, mais se sent</h2></div>
+    <p class="sec-sub">La rubrique la plus fournie de la branche, et de très loin — l’essentiel étant du travail de performance et de finition qui ne s’annonce pas.</p>
     <div class="grid cols-3">
-      <div class="card more" data-detail="marche" tabindex="0" role="button" aria-label="Détails : les changements de l’hôtel des ventes">
-        <h3>Savoir à quel prix vendre <span class="chip c-new">Hôtel des ventes</span></h3>
-        <p>Au moment de mettre un objet en vente, l’onglet affiche désormais <strong class="hl">le prix à l’unité le plus bas déjà en ligne</strong> — fini l’aller-retour par l’onglet Achat pour aller vérifier. Et côté Achat, un <strong class="hl">bouton range le catalogue à une seule offre par objet</strong>, la moins chère, au lieu de trente lignes du même consommable.</p>
-        <span class="more-link">Voir le détail</span>
-      </div>
-      <div class="card more" data-detail="apparence" tabindex="0" role="button" aria-label="Détails : le code d’apparence">
-        <h3>Votre tête en une ligne de texte <span class="chip c-new">Création</span></h3>
-        <p>Le créateur de personnage gagne un onglet <strong class="hl">Partage</strong> : toute votre apparence se résume en <strong class="hl">un code d’une ligne</strong>, qui se met à jour en direct pendant que vous réglez, se copie d’un bouton, et se <strong class="hl">colle chez quelqu’un d’autre</strong> pour rejouer exactement le même visage.</p>
+      <div class="card more" data-detail="perf" tabindex="0" role="button" aria-label="Détails : les gains de performance">
+        <h3>Le gel à la première monture disparaît <span class="chip c-new">Performance</span></h3>
+        <p>Invoquer une monture pour la première fois provoquait un <strong class="hl">à-coup</strong> le temps que la carte graphique prépare son rendu. Le jeu <strong class="hl">prépare désormais ces montures à l’avance</strong>. Même traitement pour votre propre fantôme, et les <strong class="hl">intérieurs de Gouffre</strong> ne se reconstruisent plus à chaque passage.</p>
         <span class="more-link">Voir le détail</span>
       </div>
       <div class="card">
-        <h3>La mise à jour mobile ne se refuse plus <span class="chip c-bal">Marche arrière</span></h3>
-        <p>La v0.37.0 avait ajouté un bouton « <strong class="hl">continuer sans mettre à jour</strong> » pendant le téléchargement. Il est <strong class="hl">retiré</strong> : il laissait passer sur une version périmée, droit vers le refus « version incompatible » quelques secondes plus tard. L’écran de mise à jour n’a donc plus de bouton du tout tant qu’il charge. Le reste — la barre de progression, jamais d’interruption en pleine partie — ne bouge pas.</p>
-      </div>
-    </div>
-    <div class="grid cols-2" style="margin-top:14px">
-      <div class="card">
-        <h3>Les petites réparations qui se verront <span class="chip c-util">Correctifs</span></h3>
+        <h3>Une image un peu plus propre <span class="chip c-util">Rendu</span></h3>
         <ul>
-          <li>La <strong class="hl">touche d’interaction</strong> ne se propose plus sur un objet de quête que vous ne voyez pas encore.</li>
-          <li>Les <strong class="hl">auréoles de soin</strong> qui restaient allumées hors de l’écran sont nettoyées.</li>
-          <li><strong class="hl">Grix et ses Terrassiers</strong>, arrivés en v0.37.0, voient leurs coups recalés sur leurs animations et leurs pieds reposés au sol.</li>
-          <li>Sur une connexion qui sature, le jeu <strong class="hl">jette les envois en trop plutôt que vos appuis de touche</strong> : les débuts et fins de mouvement passent en priorité.</li>
+          <li>Un <strong class="hl">lissage des contours</strong> arrive en qualité <strong class="hl">moyenne</strong>, là où il fallait monter plus haut.</li>
+          <li>Les <strong class="hl">ciels de biome</strong> se chargent dans un format plus léger.</li>
+          <li>Les rochers qui ont une collision <strong class="hl">restent visibles à tous les niveaux de qualité</strong> : on ne se cogne plus à un rocher invisible.</li>
         </ul>
       </div>
       <div class="card">
-        <h3>Ce qui occupe le reste de la branche <span class="chip c-util">Coulisses</span></h3>
-        <p>Sur les <strong class="hl">263 commits</strong>, une grosse moitié ne se voit pas en jeu : traductions régénérées dans les vingt langues, mesures de saccades graphiques outillées, statistiques d’inscription et de progression côté serveur, et le va-et-vient habituel avec la branche précédente. Cette page sera <strong class="hl">réécrite</strong> tant que la version n’est pas sortie : ce qui y figure décrit ce qui est <strong class="hl">déjà posé aujourd’hui</strong>, pas ce que sera la v0.38.0.</p>
+        <h3>Textes et interface <span class="chip c-util">Finition</span></h3>
+        <ul>
+          <li>Une passe sur les <strong class="hl">infobulles françaises</strong> et les derniers <strong class="hl">noms restés en anglais</strong>.</li>
+          <li>Une infobulle de bonus lit enfin <strong class="hl">la valeur réellement appliquée</strong>, et non une valeur théorique.</li>
+          <li>Sur écran tactile, la barre d’action de bureau <strong class="hl">ne se dessine plus deux fois</strong> en arrière-plan.</li>
+          <li>Les objets <strong class="hl">tenus en main gauche</strong> se désenchantent et se recyclent comme le reste.</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -498,261 +442,160 @@
 
 <script>
   const DETAILS = {
-    gisements: {
-      title: "Deux questions différentes, deux réponses sur la carte",
-      summary: "Lu dans le code de la branche — un gisement peut être indisponible pour deux raisons qui n’ont rien à voir, et la carte cessait de les distinguer.",
+    chateaux: {
+      title: "Ce que veut dire « un château praticable »",
+      summary: "Lu dans le code de la branche — la différence entre un décor posé sur le sol et un terrain que le jeu considère comme du relief.",
       body: `
-        <h4>« Récoltable » veut dire : par vous</h4>
+        <h4>Les murs sont du terrain</h4>
         <ul>
-          <li>La repousse d’un gisement est <b>propre à chaque joueur</b>. Deux personnes côte à côte devant le même filon peuvent voir l’une un gisement prêt, l’autre un gisement épuisé — et c’est normal.</li>
-          <li>La carte suit désormais cet état pour <b>vous</b>, et pas un état moyen : un gisement que vous venez de récolter s’affiche <b>plus petit et décoloré</b>, et redevient franc quand il est à nouveau à vous.</li>
+          <li>Les courtines ne sont pas des objets posés : ce sont des <b>reliefs du sol</b>, avec des flancs verticaux que le système d’escalade <b>refuse</b>, et un <b>dessus plat</b> qui sert de chemin.</li>
+          <li>Conséquence pratique : on marche dessus comme sur n’importe quel sol, sans passerelle invisible ni saut miraculeux.</li>
         </ul>
-        <h4>« Verrouillé » est une autre question</h4>
+        <h4>Les portes sont de vraies trouées</h4>
         <ul>
-          <li>C’est la question de l’<b>outil</b> : le gisement est prêt, mais votre pioche, votre hache ou votre faucille ne sont pas d’un rang suffisant pour l’entamer — et le jeu regarde ce que vous avez <b>réellement en main</b>.</li>
-          <li>Les deux états sont <b>indépendants</b> et affichés ensemble. La priorité visuelle va à l’épuisement (le plus courant), le verrou d’outil ayant son propre repère par-dessus.</li>
-          <li>Il n’y a donc plus qu’un cas où l’on se déplace pour rien : celui où on l’a décidé en connaissance de cause.</li>
+          <li>Chaque porte est un <b>trou aligné sur les modules du mur</b>, et la zone praticable de la porte se trouve <b>à l’intérieur de l’arche dessinée</b> — pas à côté.</li>
+          <li>Le chemin de ronde <b>s’interrompt au-dessus de chaque porte</b> : on ne traverse plus le vide au-dessus d’une arche sans s’en rendre compte.</li>
         </ul>
-        <p class="summary" style="margin-top:18px;border:0;padding:0">Même traitement pour les <b>ateliers de métier</b>, mais sans état : leurs emplacements ne bougent jamais et ne dépendent pas du joueur, donc tout le monde voit exactement la même chose.</p>`
+        <h4>Ce qui a été rattrapé au passage</h4>
+        <ul>
+          <li>Les bâtiments <b>entrent en collision selon la forme qu’ils ont à l’écran</b>, et non selon une boîte approximative.</li>
+          <li>Plus de <b>poches en coin</b> dans le Last Keep — ces recoins où l’on restait bloqué.</li>
+          <li>Une <b>brèche</b> dans la courtine de Dawnhold, née d’un reste de calcul de modules, a été refermée.</li>
+          <li>Les <b>bannières</b> se lisent depuis l’extérieur des murs, ce qui n’était pas le cas.</li>
+        </ul>
+        <h4>Et l’herbe</h4>
+        <p>Les fleurs et l’herbe <b>ne poussent plus sur la cour pavée</b> de Dawnhold : le pavé est reconnu comme tel par le semis de végétation.</p>`
     },
-    quetes: {
-      title: "Les quêtes, et la fin d’une petite cruauté",
-      summary: "Quatre états de quête sur la carte — et surtout, un objet qui brille ne ment plus.",
+    parkour: {
+      title: "Parapets et prises d’escalade",
+      summary: "Deux ajouts qui répondent au même problème : un mur sur lequel on marche doit être sûr, et un mur qu’on veut escalader doit offrir de vraies prises.",
       body: `
-        <h4>Sur la carte</h4>
+        <h4>Le parapet</h4>
+        <p>Les chemins de ronde reçoivent un <b>parapet qui retient réellement</b>. Sans lui, un mur praticable est surtout une occasion de tomber : on vise mal une marche, on sort du bord.</p>
+        <h4>Les prises</h4>
         <ul>
-          <li><b>À prendre</b>, <b>à rendre</b>, <b>répétable</b>, et <b>déjà faite pour aujourd’hui</b> : quatre dessins distincts là où il n’y avait qu’un point. Le dernier est celui qui manquait le plus — une quête quotidienne déjà bouclée avait exactement la même apparence qu’une quête à prendre.</li>
+          <li>Des <b>prises d’escalade</b> sont posées à l’intérieur comme à l’extérieur des enceintes.</li>
+          <li>Elles sont branchées sur le <b>vrai système d’escalade</b> du jeu — ce ne sont pas des décors sur lesquels on saute au jugé.</li>
+          <li>Leur <b>espacement a été refait</b> pour correspondre au réglage d’escalade introduit en v0.35 : des chaînes calées sur l’ancien réglage devenaient infranchissables ou triviales.</li>
         </ul>
-        <h4>Les objets qui brillent au sol</h4>
+        <h4>Un garde-fou explicite</h4>
+        <p>Les développeurs notent que les scellements ajoutés pour boucher les recoins <b>ne doivent pas devenir le piège qu’ils remplacent</b> : c’est le genre de correction qui se retourne facilement, et elle est suivie comme telle.</p>`
+    },
+    plans: {
+      title: "Les plans d’intérieur de château",
+      summary: "Une première : jusqu’ici, aucune carte ne montrait l’intérieur d’un château. Le Last Keep et Dawnhold en reçoivent une, par étage.",
+      body: `
+        <h4>Ce qui s’affiche</h4>
         <ul>
-          <li>Les caisses, sceaux, pages de registre et caches d’objectif étaient posés dans le monde <b>en permanence</b>, que vous ayez la quête ou non. On voyait briller, on marchait jusque-là, et le serveur <b>refusait de donner l’objet</b> — sans jamais dire pourquoi.</li>
-          <li>Ils n’apparaissent désormais que si la quête correspondante est <b>en cours ou prête à rendre</b>, et disparaissent au rendu comme à l’abandon.</li>
-          <li>La <b>touche d’interaction</b> suit : elle ne se propose plus sur un objet caché, ce qui aurait laissé une invite fantôme au milieu de rien.</li>
+          <li>Un <b>plan au sol</b>, dessiné directement depuis les <b>vraies pièces et les vraies portes</b> du château — pas une image redessinée à la main qui se périmerait au premier réaménagement.</li>
+          <li>Les pièces apparaissent en aplats discrets, les murs en traits pleins, et les <b>portes sont de véritables trouées</b> dans ces traits.</li>
+          <li>Des <b>marches</b> sont marquées en travers de chaque passage qui change de niveau.</li>
         </ul>
-        <h4>Le périmètre, volontairement étroit</h4>
+        <h4>Plusieurs étages</h4>
+        <p>Un plan est produit <b>par étage</b>. Celui où vous vous trouvez s’affiche net ; les autres restent visibles mais <b>estompés</b>, pour situer sans encombrer.</p>
+        <h4>Où on le voit</h4>
+        <p>Dans la <b>mini-carte</b> et dans la <b>fenêtre de carte</b>, à l’intérieur des instances du Last Keep et de Dawnhold Castle. C’est le même découpage que les cartes de Gouffre arrivées en v0.38.0 : un calcul pur d’un côté, un dessin de l’autre.</p>
+        <h4>Une conséquence à surveiller</h4>
+        <p>Les marqueurs de récolte ont dû être <b>retirés des branches de plan de château</b> : un plan d’intérieur n’a pas de gisements, et ils s’y affichaient à tort.</p>`
+    },
+    wipe: {
+      title: "La remise à zéro des cooldowns après un wipe sur Nythraxis",
+      summary: "Lu dans le code de la branche — la règle est simple, et son seuil est écrit noir sur blanc.",
+      body: `
+        <h4>Quand ça se déclenche</h4>
+        <p>Au <b>wipe du raid sur Nythraxis</b> : le moment où le boss retourne à sa place, retrouve sa vie, perd ses adds et ses auras, et où les portes scellées se rouvrent pour laisser le raid revenir.</p>
+        <h4>Ce qui repart à zéro</h4>
         <ul>
-          <li>Seuls les objets à <b>ramasser pour un objectif précis</b> sont concernés. Les décors avec lesquels on interagit sans quête — huttes de murlocs, tombes de Nythraxis, monuments, pontons — <b>restent debout</b> : ce sont des décors, pas des objectifs.</li>
-          <li>Le monde reste partagé et le serveur reste seul juge : c’est un filtre <b>d’affichage, par joueur</b>, pas une modification du monde.</li>
+          <li>Toute capacité connue du joueur dont la recharge dépasse <b>deux minutes</b>.</li>
+          <li>Et <b>Army of the Dead</b>, nommément, quelle que soit sa recharge.</li>
+          <li>Rien d’autre : en dessous de deux minutes, les cooldowns reviennent déjà assez vite pour ne pas décider du rythme.</li>
+        </ul>
+        <h4>Pour qui</h4>
+        <p>Uniquement les <b>participants de la tentative</b> — la liste que le combat tient lui-même. Quelqu’un qui n’était pas dans l’essai n’est pas concerné.</p>
+        <h4>Ce que ça change à une soirée raid</h4>
+        <p>Le temps entre deux essais cessait d’être décidé par le combat et devenait une attente de recharges : un raid ratait à 60 %, puis regardait un compteur avant de pouvoir réessayer <i>sérieusement</i>. C’est cette attente qui disparaît, pas la difficulté du combat.</p>`
+    },
+    peur: {
+      title: "Le budget de dégâts des peurs du Démoniste",
+      summary: "Lu dans le code de la branche, avec ses tests — un chiffre unique, 8 %, qui remplace un tirage au sort.",
+      body: `
+        <h4>Comment ça marchait avant</h4>
+        <ul>
+          <li>Toutes les peurs du jeu partageaient un modèle <b>probabiliste</b> : un coup valant une certaine fraction des points de vie maximum cassait la peur à coup sûr, et un coup plus petit la cassait <b>avec une probabilité proportionnelle</b>.</li>
+          <li>Autrement dit : un petit coup pouvait, avec de la malchance, faire sauter la peur immédiatement. Impossible à planifier.</li>
+        </ul>
+        <h4>Comment ça marche maintenant</h4>
+        <ul>
+          <li><b>Harrow</b> et <b>Dread Chorus</b> — et elles seules — reçoivent un <b>budget de dégâts fixe</b> : <b>8 % des points de vie maximum</b> de la cible.</li>
+          <li>Les dégâts s’accumulent dans ce budget ; la peur tient tant qu’il n’est pas dépassé, puis cède. Aucun hasard.</li>
+          <li>Sur une cible à 100 000 points de vie, le budget vaut 8 000. Les tests de la branche l’épinglent au point près : 7 999 ne cassent pas, 8 000 cassent.</li>
+          <li>Le budget ne descend jamais sous <b>1</b>, même sur une cible minuscule.</li>
+        </ul>
+        <h4>Ce qui ne change pas</h4>
+        <ul>
+          <li>Les autres peurs du jeu gardent l’ancien modèle probabiliste — <b>Morrowlash</b> y compris, alors qu’elle appartient à la même famille.</li>
+          <li>Les étourdissements simples, eux, cassent toujours au premier coup.</li>
+          <li>La <b>durée</b> des peurs, leur portée et leur coût ne bougent pas.</li>
+        </ul>
+        <h4>Buff ou nerf ?</h4>
+        <p>Ni l’un ni l’autre franchement : c’est de la <b>prévisibilité</b>. On perd les peurs qui tenaient anormalement longtemps par chance, on gagne celles qui sautaient au premier coup par malchance. Pour un Démoniste qui compte sur son contrôle, savoir exactement combien on peut taper vaut mieux qu’une moyenne. Le chiffre est d’ailleurs <b>écrit dans les deux descriptions de sort</b>.</p>`
+    },
+    warlock: {
+      title: "Le reste de la passe Démoniste",
+      summary: "Une quinzaine de corrections sur la même classe : c’est le vrai sujet de cette branche côté sorts.",
+      body: `
+        <h4>Le puits d’âmes</h4>
+        <p>Un <b>Soulwell</b> posé ne servait que les joueurs présents dans le groupe <b>au moment du clic</b>. Ceux qui rejoignaient ensuite restaient devant sans pouvoir se servir. Les arrivées tardives sont maintenant acceptées, et cette éligibilité <b>survit</b> aux allers-retours.</p>
+        <h4>La Nécromancie</h4>
+        <ul>
+          <li>Une mise <b>en état de marche pour le raid</b> — et c’est de ce chantier-là que vient, en prime, la <b>remise à zéro des cooldowns après un wipe</b> décrite plus haut : elle est née du besoin de rendre Army of the Dead entre deux essais.</li>
+          <li>Le sacrifice <b>vise en priorité le guerrier squelette</b>, au lieu de prendre n’importe quel serviteur sous la main.</li>
+          <li>Un dégât persistant d’undead posé en duel <b>s’efface à la fin du duel</b>, au lieu de suivre la cible.</li>
+        </ul>
+        <h4>Le Hexcraft</h4>
+        <ul>
+          <li>Le <b>fil du destin</b> est lissé — son enchaînement accrochait.</li>
+          <li>Une <b>Sentence en attente</b> passe désormais en priorité au lieu d’être doublée par autre chose.</li>
+          <li><b>Evil Eye</b> suit correctement avec Needle.</li>
+        </ul>
+        <h4>Les infobulles</h4>
+        <p>La <b>Litany</b> affiche enfin ses dégâts dans son infobulle, et les traductions de contrôle du Démoniste ont été reprises.</p>`
+    },
+    aggro: {
+      title: "Les monstres réservés à une quête",
+      summary: "Une vieille injustice : un monstre que vous n’aviez aucune raison d’affronter pouvait quand même vous tomber dessus.",
+      body: `
+        <h4>Ce qui se passait</h4>
+        <ul>
+          <li>Certains monstres n’existent que pour une quête précise. Le jeu filtrait bien les <b>dégâts</b> — vous ne pouviez pas l’attaquer sans la quête — mais pas l’<b>agression</b> : le monstre, lui, pouvait vous prendre pour cible.</li>
+          <li>Résultat : on se faisait poursuivre par un adversaire qu’on n’avait pas le droit de toucher.</li>
+        </ul>
+        <h4>Ce qui change</h4>
+        <ul>
+          <li>L’agression est désormais <b>filtrée sur la quête elle-même</b>, et non plus seulement sur le fait d’avoir tapé.</li>
+          <li>Deuxième moitié du problème : <b>soigner</b> quelqu’un près d’un tel monstre ne vous colle plus de menace si vous n’avez pas la quête. Un soigneur qui accompagnait un ami se retrouvait pris à partie sans avoir rien fait d’autre que soigner.</li>
         </ul>`
     },
-    carte: {
-      title: "Lisible en tactile, lisible sans regarder",
-      summary: "Deux publics qui n’étaient pas servis par la même carte : les téléphones, et les joueurs qui n’en voient pas le dessin.",
+    perf: {
+      title: "Les gains de performance de la branche",
+      summary: "C’est la rubrique la plus fournie, et celle dont on ne parlera pas — jusqu’à ce qu’on remarque que ça ne saccade plus.",
       body: `
-        <h4>Le téléphone</h4>
+        <h4>Les montures</h4>
         <ul>
-          <li>La mini-carte mesure <b>162 pixels</b>. Sur un écran tactile en paysage, ou avec l’interface compacte, elle est encore réduite de <b>presque moitié</b> en taille physique — un marqueur devenait un pixel de couleur.</li>
-          <li>Il existe désormais une <b>famille d’icônes à part</b>, plus grandes, choisie automatiquement dans ces cas-là. Le bureau et le portrait standard gardent les icônes sobres.</li>
-          <li>Le choix se fait sur l’<b>orientation et le mode</b> de l’interface, pas sur une mesure de mise en page : rien à régler, rien qui saute pendant qu’on tourne le téléphone.</li>
+          <li>La <b>première invocation</b> d’une monture provoquait un à-coup net : la carte graphique découvrait le modèle et devait préparer son rendu sur-le-champ.</li>
+          <li>Le jeu <b>prépare maintenant à l’avance</b> les programmes de rendu de chaque monture, ce qui referme ce gel.</li>
+          <li>Ces préparations sont <b>bornées</b> pour ne pas engorger le chargement, et leur état est rapporté honnêtement.</li>
         </ul>
-        <h4>Sans le dessin</h4>
+        <h4>Votre fantôme</h4>
+        <p>Même traitement pour les variantes de rendu de <b>votre propre esprit</b> : mourir ne devrait pas être une occasion de saccade.</p>
+        <h4>Les intérieurs de Gouffre</h4>
+        <p>Ils étaient mis en cache sous une clé qui ne convenait pas, ce qui provoquait des <b>reconstructions inutiles</b> à chaque passage. La clé a été corrigée.</p>
+        <h4>Le reste</h4>
         <ul>
-          <li>La carte sait maintenant produire un <b>résumé en mots</b> de ce qu’elle affiche — ce qu’il y a autour, où sont les objectifs — lisible par un lecteur d’écran.</li>
-          <li>Les <b>infobulles</b> de marqueurs trop rapprochés se décalent pour ne plus se recouvrir, et deux fenêtres de carte ouvertes en mode compact restent <b>séparées</b>.</li>
-        </ul>
-        <p class="summary" style="margin-top:18px;border:0;padding:0">Point d’équité, répété plusieurs fois dans le code : <b>aucune de ces informations n’est réservée aux réglages graphiques élevés</b>. Une petite machine voit les mêmes marqueurs, dans les mêmes états, qu’une grosse.</p>`
-    },
-    voleur: {
-      title: "Thuggery : les chiffres de la baisse",
-      summary: "Un nerf de valeurs uniquement — aucun sort, aucune infobulle, aucun talent n’est touché.",
-      body: `
-        <h4>Le constat</h4>
-        <ul>
-          <li>Mesuré sur le même boss de référence — le <b>Nythraxis héroïque</b>, derrière ses 798 d’armure — Thuggery sortait à environ <b>240 dégâts par seconde</b>, contre <b>190</b> pour Knifework et <b>180</b> pour Skulduggery. Presque un quart d’écart entre deux spés du même personnage.</li>
-          <li>Les trois spés du Voleur partagent une fourchette visée de <b>150 à 200</b>. Thuggery en sortait tout simplement par le haut.</li>
-        </ul>
-        <h4>Ce qui a été touché</h4>
-        <ul>
-          <li>Deux réglages de fond, ceux qui portaient son jeu très orienté <b>attaques automatiques</b>. L’un tombe de <b>0,55 à 0,20</b>, l’autre de <b>0,36 à 0,16</b>.</li>
-          <li>Le résultat visé est <b>200</b> : le haut de la fourchette. Thuggery <b>reste la meilleure des trois spés</b> du Voleur, sans l’écart.</li>
-          <li>Ce sont des <b>réglages cachés</b> : aucune infobulle ne les affiche, donc <b>aucun texte de sort ne change</b>. Un joueur ne verra la différence que sur son compteur.</li>
-        </ul>
-        <p class="summary" style="margin-top:18px;border:0;padding:0">Knifework et Skulduggery sont <b>rigoureusement identiques</b>, à la valeur près — c’est vérifié par les tests de la branche, pas seulement affirmé.</p>`
-    },
-    mage: {
-      title: "Chronomancy : les rangs qui manquaient",
-      summary: "La spé soigneur du Mage était livrée sans son haut de gamme. Cinq sorts le récupèrent.",
-      body: `
-        <h4>Les capstones de niveau 20</h4>
-        <ul>
-          <li><b>Temporal Mend</b>, le soin direct, gagne un rang qui soigne <b>environ un tiers de plus</b> que le précédent.</li>
-          <li><b>Temporal Barrier</b>, le bouclier, gagne un rang dont l’absorption monte du même ordre.</li>
-          <li><b>Temporal Echo</b>, la marque signature, gagne le sien : son soin d’application augmente, la durée de la marque ne change pas.</li>
-        </ul>
-        <h4>Deux trous ailleurs dans l’échelle</h4>
-        <ul>
-          <li><b>Aether Darts</b> gagne un <b>palier au niveau 18</b>. Il n’en avait pas : entre 14 et 20, le sort restait figé à sa puissance de 14.</li>
-          <li><b>Aether Surge</b>, le sort d’attaque de base, n’avait <b>aucune échelle du tout</b> — au niveau 20, il tapait encore comme au niveau 5. Il reçoit trois rangs (10, 15, 20), et son <b>coût en mana ne bouge pas d’un rang à l’autre</b>, exprès : c’est ce coût qui tient toute la courbe de mana de la spé.</li>
-        </ul>
-        <h4>Et une valeur relevée</h4>
-        <ul>
-          <li>La part de vos dégâts arcaniques que la marque <b>reconvertit en soins</b> sur un allié passe de <b>35 à 40 %</b> en cible unique. La version de zone (15 %) et la version de groupe, <b>Temporal Cascade</b>, ne changent pas.</li>
-        </ul>
-        <p class="summary" style="margin-top:18px;border:0;padding:0">Réserve honnête, écrite par les développeurs eux-mêmes dans le code : ces valeurs sont <b>encore en cours d’essai</b> et pas verrouillées. C’est justement pour ça qu’elles peuvent bouger avant la sortie.</p>`
-    },
-    tank: {
-      title: "Pourquoi un familier ne pouvait pas critiquer un tank",
-      summary: "Un correctif de portée, pas d’équilibrage : la règle visait les monstres, elle attrapait aussi les familiers.",
-      body: `
-        <h4>La règle d’origine</h4>
-        <ul>
-          <li>Un tank <b>engagé</b> dans son rôle — Ironguard, Faithwarden, ou Wildfang en Forme de paresse — ne peut pas <b>recevoir de coup critique d’un monstre</b>. C’est ce qui rend sa prise de dégâts prévisible pour son soigneur.</li>
-          <li>Cette règle a toujours été pensée pour le <b>JcE</b>. Le JcJ n’était pas censé être concerné.</li>
-        </ul>
-        <h4>Le trou</h4>
-        <ul>
-          <li>Elle était appliquée <b>en regardant la cible seulement</b>, jamais qui frappait. Or les <b>familiers de joueurs</b> et les compagnons de Gouffre passent par le même circuit d’attaque que les monstres.</li>
-          <li>Conséquence : en duel, en arène, en champ de bataille, le <b>loup d’un chasseur ou le démon d’un démoniste ne pouvait jamais critiquer</b> un tank engagé. Une part entière de leurs dégâts disparaissait, sans que rien ne l’annonce.</li>
-        </ul>
-        <h4>Le correctif</h4>
-        <ul>
-          <li>La règle regarde maintenant <b>aussi l’attaquant</b> : seul le coup d’une <b>créature hostile</b> est concerné. Un familier, un compagnon, un joueur — tous critiquent normalement.</li>
-          <li>Rien ne change en JcE : face aux monstres, l’immunité du tank est <b>exactement la même qu’avant</b>.</li>
-        </ul>`
-    },
-    instances: {
-      title: "Ce que la carte montre désormais dans une Faille",
-      summary: "Pour la première fois, l’intérieur d’une instance est cartographié — et les marqueurs portent leur état.",
-      body: `
-        <h4>Se repérer</h4>
-        <ul>
-          <li>L’<b>entrée</b> et son rang, la <b>descente</b> vers l’étage suivant, les <b>balises de retour</b> et la sortie de secours : quatre dessins différents, là où c’était le même point.</li>
-        </ul>
-        <h4>Les récompenses, avec leur état</h4>
-        <ul>
-          <li>Un coffre ou une cache s’affiche <b>à prendre</b>, <b>verrouillé</b>, <b>déjà ouvert</b>, ou <b>coincé</b>. Plus besoin de traverser la salle pour découvrir qu’un coéquipier est passé avant.</li>
-        </ul>
-        <h4>Les mécanismes, avec leur état aussi</h4>
-        <ul>
-          <li><b>Pylônes</b> et <b>runes de séquence</b> : allumés ou éteints. <b>Grilles</b> : scellées ou ouvertes. <b>Leviers</b> : prêts ou actionnés. <b>Orbes</b> : dormants ou actifs.</li>
-          <li><b>Blocs</b> : encore poussables, ou déjà posés sur leur cible — et les <b>emplacements de destination</b> sont marqués. Les rouleaux, eux, sont signalés comme <b>dangers</b>.</li>
-        </ul>
-        <h4>Les Gouffres ont les leurs</h4>
-        <ul>
-          <li>Passages <b>scellés ou ouverts</b>, remontée en surface, caches, et le <b>Reliquaire</b> avec l’avancement de son rite — à choisir, en cours, ou terminé — ainsi que la mention d’un Gouffre <b>généreux</b>.</li>
-        </ul>
-        <p class="summary" style="margin-top:18px;border:0;padding:0">Tout ce dessin est <b>préparé une fois et réutilisé</b> d’une image à l’autre : les emplacements de marqueurs d’une Faille sont recyclés au lieu d’être refaits à chaque rafraîchissement.</p>`
-    },
-    forge: {
-      title: "Défaire ce qui a été forgé, sans rien confisquer",
-      summary: "La suite directe du verrou posé en v0.37.0 — et le soin apporté au remboursement en dit long.",
-      body: `
-        <h4>Ce qui est remis à zéro</h4>
-        <ul>
-          <li>Sur chaque objet réellement passé par la forge : le <b>niveau d’amélioration</b>, l’<b>enchantement</b> et les <b>gemmes</b> reviennent à leur état d’origine.</li>
-          <li>Partout où l’objet peut se trouver : <b>sac, banque, rachat du marchand, et les deux emplacements d’équipement</b>. Rien n’est oublié en se cachant dans un coffre.</li>
-        </ul>
-        <h4>Ce qui est rendu</h4>
-        <ul>
-          <li>L’<b>essence dépensée est remboursée exactement</b> — le calcul rejoue la facture de l’échelle d’amélioration, plus le forfait de chaque enchantement.</li>
-          <li>Les <b>gemmes serties reviennent sous forme d’objets</b> dans les poches, et non en poussière.</li>
-        </ul>
-        <h4>Les garde-fous</h4>
-        <ul>
-          <li>C’est une opération <b>unique par contrat</b> : elle laisse une marque derrière elle, écrite dans la même transaction, et <b>toute exécution ultérieure se refuse d’elle-même</b>. Le jour où la forge ouvrira pour de bon, aucun objet forgé légitimement ne peut être balayé par une relance accidentelle.</li>
-          <li>Elle exige un <b>serveur vidé de ses joueurs</b>, tourne sur une seule connexion à la base à la fois, et vérifie l’état de chaque personnage <b>avant et après</b> l’écriture.</li>
-          <li>Le déploiement lui-même est <b>verrouillé derrière un interrupteur explicite</b> : elle ne peut pas partir toute seule avec une mise à jour ordinaire.</li>
-        </ul>`
-    },
-    nuit: {
-      title: "Une nuit, ce n’est pas juste « moins de lumière »",
-      summary: "Le retour d’un réglage qui avait déjà été monté trois fois, puis redescendu — et pourquoi il fallait cette fois le couper en deux.",
-      body: `
-        <h4>L’histoire, parce qu’elle explique tout</h4>
-        <ul>
-          <li>Un seul chiffre gouvernait toute la nuit. Il a été <b>monté trois fois</b> face à des retours « on n’y voit rien » — puis <b>franchement redescendu</b> le jour où toutes les routes du monde ont reçu de vrais lampadaires : sur une route éclairée, c’est la lampe qui doit éclairer, pas un rehaussement général.</li>
-          <li>Bien vu sur la route. Sauf que la <b>forêt n’a pas de lampadaires</b> : dès qu’on quittait le chemin, il ne restait plus qu’une découpe noire. D’où la réputation d’une nuit injouable.</li>
-        </ul>
-        <h4>La correction : deux chiffres au lieu d’un</h4>
-        <ul>
-          <li>La <b>lueur du ciel</b> — celle qui pose les reliefs et les silhouettes, donc celle qui permet de <b>se déplacer</b> — remonte franchement, à environ la moitié de la clarté du jour.</li>
-          <li>La <b>lumière de la lune</b> reste basse, autour du tiers de la précédente. C’est elle, et elle seule, qui projette les ombres longues.</li>
-          <li>C’est le <b>contraste entre les deux</b> qui fait la nuit. Une lune aussi forte que le ciel donnerait un jour terne ; un ciel aussi faible que la lune donne la découpe noire d’avant.</li>
-        </ul>
-        <p class="summary" style="margin-top:18px;border:0;padding:0">Les développeurs ont gardé une commande de développement pour <b>comparer sur place</b> l’ancien et le nouvel éclairage. Ce n’est pas accessible en jeu, mais ça dit à quel point le changement est jugé délicat.</p>`
-    },
-    lune: {
-      title: "La phase de la lune, et la journée de 45 minutes",
-      summary: "Deux nouveautés liées : un cycle plus lent, et une lune qui compte enfin pour quelque chose.",
-      body: `
-        <h4>La phase décide de la clarté</h4>
-        <ul>
-          <li>Le <b>demi-croissant est la nuit de référence</b> : c’est la nuit « normale », celle décrite juste au-dessus.</li>
-          <li>À la <b>pleine lune</b>, les deux clartés montent — mais la <b>lumière de la lune monte beaucoup plus</b> que la lueur du ciel. Le ressenti est juste : une pleine lune, ce sont des <b>ombres franches et longues</b>, pas un brouillard clair uniforme.</li>
-          <li>À la <b>nouvelle lune</b>, on descend vers le plus sombre qui reste <b>praticable</b> — et jamais en dessous : c’est tout l’intérêt d’avoir séparé les deux réglages. Un <b>reste de lumière directionnelle</b> est même conservé, pour que les formes gardent un sens.</li>
-          <li>La lune est <b>calée sur une date de référence commune</b> : tous les joueurs de la planète voient la même phase au même instant, quelle que soit l’heure de leur ordinateur.</li>
-        </ul>
-        <h4>La journée s’allonge</h4>
-        <ul>
-          <li>Le cycle complet passe de <b>20 à 45 minutes</b>. La raison donnée est concrète : à vingt minutes, <b>traverser une zone à pied allait moins vite que le ciel</b>, et on n’arrivait jamais au moment où l’on était parti.</li>
-          <li>Le <b>mois lunaire est défini en nombre de cycles</b>, il s’allonge donc automatiquement avec.</li>
-        </ul>
-        <h4>La lune elle-même</h4>
-        <ul>
-          <li>Disque <b>agrandi</b>, halo <b>resserré et adouci</b>, et la moitié dans l’ombre <b>presque entièrement effacée</b> — sans quoi la phase resterait illisible et la mécanique du dessus se sentirait sans se comprendre.</li>
-        </ul>`
-    },
-    triche: {
-      title: "La marque « Tricheur » : une sanction qui se voit, jamais qui affaiblit",
-      summary: "Le système est construit autour d’une seule règle, et le code s’applique à la rendre indéfendable à contourner — dans les deux sens.",
-      body: `
-        <h4>La règle</h4>
-        <ul>
-          <li>Écrite noir sur blanc par les développeurs : une sanction de ce type <b>ne peut changer ni une statistique, ni un temps de recharge, ni une ressource, ni un butin, ni une issue de combat</b>.</li>
-          <li>La raison est un argument d’équité, pas de clémence : une sanction qui affaiblit est une <b>modification d’équilibrage appliquée sans relecture</b>, et elle rend injuste <b>chaque match suivant</b> du joueur — pour ses adversaires comme pour ses coéquipiers.</li>
-          <li>Trois verrous tiennent cette ligne, et des tests les épinglent : la marque porte une <b>valeur nulle</b>, elle a sa <b>propre catégorie inerte</b> — pour qu’aucun réglage futur ne lui donne un effet en modifiant une constante partagée — et <b>aucun calcul de statistique ne la reconnaît</b>.</li>
-        </ul>
-        <h4>Le compte, pas le personnage</h4>
-        <ul>
-          <li>La marque vit sur le <b>compte</b>. Tous les personnages la portent, et <b>rouler un nouveau perso n’y échappe pas</b>.</li>
-          <li>Elle est <b>portée par le décompte lui-même</b> : il n’y a pas d’horloge séparée, donc rien qui puisse dériver.</li>
-        </ul>
-        <h4>Le temps qui compte</h4>
-        <ul>
-          <li>Le budget se consomme en <b>secondes jouées</b>, pas en temps de calendrier — précisément parce qu’une sanction au calendrier s’attend hors ligne, ce qui est exactement la fenêtre qu’un joueur sanctionné choisirait.</li>
-          <li>Il est <b>en pause tant que le personnage est mort</b>, cadavre comme fantôme. Ce n’est pas un oubli : une sanction dont l’objet est d’être <b>portée devant les autres</b> ne se paie pas allongé.</li>
-        </ul>
-        <h4>Tout ce qui aurait pu l’enlever</h4>
-        <ul>
-          <li><b>Deux protections plutôt qu’une</b> contre la dissipation : le marquage explicite, et l’école de magie, qui refuse indépendamment. Un seul interrupteur serait à une modification distraite de faire de la marque de la nourriture à dissipation.</li>
-          <li>Elle <b>survit à la mort et à toutes les résurrections</b>, à l’<b>entrée en arène</b> et à la fin d’une Fiesta — c’est-à-dire à tous les endroits où le jeu remet normalement les effets à zéro.</li>
-          <li>Elle ne passe <b>pas par le catalogue de titres</b>, où il aurait suffi de la décocher — elle a son propre canal, hors d’atteinte de toute commande du joueur.</li>
-          <li>Trois choses seulement l’effacent : son <b>décompte arrivé à zéro</b>, une <b>levée par un administrateur</b>, et la sauvegarde du reliquat entre deux sessions.</li>
-        </ul>
-        <p class="summary" style="margin-top:18px;border:0;padding:0">Le détail qui montre le sérieux de la règle : la marque est <b>exclue des cadres de groupe et de raid</b>. Ces cadres n’affichent qu’un nombre limité d’effets ; y placer la marque aurait <b>chassé un vrai malus dissipable</b> de l’écran du soigneur — donc handicapé le joueur, ce que la règle interdit aussi sûrement qu’une perte de statistique.</p>`
-    },
-    marche: {
-      title: "L’hôtel des ventes arrête de faire faire des allers-retours",
-      summary: "Deux petites choses qui changent la routine de tous les jours — et deux pièges de calcul évités au passage.",
-      body: `
-        <h4>Vendre en sachant le prix</h4>
-        <ul>
-          <li>L’onglet Vente affiche <b>le prix le plus bas déjà en ligne</b> pour l’objet que vous êtes en train de mettre en vente. Jusqu’ici il fallait aller le chercher dans l’onglet Achat, puis revenir.</li>
-          <li>Le prix est donné <b>à l’unité</b>, parce que c’est ce que le formulaire vous demande. Une offre existante portant sur une pile entière est donc <b>ramenée à l’unité</b> avant comparaison, et l’arrondi se fait <b>vers le haut</b> — pour ne jamais sous-estimer un prix.</li>
-          <li>Le <b>stock de la maison</b> compte comme une offre réelle : un acheteur peut le préférer au vôtre exactement comme n’importe quelle autre ligne.</li>
-          <li>Le prix affiché est <b>accompagné du nom de l’objet auquel il correspond</b> : si vous changez d’objet plus vite que la réponse n’arrive, l’ancien prix n’est jamais affiché sous le nouvel objet.</li>
-        </ul>
-        <h4>Acheter sans faire défiler trente lignes</h4>
-        <ul>
-          <li>Un <b>bouton dans l’onglet Achat</b> replie le catalogue à <b>une seule ligne par objet</b> : la moins chère.</li>
-          <li>Les objets <b>uniques</b> — ceux qui portent leurs propres caractéristiques — restent distincts entre eux : ce ne sont pas les mêmes marchandises, les replier ensemble n’aurait aucun sens.</li>
-          <li>Vos <b>propres offres</b> n’apparaissent alors que si elles sont les moins chères. Rien n’est perdu : <b>éteindre le bouton les fait toutes revenir</b>, avec de quoi les retirer.</li>
-        </ul>`
-    },
-    apparence: {
-      title: "Votre apparence en une ligne à copier",
-      summary: "Un onglet Partage dans le créateur de personnage, et un code texte qui contient tout le visage.",
-      body: `
-        <h4>Ce que c’est</h4>
-        <ul>
-          <li>Chaque réglage du créateur a désormais une <b>valeur nommée et stable</b>, et l’ensemble se résume en <b>un code d’une seule ligne</b>, avec un numéro de version.</li>
-          <li>Un onglet <b>Partage</b> affiche ce code et le <b>met à jour en direct</b> pendant que vous réglez : on voit le code changer en même temps que le visage.</li>
-        </ul>
-        <h4>À l’usage</h4>
-        <ul>
-          <li>Un bouton le <b>copie</b>, avec un repli manuel (sélection + raccourci clavier) si le navigateur refuse le presse-papiers.</li>
-          <li>Coller le code de quelqu’un d’autre <b>rejoue son apparence</b>. Si le code est abîmé ou trop ancien, l’erreur <b>dit précisément ce qui cloche</b> plutôt qu’un simple refus.</li>
-          <li>Une importation <b>conserve vos proportions de corps actuelles</b> — même règle que les boutons « au hasard » et « réinitialiser », qui ne les touchent pas non plus.</li>
+          <li>Un <b>lissage des contours</b> intégré à la passe de rendu de qualité <b>moyenne</b>.</li>
+          <li>Les <b>ciels de biome</b> chargés dans un format compressé plus léger.</li>
+          <li>Le <b>feuillage</b> allégé à distance, et la préparation de l’écran de connexion raccourcie.</li>
+          <li>Les <b>rochers qui ont une collision restent affichés</b> à tous les niveaux de qualité : on ne se cogne plus à un obstacle qu’on ne voit pas.</li>
         </ul>`
     },
   };

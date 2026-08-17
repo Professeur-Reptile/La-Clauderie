@@ -175,6 +175,22 @@ def main():
     repo, base_tag, branches = sys.argv[1], sys.argv[2], sys.argv[3:]
 
     versions = [analyse(repo, base_tag, b) for b in branches]
+
+    # Une version, UN chantier. Le jeu porte chaque version sur deux branches
+    # à la fois — `release/vX.Y.Z` et l'enveloppe `ossbrain-release/vX.Y.Z`
+    # qui y sera mergée (voir l'en-tête de pick_release_branches.py) — et les
+    # deux nous arrivent, parce qu'aucune ne devance l'autre en permanence :
+    # l'enveloppe accumule d'abord, la release la rattrape quand la PR passe.
+    # On garde donc celle qui a le PLUS de commits au-dessus du tag, la seule
+    # question qui compte pour un aperçu. Sans ça la page afficherait deux
+    # bandeaux pour la même version, dont un presque vide.
+    par_version = {}
+    for v in versions:
+        garde = par_version.get(v["version"])
+        if garde is None or v["commits"] > garde["commits"]:
+            par_version[v["version"]] = v
+    versions = list(par_version.values())
+
     # De la plus basse à la plus haute — la première est la prochaine à sortir.
     # Un nom sans numéro exploitable passe en fin de liste plutôt que de faire
     # planter le script (voir l'en-tête de pick_release_branches.py).

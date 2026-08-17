@@ -5,9 +5,23 @@
     python3 scripts/pick_release_branches.py --self-test
 
 Sortie : le TAG DE BASE (dernier publié) sur la première ligne, puis une
-branche `release/*` par ligne, de la plus basse à la plus haute — celles qui
+branche de chantier par ligne, de la plus basse à la plus haute — celles qui
 préparent une version au-dessus de ce tag. Le jeu mène parfois deux chantiers
 en parallèle (un correctif v0.35.1 et la v0.36.0), d'où la liste.
+
+DEUX préfixes comptent, pas un seul. Le jeu prépare chaque version sur
+`release/vX.Y.Z`, mais les contributions de la communauté s'accumulent
+d'abord sur une branche enveloppe `ossbrain-release/vX.Y.Z` qui est mergée
+dans la première par une PR (convention constante depuis la v0.24.0, treize
+versions). Ne regarder que `release/*` a rendu la page « À venir » vide pour
+la v0.39.0 le 17 août 2026 : `release/v0.39.0` n'avait rien au-dessus du tag
+alors que l'enveloppe portait déjà 177 commits — tout le chantier.
+
+Les deux branches d'une MÊME version sortent toutes les deux : c'est
+`build_upcoming.py`, qui a le dépôt sous la main, qui garde celle qui est la
+plus avancée au-dessus du tag. Le sens du merge s'inverse en cours de route
+(l'enveloppe devance la release, puis la release la rattrape et la dépasse
+une fois la PR passée), donc le choix ne peut PAS se faire sur le nom.
 
 Code de retour 1 (et rien sur la sortie standard) si le dépôt est injoignable
 ou n'a aucun tag exploitable : l'appelant réessaiera au prochain passage.
@@ -31,6 +45,12 @@ import sys
 
 # vX.Y ou vX.Y.Z, rien d'autre : pas de suffixe, pas de pré-version.
 VERSION = re.compile(r"^v(\d+)\.(\d+)(?:\.(\d+))?$")
+
+# Les préfixes de branche qui portent un chantier de version (voir l'en-tête).
+# `feature/*` n'en fait PAS partie : ce sont des branches de travail qui
+# visent une version sans la porter (`feature/eastbrook-v0.39.0`), et leur
+# nom ne se termine pas par un numéro de version de toute façon.
+CHANTIER_PREFIXES = ("release/", "ossbrain-release/")
 
 
 def version_key(name):
@@ -72,7 +92,7 @@ def pick(tag_refs, head_refs):
     branches = []
     for ref in head_refs:
         name = ref[len("refs/heads/"):] if ref.startswith("refs/heads/") else ref
-        if not name.startswith("release/"):
+        if not name.startswith(CHANTIER_PREFIXES):
             continue
         key = version_key(name.rsplit("/", 1)[-1])
         if key and key > base_key:
@@ -94,11 +114,24 @@ def self_test():
              "refs/heads/release/v0.24.0-ptr",
              "refs/heads/release/v0.35.1",
              "refs/heads/release/v0.36.0"]
+    # La disposition réelle d'une version en préparation : la branche de
+    # release ET son enveloppe de contributions, plus une branche de travail
+    # qui vise la version sans la porter.
+    v39 = ["refs/heads/release/v0.38.3",
+           "refs/heads/release/v0.39.0",
+           "refs/heads/ossbrain-release/v0.38.0",
+           "refs/heads/ossbrain-release/v0.39.0",
+           "refs/heads/feature/eastbrook-v0.39.0"]
     cases = [
         # (tags, heads, base attendue, branches attendues)
         (tags, heads, "v0.35.1", ["release/v0.36.0"]),
         (["refs/tags/v0.34.0"], heads, "v0.34.0",
          ["release/v0.35.1", "release/v0.36.0"]),
+        # Les DEUX branches de la v0.39.0 remontent (build_upcoming.py
+        # tranchera) ; celles au niveau ou sous le tag sont écartées, et
+        # `feature/eastbrook-v0.39.0` n'est pas un chantier de version.
+        (["refs/tags/v0.38.3"], v39, "v0.38.3",
+         ["ossbrain-release/v0.39.0", "release/v0.39.0"]),
         # Rien au-dessus du tag : la version annoncée vient de sortir.
         (tags + ["refs/tags/v0.36.0"], heads, "v0.36.0", []),
         # Un chantier en 10.x : comparaison numérique, pas alphabétique.
