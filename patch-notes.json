@@ -2,6 +2,46 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.38.3",
+   "date": "2026-08-17",
+   "titre": "Les résurrections de groupe demandent portée et ligne de vue, et l’or des donjons change de main",
+   "resume": "Un correctif court, mais trois changements qui se voient. Le plus important touche les résurrections : jusqu’ici, une résurrection de masse relevait tous les morts du groupe ou du raid où qu’ils soient, sans regarder ni la distance ni les murs. C’était le dernier moyen de contourner un verrou de donjon, parce que les verrous se vérifient à la porte et qu’une résurrection acceptée téléporte le mort jusqu’au lanceur : un soigneur déjà à l’intérieur d’une instance verrouillée pouvait y faire entrer quelqu’un qui n’avait plus le droit d’y aller. Désormais le corps doit être à portée du sort et dans la ligne de vue du lanceur — 40 m pour Collective Reversal (Chronomancy) et Ancestors’ Return (Spiritmend), 30 m pour Recall the Fallen du Paladin, y compris sa version de groupe au Sunmender niveau 16 et plus. Temporal Reversal gardait déjà ses 30 m et gagne la ligne de vue. La vérification se fait au lancement, pendant l’incantation et à la fin, et c’est le corps qui compte, pas le fantôme : si tu as libéré ton esprit, la distance se mesure jusqu’à l’endroit où tu es tombé. En acceptant, tu arrives auprès du lanceur seulement s’il est resté à portée de ton corps ; sinon tu te relèves là où le sort a été lancé. Deuxième changement, l’or des donjons. Korzul the Gravewyrm et Zulgar, les deux finales qu’on ré-enchaînait en normal pour leur seule bourse, passent tous les deux à une base de 15 000 pièces de cuivre — d’environ 3 à 8 po la mise à mort à 1 à 2 po. En échange, toute finale tuée sous un verrou héroïque paie désormais 10 po de base, et 20 po pour Nythraxis : l’or va au clear quotidien plutôt qu’à la boucle sans limite. L’aperçu du chercheur de donjon annonce enfin le bon montant. Troisième changement, la fluidité : une image qui mettait trop longtemps à s’afficher faisait figer ton personnage puis repartir à environ deux fois sa vitesse ; c’est corrigé, sans toucher au cas du jeu simplement lent ni à celui de la coupure réseau. Rien d’autre ne bouge : aucun objet, aucun monstre, aucune quête, aucun talent, aucune migration.",
+   "temps_forts": [
+    "⚔️ Les résurrections de masse ne balayent plus tout le groupe ou le raid : le corps doit être à portée du sort ET dans la ligne de vue du lanceur",
+    "🚪 La raison : les verrous de donjon se vérifient à la porte, et une résurrection acceptée téléporte — un soigneur enfermé pouvait faire entrer quelqu’un de verrouillé",
+    "📏 40 m pour Collective Reversal (Chronomancy) et Ancestors’ Return (Spiritmend) ; 30 m pour Recall the Fallen du Paladin, version de groupe du Sunmender comprise",
+    "👁️ Temporal Reversal gardait déjà ses 30 m : ce qui est nouveau pour elle, c’est la ligne de vue",
+    "⏱️ Contrôlé au lancement, pendant l’incantation (le sort s’annule) et à la fin — un sort qui ne peut relever personne ne coûte ni mana ni recharge",
+    "👻 C’est ton CORPS qui compte, pas ton fantôme : esprit libéré, la distance se mesure jusqu’à l’endroit où tu es tombé",
+    "📍 En acceptant, tu arrives auprès du lanceur seulement s’il est resté à portée de ton corps ; sinon tu te relèves là où le sort a été lancé",
+    "💰 Korzul the Gravewyrm (50 000) et Zulgar (55 000) tombent tous les deux à 15 000 pièces de cuivre : d’environ 3 à 8 po la mise à mort, à 1 à 2 po",
+    "🏆 En échange, toute finale tuée en héroïque paie 10 po de base, et Nythraxis 20 po — les six finales du jeu sont concernées",
+    "🔒 L’héroïque est verrouillé une fois par jour et par donjon : un groupe qui fait tout dans la journée se partage 70 po de base (42 à 98 po tirés)",
+    "🔍 L’aperçu du chercheur de donjon affiche enfin la bourse héroïque, et non plus la normale",
+    "🎞️ Fini le personnage qui se fige puis repart à deux fois sa vitesse après une image trop longue — le jeu simplement lent et la coupure réseau gardent leur comportement",
+    "✅ Aucun objet, aucun monstre, aucune quête, aucun talent, aucune panoplie, aucune migration"
+   ],
+   "page": "notes/v0.38.3.html",
+   "titre_en": "Group resurrections now need range and line of sight, and dungeon gold changes hands",
+   "resume_en": "A short hotfix, but three changes you will notice. The big one is resurrections: until now a mass resurrection raised every dead member of your group or raid wherever they were, looking at neither distance nor walls. That was the last way around a dungeon lockout, because lockouts are checked at the door and an accepted resurrection teleports the dead player to the caster: a healer already inside a locked instance could pull in someone who no longer had the right to be there. Now the body must be within the spell's range and in the caster's line of sight — 40 yards for Collective Reversal (Chronomancy) and Ancestors' Return (Spiritmend), 30 for the Paladin's Recall the Fallen, including its group version on a Sunmender of level 16 or higher. Temporal Reversal already enforced its 30 yards and gains line of sight. The check runs at cast start, during the cast and at completion, and it is the body that counts, not the ghost: if you released your spirit, the distance is measured to where you fell. Accepting brings you to the caster only if they stayed within reach of your body; otherwise you rise where the spell was cast. The second change is dungeon gold. Korzul the Gravewyrm and Zulgar, the two finales re-pulled on normal for their purse alone, both drop to a 15,000 copper base — from roughly 3 to 8 gold a kill down to 1 to 2. In exchange, any finale killed under a heroic lockout now pays a 10 gold base, and 20 for Nythraxis: the gold goes to the daily clear rather than the unbounded loop. The Dungeon Finder preview finally advertises the right number. The third change is smoothness: a frame that took too long to draw made your character freeze then bolt at roughly double speed; that is fixed, without touching the steadily-slow case or the network stall. Nothing else moves: no item, no mob, no quest, no talent, no migration.",
+   "temps_forts_en": [
+    "⚔️ Mass resurrections no longer sweep the whole group or raid: the body must be within the spell's range AND in the caster's line of sight",
+    "🚪 The reason: dungeon lockouts are checked at the door, and an accepted resurrection teleports — a healer inside could pull in a locked-out player",
+    "📏 40 yards for Collective Reversal (Chronomancy) and Ancestors' Return (Spiritmend); 30 for the Paladin's Recall the Fallen, Sunmender group version included",
+    "👁️ Temporal Reversal already enforced its 30 yards: what is new for it is line of sight",
+    "⏱️ Checked at cast start, during the cast (it cancels) and at completion — a spell that can raise nobody costs neither mana nor cooldown",
+    "👻 It is your BODY that counts, not your ghost: with your spirit released, the distance is measured to where you fell",
+    "📍 Accepting brings you to the caster only if they stayed within reach of your body; otherwise you rise where the spell was cast",
+    "💰 Korzul the Gravewyrm (50,000) and Zulgar (55,000) both drop to a 15,000 copper base: from roughly 3 to 8 gold a kill down to 1 to 2",
+    "🏆 In exchange, any finale killed on heroic pays a 10 gold base, and Nythraxis 20 — all six finales in the game are covered",
+    "🔒 Heroic is locked once per day per dungeon: a group clearing everything in a day shares a 70 gold base (rolling 42 to 98)",
+    "🔍 The Dungeon Finder preview finally shows the heroic purse instead of the normal one",
+    "🎞️ No more freezing then bolting at double speed after an overlong frame — the steadily-slow game and the network stall keep their behaviour",
+    "✅ No item, no mob, no quest, no talent, no set bonus, no migration"
+   ],
+   "page_en": "notes/v0.38.3.en.html"
+  },
+  {
    "version": "v0.38.2",
    "date": "2026-08-16",
    "titre": "Correctif : les pierres de garde de Nythraxis redeviennent visibles (et l’écran noir en qualité élevée disparaît)",

@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Nouveautés v0.38.3 — La Clauderie</title>
+<meta name="description" content="Les nouveautés de la v0.38.3 de World of ClaudeCraft, expliquées simplement : les résurrections de groupe demandent maintenant d’être à portée du corps et de le voir — c’était le dernier moyen de faire entrer quelqu’un dans un donjon dont il était verrouillé. Korzul et Zulgar, les deux boss qu’on enchaînait pour l’or, tombent à 15 000 pièces de cuivre, mais les finales en héroïque paient 10 po (20 po pour Nythraxis). Et le personnage ne part plus en accéléré après un blocage d’image.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Nouveautés v0.38.3 — La Clauderie">
+<meta property="og:description" content="Les nouveautés de la v0.38.3 de World of ClaudeCraft, expliquées simplement : les résurrections de groupe demandent maintenant d’être à portée du corps et de le voir — c’était le dernier moyen de faire entrer quelqu’un dans un donjon dont il était verrouillé. Korzul et Zulgar, les deux boss qu’on enchaînait pour l’or, tombent à 15 000 pièces de cuivre, mais les finales en héroïque paient 10 po (20 po pour Nythraxis). Et le personnage ne part plus en accéléré après un blocage d’image.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.38.3.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.38.3.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') === 'en') location.replace('v0.38.3.en.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Notes de version</p>
+    <h1>Nouveautés <span class="v">v0.38.3</span></h1>
+    <p class="lede">Un correctif court, mais trois changements qui se voient. Les <strong class="hl">résurrections de groupe</strong> ne relèvent plus que les corps à portée et dans ta ligne de vue — c’était le dernier moyen de faire entrer quelqu’un dans un donjon dont il était verrouillé. Les <strong class="hl">deux boss qu’on enchaînait pour l’or</strong> paient trois fois moins, mais les <strong class="hl">finales en héroïque</strong> paient beaucoup plus. Et ton personnage ne part plus en accéléré après un blocage d’image.</p>
+    <div class="meta">
+      <span><b>Publiée</b> le 17 août 2026</span>
+      <span><b>Depuis</b> la v0.38.2</span>
+      <span><b>2</b> corrections, <b>1</b> équilibrage</span>
+    </div>
+    <div class="hint">💡 Clique sur une carte pour le détail.</div>
+  </header>
+
+  <!-- Bandeau constant : mêmes rubriques, même ordre, à chaque version. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">En un coup d’œil</h2>
+    <p class="sec-sub">Les mêmes rubriques à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
+    <ol>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <a class="d-name" href="#resurrection">Classes &amp; sorts</a>
+        <span class="d-say"><b class="down">Mage ↓</b> <b class="down">Chaman ↓</b> <b class="down">Paladin ↓</b>, et uniquement sur leur spé de soin : <strong class="hl">les résurrections de groupe s’arrêtent désormais à la portée du sort</strong> et demandent de voir le corps. Aucune valeur de dégâts, de soin ni de talent ne bouge. <b class="eq">Les six autres classes =</b></span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <span class="d-name">Métiers &amp; récolte</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#or">Donjons, failles &amp; boss</a>
+        <span class="d-say"><strong class="hl">L’or change de main.</strong> Les deux finales qu’on ré-enchaînait en normal pour leur bourse tombent à un tiers, et toute finale tuée en <strong class="hl">héroïque</strong> paie 10 po de base — 20 po pour Nythraxis. Et la porte d’un donjon verrouillé ne se contourne plus par une résurrection.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <span class="d-name">Monde &amp; quêtes</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <span class="d-name">Guilde &amp; social</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#fluidite">Confort &amp; technique</a>
+        <span class="d-say">Fini le personnage qui <strong class="hl">se fige puis repart en accéléré</strong> après une image qui a mis trop longtemps à s’afficher. Un jeu simplement lent, lui, ne change pas de comportement.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="resurrection">
+    <h2><span class="num">01</span>Les résurrections regardent enfin où tu es</h2>
+    <p class="sec-sub">Jusqu’ici, une résurrection de groupe relevait tout le monde, où que soient les corps — à l’autre bout du monde compris. C’était confortable, et c’était le dernier trou dans les verrous de donjon.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="portee" tabindex="0" role="button" aria-label="Détails : la nouvelle règle de portée et de ligne de vue">
+        <h3>Ce qui change <span class="chip c-fix">Corrigé</span></h3>
+        <p>Les deux résurrections de masse balayaient le raid entier <strong class="hl">sans regarder ni la distance ni les murs</strong>. Désormais un corps ne compte que s’il est <strong class="hl">à portée du sort</strong> et <strong class="hl">dans ta ligne de vue</strong>. Le sort refuse de partir si personne n’est joignable, et s’interrompt si tu es déplacé pendant l’incantation.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="sorts" tabindex="0" role="button" aria-label="Détails : les quatre sorts concernés et leur portée">
+        <h3>Les quatre sorts concernés <span class="chip c-util">Portées</span></h3>
+        <ul>
+          <li><span data-codex="ability|collective_reversal">Collective Reversal</span> (<span data-codex="spec|Chronomancy">Chronomancy</span>) et <span data-codex="ability|ancestor_return">Ancestors’ Return</span> (<span data-codex="spec|Spiritmend">Spiritmend</span>) : <strong class="hl">40 m</strong>.</li>
+          <li><span data-codex="ability|recall_the_fallen">Recall the Fallen</span> (Paladin) : <strong class="hl">30 m</strong>, y compris la version de groupe du <span data-codex="spec|Sunmender">Sunmender</span> niveau 16 et plus.</li>
+          <li><span data-codex="ability|temporal_reversal">Temporal Reversal</span> gardait déjà ses 30 m ; ce qui est nouveau pour lui, c’est <strong class="hl">la ligne de vue</strong>.</li>
+        </ul>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="arrivee" tabindex="0" role="button" aria-label="Détails : où tu réapparais après avoir accepté">
+        <h3>Où tu réapparais <span class="chip c-util">Arrivée</span></h3>
+        <ul>
+          <li>C’est <strong class="hl">ton corps</strong> qui compte, pas ton fantôme : si tu as libéré ton esprit et couru, le sort mesure la distance jusqu’à l’endroit où tu es tombé.</li>
+          <li>En acceptant, tu arrives <strong class="hl">auprès du lanceur</strong> — mais seulement s’il est resté à portée de ton corps.</li>
+          <li>Sinon tu te relèves <strong class="hl">là où le sort a été lancé</strong>.</li>
+        </ul>
+        <span class="more-link">Voir le détail</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="or">
+    <h2><span class="num">02</span>L’or des donjons : le farm rabote, l’héroïque paie</h2>
+    <p class="sec-sub">Deux finales se ré-enchaînaient en boucle pour leur seule bourse. Leur base tombe des deux tiers, et l’or part là où il y a un verrou quotidien : les finales en héroïque.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="farm" tabindex="0" role="button" aria-label="Détails : la baisse sur Korzul et Zulgar">
+        <h3>Les deux boss qu’on enchaînait <span class="chip c-bal">Équilibrage</span></h3>
+        <ul>
+          <li><span data-codex="mob|Korzul the Gravewyrm">Korzul the Gravewyrm</span> (<span data-codex="dungeon|Gravewyrm Sanctum">Gravewyrm Sanctum</span>) : sa base passe de <strong class="hl">50 000</strong> à <strong class="hl">15 000</strong> pièces de cuivre — de 3 à 7 po la mise à mort, à <strong class="hl">1 à 2 po</strong>.</li>
+          <li><span data-codex="mob|Zulgar, Voice of the Basin">Zulgar</span> (<span data-codex="dungeon|The Wildheart Basin">The Wildheart Basin</span>) prend exactement la même correction, depuis 55 000.</li>
+          <li>Les deux payaient <strong class="hl">dix à vingt fois</strong> ce que payent les autres boss de leur propre donjon.</li>
+        </ul>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="heroique" tabindex="0" role="button" aria-label="Détails : les nouvelles bourses en héroïque">
+        <h3>L’héroïque paie beaucoup plus <span class="chip c-new">Nouveau</span></h3>
+        <ul>
+          <li>Toute finale de donjon tuée sous un <strong class="hl">verrou héroïque</strong> paie désormais <strong class="hl">10 po de base</strong> au lieu de sa petite bourse normale.</li>
+          <li>La finale du raid, <span data-codex="mob|Nythraxis, Scourge of Thornpeak">Nythraxis</span>, paie <strong class="hl">20 po</strong>.</li>
+          <li><strong class="hl">Les six finales du jeu</strong> sont concernées, de la Hollow Crypt au raid.</li>
+        </ul>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Ce que ça change pour toi <span class="chip c-util">Portée</span></h3>
+        <ul>
+          <li>L’héroïque est <strong class="hl">verrouillé une fois par jour et par donjon</strong> : la récompense va au clear, pas à la boucle.</li>
+          <li>En normal, rien d’autre ne bouge — les autres boss gardent leur bourse, et les objets ne changent pas.</li>
+          <li>L’aperçu du <strong class="hl">chercheur de donjon</strong> affiche enfin le bon montant sur une finale en héroïque : il annonçait jusqu’ici la bourse normale.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="fluidite">
+    <h2><span class="num">03</span>Fini les à-coups après un blocage d’image</h2>
+    <p class="sec-sub">En ligne, une image qui mettait trop longtemps à s’afficher faisait figer ton personnage, puis repartir en accéléré. C’est réparé — et seulement ça.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="acoups" tabindex="0" role="button" aria-label="Détails : le blocage d’image et sa correction">
+        <h3>Le symptôme <span class="chip c-fix">Corrigé</span></h3>
+        <p>Quand une image mettait plus longtemps à s’afficher que l’intervalle entre deux envois du serveur, ton personnage <strong class="hl">se figeait</strong>, puis <strong class="hl">rattrapait d’un coup</strong> à environ deux fois sa vitesse. Un seul à-coup suffisait à le déclencher.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Ce qui ne change pas <span class="chip c-util">Périmètre</span></h3>
+        <ul>
+          <li>Un jeu qui tourne <strong class="hl">lentement mais régulièrement</strong> garde exactement l’ancien comportement : rien ne saccade, il n’y a rien à rattraper.</li>
+          <li>Une <strong class="hl">vraie coupure réseau</strong> ressemble à un blocage vu de ta machine, mais mérite l’inverse : l’affichage se fige plutôt que de partir tout seul. C’est toujours le cas.</li>
+          <li>La tolérance est <strong class="hl">bornée à une demi-seconde</strong> ; au-delà, le jeu retient l’explication réseau.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Rien que l’affichage <span class="chip c-util">Coulisses</span></h3>
+        <ul>
+          <li>La correction ne touche que <strong class="hl">l’image de ton propre personnage</strong> : ni sa position réelle, ni ce que voit le serveur, ni ce que voient les autres joueurs.</li>
+          <li>Aucune valeur de combat, aucune donnée, aucune migration.</li>
+          <li>Elle ne concerne que le <strong class="hl">jeu en ligne</strong> : hors ligne, il n’y a pas d’envoi du serveur à attendre.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="reste">
+    <h2><span class="num">04</span>Et rien d’autre</h2>
+    <p class="sec-sub">C’est un correctif. Tout ce que la v0.38.0 et la v0.38.2 ont apporté reste exactement en place.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Rien de neuf à ramasser <span class="chip c-util">Contenu</span></h3>
+        <ul>
+          <li>Aucun objet, aucun monstre, aucune quête, aucune zone, aucune monture.</li>
+          <li>Aucun talent, aucune maîtrise, aucune panoplie, aucun enchantement.</li>
+          <li>Aucune migration de données : rien à refaire sur ton personnage.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Les textes qui changent <span class="chip c-util">Infobulles</span></h3>
+        <ul>
+          <li>Seules les <strong class="hl">quatre descriptions de résurrection</strong> sont réécrites : elles annoncent maintenant la portée, la ligne de vue et l’arrivée auprès du lanceur.</li>
+          <li><span data-codex="ability|temporal_reversal">Temporal Reversal</span> annonce en plus ses <strong class="hl">35 %</strong> de vie et de mana, là où elle disait vaguement « une partie ».</li>
+          <li>Les fiches du Codex du site suivent, en français comme en anglais.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Les décors n’ont pas changé <span class="chip c-util">Coulisses</span></h3>
+        <ul>
+          <li>14 modèles 3D de Fenbridge ont été <strong class="hl">re-tamponnés</strong> à l’occasion du changement de version.</li>
+          <li>Seule leur empreinte interne bouge : <strong class="hl">géométrie et textures identiques</strong>, taille identique, aucune différence à l’écran.</li>
+          <li>La <a href="v0.38.2.html">v0.38.2</a> avait fait de même sur Eastbrook et Fenbridge, pour la même raison.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    portee: {
+      title: "Portée et ligne de vue : la règle, et pourquoi elle arrive",
+      summary: "Une résurrection téléporte celui qui accepte jusqu’au lanceur. Tant qu’elle n’avait aucune limite de distance, elle passait au travers de la porte d’un donjon verrouillé.",
+      body: `
+        <h4>Le trou</h4>
+        <ul>
+          <li>Les verrous de donjon (raid et héroïque) se vérifient <b>à la porte</b>, au moment où tu entres. Une fois dedans, plus rien ne re-vérifie.</li>
+          <li>Or une résurrection acceptée <b>téléporte</b> le mort jusqu’au lanceur. Un soigneur déjà à l’intérieur d’une instance verrouillée pouvait donc faire entrer quelqu’un qui, lui, n’avait plus le droit d’y aller — sans jamais passer la porte.</li>
+          <li>Les deux résurrections de masse ne regardaient <b>ni la distance ni les murs</b> : elles balayaient toute la liste du groupe ou du raid, où que soient les corps.</li>
+        </ul>
+        <h4>La règle, maintenant</h4>
+        <p>Le corps d’un allié mort doit être <b>à portée du sort</b> et <b>dans la ligne de vue</b> du lanceur. Un mur, un rocher, une porte : le sort ne passe pas.</p>
+        <h4>Quand c’est vérifié</h4>
+        <ul>
+          <li><b>Au lancement</b> : si personne n’est joignable, le sort ne part pas du tout — ni mana, ni recharge dépensés.</li>
+          <li><b>Pendant l’incantation</b> : si tu es déplacé hors de portée, ou que le dernier corps joignable est relevé par quelqu’un d’autre, l’incantation <b>s’annule</b> au lieu de tourner dans le vide. Le jeu affiche « Out of range. » ou « Line of sight. ».</li>
+          <li><b>À la fin</b> : dernier contrôle, avec une petite tolérance de 2 m pour absorber un déplacement de dernière seconde.</li>
+        </ul>
+        <h4>Sur une résurrection de masse</h4>
+        <p>La sélection se fait <b>membre par membre</b> : ceux qui sont à portée et en vue reçoivent l’offre, les autres sont simplement ignorés. Un seul membre joignable suffit pour que le sort parte.</p>
+        <h4>Ce que ça vaut en pratique</h4>
+        <p>En raid, 40 m couvrent large : les corps d’un wipe sont presque toujours groupés. Le cas qui change vraiment, c’est celui qu’on ne devrait pas pouvoir faire — relever quelqu’un resté <b>dehors</b>, ou de l’autre côté d’un mur.</p>`
+    },
+    sorts: {
+      title: "Les quatre résurrections, sort par sort",
+      summary: "Deux balayages de groupe à 40 m, deux sorts à 30 m. Aucune autre classe n’a de résurrection.",
+      body: `
+        <h4>Les balayages de groupe — 40 m</h4>
+        <ul>
+          <li><b>Collective Reversal</b>, la résurrection de masse de la Chronomancie (Mage soigneur) : 7 s d’incantation, hors combat, 30 % de vie et de mana.</li>
+          <li><b>Ancestors’ Return</b>, son équivalent Spiritmend (Chaman soigneur) : mêmes 7 s, hors combat, mêmes 30 %.</li>
+          <li>Ces deux-là n’avaient <b>aucune portée déclarée</b> — c’est de là que venait le balayage illimité. Ils reprennent la portée par défaut des résurrections, <b>40 m</b>.</li>
+        </ul>
+        <h4>Les deux autres — 30 m</h4>
+        <ul>
+          <li><b>Recall the Fallen</b> (Paladin) : 8 s, hors combat. Sur un <b>Sunmender de niveau 16 et plus</b>, il rappelle tout le groupe — et cette version de groupe hérite de la portée du sort, donc <b>30 m</b>, pas 40.</li>
+          <li><b>Temporal Reversal</b> (Chronomancie) : la seule résurrection lançable <b>en plein combat</b>, 2 s d’incantation, 10 min de recharge. Elle vérifiait déjà sa portée de 30 m ; ce qui s’ajoute, c’est <b>la ligne de vue</b> et les contrôles pendant et en fin d’incantation.</li>
+        </ul>
+        <h4>Et les autres classes ?</h4>
+        <p>Elles n’ont pas de résurrection. Ces quatre sorts sont les seuls du jeu, et ils appartiennent tous à une <b>spé de soin</b> — sauf Recall the Fallen, que tout Paladin possède en version mono-cible.</p>`
+    },
+    arrivee: {
+      title: "Où tu réapparais quand tu acceptes",
+      summary: "Auprès du lanceur s’il est resté à portée de ton corps ; sinon à l’endroit d’où il a lancé le sort.",
+      body: `
+        <h4>Le corps, pas le fantôme</h4>
+        <p>Si tu as <b>libéré ton esprit</b>, ton fantôme est au cimetière mais ton corps est resté où tu es tombé. C’est le <b>corps</b> que le sort mesure, dans les deux sens : c’est lui qui doit être à portée, et c’est vers le lanceur que tu reviens.</p>
+        <h4>Tu as 30 secondes pour accepter</h4>
+        <p>L’offre reste valable une demi-minute. Le lanceur peut bouger pendant ce temps, et c’est là que la nouvelle règle intervient.</p>
+        <h4>Les deux cas</h4>
+        <ul>
+          <li>Le lanceur est <b>toujours vivant et toujours à portée de ton corps</b> : tu arrives à ses côtés, exactement comme avant.</li>
+          <li>Il est mort, parti, ou <b>sorti de la portée</b> de ton corps : tu te relèves <b>à l’endroit où il a lancé le sort</b>. Cet endroit-là, l’incantation a déjà prouvé qu’il était à portée de ton corps.</li>
+        </ul>
+        <h4>Concrètement</h4>
+        <p>Le scénario visé est simple : un soigneur lance la résurrection <b>dehors</b>, à côté de ton corps, puis entre dans l’instance pendant que tu réfléchis. Avant, accepter te téléportait dedans. Maintenant tu te relèves dehors, à l’endroit du lancement.</p>
+        <h4>Le boss Nythraxis suit la même règle</h4>
+        <p>Le combat de raid anticipe qui sera dans la salle après une résurrection, pour son étourdissement de transition. Cette prédiction lit désormais <b>exactement la même règle d’arrivée</b> : elle ne peut plus compter sur quelqu’un que l’acceptation ne fera pas venir.</p>`
+    },
+    farm: {
+      title: "Korzul et Zulgar : pourquoi leur bourse tombe",
+      summary: "Deux finales sans verrou, ré-enchaînables à volonté, qui payaient dix fois leurs voisins. Elles rejoignent la ligne des autres.",
+      body: `
+        <h4>Le problème</h4>
+        <ul>
+          <li>En <b>difficulté normale</b>, un donjon n’a <b>aucun verrou</b> : on peut le refaire autant qu’on veut. Et ces deux finales se rejoignent vite, sans nettoyer le donjon.</li>
+          <li><b>Korzul the Gravewyrm</b> payait une base de <b>50 000</b> pièces de cuivre, <b>Zulgar</b> 55 000 — quand les autres boss de leur propre donjon en payent 5 000 dans le Sanctum, et 2 500 dans le Wildheart.</li>
+          <li>Résultat : la boucle rapportait plus que n’importe quel contenu du jeu, pour un effort proche de zéro.</li>
+        </ul>
+        <h4>Ce qui change</h4>
+        <ul>
+          <li>Les deux tombent à la même base : <b>15 000</b> pièces de cuivre.</li>
+          <li>Toutes les bourses du jeu tirent au hasard entre <b>60 % et 140 %</b> de leur base. Korzul et Zulgar payent donc entre <b>9 000 et 21 000</b> — grosso modo <b>1 à 2 po</b>, contre 3 à 7 po avant.</li>
+          <li>Ça reste <b>trois à six fois</b> la bourse des autres boss du même donjon : c’est une finale, elle vaut plus. Simplement plus vingt fois.</li>
+        </ul>
+        <h4>Ce qui ne change pas</h4>
+        <ul>
+          <li><b>Aucun objet</b> ne bouge : les tables de butin, les taux et les pièces héroïques sont identiques.</li>
+          <li>Les autres boss du jeu gardent leur bourse.</li>
+          <li>Si tu fais ces donjons pour l’équipement ou les quêtes, tu ne verras aucune différence en dehors de la bourse.</li>
+        </ul>`
+    },
+    heroique: {
+      title: "10 po par finale héroïque, 20 pour le raid",
+      summary: "L’or déplacé vers ce qui a un verrou quotidien. Un groupe qui fait toutes les héroïques du jour se partage 70 po de base.",
+      body: `
+        <h4>La nouvelle bourse</h4>
+        <ul>
+          <li>Une finale de donjon tuée sous un <b>verrou héroïque</b> remplace sa bourse normale par une base de <b>100 000</b> pièces de cuivre, soit <b>10 po</b> — qui tirent entre 6 et 14 po.</li>
+          <li><b>Nythraxis</b>, la finale du raid, monte à <b>200 000</b>, soit <b>20 po</b> — entre 12 et 28 po.</li>
+          <li>La base héroïque est <b>la même pour les cinq donjons à 5</b>. Ils se valent en difficulté ; leur bourse normale, elle, est réglée sur le risque de farm, pas sur l’effort.</li>
+        </ul>
+        <h4>Les six finales</h4>
+        <ul>
+          <li><b>The Hollow Crypt</b> — Morthen the Gravecaller : 2 500 en normal, <b>10 po</b> en héroïque.</li>
+          <li><b>The Sunken Bastion</b> — Vael the Fogbinder : 5 000, <b>10 po</b>.</li>
+          <li><b>The Drowned Temple</b> — Ysolei : 6 000, <b>10 po</b>.</li>
+          <li><b>Gravewyrm Sanctum</b> — Korzul : 15 000, <b>10 po</b>.</li>
+          <li><b>The Wildheart Basin</b> — Zulgar : 15 000, <b>10 po</b>.</li>
+          <li><b>Nythraxis</b> (raid) : 150 000, <b>20 po</b>.</li>
+        </ul>
+        <h4>Le plafond du jour</h4>
+        <p>Le verrou étant <b>par donjon</b>, un groupe qui enchaîne toutes les héroïques d’une journée récolte <b>70 po de base</b> (cinq fois 10, plus les 20 du raid), soit <b>42 à 98 po</b> une fois les tirages faits. C’est partagé selon le réglage de butin du groupe : par défaut celui qui ramasse garde, en partage équitable chacun sa part.</p>
+        <h4>Le chercheur de donjon</h4>
+        <p>Son aperçu affichait la bourse normale même sur une activité héroïque. Il lit désormais la même règle que le jeu, donc il annonce <b>ce que la mise à mort paie vraiment</b>.</p>`
+    },
+    acoups: {
+      title: "Le blocage d’image, et pourquoi ton personnage repartait en accéléré",
+      summary: "Une image trop longue bloque tout, les envois du serveur s’entassent, et l’ancienne sécurité anti-triche prenait ce rattrapage pour une dérive.",
+      body: `
+        <h4>Ce que tu voyais</h4>
+        <p>Un <b>arrêt net</b> de ton personnage, puis un <b>départ en accéléré</b> — environ deux fois la vitesse normale — le temps qu’il rejoigne sa vraie position. Le reste du monde, lui, continuait normalement.</p>
+        <h4>Ce qui se passait</h4>
+        <ul>
+          <li>Le jeu lisse l’affichage de ton personnage entre les envois du serveur, avec une <b>laisse</b> : ton image ne peut pas s’éloigner de ta vraie position de plus que ce que tu pourrais parcourir.</li>
+          <li>Quand une image met plus longtemps à s’afficher qu’un intervalle d’envoi, le navigateur <b>bloque</b>, et les envois arrivés pendant ce temps tombent <b>tous d’un coup</b> juste avant ou juste après.</li>
+          <li>Dans les deux cas, la laisse — calibrée pour un point de repère frais — <b>rognait le rattrapage</b> légitime. D’où le figement, puis la course.</li>
+        </ul>
+        <h4>La correction</h4>
+        <ul>
+          <li>Une image <b>isolément longue</b> ouvre une courte parenthèse pendant laquelle le jeu <b>fait confiance au blocage</b> : la laisse prête la marge que le calcul de mouvement a légitimement prise, et la reprend ensuite.</li>
+          <li>La correction de dérive se met en pause le temps que la rafale d’envois soit absorbée, au lieu de corriger un écart qui n’en est pas un.</li>
+          <li>La parenthèse est <b>bornée à 500 ms</b>. Au-delà, le jeu considère que l’explication n’est plus locale.</li>
+        </ul>
+        <h4>Les deux cas volontairement laissés en l’état</h4>
+        <ul>
+          <li><b>Un jeu lent en continu</b> : si toutes les images sont longues, rien ne saccade — il n’y a pas de rattrapage à faire, donc pas de parenthèse à ouvrir.</li>
+          <li><b>Une coupure réseau</b> : vue de ta machine, elle ressemble à un blocage. Mais là, ton personnage n’a <b>rien parcouru</b> côté serveur, et le bon comportement est de figer l’affichage plutôt que de le laisser filer. C’est ce qui se passe toujours.</li>
+        </ul>
+        <h4>Ce que ça ne touche pas</h4>
+        <p>Uniquement <b>l’image de ton propre personnage</b>. Ta position réelle, celle que le serveur connaît et celle que voient les autres joueurs, n’ont jamais été concernées.</p>`
+    },
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

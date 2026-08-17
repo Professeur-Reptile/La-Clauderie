@@ -54,6 +54,12 @@ const base = `http://127.0.0.1:${PORT}`;
 
 // Page = son chemin, plus les zones remplies par JavaScript qui doivent avoir
 // du contenu (une page qui s'affiche mais reste vide est le défaut typique).
+// Les deux pages de notes contrôlées sont celles de la DERNIÈRE version, lues
+// dans patch-notes.json : la liste était figée à la main et retardait d'une
+// version à chaque MAJ, si bien que la page fraîchement écrite — la seule qui
+// vient de changer — n'était jamais ouverte dans le navigateur.
+const derniereVersion = JSON.parse(await readFile('patch-notes.json', 'utf8')).versions[0];
+
 const PAGES = [
   { path: '/index.html', filled: [] },
   { path: '/bis.html', filled: ['#bisList', '#buildBox'] },
@@ -66,8 +72,8 @@ const PAGES = [
   // dès que le jeu n'a rien en chantier.
   { path: '/patch-notes.html', filled: [] },
   { path: '/a-venir.html', filled: ['#editorial'] },
-  { path: '/notes/v0.38.2.html', filled: [] },
-  { path: '/notes/v0.38.2.en.html', filled: [] },
+  { path: `/${derniereVersion.page}`, filled: [] },
+  { path: `/${derniereVersion.page_en}`, filled: [] },
 ];
 
 // En CI, `npx playwright install chromium` fournit le navigateur ; en local
