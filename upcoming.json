@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-18T02:01:35Z",
+ "generated": "2026-08-18T08:13:54Z",
  "base_tag": "v0.38.4",
- "version": "v0.39",
+ "version": "v0.39.0",
  "branch": "ossbrain-release/v0.39",
- "declared_version": "0.38.3",
- "imminent": false,
- "commits": 180,
- "shown": 91,
- "last_commit": "2026-08-17T23:37:47Z",
+ "declared_version": "0.39.0",
+ "imminent": true,
+ "commits": 234,
+ "shown": 98,
+ "last_commit": "2026-08-18T07:26:35+00:00",
  "sections": [
   {
    "key": "classes",
@@ -27,6 +27,13 @@
      "kind": "feat",
      "scope": "druid",
      "text": "Stalk moves at 95% speed instead of half",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "d97b549d",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Clear paladin party auras from leavers",
      "date": "2026-08-18"
     },
     {
@@ -164,6 +171,13 @@
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
    "items": [
+    {
+     "h": "62c03cb0",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Add the boss and ally practice dummies to the Highwatch row",
+     "date": "2026-08-17"
+    },
     {
      "h": "f8fde76e",
      "kind": "fix",
@@ -476,6 +490,41 @@
      "date": "2026-08-18"
     },
     {
+     "h": "f3655ca3",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Correct the dev-only claim and the mirrored compass words",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "a79a09e4",
+     "kind": "fix",
+     "scope": "delves",
+     "text": "Gate direct finale lockpicks",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "4d3ca9c2",
+     "kind": "fix",
+     "scope": "unstuck",
+     "text": "Resolve battleground recovery slots",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "9f72f478",
+     "kind": "fix",
+     "scope": "test",
+     "text": "Run watchdog timeout shim as esm",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "f1d8c4c8",
+     "kind": "fix",
+     "scope": "battleground",
+     "text": "Scope unstuck wall-trap recovery",
+     "date": "2026-08-18"
+    },
+    {
      "h": "3adafbc6",
      "kind": "fix",
      "scope": "render",
@@ -697,13 +746,13 @@
  ],
  "versions": [
   {
-   "version": "v0.39",
+   "version": "v0.39.0",
    "branch": "ossbrain-release/v0.39",
-   "declared_version": "0.38.3",
-   "imminent": false,
-   "commits": 180,
-   "shown": 91,
-   "last_commit": "2026-08-17T23:37:47Z",
+   "declared_version": "0.39.0",
+   "imminent": true,
+   "commits": 234,
+   "shown": 98,
+   "last_commit": "2026-08-18T07:26:35+00:00",
    "sections": [
     {
      "key": "classes",
@@ -723,6 +772,13 @@
        "kind": "feat",
        "scope": "druid",
        "text": "Stalk moves at 95% speed instead of half",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "d97b549d",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Clear paladin party auras from leavers",
        "date": "2026-08-18"
       },
       {
@@ -860,6 +916,13 @@
      "fr": "Donjons, failles & boss",
      "en": "Dungeons, rifts & bosses",
      "items": [
+      {
+       "h": "62c03cb0",
+       "kind": "feat",
+       "scope": "sim",
+       "text": "Add the boss and ally practice dummies to the Highwatch row",
+       "date": "2026-08-17"
+      },
       {
        "h": "f8fde76e",
        "kind": "fix",
@@ -1172,6 +1235,41 @@
        "date": "2026-08-18"
       },
       {
+       "h": "f3655ca3",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Correct the dev-only claim and the mirrored compass words",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "a79a09e4",
+       "kind": "fix",
+       "scope": "delves",
+       "text": "Gate direct finale lockpicks",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "4d3ca9c2",
+       "kind": "fix",
+       "scope": "unstuck",
+       "text": "Resolve battleground recovery slots",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "9f72f478",
+       "kind": "fix",
+       "scope": "test",
+       "text": "Run watchdog timeout shim as esm",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "f1d8c4c8",
+       "kind": "fix",
+       "scope": "battleground",
+       "text": "Scope unstuck wall-trap recovery",
+       "date": "2026-08-18"
+      },
+      {
        "h": "3adafbc6",
        "kind": "fix",
        "scope": "render",
@@ -1317,905 +1415,6 @@
        "scope": "i18n",
        "text": "Correct French ability tooltips",
        "date": "2026-08-15"
-      },
-      {
-       "h": "5c96dbd0",
-       "kind": "fix",
-       "scope": "render",
-       "text": "The castle banners read from outside the walls",
-       "date": "2026-08-07"
-      },
-      {
-       "h": "76af0478",
-       "kind": "fix",
-       "scope": "evergarden",
-       "text": "Close the Dawnhold curtain's module-remainder breach",
-       "date": "2026-08-07"
-      },
-      {
-       "h": "e1d1d888",
-       "kind": "fix",
-       "scope": "castles",
-       "text": "Re-space the parkour chains for the v0.35 climb tuning",
-       "date": "2026-08-06"
-      },
-      {
-       "h": "7f0546b8",
-       "kind": "fix",
-       "scope": "render",
-       "text": "Defer Dawnhold's castle-kit preloads to the world lane",
-       "date": "2026-08-06"
-      },
-      {
-       "h": "aa871b65",
-       "kind": "fix",
-       "scope": "sim",
-       "text": "The slope gate froze players, and the maze stopped colliding",
-       "date": "2026-07-31"
-      },
-      {
-       "h": "d1353710",
-       "kind": "fix",
-       "scope": "castles",
-       "text": "Buildings collide as the shape they are drawn as",
-       "date": "2026-07-31"
-      },
-      {
-       "h": "1e6cc9ce",
-       "kind": "fix",
-       "scope": "castles",
-       "text": "No more wedge pockets anywhere in the Last Keep",
-       "date": "2026-07-30"
-      },
-      {
-       "h": "e5e1fe6e",
-       "kind": "fix",
-       "scope": "castles",
-       "text": "The seals must not become the trap they replace",
-       "date": "2026-07-30"
-      },
-      {
-       "h": "7ee83d11",
-       "kind": "fix",
-       "scope": "render",
-       "text": "Share one castle stone texture, tile it on the geometry",
-       "date": "2026-07-29"
-      },
-      {
-       "h": "81d03528",
-       "kind": "fix",
-       "scope": "foliage",
-       "text": "Keep grass and blooms off Dawnhold's paved bailey",
-       "date": "2026-07-29"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "version": "v0.39.0",
-   "branch": "ossbrain-release/v0.39.0",
-   "declared_version": "0.39.0",
-   "imminent": true,
-   "commits": 185,
-   "shown": 120,
-   "last_commit": "2026-08-18T01:15:18Z",
-   "sections": [
-    {
-     "key": "classes",
-     "icon": "⚔️",
-     "fr": "Classes & sorts",
-     "en": "Classes & spells",
-     "items": [
-      {
-       "h": "124737a7",
-       "kind": "fix",
-       "scope": "i18n",
-       "text": "Refresh warlock control translations",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "68ec85ae",
-       "kind": "fix",
-       "scope": "",
-       "text": "Sync persistent paladin party auras",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "6ca83d03",
-       "kind": "fix",
-       "scope": "warlock",
-       "text": "Move Evil Eye with Needle",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "6cd87e60",
-       "kind": "fix",
-       "scope": "warlock",
-       "text": "Improve necromancy raid readiness",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "a9983b47",
-       "kind": "fix",
-       "scope": "warlock",
-       "text": "Improve crowd control reliability",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "7a53ff63",
-       "kind": "fix",
-       "scope": "warlock",
-       "text": "Prioritize queued Sentence",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "c7ef6f11",
-       "kind": "fix",
-       "scope": "warlock",
-       "text": "Show Litany damage in tooltip",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "44a443ce",
-       "kind": "fix",
-       "scope": "ui",
-       "text": "Read the applied aura's own value for a buff tooltip's $b",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "c4d0c585",
-       "kind": "fix",
-       "scope": "warlock",
-       "text": "Allow late party joins at Soulwell",
-       "date": "2026-08-15"
-      },
-      {
-       "h": "42c250c7",
-       "kind": "fix",
-       "scope": "sim",
-       "text": "Clear persistent paladin auras on party leave",
-       "date": "2026-08-15"
-      },
-      {
-       "h": "fe0a63de",
-       "kind": "fix",
-       "scope": "warlock",
-       "text": "Smooth Hexcraft Fate Thread flow",
-       "date": "2026-08-15"
-      },
-      {
-       "h": "23b3a12c",
-       "kind": "fix",
-       "scope": "warlock",
-       "text": "Prioritize Skeleton Warrior sacrifice",
-       "date": "2026-08-15"
-      },
-      {
-       "h": "96409d98",
-       "kind": "fix",
-       "scope": "warlock",
-       "text": "Close Hexcraft QA gaps",
-       "date": "2026-08-15"
-      }
-     ]
-    },
-    {
-     "key": "metiers",
-     "icon": "🔨",
-     "fr": "Métiers & récolte",
-     "en": "Professions & gathering",
-     "items": [
-      {
-       "h": "fab5f3cf",
-       "kind": "fix",
-       "scope": "professions",
-       "text": "Let held offhands disenchant and salvage like other gear",
-       "date": "2026-08-14"
-      },
-      {
-       "h": "fab5f3cf",
-       "kind": "fix",
-       "scope": "professions",
-       "text": "Let held offhands disenchant and salvage like other gear",
-       "date": "2026-08-14"
-      },
-      {
-       "h": "ec159303",
-       "kind": "fix",
-       "scope": "ui",
-       "text": "Clear the gather markers in the castle floor-plan branches",
-       "date": "2026-08-06"
-      }
-     ]
-    },
-    {
-     "key": "donjons",
-     "icon": "🐉",
-     "fr": "Donjons, failles & boss",
-     "en": "Dungeons, rifts & bosses",
-     "items": [
-      {
-       "h": "cf2f1e93",
-       "kind": "fix",
-       "scope": "render",
-       "text": "Key delve interior builds by z-position, not moduleId",
-       "date": "2026-08-15"
-      },
-      {
-       "h": "cf2f1e93",
-       "kind": "fix",
-       "scope": "render",
-       "text": "Key delve interior builds by z-position, not moduleId",
-       "date": "2026-08-15"
-      },
-      {
-       "h": "3229a661",
-       "kind": "fix",
-       "scope": "delves",
-       "text": "Gate finale-room rewards on boss-summoned adds still alive",
-       "date": "2026-08-14"
-      },
-      {
-       "h": "301e481a",
-       "kind": "fix",
-       "scope": "tests",
-       "text": "Clear Nhalia's boss-summoned adds before the rite choose step",
-       "date": "2026-08-14"
-      },
-      {
-       "h": "3229a661",
-       "kind": "fix",
-       "scope": "delves",
-       "text": "Gate finale-room rewards on boss-summoned adds still alive",
-       "date": "2026-08-14"
-      },
-      {
-       "h": "301e481a",
-       "kind": "fix",
-       "scope": "tests",
-       "text": "Clear Nhalia's boss-summoned adds before the rite choose step",
-       "date": "2026-08-14"
-      }
-     ]
-    },
-    {
-     "key": "monde",
-     "icon": "🗺️",
-     "fr": "Monde & quêtes",
-     "en": "World & quests",
-     "items": [
-      {
-       "h": "7354f240",
-       "kind": "feat",
-       "scope": "render",
-       "text": "Author a character-creator look for every world NPC",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "82f8e1f4",
-       "kind": "feat",
-       "scope": "drakelands",
-       "text": "Dress the Ashen Bulwark's walls, towers, and gates",
-       "date": "2026-08-07"
-      },
-      {
-       "h": "49b85c0b",
-       "kind": "feat",
-       "scope": "ui",
-       "text": "Paint the Dawnhold posy icon, park the castle deed crests",
-       "date": "2026-08-06"
-      },
-      {
-       "h": "c9581c3f",
-       "kind": "feat",
-       "scope": "drakelands",
-       "text": "The Ashen Bulwark, a walled barracks on the west headland",
-       "date": "2026-07-30"
-      },
-      {
-       "h": "de5088e0",
-       "kind": "feat",
-       "scope": "drakelands",
-       "text": "Three-asset lava vocabulary, doubled dragon hoards",
-       "date": "2026-07-29"
-      },
-      {
-       "h": "43ddc4d3",
-       "kind": "feat",
-       "scope": "map",
-       "text": "Draw both castles on the zone map",
-       "date": "2026-07-29"
-      },
-      {
-       "h": "bf0fec9b",
-       "kind": "feat",
-       "scope": "drakelands",
-       "text": "Three assets per lava area, clear the dens, plant Nightbloom",
-       "date": "2026-07-29"
-      },
-      {
-       "h": "94b9adcf",
-       "kind": "feat",
-       "scope": "drakelands",
-       "text": "Castle v4 grounds, a thicker walk and a composed keep",
-       "date": "2026-07-27"
-      },
-      {
-       "h": "19dff6d9",
-       "kind": "feat",
-       "scope": "drakelands",
-       "text": "Keep entrance polish, a true doorway and stepped cuts",
-       "date": "2026-07-27"
-      },
-      {
-       "h": "587257a5",
-       "kind": "fix",
-       "scope": "render",
-       "text": "Keep Brother Aldric on his original NPC model",
-       "date": "2026-08-18"
-      },
-      {
-       "h": "e1ae1016",
-       "kind": "fix",
-       "scope": "sim",
-       "text": "Keep healing threat off a non-quester near a quest-gated mob",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "c685004d",
-       "kind": "fix",
-       "scope": "sim",
-       "text": "Gate mob aggro behind requiresQuestId, not just damage",
-       "date": "2026-08-15"
-      },
-      {
-       "h": "fec69748",
-       "kind": "fix",
-       "scope": "drakelands",
-       "text": "Castle v3 review fixes, honest gates and visible furniture",
-       "date": "2026-07-27"
-      }
-     ]
-    },
-    {
-     "key": "guilde",
-     "icon": "🏰",
-     "fr": "Guilde & social",
-     "en": "Guild & social",
-     "items": [
-      {
-       "h": "c9247240",
-       "kind": "fix",
-       "scope": "",
-       "text": "Tolerate aura-less party fakes",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "7bc60141",
-       "kind": "fix",
-       "scope": "sim",
-       "text": "Tolerate party-only soulwell snapshots",
-       "date": "2026-08-16"
-      }
-     ]
-    },
-    {
-     "key": "confort",
-     "icon": "⚙️",
-     "fr": "Confort & technique",
-     "en": "Comfort & technical",
-     "items": [
-      {
-       "h": "23137331",
-       "kind": "feat",
-       "scope": "render",
-       "text": "Fuse a region-safe FXAA arm into the medium grade pass",
-       "date": "2026-08-15"
-      },
-      {
-       "h": "23bedee3",
-       "kind": "feat",
-       "scope": "castles",
-       "text": "The wall-walks get a parapet that actually holds you on",
-       "date": "2026-07-31"
-      },
-      {
-       "h": "9ea6a9f4",
-       "kind": "feat",
-       "scope": "castles",
-       "text": "Parkour ledges inside and out, wired to the real climb system",
-       "date": "2026-07-30"
-      },
-      {
-       "h": "cf884a39",
-       "kind": "feat",
-       "scope": "castles",
-       "text": "Garrison bailey, flower court, grand stair, stone surfacing",
-       "date": "2026-07-29"
-      },
-      {
-       "h": "fc7da9b5",
-       "kind": "feat",
-       "scope": "dawnhold",
-       "text": "Five flower fields in the court, the leafy fox at its centre",
-       "date": "2026-07-29"
-      },
-      {
-       "h": "b7d87baa",
-       "kind": "feat",
-       "scope": "dawnhold",
-       "text": "Five new wings and a second stair to the upper story",
-       "date": "2026-07-29"
-      },
-      {
-       "h": "bd2218db",
-       "kind": "feat",
-       "scope": "ui",
-       "text": "An interior map for the Last Keep",
-       "date": "2026-07-27"
-      },
-      {
-       "h": "89acf55d",
-       "kind": "feat",
-       "scope": "evergarden",
-       "text": "Rebuild Dawnhold Castle into real walkable grounds",
-       "date": "2026-07-27"
-      },
-      {
-       "h": "496d7ae9",
-       "kind": "feat",
-       "scope": "evergarden",
-       "text": "Dawnhold Castle's warm interior, deeds, and floor maps",
-       "date": "2026-07-27"
-      },
-      {
-       "h": "94c4ac5c",
-       "kind": "perf",
-       "scope": "render",
-       "text": "Load the biome sky domes from KTX2 instead of Radiance",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "7e417cf4",
-       "kind": "perf",
-       "scope": "render",
-       "text": "Prewarm the local player's own spirit shader variants",
-       "date": "2026-08-15"
-      },
-      {
-       "h": "0333ad26",
-       "kind": "perf",
-       "scope": "ui",
-       "text": "Trim the login preview prewarm schedule",
-       "date": "2026-08-15"
-      },
-      {
-       "h": "c0c17384",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3476 into release",
-       "date": "2026-08-18"
-      },
-      {
-       "h": "01da0594",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3468 into release",
-       "date": "2026-08-18"
-      },
-      {
-       "h": "3adafbc6",
-       "kind": "fix",
-       "scope": "render",
-       "text": "Link the shadow-pass depth programs the shadow pass actually draws",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "0377ac00",
-       "kind": "fix",
-       "scope": "render",
-       "text": "Address review findings on mount prewarm (reparent bug, honest status, depth compile)",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "2838bba9",
-       "kind": "fix",
-       "scope": "",
-       "text": "Preserve prior v0.39 release branch",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "f3b110a0",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3437 into release",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "44a6f586",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3440 into release",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "5d7e8fc0",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3441 into release",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "cf429fc3",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3443 into release",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "505b84dc",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3444 into release",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "1ae200c3",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3446 into release",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "b4c47532",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3447 into release",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "1707f9ad",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3448 into release",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "9a2024bb",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3451 into release",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "93e785d9",
-       "kind": "fix",
-       "scope": "cosmetics",
-       "text": "Reconcile worn mech chroma unlocks",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "f0ab401b",
-       "kind": "fix",
-       "scope": "render",
-       "text": "Bound mount prewarm fetches",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "200dcfac",
-       "kind": "fix",
-       "scope": "",
-       "text": "Update v0.39 wrapper with current release base",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "0377ac00",
-       "kind": "fix",
-       "scope": "render",
-       "text": "Address review findings on mount prewarm (reparent bug, honest status, depth compile)",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "989c69a7",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3442 into release",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "d9fcf94a",
-       "kind": "fix",
-       "scope": "",
-       "text": "Record PR #3425 current head into release",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "01135531",
-       "kind": "fix",
-       "scope": "",
-       "text": "Record PR #3447 current head into release",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "68e66d8d",
-       "kind": "fix",
-       "scope": "",
-       "text": "Record PR #3390 current head into release",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "4a1ffabc",
-       "kind": "fix",
-       "scope": "",
-       "text": "Integrate PR #3425 current-head resolution",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "3df598c4",
-       "kind": "fix",
-       "scope": "",
-       "text": "Integrate PR #3447 current-head resolution",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "6e6daed9",
-       "kind": "fix",
-       "scope": "",
-       "text": "Record PR #3398 current head into release",
-       "date": "2026-08-17"
-      },
-      {
-       "h": "9e6bf970",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3431 into release",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "95ab6f68",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3425 into release",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "8d07ac06",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3428 into release",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "642444b7",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3430 into release",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "48904248",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3424 into release",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "07ef17a5",
-       "kind": "fix",
-       "scope": "",
-       "text": "Remove PR 3428 changes",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "cd3a981e",
-       "kind": "fix",
-       "scope": "cosmetics",
-       "text": "Stop unequipping a mech chroma from revoking the account-wide unlock",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "d4a450f7",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3422 into release",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "9eb8146b",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3398 into release",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "9eb8146b",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3398 into release",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "f88774aa",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3390 into release",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "bbf33b92",
-       "kind": "fix",
-       "scope": "sim",
-       "text": "Lock the whole stack when a player locks a stackable item",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "729c83fa",
-       "kind": "fix",
-       "scope": "sim",
-       "text": "Clear a duel opponent's Necromancy undead dot when the duel ends",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "4df91624",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3429 into release",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "aa43009e",
-       "kind": "fix",
-       "scope": "i18n",
-       "text": "Qualify French Cold Coffin tooltip",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "20646eae",
-       "kind": "fix",
-       "scope": "render",
-       "text": "Warm every mount's shader programs to close a #2571 freeze gap",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "dc845ffa",
-       "kind": "fix",
-       "scope": "i18n",
-       "text": "Qualify Ice Block tooltip across locales",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "4df91624",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3429 into release",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "f2cd60e3",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3432 into release",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "e4496951",
-       "kind": "fix",
-       "scope": "i18n",
-       "text": "Clarify French Cold Coffin controls",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "9e6bf970",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3431 into release",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "f1db1748",
-       "kind": "fix",
-       "scope": "i18n",
-       "text": "Narrow Ice Block control prevention",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "f2cd60e3",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3432 into release",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "87c9ebc4",
-       "kind": "fix",
-       "scope": "i18n",
-       "text": "Translate remaining French gameplay names",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "b746a137",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3410 into release",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "89856d8e",
-       "kind": "fix",
-       "scope": "sim",
-       "text": "Persist soulwell late-join eligibility",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "0eb7e342",
-       "kind": "fix",
-       "scope": "sim",
-       "text": "Allow battleground wall-trap unstuck input",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "20646eae",
-       "kind": "fix",
-       "scope": "render",
-       "text": "Warm every mount's shader programs to close a #2571 freeze gap",
-       "date": "2026-08-16"
-      },
-      {
-       "h": "77e796bb",
-       "kind": "fix",
-       "scope": "render",
-       "text": "Rocks with colliders stay visible at every graphics tier",
-       "date": "2026-08-15"
-      },
-      {
-       "h": "b900f56d",
-       "kind": "fix",
-       "scope": "ui",
-       "text": "Stop double-painting the hidden desktop action bar on touch",
-       "date": "2026-08-15"
-      },
-      {
-       "h": "01c97f27",
-       "kind": "fix",
-       "scope": "i18n",
-       "text": "Correct French ability tooltips",
-       "date": "2026-08-15"
-      },
-      {
-       "h": "be406f48",
-       "kind": "fix",
-       "scope": "i18n",
-       "text": "Correct ability tooltips across locales",
-       "date": "2026-08-15"
-      },
-      {
-       "h": "d51957af",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3418 into release",
-       "date": "2026-08-15"
-      },
-      {
-       "h": "135416b7",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3423 into release",
-       "date": "2026-08-15"
-      },
-      {
-       "h": "135416b7",
-       "kind": "fix",
-       "scope": "",
-       "text": "PR #3423 into release",
-       "date": "2026-08-15"
-      },
-      {
-       "h": "b96d3a97",
-       "kind": "fix",
-       "scope": "sim",
-       "text": "Allow bg wall-trap unstuck input",
-       "date": "2026-08-14"
       },
       {
        "h": "5c96dbd0",

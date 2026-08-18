@@ -197,7 +197,7 @@
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · En préparation</p>
     <h1>La prochaine version <span class="v" id="vNum">v0.39.0</span></h1>
-    <p class="lede">La v0.38.3 est sortie, et la v0.39.0 se prépare : <strong class="hl">177 commits</strong> déjà posés, et le jeu a <strong class="hl">inscrit le numéro 0.39.0 dans ses fichiers</strong> — le geste qu’il fait juste avant de publier. Le gros morceau ne touche pas les classes mais le décor : <strong class="hl">deux châteaux cessent d’être des façades</strong>. Dawnhold Castle, dans l’Evergarden, et l’Ashen Bulwark, dans les Drakelands, deviennent des lieux où l’on entre, où l’on monte sur les <strong class="hl">chemins de ronde</strong>, et dont l’intérieur a sa <strong class="hl">carte étage par étage</strong> — comme le Last Keep, qui en profite aussi. Côté raid, un changement qu’on sentira tout de suite : <strong class="hl">un wipe sur Nythraxis vous rend vos grands cooldowns</strong> au lieu de vous faire attendre entre deux essais. Côté classe, une seule bouge vraiment : le <strong class="hl">Démoniste</strong>, dont les deux peurs cessent d’être une loterie et absorbent un <strong class="hl">montant de dégâts fixe</strong> avant de céder.</p>
+    <p class="lede">La v0.38.3 est sortie, et la v0.39.0 se prépare : <strong class="hl">234 commits</strong> déjà posés, et le jeu a <strong class="hl">inscrit le numéro 0.39.0 dans ses fichiers</strong> — le geste qu’il fait juste avant de publier. Le gros morceau ne touche pas les classes mais le décor : <strong class="hl">deux châteaux cessent d’être des façades</strong>. Dawnhold Castle, dans l’Evergarden, et l’Ashen Bulwark, dans les Drakelands, deviennent des lieux où l’on entre, où l’on monte sur les <strong class="hl">chemins de ronde</strong>, et dont l’intérieur a sa <strong class="hl">carte étage par étage</strong> — comme le Last Keep, qui en profite aussi. Côté raid, un changement qu’on sentira tout de suite : <strong class="hl">un wipe sur Nythraxis vous rend vos grands cooldowns</strong> au lieu de vous faire attendre entre deux essais. Côté classes, deux bougent : le <strong class="hl">Démoniste</strong>, dont les deux peurs cessent d’être une loterie et absorbent un <strong class="hl">montant de dégâts fixe</strong> avant de céder, et surtout le <strong class="hl">Druide Farouche</strong>, qui se déplace enfin <strong class="hl">presque à pleine vitesse en camouflage</strong> et reçoit ses outils bien plus tôt.</p>
 
     <div class="warn">
       <span class="ico" aria-hidden="true">⚠️</span>
@@ -225,7 +225,7 @@
       <li>
         <span class="d-ico" aria-hidden="true">⚔️</span>
         <a class="d-name" href="#classes">Classes &amp; sorts</a>
-        <span class="d-say">— <b class="up">Démoniste ↑</b> <b class="up">Paladin ↑</b> <b class="eq">les sept autres =</b> · Une seule classe change pour de vrai. Les deux peurs du <b>Démoniste</b> — <b>Harrow</b> et <b>Dread Chorus</b> — cessent d’être une loterie : au lieu de pouvoir sauter au premier coup avec de la malchance, elles encaissent <b>8 % des PV maximum</b> de la cible, puis cèdent. Le <b>Paladin</b> récupère ses auras de groupe permanentes, qui ne suivaient pas toujours le groupe. Aucun chiffre de dégâts ni de soin ne bouge nulle part.</span>
+        <span class="d-say">— <b class="up">Druide ↑</b> <b class="up">Démoniste ↑</b> <b class="up">Paladin ↑</b> <b class="eq">les six autres =</b> · Le vrai gagnant est le <b>Druide Farouche</b> : son camouflage <b>Stalk</b> passe de la moitié de la vitesse à <b>95 %</b>, et ses outils de dégâts s’apprennent bien plus tôt. Les deux peurs du <b>Démoniste</b> — <b>Harrow</b> et <b>Dread Chorus</b> — cessent d’être une loterie : elles encaissent <b>8 % des PV maximum</b> de la cible, puis cèdent. Le <b>Paladin</b> récupère ses auras de groupe permanentes, qui ne suivaient pas toujours le groupe.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🔨</span>
@@ -258,7 +258,7 @@
   <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
        s'efface d'elle-même quand cette version sort, et se signale périmée si
        le jeu passe à préparer la suivante. -->
-  <div id="editorial" data-for="v0.39.0" data-commits="177" data-chantiers="v0.39.0" data-written="2026-08-17T09:30+02:00">
+  <div id="editorial" data-for="v0.39.0" data-commits="234" data-chantiers="v0.39.0" data-written="2026-08-17T09:30+02:00">
 
   <!-- 1 LES CHÂTEAUX -->
   <section id="chateaux">
@@ -332,8 +332,8 @@
 
   <!-- 3 CLASSES -->
   <section id="classes">
-    <div class="sec-head"><span class="sec-num">03</span><h2>Le Démoniste : la peur cesse d’être une loterie</h2></div>
-    <p class="sec-sub">Une seule classe change pour de vrai, et c’est une question de <strong class="hl">fiabilité</strong> plus que de puissance. Le reste de la branche côté classes, ce sont des corrections — nombreuses, mais des corrections. Rappel d’usage : ces chiffres sont ceux <strong class="hl">écrits aujourd’hui dans la branche</strong>, et une version en préparation peut encore les rebouger.</p>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Le Druide sort du bois, le Démoniste cesse de jouer aux dés</h2></div>
+    <p class="sec-sub">Deux classes changent pour de vrai : le <strong class="hl">Druide Farouche</strong> gagne en puissance, le <strong class="hl">Démoniste</strong> gagne en fiabilité. Le reste de la branche côté classes, ce sont des corrections — nombreuses, mais des corrections. Rappel d’usage : ces chiffres sont ceux <strong class="hl">écrits aujourd’hui dans la branche</strong>, et une version en préparation peut encore les rebouger.</p>
     <div class="grid cols-3">
       <div class="card more" data-detail="peur" tabindex="0" role="button" aria-label="Détails : le budget de dégâts des peurs du Démoniste">
         <h3>8 % des PV max, puis ça casse <span class="chip c-bal">Équilibrage</span></h3>
@@ -358,6 +358,21 @@
         </ul>
       </div>
     </div>
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card more" data-detail="druide" tabindex="0" role="button" aria-label="Détails : le coup de pouce au Druide Farouche">
+        <h3>Le Druide Farouche, enfin jouable tôt <span class="chip c-bal">Équilibrage</span></h3>
+        <p>Deux changements qui se sentent tout de suite. Le camouflage <strong class="hl">Stalk</strong> ne vous fait plus ramper : il passe de <strong class="hl">la moitié de la vitesse</strong> à <strong class="hl">95 %</strong>, ce qui en fait enfin un vrai outil d’approche et d’éclaireur. Et les outils de dégâts du Farouche <strong class="hl">s’apprennent beaucoup plus tôt</strong> : <strong class="hl">Redharvest passe du niveau 18 au niveau 8</strong>, et tout druide a un dépensier dès le <strong class="hl">niveau 5</strong>.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Ce que ça ne touche pas <span class="chip c-util">Précision</span></h3>
+        <ul>
+          <li>Le <strong class="hl">Voleur garde son camouflage lent</strong> à la moitié de la vitesse : le changement est propre au Druide, c’est assumé comme son identité.</li>
+          <li>Les autres spés du Druide ne sont pas visées par cette passe.</li>
+          <li>Et comme le reste de cette page : ce sont les valeurs <strong class="hl">écrites aujourd’hui</strong> dans la branche, pas des chiffres définitifs.</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <!-- 4 MONDE -->
@@ -379,8 +394,9 @@
         </ul>
       </div>
       <div class="card">
-        <h3>Deux petites justices <span class="chip c-util">Divers</span></h3>
+        <h3>Et aussi <span class="chip c-util">Divers</span></h3>
         <ul>
+          <li>Les <strong class="hl">personnages non joueurs du monde</strong> reçoivent une apparence composée avec le <strong class="hl">créateur de personnage</strong>, au lieu de modèles génériques.</li>
           <li>Verrouiller un objet empilable <strong class="hl">verrouille toute la pile</strong>, et non le seul exemplaire visé.</li>
           <li>Une teinte de mécha déséquipée <strong class="hl">ne révoque plus son déblocage</strong> sur tout le compte.</li>
           <li>En champ de bataille, on peut enfin se <strong class="hl">décoincer d’un piège de mur</strong>.</li>
@@ -560,6 +576,26 @@
         </ul>
         <h4>Les infobulles</h4>
         <p>La <b>Litany</b> affiche enfin ses dégâts dans son infobulle, et les traductions de contrôle du Démoniste ont été reprises.</p>`
+    },
+    druide: {
+      title: "Le coup de pouce au Druide Farouche",
+      summary: "Lu dans le code de la branche — un camouflage qui cesse d’être une punition, et une montée en niveau qui cesse d’être un désert.",
+      body: `
+        <h4>Le camouflage</h4>
+        <ul>
+          <li><b>Stalk</b> laissait avancer à <b>la moitié</b> de la vitesse normale. Sur cette base, il ne servait ni à éclairer, ni à ouvrir un combat : le temps d’arriver, tout avait bougé.</li>
+          <li>Il passe à <b>95 %</b> de la vitesse — presque rien de perdu. Les développeurs l’écrivent comme un choix d’identité : le camouflage rapide est ce qui distingue le Farouche.</li>
+          <li>Le <b>Voleur n’est pas concerné</b> : sa famille Duskveil garde volontairement son déplacement lent à 50 %.</li>
+        </ul>
+        <h4>Les outils qui arrivaient trop tard</h4>
+        <ul>
+          <li><b>Redharvest</b> s’apprenait au <b>niveau 18</b>. Il descend au <b>niveau 8</b>, et gagne en plus des <b>rangs</b> qui le font monter avec le personnage.</li>
+          <li>Un <b>dépensier</b> arrive désormais dès le <b>niveau 5</b> pour <b>tout druide</b>, et non plus seulement pour les Farouches ayant pris Redharvest.</li>
+          <li>Un autre outil descend du <b>niveau 14 au niveau 8</b>.</li>
+          <li><b>Savage Mending</b> est reconverti en <b>pourcentage</b> de la réserve de vie, recalibré sur l’ours de référence.</li>
+        </ul>
+        <h4>Ce que ça vise</h4>
+        <p>Le problème n’était pas la puissance au niveau maximum, mais le <b>trou de progression</b> : un Farouche passait de longs niveaux sans le bouton qui fait fonctionner son cycle. C’est cette traversée du désert qui est raccourcie.</p>`
     },
     aggro: {
       title: "Les monstres réservés à une quête",

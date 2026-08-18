@@ -2,6 +2,42 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.38.4",
+   "date": "2026-08-17",
+   "titre": "Les Gouffres : deux pièges qui bloquaient une expédition pour de bon",
+   "resume": "Un correctif court et très ciblé : deux bugs, tous les deux dans les Gouffres, et tous les deux capables de rendre une expédition impossible à terminer. Le premier ne frappe qu’avec l’affixe Restless Graves, celui des cryptes qui fait relever les morts : chaque monstre ordinaire tué fait apparaître un Raised Bonewalker 3 secondes plus tard, à l’endroit exact où il est tombé. Or le portail de sortie d’une salle s’ouvre dès que plus aucun monstre n’est vivant, et le jeu ne comptait que ceux déjà debout — donc tuer le DERNIER monstre d’une salle ouvrait le portail pendant ces 3 secondes de battement, et une fois ouvert il le restait. Les morts se relevaient alors derrière un portail déjà ouvert. Pire, un relevé mis en attente pouvait survivre au passage à la salle suivante : le Bonewalker se relevait dans l’ancienne salle mais comptait dans la liste de monstres de la nouvelle, qui attendait donc la mort d’un adversaire hors d’atteinte — son portail ne pouvait plus jamais s’ouvrir, et l’état étant enregistré, se déconnecter n’y changeait rien. Désormais les relevés en attente comptent comme des monstres vivants (le portail s’ouvre normalement une fois les Bonewalkers abattus) et ils sont abandonnés en même temps que la salle qu’on quitte. Le second bug touchait tout le monde : une expédition que tout le monde a quittée doit se libérer au bout de cinq minutes, mais pour savoir si elle était vide le jeu regardait une zone symétrique autour de son point d’origine. Comme les salles d’un Gouffre s’étendent très loin vers le nord et à peine vers le sud, cette zone mordait sur les salles du créneau voisin : aux heures de forte affluence, un autre groupe suffisait à garder réservée une expédition abandonnée. Un joueur a rapporté vingt minutes d’attente au lieu de cinq. La zone épouse maintenant la vraie emprise des salles. Rien d’autre ne bouge : aucune valeur de combat, aucun objet, aucune donnée, aucune migration, et aucun tirage au sort déplacé — l’ordre du butin est strictement identique.",
+   "temps_forts": [
+    "🐉 Deux bugs des Gouffres, tous deux capables de bloquer une expédition définitivement — c’est toute la mise à jour",
+    "⚰️ Avec l’affixe Restless Graves, chaque monstre ordinaire tué fait relever un Raised Bonewalker 3 secondes plus tard, là où il est tombé",
+    "🚪 Tuer le DERNIER monstre d’une salle ouvrait le portail pendant ces 3 secondes — et une fois ouvert, il le restait : les morts se relevaient derrière un portail déjà ouvert",
+    "🔒 Pire : un relevé en attente survivait au changement de salle, se relevait dans l’ANCIENNE mais comptait dans la NOUVELLE — dont le portail ne pouvait plus jamais s’ouvrir",
+    "💾 Et ça ne se rattrapait pas : l’état était enregistré, se déconnecter et revenir n’y changeait rien",
+    "✅ Corrigé : les relevés en attente comptent comme vivants, et sont abandonnés en même temps que la salle qu’on quitte",
+    "⏱️ Second bug : une expédition abandonnée doit se libérer en cinq minutes, mais elle pouvait rester réservée bien plus longtemps",
+    "🧭 La cause : le jeu surveillait une zone symétrique autour du point d’origine, alors que les salles s’étendent loin au nord et à peine au sud — elle mordait sur le créneau voisin",
+    "👥 Aux heures de forte affluence, un autre groupe suffisait donc à garder l’expédition réservée. Un joueur a rapporté vingt minutes au lieu de cinq",
+    "🧪 Trois nouveaux tests figent le comportement : la course du portail, l’abandon des relevés au changement de salle, et la zone de présence des deux côtés",
+    "⚔️ Aucune valeur de combat, aucun objet, aucune donnée, aucune migration — et aucun tirage au sort déplacé, l’ordre du butin est identique"
+   ],
+   "page": "notes/v0.38.4.html",
+   "titre_en": "Delves: two traps that could break a run for good",
+   "resume_en": "A short, tightly aimed hotfix: two bugs, both in the Delves, and both able to make a run impossible to finish. The first only strikes under the Restless Graves affix, the crypt one that makes the dead get back up: every ordinary mob you kill raises a Raised Bonewalker 3 seconds later, at the exact spot where it fell. But a room's exit portal opens as soon as no mob is left alive, and the game only counted the ones already standing — so killing a room's LAST mob opened the portal during that 3-second gap, and once open it stayed open. The dead then rose behind an already-open portal. Worse, a queued rise could survive the move to the next room: the Bonewalker rose in the old room but counted in the new room's mob list, which was therefore waiting on an enemy out of reach — its portal could never open again, and since the state was saved, logging out changed nothing. Pending rises now count as living mobs (the portal opens normally once the Bonewalkers are down) and they are dropped along with the room you leave. The second bug hit everyone: a run everyone has left should free itself after five minutes, but to decide whether it was empty the game watched a symmetric area around its origin point. Since a Delve's rooms stretch far to the north and barely at all to the south, that area bit into the neighbouring slot's rooms: at busy hours, another group was enough to keep an abandoned run claimed. One player reported twenty minutes of waiting instead of five. The area now matches the rooms' real footprint. Nothing else moves: no combat value, no item, no data, no migration, and no random draw displaced — loot order is strictly identical.",
+   "temps_forts_en": [
+    "🐉 Two Delve bugs, both able to break a run permanently — that is the whole release",
+    "⚰️ Under the Restless Graves affix, every ordinary mob you kill raises a Raised Bonewalker 3 seconds later, where it fell",
+    "🚪 Killing a room's LAST mob opened the portal during those 3 seconds — and once open it stayed open: the dead rose behind an already-open portal",
+    "🔒 Worse: a queued rise survived the room change, rose in the OLD room but counted in the NEW one — whose portal could never open again",
+    "💾 And there was no shaking it off: the state was saved, so logging out and back in changed nothing",
+    "✅ Fixed: pending rises count as alive, and are dropped along with the room you leave",
+    "⏱️ Second bug: an abandoned run should free itself in five minutes, but it could stay claimed far longer",
+    "🧭 The cause: the game watched a symmetric area around the origin point, while the rooms stretch far north and barely south — it bit into the neighbouring slot",
+    "👥 At busy hours another group was therefore enough to keep the run claimed. One player reported twenty minutes instead of five",
+    "🧪 Three new tests pin the behaviour: the portal race, dropping pending rises on room change, and the occupancy band from both sides",
+    "⚔️ No combat value, no item, no data, no migration — and no random draw displaced, loot order is identical"
+   ],
+   "page_en": "notes/v0.38.4.en.html"
+  },
+  {
    "version": "v0.38.3",
    "date": "2026-08-17",
    "titre": "Les résurrections de groupe demandent portée et ligne de vue, et l’or des donjons change de main",

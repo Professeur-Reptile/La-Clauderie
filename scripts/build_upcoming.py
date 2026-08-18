@@ -176,20 +176,43 @@ def main():
 
     versions = [analyse(repo, base_tag, b) for b in branches]
 
-    # Une version, UN chantier. Le jeu porte chaque version sur deux branches
-    # à la fois — `release/vX.Y.Z` et l'enveloppe `ossbrain-release/vX.Y.Z`
-    # qui y sera mergée (voir l'en-tête de pick_release_branches.py) — et les
-    # deux nous arrivent, parce qu'aucune ne devance l'autre en permanence :
-    # l'enveloppe accumule d'abord, la release la rattrape quand la PR passe.
-    # On garde donc celle qui a le PLUS de commits au-dessus du tag, la seule
-    # question qui compte pour un aperçu. Sans ça la page afficherait deux
-    # bandeaux pour la même version, dont un presque vide.
-    par_version = {}
+    # Une version, UN chantier. Le jeu porte chaque version sur PLUSIEURS
+    # branches à la fois — `release/vX.Y.Z` et une ou deux enveloppes
+    # `ossbrain-release/*` qui y seront mergées (voir l'en-tête de
+    # pick_release_branches.py) — et toutes nous arrivent, parce qu'aucune ne
+    # devance les autres en permanence : l'enveloppe accumule d'abord, la
+    # release la rattrape quand la PR passe, puis une nouvelle enveloppe
+    # repart devant.
+    #
+    # Le regroupement se fait sur le NUMÉRO ANALYSÉ, pas sur le nom de la
+    # branche : le 18 août 2026, le jeu a ouvert `ossbrain-release/v0.39` à
+    # côté de `release/v0.39.0`. Les deux préparent la même version, mais
+    # comparés comme des chaînes ils ne se ressemblent pas, et la page a
+    # affiché DEUX bandeaux pour un seul chantier.
+    par_cle = {}
     for v in versions:
-        garde = par_version.get(v["version"])
-        if garde is None or v["commits"] > garde["commits"]:
-            par_version[v["version"]] = v
-    versions = list(par_version.values())
+        par_cle.setdefault(version_key(v["version"]) or (10**9, 0, 0), []).append(v)
+
+    versions = []
+    for groupe in par_cle.values():
+        # Le contenu vient de la branche la plus avancée : ses rubriques sont
+        # les plus complètes, et son nombre de commits est la taille réelle du
+        # chantier.
+        base = max(groupe, key=lambda v: v["commits"])
+        # Le NOM affiché est le plus précis du groupe : `v0.39` et `v0.39.0`
+        # décrivent la même version, mais c'est `v0.39.0` qui sera taguée — et
+        # c'est ce numéro que l'éditorial et patch-notes.json emploient.
+        base["version"] = max(
+            (v["version"] for v in groupe), key=lambda s: (s.count("."), len(s))
+        )
+        # Le numéro est réputé FIXÉ dès qu'UNE branche de la version l'a inscrit
+        # dans son package.json : c'est le geste qui précède la publication, et
+        # il n'a pas à être répété sur l'enveloppe pour compter.
+        declarante = next((v for v in groupe if v["imminent"]), None)
+        if declarante is not None:
+            base["imminent"] = True
+            base["declared_version"] = declarante["declared_version"]
+        versions.append(base)
 
     # De la plus basse à la plus haute — la première est la prochaine à sortir.
     # Un nom sans numéro exploitable passe en fin de liste plutôt que de faire

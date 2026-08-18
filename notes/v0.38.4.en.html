@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Patch notes v0.38.4 — La Clauderie</title>
+<meta name="description" content="The v0.38.4 release of World of ClaudeCraft in plain language: two Delve bugs, both able to break a run for good. Under the Restless Graves affix, killing a room's last trash could open the exit portal during the 3 seconds before the dead rise — and seal the next room. And an abandoned run could stay claimed far past the intended 5 minutes, with 20 minutes reported. No combat value changes.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Patch notes v0.38.4 — La Clauderie">
+<meta property="og:description" content="The v0.38.4 release of World of ClaudeCraft in plain language: two Delve bugs, both able to break a run for good. Under the Restless Graves affix, killing a room's last trash could open the exit portal during the 3 seconds before the dead rise — and seal the next room. And an abandoned run could stay claimed far past the intended 5 minutes.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.38.4.en.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.38.4.en.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') !== 'en') location.replace('v0.38.4.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Site navigation"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Patch notes</p>
+    <h1>Patch notes <span class="v">v0.38.4</span></h1>
+    <p class="lede">A short, tightly aimed hotfix: <strong class="hl">two Delve bugs</strong>, both able to break a run for good. The first only struck under the <strong class="hl">Restless Graves</strong> affix, the one that makes the dead get back up: a room could seal itself <strong class="hl">permanently</strong>, with no way out left. The second kept an <strong class="hl">abandoned</strong> run claimed far past the intended five minutes — twenty minutes reported. No combat value, no item, no data changes.</p>
+    <div class="meta">
+      <span><b>Released</b> August 17, 2026</span>
+      <span><b>Since</b> v0.38.3</span>
+      <span><b>2</b> fixes</span>
+    </div>
+    <div class="hint">💡 Click a card for details.</div>
+  </header>
+
+  <!-- Constant digest: same rubrics, same order, every version. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">At a glance</h2>
+    <p class="sec-sub">The same rubrics every version, in the same order. Click one to jump to its section.</p>
+    <ol>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <span class="d-name">Classes &amp; spells</span>
+        <span class="d-say"><b class="eq">All =</b> nothing moves: no spell, no talent, no mastery, no item. The v0.38.3 resurrection ranges stand as they are.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <span class="d-name">Professions &amp; gathering</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#gouffres">Dungeons, rifts &amp; bosses</a>
+        <span class="d-say"><strong class="hl">The whole release is here.</strong> Under the <strong class="hl">Restless Graves</strong> affix, a Delve room could seal itself <strong class="hl">permanently</strong> — no portal, no way out, and the problem survived relogging. And a run everyone had left could stay <strong class="hl">claimed far longer</strong> than the intended five minutes.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <span class="d-name">World &amp; quests</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <span class="d-name">Guild &amp; social</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <span class="d-name">Comfort &amp; technical</span>
+        <span class="d-say">—</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="gouffres">
+    <h2><span class="num">01</span>Delves: two ways to get stuck</h2>
+    <p class="sec-sub">Both bugs fixed here end in the same place: a run you can no longer finish. The first only happens under one affix; the second could hit anyone, especially at busy hours.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="portail" tabindex="0" role="button" aria-label="Details: the race between the portal and the rising dead">
+        <h3>The portal outran the dead <span class="chip c-fix">Fixed</span></h3>
+        <p>Under the <strong class="hl">Restless Graves</strong> affix, every ordinary mob you kill raises a <span data-codex="mob|reliquary_bonewalker">Raised Bonewalker</span> <strong class="hl">3 seconds later</strong>. So killing a room's <strong class="hl">last</strong> mob opened the portal during those 3 seconds — and the dead then rose <strong class="hl">behind an already-open portal</strong>.</p>
+        <span class="more-link">See the detail</span>
+      </div>
+      <div class="card more" data-detail="salle" tabindex="0" role="button" aria-label="Details: the previous room sealing the next one">
+        <h3>The previous room sealed the next <span class="chip c-raid">Dead end</span></h3>
+        <p>Worse: a kill <strong class="hl">still waiting to rise</strong> could survive the move to the next room. It rose in the <strong class="hl">old</strong> room, but counted in the <strong class="hl">new</strong> room's mob list — which was therefore waiting on a mob that could <strong class="hl">never be reached</strong>. The portal never opened again.</p>
+        <span class="more-link">See the detail</span>
+      </div>
+      <div class="card more" data-detail="reserve" tabindex="0" role="button" aria-label="Details: abandoned runs staying claimed">
+        <h3>The abandoned run that never freed <span class="chip c-fix">Fixed</span></h3>
+        <p>A run everyone has left should free itself after <strong class="hl">five minutes</strong>. The game watched a <strong class="hl">symmetric</strong> area around it that bit into the <strong class="hl">neighbour's</strong> rooms: another group was enough to keep it claimed. One player reported <strong class="hl">twenty minutes</strong> of waiting.</p>
+        <span class="more-link">See the detail</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="reste">
+    <h2><span class="num">02</span>And nothing else</h2>
+    <p class="sec-sub">This is a hotfix in the strict sense, and it never leaves the Delves. Everything v0.38.3 brought the day before stays exactly in place.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Nothing moves in game <span class="chip c-util">Scope</span></h3>
+        <ul>
+          <li>No combat value: no spell, no talent, no mastery, no set bonus.</li>
+          <li>No item, no mob, no quest, no zone.</li>
+          <li>No data migration: nothing to redo on your character.</li>
+          <li>No random draw moved: loot order is <strong class="hl">strictly identical</strong>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>The scenery did not change <span class="chip c-util">Under the hood</span></h3>
+        <ul>
+          <li>The Fenbridge 3D models were <strong class="hl">re-stamped</strong> as part of the version bump.</li>
+          <li>Only their internal fingerprint moves: <strong class="hl">identical geometry and textures</strong>, identical size, no on-screen difference.</li>
+          <li>Same operation as <a href="v0.38.2.en.html">v0.38.2</a> and <a href="v0.38.3.en.html">v0.38.3</a>, for the same reason.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>v0.38.3 still stands <span class="chip c-util">Reminder</span></h3>
+        <ul>
+          <li>Group resurrections keep their range and their line of sight.</li>
+          <li><span data-codex="mob|Korzul the Gravewyrm">Korzul</span> and <span data-codex="mob|Zulgar, Voice of the Basin">Zulgar</span> keep their purse, and heroic finales still pay 10 gold.</li>
+          <li>It is all detailed on the <a href="v0.38.3.en.html">v0.38.3 page</a>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Close">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    portail: {
+      title: "The race between the portal and the rising dead",
+      summary: "Three seconds of gap, and a portal that opens once and for all: that was all it took to break a run.",
+      body: `
+        <h4>The Restless Graves affix</h4>
+        <ul>
+          <li>It is one of the crypt-themed Delve affixes. While it is active, <b>every ordinary mob you kill</b> — not elite, not boss — raises a <b>Raised Bonewalker</b> at the exact spot where it fell.</li>
+          <li>The rise is not immediate: it lands <b>3 seconds after the death</b>. That delay is the whole problem.</li>
+          <li>A mob raised by the affix does not raise another in turn: the chain stops there.</li>
+        </ul>
+        <h4>The race</h4>
+        <ul>
+          <li>A room's exit portal opens when <b>no mob is left alive</b>. Until now, the game only counted mobs <b>already standing</b>.</li>
+          <li>But between the killing blow and the rise there are those 3 seconds during which the room looks <b>empty</b>. So the portal opened — and once open, it <b>stayed</b> open.</li>
+          <li>The Bonewalkers then rose <b>behind an already-open portal</b>, which makes no sense: the room was treated as finished when it was not.</li>
+        </ul>
+        <h4>The fix</h4>
+        <p>Kills <b>waiting to rise now count as alive</b>. The portal does not open during those 3 seconds, and it opens <b>normally</b> once the Bonewalkers are down — the game re-checks every tick, so there is nothing special to do.</p>`
+    },
+    salle: {
+      title: "When the previous room sealed the next one",
+      summary: "The real trap: a pending rise that crosses the room change and blocks the exit of a room it never set foot in.",
+      body: `
+        <h4>What was happening</h4>
+        <ul>
+          <li>The group kills a room's last mob. A rise is <b>queued</b> for 3 seconds.</li>
+          <li>The group moves to the next room <b>before those 3 seconds are up</b>.</li>
+          <li>The rise was not cancelled. The Bonewalker rose <b>in the old room</b> — but it was registered in the <b>new</b> room's mob list.</li>
+        </ul>
+        <h4>Why there was no way out</h4>
+        <p>The new room was therefore waiting on a mob that stood <b>somewhere else</b>, out of reach. Its portal could <b>never</b> open again. And this was not a bad moment to sit through: the state was saved, so <b>logging out and back in changed nothing</b>.</p>
+        <h4>The fix</h4>
+        <p>Pending rises are now <b>room state</b>: they are <b>dropped along with the room</b> when the group advances. A kill queued in a room you leave rises nowhere, and counts nowhere.</p>
+        <h4>The guard rails</h4>
+        <p>Three new tests pin the behaviour: the portal race, dropping pending rises on room change, and the occupancy band from both sides.</p>`
+    },
+    reserve: {
+      title: "Abandoned runs that stayed claimed",
+      summary: "An occupancy area that was too wide, biting into the neighbouring group's rooms — and keeping claimed a run nobody was in.",
+      body: `
+        <h4>The intended rule</h4>
+        <p>Once everyone has left a run, it should <b>free itself after five minutes</b>, so the slot goes to someone else. The clock only runs, of course, if the run is <b>genuinely empty</b>.</p>
+        <h4>The flaw</h4>
+        <ul>
+          <li>To decide whether a run was empty, the game watched a <b>symmetric</b> area around its origin point — as far north as south.</li>
+          <li>But a Delve's rooms stretch <b>far to the north</b> and barely at all to the south: the origin sits almost on the southern edge.</li>
+          <li>That symmetric area therefore spilled well <b>into the neighbouring slot's rooms</b>, which are not that far away.</li>
+          <li>The consequence: <b>another group</b>, busy in its own Delve, was enough to make the abandoned run look occupied. The clock never started.</li>
+        </ul>
+        <h4>What it looked like</h4>
+        <p>At quiet hours nobody noticed. At busy hours — when several groups run the same Delve at once — a stuck slot could stay stuck <b>indefinitely</b>. One player reported <b>twenty minutes</b> of waiting instead of five.</p>
+        <h4>The fix</h4>
+        <p>The occupancy area now <b>matches the rooms' real footprint</b>: wide to the north, very short to the south. It can no longer reach the neighbour, and the five-minute clock starts as soon as the run is actually empty. The lookup that ties a player to THEIR own run deliberately keeps a wide area: it is already filtered by party, so it cannot pick the wrong slot.</p>`
+    },
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Inline Codex cards (glossary, mobs, spells…) built from the Codex data -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>
