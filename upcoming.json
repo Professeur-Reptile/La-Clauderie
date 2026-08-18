@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-17T13:22:57Z",
+ "generated": "2026-08-18T02:01:35Z",
  "base_tag": "v0.38.4",
  "version": "v0.39",
  "branch": "ossbrain-release/v0.39",
  "declared_version": "0.38.3",
  "imminent": false,
- "commits": 116,
- "shown": 66,
- "last_commit": "2026-08-17T12:08:01Z",
+ "commits": 180,
+ "shown": 91,
+ "last_commit": "2026-08-17T23:37:47Z",
  "sections": [
   {
    "key": "classes",
@@ -15,6 +15,20 @@
    "fr": "Classes & sorts",
    "en": "Classes & spells",
    "items": [
+    {
+     "h": "d0c3dbae",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Feral enablement: Wolfsblood surge, Redharvest ranks, earlier spenders, Savage Mending percentage",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "c8fb0aa1",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Stalk moves at 95% speed instead of half",
+     "date": "2026-08-18"
+    },
     {
      "h": "352927ff",
      "kind": "fix",
@@ -30,6 +44,20 @@
      "date": "2026-08-17"
     },
     {
+     "h": "ca22a72d",
+     "kind": "fix",
+     "scope": "icon-art",
+     "text": "Keep aura references repository-backed",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "59a8c7b9",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Refresh warlock control tooltips",
+     "date": "2026-08-17"
+    },
+    {
      "h": "6ca83d03",
      "kind": "fix",
      "scope": "warlock",
@@ -37,10 +65,38 @@
      "date": "2026-08-16"
     },
     {
+     "h": "6cd87e60",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Improve necromancy raid readiness",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "a9983b47",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Improve crowd control reliability",
+     "date": "2026-08-16"
+    },
+    {
      "h": "7a53ff63",
      "kind": "fix",
      "scope": "warlock",
      "text": "Prioritize queued Sentence",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "c7ef6f11",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Show Litany damage in tooltip",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "44a443ce",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Read the applied aura's own value for a buff tooltip's $b",
      "date": "2026-08-16"
     },
     {
@@ -159,6 +215,13 @@
    "en": "World & quests",
    "items": [
     {
+     "h": "7354f240",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Author a character-creator look for every world NPC",
+     "date": "2026-08-17"
+    },
+    {
      "h": "82f8e1f4",
      "kind": "feat",
      "scope": "drakelands",
@@ -215,6 +278,13 @@
      "date": "2026-07-27"
     },
     {
+     "h": "587257a5",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep Brother Aldric on his original NPC model",
+     "date": "2026-08-18"
+    },
+    {
      "h": "fd084ae3",
      "kind": "fix",
      "scope": "sim",
@@ -247,6 +317,13 @@
      "kind": "fix",
      "scope": "pet",
      "text": "Gate AI targets by quest state",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "fc9e3c3e",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Gate NPC looks by entity kind",
      "date": "2026-08-17"
     },
     {
@@ -293,6 +370,20 @@
    "fr": "Confort & technique",
    "en": "Comfort & technical",
    "items": [
+    {
+     "h": "c3fbafa4",
+     "kind": "feat",
+     "scope": "icons",
+     "text": "Repaint legacy class abilities",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "395d6d3c",
+     "kind": "feat",
+     "scope": "icons",
+     "text": "Add painted runtime identities",
+     "date": "2026-08-16"
+    },
     {
      "h": "23137331",
      "kind": "feat",
@@ -357,6 +448,13 @@
      "date": "2026-07-27"
     },
     {
+     "h": "94c4ac5c",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Load the biome sky domes from KTX2 instead of Radiance",
+     "date": "2026-08-16"
+    },
+    {
      "h": "7e417cf4",
      "kind": "perf",
      "scope": "render",
@@ -369,6 +467,27 @@
      "scope": "ui",
      "text": "Trim the login preview prewarm schedule",
      "date": "2026-08-15"
+    },
+    {
+     "h": "ef5501cb",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Carry rank threatFlat through the replacement walk and tighten the surge pin",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "3adafbc6",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Link the shadow-pass depth programs the shadow pass actually draws",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "0377ac00",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Address review findings on mount prewarm (reparent bug, honest status, depth compile)",
+     "date": "2026-08-17"
     },
     {
      "h": "ca45cabe",
@@ -413,6 +532,48 @@
      "date": "2026-08-17"
     },
     {
+     "h": "e87d5923",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Preserve locked stack counts on load",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "16c49b33",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bound mount prewarm budget",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "e15ebd10",
+     "kind": "fix",
+     "scope": "deploy",
+     "text": "Stabilize watchdog fake timeout",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "cd3a981e",
+     "kind": "fix",
+     "scope": "cosmetics",
+     "text": "Stop unequipping a mech chroma from revoking the account-wide unlock",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "bbf33b92",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Lock the whole stack when a player locks a stackable item",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "729c83fa",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Clear a duel opponent's Necromancy undead dot when the duel ends",
+     "date": "2026-08-16"
+    },
+    {
      "h": "aa43009e",
      "kind": "fix",
      "scope": "i18n",
@@ -424,6 +585,20 @@
      "kind": "fix",
      "scope": "i18n",
      "text": "Clarify French Cold Coffin controls",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "5dd5be35",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Replace placeholder action affordances",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "20646eae",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Warm every mount's shader programs to close a #2571 freeze gap",
      "date": "2026-08-16"
     },
     {
@@ -526,9 +701,9 @@
    "branch": "ossbrain-release/v0.39",
    "declared_version": "0.38.3",
    "imminent": false,
-   "commits": 116,
-   "shown": 66,
-   "last_commit": "2026-08-17T12:08:01Z",
+   "commits": 180,
+   "shown": 91,
+   "last_commit": "2026-08-17T23:37:47Z",
    "sections": [
     {
      "key": "classes",
@@ -536,6 +711,20 @@
      "fr": "Classes & sorts",
      "en": "Classes & spells",
      "items": [
+      {
+       "h": "d0c3dbae",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Feral enablement: Wolfsblood surge, Redharvest ranks, earlier spenders, Savage Mending percentage",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "c8fb0aa1",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Stalk moves at 95% speed instead of half",
+       "date": "2026-08-18"
+      },
       {
        "h": "352927ff",
        "kind": "fix",
@@ -551,6 +740,20 @@
        "date": "2026-08-17"
       },
       {
+       "h": "ca22a72d",
+       "kind": "fix",
+       "scope": "icon-art",
+       "text": "Keep aura references repository-backed",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "59a8c7b9",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Refresh warlock control tooltips",
+       "date": "2026-08-17"
+      },
+      {
        "h": "6ca83d03",
        "kind": "fix",
        "scope": "warlock",
@@ -558,10 +761,38 @@
        "date": "2026-08-16"
       },
       {
+       "h": "6cd87e60",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Improve necromancy raid readiness",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "a9983b47",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Improve crowd control reliability",
+       "date": "2026-08-16"
+      },
+      {
        "h": "7a53ff63",
        "kind": "fix",
        "scope": "warlock",
        "text": "Prioritize queued Sentence",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "c7ef6f11",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Show Litany damage in tooltip",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "44a443ce",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Read the applied aura's own value for a buff tooltip's $b",
        "date": "2026-08-16"
       },
       {
@@ -680,6 +911,13 @@
      "en": "World & quests",
      "items": [
       {
+       "h": "7354f240",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Author a character-creator look for every world NPC",
+       "date": "2026-08-17"
+      },
+      {
        "h": "82f8e1f4",
        "kind": "feat",
        "scope": "drakelands",
@@ -736,6 +974,13 @@
        "date": "2026-07-27"
       },
       {
+       "h": "587257a5",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep Brother Aldric on his original NPC model",
+       "date": "2026-08-18"
+      },
+      {
        "h": "fd084ae3",
        "kind": "fix",
        "scope": "sim",
@@ -768,6 +1013,13 @@
        "kind": "fix",
        "scope": "pet",
        "text": "Gate AI targets by quest state",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "fc9e3c3e",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Gate NPC looks by entity kind",
        "date": "2026-08-17"
       },
       {
@@ -814,6 +1066,20 @@
      "fr": "Confort & technique",
      "en": "Comfort & technical",
      "items": [
+      {
+       "h": "c3fbafa4",
+       "kind": "feat",
+       "scope": "icons",
+       "text": "Repaint legacy class abilities",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "395d6d3c",
+       "kind": "feat",
+       "scope": "icons",
+       "text": "Add painted runtime identities",
+       "date": "2026-08-16"
+      },
       {
        "h": "23137331",
        "kind": "feat",
@@ -878,6 +1144,13 @@
        "date": "2026-07-27"
       },
       {
+       "h": "94c4ac5c",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Load the biome sky domes from KTX2 instead of Radiance",
+       "date": "2026-08-16"
+      },
+      {
        "h": "7e417cf4",
        "kind": "perf",
        "scope": "render",
@@ -890,6 +1163,27 @@
        "scope": "ui",
        "text": "Trim the login preview prewarm schedule",
        "date": "2026-08-15"
+      },
+      {
+       "h": "ef5501cb",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Carry rank threatFlat through the replacement walk and tighten the surge pin",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "3adafbc6",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Link the shadow-pass depth programs the shadow pass actually draws",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "0377ac00",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Address review findings on mount prewarm (reparent bug, honest status, depth compile)",
+       "date": "2026-08-17"
       },
       {
        "h": "ca45cabe",
@@ -934,6 +1228,48 @@
        "date": "2026-08-17"
       },
       {
+       "h": "e87d5923",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Preserve locked stack counts on load",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "16c49b33",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Bound mount prewarm budget",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "e15ebd10",
+       "kind": "fix",
+       "scope": "deploy",
+       "text": "Stabilize watchdog fake timeout",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "cd3a981e",
+       "kind": "fix",
+       "scope": "cosmetics",
+       "text": "Stop unequipping a mech chroma from revoking the account-wide unlock",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "bbf33b92",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Lock the whole stack when a player locks a stackable item",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "729c83fa",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Clear a duel opponent's Necromancy undead dot when the duel ends",
+       "date": "2026-08-16"
+      },
+      {
        "h": "aa43009e",
        "kind": "fix",
        "scope": "i18n",
@@ -945,6 +1281,20 @@
        "kind": "fix",
        "scope": "i18n",
        "text": "Clarify French Cold Coffin controls",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "5dd5be35",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Replace placeholder action affordances",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "20646eae",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Warm every mount's shader programs to close a #2571 freeze gap",
        "date": "2026-08-16"
       },
       {
@@ -1047,9 +1397,9 @@
    "branch": "ossbrain-release/v0.39.0",
    "declared_version": "0.39.0",
    "imminent": true,
-   "commits": 177,
-   "shown": 115,
-   "last_commit": "2026-08-17T06:23:25Z",
+   "commits": 185,
+   "shown": 120,
+   "last_commit": "2026-08-18T01:15:18Z",
    "sections": [
     {
      "key": "classes",
@@ -1236,6 +1586,13 @@
      "en": "World & quests",
      "items": [
       {
+       "h": "7354f240",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Author a character-creator look for every world NPC",
+       "date": "2026-08-17"
+      },
+      {
        "h": "82f8e1f4",
        "kind": "feat",
        "scope": "drakelands",
@@ -1290,6 +1647,13 @@
        "scope": "drakelands",
        "text": "Keep entrance polish, a true doorway and stepped cuts",
        "date": "2026-07-27"
+      },
+      {
+       "h": "587257a5",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep Brother Aldric on his original NPC model",
+       "date": "2026-08-18"
       },
       {
        "h": "e1ae1016",
@@ -1425,6 +1789,27 @@
        "scope": "ui",
        "text": "Trim the login preview prewarm schedule",
        "date": "2026-08-15"
+      },
+      {
+       "h": "c0c17384",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3476 into release",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "01da0594",
+       "kind": "fix",
+       "scope": "",
+       "text": "PR #3468 into release",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "3adafbc6",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Link the shadow-pass depth programs the shadow pass actually draws",
+       "date": "2026-08-17"
       },
       {
        "h": "0377ac00",
