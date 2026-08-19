@@ -294,7 +294,7 @@
 
 <script src="assets/nav.js"></script>
 <script src="assets/lang.js"></script>
-<script src="assets/version.js" data-version="v0.38.4" defer></script>
+<script src="assets/version.js" data-version="v0.39.0" defer></script>
 <script>
 // Builds PvP par classe — éditorial La Clauderie, mêmes rangées de talents que
 // la page Builds (TALENTS.json de la knowledge base), re-choisies pour l'arène.
@@ -378,7 +378,7 @@ const PVP = {
   plan: [
    { fr: "<b>Bruin Rush</b> + <b>Concuss</b> en alternance : la cible passe sa vie stun ou ralentie.", en: "<b>Bruin Rush</b> + <b>Concuss</b> alternating: the target lives stunned or slowed." },
    { fr: "<b>Craven Roar</b> (−20 PA) en continu : la mêlée adverse tape dans du coton.", en: "<b>Craven Roar</b> (−20 AP) at all times: the enemy melee hits cotton." },
-   { fr: "Sors de forme, <b>Wildbloom</b> puis <b>Wildmend</b>, retourne en ours — et si on t’enracine, c’est le changement de forme lui-même qui te libère (Wildshift).", en: "Shift out, <b>Wildbloom</b> then <b>Wildmend</b>, back to bear — and if they root you, the shift itself frees you (Wildshift)." },
+   { fr: "<b>Wildbloom</b> puis <b>Wildmend</b> : depuis la v0.39, plus besoin de sortir de forme à la main — le sort te fait quitter l’ours tout seul, gratuitement et sans temps de recharge global. Retourne en ours ensuite (ça, ça coûte). Et si on t’enracine, c’est le changement de forme lui-même qui te libère (Wildshift).", en: "<b>Wildbloom</b> then <b>Wildmend</b>: since v0.39 you no longer drop the form by hand — the cast leaves bear for you, free and with no global cooldown. Shift back into bear afterwards (that part does cost). And if they root you, the shift itself frees you (Wildshift)." },
    { fr: "<b>Headbutt</b> les soins — l'interrupt verrouille 4 s.", en: "<b>Headbutt</b> their heals — the interrupt locks for 4s." }
   ],
   partner: { fr: "Partenaire 2v2 : Pactbound (« l'Increvable », toi en Groveheart) ou Hexcraft.", en: "2v2 partner: Pactbound (“the Unkillable”, you as Groveheart) or Hexcraft." }
@@ -429,7 +429,7 @@ const PVP = {
   pourquoi: { fr: "La pression qui ne s'arrête jamais : quatre DoTs sur deux cibles, des peurs en boucle, et chaque point de dégâts te revient en vie via Veinleech et Consume. Le temps joue toujours pour toi.", en: "Pressure that never stops: four DoTs across two targets, looping fears, and every point of damage comes back as your health through Veinleech and Consume. Time is always on your side." },
   talents: [
    ["Sacrilegious March", "niv. 5", { fr: "35 % de vitesse en permanence contre 2 % de ta vie par seconde : le démoniste kite enfin sans monture.", en: "a permanent 35% movement speed for 2% of your health per second: the warlock finally kites without a mount." }],
-   ["Abyssal Gag", "niv. 8", { fr: "l’interruption AVANT l’heure : elle coupe et fait taire TOUS les sorts de la cible 4 s.", en: "the interrupt EARLY: it cuts and silences ALL of the target's spells for 4s." }],
+   ["Improved Abyssal Gag", "niv. 8", { fr: "l’interruption AVANT l’heure : elle coupe et fait taire TOUS les sorts de la cible 4 s. La v0.39 y ajoute une amélioration du sort lui-même.", en: "the interrupt EARLY: it cuts and silences ALL of the target's spells for 4s. v0.39 adds an improvement to the spell itself." }],
    ["Sanguine Covenant", "niv. 11", { fr: "10 % de ta vie actuelle contre une absorption de 30 % de tes PV max pendant 8 s : ta réponse au train de mêlée.", en: "10% of your current health for an absorb worth 30% of your max health for 8s: your answer to a melee train." }],
    ["Shadow Credit", "niv. 14", { fr: "chaque grosse dépense de Condamnation te rend un générateur gratuit : Sentence relance la boucle toute seule.", en: "every big Condemnation spend hands you a free generator: Sentence restarts the loop by itself." }],
    ["Grand Malediction", "niv. 17", { fr: "−25 % de cooldown sur Hex of Violence : la mise en place revient toutes les 11 s au lieu de 15.", en: "−25% cooldown on Hex of Violence: your setup comes back every 11s instead of 15." }],
@@ -438,7 +438,7 @@ const PVP = {
   plan: [
    { fr: "DoT LES DEUX adversaires (<b>Hex of Anguish</b>, <b>Blackrot</b>) : le soigneur adverse doit soigner partout à la fois.", en: "DoT BOTH opponents (<b>Hex of Anguish</b>, <b>Blackrot</b>): the enemy healer has to heal everywhere at once." },
    { fr: "Pose ton <b>Evil Eye</b> sur la cible à tuer, monte la Condamnation avec <b>Needle of Fate</b> et <b>Hex of Violence</b>, puis lâche <b>Sentence</b> pendant le contrôle de ton partenaire.", en: "Put your <b>Evil Eye</b> on the kill target, build Condemnation with <b>Needle of Fate</b> and <b>Hex of Violence</b>, then unload <b>Sentence</b> inside your partner's control." },
-   { fr: "<b>Harrow</b> en boucle sur la cible libre — les peurs subissent les rendements décroissants : alterne avec les stuns de ton partenaire.", en: "<b>Harrow</b> on loop on the free target — fears suffer diminishing returns: alternate with your partner's stuns." },
+   { fr: "<b>Harrow</b> en boucle sur la cible libre. v0.39 : elle dure 5 s au lieu de 8, mais il faut désormais lui infliger <b>8 % de ses PV max</b> pour la briser — avant, le moindre tic de DoT la faisait sauter. Elle tient donc pour de vrai. Les peurs gardent leurs rendements décroissants : alterne avec les stuns de ton partenaire.", en: "<b>Harrow</b> on loop on the free target. v0.39: it lasts 5s instead of 8, but breaking it now takes <b>8% of their max health</b> in damage — before, one dot tick popped it. So it actually holds. Fears still suffer diminishing returns: alternate with your partner's stuns." },
    { fr: "<b>Abyssal Gag</b> les soins : 4 s sans un seul sort, école par école.", en: "<b>Abyssal Gag</b> their heals: 4s without a single spell, school by school." },
    { fr: "<b>Consume</b> en kitant (Walking Hunger) : chaque mètre parcouru te soigne.", en: "<b>Consume</b> while kiting (Walking Hunger): every meter you cover heals you." }
   ],

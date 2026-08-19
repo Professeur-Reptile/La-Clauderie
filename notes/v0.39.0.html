@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Nouveautés v0.39.0 — La Clauderie</title>
+<meta name="description" content="Les nouveautés de la v0.39.0 de World of ClaudeCraft, expliquées simplement : deux châteaux deviennent visitables (le Last Keep et Dawnhold Castle, avec un plan par étage), le Druide sauvage devient enfin jouable au lieu de taper en auto-attaque, la peur du Démoniste devient fiable, et les gros à-coups d’affichage disparaissent — 2,3 secondes de blocage à la libération de l’esprit tombent à 5 centièmes.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Nouveautés v0.39.0 — La Clauderie">
+<meta property="og:description" content="Deux châteaux deviennent visitables avec un plan par étage, le Druide sauvage devient enfin jouable, la peur du Démoniste devient fiable, et les gros à-coups d’affichage disparaissent.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.39.0.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.39.0.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') === 'en') location.replace('v0.39.0.en.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Notes de version</p>
+    <h1>Nouveautés <span class="v">v0.39.0</span></h1>
+    <p class="lede">Une grosse version de contenu, et deux nouvelles portes qui s’ouvrent : <strong class="hl">le Last Keep et Dawnhold Castle</strong> cessent d’être des décors et deviennent des bâtiments qu’on visite, avec un <strong class="hl">plan par étage</strong> qui remplace la carte du monde quand tu es dedans. Côté classes, le <strong class="hl">Druide sauvage</strong> arrête d’être un chat qui tape en auto-attaque, et la <strong class="hl">peur du Démoniste</strong> devient enfin fiable. Et les gros à-coups d’affichage disparaissent : <strong class="hl">2,3 secondes</strong> de blocage à la libération de l’esprit tombent à <strong class="hl">5 centièmes</strong>.</p>
+    <div class="meta">
+      <span><b>Publiée</b> le 19 août 2026</span>
+      <span><b>Depuis</b> la v0.38.4</span>
+      <span><b>1 225</b> fichiers touchés</span>
+      <span><b>21</b> langues complètes</span>
+    </div>
+    <div class="hint">💡 Clique sur une carte pour le détail.</div>
+  </header>
+
+  <!-- Bandeau constant : mêmes rubriques, même ordre, à chaque version. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">En un coup d’œil</h2>
+    <p class="sec-sub">Les mêmes rubriques à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
+    <ol>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <a class="d-name" href="#classes">Classes &amp; sorts</a>
+        <span class="d-say"><b class="up">Druide <span data-codex="spec|Wildfang">Wildfang</span> ↑</b> · <b class="up">Druide toutes spés ↑</b> · <b class="up">Démoniste ↑</b> · <b class="up">Paladin ↑</b> · <b class="eq">Guerrier =</b> · <b class="eq">Mage =</b> · <b class="eq">Voleur =</b> · <b class="eq">Chasseur =</b> · <b class="eq">Prêtre =</b> · <b class="eq">Chaman =</b>. Le gros morceau est le <strong class="hl">Druide en Wolf Form</strong>, jusqu’ici incapable de dépenser ses points de combo avant le niveau 14. Chez le Démoniste, la peur ne se casse plus au premier coup venu. Le Paladin, lui, ne perd plus ses auras quand quelqu’un rejoint le groupe.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <a class="d-name" href="#metiers">Métiers &amp; récolte</a>
+        <span class="d-say">Les <strong class="hl">objets de main gauche</strong> (orbes, lanternes, carquois) se <strong class="hl">désenchantent et se recyclent</strong> enfin, comme le reste de l’équipement. Et le <span data-codex="mob|frostmane_yeti">Frostmane Yeti</span> rend maintenant du <strong class="hl">cuir, des crocs et de la viande</strong>.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#donjons">Donjons, failles &amp; boss</a>
+        <span class="d-say">Dans les Gouffres, le coffre et le rite de la salle finale <strong class="hl">attendent désormais les renforts invoqués par le boss</strong> avant de s’ouvrir. Et une salle ne réutilise plus les murs de l’expédition précédente.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <a class="d-name" href="#monde">Monde &amp; quêtes</a>
+        <span class="d-say"><strong class="hl">Deux châteaux deviennent visitables</strong>, chacun avec son plan d’intérieur et son haut fait. Un millier d’endroits où l’on restait <strong class="hl">bloqué au pied d’une falaise</strong> sont débloqués, les 91 PNJ du monde ont enfin un vrai visage, et une <strong class="hl">rangée de mannequins d’entraînement</strong> apparaît au-dessus de Highwatch.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <a class="d-name" href="#guilde">Guilde &amp; social</a>
+        <span class="d-say">Les auras du Paladin <strong class="hl">suivent enfin les arrivants</strong> et se retirent proprement au départ. Un joueur qui rejoint en retard peut utiliser un Soulwell déjà posé. Et un monstre réservé à une quête ne peut plus être <strong class="hl">collé sur le dos de quelqu’un qui n’a pas la quête</strong>.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#confort">Confort &amp; technique</a>
+        <span class="d-say">La chasse aux <strong class="hl">gros à-coups</strong> : libération de l’esprit, première monte, connexion, ombres. Verrouiller une case d’objets <strong class="hl">protège toute la pile</strong>. Et les icônes de sorts de classe sont désormais <strong class="hl">gelées</strong> — elles ne changeront plus sous tes doigts.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="classes">
+    <h2><span class="num">01</span>Le Druide sauvage sort de l’auto-attaque</h2>
+    <p class="sec-sub">C’est la grosse retouche de classe de la version. Un Druide en <span data-codex="ability|cat_form">Wolf Form</span> accumulait des points de combo dès le niveau 5… sans avoir de quoi les dépenser avant le 14. Tout ce bloc corrige ça, et au passage tous les Druides gagnent un confort qui leur manquait depuis toujours.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="wolfsblood" tabindex="0" role="button" aria-label="Détails : Wolfsblood devient gratuit et rend de l’énergie">
+        <h3>Wolfsblood, de piège à fenêtre de burst <span class="chip c-bal">Équilibrage</span></h3>
+        <p><span data-codex="ability|tigers_fury">Wolfsblood</span> coûtait <strong class="hl">30 d’énergie</strong> pour +40 de puissance d’attaque pendant 6 s — un bouton que personne n’appuyait, parce que ces 30 d’énergie rapportaient plus dans le cycle normal. Il est désormais <strong class="hl">gratuit</strong> et <strong class="hl">rend 30 d’énergie</strong> : un écart de 60 d’énergie, et une vraie fenêtre où placer ses coups.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="redharvest" tabindex="0" role="button" aria-label="Détails : Redharvest gagne des rangs, et le finisher arrive au niveau 8">
+        <h3>Un finisher dès le niveau 8, au lieu de 14 <span class="chip c-new">Progression</span></h3>
+        <p><span data-codex="ability|ferocious_bite">Gorebite</span> passe du niveau 14 au niveau <strong class="hl">8</strong>, et <span data-codex="ability|redharvest">Redharvest</span> gagne <strong class="hl">trois rangs</strong> (niv. 5, 10 et 16) au lieu d’une seule version. Le rang 3 reprend <strong class="hl">exactement</strong> les anciennes valeurs : au niveau 20, rien ne change pour toi.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="unshift" tabindex="0" role="button" aria-label="Détails : sortir de forme automatiquement pour lancer un sort">
+        <h3>Lancer un sort en forme, sans y penser <span class="chip c-new">Tous les Druides</span></h3>
+        <p>Jusqu’ici, lancer un soin ou un sort de dégâts en <span data-codex="ability|bear_form">Bruin Form</span>, <span data-codex="ability|cat_form">Wolf Form</span> ou Fleet Form te renvoyait « tu ne peux pas faire ça sous cette forme ». Maintenant le Druide <strong class="hl">quitte la forme et lance le sort</strong>, dans le même appui. Sortir de forme ne coûte rien et ne déclenche <strong class="hl">aucun temps de recharge global</strong>.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="peur" tabindex="0" role="button" aria-label="Détails : la peur du Démoniste devient déterministe">
+        <h3>La peur du Démoniste devient fiable <span class="chip c-bal">Démoniste</span></h3>
+        <p><span data-codex="ability|fear">Harrow</span> durait <strong class="hl">8 s… que n’importe quel dégât cassait</strong>, y compris un tic de poison ou un coup de familier. Elle dure maintenant <strong class="hl">5 s</strong>, mais il faut cumuler <strong class="hl">8 % des PV max</strong> de la cible pour la briser. Sur le terrain, c’est un gain : 5 secondes qui tiennent valent mieux que 8 qui sautent tout de suite.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Le camouflage devient utilisable <span class="chip c-bal">Druide</span></h3>
+        <ul>
+          <li><span data-codex="ability|prowl">Stalk</span> : tu te déplaces à <strong class="hl">95 % de ta vitesse</strong> au lieu de la <strong class="hl">moitié</strong>. Le camouflage félin devient un vrai outil de repérage et d’ouverture.</li>
+          <li><span data-codex="ability|pounce">Slinkstrike</span>, l’ouverture qui étourdit 2 s, passe du niveau <strong class="hl">18 au 8</strong> : elle arrive enfin peu après le camouflage, et non treize niveaux plus tard.</li>
+          <li>Le camouflage du Voleur, lui, garde volontairement sa lenteur — c’est ce qui distingue les deux.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Savage Mending suit ton stuff <span class="chip c-bal">Druide</span></h3>
+        <ul>
+          <li><span data-codex="ability|frenzied_regeneration">Savage Mending</span>, le seul soin de l’ours, rendait <strong class="hl">180 PV fixes</strong> — soit à peine 8 % du réservoir d’un ours bien équipé.</li>
+          <li>Il rend maintenant <strong class="hl">40 % de tes PV max</strong> sur 10 s. Plus tu montes en équipement, plus il rend.</li>
+          <li>Rappel : c’est un sort de <span data-codex="ability|bear_form">Bruin Form</span>, réservé à la spé <span data-codex="spec|Wildfang">Wildfang</span>, avec 1 minute de recharge.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Un bug de rang réglé au passage <span class="chip c-fix">Correction</span></h3>
+        <ul>
+          <li>Quand un bouton se transforme en un autre (Gorebite qui devient <span data-codex="ability|redharvest">Redharvest</span>), le jeu lançait toujours le <strong class="hl">rang 1</strong> du sort d’arrivée.</li>
+          <li>Ça ne se voyait pas tant qu’aucun sort transformé n’avait de rangs. Avec les nouveaux rangs de Redharvest, ça aurait rendu le bouton <strong class="hl">faux à tous les niveaux</strong>.</li>
+          <li>Le jeu lit désormais le rang qui correspond à <strong class="hl">ton</strong> niveau.</li>
+        </ul>
+      </div>
+    </div>
+    <h3 class="grp-title">Le reste du Démoniste — et il y en a plus que ce que les notes annoncent</h3>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Le contrôle <span class="chip c-bal">Toutes spés</span></h3>
+        <ul>
+          <li><span data-codex="ability|howl_of_terror">Dread Chorus</span> (peur de zone) passe de <strong class="hl">3 à 5 s</strong>, avec le même seuil de 8 % — c’est un gain sur les deux tableaux.</li>
+          <li><strong class="hl">Leaden Hex</strong> : à 3 charges, la racine passe de <strong class="hl">1,5 à 3,5 s</strong>. C’est le plus gros mouvement de la rangée 8, et il n’est écrit nulle part dans les notes officielles.</li>
+          <li><strong class="hl">Improved Abyssal Gag</strong> ne fait plus que donner le sort en avance : il l’<strong class="hl">améliore</strong> aussi.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>La spé <span data-codex="spec|Necromancy">Necromancy</span> <span class="chip c-bal">Démoniste</span></h3>
+        <ul>
+          <li>Hors combat, tu <strong class="hl">regagnes 1 Soul Fragment toutes les 2 s</strong>, jusqu’à 3. Fini d’entamer un combat à zéro — c’est nouveau, et absent des notes du jeu.</li>
+          <li><span data-codex="ability|ossuary_mark">Ossuary Mark</span> tient <strong class="hl">15 s</strong> au lieu de 12.</li>
+          <li><span data-codex="ability|corpse_explosion">Corpse Explosion</span> sacrifie d’abord le <strong class="hl">Skeletal Warrior</strong>, puis le Bone Mage — l’inverse d’avant. Tes dégâts survivent au sacrifice.</li>
+          <li><span data-codex="ability|reaping_command">Reaping Command</span> ne remet plus à zéro la recharge propre de chaque serviteur.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>L’Emberkin encaisse enfin <span class="chip c-bal">Familier</span></h3>
+        <ul>
+          <li>Le familier <span data-codex="mob|emberkin">Emberkin</span> était si fragile qu’il mourait sur un pull ordinaire. Au niveau 20 : <strong class="hl">+41 % de vie</strong>, <strong class="hl">+50 % d’armure</strong>, <strong class="hl">+15 % de dégâts</strong>.</li>
+          <li>Il reste moins solide que le Gloomshade — c’est voulu, il garde son rôle de lanceur à distance.</li>
+          <li>Là encore : rien dans les notes officielles.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="metiers">
+    <h2><span class="num">02</span>Ce qui traînait dans les sacs devient recyclable</h2>
+    <p class="sec-sub">Deux ajustements courts, mais qui touchent tout le monde : une famille d’objets entière rejoint l’économie, et un monstre change de camp — avec ce que ça implique pour ce qu’il laisse tomber.</p>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>Les mains gauches rejoignent l’économie <span class="chip c-new">Métiers</span></h3>
+        <ul>
+          <li>Les <strong class="hl">orbes, lanternes et carquois</strong> — tout ce qui se tient en main gauche sans être une arme ni une armure — se <strong class="hl">désenchantent</strong> et se <strong class="hl">recyclent</strong> comme le reste de l’équipement.</li>
+          <li>Avant, une pièce que ta classe ne pouvait pas porter n’avait <strong class="hl">aucune sortie</strong> : ni utile, ni transformable.</li>
+          <li>N’étant ni arme ni armure, elles ne rendent que le <strong class="hl">matériau générique</strong> de leur palier, pas de matériau typé (ni essence d’armure, ni acier d’arme).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Le Yeti était rangé chez les ogres <span class="chip c-fix">Correction</span></h3>
+        <ul>
+          <li>Le <span data-codex="mob|frostmane_yeti">Frostmane Yeti</span> était classé dans la famille des <strong class="hl">ogres</strong> — un vestige de l’époque où il empruntait leur modèle 3D.</li>
+          <li>Il est désormais une <strong class="hl">bête</strong>, donc il rend <strong class="hl">cuir, crocs et viande</strong> comme toute bête. Un dépeceur y gagne une source de plus.</li>
+          <li>Trois tréants (Treant Elder, Orchard Treant, Gravenbark Shambler) passent au même titre chez les <strong class="hl">élémentaires</strong>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="donjons">
+    <h2><span class="num">03</span>Les Gouffres attendent la fin du combat</h2>
+    <p class="sec-sub">Suite directe du correctif de la v0.38.4, mais côté récompense cette fois : la salle finale ne se laisse plus vider pendant que le combat continue.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="finale" tabindex="0" role="button" aria-label="Détails : la salle finale attend les renforts du boss">
+        <h3>Le coffre attend les renforts du boss <span class="chip c-fix">Corrigé</span></h3>
+        <p>Un boss de Gouffre peut invoquer des renforts qui lui survivent — les Bonewalkers de Raise Dead, les chantres de <strong class="hl">Sister Nhalia</strong>. Le coffre, le reliquaire et le rite de fin s’ouvraient <strong class="hl">quand même</strong>, et la sortie s’ouvrait en plein combat. Ils attendent maintenant que <strong class="hl">tout soit mort</strong>.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Plus de murs de l’expédition d’avant <span class="chip c-fix">Corrigé</span></h3>
+        <ul>
+          <li>Deux expéditions qui se suivent sur le même créneau pouvaient <strong class="hl">hériter des murs</strong> de la précédente, et voir des monstres apparaître au mauvais endroit.</li>
+          <li>La cause : les morceaux de salle étaient identifiés par leur <strong class="hl">numéro de module</strong> et non par leur <strong class="hl">position</strong>.</li>
+          <li>Corrigé : chaque salle se redessine pour de bon à chaque expédition.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="monde">
+    <h2><span class="num">04</span>Deux châteaux ouvrent leurs portes</h2>
+    <p class="sec-sub">C’est le gros du contenu de la version. Deux bâtiments qui n’étaient que des façades deviennent des lieux où l’on entre, où l’on monte, et où la carte du jeu te montre l’étage où tu te trouves. Les deux se visitent <strong class="hl">seul</strong> : ce ne sont pas des donjons, il n’y a rien à y combattre.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="chateaux" tabindex="0" role="button" aria-label="Détails : les intérieurs des deux châteaux">
+        <h3>Le Last Keep et Dawnhold Castle <span class="chip c-new">Nouveau</span></h3>
+        <p>Le <span data-codex="dungeon|The Last Keep">Last Keep</span> des <span data-codex="zone|The Drakelands">Drakelands</span> s’ouvre : une <strong class="hl">tour maîtresse où l’on entre</strong>, une aile de caserne et un <strong class="hl">chemin de ronde</strong> sur ses remparts. <span data-codex="dungeon|Dawnhold Castle">Dawnhold Castle</span>, dans <span data-codex="zone|The Evergarden">l’Evergarden</span>, ouvre un palais-jardin de <strong class="hl">16 pièces</strong> avec orangerie, cour fleurie et un renard taillé en topiaire.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="plans" tabindex="0" role="button" aria-label="Détails : les plans d’intérieur qui remplacent la carte du monde">
+        <h3>La carte te suit à l’intérieur <span class="chip c-new">Nouveau</span></h3>
+        <p>Dans les deux châteaux, la carte de zone laisse la place au <strong class="hl">plan de l’étage où tu es</strong>, redessiné dès que tu changes de niveau. Ce n’est pas une image : le plan est <strong class="hl">tracé à partir de la vraie disposition</strong> des pièces, donc il ne peut pas se désynchroniser du bâtiment.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Deux hauts faits à cocher <span class="chip c-new">Livre des Exploits</span></h3>
+        <ul>
+          <li><strong class="hl">The Quiet Halls</strong> — franchir la porte du Last Keep. <strong class="hl">5 de renom</strong>.</li>
+          <li><strong class="hl">An Open Door in the Garden</strong> — visiter Dawnhold Castle. <strong class="hl">5 de renom</strong>.</li>
+          <li>Chaque château cache aussi un souvenir à ramasser : le Signet of the Last Keep, et le <span data-codex="item|dawnhold_posy">Dawnhold Garden Posy</span>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Un millier d’endroits où l’on se coinçait <span class="chip c-fix">Correction</span></h3>
+        <ul>
+          <li>Un blocage pouvait te <strong class="hl">piéger définitivement</strong> au pied de certaines falaises — impossible d’en repartir.</li>
+          <li>Un ratissage du monde entier a trouvé et corrigé <strong class="hl">environ mille</strong> de ces points.</li>
+          <li>Les haies du Grand Labyrinthe bloquent à nouveau le passage, et les rochers qui ont une collision ne sont plus <strong class="hl">effacés en qualité basse</strong> : ce qui te bloque est toujours dessiné.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Une rangée pour s’entraîner <span class="chip c-new">Highwatch</span></h3>
+        <ul>
+          <li>Trois nouveaux mannequins rejoignent celui d’Highwatch : un <strong class="hl">allié</strong>, un <strong class="hl">boss normal</strong> et un <strong class="hl">boss héroïque</strong>.</li>
+          <li>Les deux boss copient leur niveau et leur armure sur <strong class="hl">Nythraxis</strong> — pas des valeurs recopiées à la main, mais les vraies : si Nythraxis change, les mannequins changent avec.</li>
+          <li>Le mannequin allié se maintient à <strong class="hl">35 % de sa vie</strong> : un soigneur peut enfin mesurer ses soins sans tout gaspiller en surplus.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Les PNJ ont un visage <span class="chip c-mob">Décor</span></h3>
+        <ul>
+          <li>Les <strong class="hl">91 PNJ</strong> du monde et les figurants de quête partageaient <strong class="hl">quatre apparences</strong> génériques.</li>
+          <li>Chacun a désormais son propre visage, taillé dans l’éditeur de personnage.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Les ogres ressemblent à des ogres <span class="chip c-mob">Décor</span></h3>
+        <ul>
+          <li>Neuf monstres de la famille des ogres (Thornpeak Ogre, Brakka the Wallbreaker, Warlord Grask, The Sundered Horror…) quittent le pantin générique de 2023 pour un <strong class="hl">vrai corps d’ogre</strong>.</li>
+          <li>Leurs 15 portraits ont été refaits sur ce nouveau corps.</li>
+          <li>Warlord Drogmar reste volontairement sur l’ancien modèle, en attendant le sien.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Les Drakelands se rangent <span class="chip c-util">Décor</span></h3>
+        <ul>
+          <li>Les rivières de lave passent de <strong class="hl">26 morceaux qui se chevauchaient à 4</strong>.</li>
+          <li>Les trésors de dragon couvrent deux fois plus de sol, et les éclats de bloodglass tombent enfin au bon endroit (<strong class="hl">33 sur 46</strong> bien placés, contre 14).</li>
+          <li>Un nouveau fort, l’<strong class="hl">Ashen Bulwark</strong>, apparaît sur le promontoire ouest : murs, tours et cour d’exercice. Son intérieur n’est pas encore construit.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="guilde">
+    <h2><span class="num">05</span>Jouer à plusieurs, sans mauvaises surprises</h2>
+    <p class="sec-sub">Quatre corrections qui ne se voient que quand on est en groupe — et qui, chacune, faisaient perdre quelque chose à quelqu’un.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Les auras du Paladin suivent le groupe <span class="chip c-fix">Corrigé</span></h3>
+        <ul>
+          <li>Les auras permanentes du Paladin (Devotion Ward, Retribution Aura) <strong class="hl">ne s’appliquaient pas</strong> à quelqu’un qui rejoignait le groupe après coup.</li>
+          <li>Elles se posent maintenant à l’arrivée, et se <strong class="hl">retirent proprement</strong> quand le Paladin ou le membre s’en va.</li>
+          <li>Les bénédictions de 30 minutes, elles, restent — c’est normal, ce sont des sorts lancés, pas des auras.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Le Soulwell accepte les retardataires <span class="chip c-fix">Corrigé</span></h3>
+        <ul>
+          <li>Un joueur qui rejoignait le groupe <strong class="hl">après</strong> la pose du Soulwell ne pouvait pas s’y servir.</li>
+          <li>C’est réglé : il y a droit comme les autres.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Les monstres de quête restent à leur place <span class="chip c-fix">Corrigé</span></h3>
+        <ul>
+          <li>Un monstre réservé à une quête pouvait être <strong class="hl">collé sur le dos</strong> d’un joueur qui n’a pas la quête — par une provocation, une aura de menace, une fuite groupée ou un Stonebound Jolt.</li>
+          <li>Et <strong class="hl">soigner</strong> quelqu’un qui fait la quête t’inscrivait sur la liste de menace du monstre. Plus maintenant.</li>
+          <li>Un familier de Démoniste temporaire ne peut plus <strong class="hl">achever son adversaire après la fin d’un duel</strong> avec ses dégâts sur la durée.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="confort">
+    <h2><span class="num">06</span>La chasse aux gros à-coups</h2>
+    <p class="sec-sub">Un blocage d’une seconde en plein combat gâche plus une soirée qu’un point de dégâts en moins. Cette version en corrige cinq, dont un qui frappait à chaque mort.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="hoquets" tabindex="0" role="button" aria-label="Détails : les gros à-coups corrigés">
+        <h3>2,3 secondes de blocage à chaque mort <span class="chip c-fix">Performance</span></h3>
+        <p>Libérer son esprit préparait le rendu du fantôme <strong class="hl">au moment même</strong> où on en avait besoin : <strong class="hl">2 283 ms</strong> de gel, à chaque mort. C’est préparé à l’avance désormais — <strong class="hl">52 ms</strong>. Même traitement pour la première monte, la connexion et les ombres.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="icones" tabindex="0" role="button" aria-label="Détails : le gel des icônes de sorts">
+        <h3>Tes icônes de sorts ne bougeront plus <span class="chip c-new">Décision</span></h3>
+        <p>Une passe d’illustration avait repeint <strong class="hl">58 icônes de sorts de classe</strong>. Elles ont été <strong class="hl">remises à l’identique avant la sortie</strong>, et une règle a été posée : les icônes de sorts en service sont <strong class="hl">gelées</strong>. Tu repères tes boutons du coin de l’œil, à la couleur et à la forme — les changer, même en mieux, coûte à tout le monde.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Verrouiller protège toute la pile <span class="chip c-fix">Corrigé</span></h3>
+        <ul>
+          <li>Verrouiller une case contenant <strong class="hl">plusieurs exemplaires</strong> n’en protégeait qu’<strong class="hl">un seul</strong> : le jeu détachait une unité dans une nouvelle case et laissait le reste sans protection.</li>
+          <li>Ça mangeait une case de sac au passage, et pouvait échouer faute de place.</li>
+          <li>Maintenant le verrou couvre <strong class="hl">toute la case</strong>, ne consomme aucune place, et tient après sauvegarde et rechargement.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Les chromas Mech restent à toi <span class="chip c-fix">Corrigé</span></h3>
+        <ul>
+          <li>Retirer un chroma Mech <strong class="hl">annulait le déblocage</strong> à l’échelle du compte, et rendait l’objet — une boucle de duplication de plaques d’armure sans limite.</li>
+          <li>Le déblocage est maintenant <strong class="hl">définitif</strong> : retirer le chroma change seulement l’apparence affichée, et n’importe quel personnage du compte peut le reprendre.</li>
+          <li>Les personnages qui portaient l’apparence ne sont plus bloqués dessus.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Le reste <span class="chip c-util">Divers</span></h3>
+        <ul>
+          <li><strong class="hl">Débloquer</strong> (menu Échap) fonctionne enfin sur les murs de champ de bataille où l’on se coinçait.</li>
+          <li>Les ciels pèsent <strong class="hl">8 fois moins</strong> (17,8 Mo → 2,1 Mo par ciel chargé) sur les machines compatibles.</li>
+          <li>La qualité « moyenne » gagne un <strong class="hl">lissage des bords</strong>, et l’interface tactile ne se dessine plus deux fois (20 → 12,9 ms par image).</li>
+          <li>L’infobulle de <strong class="hl">Fiendhide</strong> affiche enfin la vraie armure donnée, et non un chiffre calculé d’avance.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    wolfsblood: {
+      title: "Wolfsblood : le bouton que personne n’appuyait",
+      summary: "Un cooldown qui coûtait plus cher que ce qu’il rapportait. Il devient gratuit — et il rend de l’énergie.",
+      body: `
+        <h4>Le problème</h4>
+        <ul>
+          <li><b>Wolfsblood</b> donnait <b>+40 de puissance d’attaque pendant 6 s</b>, pour <b>30 d’énergie</b>, avec 30 s de recharge.</li>
+          <li>Sauf que ces 30 d’énergie, passées dans le cycle normal (Flense, puis le finisher), rapportaient <b>davantage</b> que le bonus.</li>
+          <li>Résultat : appuyer dessus était une <b>perte de dégâts</b> dès qu’il prenait la place d’un autre coup. Les meilleures rotations l’ignoraient purement et simplement.</li>
+        </ul>
+        <h4>Ce qui change</h4>
+        <ul>
+          <li>Le sort est désormais <b>gratuit</b>, et il <b>rend 30 d’énergie</b> au lieu d’en coûter 30.</li>
+          <li>L’écart total est donc de <b>60 d’énergie</b> par rapport à avant.</li>
+          <li>Le bonus de puissance d’attaque et la durée ne changent pas : toujours +40 pendant 6 s, toujours 30 s de recharge, toujours en Wolf Form.</li>
+        </ul>
+        <h4>Comment s’en servir</h4>
+        <p>C’est devenu un <b>bouton d’ouverture de fenêtre</b> : tu l’appuies, et tu places un <b>Flense</b> dans les 6 secondes qui suivent pour que le saignement soit calculé avec la puissance d’attaque gonflée. L’énergie rendue paie le coup suivant dans la foulée.</p>
+        <h4>Et l’équilibrage&nbsp;?</h4>
+        <p>C’est une <b>augmentation de dégâts assumée</b> pour les joueurs. Les simulations automatiques d’équilibrage, elles, ne bougent pas de façon mesurable : elles n’appuyaient déjà pas sur le bouton.</p>`
+    },
+    redharvest: {
+      title: "Des points de combo qu’on peut enfin dépenser",
+      summary: "Un Druide félin gagnait des points de combo dès le niveau 5, et n’avait rien pour les dépenser avant le 14. Neuf niveaux d’attente.",
+      body: `
+        <h4>Le trou</h4>
+        <ul>
+          <li><b>Rendclaw</b> et <b>Flense</b> donnent des points de combo dès le <b>niveau 5</b>.</li>
+          <li>Le premier finisher, <b>Gorebite</b>, s’apprenait au <b>niveau 14</b>. Entre les deux, les points s’empilaient sans usage.</li>
+          <li><b>Redharvest</b> ne réglait rien : on l’atteint en <b>transformant le bouton Gorebite</b> (à 3 Old Blood), donc sans Gorebite, pas de Redharvest.</li>
+        </ul>
+        <h4>Ce qui change</h4>
+        <ul>
+          <li><b>Gorebite passe au niveau 8</b> — pour <b>tous</b> les Druides, pas seulement la spé Wildfang.</li>
+          <li><b>Redharvest gagne trois rangs</b> : niveau 5, niveau 10, niveau 16.</li>
+          <li><b>Slinkstrike</b>, l’ouverture furtive, passe du niveau 18 au <b>niveau 8</b> : elle arrive enfin peu après Stalk (niveau 5), et non treize niveaux plus tard.</li>
+        </ul>
+        <h4>Les trois rangs de Redharvest</h4>
+        <ul>
+          <li><b>Rang 1</b> (niv. 5) — 35 de dégâts, +20 par point de combo, rend 15 d’énergie.</li>
+          <li><b>Rang 2</b> (niv. 10) — 52 de dégâts, +32 par point de combo, rend 22 d’énergie.</li>
+          <li><b>Rang 3</b> (niv. 16) — 70 de dégâts, +43 par point de combo, rend 30 d’énergie.</li>
+        </ul>
+        <h4>Ce que ça change à 20</h4>
+        <p>Rien. Le <b>rang 3 reprend exactement</b> les valeurs d’avant (70 / +43 / 30 d’énergie). L’équilibrage du niveau 20 et tes anciens relevés de dégâts restent valables au chiffre près : toute la retouche porte sur le <b>chemin</b> pour y arriver.</p>`
+    },
+    unshift: {
+      title: "Sortir de forme sans y penser",
+      summary: "Le vieux réflexe : sortir de forme à la main, puis lancer le sort. Le jeu le fait pour toi, dans le même appui.",
+      body: `
+        <h4>Avant</h4>
+        <p>Un Druide en <b>Bruin Form</b>, <b>Wolf Form</b> ou <b>Fleet Form</b> qui appuyait sur un soin ou un sort de dégâts recevait « tu ne peux pas faire ça sous cette forme ». Il fallait sortir de la forme à la main, attendre, puis relancer.</p>
+        <h4>Maintenant</h4>
+        <ul>
+          <li>Le Druide <b>quitte la forme et lance le sort</b>, en un seul appui.</li>
+          <li>Sortir de forme est <b>gratuit</b> et ne déclenche <b>aucun temps de recharge global</b> : un sort instantané part <b>immédiatement</b>.</li>
+          <li>Le mana « garé » pendant la forme (l’ours joue à la rage, le félin à l’énergie) revient et paie le sort.</li>
+          <li>Rentrer dans une forme, en revanche, reste un sort normal : ça coûte et ça déclenche le GCD.</li>
+        </ul>
+        <h4>Ce qui ne te fait PAS sortir de forme</h4>
+        <ul>
+          <li>Un <b>buff</b>, un <b>debuff</b>, une <b>provocation</b>, un <b>contrôle</b>, une action de métier : refusés comme avant. Une touche mal visée ne te coûte jamais ta forme.</li>
+          <li>Un sort que tu <b>ne peux pas payer</b> : refusé, et tu gardes ta forme.</li>
+          <li>Une cible <b>morte, hors de portée, hors de vue</b>, ou un soin sans allié valide : tu gardes ta forme.</li>
+          <li>Le bouton de la forme elle-même reste un simple interrupteur.</li>
+        </ul>
+        <h4>Un détail qui compte</h4>
+        <p>Le classement « soin ou dégâts » se fait sur <b>l’identité du bouton</b>, pas sur ce que fait ton rang actuel. Entangling Roots gagne une composante de dégâts au rang 3 : sans ça, ta racine se mettrait à te sortir de forme à partir du niveau 14, sans prévenir.</p>
+        <p>Et le camouflage <b>Stalk</b> tombe dès l’appui, pas au moment où le sort part.</p>`
+    },
+    peur: {
+      title: "Une peur de 5 secondes qui tient vraiment",
+      summary: "Sur le papier c’est un nerf : 8 secondes deviennent 5. Dans les faits, c’est l’inverse — parce que les 8 secondes ne duraient jamais 8 secondes.",
+      body: `
+        <h4>Ce que faisait Harrow avant</h4>
+        <ul>
+          <li>Durée annoncée : <b>8 secondes</b>.</li>
+          <li>Règle de rupture : <b>n’importe quel dégât</b> la cassait. Pas « un gros coup » — <b>n’importe lequel</b>.</li>
+          <li>Autrement dit : un tic de poison, un coup de familier, un dégât de zone d’un allié, et la peur sautait aussitôt. Les 8 secondes étaient <b>théoriques</b>.</li>
+        </ul>
+        <h4>Ce qu’elle fait maintenant</h4>
+        <ul>
+          <li>Durée : <b>5 secondes</b>.</li>
+          <li>Règle de rupture : il faut cumuler <b>8 % des PV maximum</b> de la cible pour la briser. C’est un <b>budget</b>, pas un tirage au sort : le même combat donne toujours le même résultat.</li>
+          <li>Les dégâts automatiques (tics, familiers) ne suffisent plus à la casser d’un coup.</li>
+        </ul>
+        <h4>Le verdict</h4>
+        <p>Cinq secondes qui tiennent valent mieux que huit qui sautent au premier tic. Sur le terrain, c’est un <b>gain de contrôle</b>, et surtout un gain de <b>prévisibilité</b> : tu sais ce que ta peur va faire.</p>
+        <h4>Qui est concerné</h4>
+        <ul>
+          <li><b>Harrow</b> et <b>Dread Chorus</b>, les deux peurs du Démoniste. Dread Chorus y gagne en plus <b>2 secondes</b> (3 → 5).</li>
+          <li>Les peurs du <b>Guerrier</b>, du <b>Prêtre</b> et des monstres gardent leur ancien fonctionnement, au hasard. Rien ne change pour elles.</li>
+        </ul>`
+    },
+    finale: {
+      title: "La salle finale attend la fin du combat",
+      summary: "Un boss mort ne veut pas dire un combat fini : ses invocations, elles, sont toujours debout.",
+      body: `
+        <h4>Le défaut</h4>
+        <ul>
+          <li>Certains boss de Gouffre invoquent des renforts qui leur <b>survivent</b> : les Bonewalkers de <b>Raise Dead</b>, les chantres de <b>Sister Nhalia</b>.</li>
+          <li>Le coffre de la salle finale, le reliquaire et le rite ne regardaient que le <b>boss</b>. Ils s’ouvraient dès sa mort.</li>
+          <li>Conséquence : la sortie vers la surface s’ouvrait <b>pendant que le combat continuait</b>.</li>
+        </ul>
+        <h4>La correction</h4>
+        <p>Les trois passent maintenant par le <b>même contrôle</b> que le portail de sortie des salles intermédiaires — celui qui, depuis la v0.38.4, compte aussi les morts en attente de se relever. Tant qu’un monstre de l’expédition est vivant, le jeu répond <i>« Élimine d’abord les ennemis restants. »</i></p>
+        <h4>En pratique</h4>
+        <p>Rien à faire de ton côté : finis le nettoyage, et le coffre s’ouvre. C’est même plus sûr qu’avant, puisqu’on ne peut plus quitter une salle en laissant un groupe aux prises avec les renforts.</p>`
+    },
+    chateaux: {
+      title: "Deux châteaux qui cessent d’être des façades",
+      summary: "Ce qui n’était qu’une silhouette à l’horizon devient un bâtiment où l’on entre, où l’on monte, et où l’on se promène.",
+      body: `
+        <h4>Le Last Keep — Drakelands</h4>
+        <ul>
+          <li>Une <b>tour maîtresse où l’on entre</b>, une <b>aile de caserne</b>, un <b>chemin de ronde de 3 m</b> derrière de vrais parapets pleins, et un <b>grand escalier d’apparat de 14 m</b>.</li>
+          <li>Des <b>prises d’escalade</b> à l’intérieur comme à l’extérieur, reliées au vrai système de grimpe : les parapets te retiennent au lieu de te laisser tomber.</li>
+          <li>Une passe de collisions a rendu leur vraie forme à <b>11 bâtiments</b> posés à la main, supprimant jusqu’à <b>2,14 m</b> de vide invisible qui bloquait le passage.</li>
+          <li>Les passages étroits sont ré-espacés à <b>1,6 m minimum</b>, et un défaut de montant de porte qui pouvait piéger un personnage à la reconnexion est corrigé.</li>
+        </ul>
+        <h4>Dawnhold Castle — Evergarden</h4>
+        <ul>
+          <li>Un <b>palais-jardin de 16 pièces</b> (près de 3 400 m²), avec une <b>demi-étage solarium</b>, une aile <b>orangerie</b>, une <b>cour fleurie</b> et un <b>renard taillé en topiaire</b> au centre.</li>
+          <li>Dehors : des <b>pelouses praticables</b>, cinq champs de fleurs, un grand escalier, et la végétation tenue à l’écart de la cour pavée.</li>
+          <li>Une brèche dans le mur d’enceinte, causée par un reste de calcul de modules, est refermée.</li>
+          <li>Un seul objet à ramasser à l’intérieur : le <b>Dawnhold Garden Posy</b>.</li>
+        </ul>
+        <h4>À savoir avant d’y aller</h4>
+        <ul>
+          <li>Ce ne sont <b>pas des donjons</b> : aucun monstre, aucun boss, aucun butin. Les deux sont prévus pour <b>un joueur</b>, et se visitent quand tu veux.</li>
+          <li>Chacun donne un haut fait à <b>5 de renom</b> rien qu’en franchissant la porte.</li>
+          <li>Un troisième chantier est visible mais pas encore ouvert : l’<b>Ashen Bulwark</b>, un fort avec ses murs, ses tours et sa cour d’exercice, sur le promontoire ouest des Drakelands. Son intérieur est dessiné, mais pas construit.</li>
+        </ul>`
+    },
+    plans: {
+      title: "Un plan par étage, à la place de la carte du monde",
+      summary: "Ouvrir la carte dans un bâtiment ne servait à rien. Elle montre maintenant l’étage où tu te trouves.",
+      body: `
+        <h4>Ce qui s’affiche</h4>
+        <ul>
+          <li>Dès que tu es à l’intérieur d’un des deux châteaux, la carte de zone laisse la place au <b>plan de l’étage</b>.</li>
+          <li>L’étage est choisi par <b>ta hauteur réelle</b> dans le bâtiment : tu montes, le plan change.</li>
+        </ul>
+        <h4>Pourquoi c’est fiable</h4>
+        <p>Le plan n’est pas une image dessinée à part, qui se périmerait à la première retouche du bâtiment. Il est <b>tracé en direct à partir de la disposition réelle</b> des pièces — la même que celle où tu marches. Le plan et le château ne peuvent donc pas diverger.</p>
+        <h4>Au passage</h4>
+        <p>La pierre des châteaux est habillée par une technique qui répète la texture sur la géométrie plutôt que d’en fabriquer une par bloc. Effet secondaire bienvenu : ça supprime un <b>blocage à l’entrée dans le monde</b> causé par la fabrication de centaines de textures d’un coup.</p>`
+    },
+    hoquets: {
+      title: "Cinq gros à-coups, mesurés et corrigés",
+      summary: "À chaque fois la même cause : un travail lourd fait au pire moment, en plein jeu, au lieu d’être préparé avant.",
+      body: `
+        <h4>Mourir — 2 283 ms → 52 ms</h4>
+        <p>Libérer son esprit déclenchait la préparation du rendu du fantôme <b>à cet instant précis</b>. Un gel de plus de <b>deux secondes</b>, à chaque mort. C’est préparé à l’avance désormais : <b>52 ms</b>, soit environ <b>44 fois</b> plus court.</p>
+        <h4>Monter en selle — 897 ms</h4>
+        <p>Même histoire pour la première monte de la session. Le nombre de préparations faites en pleine image passe de <b>45 à 24</b>, et le pic de <b>897,5 ms</b> disparaît. La préparation est en plus <b>bornée</b> : elle ne peut pas monopoliser une image à son tour.</p>
+        <h4>Se connecter — 950 ms</h4>
+        <p>L’aperçu des personnages à la connexion préparait <b>114 éléments</b> ; il en prépare <b>53</b>. Presque une seconde de gel en moins à l’arrivée.</p>
+        <h4>Les ombres — 1 196 ms</h4>
+        <p>Une mise à jour du moteur 3D avait <b>réintroduit</b> un vieux défaut : des images à près de <b>1,2 seconde</b> à cause des ombres recalculées en plein rendu. Corrigé, et surtout <b>verrouillé par un contrat</b> pour que ça ne puisse plus revenir en silence une troisième fois.</p>
+        <h4>Sur téléphone et tablette</h4>
+        <p>La barre d’action de bureau, pourtant cachée, était <b>dessinée deux fois</b> sur les appareils tactiles. L’image moyenne passe de <b>19,97 à 12,87 ms</b> — un tiers de temps de calcul en moins.</p>`
+    },
+    icones: {
+      title: "Pourquoi tes icônes de sorts ne changeront plus",
+      summary: "Une décision inhabituelle : de meilleures illustrations ont été peintes, validées… puis remises au placard avant la sortie.",
+      body: `
+        <h4>Ce qui s’est passé</h4>
+        <ul>
+          <li>La grande passe d’illustration de cette version a repeint <b>58 icônes de sorts de classe</b>.</li>
+          <li>Elles ont été <b>remises à l’identique, octet pour octet</b>, avant la mise en ligne.</li>
+        </ul>
+        <h4>Le raisonnement</h4>
+        <p>Un joueur ne <i>lit</i> pas sa barre d’action. Il repère un bouton du <b>coin de l’œil</b>, à sa couleur et à sa silhouette, sous pression. Changer une icône en service — <b>même pour une plus belle</b> — force tout le monde à réapprendre ses boutons. Le coût est immédiat et pour tous ; le gain est esthétique et pour personne en particulier.</p>
+        <h4>La règle, désormais</h4>
+        <ul>
+          <li>Les <b>471 icônes</b> des dossiers de sorts de classe sont <b>gelées</b> et vérifiées automatiquement à chaque changement.</li>
+          <li>Les modifier demande un geste <b>délibéré et annoncé</b> : ça ne peut plus arriver par accident au détour d’une passe graphique.</li>
+          <li>Les 58 illustrations acceptées sont <b>archivées</b>, en attendant une éventuelle refonte assumée et prévenue.</li>
+        </ul>
+        <h4>Ce qui a bien changé</h4>
+        <p>Tout le reste a reçu ses illustrations peintes : les <b>auras</b> (89 identités exactes), les <b>ordres aux familiers</b>, les <b>monnaies</b>, les <b>affixes de Gouffre</b>, les options de la Fiesta et le spécimen du Reliquaire. Les symboles d’interface qui reposaient sur des caractères de police système sont remplacés par de vrais dessins.</p>`
+    },
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

@@ -3789,7 +3789,7 @@ const CRAFT = {
 </script>
 
 <script src="assets/lang.js"></script>
-<script src="assets/version.js" data-version="v0.38.4" defer></script>
+<script src="assets/version.js" data-version="v0.39.0" defer></script>
 <script>
 (function () {
   const T = (fr, en) => (window.LANG === 'en' ? en : fr);
@@ -4043,6 +4043,7 @@ const CRAFT = {
           <div class="catch">${item({ id: 'arcane_essence', name: 'Chime Essence', q: 'uncommon' })}<span class="pct">${T('bleu', 'blue')}</span></div>
           <div class="catch">${item({ id: 'arcane_shard', name: 'Chime Shard', q: 'rare' })}<span class="pct">${T('épique / légendaire', 'epic / legendary')}</span></div>
           <div class="meta" style="margin-top:8px">${T('Dès le bleu, un désenchant rend AUSSI un matériau « Resonant » typé (fil, cuir, mailles, acier ou bois selon la pièce) — le carburant des nouveaux enchants Runed.', 'From blue up, a disenchant ALSO yields a typed “Resonant” material (thread, hide, links, steel or timber by piece) — fuel for the new Runed enchants.')}</div>
+          <div class="meta" style="margin-top:8px">${T('Depuis la v0.39, les <b style="color:var(--text)">objets tenus en main gauche</b> (orbes, lanternes, carquois) se désenchantent et se recyclent enfin, eux aussi — avant, une pièce que ta classe ne pouvait pas porter n’avait aucune sortie. N’étant ni arme ni armure, ils ne rendent que le matériau générique de leur palier, jamais de « Resonant » typé.', 'Since v0.39, <b style="color:var(--text)">held off-hand items</b> (orbs, lanterns, quivers) can finally be disenchanted and salvaged too — before, a piece your class could not wield had no way out at all. Being neither weapon nor armor, they only yield their tier\'s universal material, never a typed “Resonant”.')}</div>
         </div>
         <div class="node ore">
           <h3><span class="ico">🔁</span>${T('La boucle efficace', 'The efficient loop')}</h3>
