@@ -26,6 +26,15 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
+    # Filet de dernier recours. Sans limite, GitHub laisse tourner 6 h — et
+    # comme la publication passe par ce contrôle et que « Publier le site » est
+    # en file d'attente unique, une étape figée bloque TOUTE publication
+    # pendant ce temps. Vécu le 19 août 2026 : le passage de 7 h 10 est resté
+    # figé sur l'installation de Chromium, et les notes de la v0.39.0 sont
+    # restées invisibles sur le site pendant des heures alors qu'elles étaient
+    # prêtes et poussées. 15 min suffisent très largement — un passage nominal
+    # en prend moins de 3.
+    timeout-minutes: 15
     steps:
       - name: Checkout du site
         uses: actions/checkout@v4
@@ -77,10 +86,22 @@ jobs:
       - name: Guides écrits à la main (rotations, enchantements, montures)
         run: node scripts/check_guides.mjs --kb wocc-knowledge-base
 
+      # `--with-deps` fait deux choses très différentes : installer des paquets
+      # système par apt, puis télécharger le navigateur. La première moitié
+      # dépend d'un miroir Ubuntu qui peut cesser de répondre SANS jamais rendre
+      # la main — apt attend alors indéfiniment. C'est ce qui est arrivé le
+      # 19 août 2026 : 6 h figées ici, et toute la file de publication bloquée
+      # derrière. On sépare donc les deux moitiés : celle des paquets est bornée
+      # et tolérée en échec, celle du navigateur reste obligatoire. Si des
+      # bibliothèques manquent vraiment, rien n'est passé sous silence :
+      # Chromium refusera de démarrer et l'étape suivante échouera bruyamment.
       - name: Installer Chromium
+        timeout-minutes: 8
         run: |
           npm install --no-save playwright@1.62.1
-          npx playwright install --with-deps chromium
+          timeout 300 npx playwright install-deps chromium \
+            || echo "::warning::paquets système non installés (miroir injoignable) — on poursuit avec le navigateur seul"
+          npx playwright install chromium
 
       - name: Ouvrir les pages dans un navigateur
         run: node scripts/check_pages.mjs --kb wocc-knowledge-base
