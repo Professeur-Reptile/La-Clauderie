@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-20T13:28:48Z",
+ "generated": "2026-08-20T19:11:59Z",
  "base_tag": "v0.39.1",
  "version": "v0.40.0",
- "branch": "release/v0.40.0",
+ "branch": "ossbrain-release/v0.40.0",
  "declared_version": "0.39.0",
  "imminent": false,
- "commits": 182,
- "shown": 145,
- "last_commit": "2026-08-20T12:05:57Z",
+ "commits": 237,
+ "shown": 164,
+ "last_commit": "2026-08-20T17:12:09Z",
  "sections": [
   {
    "key": "classes",
@@ -21,6 +21,20 @@
      "scope": "gamepad",
      "text": "Lift the cast bar with the player frame",
      "date": "2026-08-19"
+    },
+    {
+     "h": "d53df719",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Keep the pet bar commanding surviving Necromancy summons after Graveguard dies",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "5887385a",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Localize the raw connector symbols the talent tooltip generator leaked",
+     "date": "2026-08-18"
     },
     {
      "h": "d9a096ae",
@@ -86,6 +100,20 @@
      "scope": "render",
      "text": "A failed interior encounter prewarm retries",
      "date": "2026-08-20"
+    },
+    {
+     "h": "24dc51df",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Direhowl no longer softens Nythraxis's heroic wipe punishers",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "4cc50f1e",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Despawn a rare/elite corpse once its loot window ends",
+     "date": "2026-08-18"
     }
    ]
   },
@@ -132,10 +160,31 @@
    "en": "Guild & social",
    "items": [
     {
+     "h": "6ea73d85",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Fence optimistic chat filter strikes",
+     "date": "2026-08-20"
+    },
+    {
      "h": "d0ed326b",
      "kind": "fix",
      "scope": "game",
      "text": "Restore the last boot-mute traces in the audio files",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "3ced890c",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Fence the reconnect chat-moderation snapshot against a live push",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "41962b8a",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Close two review-round-two gaps in the chat-moderation fence",
      "date": "2026-08-19"
     },
     {
@@ -305,6 +354,13 @@
      "kind": "feat",
      "scope": "gamepad",
      "text": "Return the pad selection to the opener when a window closes",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "d412041e",
+     "kind": "feat",
+     "scope": "desktop",
+     "text": "Add pre-game exit control",
      "date": "2026-08-18"
     },
     {
@@ -623,6 +679,27 @@
      "date": "2026-08-20"
     },
     {
+     "h": "a240bf26",
+     "kind": "fix",
+     "scope": "",
+     "text": "Retrigger CI",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "f9637c04",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Let battleground unstuck handle wall-pinned input",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "16ad119a",
+     "kind": "fix",
+     "scope": "eastbrook",
+     "text": "Resolve corpse policy polish seals",
+     "date": "2026-08-20"
+    },
+    {
      "h": "4e46076d",
      "kind": "fix",
      "scope": "gamepad",
@@ -690,6 +767,20 @@
      "kind": "fix",
      "scope": "upstream",
      "text": "Bring upstream/main into the GPU-preparation scheduler branch",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "81976439",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Merge release/v0.40.0 into the Duskfall gate occluder fade branch",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "7187e930",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Lay the Highwatch practice row across the walk-up, one fire",
      "date": "2026-08-19"
     },
     {
@@ -798,6 +889,20 @@
      "date": "2026-08-18"
     },
     {
+     "h": "4f127506",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Shed mouse-clicked HUD button focus before it hijacks Space/Enter",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "b7639f85",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Close the open topology hole at the male nose bridge",
+     "date": "2026-08-18"
+    },
+    {
      "h": "56958c70",
      "kind": "fix",
      "scope": "render",
@@ -844,6 +949,13 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Repaint the char-select composed chips and reject composed skins",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "04bf5409",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Hide the helm-visibility eye for kits with no head geometry",
      "date": "2026-08-18"
     },
     {
@@ -900,6 +1012,13 @@
      "kind": "fix",
      "scope": "render",
      "text": "Drop the post-effect prewarm lane, the boot budget has no room",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "9b40b27e",
+     "kind": "fix",
+     "scope": "tests",
+     "text": "Drop an em dash from the decayed-corpse admission comment",
      "date": "2026-08-18"
     },
     {
@@ -994,6 +1113,20 @@
      "date": "2026-08-18"
     },
     {
+     "h": "4f05a5b6",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Fade the Duskfall gate rock when it occludes the camera",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "84a51ebf",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Fit the Duskfall gate occluder to an oriented box, not a circle",
+     "date": "2026-08-17"
+    },
+    {
      "h": "cb976cb4",
      "kind": "fix",
      "scope": "render",
@@ -1076,12 +1209,12 @@
  "versions": [
   {
    "version": "v0.40.0",
-   "branch": "release/v0.40.0",
+   "branch": "ossbrain-release/v0.40.0",
    "declared_version": "0.39.0",
    "imminent": false,
-   "commits": 182,
-   "shown": 145,
-   "last_commit": "2026-08-20T12:05:57Z",
+   "commits": 237,
+   "shown": 164,
+   "last_commit": "2026-08-20T17:12:09Z",
    "sections": [
     {
      "key": "classes",
@@ -1095,6 +1228,20 @@
        "scope": "gamepad",
        "text": "Lift the cast bar with the player frame",
        "date": "2026-08-19"
+      },
+      {
+       "h": "d53df719",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Keep the pet bar commanding surviving Necromancy summons after Graveguard dies",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "5887385a",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Localize the raw connector symbols the talent tooltip generator leaked",
+       "date": "2026-08-18"
       },
       {
        "h": "d9a096ae",
@@ -1160,6 +1307,20 @@
        "scope": "render",
        "text": "A failed interior encounter prewarm retries",
        "date": "2026-08-20"
+      },
+      {
+       "h": "24dc51df",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Direhowl no longer softens Nythraxis's heroic wipe punishers",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "4cc50f1e",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Despawn a rare/elite corpse once its loot window ends",
+       "date": "2026-08-18"
       }
      ]
     },
@@ -1206,10 +1367,31 @@
      "en": "Guild & social",
      "items": [
       {
+       "h": "6ea73d85",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Fence optimistic chat filter strikes",
+       "date": "2026-08-20"
+      },
+      {
        "h": "d0ed326b",
        "kind": "fix",
        "scope": "game",
        "text": "Restore the last boot-mute traces in the audio files",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "3ced890c",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Fence the reconnect chat-moderation snapshot against a live push",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "41962b8a",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Close two review-round-two gaps in the chat-moderation fence",
        "date": "2026-08-19"
       },
       {
@@ -1379,6 +1561,13 @@
        "kind": "feat",
        "scope": "gamepad",
        "text": "Return the pad selection to the opener when a window closes",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "d412041e",
+       "kind": "feat",
+       "scope": "desktop",
+       "text": "Add pre-game exit control",
        "date": "2026-08-18"
       },
       {
@@ -1697,6 +1886,27 @@
        "date": "2026-08-20"
       },
       {
+       "h": "a240bf26",
+       "kind": "fix",
+       "scope": "",
+       "text": "Retrigger CI",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "f9637c04",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Let battleground unstuck handle wall-pinned input",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "16ad119a",
+       "kind": "fix",
+       "scope": "eastbrook",
+       "text": "Resolve corpse policy polish seals",
+       "date": "2026-08-20"
+      },
+      {
        "h": "4e46076d",
        "kind": "fix",
        "scope": "gamepad",
@@ -1764,6 +1974,20 @@
        "kind": "fix",
        "scope": "upstream",
        "text": "Bring upstream/main into the GPU-preparation scheduler branch",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "81976439",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Merge release/v0.40.0 into the Duskfall gate occluder fade branch",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "7187e930",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Lay the Highwatch practice row across the walk-up, one fire",
        "date": "2026-08-19"
       },
       {
@@ -1872,6 +2096,20 @@
        "date": "2026-08-18"
       },
       {
+       "h": "4f127506",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Shed mouse-clicked HUD button focus before it hijacks Space/Enter",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "b7639f85",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Close the open topology hole at the male nose bridge",
+       "date": "2026-08-18"
+      },
+      {
        "h": "56958c70",
        "kind": "fix",
        "scope": "render",
@@ -1918,6 +2156,13 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Repaint the char-select composed chips and reject composed skins",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "04bf5409",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Hide the helm-visibility eye for kits with no head geometry",
        "date": "2026-08-18"
       },
       {
@@ -1974,6 +2219,13 @@
        "kind": "fix",
        "scope": "render",
        "text": "Drop the post-effect prewarm lane, the boot budget has no room",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "9b40b27e",
+       "kind": "fix",
+       "scope": "tests",
+       "text": "Drop an em dash from the decayed-corpse admission comment",
        "date": "2026-08-18"
       },
       {
@@ -2066,6 +2318,20 @@
        "scope": "gamepad",
        "text": "Re-measure the bar's lift when it gets a size, and chip the arrange hint",
        "date": "2026-08-18"
+      },
+      {
+       "h": "4f05a5b6",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Fade the Duskfall gate rock when it occludes the camera",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "84a51ebf",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Fit the Duskfall gate occluder to an oriented box, not a circle",
+       "date": "2026-08-17"
       },
       {
        "h": "cb976cb4",
