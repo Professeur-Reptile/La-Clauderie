@@ -1,55 +1,1076 @@
 {
- "generated": "2026-08-19T11:58:35Z",
- "base_tag": "v0.39.0",
+ "generated": "2026-08-20T13:28:48Z",
+ "base_tag": "v0.39.1",
  "version": "v0.40.0",
  "branch": "release/v0.40.0",
  "declared_version": "0.39.0",
  "imminent": false,
- "commits": 0,
- "shown": 0,
- "last_commit": "2026-08-19T22:10:51+12:00",
+ "commits": 182,
+ "shown": 145,
+ "last_commit": "2026-08-20T12:05:57Z",
  "sections": [
   {
    "key": "classes",
    "icon": "⚔️",
    "fr": "Classes & sorts",
    "en": "Classes & spells",
-   "items": []
+   "items": [
+    {
+     "h": "d4159bf4",
+     "kind": "fix",
+     "scope": "gamepad",
+     "text": "Lift the cast bar with the player frame",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "d9a096ae",
+     "kind": "fix",
+     "scope": "gamepad",
+     "text": "Actually cast from the cross hotbar, and reach the spellbook while arranging",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "f51cdabd",
+     "kind": "fix",
+     "scope": "gamepad",
+     "text": "Size the d-pad glyphs alike, clear the XP and cast bars, and let the pad select NPCs",
+     "date": "2026-08-18"
+    }
+   ]
   },
   {
    "key": "metiers",
    "icon": "🔨",
    "fr": "Métiers & récolte",
    "en": "Professions & gathering",
-   "items": []
+   "items": [
+    {
+     "h": "916bfe59",
+     "kind": "perf",
+     "scope": "game",
+     "text": "Dev trace frames keep the first-seen material and object names",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "aebebade",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Prewarm every lazily minted ability material, and pin the sweep",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "a53384e8",
+     "kind": "perf",
+     "scope": "render",
+     "text": "A compile gate submits one unit per material group",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "03a5b049",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Link the leaping fish body through the compile gate",
+     "date": "2026-08-17"
+    }
+   ]
   },
   {
    "key": "donjons",
    "icon": "🐉",
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
-   "items": []
+   "items": [
+    {
+     "h": "1a066d0b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "A failed interior encounter prewarm retries",
+     "date": "2026-08-20"
+    }
+   ]
   },
   {
    "key": "monde",
    "icon": "🗺️",
    "fr": "Monde & quêtes",
    "en": "World & quests",
-   "items": []
+   "items": [
+    {
+     "h": "425326c0",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Zone prepare's terrain and water fills go off-thread",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "f0d322c9",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Harden the zone-build pool from the QA review",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "0f6f345a",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Retire a dead zone-build worker instead of reusing it",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "92190d6b",
+     "kind": "fix",
+     "scope": "gamepad",
+     "text": "Talk to the npc you selected, and size the bar's lift from the bar",
+     "date": "2026-08-18"
+    }
+   ]
   },
   {
    "key": "guilde",
    "icon": "🏰",
    "fr": "Guilde & social",
    "en": "Guild & social",
-   "items": []
+   "items": [
+    {
+     "h": "d0ed326b",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Restore the last boot-mute traces in the audio files",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "2e8399ea",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Silence every audio source under the mute flag",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "62a00628",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Drop the boot-mute query flag from this branch",
+     "date": "2026-08-18"
+    }
+   ]
   },
   {
    "key": "confort",
    "icon": "⚙️",
    "fr": "Confort & technique",
    "en": "Comfort & technical",
-   "items": []
+   "items": [
+    {
+     "h": "6f302423",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Choose an enemy when a pad press needs one and has none",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "44ff69b6",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Auto-target the basic attack too",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "3b1550a6",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Gate the character sheet cold open behind link, upload and touch",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "c0ebafb1",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Resumable prewarm slots for the landmark and weather entries",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "60259f98",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Name every program the live draw mints as a live-program event",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "0fac38dd",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Add the FFXIV-style cross hotbar",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "1a6b2036",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Make the cross hotbar the pad's hotbar",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "3c6327f0",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Show the whole cross-hotbar set, both halves at once",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "191fe631",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Label the triggers on the cross hotbar and free LT/RT",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "4ad984d1",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Stop bare diamond presses casting abilities",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "7a4a9743",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Step focus with the d-pad instead of nudging a cursor",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "965c4b80",
+     "kind": "feat",
+     "scope": "game",
+     "text": "Add a boot-muted query flag",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "dac9b0ff",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Drop the software cursor and rebind the face buttons",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "021aa8dd",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Anchor a pointer to the selection and hide the OS cursor",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "c83125e2",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Focus a window's first control when it opens",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "c93d38fd",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Use the game's own arrow for the pad pointer",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "05f77015",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Add FFXIV's opt-in virtual mouse mode",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "ea7db0d5",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Give the cross hotbar its own actions, seeded once",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "868532cc",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Arrange the cross hotbar on the bar itself",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "f8637287",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Pick an ability off the spellbook onto the cross hotbar",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "db6c5ff8",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Return the pad selection to the opener when a window closes",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "fa0cbd3f",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Make arrange mode reachable, and stop the cursor acting on a stray press",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "11ca662c",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Put the basic Attack on the cross hotbar",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "0f12a273",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Place newly learned spells, show what is carried, and drop a cleared selection",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "fc54eed8",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Adopt the console-MMO face layout, target cycling and set switch",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "30b75fc2",
+     "kind": "feat",
+     "scope": "gamepad",
+     "text": "Give the cross hotbar three display presets",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "8c61eb14",
+     "kind": "feat",
+     "scope": "profiler",
+     "text": "Far-band hops, crowd offset and GPU backend for the hitch bench",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "211a068d",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Make GPU-preparation events machine-readable and add the prep kill switch",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "a4d90395",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Admit background GPU work under a learned per-frame budget",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "212dcd41",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Reveal gated decor piecewise with a learned soft deadline",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "d8afd78d",
+     "kind": "perf",
+     "scope": "render",
+     "text": "The resume lane pays program debt before upload debt",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "097472aa",
+     "kind": "perf",
+     "scope": "render",
+     "text": "The composed far bake composes without face decals",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "682449c2",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Three keeps released programs linked, bounded by count",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "eaa49c46",
+     "kind": "perf",
+     "scope": "render",
+     "text": "The resume lane compiles a batch's roots one at a time",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "72e0bb9c",
+     "kind": "perf",
+     "scope": "render",
+     "text": "The initial frame defers when the compile lane left link debt",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "fb43afd6",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Warm the horse and the owned mounts, not the whole catalog",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "ac0a5270",
+     "kind": "perf",
+     "scope": "harness",
+     "text": "Name the drawn object on every first-draw link row",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "35d2e4ed",
+     "kind": "perf",
+     "scope": "render",
+     "text": "The debt resume lane runs one root per queue unit",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "63cb317b",
+     "kind": "perf",
+     "scope": "render",
+     "text": "A debt root piece releases its tail under the cap",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "3f820da1",
+     "kind": "perf",
+     "scope": "render",
+     "text": "The near-first compile order reads an InstancedMesh's nearest instance",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "07d2d4b6",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Three skips a count 0 InstancedMesh in the render list",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "785395bf",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Capture rows name the roots of every compile unit",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "30f09325",
+     "kind": "perf",
+     "scope": "profiler",
+     "text": "Opt-in CPU profile in the hitch harness",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "58660259",
+     "kind": "perf",
+     "scope": "game",
+     "text": "Hold the world draw under a blocking arrival cover",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "e2f482db",
+     "kind": "perf",
+     "scope": "render",
+     "text": "The settle's first poll leaves the compile stack",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "fd76fa69",
+     "kind": "perf",
+     "scope": "portrait",
+     "text": "Capture composed portraits off the asking frame",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "3a4bae34",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Upload a gate's cold textures as budgeted queue pieces",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "6302781e",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Keep the env PMREM cubeUV height constant across biomes",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "41d0c0ff",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Attach authored room-graph interiors through the compile gate",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "e60d83ca",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Name each upload piece after its texture in the queue label",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "c9994669",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Price upload pieces by texture size class",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "0d101163",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Inject the live-program watch and walk it by id high-water mark",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "526205ee",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Imminent reveals first at an arrival, and the loading screen as a cover",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "7055291a",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Prewarm the grass card cap arms and the night-accents glow",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "0294ffdb",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Link the post-effect chain before the initial frame",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "bbb92ea7",
+     "kind": "perf",
+     "scope": "render",
+     "text": "A CPU build ledger and finer hitch causes for captures",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "0da5547b",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Sub-spans inside a character view build",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "c6873f29",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Asset load records carry their start time",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "14c4ca7e",
+     "kind": "perf",
+     "scope": "render",
+     "text": "A composed look's decal maps become queue pieces",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "9e7f8d8b",
+     "kind": "perf",
+     "scope": "render",
+     "text": "A gc hitch cause with the heap drop on the event",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "8536d536",
+     "kind": "perf",
+     "scope": "render",
+     "text": "The body without its face decals is the stand-in",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "6f27b00c",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Honest hitch diagnosis text and a grouped unattributed score",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "f73b5f32",
+     "kind": "fix",
+     "scope": "render",
+     "text": "A casting entity gets the actionable compile floor",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "04c9c8d0",
+     "kind": "fix",
+     "scope": "render",
+     "text": "The settle's first poll stays synchronous under a cover",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "c978b53f",
+     "kind": "fix",
+     "scope": "render",
+     "text": "The actionable casting floor means casting at the player",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "6960e09c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep the settle's first poll on the compile stack",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "4e46076d",
+     "kind": "fix",
+     "scope": "gamepad",
+     "text": "Clear the pre-push gate",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "b96d31b1",
+     "kind": "fix",
+     "scope": "gamepad",
+     "text": "Land on the control that matters, and follow focus the interface moves",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "97380bec",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Riding into a town no longer links cold at first sight",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "b64bf852",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Gate a far cell's first near flip, not every hideable",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "88dc4488",
+     "kind": "fix",
+     "scope": "gamepad",
+     "text": "Namespace the pad layout, keep the standing set, and let the player leave pad mode",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "1162c2a2",
+     "kind": "fix",
+     "scope": "gamepad",
+     "text": "Restore keyboard interact reach, and make the bar's cells and casts honest",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "9df3774c",
+     "kind": "fix",
+     "scope": "gamepad",
+     "text": "Decide mobile, drop the duplicated block, and scope the pad cursor",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "d1bfaccb",
+     "kind": "fix",
+     "scope": "render",
+     "text": "The world touch tail proves nothing at the walk",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "cc58632a",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Review fold for the far bake, the touch tail and the retention",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "0ae2277f",
+     "kind": "fix",
+     "scope": "upstream",
+     "text": "Bring upstream/main into the GPU-preparation scheduler branch",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "f6971645",
+     "kind": "fix",
+     "scope": "render",
+     "text": "A gated object view keeps its nameplate stand-in",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "1810a9c2",
+     "kind": "fix",
+     "scope": "game",
+     "text": "The arrival cover counts its owners",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "1899d2b8",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Let tail-free pieces start under a full cap and keep visible work moving",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "1d016d14",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Run gate touch pieces below every link submission",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "431aa00d",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Give an overrunning frame a proportional preparation slice",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "50d10bef",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stop the boot compile-submit lane on its own evidence",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "ee67544f",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Capture live class portraits off the frame",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "a22041b0",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Queue gate touch pieces below the boot-debt resume too",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "9b42bccd",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Guarantee a starving piece its slot and keep the budget clock honest",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "0b283ae5",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stand-in on every cold open, close while armed, portrait backoff",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "2dc6330f",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stage effect twins on the source mesh kind and never defer the Soul Rend mark",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "fe235db4",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stop the submit lane on real evidence and keep resumes off live rain",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "c462b5ee",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Ship the submit lane wall clock disarmed until textures.scene is sliced",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "ffa9d535",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bound the piece slot to every fourth starved frame and keep it off exhausted frames",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "4e5cc81c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Drop the per-frame piece slot, strict priority stays strict",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "56958c70",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Fold three's opaque bit and alpha flags into the program signature",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "0c74d43b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Make the weapon-skin prewarm host the live emissive variant",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "8fc58d74",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Close three small on-the-fly shader variant sources",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "0f238cbe",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Size the zero-env PMREM fallback like the equirect prefilters",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "44ed1754",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Never queue an upload piece for a texture three cannot upload",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "b6a1399a",
+     "kind": "fix",
+     "scope": "portrait",
+     "text": "Settle the pose before the capture's compileAsync",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "3bd20359",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Repaint the char-select composed chips and reject composed skins",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "02296eaa",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Fill the cross hotbar copy for the five non-Latin locales",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "691c58b7",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Never show a spirit puppet that has not cleared its compile gate",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "4c83e10f",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep the town reach floor to footprint-anchored roots",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "6fb0ffcf",
+     "kind": "fix",
+     "scope": "render",
+     "text": "A cover refusal does not age toward the starvation bound",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "4bbb117f",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Clear the ground-decor prewarm registry on a graphics rebuild",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "8c43abee",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Name the spirit gate's stand-in and count refused spawns",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "1033a839",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Give the arrival wait one poll before its first check",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "12762f6c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Drop the post-effect prewarm lane, the boot budget has no room",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "f67dd99a",
+     "kind": "fix",
+     "scope": "gamepad",
+     "text": "Make the d-pad reachable and its focus visible",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "4468fc4b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "The touch walk never queries the driver for readiness",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "ba8647fd",
+     "kind": "fix",
+     "scope": "gamepad",
+     "text": "Let d-pad navigation co-exist with playing",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "f33e1407",
+     "kind": "fix",
+     "scope": "gamepad",
+     "text": "Follow focus into a window opened over another",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "b2d5d394",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Stop the controller panel offering buttons it no longer owns",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "3cbfcfb9",
+     "kind": "fix",
+     "scope": "gamepad",
+     "text": "Make the expanded bank look like one, and the bar selectable",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "93ef5b30",
+     "kind": "fix",
+     "scope": "gamepad",
+     "text": "Give the virtual pointer real hover behaviour",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "f33d4d81",
+     "kind": "fix",
+     "scope": "gamepad",
+     "text": "Seed the cross hotbar from a loaded action bar, and retire the stance bar",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "0c599bcd",
+     "kind": "fix",
+     "scope": "gamepad",
+     "text": "Stop a chord firing its own button, and fit the arrange hint",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "8d8df1e3",
+     "kind": "fix",
+     "scope": "gamepad",
+     "text": "Stop every button casting a bar slot while the cross hotbar is on",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "f7096cac",
+     "kind": "fix",
+     "scope": "gamepad",
+     "text": "Let the virtual pointer's hover reach the control, not just the icon",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "642880e5",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Fold the QA, test-coverage and render-performance reviews",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "774840d2",
+     "kind": "fix",
+     "scope": "gamepad",
+     "text": "Re-measure the bar's lift when it gets a size, and chip the arrange hint",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "cb976cb4",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Gate the far-LOD bake of composed characters on shader compile",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "1b81e148",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Make the far-bake gate wait for the far variant and warm its tables",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "e6b12fef",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Gate the streamed world decor on shader compile",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "f4022c5a",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bring in PR #3468, the shadow prewarm depth-packing fix",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "d9abe621",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bring in PR #3473, the far-LOD bake compile gate",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "6cf24f67",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bring in the streamed-decor reveal gate",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "ea69a027",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Drop the import the merge left unused, and re-mint",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "5b836ed4",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Prewarm every foliage program variant and gate the bucket reveal",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "a9318b9c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Never leave a gated entity without a representation",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "a7174517",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Link the spirit puppet off-thread and keep the emissive hook on clones",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "47bed004",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Prewarm the character effect variants and gate their swap",
+     "date": "2026-08-17"
+    }
+   ]
   }
  ],
  "versions": [
@@ -58,51 +1079,1072 @@
    "branch": "release/v0.40.0",
    "declared_version": "0.39.0",
    "imminent": false,
-   "commits": 0,
-   "shown": 0,
-   "last_commit": "2026-08-19T22:10:51+12:00",
+   "commits": 182,
+   "shown": 145,
+   "last_commit": "2026-08-20T12:05:57Z",
    "sections": [
     {
      "key": "classes",
      "icon": "⚔️",
      "fr": "Classes & sorts",
      "en": "Classes & spells",
-     "items": []
+     "items": [
+      {
+       "h": "d4159bf4",
+       "kind": "fix",
+       "scope": "gamepad",
+       "text": "Lift the cast bar with the player frame",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "d9a096ae",
+       "kind": "fix",
+       "scope": "gamepad",
+       "text": "Actually cast from the cross hotbar, and reach the spellbook while arranging",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "f51cdabd",
+       "kind": "fix",
+       "scope": "gamepad",
+       "text": "Size the d-pad glyphs alike, clear the XP and cast bars, and let the pad select NPCs",
+       "date": "2026-08-18"
+      }
+     ]
     },
     {
      "key": "metiers",
      "icon": "🔨",
      "fr": "Métiers & récolte",
      "en": "Professions & gathering",
-     "items": []
+     "items": [
+      {
+       "h": "916bfe59",
+       "kind": "perf",
+       "scope": "game",
+       "text": "Dev trace frames keep the first-seen material and object names",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "aebebade",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Prewarm every lazily minted ability material, and pin the sweep",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "a53384e8",
+       "kind": "perf",
+       "scope": "render",
+       "text": "A compile gate submits one unit per material group",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "03a5b049",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Link the leaping fish body through the compile gate",
+       "date": "2026-08-17"
+      }
+     ]
     },
     {
      "key": "donjons",
      "icon": "🐉",
      "fr": "Donjons, failles & boss",
      "en": "Dungeons, rifts & bosses",
-     "items": []
+     "items": [
+      {
+       "h": "1a066d0b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "A failed interior encounter prewarm retries",
+       "date": "2026-08-20"
+      }
+     ]
     },
     {
      "key": "monde",
      "icon": "🗺️",
      "fr": "Monde & quêtes",
      "en": "World & quests",
-     "items": []
+     "items": [
+      {
+       "h": "425326c0",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Zone prepare's terrain and water fills go off-thread",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "f0d322c9",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Harden the zone-build pool from the QA review",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "0f6f345a",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Retire a dead zone-build worker instead of reusing it",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "92190d6b",
+       "kind": "fix",
+       "scope": "gamepad",
+       "text": "Talk to the npc you selected, and size the bar's lift from the bar",
+       "date": "2026-08-18"
+      }
+     ]
     },
     {
      "key": "guilde",
      "icon": "🏰",
      "fr": "Guilde & social",
      "en": "Guild & social",
-     "items": []
+     "items": [
+      {
+       "h": "d0ed326b",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Restore the last boot-mute traces in the audio files",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "2e8399ea",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Silence every audio source under the mute flag",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "62a00628",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Drop the boot-mute query flag from this branch",
+       "date": "2026-08-18"
+      }
+     ]
     },
     {
      "key": "confort",
      "icon": "⚙️",
      "fr": "Confort & technique",
      "en": "Comfort & technical",
-     "items": []
+     "items": [
+      {
+       "h": "6f302423",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Choose an enemy when a pad press needs one and has none",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "44ff69b6",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Auto-target the basic attack too",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "3b1550a6",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Gate the character sheet cold open behind link, upload and touch",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "c0ebafb1",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Resumable prewarm slots for the landmark and weather entries",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "60259f98",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Name every program the live draw mints as a live-program event",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "0fac38dd",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Add the FFXIV-style cross hotbar",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "1a6b2036",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Make the cross hotbar the pad's hotbar",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "3c6327f0",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Show the whole cross-hotbar set, both halves at once",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "191fe631",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Label the triggers on the cross hotbar and free LT/RT",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "4ad984d1",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Stop bare diamond presses casting abilities",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "7a4a9743",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Step focus with the d-pad instead of nudging a cursor",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "965c4b80",
+       "kind": "feat",
+       "scope": "game",
+       "text": "Add a boot-muted query flag",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "dac9b0ff",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Drop the software cursor and rebind the face buttons",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "021aa8dd",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Anchor a pointer to the selection and hide the OS cursor",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "c83125e2",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Focus a window's first control when it opens",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "c93d38fd",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Use the game's own arrow for the pad pointer",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "05f77015",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Add FFXIV's opt-in virtual mouse mode",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "ea7db0d5",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Give the cross hotbar its own actions, seeded once",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "868532cc",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Arrange the cross hotbar on the bar itself",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "f8637287",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Pick an ability off the spellbook onto the cross hotbar",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "db6c5ff8",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Return the pad selection to the opener when a window closes",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "fa0cbd3f",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Make arrange mode reachable, and stop the cursor acting on a stray press",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "11ca662c",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Put the basic Attack on the cross hotbar",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "0f12a273",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Place newly learned spells, show what is carried, and drop a cleared selection",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "fc54eed8",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Adopt the console-MMO face layout, target cycling and set switch",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "30b75fc2",
+       "kind": "feat",
+       "scope": "gamepad",
+       "text": "Give the cross hotbar three display presets",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "8c61eb14",
+       "kind": "feat",
+       "scope": "profiler",
+       "text": "Far-band hops, crowd offset and GPU backend for the hitch bench",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "211a068d",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Make GPU-preparation events machine-readable and add the prep kill switch",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "a4d90395",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Admit background GPU work under a learned per-frame budget",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "212dcd41",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Reveal gated decor piecewise with a learned soft deadline",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "d8afd78d",
+       "kind": "perf",
+       "scope": "render",
+       "text": "The resume lane pays program debt before upload debt",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "097472aa",
+       "kind": "perf",
+       "scope": "render",
+       "text": "The composed far bake composes without face decals",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "682449c2",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Three keeps released programs linked, bounded by count",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "eaa49c46",
+       "kind": "perf",
+       "scope": "render",
+       "text": "The resume lane compiles a batch's roots one at a time",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "72e0bb9c",
+       "kind": "perf",
+       "scope": "render",
+       "text": "The initial frame defers when the compile lane left link debt",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "fb43afd6",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Warm the horse and the owned mounts, not the whole catalog",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "ac0a5270",
+       "kind": "perf",
+       "scope": "harness",
+       "text": "Name the drawn object on every first-draw link row",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "35d2e4ed",
+       "kind": "perf",
+       "scope": "render",
+       "text": "The debt resume lane runs one root per queue unit",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "63cb317b",
+       "kind": "perf",
+       "scope": "render",
+       "text": "A debt root piece releases its tail under the cap",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "3f820da1",
+       "kind": "perf",
+       "scope": "render",
+       "text": "The near-first compile order reads an InstancedMesh's nearest instance",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "07d2d4b6",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Three skips a count 0 InstancedMesh in the render list",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "785395bf",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Capture rows name the roots of every compile unit",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "30f09325",
+       "kind": "perf",
+       "scope": "profiler",
+       "text": "Opt-in CPU profile in the hitch harness",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "58660259",
+       "kind": "perf",
+       "scope": "game",
+       "text": "Hold the world draw under a blocking arrival cover",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "e2f482db",
+       "kind": "perf",
+       "scope": "render",
+       "text": "The settle's first poll leaves the compile stack",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "fd76fa69",
+       "kind": "perf",
+       "scope": "portrait",
+       "text": "Capture composed portraits off the asking frame",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "3a4bae34",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Upload a gate's cold textures as budgeted queue pieces",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "6302781e",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Keep the env PMREM cubeUV height constant across biomes",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "41d0c0ff",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Attach authored room-graph interiors through the compile gate",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "e60d83ca",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Name each upload piece after its texture in the queue label",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "c9994669",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Price upload pieces by texture size class",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "0d101163",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Inject the live-program watch and walk it by id high-water mark",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "526205ee",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Imminent reveals first at an arrival, and the loading screen as a cover",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "7055291a",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Prewarm the grass card cap arms and the night-accents glow",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "0294ffdb",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Link the post-effect chain before the initial frame",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "bbb92ea7",
+       "kind": "perf",
+       "scope": "render",
+       "text": "A CPU build ledger and finer hitch causes for captures",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "0da5547b",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Sub-spans inside a character view build",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "c6873f29",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Asset load records carry their start time",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "14c4ca7e",
+       "kind": "perf",
+       "scope": "render",
+       "text": "A composed look's decal maps become queue pieces",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "9e7f8d8b",
+       "kind": "perf",
+       "scope": "render",
+       "text": "A gc hitch cause with the heap drop on the event",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "8536d536",
+       "kind": "perf",
+       "scope": "render",
+       "text": "The body without its face decals is the stand-in",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "6f27b00c",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Honest hitch diagnosis text and a grouped unattributed score",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "f73b5f32",
+       "kind": "fix",
+       "scope": "render",
+       "text": "A casting entity gets the actionable compile floor",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "04c9c8d0",
+       "kind": "fix",
+       "scope": "render",
+       "text": "The settle's first poll stays synchronous under a cover",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "c978b53f",
+       "kind": "fix",
+       "scope": "render",
+       "text": "The actionable casting floor means casting at the player",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "6960e09c",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep the settle's first poll on the compile stack",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "4e46076d",
+       "kind": "fix",
+       "scope": "gamepad",
+       "text": "Clear the pre-push gate",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "b96d31b1",
+       "kind": "fix",
+       "scope": "gamepad",
+       "text": "Land on the control that matters, and follow focus the interface moves",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "97380bec",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Riding into a town no longer links cold at first sight",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "b64bf852",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Gate a far cell's first near flip, not every hideable",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "88dc4488",
+       "kind": "fix",
+       "scope": "gamepad",
+       "text": "Namespace the pad layout, keep the standing set, and let the player leave pad mode",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "1162c2a2",
+       "kind": "fix",
+       "scope": "gamepad",
+       "text": "Restore keyboard interact reach, and make the bar's cells and casts honest",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "9df3774c",
+       "kind": "fix",
+       "scope": "gamepad",
+       "text": "Decide mobile, drop the duplicated block, and scope the pad cursor",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "d1bfaccb",
+       "kind": "fix",
+       "scope": "render",
+       "text": "The world touch tail proves nothing at the walk",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "cc58632a",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Review fold for the far bake, the touch tail and the retention",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "0ae2277f",
+       "kind": "fix",
+       "scope": "upstream",
+       "text": "Bring upstream/main into the GPU-preparation scheduler branch",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "f6971645",
+       "kind": "fix",
+       "scope": "render",
+       "text": "A gated object view keeps its nameplate stand-in",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "1810a9c2",
+       "kind": "fix",
+       "scope": "game",
+       "text": "The arrival cover counts its owners",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "1899d2b8",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Let tail-free pieces start under a full cap and keep visible work moving",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "1d016d14",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Run gate touch pieces below every link submission",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "431aa00d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Give an overrunning frame a proportional preparation slice",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "50d10bef",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Stop the boot compile-submit lane on its own evidence",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "ee67544f",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Capture live class portraits off the frame",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "a22041b0",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Queue gate touch pieces below the boot-debt resume too",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "9b42bccd",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Guarantee a starving piece its slot and keep the budget clock honest",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "0b283ae5",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Stand-in on every cold open, close while armed, portrait backoff",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "2dc6330f",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Stage effect twins on the source mesh kind and never defer the Soul Rend mark",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "fe235db4",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Stop the submit lane on real evidence and keep resumes off live rain",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "c462b5ee",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Ship the submit lane wall clock disarmed until textures.scene is sliced",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "ffa9d535",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Bound the piece slot to every fourth starved frame and keep it off exhausted frames",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "4e5cc81c",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Drop the per-frame piece slot, strict priority stays strict",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "56958c70",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Fold three's opaque bit and alpha flags into the program signature",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "0c74d43b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Make the weapon-skin prewarm host the live emissive variant",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "8fc58d74",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Close three small on-the-fly shader variant sources",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "0f238cbe",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Size the zero-env PMREM fallback like the equirect prefilters",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "44ed1754",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Never queue an upload piece for a texture three cannot upload",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "b6a1399a",
+       "kind": "fix",
+       "scope": "portrait",
+       "text": "Settle the pose before the capture's compileAsync",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "3bd20359",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Repaint the char-select composed chips and reject composed skins",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "02296eaa",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Fill the cross hotbar copy for the five non-Latin locales",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "691c58b7",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Never show a spirit puppet that has not cleared its compile gate",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "4c83e10f",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep the town reach floor to footprint-anchored roots",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "6fb0ffcf",
+       "kind": "fix",
+       "scope": "render",
+       "text": "A cover refusal does not age toward the starvation bound",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "4bbb117f",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Clear the ground-decor prewarm registry on a graphics rebuild",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "8c43abee",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Name the spirit gate's stand-in and count refused spawns",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "1033a839",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Give the arrival wait one poll before its first check",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "12762f6c",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Drop the post-effect prewarm lane, the boot budget has no room",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "f67dd99a",
+       "kind": "fix",
+       "scope": "gamepad",
+       "text": "Make the d-pad reachable and its focus visible",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "4468fc4b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "The touch walk never queries the driver for readiness",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "ba8647fd",
+       "kind": "fix",
+       "scope": "gamepad",
+       "text": "Let d-pad navigation co-exist with playing",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "f33e1407",
+       "kind": "fix",
+       "scope": "gamepad",
+       "text": "Follow focus into a window opened over another",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "b2d5d394",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stop the controller panel offering buttons it no longer owns",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "3cbfcfb9",
+       "kind": "fix",
+       "scope": "gamepad",
+       "text": "Make the expanded bank look like one, and the bar selectable",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "93ef5b30",
+       "kind": "fix",
+       "scope": "gamepad",
+       "text": "Give the virtual pointer real hover behaviour",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "f33d4d81",
+       "kind": "fix",
+       "scope": "gamepad",
+       "text": "Seed the cross hotbar from a loaded action bar, and retire the stance bar",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "0c599bcd",
+       "kind": "fix",
+       "scope": "gamepad",
+       "text": "Stop a chord firing its own button, and fit the arrange hint",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "8d8df1e3",
+       "kind": "fix",
+       "scope": "gamepad",
+       "text": "Stop every button casting a bar slot while the cross hotbar is on",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "f7096cac",
+       "kind": "fix",
+       "scope": "gamepad",
+       "text": "Let the virtual pointer's hover reach the control, not just the icon",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "642880e5",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Fold the QA, test-coverage and render-performance reviews",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "774840d2",
+       "kind": "fix",
+       "scope": "gamepad",
+       "text": "Re-measure the bar's lift when it gets a size, and chip the arrange hint",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "cb976cb4",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Gate the far-LOD bake of composed characters on shader compile",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "1b81e148",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Make the far-bake gate wait for the far variant and warm its tables",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "e6b12fef",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Gate the streamed world decor on shader compile",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "f4022c5a",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Bring in PR #3468, the shadow prewarm depth-packing fix",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "d9abe621",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Bring in PR #3473, the far-LOD bake compile gate",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "6cf24f67",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Bring in the streamed-decor reveal gate",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "ea69a027",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Drop the import the merge left unused, and re-mint",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "5b836ed4",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Prewarm every foliage program variant and gate the bucket reveal",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "a9318b9c",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Never leave a gated entity without a representation",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "a7174517",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Link the spirit puppet off-thread and keep the emissive hook on clones",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "47bed004",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Prewarm the character effect variants and gate their swap",
+       "date": "2026-08-17"
+      }
+     ]
     }
    ]
   }
