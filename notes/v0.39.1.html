@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Nouveautés v0.39.1 — La Clauderie</title>
+<meta name="description" content="Les nouveautés de la v0.39.1 de World of ClaudeCraft, expliquées simplement : un correctif d’urgence pour l’application de bureau, qui restait bloquée à l’entrée dans le monde depuis la v0.39.0. Une règle de sécurité de l’application refusait de démarrer le décompresseur de textures, et 170 modèles 3D du jeu ne pouvaient plus se charger. Le navigateur et le téléphone n’étaient pas touchés. Aucune valeur de jeu ne change.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Nouveautés v0.39.1 — La Clauderie">
+<meta property="og:description" content="Un correctif d’urgence pour l’application de bureau, bloquée à l’entrée dans le monde depuis la v0.39.0. Le navigateur et le téléphone n’étaient pas touchés, et aucune valeur de jeu ne change.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.39.1.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.39.1.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') === 'en') location.replace('v0.39.1.en.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Notes de version</p>
+    <h1>Nouveautés <span class="v">v0.39.1</span></h1>
+    <p class="lede">Un correctif d’urgence, et il ne concerne qu’une chose : <strong class="hl">l’application de bureau</strong>. Depuis la v0.39.0, elle <strong class="hl">restait bloquée à l’entrée dans le monde</strong> — écran de chargement qui n’aboutit jamais. Ce n’était ni ta machine ni ta connexion : une règle de sécurité de l’application elle-même refusait de démarrer le décompresseur de textures, et <strong class="hl">170 modèles 3D</strong> du jeu ne pouvaient plus se charger. <strong class="hl">Le navigateur et le téléphone n’étaient pas touchés.</strong> Aucune valeur de jeu ne change.</p>
+    <div class="meta">
+      <span><b>Publiée</b> le 20 août 2026</span>
+      <span><b>Depuis</b> la v0.39.0</span>
+      <span><b>61</b> fichiers touchés</span>
+      <span><b>0</b> valeur de jeu modifiée</span>
+    </div>
+    <div class="hint">💡 Clique sur une carte pour le détail.</div>
+  </header>
+
+  <!-- Bandeau constant : mêmes rubriques, même ordre, à chaque version. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">En un coup d’œil</h2>
+    <p class="sec-sub">Les mêmes rubriques à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
+    <ol>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <span class="d-name">Classes &amp; sorts</span>
+        <span class="d-say"><b class="eq">Toutes =</b> aucune valeur ne bouge : ni sort, ni talent, ni maîtrise, ni objet. Le Druide et le Démoniste gardent exactement ce que la <a href="v0.39.0.html">v0.39.0</a> leur a donné la veille.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <span class="d-name">Métiers &amp; récolte</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <span class="d-name">Donjons, failles &amp; boss</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <span class="d-name">Monde &amp; quêtes</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <span class="d-name">Guilde &amp; social</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#bureau">Confort &amp; technique</a>
+        <span class="d-say"><strong class="hl">Toute la mise à jour est ici.</strong> L’<strong class="hl">application de bureau</strong> ne rentrait plus dans le monde depuis la v0.39.0 : le chargement s’arrêtait net, sans message. Corrigé — et deux garde-fous automatiques empêchent désormais la panne de revenir en silence.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="bureau">
+    <h2><span class="num">01</span>L’application de bureau ne rentrait plus dans le monde</h2>
+    <p class="sec-sub">Une panne franche, et une seule : sur l’application installée (Windows, macOS, Linux), l’entrée dans le monde s’arrêtait au chargement. Le même compte, le même personnage et le même serveur marchaient très bien dans un navigateur ou sur téléphone.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="panne" tabindex="0" role="button" aria-label="Détails : ce qui se passait à l’écran, et qui était touché">
+        <h3>Ce que tu voyais, et qui était touché <span class="chip c-fix">Corrigé</span></h3>
+        <p>Sur l’<strong class="hl">application de bureau</strong> en v0.39.0, l’entrée dans le monde <strong class="hl">ne se terminait jamais</strong>. Le <strong class="hl">navigateur et le téléphone</strong>, eux, n’ont jamais été touchés : ils ne posent pas la règle de sécurité en cause. Si tu joues sur le site, tu n’as rien vu passer.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="cause" tabindex="0" role="button" aria-label="Détails : la règle de sécurité qui bloquait le décompresseur de textures">
+        <h3>Une règle de sécurité trop stricte <span class="chip c-util">Coulisses</span></h3>
+        <p>L’application se protège avec une liste de ce qu’elle a le droit de charger. Le <strong class="hl">décompresseur de textures</strong> du jeu démarre en se lisant lui-même depuis une adresse interne — un cas que la liste avait oublié. Résultat : refus, et <strong class="hl">170 modèles 3D</strong> impossibles à afficher. L’autorisation manquante a été ajoutée.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Ce que tu as à faire <span class="chip c-new">En pratique</span></h3>
+        <ul>
+          <li>Sur l’application de bureau : <strong class="hl">installe la v0.39.1</strong>, et l’entrée dans le monde repart normalement.</li>
+          <li>Aucune manipulation, aucun cache à vider, aucun réglage à changer.</li>
+          <li>Dans le navigateur ou sur téléphone : <strong class="hl">rien à faire</strong>, tu n’étais pas concerné.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Deux garde-fous ajoutés <span class="chip c-util">Coulisses</span></h3>
+        <ul>
+          <li>Un contrôle automatique relie désormais la liste d’autorisations au <strong class="hl">vrai code</strong> du décompresseur : si l’un des deux bouge sans l’autre, ça bloque avant la sortie.</li>
+          <li>Un second test <strong class="hl">entre réellement dans le monde</strong>, dans un navigateur, avec la liste de l’application de bureau.</li>
+          <li>Les deux ont été vérifiés <strong class="hl">rouges avant le correctif et verts après</strong> — ce n’est pas un test de façade.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Aucun risque ajouté <span class="chip c-util">Sécurité</span></h3>
+        <ul>
+          <li>L’autorisation ajoutée ne concerne que les données que l’application <strong class="hl">porte déjà en elle-même</strong> : ce n’est pas une adresse Internet.</li>
+          <li>Elle n’ouvre donc <strong class="hl">aucune porte vers l’extérieur</strong>.</li>
+          <li>La même autorisation existait déjà, pour la même raison, du côté des images.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="reste">
+    <h2><span class="num">02</span>Et rien d’autre</h2>
+    <p class="sec-sub">C’est un correctif au sens strict. Tout ce que la v0.39.0 a apporté la veille reste exactement en place.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Rien ne bouge côté jeu <span class="chip c-util">Portée</span></h3>
+        <ul>
+          <li>Aucune valeur de combat : ni sort, ni talent, ni maîtrise, ni panoplie.</li>
+          <li>Aucun objet, aucun monstre, aucune quête, aucune zone.</li>
+          <li>Aucune migration de données : rien à refaire sur ton personnage.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Les décors n’ont pas changé <span class="chip c-util">Coulisses</span></h3>
+        <ul>
+          <li>Les modèles 3D de Fenbridge ont été <strong class="hl">re-tamponnés</strong> à l’occasion du changement de version.</li>
+          <li>Seule leur empreinte interne bouge : <strong class="hl">géométrie et textures identiques</strong>, taille identique, aucune différence à l’écran.</li>
+          <li>Même opération qu’en <a href="v0.38.4.html">v0.38.4</a>, pour la même raison.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>La v0.39.0 tient toujours <span class="chip c-util">Rappel</span></h3>
+        <ul>
+          <li>Le <span data-codex="spec|Wildfang">Wildfang</span> garde <span data-codex="ability|ferocious_bite">Gorebite</span> au niveau 8 et ses trois rangs de <span data-codex="ability|redharvest">Redharvest</span>.</li>
+          <li>Le Last Keep et Dawnhold Castle restent visitables, plan d’étage compris.</li>
+          <li>Tout est détaillé sur la <a href="v0.39.0.html">page de la v0.39.0</a>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    panne: {
+      title: "Bloqué au chargement, et seulement sur l’application de bureau",
+      summary: "Une panne franche, sans message d’erreur, qui ne touchait qu’une façon de jouer sur trois.",
+      body: `
+        <h4>Ce qui se passait</h4>
+        <ul>
+          <li>Sur l’<b>application installée</b> (Windows, macOS, Linux) en v0.39.0, l’entrée dans le monde <b>n’aboutissait jamais</b> : le chargement s’arrêtait et restait là.</li>
+          <li>Aucun message utile à l’écran : rien n’indiquait au joueur que le problème venait de l’application, et non de son ordinateur ou de sa connexion.</li>
+          <li>Ça ne dépendait ni du personnage, ni du serveur, ni du moment : c’était systématique.</li>
+        </ul>
+        <h4>Qui était touché</h4>
+        <ul>
+          <li><b>Application de bureau</b> : touchée, à chaque entrée dans le monde.</li>
+          <li><b>Navigateur</b> (jouer depuis le site) : <b>jamais touché</b>.</li>
+          <li><b>Téléphone et tablette</b> (applications Android et iOS) : <b>jamais touchées</b>.</li>
+        </ul>
+        <h4>Pourquoi cette différence</h4>
+        <p>L’application de bureau est la <b>seule</b> des trois à embarquer une liste de sécurité qui restreint ce que la page a le droit de charger. Les deux autres n’en posent pas, donc le refus ne pouvait pas s’y produire.</p>`
+    },
+    cause: {
+      title: "Le décompresseur de textures que l’application refusait de démarrer",
+      summary: "Une autorisation oubliée dans la liste de sécurité, et 170 modèles 3D qui ne pouvaient plus s’afficher.",
+      body: `
+        <h4>Le mécanisme</h4>
+        <ul>
+          <li>Les textures du jeu sont livrées <b>compressées</b> pour tenir en mémoire et se charger vite. Les décompresser demande un petit programme embarqué.</li>
+          <li>Ce programme <b>se lit lui-même</b> au démarrage, depuis une adresse interne à la page — pas depuis Internet.</li>
+          <li>La liste de sécurité de l’application autorisait bien ce genre d’adresse pour les <b>images</b>, mais pas pour ce type de lecture-là. Le démarrage était donc <b>refusé</b>.</li>
+        </ul>
+        <h4>La conséquence</h4>
+        <ul>
+          <li><b>170 modèles 3D</b> livrés avec le jeu utilisent ce format de textures — dont ceux du décor de départ.</li>
+          <li>Faute de pouvoir les afficher, l’entrée dans le monde ne pouvait pas se terminer.</li>
+        </ul>
+        <h4>La correction</h4>
+        <p>L’autorisation manquante a été ajoutée à la liste. Elle ne vise que des données <b>contenues dans l’application elle-même</b>, pas une adresse extérieure : elle ne crée donc aucun chemin de sortie vers Internet. Et un contrôle automatique lie désormais cette liste au vrai code du décompresseur, pour que la même omission ne puisse plus passer entre les mailles.</p>`
+    },
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

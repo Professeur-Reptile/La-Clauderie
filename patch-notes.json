@@ -2,6 +2,72 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.39.2",
+   "date": "2026-08-21",
+   "titre": "Le week-end de Double Honneur arrive à Thornhollow Fields",
+   "resume": "Une seule nouveauté, mais elle change la façon d’organiser son week-end. Tous les samedis et dimanches, Thornhollow Fields passe en Double Honneur : les quatre sources d’Honor du champ de bataille — le résultat du match, les coups de grâce, les assistances et le bonus de première victoire du jour — sont multipliées par deux. Une victoire passe de 60 à 120, la première de la journée de 80 à 160, un coup de grâce de 5 à 10 et une assistance de 2 à 4. Le vrai changement est ailleurs : pendant la fenêtre, une défaite jouée jusqu’au bout, et un match nul, passent sur le barème de la VICTOIRE avant d’être doublés — 120 au lieu de 20, six fois plus. Abandonner en cours de route, en revanche, ne paie toujours rien : l’événement récompense le fait de rester, pas celui de perdre. La décroissance anti-farm reste en place et s’applique AVANT le doublement : contre la même équipe dans la journée, le 2ᵉ match paie 60 et le 3ᵉ 30 (plancher à 25 %, jamais zéro) ; sur le même joueur dans un même match, les coups de grâce paient 10, 5, 2 puis plus rien. Le jeu n’arrondit qu’une seule fois, à la fin, ce qui fait qu’un 2ᵉ coup de grâce paie 5 pleins. L’arène classée, la Fiesta, Protect Yumi et les duels restent au tarif de semaine : l’événement vise le champ de bataille, dont la file a besoin de dix joueurs pour partir. Attention à la fenêtre : elle suit la réinitialisation quotidienne du royaume à 3 h du matin, pas minuit — ouverture samedi à 3 h, fermeture lundi à 3 h, donc la soirée du dimanche est entièrement dedans. En jeu, une pastille l’annonce sur l’onglet Thornhollow Fields et le calendrier l’affiche sur les deux jours. Aucune valeur de combat ne change, et les prix chez FURY non plus.",
+   "temps_forts": [
+    "🏆 Toute la mise à jour est là : le week-end de Double Honneur ouvre à Thornhollow Fields, tous les samedis et dimanches",
+    "✖️ Les quatre sources d’Honor du champ de bataille doublent : résultat, coups de grâce, assistances et bonus de première victoire",
+    "📈 Une victoire passe de 60 à 120, la première du jour de 80 à 160 ; coup de grâce 5 → 10, assistance 2 → 4",
+    "🛡️ Le vrai changement : une défaite jouée jusqu’au bout (et un match nul) paie le tarif d’une VICTOIRE, soit 120 au lieu de 20 — six fois plus",
+    "🚪 Abandonner ne paie toujours rien : l’événement récompense le fait de rester, pas celui de perdre",
+    "⏰ La fenêtre suit la réinitialisation du royaume à 3 h du matin, pas minuit : ouverture samedi 3 h, fermeture lundi 3 h — la soirée du dimanche est entièrement dedans",
+    "📉 La décroissance reste, et passe AVANT le doublement : 2ᵉ match contre la même équipe 60, 3ᵉ et suivants 30 (plancher à 25 %)",
+    "🎯 Sur un même joueur dans un même match : 10, 5, 2, puis plus rien — la variété paie",
+    "🚫 L’arène classée, la Fiesta, Protect Yumi et les duels restent au tarif de semaine : l’événement vise le champ de bataille",
+    "👀 En jeu : une pastille sur l’onglet Thornhollow Fields quand ça tourne, et deux lignes dans le calendrier pour s’organiser avant",
+    "⚔️ Aucune valeur de combat ne bouge, et les prix chez FURY non plus : c’est ce que tu gagnes qui double, pas ce que tu dépenses"
+   ],
+   "page": "notes/v0.39.2.html",
+   "titre_en": "The Double Honor Weekend comes to Thornhollow Fields",
+   "resume_en": "One new thing, and it changes how you plan your weekend. Every Saturday and Sunday, Thornhollow Fields goes Double Honor: all four battleground Honor sources — the match result, kills, assists and the first-win-of-the-day bonus — are multiplied by two. A win goes from 60 to 120, the first of the day from 80 to 160, a kill from 5 to 10 and an assist from 2 to 4. The real change is elsewhere: inside the window, a played-out loss, and a draw, move onto the WIN rate before being doubled — 120 instead of 20, six times more. Deserting mid-match, on the other hand, still pays nothing: the event rewards staying, not losing. The anti-farm decay stays in place and applies BEFORE the doubling: against the same team in a day, the 2nd match pays 60 and the 3rd pays 30 (floored at 25%, never zero); on the same player within one match, kills pay 10, 5, 2, then nothing. The game rounds once only, at the end, which is why a 2nd kill pays a full 5. Ranked arena, Fiesta, Protect Yumi and duels stay at weekday rates: the event targets the battleground, whose queue needs ten players to pop. Mind the window: it follows the realm's 3 AM daily reset, not midnight — it opens Saturday at 3 AM and closes Monday at 3 AM, so Sunday evening is entirely inside it. In game, a chip announces it on the Thornhollow Fields tab and the calendar shows it on both days. No combat value changes, and neither do FURY prices.",
+   "temps_forts_en": [
+    "🏆 That is the whole release: the Double Honor Weekend opens at Thornhollow Fields, every Saturday and Sunday",
+    "✖️ All four battleground Honor sources double: result, kills, assists and the first-win bonus",
+    "📈 A win goes from 60 to 120, the first of the day from 80 to 160; kill 5 → 10, assist 2 → 4",
+    "🛡️ The real change: a played-out loss (and a draw) pays the WIN rate — 120 instead of 20, six times more",
+    "🚪 Deserting still pays nothing: the event rewards staying, not losing",
+    "⏰ The window follows the realm's 3 AM reset, not midnight: it opens Saturday 3 AM and closes Monday 3 AM — Sunday evening is entirely inside it",
+    "📉 The decay stays, and comes BEFORE the doubling: 2nd match against the same team 60, 3rd and beyond 30 (floored at 25%)",
+    "🎯 On the same player within one match: 10, 5, 2, then nothing — variety pays",
+    "🚫 Ranked arena, Fiesta, Protect Yumi and duels stay at weekday rates: the event targets the battleground",
+    "👀 In game: a chip on the Thornhollow Fields tab while it runs, and two calendar rows so you can plan ahead",
+    "⚔️ No combat value moves, and neither do FURY prices: what doubles is what you earn, not what you spend"
+   ],
+   "page_en": "notes/v0.39.2.en.html"
+  },
+  {
+   "version": "v0.39.1",
+   "date": "2026-08-20",
+   "titre": "L’application de bureau ne rentrait plus dans le monde",
+   "resume": "Un correctif d’urgence, et il ne concerne qu’une chose : l’application de bureau. Depuis la v0.39.0, elle restait bloquée à l’entrée dans le monde — un écran de chargement qui n’aboutissait jamais, sans message d’erreur, à chaque tentative. Ce n’était ni ta machine ni ta connexion. L’application est la seule des trois façons de jouer à embarquer une liste de sécurité qui restreint ce qu’elle a le droit de charger, et cette liste avait oublié un cas : le décompresseur de textures du jeu démarre en se lisant lui-même depuis une adresse interne à la page, ce qui n’était pas autorisé. Refus, donc — et 170 modèles 3D livrés avec le jeu, dont ceux du décor de départ, impossibles à afficher : faute de pouvoir les charger, l’entrée dans le monde ne pouvait pas se terminer. Le navigateur et les applications téléphone et tablette n’ont jamais été touchés, parce qu’ils ne posent pas cette liste. L’autorisation manquante a été ajoutée ; elle ne vise que des données contenues dans l’application elle-même, pas une adresse extérieure, donc elle n’ouvre aucun chemin vers Internet — la même autorisation existait déjà, pour la même raison, du côté des images. Deux garde-fous automatiques accompagnent le correctif : l’un relie la liste d’autorisations au vrai code du décompresseur, l’autre entre réellement dans le monde dans un navigateur avec la liste de l’application de bureau. Les deux ont été vérifiés rouges avant le correctif et verts après. Aucune valeur de jeu ne change : ni sort, ni talent, ni maîtrise, ni objet, ni monstre, ni quête.",
+   "temps_forts": [
+    "🖥️ Toute la mise à jour est là : l’application de bureau restait bloquée à l’entrée dans le monde depuis la v0.39.0",
+    "🌐 Le navigateur, le téléphone et la tablette n’ont JAMAIS été touchés — ils ne posent pas la règle de sécurité en cause",
+    "🚫 La cause : une liste de sécurité interne à l’application refusait de démarrer le décompresseur de textures",
+    "🧱 Conséquence : 170 modèles 3D du jeu, dont ceux du décor de départ, ne pouvaient plus s’afficher — et le chargement ne finissait jamais",
+    "🔧 Corrigé en ajoutant l’autorisation manquante ; il suffit d’installer la v0.39.1, rien à régler ni à vider",
+    "🔐 Aucun risque ajouté : l’autorisation ne vise que des données portées par l’application elle-même, pas une adresse Internet",
+    "🧪 Deux garde-fous automatiques ajoutés, vérifiés rouges avant le correctif et verts après",
+    "⚔️ Aucune valeur de jeu ne bouge : ni sort, ni talent, ni maîtrise, ni objet, ni monstre, ni quête"
+   ],
+   "page": "notes/v0.39.1.html",
+   "titre_en": "The desktop app could no longer enter the world",
+   "resume_en": "An emergency fix, and it covers exactly one thing: the desktop app. Since v0.39.0 it had been hanging on world entry — a loading screen that never finished, with no error message, every single time. It was not your machine and not your connection. The app is the only one of the three ways to play that ships a security list restricting what it may load, and that list had missed a case: the game's texture decompressor starts by reading itself from an address internal to the page, which was not allowed. So it was refused — and 170 3D models shipped with the game, including the ones in the starting scenery, could not be displayed: with no way to load them, world entry could never finish. Browser, phone and tablet were never affected, because they do not enforce that list. The missing permission has been added; it only covers data the app already carries inside itself, not an outside address, so it opens no route to the internet — the same permission already existed, for the same reason, on the image side. Two automatic guards ship with the fix: one ties the permission list to the decompressor's real code, the other really enters the world in a browser under the desktop app's own list. Both were verified red before the fix and green after. No game value changes: no spell, no talent, no mastery, no item, no mob, no quest.",
+   "temps_forts_en": [
+    "🖥️ That is the whole release: the desktop app had been stuck on world entry since v0.39.0",
+    "🌐 Browser, phone and tablet were NEVER affected — they do not enforce the security rule involved",
+    "🚫 The cause: a security list inside the app refused to start the texture decompressor",
+    "🧱 The consequence: 170 of the game's 3D models, the starting scenery included, could no longer display — and loading never finished",
+    "🔧 Fixed by adding the missing permission; just install v0.39.1, nothing to tweak and no cache to clear",
+    "🔐 No added risk: the permission only covers data the app already carries itself, not an internet address",
+    "🧪 Two automatic guards added, verified red before the fix and green after",
+    "⚔️ No game value moves: no spell, no talent, no mastery, no item, no mob, no quest"
+   ],
+   "page_en": "notes/v0.39.1.en.html"
+  },
+  {
    "version": "v0.39.0",
    "date": "2026-08-19",
    "titre": "Deux châteaux ouvrent leurs portes, et le Druide sauvage devient jouable",
