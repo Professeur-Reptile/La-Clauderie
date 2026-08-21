@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-20T19:11:59Z",
- "base_tag": "v0.39.1",
+ "generated": "2026-08-21T22:39:48Z",
+ "base_tag": "v0.39.2",
  "version": "v0.40.0",
  "branch": "ossbrain-release/v0.40.0",
  "declared_version": "0.39.0",
  "imminent": false,
- "commits": 237,
- "shown": 164,
- "last_commit": "2026-08-20T17:12:09Z",
+ "commits": 265,
+ "shown": 182,
+ "last_commit": "2026-08-21T21:57:37+00:00",
  "sections": [
   {
    "key": "classes",
@@ -15,6 +15,20 @@
    "fr": "Classes & sorts",
    "en": "Classes & spells",
    "items": [
+    {
+     "h": "11a2f29f",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Preserve heroic deathless rage wipe",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "11a2f29f",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Preserve heroic deathless rage wipe",
+     "date": "2026-08-21"
+    },
     {
      "h": "d4159bf4",
      "kind": "fix",
@@ -102,6 +116,13 @@
      "date": "2026-08-20"
     },
     {
+     "h": "76b200bc",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep heroic Nythraxis wardstones visible past ordinary draw range",
+     "date": "2026-08-20"
+    },
+    {
      "h": "24dc51df",
      "kind": "fix",
      "scope": "sim",
@@ -129,6 +150,13 @@
      "scope": "render",
      "text": "Zone prepare's terrain and water fills go off-thread",
      "date": "2026-08-19"
+    },
+    {
+     "h": "3f0168a7",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Rebucket recipe_duskhide_wraps to the tier its rare quality implies",
+     "date": "2026-08-20"
     },
     {
      "h": "f0d322c9",
@@ -160,11 +188,25 @@
    "en": "Guild & social",
    "items": [
     {
-     "h": "6ea73d85",
+     "h": "60d79836",
      "kind": "fix",
-     "scope": "server",
-     "text": "Fence optimistic chat filter strikes",
-     "date": "2026-08-20"
+     "scope": "ui",
+     "text": "Couple the parked-root refusal to the park selector and admit Home/End on chat tabs",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "daa03d66",
+     "kind": "fix",
+     "scope": "chat",
+     "text": "Prefer concurrent live unmute",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "daa03d66",
+     "kind": "fix",
+     "scope": "chat",
+     "text": "Prefer concurrent live unmute",
+     "date": "2026-08-21"
     },
     {
      "h": "d0ed326b",
@@ -209,6 +251,13 @@
    "fr": "Confort & technique",
    "en": "Comfort & technical",
    "items": [
+    {
+     "h": "b69a6376",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Hideable HUD tracker, seated below the minimap",
+     "date": "2026-08-21"
+    },
     {
      "h": "6f302423",
      "kind": "feat",
@@ -644,6 +693,76 @@
      "date": "2026-08-18"
     },
     {
+     "h": "be9eecda",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Apply tracker review findings",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "5b21da8f",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Trim the stale-focus wiring comments and re-pin the hud.ts ceiling",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "abed40e3",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Park pointer focus on the dialog root so FocusManager traps stay armed",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "4fee7c79",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Shrink the compact tracker chip, square the eye and chip radii",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "5ca52ee6",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Preserve fresh corpse loot eligibility",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "741c9b2c",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Keep fresh corpse fixtures explicit",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "eb5f2318",
+     "kind": "fix",
+     "scope": "test",
+     "text": "Mark fixes loot corpses fresh",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "10278a35",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "A parked dialog root is not a focused control, and extract the chrome focus wiring",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "6d703627",
+     "kind": "fix",
+     "scope": "test",
+     "text": "Refresh loot corpse fixtures",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "bc79f6c4",
+     "kind": "fix",
+     "scope": "browser",
+     "text": "Stabilize stale focus regression",
+     "date": "2026-08-21"
+    },
+    {
      "h": "6f27b00c",
      "kind": "fix",
      "scope": "game",
@@ -655,6 +774,13 @@
      "kind": "fix",
      "scope": "render",
      "text": "A casting entity gets the actionable compile floor",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "bb41f34a",
+     "kind": "fix",
+     "scope": "talents",
+     "text": "Keep Abyssal Gag's early-access framing in its tooltip",
      "date": "2026-08-20"
     },
     {
@@ -686,17 +812,10 @@
      "date": "2026-08-20"
     },
     {
-     "h": "f9637c04",
+     "h": "3c5735b1",
      "kind": "fix",
-     "scope": "sim",
-     "text": "Let battleground unstuck handle wall-pinned input",
-     "date": "2026-08-20"
-    },
-    {
-     "h": "16ad119a",
-     "kind": "fix",
-     "scope": "eastbrook",
-     "text": "Resolve corpse policy polish seals",
+     "scope": "render",
+     "text": "Trees with colliders stay visible at every graphics tier",
      "date": "2026-08-20"
     },
     {
@@ -725,6 +844,13 @@
      "kind": "fix",
      "scope": "render",
      "text": "Gate a far cell's first near flip, not every hideable",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "09c038bd",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Stop Space from re-activating the last-clicked menu button",
      "date": "2026-08-19"
     },
     {
@@ -1212,9 +1338,9 @@
    "branch": "ossbrain-release/v0.40.0",
    "declared_version": "0.39.0",
    "imminent": false,
-   "commits": 237,
-   "shown": 164,
-   "last_commit": "2026-08-20T17:12:09Z",
+   "commits": 265,
+   "shown": 182,
+   "last_commit": "2026-08-21T21:57:37+00:00",
    "sections": [
     {
      "key": "classes",
@@ -1222,6 +1348,20 @@
      "fr": "Classes & sorts",
      "en": "Classes & spells",
      "items": [
+      {
+       "h": "11a2f29f",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Preserve heroic deathless rage wipe",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "11a2f29f",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Preserve heroic deathless rage wipe",
+       "date": "2026-08-21"
+      },
       {
        "h": "d4159bf4",
        "kind": "fix",
@@ -1309,6 +1449,13 @@
        "date": "2026-08-20"
       },
       {
+       "h": "76b200bc",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep heroic Nythraxis wardstones visible past ordinary draw range",
+       "date": "2026-08-20"
+      },
+      {
        "h": "24dc51df",
        "kind": "fix",
        "scope": "sim",
@@ -1336,6 +1483,13 @@
        "scope": "render",
        "text": "Zone prepare's terrain and water fills go off-thread",
        "date": "2026-08-19"
+      },
+      {
+       "h": "3f0168a7",
+       "kind": "fix",
+       "scope": "content",
+       "text": "Rebucket recipe_duskhide_wraps to the tier its rare quality implies",
+       "date": "2026-08-20"
       },
       {
        "h": "f0d322c9",
@@ -1367,11 +1521,25 @@
      "en": "Guild & social",
      "items": [
       {
-       "h": "6ea73d85",
+       "h": "60d79836",
        "kind": "fix",
-       "scope": "server",
-       "text": "Fence optimistic chat filter strikes",
-       "date": "2026-08-20"
+       "scope": "ui",
+       "text": "Couple the parked-root refusal to the park selector and admit Home/End on chat tabs",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "daa03d66",
+       "kind": "fix",
+       "scope": "chat",
+       "text": "Prefer concurrent live unmute",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "daa03d66",
+       "kind": "fix",
+       "scope": "chat",
+       "text": "Prefer concurrent live unmute",
+       "date": "2026-08-21"
       },
       {
        "h": "d0ed326b",
@@ -1416,6 +1584,13 @@
      "fr": "Confort & technique",
      "en": "Comfort & technical",
      "items": [
+      {
+       "h": "b69a6376",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Hideable HUD tracker, seated below the minimap",
+       "date": "2026-08-21"
+      },
       {
        "h": "6f302423",
        "kind": "feat",
@@ -1851,6 +2026,76 @@
        "date": "2026-08-18"
       },
       {
+       "h": "be9eecda",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Apply tracker review findings",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "5b21da8f",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Trim the stale-focus wiring comments and re-pin the hud.ts ceiling",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "abed40e3",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Park pointer focus on the dialog root so FocusManager traps stay armed",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "4fee7c79",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Shrink the compact tracker chip, square the eye and chip radii",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "5ca52ee6",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Preserve fresh corpse loot eligibility",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "741c9b2c",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Keep fresh corpse fixtures explicit",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "eb5f2318",
+       "kind": "fix",
+       "scope": "test",
+       "text": "Mark fixes loot corpses fresh",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "10278a35",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "A parked dialog root is not a focused control, and extract the chrome focus wiring",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "6d703627",
+       "kind": "fix",
+       "scope": "test",
+       "text": "Refresh loot corpse fixtures",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "bc79f6c4",
+       "kind": "fix",
+       "scope": "browser",
+       "text": "Stabilize stale focus regression",
+       "date": "2026-08-21"
+      },
+      {
        "h": "6f27b00c",
        "kind": "fix",
        "scope": "game",
@@ -1862,6 +2107,13 @@
        "kind": "fix",
        "scope": "render",
        "text": "A casting entity gets the actionable compile floor",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "bb41f34a",
+       "kind": "fix",
+       "scope": "talents",
+       "text": "Keep Abyssal Gag's early-access framing in its tooltip",
        "date": "2026-08-20"
       },
       {
@@ -1893,17 +2145,10 @@
        "date": "2026-08-20"
       },
       {
-       "h": "f9637c04",
+       "h": "3c5735b1",
        "kind": "fix",
-       "scope": "sim",
-       "text": "Let battleground unstuck handle wall-pinned input",
-       "date": "2026-08-20"
-      },
-      {
-       "h": "16ad119a",
-       "kind": "fix",
-       "scope": "eastbrook",
-       "text": "Resolve corpse policy polish seals",
+       "scope": "render",
+       "text": "Trees with colliders stay visible at every graphics tier",
        "date": "2026-08-20"
       },
       {
@@ -1932,6 +2177,13 @@
        "kind": "fix",
        "scope": "render",
        "text": "Gate a far cell's first near flip, not every hideable",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "09c038bd",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stop Space from re-activating the last-clicked menu button",
        "date": "2026-08-19"
       },
       {

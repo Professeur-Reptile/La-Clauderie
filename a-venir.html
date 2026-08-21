@@ -196,22 +196,22 @@
 <div class="wrap">
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · En préparation</p>
-    <h1>La prochaine version <span class="v" id="vNum">v0.39.0</span></h1>
-    <p class="lede">La v0.38.3 est sortie, et la v0.39.0 se prépare : <strong class="hl">234 commits</strong> déjà posés, et le jeu a <strong class="hl">inscrit le numéro 0.39.0 dans ses fichiers</strong> — le geste qu’il fait juste avant de publier. Le gros morceau ne touche pas les classes mais le décor : <strong class="hl">deux châteaux cessent d’être des façades</strong>. Dawnhold Castle, dans l’Evergarden, et l’Ashen Bulwark, dans les Drakelands, deviennent des lieux où l’on entre, où l’on monte sur les <strong class="hl">chemins de ronde</strong>, et dont l’intérieur a sa <strong class="hl">carte étage par étage</strong> — comme le Last Keep, qui en profite aussi. Côté raid, un changement qu’on sentira tout de suite : <strong class="hl">un wipe sur Nythraxis vous rend vos grands cooldowns</strong> au lieu de vous faire attendre entre deux essais. Côté classes, deux bougent : le <strong class="hl">Démoniste</strong>, dont les deux peurs cessent d’être une loterie et absorbent un <strong class="hl">montant de dégâts fixe</strong> avant de céder, et surtout le <strong class="hl">Druide Farouche</strong>, qui se déplace enfin <strong class="hl">presque à pleine vitesse en camouflage</strong> et reçoit ses outils bien plus tôt.</p>
+    <h1>La prochaine version <span class="v" id="vNum">v0.40.0</span></h1>
+    <p class="lede">La v0.39.2 est sortie, et la v0.40.0 se prépare : <strong class="hl">265 commits</strong> déjà posés. Le gros morceau ne touche ni les classes ni le décor, mais la façon de jouer : <strong class="hl">le jeu devient jouable à la manette</strong>, pour de vrai. Une <strong class="hl">barre croisée</strong> reprise de Final Fantasy XIV remplace la barre d’action, les boutons prennent la disposition attendue sur console, la croix directionnelle <strong class="hl">change de cible</strong>, et une attaque lancée sans cible <strong class="hl">choisit l’ennemi le plus proche</strong> au lieu de refuser. Ailleurs : le <strong class="hl">Reliquaire gagne un suivi dans l’interface</strong> qu’on peut masquer, la chasse aux à-coups d’affichage continue, et deux vieux défauts de raid tombent — les <strong class="hl">trois pierres à canaliser de Nythraxis héroïque</strong> étaient invisibles de loin, et un <strong class="hl">wipe scripté du même boss était devenu survivable</strong> à cause d’un affaiblissement de Guerrier.</p>
 
     <div class="warn">
       <span class="ico" aria-hidden="true">⚠️</span>
       <div>
         <p><strong>Cette version n’est pas sortie.</strong> Tout ce qui suit est déjà mergé sur la branche que les développeurs préparent, mais peut encore être modifié, retiré, ou repoussé à plus tard.</p>
-        <p>Le jeu a en revanche <strong>fixé son numéro de version</strong>, ce qu’il fait d’habitude peu avant de publier : la sortie peut arriver vite, mais elle peut aussi attendre — et un gros morceau peut encore atterrir d’un seul coup, comme le Reliquaire en v0.36.0. Les vraies notes — vérifiées ligne à ligne dans le code du jeu — arriveront dans <a href="patch-notes.html">Nouveautés</a> le jour de la sortie.</p>
+        <p>Le jeu n’a <strong>pas encore fixé son numéro de version</strong> — le geste qu’il fait juste avant de publier. Rien ne dit donc que la sortie est proche, et un gros morceau peut encore atterrir d’un seul coup, comme le Reliquaire en v0.36.0. Les vraies notes — vérifiées ligne à ligne dans le code du jeu — arriveront dans <a href="patch-notes.html">Nouveautés</a> le jour de la sortie.</p>
       </div>
     </div>
 
     <div class="meta">
-      <span><b>Depuis</b> la v0.38.3</span>
+      <span><b>Depuis</b> la v0.39.2</span>
       <span id="freshness"><b>Dernière vérification</b> à l’instant</span>
       <span id="moved"></span>
-      <span id="written"><b>Résumé écrit</b> le 17 août 2026 à 09 h 30</span>
+      <span id="written"><b>Résumé écrit</b> le 22 août 2026 à 00 h 40</span>
     </div>
     <p class="sec-sub" style="margin:6px 0 0;font-size:0.85rem">« Dernière vérification » = la dernière fois que cette page est allée voir où en sont les développeurs. « Dernier changement du jeu » = quand ils ont touché à cette version pour la dernière fois.</p>
     <div id="chantiers"></div>
@@ -225,32 +225,32 @@
       <li>
         <span class="d-ico" aria-hidden="true">⚔️</span>
         <a class="d-name" href="#classes">Classes &amp; sorts</a>
-        <span class="d-say">— <b class="up">Druide ↑</b> <b class="up">Démoniste ↑</b> <b class="up">Paladin ↑</b> <b class="eq">les six autres =</b> · Le vrai gagnant est le <b>Druide Farouche</b> : son camouflage <b>Stalk</b> passe de la moitié de la vitesse à <b>95 %</b>, et ses outils de dégâts s’apprennent bien plus tôt. Les deux peurs du <b>Démoniste</b> — <b>Harrow</b> et <b>Dread Chorus</b> — cessent d’être une loterie : elles encaissent <b>8 % des PV maximum</b> de la cible, puis cèdent. Le <b>Paladin</b> récupère ses auras de groupe permanentes, qui ne suivaient pas toujours le groupe.</span>
+        <span class="d-say">— <b class="up">Démoniste ↑</b> <b class="down">Guerrier ↓</b> <b class="eq">les sept autres =</b> · <b>Aucune valeur de sort ni de talent ne bouge</b> sur la branche : les deux flèches viennent de corrections. Chez le <b>Démoniste Necromancy</b>, la barre du familier <b>ne disparaît plus</b> quand le Graveguard meurt — les squelettes encore debout continuent d’obéir. Chez le <b>Guerrier</b>, <b>Direhowl</b> cesse d’adoucir les wipes scriptés de Nythraxis héroïque : c’était un bug, et le raid redevient plus dur.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🔨</span>
-        <a class="d-name" href="#confort">Métiers &amp; récolte</a>
-        <span class="d-say">— Aucune recette, aucun gisement, aucun banc de pêche touché. Une seule correction, mais qui traînait : les objets <b>tenus en main gauche</b> se <b>désenchantent et se recyclent</b> comme n’importe quelle autre pièce, alors qu’ils étaient jusqu’ici les seuls à être refusés.</span>
+        <a class="d-name" href="#monde">Métiers &amp; récolte</a>
+        <span class="d-say">— Une seule ligne, mais elle débloque une impasse : les <b>Duskhide Wraps</b> demandaient un niveau de compétence rangé <b>un palier au-dessus</b> de ce que leur qualité autorise, si bien qu’un travailleur du cuir <b>n’ayant pas encore choisi sa voie ne gagnait strictement aucun point</b> en les fabriquant. Le prérequis redescend au rang du reste de sa gamme.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🐉</span>
         <a class="d-name" href="#raid">Donjons, failles &amp; boss</a>
-        <span class="d-say">— <b>Un wipe sur Nythraxis ne coûte plus vos grands cooldowns</b> : quand le boss se remet en place, tout ce qui dépasse <b>deux minutes</b> de recharge repart à zéro pour chaque participant. Côté Gouffres, la <b>salle finale ne donne plus sa récompense</b> tant qu’un add invoqué par le boss est encore debout.</span>
+        <span class="d-say">— Deux corrections sérieuses sur <b>Nythraxis héroïque</b>. Les <b>trois pierres à canaliser</b> qui interrompent la Deathless Rage sont posées loin les unes des autres exprès… et le jeu <b>cessait de les afficher</b> passé sa distance de rendu habituelle : depuis l’entrée du raid, <b>une seule des trois</b> apparaissait. Et le mécanisme censé tuer tout le monde <b>était devenu survivable</b>. Ailleurs, un rare tué <b>ne reste plus planté</b> à son camp entre la fin de son butin et sa réapparition.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🗺️</span>
-        <a class="d-name" href="#chateaux">Monde &amp; quêtes</a>
-        <span class="d-say"><b>Deux châteaux deviennent de vrais lieux.</b> <b>Dawnhold Castle</b> (Evergarden) et l’<b>Ashen Bulwark</b> (Drakelands) passent de décor à terrain praticable : cour, remparts où l’on marche, escaliers, intérieurs meublés, et une <b>carte d’intérieur étage par étage</b> que le Last Keep reçoit aussi. Et fin d’une vieille injustice : un monstre réservé à une quête <b>n’agresse plus ceux qui n’ont pas la quête</b>.</span>
+        <a class="d-name" href="#monde">Monde &amp; quêtes</a>
+        <span class="d-say">— La <b>rangée de mannequins d’entraînement</b> ajoutée en v0.39.0 au-dessus de Highwatch est <b>retournée face au chemin</b> : on la voyait par la tranche, les quatre mannequins se confondant en un seul. Et ils <b>cessent d’allumer chacun leur feu de camp</b> — un seul brasier reste, devant le mannequin de boss.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🏰</span>
-        <a class="d-name" href="#classes">Guilde &amp; social</a>
-        <span class="d-say">— Rien de neuf côté guilde. Une correction de groupe tout de même : le <b>puits d’âmes</b> du Démoniste accepte enfin ceux qui <b>rejoignent le groupe après</b> sa pose, au lieu de ne servir que les présents au moment du clic.</span>
+        <a class="d-name" href="#confort">Guilde &amp; social</a>
+        <span class="d-say">— Rien de neuf côté guilde. Côté discussion, un travail de <b>modération</b> côté serveur : une sanction ne peut plus être <b>perdue ou ressuscitée</b> par une reconnexion qui arrive en même temps qu’une décision, et le rétablissement de la parole est traité comme prioritaire.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">⚙️</span>
-        <a class="d-name" href="#confort">Confort &amp; technique</a>
-        <span class="d-say">— Le plus utile est invisible : <b>le gel d’une seconde à la première invocation d’une monture disparaît</b>, les intérieurs de Gouffre ne se reconstruisent plus à chaque passage, et un <b>lissage des contours arrive en qualité moyenne</b>. Côté texte, une passe sur les <b>infobulles françaises</b> et les derniers noms restés en anglais.</span>
+        <a class="d-name" href="#manette">Confort &amp; technique</a>
+        <span class="d-say">— <b>C’est ici que se joue la version.</b> Le jeu devient <b>jouable à la manette</b> : barre croisée à la FFXIV, disposition de boutons de console, changement de cible à la croix directionnelle, ciblage automatique, et une souris virtuelle en secours. Le <b>Reliquaire</b> gagne un suivi dans l’interface, <b>masquable</b>. Et la chasse aux à-coups d’affichage continue.</span>
       </li>
     </ol>
   </nav>
@@ -258,73 +258,80 @@
   <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
        s'efface d'elle-même quand cette version sort, et se signale périmée si
        le jeu passe à préparer la suivante. -->
-  <div id="editorial" data-for="v0.39.0" data-commits="234" data-chantiers="v0.39.0" data-written="2026-08-17T09:30+02:00">
+  <div id="editorial" data-for="v0.40.0" data-commits="265" data-chantiers="v0.40.0" data-written="2026-08-22T00:40+02:00">
 
-  <!-- 1 LES CHÂTEAUX -->
-  <section id="chateaux">
-    <div class="sec-head"><span class="sec-num">01</span><h2>Deux châteaux cessent d’être des façades</h2></div>
-    <p class="sec-sub">C’est de loin le plus gros chantier de la branche. Jusqu’ici, <strong class="hl">Dawnhold Castle</strong> dans l’Evergarden et l’<strong class="hl">Ashen Bulwark</strong> dans les Drakelands étaient des coquilles : jolies de loin, fermées de près. Les deux sont reconstruits sur le modèle du <strong class="hl">Last Keep</strong> — un terrain qu’on parcourt vraiment, murs compris. Comme toujours sur cette page : c’est du travail en cours, et la disposition peut encore bouger avant la sortie.</p>
+  <!-- 1 LA MANETTE -->
+  <section id="manette">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Le jeu devient jouable à la manette</h2></div>
+    <p class="sec-sub">C’est de très loin le plus gros chantier de la branche, et le seul qu’un joueur remarquera immédiatement. Jusqu’ici, brancher une manette donnait un curseur logiciel qu’on poussait à l’écran — utilisable, mais jamais confortable. Toute cette partie est refaite en reprenant les conventions de <strong class="hl">Final Fantasy XIV</strong>, la référence du MMO à la manette. Comme toujours sur cette page : c’est du travail en cours, et les détails peuvent encore bouger avant la sortie.</p>
     <div class="grid cols-3">
-      <div class="card more" data-detail="chateaux" tabindex="0" role="button" aria-label="Détails : ce que veut dire « château praticable »">
-        <h3>On y entre, et on monte dessus <span class="chip c-new">Monde</span></h3>
-        <p>Les remparts ne sont plus un décor posé sur le sol : ce sont des <strong class="hl">reliefs du terrain</strong>, avec une <strong class="hl">plate-forme plate au sommet</strong> sur laquelle on marche. Les portes sont de vraies ouvertures alignées sur les arches, et le chemin de ronde <strong class="hl">laisse une trouée au-dessus de chaque porte</strong> au lieu de passer par-dessus comme si de rien n’était.</p>
+      <div class="card more" data-detail="barre" tabindex="0" role="button" aria-label="Détails : la barre croisée">
+        <h3>Une barre croisée, comme sur console <span class="chip c-new">Manette</span></h3>
+        <p>Les deux gâchettes arment chacune <strong class="hl">huit cases</strong> — quatre sur la croix directionnelle, quatre sur les boutons de face —, et un appui pendant que la gâchette est tenue lance le sort. Garder l’autre gâchette enfoncée au milieu du geste donne <strong class="hl">l’autre moitié</strong> sans relâcher. Les sorts s’y rangent <strong class="hl">depuis le grimoire</strong>, à la manette.</p>
         <span class="more-link">Voir le détail</span>
       </div>
-      <div class="card more" data-detail="parkour" tabindex="0" role="button" aria-label="Détails : parapets et prises d’escalade">
-        <h3>Un parapet qui retient, des prises qui tiennent <span class="chip c-new">Escalade</span></h3>
-        <p>Deux ajouts qui vont ensemble : un <strong class="hl">parapet</strong> le long des chemins de ronde — pour ne plus tomber d’un mur en visant mal —, et des <strong class="hl">prises d’escalade</strong> dedans comme dehors, branchées sur le <strong class="hl">vrai système d’escalade</strong> du jeu et non sur un décor décoratif. Leur espacement a été refait pour coller au réglage d’escalade de la v0.35.</p>
+      <div class="card more" data-detail="boutons" tabindex="0" role="button" aria-label="Détails : la disposition des boutons">
+        <h3>Les boutons font enfin ce qu’on attend <span class="chip c-fix">Corrigé</span></h3>
+        <p>La manette confondait <strong class="hl">annuler et interagir</strong> : c’est le bouton de droite qui parlait aux PNJ et pillait, alors que sur console il ne fait jamais ça. Désormais le bouton du bas <strong class="hl">valide et interagit</strong>, celui de droite <strong class="hl">annule</strong> — il ferme la fenêtre du dessus, puis lâche la cible.</p>
         <span class="more-link">Voir le détail</span>
       </div>
-      <div class="card more" data-detail="plans" tabindex="0" role="button" aria-label="Détails : les cartes d’intérieur de château">
-        <h3>Une carte d’intérieur, étage par étage <span class="chip c-new">Interface</span></h3>
-        <p>Première fois pour un château : à l’intérieur du <strong class="hl">Last Keep</strong> et de <strong class="hl">Dawnhold</strong>, la mini-carte et la fenêtre de carte affichent un <strong class="hl">plan au sol</strong> dessiné depuis les vraies pièces — murs pleins, <strong class="hl">portes en trouées réelles</strong>, marches marquées à chaque changement de niveau. L’étage où vous êtes est net, les autres sont estompés pour situer.</p>
+      <div class="card more" data-detail="cible" tabindex="0" role="button" aria-label="Détails : cibler à la manette">
+        <h3>Cibler sans souris <span class="chip c-new">Manette</span></h3>
+        <p>La croix directionnelle, seule, <strong class="hl">fait défiler les cibles</strong> : gauche et droite parmi les ennemis, haut et bas parmi les alliés. Et si tu lances une attaque <strong class="hl">sans avoir de cible</strong>, le jeu <strong class="hl">prend l’ennemi le plus proche</strong> au lieu de refuser — le premier mur sur lequel butait tout joueur à la manette.</p>
         <span class="more-link">Voir le détail</span>
       </div>
     </div>
-    <div class="grid cols-2" style="margin-top:14px">
+    <div class="grid cols-3">
       <div class="card">
-        <h3>Dawnhold, le château-jardin <span class="chip c-util">Evergarden</span></h3>
+        <h3>Trois présentations au choix <span class="chip c-new">Réglage</span></h3>
         <ul>
-          <li>Une <strong class="hl">cour de garnison pavée</strong> unique, sans terrasses, avec le donjon composé contre son aile de grande salle au nord.</li>
-          <li>Une <strong class="hl">cour aux fleurs</strong> fermée le long du mur sud, où mènent les poternes : cinq parterres autour d’une <strong class="hl">statue de renard</strong>.</li>
-          <li><strong class="hl">Cinq nouvelles ailes</strong> et un <strong class="hl">second escalier</strong> vers l’étage, un intérieur meublé, et un <strong class="hl">haut fait</strong> pour qui vient flâner dans ses galeries.</li>
+          <li><strong class="hl">Complète</strong> : la barre telle quelle, cadre compris.</li>
+          <li><strong class="hl">Compacte</strong> : le cadre disparaît, et les repères ne restent que sur la moitié qu’une gâchette a armée.</li>
+          <li><strong class="hl">Seulement pendant l’appui</strong> : rien à l’écran tant qu’aucune gâchette n’est tenue.</li>
+          <li>Le passage de l’une à l’autre est <strong class="hl">instantané</strong>, en pleine session.</li>
         </ul>
       </div>
       <div class="card">
-        <h3>L’Ashen Bulwark, la caserne murée <span class="chip c-util">Drakelands</span></h3>
+        <h3>Une souris virtuelle, en secours <span class="chip c-util">En option</span></h3>
         <ul>
-          <li>Bâtie sur un <strong class="hl">promontoire</strong> de la côte ouest — mer, baie et lagune autour, pas une plaine ouverte.</li>
-          <li>Murs, tours et portes <strong class="hl">habillés</strong>, cour de manœuvre à l’intérieur.</li>
-          <li>Les deux châteaux sont désormais <strong class="hl">dessinés sur la carte de zone</strong> : on les voit avant d’y aller.</li>
+          <li>Certaines actions demandent un vrai pointeur : <strong class="hl">déplacer un objet entre deux sacs</strong>, cliquer un point précis sur la carte.</li>
+          <li>Un <strong class="hl">raccourci à deux boutons</strong> fait apparaître un pointeur piloté au stick droit, les gâchettes servant de clics.</li>
+          <li>Elle est <strong class="hl">désactivée par défaut</strong>, et c’est voulu : se déplacer de contrôle en contrôle vaut mieux que viser à la main. C’est la sortie de secours, pas le chemin normal.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Le reste de la manette <span class="chip c-util">Finition</span></h3>
+        <ul>
+          <li>Le <strong class="hl">curseur logiciel disparaît</strong> : on se déplace de contrôle en contrôle à la croix directionnelle.</li>
+          <li>Ouvrir une fenêtre <strong class="hl">place le focus sur son premier contrôle</strong>, et le rend à ce qu’on faisait en la fermant.</li>
+          <li>Un sort <strong class="hl">appris en cours de route se pose tout seul</strong> sur une case libre.</li>
+          <li>Le <strong class="hl">clavier et la souris ne changent pas</strong> : toutes les nouvelles commandes sont propres à la manette.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- 2 LE RAID -->
+  <!-- 2 RAID -->
   <section id="raid">
-    <div class="sec-head"><span class="sec-num">02</span><h2>Un wipe sur Nythraxis ne coûte plus vos grands cooldowns</h2></div>
-    <p class="sec-sub">Le changement qui se sentira le plus vite en raid. Jusqu’ici, rater un essai sur <span data-codex="mob|Nythraxis, Scourge of Thornpeak">Nythraxis</span> signifiait attendre — parfois dix minutes — que les gros boutons reviennent avant de pouvoir réessayer sérieusement.</p>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Nythraxis héroïque : deux défauts qui faussaient le combat</h2></div>
+    <p class="sec-sub">Les deux vont dans des sens opposés — l’un rendait une mécanique impossible à jouer, l’autre la rendait trop facile — et les deux traînaient depuis l’ouverture du mode héroïque.</p>
     <div class="grid cols-3">
-      <div class="card more" data-detail="wipe" tabindex="0" role="button" aria-label="Détails : la remise à zéro des cooldowns après un wipe">
-        <h3>Ce qui repart à zéro <span class="chip c-new">Raid</span></h3>
-        <p>Quand le raid tombe et que le boss se remet en place, chaque participant retrouve <strong class="hl">toutes ses capacités dont la recharge dépasse deux minutes</strong>. Rien en dessous n’est touché : les petits cooldowns tournent déjà assez vite pour ne pas dicter le rythme des essais.</p>
+      <div class="card more" data-detail="pierres" tabindex="0" role="button" aria-label="Détails : les pierres invisibles">
+        <h3>Une seule pierre sur trois s’affichait <span class="chip c-fix">Corrigé</span></h3>
+        <p>Les <strong class="hl">trois pierres</strong> qu’il faut canaliser pour interrompre la Deathless Rage sont <strong class="hl">volontairement écartées</strong> les unes des autres, pour forcer le raid à se séparer. Mais le jeu <strong class="hl">arrêtait d’afficher</strong> ce qui dépasse sa distance de rendu ordinaire : un joueur qui ne s’était jamais approché d’une pierre <strong class="hl">n’avait aucun pilier à cliquer</strong>.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="direhowl" tabindex="0" role="button" aria-label="Détails : le wipe scripté devenu survivable">
+        <h3>Un wipe obligatoire… qu’on survivait <span class="chip c-bal">Équilibrage</span></h3>
+        <p>Deux mécaniques du mode héroïque sont calibrées <strong class="hl">au-dessus des points de vie maximum</strong> : elles doivent tuer, sans exception. Sauf qu’elles passaient par le circuit de dégâts normal — et l’affaiblissement <strong class="hl">Direhowl</strong> du Guerrier les rabotait juste assez pour que le raid <strong class="hl">y survive</strong>.</p>
         <span class="more-link">Voir le détail</span>
       </div>
       <div class="card">
-        <h3>Une exception nommée <span class="chip c-util">Précision</span></h3>
+        <h3>Les cadavres de rares s’effacent <span class="chip c-fix">Corrigé</span></h3>
         <ul>
-          <li><span data-codex="ability|army_of_the_dead">Army of the Dead</span> repart à zéro <strong class="hl">quelle que soit</strong> sa recharge : elle est traitée à part, nommément.</li>
-          <li>Ça ne s’applique qu’aux <strong class="hl">participants de la tentative</strong>, pas à quelqu’un qui passait par là.</li>
-          <li>C’est <strong class="hl">le wipe sur Nythraxis</strong> qui déclenche, pas une mort ordinaire ni un wipe de donjon à cinq.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Et côté Gouffres <span class="chip c-new">Delves</span></h3>
-        <ul>
-          <li>La <strong class="hl">salle finale ne donne plus sa récompense</strong> tant qu’un <strong class="hl">add invoqué par le boss</strong> est encore vivant.</li>
-          <li>On pouvait donc encaisser la fin d’un Gouffre en laissant la salle à moitié nettoyée : c’est fermé.</li>
-          <li>Les intérieurs de Gouffre sont aussi <strong class="hl">mis en cache correctement</strong> — voir la partie technique.</li>
+          <li>Des joueurs signalaient <span data-codex="mob|grix_the_tunnelking">Grix the Tunnelking</span> <strong class="hl">planté à son camp</strong>, immobile et impossible à cliquer.</li>
+          <li>La cause : le cadavre se décompose sur une <strong class="hl">minuterie courte</strong>, mais un rare qui gère lui-même sa réapparition peut mettre <strong class="hl">bien plus longtemps</strong> à revenir. Entre les deux, plus rien ne le retirait du monde.</li>
+          <li>Le corps disparaît maintenant <strong class="hl">dès que sa fenêtre de butin se ferme</strong>.</li>
         </ul>
       </div>
     </div>
@@ -332,74 +339,47 @@
 
   <!-- 3 CLASSES -->
   <section id="classes">
-    <div class="sec-head"><span class="sec-num">03</span><h2>Le Druide sort du bois, le Démoniste cesse de jouer aux dés</h2></div>
-    <p class="sec-sub">Deux classes changent pour de vrai : le <strong class="hl">Druide Farouche</strong> gagne en puissance, le <strong class="hl">Démoniste</strong> gagne en fiabilité. Le reste de la branche côté classes, ce sont des corrections — nombreuses, mais des corrections. Rappel d’usage : ces chiffres sont ceux <strong class="hl">écrits aujourd’hui dans la branche</strong>, et une version en préparation peut encore les rebouger.</p>
-    <div class="grid cols-3">
-      <div class="card more" data-detail="peur" tabindex="0" role="button" aria-label="Détails : le budget de dégâts des peurs du Démoniste">
-        <h3>8 % des PV max, puis ça casse <span class="chip c-bal">Équilibrage</span></h3>
-        <p><span data-codex="ability|fear">Harrow</span> et <span data-codex="ability|howl_of_terror">Dread Chorus</span> ne se brisent plus <strong class="hl">au hasard</strong>. Elles encaissent désormais un montant fixe — <strong class="hl">8 % des points de vie maximum</strong> de la cible — puis cèdent. Avant, un petit coup pouvait les faire sauter tout de suite avec de la malchance ; maintenant on sait exactement ce qu’on peut se permettre.</p>
-        <span class="more-link">Voir le détail</span>
-      </div>
-      <div class="card more" data-detail="warlock" tabindex="0" role="button" aria-label="Détails : le reste de la passe Démoniste">
-        <h3>Et une longue passe de corrections <span class="chip c-util">Démoniste</span></h3>
-        <ul>
-          <li>Le <span data-codex="ability|soulwell">Soulwell</span> sert enfin ceux qui <strong class="hl">rejoignent le groupe après</strong> sa pose.</li>
-          <li>La Nécromancie est mise <strong class="hl">en état de marche pour le raid</strong>, et le sacrifice vise en priorité le guerrier squelette.</li>
-          <li>Le <strong class="hl">Hexcraft</strong> voit son fil du destin lissé et ses trous de finition bouchés.</li>
-        </ul>
-        <span class="more-link">Voir le détail</span>
-      </div>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Côté classes : rien ne change, deux choses se réparent</h2></div>
+    <p class="sec-sub">À l’heure où cette page est écrite, <strong class="hl">aucune valeur de sort, de talent ou de maîtrise ne bouge</strong> sur la branche. Les deux entrées ci-dessous sont des corrections — mais l’une des deux se sentira en raid.</p>
+    <div class="grid cols-2">
       <div class="card">
-        <h3>Le Paladin retrouve ses auras <span class="chip c-util">Paladin</span></h3>
+        <h3>Démoniste : la barre du familier tient bon <span class="chip c-fix">Corrigé</span></h3>
         <ul>
-          <li>Les <strong class="hl">auras de groupe permanentes</strong> se synchronisent correctement sur les membres du groupe.</li>
-          <li>Et elles <strong class="hl">s’effacent quand on quitte le groupe</strong>, au lieu de rester accrochées.</li>
-          <li>Aucun chiffre ne change : c’est l’aura qui manquait à l’appel, pas sa valeur.</li>
+          <li>En spé <span data-codex="spec|Necromancy">Necromancy</span>, le familier principal est toujours le <strong class="hl">Graveguard</strong> — les invocations temporaires (guerrier squelette, mage d’os, aile-tombe) n’y comptent pas.</li>
+          <li>Sa mort faisait donc <strong class="hl">disparaître toute la barre du familier</strong>, alors que les squelettes encore debout <strong class="hl">continuaient d’obéir</strong> : les ordres existaient, mais plus aucun bouton pour les donner.</li>
+          <li>La barre <strong class="hl">bascule maintenant sur une invocation encore vivante</strong>. Le cadre du familier et le raccourci de ciblage, eux, restent sur le principal.</li>
         </ul>
       </div>
-    </div>
-    <div class="grid cols-2" style="margin-top:14px">
-      <div class="card more" data-detail="druide" tabindex="0" role="button" aria-label="Détails : le coup de pouce au Druide Farouche">
-        <h3>Le Druide Farouche, enfin jouable tôt <span class="chip c-bal">Équilibrage</span></h3>
-        <p>Deux changements qui se sentent tout de suite. Le camouflage <strong class="hl">Stalk</strong> ne vous fait plus ramper : il passe de <strong class="hl">la moitié de la vitesse</strong> à <strong class="hl">95 %</strong>, ce qui en fait enfin un vrai outil d’approche et d’éclaireur. Et les outils de dégâts du Farouche <strong class="hl">s’apprennent beaucoup plus tôt</strong> : <strong class="hl">Redharvest passe du niveau 18 au niveau 8</strong>, et tout druide a un dépensier dès le <strong class="hl">niveau 5</strong>.</p>
-        <span class="more-link">Voir le détail</span>
-      </div>
       <div class="card">
-        <h3>Ce que ça ne touche pas <span class="chip c-util">Précision</span></h3>
+        <h3>Guerrier : Direhowl ne sauve plus le raid <span class="chip c-bal">Équilibrage</span></h3>
         <ul>
-          <li>Le <strong class="hl">Voleur garde son camouflage lent</strong> à la moitié de la vitesse : le changement est propre au Druide, c’est assumé comme son identité.</li>
-          <li>Les autres spés du Druide ne sont pas visées par cette passe.</li>
-          <li>Et comme le reste de cette page : ce sont les valeurs <strong class="hl">écrites aujourd’hui</strong> dans la branche, pas des chiffres définitifs.</li>
+          <li><strong class="hl">Direhowl</strong> réduit les dégâts que sa cible inflige. Sur Nythraxis héroïque, cette réduction s’appliquait aussi aux <strong class="hl">mécaniques censées être mortelles à coup sûr</strong>.</li>
+          <li>Résultat : un raid qui ratait la mécanique <strong class="hl">y survivait quand même</strong>. Ce n’était pas prévu.</li>
+          <li>Ces deux coups précis ignorent désormais toute réduction — <strong class="hl">et seulement quand ils sont déjà calibrés pour tuer</strong>. Direhowl ne change nulle part ailleurs, et les versions normales du combat gardent leurs réductions habituelles.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- 4 MONDE -->
+  <!-- 4 MONDE & MÉTIERS -->
   <section id="monde">
-    <div class="sec-head"><span class="sec-num">04</span><h2>Les Drakelands s’étoffent, et les monstres de quête vous laissent tranquille</h2></div>
-    <p class="sec-sub">Deux choses sans rapport, réunies ici parce qu’elles se voient au même endroit : en vous promenant.</p>
-    <div class="grid cols-3">
-      <div class="card more" data-detail="aggro" tabindex="0" role="button" aria-label="Détails : les monstres réservés à une quête">
-        <h3>Un monstre de quête ne vous saute plus dessus <span class="chip c-new">Quêtes</span></h3>
-        <p>Un monstre réservé à une quête <strong class="hl">n’agresse plus les joueurs qui n’ont pas cette quête</strong> — jusqu’ici seule l’attaque directe était filtrée, pas l’agression. Et le <strong class="hl">soin</strong> ne colle plus de menace à un non-quêteur qui passait à côté.</p>
-        <span class="more-link">Voir le détail</span>
-      </div>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Le monde, et une impasse de métier</h2></div>
+    <p class="sec-sub">Peu de chose, mais deux corrections concrètes : l’une devant les yeux de tout le monde à Highwatch, l’autre invisible et pourtant bloquante.</p>
+    <div class="grid cols-2">
       <div class="card">
-        <h3>Les Drakelands <span class="chip c-util">Zone</span></h3>
+        <h3>Les mannequins d’entraînement se voient enfin <span class="chip c-fix">Corrigé</span></h3>
         <ul>
-          <li>Un <strong class="hl">vocabulaire de lave</strong> à trois éléments, décliné par secteur.</li>
-          <li>Les <strong class="hl">trésors de dragon</strong> passent au double, et les antres sont dégagés.</li>
-          <li>Des <strong class="hl">Nightbloom</strong> plantées, et un habillage de portes et de tours.</li>
+          <li>La rangée ajoutée en <a href="notes/v0.39.0.html">v0.39.0</a> au-dessus de Highwatch était alignée <strong class="hl">dans l’axe d’arrivée</strong> : on la voyait par la tranche, et les quatre mannequins se confondaient en un seul sous quatre étiquettes empilées.</li>
+          <li>La rangée est <strong class="hl">tournée en travers du chemin</strong> et ses mannequins <strong class="hl">plus espacés</strong>.</li>
+          <li>Ils <strong class="hl">n’allument plus chacun leur feu</strong> : le jeu les prenait pour des habitants d’un camp. Il reste <strong class="hl">un seul brasier</strong>, devant le mannequin de boss.</li>
         </ul>
       </div>
       <div class="card">
-        <h3>Et aussi <span class="chip c-util">Divers</span></h3>
+        <h3>Une recette qui ne faisait plus progresser <span class="chip c-fix">Travail du cuir</span></h3>
         <ul>
-          <li>Les <strong class="hl">personnages non joueurs du monde</strong> reçoivent une apparence composée avec le <strong class="hl">créateur de personnage</strong>, au lieu de modèles génériques.</li>
-          <li>Verrouiller un objet empilable <strong class="hl">verrouille toute la pile</strong>, et non le seul exemplaire visé.</li>
-          <li>Une teinte de mécha déséquipée <strong class="hl">ne révoque plus son déblocage</strong> sur tout le compte.</li>
-          <li>En champ de bataille, on peut enfin se <strong class="hl">décoincer d’un piège de mur</strong>.</li>
+          <li>Les <strong class="hl">Duskhide Wraps</strong> exigeaient un niveau de compétence rangé <strong class="hl">un palier au-dessus</strong> de celui que leur qualité rare autorise.</li>
+          <li>Conséquence : pour un artisan <strong class="hl">n’ayant pas encore choisi sa spécialisation</strong>, les fabriquer rapportait <strong class="hl">exactement zéro point</strong> de compétence — définitivement.</li>
+          <li>Le prérequis redescend au <strong class="hl">rang du reste de la gamme rare</strong>, celui des pièces Mirewarden.</li>
         </ul>
       </div>
     </div>
@@ -408,28 +388,27 @@
   <!-- 5 CONFORT -->
   <section id="confort">
     <div class="sec-head"><span class="sec-num">05</span><h2>Ce qui ne se voit pas, mais se sent</h2></div>
-    <p class="sec-sub">La rubrique la plus fournie de la branche, et de très loin — l’essentiel étant du travail de performance et de finition qui ne s’annonce pas.</p>
+    <p class="sec-sub">La rubrique la plus fournie de la branche après la manette — l’essentiel étant du travail de performance et de finition qui ne s’annonce pas.</p>
     <div class="grid cols-3">
-      <div class="card more" data-detail="perf" tabindex="0" role="button" aria-label="Détails : les gains de performance">
-        <h3>Le gel à la première monture disparaît <span class="chip c-new">Performance</span></h3>
-        <p>Invoquer une monture pour la première fois provoquait un <strong class="hl">à-coup</strong> le temps que la carte graphique prépare son rendu. Le jeu <strong class="hl">prépare désormais ces montures à l’avance</strong>. Même traitement pour votre propre fantôme, et les <strong class="hl">intérieurs de Gouffre</strong> ne se reconstruisent plus à chaque passage.</p>
+      <div class="card more" data-detail="reliquaire" tabindex="0" role="button" aria-label="Détails : le suivi du Reliquaire">
+        <h3>Le Reliquaire s’affiche, ou pas <span class="chip c-new">Interface</span></h3>
+        <p>Le Reliquaire gagne un <strong class="hl">suivi permanent</strong> dans l’interface, placé <strong class="hl">sous la minicarte</strong>. Il se <strong class="hl">masque complètement</strong> — par un œil sur le bandeau du Reliquaire ou par une ligne des options d’interface —, le réglage est <strong class="hl">mémorisé</strong>, et épingler une page le rallume tout seul.</p>
         <span class="more-link">Voir le détail</span>
       </div>
       <div class="card">
-        <h3>Une image un peu plus propre <span class="chip c-util">Rendu</span></h3>
+        <h3>La chasse aux à-coups continue <span class="chip c-util">Performance</span></h3>
         <ul>
-          <li>Un <strong class="hl">lissage des contours</strong> arrive en qualité <strong class="hl">moyenne</strong>, là où il fallait monter plus haut.</li>
-          <li>Les <strong class="hl">ciels de biome</strong> se chargent dans un format plus léger.</li>
-          <li>Les rochers qui ont une collision <strong class="hl">restent visibles à tous les niveaux de qualité</strong> : on ne se cogne plus à un rocher invisible.</li>
+          <li>Suite directe du travail de la <a href="notes/v0.39.0.html">v0.39.0</a> : le jeu <strong class="hl">prépare son rendu à l’avance</strong> au lieu de le faire au pire moment.</li>
+          <li>Ce travail de fond est désormais <strong class="hl">borné par image</strong>, avec un budget que le jeu ajuste tout seul : il ne peut plus monopoliser l’affichage.</li>
+          <li>La construction d’une zone <strong class="hl">quitte le fil principal</strong>, et le décor lointain se dévoile <strong class="hl">par morceaux</strong> plutôt que d’un bloc.</li>
         </ul>
       </div>
       <div class="card">
-        <h3>Textes et interface <span class="chip c-util">Finition</span></h3>
+        <h3>Discussion &amp; modération <span class="chip c-util">Serveur</span></h3>
         <ul>
-          <li>Une passe sur les <strong class="hl">infobulles françaises</strong> et les derniers <strong class="hl">noms restés en anglais</strong>.</li>
-          <li>Une infobulle de bonus lit enfin <strong class="hl">la valeur réellement appliquée</strong>, et non une valeur théorique.</li>
-          <li>Sur écran tactile, la barre d’action de bureau <strong class="hl">ne se dessine plus deux fois</strong> en arrière-plan.</li>
-          <li>Les objets <strong class="hl">tenus en main gauche</strong> se désenchantent et se recyclent comme le reste.</li>
+          <li>Une sanction de discussion ne peut plus être <strong class="hl">perdue ni ressuscitée</strong> par une reconnexion qui tombe en même temps qu’une décision de modération.</li>
+          <li>Quand deux décisions se croisent, c’est le <strong class="hl">rétablissement de la parole</strong> qui l’emporte.</li>
+          <li>Le jeu peut aussi <strong class="hl">démarrer muet</strong> : toutes ses sources sonores respectent un même interrupteur.</li>
         </ul>
       </div>
     </div>
@@ -458,181 +437,133 @@
 
 <script>
   const DETAILS = {
-    chateaux: {
-      title: "Ce que veut dire « un château praticable »",
-      summary: "Lu dans le code de la branche — la différence entre un décor posé sur le sol et un terrain que le jeu considère comme du relief.",
+    barre: {
+      title: "La barre croisée, expliquée",
+      summary: "Lu dans le code de la branche — c’est la solution que Final Fantasy XIV utilise depuis dix ans pour tenir une barre d’action de MMO sur une manette.",
       body: `
-        <h4>Les murs sont du terrain</h4>
+        <h4>Le principe</h4>
         <ul>
-          <li>Les courtines ne sont pas des objets posés : ce sont des <b>reliefs du sol</b>, avec des flancs verticaux que le système d’escalade <b>refuse</b>, et un <b>dessus plat</b> qui sert de chemin.</li>
-          <li>Conséquence pratique : on marche dessus comme sur n’importe quel sol, sans passerelle invisible ni saut miraculeux.</li>
+          <li>Chaque <b>gâchette</b> arme une moitié de barre : <b>huit cases</b>, quatre sur la croix directionnelle et quatre sur les boutons de face.</li>
+          <li>Gâchette tenue + un bouton = le sort part. Deux gâchettes, donc <b>seize sorts</b> sous les doigts sans jamais lâcher le stick.</li>
+          <li>Presser l’<b>autre gâchette</b> au milieu d’un appui donne l’autre moitié : on atteint les seize cases sans relâcher.</li>
         </ul>
-        <h4>Les portes sont de vraies trouées</h4>
+        <h4>La garnir</h4>
         <ul>
-          <li>Chaque porte est un <b>trou aligné sur les modules du mur</b>, et la zone praticable de la porte se trouve <b>à l’intérieur de l’arche dessinée</b> — pas à côté.</li>
-          <li>Le chemin de ronde <b>s’interrompt au-dessus de chaque porte</b> : on ne traverse plus le vide au-dessus d’une arche sans s’en rendre compte.</li>
+          <li>Un <b>mode d’arrangement</b> se rejoint à la manette, sans souris : on prend un sort <b>dans le grimoire</b> et on le pose sur une case.</li>
+          <li>Un sort <b>appris en cours de partie</b> se place tout seul sur une case libre.</li>
+          <li>L’<b>attaque de base</b> a sa case, comme le reste.</li>
         </ul>
-        <h4>Ce qui a été rattrapé au passage</h4>
+        <h4>Trois présentations</h4>
         <ul>
-          <li>Les bâtiments <b>entrent en collision selon la forme qu’ils ont à l’écran</b>, et non selon une boîte approximative.</li>
-          <li>Plus de <b>poches en coin</b> dans le Last Keep — ces recoins où l’on restait bloqué.</li>
-          <li>Une <b>brèche</b> dans la courtine de Dawnhold, née d’un reste de calcul de modules, a été refermée.</li>
-          <li>Les <b>bannières</b> se lisent depuis l’extérieur des murs, ce qui n’était pas le cas.</li>
-        </ul>
-        <h4>Et l’herbe</h4>
-        <p>Les fleurs et l’herbe <b>ne poussent plus sur la cour pavée</b> de Dawnhold : le pavé est reconnu comme tel par le semis de végétation.</p>`
+          <li><b>Complète</b> — la barre entière, cadre compris.</li>
+          <li><b>Compacte</b> — le cadre disparaît (c’est lui qui pesait le plus à l’écran) et les repères ne restent que sur la moitié armée.</li>
+          <li><b>Seulement pendant l’appui</b> — rien du tout, jusqu’à ce qu’une gâchette descende.</li>
+          <li>Le changement est <b>instantané</b> : la barre ne se reconstruit pas. Et l’arrangement remet le cadre, puisque là, il dit quelque chose.</li>
+        </ul>`
     },
-    parkour: {
-      title: "Parapets et prises d’escalade",
-      summary: "Deux ajouts qui répondent au même problème : un mur sur lequel on marche doit être sûr, et un mur qu’on veut escalader doit offrir de vraies prises.",
+    boutons: {
+      title: "La disposition des boutons, remise dans l’ordre",
+      summary: "L’ancienne manette faisait ce qu’aucune console ne fait, et c’est le genre de détail qui rend un jeu illisible manette en main.",
       body: `
-        <h4>Le parapet</h4>
-        <p>Les chemins de ronde reçoivent un <b>parapet qui retient réellement</b>. Sans lui, un mur praticable est surtout une occasion de tomber : on vise mal une marche, on sort du bord.</p>
-        <h4>Les prises</h4>
+        <h4>Ce qui n’allait pas</h4>
         <ul>
-          <li>Des <b>prises d’escalade</b> sont posées à l’intérieur comme à l’extérieur des enceintes.</li>
-          <li>Elles sont branchées sur le <b>vrai système d’escalade</b> du jeu — ce ne sont pas des décors sur lesquels on saute au jugé.</li>
-          <li>Leur <b>espacement a été refait</b> pour correspondre au réglage d’escalade introduit en v0.35 : des chaînes calées sur l’ancien réglage devenaient infranchissables ou triviales.</li>
+          <li>Le bouton de <b>droite</b> — celui qui, sur console, veut toujours dire « annuler » — servait à <b>parler aux PNJ et à piller</b>.</li>
+          <li>Le bouton du <b>bas</b>, lui, ne faisait qu’appuyer sur les contrôles de l’interface.</li>
+          <li>Résultat : le seul verbe que la touche de droite ne porte jamais ailleurs était justement celui qu’elle portait ici.</li>
         </ul>
-        <h4>Un garde-fou explicite</h4>
-        <p>Les développeurs notent que les scellements ajoutés pour boucher les recoins <b>ne doivent pas devenir le piège qu’ils remplacent</b> : c’est le genre de correction qui se retourne facilement, et elle est suivie comme telle.</p>`
+        <h4>La nouvelle table</h4>
+        <ul>
+          <li><b>Bas</b> : valide le contrôle en cours et, s’il n’y en a pas, <b>interagit avec la cible</b>. Un seul bouton pour confirmer et pour engager une conversation.</li>
+          <li><b>Droite</b> : <b>annuler</b>, uniquement. Il ferme d’abord la fenêtre du dessus, puis lâche la cible.</li>
+          <li><b>Gauche</b> : ouvre les <b>sous-commandes de la cible</b> — le menu que la souris obtient au clic droit, fabriqué au même endroit pour que les deux ne puissent pas diverger — et à défaut, la carte.</li>
+        </ul>
+        <h4>Et le reste</h4>
+        <ul>
+          <li>La touche <b>Retour</b> parcourt les éléments de l’interface, ce que faisait la croix directionnelle avant de servir à cibler.</li>
+          <li>La <b>gâchette haute droite</b> change de jeu de barres.</li>
+          <li><b>Clavier et souris ne bougent pas</b> : chaque nouvelle commande est propre à la manette.</li>
+        </ul>`
     },
-    plans: {
-      title: "Les plans d’intérieur de château",
-      summary: "Une première : jusqu’ici, aucune carte ne montrait l’intérieur d’un château. Le Last Keep et Dawnhold en reçoivent une, par étage.",
+    cible: {
+      title: "Cibler à la manette, sans viser",
+      summary: "Le vrai mur des joueurs à la manette n’est pas de lancer un sort : c’est de choisir sur qui.",
       body: `
-        <h4>Ce qui s’affiche</h4>
+        <h4>La croix directionnelle</h4>
         <ul>
-          <li>Un <b>plan au sol</b>, dessiné directement depuis les <b>vraies pièces et les vraies portes</b> du château — pas une image redessinée à la main qui se périmerait au premier réaménagement.</li>
-          <li>Les pièces apparaissent en aplats discrets, les murs en traits pleins, et les <b>portes sont de véritables trouées</b> dans ces traits.</li>
-          <li>Des <b>marches</b> sont marquées en travers de chaque passage qui change de niveau.</li>
+          <li>Seule (sans gâchette), elle <b>fait défiler les cibles</b> : gauche et droite parmi les ennemis, haut et bas parmi les alliés.</li>
+          <li>Elle reste au service de l’<b>interface</b> tant qu’on est dedans, pour que rien ne devienne inatteignable.</li>
         </ul>
-        <h4>Plusieurs étages</h4>
-        <p>Un plan est produit <b>par étage</b>. Celui où vous vous trouvez s’affiche net ; les autres restent visibles mais <b>estompés</b>, pour situer sans encombrer.</p>
-        <h4>Où on le voit</h4>
-        <p>Dans la <b>mini-carte</b> et dans la <b>fenêtre de carte</b>, à l’intérieur des instances du Last Keep et de Dawnhold Castle. C’est le même découpage que les cartes de Gouffre arrivées en v0.38.0 : un calcul pur d’un côté, un dessin de l’autre.</p>
-        <h4>Une conséquence à surveiller</h4>
-        <p>Les marqueurs de récolte ont dû être <b>retirés des branches de plan de château</b> : un plan d’intérieur n’a pas de gisements, et ils s’y affichaient à tort.</p>`
+        <h4>Le ciblage automatique</h4>
+        <ul>
+          <li>Un joueur à la souris cible en <b>cliquant ce qu’il voit</b> : lancer un sort sans cible est, chez lui, une maladresse.</li>
+          <li>À la manette, ce geste n’existe pas. Un débutant voit un loup, appuie sur l’attaque qu’il connaît… et le sort <b>refuse</b>. Le jeu a l’air cassé, alors qu’il est juste inappris.</li>
+          <li>Un appui sur la barre croisée qui <b>exige un ennemi</b> et n’en a pas <b>prend le plus proche</b>, en utilisant la règle d’attaquabilité déjà en place — il n’élargit donc jamais qui peut être attaqué, il répond seulement à « lequel ».</li>
+        </ul>
+        <h4>Volontairement étroit</h4>
+        <ul>
+          <li>Seulement les capacités qui <b>réclament une cible</b>.</li>
+          <li><b>Jamais un sort amical</b> : un soin arracherait le joueur à l’allié qu’il visait.</li>
+          <li><b>Jamais une zone d’effet libre</b>, qui a le droit d’être lancée dans le vide.</li>
+          <li><b>Manette uniquement</b> : au clavier, un sort sans cible échoue exactement comme avant.</li>
+        </ul>`
     },
-    wipe: {
-      title: "La remise à zéro des cooldowns après un wipe sur Nythraxis",
-      summary: "Lu dans le code de la branche — la règle est simple, et son seuil est écrit noir sur blanc.",
+    pierres: {
+      title: "Pourquoi deux pierres sur trois n’existaient pas à l’écran",
+      summary: "Une règle d’optimisation générale qui rencontre un boss conçu pour éparpiller le raid : le résultat est une mécanique injouable.",
       body: `
-        <h4>Quand ça se déclenche</h4>
-        <p>Au <b>wipe du raid sur Nythraxis</b> : le moment où le boss retourne à sa place, retrouve sa vie, perd ses adds et ses auras, et où les portes scellées se rouvrent pour laisser le raid revenir.</p>
-        <h4>Ce qui repart à zéro</h4>
+        <h4>La mécanique</h4>
         <ul>
-          <li>Toute capacité connue du joueur dont la recharge dépasse <b>deux minutes</b>.</li>
-          <li>Et <b>Army of the Dead</b>, nommément, quelle que soit sa recharge.</li>
-          <li>Rien d’autre : en dessous de deux minutes, les cooldowns reviennent déjà assez vite pour ne pas décider du rythme.</li>
+          <li>Sur Nythraxis héroïque, la <b>Deathless Rage</b> ne s’interrompt qu’en canalisant <b>trois pierres</b>.</li>
+          <li>Elles sont posées <b>très écartées</b> les unes des autres — c’est le cœur de la mécanique : le raid doit se séparer pour les atteindre.</li>
         </ul>
-        <h4>Pour qui</h4>
-        <p>Uniquement les <b>participants de la tentative</b> — la liste que le combat tient lui-même. Quelqu’un qui n’était pas dans l’essai n’est pas concerné.</p>
-        <h4>Ce que ça change à une soirée raid</h4>
-        <p>Le temps entre deux essais cessait d’être décidé par le combat et devenait une attente de recharges : un raid ratait à 60 %, puis regardait un compteur avant de pouvoir réessayer <i>sérieusement</i>. C’est cette attente qui disparaît, pas la difficulté du combat.</p>`
+        <h4>Le défaut</h4>
+        <ul>
+          <li>Le moteur <b>ne crée pas l’affichage</b> de ce qui dépasse sa distance de rendu ordinaire, et garde invisible ce qui a été créé de trop loin.</li>
+          <li>Or l’écart voulu entre les pierres <b>dépasse cette distance</b>. Un raider qui ne s’était pas personnellement approché d’une pierre <b>ne voyait aucun pilier</b> à cliquer.</li>
+          <li>Mesuré sur le vrai client, depuis la plate-forme d’entrée du raid : <b>une seule des trois</b> pierres obtenait un affichage.</li>
+        </ul>
+        <h4>La correction</h4>
+        <p>Les objets qui <b>n’existent que pour être utilisés</b> — ces pierres, les portails permanents — sont désormais <b>exemptés</b> de la mise à distance, à la création comme au fil des images. Le reste du décor garde ses optimisations.</p>`
     },
-    peur: {
-      title: "Le budget de dégâts des peurs du Démoniste",
-      summary: "Lu dans le code de la branche, avec ses tests — un chiffre unique, 8 %, qui remplace un tirage au sort.",
+    direhowl: {
+      title: "Un wipe scripté qui n’en était plus un",
+      summary: "Deux coups calibrés pour tuer à coup sûr passaient par le circuit de dégâts ordinaire — donc par les réductions.",
       body: `
-        <h4>Comment ça marchait avant</h4>
+        <h4>Le principe des coups « obligatoires »</h4>
         <ul>
-          <li>Toutes les peurs du jeu partageaient un modèle <b>probabiliste</b> : un coup valant une certaine fraction des points de vie maximum cassait la peur à coup sûr, et un coup plus petit la cassait <b>avec une probabilité proportionnelle</b>.</li>
-          <li>Autrement dit : un petit coup pouvait, avec de la malchance, faire sauter la peur immédiatement. Impossible à planifier.</li>
+          <li>Deux mécaniques du mode héroïque sont volontairement calibrées <b>au-dessus des points de vie maximum</b> : rater la parade doit <b>toujours</b> tuer le raid, sans hasard.</li>
+          <li>Mais elles empruntaient le <b>circuit de dégâts normal</b>, celui qui applique toutes les réductions.</li>
         </ul>
-        <h4>Comment ça marche maintenant</h4>
-        <ul>
-          <li><b>Harrow</b> et <b>Dread Chorus</b> — et elles seules — reçoivent un <b>budget de dégâts fixe</b> : <b>8 % des points de vie maximum</b> de la cible.</li>
-          <li>Les dégâts s’accumulent dans ce budget ; la peur tient tant qu’il n’est pas dépassé, puis cède. Aucun hasard.</li>
-          <li>Sur une cible à 100 000 points de vie, le budget vaut 8 000. Les tests de la branche l’épinglent au point près : 7 999 ne cassent pas, 8 000 cassent.</li>
-          <li>Le budget ne descend jamais sous <b>1</b>, même sur une cible minuscule.</li>
-        </ul>
-        <h4>Ce qui ne change pas</h4>
-        <ul>
-          <li>Les autres peurs du jeu gardent l’ancien modèle probabiliste — <b>Morrowlash</b> y compris, alors qu’elle appartient à la même famille.</li>
-          <li>Les étourdissements simples, eux, cassent toujours au premier coup.</li>
-          <li>La <b>durée</b> des peurs, leur portée et leur coût ne bougent pas.</li>
-        </ul>
-        <h4>Buff ou nerf ?</h4>
-        <p>Ni l’un ni l’autre franchement : c’est de la <b>prévisibilité</b>. On perd les peurs qui tenaient anormalement longtemps par chance, on gagne celles qui sautaient au premier coup par malchance. Pour un Démoniste qui compte sur son contrôle, savoir exactement combien on peut taper vaut mieux qu’une moyenne. Le chiffre est d’ailleurs <b>écrit dans les deux descriptions de sort</b>.</p>`
-    },
-    warlock: {
-      title: "Le reste de la passe Démoniste",
-      summary: "Une quinzaine de corrections sur la même classe : c’est le vrai sujet de cette branche côté sorts.",
-      body: `
-        <h4>Le puits d’âmes</h4>
-        <p>Un <b>Soulwell</b> posé ne servait que les joueurs présents dans le groupe <b>au moment du clic</b>. Ceux qui rejoignaient ensuite restaient devant sans pouvoir se servir. Les arrivées tardives sont maintenant acceptées, et cette éligibilité <b>survit</b> aux allers-retours.</p>
-        <h4>La Nécromancie</h4>
-        <ul>
-          <li>Une mise <b>en état de marche pour le raid</b> — et c’est de ce chantier-là que vient, en prime, la <b>remise à zéro des cooldowns après un wipe</b> décrite plus haut : elle est née du besoin de rendre Army of the Dead entre deux essais.</li>
-          <li>Le sacrifice <b>vise en priorité le guerrier squelette</b>, au lieu de prendre n’importe quel serviteur sous la main.</li>
-          <li>Un dégât persistant d’undead posé en duel <b>s’efface à la fin du duel</b>, au lieu de suivre la cible.</li>
-        </ul>
-        <h4>Le Hexcraft</h4>
-        <ul>
-          <li>Le <b>fil du destin</b> est lissé — son enchaînement accrochait.</li>
-          <li>Une <b>Sentence en attente</b> passe désormais en priorité au lieu d’être doublée par autre chose.</li>
-          <li><b>Evil Eye</b> suit correctement avec Needle.</li>
-        </ul>
-        <h4>Les infobulles</h4>
-        <p>La <b>Litany</b> affiche enfin ses dégâts dans son infobulle, et les traductions de contrôle du Démoniste ont été reprises.</p>`
-    },
-    druide: {
-      title: "Le coup de pouce au Druide Farouche",
-      summary: "Lu dans le code de la branche — un camouflage qui cesse d’être une punition, et une montée en niveau qui cesse d’être un désert.",
-      body: `
-        <h4>Le camouflage</h4>
-        <ul>
-          <li><b>Stalk</b> laissait avancer à <b>la moitié</b> de la vitesse normale. Sur cette base, il ne servait ni à éclairer, ni à ouvrir un combat : le temps d’arriver, tout avait bougé.</li>
-          <li>Il passe à <b>95 %</b> de la vitesse — presque rien de perdu. Les développeurs l’écrivent comme un choix d’identité : le camouflage rapide est ce qui distingue le Farouche.</li>
-          <li>Le <b>Voleur n’est pas concerné</b> : sa famille Duskveil garde volontairement son déplacement lent à 50 %.</li>
-        </ul>
-        <h4>Les outils qui arrivaient trop tard</h4>
-        <ul>
-          <li><b>Redharvest</b> s’apprenait au <b>niveau 18</b>. Il descend au <b>niveau 8</b>, et gagne en plus des <b>rangs</b> qui le font monter avec le personnage.</li>
-          <li>Un <b>dépensier</b> arrive désormais dès le <b>niveau 5</b> pour <b>tout druide</b>, et non plus seulement pour les Farouches ayant pris Redharvest.</li>
-          <li>Un autre outil descend du <b>niveau 14 au niveau 8</b>.</li>
-          <li><b>Savage Mending</b> est reconverti en <b>pourcentage</b> de la réserve de vie, recalibré sur l’ours de référence.</li>
-        </ul>
-        <h4>Ce que ça vise</h4>
-        <p>Le problème n’était pas la puissance au niveau maximum, mais le <b>trou de progression</b> : un Farouche passait de longs niveaux sans le bouton qui fait fonctionner son cycle. C’est cette traversée du désert qui est raccourcie.</p>`
-    },
-    aggro: {
-      title: "Les monstres réservés à une quête",
-      summary: "Une vieille injustice : un monstre que vous n’aviez aucune raison d’affronter pouvait quand même vous tomber dessus.",
-      body: `
         <h4>Ce qui se passait</h4>
         <ul>
-          <li>Certains monstres n’existent que pour une quête précise. Le jeu filtrait bien les <b>dégâts</b> — vous ne pouviez pas l’attaquer sans la quête — mais pas l’<b>agression</b> : le monstre, lui, pouvait vous prendre pour cible.</li>
-          <li>Résultat : on se faisait poursuivre par un adversaire qu’on n’avait pas le droit de toucher.</li>
+          <li>L’affaiblissement <b>Direhowl</b> du Guerrier réduit réellement les dégâts que sa cible inflige — un effet parfaitement légitime, appliqué au boss.</li>
+          <li>Appliqué à ces deux coups-là, il les faisait <b>passer sous la barre des 100 %</b> de vie maximum. Le raid <b>survivait</b> à un mécanisme conçu pour ne jamais être survécu.</li>
         </ul>
-        <h4>Ce qui change</h4>
+        <h4>La correction, et ses limites</h4>
         <ul>
-          <li>L’agression est désormais <b>filtrée sur la quête elle-même</b>, et non plus seulement sur le fait d’avoir tapé.</li>
-          <li>Deuxième moitié du problème : <b>soigner</b> quelqu’un près d’un tel monstre ne vous colle plus de menace si vous n’avez pas la quête. Un soigneur qui accompagnait un ami se retrouvait pris à partie sans avoir rien fait d’autre que soigner.</li>
+          <li>Les deux coups sont maintenant traités comme des <b>montants définitifs</b> — mais <b>uniquement</b> quand le chiffre calibré dépasse déjà les points de vie maximum.</li>
+          <li>Les versions <b>normales</b> du combat, qui n’ont jamais été des morts garanties, <b>gardent toutes leurs réductions</b>.</li>
+          <li><b>Direhowl ne change nulle part ailleurs</b> : ni en donjon, ni en PvP, ni sur les autres boss.</li>
+          <li>Un défaut voisin, du côté d’une marque de Paladin, est <b>signalé mais pas encore corrigé</b> sur cette branche.</li>
         </ul>`
     },
-    perf: {
-      title: "Les gains de performance de la branche",
-      summary: "C’est la rubrique la plus fournie, et celle dont on ne parlera pas — jusqu’à ce qu’on remarque que ça ne saccade plus.",
+    reliquaire: {
+      title: "Le suivi du Reliquaire, et le droit de le faire taire",
+      summary: "Un ajout d’interface avec sa consigne inverse : ce qu’on ajoute à l’écran doit pouvoir en sortir.",
       body: `
-        <h4>Les montures</h4>
+        <h4>Ce que c’est</h4>
         <ul>
-          <li>La <b>première invocation</b> d’une monture provoquait un à-coup net : la carte graphique découvrait le modèle et devait préparer son rendu sur-le-champ.</li>
-          <li>Le jeu <b>prépare maintenant à l’avance</b> les programmes de rendu de chaque monture, ce qui referme ce gel.</li>
-          <li>Ces préparations sont <b>bornées</b> pour ne pas engorger le chargement, et leur état est rapporté honnêtement.</li>
+          <li>Un <b>suivi permanent</b> du Reliquaire, à droite, <b>sous la minicarte</b>, dans la même colonne que les autres suivis.</li>
+          <li>Il se cale sur le <b>bas réel</b> de cette colonne plutôt que sur une hauteur fixe : sur écran étroit, la pastille se posait par-dessus la boussole et l’horloge.</li>
         </ul>
-        <h4>Votre fantôme</h4>
-        <p>Même traitement pour les variantes de rendu de <b>votre propre esprit</b> : mourir ne devrait pas être une occasion de saccade.</p>
-        <h4>Les intérieurs de Gouffre</h4>
-        <p>Ils étaient mis en cache sous une clé qui ne convenait pas, ce qui provoquait des <b>reconstructions inutiles</b> à chaque passage. La clé a été corrigée.</p>
-        <h4>Le reste</h4>
+        <h4>Le masquer</h4>
         <ul>
-          <li>Un <b>lissage des contours</b> intégré à la passe de rendu de qualité <b>moyenne</b>.</li>
-          <li>Les <b>ciels de biome</b> chargés dans un format compressé plus léger.</li>
-          <li>Le <b>feuillage</b> allégé à distance, et la préparation de l’écran de connexion raccourcie.</li>
-          <li>Les <b>rochers qui ont une collision restent affichés</b> à tous les niveaux de qualité : on ne se cogne plus à un obstacle qu’on ne voit pas.</li>
-        </ul>`
+          <li>Un <b>œil</b> sur le bandeau du Reliquaire, ou une ligne dans les <b>options d’interface</b> : les deux commandent le même réglage, <b>mémorisé</b> d’une session à l’autre.</li>
+          <li>Masqué, il <b>ne coûte plus rien</b> — le jeu cesse d’aller lire ce qu’il affichait.</li>
+          <li>Et si tu <b>épingles une page</b> alors qu’il est caché, il se rallume : la convention habituelle des suivis d’objectifs.</li>
+        </ul>
+        <h4>Au passage</h4>
+        <p>Un suivi de quête <b>vide</b> ne laisse plus un espace fantôme dans la colonne, et les pastilles compactes prennent l’aspect des autres éléments groupés autour de la minicarte.</p>`
     },
   };
 
