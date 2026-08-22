@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-21T22:39:48Z",
- "base_tag": "v0.39.2",
+ "generated": "2026-08-22T07:10:34Z",
+ "base_tag": "v0.39.3",
  "version": "v0.40.0",
  "branch": "ossbrain-release/v0.40.0",
  "declared_version": "0.39.0",
  "imminent": false,
- "commits": 265,
- "shown": 182,
- "last_commit": "2026-08-21T21:57:37+00:00",
+ "commits": 334,
+ "shown": 218,
+ "last_commit": "2026-08-22T01:00:58Z",
  "sections": [
   {
    "key": "classes",
@@ -15,6 +15,41 @@
    "fr": "Classes & sorts",
    "en": "Classes & spells",
    "items": [
+    {
+     "h": "29144d7d",
+     "kind": "feat",
+     "scope": "rogue",
+     "text": "Sap control, utility poisons, Shadeslip, stealth targeting",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "a1c96949",
+     "kind": "fix",
+     "scope": "icons",
+     "text": "Cover rogue poison ability art",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "e82abf3d",
+     "kind": "fix",
+     "scope": "icons",
+     "text": "Mint rogue poison icon freeze pins",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "5c71f7bb",
+     "kind": "fix",
+     "scope": "render",
+     "text": "A partly failed Mage teardown is really retryable",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "e433373d",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Pass Unleashed Frenzy pet damage and hunter haste to the pet",
+     "date": "2026-08-21"
+    },
     {
      "h": "11a2f29f",
      "kind": "fix",
@@ -63,6 +98,13 @@
      "scope": "gamepad",
      "text": "Size the d-pad glyphs alike, clear the XP and cast bars, and let the pad select NPCs",
      "date": "2026-08-18"
+    },
+    {
+     "h": "a644a6c1",
+     "kind": "fix",
+     "scope": "rogue",
+     "text": "Update the pins and locale fills the rogue pass moved",
+     "date": "2026-08-11"
     }
    ]
   },
@@ -92,6 +134,13 @@
      "scope": "render",
      "text": "A compile gate submits one unit per material group",
      "date": "2026-08-18"
+    },
+    {
+     "h": "a7a1533c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "The shared depth material follows what is actually mounted",
+     "date": "2026-08-21"
     },
     {
      "h": "03a5b049",
@@ -152,6 +201,20 @@
      "date": "2026-08-19"
     },
     {
+     "h": "70b74c8b",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Drop normal-mob green/blue loot to classic-era rates",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "0c5a2544",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Confirm a vendor sale before a plain click can lose anything but junk",
+     "date": "2026-08-21"
+    },
+    {
      "h": "3f0168a7",
      "kind": "fix",
      "scope": "content",
@@ -187,6 +250,20 @@
    "fr": "Guilde & social",
    "en": "Guild & social",
    "items": [
+    {
+     "h": "114ac573",
+     "kind": "fix",
+     "scope": "input",
+     "text": "Stop Space from replaying a stale-focused potion, action-bar slot, or chat link",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "5d77b599",
+     "kind": "fix",
+     "scope": "account",
+     "text": "Add Set a Password for Apple/Discord passwordless accounts",
+     "date": "2026-08-21"
+    },
     {
      "h": "60d79836",
      "kind": "fix",
@@ -476,6 +553,34 @@
      "date": "2026-08-17"
     },
     {
+     "h": "619fcc28",
+     "kind": "feat",
+     "scope": "talents",
+     "text": "False Face lifts Duskveil to full move speed",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "c62c65ba",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Character materials stop re-deriving their program per draw",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "d4907d54",
+     "kind": "perf",
+     "scope": "render",
+     "text": "The portrait capture reads back off the main thread",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "48a885de",
+     "kind": "perf",
+     "scope": "render",
+     "text": "The portrait leaves the GPU as a bitmap, not as bytes",
+     "date": "2026-08-20"
+    },
+    {
      "h": "d8afd78d",
      "kind": "perf",
      "scope": "render",
@@ -693,6 +798,104 @@
      "date": "2026-08-18"
     },
     {
+     "h": "96b2d3f1",
+     "kind": "perf",
+     "scope": "sim",
+     "text": "Settle a stealth entry in one sweep of the entity map",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "d76132fa",
+     "kind": "fix",
+     "scope": "perf",
+     "text": "The prewarm list gate commits on delivery, not on build",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "ed0a3567",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Tolerate the transient join rejection on the FIRST connect attempt",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "a03869be",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Extract the entry poll to keep main.ts at its monolith ceiling",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "4fc0d1c3",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Defer the bags rebuild while a bag item is mid-drag",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "09d2e376",
+     "kind": "fix",
+     "scope": "net",
+     "text": "The streamed-prewarm diagnostic survives ingest",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "c704e2f5",
+     "kind": "fix",
+     "scope": "render",
+     "text": "A rebuild does not inherit the previous rig's latched arm",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "e6b04231",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Restore the prewarm submit reserve and the per-skin failure boundary",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "9350833a",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Close the review-round gaps in the extraction, latches and sampling",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "e730ec85",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Re-pin the renderer ceiling and the submit source pin",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "7993fb2d",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Shared caches are not claimable by an interior teardown",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "9e17d9a2",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Freeze the threat tab's real numbers through a kill, not the damage fallback",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "2c31c0fc",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Stop the mobile pet bar from covering the top-left More button",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "d3e3db6b",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Stop deleting the freed attack-slot ability on a build switch",
+     "date": "2026-08-21"
+    },
+    {
      "h": "be9eecda",
      "kind": "fix",
      "scope": "reliquary",
@@ -763,6 +966,27 @@
      "date": "2026-08-21"
     },
     {
+     "h": "1576d55e",
+     "kind": "fix",
+     "scope": "",
+     "text": "Repair v0.40 review findings",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "fe120629",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep hud monolith budget after v0.40 merges",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "326fd9de",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Format threat meter helper",
+     "date": "2026-08-21"
+    },
+    {
      "h": "6f27b00c",
      "kind": "fix",
      "scope": "game",
@@ -812,10 +1036,31 @@
      "date": "2026-08-20"
     },
     {
+     "h": "8750cd63",
+     "kind": "fix",
+     "scope": "render",
+     "text": "The GPU already encodes the portrait readback",
+     "date": "2026-08-20"
+    },
+    {
      "h": "3c5735b1",
      "kind": "fix",
      "scope": "render",
      "text": "Trees with colliders stay visible at every graphics tier",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "8af71d70",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Release transient VFX resources",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "2d4e31e0",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Allow data: in the Electron CSP connect-src so KTX2 zstd GLBs load",
      "date": "2026-08-20"
     },
     {
@@ -1328,6 +1573,13 @@
      "scope": "render",
      "text": "Prewarm the character effect variants and gate their swap",
      "date": "2026-08-17"
+    },
+    {
+     "h": "407841f7",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Honor Cheap Trick on the Gut Punch bar slot and tooltip",
+     "date": "2026-08-11"
     }
    ]
   }
@@ -1338,9 +1590,9 @@
    "branch": "ossbrain-release/v0.40.0",
    "declared_version": "0.39.0",
    "imminent": false,
-   "commits": 265,
-   "shown": 182,
-   "last_commit": "2026-08-21T21:57:37+00:00",
+   "commits": 334,
+   "shown": 218,
+   "last_commit": "2026-08-22T01:00:58Z",
    "sections": [
     {
      "key": "classes",
@@ -1348,6 +1600,41 @@
      "fr": "Classes & sorts",
      "en": "Classes & spells",
      "items": [
+      {
+       "h": "29144d7d",
+       "kind": "feat",
+       "scope": "rogue",
+       "text": "Sap control, utility poisons, Shadeslip, stealth targeting",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "a1c96949",
+       "kind": "fix",
+       "scope": "icons",
+       "text": "Cover rogue poison ability art",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "e82abf3d",
+       "kind": "fix",
+       "scope": "icons",
+       "text": "Mint rogue poison icon freeze pins",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "5c71f7bb",
+       "kind": "fix",
+       "scope": "render",
+       "text": "A partly failed Mage teardown is really retryable",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "e433373d",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Pass Unleashed Frenzy pet damage and hunter haste to the pet",
+       "date": "2026-08-21"
+      },
       {
        "h": "11a2f29f",
        "kind": "fix",
@@ -1396,6 +1683,13 @@
        "scope": "gamepad",
        "text": "Size the d-pad glyphs alike, clear the XP and cast bars, and let the pad select NPCs",
        "date": "2026-08-18"
+      },
+      {
+       "h": "a644a6c1",
+       "kind": "fix",
+       "scope": "rogue",
+       "text": "Update the pins and locale fills the rogue pass moved",
+       "date": "2026-08-11"
       }
      ]
     },
@@ -1425,6 +1719,13 @@
        "scope": "render",
        "text": "A compile gate submits one unit per material group",
        "date": "2026-08-18"
+      },
+      {
+       "h": "a7a1533c",
+       "kind": "fix",
+       "scope": "render",
+       "text": "The shared depth material follows what is actually mounted",
+       "date": "2026-08-21"
       },
       {
        "h": "03a5b049",
@@ -1485,6 +1786,20 @@
        "date": "2026-08-19"
       },
       {
+       "h": "70b74c8b",
+       "kind": "fix",
+       "scope": "content",
+       "text": "Drop normal-mob green/blue loot to classic-era rates",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "0c5a2544",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Confirm a vendor sale before a plain click can lose anything but junk",
+       "date": "2026-08-21"
+      },
+      {
        "h": "3f0168a7",
        "kind": "fix",
        "scope": "content",
@@ -1520,6 +1835,20 @@
      "fr": "Guilde & social",
      "en": "Guild & social",
      "items": [
+      {
+       "h": "114ac573",
+       "kind": "fix",
+       "scope": "input",
+       "text": "Stop Space from replaying a stale-focused potion, action-bar slot, or chat link",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "5d77b599",
+       "kind": "fix",
+       "scope": "account",
+       "text": "Add Set a Password for Apple/Discord passwordless accounts",
+       "date": "2026-08-21"
+      },
       {
        "h": "60d79836",
        "kind": "fix",
@@ -1809,6 +2138,34 @@
        "date": "2026-08-17"
       },
       {
+       "h": "619fcc28",
+       "kind": "feat",
+       "scope": "talents",
+       "text": "False Face lifts Duskveil to full move speed",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "c62c65ba",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Character materials stop re-deriving their program per draw",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "d4907d54",
+       "kind": "perf",
+       "scope": "render",
+       "text": "The portrait capture reads back off the main thread",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "48a885de",
+       "kind": "perf",
+       "scope": "render",
+       "text": "The portrait leaves the GPU as a bitmap, not as bytes",
+       "date": "2026-08-20"
+      },
+      {
        "h": "d8afd78d",
        "kind": "perf",
        "scope": "render",
@@ -2026,6 +2383,104 @@
        "date": "2026-08-18"
       },
       {
+       "h": "96b2d3f1",
+       "kind": "perf",
+       "scope": "sim",
+       "text": "Settle a stealth entry in one sweep of the entity map",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "d76132fa",
+       "kind": "fix",
+       "scope": "perf",
+       "text": "The prewarm list gate commits on delivery, not on build",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "ed0a3567",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Tolerate the transient join rejection on the FIRST connect attempt",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "a03869be",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Extract the entry poll to keep main.ts at its monolith ceiling",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "4fc0d1c3",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Defer the bags rebuild while a bag item is mid-drag",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "09d2e376",
+       "kind": "fix",
+       "scope": "net",
+       "text": "The streamed-prewarm diagnostic survives ingest",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "c704e2f5",
+       "kind": "fix",
+       "scope": "render",
+       "text": "A rebuild does not inherit the previous rig's latched arm",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "e6b04231",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Restore the prewarm submit reserve and the per-skin failure boundary",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "9350833a",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Close the review-round gaps in the extraction, latches and sampling",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "e730ec85",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Re-pin the renderer ceiling and the submit source pin",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "7993fb2d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Shared caches are not claimable by an interior teardown",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "9e17d9a2",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Freeze the threat tab's real numbers through a kill, not the damage fallback",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "2c31c0fc",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stop the mobile pet bar from covering the top-left More button",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "d3e3db6b",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stop deleting the freed attack-slot ability on a build switch",
+       "date": "2026-08-21"
+      },
+      {
        "h": "be9eecda",
        "kind": "fix",
        "scope": "reliquary",
@@ -2096,6 +2551,27 @@
        "date": "2026-08-21"
       },
       {
+       "h": "1576d55e",
+       "kind": "fix",
+       "scope": "",
+       "text": "Repair v0.40 review findings",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "fe120629",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep hud monolith budget after v0.40 merges",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "326fd9de",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Format threat meter helper",
+       "date": "2026-08-21"
+      },
+      {
        "h": "6f27b00c",
        "kind": "fix",
        "scope": "game",
@@ -2145,10 +2621,31 @@
        "date": "2026-08-20"
       },
       {
+       "h": "8750cd63",
+       "kind": "fix",
+       "scope": "render",
+       "text": "The GPU already encodes the portrait readback",
+       "date": "2026-08-20"
+      },
+      {
        "h": "3c5735b1",
        "kind": "fix",
        "scope": "render",
        "text": "Trees with colliders stay visible at every graphics tier",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "8af71d70",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Release transient VFX resources",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "2d4e31e0",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Allow data: in the Electron CSP connect-src so KTX2 zstd GLBs load",
        "date": "2026-08-20"
       },
       {
@@ -2661,6 +3158,13 @@
        "scope": "render",
        "text": "Prewarm the character effect variants and gate their swap",
        "date": "2026-08-17"
+      },
+      {
+       "h": "407841f7",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Honor Cheap Trick on the Gut Punch bar slot and tooltip",
+       "date": "2026-08-11"
       }
      ]
     }
