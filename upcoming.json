@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-22T07:10:34Z",
+ "generated": "2026-08-24T09:26:18Z",
  "base_tag": "v0.39.3",
  "version": "v0.40.0",
  "branch": "ossbrain-release/v0.40.0",
  "declared_version": "0.39.0",
  "imminent": false,
- "commits": 334,
- "shown": 218,
- "last_commit": "2026-08-22T01:00:58Z",
+ "commits": 969,
+ "shown": 495,
+ "last_commit": "2026-08-24T08:04:11Z",
  "sections": [
   {
    "key": "classes",
@@ -23,6 +23,41 @@
      "date": "2026-08-11"
     },
     {
+     "h": "8507a1fc",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Raise all three specs to the 200 heroic Nythraxis anchor",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "0a0bb8e6",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Close the viability-round review findings",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "af5b8a50",
+     "kind": "fix",
+     "scope": "hunter",
+     "text": "Daze Aspect of the Cheetah on damage taken",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "28300f43",
+     "kind": "fix",
+     "scope": "hunter",
+     "text": "Sync cheetah tooltip copy and allowlist the daze duration",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "44af94ea",
+     "kind": "fix",
+     "scope": "hunter",
+     "text": "Close the Pack Rally daze hole and address review",
+     "date": "2026-08-24"
+    },
+    {
      "h": "a1c96949",
      "kind": "fix",
      "scope": "icons",
@@ -34,6 +69,13 @@
      "kind": "fix",
      "scope": "icons",
      "text": "Mint rogue poison icon freeze pins",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "b42b8f6e",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Engage auto-attack on a hostile cast at a battleground enemy",
      "date": "2026-08-22"
     },
     {
@@ -136,6 +178,20 @@
      "date": "2026-08-18"
     },
     {
+     "h": "17f7c2a1",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Label craft fees as per craft",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "4772d76c",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Surface the hidden craft gold-sink fee in the crafting window",
+     "date": "2026-08-22"
+    },
+    {
      "h": "a7a1533c",
      "kind": "fix",
      "scope": "render",
@@ -148,6 +204,13 @@
      "scope": "render",
      "text": "Link the leaping fish body through the compile gate",
      "date": "2026-08-17"
+    },
+    {
+     "h": "4e2e43e0",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Extract the craft-deny message table and re-derive the sync pins",
+     "date": "2026-08-12"
     }
    ]
   },
@@ -157,6 +220,62 @@
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
    "items": [
+    {
+     "h": "e292a700",
+     "kind": "feat",
+     "scope": "telemetry",
+     "text": "Report a bounded rift zone id in client perf beacons",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "153d8984",
+     "kind": "perf",
+     "scope": "sim",
+     "text": "Index rift floor colliders into cells for movement and sight",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "36fa556a",
+     "kind": "perf",
+     "scope": "sim",
+     "text": "Stop paying per-tick cost for spent rift corpses and cold paths",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "e0d7d618",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Reset fall state on dungeon door teleport",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "4e3725a5",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Free object-view materials and retired rift floors on teardown",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "b52bac62",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Review-round fixes for the rift perf set",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "f2bc1ca9",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "Give a won rift a loot-recovery grace window before its portal closes",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "c3dd1c1d",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "Address the round-2 review findings",
+     "date": "2026-08-22"
+    },
     {
      "h": "1a066d0b",
      "kind": "fix",
@@ -194,11 +313,67 @@
    "en": "World & quests",
    "items": [
     {
+     "h": "fd6aa4cd",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add the radial action and quest strip pure cores",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "e85f9945",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Replace the touch quest tracker with a top-band strip",
+     "date": "2026-08-21"
+    },
+    {
      "h": "425326c0",
      "kind": "perf",
      "scope": "render",
      "text": "Zone prepare's terrain and water fills go off-thread",
      "date": "2026-08-19"
+    },
+    {
+     "h": "9cf56df4",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stop a moving mob freezing into its far-LOD statue",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "4a5b6c1d",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Open a smooth Gardenwalk crossing from Thornpeak Heights",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "71dfb699",
+     "kind": "fix",
+     "scope": "deeds",
+     "text": "Show which named places a wayfarer deed is still missing",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "4bf8d2b1",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Clarify the Brightwood Remembered legacy feat tooltip",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "49009d18",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Require lethal fall state transition for deed",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "7f5928ba",
+     "kind": "fix",
+     "scope": "items",
+     "text": "Let shamans wear the Bonewrought mail set",
+     "date": "2026-08-22"
     },
     {
      "h": "70b74c8b",
@@ -212,6 +387,20 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Confirm a vendor sale before a plain click can lose anything but junk",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "328814b8",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Unplate the quest strip and pin its anchor statically",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "5d7d7979",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Quest strip polish and gesture dim refinements",
      "date": "2026-08-21"
     },
     {
@@ -250,6 +439,20 @@
    "fr": "Guilde & social",
    "en": "Guild & social",
    "items": [
+    {
+     "h": "c3cef446",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Pin the CAS predicate and polish the purge report, per review",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "f4471c09",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Take the round-3 report-line nits",
+     "date": "2026-08-23"
+    },
     {
      "h": "114ac573",
      "kind": "fix",
@@ -319,6 +522,13 @@
      "scope": "game",
      "text": "Drop the boot-mute query flag from this branch",
      "date": "2026-08-18"
+    },
+    {
+     "h": "295a29bd",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Report swallowed reopen failures and share the pair index name",
+     "date": "2026-08-13"
     }
    ]
   },
@@ -329,11 +539,144 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "992c9899",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Exchange UX round from team testing",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "591577f4",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "My activities copy, browse filters, seller history",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "2ee5dd3f",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Seller profile line, category filters, wider quality range",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "8fad2bb8",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Replace the paged mobile hotbar with a radial action ring",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "960bc6af",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Seat consumables in the action ring's freed 5th slot",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "95d6910c",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Collapse the mobile button row into one menu control",
+     "date": "2026-08-21"
+    },
+    {
      "h": "b69a6376",
      "kind": "feat",
      "scope": "reliquary",
      "text": "Hideable HUD tracker, seated below the minimap",
      "date": "2026-08-21"
+    },
+    {
+     "h": "043a7ac7",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add the touch bar editor and retire long-press rearrange",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "8293ee89",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add the tap menus setting and the bar editor clear mode",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "470479f8",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Rename the menu control to quick actions and hide the reliquary line",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "ce4573b9",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Stance radial on touch and the pet frame below the player",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "305dd473",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Bound realm escrow load and make its occupancy honest",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "84e17d7b",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Widen the never-started tag into every guard tail",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "839626b1",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Bound and classify the plain-statement writers",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "136897d1",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Refuse new listings while the process drains",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "f8d50b3b",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Bound the process-local ledgers and their exclusion arrays",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "614c0920",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Close the commitGrant carve-out onto the save FIFO",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "897597e3",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Add the marketplace auth-guard read cache module",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "0e3f7946",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Wire the auth-guard cache into the marketplace guard bundle",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "a5d8c67f",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Bust the auth-guard cache at every projection writer",
+     "date": "2026-08-20"
     },
     {
      "h": "6f302423",
@@ -347,6 +690,27 @@
      "kind": "feat",
      "scope": "gamepad",
      "text": "Auto-target the basic attack too",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "f7effbad",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Scale-guard the exchange hot paths (H11)",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "77a4b4a1",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Resolve the exchange disclosure figures and scroll the tapped detail into view",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "99614e06",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Retention, sort and probe indexes, and full lock-wait bounds",
      "date": "2026-08-19"
     },
     {
@@ -532,10 +896,31 @@
      "date": "2026-08-17"
     },
     {
+     "h": "5fcb5e2c",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Bind the exact copy, offerNext, and realm into the step-up",
+     "date": "2026-08-17"
+    },
+    {
      "h": "211a068d",
      "kind": "feat",
      "scope": "render",
      "text": "Make GPU-preparation events machine-readable and add the prep kill switch",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "c4547109",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Informed commitment on the money surfaces",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "a71d1e32",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Localize the whole money surface",
      "date": "2026-08-17"
     },
     {
@@ -553,11 +938,305 @@
      "date": "2026-08-17"
     },
     {
+     "h": "b7aee5c0",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Carry the market wire fields the service computes to the player",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "733e684b",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Adopt the service-owned bond quote contract",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "b5e1b623",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Localize the market payment verdicts end to end",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "e33d613a",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Carry the listing state booleans and project the status price",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "68ca21e3",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Refuse listing a copy the owner item-locked",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "3d6f09d3",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Add the wallet step-up challenge protocol and store",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "5ebc09cf",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Enforce the wallet step-up on both custody movers",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "a54bfc68",
+     "kind": "feat",
+     "scope": "net",
+     "text": "Teach the Exchange client the step-up challenge contract",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "3b211f4b",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Run the step-up wallet flow in both custody-moving surfaces",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "138bc9e1",
+     "kind": "feat",
+     "scope": "market",
+     "text": "Surface stuck custody through a monitor and an ops endpoint",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "766bd890",
+     "kind": "feat",
+     "scope": "market",
+     "text": "Bound every payment to a traced, resolvable state",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "1f5c465a",
+     "kind": "feat",
+     "scope": "market",
+     "text": "Restore the auction buy-now, and surface bond confirmation",
+     "date": "2026-08-11"
+    },
+    {
      "h": "619fcc28",
      "kind": "feat",
      "scope": "talents",
      "text": "False Face lifts Duskveil to full move speed",
      "date": "2026-08-11"
+    },
+    {
+     "h": "9297c038",
+     "kind": "feat",
+     "scope": "market",
+     "text": "Make the listing lifecycle settlement-aware",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "413ab403",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Internal read endpoints for listings and p2p trades",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "4f97104e",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Make the payment phase visible to both players",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "cf1caf6d",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Let a bidder abandon a bid, and preview its $WOC cost",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "ec8128cc",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Hand a p2p purchase straight to the buyer",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "a2978bb0",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Refuse a $WOC offer the connected wallet cannot cover",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "649a99e2",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Refuse an Exchange bid or buy-now the wallet cannot cover",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "e10bdbb2",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Pay the bid bond in the same step as bidding",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "94296b20",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Add directed listings, the p2p sale's server foundation",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "ca5b6308",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Add directed p2p offers with escrow at acceptance",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "0d78a5de",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Strike directed non-payment, address offers by character",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "2c1dd238",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add the trade window $WOC arm's view core and client calls",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "4092ff39",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Wire the $WOC arm into the trade window",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "bdc95dff",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Invert the p2p offer so the BUYER opens the deal",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "f35135ae",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Keep the trade window open and review the $WOC offer in it",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "96d40c7c",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Show the $WOC offer in the Money row and agree via Accept Trade",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "7d826a37",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Pay for a $WOC trade from the trade window",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "9f70953f",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Drop two-factor from the Exchange paying side",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "e2aebae7",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Sell picker, drop the combined format, guard the buy-now price",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "1ab61af5",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "One combobox for the sell picker, with icons and a clear button",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "e035c0fc",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Trade every mount and every suit skin on the Exchange",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "c9ba8c12",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Cap the auction duration at 48 hours",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "6a897569",
+     "kind": "feat",
+     "scope": "woc-market",
+     "text": "Inspect a listing's stats on hover",
+     "date": "2026-07-31"
+    },
+    {
+     "h": "dabc391f",
+     "kind": "feat",
+     "scope": "server",
+     "text": "The $WOC Exchange marketplace domain",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "bbefd7fc",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "The $WOC Exchange window and client SDK",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "7865eda5",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Exact-copy escrow extraction and instanced custody mail",
+     "date": "2026-07-28"
+    },
+    {
+     "h": "db522846",
+     "kind": "perf",
+     "scope": "sim",
+     "text": "Answer the custody-parcel dedupe off the mail index",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "11ae3001",
+     "kind": "perf",
+     "scope": "server",
+     "text": "Index the category-backfill worklist read",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "9253c6c1",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Gate world-entry warmups",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "3ba1d3e5",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Defer hidden entry GPU debt",
+     "date": "2026-08-22"
     },
     {
      "h": "c62c65ba",
@@ -578,6 +1257,13 @@
      "kind": "perf",
      "scope": "render",
      "text": "The portrait leaves the GPU as a bitmap, not as bytes",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "0639ea98",
+     "kind": "perf",
+     "scope": "server",
+     "text": "Narrow every marketplace row lock to FOR NO KEY UPDATE",
      "date": "2026-08-20"
     },
     {
@@ -606,6 +1292,13 @@
      "kind": "perf",
      "scope": "render",
      "text": "The resume lane compiles a batch's roots one at a time",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "95b6cd8a",
+     "kind": "perf",
+     "scope": "server",
+     "text": "Trim the dead sale wire payload and bound every guard transaction's idle holds",
      "date": "2026-08-19"
     },
     {
@@ -805,10 +1498,381 @@
      "date": "2026-08-11"
     },
     {
+     "h": "09a74b5a",
+     "kind": "perf",
+     "scope": "loading",
+     "text": "Shorten entry and rotate backdrops",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "7ddeb4dd",
+     "kind": "fix",
+     "scope": "tests",
+     "text": "Replace the empty negated class in the quality-filter probe",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "c8e17c55",
+     "kind": "fix",
+     "scope": "tests",
+     "text": "Stage the sim.ts ratchet re-pin and true up the shard provenance",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "78ed6b0b",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Backfill category stamps on pre-round listings",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "87985c6d",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Take the Exchange /me read off the read-scope guard",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "01f384b0",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Extend the market kill switch over the operator writes",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "d285668a",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Refuse a market service base that ships the secret cleartext",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "6a767816",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Enroll the Exchange window in the chrome focus hygiene list",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "3fc33095",
+     "kind": "fix",
+     "scope": "docker",
+     "text": "Pass the market retention and review knobs through compose",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "e5669914",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Route the mobile Exchange launcher through the tray handoff",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "50216680",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Read the trade-partner name from the parsed query",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "547d6b7f",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Pets are blind to stealth, and Vanish drops all enemies",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "aab4cb66",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Let a pure buy-now list at exactly the 25c floor",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "ed630f80",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Reject a bracketed IPv6 host in the market proxy guard",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "0fffa9d6",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Stop publishing the seller's character creation date",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "0867af4a",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Steer feared players away from walls",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "791a2bd7",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Close the stealth/Vanish review findings",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "8b3648e5",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Converge best-in-slot Warspirit on the 200 DPS contract",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "3d046e11",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Stop bursting pushback-clipped channel ticks at completion",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "ae115a10",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Pull the mullet fringe's overshot vertex off the browline",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "d55345ce",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Stop a HoT's periodic tick from extending the combat meter's segment",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "a46fbf42",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Soften the Warspirit convergence to a 210 contract point",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "74483a73",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Stop a hostile proc or dot outliving the duel-ending blow",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "fb361cb6",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Fill release locale leaks",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "cc1a0a63",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Bound airborne sight to authored support",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "a87ab46d",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Keep battleground unstuck in match",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "98e7a705",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Block owned corpse harvesting",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "98e7a705",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Block owned corpse harvesting",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "7a9fd4eb",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Merge PR 3599",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "28a86cbc",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Merge Gardenwalk crossing repair",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "59d6227e",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Merge mullet forehead clip asset",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "a7ffc5c3",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Merge moving far LOD holdout",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "6f061677",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep far LOD repair under monolith budget",
+     "date": "2026-08-23"
+    },
+    {
      "h": "d76132fa",
      "kind": "fix",
      "scope": "perf",
      "text": "The prewarm list gate commits on delivery, not on build",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "1f73db42",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Apply the touch rework code review findings",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "7b2339c6",
+     "kind": "fix",
+     "scope": "loading",
+     "text": "Apply review round 1, the stream kick and the nearby floor",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "f233a58a",
+     "kind": "fix",
+     "scope": "client",
+     "text": "Treat battleground enemies and enemy-owned pets as attackable",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "4ea99393",
+     "kind": "fix",
+     "scope": "mail",
+     "text": "Never mint the Ravenpost welcome letter for bot players",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "e93eb93e",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Add the bot welcome letter purge migration",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "e8864cdb",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Destroy static file streams when the client aborts",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "a2079bcd",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Hide the bidding fields on a buy-now-only listing",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "8cd5026d",
+     "kind": "fix",
+     "scope": "deeds",
+     "text": "Close review gaps on the radius comment and label coupling",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "7e8dc2c6",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Show the sale price on a sold activity row",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "982f02b0",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Harden the purge migration per QA review",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "1e9ba977",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Address the maintainer review on the touch rework",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "fb717cdc",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep HUD monolith budget after battleground targeting",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "1e8822d5",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Stop the wall-clearance nudge from shoving mounted riders into water",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "448e93ae",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Prove the server stop by mail-row freshness, per review",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "41ccd28b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Show outfit colorway dye on low graphics tier",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "78e957a2",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Fill v0.40 release translations",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "eae2af95",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Retain failed entry texture debt",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "09e58528",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Unblock mandatory entry landmarks",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "4357c712",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Harden entry admission lifecycle",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "ef2fb94e",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Honor grounded standable sight elevation",
      "date": "2026-08-22"
     },
     {
@@ -889,6 +1953,13 @@
      "date": "2026-08-21"
     },
     {
+     "h": "ba2fbffe",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Harden the touch gesture layer per seam review",
+     "date": "2026-08-21"
+    },
+    {
      "h": "d3e3db6b",
      "kind": "fix",
      "scope": "ui",
@@ -900,6 +1971,13 @@
      "kind": "fix",
      "scope": "reliquary",
      "text": "Apply tracker review findings",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "6ac811ee",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Device feedback on seating, dims, bars and stacking",
      "date": "2026-08-21"
     },
     {
@@ -959,10 +2037,31 @@
      "date": "2026-08-21"
     },
     {
+     "h": "42e2dfae",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Open the full 33 slot span to the touch radial",
+     "date": "2026-08-21"
+    },
+    {
      "h": "bc79f6c4",
      "kind": "fix",
      "scope": "browser",
      "text": "Stabilize stale focus regression",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "babd7c46",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Pin the minimap rim satellites to the disc on touch",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "8fe34e04",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Fire a sticky strip item exactly once per tap",
      "date": "2026-08-21"
     },
     {
@@ -984,6 +2083,13 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Format threat meter helper",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "43ee20c2",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Rename the exit control key and fill every locale",
      "date": "2026-08-21"
     },
     {
@@ -1050,10 +2156,108 @@
      "date": "2026-08-20"
     },
     {
+     "h": "b0deae8d",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Apply the rider review round across all four lanes",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "88b18e19",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Make the gate's saturation probe reclaim, and cover the accept rungs",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "5551f466",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Identity-tokened gate holds and the counted pre-check refusal",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "9df89286",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Close the rider QA review round across coverage and prose",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "83e21183",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Close the review round's findings on the auth-guard cache",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "84211e02",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Derive the veto ledger floor from the db deadlines",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "aecba0c6",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Close the QA round's auth-guard cache races and observability gaps",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "23f8e2a0",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Make the join guard bust-overwrite-proof and pin the row freeze",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "adb40bd0",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Close the qa-checklist round on the auth-guard cache",
+     "date": "2026-08-20"
+    },
+    {
      "h": "8af71d70",
      "kind": "fix",
      "scope": "render",
      "text": "Release transient VFX resources",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "8674fd1e",
+     "kind": "fix",
+     "scope": "tests",
+     "text": "Provision per-leg Postgres so the pg suites run at the merge bar",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "7ede73ee",
+     "kind": "fix",
+     "scope": "tests",
+     "text": "Make the pg merge bar survive fresh databases and pin relocation",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "9dd45ad9",
+     "kind": "fix",
+     "scope": "tests",
+     "text": "Derive the Postgres-wired job set and harden the runtime guard",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "cce505dc",
+     "kind": "fix",
+     "scope": "tests",
+     "text": "Classify every CI job for the pg bar and arm the sentinel everywhere",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "8b45b7ae",
+     "kind": "fix",
+     "scope": "tests",
+     "text": "Close the fix-round review's residuals in the job classification pin",
      "date": "2026-08-20"
     },
     {
@@ -1148,10 +2352,87 @@
      "date": "2026-08-19"
     },
     {
+     "h": "c591fa46",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Harden the exchange hot-path guards per the four-lane review",
+     "date": "2026-08-19"
+    },
+    {
      "h": "7187e930",
      "kind": "fix",
      "scope": "sim",
      "text": "Lay the Highwatch practice row across the walk-up, one fire",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "5305a922",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Budget the locked bond-payout walk and settle the fix-round review",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "f17c467a",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Clear the qa gate: ledger extraction pays the ratchet and the budget break stays loud",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "814a2101",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Single-source the focus-key attribute for the emit-only chrome builder",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "8431db86",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Close the idle-bound review's contention and observability gaps",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "590d4064",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Fence the mintable cache keys, bust on every outcome, pay the ratchet",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "f4c9ff41",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "A failed partner lookup is not a no-wallet verdict",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "4495ec4d",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Plan the claims prune as anti-join seeks and close the review round",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "b61f3297",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Count delivered-save lock waits and true up deadline and retention prose",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "59d293be",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Harden the containment scan and apply the fresh review's comment truths",
+     "date": "2026-08-19"
+    },
+    {
+     "h": "88c2eca6",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "State the true retention-default contract and close the qa gate items",
      "date": "2026-08-19"
     },
     {
@@ -1323,6 +2604,20 @@
      "date": "2026-08-18"
     },
     {
+     "h": "827edf68",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync origin/release/v0.39.0 (b650d9d7d2) into feature/woc-marketplace",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "c83618ba",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Restore an extracted copy as a relocation, not a new obtain",
+     "date": "2026-08-18"
+    },
+    {
      "h": "04bf5409",
      "kind": "fix",
      "scope": "ui",
@@ -1484,6 +2779,62 @@
      "date": "2026-08-18"
     },
     {
+     "h": "7fb7afac",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Apply the seam review, from the quality colour to the fee line",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "370f941d",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Reserve the sticky row's real band, measured rather than derived",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "9b525c34",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Settle the fix-round review, insets and expiry included",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "ec083e8f",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Settle the third review, and delete a check that could not fail",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "e4a911df",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Make the locked-items caption true, and pin the chip's faces",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "9f6c2f4c",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Apply the 15 QA desk findings, from the audit row to the rig frame",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "85dd1bb0",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Align the escrow restore with its sibling grant, and name the live door",
+     "date": "2026-08-18"
+    },
+    {
+     "h": "3c625bcf",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Close the pin gaps the 15 QA coverage and seam lanes found",
+     "date": "2026-08-18"
+    },
+    {
      "h": "4f05a5b6",
      "kind": "fix",
      "scope": "render",
@@ -1509,6 +2860,55 @@
      "kind": "fix",
      "scope": "render",
      "text": "Make the far-bake gate wait for the far variant and warm its tables",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "55bee933",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Reset both accepts on a directed reopen so a spent proof cannot re-drive custody",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "981792ac",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Honest pending, decline copy, and lock hint on the step-up surfaces",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "56e19840",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Close the copy line-forge and opt-out swap the fresh re-review found",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "42a85a1a",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Index the step-up challenge FK cascade, and record the 13 ledger",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "ec9e4896",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Harden the step-up message sanitizer against C1 and format chars",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "712ff298",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Clear the Exchange window busy guard on close",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "f78888f5",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Correct the fix round the fresh re-review flagged",
      "date": "2026-08-17"
     },
     {
@@ -1547,10 +2947,45 @@
      "date": "2026-08-17"
     },
     {
+     "h": "3bdb3bcd",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Honest server surfaces for strikes, cooldowns, and pay rows",
+     "date": "2026-08-17"
+    },
+    {
      "h": "5b836ed4",
      "kind": "fix",
      "scope": "render",
      "text": "Prewarm every foliage program variant and gate the bucket reveal",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "198b8b89",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Honest deal endings and working seller controls on the trade arm",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "c37fd8e0",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Land the review round's findings",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "adaabc83",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Close the QA round's residuals on the trade arm",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "7230d29a",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Land the seam lanes' findings on the money faces",
      "date": "2026-08-17"
     },
     {
@@ -1575,11 +3010,515 @@
      "date": "2026-08-17"
     },
     {
+     "h": "4aa3925e",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Retire the dead offer partials and harden the poll read seams",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "05d8b26e",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "True up the money faces the QA lanes caught lying or leaking",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "624bdfa4",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Keep the keyed claim across a close and name its own deadline",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "cda2ce15",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Gate the anti-snipe extension on the ledger-matched verdict",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "90b257ed",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Bound bond adoption and harden the verdict pins",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "8c6c2944",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Close the refresh-path asymmetries the re-review named",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "7bfd0a7d",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Make service vocabulary drift visible and clamp log identifiers",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "8334a4db",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Extend on poll-settled bonds and harden the verdict drift channel",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "0d0d43e5",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Clamp the dev split legs and pin the untested fail-safe arms",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "10c6c52f",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Align the two payment surfaces and re-label re-priced bonds",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "a5a1aaad",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Make the bond prompt name the bond, not the bid",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "15b50e61",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Warn on bond-leg fail drift and render the listing state booleans",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "72eb65e2",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Close the escrow QA round's wire, classifier, and doc gaps",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "7291352f",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Discard broken clients and pin the fresh re-review's gaps",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "bb97ac16",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Discard the client on any codeless transaction failure",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "ad43e95a",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Close the directed rail integrity holes",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "92872dff",
+     "kind": "fix",
+     "scope": "trade",
+     "text": "Stage trade offers as per-copy slots the swap will really move",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "b9430b81",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Apply the four-reviewer round on the directed rail",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "1c3fed47",
+     "kind": "fix",
+     "scope": "trade",
+     "text": "Apply the fix-round re-review on the staging and strike changes",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "04944729",
+     "kind": "fix",
+     "scope": "trade",
+     "text": "Close the qa gate round on the directed rail",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "0e9aa4f0",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Apply the closing re-review on the directed rail fixes",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "2341ed24",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Harden the pair index boot path and mirror the one item rule on accept",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "ebbd84d8",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Name the right accept obstacle and make three pins really pin",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "fe3f5578",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Judge the accept hint over the authoritative offer table",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "665b9a28",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Make the trade capacity model run the removal walk itself",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "788862e4",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Gate the directed buyer on terms and close the audit round's server gaps",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "7837dc6e",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Read the accept belt off the model and assert the terms per offer",
+     "date": "2026-08-13"
+    },
+    {
+     "h": "bf581158",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Make delivery finalization exactly-once under every crash point",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "251d5351",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Close the reviewer-found dupe rails and bound every recurring read",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "65d60d5e",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Require in-book proof once a mail attempt was written",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "5157e816",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Keep parked rows visible and bound the residue redrive",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "b4c31d79",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Close the re-review round on the delivery hardening",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "77458f38",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Apply the three-lane review round on the payment lifecycle",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "573741b6",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Close the fix round's own regressions from the re-review",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "1b1431f4",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Close the round-three review residuals",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "9ede336b",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Close the verification round's payment and anchor findings",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "c00ad8bd",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Answer succeeded retries honestly and park the held survivor",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "faa61988",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Close the QA round's payment-lifecycle findings",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "4e412de3",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Answer the race and straddle findings honestly",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "88d6d77b",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Make the review park honest end to end and type the straddle refusal",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "b75b8422",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Refuse still-armed bindOnTrade gear on the exchange rail",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "d4803603",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Run the escrow custody write on the per-character save FIFO",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "285c5fc4",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Harden the escrow FIFO entry after the coverage and security review",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "d81bde19",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Converge the mid-leave quarantine and follow the work with the cap",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "151c5480",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Refuse typed when the escrow transaction never started",
+     "date": "2026-08-12"
+    },
+    {
      "h": "407841f7",
      "kind": "fix",
      "scope": "ui",
      "text": "Honor Cheap Trick on the Gut Punch bar slot and tooltip",
      "date": "2026-08-11"
+    },
+    {
+     "h": "6cc77a56",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Resolve the custody parcel re-check through the Sim facade",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "f81d5859",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Make the trade extraction byte-faithful and close the ratchet headroom",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "454bebed",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.37.0 into feature/woc-marketplace",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "36cc6084",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Close the insert-vs-close races and type the contention refusals",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "e829626b",
+     "kind": "fix",
+     "scope": "tests",
+     "text": "Repair the full-suite fallout of the release sync and extraction",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "aa21d5c5",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Apply the fix-round review, the reclaim default-pass repair first",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "5d96e5e2",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Default the ops read window instead of collapsing it",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "3909f43e",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Finish a sale for both players, and stop calling it cancelled",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "3979aa0b",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Make gold and $WOC exclusive for the TABLE, not per player",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "ec570d47",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Stop refusing a bond that is only awaiting finality",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "43714e03",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Offer only the price fields the chosen listing format allows",
+     "date": "2026-08-07"
+    },
+    {
+     "h": "debbfd96",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Stop the $WOC arm accusing a player whose wallet is fine",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "5412df92",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Make the $WOC arm say why \"Send offer\" is disabled",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "d7734cd5",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Actually grey out the gold fields in $WOC mode",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "900095c7",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Actually expire unanswered directed offers",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "bb178e0d",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Follow a $WOC deal through acceptance, and style the price field",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "634b4191",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Stamp the listing onto the offer, and send the real item index",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "9ec2af29",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Honour signatureRequired, and let $WOC replace the coin inputs",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "ec0163ef",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Drop a finished sale from the live offer read",
+     "date": "2026-08-06"
+    },
+    {
+     "h": "42aa8aa4",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Size the price ceiling against the real $WOC market",
+     "date": "2026-08-05"
+    },
+    {
+     "h": "8b1f109e",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Open the picker on focus, card from option icons, hold the scroll",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "82596b62",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "A fixed-price listing could never satisfy its own guards",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "e84f5234",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Dismount a seller who escrows the mount they are riding",
+     "date": "2026-08-03"
+    },
+    {
+     "h": "94f0786b",
+     "kind": "fix",
+     "scope": "security",
+     "text": "Route Exchange signing through the reviewed bridge vocabulary",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "4149db95",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "QA review pass over custody, reads, and the window",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "de91615d",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Close a silent item-loss path and the unstyled window surface",
+     "date": "2026-07-29"
+    },
+    {
+     "h": "7b654616",
+     "kind": "fix",
+     "scope": "woc-market",
+     "text": "Point the exchange client at the service prefix it is served on",
+     "date": "2026-07-29"
     }
    ]
   }
@@ -1590,9 +3529,9 @@
    "branch": "ossbrain-release/v0.40.0",
    "declared_version": "0.39.0",
    "imminent": false,
-   "commits": 334,
-   "shown": 218,
-   "last_commit": "2026-08-22T01:00:58Z",
+   "commits": 969,
+   "shown": 495,
+   "last_commit": "2026-08-24T08:04:11Z",
    "sections": [
     {
      "key": "classes",
@@ -1608,6 +3547,41 @@
        "date": "2026-08-11"
       },
       {
+       "h": "8507a1fc",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Raise all three specs to the 200 heroic Nythraxis anchor",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "0a0bb8e6",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Close the viability-round review findings",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "af5b8a50",
+       "kind": "fix",
+       "scope": "hunter",
+       "text": "Daze Aspect of the Cheetah on damage taken",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "28300f43",
+       "kind": "fix",
+       "scope": "hunter",
+       "text": "Sync cheetah tooltip copy and allowlist the daze duration",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "44af94ea",
+       "kind": "fix",
+       "scope": "hunter",
+       "text": "Close the Pack Rally daze hole and address review",
+       "date": "2026-08-24"
+      },
+      {
        "h": "a1c96949",
        "kind": "fix",
        "scope": "icons",
@@ -1619,6 +3593,13 @@
        "kind": "fix",
        "scope": "icons",
        "text": "Mint rogue poison icon freeze pins",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "b42b8f6e",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Engage auto-attack on a hostile cast at a battleground enemy",
        "date": "2026-08-22"
       },
       {
@@ -1721,6 +3702,20 @@
        "date": "2026-08-18"
       },
       {
+       "h": "17f7c2a1",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Label craft fees as per craft",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "4772d76c",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Surface the hidden craft gold-sink fee in the crafting window",
+       "date": "2026-08-22"
+      },
+      {
        "h": "a7a1533c",
        "kind": "fix",
        "scope": "render",
@@ -1733,6 +3728,13 @@
        "scope": "render",
        "text": "Link the leaping fish body through the compile gate",
        "date": "2026-08-17"
+      },
+      {
+       "h": "4e2e43e0",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Extract the craft-deny message table and re-derive the sync pins",
+       "date": "2026-08-12"
       }
      ]
     },
@@ -1742,6 +3744,62 @@
      "fr": "Donjons, failles & boss",
      "en": "Dungeons, rifts & bosses",
      "items": [
+      {
+       "h": "e292a700",
+       "kind": "feat",
+       "scope": "telemetry",
+       "text": "Report a bounded rift zone id in client perf beacons",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "153d8984",
+       "kind": "perf",
+       "scope": "sim",
+       "text": "Index rift floor colliders into cells for movement and sight",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "36fa556a",
+       "kind": "perf",
+       "scope": "sim",
+       "text": "Stop paying per-tick cost for spent rift corpses and cold paths",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "e0d7d618",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Reset fall state on dungeon door teleport",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "4e3725a5",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Free object-view materials and retired rift floors on teardown",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "b52bac62",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Review-round fixes for the rift perf set",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "f2bc1ca9",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Give a won rift a loot-recovery grace window before its portal closes",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "c3dd1c1d",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Address the round-2 review findings",
+       "date": "2026-08-22"
+      },
       {
        "h": "1a066d0b",
        "kind": "fix",
@@ -1779,11 +3837,67 @@
      "en": "World & quests",
      "items": [
       {
+       "h": "fd6aa4cd",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add the radial action and quest strip pure cores",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "e85f9945",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Replace the touch quest tracker with a top-band strip",
+       "date": "2026-08-21"
+      },
+      {
        "h": "425326c0",
        "kind": "perf",
        "scope": "render",
        "text": "Zone prepare's terrain and water fills go off-thread",
        "date": "2026-08-19"
+      },
+      {
+       "h": "9cf56df4",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Stop a moving mob freezing into its far-LOD statue",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "4a5b6c1d",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Open a smooth Gardenwalk crossing from Thornpeak Heights",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "71dfb699",
+       "kind": "fix",
+       "scope": "deeds",
+       "text": "Show which named places a wayfarer deed is still missing",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "4bf8d2b1",
+       "kind": "fix",
+       "scope": "content",
+       "text": "Clarify the Brightwood Remembered legacy feat tooltip",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "49009d18",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Require lethal fall state transition for deed",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "7f5928ba",
+       "kind": "fix",
+       "scope": "items",
+       "text": "Let shamans wear the Bonewrought mail set",
+       "date": "2026-08-22"
       },
       {
        "h": "70b74c8b",
@@ -1797,6 +3911,20 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Confirm a vendor sale before a plain click can lose anything but junk",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "328814b8",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Unplate the quest strip and pin its anchor statically",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "5d7d7979",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Quest strip polish and gesture dim refinements",
        "date": "2026-08-21"
       },
       {
@@ -1835,6 +3963,20 @@
      "fr": "Guilde & social",
      "en": "Guild & social",
      "items": [
+      {
+       "h": "c3cef446",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Pin the CAS predicate and polish the purge report, per review",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "f4471c09",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Take the round-3 report-line nits",
+       "date": "2026-08-23"
+      },
       {
        "h": "114ac573",
        "kind": "fix",
@@ -1904,6 +4046,13 @@
        "scope": "game",
        "text": "Drop the boot-mute query flag from this branch",
        "date": "2026-08-18"
+      },
+      {
+       "h": "295a29bd",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Report swallowed reopen failures and share the pair index name",
+       "date": "2026-08-13"
       }
      ]
     },
@@ -1914,11 +4063,144 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "992c9899",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Exchange UX round from team testing",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "591577f4",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "My activities copy, browse filters, seller history",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "2ee5dd3f",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Seller profile line, category filters, wider quality range",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "8fad2bb8",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Replace the paged mobile hotbar with a radial action ring",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "960bc6af",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Seat consumables in the action ring's freed 5th slot",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "95d6910c",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Collapse the mobile button row into one menu control",
+       "date": "2026-08-21"
+      },
+      {
        "h": "b69a6376",
        "kind": "feat",
        "scope": "reliquary",
        "text": "Hideable HUD tracker, seated below the minimap",
        "date": "2026-08-21"
+      },
+      {
+       "h": "043a7ac7",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add the touch bar editor and retire long-press rearrange",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "8293ee89",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add the tap menus setting and the bar editor clear mode",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "470479f8",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Rename the menu control to quick actions and hide the reliquary line",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "ce4573b9",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Stance radial on touch and the pet frame below the player",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "305dd473",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Bound realm escrow load and make its occupancy honest",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "84e17d7b",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Widen the never-started tag into every guard tail",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "839626b1",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Bound and classify the plain-statement writers",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "136897d1",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Refuse new listings while the process drains",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "f8d50b3b",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Bound the process-local ledgers and their exclusion arrays",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "614c0920",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Close the commitGrant carve-out onto the save FIFO",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "897597e3",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Add the marketplace auth-guard read cache module",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "0e3f7946",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Wire the auth-guard cache into the marketplace guard bundle",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "a5d8c67f",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Bust the auth-guard cache at every projection writer",
+       "date": "2026-08-20"
       },
       {
        "h": "6f302423",
@@ -1932,6 +4214,27 @@
        "kind": "feat",
        "scope": "gamepad",
        "text": "Auto-target the basic attack too",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "f7effbad",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Scale-guard the exchange hot paths (H11)",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "77a4b4a1",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Resolve the exchange disclosure figures and scroll the tapped detail into view",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "99614e06",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Retention, sort and probe indexes, and full lock-wait bounds",
        "date": "2026-08-19"
       },
       {
@@ -2117,10 +4420,31 @@
        "date": "2026-08-17"
       },
       {
+       "h": "5fcb5e2c",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Bind the exact copy, offerNext, and realm into the step-up",
+       "date": "2026-08-17"
+      },
+      {
        "h": "211a068d",
        "kind": "feat",
        "scope": "render",
        "text": "Make GPU-preparation events machine-readable and add the prep kill switch",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "c4547109",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Informed commitment on the money surfaces",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "a71d1e32",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Localize the whole money surface",
        "date": "2026-08-17"
       },
       {
@@ -2138,11 +4462,305 @@
        "date": "2026-08-17"
       },
       {
+       "h": "b7aee5c0",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Carry the market wire fields the service computes to the player",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "733e684b",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Adopt the service-owned bond quote contract",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "b5e1b623",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Localize the market payment verdicts end to end",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "e33d613a",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Carry the listing state booleans and project the status price",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "68ca21e3",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Refuse listing a copy the owner item-locked",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "3d6f09d3",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Add the wallet step-up challenge protocol and store",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "5ebc09cf",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Enforce the wallet step-up on both custody movers",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "a54bfc68",
+       "kind": "feat",
+       "scope": "net",
+       "text": "Teach the Exchange client the step-up challenge contract",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "3b211f4b",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Run the step-up wallet flow in both custody-moving surfaces",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "138bc9e1",
+       "kind": "feat",
+       "scope": "market",
+       "text": "Surface stuck custody through a monitor and an ops endpoint",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "766bd890",
+       "kind": "feat",
+       "scope": "market",
+       "text": "Bound every payment to a traced, resolvable state",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "1f5c465a",
+       "kind": "feat",
+       "scope": "market",
+       "text": "Restore the auction buy-now, and surface bond confirmation",
+       "date": "2026-08-11"
+      },
+      {
        "h": "619fcc28",
        "kind": "feat",
        "scope": "talents",
        "text": "False Face lifts Duskveil to full move speed",
        "date": "2026-08-11"
+      },
+      {
+       "h": "9297c038",
+       "kind": "feat",
+       "scope": "market",
+       "text": "Make the listing lifecycle settlement-aware",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "413ab403",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Internal read endpoints for listings and p2p trades",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "4f97104e",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Make the payment phase visible to both players",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "cf1caf6d",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Let a bidder abandon a bid, and preview its $WOC cost",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "ec8128cc",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Hand a p2p purchase straight to the buyer",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "a2978bb0",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Refuse a $WOC offer the connected wallet cannot cover",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "649a99e2",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Refuse an Exchange bid or buy-now the wallet cannot cover",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "e10bdbb2",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Pay the bid bond in the same step as bidding",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "94296b20",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Add directed listings, the p2p sale's server foundation",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "ca5b6308",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Add directed p2p offers with escrow at acceptance",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "0d78a5de",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Strike directed non-payment, address offers by character",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "2c1dd238",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add the trade window $WOC arm's view core and client calls",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "4092ff39",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Wire the $WOC arm into the trade window",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "bdc95dff",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Invert the p2p offer so the BUYER opens the deal",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "f35135ae",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Keep the trade window open and review the $WOC offer in it",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "96d40c7c",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Show the $WOC offer in the Money row and agree via Accept Trade",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "7d826a37",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Pay for a $WOC trade from the trade window",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "9f70953f",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Drop two-factor from the Exchange paying side",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "e2aebae7",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Sell picker, drop the combined format, guard the buy-now price",
+       "date": "2026-08-03"
+      },
+      {
+       "h": "1ab61af5",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "One combobox for the sell picker, with icons and a clear button",
+       "date": "2026-08-03"
+      },
+      {
+       "h": "e035c0fc",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Trade every mount and every suit skin on the Exchange",
+       "date": "2026-08-03"
+      },
+      {
+       "h": "c9ba8c12",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Cap the auction duration at 48 hours",
+       "date": "2026-08-03"
+      },
+      {
+       "h": "6a897569",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Inspect a listing's stats on hover",
+       "date": "2026-07-31"
+      },
+      {
+       "h": "dabc391f",
+       "kind": "feat",
+       "scope": "server",
+       "text": "The $WOC Exchange marketplace domain",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "bbefd7fc",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "The $WOC Exchange window and client SDK",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "7865eda5",
+       "kind": "feat",
+       "scope": "sim",
+       "text": "Exact-copy escrow extraction and instanced custody mail",
+       "date": "2026-07-28"
+      },
+      {
+       "h": "db522846",
+       "kind": "perf",
+       "scope": "sim",
+       "text": "Answer the custody-parcel dedupe off the mail index",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "11ae3001",
+       "kind": "perf",
+       "scope": "server",
+       "text": "Index the category-backfill worklist read",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "9253c6c1",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Gate world-entry warmups",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "3ba1d3e5",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Defer hidden entry GPU debt",
+       "date": "2026-08-22"
       },
       {
        "h": "c62c65ba",
@@ -2163,6 +4781,13 @@
        "kind": "perf",
        "scope": "render",
        "text": "The portrait leaves the GPU as a bitmap, not as bytes",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "0639ea98",
+       "kind": "perf",
+       "scope": "server",
+       "text": "Narrow every marketplace row lock to FOR NO KEY UPDATE",
        "date": "2026-08-20"
       },
       {
@@ -2191,6 +4816,13 @@
        "kind": "perf",
        "scope": "render",
        "text": "The resume lane compiles a batch's roots one at a time",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "95b6cd8a",
+       "kind": "perf",
+       "scope": "server",
+       "text": "Trim the dead sale wire payload and bound every guard transaction's idle holds",
        "date": "2026-08-19"
       },
       {
@@ -2390,10 +5022,381 @@
        "date": "2026-08-11"
       },
       {
+       "h": "09a74b5a",
+       "kind": "perf",
+       "scope": "loading",
+       "text": "Shorten entry and rotate backdrops",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "7ddeb4dd",
+       "kind": "fix",
+       "scope": "tests",
+       "text": "Replace the empty negated class in the quality-filter probe",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "c8e17c55",
+       "kind": "fix",
+       "scope": "tests",
+       "text": "Stage the sim.ts ratchet re-pin and true up the shard provenance",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "78ed6b0b",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Backfill category stamps on pre-round listings",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "87985c6d",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Take the Exchange /me read off the read-scope guard",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "01f384b0",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Extend the market kill switch over the operator writes",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "d285668a",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Refuse a market service base that ships the secret cleartext",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "6a767816",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Enroll the Exchange window in the chrome focus hygiene list",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "3fc33095",
+       "kind": "fix",
+       "scope": "docker",
+       "text": "Pass the market retention and review knobs through compose",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "e5669914",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Route the mobile Exchange launcher through the tray handoff",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "50216680",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Read the trade-partner name from the parsed query",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "547d6b7f",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Pets are blind to stealth, and Vanish drops all enemies",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "aab4cb66",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Let a pure buy-now list at exactly the 25c floor",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "ed630f80",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Reject a bracketed IPv6 host in the market proxy guard",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "0fffa9d6",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Stop publishing the seller's character creation date",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "0867af4a",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Steer feared players away from walls",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "791a2bd7",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Close the stealth/Vanish review findings",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "8b3648e5",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Converge best-in-slot Warspirit on the 200 DPS contract",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "3d046e11",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Stop bursting pushback-clipped channel ticks at completion",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "ae115a10",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Pull the mullet fringe's overshot vertex off the browline",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "d55345ce",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stop a HoT's periodic tick from extending the combat meter's segment",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "a46fbf42",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Soften the Warspirit convergence to a 210 contract point",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "74483a73",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Stop a hostile proc or dot outliving the duel-ending blow",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "fb361cb6",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Fill release locale leaks",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "cc1a0a63",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Bound airborne sight to authored support",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "a87ab46d",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Keep battleground unstuck in match",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "98e7a705",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Block owned corpse harvesting",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "98e7a705",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Block owned corpse harvesting",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "7a9fd4eb",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Merge PR 3599",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "28a86cbc",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Merge Gardenwalk crossing repair",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "59d6227e",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Merge mullet forehead clip asset",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "a7ffc5c3",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Merge moving far LOD holdout",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "6f061677",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep far LOD repair under monolith budget",
+       "date": "2026-08-23"
+      },
+      {
        "h": "d76132fa",
        "kind": "fix",
        "scope": "perf",
        "text": "The prewarm list gate commits on delivery, not on build",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "1f73db42",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Apply the touch rework code review findings",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "7b2339c6",
+       "kind": "fix",
+       "scope": "loading",
+       "text": "Apply review round 1, the stream kick and the nearby floor",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "f233a58a",
+       "kind": "fix",
+       "scope": "client",
+       "text": "Treat battleground enemies and enemy-owned pets as attackable",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "4ea99393",
+       "kind": "fix",
+       "scope": "mail",
+       "text": "Never mint the Ravenpost welcome letter for bot players",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "e93eb93e",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Add the bot welcome letter purge migration",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "e8864cdb",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Destroy static file streams when the client aborts",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "a2079bcd",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Hide the bidding fields on a buy-now-only listing",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "8cd5026d",
+       "kind": "fix",
+       "scope": "deeds",
+       "text": "Close review gaps on the radius comment and label coupling",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "7e8dc2c6",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Show the sale price on a sold activity row",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "982f02b0",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Harden the purge migration per QA review",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "1e9ba977",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Address the maintainer review on the touch rework",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "fb717cdc",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep HUD monolith budget after battleground targeting",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "1e8822d5",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Stop the wall-clearance nudge from shoving mounted riders into water",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "448e93ae",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Prove the server stop by mail-row freshness, per review",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "41ccd28b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Show outfit colorway dye on low graphics tier",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "78e957a2",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Fill v0.40 release translations",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "eae2af95",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Retain failed entry texture debt",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "09e58528",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Unblock mandatory entry landmarks",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "4357c712",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Harden entry admission lifecycle",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "ef2fb94e",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Honor grounded standable sight elevation",
        "date": "2026-08-22"
       },
       {
@@ -2474,6 +5477,13 @@
        "date": "2026-08-21"
       },
       {
+       "h": "ba2fbffe",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Harden the touch gesture layer per seam review",
+       "date": "2026-08-21"
+      },
+      {
        "h": "d3e3db6b",
        "kind": "fix",
        "scope": "ui",
@@ -2485,6 +5495,13 @@
        "kind": "fix",
        "scope": "reliquary",
        "text": "Apply tracker review findings",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "6ac811ee",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Device feedback on seating, dims, bars and stacking",
        "date": "2026-08-21"
       },
       {
@@ -2544,10 +5561,31 @@
        "date": "2026-08-21"
       },
       {
+       "h": "42e2dfae",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Open the full 33 slot span to the touch radial",
+       "date": "2026-08-21"
+      },
+      {
        "h": "bc79f6c4",
        "kind": "fix",
        "scope": "browser",
        "text": "Stabilize stale focus regression",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "babd7c46",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Pin the minimap rim satellites to the disc on touch",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "8fe34e04",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Fire a sticky strip item exactly once per tap",
        "date": "2026-08-21"
       },
       {
@@ -2569,6 +5607,13 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Format threat meter helper",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "43ee20c2",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Rename the exit control key and fill every locale",
        "date": "2026-08-21"
       },
       {
@@ -2635,10 +5680,108 @@
        "date": "2026-08-20"
       },
       {
+       "h": "b0deae8d",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Apply the rider review round across all four lanes",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "88b18e19",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Make the gate's saturation probe reclaim, and cover the accept rungs",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "5551f466",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Identity-tokened gate holds and the counted pre-check refusal",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "9df89286",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Close the rider QA review round across coverage and prose",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "83e21183",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Close the review round's findings on the auth-guard cache",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "84211e02",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Derive the veto ledger floor from the db deadlines",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "aecba0c6",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Close the QA round's auth-guard cache races and observability gaps",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "23f8e2a0",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Make the join guard bust-overwrite-proof and pin the row freeze",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "adb40bd0",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Close the qa-checklist round on the auth-guard cache",
+       "date": "2026-08-20"
+      },
+      {
        "h": "8af71d70",
        "kind": "fix",
        "scope": "render",
        "text": "Release transient VFX resources",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "8674fd1e",
+       "kind": "fix",
+       "scope": "tests",
+       "text": "Provision per-leg Postgres so the pg suites run at the merge bar",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "7ede73ee",
+       "kind": "fix",
+       "scope": "tests",
+       "text": "Make the pg merge bar survive fresh databases and pin relocation",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "9dd45ad9",
+       "kind": "fix",
+       "scope": "tests",
+       "text": "Derive the Postgres-wired job set and harden the runtime guard",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "cce505dc",
+       "kind": "fix",
+       "scope": "tests",
+       "text": "Classify every CI job for the pg bar and arm the sentinel everywhere",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "8b45b7ae",
+       "kind": "fix",
+       "scope": "tests",
+       "text": "Close the fix-round review's residuals in the job classification pin",
        "date": "2026-08-20"
       },
       {
@@ -2733,10 +5876,87 @@
        "date": "2026-08-19"
       },
       {
+       "h": "c591fa46",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Harden the exchange hot-path guards per the four-lane review",
+       "date": "2026-08-19"
+      },
+      {
        "h": "7187e930",
        "kind": "fix",
        "scope": "sim",
        "text": "Lay the Highwatch practice row across the walk-up, one fire",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "5305a922",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Budget the locked bond-payout walk and settle the fix-round review",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "f17c467a",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Clear the qa gate: ledger extraction pays the ratchet and the budget break stays loud",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "814a2101",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Single-source the focus-key attribute for the emit-only chrome builder",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "8431db86",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Close the idle-bound review's contention and observability gaps",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "590d4064",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Fence the mintable cache keys, bust on every outcome, pay the ratchet",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "f4c9ff41",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "A failed partner lookup is not a no-wallet verdict",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "4495ec4d",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Plan the claims prune as anti-join seeks and close the review round",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "b61f3297",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Count delivered-save lock waits and true up deadline and retention prose",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "59d293be",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Harden the containment scan and apply the fresh review's comment truths",
+       "date": "2026-08-19"
+      },
+      {
+       "h": "88c2eca6",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "State the true retention-default contract and close the qa gate items",
        "date": "2026-08-19"
       },
       {
@@ -2908,6 +6128,20 @@
        "date": "2026-08-18"
       },
       {
+       "h": "827edf68",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync origin/release/v0.39.0 (b650d9d7d2) into feature/woc-marketplace",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "c83618ba",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Restore an extracted copy as a relocation, not a new obtain",
+       "date": "2026-08-18"
+      },
+      {
        "h": "04bf5409",
        "kind": "fix",
        "scope": "ui",
@@ -3069,6 +6303,62 @@
        "date": "2026-08-18"
       },
       {
+       "h": "7fb7afac",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Apply the seam review, from the quality colour to the fee line",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "370f941d",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Reserve the sticky row's real band, measured rather than derived",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "9b525c34",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Settle the fix-round review, insets and expiry included",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "ec083e8f",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Settle the third review, and delete a check that could not fail",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "e4a911df",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Make the locked-items caption true, and pin the chip's faces",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "9f6c2f4c",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Apply the 15 QA desk findings, from the audit row to the rig frame",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "85dd1bb0",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Align the escrow restore with its sibling grant, and name the live door",
+       "date": "2026-08-18"
+      },
+      {
+       "h": "3c625bcf",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Close the pin gaps the 15 QA coverage and seam lanes found",
+       "date": "2026-08-18"
+      },
+      {
        "h": "4f05a5b6",
        "kind": "fix",
        "scope": "render",
@@ -3094,6 +6384,55 @@
        "kind": "fix",
        "scope": "render",
        "text": "Make the far-bake gate wait for the far variant and warm its tables",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "55bee933",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Reset both accepts on a directed reopen so a spent proof cannot re-drive custody",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "981792ac",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Honest pending, decline copy, and lock hint on the step-up surfaces",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "56e19840",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Close the copy line-forge and opt-out swap the fresh re-review found",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "42a85a1a",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Index the step-up challenge FK cascade, and record the 13 ledger",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "ec9e4896",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Harden the step-up message sanitizer against C1 and format chars",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "712ff298",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Clear the Exchange window busy guard on close",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "f78888f5",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Correct the fix round the fresh re-review flagged",
        "date": "2026-08-17"
       },
       {
@@ -3132,10 +6471,45 @@
        "date": "2026-08-17"
       },
       {
+       "h": "3bdb3bcd",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Honest server surfaces for strikes, cooldowns, and pay rows",
+       "date": "2026-08-17"
+      },
+      {
        "h": "5b836ed4",
        "kind": "fix",
        "scope": "render",
        "text": "Prewarm every foliage program variant and gate the bucket reveal",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "198b8b89",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Honest deal endings and working seller controls on the trade arm",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "c37fd8e0",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Land the review round's findings",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "adaabc83",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Close the QA round's residuals on the trade arm",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "7230d29a",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Land the seam lanes' findings on the money faces",
        "date": "2026-08-17"
       },
       {
@@ -3160,11 +6534,515 @@
        "date": "2026-08-17"
       },
       {
+       "h": "4aa3925e",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Retire the dead offer partials and harden the poll read seams",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "05d8b26e",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "True up the money faces the QA lanes caught lying or leaking",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "624bdfa4",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Keep the keyed claim across a close and name its own deadline",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "cda2ce15",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Gate the anti-snipe extension on the ledger-matched verdict",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "90b257ed",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Bound bond adoption and harden the verdict pins",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "8c6c2944",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Close the refresh-path asymmetries the re-review named",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "7bfd0a7d",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Make service vocabulary drift visible and clamp log identifiers",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "8334a4db",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Extend on poll-settled bonds and harden the verdict drift channel",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "0d0d43e5",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Clamp the dev split legs and pin the untested fail-safe arms",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "10c6c52f",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Align the two payment surfaces and re-label re-priced bonds",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "a5a1aaad",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Make the bond prompt name the bond, not the bid",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "15b50e61",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Warn on bond-leg fail drift and render the listing state booleans",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "72eb65e2",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Close the escrow QA round's wire, classifier, and doc gaps",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "7291352f",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Discard broken clients and pin the fresh re-review's gaps",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "bb97ac16",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Discard the client on any codeless transaction failure",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "ad43e95a",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Close the directed rail integrity holes",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "92872dff",
+       "kind": "fix",
+       "scope": "trade",
+       "text": "Stage trade offers as per-copy slots the swap will really move",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "b9430b81",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Apply the four-reviewer round on the directed rail",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "1c3fed47",
+       "kind": "fix",
+       "scope": "trade",
+       "text": "Apply the fix-round re-review on the staging and strike changes",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "04944729",
+       "kind": "fix",
+       "scope": "trade",
+       "text": "Close the qa gate round on the directed rail",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "0e9aa4f0",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Apply the closing re-review on the directed rail fixes",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "2341ed24",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Harden the pair index boot path and mirror the one item rule on accept",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "ebbd84d8",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Name the right accept obstacle and make three pins really pin",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "fe3f5578",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Judge the accept hint over the authoritative offer table",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "665b9a28",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Make the trade capacity model run the removal walk itself",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "788862e4",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Gate the directed buyer on terms and close the audit round's server gaps",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "7837dc6e",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Read the accept belt off the model and assert the terms per offer",
+       "date": "2026-08-13"
+      },
+      {
+       "h": "bf581158",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Make delivery finalization exactly-once under every crash point",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "251d5351",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Close the reviewer-found dupe rails and bound every recurring read",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "65d60d5e",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Require in-book proof once a mail attempt was written",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "5157e816",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Keep parked rows visible and bound the residue redrive",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "b4c31d79",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Close the re-review round on the delivery hardening",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "77458f38",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Apply the three-lane review round on the payment lifecycle",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "573741b6",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Close the fix round's own regressions from the re-review",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "1b1431f4",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Close the round-three review residuals",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "9ede336b",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Close the verification round's payment and anchor findings",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "c00ad8bd",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Answer succeeded retries honestly and park the held survivor",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "faa61988",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Close the QA round's payment-lifecycle findings",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "4e412de3",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Answer the race and straddle findings honestly",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "88d6d77b",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Make the review park honest end to end and type the straddle refusal",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "b75b8422",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Refuse still-armed bindOnTrade gear on the exchange rail",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "d4803603",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Run the escrow custody write on the per-character save FIFO",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "285c5fc4",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Harden the escrow FIFO entry after the coverage and security review",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "d81bde19",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Converge the mid-leave quarantine and follow the work with the cap",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "151c5480",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Refuse typed when the escrow transaction never started",
+       "date": "2026-08-12"
+      },
+      {
        "h": "407841f7",
        "kind": "fix",
        "scope": "ui",
        "text": "Honor Cheap Trick on the Gut Punch bar slot and tooltip",
        "date": "2026-08-11"
+      },
+      {
+       "h": "6cc77a56",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Resolve the custody parcel re-check through the Sim facade",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "f81d5859",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Make the trade extraction byte-faithful and close the ratchet headroom",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "454bebed",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.37.0 into feature/woc-marketplace",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "36cc6084",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Close the insert-vs-close races and type the contention refusals",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "e829626b",
+       "kind": "fix",
+       "scope": "tests",
+       "text": "Repair the full-suite fallout of the release sync and extraction",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "aa21d5c5",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Apply the fix-round review, the reclaim default-pass repair first",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "5d96e5e2",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Default the ops read window instead of collapsing it",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "3909f43e",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Finish a sale for both players, and stop calling it cancelled",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "3979aa0b",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Make gold and $WOC exclusive for the TABLE, not per player",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "ec570d47",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Stop refusing a bond that is only awaiting finality",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "43714e03",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Offer only the price fields the chosen listing format allows",
+       "date": "2026-08-07"
+      },
+      {
+       "h": "debbfd96",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stop the $WOC arm accusing a player whose wallet is fine",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "5412df92",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Make the $WOC arm say why \"Send offer\" is disabled",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "d7734cd5",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Actually grey out the gold fields in $WOC mode",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "900095c7",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Actually expire unanswered directed offers",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "bb178e0d",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Follow a $WOC deal through acceptance, and style the price field",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "634b4191",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Stamp the listing onto the offer, and send the real item index",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "9ec2af29",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Honour signatureRequired, and let $WOC replace the coin inputs",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "ec0163ef",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Drop a finished sale from the live offer read",
+       "date": "2026-08-06"
+      },
+      {
+       "h": "42aa8aa4",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Size the price ceiling against the real $WOC market",
+       "date": "2026-08-05"
+      },
+      {
+       "h": "8b1f109e",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Open the picker on focus, card from option icons, hold the scroll",
+       "date": "2026-08-03"
+      },
+      {
+       "h": "82596b62",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "A fixed-price listing could never satisfy its own guards",
+       "date": "2026-08-03"
+      },
+      {
+       "h": "e84f5234",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Dismount a seller who escrows the mount they are riding",
+       "date": "2026-08-03"
+      },
+      {
+       "h": "94f0786b",
+       "kind": "fix",
+       "scope": "security",
+       "text": "Route Exchange signing through the reviewed bridge vocabulary",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "4149db95",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "QA review pass over custody, reads, and the window",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "de91615d",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Close a silent item-loss path and the unstyled window surface",
+       "date": "2026-07-29"
+      },
+      {
+       "h": "7b654616",
+       "kind": "fix",
+       "scope": "woc-market",
+       "text": "Point the exchange client at the service prefix it is served on",
+       "date": "2026-07-29"
       }
      ]
     }
