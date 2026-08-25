@@ -922,7 +922,7 @@ const BUILDS = {
                en: "The beast master: your pet does the heavy lifting (and takes the hits for you), Howling Rage doubles its damage, and Wildfang Rally buffs the whole group. The comfort spec — solo, leveling, and perfectly honest in dungeons." },
    stats: { fr: "Agilité > Crit > Hâte > Endurance", en: "Agility > Crit > Haste > Stamina" },
    talents: [
-    ["Enduring Courser", "niv. 5", { fr: "Courser’s Guise donne 60 % de vitesse 3 s à l’activation : le repositionnement du maître des bêtes.", en: "Courser's Guise grants 60% speed for 3s on activation: the beast master's repositioning." }],
+    ["Enduring Courser", "niv. 5", { fr: "Courser’s Guise donne 60 % de vitesse 3 s à l’activation : le repositionnement du maître des bêtes. Depuis la v0.40, prendre un coup coupe ce sursaut ET t’étourdit 4 s (vitesse divisée par deux) — même une chute. C’est donc un outil de voyage et d’ouverture, plus une fuite sous le feu.", en: "Courser's Guise grants 60% speed for 3s on activation: the beast master's repositioning. Since v0.40, taking a hit cancels that burst AND dazes you for 4s at half speed — fall damage included. It is a travel and opening tool now, not an escape under fire." }],
     ["Shared Recovery", "niv. 8", { fr: "Wildheart soigne aussi ton familier de 30 % et vous donne 20 % de réduction de dégâts 4 s à tous les deux.", en: "Wildheart also heals your pet for 30% and grants both of you 20% damage reduction for 4s." }],
     ["Double Hush", "niv. 11", { fr: "deux interruptions à distance en réserve.", en: "two ranged interrupts in the bank." }],
     ["Efficient Rhythm", "niv. 14", { fr: "après 75 Concentration dépensée, ton prochain Pack Command en rend 20 de plus — et Pack Command rendait déjà 20.", en: "after spending 75 Focus, your next Pack Command returns 20 more — and Pack Command already returned 20." }],
@@ -995,6 +995,7 @@ const BUILDS = {
    ],
    rotation: [
     ["Adder's Bite / Festering Venom", { fr: "le poison sur l'arme, toujours.", en: "poison on the weapon, always." }],
+    ["Melting Acid", { fr: "nouveau en v0.40 (niv. 16, 40 énergie) : −5 % d'armure sur la cible pendant 12 s. À poser une fois sur un boss si le groupe tape surtout en physique — le coût en énergie ne vaut pas la peine sur des packs qui meurent vite.", en: "new in v0.40 (lvl 16, 40 energy): −5% armor on the target for 12s. Worth one application on a boss when the group is mostly physical — the energy cost is not worth it on packs that die fast." }],
     ["Duskveil + Gut Punch", { fr: "l'ouverture furtive : 4 s d'étourdissement.", en: "the stealth opener: 4s stun." }],
     ["Cutthroat Tempo", { fr: "à 2-3 combos : +30 % de hâte, LE buff à entretenir.", en: "at 2–3 combo points: +30% haste, THE buff to maintain." }],
     ["Mirrored Blades", { fr: "le sort signature (v0.25) : +20 % de vitesse d'attaque pendant 12 s — à empiler avec Cutthroat Tempo.", en: "the signature spell (v0.25): +20% attack speed for 12s — stack it with Cutthroat Tempo." }],
@@ -1024,6 +1025,7 @@ const BUILDS = {
    ],
    rotation: [
     ["Festering Venom", { fr: "le poison sur l'arme (14 dégâts par coup), gonflé de 10 % par la maîtrise — toujours actif.", en: "the weapon poison (14 damage per swing), inflated 10% by the mastery — always on." }],
+    ["Melting Acid", { fr: "nouveau en v0.40 (niv. 16, 40 énergie) : −5 % d'armure 12 s. Une pose en début de boss si le groupe est physique ; à ignorer en donjon rapide, ces 40 d'énergie valent mieux dans un builder.", en: "new in v0.40 (lvl 16, 40 energy): −5% armor for 12s. One application at the start of a boss when the group is physical; skip it in fast dungeons, those 40 energy are better spent on a builder." }],
     ["Duskveil → Lurker's Strike", { fr: "l'ouverture : 250 % de dégâts d'arme depuis la furtivité, dans le dos.", en: "the opener: 250% weapon damage from stealth, from behind." }],
     ["Killer's Calm", { fr: "ton sort signature (CD 120 s) : le prochain coup crit à coup sûr — colle-le à un Lurker's Strike.", en: "your signature spell (120s CD): the next attack is a guaranteed crit — glue it to a Lurker's Strike." }],
     ["Craven Thrust", { fr: "le builder : 150 % arme, +30 % de crit via Redhanded — reste dans le dos.", en: "the builder: 150% weapon damage, +30% crit from Redhanded — stay behind the target." }],
@@ -1038,8 +1040,8 @@ const BUILDS = {
   {
    tag: "Skulduggery (subtlety)",
    spec: "Skulduggery (subtlety)",
-   mastery: { fr: "False Face : +25 % de dégâts sur tes coups critiques, +50 % de vitesse de déplacement en Duskveil",
-              en: "False Face: +25% damage on your critical strikes, +50% movement speed while in Duskveil" },
+   mastery: { fr: "False Face (v0.40) : +25 % de dégâts sur tes coups critiques, et tu te déplaces à 100 % de ta vitesse en Duskveil — le ralentissement de la furtivité disparaît complètement (c’était 75 % avant)",
+              en: "False Face (v0.40): +25% damage on your critical strikes, and you move at 100% speed while in Duskveil — the stealth slow is gone entirely (it was 75% before)" },
    pourquoi: { fr: "Le voleur des ombres : des saignements amplifiés par Red Ribbon (+40 % de dégâts de saignement subis par la cible), des critiques 25 % plus lourds, et une mobilité que rien n'égale entre Duskveil accéléré, Shadeslip et Smokestep. La spé la plus riche en outils — et la reine du PvP (voir l'onglet PvP du site).",
                en: "The shadow rogue: bleeds amplified by Red Ribbon (target takes +40% bleed damage), crits 25% heavier, and mobility nothing matches between accelerated Duskveil, Shadeslip and Smokestep. The most tool-rich spec — and the queen of PvP (see the site's PvP tab)." },
    stats: { fr: "Agilité > Crit > Hâte", en: "Agility > Crit > Haste" },
@@ -1053,6 +1055,7 @@ const BUILDS = {
    ],
    rotation: [
     ["Adder's Bite / Festering Venom", { fr: "le poison sur l'arme, toujours.", en: "poison on the weapon, always." }],
+    ["Nightshade Coating", { fr: "nouveau en v0.40 (niv. 18, 40 énergie) : −25 % de soins reçus pendant 12 s. Sans valeur sur un boss, mais c'est LE bouton de la spé en PvP et sur les rares du monde ouvert.", en: "new in v0.40 (lvl 18, 40 energy): −25% healing received for 12s. Worthless on a boss, but it is THE spec button in PvP and on open-world rares." }],
     ["Duskveil → Shadeslip → Throat Wire", { fr: "l'ouverture : arrive dans le dos sans être vu et pose le premier saignement (+20 énergie via Dusk Dividend).", en: "the opener: arrive behind the target unseen and land the first bleed (+20 energy from Dusk Dividend)." }],
     ["Red Ribbon", { fr: "ton sort signature : saignement + la cible subit +40 % de dégâts de saignement — le multiplicateur de toute la spé.", en: "your signature spell: a bleed + the target takes +40% bleed damage — the whole spec's multiplier." }],
     ["Bleed Out", { fr: "LE finisher : 16 s de saignement, amplifié par Red Ribbon.", en: "THE finisher: a 16s bleed, amplified by Red Ribbon." }],

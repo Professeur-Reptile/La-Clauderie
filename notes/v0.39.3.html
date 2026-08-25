@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Nouveautés v0.39.3 — La Clauderie</title>
+<meta name="description" content="Les nouveautés de la v0.39.3 de World of ClaudeCraft, expliquées simplement : le week-end de Double Honneur ouvre 12 heures plus tôt, dès le vendredi 15 h heure du royaume (21 h en France) au lieu du samedi 3 h. La fermeture reste au lundi 3 h, le barème est inchangé et aucune valeur de combat ne bouge.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Nouveautés v0.39.3 — La Clauderie">
+<meta property="og:description" content="Le week-end de Double Honneur ouvre 12 h plus tôt : vendredi 15 h heure du royaume, soit vendredi 21 h en France. La fermeture ne bouge pas, le barème non plus.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.39.3.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.39.3.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') === 'en') location.replace('v0.39.3.en.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Notes de version</p>
+    <h1>Nouveautés <span class="v">v0.39.3</span></h1>
+    <p class="lede">Un correctif d’une seule ligne, mais qui rend une soirée entière : le <strong class="hl">week-end de Double Honneur</strong> ouvre désormais le <strong class="hl">vendredi à 15 h</strong> (heure du royaume) au lieu du samedi à 3 h du matin. <strong class="hl">Douze heures de plus</strong>, et la fermeture ne bouge pas — toujours le lundi à 3 h. Pour nous, en France, ça veut dire que l’événement commence le <strong class="hl">vendredi vers 21 h</strong> : la soirée du vendredi compte enfin. Rien d’autre ne change : ni le barème, ni les valeurs de combat.</p>
+    <div class="meta">
+      <span><b>Publiée</b> le 22 août 2026</span>
+      <span><b>Depuis</b> la v0.39.2</span>
+      <span><b>+12 h</b> de fenêtre</span>
+      <span><b>0</b> valeur de combat modifiée</span>
+    </div>
+    <div class="hint">💡 Clique sur une carte pour le détail.</div>
+  </header>
+
+  <!-- Bandeau constant : mêmes rubriques, même ordre, à chaque version. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">En un coup d’œil</h2>
+    <p class="sec-sub">Les mêmes rubriques à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
+    <ol>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <span class="d-name">Classes &amp; sorts</span>
+        <span class="d-say"><b class="eq">Toutes =</b> aucune valeur de combat ne bouge : ni sort, ni talent, ni maîtrise, ni panoplie. C’est un changement d’<strong class="hl">horaire</strong>, rien de plus.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <span class="d-name">Métiers &amp; récolte</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <span class="d-name">Donjons, failles &amp; boss</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <span class="d-name">Monde &amp; quêtes</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <a class="d-name" href="#guilde">Guilde &amp; social</a>
+        <span class="d-say"><strong class="hl">Toute la mise à jour est ici.</strong> Le <strong class="hl">Double Honneur</strong> ouvre <strong class="hl">12 h plus tôt</strong> — vendredi 15 h heure du royaume, soit <strong class="hl">vendredi 21 h chez nous</strong>. La fermeture reste au lundi 3 h. Le barème, lui, est identique à celui de la <a href="v0.39.2.html">v0.39.2</a>.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <span class="d-name">Confort &amp; technique</span>
+        <span class="d-say">Rien de visible. Sous le capot, le serveur apprend à lire <strong class="hl">deux dates</strong> au lieu d’une pour savoir si l’événement tourne.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="guilde">
+    <h2><span class="num">01</span>Le Double Honneur commence le vendredi soir</h2>
+    <p class="sec-sub">La <a href="v0.39.2.html">v0.39.2</a> avait calé l’ouverture sur la réinitialisation du royaume, le <strong class="hl">samedi à 3 h du matin</strong>. Sur le papier c’était propre ; en pratique, le royaume tourne à l’heure de la côte est américaine, et 3 h du matin là-bas, c’est déjà le samedi soir de l’autre côté de la planète. Cette version décale l’ouverture, pas la fermeture.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="horaire" tabindex="0" role="button" aria-label="Détails : les horaires exacts, heure du royaume et heure française">
+        <h3>Vendredi 15 h, heure du royaume <span class="chip c-new">Le changement</span></h3>
+        <p>L’ouverture passe du <strong class="hl">samedi 3 h</strong> au <strong class="hl">vendredi 15 h</strong> — exactement <strong class="hl">12 heures plus tôt</strong>. La fermeture ne change pas : <strong class="hl">lundi 3 h</strong>. La fenêtre passe donc de <strong class="hl">48 h à 60 h</strong>.</p>
+        <span class="more-link">Voir les horaires en heure française</span>
+      </div>
+      <div class="card more" data-detail="dateline" tabindex="0" role="button" aria-label="Détails : pourquoi douze heures, et pas six ou vingt-quatre">
+        <h3>Pourquoi douze heures <span class="chip c-util">La raison</span></h3>
+        <p>Le royaume vit à l’heure de <strong class="hl">New York</strong>. Un samedi 3 h là-bas, c’est un samedi <strong class="hl">19 h</strong> en Nouvelle-Zélande : leur samedi était fini avant que l’événement commence. À <strong class="hl">12 h d’avance</strong>, l’ouverture tombe à <strong class="hl">7 h du matin</strong> chez eux — leur week-end entier est dedans.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="bareme" tabindex="0" role="button" aria-label="Détails : le barème, inchangé depuis la v0.39.2">
+        <h3>Le barème ne bouge pas <span class="chip c-util">Rappel</span></h3>
+        <p>Les <strong class="hl">quatre</strong> sources d’Honor du champ de bataille restent <strong class="hl">doublées</strong> sur toute la fenêtre, et une <strong class="hl">défaite jouée jusqu’au bout</strong> paie toujours le tarif d’une victoire : <strong class="hl">120</strong> au lieu de 20. Ce sont juste douze heures de plus pour en profiter.</p>
+        <span class="more-link">Voir le barème complet</span>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Ce que ça change pour la guilde <span class="chip c-new">Pratique</span></h3>
+        <ul>
+          <li>La <strong class="hl">soirée du vendredi</strong> devient une soirée d’événement : c’est souvent celle où l’on est le plus nombreux connectés.</li>
+          <li>Thornhollow Fields demande <strong class="hl">dix joueurs</strong> pour partir — trois soirées valent mieux que deux pour remplir la file.</li>
+          <li>Le samedi et le dimanche ne perdent rien : l’événement couvre les trois soirées d’affilée.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Ce qui ne change PAS <span class="chip c-util">Portée</span></h3>
+        <ul>
+          <li>L’<strong class="hl">arène classée</strong>, la <strong class="hl">Fiesta</strong>, Protect Yumi, la Vale Cup et les duels : toujours hors événement.</li>
+          <li>La <strong class="hl">décroissance</strong> reste en place, et s’applique toujours <strong class="hl">avant</strong> le doublement.</li>
+          <li>Les prix chez FURY sont les mêmes : c’est le gain qui double, pas la dépense.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Les compteurs quotidiens sont intacts <span class="chip c-util">À savoir</span></h3>
+        <ul>
+          <li>Le <strong class="hl">bonus de première victoire</strong>, la décroissance journalière et le Gouffre quotidien basculent toujours à <strong class="hl">3 h</strong>, comme avant.</li>
+          <li>Seule l’<strong class="hl">ouverture</strong> de l’événement a été avancée — aucun autre horaire du jeu n’a été touché.</li>
+          <li>Un vendredi 15 h ne remet donc <strong class="hl">rien</strong> à zéro : ta première victoire du jour reste celle du vendredi.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="reste">
+    <h2><span class="num">02</span>Et rien d’autre</h2>
+    <p class="sec-sub">C’est un correctif au sens strict : une constante d’horaire, la plomberie qui va avec, et c’est tout.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Deux dates au lieu d’une <span class="chip c-util">Coulisses</span></h3>
+        <ul>
+          <li>Le jeu ne lit <strong class="hl">jamais l’heure</strong> dans son moteur de simulation : c’est le serveur qui lui donne la date du jour.</li>
+          <li>Il lui en donne maintenant <strong class="hl">deux</strong> : celle d’aujourd’hui, et celle qu’il fera <strong class="hl">12 h plus tard</strong>. L’événement tourne dès que l’une des deux tombe un week-end.</li>
+          <li>C’est ce qui permet d’ouvrir en avance sans jamais toucher aux réinitialisations quotidiennes.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Rien ne bouge côté combat <span class="chip c-util">Portée</span></h3>
+        <ul>
+          <li>Aucune valeur : ni sort, ni talent, ni maîtrise, ni panoplie.</li>
+          <li>Aucun objet, aucun monstre, aucune quête, aucune zone.</li>
+          <li>Le <a href="../bis.html">guide Builds</a> et le <a href="../metiers.html">guide Métiers</a> restent valables tels quels.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Les décors n’ont pas changé <span class="chip c-util">Coulisses</span></h3>
+        <ul>
+          <li>Comme en <a href="v0.39.1.html">v0.39.1</a> et en <a href="v0.39.2.html">v0.39.2</a>, les modèles 3D de Fenbridge ont été <strong class="hl">re-tamponnés</strong> au passage de version.</li>
+          <li><strong class="hl">Géométrie et textures identiques</strong>, taille identique : aucune différence à l’écran.</li>
+          <li>Le <a href="../pvp.html">guide PvP</a> de la guilde est à jour du nouvel horaire.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    horaire: {
+      title: "Les horaires exacts, des deux côtés de l’Atlantique",
+      summary: "Le royaume vit à l’heure de New York. Voici la fenêtre telle qu’on la vit depuis la France.",
+      body: `
+        <h4>Heure du royaume (côte est des États-Unis)</h4>
+        <ul>
+          <li><b>Ouverture</b> : vendredi <b>15 h</b> (avant : samedi 3 h).</li>
+          <li><b>Fermeture</b> : lundi <b>3 h</b> — inchangée.</li>
+          <li>Durée totale : <b>60 h</b> au lieu de 48.</li>
+        </ul>
+        <h4>Heure française (l’été, quand les deux zones sont à l’heure d’été)</h4>
+        <ul>
+          <li><b>Ouverture</b> : vendredi <b>21 h</b>. La soirée du vendredi est dedans, entière.</li>
+          <li><b>Fermeture</b> : lundi <b>9 h</b> du matin.</li>
+          <li>L’écart avec le royaume est de <b>6 heures</b> pendant l’heure d’été. Il peut valoir 5 h pendant les deux semaines de l’année où les changements d’heure européen et américain ne tombent pas ensemble.</li>
+        </ul>
+        <h4>Pourquoi la fermeture ne bouge pas</h4>
+        <p>La fin de l’événement est calée sur la <b>réinitialisation quotidienne du lundi</b>, la même qui remet à zéro ta première victoire du jour. La déplacer aurait demandé de toucher à cette réinitialisation, qui sert à bien d’autres choses. Seule l’ouverture a été avancée, et elle passe par un mécanisme séparé.</p>`
+    },
+    dateline: {
+      title: "Douze heures, à cause de la ligne de changement de date",
+      summary: "Le chiffre n’est pas arrondi au hasard : c’est ce qu’il faut pour que l’autre bout du monde récupère son samedi.",
+      body: `
+        <h4>Le problème</h4>
+        <ul>
+          <li>Le royaume tourne à l’heure de <b>New York</b>, et sa journée bascule à <b>3 h du matin</b>.</li>
+          <li>La Nouvelle-Zélande est <b>16 h</b> devant : un samedi 3 h à New York, c’est déjà un samedi <b>19 h</b> là-bas.</li>
+          <li>Résultat : leur samedi de jeu était pratiquement terminé quand l’événement démarrait. Ils n’avaient qu’un dimanche.</li>
+        </ul>
+        <h4>Le calcul</h4>
+        <ul>
+          <li>Avec <b>12 h</b> d’avance, l’ouverture tombe le vendredi 15 h à New York, soit le <b>samedi 7 h</b> en Nouvelle-Zélande.</li>
+          <li>C’est un samedi matin : leur week-end entier est dans la fenêtre.</li>
+          <li>Et côté américain, la soirée du dimanche reste couverte comme avant, puisque la fermeture n’a pas bougé.</li>
+        </ul>
+        <h4>Le petit piège des changements d’heure</h4>
+        <p>L’avance de 12 h est comptée en <b>temps réel</b>, pas en heures d’horloge. Les nuits de changement d’heure, l’écart affiché vaut donc 11 ou 13 heures — mais ces nuits-là tombent un dimanche matin, jamais un vendredi après-midi, donc l’ouverture n’est jamais concernée.</p>`
+    },
+    bareme: {
+      title: "Le barème du week-end, inchangé",
+      summary: "Rien n’a été retouché depuis la v0.39.2 : ce sont les mêmes chiffres, sur une fenêtre plus longue.",
+      body: `
+        <h4>Une rencontre contre une équipe pas encore croisée dans la journée</h4>
+        <ul>
+          <li><b>Victoire</b> : 60 → <b>120</b>.</li>
+          <li><b>Défaite jouée jusqu’au bout</b> : 20 → <b>120</b>, le tarif d’une victoire.</li>
+          <li><b>Match nul</b> : 20 → <b>120</b>, pour les deux camps.</li>
+          <li><b>Bonus de première victoire du jour</b> : +20 → <b>+40</b>, soit <b>160</b> pour une première victoire.</li>
+        </ul>
+        <h4>Pendant le match</h4>
+        <ul>
+          <li><b>Coup de grâce</b> : 5 → <b>10</b>. <b>Assistance</b> : 2 → <b>4</b>.</li>
+        </ul>
+        <h4>La décroissance, toujours avant le doublement</h4>
+        <ul>
+          <li>Même équipe dans la journée : <b>120</b>, puis <b>60</b>, puis <b>30</b>.</li>
+          <li>Même joueur dans un match : <b>10</b>, <b>5</b>, <b>2</b>, puis rien.</li>
+        </ul>
+        <h4>Et l’abandon ?</h4>
+        <p>Toujours <b>zéro</b>. Le tarif « victoire » ne s’applique qu’aux matchs joués jusqu’au bout : l’événement récompense le fait de rester, pas celui de perdre.</p>`
+    },
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

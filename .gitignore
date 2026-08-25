@@ -5,3 +5,6 @@ __pycache__/
 # Fichiers temporaires générés par les scripts BiS / Récolte-Métiers
 bis_new.json
 craft.json
+
+# Dépendances npm installées localement (playwright pour check_pages.mjs)
+node_modules/

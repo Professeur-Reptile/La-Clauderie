@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Nouveautés v0.40.0 — La Clauderie</title>
+<meta name="description" content="Les nouveautés de la v0.40.0 de World of ClaudeCraft, expliquées simplement : une île de départ complète avec dix quêtes, un panneau des guildes dans les villes, un marché entre joueurs livré mais éteint, le Démoniste remonté au niveau des autres classes, et la fin des gros à-coups (pire blocage de 5,6 s à 0,47 s).">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Nouveautés v0.40.0 — La Clauderie">
+<meta property="og:description" content="Une île de départ complète, un panneau des guildes dans les villes, un marché entre joueurs encore éteint, le Démoniste remonté au niveau des autres, et la fin des gros à-coups.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.40.0.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.40.0.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') === 'en') location.replace('v0.40.0.en.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Notes de version</p>
+    <h1>Nouveautés <span class="v">v0.40.0</span></h1>
+    <p class="lede">La plus grosse version depuis longtemps, et trois choses à retenir. Une <strong class="hl">île de départ complète</strong> ouvre à l’ouest de la vallée : dix quêtes qui apprennent le jeu et déposent le débutant au <strong class="hl">niveau 3</strong> à Eastbrook. Un <strong class="hl">panneau des guildes</strong> apparaît dans les villes, avec un classement et un bouton pour se porter candidat. Et un <strong class="hl">marché entre joueurs</strong> arrive dans le code — mais il est <strong class="hl">éteint</strong>, personne ne peut encore s’en servir. Côté combat, le <strong class="hl">Démoniste</strong> sort du fond du classement, et le jeu arrête de se figer.</p>
+    <div class="meta">
+      <span><b>Publiée</b> le 25 août 2026</span>
+      <span><b>Depuis</b> la v0.39.3</span>
+      <span><b>1 158</b> commits</span>
+      <span><b>21</b> langues complétées</span>
+    </div>
+    <div class="hint">💡 Clique sur une carte pour le détail.</div>
+  </header>
+
+  <!-- Bandeau constant : mêmes rubriques, même ordre, à chaque version. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">En un coup d’œil</h2>
+    <p class="sec-sub">Les mêmes rubriques à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
+    <ol>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <a class="d-name" href="#classes">Classes &amp; sorts</a>
+        <span class="d-say"><b class="up">Démoniste ↑</b> · <b class="up">Voleur ↑</b> · <b class="up">Chasseur <span data-codex="spec|Packlord">Packlord</span> ↑</b> · <b class="down">Mage <span data-codex="spec|Pyromancy">Pyromancy</span> ↓</b> · <b class="down">Chaman <span data-codex="spec|Warspirit">Warspirit</span> ↓</b> · <b class="eq">Guerrier =</b> · <b class="eq">Paladin =</b> · <b class="eq">Prêtre =</b> · <b class="eq">Druide =</b>. Le gros morceau est le <strong class="hl">Démoniste</strong>, dernier de la liste en héroïque et remonté au niveau des autres. En face, deux spés qui dominaient sont redescendues.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <a class="d-name" href="#metiers">Métiers &amp; récolte</a>
+        <span class="d-say">Rien ne change dans les recettes, mais l’<strong class="hl">île de départ</strong> apprend enfin la roue des métiers et paie de quoi s’acheter <strong class="hl">toute la panoplie d’outils de rang 1</strong> en arrivant dans la vallée. Le prix d’un artisanat affiché correspond maintenant au prix réellement débité.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#donjons">Donjons, failles &amp; boss</a>
+        <span class="d-say">Un portail de Faille <strong class="hl">gagné</strong> reste ouvert <strong class="hl">15 minutes</strong> : une équipe qui meurt sur le coup fatal peut revenir en fantôme récupérer son butin. Et les Failles tournent <strong class="hl">plus vite côté serveur</strong>.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <a class="d-name" href="#monde">Monde &amp; quêtes</a>
+        <span class="d-say"><strong class="hl">La grosse nouveauté.</strong> <span data-codex="zone|The Proving Shore">The Proving Shore</span>, une île d’entraînement de niveau 1-2 avec <strong class="hl">dix quêtes</strong>, cinq lieux et son propre petit monde. Ailleurs, les <strong class="hl">taux de butin</strong> des monstres ordinaires sont uniformisés, et plusieurs pièges du décor disparaissent.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <a class="d-name" href="#guilde">Guilde &amp; social</a>
+        <span class="d-say">Un <strong class="hl">panneau des guildes</strong> s’affiche dans les villes : classement par expérience totale, mention « recrute », et un bouton pour se <strong class="hl">porter candidat sans quitter la sienne</strong>. C’est aussi ici qu’arrive le <a href="#marche">marché entre joueurs</a> — livré, mais éteint.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#confort">Confort &amp; technique</a>
+        <span class="d-say">Les <strong class="hl">gros à-coups disparaissent</strong> : le pire blocage tombe de <strong class="hl">5,6 s à 0,47 s</strong> et l’entrée dans le jeu de <strong class="hl">24 s à 16 s</strong>. La <strong class="hl">manette</strong> et l’écran <strong class="hl">tactile</strong> sont refaits de zéro, et les <strong class="hl">21 langues</strong> sont complètes.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="classes">
+    <h2><span class="num">01</span>Le Démoniste sort du fond du classement</h2>
+    <p class="sec-sub">C’est un rééquilibrage mesuré, pas une impression : sur les relevés réels en héroïque, les trois spés de Démoniste plafonnaient à <strong class="hl">169, 133 et 131</strong> de dégâts par seconde pendant que le Voleur <span data-codex="spec|Thuggery">Thuggery</span> et le Mage <span data-codex="spec|Pyromancy">Pyromancy</span> tapaient entre <strong class="hl">217 et 222</strong>. La version vise <strong class="hl">200</strong> pour tout le monde, et corrige les deux bouts à la fois.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="demoniste" tabindex="0" role="button" aria-label="Détails : les trois spés de Démoniste, chiffre par chiffre">
+        <h3>Démoniste, les trois spés <span class="chip c-bal">Le gros morceau</span></h3>
+        <p><span data-codex="spec|Hexcraft">Hexcraft</span> gagne <strong class="hl">+7 %</strong> de dégâts de sorts, <span data-codex="spec|Ruination">Ruination</span> et <span data-codex="spec|Necromancy">Necromancy</span> <strong class="hl">+10 %</strong> — et Necromancy ajoute <strong class="hl">+15 %</strong> aux dégâts de ses serviteurs. Les coûts en mana des sorts principaux baissent aussi, jusqu’à <strong class="hl">−23 %</strong> pour <span data-codex="ability|shadow_bolt">Gloom Bolt</span> et <span data-codex="ability|immolate">Burning Pact</span>.</p>
+        <span class="more-link">Voir le détail par spé</span>
+      </div>
+      <div class="card more" data-detail="voleur" tabindex="0" role="button" aria-label="Détails : les nouveautés du Voleur, poisons et camouflage">
+        <h3>Voleur : deux poisons et un vrai camouflage <span class="chip c-new">Nouveau</span></h3>
+        <p>Deux poisons arrivent : <span data-codex="ability|melting_acid">Melting Acid</span> (<strong class="hl">−5 % d’armure</strong>) et <span data-codex="ability|nightshade_coating">Nightshade Coating</span> (<strong class="hl">−25 % de soins reçus</strong>). <span data-codex="ability|sap">Sap</span> descend au <strong class="hl">niveau 1</strong> et ne casse plus le camouflage. Et en <span data-codex="spec|Skulduggery">Skulduggery</span>, on se déplace enfin à <strong class="hl">pleine vitesse</strong> en <span data-codex="ability|stealth">Duskveil</span>.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="nerfs" tabindex="0" role="button" aria-label="Détails : les deux spés qui redescendent, et le nerf du Chasseur">
+        <h3>Ce qui redescend <span class="chip c-bal">Nerfs</span></h3>
+        <p><span data-codex="spec|Pyromancy">Pyromancy</span> voit sa maîtrise <span data-codex="talent|Ignition">Ignition</span> passer de <strong class="hl">40 % à 30 %</strong>, et <span data-codex="spec|Warspirit">Warspirit</span> ses échos de <span data-codex="ability|galeheart_weapon">Galeheart Weapon</span> de <strong class="hl">50 % à 25 %</strong>. Le Chasseur, lui, se fait <strong class="hl">étourdir</strong> quand il prend un coup sous <span data-codex="ability|aspect_of_the_cheetah">Courser’s Guise</span>.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Les familiers profitent enfin de ton équipement <span class="chip c-new">Correctif de fond</span></h3>
+        <ul>
+          <li>Jusqu’ici, la <strong class="hl">hâte</strong> d’un familier restait bloquée à <strong class="hl">zéro toute sa vie</strong> : ton équipement de vitesse d’attaque ne lui faisait rien.</li>
+          <li>Il reprend maintenant <strong class="hl">exactement</strong> la hâte de son maître — un pour un, pas une fraction.</li>
+          <li>Ça touche le <span data-codex="spec|Packlord">Packlord</span> comme le <span data-codex="spec|Necromancy">Necromancy</span> : plus tu montes en vitesse d’attaque, plus ton compagnon frappe vite.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Le Chaman peut porter la panoplie Bonewrought <span class="chip c-new">Équipement</span></h3>
+        <ul>
+          <li>Les six pièces de la <span data-codex="set|crownforged">Bonewrought Regalia</span> étaient réservées au <strong class="hl">Guerrier et au Paladin</strong>.</li>
+          <li>Elles s’ouvrent au <strong class="hl">Chaman</strong>, versions héroïques comprises — c’est une panoplie de mailles Force/Endurance faite pour le corps à corps.</li>
+          <li>Le <a href="../bis.html">guide Builds</a> a déjà recalculé le meilleur équipement avec cette ouverture.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Les petits ajustements <span class="chip c-util">Divers</span></h3>
+        <ul>
+          <li><span data-codex="ability|summon_infernal">Summon Pyre Colossus</span> frappe <strong class="hl">64-79</strong> à l’impact au lieu de 58-72.</li>
+          <li>Un sort canalisé fait maintenant des dégâts <strong class="hl">proportionnels</strong> au moment où on l’interrompt.</li>
+          <li>Les gardes de mur empêchent un joueur sous <strong class="hl">peur</strong> de rester coincé à frotter un obstacle.</li>
+          <li>La barre du familier <strong class="hl">survit à sa mort</strong>, et le pas de l’ombre du Voleur cible désormais un allié comme un ennemi.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="metiers">
+    <h2><span class="num">02</span>Métiers : rien ne change, sauf le début</h2>
+    <p class="sec-sub">Aucune recette, aucun matériau, aucun nœud de récolte n’a bougé. Ce qui change, c’est la façon dont un nouveau joueur découvre les métiers — et un affichage de prix qui mentait un peu.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>La roue des métiers s’apprend sur l’île <span class="chip c-new">Nouveau</span></h3>
+        <ul>
+          <li>Une des leçons de <span data-codex="zone|The Proving Shore">The Proving Shore</span> explique la <strong class="hl">roue des métiers</strong>, une autre la <strong class="hl">banque et les emplacements de sacs</strong>.</li>
+          <li>Chaque leçon nomme la <strong class="hl">touche ou le clic</strong> exact à utiliser, au lieu de laisser deviner.</li>
+          <li>La chaîne paie assez de cuivre pour acheter la <strong class="hl">bourse de lin</strong> en cours de route.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>De quoi s’équiper en arrivant <span class="chip c-new">Pratique</span></h3>
+        <ul>
+          <li>Un diplômé de l’île arrive dans la vallée avec de quoi acheter <strong class="hl">toute la panoplie d’outils de rang 1</strong>.</li>
+          <li>L’île elle-même ne vend <strong class="hl">aucun outil</strong> : c’est volontaire, les métiers commencent dans la vallée.</li>
+          <li>Le <a href="../metiers.html">guide Métiers</a> reste valable tel quel : les tables de récolte et les recettes sont identiques.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Deux corrections d’artisanat <span class="chip c-util">Correctifs</span></h3>
+        <ul>
+          <li>Le <strong class="hl">prix affiché</strong> d’un artisanat suit maintenant la formule réellement appliquée : plus d’écart entre l’annonce et la facture.</li>
+          <li>Les <strong class="hl">Duskhide Wraps</strong> réapprennent le travail du cuir — la recette avait cessé de l’enseigner.</li>
+          <li>Le désenchantement et le recyclage, ouverts aux objets de main gauche en <a href="v0.39.0.html">v0.39.0</a>, ne changent pas.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="donjons">
+    <h2><span class="num">03</span>Les Failles pardonnent le coup fatal</h2>
+    <p class="sec-sub">Un scénario que tout le monde a vécu : le boss tombe, mais l’équipe tombe avec lui, et le portail se referme sur un butin gagné que personne n’a ramassé. Cette version ouvre une fenêtre de rattrapage.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="faille" tabindex="0" role="button" aria-label="Détails : la fenêtre de récupération de 15 minutes">
+        <h3>15 minutes pour revenir chercher son butin <span class="chip c-new">Nouveau</span></h3>
+        <p>Un portail de Faille <strong class="hl">gagné</strong> reste debout <strong class="hl">15 minutes</strong> après le clear. Une équipe qui meurt sur le coup fatal peut <strong class="hl">libérer son esprit, courir, et rentrer en fantôme</strong> ramasser les corps. Impossible de refarmer : seul un <strong class="hl">mort de l’équipe gagnante</strong> peut repasser.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Les Failles pèsent moins lourd <span class="chip c-util">Technique</span></h3>
+        <ul>
+          <li>Le temps de calcul d’un tour de serveur passe de <strong class="hl">5,80 à 4,53 ms</strong> en moyenne.</li>
+          <li>Les tests de collision d’une Faille tombent de <strong class="hl">566 à 187 nanosecondes</strong> l’opération.</li>
+          <li>Concrètement : moins de saccades quand une Faille tourne à plein, surtout en groupe.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Trois correctifs de donjon <span class="chip c-util">Correctifs</span></h3>
+        <ul>
+          <li>Les pierres de garde du <strong class="hl">Nythraxis héroïque</strong> s’affichent enfin depuis la distance d’un raid.</li>
+          <li>Le corps de <strong class="hl">Grix the Tunnelking</strong> disparaît quand la fenêtre de butin se ferme, au lieu de traîner.</li>
+          <li>Une porte de donjon ne provoque plus de <strong class="hl">dégâts de chute</strong> quand on y atterrit en sautant.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="monde">
+    <h2><span class="num">04</span>Une île entière pour apprendre à jouer</h2>
+    <p class="sec-sub">C’est la vraie nouveauté de contenu de la version. <span data-codex="zone|The Proving Shore">The Proving Shore</span> est une île d’entraînement de <strong class="hl">niveau 1 à 2</strong>, à l’ouest de la vallée d’Eastbrook. <span data-codex="npc|wayfarer_bryn">Wayfarer Bryn</span> propose la traversée à tout nouveau personnage — c’est une <strong class="hl">proposition</strong>, pas un passage obligé.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="ile" tabindex="0" role="button" aria-label="Détails : les dix quêtes de l’île, les cinq lieux, et ce qu’on en ramène">
+        <h3>Dix quêtes, cinq lieux <span class="chip c-new">Nouveau contenu</span></h3>
+        <p>La chaîne apprend à <strong class="hl">se battre, ramasser, gérer ses sacs et sa banque</strong>, puis relâche le joueur. Cinq lieux : <strong class="hl">Dawnrest Camp</strong>, le vieux ponton, la cour d’entraînement, la ligne d’épaves et le Gauntlet. On y croise <span data-codex="mob|shore_scuttler">Shore Scuttler</span> et un certain <span data-codex="mob|mister_crabs">Mister Crabs</span>.</p>
+        <span class="more-link">Voir toute la chaîne</span>
+      </div>
+      <div class="card">
+        <h3>On en sort au niveau 3 <span class="chip c-new">Ce qu’on ramène</span></h3>
+        <ul>
+          <li>L’expérience des quêtes est calibrée pour qu’un diplômé pose le pied dans la vallée au <strong class="hl">niveau 3</strong>, prêt pour la chaîne d’ouverture d’Eastbrook.</li>
+          <li>Une bague, la <span data-codex="item|mother_of_pearl">Mother of Pearl</span>, donne <strong class="hl">+1 partout</strong> — modeste, mais c’est un objet vert dès le niveau 1.</li>
+          <li>Le retour se fait par la <span data-codex="item|ps_ferry_bell">cloche du bac</span> du vieux ponton, qui dépose en ville à Eastbrook.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>On peut y retourner <span class="chip c-util">À savoir</span></h3>
+        <ul>
+          <li>Une <strong class="hl">seconde cloche</strong>, sur la plage ouest de la vallée, ramène sur l’île pour une révision.</li>
+          <li><span data-codex="npc|ferryman_odo">Ferryman Odo</span> assure la traversée quand on se déclare prêt.</li>
+          <li>L’île partage le ciel et les couleurs de la vallée, mais a sa <strong class="hl">propre musique</strong>.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="butin" tabindex="0" role="button" aria-label="Détails : les taux de butin uniformisés">
+        <h3>Les taux de butin sont uniformisés <span class="chip c-bal">Équilibrage</span></h3>
+        <p>Sur les monstres ordinaires des zones de montée, un objet <strong class="hl">vert</strong> tombe à <strong class="hl">2 %</strong> et un <strong class="hl">bleu</strong> à <strong class="hl">0,2 %</strong>. Un taux commun partout, au lieu d’un patchwork zone par zone : le farm reste lent, mais il est enfin <strong class="hl">prévisible</strong>.</p>
+        <span class="more-link">Voir ce que ça donne en pratique</span>
+      </div>
+      <div class="card">
+        <h3>Le décor arrête de piéger <span class="chip c-util">Correctifs</span></h3>
+        <ul>
+          <li>Les étals du marché d’<strong class="hl">Eastbrook</strong> ne coupent plus la ligne de vue : on peut lancer à travers la place.</li>
+          <li>La traversée de <strong class="hl">Gardenwalk</strong> passe d’une pente de <strong class="hl">1,86 à 0,20</strong> au maximum — elle se monte à pied, tout simplement.</li>
+          <li>La porte du <strong class="hl">Duskfall Passage</strong> s’estompe quand elle avale la caméra.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Quêtes et hauts faits <span class="chip c-util">Correctifs</span></h3>
+        <ul>
+          <li>Le <strong class="hl">Livre des Hauts Faits</strong> liste enfin les lieux qui manquent, et son rayon de visite passe de <strong class="hl">20 à 24 mètres</strong>.</li>
+          <li>« Gravity Always Wins » demande une <strong class="hl">vraie mort</strong> : sauter d’une falaise en fantôme ne compte plus.</li>
+          <li>« Brightwood Remembered » dit clairement que sa relique ne tombe plus.</li>
+          <li>La rangée d’entraînement de <strong class="hl">Highwatch</strong> annonce honnêtement quatre mannequins espacés de 6 mètres.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="guilde">
+    <h2><span class="num">05</span>Un panneau des guildes dans chaque ville</h2>
+    <p class="sec-sub">Jusqu’ici, rejoindre une guilde passait par le canal de discussion et la chance. Les tableaux d’affichage des villes deviennent un vrai annuaire : qui existe, qui recrute, et à quel point la guilde est active.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="panneau" tabindex="0" role="button" aria-label="Détails : le panneau, le classement et la candidature">
+        <h3>Se porter candidat sans quitter la sienne <span class="chip c-new">Nouveau</span></h3>
+        <p>Le panneau classe les guildes par <strong class="hl">expérience totale accumulée</strong> et affiche qui recrute. On peut <strong class="hl">se déclarer candidat</strong> sans quitter sa guilde : la mention « <strong class="hl">Pledge of…</strong> » apparaît alors sous son nom, et les officiers de la guilde visée reçoivent la demande.</p>
+        <span class="more-link">Voir comment ça marche</span>
+      </div>
+      <div class="card">
+        <h3>Un garde-fou contre le harcèlement <span class="chip c-util">Règles</span></h3>
+        <ul>
+          <li>Un refus impose un délai avant de re-candidater <strong class="hl">à cette guilde</strong> : <strong class="hl">un jour</strong>, puis <strong class="hl">une semaine</strong>, puis <strong class="hl">définitif</strong>.</li>
+          <li>Une <strong class="hl">invitation</strong> de cette même guilde efface l’ardoise : « on veut bien de toi, finalement ».</li>
+          <li>Un délai de <strong class="hl">cinq minutes</strong> par personnage limite le démarchage en rafale.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Côté officiers <span class="chip c-util">Outils</span></h3>
+        <ul>
+          <li>Un onglet <strong class="hl">Candidatures</strong> apparaît, avec le compte en direct et les réglages de recrutement.</li>
+          <li>Le nom des guildes se <strong class="hl">colore</strong> selon cinq paliers d’expérience totale.</li>
+          <li>Le mot du maître de guilde passe par le <strong class="hl">filtre de discussion</strong> comme le reste.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="marche">
+    <h2><span class="num">06</span>Un marché entre joueurs — livré, mais éteint</h2>
+    <p class="sec-sub">C’est la fonctionnalité dont le code occupe la plus grosse part de la version, et pourtant <strong class="hl">personne ne peut encore s’en servir</strong> : le marché est protégé par un interrupteur côté serveur, et cet interrupteur est <strong class="hl">sur off</strong>. On en parle parce qu’il arrive, pas parce qu’il est ouvert.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="marche" tabindex="0" role="button" aria-label="Détails : comment le marché fonctionnera, ventes, enchères et frais">
+        <h3>Enchères, prix fixe, et vente à une personne <span class="chip c-new">À venir</span></h3>
+        <p>Trois formats : l’<strong class="hl">enchère</strong> (12, 24 ou 48 h), le <strong class="hl">prix fixe</strong>, et l’offre <strong class="hl">adressée à un joueur nommé</strong>. Une enchère qui reçoit une offre dans ses <strong class="hl">deux dernières minutes</strong> se prolonge de deux minutes, <strong class="hl">30 minutes au maximum</strong>.</p>
+        <span class="more-link">Voir les règles annoncées</span>
+      </div>
+      <div class="card more" data-detail="argent" tabindex="0" role="button" aria-label="Détails : ce marché se paie en argent réel">
+        <h3>Ça se paie en argent réel <span class="chip c-bal">Important</span></h3>
+        <p>Ce n’est <strong class="hl">pas</strong> l’hôtel des ventes en or du jeu, qui ne bouge pas. Les prix y sont affichés en <strong class="hl">dollars</strong> et réglés en jeton <strong class="hl">$WOC</strong> depuis un portefeuille personnel. Le vendeur paie <strong class="hl">10 %</strong> de frais et garde le reste.</p>
+        <span class="more-link">Voir ce que ça implique</span>
+      </div>
+      <div class="card">
+        <h3>Ce qui ne se vendra pas <span class="chip c-util">Limites</span></h3>
+        <ul>
+          <li>Trois familles seulement : <strong class="hl">équipement</strong>, <strong class="hl">montures</strong> et <strong class="hl">peintures de mécha</strong>. Tout le reste est refusé par défaut.</li>
+          <li>Les objets <strong class="hl">liés</strong> et les objets de quête sont refusés — sauf les montures, dont le lien est toléré.</li>
+          <li><strong class="hl">Douze annonces actives</strong> au maximum par compte, entre <strong class="hl">0,25 $</strong> et <strong class="hl">1 000 $</strong> l’objet.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="confort">
+    <h2><span class="num">07</span>Le jeu arrête de se figer</h2>
+    <p class="sec-sub">La partie la plus utile de la version pour qui joue sur une machine modeste. Un seul chef d’orchestre s’occupe désormais de tout ce que la carte graphique doit préparer, au lieu de laisser chaque morceau s’en charger quand ça l’arrange.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="perf" tabindex="0" role="button" aria-label="Détails : tous les chiffres de performance">
+        <h3>Le pire blocage : 5,6 s → 0,47 s <span class="chip c-new">Performance</span></h3>
+        <p>Le gel le plus long mesuré tombe de <strong class="hl">5,6 secondes à 0,47</strong>. Les images qui dépassent 50 ms passent de <strong class="hl">28,6 à 4,2 par minute</strong>, et l’entrée dans le jeu de <strong class="hl">23,7 à 16,0 secondes</strong>.</p>
+        <span class="more-link">Voir tous les chiffres</span>
+      </div>
+      <div class="card">
+        <h3>Manette et tactile, refaits <span class="chip c-new">Nouveau</span></h3>
+        <ul>
+          <li>La <strong class="hl">manette</strong> reçoit une double barre à la façon de Final Fantasy XIV : chaque gâchette arme <strong class="hl">8 cases</strong>, les bumpers changent de jeu, et la croix directionnelle navigue dans toutes les fenêtres.</li>
+          <li>Le <strong class="hl">tactile</strong> passe à un anneau : <strong class="hl">4 boutons × 5 actions sur 2 pages</strong>, avec les consommables replacés sous le pouce et un éditeur de barre dédié.</li>
+          <li>Une option <strong class="hl">« appui simple »</strong> remplace les gestes de glissement pour qui en a besoin.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Le reste du confort <span class="chip c-util">Divers</span></h3>
+        <ul>
+          <li>Les <strong class="hl">21 langues</strong> sont complètes : marché, panneau des guildes, tutoriel et quêtes compris.</li>
+          <li>Les écrans de chargement alternent <strong class="hl">11 illustrations</strong> au lieu d’une seule.</li>
+          <li>Le suivi du <strong class="hl">Reliquaire</strong> se masque et descend sous la minicarte.</li>
+          <li>Les comptes Apple et Discord peuvent enfin se définir un <strong class="hl">vrai mot de passe</strong>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    demoniste: {
+      title: "Le Démoniste, spé par spé",
+      summary: "Les trois spés visaient 200 dégâts par seconde en héroïque et en étaient loin. Voici ce qui a été donné, et à qui.",
+      body: `
+        <h4>D’où vient le problème</h4>
+        <ul>
+          <li>Sur les relevés réels en héroïque, les meilleurs Démonistes plafonnaient à <b>169</b> (Hexcraft), <b>133</b> (Ruination) et <b>131</b> (Necromancy) dégâts par seconde.</li>
+          <li>Dans le même temps, le Voleur Thuggery et le Mage Pyromancy tapaient entre <b>217 et 222</b>. L’écart n’était pas une impression : il allait de <b>21 à 33 %</b> sous la cible.</li>
+          <li>Une précision qui compte : l’ancien constat « le Démoniste va bien » avait été mesuré sur un mannequin de niveau 20 <b>sans armure</b>, avec un équipement de test qui ignorait les bonus de panoplie. La nouvelle mesure se fait sur un boss de niveau 22 avec la vraie courbe d’armure.</li>
+        </ul>
+        <h4>Hexcraft (affliction)</h4>
+        <ul>
+          <li><b>+7 %</b> de dégâts sur tous les sorts.</li>
+          <li>Needle of Fate : <b>+8 %</b> de dégâts et <b>−8 %</b> de mana. Consume : <b>−8 %</b> de mana.</li>
+        </ul>
+        <h4>Ruination (destruction)</h4>
+        <ul>
+          <li><b>+10 %</b> de dégâts sur tous les sorts.</li>
+          <li>Gloom Bolt et Burning Pact : <b>−23 %</b> de mana et <b>−3 %</b> de temps d’incantation. C’est la plus grosse remise en mana de la version, et elle vise les deux boutons qu’on appuie le plus.</li>
+        </ul>
+        <h4>Necromancy (démonologie)</h4>
+        <ul>
+          <li><b>+10 %</b> de dégâts sur les sorts, et <b>+15 %</b> sur ceux des serviteurs — les serviteurs ne profitaient d’aucun des deux réglages précédents, d’où la ligne à part.</li>
+          <li>Essence Reap : <b>+8 %</b> de dégâts et <b>−8 %</b> de mana. Bone Armor : <b>−8 %</b> de mana.</li>
+          <li>Summon Pyre Colossus frappe <b>64-79</b> à l’impact au lieu de 58-72.</li>
+        </ul>
+        <h4>Un effet de bord assumé</h4>
+        <p>Le multiplicateur touche aussi les valeurs fixes des bonus de classe : l’armure Fiendhide absorbe <b>88/176</b> au lieu de 80/160. À l’inverse, le mana rendu par Hard Bargain est explicitement exclu. Et ces réglages s’appliquent <b>aussi en PvP</b> — le jeu n’a pas de barème séparé.</p>
+        <h4>Où ça atterrit</h4>
+        <p>Les tests du jeu vérifient désormais que chaque spé de Démoniste rend entre <b>185 et 220</b> dégâts par seconde sur 120 secondes contre le profil du Nythraxis héroïque, avec moins de <b>10 %</b> de temps passé à court de mana. C’est la même fourchette que les autres classes de dégâts.</p>`
+    },
+    voleur: {
+      title: "Voleur : deux poisons, un Sap précoce, et la pleine vitesse en Skulduggery",
+      summary: "Le camouflage devient un outil utilisable, pas seulement une ouverture — mais attention, tout n’est pas pour toutes les spés.",
+      body: `
+        <h4>Deux poisons, pour tous les Voleurs</h4>
+        <ul>
+          <li><b>Melting Acid</b> (niveau 16, 40 d’énergie) : 3 à 5 dégâts de Nature, et <b>−5 % d’armure</b> sur la cible pendant 12 sec.</li>
+          <li><b>Nightshade Coating</b> (niveau 18, 40 d’énergie) : 3 à 5 dégâts de Nature, et <b>−25 % de soins reçus</b> pendant 12 sec. C’est une blessure mortelle : en PvP, elle change la façon dont un soigneur adverse tient sa cible.</li>
+          <li>Les deux ont leur propre icône peinte, ajoutée avec la version.</li>
+        </ul>
+        <h4>Sap descend au niveau 1</h4>
+        <ul>
+          <li>Sap s’apprenait au niveau 3 ; il s’apprend maintenant au <b>niveau 1</b>.</li>
+          <li>Surtout, il ne <b>casse plus Duskveil</b> et ne <b>déclenche plus le combat</b>. On peut donc endormir une sentinelle et continuer sa route camouflé, ce qui était impossible avant.</li>
+          <li>Le reste ne change pas : 8 sec d’incapacité, cible hors combat, et n’importe quel dégât réveille.</li>
+        </ul>
+        <h4>La pleine vitesse : Skulduggery SEULEMENT</h4>
+        <ul>
+          <li>C’est la <b>maîtrise False Face</b> de la spé <b>Skulduggery</b> qui donne les <b>100 % de vitesse</b> en Duskveil — elle en donnait 75 % avant.</li>
+          <li>Un Voleur <b>Knifework</b> ou <b>Thuggery</b> se déplace toujours à <b>moitié vitesse</b> sous Duskveil : la description de base du sort le dit toujours, et elle est juste.</li>
+          <li>Les notes officielles du jeu annoncent la pleine vitesse sans préciser la spé ; le code, lui, est net. Si tu ne joues pas Skulduggery, ne compte pas dessus.</li>
+        </ul>
+        <h4>Et le reste du kit</h4>
+        <ul>
+          <li>Les <b>familiers ennemis</b> ne voient plus du tout un joueur camouflé — comme les joueurs, et contrairement aux monstres, qui gardent leur détection de proximité classique.</li>
+          <li><b>Smokestep</b> largue tous les attaquants, pas seulement la cible en cours.</li>
+          <li>Le <b>pas de l’ombre</b> peut viser un <b>allié</b> autant qu’un ennemi, toujours sans casser le camouflage.</li>
+        </ul>`
+    },
+    nerfs: {
+      title: "Ce qui redescend, et pourquoi",
+      summary: "Ramener le Démoniste à 200 ne suffisait pas : les deux spés qui dépassaient ont été ramenées vers la même cible.",
+      body: `
+        <h4>Mage Pyromancy</h4>
+        <ul>
+          <li>La maîtrise <b>Ignition</b> faisait brûler la cible pour <b>40 %</b> des dégâts d’un coup critique, en cumul. C’est maintenant <b>30 %</b>.</li>
+          <li>Les 2 % de chance de coup critique de la maîtrise, eux, ne bougent pas.</li>
+          <li>Pyromancy tapait entre 217 et 222 sur les relevés réels : c’est le quart supérieur qui part.</li>
+        </ul>
+        <h4>Chaman Warspirit</h4>
+        <ul>
+          <li>Les échos de <b>Galeheart Weapon</b> passent de <b>50 % à 25 %</b> de dégâts de Nature. Le reste du passif est intact : pas de malus de toucher à deux armes, deux échos tous les 3 coups, Stormcast pendant 12 sec.</li>
+          <li>En compensation partielle, la spé récupère de la <b>puissance d’attaque</b> (+24 et +15 %) : le jeu a préféré rendre sur un axe qui ne touche que les dégâts, plutôt que sur l’agilité qui aurait aussi donné de l’esquive.</li>
+          <li>Résultat visé sur 24 relevés : entre <b>209 et 221</b> avec le meilleur équipement épique.</li>
+        </ul>
+        <h4>Chasseur : Courser’s Guise n’est plus gratuit</h4>
+        <ul>
+          <li>L’aspect donne toujours <b>+30 % de vitesse pendant 30 minutes</b>.</li>
+          <li>Mais tant qu’il est actif, <b>prendre un coup t’étourdit</b> : vitesse divisée par deux pendant <b>4 secondes</b>, et chaque nouveau coup relance le compteur (sans cumuler).</li>
+          <li>Le piège : les <b>dégâts de chute</b>, la noyade et l’épuisement étourdissent aussi — c’est fidèle au jeu d’origine, où une chute coupait la course du guépard. Un coup <b>entièrement absorbé</b>, en revanche, ne fait rien.</li>
+          <li>Le talent <b>Enduring Courser</b> (le sursaut à 60 % pendant 3 s à l’activation) est coupé par le même coup.</li>
+          <li>Autrement dit : c’est redevenu un outil de <b>voyage</b>, plus un outil de fuite en combat.</li>
+        </ul>
+        <h4>Ce qui ne bouge pas du tout</h4>
+        <p>Guerrier, Paladin, Prêtre et Druide n’ont aucune valeur modifiée cette version. Leurs guides de <a href="../bis.html">spé et talents</a> restent valables tels quels.</p>`
+    },
+    faille: {
+      title: "La fenêtre de récupération d’une Faille gagnée",
+      summary: "Quinze minutes pour revenir chercher un butin gagné — sans ouvrir la porte au farm.",
+      body: `
+        <h4>Le problème</h4>
+        <ul>
+          <li>Une équipe qui meurt <b>sur le coup fatal</b> (ou juste après) n’a personne pour ressusciter les autres.</li>
+          <li>Le portail se refermait, et le butin déjà gagné restait dans des corps inaccessibles.</li>
+        </ul>
+        <h4>La règle</h4>
+        <ul>
+          <li>Un portail dont l’événement est <b>gagné</b> reste debout <b>15 minutes</b> de plus.</li>
+          <li>Pendant ce temps, on peut <b>libérer son esprit</b>, revenir en courant et rentrer <b>en fantôme</b> récupérer son corps.</li>
+          <li>Le jeu annonce la Faille comme « scellée » dès la victoire : le portail encore visible est une porte de rattrapage, pas une Faille encore ouverte.</li>
+        </ul>
+        <h4>Pourquoi ça ne se farme pas</h4>
+        <ul>
+          <li>Tout entrant <b>vivant</b> est refusé dès que l’événement est marqué comme terminé, portail debout ou non.</li>
+          <li>Seul un <b>membre mort de l’équipe gagnante</b> peut repasser.</li>
+          <li>L’instance et le portail expirent ensemble : le contenu ne survit jamais à sa porte, ni l’inverse.</li>
+        </ul>`
+    },
+    ile: {
+      title: "The Proving Shore, du début à la fin",
+      summary: "Dix quêtes sur rails, cinq lieux, et une sortie calibrée au niveau 3.",
+      body: `
+        <h4>Comment on y va</h4>
+        <ul>
+          <li><b>Wayfarer Bryn</b>, au point d’apparition d’Eastbrook, propose la traversée à tout nouveau personnage.</li>
+          <li>C’est une <b>proposition</b> : un joueur qui connaît déjà le jeu peut décliner et commencer directement dans la vallée.</li>
+          <li>L’île se trouve à l’<b>ouest</b> de la vallée d’Eastbrook, en pleine mer.</li>
+        </ul>
+        <h4>Les dix quêtes</h4>
+        <ul>
+          <li><b>Run the Gauntlet</b> et <b>Strike True</b> : se déplacer, viser, frapper les effigies de la cour d’entraînement.</li>
+          <li><b>Hone the Edge</b>, <b>Shell and Claw</b>, <b>Mother of Pearl</b> : le vrai combat, contre les Shore Scuttlers puis Mister Crabs. La bague <b>Mother of Pearl</b> tombe ici.</li>
+          <li><b>The Wreck Line</b> : la ligne d’épaves, et le ramassage.</li>
+          <li><b>Pouch and Purse</b> : la leçon des <b>sacs et de la banque</b>, avec de quoi acheter la bourse de lin sur place.</li>
+          <li><b>Word on the Wind</b> : le tableau d’affichage, donc la <b>roue des métiers</b>.</li>
+          <li><b>The Long Walk</b> puis <b>Set Sail</b> : Ferryman Odo emmène le diplômé sur le continent.</li>
+        </ul>
+        <h4>Ce qu’on en ramène</h4>
+        <ul>
+          <li>Assez d’<b>expérience</b> pour poser le pied dans la vallée au <b>niveau 3</b>.</li>
+          <li>Assez de <b>cuivre</b> pour acheter la bourse de lin en cours de route <b>et</b> toute la panoplie d’outils de métier de rang 1 aux comptoirs de la vallée.</li>
+          <li>L’île, elle, ne vend <b>aucun outil de métier</b> : c’est délibéré, les métiers commencent sur le continent.</li>
+        </ul>
+        <h4>Le retour, dans les deux sens</h4>
+        <ul>
+          <li>La <b>cloche du bac</b> du vieux ponton dépose en ville à Eastbrook.</li>
+          <li>Une <b>seconde cloche</b>, sur la plage ouest de la vallée, ramène sur l’île pour une révision quand on veut.</li>
+        </ul>`
+    },
+    butin: {
+      title: "Les taux de butin, uniformisés",
+      summary: "2 % pour un vert, 0,2 % pour un bleu, sur les monstres ordinaires des zones de montée.",
+      body: `
+        <h4>La règle</h4>
+        <ul>
+          <li>Sur un <b>monstre ordinaire</b> d’une zone de montée : <b>2 %</b> pour une pièce verte, <b>0,2 %</b> pour une bleue.</li>
+          <li>Le même taux partout, au lieu d’un réglage zone par zone hérité de l’ordre dans lequel les zones ont été écrites.</li>
+        </ul>
+        <h4>Ce que ça donne en pratique</h4>
+        <ul>
+          <li>Un vert tous les <b>50 monstres</b> environ, un bleu tous les <b>500</b>. Ce sont des probabilités indépendantes : 500 monstres ne <b>garantissent</b> rien.</li>
+          <li>Ça reste du hasard pur, sans compteur de malchance : c’est un ordre de grandeur pour décider si ça vaut la peine, pas une promesse.</li>
+        </ul>
+        <h4>Ce qui n’est PAS concerné</h4>
+        <ul>
+          <li>Les <b>boss</b> de donjon et de raid gardent leurs propres tables, souvent bien plus généreuses.</li>
+          <li>Les <b>Failles</b> et les <b>Gouffres</b> gardent les leurs.</li>
+          <li>Les monstres <b>nommés</b> du monde ouvert gardent leurs objets dédiés.</li>
+        </ul>`
+    },
+    panneau: {
+      title: "Le panneau des guildes, en pratique",
+      summary: "Un annuaire classé, une candidature qui n’oblige à rien, et une échelle de refus qui protège des relances.",
+      body: `
+        <h4>Ce qu’on lit sur le panneau</h4>
+        <ul>
+          <li>La liste des guildes, classée par <b>expérience totale accumulée</b> par leurs membres — pas par nombre de membres.</li>
+          <li>La mention <b>« recrute »</b> quand la guilde l’a activée.</li>
+          <li>Le nom de chaque guilde se colore selon <b>cinq paliers</b> d’expérience totale : un repère immédiat sur l’activité réelle.</li>
+        </ul>
+        <h4>Se porter candidat</h4>
+        <ul>
+          <li>On peut candidater <b>sans quitter sa guilde actuelle</b>. Rien n’est rompu tant que rien n’est accepté.</li>
+          <li>La mention « <b>Pledge of {guilde}</b> » s’affiche alors sous le nom du personnage, visible par tous.</li>
+          <li>Un délai de <b>cinq minutes par personnage</b> empêche d’arroser tout le panneau d’un coup.</li>
+        </ul>
+        <h4>Si la guilde refuse</h4>
+        <ul>
+          <li>1<sup>er</sup> refus : <b>un jour</b> avant de pouvoir re-candidater à cette guilde.</li>
+          <li>2<sup>e</sup> refus : <b>une semaine</b>.</li>
+          <li>3<sup>e</sup> refus et suivants : <b>définitif</b>.</li>
+          <li>L’échelle est <b>par guilde</b> : un refus quelque part ne ferme aucune autre porte. Et une <b>invitation</b> de cette guilde efface tout l’historique.</li>
+        </ul>
+        <h4>Côté officiers</h4>
+        <ul>
+          <li>Un onglet <b>Candidatures</b>, avec le nombre en direct et les réglages de recrutement.</li>
+          <li>Le mot d’accueil du maître de guilde passe par le <b>filtre de discussion</b>, comme n’importe quel message public.</li>
+        </ul>`
+    },
+    marche: {
+      title: "Le marché $WOC : les règles annoncées",
+      summary: "Rien de tout cela n’est actif aujourd’hui. C’est ce que le code prévoit le jour où l’interrupteur passera sur on.",
+      body: `
+        <h4>D’abord : il est éteint</h4>
+        <ul>
+          <li>Tout le marché est derrière un <b>interrupteur de configuration</b> côté serveur. Tant qu’il n’est pas armé, chaque action de vente ou d’achat est refusée.</li>
+          <li>Le jeu se réserve aussi le droit de le <b>suspendre ou de l’arrêter</b> : dans ce cas, les objets en dépôt reviennent à leurs vendeurs.</li>
+        </ul>
+        <h4>Les trois formats</h4>
+        <ul>
+          <li><b>Enchère</b> : 12, 24 ou 48 heures, au choix du vendeur. Les anciennes durées de 72 h et d’une semaine sont refusées à la création — les annonces déjà lancées gardent la leur.</li>
+          <li><b>Prix fixe</b> : premier arrivé, avec un verrou d’acheteur pour éviter les collisions.</li>
+          <li><b>Offre adressée</b> : une vente à un joueur nommé, négociée par la fenêtre d’échange.</li>
+        </ul>
+        <h4>Le contre-sniping</h4>
+        <ul>
+          <li>Une offre déposée dans les <b>deux dernières minutes</b> repousse la fin de <b>deux minutes</b>.</li>
+          <li>Le report total est plafonné à <b>30 minutes</b> au-delà de l’heure choisie par le vendeur.</li>
+        </ul>
+        <h4>Les cautions</h4>
+        <ul>
+          <li>Enchérir demande une <b>caution de 5 %</b> de l’offre, entre <b>1 $</b> et <b>50 $</b>, jamais plus que l’offre elle-même.</li>
+          <li>Gagner sans payer dans le délai fait <b>perdre la caution</b> — elle ne va pas au vendeur — et vaut un <b>avertissement</b>. Les avertissements répétés suspendent l’accès au marché.</li>
+        </ul>
+        <h4>Les limites</h4>
+        <ul>
+          <li><b>Douze annonces actives</b> au maximum par compte.</li>
+          <li>Prix entre <b>0,25 $</b> et <b>1 000 $</b>. Le plafond a été calculé contre la liquidité réelle du jeton, pas choisi au hasard.</li>
+          <li>Seuls l’<b>équipement</b>, les <b>montures</b> et les <b>peintures de mécha</b> sont éligibles ; tout le reste est refusé par défaut, objets de quête et objets liés compris.</li>
+        </ul>`
+    },
+    argent: {
+      title: "Ce marché se paie en argent réel",
+      summary: "À ne pas confondre avec l’hôtel des ventes en or du jeu, qui ne change pas d’un iota.",
+      body: `
+        <h4>Deux marchés différents</h4>
+        <ul>
+          <li>L’<b>hôtel des ventes</b> historique fonctionne en <b>or</b>, prend <b>5 %</b> au vendeur, et n’est pas touché par cette version.</li>
+          <li>Le nouveau marché fonctionne en <b>jeton $WOC</b>, avec des prix affichés en <b>dollars</b>. Ce sont deux choses distinctes qui portent le même mot.</li>
+        </ul>
+        <h4>Comment un paiement se déroule</h4>
+        <ul>
+          <li>Le prix est fixé en <b>dollars</b> et ne bouge pas.</li>
+          <li>Au moment de payer, l’acheteur demande un <b>devis</b> : le nombre de jetons correspondant au cours du moment, valable <b>90 secondes</b>.</li>
+          <li>Il signe alors <b>une seule transaction</b> depuis son propre portefeuille. Si le cours a bougé entre l’engagement et le paiement, le nombre de jetons change — le prix en dollars, non.</li>
+          <li>Les frais de réseau sont à la charge de l’acheteur.</li>
+        </ul>
+        <h4>Les 10 % de frais</h4>
+        <ul>
+          <li>Le <b>vendeur</b> paie <b>10 %</b> du montant : <b>7 %</b> vont à la trésorerie du jeu, <b>3 %</b> sont <b>détruits</b> définitivement.</li>
+          <li>Il garde donc environ <b>90 %</b> — chaque part étant arrondie au centime supérieur, sa part peut tomber jusqu’à deux centimes sous les 90 %.</li>
+          <li>Le partage est affiché aux deux parties <b>avant</b> confirmation.</li>
+        </ul>
+        <h4>Le conseil de la guilde</h4>
+        <p>Rien à faire pour l’instant, et c’est très bien ainsi : le marché est fermé. Le jour où il ouvrira, retenir qu’il faudra un <b>portefeuille vérifié</b>, que les prix sont en <b>vraie monnaie</b>, et que le jeu se réserve le droit de <b>changer les frais ou d’arrêter le service</b>. Rien de tout cela ne concerne l’or, l’équipement gagné en jeu, ou la progression normale.</p>`
+    },
+    perf: {
+      title: "Tous les chiffres de performance",
+      summary: "Un seul ordonnanceur pilote la carte graphique : compilation des shaders, envoi des textures, préparation des personnages.",
+      body: `
+        <h4>Les gels</h4>
+        <ul>
+          <li>Pire blocage mesuré : <b>5,6 s → 0,47 s</b>.</li>
+          <li>Compilation de shaders bloquant le fil principal : <b>1 104 ms → 504 ms</b> au maximum.</li>
+          <li>Images dépassant 50 ms, par minute : <b>28,6 → 4,2</b>.</li>
+        </ul>
+        <h4>Le chargement</h4>
+        <ul>
+          <li>Entrée dans le jeu : <b>23,7 s → 16,0 s</b>.</li>
+          <li>Préchauffage de la carte graphique : <b>14,1 s → 3,7 s</b>.</li>
+          <li>L’écran de chargement alterne maintenant <b>11 illustrations</b> au lieu d’une image figée.</li>
+        </ul>
+        <h4>Les personnages à l’écran</h4>
+        <ul>
+          <li>Reconstructions de matériaux par image : <b>430,9 → 11,6</b>, en partageant les matériaux entre personnages.</li>
+          <li>C’est la source la plus courante de saccades dans une ville ou un raid bondé.</li>
+        </ul>
+        <h4>Côté serveur</h4>
+        <ul>
+          <li>Tour de simulation d’une Faille : <b>5,80 ms → 4,53 ms</b> en moyenne.</li>
+          <li>Collisions d’une Faille : <b>566 ns → 187 ns</b> l’opération.</li>
+          <li>Une fuite de descripteurs de fichiers sur les téléchargements interrompus est bouchée.</li>
+        </ul>
+        <h4>Le ménage</h4>
+        <p>Les lettres de bienvenue envoyées par les robots de la Vale Cup sont supprimées, et <b>134 431</b> lettres orphelines ont été purgées — soit <b>85 Mo</b> sur les 89 Mo que pesait le courrier du jeu.</p>`
+    },
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Patch notes v0.40.0 — La Clauderie</title>
+<meta name="description" content="The v0.40.0 release of World of ClaudeCraft in plain language: a complete starter island with ten quests, a guild noticeboard in towns, a player marketplace shipped but switched off, the Warlock brought back up to the other classes, and the end of the big freezes (worst stall from 5.6 s to 0.47 s).">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Patch notes v0.40.0 — La Clauderie">
+<meta property="og:description" content="A complete starter island, a guild noticeboard in towns, a player marketplace still switched off, the Warlock brought back up to the rest, and the end of the big freezes.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.40.0.en.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.40.0.en.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') !== 'en') location.replace('v0.40.0.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Site navigation"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Patch notes</p>
+    <h1>Patch notes <span class="v">v0.40.0</span></h1>
+    <p class="lede">The biggest release in a long while, and three things to remember. A <strong class="hl">complete starter island</strong> opens west of the vale: ten quests that teach the game and drop a beginner at <strong class="hl">level 3</strong> in Eastbrook. A <strong class="hl">guild noticeboard</strong> appears in towns, with a ranking and a button to apply. And a <strong class="hl">player marketplace</strong> lands in the code — but it is <strong class="hl">switched off</strong>, nobody can use it yet. In combat, the <strong class="hl">Warlock</strong> climbs out of last place, and the game stops freezing.</p>
+    <div class="meta">
+      <span><b>Released</b> August 25, 2026</span>
+      <span><b>Since</b> v0.39.3</span>
+      <span><b>1,158</b> commits</span>
+      <span><b>21</b> locales completed</span>
+    </div>
+    <div class="hint">💡 Click a card for details.</div>
+  </header>
+
+  <!-- Fixed digest: same rubrics, same order, every release. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">At a glance</h2>
+    <p class="sec-sub">The same rubrics every release, in the same order. Click a rubric to jump to its section.</p>
+    <ol>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <a class="d-name" href="#classes">Classes &amp; spells</a>
+        <span class="d-say"><b class="up">Warlock ↑</b> · <b class="up">Rogue ↑</b> · <b class="up">Hunter <span data-codex="spec|Packlord">Packlord</span> ↑</b> · <b class="down">Mage <span data-codex="spec|Pyromancy">Pyromancy</span> ↓</b> · <b class="down">Shaman <span data-codex="spec|Warspirit">Warspirit</span> ↓</b> · <b class="eq">Warrior =</b> · <b class="eq">Paladin =</b> · <b class="eq">Priest =</b> · <b class="eq">Druid =</b>. The headline is the <strong class="hl">Warlock</strong>, dead last in heroic and brought back up to everyone else. Facing it, two specs that dominated come back down.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <a class="d-name" href="#metiers">Professions &amp; gathering</a>
+        <span class="d-say">No recipe changes, but the <strong class="hl">starter island</strong> finally teaches the professions wheel and pays enough for a <strong class="hl">full tier-1 tool set</strong> on arrival in the vale. A craft's displayed fee now matches the fee actually charged.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#donjons">Dungeons, rifts &amp; bosses</a>
+        <span class="d-say">A <strong class="hl">won</strong> rift portal stays open for <strong class="hl">15 minutes</strong>: a party that dies on the killing blow can walk back in as ghosts and collect. And rifts run <strong class="hl">lighter on the server</strong>.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <a class="d-name" href="#monde">World &amp; quests</a>
+        <span class="d-say"><strong class="hl">The big one.</strong> <span data-codex="zone|The Proving Shore">The Proving Shore</span>, a level 1-2 training island with <strong class="hl">ten quests</strong>, five landmarks and a world of its own. Elsewhere, <strong class="hl">drop rates</strong> on ordinary mobs are normalised and several terrain traps disappear.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <a class="d-name" href="#guilde">Guild &amp; social</a>
+        <span class="d-say">A <strong class="hl">guild noticeboard</strong> appears in towns: ranked by lifetime XP, marked as recruiting, with a button to <strong class="hl">apply without leaving your own guild</strong>. The <a href="#marche">player marketplace</a> lands here too — shipped, but switched off.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#confort">Quality of life &amp; tech</a>
+        <span class="d-say">The <strong class="hl">freezes go away</strong>: the worst stall drops from <strong class="hl">5.6 s to 0.47 s</strong> and entry into the game from <strong class="hl">24 s to 16 s</strong>. <strong class="hl">Controller</strong> and <strong class="hl">touch</strong> are rebuilt from scratch, and all <strong class="hl">21 locales</strong> are complete.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="classes">
+    <h2><span class="num">01</span>The Warlock climbs out of last place</h2>
+    <p class="sec-sub">This is measured rebalancing, not a feeling: on live heroic parses the three Warlock specs topped out at <strong class="hl">169, 133 and 131</strong> damage per second while <span data-codex="spec|Thuggery">Thuggery</span> Rogues and <span data-codex="spec|Pyromancy">Pyromancy</span> Mages hit <strong class="hl">217 to 222</strong>. The release targets <strong class="hl">200</strong> for everyone, and fixes both ends at once.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="demoniste" tabindex="0" role="button" aria-label="Details: the three Warlock specs, number by number">
+        <h3>Warlock, all three specs <span class="chip c-bal">The headline</span></h3>
+        <p><span data-codex="spec|Hexcraft">Hexcraft</span> gains <strong class="hl">+7 %</strong> spell damage, <span data-codex="spec|Ruination">Ruination</span> and <span data-codex="spec|Necromancy">Necromancy</span> <strong class="hl">+10 %</strong> — and Necromancy adds <strong class="hl">+15 %</strong> to its minions' damage. Mana costs on the main spells drop too, down <strong class="hl">−23 %</strong> for <span data-codex="ability|shadow_bolt">Gloom Bolt</span> and <span data-codex="ability|immolate">Burning Pact</span>.</p>
+        <span class="more-link">See the per-spec detail</span>
+      </div>
+      <div class="card more" data-detail="voleur" tabindex="0" role="button" aria-label="Details: the Rogue's new poisons and stealth">
+        <h3>Rogue: two poisons and real stealth <span class="chip c-new">New</span></h3>
+        <p>Two poisons arrive: <span data-codex="ability|melting_acid">Melting Acid</span> (<strong class="hl">−5 % armor</strong>) and <span data-codex="ability|nightshade_coating">Nightshade Coating</span> (<strong class="hl">−25 % healing received</strong>). <span data-codex="ability|sap">Sap</span> drops to <strong class="hl">level 1</strong> and no longer breaks stealth. And in <span data-codex="spec|Skulduggery">Skulduggery</span> you finally move at <strong class="hl">full speed</strong> in <span data-codex="ability|stealth">Duskveil</span>.</p>
+        <span class="more-link">See the detail</span>
+      </div>
+      <div class="card more" data-detail="nerfs" tabindex="0" role="button" aria-label="Details: the two specs coming down, and the Hunter nerf">
+        <h3>What comes down <span class="chip c-bal">Nerfs</span></h3>
+        <p><span data-codex="spec|Pyromancy">Pyromancy</span>'s mastery <span data-codex="talent|Ignition">Ignition</span> falls from <strong class="hl">40 % to 30 %</strong>, and <span data-codex="spec|Warspirit">Warspirit</span>'s <span data-codex="ability|galeheart_weapon">Galeheart Weapon</span> echoes from <strong class="hl">50 % to 25 %</strong>. The Hunter now gets <strong class="hl">dazed</strong> when hit under <span data-codex="ability|aspect_of_the_cheetah">Courser's Guise</span>.</p>
+        <span class="more-link">See the detail</span>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Pets finally benefit from your gear <span class="chip c-new">Deep fix</span></h3>
+        <ul>
+          <li>Until now a pet's <strong class="hl">haste</strong> stayed at <strong class="hl">zero for its entire life</strong>: your attack-speed gear did nothing for it.</li>
+          <li>It now mirrors its owner's haste <strong class="hl">exactly</strong> — one for one, not a fraction.</li>
+          <li>That touches <span data-codex="spec|Packlord">Packlord</span> and <span data-codex="spec|Necromancy">Necromancy</span> alike: the more attack speed you stack, the faster your companion swings.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Shamans can wear the Bonewrought set <span class="chip c-new">Gear</span></h3>
+        <ul>
+          <li>All six <span data-codex="set|crownforged">Bonewrought Regalia</span> pieces were <strong class="hl">Warrior and Paladin</strong> only.</li>
+          <li>They open up to the <strong class="hl">Shaman</strong>, heroic versions included — it is a Strength/Stamina mail set built for melee.</li>
+          <li>The <a href="../bis.html">Builds guide</a> has already recomputed best-in-slot with that opening.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Smaller adjustments <span class="chip c-util">Misc</span></h3>
+        <ul>
+          <li><span data-codex="ability|summon_infernal">Summon Pyre Colossus</span> hits for <strong class="hl">64-79</strong> on impact instead of 58-72.</li>
+          <li>A channelled spell now deals damage <strong class="hl">proportional</strong> to when it is interrupted.</li>
+          <li>Wall guards stop a <strong class="hl">feared</strong> player from grinding into an obstacle.</li>
+          <li>The pet bar <strong class="hl">survives its pet's death</strong>, and the Rogue's shadow step now targets an ally as well as an enemy.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="metiers">
+    <h2><span class="num">02</span>Professions: nothing changes, except the beginning</h2>
+    <p class="sec-sub">No recipe, no material and no gathering node moved. What changes is how a new player meets the professions — and a price display that was slightly lying.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>The professions wheel is taught on the island <span class="chip c-new">New</span></h3>
+        <ul>
+          <li>One <span data-codex="zone|The Proving Shore">Proving Shore</span> lesson explains the <strong class="hl">professions wheel</strong>, another the <strong class="hl">bank and bag slots</strong>.</li>
+          <li>Each lesson names the exact <strong class="hl">key or click</strong> to use instead of leaving you to guess.</li>
+          <li>The chain pays enough copper to buy the <strong class="hl">Linen Pouch</strong> along the way.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Enough to kit out on arrival <span class="chip c-new">Practical</span></h3>
+        <ul>
+          <li>A graduate reaches the vale with enough coin for the <strong class="hl">full tier-1 tool set</strong>.</li>
+          <li>The island itself stocks <strong class="hl">no tools</strong>: that is deliberate, professions start in the vale.</li>
+          <li>The <a href="../metiers.html">Professions guide</a> stands as it is: gathering tables and recipes are identical.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Two crafting fixes <span class="chip c-util">Fixes</span></h3>
+        <ul>
+          <li>A craft's <strong class="hl">displayed fee</strong> now follows the formula actually applied: no more gap between the quote and the bill.</li>
+          <li><strong class="hl">Duskhide Wraps</strong> teach leatherworking again — the recipe had stopped granting skill.</li>
+          <li>Disenchanting and salvaging, opened to off-hand items in <a href="v0.39.0.en.html">v0.39.0</a>, are unchanged.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="donjons">
+    <h2><span class="num">03</span>Rifts forgive the killing blow</h2>
+    <p class="sec-sub">A scenario everyone has lived: the boss falls, the party falls with it, and the portal closes over earned loot nobody picked up. This release opens a recovery window.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="faille" tabindex="0" role="button" aria-label="Details: the 15-minute recovery window">
+        <h3>15 minutes to come back for your loot <span class="chip c-new">New</span></h3>
+        <p>A <strong class="hl">won</strong> rift portal stays standing for <strong class="hl">15 minutes</strong> after the clear. A party that dies on the killing blow can <strong class="hl">release, run back and walk in as ghosts</strong> to loot their corpses. No farming: only a <strong class="hl">dead member of the winning party</strong> may pass.</p>
+        <span class="more-link">See the detail</span>
+      </div>
+      <div class="card">
+        <h3>Rifts weigh less <span class="chip c-util">Technical</span></h3>
+        <ul>
+          <li>Server tick time drops from <strong class="hl">5.80 to 4.53 ms</strong> on average.</li>
+          <li>Rift collision tests fall from <strong class="hl">566 to 187 nanoseconds</strong> per operation.</li>
+          <li>In practice: fewer stutters when a rift runs at full tilt, especially in a group.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Three dungeon fixes <span class="chip c-util">Fixes</span></h3>
+        <ul>
+          <li><strong class="hl">Heroic Nythraxis</strong> wardstones finally render from raid distance.</li>
+          <li><strong class="hl">Grix the Tunnelking</strong>'s corpse despawns when the loot window closes instead of lingering.</li>
+          <li>A dungeon door no longer causes <strong class="hl">fall damage</strong> when you land on it mid-jump.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="monde">
+    <h2><span class="num">04</span>A whole island for learning the game</h2>
+    <p class="sec-sub">This is the release's real content addition. <span data-codex="zone|The Proving Shore">The Proving Shore</span> is a <strong class="hl">level 1-2</strong> training island west of Eastbrook Vale. <span data-codex="npc|wayfarer_bryn">Wayfarer Bryn</span> offers every new character passage — an <strong class="hl">offer</strong>, not a mandatory corridor.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="ile" tabindex="0" role="button" aria-label="Details: the island's ten quests, five landmarks and rewards">
+        <h3>Ten quests, five landmarks <span class="chip c-new">New content</span></h3>
+        <p>The chain teaches <strong class="hl">fighting, looting, bags and banking</strong>, then lets go. Five landmarks: <strong class="hl">Dawnrest Camp</strong>, the Old Pier, the Practice Yard, the Wreck Line and the Gauntlet. You will meet <span data-codex="mob|shore_scuttler">Shore Scuttlers</span> and a certain <span data-codex="mob|mister_crabs">Mister Crabs</span>.</p>
+        <span class="more-link">See the whole chain</span>
+      </div>
+      <div class="card">
+        <h3>You leave at level 3 <span class="chip c-new">What you take home</span></h3>
+        <ul>
+          <li>Quest experience is tuned so a graduate steps onto the vale at <strong class="hl">level 3</strong>, ready for Eastbrook's own opening chain.</li>
+          <li>A ring, <span data-codex="item|mother_of_pearl">Mother of Pearl</span>, gives <strong class="hl">+1 to everything</strong> — modest, but it is a green at level 1.</li>
+          <li>The way back is the Old Pier's <span data-codex="item|ps_ferry_bell">ferry bell</span>, which sets you down in Eastbrook town.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>You can go back <span class="chip c-util">Good to know</span></h3>
+        <ul>
+          <li>A <strong class="hl">second bell</strong> on the vale's west strand rings you back to the island for a refresher.</li>
+          <li><span data-codex="npc|ferryman_odo">Ferryman Odo</span> handles the crossing when you say you are ready.</li>
+          <li>The island shares the vale's sky and palette but has <strong class="hl">its own music</strong>.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="butin" tabindex="0" role="button" aria-label="Details: the normalised drop rates">
+        <h3>Drop rates are normalised <span class="chip c-bal">Balance</span></h3>
+        <p>On ordinary mobs in levelling zones, a <strong class="hl">green</strong> drops at <strong class="hl">2 %</strong> and a <strong class="hl">blue</strong> at <strong class="hl">0.2 %</strong>. One rate everywhere instead of a zone-by-zone patchwork: farming stays slow, but it is finally <strong class="hl">predictable</strong>.</p>
+        <span class="more-link">See what that means in practice</span>
+      </div>
+      <div class="card">
+        <h3>The terrain stops trapping you <span class="chip c-util">Fixes</span></h3>
+        <ul>
+          <li><strong class="hl">Eastbrook</strong>'s market stalls no longer block line of sight: you can cast across the square.</li>
+          <li>The <strong class="hl">Gardenwalk</strong> crossing drops from a <strong class="hl">1.86</strong> slope to <strong class="hl">0.20</strong> maximum — you simply walk up it.</li>
+          <li>The <strong class="hl">Duskfall Passage</strong> gate fades when it swallows the camera.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Quests and deeds <span class="chip c-util">Fixes</span></h3>
+        <ul>
+          <li>The <strong class="hl">Book of Deeds</strong> now lists the named places you are missing, and its visit radius widens from <strong class="hl">20 to 24 yards</strong>.</li>
+          <li>"Gravity Always Wins" requires an <strong class="hl">actual death</strong>: cliff-hopping as a ghost no longer counts.</li>
+          <li>"Brightwood Remembered" says plainly that its relic no longer drops.</li>
+          <li><strong class="hl">Highwatch</strong>'s practice row honestly reads as four dummies at a 6-yard pitch.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="guilde">
+    <h2><span class="num">05</span>A guild noticeboard in every town</h2>
+    <p class="sec-sub">Joining a guild used to run on chat and luck. Town noticeboards become a real directory: who exists, who is recruiting, and how active the guild really is.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="panneau" tabindex="0" role="button" aria-label="Details: the board, the ranking and applying">
+        <h3>Apply without leaving your own <span class="chip c-new">New</span></h3>
+        <p>The board ranks guilds by <strong class="hl">lifetime XP</strong> and shows who is recruiting. You can <strong class="hl">pledge</strong> without leaving your guild: "<strong class="hl">Pledge of…</strong>" then shows under your name, and the target guild's officers get the request.</p>
+        <span class="more-link">See how it works</span>
+      </div>
+      <div class="card">
+        <h3>A guard rail against pestering <span class="chip c-util">Rules</span></h3>
+        <ul>
+          <li>A rejection sets a wait before pledging to <strong class="hl">that guild</strong> again: <strong class="hl">one day</strong>, then <strong class="hl">one week</strong>, then <strong class="hl">forever</strong>.</li>
+          <li>An <strong class="hl">invite</strong> from that same guild wipes the slate: "we do want you after all".</li>
+          <li>A <strong class="hl">five-minute</strong> per-character cooldown limits carpet-bombing the board.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>For officers <span class="chip c-util">Tools</span></h3>
+        <ul>
+          <li>A <strong class="hl">Pledges</strong> tab appears, with live counts and recruitment settings.</li>
+          <li>Guild names are <strong class="hl">colour-coded</strong> across five lifetime-XP tiers.</li>
+          <li>The Guild Master's note runs through the <strong class="hl">chat filter</strong> like anything else.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="marche">
+    <h2><span class="num">06</span>A player marketplace — shipped, but switched off</h2>
+    <p class="sec-sub">This is the feature whose code takes the largest share of the release, and yet <strong class="hl">nobody can use it</strong>: the marketplace sits behind a server-side switch, and that switch is <strong class="hl">off</strong>. We cover it because it is coming, not because it is open.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="marche" tabindex="0" role="button" aria-label="Details: how the marketplace will work, sales, auctions and fees">
+        <h3>Auctions, buy-now, and direct sales <span class="chip c-new">Coming</span></h3>
+        <p>Three formats: the <strong class="hl">auction</strong> (12, 24 or 48 h), the <strong class="hl">fixed price</strong>, and an offer <strong class="hl">addressed to a named player</strong>. An auction that takes a bid in its <strong class="hl">final two minutes</strong> extends by two more, up to <strong class="hl">30 minutes</strong> total.</p>
+        <span class="more-link">See the announced rules</span>
+      </div>
+      <div class="card more" data-detail="argent" tabindex="0" role="button" aria-label="Details: this marketplace uses real money">
+        <h3>It runs on real money <span class="chip c-bal">Important</span></h3>
+        <p>This is <strong class="hl">not</strong> the game's gold auction house, which does not change. Prices are shown in <strong class="hl">dollars</strong> and settled in the <strong class="hl">$WOC</strong> token from a personal wallet. The seller pays <strong class="hl">10 %</strong> in fees and keeps the rest.</p>
+        <span class="more-link">See what it implies</span>
+      </div>
+      <div class="card">
+        <h3>What will not sell <span class="chip c-util">Limits</span></h3>
+        <ul>
+          <li>Three families only: <strong class="hl">equipment</strong>, <strong class="hl">mounts</strong> and <strong class="hl">mech chromas</strong>. Everything else is refused by default.</li>
+          <li><strong class="hl">Soulbound</strong> and quest items are refused — except mounts, whose binding is tolerated.</li>
+          <li>At most <strong class="hl">twelve active listings</strong> per account, between <strong class="hl">$0.25</strong> and <strong class="hl">$1,000</strong> an item.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="confort">
+    <h2><span class="num">07</span>The game stops freezing</h2>
+    <p class="sec-sub">The most useful part of the release for anyone on a modest machine. One conductor now handles everything the graphics card has to prepare, instead of each piece doing it whenever it feels like it.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="perf" tabindex="0" role="button" aria-label="Details: all the performance numbers">
+        <h3>Worst stall: 5.6 s → 0.47 s <span class="chip c-new">Performance</span></h3>
+        <p>The longest measured freeze drops from <strong class="hl">5.6 seconds to 0.47</strong>. Frames over 50 ms fall from <strong class="hl">28.6 to 4.2 per minute</strong>, and entry into the game from <strong class="hl">23.7 to 16.0 seconds</strong>.</p>
+        <span class="more-link">See all the numbers</span>
+      </div>
+      <div class="card">
+        <h3>Controller and touch, rebuilt <span class="chip c-new">New</span></h3>
+        <ul>
+          <li>The <strong class="hl">controller</strong> gets a Final Fantasy XIV-style cross hotbar: each trigger arms <strong class="hl">8 cells</strong>, bumpers swap sets, and the d-pad navigates every window.</li>
+          <li><strong class="hl">Touch</strong> moves to a ring: <strong class="hl">4 buttons × 5 actions across 2 pages</strong>, consumables repositioned for thumb reach, and a dedicated bar editor.</li>
+          <li>A <strong class="hl">tap-only</strong> option replaces the drag gestures for anyone who needs it.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>The rest of the polish <span class="chip c-util">Misc</span></h3>
+        <ul>
+          <li>All <strong class="hl">21 locales</strong> are complete: marketplace, guild board, tutorial and quests included.</li>
+          <li>Loading screens rotate through <strong class="hl">11 backdrops</strong> instead of a single image.</li>
+          <li>The <strong class="hl">Reliquary</strong> tracker can be hidden and moves below the minimap.</li>
+          <li>Apple and Discord accounts can finally set a <strong class="hl">real password</strong>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Close">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    demoniste: {
+      title: "The Warlock, spec by spec",
+      summary: "All three specs targeted 200 damage per second in heroic and were nowhere near it. Here is what was given, and to whom.",
+      body: `
+        <h4>Where the problem came from</h4>
+        <ul>
+          <li>On live heroic parses the best Warlocks topped out at <b>169</b> (Hexcraft), <b>133</b> (Ruination) and <b>131</b> (Necromancy) damage per second.</li>
+          <li>Over the same period Thuggery Rogues and Pyromancy Mages hit <b>217 to 222</b>. The gap was not a feeling: it ran <b>21 to 33 %</b> under target.</li>
+          <li>One detail that matters: the older "the Warlock is fine" reading was measured on a level-20 dummy with <b>no armor</b>, using a test kit that forfeited set bonuses. The new measurement uses a level-22 boss with the real armor curve.</li>
+        </ul>
+        <h4>Hexcraft (affliction)</h4>
+        <ul>
+          <li><b>+7 %</b> damage on all spells.</li>
+          <li>Needle of Fate: <b>+8 %</b> damage and <b>−8 %</b> mana. Consume: <b>−8 %</b> mana.</li>
+        </ul>
+        <h4>Ruination (destruction)</h4>
+        <ul>
+          <li><b>+10 %</b> damage on all spells.</li>
+          <li>Gloom Bolt and Burning Pact: <b>−23 %</b> mana and <b>−3 %</b> cast time. It is the largest mana discount in the release, and it targets the two buttons you press most.</li>
+        </ul>
+        <h4>Necromancy (demonology)</h4>
+        <ul>
+          <li><b>+10 %</b> spell damage, and <b>+15 %</b> on minion damage — minions benefited from neither of the previous knobs, hence the separate line.</li>
+          <li>Essence Reap: <b>+8 %</b> damage and <b>−8 %</b> mana. Bone Armor: <b>−8 %</b> mana.</li>
+          <li>Summon Pyre Colossus hits for <b>64-79</b> on impact instead of 58-72.</li>
+        </ul>
+        <h4>An accepted side effect</h4>
+        <p>The multiplier also reaches flat class-buff magnitudes: Fiendhide armor now absorbs <b>88/176</b> instead of 80/160. Hard Bargain's mana yield is explicitly excluded. And these knobs apply <b>in PvP too</b> — the game has no separate PvP scaling.</p>
+        <h4>Where it lands</h4>
+        <p>The game's tests now check that each Warlock spec delivers between <b>185 and 220</b> damage per second over 120 seconds against the heroic Nythraxis profile, spending under <b>10 %</b> of its time out of mana. That is the same band as the other damage classes.</p>`
+    },
+    voleur: {
+      title: "Rogue: two poisons, an early Sap, and full speed in Skulduggery",
+      summary: "Stealth becomes a usable tool, not just an opener — but mind which spec gets what.",
+      body: `
+        <h4>Two poisons, for every Rogue</h4>
+        <ul>
+          <li><b>Melting Acid</b> (level 16, 40 energy): 3 to 5 Nature damage, and <b>−5 % armor</b> on the target for 12 sec.</li>
+          <li><b>Nightshade Coating</b> (level 18, 40 energy): 3 to 5 Nature damage, and <b>−25 % healing received</b> for 12 sec. It is a mortal wound: in PvP it changes how an enemy healer holds a target up.</li>
+          <li>Both ship with their own painted icon, added with the release.</li>
+        </ul>
+        <h4>Sap drops to level 1</h4>
+        <ul>
+          <li>Sap was learned at level 3; it is now learned at <b>level 1</b>.</li>
+          <li>More importantly it no longer <b>breaks Duskveil</b> and no longer <b>starts combat</b>. You can put a sentry to sleep and walk on stealthed, which was impossible before.</li>
+          <li>The rest is unchanged: 8 sec incapacitate, target out of combat, any damage wakes it.</li>
+        </ul>
+        <h4>Full speed: Skulduggery ONLY</h4>
+        <ul>
+          <li>It is the <b>False Face</b> mastery of the <b>Skulduggery</b> spec that grants <b>100 % speed</b> in Duskveil — it granted 75 % before.</li>
+          <li>A <b>Knifework</b> or <b>Thuggery</b> Rogue still moves at <b>half speed</b> under Duskveil: the spell's base description still says so, and it is right.</li>
+          <li>The game's official notes announce full-speed stealth without naming the spec; the code is unambiguous. If you do not play Skulduggery, do not count on it.</li>
+        </ul>
+        <h4>And the rest of the kit</h4>
+        <ul>
+          <li>Enemy <b>pets</b> can no longer see a stealthed player at all — like enemy players, and unlike mobs, which keep their classic proximity detection.</li>
+          <li><b>Smokestep</b> drops every attacker, not just the current target.</li>
+          <li>The <b>shadow step</b> can target an <b>ally</b> as well as an enemy, still without breaking stealth.</li>
+        </ul>`
+    },
+    nerfs: {
+      title: "What comes down, and why",
+      summary: "Lifting the Warlock to 200 was not enough: the two specs above the line were brought toward the same target.",
+      body: `
+        <h4>Mage Pyromancy</h4>
+        <ul>
+          <li>The <b>Ignition</b> mastery burned the target for <b>40 %</b> of a critical strike's damage, stacking. It is now <b>30 %</b>.</li>
+          <li>The mastery's 2 % critical strike chance does not move.</li>
+          <li>Pyromancy was parsing 217 to 222 on live heroic: it is the top quarter that goes.</li>
+        </ul>
+        <h4>Shaman Warspirit</h4>
+        <ul>
+          <li><b>Galeheart Weapon</b>'s echoes fall from <b>50 % to 25 %</b> Nature damage. The rest of the passive is intact: no dual-wield miss penalty, two echoes every 3rd attack, Stormcast for 12 sec.</li>
+          <li>As partial compensation the spec gets <b>attack power</b> back (+24 and +15 %): the game chose to give on an axis that only feeds damage, rather than on agility, which would also have bought avoidance.</li>
+          <li>Target result over 24 samples: between <b>209 and 221</b> with the best epic kit.</li>
+        </ul>
+        <h4>Hunter: Courser's Guise is no longer free</h4>
+        <ul>
+          <li>The aspect still grants <b>+30 % movement speed for 30 minutes</b>.</li>
+          <li>But while it is up, <b>taking a hit dazes you</b>: half speed for <b>4 seconds</b>, and each new hit refreshes the timer (it never stacks).</li>
+          <li>The catch: <b>fall damage</b>, drowning and fatigue daze you too — faithful to the original game, where a fall cut the cheetah sprint. A <b>fully absorbed</b> hit, on the other hand, does nothing.</li>
+          <li>The <b>Enduring Courser</b> talent (the 60 % burst for 3 sec on activation) is cancelled by the same hit.</li>
+          <li>In short: it is a <b>travel</b> tool again, not an escape tool in combat.</li>
+        </ul>
+        <h4>What does not move at all</h4>
+        <p>Warrior, Paladin, Priest and Druid have no value changed this release. Their <a href="../bis.html">spec and talent guides</a> stand as they are.</p>`
+    },
+    faille: {
+      title: "The recovery window on a won rift",
+      summary: "Fifteen minutes to come back for earned loot — without opening the door to farming.",
+      body: `
+        <h4>The problem</h4>
+        <ul>
+          <li>A party that dies <b>on the killing blow</b> (or just after) has nobody left to resurrect the others.</li>
+          <li>The portal closed, and already-earned loot stayed in unreachable corpses.</li>
+        </ul>
+        <h4>The rule</h4>
+        <ul>
+          <li>A portal whose event is <b>won</b> stays standing for <b>15 more minutes</b>.</li>
+          <li>During that time you can <b>release</b>, run back and enter <b>as a ghost</b> to recover your corpse.</li>
+          <li>The game announces the rift as "sealed" the moment it is won: a portal still standing is a recovery door, not an open rift.</li>
+        </ul>
+        <h4>Why it cannot be farmed</h4>
+        <ul>
+          <li>Any <b>living</b> entrant is turned away the instant the event reads as cleared, portal standing or not.</li>
+          <li>Only a <b>dead member of the winning party</b> may walk back through.</li>
+          <li>The instance and the portal expire together: the content never outlives its door, nor the other way round.</li>
+        </ul>`
+    },
+    ile: {
+      title: "The Proving Shore, start to finish",
+      summary: "Ten on-rails quests, five landmarks, and an exit tuned to level 3.",
+      body: `
+        <h4>How you get there</h4>
+        <ul>
+          <li><b>Wayfarer Bryn</b>, at the Eastbrook spawn, offers passage to every new character.</li>
+          <li>It is an <b>offer</b>: a player who already knows the game can decline and start straight in the vale.</li>
+          <li>The island sits <b>west</b> of Eastbrook Vale, out at sea.</li>
+        </ul>
+        <h4>The ten quests</h4>
+        <ul>
+          <li><b>Run the Gauntlet</b> and <b>Strike True</b>: moving, aiming, striking the Practice Yard effigies.</li>
+          <li><b>Hone the Edge</b>, <b>Shell and Claw</b>, <b>Mother of Pearl</b>: real combat, against Shore Scuttlers then Mister Crabs. The <b>Mother of Pearl</b> ring drops here.</li>
+          <li><b>The Wreck Line</b>: the wreck line itself, and looting.</li>
+          <li><b>Pouch and Purse</b>: the <b>bags and bank</b> lesson, with enough coin to buy the Linen Pouch on the spot.</li>
+          <li><b>Word on the Wind</b>: the noticeboard, and so the <b>professions wheel</b>.</li>
+          <li><b>The Long Walk</b> then <b>Set Sail</b>: Ferryman Odo takes the graduate to the mainland.</li>
+        </ul>
+        <h4>What you take home</h4>
+        <ul>
+          <li>Enough <b>experience</b> to step onto the vale at <b>level 3</b>.</li>
+          <li>Enough <b>copper</b> to buy the Linen Pouch on the way <b>and</b> the full tier-1 profession tool set at the vale's counters.</li>
+          <li>The island stocks <b>no profession tools</b> at all: that is deliberate, professions start on the mainland.</li>
+        </ul>
+        <h4>The return trip, both ways</h4>
+        <ul>
+          <li>The Old Pier's <b>ferry bell</b> sets you down in Eastbrook town.</li>
+          <li>A <b>second bell</b> on the vale's west strand rings you back to the island for a refresher whenever you want.</li>
+        </ul>`
+    },
+    butin: {
+      title: "Drop rates, normalised",
+      summary: "2 % for a green, 0.2 % for a blue, on ordinary mobs in levelling zones.",
+      body: `
+        <h4>The rule</h4>
+        <ul>
+          <li>On an <b>ordinary mob</b> in a levelling zone: <b>2 %</b> for a green piece, <b>0.2 %</b> for a blue.</li>
+          <li>The same rate everywhere, instead of a zone-by-zone setting inherited from the order the zones were written in.</li>
+        </ul>
+        <h4>What that means in practice</h4>
+        <ul>
+          <li>A green roughly every <b>50 mobs</b>, a blue every <b>500</b>. These are independent rolls: 500 mobs <b>guarantee</b> nothing.</li>
+          <li>It stays pure chance, with no bad-luck counter: it is an order of magnitude to decide whether it is worth it, not a promise.</li>
+        </ul>
+        <h4>What is NOT affected</h4>
+        <ul>
+          <li>Dungeon and raid <b>bosses</b> keep their own tables, often far more generous.</li>
+          <li><b>Rifts</b> and <b>delves</b> keep theirs.</li>
+          <li><b>Named</b> world mobs keep their dedicated items.</li>
+        </ul>`
+    },
+    panneau: {
+      title: "The guild noticeboard, in practice",
+      summary: "A ranked directory, a pledge that commits to nothing, and a rejection ladder that stops the pestering.",
+      body: `
+        <h4>What the board shows</h4>
+        <ul>
+          <li>The list of guilds, ranked by the <b>lifetime XP</b> their members have earned — not by member count.</li>
+          <li>A <b>recruiting</b> marker when the guild has turned it on.</li>
+          <li>Each guild name is coloured across <b>five tiers</b> of lifetime XP: an instant read on real activity.</li>
+        </ul>
+        <h4>Pledging</h4>
+        <ul>
+          <li>You can pledge <b>without leaving your current guild</b>. Nothing is broken until something is accepted.</li>
+          <li>"<b>Pledge of {guild}</b>" then shows under your character's name, visible to everyone.</li>
+          <li>A <b>five-minute per-character</b> cooldown stops you spraying the whole board at once.</li>
+        </ul>
+        <h4>If the guild says no</h4>
+        <ul>
+          <li>1st rejection: <b>one day</b> before you can pledge to that guild again.</li>
+          <li>2nd rejection: <b>one week</b>.</li>
+          <li>3rd and beyond: <b>permanent</b>.</li>
+          <li>The ladder is <b>per guild</b>: a rejection somewhere closes no other door. And an <b>invite</b> from that guild wipes the whole history.</li>
+        </ul>
+        <h4>For officers</h4>
+        <ul>
+          <li>A <b>Pledges</b> tab, with a live count and recruitment settings.</li>
+          <li>The Guild Master's welcome note runs through the <b>chat filter</b>, like any public message.</li>
+        </ul>`
+    },
+    marche: {
+      title: "The $WOC marketplace: the announced rules",
+      summary: "None of this is live today. It is what the code plans for the day the switch is flipped on.",
+      body: `
+        <h4>First: it is off</h4>
+        <ul>
+          <li>The whole marketplace sits behind a server-side <b>configuration switch</b>. Until it is armed, every selling or buying action is refused.</li>
+          <li>The game also reserves the right to <b>suspend or discontinue</b> it: escrowed items would then return to their sellers.</li>
+        </ul>
+        <h4>The three formats</h4>
+        <ul>
+          <li><b>Auction</b>: 12, 24 or 48 hours, seller's choice. The retired 72-hour and one-week options are refused at creation — listings already running keep theirs.</li>
+          <li><b>Fixed price</b>: first come, with a buyer lock to avoid collisions.</li>
+          <li><b>Directed offer</b>: a sale to a named player, negotiated through the trade window.</li>
+        </ul>
+        <h4>Anti-sniping</h4>
+        <ul>
+          <li>A bid placed in the <b>final two minutes</b> pushes the end back by <b>two minutes</b>.</li>
+          <li>Total extension is capped at <b>30 minutes</b> past the seller's chosen end.</li>
+        </ul>
+        <h4>Bonds</h4>
+        <ul>
+          <li>Bidding requires a <b>5 % bond</b> of the bid, between <b>$1</b> and <b>$50</b>, never above the bid itself.</li>
+          <li>Winning without paying in time <b>forfeits the bond</b> — it never goes to the seller — and earns a <b>strike</b>. Repeated strikes suspend marketplace access.</li>
+        </ul>
+        <h4>The limits</h4>
+        <ul>
+          <li><b>Twelve active listings</b> maximum per account.</li>
+          <li>Prices between <b>$0.25</b> and <b>$1,000</b>. The ceiling was measured against the token's real liquidity, not picked as a round number.</li>
+          <li>Only <b>equipment</b>, <b>mounts</b> and <b>mech chromas</b> are eligible; everything else is refused by default, quest items and soulbound gear included.</li>
+        </ul>`
+    },
+    argent: {
+      title: "This marketplace runs on real money",
+      summary: "Not to be confused with the game's gold auction house, which does not change one bit.",
+      body: `
+        <h4>Two different markets</h4>
+        <ul>
+          <li>The existing <b>auction house</b> runs on <b>gold</b>, takes <b>5 %</b> from the seller, and is untouched by this release.</li>
+          <li>The new marketplace runs on the <b>$WOC token</b>, with prices shown in <b>dollars</b>. Two distinct things that share a word.</li>
+        </ul>
+        <h4>How a payment goes</h4>
+        <ul>
+          <li>The price is set in <b>dollars</b> and does not move.</li>
+          <li>At payment time the buyer requests a <b>quote</b>: the number of tokens matching the current rate, valid for <b>90 seconds</b>.</li>
+          <li>They then sign <b>one transaction</b> from their own wallet. If the rate moves between commitment and payment, the token count changes — the dollar price does not.</li>
+          <li>Network fees are on the buyer.</li>
+        </ul>
+        <h4>The 10 % fee</h4>
+        <ul>
+          <li>The <b>seller</b> pays <b>10 %</b> of the amount: <b>7 %</b> goes to the game treasury, <b>3 %</b> is <b>permanently burned</b>.</li>
+          <li>They keep roughly <b>90 %</b> — each leg rounds up to the cent, so their share can land up to two cents below 90 %.</li>
+          <li>The split is shown to both parties <b>before</b> they confirm.</li>
+        </ul>
+        <h4>The guild's advice</h4>
+        <p>Nothing to do for now, and that is fine: the marketplace is closed. When it opens, remember it needs a <b>verified wallet</b>, prices are in <b>real currency</b>, and the game reserves the right to <b>change the fee or stop the service</b>. None of this touches gold, gear earned in game, or normal progression.</p>`
+    },
+    perf: {
+      title: "All the performance numbers",
+      summary: "One scheduler drives the graphics card: shader compiles, texture uploads, character preparation.",
+      body: `
+        <h4>Freezes</h4>
+        <ul>
+          <li>Worst measured stall: <b>5.6 s → 0.47 s</b>.</li>
+          <li>Shader compiling blocking the main thread: <b>1,104 ms → 504 ms</b> maximum.</li>
+          <li>Frames over 50 ms, per minute: <b>28.6 → 4.2</b>.</li>
+        </ul>
+        <h4>Loading</h4>
+        <ul>
+          <li>Entry into the game: <b>23.7 s → 16.0 s</b>.</li>
+          <li>GPU prewarm: <b>14.1 s → 3.7 s</b>.</li>
+          <li>The loading screen now rotates through <b>11 backdrops</b> instead of one static image.</li>
+        </ul>
+        <h4>Characters on screen</h4>
+        <ul>
+          <li>Material rebuilds per frame: <b>430.9 → 11.6</b>, by sharing materials across characters.</li>
+          <li>That is the most common source of stutter in a busy town or raid.</li>
+        </ul>
+        <h4>Server side</h4>
+        <ul>
+          <li>Rift simulation tick: <b>5.80 ms → 4.53 ms</b> mean.</li>
+          <li>Rift collisions: <b>566 ns → 187 ns</b> per operation.</li>
+          <li>A file-descriptor leak on aborted downloads is closed.</li>
+        </ul>
+        <h4>The cleanup</h4>
+        <p>Vale Cup bot welcome letters are gone, and <b>134,431</b> orphaned letters were purged — <b>85 MB</b> of the 89 MB the game's mail weighed.</p>`
+    },
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

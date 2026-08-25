@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Patch notes v0.39.3 — La Clauderie</title>
+<meta name="description" content="The v0.39.3 release of World of ClaudeCraft in plain language: the Double Honor Weekend opens 12 hours earlier, from Friday 3 PM realm time (9 PM in France) instead of Saturday 3 AM. The close stays at Monday 3 AM, the rates are unchanged and no combat value moves.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Patch notes v0.39.3 — La Clauderie">
+<meta property="og:description" content="The Double Honor Weekend opens 12 h earlier: Friday 3 PM realm time, Friday 9 PM in France. The close does not move, and neither do the rates.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.39.3.en.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.39.3.en.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') !== 'en') location.replace('v0.39.3.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Site navigation"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Patch notes</p>
+    <h1>Patch notes <span class="v">v0.39.3</span></h1>
+    <p class="lede">A one-line hotfix that hands back a whole evening: the <strong class="hl">Double Honor Weekend</strong> now opens <strong class="hl">Friday at 3 PM</strong> realm time instead of Saturday at 3 AM. <strong class="hl">Twelve hours earlier</strong>, and the close does not move — still Monday 3 AM. For us in France that means the event starts <strong class="hl">Friday around 9 PM</strong>: Friday night finally counts. Nothing else changes — not the rates, not a single combat value.</p>
+    <div class="meta">
+      <span><b>Released</b> August 22, 2026</span>
+      <span><b>Since</b> v0.39.2</span>
+      <span><b>+12 h</b> of window</span>
+      <span><b>0</b> combat values changed</span>
+    </div>
+    <div class="hint">💡 Click a card for details.</div>
+  </header>
+
+  <!-- Fixed digest: same rubrics, same order, every release. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">At a glance</h2>
+    <p class="sec-sub">The same rubrics every release, in the same order. Click a rubric to jump to its section.</p>
+    <ol>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <span class="d-name">Classes &amp; spells</span>
+        <span class="d-say"><b class="eq">All =</b> no combat value moves: no spell, no talent, no mastery, no set. This is a <strong class="hl">schedule</strong> change and nothing else.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <span class="d-name">Professions &amp; gathering</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <span class="d-name">Dungeons, rifts &amp; bosses</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <span class="d-name">World &amp; quests</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <a class="d-name" href="#guilde">Guild &amp; social</a>
+        <span class="d-say"><strong class="hl">The whole release is here.</strong> <strong class="hl">Double Honor</strong> opens <strong class="hl">12 hours earlier</strong> — Friday 3 PM realm time, <strong class="hl">Friday 9 PM</strong> our time. The close stays at Monday 3 AM, and the rates are identical to <a href="v0.39.2.en.html">v0.39.2</a>.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <span class="d-name">Quality of life &amp; tech</span>
+        <span class="d-say">Nothing visible. Under the hood the server learns to read <strong class="hl">two dates</strong> instead of one to know whether the event is running.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="guilde">
+    <h2><span class="num">01</span>Double Honor now starts Friday evening</h2>
+    <p class="sec-sub"><a href="v0.39.2.en.html">v0.39.2</a> anchored the opening on the realm reset, <strong class="hl">Saturday at 3 AM</strong>. Clean on paper; in practice the realm runs on US East Coast time, and 3 AM there is already Saturday evening on the other side of the planet. This release moves the opening, not the close.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="horaire" tabindex="0" role="button" aria-label="Details: exact times, realm time and French time">
+        <h3>Friday 3 PM, realm time <span class="chip c-new">The change</span></h3>
+        <p>The opening moves from <strong class="hl">Saturday 3 AM</strong> to <strong class="hl">Friday 3 PM</strong> — exactly <strong class="hl">12 hours earlier</strong>. The close is unchanged: <strong class="hl">Monday 3 AM</strong>. The window grows from <strong class="hl">48 h to 60 h</strong>.</p>
+        <span class="more-link">See the times in French hours</span>
+      </div>
+      <div class="card more" data-detail="dateline" tabindex="0" role="button" aria-label="Details: why twelve hours, and not six or twenty-four">
+        <h3>Why twelve hours <span class="chip c-util">The reason</span></h3>
+        <p>The realm lives on <strong class="hl">New York</strong> time. Saturday 3 AM there is Saturday <strong class="hl">7 PM</strong> in New Zealand: their Saturday was over before the event began. Twelve hours early puts the opening at <strong class="hl">7 AM</strong> their time — their whole weekend is inside it.</p>
+        <span class="more-link">See the detail</span>
+      </div>
+      <div class="card more" data-detail="bareme" tabindex="0" role="button" aria-label="Details: the rates, unchanged since v0.39.2">
+        <h3>The rates do not move <span class="chip c-util">Reminder</span></h3>
+        <p>All <strong class="hl">four</strong> battleground Honor sources stay <strong class="hl">doubled</strong> for the whole window, and a <strong class="hl">played-out loss</strong> still pays the win rate: <strong class="hl">120</strong> instead of 20. You just get twelve more hours to use it.</p>
+        <span class="more-link">See the full rates</span>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>What it changes for the guild <span class="chip c-new">Practical</span></h3>
+        <ul>
+          <li><strong class="hl">Friday night</strong> becomes an event night — usually the one where most of us are online.</li>
+          <li>Thornhollow Fields needs <strong class="hl">ten players</strong> to pop; three evenings fill a queue better than two.</li>
+          <li>Saturday and Sunday lose nothing: the event now covers three evenings in a row.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>What does NOT change <span class="chip c-util">Scope</span></h3>
+        <ul>
+          <li><strong class="hl">Ranked arena</strong>, the <strong class="hl">Fiesta</strong>, Protect Yumi, the Vale Cup and duels: still outside the event.</li>
+          <li><strong class="hl">Decay</strong> stays in place, and still applies <strong class="hl">before</strong> the doubling.</li>
+          <li>FURY's prices are the same: what doubles is the income, not the spend.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Daily counters are untouched <span class="chip c-util">Good to know</span></h3>
+        <ul>
+          <li>The <strong class="hl">first-win bonus</strong>, daily decay and the daily delve still roll at <strong class="hl">3 AM</strong>, exactly as before.</li>
+          <li>Only the event's <strong class="hl">opening</strong> moved — no other in-game schedule was touched.</li>
+          <li>So Friday 3 PM resets <strong class="hl">nothing</strong>: your first win of the day is still Friday's.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="reste">
+    <h2><span class="num">02</span>And nothing else</h2>
+    <p class="sec-sub">A hotfix in the strict sense: one schedule constant, the plumbing that goes with it, and that is all.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Two dates instead of one <span class="chip c-util">Behind the scenes</span></h3>
+        <ul>
+          <li>The game <strong class="hl">never reads a clock</strong> inside its simulation engine: the server hands it the day.</li>
+          <li>It now hands it <strong class="hl">two</strong>: today's, and the one <strong class="hl">12 hours ahead</strong>. The event runs as soon as either falls on a weekend day.</li>
+          <li>That is what lets it open early without touching any daily reset.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Nothing moves in combat <span class="chip c-util">Scope</span></h3>
+        <ul>
+          <li>No value: no spell, no talent, no mastery, no set.</li>
+          <li>No item, no mob, no quest, no zone.</li>
+          <li>The <a href="../bis.html">Builds guide</a> and the <a href="../metiers.html">Professions guide</a> stand as they are.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>The scenery did not change <span class="chip c-util">Behind the scenes</span></h3>
+        <ul>
+          <li>As in <a href="v0.39.1.en.html">v0.39.1</a> and <a href="v0.39.2.en.html">v0.39.2</a>, Fenbridge's 3D models were <strong class="hl">re-stamped</strong> with the version bump.</li>
+          <li><strong class="hl">Identical geometry and textures</strong>, identical size: no on-screen difference.</li>
+          <li>The guild's <a href="../pvp.html">PvP guide</a> is up to date with the new schedule.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Close">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    horaire: {
+      title: "Exact times, on both sides of the Atlantic",
+      summary: "The realm lives on New York time. Here is the window as we experience it from France.",
+      body: `
+        <h4>Realm time (US East Coast)</h4>
+        <ul>
+          <li><b>Opens</b>: Friday <b>3 PM</b> (was: Saturday 3 AM).</li>
+          <li><b>Closes</b>: Monday <b>3 AM</b> — unchanged.</li>
+          <li>Total length: <b>60 h</b> instead of 48.</li>
+        </ul>
+        <h4>French time (in summer, when both zones are on daylight saving)</h4>
+        <ul>
+          <li><b>Opens</b>: Friday <b>9 PM</b>. Friday evening is inside it, whole.</li>
+          <li><b>Closes</b>: Monday <b>9 AM</b>.</li>
+          <li>The gap to the realm is <b>6 hours</b> during summer time. It can be 5 h during the two weeks a year when the European and American clock changes do not line up.</li>
+        </ul>
+        <h4>Why the close does not move</h4>
+        <p>The end of the event is anchored on <b>Monday's daily reset</b>, the same one that clears your first win of the day. Moving it would have meant touching that reset, which serves plenty of other things. Only the opening was pulled forward, and it goes through a separate mechanism.</p>`
+    },
+    dateline: {
+      title: "Twelve hours, because of the date line",
+      summary: "The number is not a round guess: it is what it takes for the other end of the world to get its Saturday back.",
+      body: `
+        <h4>The problem</h4>
+        <ul>
+          <li>The realm runs on <b>New York</b> time, and its day rolls at <b>3 AM</b>.</li>
+          <li>New Zealand is <b>16 h</b> ahead: Saturday 3 AM in New York is already Saturday <b>7 PM</b> there.</li>
+          <li>Their play Saturday was practically over when the event started. They only ever had a Sunday.</li>
+        </ul>
+        <h4>The arithmetic</h4>
+        <ul>
+          <li>With <b>12 h</b> of lead, the opening falls on Friday 3 PM in New York, which is <b>Saturday 7 AM</b> in New Zealand.</li>
+          <li>That is a Saturday morning: their whole weekend is in the window.</li>
+          <li>And on the American side, Sunday evening stays covered as before, since the close did not move.</li>
+        </ul>
+        <h4>The daylight-saving catch</h4>
+        <p>The 12 h lead is counted in <b>real time</b>, not clock hours. On clock-change nights the visible gap reads 11 or 13 hours — but those nights fall on a Sunday morning, never a Friday afternoon, so the opening is never affected.</p>`
+    },
+    bareme: {
+      title: "The weekend rates, unchanged",
+      summary: "Nothing was retuned since v0.39.2: same numbers, longer window.",
+      body: `
+        <h4>A match against a team you have not met yet today</h4>
+        <ul>
+          <li><b>Win</b>: 60 → <b>120</b>.</li>
+          <li><b>Played-out loss</b>: 20 → <b>120</b>, the win rate.</li>
+          <li><b>Draw</b>: 20 → <b>120</b>, for both sides.</li>
+          <li><b>First win of the day bonus</b>: +20 → <b>+40</b>, so <b>160</b> for a first win.</li>
+        </ul>
+        <h4>During the match</h4>
+        <ul>
+          <li><b>Killing blow</b>: 5 → <b>10</b>. <b>Assist</b>: 2 → <b>4</b>.</li>
+        </ul>
+        <h4>Decay, still before the doubling</h4>
+        <ul>
+          <li>Same team within a day: <b>120</b>, then <b>60</b>, then <b>30</b>.</li>
+          <li>Same player within a match: <b>10</b>, <b>5</b>, <b>2</b>, then nothing.</li>
+        </ul>
+        <h4>And deserting?</h4>
+        <p>Still <b>zero</b>. The win rate only applies to matches <b>played to the end</b>: the event rewards staying, not losing.</p>`
+    },
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>
