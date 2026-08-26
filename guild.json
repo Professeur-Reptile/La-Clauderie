@@ -2,42 +2,42 @@
   "guilde": {
     "classementServeur": 7,
     "classement": {
-      "releveLe": "2026-08-26T17:31:55Z",
+      "releveLe": "2026-08-26T20:13:10Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "HUMANITY",
           "memberCount": 99,
-          "totalLifetimeXp": 59068562,
+          "totalLifetimeXp": 59360708,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "Monarchs",
           "memberCount": 84,
-          "totalLifetimeXp": 54673938,
+          "totalLifetimeXp": 54676793,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Look Good Play Good",
           "memberCount": 100,
-          "totalLifetimeXp": 46832053,
+          "totalLifetimeXp": 46842304,
           "topLevel": 20
         },
         {
           "rank": 4,
           "name": "Raiders United",
-          "memberCount": 84,
-          "totalLifetimeXp": 38102902,
+          "memberCount": 91,
+          "totalLifetimeXp": 40806596,
           "topLevel": 20
         },
         {
           "rank": 5,
           "name": "Vis Absoluta",
           "memberCount": 42,
-          "totalLifetimeXp": 17585740,
+          "totalLifetimeXp": 17587930,
           "topLevel": 20
         },
         {
@@ -51,14 +51,14 @@
           "rank": 7,
           "name": "La Clauderie",
           "memberCount": 40,
-          "totalLifetimeXp": 11788254,
+          "totalLifetimeXp": 11788718,
           "topLevel": 20
         },
         {
           "rank": 8,
           "name": "Holy Order",
           "memberCount": 48,
-          "totalLifetimeXp": 10769919,
+          "totalLifetimeXp": 10780968,
           "topLevel": 20
         },
         {
@@ -80,7 +80,7 @@
         "rank": 7,
         "name": "La Clauderie",
         "memberCount": 40,
-        "totalLifetimeXp": 11788254,
+        "totalLifetimeXp": 11788718,
         "topLevel": 20
       }
     }
