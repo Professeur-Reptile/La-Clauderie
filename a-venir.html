@@ -197,7 +197,7 @@
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · En préparation</p>
     <h1>La prochaine version <span class="v" id="vNum">v0.40.0</span></h1>
-    <p class="lede">La v0.39.2 est sortie, et la v0.40.0 se prépare : <strong class="hl">265 commits</strong> déjà posés. Le gros morceau ne touche ni les classes ni le décor, mais la façon de jouer : <strong class="hl">le jeu devient jouable à la manette</strong>, pour de vrai. Une <strong class="hl">barre croisée</strong> reprise de Final Fantasy XIV remplace la barre d’action, les boutons prennent la disposition attendue sur console, la croix directionnelle <strong class="hl">change de cible</strong>, et une attaque lancée sans cible <strong class="hl">choisit l’ennemi le plus proche</strong> au lieu de refuser. Ailleurs : le <strong class="hl">Reliquaire gagne un suivi dans l’interface</strong> qu’on peut masquer, la chasse aux à-coups d’affichage continue, et deux vieux défauts de raid tombent — les <strong class="hl">trois pierres à canaliser de Nythraxis héroïque</strong> étaient invisibles de loin, et un <strong class="hl">wipe scripté du même boss était devenu survivable</strong> à cause d’un affaiblissement de Guerrier.</p>
+    <p class="lede">La v0.40.1 est sortie, et la v0.41.0 se prépare : <strong class="hl">220 commits</strong> déjà posés. Le gros morceau ne se voit sur aucune capture d’écran, mais il se sent dès le premier pas — <strong class="hl">le déplacement est refait de zéro</strong>. Jusqu’ici ton personnage était dessiné à partir d’une estimation que le serveur corrigeait sans arrêt : d’où les micro-glissades au démarrage d’une course, les trajectoires qui coupent mal dans les virages, et les retours en arrière quand la connexion hoquette. Le jeu fait maintenant <strong class="hl">tourner le même calcul des deux côtés</strong>, sur exactement la même suite de commandes, et ne te corrige plus que lorsqu’il te contredit vraiment (contrôle, poussée, changement de vitesse). Ailleurs : des <strong class="hl">barres de temps d’attaque</strong> pour ta cible et la cible de ta cible, une <strong class="hl">voix féminine</strong> enfin branchée pour les personnages qui en ont une, un <strong class="hl">« Tout vendre »</strong> chez les marchands — et une règle de combat qui change pour tout le monde : les <strong class="hl">sorts instantanés peuvent désormais être évités</strong>.</p>
 
     <div class="warn">
       <span class="ico" aria-hidden="true">⚠️</span>
@@ -208,10 +208,10 @@
     </div>
 
     <div class="meta">
-      <span><b>Depuis</b> la v0.39.2</span>
+      <span><b>Depuis</b> la v0.40.1</span>
       <span id="freshness"><b>Dernière vérification</b> à l’instant</span>
       <span id="moved"></span>
-      <span id="written"><b>Résumé écrit</b> le 22 août 2026 à 00 h 40</span>
+      <span id="written"><b>Résumé écrit</b> le 26 août 2026 à 23 h 15</span>
     </div>
     <p class="sec-sub" style="margin:6px 0 0;font-size:0.85rem">« Dernière vérification » = la dernière fois que cette page est allée voir où en sont les développeurs. « Dernier changement du jeu » = quand ils ont touché à cette version pour la dernière fois.</p>
     <div id="chantiers"></div>
@@ -224,33 +224,33 @@
     <ol>
       <li>
         <span class="d-ico" aria-hidden="true">⚔️</span>
-        <a class="d-name" href="#classes">Classes &amp; sorts</a>
-        <span class="d-say">— <b class="up">Démoniste ↑</b> <b class="down">Guerrier ↓</b> <b class="eq">les sept autres =</b> · <b>Aucune valeur de sort ni de talent ne bouge</b> sur la branche : les deux flèches viennent de corrections. Chez le <b>Démoniste Necromancy</b>, la barre du familier <b>ne disparaît plus</b> quand le Graveguard meurt — les squelettes encore debout continuent d’obéir. Chez le <b>Guerrier</b>, <b>Direhowl</b> cesse d’adoucir les wipes scriptés de Nythraxis héroïque : c’était un bug, et le raid redevient plus dur.</span>
+        <a class="d-name" href="#combat">Classes &amp; sorts</a>
+        <span class="d-say">— <b class="down">Toutes ↓</b>, et pour la même raison : <b>aucune valeur de sort ni de talent ne bouge</b>, mais deux catégories d’attaques qui touchaient <b>toujours</b> peuvent maintenant être <b>évitées</b> — les <b>sorts instantanés</b> hostiles et les <b>coups physiques spéciaux</b>. C’était un oubli, pas un équilibrage : ces deux chemins ne passaient pas par le tirage d’esquive commun. Personne ne perd de terrain sur les autres, mais tout le monde tape un peu moins souvent. Deux autres règles changent aussi : l’<b>interruption d’un sort canalisé</b> coûte enfin les tics qu’elle enlève, et un <b>bouclier de soin</b> se vide maintenant avec les soins qui tombent goutte à goutte.</span>
       </li>
-      <li>
+      <li class="none">
         <span class="d-ico" aria-hidden="true">🔨</span>
-        <a class="d-name" href="#monde">Métiers &amp; récolte</a>
-        <span class="d-say">— Une seule ligne, mais elle débloque une impasse : les <b>Duskhide Wraps</b> demandaient un niveau de compétence rangé <b>un palier au-dessus</b> de ce que leur qualité autorise, si bien qu’un travailleur du cuir <b>n’ayant pas encore choisi sa voie ne gagnait strictement aucun point</b> en les fabriquant. Le prérequis redescend au rang du reste de sa gamme.</span>
+        <span class="d-name">Métiers &amp; récolte</span>
+        <span class="d-say">—</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🐉</span>
-        <a class="d-name" href="#raid">Donjons, failles &amp; boss</a>
-        <span class="d-say">— Deux corrections sérieuses sur <b>Nythraxis héroïque</b>. Les <b>trois pierres à canaliser</b> qui interrompent la Deathless Rage sont posées loin les unes des autres exprès… et le jeu <b>cessait de les afficher</b> passé sa distance de rendu habituelle : depuis l’entrée du raid, <b>une seule des trois</b> apparaissait. Et le mécanisme censé tuer tout le monde <b>était devenu survivable</b>. Ailleurs, un rare tué <b>ne reste plus planté</b> à son camp entre la fin de son butin et sa réapparition.</span>
+        <a class="d-name" href="#donjons">Donjons, failles &amp; boss</a>
+        <span class="d-say">— Le <b>déplacement prédit fonctionne aussi dans les Failles</b>, où il ne marchait pas du tout : c’est là que les à-coups étaient les pires. Un <b>esprit libéré</b> ne peut plus faire avancer une énigme de Faille, un <b>Gouffre</b> récupère les joueurs restés coincés dedans, et la <b>monnaie de la forge de Faille</b> devient envoyable par courrier.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🗺️</span>
         <a class="d-name" href="#monde">Monde &amp; quêtes</a>
-        <span class="d-say">— La <b>rangée de mannequins d’entraînement</b> ajoutée en v0.39.0 au-dessus de Highwatch est <b>retournée face au chemin</b> : on la voyait par la tranche, les quatre mannequins se confondant en un seul. Et ils <b>cessent d’allumer chacun leur feu de camp</b> — un seul brasier reste, devant le mannequin de boss.</span>
+        <span class="d-say">— Un <b>« Tout vendre »</b> arrive chez les marchands, au clic droit comme au doigt, et la fenêtre qui détruit un objet propose enfin <b>la pile entière</b> plutôt qu’une unité. La <b>barre d’expérience affiche son pourcentage en permanence</b>, y compris sur mobile où il n’apparaissait jamais. Et les monstres cessent de lancer leurs sorts <b>pendant qu’ils fuient</b>.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">🏰</span>
-        <a class="d-name" href="#confort">Guilde &amp; social</a>
-        <span class="d-say">— Rien de neuf côté guilde. Côté discussion, un travail de <b>modération</b> côté serveur : une sanction ne peut plus être <b>perdue ou ressuscitée</b> par une reconnexion qui arrive en même temps qu’une décision, et le rétablissement de la parole est traité comme prioritaire.</span>
+        <a class="d-name" href="#guilde">Guilde &amp; social</a>
+        <span class="d-say">— Rien de neuf sur le panneau des guildes, tout juste arrivé en <a href="notes/v0.40.0.html#guilde">v0.40.0</a>. Deux corrections de groupe : un <b>Gouffre en cours</b> ne perd plus le fil quand la composition du groupe change, et un butin en <b>« chacun pour soi »</b> va bien au joueur qui l’a ouvert au lieu d’être envoyé à un groupe absent.</span>
       </li>
       <li>
         <span class="d-ico" aria-hidden="true">⚙️</span>
-        <a class="d-name" href="#manette">Confort &amp; technique</a>
-        <span class="d-say">— <b>C’est ici que se joue la version.</b> Le jeu devient <b>jouable à la manette</b> : barre croisée à la FFXIV, disposition de boutons de console, changement de cible à la croix directionnelle, ciblage automatique, et une souris virtuelle en secours. Le <b>Reliquaire</b> gagne un suivi dans l’interface, <b>masquable</b>. Et la chasse aux à-coups d’affichage continue.</span>
+        <a class="d-name" href="#mouvement">Confort &amp; technique</a>
+        <span class="d-say">— <b>C’est ici que se joue la version.</b> Le <b>déplacement est refait</b> : le jeu fait tourner le même calcul chez toi et sur le serveur, sur la même suite de commandes, pour que ton personnage soit dessiné <b>tout de suite et sans correction</b> tant que tu joues normalement. À côté, des <b>barres de temps d’attaque</b> pour la cible et la cible de la cible, une <b>voix féminine</b> branchée, et le <b>curseur du champ de vision</b> qui arrête de se remettre à zéro.</span>
       </li>
     </ol>
   </nav>
@@ -258,157 +258,219 @@
   <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
        s'efface d'elle-même quand cette version sort, et se signale périmée si
        le jeu passe à préparer la suivante. -->
-  <div id="editorial" data-for="v0.40.0" data-commits="265" data-chantiers="v0.40.0" data-written="2026-08-22T00:40+02:00">
+  <div id="editorial" data-for="v0.41.0" data-commits="220" data-chantiers="v0.41.0" data-written="2026-08-26T23:15+02:00">
 
-  <!-- 1 LA MANETTE -->
-  <section id="manette">
-    <div class="sec-head"><span class="sec-num">01</span><h2>Le jeu devient jouable à la manette</h2></div>
-    <p class="sec-sub">C’est de très loin le plus gros chantier de la branche, et le seul qu’un joueur remarquera immédiatement. Jusqu’ici, brancher une manette donnait un curseur logiciel qu’on poussait à l’écran — utilisable, mais jamais confortable. Toute cette partie est refaite en reprenant les conventions de <strong class="hl">Final Fantasy XIV</strong>, la référence du MMO à la manette. Comme toujours sur cette page : c’est du travail en cours, et les détails peuvent encore bouger avant la sortie.</p>
+  <!-- 1 LE MOUVEMENT -->
+  <section id="mouvement">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Le déplacement est refait de zéro</h2></div>
+    <p class="sec-sub">C’est de très loin le plus gros chantier de la branche, et personne ne le verra sur une capture d’écran — mais tout le monde le sentira. Le but affiché : que ton personnage soit dessiné <strong class="hl">tout de suite et sans jamais être corrigé</strong> tant que tu joues normalement, quelle que soit la qualité de ta connexion. Comme toujours sur cette page : c’est du travail en cours, et les détails peuvent encore bouger avant la sortie.</p>
     <div class="grid cols-3">
-      <div class="card more" data-detail="barre" tabindex="0" role="button" aria-label="Détails : la barre croisée">
-        <h3>Une barre croisée, comme sur console <span class="chip c-new">Manette</span></h3>
-        <p>Les deux gâchettes arment chacune <strong class="hl">huit cases</strong> — quatre sur la croix directionnelle, quatre sur les boutons de face —, et un appui pendant que la gâchette est tenue lance le sort. Garder l’autre gâchette enfoncée au milieu du geste donne <strong class="hl">l’autre moitié</strong> sans relâcher. Les sorts s’y rangent <strong class="hl">depuis le grimoire</strong>, à la manette.</p>
-        <span class="more-link">Voir le détail</span>
+      <div class="card more" data-detail="pourquoi" tabindex="0" role="button" aria-label="Détails : pourquoi ça glissait">
+        <h3>Pourquoi ça glissait <span class="chip c-fix">Le problème</span></h3>
+        <p>Ton personnage était dessiné à partir d’une <strong class="hl">estimation</strong> que le serveur corrigeait en permanence. Les deux ne travaillaient pas sur la <strong class="hl">même suite de commandes</strong> : dès que tu changeais d’intention entre deux battements du serveur, les deux versions divergeaient — et il fallait te ramener de force.</p>
+        <span class="more-link">Voir ce que ça donnait</span>
       </div>
-      <div class="card more" data-detail="boutons" tabindex="0" role="button" aria-label="Détails : la disposition des boutons">
-        <h3>Les boutons font enfin ce qu’on attend <span class="chip c-fix">Corrigé</span></h3>
-        <p>La manette confondait <strong class="hl">annuler et interagir</strong> : c’est le bouton de droite qui parlait aux PNJ et pillait, alors que sur console il ne fait jamais ça. Désormais le bouton du bas <strong class="hl">valide et interagit</strong>, celui de droite <strong class="hl">annule</strong> — il ferme la fenêtre du dessus, puis lâche la cible.</p>
-        <span class="more-link">Voir le détail</span>
+      <div class="card more" data-detail="comment" tabindex="0" role="button" aria-label="Détails : le nouveau modèle">
+        <h3>Le même calcul des deux côtés <span class="chip c-new">La solution</span></h3>
+        <p>Ton jeu envoie maintenant ses commandes <strong class="hl">une par une, horodatées</strong>, et fait tourner <strong class="hl">exactement le même calcul</strong> que le serveur sur exactement la même suite. Les deux tombent sur le même résultat, donc il n’y a plus rien à corriger. Le serveur reste <strong class="hl">seul maître</strong> de ta position.</p>
+        <span class="more-link">Voir comment ça marche</span>
       </div>
-      <div class="card more" data-detail="cible" tabindex="0" role="button" aria-label="Détails : cibler à la manette">
-        <h3>Cibler sans souris <span class="chip c-new">Manette</span></h3>
-        <p>La croix directionnelle, seule, <strong class="hl">fait défiler les cibles</strong> : gauche et droite parmi les ennemis, haut et bas parmi les alliés. Et si tu lances une attaque <strong class="hl">sans avoir de cible</strong>, le jeu <strong class="hl">prend l’ennemi le plus proche</strong> au lieu de refuser — le premier mur sur lequel butait tout joueur à la manette.</p>
+      <div class="card more" data-detail="corrections" tabindex="0" role="button" aria-label="Détails : quand le jeu te corrige encore">
+        <h3>Quand tu seras encore corrigé <span class="chip c-util">Honnêteté</span></h3>
+        <p>Il reste des cas où le serveur te contredit <strong class="hl">légitimement</strong> : un contrôle qui t’immobilise, une poussée, un changement de vitesse. Ceux-là sont désormais <strong class="hl">annoncés explicitement</strong> et lissés, au lieu d’arriver comme un à-coup indistinct.</p>
         <span class="more-link">Voir le détail</span>
       </div>
     </div>
     <div class="grid cols-3">
       <div class="card">
-        <h3>Trois présentations au choix <span class="chip c-new">Réglage</span></h3>
+        <h3>Les Failles en profitent aussi <span class="chip c-new">Nouveau</span></h3>
         <ul>
-          <li><strong class="hl">Complète</strong> : la barre telle quelle, cadre compris.</li>
-          <li><strong class="hl">Compacte</strong> : le cadre disparaît, et les repères ne restent que sur la moitié qu’une gâchette a armée.</li>
-          <li><strong class="hl">Seulement pendant l’appui</strong> : rien à l’écran tant qu’aucune gâchette n’est tenue.</li>
-          <li>Le passage de l’une à l’autre est <strong class="hl">instantané</strong>, en pleine session.</li>
+          <li>La prédiction ne fonctionnait <strong class="hl">pas du tout</strong> à l’intérieur d’une Faille : c’est justement là que les à-coups étaient les plus pénibles.</li>
+          <li>Elle y est maintenant branchée, murs compris.</li>
+          <li>Un joueur qui reste <strong class="hl">coincé dans un mur</strong> d’un champ de bataille peut de nouveau se débloquer — la manœuvre avait été trop restreinte, plusieurs allers-retours ont été nécessaires pour la régler.</li>
         </ul>
       </div>
       <div class="card">
-        <h3>Une souris virtuelle, en secours <span class="chip c-util">En option</span></h3>
+        <h3>Ce qui ne change pas <span class="chip c-util">Portée</span></h3>
         <ul>
-          <li>Certaines actions demandent un vrai pointeur : <strong class="hl">déplacer un objet entre deux sacs</strong>, cliquer un point précis sur la carte.</li>
-          <li>Un <strong class="hl">raccourci à deux boutons</strong> fait apparaître un pointeur piloté au stick droit, les gâchettes servant de clics.</li>
-          <li>Elle est <strong class="hl">désactivée par défaut</strong>, et c’est voulu : se déplacer de contrôle en contrôle vaut mieux que viser à la main. C’est la sortie de secours, pas le chemin normal.</li>
+          <li>Le serveur reste <strong class="hl">l’autorité</strong> sur ta position : ton jeu ne décide de rien, il calcule la même chose en avance.</li>
+          <li>Le rythme du serveur ne change pas non plus.</li>
+          <li>Le ciblage, le clic-pour-se-déplacer et les déclencheurs de quête continuent de lire la position officielle.</li>
         </ul>
       </div>
       <div class="card">
-        <h3>Le reste de la manette <span class="chip c-util">Finition</span></h3>
+        <h3>Le reste du confort <span class="chip c-new">Divers</span></h3>
         <ul>
-          <li>Le <strong class="hl">curseur logiciel disparaît</strong> : on se déplace de contrôle en contrôle à la croix directionnelle.</li>
-          <li>Ouvrir une fenêtre <strong class="hl">place le focus sur son premier contrôle</strong>, et le rend à ce qu’on faisait en la fermant.</li>
-          <li>Un sort <strong class="hl">appris en cours de route se pose tout seul</strong> sur une case libre.</li>
-          <li>Le <strong class="hl">clavier et la souris ne changent pas</strong> : toutes les nouvelles commandes sont propres à la manette.</li>
+          <li>Le curseur du <strong class="hl">champ de vision</strong> arrête d’être remis à zéro à chaque image : le réglage tient enfin.</li>
+          <li>Changer de <strong class="hl">préréglage graphique</strong> ne peut plus figer le jeu plusieurs minutes.</li>
+          <li>Sur mobile, la <strong class="hl">barre croisée</strong> et les commandes tactiles cessent de se marcher dessus.</li>
+          <li>Une <strong class="hl">voix féminine</strong> est enfin branchée : huit prises livrées il y a des mois dormaient sans être jouées, faute de savoir lire le genre du personnage.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- 2 RAID -->
-  <section id="raid">
-    <div class="sec-head"><span class="sec-num">02</span><h2>Nythraxis héroïque : deux défauts qui faussaient le combat</h2></div>
-    <p class="sec-sub">Les deux vont dans des sens opposés — l’un rendait une mécanique impossible à jouer, l’autre la rendait trop facile — et les deux traînaient depuis l’ouverture du mode héroïque.</p>
+  <!-- 2 COMBAT -->
+  <section id="combat">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Trois règles de combat changent — pour tout le monde</h2></div>
+    <p class="sec-sub">Aucune valeur de sort, de talent ou de maîtrise ne bouge sur la branche. Ce qui change, ce sont trois règles communes qui ne s’appliquaient pas là où elles auraient dû, et qui touchent donc <strong class="hl">toutes les classes en même temps</strong>.</p>
     <div class="grid cols-3">
-      <div class="card more" data-detail="pierres" tabindex="0" role="button" aria-label="Détails : les pierres invisibles">
-        <h3>Une seule pierre sur trois s’affichait <span class="chip c-fix">Corrigé</span></h3>
-        <p>Les <strong class="hl">trois pierres</strong> qu’il faut canaliser pour interrompre la Deathless Rage sont <strong class="hl">volontairement écartées</strong> les unes des autres, pour forcer le raid à se séparer. Mais le jeu <strong class="hl">arrêtait d’afficher</strong> ce qui dépasse sa distance de rendu ordinaire : un joueur qui ne s’était jamais approché d’une pierre <strong class="hl">n’avait aucun pilier à cliquer</strong>.</p>
-        <span class="more-link">Voir le détail</span>
-      </div>
-      <div class="card more" data-detail="direhowl" tabindex="0" role="button" aria-label="Détails : le wipe scripté devenu survivable">
-        <h3>Un wipe obligatoire… qu’on survivait <span class="chip c-bal">Équilibrage</span></h3>
-        <p>Deux mécaniques du mode héroïque sont calibrées <strong class="hl">au-dessus des points de vie maximum</strong> : elles doivent tuer, sans exception. Sauf qu’elles passaient par le circuit de dégâts normal — et l’affaiblissement <strong class="hl">Direhowl</strong> du Guerrier les rabotait juste assez pour que le raid <strong class="hl">y survive</strong>.</p>
-        <span class="more-link">Voir le détail</span>
+      <div class="card more" data-detail="esquive" tabindex="0" role="button" aria-label="Détails : les attaques qui touchaient toujours">
+        <h3>Les instantanés peuvent rater <span class="chip c-bal">Le vrai changement</span></h3>
+        <p>Deux familles d’attaques <strong class="hl">ne pouvaient pas être évitées</strong> : les <strong class="hl">sorts instantanés</strong> hostiles et les <strong class="hl">coups physiques spéciaux</strong>. Ni l’un ni l’autre ne passait par le tirage commun. Les deux le font maintenant.</p>
+        <span class="more-link">Voir ce que ça implique</span>
       </div>
       <div class="card">
-        <h3>Les cadavres de rares s’effacent <span class="chip c-fix">Corrigé</span></h3>
+        <h3>Interrompre un canalisé coûte enfin <span class="chip c-fix">Corrigé</span></h3>
         <ul>
-          <li>Des joueurs signalaient <span data-codex="mob|grix_the_tunnelking">Grix the Tunnelking</span> <strong class="hl">planté à son camp</strong>, immobile et impossible à cliquer.</li>
-          <li>La cause : le cadavre se décompose sur une <strong class="hl">minuterie courte</strong>, mais un rare qui gère lui-même sa réapparition peut mettre <strong class="hl">bien plus longtemps</strong> à revenir. Entre les deux, plus rien ne le retirait du monde.</li>
-          <li>Le corps disparaît maintenant <strong class="hl">dès que sa fenêtre de butin se ferme</strong>.</li>
+          <li>Repousser un sort <strong class="hl">canalisé</strong> lui enlève des tics — mais le jeu ne facturait pas ces tics perdus.</li>
+          <li>C’est corrigé : l’interruption coûte réellement ce qu’elle retire.</li>
+          <li>Dans le même esprit, un sort <strong class="hl">manqué</strong> ne déclenche plus les effets attachés au coup.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Les boucliers de soin se vident <span class="chip c-fix">Corrigé</span></h3>
+        <ul>
+          <li>Un bouclier qui absorbe les <strong class="hl">soins</strong> ignorait les soins tombant <strong class="hl">goutte à goutte</strong> : il ne se consommait que sur les gros soins directs.</li>
+          <li>Il se vide maintenant avec les deux, et un soin absorbé le <strong class="hl">signale à l’écran</strong>.</li>
+          <li>Une faille permettant d’annuler un temps de recharge interne au clic droit est bouchée.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Le Chasseur, en passant <span class="chip c-util">Détail</span></h3>
+        <ul>
+          <li>La <strong class="hl">hâte à distance</strong> était calculée à part ; elle rentre dans le même compteur que le reste.</li>
+          <li>Objectif affiché : que l’arme à distance et l’arme de mêlée suivent enfin la même règle.</li>
+          <li>Aucune valeur de talent ne bouge — c’est le calcul qui est unifié.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Les monstres arrêtent de tricher <span class="chip c-fix">Corrigé</span></h3>
+        <ul>
+          <li>Un monstre en <strong class="hl">fuite</strong> continuait de lancer ses sorts de soutien : il ne le fait plus.</li>
+          <li>Le compteur de leurs attaques de zone est remis à zéro correctement, comme celui de leurs autres capacités.</li>
+          <li>Les <strong class="hl">auto-attaques</strong> des autres joueurs et des monstres sont maintenant suivies pour de vrai — c’est ce qui rend possibles les barres de la section suivante.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>À prendre avec des pincettes <span class="chip c-bal">Rappel</span></h3>
+        <ul>
+          <li>Rien de tout cela n’est sorti : la branche peut encore reculer sur n’importe lequel de ces points.</li>
+          <li>Aucun chiffre n’est donné ici exprès — les valeurs de combat bougent jusqu’au dernier moment.</li>
+          <li>Les vraies notes, vérifiées ligne à ligne, arriveront dans <a href="patch-notes.html">Nouveautés</a> le jour de la sortie.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- 3 CLASSES -->
-  <section id="classes">
-    <div class="sec-head"><span class="sec-num">03</span><h2>Côté classes : rien ne change, deux choses se réparent</h2></div>
-    <p class="sec-sub">À l’heure où cette page est écrite, <strong class="hl">aucune valeur de sort, de talent ou de maîtrise ne bouge</strong> sur la branche. Les deux entrées ci-dessous sont des corrections — mais l’une des deux se sentira en raid.</p>
-    <div class="grid cols-2">
-      <div class="card">
-        <h3>Démoniste : la barre du familier tient bon <span class="chip c-fix">Corrigé</span></h3>
-        <ul>
-          <li>En spé <span data-codex="spec|Necromancy">Necromancy</span>, le familier principal est toujours le <strong class="hl">Graveguard</strong> — les invocations temporaires (guerrier squelette, mage d’os, aile-tombe) n’y comptent pas.</li>
-          <li>Sa mort faisait donc <strong class="hl">disparaître toute la barre du familier</strong>, alors que les squelettes encore debout <strong class="hl">continuaient d’obéir</strong> : les ordres existaient, mais plus aucun bouton pour les donner.</li>
-          <li>La barre <strong class="hl">bascule maintenant sur une invocation encore vivante</strong>. Le cadre du familier et le raccourci de ciblage, eux, restent sur le principal.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Guerrier : Direhowl ne sauve plus le raid <span class="chip c-bal">Équilibrage</span></h3>
-        <ul>
-          <li><strong class="hl">Direhowl</strong> réduit les dégâts que sa cible inflige. Sur Nythraxis héroïque, cette réduction s’appliquait aussi aux <strong class="hl">mécaniques censées être mortelles à coup sûr</strong>.</li>
-          <li>Résultat : un raid qui ratait la mécanique <strong class="hl">y survivait quand même</strong>. Ce n’était pas prévu.</li>
-          <li>Ces deux coups précis ignorent désormais toute réduction — <strong class="hl">et seulement quand ils sont déjà calibrés pour tuer</strong>. Direhowl ne change nulle part ailleurs, et les versions normales du combat gardent leurs réductions habituelles.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4 MONDE & MÉTIERS -->
+  <!-- 3 MONDE -->
   <section id="monde">
-    <div class="sec-head"><span class="sec-num">04</span><h2>Le monde, et une impasse de métier</h2></div>
-    <p class="sec-sub">Peu de chose, mais deux corrections concrètes : l’une devant les yeux de tout le monde à Highwatch, l’autre invisible et pourtant bloquante.</p>
-    <div class="grid cols-2">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Des barres d’attaque, un « Tout vendre », et une monture qui n’est pour personne</h2></div>
+    <p class="sec-sub">Le reste de la branche est un chapelet de petites choses, dont trois qu’on remarquera tout de suite.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="barres" tabindex="0" role="button" aria-label="Détails : les barres de temps d’attaque">
+        <h3>Le temps d’attaque de ta cible <span class="chip c-new">Nouveau</span></h3>
+        <p>Deux barres arrivent dans l’interface : celle de <strong class="hl">ta cible</strong> et celle de <strong class="hl">la cible de ta cible</strong>. Elles montrent où en est son prochain coup. Un <strong class="hl">réglage dédié</strong> les allume, indépendant de l’affichage de la cible de la cible.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="vendre" tabindex="0" role="button" aria-label="Détails : Tout vendre et la destruction de pile">
+        <h3>« Tout vendre » chez le marchand <span class="chip c-new">Nouveau</span></h3>
+        <p>Un clic droit — et pour la première fois un <strong class="hl">appui sur mobile</strong> — ouvre un menu avec « Vendre » et « <strong class="hl">Tout vendre (N)</strong> », N étant tout ce que tu possèdes <strong class="hl">tous sacs confondus</strong>. Et la fenêtre qui détruit un objet propose enfin <strong class="hl">la pile entière</strong>.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card more" data-detail="monture" tabindex="0" role="button" aria-label="Détails : la nouvelle monture, et pourquoi personne ne l’aura">
+        <h3>Une monture… que personne ne peut avoir <span class="chip c-util">À tempérer</span></h3>
+        <p>Un <strong class="hl">Bonebound Rickshaw</strong> arrive dans le catalogue : une charrette tirée par un squelette, avec sa propre animation de course et ses roues qui tournent pour de vrai. Mais le code le dit noir sur blanc : <strong class="hl">aucun moyen de l’obtenir</strong> n’existe pour l’instant.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+    </div>
+    <div class="grid cols-3">
       <div class="card">
-        <h3>Les mannequins d’entraînement se voient enfin <span class="chip c-fix">Corrigé</span></h3>
+        <h3>La barre d’expérience parle enfin <span class="chip c-new">Nouveau</span></h3>
         <ul>
-          <li>La rangée ajoutée en <a href="notes/v0.39.0.html">v0.39.0</a> au-dessus de Highwatch était alignée <strong class="hl">dans l’axe d’arrivée</strong> : on la voyait par la tranche, et les quatre mannequins se confondaient en un seul sous quatre étiquettes empilées.</li>
-          <li>La rangée est <strong class="hl">tournée en travers du chemin</strong> et ses mannequins <strong class="hl">plus espacés</strong>.</li>
-          <li>Ils <strong class="hl">n’allument plus chacun leur feu</strong> : le jeu les prenait pour des habitants d’un camp. Il reste <strong class="hl">un seul brasier</strong>, devant le mannequin de boss.</li>
+          <li>Le <strong class="hl">pourcentage</strong> ne s’affichait qu’au survol de la souris — donc <strong class="hl">jamais sur mobile</strong>, où il n’y a pas de survol.</li>
+          <li>Il est maintenant affiché <strong class="hl">en permanence</strong>, sur l’ordinateur comme sur l’anneau autour du portrait sur mobile.</li>
+          <li>Le survol continue de donner les chiffres exacts sur ordinateur.</li>
         </ul>
       </div>
       <div class="card">
-        <h3>Une recette qui ne faisait plus progresser <span class="chip c-fix">Travail du cuir</span></h3>
+        <h3>Décor et petits blocages <span class="chip c-fix">Corrigés</span></h3>
         <ul>
-          <li>Les <strong class="hl">Duskhide Wraps</strong> exigeaient un niveau de compétence rangé <strong class="hl">un palier au-dessus</strong> de celui que leur qualité rare autorise.</li>
-          <li>Conséquence : pour un artisan <strong class="hl">n’ayant pas encore choisi sa spécialisation</strong>, les fabriquer rapportait <strong class="hl">exactement zéro point</strong> de compétence — définitivement.</li>
-          <li>Le prérequis redescend au <strong class="hl">rang du reste de la gamme rare</strong>, celui des pièces Mirewarden.</li>
+          <li>Les <strong class="hl">piles de boulets de Dawnhold</strong> deviennent praticables : on peut monter dessus.</li>
+          <li>On ne peut plus <strong class="hl">s’accrocher à un rebord</strong> en tombant assez vite pour se blesser.</li>
+          <li>Dans un champ de bataille, la touche <strong class="hl">Interagir</strong> atteint de nouveau les objets du terrain pendant un match.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Une quête plus généreuse <span class="chip c-bal">Équilibrage</span></h3>
+        <ul>
+          <li>Les taux de la <strong class="hl">Drowned Litany</strong> — son coffre et sa pièce épique — sont remontés.</li>
+          <li>Aucun chiffre ici : c’est exactement le genre de valeur qui bouge encore avant la sortie.</li>
+          <li>Une <strong class="hl">Ascension</strong> affiche de nouveau ses sept charges après une Extended Dawn.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- 5 CONFORT -->
-  <section id="confort">
-    <div class="sec-head"><span class="sec-num">05</span><h2>Ce qui ne se voit pas, mais se sent</h2></div>
-    <p class="sec-sub">La rubrique la plus fournie de la branche après la manette — l’essentiel étant du travail de performance et de finition qui ne s’annonce pas.</p>
+  <!-- 4 DONJONS -->
+  <section id="donjons">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Failles et Gouffres : quatre correctifs</h2></div>
+    <p class="sec-sub">Rien de neuf en contenu, mais quatre situations bloquantes qui disparaissent.</p>
     <div class="grid cols-3">
-      <div class="card more" data-detail="reliquaire" tabindex="0" role="button" aria-label="Détails : le suivi du Reliquaire">
-        <h3>Le Reliquaire s’affiche, ou pas <span class="chip c-new">Interface</span></h3>
-        <p>Le Reliquaire gagne un <strong class="hl">suivi permanent</strong> dans l’interface, placé <strong class="hl">sous la minicarte</strong>. Il se <strong class="hl">masque complètement</strong> — par un œil sur le bandeau du Reliquaire ou par une ligne des options d’interface —, le réglage est <strong class="hl">mémorisé</strong>, et épingler une page le rallume tout seul.</p>
-        <span class="more-link">Voir le détail</span>
-      </div>
       <div class="card">
-        <h3>La chasse aux à-coups continue <span class="chip c-util">Performance</span></h3>
+        <h3>Un fantôme ne résout plus les énigmes <span class="chip c-fix">Corrigé</span></h3>
         <ul>
-          <li>Suite directe du travail de la <a href="notes/v0.39.0.html">v0.39.0</a> : le jeu <strong class="hl">prépare son rendu à l’avance</strong> au lieu de le faire au pire moment.</li>
-          <li>Ce travail de fond est désormais <strong class="hl">borné par image</strong>, avec un budget que le jeu ajuste tout seul : il ne peut plus monopoliser l’affichage.</li>
-          <li>La construction d’une zone <strong class="hl">quitte le fil principal</strong>, et le décor lointain se dévoile <strong class="hl">par morceaux</strong> plutôt que d’un bloc.</li>
+          <li>Un joueur ayant <strong class="hl">libéré son esprit</strong> pouvait faire avancer une énigme de Faille.</li>
+          <li>C’était d’autant plus visible depuis la <a href="notes/v0.40.0.html#donjons">v0.40.0</a>, qui laisse justement les fantômes revenir 15 minutes après une victoire.</li>
+          <li>Les deux mécaniques cohabitent maintenant proprement : revenir chercher son butin, oui ; faire avancer le donjon, non.</li>
         </ul>
       </div>
       <div class="card">
-        <h3>Discussion &amp; modération <span class="chip c-util">Serveur</span></h3>
+        <h3>Les Gouffres récupèrent leurs oubliés <span class="chip c-fix">Corrigé</span></h3>
         <ul>
-          <li>Une sanction de discussion ne peut plus être <strong class="hl">perdue ni ressuscitée</strong> par une reconnexion qui tombe en même temps qu’une décision de modération.</li>
-          <li>Quand deux décisions se croisent, c’est le <strong class="hl">rétablissement de la parole</strong> qui l’emporte.</li>
-          <li>Le jeu peut aussi <strong class="hl">démarrer muet</strong> : toutes ses sources sonores respectent un même interrupteur.</li>
+          <li>Des joueurs pouvaient rester <strong class="hl">enregistrés dans un Gouffre</strong> qu’ils avaient quitté, bloquant la suite.</li>
+          <li>Le jeu les repère et les sort désormais tout seul.</li>
+          <li>Un Gouffre en cours ne perd plus non plus le fil quand la <strong class="hl">composition du groupe</strong> change en pleine descente.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>La monnaie de forge circule <span class="chip c-new">Nouveau</span></h3>
+        <ul>
+          <li>La monnaie de la <strong class="hl">forge de Faille</strong> ne pouvait ni s’envoyer par courrier ni se mettre en vente.</li>
+          <li>Les deux s’ouvrent — pratique pour rassembler ce qui traîne sur plusieurs personnages.</li>
+          <li>Et l’état d’une Faille est renvoyé correctement quand tu reprends la main après une coupure.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 GUILDE -->
+  <section id="guilde">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Guilde &amp; social : deux corrections de groupe</h2></div>
+    <p class="sec-sub">Le panneau des guildes vient d’arriver en <a href="notes/v0.40.0.html#guilde">v0.40.0</a> et d’être réparé en <a href="notes/v0.40.1.html#guilde">v0.40.1</a> ; la branche n’y retouche pas. Ce qui bouge, c’est le groupe.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Le butin « chacun pour soi » arrive à bon port <span class="chip c-fix">Corrigé</span></h3>
+        <ul>
+          <li>En mode <strong class="hl">chacun pour soi</strong>, le butin partait vers un groupe qui n’existait pas.</li>
+          <li>Il va maintenant au <strong class="hl">joueur qui a ouvert le corps</strong>, ce qui est tout l’intérêt du mode.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Un Gouffre suit son groupe <span class="chip c-fix">Corrigé</span></h3>
+        <ul>
+          <li>Quand quelqu’un rejoignait ou quittait le groupe en pleine descente, la partie en cours <strong class="hl">perdait le fil</strong>.</li>
+          <li>Elle se raccroche désormais au groupe tel qu’il est à cet instant.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Le courrier tient la charge <span class="chip c-new">Coulisses</span></h3>
+        <ul>
+          <li>La v0.40.1 avait déjà bouché deux blocages liés au <a href="notes/v0.40.1.html#confort">courrier du jeu</a> ; la branche va plus loin.</li>
+          <li>Le courrier n’est plus réécrit <strong class="hl">en entier toutes les 30 secondes</strong> : il est enregistré par morceaux.</li>
+          <li>Invisible en jeu, mais c’est ce qui empêche le marché nouvellement ouvert de faire ramer le serveur en grandissant.</li>
         </ul>
       </div>
     </div>
@@ -437,133 +499,147 @@
 
 <script>
   const DETAILS = {
-    barre: {
-      title: "La barre croisée, expliquée",
-      summary: "Lu dans le code de la branche — c’est la solution que Final Fantasy XIV utilise depuis dix ans pour tenir une barre d’action de MMO sur une manette.",
+    pourquoi: {
+      title: "Pourquoi ton personnage glissait",
+      summary: "Lu dans le document de conception de la branche : le défaut n’était pas un réglage à affiner, mais un désaccord de fond entre ton jeu et le serveur.",
       body: `
-        <h4>Le principe</h4>
-        <ul>
-          <li>Chaque <b>gâchette</b> arme une moitié de barre : <b>huit cases</b>, quatre sur la croix directionnelle et quatre sur les boutons de face.</li>
-          <li>Gâchette tenue + un bouton = le sort part. Deux gâchettes, donc <b>seize sorts</b> sous les doigts sans jamais lâcher le stick.</li>
-          <li>Presser l’<b>autre gâchette</b> au milieu d’un appui donne l’autre moitié : on atteint les seize cases sans relâcher.</li>
-        </ul>
-        <h4>La garnir</h4>
-        <ul>
-          <li>Un <b>mode d’arrangement</b> se rejoint à la manette, sans souris : on prend un sort <b>dans le grimoire</b> et on le pose sur une case.</li>
-          <li>Un sort <b>appris en cours de partie</b> se place tout seul sur une case libre.</li>
-          <li>L’<b>attaque de base</b> a sa case, comme le reste.</li>
-        </ul>
-        <h4>Trois présentations</h4>
-        <ul>
-          <li><b>Complète</b> — la barre entière, cadre compris.</li>
-          <li><b>Compacte</b> — le cadre disparaît (c’est lui qui pesait le plus à l’écran) et les repères ne restent que sur la moitié armée.</li>
-          <li><b>Seulement pendant l’appui</b> — rien du tout, jusqu’à ce qu’une gâchette descende.</li>
-          <li>Le changement est <b>instantané</b> : la barre ne se reconstruit pas. Et l’arrangement remet le cadre, puisque là, il dit quelque chose.</li>
-        </ul>`
-    },
-    boutons: {
-      title: "La disposition des boutons, remise dans l’ordre",
-      summary: "L’ancienne manette faisait ce qu’aucune console ne fait, et c’est le genre de détail qui rend un jeu illisible manette en main.",
-      body: `
-        <h4>Ce qui n’allait pas</h4>
-        <ul>
-          <li>Le bouton de <b>droite</b> — celui qui, sur console, veut toujours dire « annuler » — servait à <b>parler aux PNJ et à piller</b>.</li>
-          <li>Le bouton du <b>bas</b>, lui, ne faisait qu’appuyer sur les contrôles de l’interface.</li>
-          <li>Résultat : le seul verbe que la touche de droite ne porte jamais ailleurs était justement celui qu’elle portait ici.</li>
-        </ul>
-        <h4>La nouvelle table</h4>
-        <ul>
-          <li><b>Bas</b> : valide le contrôle en cours et, s’il n’y en a pas, <b>interagit avec la cible</b>. Un seul bouton pour confirmer et pour engager une conversation.</li>
-          <li><b>Droite</b> : <b>annuler</b>, uniquement. Il ferme d’abord la fenêtre du dessus, puis lâche la cible.</li>
-          <li><b>Gauche</b> : ouvre les <b>sous-commandes de la cible</b> — le menu que la souris obtient au clic droit, fabriqué au même endroit pour que les deux ne puissent pas diverger — et à défaut, la carte.</li>
-        </ul>
-        <h4>Et le reste</h4>
-        <ul>
-          <li>La touche <b>Retour</b> parcourt les éléments de l’interface, ce que faisait la croix directionnelle avant de servir à cibler.</li>
-          <li>La <b>gâchette haute droite</b> change de jeu de barres.</li>
-          <li><b>Clavier et souris ne bougent pas</b> : chaque nouvelle commande est propre à la manette.</li>
-        </ul>`
-    },
-    cible: {
-      title: "Cibler à la manette, sans viser",
-      summary: "Le vrai mur des joueurs à la manette n’est pas de lancer un sort : c’est de choisir sur qui.",
-      body: `
-        <h4>La croix directionnelle</h4>
-        <ul>
-          <li>Seule (sans gâchette), elle <b>fait défiler les cibles</b> : gauche et droite parmi les ennemis, haut et bas parmi les alliés.</li>
-          <li>Elle reste au service de l’<b>interface</b> tant qu’on est dedans, pour que rien ne devienne inatteignable.</li>
-        </ul>
-        <h4>Le ciblage automatique</h4>
-        <ul>
-          <li>Un joueur à la souris cible en <b>cliquant ce qu’il voit</b> : lancer un sort sans cible est, chez lui, une maladresse.</li>
-          <li>À la manette, ce geste n’existe pas. Un débutant voit un loup, appuie sur l’attaque qu’il connaît… et le sort <b>refuse</b>. Le jeu a l’air cassé, alors qu’il est juste inappris.</li>
-          <li>Un appui sur la barre croisée qui <b>exige un ennemi</b> et n’en a pas <b>prend le plus proche</b>, en utilisant la règle d’attaquabilité déjà en place — il n’élargit donc jamais qui peut être attaqué, il répond seulement à « lequel ».</li>
-        </ul>
-        <h4>Volontairement étroit</h4>
-        <ul>
-          <li>Seulement les capacités qui <b>réclament une cible</b>.</li>
-          <li><b>Jamais un sort amical</b> : un soin arracherait le joueur à l’allié qu’il visait.</li>
-          <li><b>Jamais une zone d’effet libre</b>, qui a le droit d’être lancée dans le vide.</li>
-          <li><b>Manette uniquement</b> : au clavier, un sort sans cible échoue exactement comme avant.</li>
-        </ul>`
-    },
-    pierres: {
-      title: "Pourquoi deux pierres sur trois n’existaient pas à l’écran",
-      summary: "Une règle d’optimisation générale qui rencontre un boss conçu pour éparpiller le raid : le résultat est une mécanique injouable.",
-      body: `
-        <h4>La mécanique</h4>
-        <ul>
-          <li>Sur Nythraxis héroïque, la <b>Deathless Rage</b> ne s’interrompt qu’en canalisant <b>trois pierres</b>.</li>
-          <li>Elles sont posées <b>très écartées</b> les unes des autres — c’est le cœur de la mécanique : le raid doit se séparer pour les atteindre.</li>
-        </ul>
-        <h4>Le défaut</h4>
-        <ul>
-          <li>Le moteur <b>ne crée pas l’affichage</b> de ce qui dépasse sa distance de rendu ordinaire, et garde invisible ce qui a été créé de trop loin.</li>
-          <li>Or l’écart voulu entre les pierres <b>dépasse cette distance</b>. Un raider qui ne s’était pas personnellement approché d’une pierre <b>ne voyait aucun pilier</b> à cliquer.</li>
-          <li>Mesuré sur le vrai client, depuis la plate-forme d’entrée du raid : <b>une seule des trois</b> pierres obtenait un affichage.</li>
-        </ul>
-        <h4>La correction</h4>
-        <p>Les objets qui <b>n’existent que pour être utilisés</b> — ces pierres, les portails permanents — sont désormais <b>exemptés</b> de la mise à distance, à la création comme au fil des images. Le reste du décor garde ses optimisations.</p>`
-    },
-    direhowl: {
-      title: "Un wipe scripté qui n’en était plus un",
-      summary: "Deux coups calibrés pour tuer à coup sûr passaient par le circuit de dégâts ordinaire — donc par les réductions.",
-      body: `
-        <h4>Le principe des coups « obligatoires »</h4>
-        <ul>
-          <li>Deux mécaniques du mode héroïque sont volontairement calibrées <b>au-dessus des points de vie maximum</b> : rater la parade doit <b>toujours</b> tuer le raid, sans hasard.</li>
-          <li>Mais elles empruntaient le <b>circuit de dégâts normal</b>, celui qui applique toutes les réductions.</li>
-        </ul>
         <h4>Ce qui se passait</h4>
         <ul>
-          <li>L’affaiblissement <b>Direhowl</b> du Guerrier réduit réellement les dégâts que sa cible inflige — un effet parfaitement légitime, appliqué au boss.</li>
-          <li>Appliqué à ces deux coups-là, il les faisait <b>passer sous la barre des 100 %</b> de vie maximum. Le raid <b>survivait</b> à un mécanisme conçu pour ne jamais être survécu.</li>
+          <li>Ton jeu envoyait au serveur des <b>touches tenues</b>, à intervalle régulier : « j’avance », « j’avance », « je tourne ».</li>
+          <li>Le serveur écrasait à chaque fois la commande précédente, puis lisait ce qu’il trouvait <b>à son propre rythme</b>.</li>
+          <li>Résultat : dès que tu changeais d’intention <b>entre deux battements</b> du serveur, vous ne jouiez plus la même partition. Ton jeu avait vu le changement, le serveur non — ou l’inverse.</li>
         </ul>
-        <h4>La correction, et ses limites</h4>
+        <h4>Ce que ça donnait à l’écran</h4>
         <ul>
-          <li>Les deux coups sont maintenant traités comme des <b>montants définitifs</b> — mais <b>uniquement</b> quand le chiffre calibré dépasse déjà les points de vie maximum.</li>
-          <li>Les versions <b>normales</b> du combat, qui n’ont jamais été des morts garanties, <b>gardent toutes leurs réductions</b>.</li>
-          <li><b>Direhowl ne change nulle part ailleurs</b> : ni en donjon, ni en PvP, ni sur les autres boss.</li>
-          <li>Un défaut voisin, du côté d’une marque de Paladin, est <b>signalé mais pas encore corrigé</b> sur cette branche.</li>
+          <li>Une <b>hésitation de vitesse</b> au démarrage de chaque course — même sans aucune latence.</li>
+          <li>Une <b>trajectoire qui coupe mal</b> dès que tu braques en courant.</li>
+          <li>Des <b>retours en arrière</b> quand la connexion hoquette, parce qu’il fallait bien te remettre là où le serveur te croyait.</li>
+        </ul>
+        <h4>Pourquoi ça ne se réglait pas</h4>
+        <p>Ton personnage était dessiné par une <b>estimation</b> tenue en laisse et corrigée en continu par la position officielle. Tant que les deux hôtes ne jouaient pas la même suite de commandes, aucun réglage ne pouvait supprimer un écart dont c’était la cause même. D’où une refonte plutôt qu’un ajustement.</p>`
+    },
+    comment: {
+      title: "Le même calcul, sur la même suite de commandes",
+      summary: "Le principe tient en une phrase : ton jeu et le serveur font tourner le même code sur exactement les mêmes entrées.",
+      body: `
+        <h4>Côté ton jeu</h4>
+        <ul>
+          <li>Il découpe ce que tu fais en <b>images de commande</b> régulières, chacune <b>numérotée</b>.</li>
+          <li>Chaque image est <b>gardée en mémoire</b>, jouée immédiatement chez toi, et envoyée telle quelle.</li>
+          <li>Tu vois donc ton mouvement <b>sans attendre</b> la réponse du serveur.</li>
+        </ul>
+        <h4>Côté serveur</h4>
+        <ul>
+          <li>Il range les images reçues <b>dans l’ordre</b>, au lieu d’écraser la dernière, et les consomme une par une.</li>
+          <li>Il renvoie le <b>numéro</b> de la dernière image qu’il a consommée.</li>
+          <li>Comme le calcul du déplacement est <b>le même code</b> des deux côtés, il tombe sur le même résultat que toi : il n’y a rien à corriger.</li>
+        </ul>
+        <h4>Ce qui reste au serveur</h4>
+        <ul>
+          <li>Il reste <b>seul maître</b> de ta position réelle : ton jeu ne décide de rien, il calcule la même chose en avance.</li>
+          <li>Son rythme ne change pas, et le ciblage, le clic-pour-se-déplacer et les déclencheurs de quête continuent de lire la position officielle.</li>
+          <li>L’ancien protocole reste accepté, pour que les sessions en cours pendant une mise à jour dégradent au lieu de casser.</li>
+        </ul>
+        <h4>La barre à franchir</h4>
+        <p>La branche se fixe une exigence chiffrée, mesurée par une suite de tests dédiée : le mouvement doit rester <b>instantané et sans correction</b> pour du jeu normal, y compris sur une connexion lente et irrégulière. C’est un objectif de développement, pas une promesse tenue tant que la version n’est pas sortie.</p>`
+    },
+    corrections: {
+      title: "Les corrections qui restent, et pourquoi",
+      summary: "L’objectif n’est pas « plus aucune correction » : c’est « plus aucune correction injustifiée ».",
+      body: `
+        <h4>Ce qui te corrigera encore</h4>
+        <ul>
+          <li>Un <b>contrôle</b> qui t’immobilise ou t’empêche d’agir.</li>
+          <li>Une <b>poussée</b>, une téléportation, un déplacement forcé.</li>
+          <li>Un <b>changement de vitesse</b> que ton jeu ne connaissait pas encore.</li>
+        </ul>
+        <h4>La différence</h4>
+        <ul>
+          <li>Ces cas-là sont des <b>désaccords légitimes</b> : le serveur a raison, ton jeu ne pouvait pas savoir.</li>
+          <li>Ils sont maintenant <b>annoncés comme tels</b> et lissés, au lieu d’arriver mêlés aux à-coups ordinaires.</li>
+          <li>Autrement dit : si tu es corrigé, c’est qu’il s’est passé quelque chose — pas que le réseau a hoqueté.</li>
+        </ul>
+        <h4>Le reste du chantier</h4>
+        <p>Une bonne partie des commits de la branche sont des <b>tours de finition</b> sur ce même travail : dérive d’horloge entre ton jeu et le serveur, à-coup de rotation au relâchement, autorité conservée pendant un franchissement, reprise après une coupure. C’est le signe d’un chantier suivi de près — et aussi qu’il n’est pas terminé.</p>`
+    },
+    esquive: {
+      title: "Deux familles d’attaques qui ne pouvaient pas rater",
+      summary: "Ce n’est pas un équilibrage : deux chemins de résolution ne passaient pas par le tirage commun, et n’avaient donc aucune chance d’échouer.",
+      body: `
+        <h4>Ce qui était cassé</h4>
+        <ul>
+          <li>Un <b>sort instantané hostile</b> — ceux qui ne lancent pas de projectile — sautait le tirage de résistance que son équivalent à projectile fait à l’impact.</li>
+          <li>Un <b>coup physique spécial</b> à dégâts directs ne faisait <b>aucun tirage de manqué</b>, contrairement aux effets voisins qui, eux, en faisaient un.</li>
+          <li>Les deux touchaient donc <b>systématiquement</b>, quelle que soit la cible.</li>
+        </ul>
+        <h4>Ce qui change</h4>
+        <ul>
+          <li>Les deux passent maintenant par la même résolution que le reste.</li>
+          <li>Le tirage physique est sauté quand la chance de manquer est <b>déjà nulle</b> — inutile de tirer un dé qui ne peut pas perdre.</li>
+        </ul>
+        <h4>Ce que ça veut dire pour toi</h4>
+        <ul>
+          <li>Toutes les classes tapent un peu <b>moins souvent</b> : personne ne perd de terrain sur les autres, mais les chiffres bruts baissent.</li>
+          <li>En PvP, une ouverture instantanée n’est plus une <b>garantie</b>.</li>
+          <li>Les statistiques qui font manquer ou résister — celles de ta cible — comptent désormais contre ces attaques-là aussi.</li>
+        </ul>
+        <h4>Prudence</h4>
+        <p>C’est typiquement le genre de correction qui peut être <b>retouchée, compensée ailleurs, ou repoussée</b> avant la sortie : une baisse générale des dégâts se paie souvent par un ajustement en face. Rien de tel n’est encore sur la branche.</p>`
+    },
+    barres: {
+      title: "Les barres de temps d’attaque",
+      summary: "Savoir quand tombe le prochain coup de l’adversaire — la brique que les joueurs de mêlée et de PvP réclament dans tous les MMO.",
+      body: `
+        <h4>Ce qui arrive</h4>
+        <ul>
+          <li>Une barre pour <b>ta cible</b>, et une pour <b>la cible de ta cible</b>.</li>
+          <li>Elles se remplissent entre deux coups : d’un coup d’œil, tu sais où en est son cycle d’attaque.</li>
+          <li>Elles reposent sur un vrai suivi des <b>auto-attaques des autres</b>, ajouté par la branche — ce qui n’existait pas jusqu’ici.</li>
+        </ul>
+        <h4>Comment ça s’allume</h4>
+        <ul>
+          <li>Un <b>réglage dédié</b> dans les options d’interface, traduit dans toutes les langues du jeu.</li>
+          <li>Il est <b>indépendant</b> de l’affichage du petit portrait de la cible de la cible : tu peux avoir la barre sans le portrait, et l’inverse.</li>
+        </ul>
+        <h4>Et pour toi</h4>
+        <p>Ta propre barre de temps d’attaque existait déjà ; la branche lui ajoute une <b>seconde barre pour la main gauche</b>, celle qui permet de placer ses coups entre deux frappes quand on se bat à deux armes.</p>`
+    },
+    vendre: {
+      title: "« Tout vendre », et la destruction de pile",
+      summary: "Deux irritants du premier jour, pris ensemble.",
+      body: `
+        <h4>Le problème</h4>
+        <ul>
+          <li>Vendre plus d’un exemplaire à la fois demandait de <b>découvrir le clic avec Maj</b>, que rien n’indique.</li>
+          <li>Sur mobile, il n’y avait tout simplement <b>aucun moyen</b> d’ouvrir un menu sur un objet vendable.</li>
+          <li>Et la fenêtre qui détruit un objet proposait <b>1</b> par défaut, même quand tu venais de cliquer une pile entière.</li>
+        </ul>
+        <h4>Ce qui arrive</h4>
+        <ul>
+          <li>Un clic droit — ou un <b>appui</b> sur mobile — ouvre un menu avec « <b>Vendre</b> » et « <b>Tout vendre (N)</b> ».</li>
+          <li>N compte tout ce que tu possèdes, <b>tous sacs confondus</b>, pas seulement la pile cliquée.</li>
+          <li>Le raccourci existant pour vendre une demi-pile d’un coup ne change pas.</li>
+          <li>La fenêtre de destruction propose maintenant la <b>pile entière</b>, toujours modifiable, avec la même confirmation qu’avant.</li>
         </ul>`
     },
-    reliquaire: {
-      title: "Le suivi du Reliquaire, et le droit de le faire taire",
-      summary: "Un ajout d’interface avec sa consigne inverse : ce qu’on ajoute à l’écran doit pouvoir en sortir.",
+    monture: {
+      title: "Le Bonebound Rickshaw : joli, et inaccessible",
+      summary: "À lire avant de se réjouir : la monture existe dans le code, mais rien ne permet de l’obtenir.",
       body: `
         <h4>Ce que c’est</h4>
         <ul>
-          <li>Un <b>suivi permanent</b> du Reliquaire, à droite, <b>sous la minicarte</b>, dans la même colonne que les autres suivis.</li>
-          <li>Il se cale sur le <b>bas réel</b> de cette colonne plutôt que sur une hauteur fixe : sur écran étroit, la pastille se posait par-dessus la boussole et l’horloge.</li>
+          <li>Une charrette à bras d’allure <b>Halloween</b>, tirée par un <b>squelette</b> intégré à l’engin, qui tient les brancards.</li>
+          <li>Le squelette a une <b>vraie démarche</b>, et les roues tournent d’après la distance réellement parcourue — pas d’animation approximative.</li>
+          <li>Elle a son propre <b>son d’invocation</b> et son bruit de roulement, et pique du nez vers le haut quand on saute.</li>
         </ul>
-        <h4>Le masquer</h4>
+        <h4>Le point important</h4>
         <ul>
-          <li>Un <b>œil</b> sur le bandeau du Reliquaire, ou une ligne dans les <b>options d’interface</b> : les deux commandent le même réglage, <b>mémorisé</b> d’une session à l’autre.</li>
-          <li>Masqué, il <b>ne coûte plus rien</b> — le jeu cesse d’aller lire ce qu’il affichait.</li>
-          <li>Et si tu <b>épingles une page</b> alors qu’il est caché, il se rallume : la convention habituelle des suivis d’objectifs.</li>
+          <li>Le catalogue la range comme <b>réservée aux développeurs</b>, avec la mention explicite : <b>aucun chemin d’acquisition pour les joueurs</b> à ce jour.</li>
+          <li>Elle est rangée en fin de catalogue, à côté du char déjà dans le même cas.</li>
+          <li>Ça peut changer d’ici la sortie — ou pas du tout. Rien ne permet aujourd’hui de dire comment on l’obtiendra.</li>
         </ul>
-        <h4>Au passage</h4>
-        <p>Un suivi de quête <b>vide</b> ne laisse plus un espace fantôme dans la colonne, et les pastilles compactes prennent l’aspect des autres éléments groupés autour de la minicarte.</p>`
+        <h4>Pourquoi on en parle quand même</h4>
+        <p>Parce que c’est une dizaine de commits de la branche, qu’elle apparaîtra dans les captures d’écran, et qu’il vaut mieux savoir tout de suite qu’elle n’est <b>pas à farmer</b>. Le <a href="montures.html">guide Montures</a> ne la listera que le jour où le jeu donnera un moyen de l’avoir.</p>`
     },
   };
 

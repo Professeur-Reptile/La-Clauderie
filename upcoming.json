@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-26T21:02:08Z",
+ "generated": "2026-08-26T21:20:38Z",
  "base_tag": "v0.40.1",
  "version": "v0.41.0",
  "branch": "ossbrain-release/v0.41.0",
@@ -7,7 +7,7 @@
  "imminent": false,
  "commits": 220,
  "shown": 95,
- "last_commit": "2026-08-26T20:14:52Z",
+ "last_commit": "2026-08-26T20:14:52+00:00",
  "sections": [
   {
    "key": "classes",
@@ -730,7 +730,7 @@
    "imminent": false,
    "commits": 220,
    "shown": 95,
-   "last_commit": "2026-08-26T20:14:52Z",
+   "last_commit": "2026-08-26T20:14:52+00:00",
    "sections": [
     {
      "key": "classes",
