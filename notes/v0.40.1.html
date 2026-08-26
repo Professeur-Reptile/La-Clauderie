@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Nouveautés v0.40.1 — La Clauderie</title>
+<meta name="description" content="Les nouveautés de la v0.40.1 de World of ClaudeCraft, expliquées simplement : le marché entre joueurs est ouvert, changer le portefeuille qui reçoit ton argent demande une preuve, les candidatures de guilde survivent à la déconnexion et deux ralentissements de serveur sont bouchés. Aucune valeur de combat ne change.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Nouveautés v0.40.1 — La Clauderie">
+<meta property="og:description" content="Le marché entre joueurs est ouvert, ton portefeuille est verrouillé par une preuve d’identité, et les candidatures de guilde tiennent enfin même hors ligne.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.40.1.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.40.1.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') === 'en') location.replace('v0.40.1.en.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Notes de version</p>
+    <h1>Nouveautés <span class="v">v0.40.1</span></h1>
+    <p class="lede">Le marché entre joueurs, livré <strong class="hl">éteint</strong> avec la <a href="v0.40.0.html">v0.40.0</a>, est <strong class="hl">ouvert</strong> : le jeu l’a allumé le 26 août. Cette version est le paquet de sécurité qui allait avec — changer le portefeuille qui reçoit ton argent demande désormais une <strong class="hl">preuve que c’est bien toi</strong>. À côté, deux vrais correctifs : une <strong class="hl">candidature de guilde survit à la déconnexion</strong> (et accepter quelqu’un hors ligne le fait enfin entrer), et deux ralentissements de serveur apparus en v0.40.0 sont bouchés. <strong class="hl">Aucune valeur de combat ne change</strong>.</p>
+    <div class="meta">
+      <span><b>Publiée</b> le 26 août 2026</span>
+      <span><b>Depuis</b> la v0.40.0</span>
+      <span><b>22</b> commits</span>
+      <span><b>0</b> valeur de combat modifiée</span>
+    </div>
+    <div class="hint">💡 Clique sur une carte pour le détail.</div>
+  </header>
+
+  <!-- Bandeau constant : mêmes rubriques, même ordre, à chaque version. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">En un coup d’œil</h2>
+    <p class="sec-sub">Les mêmes rubriques à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
+    <ol>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <span class="d-name">Classes &amp; sorts</span>
+        <span class="d-say"><b class="eq">Toutes =</b> aucune valeur ne bouge : ni sort, ni talent, ni maîtrise, ni panoplie, ni objet. Les nouveautés de classe de la <a href="v0.40.0.html">v0.40.0</a> — le Démoniste remonté, les poisons du Voleur — restent telles quelles.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <span class="d-name">Métiers &amp; récolte</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <span class="d-name">Donjons, failles &amp; boss</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <span class="d-name">Monde &amp; quêtes</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <a class="d-name" href="#guilde">Guilde &amp; social</a>
+        <span class="d-say"><strong class="hl">Le gros du correctif.</strong> Une <strong class="hl">candidature</strong> devient une demande qui <strong class="hl">tient</strong> : elle survit à la déconnexion, et un officier qui accepte quelqu’un de <strong class="hl">hors ligne</strong> le fait vraiment entrer — avant, la demande disparaissait sans rien faire. C’est aussi ici qu’ouvre le <a href="#marche">marché entre joueurs</a>.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#confort">Confort &amp; technique</a>
+        <span class="d-say">Deux <strong class="hl">à-coups de serveur</strong> introduits par la v0.40.0 sont bouchés : ils venaient tous les deux du courrier du jeu, devenu si gros (<strong class="hl">89 Mo</strong>) que le relire entier bloquait le monde plusieurs centaines de millisecondes.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="marche">
+    <h2><span class="num">01</span>Le marché entre joueurs est ouvert</h2>
+    <p class="sec-sub">On l’avait annoncé « livré, mais éteint » il y a un jour : c’était exact au moment de la <a href="v0.40.0.html">v0.40.0</a>. Le jeu l’a allumé le <strong class="hl">26 août</strong>, et cette version est le paquet qui accompagne l’ouverture — outils d’exploitation, sécurité du portefeuille, et conditions d’utilisation publiées.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="ouverture" tabindex="0" role="button" aria-label="Détails : ce que l’ouverture change, et ce qu’il faut savoir avant de s’en servir">
+        <h3>C’est ouvert <span class="chip c-new">Le changement</span></h3>
+        <p>Les trois formats annoncés sont utilisables : <strong class="hl">enchère</strong> (12, 24 ou 48 h), <strong class="hl">prix fixe</strong>, et vente à un joueur nommé. Rappel important : c’est de l’<strong class="hl">argent réel</strong>, pas l’hôtel des ventes en or — celui-ci n’a pas bougé.</p>
+        <span class="more-link">Voir ce qu’il faut savoir avant</span>
+      </div>
+      <div class="card more" data-detail="portefeuille" tabindex="0" role="button" aria-label="Détails : les règles exactes pour changer ou retirer son portefeuille">
+        <h3>Ton portefeuille est verrouillé <span class="chip c-new">Sécurité</span></h3>
+        <p>C’est lui qui reçoit l’argent de tes ventes, donc le <strong class="hl">changer ou le retirer</strong> demande une preuve : la <strong class="hl">signature du portefeuille actuel</strong>, ou ton <strong class="hl">mot de passe</strong> (plus le second facteur si tu en as un). Un <strong class="hl">e-mail</strong> part à chaque changement.</p>
+        <span class="more-link">Voir les règles exactes</span>
+      </div>
+      <div class="card">
+        <h3>Deux petits ajouts <span class="chip c-util">Interface</span></h3>
+        <ul>
+          <li>L’état de ton portefeuille s’affiche maintenant <strong class="hl">en haut de l’Échange</strong>, au-dessus des filtres : un portefeuille déconnecté se rebranche sans quitter la page.</li>
+          <li>Les <strong class="hl">conditions d’utilisation</strong> du marché et les avertissements sur les risques sont publiés sur les pages officielles auxquelles le jeu renvoie.</li>
+          <li>Côté coulisses, les opérateurs peuvent trancher un paiement resté en attente de vérification, dans un sens ou dans l’autre.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Ce qui n’a pas changé <span class="chip c-util">Rappel</span></h3>
+        <ul>
+          <li>Le vendeur paie <strong class="hl">10 %</strong> de frais : 7 % à la trésorerie du jeu, 3 % détruits. Il garde environ 90 %.</li>
+          <li><strong class="hl">Douze annonces actives</strong> par compte au maximum, entre <strong class="hl">0,25 $</strong> et <strong class="hl">1 000 $</strong> l’objet.</li>
+          <li>Seuls l’<strong class="hl">équipement</strong>, les <strong class="hl">montures</strong> et les <strong class="hl">peintures de mécha</strong> se vendent.</li>
+          <li>Le détail complet des règles est resté sur la <a href="v0.40.0.html#marche">page de la v0.40.0</a>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Le conseil de la guilde <span class="chip c-bal">À lire</span></h3>
+        <ul>
+          <li>Rien ne t’oblige à t’en servir : l’or, l’équipement gagné en jeu et la progression normale ne sont pas concernés.</li>
+          <li>Si tu t’y mets, garde en tête que le prix est fixé en <strong class="hl">dollars</strong> mais réglé en jetons : le nombre de jetons bouge avec le cours entre ton engagement et ton paiement.</li>
+          <li>Le jeu se réserve le droit de <strong class="hl">changer les frais, suspendre ou arrêter</strong> le marché.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Si tu ne fais rien <span class="chip c-util">Bonne nouvelle</span></h3>
+        <ul>
+          <li>Sans portefeuille lié, tu ne peux ni acheter ni vendre — et rien ne t’y pousse.</li>
+          <li>Aucun objet ne quitte tes sacs tout seul : une mise en vente met l’objet en <strong class="hl">dépôt</strong>, et un marché suspendu les rend à leurs vendeurs.</li>
+          <li>Les objets <strong class="hl">liés</strong> et de quête restent invendables, montures mises à part.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="guilde">
+    <h2><span class="num">02</span>Les candidatures de guilde tiennent enfin</h2>
+    <p class="sec-sub">Le panneau des guildes est arrivé avec la <a href="v0.40.0.html#guilde">v0.40.0</a>, et il avait un défaut gênant : accepter un candidat qui n’était pas connecté <strong class="hl">effaçait sa demande sans rien faire</strong>. Il ne le savait jamais, et l’officier croyait l’avoir recruté. C’est corrigé, et la candidature devient une vraie demande permanente.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="candidature" tabindex="0" role="button" aria-label="Détails : le cycle de vie complet d’une candidature">
+        <h3>Une candidature survit à la déconnexion <span class="chip c-new">Correctif</span></h3>
+        <p>Ta candidature est maintenant une <strong class="hl">demande permanente</strong> : tu peux te déconnecter, elle reste affichée aux officiers. Elle ne disparaît que sur un vrai dénouement — tu entres, tu la retires, ou la guilde te refuse.</p>
+        <span class="more-link">Voir tous les cas</span>
+      </div>
+      <div class="card">
+        <h3>Accepter quelqu’un hors ligne marche <span class="chip c-new">Correctif</span></h3>
+        <ul>
+          <li>Si le candidat est <strong class="hl">hors ligne</strong>, l’officier qui accepte l’<strong class="hl">assied directement</strong> dans la guilde : il se retrouve membre à sa prochaine connexion.</li>
+          <li>S’il est <strong class="hl">en ligne</strong>, rien ne change : il reçoit l’invitation habituelle, et sa candidature reste posée tant qu’il n’a pas rejoint.</li>
+          <li>S’il <strong class="hl">décline</strong> cette invitation, sa candidature est retirée — pas besoin d’aller l’annuler à la main.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Un refus arrête vraiment tout <span class="chip c-util">Détail utile</span></h3>
+        <ul>
+          <li>Un officier qui refuse annule aussi l’<strong class="hl">invitation encore en attente</strong> d’une acceptation précédente : le « non » stoppe l’entrée, il ne fait plus que rallonger l’échelle d’attente.</li>
+          <li>Les deux côtés sont prévenus de l’annulation.</li>
+          <li>Et il n’y a plus de course possible : quelqu’un qui retire sa candidature ou décline juste au moment où un officier accepte ne peut plus être assis contre son gré.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Fonder sa guilde efface sa candidature <span class="chip c-util">Cohérence</span></h3>
+        <ul>
+          <li>Créer une guilde retire ta candidature en attente ailleurs — l’aspiration s’arrête là.</li>
+          <li>Rejoindre n’importe quelle guilde fait la même chose.</li>
+          <li>Dans les deux cas, la mention « <strong class="hl">Pledge of…</strong> » disparaît de ton nom tout de suite, sans avoir à te reconnecter.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>L’échelle de refus n’a pas changé <span class="chip c-util">Rappel</span></h3>
+        <ul>
+          <li>1<sup>er</sup> refus : <strong class="hl">un jour</strong> d’attente pour cette guilde. 2<sup>e</sup> : <strong class="hl">une semaine</strong>. 3<sup>e</sup> : <strong class="hl">définitif</strong>.</li>
+          <li>Une <strong class="hl">invitation</strong> de cette guilde efface toute l’ardoise.</li>
+          <li>Le délai de <strong class="hl">cinq minutes</strong> entre deux candidatures vaut pour toute nouvelle demande — y compris après un retrait.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Ce que ça change pour La Clauderie <span class="chip c-new">Pratique</span></h3>
+        <ul>
+          <li>Les officiers peuvent traiter les candidatures <strong class="hl">quand ils veulent</strong>, sans attendre que la personne soit connectée.</li>
+          <li>Une candidature déposée la nuit est toujours là le lendemain matin.</li>
+          <li>Le panneau ne se vide plus tout seul : ce qui y figure est réellement en attente.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="confort">
+    <h2><span class="num">03</span>Deux à-coups de serveur bouchés</h2>
+    <p class="sec-sub">Les deux venaient du même endroit : le <strong class="hl">courrier du jeu</strong>, un seul gros bloc de données qui pèse <strong class="hl">89 Mo</strong> en production. Deux nouveautés de la v0.40.0 le relisaient entier à chaque fois, et pendant ce temps le monde attendait.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="perf" tabindex="0" role="button" aria-label="Détails : les deux blocages, leurs chiffres et leur correction">
+        <h3>Le tableau de bord bloquait le monde <span class="chip c-new">Correctif</span></h3>
+        <p>Un relevé de richesse tournait <strong class="hl">toutes les minutes</strong> côté administration et relisait tout le courrier : environ <strong class="hl">400 ms de blocage par minute</strong>, qui grossissaient avec le courrier. Le calcul se fait maintenant dans la base, et son coût pour le jeu ne bouge plus.</p>
+        <span class="more-link">Voir les deux corrections</span>
+      </div>
+      <div class="card">
+        <h3>Chaque colis du marché coûtait cher <span class="chip c-util">Correctif</span></h3>
+        <ul>
+          <li>Chaque objet livré, chaque annonce rendue et chaque avis de vente réécrivait tout le courrier : environ <strong class="hl">250 ms</strong> de blocage <strong class="hl">par colis</strong>.</li>
+          <li>Un colis écrit maintenant <strong class="hl">une seule ligne</strong>, et rejoint le gros bloc au passage suivant.</li>
+          <li>Une panne au mauvais moment ne perd rien : les lignes en attente sont rejouées au redémarrage, sans doublon.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Et rien d’autre <span class="chip c-util">Portée</span></h3>
+        <ul>
+          <li><strong class="hl">Aucune donnée de jeu ne change</strong> : sorts, talents, objets, monstres, quêtes et zones sont identiques à la <a href="v0.40.0.html">v0.40.0</a>.</li>
+          <li>Le <a href="../bis.html">guide Builds</a>, le <a href="../metiers.html">guide Métiers</a>, les <a href="../failles.html">Failles</a> et les <a href="../montures.html">Montures</a> restent valables tels quels.</li>
+          <li>Les modèles 3D de Fenbridge ont été re-tamponnés au passage de version, sans aucune différence à l’écran.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    ouverture: {
+      title: "Le marché est ouvert : ce qu’il faut savoir avant de s’en servir",
+      summary: "Rien n’oblige à y toucher. Mais si tu t’y mets, voici les points qui surprennent le plus.",
+      body: `
+        <h4>Ce n’est pas l’hôtel des ventes du jeu</h4>
+        <ul>
+          <li>L’<b>hôtel des ventes</b> historique fonctionne en <b>or</b>, prend 5 % au vendeur, et n’a pas changé.</li>
+          <li>Le nouveau marché fonctionne en <b>jeton $WOC</b>, avec des prix affichés en <b>dollars</b>. Deux choses distinctes.</li>
+          <li>Il faut un <b>portefeuille vérifié</b> rattaché à ton compte pour acheter comme pour vendre.</li>
+        </ul>
+        <h4>Le prix est en dollars, le paiement en jetons</h4>
+        <ul>
+          <li>Le prix affiché ne bouge pas : il est fixé en <b>dollars</b>.</li>
+          <li>Au moment de payer, tu demandes un <b>devis</b> — le nombre de jetons correspondant au cours de l’instant, valable <b>90 secondes</b> — puis tu signes <b>une seule transaction</b> depuis ton portefeuille.</li>
+          <li>Si le cours bouge entre ton engagement et ton paiement, c’est le nombre de jetons qui change, pas le prix en dollars. Les frais de réseau sont à ta charge.</li>
+        </ul>
+        <h4>Enchérir engage</h4>
+        <ul>
+          <li>Une enchère demande une <b>caution de 5 %</b> de ton offre (entre 1 $ et 50 $).</li>
+          <li>Gagner sans payer dans le délai fait <b>perdre la caution</b> — elle ne va pas au vendeur — et vaut un avertissement. Les avertissements répétés coupent l’accès au marché.</li>
+          <li>Une offre déposée dans les <b>deux dernières minutes</b> prolonge l’enchère de deux minutes, jusqu’à 30 minutes de rab au total.</li>
+        </ul>
+        <h4>Ce que le jeu se réserve</h4>
+        <p>Les conditions d’utilisation, publiées avec cette version, disent que le jeu peut <b>changer les frais</b> (jamais sur une vente déjà conclue), <b>suspendre</b> ou <b>arrêter</b> le marché. Dans ce cas les objets en dépôt reviennent à leurs vendeurs, et aucune compensation n’est due pour une vente espérée. À lire avant de compter dessus.</p>`
+    },
+    portefeuille: {
+      title: "Changer ou retirer ton portefeuille : les règles exactes",
+      summary: "C’est le portefeuille qui encaisse tes ventes. Une session volée ne doit pas suffire à le déplacer.",
+      body: `
+        <h4>Le premier rattachement reste simple</h4>
+        <ul>
+          <li>Lier un portefeuille pour la <b>première fois</b> se fait comme avant : tu signes un message avec, et c’est tout. Il n’y a pas de portefeuille précédent à protéger.</li>
+          <li>Re-vérifier <b>le même</b> portefeuille ne demande rien non plus.</li>
+          <li>Dans tous les cas, un <b>e-mail</b> t’avertit du changement : c’est le filet de sécurité de ce chemin-là.</li>
+        </ul>
+        <h4>Changer pour un AUTRE portefeuille</h4>
+        <ul>
+          <li>Deux façons de prouver que c’est toi, au choix :</li>
+          <li>— la <b>signature du portefeuille actuel</b> sur le même message que signe le nouveau ;</li>
+          <li>— ou ton <b>mot de passe de compte</b>, plus le <b>second facteur</b> si tu en as activé un.</li>
+        </ul>
+        <h4>Retirer le portefeuille : mot de passe obligatoire</h4>
+        <ul>
+          <li>Là, la signature ne suffit <b>pas</b> : le message qu’on signe pour lier un portefeuille ne peut pas être limité à une suppression, donc il ne prouve rien pour ce geste-là.</li>
+          <li>Il faut donc le <b>mot de passe</b> (plus le second facteur le cas échéant).</li>
+        </ul>
+        <h4>Si tu n’as pas de mot de passe</h4>
+        <p>Les comptes créés via <b>Apple</b> ou <b>Discord</b> n’en ont pas forcément. Au lieu de te laisser bloqué, le jeu t’envoie maintenant vers « <b>Définir un mot de passe</b> » — la possibilité d’en créer un est arrivée avec la <a href="v0.40.0.html">v0.40.0</a>.</p>`
+    },
+    candidature: {
+      title: "Le cycle de vie d’une candidature, cas par cas",
+      summary: "Une candidature est désormais une demande permanente. Voici exactement quand elle disparaît, et quand elle reste.",
+      body: `
+        <h4>Le bug corrigé</h4>
+        <ul>
+          <li>Avant, accepter une candidature <b>supprimait la demande</b>, puis essayait d’envoyer une invitation — un mécanisme qui ne marche que si la personne est <b>connectée</b>.</li>
+          <li>Résultat sur quelqu’un de hors ligne : la demande disparaissait, aucune invitation n’arrivait, et personne n’était prévenu. L’officier croyait avoir recruté, le candidat ne voyait rien.</li>
+        </ul>
+        <h4>Maintenant : candidat hors ligne</h4>
+        <ul>
+          <li>L’officier accepte → le candidat est <b>assis directement</b> dans la guilde.</li>
+          <li>Il se découvre membre à sa <b>prochaine connexion</b>.</li>
+          <li>L’entrée et la consommation de la candidature se font <b>d’un seul bloc</b> : impossible d’asseoir quelqu’un qui vient de se retirer.</li>
+        </ul>
+        <h4>Maintenant : candidat en ligne</h4>
+        <ul>
+          <li>L’officier accepte → le candidat reçoit l’<b>invitation habituelle</b>, avec sa fenêtre à accepter ou décliner.</li>
+          <li>Sa candidature <b>reste posée</b> tant qu’il n’a pas effectivement rejoint : une invitation ignorée ou une guilde pleine ne l’efface pas.</li>
+          <li>S’il <b>décline</b>, la candidature est retirée : décliner vaut renoncement.</li>
+        </ul>
+        <h4>Quand la candidature disparaît</h4>
+        <ul>
+          <li>Tu <b>rejoins</b> la guilde (ou n’importe quelle autre).</li>
+          <li>Tu <b>fondes</b> ta propre guilde.</li>
+          <li>Tu <b>décline</b> l’invitation reçue, ou tu retires ta candidature toi-même.</li>
+          <li>La guilde te <b>refuse</b> — et le refus annule au passage toute invitation encore en attente.</li>
+        </ul>
+        <h4>Un point qui n’a pas changé</h4>
+        <p>Le délai de <b>cinq minutes</b> entre deux candidatures compte à partir de la dernière déposée, et il <b>survit à un retrait</b> : se retirer pour re-candidater ailleurs tout de suite ne marche pas. C’est ce qui empêche d’arroser tout le panneau.</p>`
+    },
+    perf: {
+      title: "Les deux blocages, et pourquoi ils venaient du courrier",
+      summary: "Le courrier du jeu est stocké comme un seul gros bloc de 89 Mo. Deux nouveautés de la v0.40.0 le relisaient entier.",
+      body: `
+        <h4>Le problème commun</h4>
+        <ul>
+          <li>Tout le courrier d’un royaume tient dans <b>un seul bloc</b> de données, qui pèse <b>89 Mo</b> en production.</li>
+          <li>Le relire ou le réécrire coûte des centaines de millisecondes, pendant lesquelles la <b>boucle du monde</b> ne tourne pas — c’est ce que les joueurs ressentent comme un à-coup.</li>
+          <li>Les deux nouveautés fautives sont arrivées avec la v0.40.0 : elles n’existaient pas avant.</li>
+        </ul>
+        <h4>Le relevé de richesse (toutes les minutes)</h4>
+        <ul>
+          <li>Le tableau de bord d’administration recalcule les totaux d’or par compte <b>toutes les 60 secondes</b>.</li>
+          <li>La partie qui compte l’argent en dépôt chargeait tout le courrier dans le jeu pour le parcourir : environ <b>400 ms de blocage par minute</b>, et ça grossissait avec le courrier.</li>
+          <li>Le calcul se fait maintenant <b>dans la base de données</b>, avec une limite de mémoire. Le coût pour le jeu ne bouge plus quand le courrier grossit.</li>
+        </ul>
+        <h4>Les colis du marché (à chaque livraison)</h4>
+        <ul>
+          <li>Chaque objet livré, chaque annonce rendue à son vendeur et chaque avis de vente réécrivait tout le bloc : environ <b>250 ms</b> à chaque fois.</li>
+          <li>Un colis écrit désormais <b>une ligne</b>, tout de suite ; il rejoint le gros bloc à la prochaine écriture prévue, qui supprime la ligne dans le même mouvement.</li>
+          <li>Si le serveur tombe entre les deux, les lignes survivantes sont <b>rejouées au redémarrage</b>, et un garde-fou empêche qu’un colis soit livré deux fois.</li>
+        </ul>
+        <h4>Ce que ça change pour toi</h4>
+        <p>Rien à faire, et rien à régler : ce sont des à-coups <b>côté serveur</b>, ressentis par tout le monde en même temps. Ils disparaissent, et surtout ils <b>ne grossiront plus</b> avec le courrier accumulé — c’était le vrai risque, puisque le marché nouvellement ouvert va en produire beaucoup.</p>`
+    },
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

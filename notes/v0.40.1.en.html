@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Patch notes v0.40.1 — La Clauderie</title>
+<meta name="description" content="The v0.40.1 release of World of ClaudeCraft in plain language: the player marketplace is open, changing the wallet that receives your money demands proof, guild pledges survive logout and two server stalls are closed. No combat value changes.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Patch notes v0.40.1 — La Clauderie">
+<meta property="og:description" content="The player marketplace is open, your wallet is locked behind proof of identity, and guild pledges finally hold even offline.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.40.1.en.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.40.1.en.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') !== 'en') location.replace('v0.40.1.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Site navigation"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Patch notes</p>
+    <h1>Patch notes <span class="v">v0.40.1</span></h1>
+    <p class="lede">The player marketplace, shipped <strong class="hl">switched off</strong> with <a href="v0.40.0.en.html">v0.40.0</a>, is <strong class="hl">open</strong>: the game turned it on on August 26. This release is the security package that came with it — changing the wallet that receives your money now demands <strong class="hl">proof it is you</strong>. Alongside, two real fixes: a <strong class="hl">guild pledge now survives logout</strong> (and accepting an offline pledger finally puts them in), and two server stalls introduced in v0.40.0 are closed. <strong class="hl">No combat value changes.</strong></p>
+    <div class="meta">
+      <span><b>Released</b> August 26, 2026</span>
+      <span><b>Since</b> v0.40.0</span>
+      <span><b>22</b> commits</span>
+      <span><b>0</b> combat values changed</span>
+    </div>
+    <div class="hint">💡 Click a card for details.</div>
+  </header>
+
+  <!-- Fixed digest: same rubrics, same order, every release. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">At a glance</h2>
+    <p class="sec-sub">The same rubrics every release, in the same order. Click a rubric to jump to its section.</p>
+    <ol>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <span class="d-name">Classes &amp; spells</span>
+        <span class="d-say"><b class="eq">All =</b> no value moves: no spell, no talent, no mastery, no set, no item. The class work from <a href="v0.40.0.en.html">v0.40.0</a> — the Warlock lifted, the Rogue's poisons — stands as it is.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <span class="d-name">Professions &amp; gathering</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <span class="d-name">Dungeons, rifts &amp; bosses</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <span class="d-name">World &amp; quests</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <a class="d-name" href="#guilde">Guild &amp; social</a>
+        <span class="d-say"><strong class="hl">The heart of the hotfix.</strong> A <strong class="hl">pledge</strong> becomes a request that <strong class="hl">holds</strong>: it survives logout, and an officer accepting an <strong class="hl">offline</strong> pledger really does put them in — before, the request simply vanished. The <a href="#marche">player marketplace</a> opens here too.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#confort">Quality of life &amp; tech</a>
+        <span class="d-say">Two <strong class="hl">server stalls</strong> introduced by v0.40.0 are closed: both came from the game's mail, now so large (<strong class="hl">89 MB</strong>) that re-reading it whole blocked the world for hundreds of milliseconds.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="marche">
+    <h2><span class="num">01</span>The player marketplace is open</h2>
+    <p class="sec-sub">We called it "shipped, but switched off" a day ago: that was accurate at <a href="v0.40.0.en.html">v0.40.0</a>. The game turned it on on <strong class="hl">August 26</strong>, and this release is the package that comes with opening — operator tools, wallet security, and published terms.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="ouverture" tabindex="0" role="button" aria-label="Details: what opening changes, and what to know before using it">
+        <h3>It is open <span class="chip c-new">The change</span></h3>
+        <p>All three announced formats are usable: <strong class="hl">auction</strong> (12, 24 or 48 h), <strong class="hl">fixed price</strong>, and a sale to a named player. Important reminder: this is <strong class="hl">real money</strong>, not the gold auction house — that one has not moved.</p>
+        <span class="more-link">See what to know first</span>
+      </div>
+      <div class="card more" data-detail="portefeuille" tabindex="0" role="button" aria-label="Details: the exact rules for changing or removing your wallet">
+        <h3>Your wallet is locked down <span class="chip c-new">Security</span></h3>
+        <p>It receives the money from your sales, so <strong class="hl">changing or removing it</strong> now demands proof: the <strong class="hl">current wallet's signature</strong>, or your <strong class="hl">account password</strong> (plus your second factor if you have one). An <strong class="hl">email</strong> goes out on every change.</p>
+        <span class="more-link">See the exact rules</span>
+      </div>
+      <div class="card">
+        <h3>Two small additions <span class="chip c-util">Interface</span></h3>
+        <ul>
+          <li>Your wallet's status now sits <strong class="hl">at the top of the Exchange</strong>, above the filters: a disconnected wallet is fixable without leaving the page.</li>
+          <li>The marketplace's <strong class="hl">terms of service</strong> and risk disclosures are published on the official pages the game links to.</li>
+          <li>Behind the scenes, operators can rule on a payment parked for review, either way.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>What has not changed <span class="chip c-util">Reminder</span></h3>
+        <ul>
+          <li>The seller pays <strong class="hl">10 %</strong> in fees: 7 % to the game treasury, 3 % burned. They keep roughly 90 %.</li>
+          <li>At most <strong class="hl">twelve active listings</strong> per account, between <strong class="hl">$0.25</strong> and <strong class="hl">$1,000</strong> an item.</li>
+          <li>Only <strong class="hl">equipment</strong>, <strong class="hl">mounts</strong> and <strong class="hl">mech chromas</strong> can be sold.</li>
+          <li>The full rules stayed on the <a href="v0.40.0.en.html#marche">v0.40.0 page</a>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>The guild's advice <span class="chip c-bal">Worth reading</span></h3>
+        <ul>
+          <li>Nothing forces you to touch it: gold, gear earned in game and normal progression are untouched.</li>
+          <li>If you do use it, remember the price is set in <strong class="hl">dollars</strong> but paid in tokens: the token count moves with the rate between your commitment and your payment.</li>
+          <li>The game reserves the right to <strong class="hl">change the fee, suspend or discontinue</strong> the marketplace.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>If you do nothing <span class="chip c-util">Good news</span></h3>
+        <ul>
+          <li>Without a linked wallet you can neither buy nor sell — and nothing pushes you to.</li>
+          <li>No item leaves your bags on its own: listing puts the item in <strong class="hl">escrow</strong>, and a suspended marketplace returns them to their sellers.</li>
+          <li><strong class="hl">Soulbound</strong> and quest items stay unsellable, mounts aside.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="guilde">
+    <h2><span class="num">02</span>Guild pledges finally hold</h2>
+    <p class="sec-sub">The guild noticeboard arrived with <a href="v0.40.0.en.html#guilde">v0.40.0</a>, and it had an awkward flaw: accepting a candidate who was not connected <strong class="hl">deleted their request and did nothing else</strong>. They never found out, and the officer thought they had recruited someone. That is fixed, and a pledge becomes a genuinely standing request.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="candidature" tabindex="0" role="button" aria-label="Details: the full life cycle of a pledge">
+        <h3>A pledge survives logout <span class="chip c-new">Fix</span></h3>
+        <p>Your pledge is now a <strong class="hl">standing request</strong>: you can log out, and it stays on the officers' board. It only disappears on a real outcome — you join, you withdraw it, or the guild rejects you.</p>
+        <span class="more-link">See every case</span>
+      </div>
+      <div class="card">
+        <h3>Accepting an offline pledger works <span class="chip c-new">Fix</span></h3>
+        <ul>
+          <li>If the candidate is <strong class="hl">offline</strong>, the officer who accepts <strong class="hl">seats them directly</strong> in the guild: they find themselves a member at their next login.</li>
+          <li>If they are <strong class="hl">online</strong>, nothing changes: they get the usual invite, and their pledge stays standing until they actually join.</li>
+          <li>If they <strong class="hl">decline</strong> that invite, the pledge is withdrawn — no need to go cancel it by hand.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>A rejection really stops everything <span class="chip c-util">Useful detail</span></h3>
+        <ul>
+          <li>An officer who rejects also cancels any <strong class="hl">invite still pending</strong> from an earlier accept: the "no" stops the join, it no longer just bumps the waiting ladder.</li>
+          <li>Both sides are told about the cancellation.</li>
+          <li>And no race is possible any more: someone withdrawing or declining exactly as an officer accepts can no longer be seated against their will.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Founding a guild clears your pledge <span class="chip c-util">Consistency</span></h3>
+        <ul>
+          <li>Creating a guild withdraws your pending pledge elsewhere — the aspiration ends there.</li>
+          <li>Joining any guild does the same.</li>
+          <li>In both cases the "<strong class="hl">Pledge of…</strong>" line disappears from your name right away, without relogging.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>The rejection ladder is unchanged <span class="chip c-util">Reminder</span></h3>
+        <ul>
+          <li>1st rejection: <strong class="hl">one day</strong> before pledging to that guild again. 2nd: <strong class="hl">one week</strong>. 3rd: <strong class="hl">permanent</strong>.</li>
+          <li>An <strong class="hl">invite</strong> from that guild wipes the whole slate.</li>
+          <li>The <strong class="hl">five-minute</strong> gap between pledges applies to any new request — including after a withdrawal.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>What it means for La Clauderie <span class="chip c-new">Practical</span></h3>
+        <ul>
+          <li>Officers can handle pledges <strong class="hl">whenever they like</strong>, without waiting for the person to be online.</li>
+          <li>A pledge left overnight is still there in the morning.</li>
+          <li>The board no longer empties itself: what is on it is genuinely pending.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="confort">
+    <h2><span class="num">03</span>Two server stalls closed</h2>
+    <p class="sec-sub">Both came from the same place: the game's <strong class="hl">mail</strong>, one large data blob weighing <strong class="hl">89 MB</strong> in production. Two v0.40.0 features re-read it whole every time, and the world waited while they did.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="perf" tabindex="0" role="button" aria-label="Details: both stalls, their numbers and their fix">
+        <h3>The dashboard was blocking the world <span class="chip c-new">Fix</span></h3>
+        <p>A wealth sweep ran <strong class="hl">every minute</strong> on the admin side and re-read all the mail: about <strong class="hl">400 ms of blocking per minute</strong>, growing with the mail. The maths now happens inside the database, and its cost to the game no longer moves.</p>
+        <span class="more-link">See both fixes</span>
+      </div>
+      <div class="card">
+        <h3>Every marketplace parcel cost dearly <span class="chip c-util">Fix</span></h3>
+        <ul>
+          <li>Every delivered item, returned listing and sale notice rewrote the whole mail: about <strong class="hl">250 ms</strong> of blocking <strong class="hl">per parcel</strong>.</li>
+          <li>A parcel now writes <strong class="hl">one single row</strong>, and joins the big blob on the next pass.</li>
+          <li>A crash at the wrong moment loses nothing: pending rows are replayed at restart, with no duplicates.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>And nothing else <span class="chip c-util">Scope</span></h3>
+        <ul>
+          <li><strong class="hl">No game data changes</strong>: spells, talents, items, mobs, quests and zones are identical to <a href="v0.40.0.en.html">v0.40.0</a>.</li>
+          <li>The <a href="../bis.html">Builds guide</a>, the <a href="../metiers.html">Professions guide</a>, the <a href="../failles.html">Rifts</a> and the <a href="../montures.html">Mounts</a> pages stand as they are.</li>
+          <li>Fenbridge's 3D models were re-stamped with the version bump, with no on-screen difference.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Close">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    ouverture: {
+      title: "The marketplace is open: what to know before using it",
+      summary: "Nothing obliges you to touch it. But if you do, here are the points that surprise people most.",
+      body: `
+        <h4>This is not the game's auction house</h4>
+        <ul>
+          <li>The existing <b>auction house</b> runs on <b>gold</b>, takes 5 % from the seller, and has not changed.</li>
+          <li>The new marketplace runs on the <b>$WOC token</b>, with prices shown in <b>dollars</b>. Two distinct things.</li>
+          <li>You need a <b>verified wallet</b> linked to your account to buy as well as to sell.</li>
+        </ul>
+        <h4>The price is in dollars, the payment in tokens</h4>
+        <ul>
+          <li>The displayed price does not move: it is set in <b>dollars</b>.</li>
+          <li>At payment time you request a <b>quote</b> — the token count matching the current rate, valid for <b>90 seconds</b> — then sign <b>one single transaction</b> from your wallet.</li>
+          <li>If the rate moves between commitment and payment, it is the token count that changes, not the dollar price. Network fees are on you.</li>
+        </ul>
+        <h4>Bidding commits you</h4>
+        <ul>
+          <li>An auction requires a <b>5 % bond</b> of your bid (between $1 and $50).</li>
+          <li>Winning without paying in time <b>forfeits the bond</b> — it never goes to the seller — and earns a strike. Repeated strikes cut off marketplace access.</li>
+          <li>A bid placed in the <b>final two minutes</b> extends the auction by two more, up to 30 minutes of extra time in total.</li>
+        </ul>
+        <h4>What the game reserves</h4>
+        <p>The terms of service published with this release say the game may <b>change the fee</b> (never on a sale already agreed), <b>suspend</b> or <b>discontinue</b> the marketplace. In that case escrowed items return to their sellers, and nothing is owed for an expected sale. Read them before counting on it.</p>`
+    },
+    portefeuille: {
+      title: "Changing or removing your wallet: the exact rules",
+      summary: "This is the wallet that cashes your sales. A stolen session alone must not be enough to move it.",
+      body: `
+        <h4>The first link stays simple</h4>
+        <ul>
+          <li>Linking a wallet for the <b>first time</b> works as before: you sign a message with it, and that is all. There is no previous wallet to protect.</li>
+          <li>Re-verifying <b>the same</b> wallet asks for nothing either.</li>
+          <li>In every case an <b>email</b> warns you of the change: that is this path's safety net.</li>
+        </ul>
+        <h4>Switching to ANOTHER wallet</h4>
+        <ul>
+          <li>Two ways to prove it is you, your choice:</li>
+          <li>— the <b>current wallet's signature</b> over the same message the new one signs;</li>
+          <li>— or your <b>account password</b>, plus your <b>second factor</b> if you have one enrolled.</li>
+        </ul>
+        <h4>Removing the wallet: password only</h4>
+        <ul>
+          <li>Here a signature is <b>not</b> enough: the message signed to link a wallet cannot be scoped to a removal, so it proves nothing for that particular action.</li>
+          <li>So it takes the <b>password</b> (plus the second factor where applicable).</li>
+        </ul>
+        <h4>If you have no password</h4>
+        <p>Accounts created through <b>Apple</b> or <b>Discord</b> may not have one. Instead of leaving you stuck, the game now points you at "<b>Set a password</b>" — the ability to create one arrived with <a href="v0.40.0.en.html">v0.40.0</a>.</p>`
+    },
+    candidature: {
+      title: "The life cycle of a pledge, case by case",
+      summary: "A pledge is now a standing request. Here is exactly when it disappears, and when it stays.",
+      body: `
+        <h4>The bug that was fixed</h4>
+        <ul>
+          <li>Before, accepting a pledge <b>deleted the request</b>, then tried to send an invite — a mechanism that only works if the person is <b>online</b>.</li>
+          <li>Result for someone offline: the request vanished, no invite arrived, and nobody was told. The officer thought they had recruited; the candidate saw nothing.</li>
+        </ul>
+        <h4>Now: offline candidate</h4>
+        <ul>
+          <li>The officer accepts → the candidate is <b>seated directly</b> in the guild.</li>
+          <li>They discover they are a member at their <b>next login</b>.</li>
+          <li>The seating and the consumption of the pledge happen <b>in one block</b>: nobody who just withdrew can be seated.</li>
+        </ul>
+        <h4>Now: online candidate</h4>
+        <ul>
+          <li>The officer accepts → the candidate gets the <b>usual invite</b>, with its accept-or-decline window.</li>
+          <li>Their pledge <b>stays standing</b> until they actually join: an ignored invite or a full guild does not clear it.</li>
+          <li>If they <b>decline</b>, the pledge is withdrawn: declining counts as giving up.</li>
+        </ul>
+        <h4>When a pledge disappears</h4>
+        <ul>
+          <li>You <b>join</b> the guild (or any other one).</li>
+          <li>You <b>found</b> your own guild.</li>
+          <li>You <b>decline</b> the invite you received, or withdraw the pledge yourself.</li>
+          <li>The guild <b>rejects</b> you — and the rejection cancels any still-pending invite along the way.</li>
+        </ul>
+        <h4>One point that has not changed</h4>
+        <p>The <b>five-minute</b> gap between pledges counts from the last one placed, and it <b>survives a withdrawal</b>: withdrawing to immediately pledge elsewhere does not work. That is what stops anyone spraying the whole board.</p>`
+    },
+    perf: {
+      title: "The two stalls, and why they came from the mail",
+      summary: "The game's mail is stored as one 89 MB blob. Two v0.40.0 features re-read it whole.",
+      body: `
+        <h4>The shared problem</h4>
+        <ul>
+          <li>A realm's entire mail lives in <b>one blob</b> of data, weighing <b>89 MB</b> in production.</li>
+          <li>Re-reading or rewriting it costs hundreds of milliseconds, during which the <b>world loop</b> does not run — that is what players feel as a stall.</li>
+          <li>Both offending features arrived with v0.40.0: they did not exist before.</li>
+        </ul>
+        <h4>The wealth sweep (every minute)</h4>
+        <ul>
+          <li>The admin dashboard recomputes per-account gold totals <b>every 60 seconds</b>.</li>
+          <li>The half that counts escrowed money loaded all the mail into the game to walk it: about <b>400 ms of blocking per minute</b>, growing with the mail.</li>
+          <li>The maths now happens <b>inside the database</b>, under a memory allowance. Its cost to the game no longer moves as the book grows.</li>
+        </ul>
+        <h4>The marketplace parcels (on every delivery)</h4>
+        <ul>
+          <li>Every delivered item, every listing returned to its seller and every sale notice rewrote the whole blob: about <b>250 ms</b> each time.</li>
+          <li>A parcel now writes <b>one row</b>, immediately; it joins the big blob at the next scheduled write, which removes the row in the same move.</li>
+          <li>If the server falls over in between, surviving rows are <b>replayed at restart</b>, and a guard stops a parcel being delivered twice.</li>
+        </ul>
+        <h4>What it means for you</h4>
+        <p>Nothing to do and nothing to tune: these are <b>server-side</b> stalls, felt by everyone at the same time. They go away, and above all they <b>will not grow</b> with accumulated mail — which was the real risk, since the newly opened marketplace is going to produce a lot of it.</p>`
+    },
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>
