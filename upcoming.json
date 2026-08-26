@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-26T18:20:52Z",
- "base_tag": "v0.40.0",
- "version": "v0.40.1",
- "branch": "release/v0.40.1",
- "declared_version": "0.40.1",
- "imminent": true,
- "commits": 30,
- "shown": 17,
- "last_commit": "2026-08-26T23:25:12+12:00",
+ "generated": "2026-08-26T21:02:08Z",
+ "base_tag": "v0.40.1",
+ "version": "v0.41.0",
+ "branch": "ossbrain-release/v0.41.0",
+ "declared_version": "0.40.0",
+ "imminent": false,
+ "commits": 220,
+ "shown": 95,
+ "last_commit": "2026-08-26T20:14:52Z",
  "sections": [
   {
    "key": "classes",
@@ -16,10 +16,17 @@
    "en": "Classes & spells",
    "items": [
     {
-     "h": "77819fed",
-     "kind": "fix",
+     "h": "e111d2bb",
+     "kind": "feat",
      "scope": "server",
-     "text": "CASE-armor the escrow copper cast against qual reordering",
+     "text": "Mirror auto-attack swing timer for non-self entities",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "6096f300",
+     "kind": "feat",
+     "scope": "net",
+     "text": "Decode the general auto-attack swing mirror client-side",
      "date": "2026-08-26"
     }
    ]
@@ -36,14 +43,107 @@
    "icon": "🐉",
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
-   "items": []
+   "items": [
+    {
+     "h": "f493de54",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Block rift puzzle progress for a released spirit",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "ed765d15",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.41.0 into fix/rift-movement-jitter",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "c048a5c8",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Recover stale delve occupants",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "6a33e110",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Allow mailing and market listing of rift forge currency",
+     "date": "2026-08-24"
+    }
+   ]
   },
   {
    "key": "monde",
    "icon": "🗺️",
    "fr": "Monde & quêtes",
    "en": "World & quests",
-   "items": []
+   "items": [
+    {
+     "h": "b549bd61",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Make Entity.autoAttack track genuine mob melee engagement",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "6a0ef0de",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add vendor Sell all row and default the destroy prompt to the full stack",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "3066399b",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Raise Drowned Litany Bountiful Coffer and epic drop rates",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "50439da2",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Address fresh-review findings on the litany drop-rate bump",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "2055e2d4",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Drop pre-existing em dashes surfaced by the v0.41.0 merge",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "a1491696",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Route vendor sell all through safety gate",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "e5add997",
+     "kind": "fix",
+     "scope": "mob",
+     "text": "Stop evading mobs from casting their support kit",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "79ba7288",
+     "kind": "fix",
+     "scope": "mob",
+     "text": "Seed and reset the aoe pulse timer like its siblings",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "3a61f9fb",
+     "kind": "fix",
+     "scope": "items",
+     "text": "Account for reins_rickshaw_mount in the item-art audit pins",
+     "date": "2026-08-11"
+    }
+   ]
   },
   {
    "key": "guilde",
@@ -52,32 +152,18 @@
    "en": "Guild & social",
    "items": [
     {
-     "h": "bad2294e",
+     "h": "936b60a0",
      "kind": "fix",
-     "scope": "social",
-     "text": "Persist guild pledges over logout and seat offline pledgers on accept",
-     "date": "2026-08-26"
+     "scope": "delves",
+     "text": "Re-bind a live run's party key when membership changes",
+     "date": "2026-08-22"
     },
     {
-     "h": "262a51b1",
+     "h": "e1c6d42b",
      "kind": "fix",
-     "scope": "social",
-     "text": "Close the pledge-accept QA findings",
-     "date": "2026-08-26"
-    },
-    {
-     "h": "ff0e73b6",
-     "kind": "fix",
-     "scope": "social",
-     "text": "Declining the pledged guild invite withdraws the pledge",
-     "date": "2026-08-26"
-    },
-    {
-     "h": "feb7e2e0",
-     "kind": "fix",
-     "scope": "social",
-     "text": "Cancel invites on reject and consume the pledge in the seat",
-     "date": "2026-08-26"
+     "scope": "loot",
+     "text": "Give ffa looters the loot instead of the absent party",
+     "date": "2026-08-22"
     }
    ]
   },
@@ -88,276 +174,563 @@
    "en": "Comfort & technical",
    "items": [
     {
-     "h": "5ef1b0af",
+     "h": "f2278024",
      "kind": "feat",
-     "scope": "wallet",
-     "text": "Require re-authorization to change or remove a linked wallet",
+     "scope": "ui",
+     "text": "Add targetSwingTimerState, the third use of the swing core",
      "date": "2026-08-26"
     },
     {
-     "h": "3497b4d7",
+     "h": "b5250e8a",
      "kind": "feat",
-     "scope": "exchange",
-     "text": "Solana wallet card above the Browse filters",
+     "scope": "ui",
+     "text": "Add TargetSwingTimerBars, the HUD wiring for the new bars",
      "date": "2026-08-26"
     },
     {
-     "h": "ad9f18db",
+     "h": "9c0f582f",
      "kind": "feat",
-     "scope": "server",
-     "text": "Add the parked-review settlement operator arm",
+     "scope": "ui",
+     "text": "Wire the target/target-of-target swing bars into the HUD",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "69fa1287",
+     "kind": "feat",
+     "scope": "i18n",
+     "text": "Add the showTargetSwingTimer toggle label (English)",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "aa7d3ffd",
+     "kind": "feat",
+     "scope": "i18n",
+     "text": "Fill non-Latin translations for the swing timer toggle",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "b28dfb84",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add the showTargetSwingTimer Interface option",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "f765f5fa",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add the target/target-of-target swing bar markup and CSS",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "3c785e92",
+     "kind": "feat",
+     "scope": "net",
+     "text": "Add movement wire v2 with per-tick input frames",
      "date": "2026-08-25"
     },
     {
-     "h": "dd44e3db",
+     "h": "4c9f5ac8",
      "kind": "feat",
-     "scope": "terms",
-     "text": "Publish the marketplace Terms revision to the live pages",
+     "scope": "movement",
+     "text": "Add client prediction with exact-match reconciliation",
      "date": "2026-08-25"
     },
     {
-     "h": "a0bf96d0",
-     "kind": "perf",
-     "scope": "server",
-     "text": "Close the escrow aggregate review findings",
-     "date": "2026-08-26"
-    },
-    {
-     "h": "578e4e39",
-     "kind": "perf",
-     "scope": "server",
-     "text": "Persist custody parcels as overlay rows, not whole-book writes",
-     "date": "2026-08-26"
-    },
-    {
-     "h": "993b4bbd",
-     "kind": "fix",
-     "scope": "wallet",
-     "text": "Harden R11 per review round 2 and fill every locale",
-     "date": "2026-08-26"
-    },
-    {
-     "h": "56719bfb",
-     "kind": "fix",
-     "scope": "wallet",
-     "text": "Apply the R11 round-2 review residuals",
-     "date": "2026-08-26"
-    },
-    {
-     "h": "4c66556a",
-     "kind": "fix",
-     "scope": "server",
-     "text": "Aggregate account-wealth escrow totals inside Postgres",
-     "date": "2026-08-26"
-    },
-    {
-     "h": "a121c119",
-     "kind": "fix",
-     "scope": "server",
-     "text": "Close the custody overlay review findings",
-     "date": "2026-08-26"
-    },
-    {
-     "h": "36524856",
-     "kind": "fix",
-     "scope": "server",
-     "text": "Make the custody stale cutoff a provably sound watermark",
-     "date": "2026-08-26"
-    },
-    {
-     "h": "cc99b45e",
-     "kind": "fix",
-     "scope": "server",
-     "text": "Realm-scope the review ruling and close the review round",
+     "h": "0f1fb77c",
+     "kind": "feat",
+     "scope": "movement",
+     "text": "Make the strict feel targets the default merge bar",
      "date": "2026-08-25"
+    },
+    {
+     "h": "f4c4a130",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add the off-hand melee-weaving swing-timer bar",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "dc9021f0",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Always show the XP bar percentage, on desktop and the mobile ring",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "9b971f01",
+     "kind": "feat",
+     "scope": "movement",
+     "text": "Add responsive validated locomotion",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "1f38663d",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add an always-visible Wishlist on Steam reminder",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "413edbd7",
+     "kind": "feat",
+     "scope": "mounts",
+     "text": "Give the Bonebound Rickshaw a summon call",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "13036998",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Tip the rickshaw nose-up on a jump",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "1ee44037",
+     "kind": "feat",
+     "scope": "sfx",
+     "text": "Wire the staged female player voice to authored gender",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "aa09245a",
+     "kind": "feat",
+     "scope": "mounts",
+     "text": "Add the Bonebound Rickshaw mount",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "de1d73c6",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Allow battleground wall-contact unstuck",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "4ec99f40",
+     "kind": "fix",
+     "scope": "movement",
+     "text": "Repair keyboard release prediction gates",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "d99ad839",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bound the KTX2 restore wait so a graphics-preset switch can't stall for minutes",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "5b65c798",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Extend Entity.autoAttack tracking to pets, casters, and defensive pursuit",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "119b5933",
+     "kind": "fix",
+     "scope": "tests",
+     "text": "Correct false-positive test assertions for pet and caster autoAttack",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "22479edd",
+     "kind": "fix",
+     "scope": "test",
+     "text": "Replace undecisive test with decisive one for targetSwingTimerState",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "88b21210",
+     "kind": "fix",
+     "scope": "test",
+     "text": "Add a decisive enabled-gate case for the tot swing bar",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "4ca3526b",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Tighten battleground unstuck wall contact",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "3aa8a888",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Narrow battleground unstuck to wall traps",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "c2520933",
+     "kind": "fix",
+     "scope": "test",
+     "text": "Satisfy changed-file gate",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "214c20dd",
+     "kind": "fix",
+     "scope": "mobile",
+     "text": "Stand the touch chrome and cross-hotbar down for each other",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "5eecb816",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Reject battleground wall-contact unstuck",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "e5d26937",
+     "kind": "fix",
+     "scope": "mobile",
+     "text": "Stand the XHB alone and revive the micromenu rail for a paired pad",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "b8e6a8cb",
+     "kind": "fix",
+     "scope": "unstuck",
+     "text": "Allow battleground wall rescues",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "0648b71c",
+     "kind": "fix",
+     "scope": "movement",
+     "text": "Preserve authority through traversal",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "6b12c09b",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Fill the Double Honor Weekend translations that blanked the Battlegrounds window",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "25032956",
+     "kind": "fix",
+     "scope": "movement",
+     "text": "Absorb client frame timing drift",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "96dc646d",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Let battleground unstuck detect real wall traps",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "4f915b88",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Make incremental mail partition saves atomic",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "fd92255d",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Remove duplicate double honor locale keys",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "2603c1fb",
+     "kind": "fix",
+     "scope": "battleground",
+     "text": "Let the Interact key reach interactables in a live match",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "39c5553b",
+     "kind": "fix",
+     "scope": "movement",
+     "text": "Polish round from the QA gate findings",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "87639ae8",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Resend riftState on resume and close the endSession race",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "217961a7",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Close mail partition persistence review gaps",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "832a9432",
+     "kind": "fix",
+     "scope": "movement",
+     "text": "Eliminate the rotation-release yaw jag",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "a8249141",
+     "kind": "fix",
+     "scope": "movement",
+     "text": "Address the first maintainer review of the rework",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "95139db0",
+     "kind": "fix",
+     "scope": "movement",
+     "text": "Resync the input timeline from an empty buffer",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "880755c5",
+     "kind": "fix",
+     "scope": "movement",
+     "text": "Count resyncs only when the anchor moves the cursor",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "9b1e8b31",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Emit absorbed periodic heal feedback",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "2e6b83b3",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Stop hit riders after physical direct miss",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "4637ad88",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Close the internal-cooldown right-click-cancel exploit",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "bdf72265",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Persist the Ravenpost mail book incrementally, not the whole blob every 30s",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "3cc430d9",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Close the correctness gaps three independent reviewers found in the mail partition split",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "8462fb5c",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Rebase #3561 onto v0.40.0 and wire the $WOC Exchange durability path",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "0345046b",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Make the Dawnhold cannonball piles standable",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "f26ab08c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Honor the FOV slider instead of resetting it every frame",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "c9022aa1",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Show all 7 Ascension charges after Extended Dawn",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "3a20bd3a",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Predict player movement inside rifts (issue #3479)",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "a071aeb4",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Re-dirty plain letters too, not just escrow, on the mail refresh cadence",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "0fa44e7a",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Release mail focus after pointer click",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "46e7f250",
+     "kind": "fix",
+     "scope": "climb",
+     "text": "Refuse ledge grabs from damaging fall speeds",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "5a9df4b4",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Roll avoidance for instant spells and physical direct damage",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "a10c5513",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Make channel pushback cost the ticks it removes",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "03638855",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Close the world loop's measurement blind spot",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "41910284",
+     "kind": "fix",
+     "scope": "battleground",
+     "text": "Keep the backfill sweep going past a declined match",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "3bb12043",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Drain heal absorb shields from periodic healing",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "9bddf224",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Settle physics state on every instance arrival teleport",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "2ca389c4",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Fold ranged haste into the single swing interval bucket",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "dea4ecfd",
+     "kind": "fix",
+     "scope": "sfx",
+     "text": "Generate gain ceilings before the manifest that validates them",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "1a2b2724",
+     "kind": "fix",
+     "scope": "sfx",
+     "text": "Apply the rickshaw summon's gain trim",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "db7d649b",
+     "kind": "fix",
+     "scope": "sfx",
+     "text": "Pick up the measured gain ceilings for the new player-voice keys",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "6fde09e1",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Finish the rickshaw round-7 review findings",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "d91515b0",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Extract rickshaw render state to fit the monolith ratchet",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "d8a327e1",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Repoint the depth-packing guard and remint the polish seal",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "a684b453",
+     "kind": "fix",
+     "scope": "docs",
+     "text": "Strip em dashes from mount-authoring-notes.md",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "d663c1f8",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Address rickshaw PR round-5 review findings",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "afe2eebe",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Address rickshaw PR round-6 review findings",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "ef147da9",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Correct three defects in the round-6 review fixes",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "38fbcf99",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Address rickshaw PR round-4 review findings",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "040f806b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Repair VisualDef.modular JSDoc broken by a mislanded sed edit",
+     "date": "2026-08-10"
     }
    ]
   }
  ],
  "versions": [
   {
-   "version": "v0.40.1",
-   "branch": "release/v0.40.1",
-   "declared_version": "0.40.1",
-   "imminent": true,
-   "commits": 30,
-   "shown": 17,
-   "last_commit": "2026-08-26T23:25:12+12:00",
-   "sections": [
-    {
-     "key": "classes",
-     "icon": "⚔️",
-     "fr": "Classes & sorts",
-     "en": "Classes & spells",
-     "items": [
-      {
-       "h": "77819fed",
-       "kind": "fix",
-       "scope": "server",
-       "text": "CASE-armor the escrow copper cast against qual reordering",
-       "date": "2026-08-26"
-      }
-     ]
-    },
-    {
-     "key": "metiers",
-     "icon": "🔨",
-     "fr": "Métiers & récolte",
-     "en": "Professions & gathering",
-     "items": []
-    },
-    {
-     "key": "donjons",
-     "icon": "🐉",
-     "fr": "Donjons, failles & boss",
-     "en": "Dungeons, rifts & bosses",
-     "items": []
-    },
-    {
-     "key": "monde",
-     "icon": "🗺️",
-     "fr": "Monde & quêtes",
-     "en": "World & quests",
-     "items": []
-    },
-    {
-     "key": "guilde",
-     "icon": "🏰",
-     "fr": "Guilde & social",
-     "en": "Guild & social",
-     "items": [
-      {
-       "h": "bad2294e",
-       "kind": "fix",
-       "scope": "social",
-       "text": "Persist guild pledges over logout and seat offline pledgers on accept",
-       "date": "2026-08-26"
-      },
-      {
-       "h": "262a51b1",
-       "kind": "fix",
-       "scope": "social",
-       "text": "Close the pledge-accept QA findings",
-       "date": "2026-08-26"
-      },
-      {
-       "h": "ff0e73b6",
-       "kind": "fix",
-       "scope": "social",
-       "text": "Declining the pledged guild invite withdraws the pledge",
-       "date": "2026-08-26"
-      },
-      {
-       "h": "feb7e2e0",
-       "kind": "fix",
-       "scope": "social",
-       "text": "Cancel invites on reject and consume the pledge in the seat",
-       "date": "2026-08-26"
-      }
-     ]
-    },
-    {
-     "key": "confort",
-     "icon": "⚙️",
-     "fr": "Confort & technique",
-     "en": "Comfort & technical",
-     "items": [
-      {
-       "h": "5ef1b0af",
-       "kind": "feat",
-       "scope": "wallet",
-       "text": "Require re-authorization to change or remove a linked wallet",
-       "date": "2026-08-26"
-      },
-      {
-       "h": "3497b4d7",
-       "kind": "feat",
-       "scope": "exchange",
-       "text": "Solana wallet card above the Browse filters",
-       "date": "2026-08-26"
-      },
-      {
-       "h": "ad9f18db",
-       "kind": "feat",
-       "scope": "server",
-       "text": "Add the parked-review settlement operator arm",
-       "date": "2026-08-25"
-      },
-      {
-       "h": "dd44e3db",
-       "kind": "feat",
-       "scope": "terms",
-       "text": "Publish the marketplace Terms revision to the live pages",
-       "date": "2026-08-25"
-      },
-      {
-       "h": "a0bf96d0",
-       "kind": "perf",
-       "scope": "server",
-       "text": "Close the escrow aggregate review findings",
-       "date": "2026-08-26"
-      },
-      {
-       "h": "578e4e39",
-       "kind": "perf",
-       "scope": "server",
-       "text": "Persist custody parcels as overlay rows, not whole-book writes",
-       "date": "2026-08-26"
-      },
-      {
-       "h": "993b4bbd",
-       "kind": "fix",
-       "scope": "wallet",
-       "text": "Harden R11 per review round 2 and fill every locale",
-       "date": "2026-08-26"
-      },
-      {
-       "h": "56719bfb",
-       "kind": "fix",
-       "scope": "wallet",
-       "text": "Apply the R11 round-2 review residuals",
-       "date": "2026-08-26"
-      },
-      {
-       "h": "4c66556a",
-       "kind": "fix",
-       "scope": "server",
-       "text": "Aggregate account-wealth escrow totals inside Postgres",
-       "date": "2026-08-26"
-      },
-      {
-       "h": "a121c119",
-       "kind": "fix",
-       "scope": "server",
-       "text": "Close the custody overlay review findings",
-       "date": "2026-08-26"
-      },
-      {
-       "h": "36524856",
-       "kind": "fix",
-       "scope": "server",
-       "text": "Make the custody stale cutoff a provably sound watermark",
-       "date": "2026-08-26"
-      },
-      {
-       "h": "cc99b45e",
-       "kind": "fix",
-       "scope": "server",
-       "text": "Realm-scope the review ruling and close the review round",
-       "date": "2026-08-25"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "version": "v0.41.0",
    "branch": "ossbrain-release/v0.41.0",
    "declared_version": "0.40.0",
    "imminent": false,
-   "commits": 219,
-   "shown": 94,
-   "last_commit": "2026-08-26T14:44:30Z",
+   "commits": 220,
+   "shown": 95,
+   "last_commit": "2026-08-26T20:14:52Z",
    "sections": [
     {
      "key": "classes",
@@ -738,6 +1111,13 @@
        "kind": "fix",
        "scope": "mobile",
        "text": "Stand the XHB alone and revive the micromenu rail for a paired pad",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "b8e6a8cb",
+       "kind": "fix",
+       "scope": "unstuck",
+       "text": "Allow battleground wall rescues",
        "date": "2026-08-26"
       },
       {
