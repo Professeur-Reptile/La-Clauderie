@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-26T21:20:38Z",
+ "generated": "2026-08-27T15:25:45Z",
  "base_tag": "v0.40.1",
  "version": "v0.41.0",
  "branch": "ossbrain-release/v0.41.0",
  "declared_version": "0.40.0",
  "imminent": false,
- "commits": 220,
- "shown": 95,
- "last_commit": "2026-08-26T20:14:52+00:00",
+ "commits": 269,
+ "shown": 119,
+ "last_commit": "2026-08-27T13:56:38Z",
  "sections": [
   {
    "key": "classes",
@@ -28,6 +28,20 @@
      "scope": "net",
      "text": "Decode the general auto-attack swing mirror client-side",
      "date": "2026-08-26"
+    },
+    {
+     "h": "3ed4a6d3",
+     "kind": "fix",
+     "scope": "paladin",
+     "text": "Refill the level 3 ding after Hammer of Grace moved to 1",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "da8b23c1",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Split Stormsurge aura display classification",
+     "date": "2026-08-27"
     }
    ]
   },
@@ -44,6 +58,13 @@
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
    "items": [
+    {
+     "h": "77b8c582",
+     "kind": "fix",
+     "scope": "mobile",
+     "text": "Give the delve tracker a seat in xhb-mode instead of hiding it",
+     "date": "2026-08-27"
+    },
     {
      "h": "f493de54",
      "kind": "fix",
@@ -152,6 +173,13 @@
    "en": "Guild & social",
    "items": [
     {
+     "h": "0ff03bf6",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Export client perf report telemetry as Prometheus series",
+     "date": "2026-08-27"
+    },
+    {
      "h": "936b60a0",
      "kind": "fix",
      "scope": "delves",
@@ -173,6 +201,13 @@
    "fr": "Confort & technique",
    "en": "Comfort & technical",
    "items": [
+    {
+     "h": "f41e99ea",
+     "kind": "feat",
+     "scope": "market",
+     "text": "Show wallet balance in Exchange",
+     "date": "2026-08-27"
+    },
     {
      "h": "f2278024",
      "kind": "feat",
@@ -223,6 +258,13 @@
      "date": "2026-08-26"
     },
     {
+     "h": "3497b4d7",
+     "kind": "feat",
+     "scope": "exchange",
+     "text": "Solana wallet card above the Browse filters",
+     "date": "2026-08-26"
+    },
+    {
      "h": "3c785e92",
      "kind": "feat",
      "scope": "net",
@@ -248,6 +290,13 @@
      "kind": "feat",
      "scope": "ui",
      "text": "Add the off-hand melee-weaving swing-timer bar",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "07254024",
+     "kind": "feat",
+     "scope": "classes",
+     "text": "Smooth early ability curve for every class (v0.41.0)",
      "date": "2026-08-25"
     },
     {
@@ -298,6 +347,76 @@
      "scope": "mounts",
      "text": "Add the Bonebound Rickshaw mount",
      "date": "2026-08-10"
+    },
+    {
+     "h": "98c4508d",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Fill release pending locale rows",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "53c9cdde",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Refresh balance after payments",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "fc049501",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Pick the .desktop entry belonging to the running channel",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "4f014828",
+     "kind": "fix",
+     "scope": "mobile",
+     "text": "Clear the re-review's blocking findings for the pad rail rework",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "8e6b06b6",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Harden the client perf sink per the hot-path review",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "7fecd890",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Apply the review round on the client perf exporter",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "4ff32297",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Address Exchange review findings",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "75eddd3a",
+     "kind": "fix",
+     "scope": "unstuck",
+     "text": "Pin battleground settings wall rescue",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "42e0aac6",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Prioritize short buffs under the low-tier cap, debuff-style Stormsurge",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "db618488",
+     "kind": "fix",
+     "scope": "unstuck",
+     "text": "Allow bg wall contact from settings",
+     "date": "2026-08-27"
     },
     {
      "h": "de1d73c6",
@@ -377,10 +496,38 @@
      "date": "2026-08-26"
     },
     {
+     "h": "3b385bbc",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Register the worldofclaudecraft:// handler on Linux",
+     "date": "2026-08-26"
+    },
+    {
      "h": "5eecb816",
      "kind": "fix",
      "scope": "sim",
      "text": "Reject battleground wall-contact unstuck",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "8f611b2c",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Address review on the Linux deep-link handler",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "6ef54948",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Reveal the $WOC Exchange launcher on the desktop shell",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "64b82309",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Show an overflow badge for buffs the low-tier cap sheds",
      "date": "2026-08-26"
     },
     {
@@ -391,10 +538,31 @@
      "date": "2026-08-26"
     },
     {
+     "h": "b8cc6eb9",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Let the GPU process start under Steam's overlay on Linux",
+     "date": "2026-08-26"
+    },
+    {
      "h": "b8e6a8cb",
      "kind": "fix",
      "scope": "unstuck",
      "text": "Allow battleground wall rescues",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "705824bd",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Address review on the Steam overlay GPU guard",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "13778671",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Address second review on the Linux deep-link handler",
      "date": "2026-08-26"
     },
     {
@@ -728,9 +896,9 @@
    "branch": "ossbrain-release/v0.41.0",
    "declared_version": "0.40.0",
    "imminent": false,
-   "commits": 220,
-   "shown": 95,
-   "last_commit": "2026-08-26T20:14:52+00:00",
+   "commits": 269,
+   "shown": 119,
+   "last_commit": "2026-08-27T13:56:38Z",
    "sections": [
     {
      "key": "classes",
@@ -751,6 +919,20 @@
        "scope": "net",
        "text": "Decode the general auto-attack swing mirror client-side",
        "date": "2026-08-26"
+      },
+      {
+       "h": "3ed4a6d3",
+       "kind": "fix",
+       "scope": "paladin",
+       "text": "Refill the level 3 ding after Hammer of Grace moved to 1",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "da8b23c1",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Split Stormsurge aura display classification",
+       "date": "2026-08-27"
       }
      ]
     },
@@ -767,6 +949,13 @@
      "fr": "Donjons, failles & boss",
      "en": "Dungeons, rifts & bosses",
      "items": [
+      {
+       "h": "77b8c582",
+       "kind": "fix",
+       "scope": "mobile",
+       "text": "Give the delve tracker a seat in xhb-mode instead of hiding it",
+       "date": "2026-08-27"
+      },
       {
        "h": "f493de54",
        "kind": "fix",
@@ -875,6 +1064,13 @@
      "en": "Guild & social",
      "items": [
       {
+       "h": "0ff03bf6",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Export client perf report telemetry as Prometheus series",
+       "date": "2026-08-27"
+      },
+      {
        "h": "936b60a0",
        "kind": "fix",
        "scope": "delves",
@@ -896,6 +1092,13 @@
      "fr": "Confort & technique",
      "en": "Comfort & technical",
      "items": [
+      {
+       "h": "f41e99ea",
+       "kind": "feat",
+       "scope": "market",
+       "text": "Show wallet balance in Exchange",
+       "date": "2026-08-27"
+      },
       {
        "h": "f2278024",
        "kind": "feat",
@@ -946,6 +1149,13 @@
        "date": "2026-08-26"
       },
       {
+       "h": "3497b4d7",
+       "kind": "feat",
+       "scope": "exchange",
+       "text": "Solana wallet card above the Browse filters",
+       "date": "2026-08-26"
+      },
+      {
        "h": "3c785e92",
        "kind": "feat",
        "scope": "net",
@@ -971,6 +1181,13 @@
        "kind": "feat",
        "scope": "ui",
        "text": "Add the off-hand melee-weaving swing-timer bar",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "07254024",
+       "kind": "feat",
+       "scope": "classes",
+       "text": "Smooth early ability curve for every class (v0.41.0)",
        "date": "2026-08-25"
       },
       {
@@ -1021,6 +1238,76 @@
        "scope": "mounts",
        "text": "Add the Bonebound Rickshaw mount",
        "date": "2026-08-10"
+      },
+      {
+       "h": "98c4508d",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Fill release pending locale rows",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "53c9cdde",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Refresh balance after payments",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "fc049501",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Pick the .desktop entry belonging to the running channel",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "4f014828",
+       "kind": "fix",
+       "scope": "mobile",
+       "text": "Clear the re-review's blocking findings for the pad rail rework",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "8e6b06b6",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Harden the client perf sink per the hot-path review",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "7fecd890",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Apply the review round on the client perf exporter",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "4ff32297",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Address Exchange review findings",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "75eddd3a",
+       "kind": "fix",
+       "scope": "unstuck",
+       "text": "Pin battleground settings wall rescue",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "42e0aac6",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Prioritize short buffs under the low-tier cap, debuff-style Stormsurge",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "db618488",
+       "kind": "fix",
+       "scope": "unstuck",
+       "text": "Allow bg wall contact from settings",
+       "date": "2026-08-27"
       },
       {
        "h": "de1d73c6",
@@ -1100,10 +1387,38 @@
        "date": "2026-08-26"
       },
       {
+       "h": "3b385bbc",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Register the worldofclaudecraft:// handler on Linux",
+       "date": "2026-08-26"
+      },
+      {
        "h": "5eecb816",
        "kind": "fix",
        "scope": "sim",
        "text": "Reject battleground wall-contact unstuck",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "8f611b2c",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Address review on the Linux deep-link handler",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "6ef54948",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Reveal the $WOC Exchange launcher on the desktop shell",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "64b82309",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Show an overflow badge for buffs the low-tier cap sheds",
        "date": "2026-08-26"
       },
       {
@@ -1114,10 +1429,31 @@
        "date": "2026-08-26"
       },
       {
+       "h": "b8cc6eb9",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Let the GPU process start under Steam's overlay on Linux",
+       "date": "2026-08-26"
+      },
+      {
        "h": "b8e6a8cb",
        "kind": "fix",
        "scope": "unstuck",
        "text": "Allow battleground wall rescues",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "705824bd",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Address review on the Steam overlay GPU guard",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "13778671",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Address second review on the Linux deep-link handler",
        "date": "2026-08-26"
       },
       {
