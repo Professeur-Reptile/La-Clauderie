@@ -109,6 +109,23 @@ def _add(iid, line, ref=None, name=None):
     if not any((e.get('text') if isinstance(e, dict) else e) == line for e in existing):
         existing.append(entry)
 
+# Mise en forme d'un pourcentage, en français (virgule décimale).
+#
+# Arrondir à l'entier ment sur les petits taux : le 27 août 2026, les
+# Wyrmcult Spellgrips (0,2 % chez le Wyrmcult Necromancer depuis la v0.40.0,
+# 4 % avant) s'affichaient « · 0 % » — ce qui se lit « ne tombe jamais » alors
+# que l'objet tombe, rarement. Sous 1 %, on garde donc des décimales ; sous
+# 0,01 %, on le dit au lieu d'écrire un zéro.
+def _pct(v):
+    if v <= 0:
+        return '0 %'
+    if v < 0.01:
+        return '< 0,01 %'
+    s = f"{v:.0f}" if v >= 1 else (f"{v:.1f}" if v >= 0.1 else f"{v:.2f}")
+    if '.' in s:  # ne jamais raboter un entier : « 100 » n'est pas « 1 »
+        s = s.rstrip('0').rstrip('.')
+    return s.replace('.', ',') + ' %'
+
 # Un même objet occupe souvent PLUSIEURS emplacements de la table de butin d'un
 # boss (ex. Nythraxis liste une épaulière 4× à 16-17 %). On agrège par source
 # pour n'afficher qu'UNE ligne, avec la probabilité d'en obtenir au moins un sur
@@ -120,7 +137,7 @@ def _pct_combined(chances):
     p = 1.0
     for c in cs:
         p *= (1 - c)
-    return f" · {round((1 - p) * 100)} %"
+    return f" · {_pct((1 - p) * 100)}"
 
 def _loot_by_item(entries):
     by = {}
@@ -199,7 +216,7 @@ for _iid in _RIFT.get('epicIds', []):
 _LEGPCT = _RIFT.get('legendaryChanceS')
 for _iid in _RIFT.get('legendaryIds', []):
     _add(_iid, "Faille rang S : légendaire"
-         + (f" · {round(_LEGPCT * 100, 1)} % par victoire" if _LEGPCT else ""))
+         + (f" · {_pct(_LEGPCT * 100)} par victoire" if _LEGPCT else ""))
 for _iid in _RIFT.get('rareIds', []):
     _add(_iid, "Faille : drop d'ambiance (trash, gros taux sur le boss d'ambiance)")
 for _iid in _RIFT.get('gearIds', []):
@@ -234,7 +251,7 @@ for _tier, _mi in sorted((_RIFT.get('mounts') or {}).items()):
     for _iid in _mi.get('reins', []):
         _ch = _mi.get('chance')
         _add(_iid, f"Faille rang {_tier} : monture"
-             + (f" · {round(_ch * 100, 1)} % par victoire" if _ch else ""))
+             + (f" · {_pct(_ch * 100)} par victoire" if _ch else ""))
 
 # Héritage : équipement (arme/armure) sans AUCUNE provenance connue — ni butin,
 # ni vendeur, ni quête, ni delve, ni marché, ni départ de classe. Vérifié dans
