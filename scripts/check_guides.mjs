@@ -124,10 +124,15 @@ function checkName(where, cls, specId, name) {
     fail(where, `« ${name} » : RETIRÉ DU GRIMOIRE (hiddenFromPlayer) — plus lançable par un joueur`);
     return;
   }
-  const usable = live.filter((d) => !d.specs || d.specs.includes(specId));
+  const usable = live.filter((d) =>
+    (!d.specs || d.specs.includes(specId)) && !d.excludeSpecs?.includes(specId));
   if (!usable.length) {
     const reserved = [...new Set(live.flatMap((d) => d.specs ?? []))].sort().join(', ');
-    fail(where, `« ${name} » : réservé à ${reserved} — pas à ${specId}`);
+    const excluded = [...new Set(live.flatMap((d) => d.excludeSpecs ?? []))].sort().join(', ');
+    const detail = excluded.includes(specId)
+      ? `interdit à ${excluded}`
+      : `réservé à ${reserved}`;
+    fail(where, `« ${name} » : ${detail} — pas à ${specId}`);
     return;
   }
   if (!usable.some((d) => grantable[cls]?.has(d.id))) {

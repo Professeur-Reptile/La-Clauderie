@@ -787,8 +787,8 @@ const BUILDS = {
    tag: "Hexcraft (affliction)",
    spec: "Hexcraft (affliction)",
    mastery: { fr: "Sentence (v0.36) : +10 % sur Needle of Fate, Sentence et Litany of Guilt", en: "Sentence (v0.36): +10% on Needle of Fate, Sentence and Litany of Guilt" },
-   pourquoi: { fr: "Les DoTs font le gros du travail au niveau 20, et Consume te rend la vie que Hard Bargain dépense. Les alternatives sont dans les onglets Ruination (burst) et Necromancy (morts-vivants) ci-dessus.",
-               en: "DoTs do the heavy lifting at level 20, and Consume gives back the life Hard Bargain spends. The alternatives live in the Ruination (burst) and Necromancy (undead) tabs above." },
+   pourquoi: { fr: "Tu accumules la Condamnation sur ton Œil Maudit, puis tu la dépenses avec Sentence. Les alternatives sont dans les onglets Ruination (burst) et Necromancy (morts-vivants) ci-dessus.",
+              en: "Build Condemnation on your Evil Eye, then spend it with Sentence. The alternatives live in the Ruination (burst) and Necromancy (undead) tabs above." },
    stats: { fr: "Intelligence > Hâte > Crit > Endurance", en: "Intellect > Haste > Crit > Stamina" },
    talents: [
     ["Grave Rhythm", "niv. 5", { fr: "Umbral Anchor revient 15 s plus vite : ton repli d’urgence, plus souvent disponible.", en: "Umbral Anchor recovers 15s faster: your escape hatch, available more often." }],
@@ -799,10 +799,7 @@ const BUILDS = {
     ["Unbroken Ritual", "niv. 20", { fr: "chaque seconde passée à incanter enlève 0,5 s à tes cooldowns : sur un boss, tu les enchaînes.", en: "every second spent casting shaves 0.5s off your cooldowns: on a boss, you chain them." }]
    ],
    rotation: [
-    ["Summon Gloomshade", { fr: "le familier d’abord : Warfiend, Wraithborn, Succube et Chasseur de sorts sont retirés en v0.36 — il reste le Gloomshade (tank) et le Pyre Colossus.", en: "pet first: Warfiend, Wraithborn, Succubus and Felhunter are removed in v0.36 — what is left is the Gloomshade (tank) and the Pyre Colossus." }],
     ["Evil Eye", { fr: "la signature, et le pivot de toute la spé : marque une cible, qui devient ta cible principale. Déplacer l’Œil garde la Condamnation accumulée, mais ne repousse pas son expiration à 20 s.", en: "the signature, and the pivot of the whole spec: it marks one enemy as your primary focus. Moving the Eye keeps the Condemnation you banked, but does not refresh its 20-sec expiry." }],
-    ["Hex of Anguish", { fr: "DoT n°1, sur tout.", en: "DoT #1, on everything." }],
-    ["Blackrot", { fr: "DoT n°2, il nourrit Hexstorm.", en: "DoT #2, it feeds Hexstorm." }],
     ["Needle of Fate", { fr: "ton générateur : 7 Condamnation à chaque fois qu’il pique la cible qui porte l’Œil — et chaque coup sur l’Œil principal ajoute un Fil du Destin.", en: "your generator: 7 Condemnation every time it pierces the target bearing the Eye — and each hit on the primary Eye adds a Fate Thread." }],
     ["Maledict Gaze", { fr: "ton Œil Maudit frappe l’Œil principal tout seul, toutes les 2,5 s. Cursed Accomplice le lie à toi quand tu n’as pas d’allié sélectionné : 2 Condamnation par regard.", en: "your Maledict Eye attacks the primary Eye on its own, every 2.5s. Cursed Accomplice links it to you when no ally is selected: 2 Condemnation per gaze." }],
     ["Hex of Violence", { fr: "toutes les 15 s : les 3 prochaines actions offensives de la cible te rendent 7 Condamnation chacune et la fouettent au passage.", en: "every 15s: the target's next 3 damaging actions each grant you 7 Condemnation and lash it in return." }],
@@ -812,11 +809,10 @@ const BUILDS = {
     ["Possess the Evil Eye / Hour of Judgment", { fr: "les deux grosses fenêtres : 35 Condamnation et un Needle of Fate en 1 s, puis (niv. 20) 40 Condamnation et 3 Fils du Destin d’un coup.", en: "your two big windows: 35 Condemnation and a 1-sec Needle of Fate, then (lvl 20) 40 Condemnation and 3 Fate Threads at once." }],
     ["Coven", { fr: "sur les packs (niv. 17) : des Yeux secondaires sur 4 ennemis, qui alimentent la réserve à 50 % et reçoivent l’écho de Sentence.", en: "on packs (lvl 17): secondary Eyes on 4 enemies, feeding the shared pool at 50% and receiving the Sentence echo." }],
     ["Consume", { fr: "le filler : dégâts + vol de vie.", en: "the filler: damage + life steal." }],
-    ["Hard Bargain", { fr: "PV → mana pendant que les DoTs travaillent — Consume rembourse.", en: "HP → mana while the DoTs do the work — Consume pays it back." }],
     ["Abyssal Gag", { fr: "l’interrupt (ex-Gag Order) : silence en pleine incantation, école coupée 4 s.", en: "the interrupt (formerly Gag Order): silences mid-cast, school locked for 4s." }]
    ],
-   astuce: { fr: "Sur un boss : les 3 DoTs + Consume en boucle = des dégâts que tu peux faire en bougeant pendant les mécaniques.",
-             en: "On a boss: the 3 DoTs + Consume on loop = damage you can keep dealing while moving through mechanics." }
+   astuce: { fr: "Sur un boss : garde l’Œil Maudit sur la cible, génère la Condamnation avec Needle of Fate et termine avec Sentence.",
+             en: "On a boss: keep the Evil Eye on the target, generate Condemnation with Needle of Fate, then finish with Sentence." }
   },
   {
    tag: "Ruination (destruction)",
@@ -840,7 +836,6 @@ const BUILDS = {
     ["Conflagrate", { fr: "ton sort signature (CD 6 s) : consume Burning Pact en dégâts instantanés — repose le Pact, reconsume, en boucle.", en: "your signature spell (6s CD): consumes Burning Pact into instant damage — re-Pact, re-Conflagrate, on loop." }],
     ["Ruinbolt", { fr: "à chaque cooldown (12 s) : ta plus grosse frappe.", en: "on every cooldown (12s): your biggest hit." }],
     ["Duskfire", { fr: "l'instant d'ombre toutes les 15 s.", en: "the Shadow instant every 15s." }],
-    ["Sear", { fr: "le filler rapide, taillé par Ashen Focus.", en: "the fast filler, sharpened by Ashen Focus." }],
     ["Rain of Fire", { fr: "l'AoE sur les packs.", en: "the AoE on packs." }],
     ["Abyssal Gag", { fr: "l’interrupt (ex-Gag Order) : silence en pleine incantation, école coupée 4 s.", en: "the interrupt (formerly Gag Order): silences mid-cast, school locked for 4s." }]
    ],
@@ -872,10 +867,7 @@ const BUILDS = {
     ["Soul Lance", { fr: "ta frappe principale (8 s) : contre une cible marquée, la moitié de ses dégâts va grossir la marque.", en: "your main hit (8s): against a marked target, half its damage is added to the mark." }],
     ["Ossuary Mark", { fr: "la marque (20 s de recharge) : elle stocke 20 % de TOUT ce que toi et tes morts-vivants infligez pendant <b>15 s</b> (12 s avant la v0.39), puis tu la fais détoner.", en: "the mark (20s cooldown): it banks 20% of EVERYTHING you and your undead deal for <b>15s</b> (12s before v0.39), then you detonate it." }],
     ["Reaping Command / Unholy Command", { fr: "les ordres : 2 fragments pour une frappe de tout le Domaine à l’unisson (8 s), 3 fragments pour +25 % de dégâts et +20 % de vitesse pendant 12 s.", en: "the commands: 2 fragments for the whole Dominion striking in unison (8s), 3 fragments for +25% damage and +20% speed for 12s." }],
-    ["Hex of Anguish + Blackrot", { fr: "les deux DoTs, toujours actifs — ils arment Deepened Hex.", en: "both DoTs, always up — they arm Deepened Hex." }],
-    ["Gloom Bolt", { fr: "le spam : +20 % sous DoTs, et chaque 3e rend Blackrot instantané.", en: "the spam: +20% under DoTs, and every 3rd makes Blackrot instant." }],
     ["Bone Armor / Sacrifice Undead", { fr: "tes deux façons de tenir : un bouclier de 20 % de tes PV max (45 s), ou sacrifier un serviteur pour récupérer 25 % de ta vie. v0.39 : l’ordre de sacrifice est inversé — le Skeletal Warrior part en premier, le Bone Mage ensuite, le Gravewing en dernier recours. Tes dégâts survivent au sacrifice.", en: "your two ways to hold on: a shield worth 20% of your max health (45s), or sacrificing a servant to get 25% of your health back. v0.39: the sacrifice order is reversed — the Skeletal Warrior goes first, then the Bone Mage, the Gravewing only as a last resort. Your damage survives the sacrifice." }],
-    ["Consume", { fr: "le filler-soin quand tu as pris des coups.", en: "the healing filler once you've taken hits." }],
     ["Abyssal Gag", { fr: "l’interrupt (ex-Gag Order).", en: "the interrupt (formerly Gag Order)." }]
    ],
    astuce: { fr: "Ton Graveguard est un vrai coéquipier : Grave Dominion lui transfère tes dégâts, alors surveille SES PV aussi — un Graveguard mort, et te voilà un Hexcraft sans talents. Il provoque tout seul par défaut, et Reaping Command lui donne 4 s à −30 % de dégâts subis quand ça chauffe.",
