@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-27T15:25:45Z",
+ "generated": "2026-08-28T14:33:21Z",
  "base_tag": "v0.40.1",
  "version": "v0.41.0",
  "branch": "ossbrain-release/v0.41.0",
- "declared_version": "0.40.0",
- "imminent": false,
- "commits": 269,
- "shown": 119,
- "last_commit": "2026-08-27T13:56:38Z",
+ "declared_version": "0.41.0",
+ "imminent": true,
+ "commits": 372,
+ "shown": 164,
+ "last_commit": "2026-08-28T13:45:09Z",
  "sections": [
   {
    "key": "classes",
@@ -37,6 +37,13 @@
      "date": "2026-08-27"
     },
     {
+     "h": "58dd5db5",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Interrupt a timed cast the instant its target dies",
+     "date": "2026-08-27"
+    },
+    {
      "h": "da8b23c1",
      "kind": "fix",
      "scope": "sim",
@@ -50,7 +57,15 @@
    "icon": "🔨",
    "fr": "Métiers & récolte",
    "en": "Professions & gathering",
-   "items": []
+   "items": [
+    {
+     "h": "45783221",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Scrub NaN from every material's final fragment color, not just the composer path",
+     "date": "2026-08-27"
+    }
+   ]
   },
   {
    "key": "donjons",
@@ -116,6 +131,27 @@
      "date": "2026-08-24"
     },
     {
+     "h": "de72980b",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Note the AMD-on-screen limit, cover the unreadable-vendor arm",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "24b6d234",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Let a vendor sale clear a whole stack, add a confirm opt-out",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "24b6d234",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Let a vendor sale clear a whole stack, add a confirm opt-out",
+     "date": "2026-08-27"
+    },
+    {
      "h": "3066399b",
      "kind": "fix",
      "scope": "content",
@@ -173,6 +209,13 @@
    "en": "Guild & social",
    "items": [
     {
+     "h": "a8a06b25",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Frame layout row above party section, flush horizontal menu",
+     "date": "2026-08-27"
+    },
+    {
      "h": "0ff03bf6",
      "kind": "feat",
      "scope": "server",
@@ -202,10 +245,66 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "46376ef4",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Visible snap grid, game-styled edit cursors, layered edge glow",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "5a37979e",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Resizes snap to the grid while Snap to Grid is on",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "46a80943",
+     "kind": "feat",
+     "scope": "market",
+     "text": "Expose operator sale provenance",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "7352da46",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Interface editor round: dimension drags, frames menu, bar lock",
+     "date": "2026-08-27"
+    },
+    {
      "h": "f41e99ea",
      "kind": "feat",
      "scope": "market",
      "text": "Show wallet balance in Exchange",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "f13cc547",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Frames menu round: combined bar rows, size reset, orientation, movable wishlist",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "fcc61a2d",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Per-bar orientation, per-frame size resets, frames-tab cleanup",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "f86ce36f",
+     "kind": "feat",
+     "scope": "desktop",
+     "text": "Allow the $WOC Exchange on website desktop builds only",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "17d30a46",
+     "kind": "feat",
+     "scope": "woc",
+     "text": "Wire the Exchange signers through the desktop wallet handoff",
      "date": "2026-08-27"
     },
     {
@@ -342,11 +441,144 @@
      "date": "2026-08-12"
     },
     {
+     "h": "c9c3f223",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add an Unlock interface option that frees every HUD frame",
+     "date": "2026-08-10"
+    },
+    {
      "h": "aa09245a",
      "kind": "feat",
      "scope": "mounts",
      "text": "Add the Bonebound Rickshaw mount",
      "date": "2026-08-10"
+    },
+    {
+     "h": "92f73769",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Address the PR review round (blockers, should-fixes, play notes)",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "8a95e1df",
+     "kind": "fix",
+     "scope": "controller",
+     "text": "Filter cross hotbar slot remaps",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "8a95e1df",
+     "kind": "fix",
+     "scope": "controller",
+     "text": "Filter cross hotbar slot remaps",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "72769c96",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Refresh three patch lock metadata",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "68ede665",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Format merged wealth database imports",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "c11c9878",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Move the final-color NaN guard to the ShaderChunk seam",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "69766e78",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Review round three (edge-cache space, snap keyboard, dispatcher)",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "c3457f35",
+     "kind": "fix",
+     "scope": "woc",
+     "text": "Enable exchange on verified Seeker builds",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "26379d81",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Draw the snap grid in visual px, repaint the grip approach band",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "a60c74ef",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Address operator listing review",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "0eb83083",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Pace KTX2 restore re-uploads through the GPU work queue",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "c6a2d05e",
+     "kind": "fix",
+     "scope": "",
+     "text": "Allow bg unstuck after esc clears movement",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "0c3d4c39",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "No Linux PRIME offload when the NVIDIA card drives the screen",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "a79dece0",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Extract KTX2 restore queue bridge",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "6d418222",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Make the NaN guard unconditional, module-scoped, and driver-tested",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "d6479975",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Scrub outgoing light before fog",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "1cf2899d",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Preserve battleground unstuck wall pressure",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "2810799e",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Tolerate lightweight movement sim contexts",
+     "date": "2026-08-28"
     },
     {
      "h": "98c4508d",
@@ -370,6 +602,20 @@
      "date": "2026-08-27"
     },
     {
+     "h": "e66500a8",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Exclude channels from the new-target-death guard",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "a3361d71",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Cap the daily chest so horizontal menu rows really touch",
+     "date": "2026-08-27"
+    },
+    {
      "h": "4f014828",
      "kind": "fix",
      "scope": "mobile",
@@ -388,6 +634,13 @@
      "kind": "fix",
      "scope": "server",
      "text": "Apply the review round on the client perf exporter",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "006133f8",
+     "kind": "fix",
+     "scope": "controller",
+     "text": "Expose flat face button remapping",
      "date": "2026-08-27"
     },
     {
@@ -416,6 +669,48 @@
      "kind": "fix",
      "scope": "unstuck",
      "text": "Allow bg wall contact from settings",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "2574bf96",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Apply the security-review round on the Exchange gate",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "ac9c50c8",
+     "kind": "fix",
+     "scope": "unstuck",
+     "text": "Keep battleground wall rescue from becoming a shortcut",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "363c120a",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Close the QA round on the Exchange distribution gate",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "36f38a4a",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep cascaded windows visible after resize",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "9c154e58",
+     "kind": "fix",
+     "scope": "woc",
+     "text": "Apply the five-reviewer round on the desktop signing path",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "f57715c3",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Clear stale v2 movement on starvation",
      "date": "2026-08-27"
     },
     {
@@ -563,6 +858,13 @@
      "kind": "fix",
      "scope": "desktop",
      "text": "Address second review on the Linux deep-link handler",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "d99ad839",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bound the KTX2 restore wait so a graphics-preset switch can't stall for minutes",
      "date": "2026-08-26"
     },
     {
@@ -874,6 +1176,20 @@
      "date": "2026-08-11"
     },
     {
+     "h": "63494bca",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Give the HUD frame resize grip a real keyboard path",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "78d4df11",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Position a re-homed HUD frame and stop shadowing the rail rule",
+     "date": "2026-08-10"
+    },
+    {
      "h": "38fbcf99",
      "kind": "fix",
      "scope": "mounts",
@@ -894,11 +1210,11 @@
   {
    "version": "v0.41.0",
    "branch": "ossbrain-release/v0.41.0",
-   "declared_version": "0.40.0",
-   "imminent": false,
-   "commits": 269,
-   "shown": 119,
-   "last_commit": "2026-08-27T13:56:38Z",
+   "declared_version": "0.41.0",
+   "imminent": true,
+   "commits": 372,
+   "shown": 164,
+   "last_commit": "2026-08-28T13:45:09Z",
    "sections": [
     {
      "key": "classes",
@@ -928,6 +1244,13 @@
        "date": "2026-08-27"
       },
       {
+       "h": "58dd5db5",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Interrupt a timed cast the instant its target dies",
+       "date": "2026-08-27"
+      },
+      {
        "h": "da8b23c1",
        "kind": "fix",
        "scope": "sim",
@@ -941,7 +1264,15 @@
      "icon": "🔨",
      "fr": "Métiers & récolte",
      "en": "Professions & gathering",
-     "items": []
+     "items": [
+      {
+       "h": "45783221",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Scrub NaN from every material's final fragment color, not just the composer path",
+       "date": "2026-08-27"
+      }
+     ]
     },
     {
      "key": "donjons",
@@ -1007,6 +1338,27 @@
        "date": "2026-08-24"
       },
       {
+       "h": "de72980b",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Note the AMD-on-screen limit, cover the unreadable-vendor arm",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "24b6d234",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Let a vendor sale clear a whole stack, add a confirm opt-out",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "24b6d234",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Let a vendor sale clear a whole stack, add a confirm opt-out",
+       "date": "2026-08-27"
+      },
+      {
        "h": "3066399b",
        "kind": "fix",
        "scope": "content",
@@ -1064,6 +1416,13 @@
      "en": "Guild & social",
      "items": [
       {
+       "h": "a8a06b25",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Frame layout row above party section, flush horizontal menu",
+       "date": "2026-08-27"
+      },
+      {
        "h": "0ff03bf6",
        "kind": "feat",
        "scope": "server",
@@ -1093,10 +1452,66 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "46376ef4",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Visible snap grid, game-styled edit cursors, layered edge glow",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "5a37979e",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Resizes snap to the grid while Snap to Grid is on",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "46a80943",
+       "kind": "feat",
+       "scope": "market",
+       "text": "Expose operator sale provenance",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "7352da46",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Interface editor round: dimension drags, frames menu, bar lock",
+       "date": "2026-08-27"
+      },
+      {
        "h": "f41e99ea",
        "kind": "feat",
        "scope": "market",
        "text": "Show wallet balance in Exchange",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "f13cc547",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Frames menu round: combined bar rows, size reset, orientation, movable wishlist",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "fcc61a2d",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Per-bar orientation, per-frame size resets, frames-tab cleanup",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "f86ce36f",
+       "kind": "feat",
+       "scope": "desktop",
+       "text": "Allow the $WOC Exchange on website desktop builds only",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "17d30a46",
+       "kind": "feat",
+       "scope": "woc",
+       "text": "Wire the Exchange signers through the desktop wallet handoff",
        "date": "2026-08-27"
       },
       {
@@ -1233,11 +1648,144 @@
        "date": "2026-08-12"
       },
       {
+       "h": "c9c3f223",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add an Unlock interface option that frees every HUD frame",
+       "date": "2026-08-10"
+      },
+      {
        "h": "aa09245a",
        "kind": "feat",
        "scope": "mounts",
        "text": "Add the Bonebound Rickshaw mount",
        "date": "2026-08-10"
+      },
+      {
+       "h": "92f73769",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Address the PR review round (blockers, should-fixes, play notes)",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "8a95e1df",
+       "kind": "fix",
+       "scope": "controller",
+       "text": "Filter cross hotbar slot remaps",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "8a95e1df",
+       "kind": "fix",
+       "scope": "controller",
+       "text": "Filter cross hotbar slot remaps",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "72769c96",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Refresh three patch lock metadata",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "68ede665",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Format merged wealth database imports",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "c11c9878",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Move the final-color NaN guard to the ShaderChunk seam",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "69766e78",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Review round three (edge-cache space, snap keyboard, dispatcher)",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "c3457f35",
+       "kind": "fix",
+       "scope": "woc",
+       "text": "Enable exchange on verified Seeker builds",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "26379d81",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Draw the snap grid in visual px, repaint the grip approach band",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "a60c74ef",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Address operator listing review",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "0eb83083",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Pace KTX2 restore re-uploads through the GPU work queue",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "c6a2d05e",
+       "kind": "fix",
+       "scope": "",
+       "text": "Allow bg unstuck after esc clears movement",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "0c3d4c39",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "No Linux PRIME offload when the NVIDIA card drives the screen",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "a79dece0",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Extract KTX2 restore queue bridge",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "6d418222",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Make the NaN guard unconditional, module-scoped, and driver-tested",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "d6479975",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Scrub outgoing light before fog",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "1cf2899d",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Preserve battleground unstuck wall pressure",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "2810799e",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Tolerate lightweight movement sim contexts",
+       "date": "2026-08-28"
       },
       {
        "h": "98c4508d",
@@ -1261,6 +1809,20 @@
        "date": "2026-08-27"
       },
       {
+       "h": "e66500a8",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Exclude channels from the new-target-death guard",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "a3361d71",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Cap the daily chest so horizontal menu rows really touch",
+       "date": "2026-08-27"
+      },
+      {
        "h": "4f014828",
        "kind": "fix",
        "scope": "mobile",
@@ -1279,6 +1841,13 @@
        "kind": "fix",
        "scope": "server",
        "text": "Apply the review round on the client perf exporter",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "006133f8",
+       "kind": "fix",
+       "scope": "controller",
+       "text": "Expose flat face button remapping",
        "date": "2026-08-27"
       },
       {
@@ -1307,6 +1876,48 @@
        "kind": "fix",
        "scope": "unstuck",
        "text": "Allow bg wall contact from settings",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "2574bf96",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Apply the security-review round on the Exchange gate",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "ac9c50c8",
+       "kind": "fix",
+       "scope": "unstuck",
+       "text": "Keep battleground wall rescue from becoming a shortcut",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "363c120a",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Close the QA round on the Exchange distribution gate",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "36f38a4a",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep cascaded windows visible after resize",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "9c154e58",
+       "kind": "fix",
+       "scope": "woc",
+       "text": "Apply the five-reviewer round on the desktop signing path",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "f57715c3",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Clear stale v2 movement on starvation",
        "date": "2026-08-27"
       },
       {
@@ -1454,6 +2065,13 @@
        "kind": "fix",
        "scope": "desktop",
        "text": "Address second review on the Linux deep-link handler",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "d99ad839",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Bound the KTX2 restore wait so a graphics-preset switch can't stall for minutes",
        "date": "2026-08-26"
       },
       {
@@ -1763,6 +2381,20 @@
        "scope": "mounts",
        "text": "Correct three defects in the round-6 review fixes",
        "date": "2026-08-11"
+      },
+      {
+       "h": "63494bca",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Give the HUD frame resize grip a real keyboard path",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "78d4df11",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Position a re-homed HUD frame and stop shadowing the rail rule",
+       "date": "2026-08-10"
       },
       {
        "h": "38fbcf99",
