@@ -2,35 +2,35 @@
   "guilde": {
     "classementServeur": 6,
     "classement": {
-      "releveLe": "2026-08-30T16:34:43Z",
+      "releveLe": "2026-08-30T20:56:55Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Monarchs",
           "memberCount": 90,
-          "totalLifetimeXp": 56289694,
+          "totalLifetimeXp": 56290844,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "Look Good Play Good",
           "memberCount": 99,
-          "totalLifetimeXp": 46812803,
+          "totalLifetimeXp": 46817355,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Raiders United",
           "memberCount": 99,
-          "totalLifetimeXp": 42334592,
+          "totalLifetimeXp": 42649618,
           "topLevel": 20
         },
         {
           "rank": 4,
           "name": "Vis Absoluta",
           "memberCount": 44,
-          "totalLifetimeXp": 18314745,
+          "totalLifetimeXp": 18319695,
           "topLevel": 20
         },
         {
@@ -44,21 +44,21 @@
           "rank": 6,
           "name": "La Clauderie",
           "memberCount": 47,
-          "totalLifetimeXp": 13645286,
+          "totalLifetimeXp": 13645513,
           "topLevel": 20
         },
         {
           "rank": 7,
-          "name": "Holy Order",
-          "memberCount": 47,
-          "totalLifetimeXp": 10472419,
+          "name": "A Guilda",
+          "memberCount": 30,
+          "totalLifetimeXp": 10550749,
           "topLevel": 20
         },
         {
           "rank": 8,
-          "name": "A Guilda",
-          "memberCount": 29,
-          "totalLifetimeXp": 10465758,
+          "name": "Holy Order",
+          "memberCount": 47,
+          "totalLifetimeXp": 10472419,
           "topLevel": 20
         },
         {
@@ -72,7 +72,7 @@
           "rank": 10,
           "name": "Cheaters",
           "memberCount": 25,
-          "totalLifetimeXp": 8389109,
+          "totalLifetimeXp": 8389451,
           "topLevel": 20
         }
       ],
@@ -80,7 +80,7 @@
         "rank": 6,
         "name": "La Clauderie",
         "memberCount": 47,
-        "totalLifetimeXp": 13645286,
+        "totalLifetimeXp": 13645513,
         "topLevel": 20
       }
     }
