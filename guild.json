@@ -2,35 +2,35 @@
   "guilde": {
     "classementServeur": 6,
     "classement": {
-      "releveLe": "2026-08-30T20:56:55Z",
+      "releveLe": "2026-08-30T23:23:29Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Monarchs",
           "memberCount": 90,
-          "totalLifetimeXp": 56290844,
+          "totalLifetimeXp": 56307680,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "Look Good Play Good",
           "memberCount": 99,
-          "totalLifetimeXp": 46817355,
+          "totalLifetimeXp": 46829339,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Raiders United",
           "memberCount": 99,
-          "totalLifetimeXp": 42649618,
+          "totalLifetimeXp": 42651360,
           "topLevel": 20
         },
         {
           "rank": 4,
           "name": "Vis Absoluta",
           "memberCount": 44,
-          "totalLifetimeXp": 18319695,
+          "totalLifetimeXp": 18329375,
           "topLevel": 20
         },
         {
@@ -70,9 +70,9 @@
         },
         {
           "rank": 10,
-          "name": "Cheaters",
-          "memberCount": 25,
-          "totalLifetimeXp": 8389451,
+          "name": "Sovereign",
+          "memberCount": 17,
+          "totalLifetimeXp": 8650010,
           "topLevel": 20
         }
       ],
