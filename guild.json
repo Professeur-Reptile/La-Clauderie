@@ -2,49 +2,49 @@
   "guilde": {
     "classementServeur": 6,
     "classement": {
-      "releveLe": "2026-08-30T11:51:42Z",
+      "releveLe": "2026-08-30T16:34:43Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Monarchs",
           "memberCount": 90,
-          "totalLifetimeXp": 56281262,
+          "totalLifetimeXp": 56289694,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "Look Good Play Good",
           "memberCount": 99,
-          "totalLifetimeXp": 46800124,
+          "totalLifetimeXp": 46812803,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Raiders United",
-          "memberCount": 100,
-          "totalLifetimeXp": 43301664,
+          "memberCount": 99,
+          "totalLifetimeXp": 42334592,
           "topLevel": 20
         },
         {
           "rank": 4,
           "name": "Vis Absoluta",
           "memberCount": 44,
-          "totalLifetimeXp": 18288446,
+          "totalLifetimeXp": 18314745,
           "topLevel": 20
         },
         {
           "rank": 5,
           "name": "Ehren Nuggets",
           "memberCount": 95,
-          "totalLifetimeXp": 16267538,
+          "totalLifetimeXp": 16272137,
           "topLevel": 20
         },
         {
           "rank": 6,
           "name": "La Clauderie",
           "memberCount": 47,
-          "totalLifetimeXp": 13635061,
+          "totalLifetimeXp": 13645286,
           "topLevel": 20
         },
         {
@@ -72,7 +72,7 @@
           "rank": 10,
           "name": "Cheaters",
           "memberCount": 25,
-          "totalLifetimeXp": 8378621,
+          "totalLifetimeXp": 8389109,
           "topLevel": 20
         }
       ],
@@ -80,7 +80,7 @@
         "rank": 6,
         "name": "La Clauderie",
         "memberCount": 47,
-        "totalLifetimeXp": 13635061,
+        "totalLifetimeXp": 13645286,
         "topLevel": 20
       }
     }
