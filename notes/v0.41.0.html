@@ -1,0 +1,809 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Nouveautés v0.41.0 — La Clauderie</title>
+<meta name="description" content="Les nouveautés de la v0.41.0 de World of ClaudeCraft, expliquées simplement : le raid d’Ignivar ouvre avec cinq salles, deux boss et 201 objets, un coffre à matériaux et sept sacs soulagent la banque, et la refonte des panoplies affaiblit l’équipement actuel de toutes les classes.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Nouveautés v0.41.0 — La Clauderie">
+<meta property="og:description" content="Le raid d’Ignivar ouvre, un coffre à matériaux soulage enfin la banque, et toutes les panoplies changent de règle — ton équipement actuel en sort affaibli.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.41.0.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.41.0.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') === 'en') location.replace('v0.41.0.en.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Notes de version</p>
+    <h1>Nouveautés <span class="v">v0.41.0</span></h1>
+    <p class="lede">Le <strong class="hl">raid d’Ignivar</strong> ouvre : cinq salles, deux boss, et <strong class="hl">201 objets</strong> à ramasser. Mais la vraie nouvelle est ailleurs, et les notes officielles la mentionnent à peine — <strong class="hl">toutes les panoplies du jeu changent de règle</strong>, et ton équipement actuel en sort affaibli. À côté, une version « rangement » très généreuse (un <strong class="hl">coffre à matériaux</strong>, sept sacs, quatre emplacements en banque) et deux corrections de combat qui touchent <strong class="hl">tout le monde</strong>.</p>
+    <div class="meta">
+      <span><b>Publiée</b> le 31 août 2026</span>
+      <span><b>Depuis</b> la v0.40.1</span>
+      <span><b>93</b> chantiers</span>
+      <span><b>2</b> nouveaux boss</span>
+    </div>
+    <div class="hint">💡 Clique sur une carte pour le détail.</div>
+  </header>
+
+  <!-- Bandeau constant : mêmes rubriques, même ordre, à chaque version. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">En un coup d’œil</h2>
+    <p class="sec-sub">Les mêmes rubriques à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
+    <ol>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <a class="d-name" href="#classes">Classes &amp; sorts</a>
+        <span class="d-say"><b class="up">Chaman ↑</b> · <b class="up">Démoniste ↑</b> · <b class="up">Paladin ↑</b> · <b class="down">Chasseur ↓</b> · <b class="eq">Guerrier =</b> · <b class="eq">Mage =</b> · <b class="eq">Voleur =</b> · <b class="eq">Prêtre =</b> · <b class="eq">Druide =</b>. Mais surtout <strong class="hl">deux changements pour tout le monde</strong> : tes sorts <strong class="hl">instantanés peuvent désormais être esquivés</strong> (ils ne rataient jamais), et la <a href="#panoplies">refonte des panoplies</a> <strong class="hl">affaiblit l’équipement que tu portes aujourd’hui</strong>.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <a class="d-name" href="#rangement">Métiers &amp; récolte</a>
+        <span class="d-say">La grosse nouveauté gratuite : un <strong class="hl">coffre à matériaux</strong> hors banque (<strong class="hl">40 à 200</strong> de chaque matériau), <strong class="hl">sept nouveaux sacs</strong> dont quatre réservés aux matériaux, et <strong class="hl">quatre emplacements</strong> de sacs dans la banque. La fabrication <strong class="hl">pioche toute seule</strong> dans le coffre.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#raid">Donjons, failles &amp; boss</a>
+        <span class="d-say">Le <strong class="hl">raid d’Ignivar</strong> ouvre en Normal et en Héroïque : cinq salles, deux boss, <strong class="hl">201 objets</strong>. Et un chiffre discret mais énorme — l’épique de <span data-codex="delve|The Drowned Litany">La Litanie Noyée</span> passe d’environ <strong class="hl">1 chance sur 667</strong> à <strong class="hl">1 sur 42</strong>.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <a class="d-name" href="#monde">Monde &amp; quêtes</a>
+        <span class="d-say">L’entrée du raid s’ouvre sur une <strong class="hl">nouvelle avancée</strong> des <span data-codex="zone|The Drakelands">Drakelands</span>. Sinon, du détail : <span data-codex="mob|Mister Crabs">Mister Crabs</span> retrouve un cycle de vie correct, les piles de boulets de Dawnhold deviennent praticables, et la monnaie de forge des Failles s’envoie enfin par courrier.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <a class="d-name" href="#guilde">Guilde &amp; social</a>
+        <span class="d-say">Rien de visible, trois filets de sécurité : la <strong class="hl">création d’une guilde</strong>, les <strong class="hl">reçus de la banque de guilde</strong> et leur journal ne peuvent plus s’arrêter au milieu et laisser un état bancal.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#confort">Confort &amp; technique</a>
+        <span class="d-say">Tu peux enfin <strong class="hl">déplacer et redimensionner</strong> toute ton interface d’un seul réglage. La <strong class="hl">manette et le tactile</strong> savent viser au sol et charger un sort. Et le jeu est <strong class="hl">entièrement traduit</strong> dans ses 21 langues.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="raid">
+    <h2><span class="num">01</span>Le raid d’Ignivar</h2>
+    <p class="sec-sub">Cinq salles, deux boss, en Normal et en Héroïque. L’entrée se trouve sur une nouvelle avancée des <span data-codex="zone|The Drakelands">Drakelands</span>, et le raid se reprend au point de contrôle le plus profond que ton groupe a atteint.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="raid" tabindex="0" role="button" aria-label="Détails : les cinq salles, les deux boss et les règles d’entrée">
+        <h3>Cinq salles, deux boss <span class="chip c-raid">Raid</span></h3>
+        <p>Un monte-charge de forge, les Halls du Premier Trempage, l’arène, l’Assemblée en fusion, et le <strong class="hl">Creuset intérieur</strong> pour la finale. <strong class="hl">Ignivar, Héraut de la Dernière Flamme</strong> puis <strong class="hl">Varkhul, Père-Forge de la Dernière Flamme</strong>.</p>
+        <span class="more-link">Voir les salles et les règles d’entrée</span>
+      </div>
+      <div class="card more" data-detail="butin" tabindex="0" role="button" aria-label="Détails : les 201 objets, les sigils et les taux de butin vérifiés">
+        <h3>201 objets à ramasser <span class="chip c-epic">Butin</span></h3>
+        <p>Panoplies de classe, <strong class="hl">sigils</strong> à échanger, pièces hors panoplie, armes, boucliers, et un <strong class="hl">légendaire</strong> sur chacun des deux boss. Le butin héroïque est calibré à part, il ne recopie plus le Normal.</p>
+        <span class="more-link">Voir les taux exacts</span>
+      </div>
+      <div class="card more" data-detail="litanie" tabindex="0" role="button" aria-label="Détails : le calcul complet du nouveau taux d’épique de La Litanie Noyée">
+        <h3>Un épique 16 fois plus probable <span class="chip c-bal">Vérifié</span></h3>
+        <p>Les notes officielles disent seulement « taux corrigés ». En réalité <span data-codex="delve|The Drowned Litany">La Litanie Noyée</span> passe d’environ <strong class="hl">1 chance sur 667</strong> par nettoyage héroïque à <strong class="hl">1 sur 42</strong> : <strong class="hl">deux</strong> réglages ont bougé et ils se multiplient.</p>
+        <span class="more-link">Voir le calcul</span>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Ce que le raid change côté groupe <span class="chip c-util">Pratique</span></h3>
+        <ul>
+          <li>Un membre qui revient rentre <strong class="hl">au point de contrôle le plus profond</strong> déjà validé — pas besoin de tout refaire.</li>
+          <li>L’entrée est <strong class="hl">bloquée pendant un combat</strong> de salle : on ne débarque plus au milieu d’un pull.</li>
+          <li>Les salles de boss restent <strong class="hl">scellées</strong> tant que la progression demandée n’est pas faite.</li>
+          <li>Les portails renvoient <strong class="hl">à l’étage</strong> correspondant, toujours dans le même sens d’arrivée.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Le bouclier rare de Varkhul <span class="chip c-epic">Héroïque</span></h3>
+        <ul>
+          <li>Le bouclier Emberward de Varkhul est passé <strong class="hl">héroïque uniquement</strong> : il ne tombe plus du tout en Normal.</li>
+          <li>Son taux est de <strong class="hl">3 %</strong>, à l’intérieur du groupe « boucliers » — donc sans réduire tes chances d’avoir un bouclier.</li>
+          <li>Les <strong class="hl">deux épiques</strong> du même groupe se partagent les <strong class="hl">97 %</strong> restants, à parts égales.</li>
+          <li>Autrement dit, tu repars toujours avec exactement un bouclier ; c’est seulement lequel qui se joue.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Failles &amp; expéditions <span class="chip c-util">Le reste</span></h3>
+        <ul>
+          <li>Une expédition en cours <strong class="hl">se recale</strong> quand la composition du groupe change en pleine course.</li>
+          <li>Un esprit relâché ne fait plus <strong class="hl">avancer les énigmes</strong> de Faille à la place des vivants.</li>
+          <li>La <strong class="hl">monnaie de forge</strong> des Failles s’envoie par courrier et se vend à l’hôtel des ventes.</li>
+          <li>Absent des notes officielles : les <strong class="hl">deux légendaires du rang S</strong> ont été remontés. Heart of the Rift passe à <strong class="hl">18 / 8 / 8 / 8</strong> (au lieu de 14 / 6 / 6 / 6) et Voidsong à <strong class="hl">25 / 23 / 17</strong> (au lieu de 19 / 17 / 13).</li>
+          <li>Les monstres en fuite <strong class="hl">arrêtent d’agir</strong> et annoncent clairement leur première frappe au retour.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="classes">
+    <h2><span class="num">02</span>Ce qui change pour ta classe</h2>
+    <p class="sec-sub">Deux changements touchent <strong class="hl">toutes les classes</strong> et méritent d’être lus en premier — ils ne sont presque pas mis en avant par les notes officielles. Ensuite seulement viennent les ajustements par classe, qui sont peu nombreux.</p>
+    <div class="grid cols-2">
+      <div class="card more" data-detail="esquive" tabindex="0" role="button" aria-label="Détails : ce que change le passage des instantanés par le test d’esquive">
+        <h3>Tes instantanés peuvent rater <span class="chip c-bal">Tout le monde</span></h3>
+        <p>Jusqu’ici, un sort <strong class="hl">instantané</strong> hostile et un coup <strong class="hl">physique direct</strong> ne passaient par <strong class="hl">aucun test d’esquive</strong> : ils touchaient toujours. Les deux passent maintenant par le même test que le reste. Et si le coup rate, ce qui allait avec — ralentissement, contrôle, dégâts sur la durée, ressource rendue — <strong class="hl">ne s’applique plus non plus</strong>.</p>
+        <span class="more-link">Voir ce que ça implique</span>
+      </div>
+      <div class="card more" data-detail="panoplies" tabindex="0" role="button" aria-label="Détails : la refonte 2/4/6 des panoplies et son effet chiffré sur l’équipement actuel">
+        <h3 id="panoplies">Toutes les panoplies changent de règle <span class="chip c-bal">Important</span></h3>
+        <p>Les anciennes panoplies de palier 1 et 2 <strong class="hl">fusionnent en une seule échelle</strong> : bonus à <strong class="hl">2</strong>, à <strong class="hl">4</strong>, à <strong class="hl">6</strong> pièces. Fini le cumul de deux panoplies — et les valeurs <strong class="hl">baissent de moitié</strong> au passage (hâte 150 → 80, précision 60 → 30). Ton équipement actuel devient donc <strong class="hl">plus faible qu’hier</strong>, en PvE comme en PvP.</p>
+        <span class="more-link">Voir les chiffres mesurés</span>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="chaman" tabindex="0" role="button" aria-label="Détails : le calcul du nouveau dégât de zone du Chaman">
+        <h3>Chaman <b class="up">↑</b> <span class="chip c-new">Zone</span></h3>
+        <p>Avec <span data-codex="talent|Living Weapon">Living Weapon</span>, <strong class="hl">chaque</strong> écho de <span data-codex="ability|Galeheart">Galeheart</span> frappe désormais les ennemis proches, au lieu du dernier seulement. Le pourcentage baisse (50 → 40 %) mais il s’applique <strong class="hl">deux fois</strong> : <strong class="hl">+60 %</strong> sur chaque cible secondaire.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+      <div class="card">
+        <h3>Démoniste <b class="up">↑</b> <span class="chip c-new">Correctif</span></h3>
+        <ul>
+          <li>Se faire frapper pendant <span data-codex="ability|Consume">Consume</span> raccourcissait la canalisation <strong class="hl">sans en retirer les tics</strong>.</li>
+          <li>Conséquence : le sort se terminait « en avance », le jeu croyait qu’il restait des tics, et le <strong class="hl">bonus de fin</strong> était <strong class="hl">silencieusement sauté</strong>.</li>
+          <li>C’est corrigé : la poussée coûte maintenant les tics qu’elle enlève, et la fin de canalisation se déclenche bien.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Paladin <b class="up">↑</b> <span class="chip c-new">Affichage</span></h3>
+        <ul>
+          <li>Avec <span data-codex="talent|Extended Dawn">Extended Dawn</span>, <span data-codex="ability|Divine Ascension">Divine Ascension</span> empoigne <strong class="hl">7</strong> capacités (5 de base + 2) — mais l’interface n’en affichait que <strong class="hl">5</strong>. Les sept sont désormais visibles.</li>
+          <li><span data-codex="ability|Dawn Devotion">Dawn Devotion</span> s’apprend au <strong class="hl">niveau 3</strong> au lieu de 5.</li>
+          <li>Précision ajoutée à la chaîne sacrée : elle <strong class="hl">ne tire ni ne ralentit un boss</strong>. C’était déjà le cas, ce n’est plus une surprise.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Chasseur <b class="down">↓</b> <span class="chip c-pvp">Nerf</span></h3>
+        <ul>
+          <li><span data-codex="ability|Splitshot">Splitshot</span> portait déjà une <strong class="hl">distance minimale de 8 m</strong>, mais le jeu ne la faisait pas respecter quand on visait le sol.</li>
+          <li>On pouvait donc le lâcher <strong class="hl">à ses pieds</strong>. C’est refusé maintenant, et refusé <strong class="hl">avant</strong> de dépenser le coût et le temps de recharge.</li>
+          <li>La visée au sol devient par ailleurs disponible à la <strong class="hl">manette</strong> et au <strong class="hl">tactile</strong>.</li>
+        </ul>
+      </div>
+      <div class="card more" data-detail="niveaux" tabindex="0" role="button" aria-label="Détails : les nouveaux niveaux d’apprentissage classe par classe">
+        <h3>Monter un nouveau perso <span class="chip c-util">Niveaux 2 à 8</span></h3>
+        <p>Chaque classe gagne maintenant <strong class="hl">une ou deux capacités à chaque niveau de 2 à 6</strong>, au lieu de longs paliers vides. Rien ne change à haut niveau — <strong class="hl">aucune valeur de sort n’est touchée</strong>, seulement le moment où on l’apprend.</p>
+        <span class="more-link">Voir le piège pour les rerolls</span>
+      </div>
+      <div class="card">
+        <h3>Et une nouvelle statistique <span class="chip c-new">Soigneurs</span></h3>
+        <ul>
+          <li>Le jeu ajoute la <strong class="hl">Puissance de soin</strong>, qui arrive avec l’équipement du raid.</li>
+          <li>Elle marche à <strong class="hl">sens unique</strong> : la Puissance des sorts continue d’améliorer tes soins, mais la Puissance de soin <strong class="hl">n’ajoute rien à tes dégâts</strong>.</li>
+          <li>Le <a href="../bis.html">guide Builds</a> la prendra en compte tout seul dès que les données du raid seront publiées.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="rangement">
+    <h2><span class="num">03</span>Le coffre à matériaux, et sept sacs</h2>
+    <p class="sec-sub">C’est la version « rangement », et l’essentiel est <strong class="hl">gratuit ou presque</strong>. La banque saturée était la plainte n°1 de ceux qui craftent.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="coffre" tabindex="0" role="button" aria-label="Détails : comment marche le coffre à matériaux et ce qu’il coûte">
+        <h3>Un coffre rien que pour les matériaux <span class="chip c-new">Nouveau</span></h3>
+        <p>Un troisième onglet dans la banque, à côté de Personnel et Guilde. <strong class="hl">Chaque matériau a sa propre place</strong> — une grosse pile ne peut plus étouffer les autres. Il démarre à <strong class="hl">40</strong> de chaque et monte à <strong class="hl">200</strong> en quatre paliers.</p>
+        <span class="more-link">Voir les prix et les règles</span>
+      </div>
+      <div class="card more" data-detail="sacs" tabindex="0" role="button" aria-label="Détails : les sept nouveaux sacs, leur taille et où les obtenir">
+        <h3>Sept nouveaux sacs <span class="chip c-new">Dont 4 à matériaux</span></h3>
+        <p>Du petit sac de zone 1 à <strong class="hl">24 emplacements</strong>, le plus grand sac du jeu. Quatre sont des <strong class="hl">sacoches à réactifs</strong> : elles ne prennent que des matériaux, et libèrent d’autant tes sacs ordinaires.</p>
+        <span class="more-link">Voir la liste complète</span>
+      </div>
+      <div class="card">
+        <h3>Fabriquer sans faire l’aller-retour <span class="chip c-new">Confort</span></h3>
+        <ul>
+          <li>La fabrication dépense d’abord ce que tu <strong class="hl">portes</strong>, puis prend le reste <strong class="hl">directement dans le coffre</strong>.</li>
+          <li>La fenêtre de craft <strong class="hl">marque chaque ligne</strong> qui va puiser dans le coffre, avant que tu valides.</li>
+          <li>Attention : ça marche <strong class="hl">en monde ouvert seulement</strong>. En donjon, en raid, en Faille, en champ de bataille et en arène, tu fabriques avec ce que tu portes — et la fenêtre te le dit clairement au lieu d’échouer sans explication.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Quatre emplacements dans la banque <span class="chip c-new">Nouveau</span></h3>
+        <ul>
+          <li>Tu peux <strong class="hl">encastrer un sac</strong> dans la banque elle-même : ses emplacements s’ajoutent au total.</li>
+          <li>Ils se débloquent dans l’ordre : <strong class="hl">100</strong>, <strong class="hl">200</strong>, <strong class="hl">350</strong> puis <strong class="hl">500</strong> pièces d’or.</li>
+          <li>Y mettre une sacoche à réactifs, c’est <strong class="hl">échanger</strong> de la place générale contre de la place à matériaux : un choix, pas une amélioration.</li>
+          <li>Retirer un sac ne perd <strong class="hl">jamais rien</strong> : si ça déborde, tout reste en place et la banque refuse simplement les nouveaux dépôts.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Jusqu’où ça monte <span class="chip c-util">Chiffres</span></h3>
+        <ul>
+          <li>Une banque démarre à <strong class="hl">24</strong> emplacements et monte à <strong class="hl">96</strong> avec l’échelle en or, inchangée (12 paliers de 6).</li>
+          <li>Les bonus de compte ajoutent jusqu’à <strong class="hl">16</strong> de plus.</li>
+          <li>Les quatre sacs encastrés ajoutent les leurs par-dessus, et ce plafond <strong class="hl">bougera</strong> avec les futurs sacs.</li>
+          <li>Le coffre à matériaux, lui, est <strong class="hl">en dehors de tout ça</strong>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Deux hauts faits, et un piège <span class="chip c-util">À savoir</span></h3>
+        <ul>
+          <li>Deux hauts faits récompensent le <strong class="hl">premier</strong> et le <strong class="hl">quatrième</strong> emplacement de sac. Comme tous les hauts faits, ils ne donnent que du Renom.</li>
+          <li>Le piège : deux des nouveaux sacs rejoignent des pages du <strong class="hl">Reliquaire déjà complètes</strong>. Une page que tu avais finie <strong class="hl">repasse en incomplète</strong> jusqu’à ce que tu trouves le sac.</li>
+          <li>Les infobulles disent maintenant qu’un sac est réservé aux matériaux — à lire <strong class="hl">avant</strong> de l’acheter ou de le fabriquer.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="monde">
+    <h2><span class="num">04</span>Monde &amp; quêtes</h2>
+    <p class="sec-sub">Peu de choses, mais l’entrée du raid ajoute un vrai bout de terrain, et deux irritants connus disparaissent.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Une nouvelle avancée aux Drakelands <span class="chip c-new">Terrain</span></h3>
+        <ul>
+          <li>Les <span data-codex="zone|The Drakelands">Drakelands</span> (niveaux 16 à 20) gagnent l’<strong class="hl">approche volcanique</strong> qui mène à l’entrée du raid.</li>
+          <li>Ce n’est pas une nouvelle zone : la zone existait, c’est son <strong class="hl">terrain qui s’étend</strong>.</li>
+          <li>Une entrée d’essai à pied a aussi été ajoutée du côté d’Eastbrook.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Deux irritants réglés <span class="chip c-util">Correctifs</span></h3>
+        <ul>
+          <li><span data-codex="mob|Mister Crabs">Mister Crabs</span> suivait un cycle de vie incorrect. Il est revenu à celui prévu.</li>
+          <li>Les <strong class="hl">piles de boulets</strong> de Dawnhold deviennent praticables : on peut monter dessus au lieu de les traverser.</li>
+          <li>Une chute qui fait mal ne peut plus se transformer en <strong class="hl">rattrapage de corniche</strong> au dernier moment.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Champs de bataille <span class="chip c-pvp">PvP</span></h3>
+        <ul>
+          <li>Le <strong class="hl">remplissage</strong> continue même après un match refusé, au lieu de s’arrêter là.</li>
+          <li>Les objets interactifs répondent à nouveau à la touche <span class="kbd">Interagir</span>.</li>
+          <li>Le terrain <strong class="hl">attend d’être prêt</strong> avant de s’afficher, ce qui supprime les arrivées dans un décor incomplet.</li>
+          <li>Les corps de démons restent disponibles pour les résurrections de vague.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="guilde">
+    <h2><span class="num">05</span>Guilde &amp; social</h2>
+    <p class="sec-sub">Rien de neuf à voir, mais trois filets de sécurité posés au bon endroit. Ce sont exactement le genre de failles qui, un jour de malchance, laissent une guilde ou une banque dans un état incohérent.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Fonder une guilde, d’un bloc <span class="chip c-util">Fiabilité</span></h3>
+        <ul>
+          <li>La création d’une guilde se fait maintenant <strong class="hl">en une seule opération</strong> : soit tout réussit, soit rien n’est écrit.</li>
+          <li>Une coupure au mauvais moment ne peut donc plus laisser une guilde à moitié créée.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>La banque de guilde tient ses reçus <span class="chip c-util">Fiabilité</span></h3>
+        <ul>
+          <li>Les effets d’un <strong class="hl">reçu</strong> de banque de guilde sont eux aussi appliqués d’un seul bloc.</li>
+          <li>Plus de cas où l’objet bouge mais où la ligne de journal manque — ou l’inverse.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Un journal qui correspond <span class="chip c-util">Fiabilité</span></h3>
+        <ul>
+          <li>Les lignes de journal de guilde sont désormais <strong class="hl">rattachées</strong> à la sauvegarde de banque correspondante.</li>
+          <li>Concrètement : ce que dit l’historique et ce que contient la banque ne peuvent plus se contredire.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="confort">
+    <h2><span class="num">06</span>Confort &amp; technique</h2>
+    <p class="sec-sub">La plus longue liste de la version, et la plus utile au quotidien. L’interface devient réellement réglable, et la manette rattrape son retard.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="interface" tabindex="0" role="button" aria-label="Détails : tout ce que le déverrouillage de l’interface permet de régler">
+        <h3>Déverrouiller toute l’interface <span class="chip c-new">Gros confort</span></h3>
+        <p>Un seul réglage <strong class="hl">libère d’un coup</strong> tous les cadres déplaçables : barres d’action, cadres d’unité, barre d’incantation, minicarte. On les déplace, on les redimensionne, on les remet en place un par un — et <strong class="hl">ça tient</strong> quand tu changes de taille d’écran ou d’échelle.</p>
+        <span class="more-link">Voir tout ce qui se règle</span>
+      </div>
+      <div class="card">
+        <h3>Manette et tactile <span class="chip c-new">Rattrapage</span></h3>
+        <ul>
+          <li>Les sorts qui se <strong class="hl">visent au sol</strong> fonctionnent enfin à la manette et au tactile.</li>
+          <li>Les sorts <strong class="hl">à charge</strong> se maintiennent depuis un emplacement de manette comme depuis la barre croisée.</li>
+          <li>Les <strong class="hl">boutons de façade</strong> se réassignent directement, sans passer par un menu détourné.</li>
+          <li>L’habillage tactile et la barre croisée ne se disputent plus la place à l’écran.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Les petites choses qui comptent <span class="chip c-util">Interface</span></h3>
+        <ul>
+          <li>Chez le marchand : <strong class="hl">vendre une pile entière</strong>, une ligne « Tout vendre », et la confirmation qui se désactive.</li>
+          <li>Détruire un objet propose désormais la <strong class="hl">pile complète</strong> par défaut.</li>
+          <li>Le <strong class="hl">pourcentage d’XP</strong> est toujours visible, sur ordinateur comme sur mobile.</li>
+          <li>Le champ de vision <strong class="hl">garde la valeur</strong> que tu lui donnes.</li>
+          <li>Une barre de <strong class="hl">rythme d’attaque</strong> pour la main gauche, et pour ta cible.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Bureau et Linux <span class="chip c-util">Technique</span></h3>
+        <ul>
+          <li>Le solde de ton portefeuille s’affiche dans l’Échange — sur les versions <strong class="hl">bureau du site</strong> uniquement, jamais sous Steam ni Epic, par politique de ces boutiques.</li>
+          <li>Sous Linux, les liens <strong class="hl">worldofclaudecraft://</strong> sont reconnus après installation.</li>
+          <li>Toujours sous Linux : plus de bascule de carte graphique inutile quand c’est la NVIDIA qui pilote déjà l’écran, et l’overlay Steam ne coupe plus l’accélération.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Performances <span class="chip c-util">Serveur</span></h3>
+        <ul>
+          <li>Le courrier s’enregistre <strong class="hl">au fil de l’eau</strong> : l’à-coup récurrent de sauvegarde disparaît.</li>
+          <li>Les <strong class="hl">compilations de shaders</strong> sont bornées quand tu changes les réglages graphiques.</li>
+          <li>Une couleur invalide est <strong class="hl">nettoyée</strong> avant de pouvoir gâcher toute l’image.</li>
+          <li>Treize décors de raid inutilisés ne sont plus téléchargés pour rien.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Traductions <span class="chip c-new">Complet</span></h3>
+        <ul>
+          <li>Toutes les lignes de la v0.41.0 sont remplies dans les <strong class="hl">21 langues</strong> livrées, français compris.</li>
+          <li>Deux textes manquants <strong class="hl">vidaient la fenêtre</strong> des champs de bataille : le refus d’entrée du raid et le week-end de Double Honneur.</li>
+          <li>Les voix féminines de personnage suivent enfin le <strong class="hl">genre choisi</strong>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    raid: {
+      title: "Le raid d’Ignivar : les salles, les boss, et comment on y entre",
+      summary: "Cinq espaces enchaînés, deux boss, et des règles d’entrée pensées pour qu’on ne casse plus la soirée d’un groupe.",
+      body: `
+        <h4>Les cinq salles, dans l’ordre</h4>
+        <ul>
+          <li>Le <b>monte-charge de la forge</b> : l’antichambre. La porte reste scellée le temps de la descente, puis devient un passage ordinaire.</li>
+          <li>Les <b>Halls du Premier Trempage</b>.</li>
+          <li>L’<b>arène d’Ignivar</b>, où se joue le premier boss.</li>
+          <li>L’<b>Assemblée en fusion</b>.</li>
+          <li>Le <b>Creuset intérieur</b>, la salle de finale.</li>
+        </ul>
+        <h4>Les deux boss</h4>
+        <ul>
+          <li><b>Ignivar, Héraut de la Dernière Flamme</b>.</li>
+          <li><b>Varkhul, Père-Forge de la Dernière Flamme</b>, la finale.</li>
+          <li>Chacun a ses mécaniques, ses animations, ses répliques doublées et sa fiche dans le guide des boss du jeu.</li>
+          <li>Les deux existent en <b>Normal</b> et en <b>Héroïque</b>, réglés séparément.</li>
+        </ul>
+        <h4>Les règles d’entrée</h4>
+        <ul>
+          <li>Un membre qui revient est replacé au <b>point de contrôle le plus profond</b> que le groupe a validé.</li>
+          <li>On <b>ne peut pas entrer</b> pendant qu’un combat de salle est en cours.</li>
+          <li>Les salles de boss sont <b>scellées</b> tant que la progression demandée n’est pas remplie.</li>
+          <li>Les portails renvoient <b>à l’étage</b> correspondant, avec une orientation d’arrivée constante.</li>
+        </ul>
+        <h4>Le décor</h4>
+        <p>La forge a droit à son propre matériel : dallage de fer, machinerie, <b>douve de lave</b>, enclume animée, éclairage par salle et occlusion des murs. L’approche extérieure est volcanique. Rien de tout ça ne change le jeu, mais c’est ce qui fait qu’un raid ne ressemble pas au précédent.</p>`
+    },
+    butin: {
+      title: "Le butin du Creuset : 201 objets, et les taux vérifiés",
+      summary: "Le palier complet, avec ce que le code dit vraiment des taux — pas seulement ce qu’annoncent les notes.",
+      body: `
+        <h4>Ce que contient le palier</h4>
+        <ul>
+          <li><b>201 objets</b> en tout : panoplies de classe, <b>sigils</b> à échanger, pièces hors panoplie, armes, boucliers et réactifs.</li>
+          <li>Chaque boss a sa <b>table dédiée</b>, et le Reliquaire couvre l’ensemble.</li>
+          <li>Ignivar et Varkhul laissent chacun tomber un <b>légendaire</b> écrit à la main.</li>
+          <li>Le butin <b>héroïque</b> ne recopie plus le Normal : il est routé et calibré à part.</li>
+        </ul>
+        <h4>Les taux de Varkhul en héroïque</h4>
+        <ul>
+          <li><b>Sigils</b> (torse, jambes, casque) : trois options par groupe, à <b>34 / 33 / 33 %</b>. Tu en sors toujours un.</li>
+          <li><b>Boucliers</b> : Emberward à <b>3 %</b>, et les deux épiques du groupe se partagent les <b>97 %</b> restants, soit <b>48,5 %</b> chacun.</li>
+          <li><b>Armes</b> : trois options à <b>34 / 33 / 33 %</b>.</li>
+          <li><b>Anneaux</b> : quatre options à <b>25 %</b> chacune.</li>
+          <li><b>Bottes hors panoplie</b> : dix options à <b>7 %</b>, plus deux objets à <b>15 %</b>.</li>
+        </ul>
+        <h4>Le point important sur Emberward</h4>
+        <p>Emberward a été retiré du Normal et <b>déplacé en héroïque uniquement</b>. Son 3 % vit <b>à l’intérieur</b> du groupe « boucliers » qui existait déjà : il ne rajoute pas un tirage, il prend une part du même. Tu repars donc toujours avec exactement <b>un</b> bouclier — la seule question est lequel.</p>
+        <h4>Pourquoi le site n’en dit pas plus pour l’instant</h4>
+        <p>Les fiches détaillées des 201 objets arriveront quand la base du Codex aura enregistré la version. Elles sont <b>calculées</b>, pas rédigées : le <a href="../bis.html">guide Builds</a> se recalculera tout seul avec l’équipement du raid.</p>`
+    },
+    litanie: {
+      title: "La Litanie Noyée : le calcul complet du nouveau taux",
+      summary: "Les notes officielles disent « taux corrigés ». Deux réglages ont bougé, et comme ils se multiplient, l’effet est bien plus grand que chacun ne le laisse croire.",
+      body: `
+        <h4>Ce qu’il fallait aligner</h4>
+        <ul>
+          <li>L’épique de prestige ne tombe que d’un coffre <b>généreux</b>, et à un certain taux.</li>
+          <li>Ce sont ces <b>deux</b> nombres qui ont bougé, pas un seul.</li>
+        </ul>
+        <h4>Avant</h4>
+        <ul>
+          <li>Chances qu’une course soit <b>généreuse</b> : <b>5 %</b> en héroïque (2 % en normal).</li>
+          <li>Chances que le coffre lâche l’épique : <b>3 %</b>.</li>
+          <li>Donc par nettoyage héroïque : 0,05 × 0,03 = <b>0,15 %</b>, soit environ <b>1 chance sur 667</b>.</li>
+        </ul>
+        <h4>Maintenant</h4>
+        <ul>
+          <li>Course <b>généreuse</b> : <b>20 %</b> en héroïque (8 % en normal).</li>
+          <li>Épique dans le coffre : <b>12 %</b>.</li>
+          <li>Donc par nettoyage héroïque : 0,20 × 0,12 = <b>2,4 %</b>, soit environ <b>1 chance sur 42</b>.</li>
+        </ul>
+        <h4>Pourquoi c’est important de le dire ainsi</h4>
+        <p>Chaque réglage a été multiplié par <b>4</b>. Pris isolément, on lirait « quatre fois plus de chances ». Mais les deux se multiplient l’un l’autre : le vrai gain est de <b>16 fois</b>. C’est la différence entre un objet qu’on ne verra jamais et un objet qu’on finit par avoir.</p>`
+    },
+    esquive: {
+      title: "Tes instantanés passent maintenant par le test d’esquive",
+      summary: "Deux chemins d’attaque échappaient au test depuis toujours. Ils y passent, et ce qui accompagne le coup tombe avec lui.",
+      body: `
+        <h4>Le défaut</h4>
+        <ul>
+          <li>Le test d’esquive était branché sur <b>deux chemins</b> de résolution au lieu du tronc commun.</li>
+          <li>Résultat : un sort hostile <b>instantané</b> (sans projectile) ne passait <b>jamais</b> par le test de résistance que prend un projectile à l’impact.</li>
+          <li>Et un coup <b>physique direct</b> ne tirait <b>aucun</b> test de raté, contrairement à l’effet de fracassement juste à côté.</li>
+        </ul>
+        <h4>Ce qui change</h4>
+        <ul>
+          <li>Les deux passent maintenant par le test, l’instantané via un morceau de code <b>partagé</b> avec le projectile pour que les deux restent identiques.</li>
+          <li>Le test physique est <b>sauté</b> quand les chances de rater sont déjà nulles — inutile de tirer un dé qui ne peut pas perdre.</li>
+        </ul>
+        <h4>La conséquence la moins évidente</h4>
+        <p>Un coup physique direct qui <b>rate</b> arrête maintenant <b>tout le paquet</b> qui allait avec : le ralentissement, le contrôle, les dégâts sur la durée et la ressource rendue ne s’appliquent plus. Avant, le coup pouvait être évité mais ses effets secondaires passaient quand même.</p>
+        <h4>Ce que ça veut dire pour toi</h4>
+        <p>Tes enchaînements deviennent un peu <b>moins fiables</b> qu’avant, surtout ceux qui reposent sur un instantané pour poser un contrôle. Ce n’est pas un nerf de chiffres — aucune valeur de sort ne bouge — c’est la fin d’une garantie qui n’aurait jamais dû exister.</p>`
+    },
+    panoplies: {
+      title: "La refonte des panoplies : ce que ton équipement perd",
+      summary: "C’est le changement le plus lourd de la version, et les notes officielles ne le présentent que comme un préalable au nouveau raid.",
+      body: `
+        <h4>Avant : deux panoplies valaient mieux qu’une</h4>
+        <ul>
+          <li>Les familles de <b>palier 1</b> et de <b>palier 2</b> d’un même archétype comptaient <b>séparément</b>.</li>
+          <li>On pouvait donc porter 4 pièces de l’une et 4 de l’autre, et toucher <b>les deux</b> bonus de 4. C’est ce que le jeu appelle lui-même le « double-stack ».</li>
+        </ul>
+        <h4>Maintenant : une seule échelle</h4>
+        <ul>
+          <li>Les deux familles partagent <b>une seule table</b> : le jeu additionne tes pièces des deux et applique le barème une fois.</li>
+          <li>Le barème devient : les <b>statistiques à 2</b> pièces, le proc du palier 1 plus la puissance brute à <b>4</b>, et le proc du palier 2 au <b>6</b>.</li>
+        </ul>
+        <h4>Les valeurs baissent aussi</h4>
+        <ul>
+          <li><b>Hâte</b> : de 150 à <b>80</b> de score.</li>
+          <li><b>Précision</b> : de 60 à <b>30</b>.</li>
+          <li>Les valeurs de proc baissent également.</li>
+          <li>Le programme de Précision est réorienté : les amorces de palier 2 basculent vers <b>critique et hâte</b>, quatre pièces héroïques de donjon vers le <b>critique</b>, et le talisman Swiftfang vers la <b>hâte</b>.</li>
+        </ul>
+        <h4>Le chiffre que le jeu reconnaît lui-même</h4>
+        <p>Le jeu maintient un contrôle qui vérifie que l’équipement PvE reste dans une fourchette face au kit d’honneur en PvP. Après la refonte, l’équipement de référence <b>tombe sous ses propres seuils</b> : mesuré à <b>0,701</b> pour l’armure seule contre un plancher de 0,8, <b>0,756</b> en kit complet contre 0,9, et <b>0,824</b> avec le bras légendaire contre 1,0. Le jeu a <b>abaissé ses seuils temporairement</b> plutôt que d’annuler le changement, en notant que c’est « la réalité honnête d’une transition ».</p>
+        <h4>En clair</h4>
+        <p>Tant que tu n’auras pas rééquipé dans le nouveau raid, tu es <b>plus faible qu’avant la mise à jour</b>, et l’écart est le plus visible en PvP. Ce n’est pas un bug et ce n’est pas temporaire au sens d’un correctif : c’est le prix payé pour que le nouveau palier ait de la place au-dessus.</p>`
+    },
+    chaman: {
+      title: "Chaman : d’où viennent les +60 % de dégâts de zone",
+      summary: "Le pourcentage affiché baisse, et pourtant les dégâts montent. Voici pourquoi.",
+      body: `
+        <h4>Comment marche Galeheart</h4>
+        <ul>
+          <li>En posture Galeheart, chaque attaque déclenche <b>deux échos</b> sur ta cible principale.</li>
+          <li>Avec le talent <b>Living Weapon</b>, ces échos débordent sur jusqu’à <b>2 ennemis</b> proches, dans un rayon de 8 mètres.</li>
+        </ul>
+        <h4>Avant</h4>
+        <ul>
+          <li>Seul le <b>dernier</b> écho débordait, à <b>50 %</b>.</li>
+          <li>Chaque cible secondaire prenait donc l’équivalent d’un <b>demi-écho</b>, soit un <b>quart</b> de ce que prenait la cible principale.</li>
+          <li>Le jeu le reconnaît : une fenêtre sur 3 cibles ne valait que <b>1,04 fois</b> le mono-cible. Autrement dit, Warspirit n’avait <b>pas d’AoE du tout</b>.</li>
+        </ul>
+        <h4>Maintenant</h4>
+        <ul>
+          <li><b>Chaque</b> écho déborde, à <b>40 %</b>.</li>
+          <li>Chaque cible secondaire prend donc 2 × 40 % = <b>0,8 écho</b>, contre 0,5 avant : <b>+60 %</b>.</li>
+          <li>La sélection des cibles se fait <b>une seule fois</b>, hors de la boucle — les deux échos frappent le même monde, il n’y a pas de tirage supplémentaire.</li>
+        </ul>
+        <h4>Et un autre point pour le Chaman</h4>
+        <p>La <b>résurrection de masse</b> hors combat passe désormais par le temps de recharge de Chronomancie, comme les autres résurrections de groupe.</p>`
+    },
+    niveaux: {
+      title: "Le lissage des niveaux 2 à 8, et le piège des rerolls",
+      summary: "Un changement qui ne concerne que la montée en niveau — mais qui a un effet immédiat sur les personnages déjà commencés.",
+      body: `
+        <h4>Ce qui a été fait</h4>
+        <ul>
+          <li>Les niveaux d’apprentissage du kit de base ont été <b>étalés</b> pour que chaque classe gagne <b>une ou deux capacités actives</b> à chaque niveau de <b>2 à 6</b>, et jamais plus de deux avant le 8.</li>
+          <li>Le déplacement est <b>vers l’avant uniquement</b> : rien de ce qui s’apprenait avant le niveau 5 n’a été repoussé, parce que les spécialisations commencent là.</li>
+        </ul>
+        <h4>Quelques exemples</h4>
+        <ul>
+          <li>Mage : <b>Rimelance</b> au niveau 2 (au lieu de 4), <b>Icebind</b> au 3 (au lieu de 5).</li>
+          <li>Chasseur : <b>Fell Shot</b> au niveau 2 (au lieu de 5), <b>Venom Barb</b> au 3.</li>
+          <li>Prêtre : <b>Dirge of Decay</b> au niveau 2 (au lieu de 4).</li>
+          <li>Chaman : <b>Earthen Jolt</b> au niveau 2, et <b>Cinder Jolt</b> au 4 au lieu du 8.</li>
+          <li>Druide : <b>Wildbloom</b> au niveau 3, et sa forme de loup au 4.</li>
+          <li>Paladin : <b>Dawn Devotion</b> au niveau 3.</li>
+        </ul>
+        <h4>Le piège, à connaître avant de se connecter</h4>
+        <ul>
+          <li>Les <b>signatures de spécialisation du Démoniste</b> passent du niveau <b>1 au niveau 5</b>, pour qu’un nouveau Démoniste n’ait plus à choisir sa voie avant sa première quête.</li>
+          <li>Conséquence assumée par le jeu, sans migration : un <b>personnage déjà commencé</b> et de niveau inférieur <b>perd</b> les capacités qu’il n’a plus l’âge d’avoir, jusqu’à ce qu’il atteigne le niveau.</li>
+          <li>Ça ne concerne <b>que les bas niveaux</b>. Un personnage au niveau maximum ne voit strictement aucune différence.</li>
+        </ul>
+        <h4>À retenir</h4>
+        <p><b>Aucune valeur de sort n’a été touchée</b> : ni dégâts, ni coût, ni temps de recharge. Seul le moment où on apprend a bougé.</p>`
+    },
+    coffre: {
+      title: "Le coffre à matériaux : règles et prix",
+      summary: "Un troisième onglet de banque réservé aux matériaux, où chaque matériau a son propre plafond.",
+      body: `
+        <h4>Le principe</h4>
+        <ul>
+          <li>C’est un <b>troisième onglet</b> dans la fenêtre de banque, à côté de Personnel et Guilde.</li>
+          <li>Il est <b>par personnage</b>, comme la banque.</li>
+          <li>Chaque matériau a <b>sa propre place</b> plutôt qu’un pot commun : une grosse pile ne peut jamais étouffer les autres.</li>
+          <li>C’est un service de <b>banquier</b> : les dépôts et retraits se font auprès d’un intendant.</li>
+        </ul>
+        <h4>La capacité</h4>
+        <ul>
+          <li>Il démarre à <b>40</b> de chaque matériau.</li>
+          <li>Il s’élargit en <b>quatre paliers</b> de 40, jusqu’à <b>200</b> de chaque.</li>
+        </ul>
+        <h4>Les prix</h4>
+        <ul>
+          <li>Déblocage : <b>2 pièces d’or</b>.</li>
+          <li>Puis <b>5</b>, <b>10</b>, <b>20</b> et <b>40</b> pièces d’or pour chaque palier suivant.</li>
+          <li>Ces prix sont fixés <b>côté serveur</b> et peuvent bouger sans mise à jour du jeu : l’intendant est toujours la réponse à jour.</li>
+        </ul>
+        <h4>Au quotidien</h4>
+        <ul>
+          <li>Tu déposes en cliquant un matériau dans tes sacs, ou avec <b>Tout déposer</b>.</li>
+          <li>L’équipement, les outils, les objets de quête et les consommables ne sont <b>jamais</b> emportés par ce bouton.</li>
+          <li>Retirer plus que ce que tes sacs peuvent tenir te dit <b>combien rentre vraiment</b> au lieu d’échouer.</li>
+        </ul>`
+    },
+    sacs: {
+      title: "Les sept nouveaux sacs",
+      summary: "Quatre sacoches à réactifs, trois sacs ordinaires. La distinction compte : elles alimentent deux réserves différentes.",
+      body: `
+        <h4>La liste</h4>
+        <ul>
+          <li><b>Burlap Reagent Pouch</b> — <b>8</b> places, matériaux seulement. Marchand de zone 1.</li>
+          <li><b>Forager’s Haversack</b> — <b>12</b> places, matériaux seulement. Couture.</li>
+          <li><b>Duskweave Bag</b> — <b>12</b> places, tout. Couture.</li>
+          <li><b>Wayfarer’s Backpack</b> — <b>16</b> places, tout. Butin du monde.</li>
+          <li><b>Resonantweave Bag</b> — <b>16</b> places, tout. Couture.</li>
+          <li><b>Necromancer’s Reagent Satchel</b> — <b>20</b> places, matériaux seulement. Grand Nécromancien.</li>
+          <li><b>Loombound Reagent Satchel</b> — <b>24</b> places, matériaux seulement. Couture. <b>Le plus grand sac du jeu.</b></li>
+        </ul>
+        <h4>Ordinaire ou sacoche : la différence</h4>
+        <ul>
+          <li>Un sac <b>ordinaire</b> élargit ta place générale.</li>
+          <li>Une <b>sacoche à réactifs</b> élargit une place réservée aux matériaux — et rien d’autre ne peut y entrer.</li>
+          <li>En encastrer une dans la banque, c’est donc <b>échanger</b> de la place générale contre de la place à matériaux. Le jeu le dit clairement : c’est un choix, pas une amélioration.</li>
+        </ul>
+        <h4>Pour les couturiers</h4>
+        <p>Quatre des sept se fabriquent en <b>Couture</b>, chez le maître. Deux se placent sur le palier de compétence <b>25</b>, deux sur le <b>50</b> — et pour les deux plus gros, c’est le <b>coût en matériaux</b> qui sert de barrière, pas le niveau de métier. Le <a href="../metiers.html">guide Métiers</a> les affichera dès que les données du Codex auront enregistré la version.</p>
+        <h4>Le piège du Reliquaire</h4>
+        <p>Deux de ces sacs rejoignent des pages de Reliquaire <b>déjà publiées</b>. Une page que tu avais complétée <b>repasse en incomplète</b> jusqu’à ce que tu mettes la main sur le nouveau sac.</p>`
+    },
+    interface: {
+      title: "Déverrouiller l’interface : tout ce qui se règle",
+      summary: "Un seul réglage libère tous les cadres à la fois, au lieu de les déverrouiller un par un.",
+      body: `
+        <h4>Le principe</h4>
+        <ul>
+          <li>Une option <b>Déverrouiller l’interface</b> libère d’un coup <b>tous</b> les cadres déplaçables actifs.</li>
+          <li>Chaque cadre se <b>déplace</b> à la souris, se <b>pousse au clavier</b> pour l’ajustement fin, se <b>redimensionne</b>, et se <b>remet à zéro</b> individuellement.</li>
+          <li>Les réglages <b>tiennent</b> quand tu changes la taille de la fenêtre ou l’échelle de l’interface. C’était le vrai défaut d’avant.</li>
+        </ul>
+        <h4>Ce que l’éditeur permet en plus</h4>
+        <ul>
+          <li>L’<b>orientation</b> de chaque barre, séparément.</li>
+          <li>Un <b>aperçu de groupe</b> pour placer les cadres sans être en groupe.</li>
+          <li>La <b>direction des auras</b>, et le nombre de <b>colonnes</b> en raid.</li>
+          <li>L’<b>espacement</b>, la <b>fusion</b> de barres d’action, et le <b>masquage des emplacements vides</b>.</li>
+          <li>Le <b>verrouillage</b> du cadre du joueur, une fois qu’il est bien placé.</li>
+        </ul>
+        <h4>Quelques autres réglages de fenêtre</h4>
+        <ul>
+          <li>Les fenêtres en cascade <b>restent visibles</b> après un redimensionnement.</li>
+          <li>Un clic dans le courrier <b>rend le focus</b> correctement.</li>
+          <li>Les barres de vie sur les plaques de nom se <b>sélectionnent directement</b>, y compris au milieu d’un paquet de monstres en raid.</li>
+          <li>Sur Steam, le rappel de liste de souhaits reste disponible et <b>déplaçable</b>.</li>
+          <li>Un badge de <b>débordement</b> apparaît quand tu as plus de bonus que la limite d’affichage choisie.</li>
+        </ul>`
+    },
+  };
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>
