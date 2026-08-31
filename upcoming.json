@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-31T17:41:23Z",
+ "generated": "2026-08-31T22:59:38Z",
  "base_tag": "v0.41.0",
- "version": "v0.42.0",
- "branch": "ossbrain-release/v0.42.0",
+ "version": "v0.41.1",
+ "branch": "release/v0.41.1",
  "declared_version": "0.41.0",
  "imminent": false,
- "commits": 1,
- "shown": 0,
- "last_commit": "2026-08-31T17:12:10Z",
+ "commits": 4,
+ "shown": 1,
+ "last_commit": "2026-09-01T08:52:51+12:00",
  "sections": [
   {
    "key": "classes",
@@ -28,7 +28,15 @@
    "icon": "🐉",
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
-   "items": []
+   "items": [
+    {
+     "h": "f70c3208",
+     "kind": "fix",
+     "scope": "instances",
+     "text": "Make heroic Ignivar claims survive the forge-lift door",
+     "date": "2026-09-01"
+    }
+   ]
   },
   {
    "key": "monde",
@@ -54,13 +62,13 @@
  ],
  "versions": [
   {
-   "version": "v0.42.0",
-   "branch": "ossbrain-release/v0.42.0",
+   "version": "v0.41.1",
+   "branch": "release/v0.41.1",
    "declared_version": "0.41.0",
    "imminent": false,
-   "commits": 1,
-   "shown": 0,
-   "last_commit": "2026-08-31T17:12:10Z",
+   "commits": 4,
+   "shown": 1,
+   "last_commit": "2026-09-01T08:52:51+12:00",
    "sections": [
     {
      "key": "classes",
@@ -81,7 +89,15 @@
      "icon": "🐉",
      "fr": "Donjons, failles & boss",
      "en": "Dungeons, rifts & bosses",
-     "items": []
+     "items": [
+      {
+       "h": "f70c3208",
+       "kind": "fix",
+       "scope": "instances",
+       "text": "Make heroic Ignivar claims survive the forge-lift door",
+       "date": "2026-09-01"
+      }
+     ]
     },
     {
      "key": "monde",
@@ -103,6 +119,237 @@
      "fr": "Confort & technique",
      "en": "Comfort & technical",
      "items": []
+    }
+   ]
+  },
+  {
+   "version": "v0.42.0",
+   "branch": "ossbrain-release/v0.42.0",
+   "declared_version": "0.41.0",
+   "imminent": false,
+   "commits": 67,
+   "shown": 25,
+   "last_commit": "2026-08-31T22:35:49Z",
+   "sections": [
+    {
+     "key": "classes",
+     "icon": "⚔️",
+     "fr": "Classes & sorts",
+     "en": "Classes & spells",
+     "items": []
+    },
+    {
+     "key": "metiers",
+     "icon": "🔨",
+     "fr": "Métiers & récolte",
+     "en": "Professions & gathering",
+     "items": [
+      {
+       "h": "9502c935",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Extract the prewarm depth-material cache to fit the ratchet",
+       "date": "2026-08-12"
+      }
+     ]
+    },
+    {
+     "key": "donjons",
+     "icon": "🐉",
+     "fr": "Donjons, failles & boss",
+     "en": "Dungeons, rifts & bosses",
+     "items": []
+    },
+    {
+     "key": "monde",
+     "icon": "🗺️",
+     "fr": "Monde & quêtes",
+     "en": "World & quests",
+     "items": [
+      {
+       "h": "87c89fc5",
+       "kind": "fix",
+       "scope": "sfx",
+       "text": "Let a mob subfamily take inherit its family's custom-master flag",
+       "date": "2026-08-26"
+      }
+     ]
+    },
+    {
+     "key": "guilde",
+     "icon": "🏰",
+     "fr": "Guilde & social",
+     "en": "Guild & social",
+     "items": []
+    },
+    {
+     "key": "confort",
+     "icon": "⚙️",
+     "fr": "Confort & technique",
+     "en": "Comfort & technical",
+     "items": [
+      {
+       "h": "4cd8bd67",
+       "kind": "feat",
+       "scope": "perf",
+       "text": "Store the graphics backend beside the GPU bucket",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "d663e500",
+       "kind": "feat",
+       "scope": "perf",
+       "text": "Label the client perf metrics with the graphics backend",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "fd8a712e",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Item icon for the Rallycart RXT ignition key",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "ef3df570",
+       "kind": "feat",
+       "scope": "mounts",
+       "text": "Give the rocket sled a summon call, and lift its winddown",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "6e0b7fc2",
+       "kind": "feat",
+       "scope": "mounts",
+       "text": "Add the Rallycart RXT vehicle mount",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "b221e0dc",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Finish the rallycart headlight tuning",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "b2efeb84",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Rallycart tail lamp lenses from a hand-traced outline",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "fe8a746d",
+       "kind": "feat",
+       "scope": "mounts",
+       "text": "Add the Goblin Rocket Sled mount",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "980b1013",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Measure a vehicle once per model, not per rider",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "e3008c1e",
+       "kind": "fix",
+       "scope": "test",
+       "text": "Drop the unused ITEMS import the audit-builder test carries",
+       "date": "2026-08-31"
+      },
+      {
+       "h": "97874e74",
+       "kind": "fix",
+       "scope": "test",
+       "text": "Follow the merged tree's pins after the release sync",
+       "date": "2026-08-31"
+      },
+      {
+       "h": "4f18903b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Settle stale Rallycart exhaust stops",
+       "date": "2026-08-31"
+      },
+      {
+       "h": "b9a59795",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Preserve queued battleground unstuck wall pressure",
+       "date": "2026-08-31"
+      },
+      {
+       "h": "31f9b2f5",
+       "kind": "fix",
+       "scope": "audio",
+       "text": "Keep the tail fade when an attack is also set",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "30a8ac8a",
+       "kind": "fix",
+       "scope": "audio",
+       "text": "Fade the summon's tail and match the idle handoff to it",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "32d47012",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Drop engine state before arming the summon, not after",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "0e3bd181",
+       "kind": "fix",
+       "scope": "sfx",
+       "text": "Register the sled's summon take in the manifest",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "7d5193e4",
+       "kind": "fix",
+       "scope": "sfx",
+       "text": "Register the rallycart's reverse takes",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "e7200d51",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Aim the frozen chase camera from its current pose under r185",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "0d6dfb42",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Put the rallycart headlights in their actual bowls",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "9d743732",
+       "kind": "fix",
+       "scope": "audio",
+       "text": "Carry engine transitions with the vehicle, soften the summon seam",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "80a4d996",
+       "kind": "fix",
+       "scope": "sled",
+       "text": "KTX2-compress the sled GLB and refresh the seals",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "ea95a16a",
+       "kind": "fix",
+       "scope": "mounts",
+       "text": "Resolve goblin rocket sled gate failures",
+       "date": "2026-08-12"
+      }
+     ]
     }
    ]
   }
