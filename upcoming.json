@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-30T19:36:41Z",
+ "generated": "2026-08-31T01:42:38Z",
  "base_tag": "v0.40.1",
  "version": "v0.41.0",
  "branch": "release/v0.41.0",
  "declared_version": "0.41.0",
  "imminent": true,
- "commits": 486,
- "shown": 272,
- "last_commit": "2026-08-30T18:38:53Z",
+ "commits": 819,
+ "shown": 407,
+ "last_commit": "2026-08-30T23:47:10Z",
  "sections": [
   {
    "key": "classes",
@@ -107,11 +107,32 @@
      "date": "2026-08-28"
     },
     {
+     "h": "e111d2bb",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Mirror auto-attack swing timer for non-self entities",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "6096f300",
+     "kind": "feat",
+     "scope": "net",
+     "text": "Decode the general auto-attack swing mirror client-side",
+     "date": "2026-08-26"
+    },
+    {
      "h": "98055df7",
      "kind": "feat",
      "scope": "ui",
      "text": "Precise touch ground targeting for every placement spell",
      "date": "2026-08-26"
+    },
+    {
+     "h": "2dbe1d75",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Put the shaman mass resurrection on the Chronomancy cooldown",
+     "date": "2026-08-31"
     },
     {
      "h": "eaebae91",
@@ -126,6 +147,27 @@
      "scope": "ui",
      "text": "Render the Spell Power and Healing Power item affixes",
      "date": "2026-08-30"
+    },
+    {
+     "h": "3ed4a6d3",
+     "kind": "fix",
+     "scope": "paladin",
+     "text": "Refill the level 3 ding after Hammer of Grace moved to 1",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "58dd5db5",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Interrupt a timed cast the instant its target dies",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "da8b23c1",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Split Stormsurge aura display classification",
+     "date": "2026-08-27"
     }
    ]
   },
@@ -148,6 +190,13 @@
      "scope": "vault",
      "text": "Preserve material item identity",
      "date": "2026-08-25"
+    },
+    {
+     "h": "45783221",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Scrub NaN from every material's final fragment color, not just the composer path",
+     "date": "2026-08-27"
     },
     {
      "h": "efb91481",
@@ -620,6 +669,13 @@
      "date": "2026-08-28"
     },
     {
+     "h": "77b8c582",
+     "kind": "fix",
+     "scope": "mobile",
+     "text": "Give the delve tracker a seat in xhb-mode instead of hiding it",
+     "date": "2026-08-27"
+    },
+    {
      "h": "cea68629",
      "kind": "fix",
      "scope": "ui",
@@ -683,6 +739,34 @@
      "date": "2026-08-26"
     },
     {
+     "h": "f493de54",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Block rift puzzle progress for a released spirit",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "ed765d15",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.41.0 into fix/rift-movement-jitter",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "c048a5c8",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Recover stale delve occupants",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "6a33e110",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Allow mailing and market listing of rift forge currency",
+     "date": "2026-08-24"
+    },
+    {
      "h": "44d75442",
      "kind": "fix",
      "scope": "raid",
@@ -710,6 +794,20 @@
      "scope": "content",
      "text": "Bind the marks-vendor jewelry (vendor gear + dropped marks rule)",
      "date": "2026-08-28"
+    },
+    {
+     "h": "b549bd61",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Make Entity.autoAttack track genuine mob melee engagement",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "6a0ef0de",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add vendor Sell all row and default the destroy prompt to the full stack",
+     "date": "2026-08-24"
     },
     {
      "h": "c0aceec2",
@@ -768,11 +866,46 @@
      "date": "2026-08-28"
     },
     {
+     "h": "24b6d234",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Let a vendor sale clear a whole stack, add a confirm opt-out",
+     "date": "2026-08-27"
+    },
+    {
      "h": "7129d082",
      "kind": "fix",
      "scope": "art",
      "text": "Restore the base mob portrait set and freshness ledger",
      "date": "2026-08-27"
+    },
+    {
+     "h": "24b6d234",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Let a vendor sale clear a whole stack, add a confirm opt-out",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "3066399b",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Raise Drowned Litany Bountiful Coffer and epic drop rates",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "50439da2",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Address fresh-review findings on the litany drop-rate bump",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "2055e2d4",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Drop pre-existing em dashes surfaced by the v0.41.0 merge",
+     "date": "2026-08-25"
     },
     {
      "h": "35534c39",
@@ -787,6 +920,34 @@
      "scope": "game",
      "text": "Let the spawn intro stand alone over the island landing fall",
      "date": "2026-08-25"
+    },
+    {
+     "h": "a1491696",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Route vendor sell all through safety gate",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "e5add997",
+     "kind": "fix",
+     "scope": "mob",
+     "text": "Stop evading mobs from casting their support kit",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "79ba7288",
+     "kind": "fix",
+     "scope": "mob",
+     "text": "Seed and reset the aoe pulse timer like its siblings",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "3a61f9fb",
+     "kind": "fix",
+     "scope": "items",
+     "text": "Account for reins_rickshaw_mount in the item-art audit pins",
+     "date": "2026-08-11"
     }
    ]
   },
@@ -816,6 +977,20 @@
      "scope": "guild-bank",
      "text": "Receipt command effects atomically",
      "date": "2026-08-25"
+    },
+    {
+     "h": "936b60a0",
+     "kind": "fix",
+     "scope": "delves",
+     "text": "Re-bind a live run's party key when membership changes",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "e1c6d42b",
+     "kind": "fix",
+     "scope": "loot",
+     "text": "Give ffa looters the loot instead of the absent party",
+     "date": "2026-08-22"
     }
    ]
   },
@@ -1141,10 +1316,59 @@
      "date": "2026-08-26"
     },
     {
+     "h": "f2278024",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add targetSwingTimerState, the third use of the swing core",
+     "date": "2026-08-26"
+    },
+    {
      "h": "1333b8e2",
      "kind": "feat",
      "scope": "art",
      "text": "Record painted bank bag provenance",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "b5250e8a",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add TargetSwingTimerBars, the HUD wiring for the new bars",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "9c0f582f",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Wire the target/target-of-target swing bars into the HUD",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "69fa1287",
+     "kind": "feat",
+     "scope": "i18n",
+     "text": "Add the showTargetSwingTimer toggle label (English)",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "aa7d3ffd",
+     "kind": "feat",
+     "scope": "i18n",
+     "text": "Fill non-Latin translations for the swing timer toggle",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "b28dfb84",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add the showTargetSwingTimer Interface option",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "f765f5fa",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add the target/target-of-target swing bar markup and CSS",
      "date": "2026-08-26"
     },
     {
@@ -1174,6 +1398,34 @@
      "scope": "exchange",
      "text": "Solana wallet card above the Browse filters",
      "date": "2026-08-26"
+    },
+    {
+     "h": "3c785e92",
+     "kind": "feat",
+     "scope": "net",
+     "text": "Add movement wire v2 with per-tick input frames",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "4c9f5ac8",
+     "kind": "feat",
+     "scope": "movement",
+     "text": "Add client prediction with exact-match reconciliation",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "0f1fb77c",
+     "kind": "feat",
+     "scope": "movement",
+     "text": "Make the strict feel targets the default merge bar",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "f4c4a130",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add the off-hand melee-weaving swing-timer bar",
+     "date": "2026-08-25"
     },
     {
      "h": "8cd8d6f6",
@@ -1218,6 +1470,27 @@
      "date": "2026-08-25"
     },
     {
+     "h": "07254024",
+     "kind": "feat",
+     "scope": "classes",
+     "text": "Smooth early ability curve for every class (v0.41.0)",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "dc9021f0",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Always show the XP bar percentage, on desktop and the mobile ring",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "9b971f01",
+     "kind": "feat",
+     "scope": "movement",
+     "text": "Add responsive validated locomotion",
+     "date": "2026-08-24"
+    },
+    {
      "h": "1f38663d",
      "kind": "feat",
      "scope": "ui",
@@ -1225,10 +1498,38 @@
      "date": "2026-08-22"
     },
     {
+     "h": "413edbd7",
+     "kind": "feat",
+     "scope": "mounts",
+     "text": "Give the Bonebound Rickshaw a summon call",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "13036998",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Tip the rickshaw nose-up on a jump",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "1ee44037",
+     "kind": "feat",
+     "scope": "sfx",
+     "text": "Wire the staged female player voice to authored gender",
+     "date": "2026-08-12"
+    },
+    {
      "h": "c9c3f223",
      "kind": "feat",
      "scope": "ui",
      "text": "Add an Unlock interface option that frees every HUD frame",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "aa09245a",
+     "kind": "feat",
+     "scope": "mounts",
+     "text": "Add the Bonebound Rickshaw mount",
      "date": "2026-08-10"
     },
     {
@@ -1337,6 +1638,13 @@
      "date": "2026-08-31"
     },
     {
+     "h": "841bf1fe",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release/v0.41.0 into ossbrain-release/v0.41.0",
+     "date": "2026-08-31"
+    },
+    {
      "h": "3afa12e6",
      "kind": "fix",
      "scope": "guide",
@@ -1435,10 +1743,38 @@
      "date": "2026-08-28"
     },
     {
+     "h": "8a95e1df",
+     "kind": "fix",
+     "scope": "controller",
+     "text": "Filter cross hotbar slot remaps",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "8a95e1df",
+     "kind": "fix",
+     "scope": "controller",
+     "text": "Filter cross hotbar slot remaps",
+     "date": "2026-08-28"
+    },
+    {
      "h": "82848b5a",
      "kind": "fix",
      "scope": "render",
      "text": "Tile the ignivar rooms to their walls, room-key the moat carve",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "72769c96",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Refresh three patch lock metadata",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "68ede665",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Format merged wealth database imports",
      "date": "2026-08-28"
     },
     {
@@ -1453,6 +1789,13 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Apply the maintainer review round on placement aim",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "c11c9878",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Move the final-color NaN guard to the ShaderChunk seam",
      "date": "2026-08-28"
     },
     {
@@ -1498,6 +1841,20 @@
      "date": "2026-08-28"
     },
     {
+     "h": "0eb83083",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Pace KTX2 restore re-uploads through the GPU work queue",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "c6a2d05e",
+     "kind": "fix",
+     "scope": "",
+     "text": "Allow bg unstuck after esc clears movement",
+     "date": "2026-08-28"
+    },
+    {
      "h": "181600d9",
      "kind": "fix",
      "scope": "world",
@@ -1512,10 +1869,45 @@
      "date": "2026-08-28"
     },
     {
+     "h": "a79dece0",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Extract KTX2 restore queue bridge",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "6d418222",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Make the NaN guard unconditional, module-scoped, and driver-tested",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "d6479975",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Scrub outgoing light before fog",
+     "date": "2026-08-28"
+    },
+    {
      "h": "183026e5",
      "kind": "fix",
      "scope": "world",
      "text": "No wild scatter on the fortress grounds",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "1cf2899d",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Preserve battleground unstuck wall pressure",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "2810799e",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Tolerate lightweight movement sim contexts",
      "date": "2026-08-28"
     },
     {
@@ -1533,6 +1925,13 @@
      "date": "2026-08-27"
     },
     {
+     "h": "98c4508d",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Fill release pending locale rows",
+     "date": "2026-08-27"
+    },
+    {
      "h": "53c9cdde",
      "kind": "fix",
      "scope": "market",
@@ -1540,10 +1939,31 @@
      "date": "2026-08-27"
     },
     {
+     "h": "fc049501",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Pick the .desktop entry belonging to the running channel",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "e66500a8",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Exclude channels from the new-target-death guard",
+     "date": "2026-08-27"
+    },
+    {
      "h": "a3361d71",
      "kind": "fix",
      "scope": "hud",
      "text": "Cap the daily chest so horizontal menu rows really touch",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "4f014828",
+     "kind": "fix",
+     "scope": "mobile",
+     "text": "Clear the re-review's blocking findings for the pad rail rework",
      "date": "2026-08-27"
     },
     {
@@ -1561,6 +1981,13 @@
      "date": "2026-08-27"
     },
     {
+     "h": "006133f8",
+     "kind": "fix",
+     "scope": "controller",
+     "text": "Expose flat face button remapping",
+     "date": "2026-08-27"
+    },
+    {
      "h": "4ff32297",
      "kind": "fix",
      "scope": "market",
@@ -1568,10 +1995,31 @@
      "date": "2026-08-27"
     },
     {
+     "h": "75eddd3a",
+     "kind": "fix",
+     "scope": "unstuck",
+     "text": "Pin battleground settings wall rescue",
+     "date": "2026-08-27"
+    },
+    {
      "h": "3e9778bc",
      "kind": "fix",
      "scope": "art",
      "text": "Re-mint the Heart of the End portrait from its reworked model",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "42e0aac6",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Prioritize short buffs under the low-tier cap, debuff-style Stormsurge",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "db618488",
+     "kind": "fix",
+     "scope": "unstuck",
+     "text": "Allow bg wall contact from settings",
      "date": "2026-08-27"
     },
     {
@@ -1624,6 +2072,13 @@
      "date": "2026-08-27"
     },
     {
+     "h": "ac9c50c8",
+     "kind": "fix",
+     "scope": "unstuck",
+     "text": "Keep battleground wall rescue from becoming a shortcut",
+     "date": "2026-08-27"
+    },
+    {
      "h": "363c120a",
      "kind": "fix",
      "scope": "desktop",
@@ -1631,10 +2086,24 @@
      "date": "2026-08-27"
     },
     {
+     "h": "36f38a4a",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep cascaded windows visible after resize",
+     "date": "2026-08-27"
+    },
+    {
      "h": "9c154e58",
      "kind": "fix",
      "scope": "woc",
      "text": "Apply the five-reviewer round on the desktop signing path",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "f57715c3",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Clear stale v2 movement on starvation",
      "date": "2026-08-27"
     },
     {
@@ -1680,6 +2149,48 @@
      "date": "2026-08-27"
     },
     {
+     "h": "de1d73c6",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Allow battleground wall-contact unstuck",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "4ec99f40",
+     "kind": "fix",
+     "scope": "movement",
+     "text": "Repair keyboard release prediction gates",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "d99ad839",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bound the KTX2 restore wait so a graphics-preset switch can't stall for minutes",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "5b65c798",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Extend Entity.autoAttack tracking to pets, casters, and defensive pursuit",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "119b5933",
+     "kind": "fix",
+     "scope": "tests",
+     "text": "Correct false-positive test assertions for pet and caster autoAttack",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "22479edd",
+     "kind": "fix",
+     "scope": "test",
+     "text": "Replace undecisive test with decisive one for targetSwingTimerState",
+     "date": "2026-08-26"
+    },
+    {
      "h": "5d273b32",
      "kind": "fix",
      "scope": "ui",
@@ -1698,6 +2209,13 @@
      "kind": "fix",
      "scope": "db",
      "text": "Bound character storage lifecycles",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "88b21210",
+     "kind": "fix",
+     "scope": "test",
+     "text": "Add a decisive enabled-gate case for the tot swing bar",
      "date": "2026-08-26"
     },
     {
@@ -1743,6 +2261,13 @@
      "date": "2026-08-26"
     },
     {
+     "h": "4ca3526b",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Tighten battleground unstuck wall contact",
+     "date": "2026-08-26"
+    },
+    {
      "h": "c781b249",
      "kind": "fix",
      "scope": "",
@@ -1778,10 +2303,101 @@
      "date": "2026-08-26"
     },
     {
+     "h": "3aa8a888",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Narrow battleground unstuck to wall traps",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "c2520933",
+     "kind": "fix",
+     "scope": "test",
+     "text": "Satisfy changed-file gate",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "214c20dd",
+     "kind": "fix",
+     "scope": "mobile",
+     "text": "Stand the touch chrome and cross-hotbar down for each other",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "3b385bbc",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Register the worldofclaudecraft:// handler on Linux",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "5eecb816",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Reject battleground wall-contact unstuck",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "8f611b2c",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Address review on the Linux deep-link handler",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "6ef54948",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Reveal the $WOC Exchange launcher on the desktop shell",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "64b82309",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Show an overflow badge for buffs the low-tier cap sheds",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "e5d26937",
+     "kind": "fix",
+     "scope": "mobile",
+     "text": "Stand the XHB alone and revive the micromenu rail for a paired pad",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "b8cc6eb9",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Let the GPU process start under Steam's overlay on Linux",
+     "date": "2026-08-26"
+    },
+    {
      "h": "8803a8e1",
      "kind": "fix",
      "scope": "storage",
      "text": "Complete bank hardening review",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "b8e6a8cb",
+     "kind": "fix",
+     "scope": "unstuck",
+     "text": "Allow battleground wall rescues",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "705824bd",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Address review on the Steam overlay GPU guard",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "13778671",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Address second review on the Linux deep-link handler",
      "date": "2026-08-26"
     },
     {
@@ -1848,6 +2464,20 @@
      "date": "2026-08-26"
     },
     {
+     "h": "d99ad839",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bound the KTX2 restore wait so a graphics-preset switch can't stall for minutes",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "0648b71c",
+     "kind": "fix",
+     "scope": "movement",
+     "text": "Preserve authority through traversal",
+     "date": "2026-08-25"
+    },
+    {
      "h": "54829551",
      "kind": "fix",
      "scope": "render",
@@ -1859,6 +2489,27 @@
      "kind": "fix",
      "scope": "game",
      "text": "Hold the entry curtain on the intro's establishing shot",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "6b12c09b",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Fill the Double Honor Weekend translations that blanked the Battlegrounds window",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "25032956",
+     "kind": "fix",
+     "scope": "movement",
+     "text": "Absorb client frame timing drift",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "96dc646d",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Let battleground unstuck detect real wall traps",
      "date": "2026-08-25"
     },
     {
@@ -1876,10 +2527,94 @@
      "date": "2026-08-25"
     },
     {
+     "h": "4f915b88",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Make incremental mail partition saves atomic",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "fd92255d",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Remove duplicate double honor locale keys",
+     "date": "2026-08-25"
+    },
+    {
      "h": "3bd5a7ee",
      "kind": "fix",
      "scope": "render",
      "text": "Bound the entry frames' scenery consult to the detail horizon",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "2603c1fb",
+     "kind": "fix",
+     "scope": "battleground",
+     "text": "Let the Interact key reach interactables in a live match",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "39c5553b",
+     "kind": "fix",
+     "scope": "movement",
+     "text": "Polish round from the QA gate findings",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "87639ae8",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Resend riftState on resume and close the endSession race",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "217961a7",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Close mail partition persistence review gaps",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "832a9432",
+     "kind": "fix",
+     "scope": "movement",
+     "text": "Eliminate the rotation-release yaw jag",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "a8249141",
+     "kind": "fix",
+     "scope": "movement",
+     "text": "Address the first maintainer review of the rework",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "95139db0",
+     "kind": "fix",
+     "scope": "movement",
+     "text": "Resync the input timeline from an empty buffer",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "880755c5",
+     "kind": "fix",
+     "scope": "movement",
+     "text": "Count resyncs only when the anchor moves the cursor",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "9b1e8b31",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Emit absorbed periodic heal feedback",
+     "date": "2026-08-25"
+    },
+    {
+     "h": "2e6b83b3",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Stop hit riders after physical direct miss",
      "date": "2026-08-25"
     },
     {
@@ -1946,6 +2681,202 @@
      "date": "2026-08-25"
     },
     {
+     "h": "4637ad88",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Close the internal-cooldown right-click-cancel exploit",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "bdf72265",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Persist the Ravenpost mail book incrementally, not the whole blob every 30s",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "3cc430d9",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Close the correctness gaps three independent reviewers found in the mail partition split",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "8462fb5c",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Rebase #3561 onto v0.40.0 and wire the $WOC Exchange durability path",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "0345046b",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Make the Dawnhold cannonball piles standable",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "f26ab08c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Honor the FOV slider instead of resetting it every frame",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "c9022aa1",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Show all 7 Ascension charges after Extended Dawn",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "3a20bd3a",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Predict player movement inside rifts (issue #3479)",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "a071aeb4",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Re-dirty plain letters too, not just escrow, on the mail refresh cadence",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "0fa44e7a",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Release mail focus after pointer click",
+     "date": "2026-08-24"
+    },
+    {
+     "h": "46e7f250",
+     "kind": "fix",
+     "scope": "climb",
+     "text": "Refuse ledge grabs from damaging fall speeds",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "5a9df4b4",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Roll avoidance for instant spells and physical direct damage",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "a10c5513",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Make channel pushback cost the ticks it removes",
+     "date": "2026-08-23"
+    },
+    {
+     "h": "03638855",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Close the world loop's measurement blind spot",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "41910284",
+     "kind": "fix",
+     "scope": "battleground",
+     "text": "Keep the backfill sweep going past a declined match",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "3bb12043",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Drain heal absorb shields from periodic healing",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "9bddf224",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Settle physics state on every instance arrival teleport",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "2ca389c4",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Fold ranged haste into the single swing interval bucket",
+     "date": "2026-08-22"
+    },
+    {
+     "h": "dea4ecfd",
+     "kind": "fix",
+     "scope": "sfx",
+     "text": "Generate gain ceilings before the manifest that validates them",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "1a2b2724",
+     "kind": "fix",
+     "scope": "sfx",
+     "text": "Apply the rickshaw summon's gain trim",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "db7d649b",
+     "kind": "fix",
+     "scope": "sfx",
+     "text": "Pick up the measured gain ceilings for the new player-voice keys",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "6fde09e1",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Finish the rickshaw round-7 review findings",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "d91515b0",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Extract rickshaw render state to fit the monolith ratchet",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "d8a327e1",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Repoint the depth-packing guard and remint the polish seal",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "a684b453",
+     "kind": "fix",
+     "scope": "docs",
+     "text": "Strip em dashes from mount-authoring-notes.md",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "d663c1f8",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Address rickshaw PR round-5 review findings",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "afe2eebe",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Address rickshaw PR round-6 review findings",
+     "date": "2026-08-11"
+    },
+    {
+     "h": "ef147da9",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Correct three defects in the round-6 review fixes",
+     "date": "2026-08-11"
+    },
+    {
      "h": "63494bca",
      "kind": "fix",
      "scope": "ui",
@@ -1958,6 +2889,20 @@
      "scope": "ui",
      "text": "Position a re-homed HUD frame and stop shadowing the rail rule",
      "date": "2026-08-10"
+    },
+    {
+     "h": "38fbcf99",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Address rickshaw PR round-4 review findings",
+     "date": "2026-08-10"
+    },
+    {
+     "h": "040f806b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Repair VisualDef.modular JSDoc broken by a mislanded sed edit",
+     "date": "2026-08-10"
     }
    ]
   }
@@ -1968,9 +2913,9 @@
    "branch": "release/v0.41.0",
    "declared_version": "0.41.0",
    "imminent": true,
-   "commits": 486,
-   "shown": 272,
-   "last_commit": "2026-08-30T18:38:53Z",
+   "commits": 819,
+   "shown": 407,
+   "last_commit": "2026-08-30T23:47:10Z",
    "sections": [
     {
      "key": "classes",
@@ -2070,11 +3015,32 @@
        "date": "2026-08-28"
       },
       {
+       "h": "e111d2bb",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Mirror auto-attack swing timer for non-self entities",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "6096f300",
+       "kind": "feat",
+       "scope": "net",
+       "text": "Decode the general auto-attack swing mirror client-side",
+       "date": "2026-08-26"
+      },
+      {
        "h": "98055df7",
        "kind": "feat",
        "scope": "ui",
        "text": "Precise touch ground targeting for every placement spell",
        "date": "2026-08-26"
+      },
+      {
+       "h": "2dbe1d75",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Put the shaman mass resurrection on the Chronomancy cooldown",
+       "date": "2026-08-31"
       },
       {
        "h": "eaebae91",
@@ -2089,6 +3055,27 @@
        "scope": "ui",
        "text": "Render the Spell Power and Healing Power item affixes",
        "date": "2026-08-30"
+      },
+      {
+       "h": "3ed4a6d3",
+       "kind": "fix",
+       "scope": "paladin",
+       "text": "Refill the level 3 ding after Hammer of Grace moved to 1",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "58dd5db5",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Interrupt a timed cast the instant its target dies",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "da8b23c1",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Split Stormsurge aura display classification",
+       "date": "2026-08-27"
       }
      ]
     },
@@ -2111,6 +3098,13 @@
        "scope": "vault",
        "text": "Preserve material item identity",
        "date": "2026-08-25"
+      },
+      {
+       "h": "45783221",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Scrub NaN from every material's final fragment color, not just the composer path",
+       "date": "2026-08-27"
       },
       {
        "h": "efb91481",
@@ -2583,6 +3577,13 @@
        "date": "2026-08-28"
       },
       {
+       "h": "77b8c582",
+       "kind": "fix",
+       "scope": "mobile",
+       "text": "Give the delve tracker a seat in xhb-mode instead of hiding it",
+       "date": "2026-08-27"
+      },
+      {
        "h": "cea68629",
        "kind": "fix",
        "scope": "ui",
@@ -2646,6 +3647,34 @@
        "date": "2026-08-26"
       },
       {
+       "h": "f493de54",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Block rift puzzle progress for a released spirit",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "ed765d15",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.41.0 into fix/rift-movement-jitter",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "c048a5c8",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Recover stale delve occupants",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "6a33e110",
+       "kind": "fix",
+       "scope": "content",
+       "text": "Allow mailing and market listing of rift forge currency",
+       "date": "2026-08-24"
+      },
+      {
        "h": "44d75442",
        "kind": "fix",
        "scope": "raid",
@@ -2673,6 +3702,20 @@
        "scope": "content",
        "text": "Bind the marks-vendor jewelry (vendor gear + dropped marks rule)",
        "date": "2026-08-28"
+      },
+      {
+       "h": "b549bd61",
+       "kind": "feat",
+       "scope": "sim",
+       "text": "Make Entity.autoAttack track genuine mob melee engagement",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "6a0ef0de",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add vendor Sell all row and default the destroy prompt to the full stack",
+       "date": "2026-08-24"
       },
       {
        "h": "c0aceec2",
@@ -2731,11 +3774,46 @@
        "date": "2026-08-28"
       },
       {
+       "h": "24b6d234",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Let a vendor sale clear a whole stack, add a confirm opt-out",
+       "date": "2026-08-27"
+      },
+      {
        "h": "7129d082",
        "kind": "fix",
        "scope": "art",
        "text": "Restore the base mob portrait set and freshness ledger",
        "date": "2026-08-27"
+      },
+      {
+       "h": "24b6d234",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Let a vendor sale clear a whole stack, add a confirm opt-out",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "3066399b",
+       "kind": "fix",
+       "scope": "content",
+       "text": "Raise Drowned Litany Bountiful Coffer and epic drop rates",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "50439da2",
+       "kind": "fix",
+       "scope": "content",
+       "text": "Address fresh-review findings on the litany drop-rate bump",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "2055e2d4",
+       "kind": "fix",
+       "scope": "content",
+       "text": "Drop pre-existing em dashes surfaced by the v0.41.0 merge",
+       "date": "2026-08-25"
       },
       {
        "h": "35534c39",
@@ -2750,6 +3828,34 @@
        "scope": "game",
        "text": "Let the spawn intro stand alone over the island landing fall",
        "date": "2026-08-25"
+      },
+      {
+       "h": "a1491696",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Route vendor sell all through safety gate",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "e5add997",
+       "kind": "fix",
+       "scope": "mob",
+       "text": "Stop evading mobs from casting their support kit",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "79ba7288",
+       "kind": "fix",
+       "scope": "mob",
+       "text": "Seed and reset the aoe pulse timer like its siblings",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "3a61f9fb",
+       "kind": "fix",
+       "scope": "items",
+       "text": "Account for reins_rickshaw_mount in the item-art audit pins",
+       "date": "2026-08-11"
       }
      ]
     },
@@ -2779,6 +3885,20 @@
        "scope": "guild-bank",
        "text": "Receipt command effects atomically",
        "date": "2026-08-25"
+      },
+      {
+       "h": "936b60a0",
+       "kind": "fix",
+       "scope": "delves",
+       "text": "Re-bind a live run's party key when membership changes",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "e1c6d42b",
+       "kind": "fix",
+       "scope": "loot",
+       "text": "Give ffa looters the loot instead of the absent party",
+       "date": "2026-08-22"
       }
      ]
     },
@@ -3104,10 +4224,59 @@
        "date": "2026-08-26"
       },
       {
+       "h": "f2278024",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add targetSwingTimerState, the third use of the swing core",
+       "date": "2026-08-26"
+      },
+      {
        "h": "1333b8e2",
        "kind": "feat",
        "scope": "art",
        "text": "Record painted bank bag provenance",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "b5250e8a",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add TargetSwingTimerBars, the HUD wiring for the new bars",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "9c0f582f",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Wire the target/target-of-target swing bars into the HUD",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "69fa1287",
+       "kind": "feat",
+       "scope": "i18n",
+       "text": "Add the showTargetSwingTimer toggle label (English)",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "aa7d3ffd",
+       "kind": "feat",
+       "scope": "i18n",
+       "text": "Fill non-Latin translations for the swing timer toggle",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "b28dfb84",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add the showTargetSwingTimer Interface option",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "f765f5fa",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add the target/target-of-target swing bar markup and CSS",
        "date": "2026-08-26"
       },
       {
@@ -3137,6 +4306,34 @@
        "scope": "exchange",
        "text": "Solana wallet card above the Browse filters",
        "date": "2026-08-26"
+      },
+      {
+       "h": "3c785e92",
+       "kind": "feat",
+       "scope": "net",
+       "text": "Add movement wire v2 with per-tick input frames",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "4c9f5ac8",
+       "kind": "feat",
+       "scope": "movement",
+       "text": "Add client prediction with exact-match reconciliation",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "0f1fb77c",
+       "kind": "feat",
+       "scope": "movement",
+       "text": "Make the strict feel targets the default merge bar",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "f4c4a130",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add the off-hand melee-weaving swing-timer bar",
+       "date": "2026-08-25"
       },
       {
        "h": "8cd8d6f6",
@@ -3181,6 +4378,27 @@
        "date": "2026-08-25"
       },
       {
+       "h": "07254024",
+       "kind": "feat",
+       "scope": "classes",
+       "text": "Smooth early ability curve for every class (v0.41.0)",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "dc9021f0",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Always show the XP bar percentage, on desktop and the mobile ring",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "9b971f01",
+       "kind": "feat",
+       "scope": "movement",
+       "text": "Add responsive validated locomotion",
+       "date": "2026-08-24"
+      },
+      {
        "h": "1f38663d",
        "kind": "feat",
        "scope": "ui",
@@ -3188,10 +4406,38 @@
        "date": "2026-08-22"
       },
       {
+       "h": "413edbd7",
+       "kind": "feat",
+       "scope": "mounts",
+       "text": "Give the Bonebound Rickshaw a summon call",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "13036998",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Tip the rickshaw nose-up on a jump",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "1ee44037",
+       "kind": "feat",
+       "scope": "sfx",
+       "text": "Wire the staged female player voice to authored gender",
+       "date": "2026-08-12"
+      },
+      {
        "h": "c9c3f223",
        "kind": "feat",
        "scope": "ui",
        "text": "Add an Unlock interface option that frees every HUD frame",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "aa09245a",
+       "kind": "feat",
+       "scope": "mounts",
+       "text": "Add the Bonebound Rickshaw mount",
        "date": "2026-08-10"
       },
       {
@@ -3300,6 +4546,13 @@
        "date": "2026-08-31"
       },
       {
+       "h": "841bf1fe",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release/v0.41.0 into ossbrain-release/v0.41.0",
+       "date": "2026-08-31"
+      },
+      {
        "h": "3afa12e6",
        "kind": "fix",
        "scope": "guide",
@@ -3398,10 +4651,38 @@
        "date": "2026-08-28"
       },
       {
+       "h": "8a95e1df",
+       "kind": "fix",
+       "scope": "controller",
+       "text": "Filter cross hotbar slot remaps",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "8a95e1df",
+       "kind": "fix",
+       "scope": "controller",
+       "text": "Filter cross hotbar slot remaps",
+       "date": "2026-08-28"
+      },
+      {
        "h": "82848b5a",
        "kind": "fix",
        "scope": "render",
        "text": "Tile the ignivar rooms to their walls, room-key the moat carve",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "72769c96",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Refresh three patch lock metadata",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "68ede665",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Format merged wealth database imports",
        "date": "2026-08-28"
       },
       {
@@ -3416,6 +4697,13 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Apply the maintainer review round on placement aim",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "c11c9878",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Move the final-color NaN guard to the ShaderChunk seam",
        "date": "2026-08-28"
       },
       {
@@ -3461,6 +4749,20 @@
        "date": "2026-08-28"
       },
       {
+       "h": "0eb83083",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Pace KTX2 restore re-uploads through the GPU work queue",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "c6a2d05e",
+       "kind": "fix",
+       "scope": "",
+       "text": "Allow bg unstuck after esc clears movement",
+       "date": "2026-08-28"
+      },
+      {
        "h": "181600d9",
        "kind": "fix",
        "scope": "world",
@@ -3475,10 +4777,45 @@
        "date": "2026-08-28"
       },
       {
+       "h": "a79dece0",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Extract KTX2 restore queue bridge",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "6d418222",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Make the NaN guard unconditional, module-scoped, and driver-tested",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "d6479975",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Scrub outgoing light before fog",
+       "date": "2026-08-28"
+      },
+      {
        "h": "183026e5",
        "kind": "fix",
        "scope": "world",
        "text": "No wild scatter on the fortress grounds",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "1cf2899d",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Preserve battleground unstuck wall pressure",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "2810799e",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Tolerate lightweight movement sim contexts",
        "date": "2026-08-28"
       },
       {
@@ -3496,6 +4833,13 @@
        "date": "2026-08-27"
       },
       {
+       "h": "98c4508d",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Fill release pending locale rows",
+       "date": "2026-08-27"
+      },
+      {
        "h": "53c9cdde",
        "kind": "fix",
        "scope": "market",
@@ -3503,10 +4847,31 @@
        "date": "2026-08-27"
       },
       {
+       "h": "fc049501",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Pick the .desktop entry belonging to the running channel",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "e66500a8",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Exclude channels from the new-target-death guard",
+       "date": "2026-08-27"
+      },
+      {
        "h": "a3361d71",
        "kind": "fix",
        "scope": "hud",
        "text": "Cap the daily chest so horizontal menu rows really touch",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "4f014828",
+       "kind": "fix",
+       "scope": "mobile",
+       "text": "Clear the re-review's blocking findings for the pad rail rework",
        "date": "2026-08-27"
       },
       {
@@ -3524,6 +4889,13 @@
        "date": "2026-08-27"
       },
       {
+       "h": "006133f8",
+       "kind": "fix",
+       "scope": "controller",
+       "text": "Expose flat face button remapping",
+       "date": "2026-08-27"
+      },
+      {
        "h": "4ff32297",
        "kind": "fix",
        "scope": "market",
@@ -3531,10 +4903,31 @@
        "date": "2026-08-27"
       },
       {
+       "h": "75eddd3a",
+       "kind": "fix",
+       "scope": "unstuck",
+       "text": "Pin battleground settings wall rescue",
+       "date": "2026-08-27"
+      },
+      {
        "h": "3e9778bc",
        "kind": "fix",
        "scope": "art",
        "text": "Re-mint the Heart of the End portrait from its reworked model",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "42e0aac6",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Prioritize short buffs under the low-tier cap, debuff-style Stormsurge",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "db618488",
+       "kind": "fix",
+       "scope": "unstuck",
+       "text": "Allow bg wall contact from settings",
        "date": "2026-08-27"
       },
       {
@@ -3587,6 +4980,13 @@
        "date": "2026-08-27"
       },
       {
+       "h": "ac9c50c8",
+       "kind": "fix",
+       "scope": "unstuck",
+       "text": "Keep battleground wall rescue from becoming a shortcut",
+       "date": "2026-08-27"
+      },
+      {
        "h": "363c120a",
        "kind": "fix",
        "scope": "desktop",
@@ -3594,10 +4994,24 @@
        "date": "2026-08-27"
       },
       {
+       "h": "36f38a4a",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep cascaded windows visible after resize",
+       "date": "2026-08-27"
+      },
+      {
        "h": "9c154e58",
        "kind": "fix",
        "scope": "woc",
        "text": "Apply the five-reviewer round on the desktop signing path",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "f57715c3",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Clear stale v2 movement on starvation",
        "date": "2026-08-27"
       },
       {
@@ -3643,6 +5057,48 @@
        "date": "2026-08-27"
       },
       {
+       "h": "de1d73c6",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Allow battleground wall-contact unstuck",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "4ec99f40",
+       "kind": "fix",
+       "scope": "movement",
+       "text": "Repair keyboard release prediction gates",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "d99ad839",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Bound the KTX2 restore wait so a graphics-preset switch can't stall for minutes",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "5b65c798",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Extend Entity.autoAttack tracking to pets, casters, and defensive pursuit",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "119b5933",
+       "kind": "fix",
+       "scope": "tests",
+       "text": "Correct false-positive test assertions for pet and caster autoAttack",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "22479edd",
+       "kind": "fix",
+       "scope": "test",
+       "text": "Replace undecisive test with decisive one for targetSwingTimerState",
+       "date": "2026-08-26"
+      },
+      {
        "h": "5d273b32",
        "kind": "fix",
        "scope": "ui",
@@ -3661,6 +5117,13 @@
        "kind": "fix",
        "scope": "db",
        "text": "Bound character storage lifecycles",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "88b21210",
+       "kind": "fix",
+       "scope": "test",
+       "text": "Add a decisive enabled-gate case for the tot swing bar",
        "date": "2026-08-26"
       },
       {
@@ -3706,6 +5169,13 @@
        "date": "2026-08-26"
       },
       {
+       "h": "4ca3526b",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Tighten battleground unstuck wall contact",
+       "date": "2026-08-26"
+      },
+      {
        "h": "c781b249",
        "kind": "fix",
        "scope": "",
@@ -3741,10 +5211,101 @@
        "date": "2026-08-26"
       },
       {
+       "h": "3aa8a888",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Narrow battleground unstuck to wall traps",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "c2520933",
+       "kind": "fix",
+       "scope": "test",
+       "text": "Satisfy changed-file gate",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "214c20dd",
+       "kind": "fix",
+       "scope": "mobile",
+       "text": "Stand the touch chrome and cross-hotbar down for each other",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "3b385bbc",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Register the worldofclaudecraft:// handler on Linux",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "5eecb816",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Reject battleground wall-contact unstuck",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "8f611b2c",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Address review on the Linux deep-link handler",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "6ef54948",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Reveal the $WOC Exchange launcher on the desktop shell",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "64b82309",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Show an overflow badge for buffs the low-tier cap sheds",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "e5d26937",
+       "kind": "fix",
+       "scope": "mobile",
+       "text": "Stand the XHB alone and revive the micromenu rail for a paired pad",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "b8cc6eb9",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Let the GPU process start under Steam's overlay on Linux",
+       "date": "2026-08-26"
+      },
+      {
        "h": "8803a8e1",
        "kind": "fix",
        "scope": "storage",
        "text": "Complete bank hardening review",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "b8e6a8cb",
+       "kind": "fix",
+       "scope": "unstuck",
+       "text": "Allow battleground wall rescues",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "705824bd",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Address review on the Steam overlay GPU guard",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "13778671",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Address second review on the Linux deep-link handler",
        "date": "2026-08-26"
       },
       {
@@ -3811,6 +5372,20 @@
        "date": "2026-08-26"
       },
       {
+       "h": "d99ad839",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Bound the KTX2 restore wait so a graphics-preset switch can't stall for minutes",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "0648b71c",
+       "kind": "fix",
+       "scope": "movement",
+       "text": "Preserve authority through traversal",
+       "date": "2026-08-25"
+      },
+      {
        "h": "54829551",
        "kind": "fix",
        "scope": "render",
@@ -3822,6 +5397,27 @@
        "kind": "fix",
        "scope": "game",
        "text": "Hold the entry curtain on the intro's establishing shot",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "6b12c09b",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Fill the Double Honor Weekend translations that blanked the Battlegrounds window",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "25032956",
+       "kind": "fix",
+       "scope": "movement",
+       "text": "Absorb client frame timing drift",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "96dc646d",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Let battleground unstuck detect real wall traps",
        "date": "2026-08-25"
       },
       {
@@ -3839,10 +5435,94 @@
        "date": "2026-08-25"
       },
       {
+       "h": "4f915b88",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Make incremental mail partition saves atomic",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "fd92255d",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Remove duplicate double honor locale keys",
+       "date": "2026-08-25"
+      },
+      {
        "h": "3bd5a7ee",
        "kind": "fix",
        "scope": "render",
        "text": "Bound the entry frames' scenery consult to the detail horizon",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "2603c1fb",
+       "kind": "fix",
+       "scope": "battleground",
+       "text": "Let the Interact key reach interactables in a live match",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "39c5553b",
+       "kind": "fix",
+       "scope": "movement",
+       "text": "Polish round from the QA gate findings",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "87639ae8",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Resend riftState on resume and close the endSession race",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "217961a7",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Close mail partition persistence review gaps",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "832a9432",
+       "kind": "fix",
+       "scope": "movement",
+       "text": "Eliminate the rotation-release yaw jag",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "a8249141",
+       "kind": "fix",
+       "scope": "movement",
+       "text": "Address the first maintainer review of the rework",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "95139db0",
+       "kind": "fix",
+       "scope": "movement",
+       "text": "Resync the input timeline from an empty buffer",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "880755c5",
+       "kind": "fix",
+       "scope": "movement",
+       "text": "Count resyncs only when the anchor moves the cursor",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "9b1e8b31",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Emit absorbed periodic heal feedback",
+       "date": "2026-08-25"
+      },
+      {
+       "h": "2e6b83b3",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Stop hit riders after physical direct miss",
        "date": "2026-08-25"
       },
       {
@@ -3909,6 +5589,202 @@
        "date": "2026-08-25"
       },
       {
+       "h": "4637ad88",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Close the internal-cooldown right-click-cancel exploit",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "bdf72265",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Persist the Ravenpost mail book incrementally, not the whole blob every 30s",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "3cc430d9",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Close the correctness gaps three independent reviewers found in the mail partition split",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "8462fb5c",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Rebase #3561 onto v0.40.0 and wire the $WOC Exchange durability path",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "0345046b",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Make the Dawnhold cannonball piles standable",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "f26ab08c",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Honor the FOV slider instead of resetting it every frame",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "c9022aa1",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Show all 7 Ascension charges after Extended Dawn",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "3a20bd3a",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Predict player movement inside rifts (issue #3479)",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "a071aeb4",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Re-dirty plain letters too, not just escrow, on the mail refresh cadence",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "0fa44e7a",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Release mail focus after pointer click",
+       "date": "2026-08-24"
+      },
+      {
+       "h": "46e7f250",
+       "kind": "fix",
+       "scope": "climb",
+       "text": "Refuse ledge grabs from damaging fall speeds",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "5a9df4b4",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Roll avoidance for instant spells and physical direct damage",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "a10c5513",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Make channel pushback cost the ticks it removes",
+       "date": "2026-08-23"
+      },
+      {
+       "h": "03638855",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Close the world loop's measurement blind spot",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "41910284",
+       "kind": "fix",
+       "scope": "battleground",
+       "text": "Keep the backfill sweep going past a declined match",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "3bb12043",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Drain heal absorb shields from periodic healing",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "9bddf224",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Settle physics state on every instance arrival teleport",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "2ca389c4",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Fold ranged haste into the single swing interval bucket",
+       "date": "2026-08-22"
+      },
+      {
+       "h": "dea4ecfd",
+       "kind": "fix",
+       "scope": "sfx",
+       "text": "Generate gain ceilings before the manifest that validates them",
+       "date": "2026-08-21"
+      },
+      {
+       "h": "1a2b2724",
+       "kind": "fix",
+       "scope": "sfx",
+       "text": "Apply the rickshaw summon's gain trim",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "db7d649b",
+       "kind": "fix",
+       "scope": "sfx",
+       "text": "Pick up the measured gain ceilings for the new player-voice keys",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "6fde09e1",
+       "kind": "fix",
+       "scope": "mounts",
+       "text": "Finish the rickshaw round-7 review findings",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "d91515b0",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Extract rickshaw render state to fit the monolith ratchet",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "d8a327e1",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Repoint the depth-packing guard and remint the polish seal",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "a684b453",
+       "kind": "fix",
+       "scope": "docs",
+       "text": "Strip em dashes from mount-authoring-notes.md",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "d663c1f8",
+       "kind": "fix",
+       "scope": "mounts",
+       "text": "Address rickshaw PR round-5 review findings",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "afe2eebe",
+       "kind": "fix",
+       "scope": "mounts",
+       "text": "Address rickshaw PR round-6 review findings",
+       "date": "2026-08-11"
+      },
+      {
+       "h": "ef147da9",
+       "kind": "fix",
+       "scope": "mounts",
+       "text": "Correct three defects in the round-6 review fixes",
+       "date": "2026-08-11"
+      },
+      {
        "h": "63494bca",
        "kind": "fix",
        "scope": "ui",
@@ -3920,6 +5796,20 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Position a re-homed HUD frame and stop shadowing the rail rule",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "38fbcf99",
+       "kind": "fix",
+       "scope": "mounts",
+       "text": "Address rickshaw PR round-4 review findings",
+       "date": "2026-08-10"
+      },
+      {
+       "h": "040f806b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Repair VisualDef.modular JSDoc broken by a mislanded sed edit",
        "date": "2026-08-10"
       }
      ]
