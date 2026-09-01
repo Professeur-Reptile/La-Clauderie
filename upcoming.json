@@ -1,20 +1,77 @@
 {
- "generated": "2026-09-01T11:58:38Z",
+ "generated": "2026-09-01T17:26:55Z",
  "base_tag": "v0.41.1",
  "version": "v0.42.0",
  "branch": "ossbrain-release/v0.42.0",
- "declared_version": "0.41.0",
- "imminent": false,
- "commits": 76,
- "shown": 27,
- "last_commit": "2026-09-01T10:58:27Z",
+ "declared_version": "0.42.0",
+ "imminent": true,
+ "commits": 211,
+ "shown": 80,
+ "last_commit": "2026-09-01T16:31:02Z",
  "sections": [
   {
    "key": "classes",
    "icon": "⚔️",
    "fr": "Classes & sorts",
    "en": "Classes & spells",
-   "items": []
+   "items": [
+    {
+     "h": "7958d0d9",
+     "kind": "feat",
+     "scope": "combat",
+     "text": "Add a player-toggleable auto-face lock for PvE auto-attack",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "46d6ddf0",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Auto-attack never turns the player; channels pin facing instead",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "a7fb08ee",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep the Vespers priest Gloomtithe bank visible past the low-tier buff cap",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "58cbf757",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Scope auto-attack auto-facing to PvE, keep the facing gate in PvP",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "35d92876",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Don't auto-attack when casting Rune of Power",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "bafc229a",
+     "kind": "fix",
+     "scope": "rogue",
+     "text": "Reset the swing timer when Eye Jab lands",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "01c7e2b4",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Decouple player-frame buff placement from the frame's drag state",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "2f855779",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Auto-face the auto-attack target instead of silently stalling",
+     "date": "2026-08-28"
+    }
+   ]
   },
   {
    "key": "metiers",
@@ -22,6 +79,20 @@
    "fr": "Métiers & récolte",
    "en": "Professions & gathering",
    "items": [
+    {
+     "h": "aaf44542",
+     "kind": "feat",
+     "scope": "professions",
+     "text": "Allow re-applying the same enchant to burn reagents",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "ef62e91c",
+     "kind": "fix",
+     "scope": "scripts",
+     "text": "Select Apply Enchant row by action id in PR shot rig",
+     "date": "2026-08-29"
+    },
     {
      "h": "9502c935",
      "kind": "fix",
@@ -36,7 +107,29 @@
    "icon": "🐉",
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
-   "items": []
+   "items": [
+    {
+     "h": "7567906a",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Key the vendor gate lookup to the page's own delve, add locale fills",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "9ddc0311",
+     "kind": "fix",
+     "scope": "social",
+     "text": "Register The Wildheart Basin in the Dungeon Finder catalogue",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "69be96a4",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "Humanize boss mechanic list in Dungeon Upgrader concept text",
+     "date": "2026-08-28"
+    }
+   ]
   },
   {
    "key": "monde",
@@ -44,6 +137,41 @@
    "fr": "Monde & quêtes",
    "en": "World & quests",
    "items": [
+    {
+     "h": "44ac4787",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Re-mint the Wildheart Basin rows in the mob portrait ledger",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "d434e252",
+     "kind": "fix",
+     "scope": "pet",
+     "text": "Refuse to attack or acquire a mob mid-evade",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "5b5f44f1",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Fall back retired deed descriptions",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "0cfb1830",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Name the vendor unlock gate on gated Reliquary relics",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "5357a978",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Stop mail/vendor deny toasts and the proc overlay from mis-layering with windows",
+     "date": "2026-08-28"
+    },
     {
      "h": "87c89fc5",
      "kind": "fix",
@@ -137,11 +265,137 @@
      "date": "2026-09-01"
     },
     {
+     "h": "5ff1e4f5",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Encode the prestige rank star as a unicode escape",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "71e6b364",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Drop the star glyph from the prestige rank display",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "a2af45b3",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Finish the pending.ts merge regen and drop a copy-scan false positive",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "5ff1e4f5",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Encode the prestige rank star as a unicode escape",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "ed56eb17",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Drop the non-ASCII star glyph from the prestige rank display",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "e1943c06",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Drop dead imports left by the release/v0.42.0 sync merge",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "e94cc8c4",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Reformat sim_i18n.ts BASE_DICT after the release/v0.42.0 merge",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "a9693cd8",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Break stealth on mount summon to close the stealth-horse exploit",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "f039a8e7",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Wire the missing autoFaceLock keybind label (#3729 follow-up)",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "6c4876d1",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Re-derive the W0b command-schema counts after the sync merge",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "7659b02a",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Dispose terrain/water/underwater views on renderer teardown",
+     "date": "2026-09-01"
+    },
+    {
      "h": "5279608d",
      "kind": "fix",
      "scope": "server",
      "text": "Use queued facing for battleground unstuck pressure",
      "date": "2026-09-01"
+    },
+    {
+     "h": "95c050d1",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Dispose farTerrainView and harden the world-view lifecycle seam",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "8ba5e2ae",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Observe pageshow context loss",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "ff630a2b",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Clear stacked stealth on summon",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "24e5e25f",
+     "kind": "fix",
+     "scope": "styles",
+     "text": "Restore wallet mini focus border",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "6a4a7b6b",
+     "kind": "fix",
+     "scope": "input",
+     "text": "Make the keybind corruption repair genuinely one-time",
+     "date": "2026-08-31"
+    },
+    {
+     "h": "fdfe2ca1",
+     "kind": "fix",
+     "scope": "input",
+     "text": "Document the repair-marker forward-compat gap and tighten types",
+     "date": "2026-08-31"
+    },
+    {
+     "h": "4af99472",
+     "kind": "fix",
+     "scope": "controller",
+     "text": "Guide tutorial bag navigation",
+     "date": "2026-08-31"
     },
     {
      "h": "e3008c1e",
@@ -165,11 +419,130 @@
      "date": "2026-08-31"
     },
     {
+     "h": "8c053ab9",
+     "kind": "fix",
+     "scope": "controller",
+     "text": "Advance tutorial bag prompts",
+     "date": "2026-08-31"
+    },
+    {
      "h": "b9a59795",
      "kind": "fix",
      "scope": "server",
      "text": "Preserve queued battleground unstuck wall pressure",
      "date": "2026-08-31"
+    },
+    {
+     "h": "f3be568b",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Restore custom window/panel positions across a fullscreen resize",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "d01ddc6b",
+     "kind": "fix",
+     "scope": "deeds",
+     "text": "Retire the Vale Cup deeds to Feats of Strength",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "d81f7c10",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Knockback no longer freezes players against static colliders",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "30c647ba",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Self-heal a WebGL context loss that never restores",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "99e7be5b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Restore the bloom addend NaN scrub the Infinity cap dropped",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "d744a0de",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Run the KTX2 restore re-upload for real inside its queued unit",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "49205b0e",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Clamp both sanitizeFinite bounds and cover the stuck-loss evidence, latch, and bfcache gaps",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "f8915f11",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Skip the KTX2 restore re-upload on a lost host context",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "410aa5a7",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Read the KTX2 restore queue live at apply time, not at contextlost",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "223e500b",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Compensate the performance overlay for UI Scale like every other movable window",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "64f7958f",
+     "kind": "fix",
+     "scope": "deeds",
+     "text": "Retire the Fiesta bracket deeds to Feats of Strength",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "1aee2029",
+     "kind": "fix",
+     "scope": "scripts",
+     "text": "Dismiss the Proving Shore arrival note in the deeds shot",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "be894fdc",
+     "kind": "fix",
+     "scope": "deeds",
+     "text": "Correct the Fiesta Feat comment and pin the un-stranding",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "4b60c08c",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Freed Attack-slot ability stays visible across a build switch",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "30005c86",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Sheathe a drawn weapon while mounted, folded into the swim overlay",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "e674f4e9",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Scale the remote-entity teleport-snap threshold to elapsed time",
+     "date": "2026-08-24"
     },
     {
      "h": "31f9b2f5",
@@ -248,18 +621,75 @@
   {
    "version": "v0.42.0",
    "branch": "ossbrain-release/v0.42.0",
-   "declared_version": "0.41.0",
-   "imminent": false,
-   "commits": 76,
-   "shown": 27,
-   "last_commit": "2026-09-01T10:58:27Z",
+   "declared_version": "0.42.0",
+   "imminent": true,
+   "commits": 211,
+   "shown": 80,
+   "last_commit": "2026-09-01T16:31:02Z",
    "sections": [
     {
      "key": "classes",
      "icon": "⚔️",
      "fr": "Classes & sorts",
      "en": "Classes & spells",
-     "items": []
+     "items": [
+      {
+       "h": "7958d0d9",
+       "kind": "feat",
+       "scope": "combat",
+       "text": "Add a player-toggleable auto-face lock for PvE auto-attack",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "46d6ddf0",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Auto-attack never turns the player; channels pin facing instead",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "a7fb08ee",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep the Vespers priest Gloomtithe bank visible past the low-tier buff cap",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "58cbf757",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Scope auto-attack auto-facing to PvE, keep the facing gate in PvP",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "35d92876",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Don't auto-attack when casting Rune of Power",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "bafc229a",
+       "kind": "fix",
+       "scope": "rogue",
+       "text": "Reset the swing timer when Eye Jab lands",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "01c7e2b4",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Decouple player-frame buff placement from the frame's drag state",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "2f855779",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Auto-face the auto-attack target instead of silently stalling",
+       "date": "2026-08-28"
+      }
+     ]
     },
     {
      "key": "metiers",
@@ -267,6 +697,20 @@
      "fr": "Métiers & récolte",
      "en": "Professions & gathering",
      "items": [
+      {
+       "h": "aaf44542",
+       "kind": "feat",
+       "scope": "professions",
+       "text": "Allow re-applying the same enchant to burn reagents",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "ef62e91c",
+       "kind": "fix",
+       "scope": "scripts",
+       "text": "Select Apply Enchant row by action id in PR shot rig",
+       "date": "2026-08-29"
+      },
       {
        "h": "9502c935",
        "kind": "fix",
@@ -281,7 +725,29 @@
      "icon": "🐉",
      "fr": "Donjons, failles & boss",
      "en": "Dungeons, rifts & bosses",
-     "items": []
+     "items": [
+      {
+       "h": "7567906a",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Key the vendor gate lookup to the page's own delve, add locale fills",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "9ddc0311",
+       "kind": "fix",
+       "scope": "social",
+       "text": "Register The Wildheart Basin in the Dungeon Finder catalogue",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "69be96a4",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Humanize boss mechanic list in Dungeon Upgrader concept text",
+       "date": "2026-08-28"
+      }
+     ]
     },
     {
      "key": "monde",
@@ -289,6 +755,41 @@
      "fr": "Monde & quêtes",
      "en": "World & quests",
      "items": [
+      {
+       "h": "44ac4787",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Re-mint the Wildheart Basin rows in the mob portrait ledger",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "d434e252",
+       "kind": "fix",
+       "scope": "pet",
+       "text": "Refuse to attack or acquire a mob mid-evade",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "5b5f44f1",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Fall back retired deed descriptions",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "0cfb1830",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Name the vendor unlock gate on gated Reliquary relics",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "5357a978",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stop mail/vendor deny toasts and the proc overlay from mis-layering with windows",
+       "date": "2026-08-28"
+      },
       {
        "h": "87c89fc5",
        "kind": "fix",
@@ -382,11 +883,137 @@
        "date": "2026-09-01"
       },
       {
+       "h": "5ff1e4f5",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Encode the prestige rank star as a unicode escape",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "71e6b364",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Drop the star glyph from the prestige rank display",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "a2af45b3",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Finish the pending.ts merge regen and drop a copy-scan false positive",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "5ff1e4f5",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Encode the prestige rank star as a unicode escape",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "ed56eb17",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Drop the non-ASCII star glyph from the prestige rank display",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "e1943c06",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Drop dead imports left by the release/v0.42.0 sync merge",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "e94cc8c4",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Reformat sim_i18n.ts BASE_DICT after the release/v0.42.0 merge",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "a9693cd8",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Break stealth on mount summon to close the stealth-horse exploit",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "f039a8e7",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Wire the missing autoFaceLock keybind label (#3729 follow-up)",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "6c4876d1",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Re-derive the W0b command-schema counts after the sync merge",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "7659b02a",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Dispose terrain/water/underwater views on renderer teardown",
+       "date": "2026-09-01"
+      },
+      {
        "h": "5279608d",
        "kind": "fix",
        "scope": "server",
        "text": "Use queued facing for battleground unstuck pressure",
        "date": "2026-09-01"
+      },
+      {
+       "h": "95c050d1",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Dispose farTerrainView and harden the world-view lifecycle seam",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "8ba5e2ae",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Observe pageshow context loss",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "ff630a2b",
+       "kind": "fix",
+       "scope": "mounts",
+       "text": "Clear stacked stealth on summon",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "24e5e25f",
+       "kind": "fix",
+       "scope": "styles",
+       "text": "Restore wallet mini focus border",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "6a4a7b6b",
+       "kind": "fix",
+       "scope": "input",
+       "text": "Make the keybind corruption repair genuinely one-time",
+       "date": "2026-08-31"
+      },
+      {
+       "h": "fdfe2ca1",
+       "kind": "fix",
+       "scope": "input",
+       "text": "Document the repair-marker forward-compat gap and tighten types",
+       "date": "2026-08-31"
+      },
+      {
+       "h": "4af99472",
+       "kind": "fix",
+       "scope": "controller",
+       "text": "Guide tutorial bag navigation",
+       "date": "2026-08-31"
       },
       {
        "h": "e3008c1e",
@@ -410,11 +1037,130 @@
        "date": "2026-08-31"
       },
       {
+       "h": "8c053ab9",
+       "kind": "fix",
+       "scope": "controller",
+       "text": "Advance tutorial bag prompts",
+       "date": "2026-08-31"
+      },
+      {
        "h": "b9a59795",
        "kind": "fix",
        "scope": "server",
        "text": "Preserve queued battleground unstuck wall pressure",
        "date": "2026-08-31"
+      },
+      {
+       "h": "f3be568b",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Restore custom window/panel positions across a fullscreen resize",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "d01ddc6b",
+       "kind": "fix",
+       "scope": "deeds",
+       "text": "Retire the Vale Cup deeds to Feats of Strength",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "d81f7c10",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Knockback no longer freezes players against static colliders",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "30c647ba",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Self-heal a WebGL context loss that never restores",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "99e7be5b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Restore the bloom addend NaN scrub the Infinity cap dropped",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "d744a0de",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Run the KTX2 restore re-upload for real inside its queued unit",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "49205b0e",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Clamp both sanitizeFinite bounds and cover the stuck-loss evidence, latch, and bfcache gaps",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "f8915f11",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Skip the KTX2 restore re-upload on a lost host context",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "410aa5a7",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Read the KTX2 restore queue live at apply time, not at contextlost",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "223e500b",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Compensate the performance overlay for UI Scale like every other movable window",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "64f7958f",
+       "kind": "fix",
+       "scope": "deeds",
+       "text": "Retire the Fiesta bracket deeds to Feats of Strength",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "1aee2029",
+       "kind": "fix",
+       "scope": "scripts",
+       "text": "Dismiss the Proving Shore arrival note in the deeds shot",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "be894fdc",
+       "kind": "fix",
+       "scope": "deeds",
+       "text": "Correct the Fiesta Feat comment and pin the un-stranding",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "4b60c08c",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Freed Attack-slot ability stays visible across a build switch",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "30005c86",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Sheathe a drawn weapon while mounted, folded into the swim overlay",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "e674f4e9",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Scale the remote-entity teleport-snap threshold to elapsed time",
+       "date": "2026-08-24"
       },
       {
        "h": "31f9b2f5",
