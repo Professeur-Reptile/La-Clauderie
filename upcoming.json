@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-01T05:33:10Z",
- "base_tag": "v0.41.0",
- "version": "v0.41.1",
- "branch": "release/v0.41.1",
- "declared_version": "0.41.1",
- "imminent": true,
- "commits": 22,
- "shown": 10,
- "last_commit": "2026-09-01T17:15:35+12:00",
+ "generated": "2026-09-01T11:58:38Z",
+ "base_tag": "v0.41.1",
+ "version": "v0.42.0",
+ "branch": "ossbrain-release/v0.42.0",
+ "declared_version": "0.41.0",
+ "imminent": false,
+ "commits": 76,
+ "shown": 27,
+ "last_commit": "2026-09-01T10:58:27Z",
  "sections": [
   {
    "key": "classes",
@@ -23,11 +23,11 @@
    "en": "Professions & gathering",
    "items": [
     {
-     "h": "8a8bdc90",
+     "h": "9502c935",
      "kind": "fix",
-     "scope": "ui",
-     "text": "Mech chroma plate tooltips read Skin, not Tool",
-     "date": "2026-09-01"
+     "scope": "render",
+     "text": "Extract the prewarm depth-material cache to fit the ratchet",
+     "date": "2026-08-12"
     }
    ]
   },
@@ -36,15 +36,7 @@
    "icon": "🐉",
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
-   "items": [
-    {
-     "h": "f70c3208",
-     "kind": "fix",
-     "scope": "instances",
-     "text": "Make heroic Ignivar claims survive the forge-lift door",
-     "date": "2026-09-01"
-    }
-   ]
+   "items": []
   },
   {
    "key": "monde",
@@ -53,32 +45,11 @@
    "en": "World & quests",
    "items": [
     {
-     "h": "cdede2bd",
+     "h": "87c89fc5",
      "kind": "fix",
-     "scope": "raids",
-     "text": "Move tier vendor outside entrance",
-     "date": "2026-09-01"
-    },
-    {
-     "h": "84cfa1ba",
-     "kind": "fix",
-     "scope": "raids",
-     "text": "Preserve world determinism for tier vendor",
-     "date": "2026-09-01"
-    },
-    {
-     "h": "d569247b",
-     "kind": "fix",
-     "scope": "items",
-     "text": "Keep only Crucible sigils soulbound",
-     "date": "2026-09-01"
-    },
-    {
-     "h": "6e3aaee3",
-     "kind": "fix",
-     "scope": "items",
-     "text": "Restore soulbound on the Crucible tier set pieces",
-     "date": "2026-09-01"
+     "scope": "sfx",
+     "text": "Let a mob subfamily take inherit its family's custom-master flag",
+     "date": "2026-08-26"
     }
    ]
   },
@@ -87,15 +58,7 @@
    "icon": "🏰",
    "fr": "Guilde & social",
    "en": "Guild & social",
-   "items": [
-    {
-     "h": "9ecd03a6",
-     "kind": "fix",
-     "scope": "items",
-     "text": "Restore soulbound party trade flow",
-     "date": "2026-09-01"
-    }
-   ]
+   "items": []
   },
   {
    "key": "confort",
@@ -104,166 +67,192 @@
    "en": "Comfort & technical",
    "items": [
     {
-     "h": "7d3a703f",
-     "kind": "fix",
-     "scope": "cosmetics",
-     "text": "Return the armor plate item when a mech chroma comes off",
-     "date": "2026-09-01"
+     "h": "4cd8bd67",
+     "kind": "feat",
+     "scope": "perf",
+     "text": "Store the graphics backend beside the GPU bucket",
+     "date": "2026-08-29"
     },
     {
-     "h": "7a04c5be",
-     "kind": "fix",
+     "h": "d663e500",
+     "kind": "feat",
+     "scope": "perf",
+     "text": "Label the client perf metrics with the graphics backend",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "fd8a712e",
+     "kind": "feat",
      "scope": "ui",
-     "text": "Mount the store decision prompt on document.body",
+     "text": "Item icon for the Rallycart RXT ignition key",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "ef3df570",
+     "kind": "feat",
+     "scope": "mounts",
+     "text": "Give the rocket sled a summon call, and lift its winddown",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "6e0b7fc2",
+     "kind": "feat",
+     "scope": "mounts",
+     "text": "Add the Rallycart RXT vehicle mount",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "b221e0dc",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Finish the rallycart headlight tuning",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "b2efeb84",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Rallycart tail lamp lenses from a hand-traced outline",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "fe8a746d",
+     "kind": "feat",
+     "scope": "mounts",
+     "text": "Add the Goblin Rocket Sled mount",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "980b1013",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Measure a vehicle once per model, not per rider",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "f7eb351f",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Ignore rejected battleground wall-pressure input",
      "date": "2026-09-01"
     },
     {
-     "h": "1774f2dd",
+     "h": "5279608d",
      "kind": "fix",
-     "scope": "",
-     "text": "Admit the armory-purchase-decision screenshots to the sparse cone",
+     "scope": "server",
+     "text": "Use queued facing for battleground unstuck pressure",
      "date": "2026-09-01"
+    },
+    {
+     "h": "e3008c1e",
+     "kind": "fix",
+     "scope": "test",
+     "text": "Drop the unused ITEMS import the audit-builder test carries",
+     "date": "2026-08-31"
+    },
+    {
+     "h": "97874e74",
+     "kind": "fix",
+     "scope": "test",
+     "text": "Follow the merged tree's pins after the release sync",
+     "date": "2026-08-31"
+    },
+    {
+     "h": "4f18903b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Settle stale Rallycart exhaust stops",
+     "date": "2026-08-31"
+    },
+    {
+     "h": "b9a59795",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Preserve queued battleground unstuck wall pressure",
+     "date": "2026-08-31"
+    },
+    {
+     "h": "31f9b2f5",
+     "kind": "fix",
+     "scope": "audio",
+     "text": "Keep the tail fade when an attack is also set",
+     "date": "2026-08-21"
+    },
+    {
+     "h": "30a8ac8a",
+     "kind": "fix",
+     "scope": "audio",
+     "text": "Fade the summon's tail and match the idle handoff to it",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "32d47012",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Drop engine state before arming the summon, not after",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "0e3bd181",
+     "kind": "fix",
+     "scope": "sfx",
+     "text": "Register the sled's summon take in the manifest",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "7d5193e4",
+     "kind": "fix",
+     "scope": "sfx",
+     "text": "Register the rallycart's reverse takes",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "e7200d51",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Aim the frozen chase camera from its current pose under r185",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "0d6dfb42",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Put the rallycart headlights in their actual bowls",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "9d743732",
+     "kind": "fix",
+     "scope": "audio",
+     "text": "Carry engine transitions with the vehicle, soften the summon seam",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "80a4d996",
+     "kind": "fix",
+     "scope": "sled",
+     "text": "KTX2-compress the sled GLB and refresh the seals",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "ea95a16a",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Resolve goblin rocket sled gate failures",
+     "date": "2026-08-12"
     }
    ]
   }
  ],
  "versions": [
   {
-   "version": "v0.41.1",
-   "branch": "release/v0.41.1",
-   "declared_version": "0.41.1",
-   "imminent": true,
-   "commits": 22,
-   "shown": 10,
-   "last_commit": "2026-09-01T17:15:35+12:00",
-   "sections": [
-    {
-     "key": "classes",
-     "icon": "⚔️",
-     "fr": "Classes & sorts",
-     "en": "Classes & spells",
-     "items": []
-    },
-    {
-     "key": "metiers",
-     "icon": "🔨",
-     "fr": "Métiers & récolte",
-     "en": "Professions & gathering",
-     "items": [
-      {
-       "h": "8a8bdc90",
-       "kind": "fix",
-       "scope": "ui",
-       "text": "Mech chroma plate tooltips read Skin, not Tool",
-       "date": "2026-09-01"
-      }
-     ]
-    },
-    {
-     "key": "donjons",
-     "icon": "🐉",
-     "fr": "Donjons, failles & boss",
-     "en": "Dungeons, rifts & bosses",
-     "items": [
-      {
-       "h": "f70c3208",
-       "kind": "fix",
-       "scope": "instances",
-       "text": "Make heroic Ignivar claims survive the forge-lift door",
-       "date": "2026-09-01"
-      }
-     ]
-    },
-    {
-     "key": "monde",
-     "icon": "🗺️",
-     "fr": "Monde & quêtes",
-     "en": "World & quests",
-     "items": [
-      {
-       "h": "cdede2bd",
-       "kind": "fix",
-       "scope": "raids",
-       "text": "Move tier vendor outside entrance",
-       "date": "2026-09-01"
-      },
-      {
-       "h": "84cfa1ba",
-       "kind": "fix",
-       "scope": "raids",
-       "text": "Preserve world determinism for tier vendor",
-       "date": "2026-09-01"
-      },
-      {
-       "h": "d569247b",
-       "kind": "fix",
-       "scope": "items",
-       "text": "Keep only Crucible sigils soulbound",
-       "date": "2026-09-01"
-      },
-      {
-       "h": "6e3aaee3",
-       "kind": "fix",
-       "scope": "items",
-       "text": "Restore soulbound on the Crucible tier set pieces",
-       "date": "2026-09-01"
-      }
-     ]
-    },
-    {
-     "key": "guilde",
-     "icon": "🏰",
-     "fr": "Guilde & social",
-     "en": "Guild & social",
-     "items": [
-      {
-       "h": "9ecd03a6",
-       "kind": "fix",
-       "scope": "items",
-       "text": "Restore soulbound party trade flow",
-       "date": "2026-09-01"
-      }
-     ]
-    },
-    {
-     "key": "confort",
-     "icon": "⚙️",
-     "fr": "Confort & technique",
-     "en": "Comfort & technical",
-     "items": [
-      {
-       "h": "7d3a703f",
-       "kind": "fix",
-       "scope": "cosmetics",
-       "text": "Return the armor plate item when a mech chroma comes off",
-       "date": "2026-09-01"
-      },
-      {
-       "h": "7a04c5be",
-       "kind": "fix",
-       "scope": "ui",
-       "text": "Mount the store decision prompt on document.body",
-       "date": "2026-09-01"
-      },
-      {
-       "h": "1774f2dd",
-       "kind": "fix",
-       "scope": "",
-       "text": "Admit the armory-purchase-decision screenshots to the sparse cone",
-       "date": "2026-09-01"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "version": "v0.42.0",
    "branch": "ossbrain-release/v0.42.0",
    "declared_version": "0.41.0",
    "imminent": false,
-   "commits": 70,
-   "shown": 26,
-   "last_commit": "2026-09-01T01:32:50Z",
+   "commits": 76,
+   "shown": 27,
+   "last_commit": "2026-09-01T10:58:27Z",
    "sections": [
     {
      "key": "classes",
@@ -390,6 +379,13 @@
        "kind": "fix",
        "scope": "server",
        "text": "Ignore rejected battleground wall-pressure input",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "5279608d",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Use queued facing for battleground unstuck pressure",
        "date": "2026-09-01"
       },
       {
