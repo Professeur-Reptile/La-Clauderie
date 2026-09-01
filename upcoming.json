@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-31T22:59:38Z",
+ "generated": "2026-09-01T05:33:10Z",
  "base_tag": "v0.41.0",
  "version": "v0.41.1",
  "branch": "release/v0.41.1",
- "declared_version": "0.41.0",
- "imminent": false,
- "commits": 4,
- "shown": 1,
- "last_commit": "2026-09-01T08:52:51+12:00",
+ "declared_version": "0.41.1",
+ "imminent": true,
+ "commits": 22,
+ "shown": 10,
+ "last_commit": "2026-09-01T17:15:35+12:00",
  "sections": [
   {
    "key": "classes",
@@ -21,7 +21,15 @@
    "icon": "🔨",
    "fr": "Métiers & récolte",
    "en": "Professions & gathering",
-   "items": []
+   "items": [
+    {
+     "h": "8a8bdc90",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Mech chroma plate tooltips read Skin, not Tool",
+     "date": "2026-09-01"
+    }
+   ]
   },
   {
    "key": "donjons",
@@ -43,32 +51,91 @@
    "icon": "🗺️",
    "fr": "Monde & quêtes",
    "en": "World & quests",
-   "items": []
+   "items": [
+    {
+     "h": "cdede2bd",
+     "kind": "fix",
+     "scope": "raids",
+     "text": "Move tier vendor outside entrance",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "84cfa1ba",
+     "kind": "fix",
+     "scope": "raids",
+     "text": "Preserve world determinism for tier vendor",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "d569247b",
+     "kind": "fix",
+     "scope": "items",
+     "text": "Keep only Crucible sigils soulbound",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "6e3aaee3",
+     "kind": "fix",
+     "scope": "items",
+     "text": "Restore soulbound on the Crucible tier set pieces",
+     "date": "2026-09-01"
+    }
+   ]
   },
   {
    "key": "guilde",
    "icon": "🏰",
    "fr": "Guilde & social",
    "en": "Guild & social",
-   "items": []
+   "items": [
+    {
+     "h": "9ecd03a6",
+     "kind": "fix",
+     "scope": "items",
+     "text": "Restore soulbound party trade flow",
+     "date": "2026-09-01"
+    }
+   ]
   },
   {
    "key": "confort",
    "icon": "⚙️",
    "fr": "Confort & technique",
    "en": "Comfort & technical",
-   "items": []
+   "items": [
+    {
+     "h": "7d3a703f",
+     "kind": "fix",
+     "scope": "cosmetics",
+     "text": "Return the armor plate item when a mech chroma comes off",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "7a04c5be",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Mount the store decision prompt on document.body",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "1774f2dd",
+     "kind": "fix",
+     "scope": "",
+     "text": "Admit the armory-purchase-decision screenshots to the sparse cone",
+     "date": "2026-09-01"
+    }
+   ]
   }
  ],
  "versions": [
   {
    "version": "v0.41.1",
    "branch": "release/v0.41.1",
-   "declared_version": "0.41.0",
-   "imminent": false,
-   "commits": 4,
-   "shown": 1,
-   "last_commit": "2026-09-01T08:52:51+12:00",
+   "declared_version": "0.41.1",
+   "imminent": true,
+   "commits": 22,
+   "shown": 10,
+   "last_commit": "2026-09-01T17:15:35+12:00",
    "sections": [
     {
      "key": "classes",
@@ -82,7 +149,15 @@
      "icon": "🔨",
      "fr": "Métiers & récolte",
      "en": "Professions & gathering",
-     "items": []
+     "items": [
+      {
+       "h": "8a8bdc90",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Mech chroma plate tooltips read Skin, not Tool",
+       "date": "2026-09-01"
+      }
+     ]
     },
     {
      "key": "donjons",
@@ -104,21 +179,80 @@
      "icon": "🗺️",
      "fr": "Monde & quêtes",
      "en": "World & quests",
-     "items": []
+     "items": [
+      {
+       "h": "cdede2bd",
+       "kind": "fix",
+       "scope": "raids",
+       "text": "Move tier vendor outside entrance",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "84cfa1ba",
+       "kind": "fix",
+       "scope": "raids",
+       "text": "Preserve world determinism for tier vendor",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "d569247b",
+       "kind": "fix",
+       "scope": "items",
+       "text": "Keep only Crucible sigils soulbound",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "6e3aaee3",
+       "kind": "fix",
+       "scope": "items",
+       "text": "Restore soulbound on the Crucible tier set pieces",
+       "date": "2026-09-01"
+      }
+     ]
     },
     {
      "key": "guilde",
      "icon": "🏰",
      "fr": "Guilde & social",
      "en": "Guild & social",
-     "items": []
+     "items": [
+      {
+       "h": "9ecd03a6",
+       "kind": "fix",
+       "scope": "items",
+       "text": "Restore soulbound party trade flow",
+       "date": "2026-09-01"
+      }
+     ]
     },
     {
      "key": "confort",
      "icon": "⚙️",
      "fr": "Confort & technique",
      "en": "Comfort & technical",
-     "items": []
+     "items": [
+      {
+       "h": "7d3a703f",
+       "kind": "fix",
+       "scope": "cosmetics",
+       "text": "Return the armor plate item when a mech chroma comes off",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "7a04c5be",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Mount the store decision prompt on document.body",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "1774f2dd",
+       "kind": "fix",
+       "scope": "",
+       "text": "Admit the armory-purchase-decision screenshots to the sparse cone",
+       "date": "2026-09-01"
+      }
+     ]
     }
    ]
   },
@@ -127,9 +261,9 @@
    "branch": "ossbrain-release/v0.42.0",
    "declared_version": "0.41.0",
    "imminent": false,
-   "commits": 67,
-   "shown": 25,
-   "last_commit": "2026-08-31T22:35:49Z",
+   "commits": 70,
+   "shown": 26,
+   "last_commit": "2026-09-01T01:32:50Z",
    "sections": [
     {
      "key": "classes",
@@ -250,6 +384,13 @@
        "scope": "render",
        "text": "Measure a vehicle once per model, not per rider",
        "date": "2026-08-20"
+      },
+      {
+       "h": "f7eb351f",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Ignore rejected battleground wall-pressure input",
+       "date": "2026-09-01"
       },
       {
        "h": "e3008c1e",
