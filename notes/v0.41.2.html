@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Nouveautés v0.41.2 — La Clauderie</title>
+<meta name="description" content="Les nouveautés de la v0.41.2 de World of ClaudeCraft, expliquées simplement : la banque de guilde n’éjecte plus les officiers, le quartier-maître du Creuset devient atteignable, et les téléphones appliquent enfin leurs mises à jour.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Nouveautés v0.41.2 — La Clauderie">
+<meta property="og:description" content="La banque de guilde n’éjecte plus les officiers, et le quartier-maître du Creuset n’est plus coincé derrière un mur.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.41.2.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.41.2.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') === 'en') location.replace('v0.41.2.en.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Notes de version</p>
+    <h1>Nouveautés <span class="v">v0.41.2</span></h1>
+    <p class="lede">Un correctif du lendemain, qui règle trois ennuis nés de la <a href="v0.41.1.html">v0.41.1</a>. Le plus gênant nous concernait directement : à deux officiers dans la <strong class="hl">banque de guilde</strong>, l’un se faisait éjecter avec un message d’erreur alarmant. Ensuite, le <strong class="hl">quartier-maître du Creuset</strong> devient enfin atteignable — il avait été déplacé la veille de l’autre côté d’un mur. Et les téléphones <strong class="hl">appliquent</strong> enfin les mises à jour qu’ils téléchargeaient.</p>
+    <div class="meta">
+      <span><b>Publiée</b> le 2 septembre 2026</span>
+      <span><b>Depuis</b> la v0.41.1</span>
+      <span><b>4</b> chantiers</span>
+      <span><b>0</b> valeur de combat modifiée</span>
+    </div>
+    <div class="hint">💡 Clique sur une carte pour le détail.</div>
+  </header>
+
+  <!-- Bandeau constant : mêmes rubriques, même ordre, à chaque version. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">En un coup d’œil</h2>
+    <p class="sec-sub">Les mêmes rubriques à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
+    <ol>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <span class="d-name">Classes &amp; sorts</span>
+        <span class="d-say"><b class="eq">Toutes =</b> aucune valeur ne bouge : ni sort, ni talent, ni maîtrise, ni panoplie, ni objet. Les résurrections ajoutées par la <a href="v0.41.1.html#classes">v0.41.1</a> restent telles quelles.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <span class="d-name">Métiers &amp; récolte</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#quartier">Donjons, failles &amp; boss</a>
+        <span class="d-say">Le <strong class="hl">quartier-maître du Creuset</strong> est enfin atteignable : déplacé la veille, il se retrouvait <strong class="hl">de l’autre côté du mur d’enceinte</strong>, treize mètres sous la porte. Il se tient maintenant sur le palier juste en dessous, à six mètres.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <a class="d-name" href="#quartier">Monde &amp; quêtes</a>
+        <span class="d-say">Le correctif est aussi un correctif de <strong class="hl">terrain</strong> : le jeu sait désormais poser un personnage sur les <strong class="hl">dalles</strong> d’une forteresse, et plus seulement sur le sol brut.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <a class="d-name" href="#banque">Guilde &amp; social</a>
+        <span class="d-say"><strong class="hl">Le gros du correctif.</strong> À deux officiers dans la banque de guilde, l’un se faisait <strong class="hl">éjecter</strong> avec « ton personnage a été repris par une autre session » — un message qui laisse croire à un piratage. C’est réglé, et le refus poli remplace l’éjection.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#confort">Confort &amp; technique</a>
+        <span class="d-say">Sur téléphone, l’application <strong class="hl">téléchargeait</strong> les mises à jour sans jamais les <strong class="hl">appliquer</strong> : on restait bloqué sur « les versions du jeu et du serveur sont incompatibles ». Corrigé.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="banque">
+    <h2><span class="num">01</span>La banque de guilde ne t’éjecte plus</h2>
+    <p class="sec-sub">C’est le bug qui a le plus embêté les guildes actives : deux officiers qui rangeaient la banque en même temps, et l’un des deux se faisait sortir du jeu avec un message inquiétant qui n’avait rien à voir.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="banque" tabindex="0" role="button" aria-label="Détails : ce qui se passait, et la règle qui le remplace">
+        <h3>Ce qui se passait <span class="chip c-new">Correctif</span></h3>
+        <p>Deux officiers qui échangeaient des matériaux provoquaient un <strong class="hl">conflit de sauvegarde</strong>. Le jeu le traitait comme une prise de contrôle du personnage et affichait « <strong class="hl">ton personnage a été repris par une autre session</strong> » — un message qui fait penser à un compte piraté, alors qu’il ne s’agissait que de deux collègues rangeant la banque.</p>
+        <span class="more-link">Voir la règle qui remplace ça</span>
+      </div>
+      <div class="card">
+        <h3>Un refus poli à la place <span class="chip c-new">Nouveau</span></h3>
+        <ul>
+          <li>Quand la banque est en train d’enregistrer, l’opération est simplement <strong class="hl">refusée</strong>, avec : « La banque de guilde est en train d’enregistrer une modification récente. Réessaie dans un instant. »</li>
+          <li>Tu restes connecté, ton personnage ne bouge pas, et tu réessaies deux secondes plus tard.</li>
+          <li>Un second message couvre le cas où c’est <strong class="hl">toi</strong> qui es occupé : « Tu es occupé. Réessaie dans un instant. »</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Et le refus reste rare <span class="chip c-util">Détail</span></h3>
+        <ul>
+          <li>Le contrôle vérifie <strong class="hl">d’abord tes droits</strong> : inutile de refuser pour cause de sauvegarde quelqu’un qui n’avait pas le droit de toucher la banque.</li>
+          <li>Il regarde <strong class="hl">ta guilde seule</strong>, au lieu de balayer tout le royaume — donc pas de ralentissement.</li>
+          <li>Et l’enregistrement est <strong class="hl">lissé</strong> pour ne pas se relancer en boucle, ce qui refermerait la fenêtre de refus en permanence.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="quartier">
+    <h2><span class="num">02</span>Le quartier-maître du Creuset est atteignable</h2>
+    <p class="sec-sub">La <a href="v0.41.1.html">v0.41.1</a> l’avait sorti du raid pour t’éviter d’y entrer juste pour échanger tes sigils. Bonne idée, mauvais endroit : il s’était retrouvé de l’autre côté du mur.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="quartier" tabindex="0" role="button" aria-label="Détails : où il était, où il est, et pourquoi il tombait dehors">
+        <h3>Il était derrière le mur <span class="chip c-bal">Vérifié</span></h3>
+        <p>L’ancien emplacement tombait sur la <strong class="hl">corniche de terrain brut à l’extérieur du mur ouest</strong>, <strong class="hl">treize mètres sous</strong> la porte du raid, avec le mur entre les deux. Pour le rejoindre il fallait <strong class="hl">sortir de la forteresse, contourner l’île à la nage</strong> et remonter jusqu’au pied du rempart.</p>
+        <span class="more-link">Voir la correction exacte</span>
+      </div>
+      <div class="card">
+        <h3>Où il se tient maintenant <span class="chip c-new">Corrigé</span></h3>
+        <ul>
+          <li>Sur la <strong class="hl">cour du palier</strong>, une volée de marches sous la porte du donjon-forteresse.</li>
+          <li>À <strong class="hl">six mètres</strong> de la porte, sur le bord ouest pour ne pas boucher l’escalier.</li>
+          <li>Et <strong class="hl">hors</strong> de la zone de déclenchement de la porte, pour qu’on ne rentre pas dans le raid en voulant lui parler.</li>
+          <li>Accessible depuis la porte comme depuis la cour du dessous : les deux chemins sont marchables.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Un correctif de terrain, aussi <span class="chip c-util">Coulisses</span></h3>
+        <ul>
+          <li>Le vrai fautif : le jeu calculait sa position sur le <strong class="hl">sol brut</strong>, sans tenir compte des <strong class="hl">dalles</strong> posées par-dessus dans la forteresse.</li>
+          <li>Un personnage posé ainsi se retrouve <strong class="hl">enfoncé dans la dalle</strong> — et le jeu le lit alors comme coincé dans un décor.</li>
+          <li>Il sait maintenant poser les pieds sur le dessus de la dalle. Ça servira à tous les futurs personnages placés dans un bâtiment.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="confort">
+    <h2><span class="num">03</span>Les téléphones appliquent enfin leurs mises à jour</h2>
+    <p class="sec-sub">Un bug particulièrement pénible sur mobile : l’application téléchargeait bien la nouvelle version, mais ne la lançait jamais — et refusait ensuite de se connecter.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Le symptôme <span class="chip c-new">Correctif</span></h3>
+        <ul>
+          <li>Sur Android et iOS, on tombait sur « <strong class="hl">les versions du jeu et du serveur sont incompatibles</strong> » sans pouvoir rien y faire.</li>
+          <li>La mise à jour était pourtant bien téléchargée et rangée : elle n’était simplement jamais <strong class="hl">activée</strong>.</li>
+          <li>Désormais le paquet est appliqué <strong class="hl">au moment où il est déposé</strong>, et l’application repère aussi celui qui l’attendait déjà avant son démarrage.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Ce qui n’a pas changé <span class="chip c-util">Portée</span></h3>
+        <ul>
+          <li><strong class="hl">Aucune donnée de jeu</strong> ne bouge : sorts, talents, panoplies, objets, monstres et zones sont identiques à la <a href="v0.41.1.html">v0.41.1</a>.</li>
+          <li>Le <a href="../bis.html">guide Builds</a>, le <a href="../pvp.html">guide PvP</a>, les <a href="../failles.html">Failles</a>, les <a href="../metiers.html">Métiers</a> et les <a href="../montures.html">Montures</a> restent valables tels quels.</li>
+          <li>Les empreintes des décors de Fenbridge ont été refaites au passage de version, sans aucune différence à l’écran.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Le mot de la fin <span class="chip c-bal">Notre avis</span></h3>
+        <ul>
+          <li>Trois versions en trois jours, ça fait beaucoup — mais les trois ennuis réparés ici venaient tous du <strong class="hl">gros ajout</strong> de la <a href="v0.41.0.html">v0.41.0</a>.</li>
+          <li>Le raid est désormais jouable en Héroïque, ses sigils s’échangent dehors, et la banque de guilde tient à plusieurs.</li>
+          <li>C’est le bon moment pour y retourner.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    banque: {
+      title: "La banque de guilde : ce qui se passait, et la règle qui le remplace",
+      summary: "Deux officiers, deux sauvegardes qui se marchent dessus, et un message d’erreur qui n’avait rien à voir avec le problème.",
+      body: `
+        <h4>Le symptôme</h4>
+        <ul>
+          <li>Deux officiers échangent des matériaux dans la banque de guilde, à peu près en même temps.</li>
+          <li>L’un des deux est <b>éjecté</b>, avec « ton personnage a été repris par une autre session ».</li>
+          <li>Ce message existe pour un tout autre cas — quelqu’un qui se connecte sur ton compte ailleurs. Le voir ici fait légitimement peur.</li>
+        </ul>
+        <h4>La cause</h4>
+        <p>La banque de guilde s’enregistre par blocs. Quand deux modifications tombent trop près l’une de l’autre, la seconde peut travailler sur un état que le serveur est en train de remplacer : un <b>conflit de sauvegarde</b>. Faute de meilleure réponse, le jeu retombait sur le chemin « une autre session a pris la main », qui déconnecte.</p>
+        <h4>La nouvelle règle</h4>
+        <ul>
+          <li>Un <b>retrait</b> d’objet, un <b>retrait d’or</b> ou un <b>achat d’extension</b> ne peut consommer que de la valeur <b>déjà enregistrée</b>, plus <b>tes propres dépôts</b> pas encore sauvegardés.</li>
+          <li>Autrement dit : tu ne peux pas dépenser ce qu’un autre vient tout juste de déposer et qui n’est pas encore écrit. Tu attends une seconde, et c’est à toi.</li>
+          <li>Si la condition n’est pas remplie, l’opération est <b>refusée</b> — elle ne déconnecte plus personne.</li>
+        </ul>
+        <h4>Pourquoi le refus reste rare</h4>
+        <ul>
+          <li>Le contrôle vérifie <b>d’abord les droits d’édition</b> : quelqu’un sans permission est refusé pour la bonne raison, pas pour une histoire de sauvegarde.</li>
+          <li>Il consulte un index <b>par guilde</b> au lieu de parcourir tout le royaume, donc il ne coûte rien même sur un serveur chargé.</li>
+          <li>L’enregistrement est <b>amorti</b> : sans ça, chaque modification relancerait une sauvegarde, et la fenêtre de refus ne se refermerait jamais.</li>
+        </ul>
+        <h4>Ce que tu verras</h4>
+        <p>Dans le pire des cas, une ligne : « <b>La banque de guilde est en train d’enregistrer une modification récente. Réessaie dans un instant.</b> » Et c’est tout — tu restes en jeu.</p>`
+    },
+    quartier: {
+      title: "Le quartier-maître : où il était, où il est, et pourquoi",
+      summary: "Un déplacement bien intentionné qui l’avait posé de l’autre côté d’un rempart, sur du terrain brut.",
+      body: `
+        <h4>L’intention de la v0.41.1</h4>
+        <p>Le quartier-maître du Creuset échange tes sigils contre les pièces de panoplie. Il se tenait <b>dans</b> le raid, aux Halls du Premier Trempage : pour dépenser tes sigils, il fallait relancer une instance. La v0.41.1 l’a donc sorti dehors, près de l’entrée du donjon-forteresse.</p>
+        <h4>Où il a atterri</h4>
+        <ul>
+          <li>La porte du donjon-forteresse est en haut d’un <b>escalier fermé par des murs</b>, sur le plat du sommet.</li>
+          <li>Le point choisi tombait <b>hors du passage</b>, contre la face extérieure du <b>mur ouest</b>, sur la corniche de terrain brut.</li>
+          <li>Soit <b>treize mètres plus bas</b> que la porte, avec un mur entre les deux.</li>
+          <li>Pour l’atteindre : sortir de la forteresse, <b>contourner l’île à la nage</b>, et marcher jusqu’au pied du rempart. Autant dire jamais.</li>
+        </ul>
+        <h4>Où il est maintenant</h4>
+        <ul>
+          <li>Sur la <b>cour du palier</b>, le replat de l’escalier une volée sous la porte.</li>
+          <li>À <b>six mètres</b> de la porte, contre le bord ouest pour laisser la volée dégagée.</li>
+          <li><b>En dehors</b> du cercle de deux mètres qui déclenche l’entrée dans le raid : on peut lui parler sans se faire aspirer dedans.</li>
+          <li>Un test parcourt le vrai moteur de déplacement depuis la porte <b>et</b> depuis la cour du dessous pour épingler qu’il est bien joignable des deux côtés.</li>
+        </ul>
+        <h4>La cause de fond</h4>
+        <p>Le jeu plaçait le personnage à la hauteur du <b>sol</b>, sans regarder les <b>dalles</b> posées par-dessus dans la forteresse. Un corps posé comme ça se retrouve enfoncé d’une largeur de main dans la dalle, et le contrôle de collision le lit alors comme <b>coincé dans un décor</b> — donc il était rejeté ailleurs. Le jeu sait maintenant demander la hauteur du <b>dessus de la dalle</b> quand un personnage doit s’y tenir. C’est un outil réutilisable pour tous les futurs personnages placés dans un bâtiment.</p>`
+    },
+  };
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

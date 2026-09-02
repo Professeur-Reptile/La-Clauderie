@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Patch notes v0.41.1 — La Clauderie</title>
+<meta name="description" content="The v0.41.1 release of World of ClaudeCraft in plain language: every healer can finally resurrect, the Paladin loses their no-cooldown rez, Heroic Ignivar works again, and 41 raid items become tradable.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Patch notes v0.41.1 — La Clauderie">
+<meta property="og:description" content="Every healer can finally resurrect, and Heroic Ignivar works again — it had been handing out Normal loot since launch.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.41.1.en.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.41.1.en.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') !== 'en') location.replace('v0.41.1.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Site navigation"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Patch notes</p>
+    <h1>Patch notes <span class="v">v0.41.1</span></h1>
+    <p class="lede">A hotfix that delivers two things that matter. First, <strong class="hl">every healer can finally resurrect</strong>: Priests and Druids get their own spells, and the Druid picks up the only <strong class="hl">in-combat</strong> resurrection on a five-minute cooldown. Second, <strong class="hl">Heroic Ignivar works again</strong> — and the bug was worse than the notes let on: picking Heroic silently ran you through Normal, loot included.</p>
+    <div class="meta">
+      <span><b>Released</b> September 1, 2026</span>
+      <span><b>Since</b> v0.41.0</span>
+      <span><b>12</b> pull requests</span>
+      <span><b>3</b> resurrections added</span>
+    </div>
+    <div class="hint">💡 Click a card for details.</div>
+  </header>
+
+  <!-- Fixed digest: same rubrics, same order, every release. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">At a glance</h2>
+    <p class="sec-sub">The same rubrics every release, in the same order. Click a rubric to jump to its section.</p>
+    <ol>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <a class="d-name" href="#classes">Classes &amp; spells</a>
+        <span class="d-say"><b class="up">Priest ↑</b> · <b class="up">Druid ↑</b> · <b class="down">Paladin ↓</b> · <b class="eq">Warrior =</b> · <b class="eq">Mage =</b> · <b class="eq">Rogue =</b> · <b class="eq">Hunter =</b> · <b class="eq">Shaman =</b> · <b class="eq">Warlock =</b>. Priests and Druids gain a group resurrection, the Druid additionally an <strong class="hl">in-combat</strong> one; the Paladin sees theirs go from <strong class="hl">no cooldown to five minutes</strong>. And for everyone: your key presses now <strong class="hl">queue</strong> at the tail of a global cooldown.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <span class="d-name">Professions &amp; gathering</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#raid">Dungeons, rifts &amp; bosses</a>
+        <span class="d-say"><strong class="hl">Heroic Ignivar works again</strong> — it had been broken since launch, in the worst way: you thought you were on Heroic, the game gave you Normal. And <strong class="hl">41 items</strong> from the raid become tradable, against 160 that stay soulbound.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <a class="d-name" href="#raid">World &amp; quests</a>
+        <span class="d-say">The <strong class="hl">Crucible Quartermaster</strong> leaves the raid interior to stand outside, beside the keep entrance. (It took v0.41.2 to make him actually <em>reachable</em>.)</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <span class="d-name">Guild &amp; social</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#confort">Comfort &amp; technical</a>
+        <span class="d-say"><strong class="hl">Mech chroma plates</strong> are handed back when you remove the colour, the Purchase Skin confirm is no longer hidden behind the inspector, and the <strong class="hl">21 locales</strong> are complete again.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="classes">
+    <h2><span class="num">01</span>Healers, and the spell queue</h2>
+    <p class="sec-sub">Two unrelated changes, but both touch how you play every day. The first fixes an inequality between healers; the second rewards a good connection a little less.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="rez" tabindex="0" role="button" aria-label="Details: the full resurrection table, class by class">
+        <h3>Every healer gets one <span class="chip c-new">New</span></h3>
+        <p><span data-codex="talent|Benison">Benison</span> and <span data-codex="talent|Doctrine">Doctrine</span> priests get <span data-codex="ability|Prayer of Returning">Prayer of Returning</span> (group, out of combat). <span data-codex="talent|Groveheart">Groveheart</span> druids get <strong class="hl">two</strong> spells: <span data-codex="ability|Grove Awakening">Grove Awakening</span> (group, out of combat) and <span data-codex="ability|Wildwake">Wildwake</span>, a resurrection cast <strong class="hl">in the thick of combat</strong>.</p>
+        <span class="more-link">See the full table</span>
+      </div>
+      <div class="card more" data-detail="file" tabindex="0" role="button" aria-label="Details: how the spell queue works, and what the notes leave out">
+        <h3>Your presses no longer vanish <span class="chip c-new">Everyone</span></h3>
+        <p>Pressing a key in the <strong class="hl">final 0.4 seconds</strong> of a running global cooldown no longer drops it on the floor: the spell is <strong class="hl">queued</strong> and fires the moment the cooldown clears. Last press wins. Rotation cadence therefore no longer rewards a good connection.</p>
+        <span class="more-link">See what the notes leave out</span>
+      </div>
+      <div class="card">
+        <h3>Paladin <b class="down">↓</b> <span class="chip c-pvp">Nerf</span></h3>
+        <ul>
+          <li><span data-codex="ability|Recall the Fallen">Recall the Fallen</span> goes from <strong class="hl">no cooldown</strong> to <strong class="hl">five minutes</strong>.</li>
+          <li>The game explains why: "out of combat" was <strong class="hl">not a throttle</strong>, because a caster who never draws aggro drops combat mid-encounter once the timer passes. Resurrections could therefore be chained <strong class="hl">inside a single fight</strong>.</li>
+          <li>It is the only real nerf in the release, and it lines the Paladin up with everyone else.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Mouseover targeting survives <span class="chip c-util">Useful detail</span></h3>
+        <ul>
+          <li>A queued spell <strong class="hl">keeps the target</strong> you were hovering when you pressed.</li>
+          <li>Without that, the queue would have broken mouseover healing — it was the first piece of feedback received.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>What does not change <span class="chip c-util">Scope</span></h3>
+        <ul>
+          <li><strong class="hl">No damage, healing or cost value</strong> moves in this release.</li>
+          <li>Sets, talents and masteries are identical to <a href="v0.41.0.en.html">v0.41.0</a> — including <a href="v0.41.0.en.html#panoplies">the 2/4/6 rework</a> and its effect on your gear.</li>
+          <li>The <a href="../bis.html">Builds guide</a> and the <a href="../pvp.html">PvP guide</a> stand as they are.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>For raiding <span class="chip c-raid">Practical</span></h3>
+        <ul>
+          <li>A raid can now count on <strong class="hl">any healer</strong> to pick the group back up after a wipe, instead of depending on one class.</li>
+          <li><span data-codex="ability|Wildwake">Wildwake</span> is the <strong class="hl">only</strong> in-combat resurrection at five minutes — the other class that has one waits ten.</li>
+          <li>The <strong class="hl">group</strong> resurrections are all pinned to the same value so no spec gains an edge.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="raid">
+    <h2><span class="num">02</span>Heroic Ignivar, and the loot that trades</h2>
+    <p class="sec-sub">The raid opened with <a href="v0.41.0.en.html">v0.41.0</a>, and its Heroic mode did not work. That is fixed, and the loot binding policy is finally settled.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="heroique" tabindex="0" role="button" aria-label="Details: the Heroic bug and what it actually did">
+        <h3>Heroic was giving you Normal <span class="chip c-bal">Verified</span></h3>
+        <p>The notes only say "Heroic Ignivar works again". The code is more precise, and more annoying: the <strong class="hl">forge-lift room</strong> was not declared heroic, so the game <strong class="hl">clamped your choice down to Normal at the door</strong> — and every room deeper in inherited that clamped claim.</p>
+        <span class="more-link">See what that meant</span>
+      </div>
+      <div class="card more" data-detail="butin" tabindex="0" role="button" aria-label="Details: the exact count of soulbound and tradable items">
+        <h3>41 items become tradable <span class="chip c-epic">Loot</span></h3>
+        <p>Of the tier's <strong class="hl">201</strong> items: the <strong class="hl">15 redemption sigils</strong> and the <strong class="hl">145 tier pieces</strong> they buy stay <strong class="hl">soulbound</strong>, and the <strong class="hl">41 ordinary boss drops</strong> become <strong class="hl">transferable</strong>. The numbers check out exactly.</p>
+        <span class="more-link">See the detail</span>
+      </div>
+      <div class="card">
+        <h3>Trading a soulbound drop in party <span class="chip c-new">New</span></h3>
+        <ul>
+          <li>Raid loot that is <strong class="hl">bound on pickup</strong> can now be staged in a trade window — but only with the <strong class="hl">group that earned it</strong>.</li>
+          <li>The game snapshots <strong class="hl">who was present at kill time</strong>: someone who joins afterwards cannot receive it.</li>
+          <li>This is what lets you rescue an item that dropped on the wrong armour type.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>The quartermaster leaves the raid <span class="chip c-util">Location</span></h3>
+        <ul>
+          <li>He moved out of the <strong class="hl">Halls of First Tempering</strong> to stand outside, beside the keep entrance.</li>
+          <li>The intent was right: no more entering the raid just to spend your sigils.</li>
+          <li>Except the chosen spot was <strong class="hl">unreachable</strong> — it took <a href="v0.41.2.en.html">v0.41.2</a>, the next day, to settle it.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>What it means for the guild <span class="chip c-raid">Practical</span></h3>
+        <ul>
+          <li>A Heroic night finally counts: until now it handed out Normal loot.</li>
+          <li>The <strong class="hl">Emberward</strong> shield, moved to Heroic only in <a href="v0.41.0.en.html">v0.41.0</a>, was therefore <strong class="hl">impossible to obtain</strong> between the two releases.</li>
+          <li>If you ran Heroic on August 31, that was Normal. It needs doing again.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>And the two bosses <span class="chip c-raid">Reminder</span></h3>
+        <ul>
+          <li><span data-codex="mob|Ignivar, Herald of the Last Flame">Ignivar</span> and <span data-codex="mob|Varkhul, Forgefather of the Last Flame">Varkhul</span> received <strong class="hl">no balance changes</strong> here.</li>
+          <li>Their mechanics and drop rates are the ones described on <a href="v0.41.0.en.html#raid">the v0.41.0 page</a>.</li>
+          <li>Only the <strong class="hl">mode</strong> you fight them on is fixed.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="confort">
+    <h2><span class="num">03</span>The rest</h2>
+    <p class="sec-sub">Three small things, one of which involves real money: mech chroma plates finally come back to you.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Your chroma plates come back <span class="chip c-new">Fix</span></h3>
+        <ul>
+          <li>Equipping a mech chroma <strong class="hl">consumes</strong> a plate. Until now, removing the colour did not hand it back.</li>
+          <li>Now <strong class="hl">any transition away</strong> — unequip, swatch change, fresh claim — <strong class="hl">releases the plate</strong> back to your bags, exactly once.</li>
+          <li>The permanent account-wide unlock is never revoked: re-selecting a colour you already own consumes nothing.</li>
+          <li>The plate tooltip finally reads "Skin" instead of "Tool".</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>The purchase confirm is visible <span class="chip c-util">Fix</span></h3>
+        <ul>
+          <li>The "Purchase Skin" confirm opened <strong class="hl">behind</strong> the inspector overlay, so it could not be seen.</li>
+          <li>It now mounts above everything: you can confirm, or cancel.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Translations are complete again <span class="chip c-new">21 locales</span></h3>
+        <ul>
+          <li>Every new string in the release is filled across the <strong class="hl">21 shipped locales</strong>.</li>
+          <li>Four resurrection tooltips had been blanked and are refilled across <strong class="hl">18 locales</strong>: <span data-codex="ability|Ancestors' Return">Ancestors' Return</span>, <span data-codex="ability|Collective Reversal">Collective Reversal</span>, <span data-codex="ability|Temporal Reversal">Temporal Reversal</span> and <span data-codex="ability|Recall the Fallen">Recall the Fallen</span>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Close">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    rez: {
+      title: "Who can resurrect, and on what cooldown",
+      summary: "The complete table after v0.41.1 — and one gap the official notes smooth over.",
+      body: `
+        <h4>GROUP resurrections, out of combat</h4>
+        <ul>
+          <li><b>Prayer of Returning</b> — Benison and Doctrine priests. <b>NEW.</b> 5 min.</li>
+          <li><b>Grove Awakening</b> — Groveheart druids. <b>NEW.</b> 5 min.</li>
+          <li><b>Ancestors' Return</b> — Shaman. 5 min.</li>
+          <li><b>Collective Reversal</b> — Mage. 5 min.</li>
+          <li><b>Recall the Fallen</b> — Paladin. <b>Goes from 0 to 5 min.</b></li>
+        </ul>
+        <p>All pinned to the <b>same</b> value, and the game says why: so the mass resurrections "cannot be played against each other". Tests pin that equality.</p>
+        <h4>IN-COMBAT resurrections, single target</h4>
+        <ul>
+          <li><b>Wildwake</b> — Groveheart druids. <b>NEW.</b> <b>5 min.</b></li>
+          <li><b>Temporal Reversal</b> — Mage. <b>10 min.</b></li>
+        </ul>
+        <h4>The gap the notes smooth over</h4>
+        <p>The official notes announce "one shared clock for all healer rezzes". That is true of the <b>group</b> resurrections, and only of those. On the <b>in-combat</b> one, the Druid's new spell sits at <b>5 minutes</b> where the Mage's stays at <b>10</b>: the Druid casts <b>two</b> in the time the Mage casts one. Nothing in the code links those two, and the comment justifying the equality speaks explicitly about the mass rezzes alone.</p>
+        <h4>Wildwake's numbers</h4>
+        <ul>
+          <li>Level 16, 60 mana, <b>2 s</b> cast, <b>30 yd</b> range.</li>
+          <li>The ally returns <b>at your side</b> with <b>35%</b> of their health and mana.</li>
+          <li><b>No resurrection sickness</b>: they are straight back in.</li>
+        </ul>
+        <h4>Grove Awakening's numbers</h4>
+        <ul>
+          <li>Level 20, 250 mana, <b>7 s</b> cast.</li>
+          <li>Calls the whole group or raid within <b>40 yd</b>, in <b>line of sight</b>, at <b>30%</b> health and mana.</li>
+        </ul>`
+    },
+    file: {
+      title: "The spell queue: what the notes leave out",
+      summary: "A 0.4-second window, lifted from Lich King-era World of Warcraft. But the code goes one step further than the announcement.",
+      body: `
+        <h4>What is announced</h4>
+        <ul>
+          <li>A press in the <b>final 0.4 seconds</b> of a running global cooldown <b>loads</b> the spell into a queued slot.</li>
+          <li>It fires <b>the moment</b> the cooldown clears.</li>
+          <li>One slot only: <b>last press wins</b>.</li>
+          <li>The mouseover target is <b>carried through</b> with the queued spell.</li>
+        </ul>
+        <h4>What the code additionally does</h4>
+        <p>The same 0.4 s window also applies to the tail of a <b>cast in progress</b>, not only to the tail of a global cooldown. The notes only mention the second case. In practice you can therefore chain off the end of a long cast exactly as off the end of a GCD — more generous than announced.</p>
+        <h4>Why it is a real change</h4>
+        <p>Before, a press a fraction of a second too early was <b>lost</b>: you had to press again, so you were aiming at the window by hand. A player with a good connection hit it more easily than the rest. The game says so itself: "rotation cadence no longer rewards low ping." It is the kind of change that never shows in the numbers and is felt immediately at the keyboard.</p>
+        <h4>What it does not do</h4>
+        <p>This is not a queue: there is <b>one</b> slot. Mashing three keys does not chain them — only the last one fires.</p>`
+    },
+    heroique: {
+      title: "The Heroic bug: what it actually did",
+      summary: "The notes say \"Heroic Ignivar works again\". The code says what was happening instead, and it is worse.",
+      body: `
+        <h4>The mechanism</h4>
+        <ul>
+          <li>The raid has five rooms, and the first is the <b>forge-lift room</b> — it is also its <b>only door from the overworld</b>.</li>
+          <li>That room had not been listed among the heroic rooms.</li>
+          <li>So when the group claimed the difficulty <b>at the door</b>, the game <b>clamped the heroic selection down to Normal</b>.</li>
+          <li>And because deeper rooms <b>inherit</b> that claim, the whole raid ran on Normal.</li>
+        </ul>
+        <h4>What that meant for you</h4>
+        <ul>
+          <li>You picked Heroic, you fought <b>Normal</b> bosses, and you collected <b>Normal</b> loot.</li>
+          <li>The <b>Emberward</b> shield, moved to Heroic only by v0.41.0, was therefore <b>strictly impossible to obtain</b> for the entire interval.</li>
+          <li>Nothing flagged it: no message, no on-screen sign.</li>
+        </ul>
+        <h4>The fix</h4>
+        <p>The forge-lift room is now declared heroic — <b>for eligibility only</b>. It spawns nothing, so its health, damage and armour multipliers all stay at 1: the room does not get harder, it simply passes the right mode on to the rooms that follow.</p>
+        <h4>What to do</h4>
+        <p>If your guild cleared Heroic between August 31 and September 1, that clear was Normal. It needs redoing for heroic loot.</p>`
+    },
+    butin: {
+      title: "What binds and what trades, item by item",
+      summary: "The announced numbers land exactly — verified one by one against the game's tables.",
+      body: `
+        <h4>The count</h4>
+        <ul>
+          <li><b>201</b> items in the Crucible tier, in total.</li>
+          <li><b>15 tier redemption sigils</b>: <b>soulbound</b>.</li>
+          <li><b>145 tier set pieces</b> bought with those sigils: <b>soulbound</b>.</li>
+          <li>That is <b>160</b> soulbound, and <b>41</b> ordinary boss drops made <b>transferable</b>.</li>
+        </ul>
+        <p>Those 41 items previously carried the soulbound mark; v0.41.1 strips it from them, one at a time.</p>
+        <h4>The logic</h4>
+        <p>What makes up a <b>class set</b> stays attached to whoever earned it — that is character progression. What drops <b>alongside</b> it (rings, off-set boots, weapons, shields) circulates, and can therefore be bought, sold or given away.</p>
+        <h4>And party-window trading</h4>
+        <ul>
+          <li>Even <b>bind-on-pickup</b> loot can now go through a trade window, as long as it stays <b>within the group that earned it</b>.</li>
+          <li>The game remembers <b>who was there at kill time</b>: nobody outside, and nobody who joined later, can receive it.</li>
+          <li>It is the standard safety net for loot that landed on the wrong armour type at roll time.</li>
+        </ul>`
+    },
+  };
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

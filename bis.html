@@ -577,10 +577,12 @@ const BUILDS = {
     ["Second Bloom", { fr: "soin direct + HoT de 21 s : ton meilleur rapport mana/soin.", en: "direct heal + 21s HoT: your best healing per mana." }],
     ["Wildmend", { fr: "le gros soin quand ça descend vraiment.", en: "the big heal when health really drops." }],
     ["Wildward", { fr: "le buff +5 % toutes stats du groupe.", en: "the group's +5% all-stats buff." }],
-    ["Briarguard", { fr: "sur le tank : des dégâts gratuits à chaque coup reçu.", en: "on the tank: free damage on every hit taken." }]
+    ["Briarguard", { fr: "sur le tank : des dégâts gratuits à chaque coup reçu.", en: "on the tank: free damage on every hit taken." }],
+    ["Wildwake", { fr: "NOUVEAU en v0.41.1 : la résurrection EN PLEIN COMBAT, 2 s d’incantation, 5 min de recharge. L’allié revient à tes côtés avec 35 % de ses PV et de sa mana, et SANS mal de résurrection. C’est aujourd’hui la seule résurrection en combat à 5 minutes — celle du Mage est à 10.", en: "NEW in v0.41.1: the IN-COMBAT resurrection, 2s cast, 5 min cooldown. The ally returns at your side with 35% of their health and mana, and NO resurrection sickness. It is currently the only in-combat rez at 5 minutes — the Mage's sits at 10." }],
+    ["Grove Awakening", { fr: "NOUVEAU en v0.41.1 : la résurrection de groupe hors combat, 7 s d’incantation, 5 min de recharge. Tout le groupe ou le raid dans 40 m et en ligne de vue revient à 30 % de PV et de mana.", en: "NEW in v0.41.1: the out-of-combat group resurrection, 7s cast, 5 min cooldown. The whole group or raid within 40 yd and in line of sight comes back at 30% health and mana." }]
    ],
-   astuce: { fr: "Pose Wildbloom AVANT le pull — un HoT qui tourne, c'est un heal d'avance.",
-             en: "Cast Wildbloom BEFORE the pull — a rolling HoT is a heal in the bank." }
+   astuce: { fr: "Pose Wildbloom AVANT le pull — un HoT qui tourne, c'est un heal d'avance. Et depuis la v0.41.1 tu es le seul soigneur à pouvoir relever quelqu’un SANS sortir du combat à cinq minutes de recharge : garde Wildwake pour le tank ou l’autre soigneur, pas pour le premier DPS tombé.",
+             en: "Cast Wildbloom BEFORE the pull — a rolling HoT is a heal in the bank. And since v0.41.1 you are the only healer who can pick someone up WITHOUT leaving combat on a five-minute cooldown: save Wildwake for the tank or the other healer, not for the first DPS who drops." }
   },
   dps: {
    spec: { fr: "Moongrove (balance) — Moonwing", en: "Moongrove (balance) — Moonwing" },
@@ -632,10 +634,11 @@ const BUILDS = {
     ["Psalm of Warding", { fr: "le bouclier AVANT les dégâts — il évite d'avoir à soigner.", en: "the shield BEFORE the damage — it saves you the healing." }],
     ["Lingering Grace", { fr: "le HoT d'entretien.", en: "the maintenance HoT." }],
     ["Urgent Prayer", { fr: "le soin rapide quand ça urge.", en: "the fast heal when it's urgent." }],
-    ["Seraphic Vigil", { fr: "le sort signature (v0.36) : 30 s de garde sur un allié — le premier coup qui le passe sous 35 % la consomme et le soigne de 180. Sunburst Canticle (ex-Holy Nova) reste ton soin de zone.", en: "the signature spell (v0.36): a 30s vigil on one ally — the first hit that drops them below 35% consumes it and heals 180. Sunburst Canticle (formerly Holy Nova) is still your area heal." }],
+    ["Seraphic Vigil", { fr: "le sort signature (v0.36) : 30 s de garde sur un allié — le premier coup qui le passe sous 35 % la consomme et le soigne de 180, ou de 270 si tu portes 2 pièces de la panoplie Benison Dawnweave du raid. Sunburst Canticle (ex-Holy Nova) reste ton soin de zone.", en: "the signature spell (v0.36): a 30s vigil on one ally — the first hit that drops them below 35% consumes it and heals 180, or 270 if you wear 2 pieces of the raid’s Benison Dawnweave set. Sunburst Canticle (formerly Holy Nova) is still your area heal." }],
     ["Choirmend / Sunburst Canticle", { fr: "tes deux soins de zone : Choirmend porte à 30 m sur les alliés, Sunburst Canticle ne fait que 10 m mais frappe aussi les ennemis qui s’y trouvent.", en: "your two area heals: Choirmend reaches allies within 30m, Sunburst Canticle only 10m but it also damages the enemies standing in it." }],
     ["Solemn Prayer", { fr: "le très gros soin talenté, pour les trous d'un boss.", en: "the very big talented heal, for the scary dips on a boss." }],
-    ["Litany of Resolve", { fr: "le buff +5 % Endurance du groupe.", en: "the group's +5% Stamina buff." }]
+    ["Litany of Resolve", { fr: "le buff +5 % Endurance du groupe.", en: "the group's +5% Stamina buff." }],
+    ["Prayer of Returning", { fr: "NOUVEAU en v0.41.1 : la résurrection de groupe, hors combat, 5 min de recharge. Tout le groupe ou le raid dans 40 m et en ligne de vue revient à 30 % de PV et de mana. Le Prêtre n’en avait aucune jusqu’ici.", en: "NEW in v0.41.1: the group resurrection, out of combat, 5 min cooldown. The whole group or raid within 40 yd and in line of sight comes back at 30% health and mana. Priests had none at all until now." }]
    ],
    astuce: { fr: "Le bouclier profite deux fois : les dégâts absorbés, et le stress que tu n'as pas.",
              en: "The shield pays off twice: the damage absorbed, and the stress you never feel." }
@@ -664,7 +667,8 @@ const BUILDS = {
     ["Lingering Grace", { fr: "le HoT d'entretien sous les boucliers.", en: "the maintenance HoT beneath the shields." }],
     ["Solemn Prayer", { fr: "le gros soin, quand le bouclier n’a pas suffi.", en: "the big heal, when the shield was not enough." }],
     ["Urgent Prayer", { fr: "l'urgence, quand l'absorption a déjà cédé.", en: "the emergency heal, once the absorption has already broken." }],
-    ["Litany of Resolve", { fr: "le buff d'Endurance (+7,5 % talenté), toujours actif.", en: "the Stamina buff (+7.5% talented), always on." }]
+    ["Litany of Resolve", { fr: "le buff d'Endurance (+7,5 % talenté), toujours actif.", en: "the Stamina buff (+7.5% talented), always on." }],
+    ["Prayer of Returning", { fr: "NOUVEAU en v0.41.1 : la même résurrection de groupe que le Benison — hors combat, 5 min de recharge, 30 % de PV et de mana pour tout le monde dans 40 m.", en: "NEW in v0.41.1: the same group resurrection as Benison — out of combat, 5 min cooldown, 30% health and mana for everyone within 40 yd." }]
    ],
    astuce: { fr: "Pose Psalm of Warding sur le tank AVANT le pull, pas après le premier coup — un disci en retard n'est qu'un Benison en moins bien.",
              en: "Shield the tank BEFORE the pull, not after the first hit — a late disc priest is just a worse Benison." }

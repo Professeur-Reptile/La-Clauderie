@@ -65,7 +65,7 @@
   "cleaving_blows": "Red Harvest rembourse toujours une charge de Twinstrike. (Fureur)",
   "cloak_of_shadows": "T'enveloppe d'ombres, absorbant 420 points de dégâts pendant 5 s. (talent de Voleur)",
   "cold_blood": "Concentre ton instinct meurtrier : ta prochaine attaque est un coup critique. (Signature de Knifework)",
-  "cold_focus": "Pendant 12 s, Measured Shot rend 50 % de Concentration en plus, et Long Draw coûte 25 % de moins et s’incante 30 % plus vite. (Signature de Coldsight)",
+  "cold_focus": "Pendant 12 s, Measured Shot rend 30 de Focus, et Long Draw coûte 25 % de moins et s’incante 30 % plus vite. (signature Coldsight)",
   "cold_snap": "Met fin à la recharge de Flickerstep, Frostveil et Greater Invisibility. (talent de Mage)",
   "collective_reversal": "Remonte le temps pour chaque membre mort de ton groupe ou de ton raid situé à moins de 40 m et dans ta ligne de vue, et le ramène à la vie à tes côtés avec 30 % de ses PV et de son mana. Incantation impossible en combat. (Chronomancy)",
   "combustion": "Embrase-toi : pendant 10 s, tes sorts de Feu infligent systématiquement des coups critiques, y compris les projectiles déjà en vol. Hors GCD. Ces critiques alimentent Hot Streak comme n'importe quels autres, et son lancement achève aussitôt la charge de Cinderfall en cours de recharge. (signature Feu)",
@@ -236,13 +236,13 @@
   "moonfire": "Brûle l'ennemi d'un feu lunaire, infligeant $d dégâts d'Arcane plus des dégâts périodiques.",
   "moonkin_form": "Te métamorphose en redoutable Moonkin, augmentant les dégâts de tes sorts de 20 % et ton armure de 50 %. Persiste jusqu'à ce que tu quittes la forme. Relance le sort pour reprendre ta forme d'incantateur. (signature Équilibre)",
   "moonlash": "Dépense tes 3 Moontide pour une frappe lourde de $d dégâts des Arcanes : l’option dégâts. Sunwake dépense les mêmes 3 Moontide, il faut donc choisir.",
-  "moonseed": "Forme Moonwing uniquement. Frappe pour $d dégâts des Arcanes, ajoute 1 Moontide (3 au maximum) et prolonge ta Lunar Tempest de 6 s, sans dépasser 6 s par application. À 3 Moontide, ce bouton devient Moonsurge : une frappe instantanée de 136 à 162 dégâts des Arcanes (plus la puissance des sorts) qui dépense les 3.",
+  "moonseed": "Forme Moonwing uniquement. Frappe pour $d dégâts des Arcanes, ajoute 1 Moontide (3 au maximum) et prolonge ta Lunar Tempest de 6 s, jusqu’à $t s par application. À 3 Moontide, ce bouton devient Moonsurge : une frappe instantanée de 136 à 162 dégâts des Arcanes (plus la puissance des sorts) qui dépense les 3.",
   "mortal_strike": "Une frappe vicieuse infligeant les dégâts de l'arme plus $d et réduisant les soins reçus par la cible de 50 % pendant 10 s. Applique Gaping Wounds (saignement). (signature Armes)",
-  "multi_shot": "Décoche une gerbe de projectiles sur la zone visée, infligeant $d dégâts physiques aux ennemis dans un rayon de 8 m. (talent de chasseur)",
+  "multi_shot": "Décoche une gerbe sur la zone visée, infligeant $d dégâts physiques aux ennemis dans un rayon de 8 m. Ne peut pas être visé à moins de 8 m de toi. (talent de Chasseur)",
   "needle_of_fate": "Transperce l’ennemi pour $d dégâts d’Ombre et génère 7 de Condamnation à l’impact s’il porte encore ton Evil Eye. Une incantation menée à son terme déplace ton Evil Eye principal sur la cible et ajoute un Fate Thread pendant 12 s, jusqu’à 3. Tes Fate Threads te restent quand l’Œil se déplace ou que sa cible meurt. Viser un Coven Eye secondaire l’échange avec l’Œil principal.",
-  "oath_chain": "Enchaîne instantanément un ennemi éloigné d’une chaîne sacrée. L’ennemi est tiré vers toi à 18 m par seconde jusqu’à 3 m, puis ralenti de 50 % pendant 4 s. Sous Ascension, elle enchaîne un second ennemi proche.",
+  "oath_chain": "Entrave instantanément un ennemi distant d’une chaîne sacrée. Il est tiré vers toi à 18 m par seconde jusqu’à 3 m, puis ralenti de 50 % pendant 4 s. Pendant Ascension, la chaîne prend un second ennemi proche. Sans effet sur les boss : ni tirés, ni ralentis.",
   "ossuary_mark": "Marque un ennemi pendant 15 s et emmagasine 20 % des dégâts infligés par toi et tes morts-vivants. Relance pour faire détoner la marque. Si l’ennemi marqué meurt, elle explose dans 6 m et crée 1 fragment d’âme.",
-  "overbloom": "Dépense tes 5 Verdance : chaque allié portant tes soins périodiques est soigné instantanément de 60 % de ce qu’il leur restait à rendre, les effets sont retirés, et la cible reçoit un Wildbloom tout neuf.",
+  "overbloom": "Dépense tes 5 Verdance : chaque allié portant tes soins sur la durée est soigné instantanément de $b % des soins qu’il leur restait à rendre, ces effets sont consommés, et la cible reçoit un Wildbloom tout neuf.",
   "overload": "Ton prochain sort est amplifié de 40 % mais coûte 50 % de mana en plus. Dure 10 s. (talent de Mage)",
   "overpower": "Attaque instantanée (2 charges) infligeant les dégâts de l'arme plus $d, qui renforce ton prochain Maiming Strike de 20 % (cumulable deux fois). Ne peut pas être esquivée.",
   "pack_command": "Ordonne à ton familier vivant de frapper pour 36 à 48 dégâts physiques. Les dégâts augmentent avec la puissance d’attaque du familier. Un coup au but rend 20 de Concentration et donne 1 Pack Ferocity pendant 30 s, jusqu’à 3. Chaque cumul augmente de 10 % tous les dégâts de ton familier. Cette frappe utilise les cumuls que tu avais AVANT le coup.",
@@ -310,7 +310,7 @@
   "searing_pain": "Brûle l'ennemi d'un feu atroce pour $d dégâts de Feu. Incantation rapide.",
   "seasoned_soldier": "Tes attaques automatiques critiques génèrent 10 % de rage supplémentaire. (Armes)",
   "sentence": "Consomme toute ta Condamnation et tous tes Fate Threads pour rendre la sentence. Chaque Thread ajoute 6 % de dégâts. Des effets supplémentaires s’ajoutent à 20, 50, 80 et 100 de Condamnation. Sa montée en dégâts s’aplatit après le niveau 16.",
-  "seraphic_vigil": "Protège un allié pendant 30 s. Le premier coup qui le fait passer sous 35 % de vie consomme la garde et le soigne de 180. (Signature de Benison)",
+  "seraphic_vigil": "Protège un allié pendant 30 s. Le premier coup qui le fait descendre sous 35 % de ses PV consomme la Vigil et le soigne de $b. (signature Benison)",
   "serpent_sting": "Inflige $d dégâts de Nature au total sur 15 s, toutes les 3 s. Les dégâts augmentent avec ta puissance d’attaque à distance.",
   "shadow_bolt": "Envoie un trait d'ombre sur l'ennemi pour $d dégâts d'Ombre.",
   "shadow_word_pain": "Inflige $d dégâts d’Ombre au total sur 18 s, toutes les 3 s. Les dégâts augmentent avec ta puissance des sorts. Vespers : 10 % de dégâts en plus, et chaque tick sur ton Effigy donne 1 Gloomtithe.",
@@ -412,7 +412,10 @@
   "wrath": "Projette un trait d'énergie naturelle pour $d dégâts de Nature.",
   "wyvern_sting": "Pique l'ennemi à distance et le neutralise pendant 4 s au maximum. Tout dégât met fin à l'effet. (signature Survie)",
   "melting_acid": "Asperge la cible d’un poison corrosif : $d dégâts de Nature, et son armure baisse de 5 % pendant 12 s.",
-  "nightshade_coating": "Enduit la cible de morelle : $d dégâts de Nature, et les soins qu’elle reçoit baissent de 25 % pendant 12 s."
+  "nightshade_coating": "Enduit la cible de morelle : $d dégâts de Nature, et les soins qu’elle reçoit baissent de 25 % pendant 12 s.",
+  "grove_awakening": "Rappelle à tes côtés chaque membre tombé de ton groupe ou de ton raid situé à moins de 40 m et dans ta ligne de vue, avec 30 % de ses PV et de sa mana. Incantable hors combat seulement. (Groveheart)",
+  "prayer_of_returning": "Rappelle à tes côtés chaque membre tombé de ton groupe ou de ton raid situé à moins de 40 m et dans ta ligne de vue, avec 30 % de ses PV et de sa mana. Incantable hors combat seulement. (Benison et Doctrine)",
+  "wildwake": "Fais refleurir un allié tombé : il revient à la vie à tes côtés avec 35 % de ses PV et de sa mana — même en plein combat. (Groveheart)"
  },
  "talent": {
   "druid/dru_r11_furor": "Gripping Roots rend instantané ton prochain Wildbolt lancé dans les 8 s, au plus une fois toutes les 15 s.",
@@ -534,7 +537,7 @@
   "shaman/sha_r17_improved_ghost_wolf": "Quand l’effet est prêt, sortir de Shadewolf te permet d’incanter en marchant pendant 8 s. Recharge interne de 90 s.",
   "shaman/sha_r20_bloodlust": "Après qu’Earthen Jolt ou Faultwake a consommé tout ton Thunder, tu en gardes 2. Après qu’un sort a consommé Stormcast, tu gardes 1 cran de cadence Warspirit. Après que Cascading Mend a consommé ton Mending Current, tu en récupères 25 %.",
   "shaman/sha_r20_elemental_fury": "Après qu’Earthen Jolt ou Faultwake a consommé tout ton Thunder, 40 % de ses dégâts se répètent 1 s plus tard. Un sort qui consomme Stormcast se répète à 40 % de puissance. Les soins issus d’un Mending Current consommé se répètent à 40 % après 2 s. Ces répétitions ne déclenchent aucun autre effet.",
-  "shaman/sha_r20_tidal_waves": "Après qu’Earthen Jolt ou Faultwake a consommé tout ton Thunder, Pyrebrand rend ton prochain Arc Bolt instantané. Le dernier écho de Galeheart inflige 50 % des dégâts à 2 ennemis dans 8 m. Un sort Stonebound qui consomme Stormcast donne une absorption égale à 8 % de tes PV max. Avec Lifespring actif, Tidecall ajoute aussi 50 % de son soin complet à l’allié le plus blessé dans 10 m.",
+  "shaman/sha_r20_tidal_waves": "Après qu’Earthen Jolt ou Faultwake a consommé tout ton Thunder, Pyrebrand rend ton prochain Arc Bolt instantané. Chaque écho de Galeheart inflige 40 % de dégâts à 2 ennemis au maximum dans un rayon de 8 m. Un sort Stonebound qui consomme Stormcast t’accorde une absorption égale à 8 % de tes PV max. Avec Lifespring actif, Tidecall ajoute aussi 50 % de son soin complet à l’allié le plus blessé dans un rayon de 10 m.",
   "shaman/sha_r5_concussion": "Shadewolf devient instantané. Y entrer retire immobilisations et ralentissements.",
   "shaman/sha_r5_imbue_mastery": "Après un Jolt, le prochain Arc Bolt ou Mending Waters commencé dans les 8 s peut être lancé en marchant.",
   "shaman/sha_r5_improved_lightning_shield": "Entrer en Shadewolf donne 60 % de vitesse de déplacement pendant 3 s, une fois toutes les 20 s.",
@@ -691,41 +694,48 @@
  "set": {
   "crownforged": {
    "3": "Augmente la Force de 15, l'Endurance de 15, et la vitesse d'attaque et d'incantation de 7,5 %.",
-   "4": "Augmente le toucher de 6 %. Les coups critiques de ton arme font éclater les os de la cible avec Bonesplinter, la faisant saigner pour 8 points de dégâts toutes les 2 s pendant 12 s. Se cumule jusqu'à 3 fois.",
-   "2": "Augmente la puissance d'attaque de 40."
+   "4": "Augmente la puissance d’attaque de 25. Tes coups critiques d’arme ont 50 % de chances d’accorder Gravemight, qui augmente la puissance d’attaque de 40 pendant 10 s.",
+   "2": "Augmente la Force de 10 et l’Endurance de 10.",
+   "6": "Augmente la vitesse d’attaque et d’incantation de 4 % et la précision de 3 %. Tes coups critiques d’arme éclatent la cible d’un Bonesplinter, qui la fait saigner de 5 dégâts toutes les 2 s pendant 12 s. Cumulable 3 fois."
   },
   "necromancers": {
    "3": "Augmente l'Intellect de 10 et l'Endurance de 10.",
-   "2": "Augmente la puissance des sorts de 20. Les dégâts subis ne retardent plus tes incantations (100 % de résistance au recul d'incantation).",
-   "4": "Tes sorts ont 10 % de chances de conférer Clearcasting, rendant ton prochain sort gratuit."
+   "2": "Augmente l’Intelligence de 10 et l’Esprit de 10. Les dégâts subis retardent deux fois moins ton incantation (50 % de résistance à la poussée).",
+   "4": "Augmente la puissance des sorts de 12. Tes sorts ont 6 % de chances d’accorder Clearcasting, qui rend ton prochain sort gratuit.",
+   "6": "Augmente la vitesse d’attaque et d’incantation de 4 %. Tes sorts ont 10 % de chances d’accorder Soulblaze, qui augmente la puissance des sorts de 25 pendant 10 s."
   },
   "deathlord": {
    "3": "Augmente la Force de 15 et l'Endurance de 15.",
-   "2": "Augmente la puissance d'attaque de 40.",
-   "4": "Les coups critiques de ton arme ont 50 % de chances de conférer Gravemight, augmentant la puissance d'attaque de 60 pendant 10 s."
+   "2": "Augmente la Force de 10 et l’Endurance de 10.",
+   "4": "Augmente la puissance d’attaque de 25. Tes coups critiques d’arme ont 50 % de chances d’accorder Gravemight, qui augmente la puissance d’attaque de 40 pendant 10 s.",
+   "6": "Augmente la vitesse d’attaque et d’incantation de 4 % et la précision de 3 %. Tes coups critiques d’arme éclatent la cible d’un Bonesplinter, qui la fait saigner de 5 dégâts toutes les 2 s pendant 12 s. Cumulable 3 fois."
   },
   "nighttalon": {
-   "4": "Augmente le toucher de 6 %. Tes coups critiques à l'arme ouvrent une Ragged Gash, un saignement qui inflige 6 dégâts toutes les 2 s pendant 12 s. Se cumule jusqu'à 3 fois.",
+   "4": "Augmente la puissance d’attaque de 25. Tes coups critiques d’arme ont 50 % de chances d’accorder Fangrush, qui augmente la vitesse d’attaque de 15 % pendant 8 s.",
    "3": "Augmente l'Agilité de 15, la chance de coup critique de 1 % et la vitesse d'attaque et d'incantation de 7,5 %.",
-   "2": "Augmente la puissance d'attaque de 40."
+   "2": "Augmente l’Agilité de 10 et les chances de coup critique de 1 %.",
+   "6": "Augmente la vitesse d’attaque et d’incantation de 4 % et la précision de 3 %. Tes coups critiques d’arme ouvrent une Ragged Gash, qui fait saigner la cible de 4 dégâts toutes les 2 s pendant 12 s. Cumulable 3 fois."
   },
   "stormcallers": {
-   "2": "Augmente la puissance des sorts de 20. Les dégâts subis ne retardent plus tes incantations (100 % de résistance au recul d'incantation).",
-   "4": "Tes sorts ont 10 % de chances de conférer Soulblaze, qui augmente la puissance des sorts de 40 pendant 10 s.",
-   "3": "Augmente l'Intellect de 15, l'Esprit de 15 et la vitesse d'attaque et d'incantation de 7,5 %."
+   "2": "Augmente l’Intelligence de 10 et l’Esprit de 10. Les dégâts subis retardent deux fois moins ton incantation (50 % de résistance à la poussée).",
+   "4": "Augmente la puissance des sorts de 12. Tes sorts ont 6 % de chances d’accorder Clearcasting, qui rend ton prochain sort gratuit.",
+   "3": "Augmente l'Intellect de 15, l'Esprit de 15 et la vitesse d'attaque et d'incantation de 7,5 %.",
+   "6": "Augmente la vitesse d’attaque et d’incantation de 4 %. Tes sorts ont 10 % de chances d’accorder Soulblaze, qui augmente la puissance des sorts de 25 pendant 10 s."
   },
   "soulflame": {
    "3": "Augmente l'Intelligence de 15, l'Esprit de 15, et la vitesse d'attaque et d'incantation de 7,5 %.",
-   "2": "Augmente la puissance des sorts de 20. Les dégâts subis ne retardent plus tes incantations (100 % de résistance au recul d'incantation).",
-   "4": "Tes sorts ont 10 % de chances de conférer Soulblaze, augmentant la puissance des sorts de 40 pendant 10 s."
+   "2": "Augmente l’Intelligence de 10 et l’Esprit de 10. Les dégâts subis retardent deux fois moins ton incantation (50 % de résistance à la poussée).",
+   "4": "Augmente la puissance des sorts de 12. Tes sorts ont 6 % de chances d’accorder Clearcasting, qui rend ton prochain sort gratuit.",
+   "6": "Augmente la vitesse d’attaque et d’incantation de 4 %. Tes sorts ont 10 % de chances d’accorder Soulblaze, qui augmente la puissance des sorts de 25 pendant 10 s."
   },
   "greyjaw_stalker": {
    "3": "Augmente la vitesse d'attaque et d'incantation de 7,5 %."
   },
   "wyrmshadow": {
-   "2": "Augmente la puissance d'attaque de 40.",
-   "4": "Tes coups critiques avec une arme ont 50 % de chances de conférer Fangrush, augmentant la vitesse d'attaque de 25 % pendant 8 s.",
-   "3": "Augmente l'Agilité de 15 et la chance de coup critique de 1 %."
+   "2": "Augmente l’Agilité de 10 et les chances de coup critique de 1 %.",
+   "4": "Augmente la puissance d’attaque de 25. Tes coups critiques d’arme ont 50 % de chances d’accorder Fangrush, qui augmente la vitesse d’attaque de 15 % pendant 8 s.",
+   "3": "Augmente l'Agilité de 15 et la chance de coup critique de 1 %.",
+   "6": "Augmente la vitesse d’attaque et d’incantation de 4 % et la précision de 3 %. Tes coups critiques d’arme ouvrent une Ragged Gash, qui fait saigner la cible de 4 dégâts toutes les 2 s pendant 12 s. Cumulable 3 fois."
   },
   "vale_arcanist": {
    "3": "Augmente la vitesse d'attaque et d'incantation de 7,5 %."
@@ -757,6 +767,122 @@
    "2": "Augmente la défense WARFARE de 40.",
    "4": "Augmente l’attaque WARFARE de 40, et le contrôle des foules que les joueurs ennemis te lancent dure 15 % de moins.",
    "7": "Augmente l’attaque et la défense WARFARE de 80. Tes sorts ont 15 % de chances de conférer Thornguard, qui augmente ton esquive de 15 % pendant 6 s."
+  },
+  "ashveil": {
+   "2": "Lurker’s Strike frappe 25 % plus fort.",
+   "4": "Ta frappe Veiled Edge frappe au triple, au lieu du double."
+  },
+  "benison_dawnweave": {
+   "2": "Le sauvetage de Seraphic Vigil soigne de 270 au lieu de 180. Les dégâts subis ne retardent plus ton incantation.",
+   "4": "Quand Seraphic Vigil se déclenche, son allié est en plus soigné de 15 % de ses PV max sur 10 s."
+  },
+  "chronoweave": {
+   "2": "Temporal Echo convertit 50 % de tes dégâts des Arcanes mono-cible en soins. Les dégâts subis ne retardent plus ton incantation.",
+   "4": "La recharge de Temporal Cascade est réduite de 5 s."
+  },
+  "cinderbark": {
+   "2": "Sweeping Claws a 30 % de chances de mettre un Old Blood de plus en réserve.",
+   "4": "Marrowbreak frappe 30 % plus fort, et sa protection d’urgence ne remplace plus la frappe."
+  },
+  "cinderfang": {
+   "2": "Le remboursement d’énergie de Venom Ritual monte à 20 par générateur.",
+   "4": "La recharge de Venom Dart tombe à 4 s."
+  },
+  "coldsight_trackers": {
+   "2": "Measured Shot rend 5 de Focus de plus.",
+   "4": "Les coups critiques de Long Draw prolongent Cold Focus de 2 s, jusqu’à 6 s par activation."
+  },
+  "dawnforged": {
+   "2": "Beacon of Light recopie 55 % de tes soins directs. Les dégâts subis ne retardent plus ton incantation.",
+   "4": "Le Dawn’s Embrace amplifié par Radiant Resonance devient instantané."
+  },
+  "emberfury": {
+   "2": "Ton Enrage dure 6 s au lieu de 4.",
+   "4": "Bloodletting te met toujours en Enrage, et son soin monte à 8 % de tes PV max."
+  },
+  "emberscreed": {
+   "2": "Ton lien Doctrine convertit 10 % de plus de tes dégâts sacrés en soins. Les dégâts subis ne retardent plus ton incantation.",
+   "4": "Quand ton Psalm of Warding est entièrement consommé, ton prochain Scouring Hymn dans les 10 s est instantané. Une fois toutes les 15 s au maximum."
+  },
+  "forgewall": {
+   "2": "Iron Resolve convertit la rage à 5 d’absorption par point au lieu de 4.",
+   "4": "Lancer Shieldcrack réduit de 2 s la recharge restante d’Iron Resolve."
+  },
+  "frostquench": {
+   "2": "Les coups critiques de Rimelance mettent un second Icicle en réserve, jusqu’au maximum de 5. Les dégâts subis ne retardent plus ton incantation.",
+   "4": "Winterlash pose 3 charges de Winter’s Chill au lieu de 2."
+  },
+  "gravebrand": {
+   "2": "La recharge de Reaping Command est réduite de 2 s. Les dégâts subis ne retardent plus ton incantation.",
+   "4": "Les frappes à l’unisson de Reaping Command infligent 25 % de dégâts en plus."
+  },
+  "grovespring": {
+   "2": "Swiftmend consomme d’abord ton propre Wildbloom ou Second Bloom et soigne 25 % de plus. Les dégâts subis ne retardent plus ton incantation.",
+   "4": "Overbloom récolte 75 % de tes effets restants et met 1 Verdance en réserve juste après."
+  },
+  "hexthread": {
+   "2": "Needle of Fate accorde 2 Condemnation de plus. Les dégâts subis ne retardent plus ton incantation.",
+   "4": "Passing Sentence rembourse 10 Condemnation."
+  },
+  "moonscorch": {
+   "2": "Moonseed peut prolonger Lunar Tempest deux fois par application, jusqu’à 12 s au maximum. Les dégâts subis ne retardent plus ton incantation.",
+   "4": "Moonsurge et Sunwake frappent 25 % plus fort."
+  },
+  "oathpyre": {
+   "2": "Les chances de Vowkeeper Strike d’armer Solar Reprisal montent à 30 %, et bloquer une attaque l’arme 40 % du temps.",
+   "4": "Consommer Solar Reprisal te pose un bouclier de 6 % de tes PV max pendant 10 s."
+  },
+  "packlord_emberhide": {
+   "2": "La recharge de Pack Command tombe à 3 s.",
+   "4": "Les chances de Pack Command de réinitialiser la recharge de Stampede montent à 30 %."
+  },
+  "pyroclast": {
+   "2": "Scald inflige toujours un coup critique aux cibles à 35 % de PV ou moins. Les dégâts subis ne retardent plus ton incantation.",
+   "4": "Les coups critiques de tes sorts de Feu lancés hors Phoenix Trance réduisent sa recharge restante de 1,5 s."
+  },
+  "ruincaller": {
+   "2": "Conflagrate porte 3 charges. Les dégâts subis ne retardent plus ton incantation.",
+   "4": "Ruinbolt frappe 20 % plus fort."
+  },
+  "slagbreaker": {
+   "2": "Redhand amplifie ta prochaine Maiming Strike de 30 % par cumul au lieu de 20.",
+   "4": "Un lancer de Redhand sur deux réduit de 3 s la recharge restante de Breachmaker."
+  },
+  "slagsnare": {
+   "2": "Gutting Strike génère 20 de Focus.",
+   "4": "Un Woundrend qui consomme 3 Hunting Momentum les conserve. Une fois toutes les 8 s au maximum."
+  },
+  "smolderstrike": {
+   "2": "Haymaker frappe 20 % plus fort.",
+   "4": "Lights Out rembourse 6 s sur la recharge restante de Mirrored Blades."
+  },
+  "springmender": {
+   "2": "La recharge de Tidecall est réduite de 4 s. Les dégâts subis ne retardent plus ton incantation.",
+   "4": "Cascading Mend atteint un quatrième allié et récolte les Mending Currents à 150 %."
+  },
+  "stonehearth": {
+   "2": "Sous Stonebound, un Mending Waters lancé avec Stormcast ne coûte pas de mana et soigne 25 % de plus.",
+   "4": "Sous Stonebound, terminer une cadence te soigne de 3 % de tes PV max."
+  },
+  "stormkindled": {
+   "2": "Unleash Weapon sur Pyrebrand accorde 3 Thunder. Les dégâts subis ne retardent plus ton incantation.",
+   "4": "Le bonus d’Earthen Jolt par Thunder monte à 30 %."
+  },
+  "vesperash": {
+   "2": "La recharge de Call Tithefiend est réduite de 6 s. Les dégâts subis ne retardent plus ton incantation.",
+   "4": "Appeler ton Tithefiend réinitialise la recharge de Mindfracture, et le démon rend deux fois plus de mana par coup."
+  },
+  "warspirit_emberscale": {
+   "2": "Ancestral Strike fait avancer ta cadence de 3 crans.",
+   "4": "Ancestral Strike frappe 30 % plus fort."
+  },
+  "wildfang_emberhide": {
+   "2": "Redharvest rend 45 d’énergie au lieu de 30.",
+   "4": "Redharvest repose un Flense tout neuf sur la cible."
+  },
+  "zealfire": {
+   "2": "Final Edict et Dawnfall réduisent mutuellement leur recharge restante de 3 s au lieu de 2.",
+   "4": "Hammer of Wrath lancé sous Dawn’s Wrath frappe 40 % plus fort, au lieu de 20."
   }
  },
  "_src": {
@@ -824,7 +950,7 @@
   "ability\tcleaving_blows": "10ba76f8",
   "ability\tcloak_of_shadows": "8f4c7b2e",
   "ability\tcold_blood": "648ab595",
-  "ability\tcold_focus": "981b1033",
+  "ability\tcold_focus": "27cc58a6",
   "ability\tcold_snap": "f98cf160",
   "ability\tcollective_reversal": "ae59e94a",
   "ability\tcombustion": "3d4f512a",
@@ -995,13 +1121,13 @@
   "ability\tmoonfire": "64df8f63",
   "ability\tmoonkin_form": "b31b23fd",
   "ability\tmoonlash": "fad098c7",
-  "ability\tmoonseed": "e4e02511",
+  "ability\tmoonseed": "3750432b",
   "ability\tmortal_strike": "2099fd1b",
-  "ability\tmulti_shot": "2eb283b8",
+  "ability\tmulti_shot": "d8f0cdc6",
   "ability\tneedle_of_fate": "6b3fcbf8",
-  "ability\toath_chain": "0e32162e",
+  "ability\toath_chain": "446e6b6f",
   "ability\tossuary_mark": "f2e25e3e",
-  "ability\toverbloom": "fd565151",
+  "ability\toverbloom": "9134000c",
   "ability\toverload": "29d76bcf",
   "ability\toverpower": "54247d6d",
   "ability\tpack_command": "43111204",
@@ -1069,7 +1195,7 @@
   "ability\tsearing_pain": "3199872f",
   "ability\tseasoned_soldier": "a7877fee",
   "ability\tsentence": "0b25ec1b",
-  "ability\tseraphic_vigil": "fab62674",
+  "ability\tseraphic_vigil": "ba5eb877",
   "ability\tserpent_sting": "b06a4c1b",
   "ability\tshadow_bolt": "fa4a9de6",
   "ability\tshadow_word_pain": "e40cb13a",
@@ -1171,25 +1297,25 @@
   "ability\twrath": "42108d22",
   "ability\twyvern_sting": "4bc1e807",
   "set\tboundstone_vanguard\t3": "0afc4b70",
-  "set\tcrownforged\t2": "3f2a3868",
+  "set\tcrownforged\t2": "b8057597",
   "set\tcrownforged\t3": "d955e2e2",
-  "set\tcrownforged\t4": "6b6d2f06",
-  "set\tdeathlord\t2": "3f2a3868",
+  "set\tcrownforged\t4": "e744a5ed",
+  "set\tdeathlord\t2": "b8057597",
   "set\tdeathlord\t3": "e0f900ed",
-  "set\tdeathlord\t4": "ab5097af",
+  "set\tdeathlord\t4": "e744a5ed",
   "set\tgreyjaw_stalker\t3": "0afc4b70",
-  "set\tnecromancers\t2": "e2311c8f",
+  "set\tnecromancers\t2": "53f38921",
   "set\tnecromancers\t3": "b022f451",
-  "set\tnecromancers\t4": "5add8aec",
-  "set\tnighttalon\t2": "3f2a3868",
+  "set\tnecromancers\t4": "4e30cc5d",
+  "set\tnighttalon\t2": "a8070456",
   "set\tnighttalon\t3": "6058ef38",
-  "set\tnighttalon\t4": "0814f3c9",
-  "set\tsoulflame\t2": "e2311c8f",
+  "set\tnighttalon\t4": "47841b59",
+  "set\tsoulflame\t2": "53f38921",
   "set\tsoulflame\t3": "3b56c6eb",
-  "set\tsoulflame\t4": "2f2f45ab",
-  "set\tstormcallers\t2": "e2311c8f",
+  "set\tsoulflame\t4": "4e30cc5d",
+  "set\tstormcallers\t2": "53f38921",
   "set\tstormcallers\t3": "3b56c6eb",
-  "set\tstormcallers\t4": "2f2f45ab",
+  "set\tstormcallers\t4": "4e30cc5d",
   "set\tvale_arcanist\t3": "0afc4b70",
   "set\twarfare_ashstalker\t2": "182f8e63",
   "set\twarfare_ashstalker\t4": "11d5e068",
@@ -1206,9 +1332,9 @@
   "set\twarfare_thornhide\t2": "182f8e63",
   "set\twarfare_thornhide\t4": "11d5e068",
   "set\twarfare_thornhide\t7": "f8204572",
-  "set\twyrmshadow\t2": "3f2a3868",
+  "set\twyrmshadow\t2": "a8070456",
   "set\twyrmshadow\t3": "d25a5248",
-  "set\twyrmshadow\t4": "2a12482b",
+  "set\twyrmshadow\t4": "47841b59",
   "spec\tdruid/balance\tdescription": "4f0909f9",
   "spec\tdruid/balance\tmastery": "2e085306",
   "spec\tdruid/feral\tdescription": "1eb712f7",
@@ -1382,7 +1508,7 @@
   "talent\tshaman/sha_r17_improved_ghost_wolf": "f09418c5",
   "talent\tshaman/sha_r20_bloodlust": "f49734e0",
   "talent\tshaman/sha_r20_elemental_fury": "76e85e1d",
-  "talent\tshaman/sha_r20_tidal_waves": "87a18773",
+  "talent\tshaman/sha_r20_tidal_waves": "17fcff16",
   "talent\tshaman/sha_r5_concussion": "9a5560ba",
   "talent\tshaman/sha_r5_imbue_mastery": "138c709b",
   "talent\tshaman/sha_r5_improved_lightning_shield": "30983593",
@@ -1426,6 +1552,74 @@
   "talent\twarrior/war_row_storm_bolt": "1eec33b4",
   "talent\twarrior/war_row_victory_rush": "691475a1",
   "ability\tmelting_acid": "016a0d2b",
-  "ability\tnightshade_coating": "7deeadcd"
+  "ability\tnightshade_coating": "7deeadcd",
+  "ability\tgrove_awakening": "c2cefa9a",
+  "ability\tprayer_of_returning": "8aa00a04",
+  "ability\twildwake": "c0f9edd4",
+  "set\tashveil\t2": "341d048c",
+  "set\tashveil\t4": "ae2047a7",
+  "set\tbenison_dawnweave\t2": "8b1388e1",
+  "set\tbenison_dawnweave\t4": "e61cbc3c",
+  "set\tchronoweave\t2": "a477e4a3",
+  "set\tchronoweave\t4": "ad6c5fb7",
+  "set\tcinderbark\t2": "b034fe04",
+  "set\tcinderbark\t4": "aaf6e995",
+  "set\tcinderfang\t2": "ba392436",
+  "set\tcinderfang\t4": "262c8dc3",
+  "set\tcoldsight_trackers\t2": "2543e89c",
+  "set\tcoldsight_trackers\t4": "f624bc86",
+  "set\tcrownforged\t6": "f12efc4f",
+  "set\tdawnforged\t2": "a2dd3778",
+  "set\tdawnforged\t4": "7e722003",
+  "set\tdeathlord\t6": "f12efc4f",
+  "set\temberfury\t2": "33bed3f9",
+  "set\temberfury\t4": "05ca3ed2",
+  "set\temberscreed\t2": "820f10fa",
+  "set\temberscreed\t4": "51d54a5f",
+  "set\tforgewall\t2": "e5d38e31",
+  "set\tforgewall\t4": "529d5195",
+  "set\tfrostquench\t2": "1eb5f191",
+  "set\tfrostquench\t4": "bd696970",
+  "set\tgravebrand\t2": "559dfb0c",
+  "set\tgravebrand\t4": "27c7ea67",
+  "set\tgrovespring\t2": "2edb50e1",
+  "set\tgrovespring\t4": "36852a4a",
+  "set\thexthread\t2": "c9d3aef5",
+  "set\thexthread\t4": "7abb00f6",
+  "set\tmoonscorch\t2": "2a84c55e",
+  "set\tmoonscorch\t4": "38cec1d0",
+  "set\tnecromancers\t6": "eaf51cd9",
+  "set\tnighttalon\t6": "7d2692c9",
+  "set\toathpyre\t2": "36a1d096",
+  "set\toathpyre\t4": "70f6462c",
+  "set\tpacklord_emberhide\t2": "48a23350",
+  "set\tpacklord_emberhide\t4": "d6e133e2",
+  "set\tpyroclast\t2": "b219a6e7",
+  "set\tpyroclast\t4": "19a66027",
+  "set\truincaller\t2": "b044cf9e",
+  "set\truincaller\t4": "a9138a59",
+  "set\tslagbreaker\t2": "bf4f48a7",
+  "set\tslagbreaker\t4": "569b4762",
+  "set\tslagsnare\t2": "47469633",
+  "set\tslagsnare\t4": "b0838ec3",
+  "set\tsmolderstrike\t2": "66778702",
+  "set\tsmolderstrike\t4": "b581ac00",
+  "set\tsoulflame\t6": "eaf51cd9",
+  "set\tspringmender\t2": "10a09902",
+  "set\tspringmender\t4": "0963ec42",
+  "set\tstonehearth\t2": "6f3f32c7",
+  "set\tstonehearth\t4": "0d04c52f",
+  "set\tstormcallers\t6": "eaf51cd9",
+  "set\tstormkindled\t2": "dd16f0c1",
+  "set\tstormkindled\t4": "78b543ad",
+  "set\tvesperash\t2": "10a5ef64",
+  "set\tvesperash\t4": "afb6da8f",
+  "set\twarspirit_emberscale\t2": "95d47342",
+  "set\twarspirit_emberscale\t4": "e168ada5",
+  "set\twildfang_emberhide\t2": "f1ea6f9a",
+  "set\twildfang_emberhide\t4": "42652815",
+  "set\twyrmshadow\t6": "7d2692c9",
+  "set\tzealfire\t2": "6be034bc",
+  "set\tzealfire\t4": "35619316"
  }
 }
