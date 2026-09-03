@@ -2,6 +2,48 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.41.3",
+   "date": "2026-09-03",
+   "titre": "Le combat colle — plus moyen d’en sortir en reculant",
+   "resume": "Une seule règle change, et elle en change beaucoup d’autres. Jusqu’ici « être en combat » voulait dire « il s’est passé quelque chose il y a moins de cinq secondes » : il suffisait donc d’arrêter d’agir pour en sortir, même en plein combat de boss. Désormais c’est le monstre qui décide — tu restes en combat tant qu’un monstre vivant et engagé te porte sur sa liste de menace, et soigner suffit à t’y mettre, donc un soigneur de raid y reste du début à la fin même s’il n’est jamais visé. On n’en sort plus que de cinq façons : le monstre meurt, il rentre chez lui, tu meurs, tu t’échappes en camouflage, ou tu sors de sa portée. En monde ouvert cette portée est de 100 mètres, mesurée à plat, et un boss engagé retient tous les membres vivants du groupe de ses attaquants dans ce même rayon — un seul chiffre pour les deux règles. Attention au piège : sortir de ces 100 mètres ne met pas ta menace en pause, elle est détruite, donc un effet qui te projette ou te téléporte au-delà te ramène dans le combat avec zéro menace. Conséquence directe pour cinq classes : le Prêtre, le Druide, le Mage, le Chaman et le Paladin ne peuvent plus lancer leur résurrection de groupe en plein combat en reculant et en attendant cinq secondes ; c’était une astuce, elle est fermée, et aucune valeur de sort ne bouge pour autant. À l’inverse, un changement absent des notes officielles profite au Chasseur et au Démoniste : un familier ne garde plus son maître en combat que tant qu’il échange vraiment des coups, cinq secondes après le dernier tu repasses hors combat — un familier qui coursait une cible inatteignable te privait jusqu’ici de ta régénération. L’autre moitié du correctif touche les donjons : dans un donjon ou une salle de raid, un monstre ne lâche plus jamais quelqu’un parce qu’il s’éloigne, et ni la laisse ni l’attache ne le renvoient chez lui, donc promener un gros pull ne remet plus rien à zéro. Un monstre qui ne peut pas t’atteindre se fige, immunisé aux dégâts et sans attaquer, puis traverse l’obstacle au bout de dix secondes — en redevenant frappable pendant la traversée. Les Failles et les Gouffres, eux, gardent les règles du monde ouvert.",
+   "temps_forts": [
+    "⚔️ Tu restes en combat tant qu’un monstre vivant te garde sur sa liste — le minuteur de 5 s ne décide plus",
+    "💚 Soigner met sur la liste : un soigneur de raid y reste toute la durée du combat",
+    "🚫 Fini la résurrection de groupe en plein combat en reculant cinq secondes",
+    "🔻 Concerne le Prêtre, le Druide, le Mage, le Chaman et le Paladin — sans qu’aucune valeur ne bouge",
+    "🐺 Chasseur et Démoniste : ton familier ne te bloque plus en combat s’il ne frappe pas (absent des notes)",
+    "📏 En monde ouvert : au-delà de 100 m d’un monstre engagé, tu quittes sa liste au tour suivant",
+    "👑 Un boss engagé retient tout le groupe de ses attaquants dans ce même rayon de 100 m",
+    "⚠️ Sortir des 100 m DÉTRUIT ta menace : une projection au-delà te ramène à zéro, pas à ta menace d’avant",
+    "🏰 En donjon, un monstre ne rentre plus JAMAIS chez lui : promener un pull ne remet rien à zéro",
+    "🧱 Un monstre coincé se fige immunisé, puis traverse l’obstacle au bout de 10 s — et redevient frappable",
+    "🗝️ Chaque salle du raid d’Ignivar est sa propre instance : la traverser reste le seul reset",
+    "🌀 Les Failles et les Gouffres ne changent pas : ils gardent les règles du monde ouvert",
+    "🗨️ La commande /combat dit enfin POURQUOI tu es encore en combat",
+    "✅ Aucune valeur de sort, de talent, de maîtrise, de panoplie ou d’objet ne change"
+   ],
+   "page": "notes/v0.41.3.html",
+   "titre_en": "Combat sticks — you can no longer walk out of it",
+   "resume_en": "One rule changes, and it changes many others. Until now “in combat” meant “something happened less than five seconds ago”: stopping was therefore enough to leave it, even mid-boss-fight. Now the mob decides — you stay in combat while a living, engaged mob carries you on its hate table, and healing is enough to put you there, so a raid healer is held from start to finish even if never targeted. There are only five ways out: the mob dies, it evades home, you die, you escape through stealth, or you leave its reach. In the open world that reach is 100 yards, measured flat, and an engaged boss holds every living member of its attackers' group within that same radius — one number for both rules. Mind the trap: leaving those 100 yards does not pause your threat, it destroys it, so anything that knocks you back or teleports you past it returns you to the fight on zero threat. Direct consequence for five classes: Priest, Druid, Mage, Shaman and Paladin can no longer cast their group resurrection mid-fight by stepping back and waiting five seconds; that was a trick, and it is closed — with no spell value changing. Conversely, a change absent from the official notes helps Hunters and Warlocks: a pet holds its owner in combat only while genuinely trading blows, and five seconds after the last one you are out — a pet chasing an unreachable target used to cost you your regeneration entirely. The other half of the hotfix is about dungeons: inside a dungeon or a raid room a mob never sheds someone for walking away, and neither the leash nor the tether sends it home, so dragging a big pull resets nothing. A mob that cannot reach you freezes, immune to damage and unable to act, then phases through the obstacle after ten seconds — becoming hittable again on the way in. Rifts and delves keep the open-world rules.",
+   "temps_forts_en": [
+    "⚔️ You stay in combat while a living mob keeps you on its table — the 5s timer no longer decides",
+    "💚 Healing puts you on the table: a raid healer is held for the whole fight",
+    "🚫 No more mid-fight group resurrection by stepping back for five seconds",
+    "🔻 Affects Priest, Druid, Mage, Shaman and Paladin — with no value changing",
+    "🐺 Hunter and Warlock: your pet no longer locks you in combat when it is not hitting (absent from the notes)",
+    "📏 Open world: beyond 100 yd of an engaged mob you drop off its table on the next tick",
+    "👑 An engaged boss holds its attackers' whole group within that same 100 yd radius",
+    "⚠️ Leaving the 100 yd DESTROYS your threat: a knockback past it returns you at zero, not at your old threat",
+    "🏰 In a dungeon a mob NEVER goes home: dragging a pull resets nothing",
+    "🧱 A stuck mob freezes immune, then phases through the obstacle after 10 s — and becomes hittable again",
+    "🗝️ Every Ignivar raid room is its own instance: crossing one is the only reset left",
+    "🌀 Rifts and delves are unchanged: they keep the open-world rules",
+    "🗨️ The /combat command finally says WHY you are still in combat",
+    "✅ No spell, talent, mastery, set or item value changes"
+   ],
+   "page_en": "notes/v0.41.3.en.html"
+  },
+  {
    "version": "v0.41.2",
    "date": "2026-09-02",
    "titre": "La banque de guilde ne t’éjecte plus, et le quartier-maître est enfin atteignable",

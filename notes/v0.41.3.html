@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Nouveautés v0.41.3 — La Clauderie</title>
+<meta name="description" content="Les nouveautés de la v0.41.3 de World of ClaudeCraft, expliquées simplement : le combat colle désormais tant qu’un monstre te garde sur sa liste, les monstres de donjon ne rentrent plus chez eux, et la résurrection de groupe en plein combat devient impossible.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Nouveautés v0.41.3 — La Clauderie">
+<meta property="og:description" content="Le combat colle : plus moyen d’en sortir en reculant, et les monstres de donjon ne rentrent plus jamais chez eux.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.41.3.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.41.3.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') === 'en') location.replace('v0.41.3.en.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Notes de version</p>
+    <h1>Nouveautés <span class="v">v0.41.3</span></h1>
+    <p class="lede">Une seule règle change, et elle change beaucoup de choses : <strong class="hl">le combat colle</strong>. Tant qu’un monstre vivant te garde sur sa liste, tu restes en combat — même si tu arrêtes de jouer, même si tu t’éloignes. Et en donjon, <strong class="hl">les monstres ne rentrent plus jamais chez eux</strong> : promener un pull dans les couloirs ne remet plus rien à zéro. <strong class="hl">Aucune valeur de sort ne bouge</strong>, mais plusieurs habitudes deviennent impossibles.</p>
+    <div class="meta">
+      <span><b>Publiée</b> le 3 septembre 2026</span>
+      <span><b>Depuis</b> la v0.41.2</span>
+      <span><b>22</b> commits</span>
+      <span><b>0</b> valeur de sort modifiée</span>
+    </div>
+    <div class="hint">💡 Clique sur une carte pour le détail.</div>
+  </header>
+
+  <!-- Bandeau constant : mêmes rubriques, même ordre, à chaque version. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">En un coup d’œil</h2>
+    <p class="sec-sub">Les mêmes rubriques à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
+    <ol>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <a class="d-name" href="#combat">Classes &amp; sorts</a>
+        <span class="d-say"><b class="up">Chasseur ↑</b> · <b class="up">Démoniste ↑</b> · <b class="down">Prêtre ↓</b> · <b class="down">Druide ↓</b> · <b class="down">Mage ↓</b> · <b class="down">Chaman ↓</b> · <b class="down">Paladin ↓</b> · <b class="eq">Guerrier =</b> · <b class="eq">Voleur =</b>. <strong class="hl">Aucune valeur ne bouge</strong> : ce sont des capacités qui changent de disponibilité. Les cinq classes marquées ↓ ne peuvent plus <strong class="hl">ressusciter le groupe en plein combat</strong> en reculant et en attendant cinq secondes — c’était une astuce, elle est fermée. Les deux ↑ récupèrent leur <strong class="hl">régénération hors combat</strong> : un familier qui coursait quelque chose d’inatteignable les gardait en combat indéfiniment.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <span class="d-name">Métiers &amp; récolte</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#donjons">Donjons, failles &amp; boss</a>
+        <span class="d-say"><strong class="hl">Le gros du correctif.</strong> Dans un donjon ou une salle de raid, un monstre ne lâche <strong class="hl">plus jamais</strong> quelqu’un parce qu’il s’éloigne, et ni la laisse ni l’attache ne le renvoient chez lui. Promener un pull ne remet donc plus rien à zéro. <strong class="hl">Les Failles et les Gouffres ne sont pas concernés</strong> : ils gardent les règles du monde ouvert.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <a class="d-name" href="#combat">Monde &amp; quêtes</a>
+        <span class="d-say">En monde ouvert la règle reste la distance, mais elle est unifiée : au-delà de <strong class="hl">100 mètres</strong> d’un monstre engagé, tu sors de sa liste au tour suivant. Un boss engagé, lui, <strong class="hl">retient tout le groupe</strong> dans ce même rayon.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <span class="d-name">Guilde &amp; social</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#confort">Confort &amp; technique</a>
+        <span class="d-say">La commande <strong class="hl">/combat</strong> ne se contente plus de dire que tu es en combat : elle dit <strong class="hl">pourquoi</strong> — un ennemi te garde sur sa liste, ou un boss engagé retient ton groupe.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="combat">
+    <h2><span class="num">01</span>Le combat colle</h2>
+    <p class="sec-sub">Jusqu’ici, « être en combat » voulait dire « il s’est passé quelque chose il y a moins de cinq secondes ». Il suffisait donc d’arrêter d’agir pour en sortir, même au milieu d’un combat de boss. Désormais c’est le monstre qui décide : tant qu’il te garde sur sa liste, tu es en combat.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="regle" tabindex="0" role="button" aria-label="Détails : la nouvelle règle, et quand tu sors vraiment du combat">
+        <h3>Tant qu’un monstre te garde <span class="chip c-bal">La règle</span></h3>
+        <p>Tu restes en combat tant qu’un monstre <strong class="hl">vivant et engagé</strong> te porte sur sa liste de menace. Soigner suffit à t’y mettre : un soigneur de raid y reste donc <strong class="hl">toute la durée du combat</strong>, même s’il ne prend jamais un coup.</p>
+        <span class="more-link">Voir quand tu en sors vraiment</span>
+      </div>
+      <div class="card more" data-detail="rez" tabindex="0" role="button" aria-label="Détails : l’astuce de la résurrection en plein combat, et pourquoi elle est fermée">
+        <h3>La résurrection en plein combat, c’est fini <span class="chip c-pvp">Fermé</span></h3>
+        <p>Un lanceur qui reculait et attendait cinq secondes <strong class="hl">sortait du combat</strong>, lançait une <strong class="hl">résurrection de groupe</strong> — interdite en combat — puis revenait. Le jeu l’avait reconnu il y a deux jours en mettant ces sorts à cinq minutes de recharge ; il ferme maintenant la porte elle-même.</p>
+        <span class="more-link">Voir ce que ça change classe par classe</span>
+      </div>
+      <div class="card more" data-detail="familiers" tabindex="0" role="button" aria-label="Détails : le changement sur les familiers, absent des notes officielles">
+        <h3>Ton familier ne te bloque plus <span class="chip c-new">Absent des notes</span></h3>
+        <p>Les notes officielles n’en parlent pas. Un familier ne garde désormais son maître en combat que <strong class="hl">tant qu’il échange vraiment des coups</strong> : cinq secondes après son dernier, tu repasses hors combat. Un familier qui course une cible inatteignable ne te prive plus de ta régénération.</p>
+        <span class="more-link">Voir le détail</span>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Les 100 mètres, en monde ouvert <span class="chip c-util">Chiffres</span></h3>
+        <ul>
+          <li>Au-delà de <strong class="hl">100 m</strong> d’un monstre engagé, tu quittes sa liste au tour suivant.</li>
+          <li>Un <strong class="hl">boss engagé</strong> retient tous les membres vivants du groupe de ses attaquants dans ce <strong class="hl">même</strong> rayon : une seule distance pour les deux règles.</li>
+          <li>La mesure est <strong class="hl">à plat</strong> : quelqu’un à un autre étage du même bâtiment compte toujours comme présent.</li>
+          <li>100 m, ce n’est pas un chiffre rond posé au hasard — voir la fiche pour d’où il sort.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Un piège à connaître <span class="chip c-bal">Important</span></h3>
+        <ul>
+          <li>Sortir des 100 m ne met pas ta menace en pause : elle est <strong class="hl">détruite</strong>.</li>
+          <li>Donc si un effet te <strong class="hl">projette ou te téléporte</strong> au-delà, tu reviens dans le combat avec <strong class="hl">zéro menace</strong> — pas avec celle que tu avais.</li>
+          <li>Pour un tank, c’est la différence entre reprendre son boss et le voir partir sur le soigneur.</li>
+          <li>Le jeu le sait et le note : la marge de sécurité de ce chiffre est justement là pour qu’aucune capacité normale ne t’emmène aussi loin.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Quand tu sors du combat <span class="chip c-util">Les cas</span></h3>
+        <ul>
+          <li>Le monstre <strong class="hl">meurt</strong>, ou <strong class="hl">rentre chez lui</strong>.</li>
+          <li>Tu <strong class="hl">meurs</strong>.</li>
+          <li>Tu t’<strong class="hl">échappes en camouflage</strong> — le Voleur garde donc entièrement sa sortie.</li>
+          <li>Tu sors de sa portée (monde ouvert), ou tu quittes l’instance (donjon).</li>
+          <li>Les sorts « incantables hors combat seulement » respectent enfin cet état retenu, au lieu de se fier au minuteur.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="donjons">
+    <h2><span class="num">02</span>En donjon, les monstres ne rentrent plus chez eux</h2>
+    <p class="sec-sub">C’est la moitié la plus visible du correctif, et elle ferme une façon de jouer qui était devenue une méthode de farm : promener un gros pull jusqu’à ce que les monstres abandonnent.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="donjon" tabindex="0" role="button" aria-label="Détails : la règle d’instance, la posture d’évasion et le passage à travers les murs">
+        <h3>Plus de remise à zéro <span class="chip c-bal">Le changement</span></h3>
+        <p>Dans un donjon ou une salle de raid, un monstre ne lâche <strong class="hl">jamais</strong> un attaquant parce qu’il s’éloigne, et ni la <strong class="hl">laisse</strong> ni l’<strong class="hl">attache</strong> ne le renvoient à son point de départ. Sa liste est attachée à la salle : on n’en sort qu’en la quittant, en mourant, ou en camouflage.</p>
+        <span class="more-link">Voir la posture d’évasion</span>
+      </div>
+      <div class="card">
+        <h3>Un monstre coincé ne se farme plus <span class="chip c-new">Nouveau</span></h3>
+        <ul>
+          <li>Un monstre qui <strong class="hl">ne peut pas t’atteindre</strong> se fige en « posture d’évasion » : <strong class="hl">immunisé aux dégâts</strong>, aucune attaque, aucun sort — mais il te garde.</li>
+          <li>Au bout de <strong class="hl">10 secondes</strong>, il <strong class="hl">traverse l’obstacle</strong> pour venir à toi.</li>
+          <li>Et pendant cette traversée il <strong class="hl">redevient frappable</strong> : tu vois arriver un monstre tuable, pas un monstre invincible.</li>
+          <li>Une corniche ne rapporte donc plus que quelques secondes.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Partir en plein combat <span class="chip c-util">Le cas normal</span></h3>
+        <ul>
+          <li>Quitter le donjon en plein combat déclenche le comportement classique : les monstres <strong class="hl">rentrent, remontent à pleine vie</strong> et vident leur liste.</li>
+          <li>L’ancienne <strong class="hl">mémoire de 30 secondes</strong> — qui te remettait ta menace si tu revenais vite — est <strong class="hl">supprimée</strong>.</li>
+          <li>Les portes d’instance libèrent proprement, au lieu de laisser quelqu’un coincé en combat.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Les Failles et les Gouffres ne changent pas <span class="chip c-util">Portée</span></h3>
+        <ul>
+          <li>Les <a href="../failles.html">Failles</a> et les Gouffres gardent leurs propres règles, celles du <strong class="hl">monde ouvert</strong> : la portée de 100 m, les laisses, et le retour au point de départ.</li>
+          <li>Les notes officielles parlent de « donjons et raids » sans le préciser — c’est vérifié dans le code.</li>
+          <li>Ce qui y change, c’est seulement la règle générale du combat qui colle.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Chaque salle du raid est séparée <span class="chip c-raid">Détail utile</span></h3>
+        <ul>
+          <li>Dans le raid d’Ignivar, <strong class="hl">chaque salle est sa propre instance</strong>.</li>
+          <li>Donc <strong class="hl">passer d’une salle à l’autre</strong> te fait bien sortir de la liste des monstres de la précédente.</li>
+          <li>C’est le seul « reset » qui reste à l’intérieur du raid.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Pourquoi ce changement <span class="chip c-bal">Notre lecture</span></h3>
+        <ul>
+          <li>Le jeu le dit franchement : promener un gros pull ne doit ni <strong class="hl">remettre le pull à zéro</strong>, ni permettre de <strong class="hl">grignoter gratuitement</strong> un monstre bloqué.</li>
+          <li>C’était devenu une méthode de farm, pas un accident.</li>
+          <li>Pour une guilde qui joue normalement, ça ne change rien — sauf qu’un pull raté se paie maintenant vraiment.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="confort">
+    <h2><span class="num">03</span>Le reste</h2>
+    <p class="sec-sub">Une seule chose, mais bien pensée : le jeu explique enfin pourquoi tu es encore en combat.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>La commande /combat dit pourquoi <span class="chip c-new">Confort</span></h3>
+        <ul>
+          <li>Avant, elle lisait seulement le minuteur et pouvait annoncer un décompte qui ne se réalisait pas.</li>
+          <li>Elle sait maintenant si tu es <strong class="hl">retenu</strong> — parce qu’un ennemi te porte sur sa liste, ou parce qu’un <strong class="hl">boss engagé retient ton groupe</strong>.</li>
+          <li>C’est utile exactement au moment où on se demande pourquoi on ne peut pas boire, manger ou monter en selle.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Ce qui ne change pas <span class="chip c-util">Portée</span></h3>
+        <ul>
+          <li><strong class="hl">Aucune valeur de sort, de talent, de maîtrise, de panoplie ou d’objet</strong> ne bouge.</li>
+          <li>Le <a href="../bis.html">guide Builds</a>, le <a href="../metiers.html">guide Métiers</a> et les <a href="../montures.html">Montures</a> restent valables tels quels.</li>
+          <li>Le guide <a href="../pvp.html">PvP</a> aussi : la règle ne s’applique qu’aux monstres, pas aux joueurs.</li>
+          <li>Les empreintes des décors de Fenbridge ont été refaites au passage de version, sans <strong class="hl">aucun</strong> changement d’image.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Le mot de la fin <span class="chip c-bal">Notre avis</span></h3>
+        <ul>
+          <li>Quatre versions en quatre jours, toutes issues du gros ajout de la <a href="v0.41.0.html">v0.41.0</a>.</li>
+          <li>Celle-ci est la plus intéressante des trois correctifs : elle ne répare pas un bug, elle <strong class="hl">tranche une règle</strong> qui traînait.</li>
+          <li>À retenir concrètement : ne compte plus sortir du combat en reculant, et un pull raté en donjon se termine maintenant à l’entrée.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    regle: {
+      title: "La nouvelle règle du combat, et quand tu en sors vraiment",
+      summary: "Ce n’est plus un minuteur qui décide, c’est le monstre. Voici la règle exacte et ses cinq sorties.",
+      body: `
+        <h4>Avant</h4>
+        <ul>
+          <li>« En combat » voulait dire : <b>un événement de combat il y a moins de 5 secondes</b>.</li>
+          <li>Arrêter d’agir cinq secondes suffisait donc à en sortir — même au milieu d’un combat de boss, tant que rien ne te visait.</li>
+          <li>C’est ce que le jeu appelle lui-même le « linger de 5 s ».</li>
+        </ul>
+        <h4>Maintenant</h4>
+        <ul>
+          <li>Tu es en combat tant qu’un monstre <b>vivant et engagé</b> te porte sur sa <b>liste de menace</b>.</li>
+          <li>« Engagé » veut dire : en combat, ou en train de poursuivre, d’attaquer ou de fuir — et pas en train de rentrer chez lui.</li>
+          <li>Un boss scripté qui se met en pause pour une phase <b>reste engagé</b>, et continue donc de retenir le raid.</li>
+          <li><b>Soigner met sur la liste</b> : un soigneur de raid y est du début à la fin, même sans jamais être visé.</li>
+        </ul>
+        <h4>Les cinq sorties</h4>
+        <ul>
+          <li>Le monstre <b>meurt</b>.</li>
+          <li>Le monstre <b>rentre chez lui</b> (évasion).</li>
+          <li>Tu <b>meurs</b>.</li>
+          <li>Tu t’<b>échappes en camouflage</b>.</li>
+          <li>Tu sors de sa portée — 100 m en monde ouvert ; en donjon, il faut <b>quitter la salle</b>.</li>
+        </ul>
+        <h4>D’où sortent les 100 mètres</h4>
+        <p>Le jeu explique son calcul : l’<b>enveloppe d’action</b> du jeu est de 40 m (portée maximale d’un soin ou d’une résurrection). La plus longue chaîne qui garde quelqu’un dans un combat est donc <b>un soigneur à 40 m d’un joueur lui-même à 40 m du monstre</b>, soit environ <b>85 m</b>. Les 100 m laissent une marge d’environ 15 m — assez pour qu’aucune capacité normale ne t’emmène au-delà, et bien en dessous de l’écart entre deux instances, pour qu’une téléportation te libère immédiatement.</p>`
+    },
+    rez: {
+      title: "L’astuce de la résurrection en plein combat, classe par classe",
+      summary: "Le jeu avait déjà réagi une fois en deux jours. Cette fois il ferme la porte au lieu de rallonger le délai.",
+      body: `
+        <h4>L’astuce</h4>
+        <ul>
+          <li>Les résurrections de <b>groupe</b> sont marquées « incantable hors combat seulement ».</li>
+          <li>Mais un lanceur qui restait en arrière et <b>arrêtait d’agir cinq secondes</b> repassait hors combat, même en plein combat de boss.</li>
+          <li>Il lançait donc sa résurrection de masse au milieu de la rencontre, puis reprenait.</li>
+        </ul>
+        <h4>Ce que le jeu avait déjà fait</h4>
+        <p>La <a href="v0.41.1.html#classes">v0.41.1</a>, deux jours plus tôt, avait aligné toutes ces résurrections sur <b>cinq minutes de recharge</b> — y compris celle du Paladin qui n’en avait aucune — précisément parce que, disait le code, « hors combat n’est pas un frein ». La v0.41.3 corrige la cause : hors combat <b>redevient un vrai frein</b>. Les cinq minutes restent, mais elles servent maintenant à limiter d’une rencontre à l’autre, plus à compenser un trou.</p>
+        <h4>Qui perd quoi</h4>
+        <ul>
+          <li><b>Prêtre</b> (Benison, Doctrine) — Prayer of Returning.</li>
+          <li><b>Druide</b> (Groveheart) — Grove Awakening. <b>Wildwake n’est pas concerné</b> : elle se lance en plein combat par nature, c’est tout son intérêt.</li>
+          <li><b>Mage</b> — Collective Reversal. Temporal Reversal, en combat, n’est pas concernée non plus.</li>
+          <li><b>Chaman</b> — Ancestors’ Return.</li>
+          <li><b>Paladin</b> — Recall the Fallen.</li>
+        </ul>
+        <h4>À relativiser</h4>
+        <p>Aucune de ces classes ne perd de puissance : les sorts n’ont pas changé d’un chiffre. Ce qui disparaît, c’est un usage que le jeu ne voulait pas. Et la contrepartie est réelle : <b>Wildwake</b>, la résurrection en combat du Druide arrivée en v0.41.1, devient d’autant plus précieuse — c’est désormais l’une des deux seules façons de relever quelqu’un sans finir le combat.</p>`
+    },
+    familiers: {
+      title: "Les familiers : le changement que les notes ne mentionnent pas",
+      summary: "Une ligne dans le code, invisible dans les notes officielles, et un vrai soulagement pour le Chasseur et le Démoniste.",
+      body: `
+        <h4>Le problème</h4>
+        <ul>
+          <li>Un familier en train de poursuivre une cible gardait son <b>maître en combat</b>, indéfiniment.</li>
+          <li>Il suffisait donc que ton familier s’accroche à quelque chose d’<b>inatteignable</b> — coincé derrière un décor, parti trop loin — pour que tu restes bloqué en combat.</li>
+          <li>Conséquence directe : ta <b>régénération hors combat</b> ne repartait jamais, et tu ne pouvais ni boire, ni manger, ni monter en selle.</li>
+        </ul>
+        <h4>La règle maintenant</h4>
+        <ul>
+          <li>Un familier ne garde son maître en combat que tant qu’il <b>échange réellement des coups</b> — son minuteur se remet à zéro à chaque coup donné ou reçu.</li>
+          <li><b>Cinq secondes</b> après le dernier, le maître repasse hors combat.</li>
+          <li>C’est exactement la même durée que le linger de combat du joueur : les deux règles s’alignent.</li>
+        </ul>
+        <h4>Pour qui</h4>
+        <p>Le <b>Chasseur</b> et le <b>Démoniste</b>, les deux classes à familier permanent. C’est le seul endroit de cette version où quelqu’un gagne quelque chose, et il n’est écrit nulle part dans les notes officielles — on l’a trouvé en lisant le code.</p>`
+    },
+    donjon: {
+      title: "La règle d’instance : posture d’évasion et passage à travers les murs",
+      summary: "Le morceau le plus travaillé de la version, et celui qui ferme une méthode de farm.",
+      body: `
+        <h4>La règle</h4>
+        <ul>
+          <li>Dans une instance revendiquée — un donjon, ou <b>une salle de raid</b> — un monstre ne perd <b>jamais</b> un attaquant par la distance.</li>
+          <li>Sa liste de menace est <b>attachée à la salle</b> : on n’en sort qu’en quittant la salle, en mourant, ou en s’échappant en camouflage.</li>
+          <li>Ni la <b>laisse souple</b> ni l’<b>attache dure</b> ne renvoient le monstre à son point de départ.</li>
+          <li>Traîner un pull dans toute l’instance ne remet donc plus rien à zéro.</li>
+        </ul>
+        <h4>La posture d’évasion</h4>
+        <ul>
+          <li>Un monstre qui <b>ne peut pas atteindre sa cible</b> — bloqué par le décor, ou coincé — se fige sur place.</li>
+          <li>Il devient <b>immunisé aux dégâts</b>, ne frappe plus, ne lance plus rien, mais <b>garde sa liste</b>.</li>
+          <li>Il repart dès que la cible est de nouveau accessible.</li>
+        </ul>
+        <h4>Et au bout de dix secondes</h4>
+        <ul>
+          <li>Si le blocage dure <b>10 secondes</b>, le monstre <b>traverse le décor</b> pour rejoindre sa cible — le même passage que celui qu’un monstre utilise pour rentrer chez lui.</li>
+          <li>Pendant cette traversée, il <b>redevient frappable</b>. L’immunité n’avait qu’un but — empêcher de taper gratuitement un monstre qui ne peut pas répondre — et ce but disparaît dès qu’il avance.</li>
+          <li>Le jeu formule l’intention clairement : un joueur à distance doit voir arriver <b>un monstre tuable</b>, pas un monstre invincible.</li>
+        </ul>
+        <h4>Ce que ça ferme</h4>
+        <p>Deux choses, et le jeu les nomme : on ne peut plus <b>remettre un pull à zéro</b> en le promenant, ni <b>grignoter gratuitement</b> un monstre coincé depuis une corniche. C’est cette seconde technique — le pull en chaîne kité — qui était devenue une méthode de farm. Une corniche ne rapporte plus que quelques secondes.</p>
+        <h4>Quitter en plein combat</h4>
+        <p>Le comportement classique revient : si tu sors de l’instance en plein combat, les monstres <b>rentrent, remontent à pleine vie</b> et vident leur liste. L’ancienne <b>mémoire de 30 secondes</b>, qui te rendait ta menace si tu revenais vite, a été retirée.</p>`
+    },
+  };
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>

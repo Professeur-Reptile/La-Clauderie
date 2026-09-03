@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Patch notes v0.41.3 — La Clauderie</title>
+<meta name="description" content="The v0.41.3 release of World of ClaudeCraft in plain language: combat now sticks while a mob keeps you on its table, dungeon mobs never go home, and mid-fight group resurrection becomes impossible.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Patch notes v0.41.3 — La Clauderie">
+<meta property="og:description" content="Combat sticks: you can no longer walk out of it, and dungeon mobs never go home.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.41.3.en.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.41.3.en.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') !== 'en') location.replace('v0.41.3.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Site navigation"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Patch notes</p>
+    <h1>Patch notes <span class="v">v0.41.3</span></h1>
+    <p class="lede">One rule changes, and it changes a great deal: <strong class="hl">combat sticks</strong>. As long as a living mob keeps you on its table, you are in combat — even if you stop acting, even if you walk away. And inside a dungeon, <strong class="hl">mobs never go home any more</strong>: dragging a pull around the corridors resets nothing. <strong class="hl">No spell value moves</strong>, but several habits become impossible.</p>
+    <div class="meta">
+      <span><b>Released</b> September 3, 2026</span>
+      <span><b>Since</b> v0.41.2</span>
+      <span><b>22</b> commits</span>
+      <span><b>0</b> spell values changed</span>
+    </div>
+    <div class="hint">💡 Click a card for details.</div>
+  </header>
+
+  <!-- Fixed digest: same rubrics, same order, every release. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">At a glance</h2>
+    <p class="sec-sub">The same rubrics every release, in the same order. Click a rubric to jump to its section.</p>
+    <ol>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <a class="d-name" href="#combat">Classes &amp; spells</a>
+        <span class="d-say"><b class="up">Hunter ↑</b> · <b class="up">Warlock ↑</b> · <b class="down">Priest ↓</b> · <b class="down">Druid ↓</b> · <b class="down">Mage ↓</b> · <b class="down">Shaman ↓</b> · <b class="down">Paladin ↓</b> · <b class="eq">Warrior =</b> · <b class="eq">Rogue =</b>. <strong class="hl">No value moves</strong>: what changes is when abilities are available. The five marked ↓ can no longer <strong class="hl">mass-resurrect mid-fight</strong> by stepping back and waiting five seconds — that was a trick, and it is closed. The two ↑ get their <strong class="hl">out-of-combat regeneration</strong> back: a pet chasing something unreachable used to hold them in combat indefinitely.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <span class="d-name">Professions &amp; gathering</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#donjons">Dungeons, rifts &amp; bosses</a>
+        <span class="d-say"><strong class="hl">The bulk of the hotfix.</strong> Inside a dungeon or a raid room, a mob <strong class="hl">never</strong> sheds someone for walking away, and neither the leash nor the tether sends it home. Dragging a pull around therefore resets nothing. <strong class="hl">Rifts and delves are not affected</strong>: they keep the open-world rules.</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <a class="d-name" href="#combat">World &amp; quests</a>
+        <span class="d-say">In the open world distance still decides, but it is now one number: beyond <strong class="hl">100 yards</strong> of an engaged mob you drop off its table on the next tick. An engaged boss <strong class="hl">holds the whole group</strong> within that same radius.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <span class="d-name">Guild &amp; social</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#confort">Comfort &amp; technical</a>
+        <span class="d-say">The <strong class="hl">/combat</strong> command no longer just says you are in combat: it says <strong class="hl">why</strong> — an enemy still carries you on its table, or an engaged boss is holding your group.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="combat">
+    <h2><span class="num">01</span>Combat sticks</h2>
+    <p class="sec-sub">Until now, "in combat" meant "something happened less than five seconds ago". Simply stopping was enough to drop out of it, even in the middle of a boss fight. Now the mob decides: as long as it keeps you on its table, you are in combat.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="regle" tabindex="0" role="button" aria-label="Details: the new rule, and when you actually leave combat">
+        <h3>As long as a mob holds you <span class="chip c-bal">The rule</span></h3>
+        <p>You stay in combat while a <strong class="hl">living, engaged</strong> mob carries you on its hate table. Healing is enough to put you there: a raid healer is therefore held for the <strong class="hl">entire fight</strong>, even if nothing ever targets them.</p>
+        <span class="more-link">See when you actually get out</span>
+      </div>
+      <div class="card more" data-detail="rez" tabindex="0" role="button" aria-label="Details: the mid-fight resurrection trick, and why it is closed">
+        <h3>No more mid-fight mass rez <span class="chip c-pvp">Closed</span></h3>
+        <p>A caster who stepped back and waited five seconds <strong class="hl">dropped out of combat</strong>, cast a <strong class="hl">group resurrection</strong> — which is barred in combat — and went back in. The game already acknowledged it two days ago by putting those spells on a five-minute cooldown; now it shuts the door itself.</p>
+        <span class="more-link">See what it changes class by class</span>
+      </div>
+      <div class="card more" data-detail="familiers" tabindex="0" role="button" aria-label="Details: the pet change, absent from the official notes">
+        <h3>Your pet no longer traps you <span class="chip c-new">Absent from the notes</span></h3>
+        <p>The official notes do not mention it. A pet now holds its owner in combat only <strong class="hl">while it is genuinely trading blows</strong>: five seconds after its last one, you are out. A pet chasing an unreachable target no longer costs you your regeneration.</p>
+        <span class="more-link">See the detail</span>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>The 100 yards, in the open world <span class="chip c-util">Numbers</span></h3>
+        <ul>
+          <li>Beyond <strong class="hl">100 yd</strong> of an engaged mob, you leave its table on the next tick.</li>
+          <li>An <strong class="hl">engaged boss</strong> holds every living member of its attackers' group within that <strong class="hl">same</strong> radius: one number for both rules.</li>
+          <li>It is measured <strong class="hl">flat</strong>: someone on another floor of the same building still counts as present.</li>
+          <li>100 is not a round number picked at random — see the card for where it comes from.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>One trap worth knowing <span class="chip c-bal">Important</span></h3>
+        <ul>
+          <li>Leaving the 100 yd does not pause your threat: it <strong class="hl">destroys</strong> it.</li>
+          <li>So if something <strong class="hl">knocks you back or teleports you</strong> beyond it, you return to the fight on <strong class="hl">zero threat</strong> — not the threat you had.</li>
+          <li>For a tank that is the difference between picking the boss back up and watching it walk to the healer.</li>
+          <li>The game knows and says so: the safety margin in that number exists precisely so no ordinary ability carries you that far.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>When you do leave combat <span class="chip c-util">The cases</span></h3>
+        <ul>
+          <li>The mob <strong class="hl">dies</strong>, or <strong class="hl">evades home</strong>.</li>
+          <li>You <strong class="hl">die</strong>.</li>
+          <li>You <strong class="hl">escape through stealth</strong> — so the Rogue keeps its exit in full.</li>
+          <li>You leave its reach (open world), or leave the instance (dungeon).</li>
+          <li>Abilities marked "cannot be cast in combat" finally respect this held state instead of trusting the timer.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="donjons">
+    <h2><span class="num">02</span>Inside a dungeon, mobs never go home</h2>
+    <p class="sec-sub">This is the most visible half of the hotfix, and it closes a way of playing that had become a farming method: dragging a big pull around until the mobs give up.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="donjon" tabindex="0" role="button" aria-label="Details: the instance rule, the evade stance and phasing through walls">
+        <h3>No more resets <span class="chip c-bal">The change</span></h3>
+        <p>Inside a dungeon or a raid room, a mob <strong class="hl">never</strong> sheds an attacker for walking away, and neither the <strong class="hl">soft leash</strong> nor the <strong class="hl">hard tether</strong> sends it back to its spawn. Its table is scoped to the room: you leave it only by leaving, dying, or stealthing out.</p>
+        <span class="more-link">See the evade stance</span>
+      </div>
+      <div class="card">
+        <h3>A stuck mob can't be farmed <span class="chip c-new">New</span></h3>
+        <ul>
+          <li>A mob that <strong class="hl">cannot reach you</strong> freezes in an "evade stance": <strong class="hl">immune to damage</strong>, no swings, no casts — but it keeps you.</li>
+          <li>After <strong class="hl">10 seconds</strong>, it <strong class="hl">phases through the obstacle</strong> to come at you.</li>
+          <li>And while phasing it <strong class="hl">becomes hittable again</strong>: you see a killable mob coming, not an invincible one.</li>
+          <li>A perch is therefore worth a few seconds, no more.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Leaving mid-fight <span class="chip c-util">The normal case</span></h3>
+        <ul>
+          <li>Leaving the dungeon mid-fight triggers the classic behaviour: mobs <strong class="hl">evade home, return to full health</strong> and empty their table.</li>
+          <li>The old <strong class="hl">30-second memory</strong> — which handed your threat back if you returned quickly — has been <strong class="hl">removed</strong>.</li>
+          <li>Instance doors now release cleanly instead of leaving someone stuck in combat.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Rifts and delves are unaffected <span class="chip c-util">Scope</span></h3>
+        <ul>
+          <li><a href="../failles.html">Rifts</a> and delves keep their own records and the <strong class="hl">open-world</strong> rules: the 100 yd reach, the leashes, and the evade-home stall.</li>
+          <li>The official notes say "dungeons and raids" without spelling this out — it is verified in the code.</li>
+          <li>What does change there is only the general sticky-combat rule.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Each raid room is separate <span class="chip c-raid">Useful detail</span></h3>
+        <ul>
+          <li>In the Ignivar raid, <strong class="hl">every room is its own instance</strong>.</li>
+          <li>So <strong class="hl">crossing from one room to the next</strong> does drop you off the previous room's tables.</li>
+          <li>It is the only "reset" left inside the raid.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Why the change <span class="chip c-bal">Our reading</span></h3>
+        <ul>
+          <li>The game says it plainly: dragging a big pull should neither <strong class="hl">reset the pull</strong> nor allow <strong class="hl">chipping a pinned mob down for free</strong>.</li>
+          <li>That had become a farming method, not an accident.</li>
+          <li>For a guild playing normally it changes nothing — except that a botched pull now genuinely costs you.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="confort">
+    <h2><span class="num">03</span>The rest</h2>
+    <p class="sec-sub">One thing only, but a well-judged one: the game finally explains why you are still in combat.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>/combat tells you why <span class="chip c-new">Comfort</span></h3>
+        <ul>
+          <li>Before, it read only the timer and could promise a countdown that never arrived.</li>
+          <li>It now knows whether you are <strong class="hl">held</strong> — because an enemy carries you on its table, or because an <strong class="hl">engaged boss is holding your group</strong>.</li>
+          <li>Useful at exactly the moment you wonder why you cannot drink, eat or mount up.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>What does not change <span class="chip c-util">Scope</span></h3>
+        <ul>
+          <li><strong class="hl">No spell, talent, mastery, set or item value</strong> moves.</li>
+          <li>The <a href="../bis.html">Builds guide</a>, the <a href="../metiers.html">Professions guide</a> and the <a href="../montures.html">Mounts</a> page stand as they are.</li>
+          <li>So does the <a href="../pvp.html">PvP guide</a>: the rule applies to mobs, not to players.</li>
+          <li>Fenbridge asset fingerprints were reminted for the version bump, with <strong class="hl">no</strong> change on screen.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Our take <span class="chip c-bal">Guild view</span></h3>
+        <ul>
+          <li>Four releases in four days, all downstream of the big addition in <a href="v0.41.0.en.html">v0.41.0</a>.</li>
+          <li>This is the most interesting of the three hotfixes: it does not repair a bug, it <strong class="hl">settles a rule</strong> that had been left hanging.</li>
+          <li>Concretely: stop counting on walking away to leave combat, and a botched dungeon pull now ends at the entrance.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Close">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    regle: {
+      title: "The new combat rule, and when you actually get out",
+      summary: "A timer no longer decides — the mob does. Here is the exact rule and its five exits.",
+      body: `
+        <h4>Before</h4>
+        <ul>
+          <li>"In combat" meant: <b>a combat event less than 5 seconds ago</b>.</li>
+          <li>Stopping for five seconds was therefore enough to leave it — even mid-boss-fight, as long as nothing was targeting you.</li>
+          <li>The game itself calls this the "5s linger".</li>
+        </ul>
+        <h4>Now</h4>
+        <ul>
+          <li>You are in combat while a <b>living, engaged</b> mob carries you on its <b>hate table</b>.</li>
+          <li>"Engaged" means: in combat, or actively chasing, attacking or fleeing — and not walking home.</li>
+          <li>A scripted boss parked idle for an intermission <b>stays engaged</b>, and keeps holding the raid through it.</li>
+          <li><b>Healing puts you on the table</b>: a raid healer is held from start to finish, even if never targeted.</li>
+        </ul>
+        <h4>The five exits</h4>
+        <ul>
+          <li>The mob <b>dies</b>.</li>
+          <li>The mob <b>evades home</b>.</li>
+          <li>You <b>die</b>.</li>
+          <li>You <b>escape through stealth</b>.</li>
+          <li>You leave its reach — 100 yd in the open world; inside a dungeon you must <b>leave the room</b>.</li>
+        </ul>
+        <h4>Where the 100 yards come from</h4>
+        <p>The game shows its arithmetic: the <b>action envelope</b> is 40 yd (the longest heal or resurrection reach). The longest chain that keeps someone in a fight is therefore <b>a healer 40 yd from a raider who is 40 yd from the mob</b>, about <b>85 yd</b>. The 100 leaves roughly 15 yd of margin — enough that no ordinary ability carries you past it, and comfortably under the pitch between two instances, so teleporting away releases you immediately.</p>`
+    },
+    rez: {
+      title: "The mid-fight resurrection trick, class by class",
+      summary: "The game had already reacted once in two days. This time it shuts the door instead of lengthening the cooldown.",
+      body: `
+        <h4>The trick</h4>
+        <ul>
+          <li><b>Group</b> resurrections are marked "cannot be cast in combat".</li>
+          <li>But a caster who stayed at the back and <b>stopped acting for five seconds</b> dropped out of combat, even mid-boss-fight.</li>
+          <li>They therefore cast their mass rez in the middle of the encounter, then carried on.</li>
+        </ul>
+        <h4>What the game had already done</h4>
+        <p><a href="v0.41.1.en.html#classes">v0.41.1</a>, two days earlier, put every one of those resurrections on a <b>five-minute cooldown</b> — including the Paladin's, which had none — precisely because, as the code put it, "out of combat is not a throttle". v0.41.3 fixes the cause: out of combat <b>becomes a real gate again</b>. The five minutes stay, but they now limit you across encounters rather than papering over a hole.</p>
+        <h4>Who loses what</h4>
+        <ul>
+          <li><b>Priest</b> (Benison, Doctrine) — Prayer of Returning.</li>
+          <li><b>Druid</b> (Groveheart) — Grove Awakening. <b>Wildwake is unaffected</b>: it is cast in combat by design, which is its whole point.</li>
+          <li><b>Mage</b> — Collective Reversal. Temporal Reversal, being in-combat, is unaffected too.</li>
+          <li><b>Shaman</b> — Ancestors' Return.</li>
+          <li><b>Paladin</b> — Recall the Fallen.</li>
+        </ul>
+        <h4>Keep it in proportion</h4>
+        <p>None of these classes loses power: not one number in those spells changed. What disappears is a use the game did not want. And there is a real upside: <b>Wildwake</b>, the Druid's in-combat resurrection introduced in v0.41.1, becomes that much more valuable — it is now one of only two ways to pick someone up without ending the fight.</p>`
+    },
+    familiers: {
+      title: "Pets: the change the notes do not mention",
+      summary: "One line in the code, invisible in the official notes, and a real relief for Hunters and Warlocks.",
+      body: `
+        <h4>The problem</h4>
+        <ul>
+          <li>A pet chasing a target held its <b>owner in combat</b>, indefinitely.</li>
+          <li>So all it took was your pet latching onto something <b>unreachable</b> — stuck behind scenery, gone too far — to leave you locked in combat.</li>
+          <li>Direct consequence: your <b>out-of-combat health regeneration</b> never restarted, and you could not drink, eat or mount up.</li>
+        </ul>
+        <h4>The rule now</h4>
+        <ul>
+          <li>A pet holds its owner in combat only while it is <b>genuinely trading blows</b> — its timer resets on every hit dealt or taken.</li>
+          <li><b>Five seconds</b> after the last one, the owner drops out of combat.</li>
+          <li>That is exactly the player's own combat linger: the two rules line up.</li>
+        </ul>
+        <h4>For whom</h4>
+        <p>The <b>Hunter</b> and the <b>Warlock</b>, the two permanent-pet classes. It is the only place in this release where anyone gains something, and it is written nowhere in the official notes — we found it reading the code.</p>`
+    },
+    donjon: {
+      title: "The instance rule: evade stance and phasing through walls",
+      summary: "The most carefully built part of the release, and the one that closes a farming method.",
+      body: `
+        <h4>The rule</h4>
+        <ul>
+          <li>Inside a claimed instance — a dungeon, or <b>one raid room</b> — a mob <b>never</b> loses an attacker to distance.</li>
+          <li>Its hate table is <b>scoped to the room</b>: you leave it only by leaving the room, dying, or escaping through stealth.</li>
+          <li>Neither the <b>soft leash</b> nor the <b>hard tether</b> sends the mob back to its spawn.</li>
+          <li>Dragging a pull around the instance therefore resets nothing.</li>
+        </ul>
+        <h4>The evade stance</h4>
+        <ul>
+          <li>A mob that <b>cannot reach its target</b> — blocked by geometry, or stuck — freezes in place.</li>
+          <li>It becomes <b>immune to damage</b>, stops swinging and casting, but <b>keeps its table</b>.</li>
+          <li>It resumes the moment the target is reachable again.</li>
+        </ul>
+        <h4>And after ten seconds</h4>
+        <ul>
+          <li>If the hold lasts <b>10 seconds</b>, the mob <b>phases through the geometry</b> to reach its target — the same phasing an evading mob uses to get home.</li>
+          <li>While phasing it <b>becomes hittable again</b>. The immunity had one job — denying free damage to a mob that cannot fight back — and that job ends the moment it starts making progress.</li>
+          <li>The game states the intent clearly: a ranged player should see <b>a killable mob</b> coming through the wall, not an unkillable one.</li>
+        </ul>
+        <h4>What it closes</h4>
+        <p>Two things, and the game names them: you can no longer <b>reset a pull</b> by dragging it, nor <b>chip a pinned mob down for free</b> from a perch. It was that second technique — the kited chain pull — that had become a farming method. A perch is now worth a few seconds and nothing more.</p>
+        <h4>Leaving mid-fight</h4>
+        <p>The classic behaviour returns: leave the instance mid-fight and the mobs <b>evade home, return to full health</b> and empty their tables. The old <b>30-second memory</b>, which handed your threat back if you came straight back, has been removed.</p>`
+    },
+  };
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>
