@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-03T12:45:38Z",
+ "generated": "2026-09-05T04:52:42Z",
  "base_tag": "v0.41.3",
  "version": "v0.42.0",
  "branch": "ossbrain-release/v0.42.0",
  "declared_version": "0.42.0",
  "imminent": true,
- "commits": 246,
- "shown": 93,
- "last_commit": "2026-09-03T03:41:02+00:00",
+ "commits": 332,
+ "shown": 133,
+ "last_commit": "2026-09-05T01:43:22Z",
  "sections": [
   {
    "key": "classes",
@@ -28,6 +28,20 @@
      "scope": "sim",
      "text": "Auto-attack never turns the player; channels pin facing instead",
      "date": "2026-09-01"
+    },
+    {
+     "h": "70de3d36",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Stop a refused cast leaking a stale auto-attack engage into Soulwell",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "56940483",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Make the rogue poisons real weapon coats",
+     "date": "2026-08-31"
     },
     {
      "h": "a7fb08ee",
@@ -94,6 +108,13 @@
      "date": "2026-09-02"
     },
     {
+     "h": "3ba47040",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Name an epic-or-better material the deposit-all sweep moved",
+     "date": "2026-09-01"
+    },
+    {
      "h": "ef62e91c",
      "kind": "fix",
      "scope": "scripts",
@@ -121,6 +142,20 @@
      "scope": "loot",
      "text": "Pace the Crucible raid at one item per five raiders per kill",
      "date": "2026-09-02"
+    },
+    {
+     "h": "8d6085cc",
+     "kind": "fix",
+     "scope": "raid",
+     "text": "Make the Forge-Lift car's side panels solid",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "ab938fa6",
+     "kind": "fix",
+     "scope": "instances",
+     "text": "Let a raid party switch difficulty without disbanding",
+     "date": "2026-09-01"
     },
     {
      "h": "7567906a",
@@ -157,6 +192,13 @@
      "scope": "content",
      "text": "Point new players at the Proving Shore ferry bell",
      "date": "2026-09-01"
+    },
+    {
+     "h": "7cb65db3",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Give the zone-feature dressing a lean-tier ladder",
+     "date": "2026-09-02"
     },
     {
      "h": "44ac4787",
@@ -209,6 +251,13 @@
    "en": "Guild & social",
    "items": [
     {
+     "h": "d2b01d27",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Move the Filter Profanity switch from Key Bindings to Interface > Chat",
+     "date": "2026-09-02"
+    },
+    {
      "h": "fbed0d2c",
      "kind": "fix",
      "scope": "moderation",
@@ -245,11 +294,39 @@
      "date": "2026-08-20"
     },
     {
+     "h": "c4d657ef",
+     "kind": "feat",
+     "scope": "sfx",
+     "text": "Ride the player's own footfall on the troll and the tortoise",
+     "date": "2026-08-18"
+    },
+    {
      "h": "ef3df570",
      "kind": "feat",
      "scope": "mounts",
      "text": "Give the rocket sled a summon call, and lift its winddown",
      "date": "2026-08-17"
+    },
+    {
+     "h": "d19e6b57",
+     "kind": "feat",
+     "scope": "mounts",
+     "text": "Add the Cluckwork Mech Bird store mount",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "d695ff45",
+     "kind": "feat",
+     "scope": "mounts",
+     "text": "Fidget on a 5-second beat",
+     "date": "2026-08-17"
+    },
+    {
+     "h": "2bb95d50",
+     "kind": "feat",
+     "scope": "mounts",
+     "text": "Add the Chimeglass Tortoise rideable mount",
+     "date": "2026-08-16"
     },
     {
      "h": "6e0b7fc2",
@@ -271,6 +348,13 @@
      "scope": "render",
      "text": "Rallycart tail lamp lenses from a hand-traced outline",
      "date": "2026-08-16"
+    },
+    {
+     "h": "d8686fb4",
+     "kind": "feat",
+     "scope": "mounts",
+     "text": "Add the Lanternback Troll rideable mount",
+     "date": "2026-08-15"
     },
     {
      "h": "fe8a746d",
@@ -301,11 +385,123 @@
      "date": "2026-09-02"
     },
     {
+     "h": "e7248d5e",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Reject the blade-grass pool corners the fade already hides",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "fe142cdd",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Band the blade-grass instance uploads by grid row",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "9a88bf4b",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Let three cull the blade pools sector by sector",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "2d357125",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Re-measure only the blade sectors a crossing touched",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "f8976eeb",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Band the uploads on bytes, not on how many blocks are dirty",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "48027360",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Merge a prop bucket's shadow casters with its non-casters",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "e4f8dad3",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Cull a character rig per pass, not per tier",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "418f40cf",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Render the High tier's sun shadows at 2560",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "efec7552",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Make three's shadow depth pass depth-only",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "5846882b",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Shed the sun shadow extent under sustained pressure",
+     "date": "2026-09-02"
+    },
+    {
      "h": "980b1013",
      "kind": "perf",
      "scope": "render",
      "text": "Measure a vehicle once per model, not per rider",
      "date": "2026-08-20"
+    },
+    {
+     "h": "11ffc2d2",
+     "kind": "fix",
+     "scope": "realm-builder",
+     "text": "Action the release/v0.42.0 review findings",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "418d1a11",
+     "kind": "fix",
+     "scope": "realm-builder",
+     "text": "Round-3 review findings (client catchment, pins, registry)",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "7e7b7d2e",
+     "kind": "fix",
+     "scope": "realm-builder",
+     "text": "Keep ZWNJ and ZWJ out of the name refusal (round 4)",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "bd520ffd",
+     "kind": "fix",
+     "scope": "",
+     "text": "Bring release/v0.42.0 into the Chimeglass Tortoise mount",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "1451e2bb",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Reset the rider's x on dismount and share one mount lifecycle host",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "25a7ddab",
+     "kind": "fix",
+     "scope": "store",
+     "text": "Render the Machine Stable as the Armory card family",
+     "date": "2026-09-03"
     },
     {
      "h": "603b405d",
@@ -322,10 +518,59 @@
      "date": "2026-09-02"
     },
     {
+     "h": "b86cf1da",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep lean-tier rocks and dressing visible as the camera orbits",
+     "date": "2026-09-02"
+    },
+    {
      "h": "9daea35f",
      "kind": "fix",
      "scope": "render",
      "text": "Refuse a merge whose parts disagree on morph kinds",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "0324c5fc",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Drop the blade-grass disc rejection, it erodes the meadow",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "b5fdb21c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Answer the blade-pool review round",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "34c8f6e2",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep the shadow map's colour clear, drop only its colour write",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "546b7a35",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Answer the shadow-shed review round",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "b0472cf2",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Reap a silent socket after two minutes however late the sweep runs",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "823f3850",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Widen the socket silence deadline to ten minutes",
      "date": "2026-09-02"
     },
     {
@@ -448,6 +693,13 @@
      "date": "2026-09-01"
     },
     {
+     "h": "f47c6f9e",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Close the notable-item gap on the Bank and fix its Full arm",
+     "date": "2026-09-01"
+    },
+    {
      "h": "8ba5e2ae",
      "kind": "fix",
      "scope": "render",
@@ -480,6 +732,13 @@
      "kind": "fix",
      "scope": "input",
      "text": "Document the repair-marker forward-compat gap and tighten types",
+     "date": "2026-08-31"
+    },
+    {
+     "h": "160386fc",
+     "kind": "fix",
+     "scope": "talents",
+     "text": "Let Redhanded's poison damage reach the coat rider",
      "date": "2026-08-31"
     },
     {
@@ -679,6 +938,13 @@
      "date": "2026-08-17"
     },
     {
+     "h": "650d69d8",
+     "kind": "fix",
+     "scope": "",
+     "text": "Bring the v0.39.0 release candidate into the troll mount",
+     "date": "2026-08-16"
+    },
+    {
      "h": "0d6dfb42",
      "kind": "fix",
      "scope": "render",
@@ -691,6 +957,20 @@
      "scope": "audio",
      "text": "Carry engine transitions with the vehicle, soften the summon seam",
      "date": "2026-08-16"
+    },
+    {
+     "h": "2e169f79",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Space over a bag row jumps the mount instead of dismounting",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "125a8df4",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Re-bless the item-art record and clear the mount's lint debt",
+     "date": "2026-08-15"
     },
     {
      "h": "80a4d996",
@@ -715,9 +995,9 @@
    "branch": "ossbrain-release/v0.42.0",
    "declared_version": "0.42.0",
    "imminent": true,
-   "commits": 246,
-   "shown": 93,
-   "last_commit": "2026-09-03T03:41:02+00:00",
+   "commits": 332,
+   "shown": 133,
+   "last_commit": "2026-09-05T01:43:22Z",
    "sections": [
     {
      "key": "classes",
@@ -738,6 +1018,20 @@
        "scope": "sim",
        "text": "Auto-attack never turns the player; channels pin facing instead",
        "date": "2026-09-01"
+      },
+      {
+       "h": "70de3d36",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stop a refused cast leaking a stale auto-attack engage into Soulwell",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "56940483",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Make the rogue poisons real weapon coats",
+       "date": "2026-08-31"
       },
       {
        "h": "a7fb08ee",
@@ -804,6 +1098,13 @@
        "date": "2026-09-02"
       },
       {
+       "h": "3ba47040",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Name an epic-or-better material the deposit-all sweep moved",
+       "date": "2026-09-01"
+      },
+      {
        "h": "ef62e91c",
        "kind": "fix",
        "scope": "scripts",
@@ -831,6 +1132,20 @@
        "scope": "loot",
        "text": "Pace the Crucible raid at one item per five raiders per kill",
        "date": "2026-09-02"
+      },
+      {
+       "h": "8d6085cc",
+       "kind": "fix",
+       "scope": "raid",
+       "text": "Make the Forge-Lift car's side panels solid",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "ab938fa6",
+       "kind": "fix",
+       "scope": "instances",
+       "text": "Let a raid party switch difficulty without disbanding",
+       "date": "2026-09-01"
       },
       {
        "h": "7567906a",
@@ -867,6 +1182,13 @@
        "scope": "content",
        "text": "Point new players at the Proving Shore ferry bell",
        "date": "2026-09-01"
+      },
+      {
+       "h": "7cb65db3",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Give the zone-feature dressing a lean-tier ladder",
+       "date": "2026-09-02"
       },
       {
        "h": "44ac4787",
@@ -919,6 +1241,13 @@
      "en": "Guild & social",
      "items": [
       {
+       "h": "d2b01d27",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Move the Filter Profanity switch from Key Bindings to Interface > Chat",
+       "date": "2026-09-02"
+      },
+      {
        "h": "fbed0d2c",
        "kind": "fix",
        "scope": "moderation",
@@ -955,11 +1284,39 @@
        "date": "2026-08-20"
       },
       {
+       "h": "c4d657ef",
+       "kind": "feat",
+       "scope": "sfx",
+       "text": "Ride the player's own footfall on the troll and the tortoise",
+       "date": "2026-08-18"
+      },
+      {
        "h": "ef3df570",
        "kind": "feat",
        "scope": "mounts",
        "text": "Give the rocket sled a summon call, and lift its winddown",
        "date": "2026-08-17"
+      },
+      {
+       "h": "d19e6b57",
+       "kind": "feat",
+       "scope": "mounts",
+       "text": "Add the Cluckwork Mech Bird store mount",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "d695ff45",
+       "kind": "feat",
+       "scope": "mounts",
+       "text": "Fidget on a 5-second beat",
+       "date": "2026-08-17"
+      },
+      {
+       "h": "2bb95d50",
+       "kind": "feat",
+       "scope": "mounts",
+       "text": "Add the Chimeglass Tortoise rideable mount",
+       "date": "2026-08-16"
       },
       {
        "h": "6e0b7fc2",
@@ -981,6 +1338,13 @@
        "scope": "render",
        "text": "Rallycart tail lamp lenses from a hand-traced outline",
        "date": "2026-08-16"
+      },
+      {
+       "h": "d8686fb4",
+       "kind": "feat",
+       "scope": "mounts",
+       "text": "Add the Lanternback Troll rideable mount",
+       "date": "2026-08-15"
       },
       {
        "h": "fe8a746d",
@@ -1011,11 +1375,123 @@
        "date": "2026-09-02"
       },
       {
+       "h": "e7248d5e",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Reject the blade-grass pool corners the fade already hides",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "fe142cdd",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Band the blade-grass instance uploads by grid row",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "9a88bf4b",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Let three cull the blade pools sector by sector",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "2d357125",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Re-measure only the blade sectors a crossing touched",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "f8976eeb",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Band the uploads on bytes, not on how many blocks are dirty",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "48027360",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Merge a prop bucket's shadow casters with its non-casters",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "e4f8dad3",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Cull a character rig per pass, not per tier",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "418f40cf",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Render the High tier's sun shadows at 2560",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "efec7552",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Make three's shadow depth pass depth-only",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "5846882b",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Shed the sun shadow extent under sustained pressure",
+       "date": "2026-09-02"
+      },
+      {
        "h": "980b1013",
        "kind": "perf",
        "scope": "render",
        "text": "Measure a vehicle once per model, not per rider",
        "date": "2026-08-20"
+      },
+      {
+       "h": "11ffc2d2",
+       "kind": "fix",
+       "scope": "realm-builder",
+       "text": "Action the release/v0.42.0 review findings",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "418d1a11",
+       "kind": "fix",
+       "scope": "realm-builder",
+       "text": "Round-3 review findings (client catchment, pins, registry)",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "7e7b7d2e",
+       "kind": "fix",
+       "scope": "realm-builder",
+       "text": "Keep ZWNJ and ZWJ out of the name refusal (round 4)",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "bd520ffd",
+       "kind": "fix",
+       "scope": "",
+       "text": "Bring release/v0.42.0 into the Chimeglass Tortoise mount",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "1451e2bb",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Reset the rider's x on dismount and share one mount lifecycle host",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "25a7ddab",
+       "kind": "fix",
+       "scope": "store",
+       "text": "Render the Machine Stable as the Armory card family",
+       "date": "2026-09-03"
       },
       {
        "h": "603b405d",
@@ -1032,10 +1508,59 @@
        "date": "2026-09-02"
       },
       {
+       "h": "b86cf1da",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep lean-tier rocks and dressing visible as the camera orbits",
+       "date": "2026-09-02"
+      },
+      {
        "h": "9daea35f",
        "kind": "fix",
        "scope": "render",
        "text": "Refuse a merge whose parts disagree on morph kinds",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "0324c5fc",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Drop the blade-grass disc rejection, it erodes the meadow",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "b5fdb21c",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Answer the blade-pool review round",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "34c8f6e2",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep the shadow map's colour clear, drop only its colour write",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "546b7a35",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Answer the shadow-shed review round",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "b0472cf2",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Reap a silent socket after two minutes however late the sweep runs",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "823f3850",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Widen the socket silence deadline to ten minutes",
        "date": "2026-09-02"
       },
       {
@@ -1158,6 +1683,13 @@
        "date": "2026-09-01"
       },
       {
+       "h": "f47c6f9e",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Close the notable-item gap on the Bank and fix its Full arm",
+       "date": "2026-09-01"
+      },
+      {
        "h": "8ba5e2ae",
        "kind": "fix",
        "scope": "render",
@@ -1190,6 +1722,13 @@
        "kind": "fix",
        "scope": "input",
        "text": "Document the repair-marker forward-compat gap and tighten types",
+       "date": "2026-08-31"
+      },
+      {
+       "h": "160386fc",
+       "kind": "fix",
+       "scope": "talents",
+       "text": "Let Redhanded's poison damage reach the coat rider",
        "date": "2026-08-31"
       },
       {
@@ -1389,6 +1928,13 @@
        "date": "2026-08-17"
       },
       {
+       "h": "650d69d8",
+       "kind": "fix",
+       "scope": "",
+       "text": "Bring the v0.39.0 release candidate into the troll mount",
+       "date": "2026-08-16"
+      },
+      {
        "h": "0d6dfb42",
        "kind": "fix",
        "scope": "render",
@@ -1401,6 +1947,20 @@
        "scope": "audio",
        "text": "Carry engine transitions with the vehicle, soften the summon seam",
        "date": "2026-08-16"
+      },
+      {
+       "h": "2e169f79",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Space over a bag row jumps the mount instead of dismounting",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "125a8df4",
+       "kind": "fix",
+       "scope": "mounts",
+       "text": "Re-bless the item-art record and clear the mount's lint debt",
+       "date": "2026-08-15"
       },
       {
        "h": "80a4d996",
