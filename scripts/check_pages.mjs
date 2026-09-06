@@ -19,7 +19,8 @@
 // -----------------------------------------------------------------------------
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
-import { extname, join, normalize } from 'node:path';
+import { extname, join } from 'node:path';
+import { normalize as normalizeUrl } from 'node:path/posix';
 import { chromium } from 'playwright';
 
 const args = process.argv.slice(2);
@@ -37,7 +38,10 @@ const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.
 const server = createServer(async (req, res) => {
   try {
     const url = decodeURIComponent((req.url || '/').split('?')[0]);
-    const rel = normalize(url).replace(/^(\.\.[/\\])+/, '');
+    // Les URL utilisent toujours « / », même sous Windows. Utiliser le
+    // normaliseur natif ici transforme le préfixe /La-Clauderie/ en
+    // \La-Clauderie\ avant que le routage puisse le reconnaître.
+    const rel = normalizeUrl(url).replace(/^(\.\.[/\\])+/, '');
     const path = rel.startsWith('/wocc-knowledge-base/')
       ? join(KB, rel.slice('/wocc-knowledge-base/'.length))
       : join('.', rel.replace(/^\/La-Clauderie\//, '/'));
@@ -45,7 +49,8 @@ const server = createServer(async (req, res) => {
     const body = await readFile(target);
     res.writeHead(200, { 'content-type': MIME[extname(target)] || 'application/octet-stream' });
     res.end(body);
-  } catch {
+  } catch (error) {
+    console.error('serve 404', req.url, error?.message || error);
     res.writeHead(404).end('not found');
   }
 });
@@ -62,11 +67,9 @@ const derniereVersion = JSON.parse(await readFile('patch-notes.json', 'utf8')).v
 
 const PAGES = [
   { path: '/index.html', filled: [] },
-  // #races vient du palmarès injecté dans la page : il doit toujours être
-  // rempli. #tiles, lui, dépend d'un appel au site officiel des records — on
-  // ne l'exige PAS, sinon une panne chez eux bloquerait notre publication (la
-  // page affiche alors son propre message, pas une zone vide).
-  { path: '/guilde.html', filled: ['#races'] },
+  // Les chiffres de guilde dépendent d'un appel au site officiel des records :
+  // on ne les exige PAS, sinon une panne chez eux bloquerait la publication.
+  { path: '/guilde.html', filled: [] },
   { path: '/bis.html', filled: ['#bisList', '#buildBox'] },
   { path: '/metiers.html', filled: ['#view-recolte', '#view-metiers'] },
   { path: '/pvp.html', filled: ['#buildBox'] },
@@ -111,7 +114,10 @@ for (const page of PAGES) {
   tab.on('response', (r) => {
     // Uniquement nos propres ressources : le badge de version interroge aussi
     // l'API GitHub, hors de notre contrôle et absente en CI hors ligne.
-    if (r.status() >= 400 && r.url().startsWith(base)) failed.push(`${r.status()} ${r.url().replace(base, '')}`);
+    if (r.status() >= 400 && r.url().startsWith(base)) {
+      console.error('response-fail', r.status(), r.url(), 'service-worker=', r.fromServiceWorker());
+      failed.push(`${r.status()} ${r.url().replace(base, '')}`);
+    }
   });
 
   await tab.goto(base + '/La-Clauderie' + page.path, { waitUntil: 'networkidle' });

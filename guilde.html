@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
-<title data-en="La Clauderie — guild stats &amp; hall of fame">La Clauderie — chiffres et exploits</title>
-<meta name="description" content="Les chiffres de la guilde La Clauderie sur World of ClaudeCraft, en direct, et le mur des exploits : nos premières du serveur et nos places au tableau d'honneur.">
+<title data-en="La Clauderie — guild stats">La Clauderie — chiffres de la guilde</title>
+<meta name="description" content="Les chiffres de la guilde La Clauderie sur World of ClaudeCraft, en direct.">
 <meta name="theme-color" content="#c8a04b">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="La Clauderie">
-<meta property="og:title" content="La Clauderie — chiffres et exploits">
-<meta property="og:description" content="Les chiffres de la guilde en direct, et le mur des exploits.">
+<meta property="og:title" content="La Clauderie — chiffres de la guilde">
+<meta property="og:description" content="Les chiffres de la guilde en direct.">
 <meta property="og:url" content="https://laclauderie.fr/guilde.html">
 <link rel="canonical" href="https://laclauderie.fr/guilde.html">
 <meta property="og:image" content="https://laclauderie.fr/assets/og.png">
@@ -81,33 +81,45 @@
   .tile .n { font-family: var(--font-display); font-size: clamp(1.5rem, 4.4vw, 2rem); font-weight: 600; color: var(--gold-bright); line-height: 1.1; display: block; }
   .tile .k { color: var(--dim); font-size: 0.8rem; margin-top: 4px; display: block; }
   .tile.wide { grid-column: 1 / -1; }
+  button.tile { color: inherit; font: inherit; text-align: left; cursor: pointer; }
+  button.tile:hover, button.tile:focus-visible { border-color: var(--gold); outline: none; }
+  .tile .more { color: var(--gold); font-size: 0.76rem; margin-top: 10px; display: block; }
+
+  /* --- fenêtre des membres --- */
+  body.modal-open { overflow: hidden; }
+  .modal { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 18px; }
+  .modal[hidden] { display: none; }
+  .modal-backdrop { position: absolute; inset: 0; background: rgba(5, 7, 12, 0.78); }
+  .modal-panel { position: relative; width: min(720px, 100%); max-height: min(640px, 88vh); overflow: auto; background: var(--bg-card); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 18px 70px rgba(0,0,0,.45); padding: 20px; }
+  .modal-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+  .modal-head h2.sec { margin: 0; }
+  .modal-close { flex: none; border: 1px solid var(--line); border-radius: 8px; background: transparent; color: var(--dim); font: inherit; font-size: 1.3rem; line-height: 1; width: 34px; height: 34px; cursor: pointer; }
+  .modal-close:hover, .modal-close:focus-visible { color: var(--gold-bright); border-color: var(--gold); outline: none; }
+
+  /* --- liste des membres --- */
+  .members { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 8px; }
+  .members-loading { color: var(--dim); margin: 4px 0; }
+  .member { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; background: var(--bg-card); border: 1px solid var(--line); border-radius: 10px; padding: 8px 11px; font-size: 0.86rem; }
+  .member-main { display: inline-flex; align-items: center; gap: 7px; }
+  .member .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .member .last { color: var(--faint); font-size: 0.72rem; padding-left: 16px; }
+  .member .stat-value { color: var(--gold-bright); font-variant-numeric: tabular-nums; }
 
   /* --- composition par classe --- */
   .compo { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
   .cls { display: inline-flex; align-items: baseline; gap: 7px; background: var(--bg-card); border: 1px solid var(--line); border-radius: 999px; padding: 5px 13px; font-size: 0.86rem; }
+  button.cls { color: inherit; font: inherit; text-align: left; cursor: pointer; appearance: none; }
+  button.cls:hover, button.cls:focus-visible { border-color: var(--gold); outline: none; }
   .cls .dot { width: 9px; height: 9px; border-radius: 50%; align-self: center; flex: none; }
   .cls .c { color: var(--dim); font-variant-numeric: tabular-nums; }
 
   /* --- activité --- */
+  .chart-shell { position: relative; }
   .chart { display: flex; align-items: flex-end; gap: 2px; height: 92px; margin-top: 6px; padding: 10px 12px; background: var(--bg-card); border: 1px solid var(--line); border-radius: 12px; overflow-x: auto; }
   .chart i { flex: 1 0 5px; min-width: 5px; background: linear-gradient(180deg, var(--gold-bright), var(--gold)); border-radius: 2px 2px 0 0; opacity: 0.85; }
-  .chart i:hover { opacity: 1; }
-
-  /* --- premières du serveur --- */
-  .first { background: linear-gradient(135deg, rgba(255,128,0,0.10), rgba(200,160,75,0.05)); border: 1px solid rgba(255,128,0,0.34); border-radius: 12px; padding: 18px 20px; margin-bottom: 12px; }
-  .first .crown { font-size: 1.5rem; line-height: 1; }
-  .first .who { font-family: var(--font-display); font-size: 1.22rem; color: var(--q-legendary); font-weight: 600; }
-  .first .what { margin: 5px 0 0; }
-  .first .when { color: var(--faint); font-size: 0.82rem; margin: 6px 0 0; }
-
-  /* --- tableau d'honneur --- */
-  .race { background: var(--bg-card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; }
-  .race h3 { margin: 0; font-size: 1rem; font-weight: 600; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
-  .race .best { color: var(--gold-bright); font-variant-numeric: tabular-nums; }
-  .race .out { color: var(--faint); font-size: 0.8rem; font-weight: 400; }
-  .race ul { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
-  .race li { font-size: 0.84rem; background: rgba(255,255,255,0.035); border: 1px solid var(--line-soft); border-radius: 999px; padding: 3px 11px; display: inline-flex; align-items: center; gap: 6px; }
-  .race li .r { color: var(--faint); font-variant-numeric: tabular-nums; font-family: var(--font-mono); font-size: 0.78rem; }
+  .chart i:hover, .chart i:focus-visible { opacity: 1; outline: 2px solid var(--gold-bright); outline-offset: 2px; }
+  .chart-tip { position: absolute; z-index: 2; top: 14px; left: 50%; transform: translateX(-50%); pointer-events: none; background: var(--bg-card); border: 1px solid var(--gold); border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.35); color: var(--gold-bright); font-size: .78rem; padding: 5px 10px; white-space: nowrap; }
+  .chart-tip[hidden] { display: none; }
 
   .note { color: var(--faint); font-size: 0.82rem; margin-top: 14px; }
   .err { background: var(--bg-card); border: 1px solid var(--line); border-left: 3px solid var(--q-legendary); border-radius: 10px; padding: 14px 18px; color: var(--dim); }
@@ -130,13 +142,24 @@
   <header class="page">
     <p class="eyebrow" data-en="The guild · live figures">La guilde · chiffres en direct</p>
     <h1 data-en="La Clauderie, in numbers">La Clauderie en chiffres</h1>
-    <p class="lede" data-en="Everything the guild has done together, counted by the game itself — and the wall of what we got there first. Figures are read live from the game's own records site at every visit.">Tout ce que la guilde a accompli ensemble, compté par le jeu lui-même — et le mur de ce qu’on a décroché en premier. Les chiffres sont relus en direct à chaque visite sur le site officiel des records.</p>
+    <p class="lede" data-en="Everything the guild has done together, counted by the game itself. Figures are read live from the game's own records site at every visit.">Tout ce que la guilde a accompli ensemble, compté par le jeu lui-même. Les chiffres sont relus en direct à chaque visite sur le site officiel des records.</p>
   </header>
 
   <h2 class="sec" data-en="The figures">Les chiffres</h2>
   <p class="sub" data-en="Everyone's totals, added up. Updated live.">Les totaux de tout le monde, additionnés. Mis à jour en direct.</p>
   <div id="tiles" class="tiles">
     <div class="tile wide"><span class="k" data-en="Loading the guild's figures…">Chargement des chiffres de la guilde…</span></div>
+  </div>
+
+  <div id="members-wrap" class="modal" hidden>
+    <div class="modal-backdrop" data-close-members></div>
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="members-title">
+      <div class="modal-head">
+        <h2 id="members-title" class="sec" data-en="Guild members">Les membres de la guilde</h2>
+        <button id="members-close" class="modal-close" type="button" aria-label="Fermer">×</button>
+      </div>
+      <div id="members" class="members"></div>
+    </section>
   </div>
 
   <div id="compo-wrap" hidden>
@@ -148,36 +171,21 @@
   <div id="act-wrap" hidden>
     <h2 class="sec" data-en="Our activity">Notre activité</h2>
     <p class="sub" data-en="Deeds earned by the guild, day by day.">Les hauts faits décrochés par la guilde, jour après jour.</p>
-    <div id="chart" class="chart"></div>
+    <div class="chart-shell">
+      <div id="chart" class="chart"></div>
+      <div id="chart-tip" class="chart-tip" role="tooltip" hidden></div>
+    </div>
     <p id="act-note" class="note"></p>
   </div>
-
-  <h2 class="sec" data-en="The wall of fame">Le mur des exploits</h2>
-  <p class="sub" data-en="Server firsts and our places in the hall of fame — as recognised by the game's official records site, not by us.">Les premières du serveur et nos places au tableau d’honneur — telles que le site officiel des records les reconnaît, pas comme on les raconte.</p>
-  <div id="firsts"></div>
-  <div id="races"></div>
-  <p id="exploits-note" class="note"></p>
 
 </div>
 
 <footer>
   <div class="wrap">
-    <p data-en="La Clauderie — figures read from the game's official records site. Nothing here is hand-written.">La Clauderie — chiffres relevés sur le site officiel des records du jeu. Rien ici n’est écrit à la main.</p>
+    <p data-en="La Clauderie — figures read live from the game's official records site. Activity history is available from July 13, 2026.">La Clauderie — chiffres relus en direct sur le site officiel des records du jeu. L’historique d’activité est disponible depuis le 13 juillet 2026.</p>
     <p style="margin-top:8px"><a href="index.html" data-en="← Back to the site">← Retour au site</a></p>
   </div>
 </footer>
-
-<script>
-/* ==========================================================================
-   Le palmarès (mur des exploits) est INJECTÉ ici par scripts/build_exploits.mjs
-   — ne pas l'éditer à la main. Il est figé dans la page plutôt que chargé à
-   la volée parce qu'il coûte cher à recalculer : le tableau d'honneur compte
-   ~45 « courses », et la seule Nythraxis héroïque pèse 190 Ko pour 712
-   joueurs. Les CHIFFRES de la guilde, eux, tiennent en un seul appel et
-   restent donc en direct plus bas.
-   ========================================================================== */
-const EXPLOITS = /* EXPLOITS_START */{"releve":"2026-09-06T15:17:56.538Z","guilde":{"id":89,"nom":"La Clauderie","membres":47},"premieres":[{"membre":"Nhawette","classe":"priest","label":"First: Nythraxis heroic","detail":"joint first with their warband","quand":"2026-07-13 15:22","deed_id":"dgn_nythraxis_heroic"},{"membre":"Nhawette","classe":"priest","label":"First: Nythraxis deathless","detail":"joint first with their warband","quand":"2026-07-13 15:22","deed_id":"dgn_nythraxis_deathless"}],"courses":[{"deed_id":"soc_wyrms_hoard","label":"A Wyrm's Hoard","groupe":"Feats & chronicles","total":254,"membres":[{"membre":"Gmail","classe":"druid","rang":2,"quand":"2026-07-14"},{"membre":"Saggin","classe":"mage","rang":25,"quand":"2026-07-19"},{"membre":"Valadin","classe":"paladin","rang":80,"quand":"2026-07-30"},{"membre":"Nhawette","classe":"priest","rang":232,"quand":"2026-08-31"}]},{"deed_id":"dgn_nythraxis_heroic","label":"Nythraxis heroic","groupe":"Raids & dungeons","total":712,"membres":[{"membre":"Nhawette","classe":"priest","rang":7,"quand":"2026-07-13"},{"membre":"Aetherius","classe":"priest","rang":12,"quand":"2026-07-13"},{"membre":"Nhawi","classe":"shaman","rang":30,"quand":"2026-07-14"},{"membre":"Pr Reptile","classe":"mage","rang":52,"quand":"2026-07-15"},{"membre":"Pr Reptile Druid","classe":"druid","rang":107,"quand":"2026-07-16"},{"membre":"Pr Reptile heal","classe":"priest","rang":109,"quand":"2026-07-16"},{"membre":"Gmail","classe":"druid","rang":112,"quand":"2026-07-16"},{"membre":"Saggin","classe":"mage","rang":119,"quand":"2026-07-16"},{"membre":"Aureus","classe":"paladin","rang":201,"quand":"2026-07-19"},{"membre":"Faho","classe":"hunter","rang":229,"quand":"2026-07-20"},{"membre":"Fahora","classe":"shaman","rang":238,"quand":"2026-07-20"},{"membre":"spirou","classe":"druid","rang":621,"quand":"2026-08-25"}]},{"deed_id":"dgn_nythraxis_deathless","label":"Nythraxis deathless","groupe":"Raids & dungeons","total":579,"membres":[{"membre":"Nhawette","classe":"priest","rang":7,"quand":"2026-07-13"},{"membre":"Pr Reptile","classe":"mage","rang":47,"quand":"2026-07-17"},{"membre":"Saggin","classe":"mage","rang":57,"quand":"2026-07-17"},{"membre":"Gmail","classe":"druid","rang":76,"quand":"2026-07-17"},{"membre":"Nhawi","classe":"shaman","rang":86,"quand":"2026-07-17"},{"membre":"Aureus","classe":"paladin","rang":121,"quand":"2026-07-20"},{"membre":"Faho","classe":"hunter","rang":124,"quand":"2026-07-20"},{"membre":"Fahora","classe":"shaman","rang":140,"quand":"2026-07-20"},{"membre":"spirou","classe":"druid","rang":503,"quand":"2026-08-26"}]},{"deed_id":"chr_peaks_chapter_iii","label":"Chronicle of Thornpeak","groupe":"Feats & chronicles","total":31,"membres":[{"membre":"Faho","classe":"hunter","rang":8,"quand":"2026-07-25"}]},{"deed_id":"cmb_legion_of_one","label":"Legion of One","groupe":"Feats & chronicles","total":42,"membres":[{"membre":"Saggin","classe":"mage","rang":16,"quand":"2026-08-03"}]},{"deed_id":"pvp_duel_first_win","label":"First duel won","groupe":"PvP & sport","total":316,"membres":[{"membre":"Gmail","classe":"druid","rang":24,"quand":"2026-07-15"},{"membre":"Saggin","classe":"mage","rang":65,"quand":"2026-07-18"},{"membre":"Nhawette","classe":"priest","rang":120,"quand":"2026-07-27"},{"membre":"Valadin","classe":"paladin","rang":138,"quand":"2026-07-29"}]},{"deed_id":"dgn_deepward","label":"Deepward","groupe":"Raids & dungeons","total":72,"membres":[{"membre":"Faho","classe":"hunter","rang":27,"quand":"2026-07-24"}]},{"deed_id":"dlv_solo_heroic","label":"Heroic delve solo","groupe":"Raids & dungeons","total":278,"membres":[{"membre":"wormchasseur","classe":"hunter","rang":36,"quand":"2026-07-16"},{"membre":"Faho","classe":"hunter","rang":90,"quand":"2026-07-24"},{"membre":"DokunFR-","classe":"warrior","rang":121,"quand":"2026-08-01"},{"membre":"Ambassador","classe":"warrior","rang":250,"quand":"2026-08-27"}]},{"deed_id":"prog_masterwright","label":"Masterwright","groupe":"Professions","total":197,"membres":[{"membre":"DokunFR-","classe":"warrior","rang":89,"quand":"2026-08-01"},{"membre":"Faho","classe":"hunter","rang":95,"quand":"2026-08-02"}]}]}/* EXPLOITS_END */;
-</script>
 
 <script>
 (function () {
@@ -203,28 +211,6 @@ const EXPLOITS = /* EXPLOITS_START */{"releve":"2026-09-06T15:17:56.538Z","guild
     warrior: 'Warrior', paladin: 'Paladin', shaman: 'Shaman', druid: 'Druid',
     priest: 'Priest', mage: 'Mage', warlock: 'Warlock', rogue: 'Rogue', hunter: 'Hunter'
   };
-
-  // Noms français des hauts faits, traduits à la main : le jeu ne les fournit
-  // qu'en anglais (rien dans I18N_FR.json de la KB, qui ne couvre que les
-  // objets et les sorts). Clés = l'ID du haut fait, jamais son libellé : un
-  // renommage côté jeu ne doit pas faire retomber la page en anglais.
-  // Une course inconnue garde son libellé d'origine plutôt que de disparaître.
-  var DEED_FR = {
-    dgn_nythraxis_heroic: 'Nythraxis héroïque',
-    dgn_nythraxis_deathless: 'Nythraxis sans une seule mort',
-    soc_wyrms_hoard: 'Le trésor du wyrm',
-    chr_peaks_chapter_iii: 'La chronique de Thornpeak',
-    cmb_legion_of_one: 'Une légion à lui seul',
-    pvp_duel_first_win: 'Premier duel gagné',
-    dgn_deepward: 'Gardien des profondeurs',
-    dlv_solo_heroic: 'Descente héroïque en solo',
-    prog_masterwright: 'Maître artisan',
-    prog_mythic: 'Mythique'
-  };
-  function nomHautFait(deedId, labelOfficiel) {
-    if (en()) return labelOfficiel;
-    return DEED_FR[deedId] || labelOfficiel;
-  }
 
   // lang.js pose la langue dans localStorage ; on la relit pareil pour que la
   // page suive le bouton FR/EN comme les autres.
@@ -259,23 +245,169 @@ const EXPLOITS = /* EXPLOITS_START */{"releve":"2026-09-06T15:17:56.538Z","guild
   }
 
   // ---------------------------------------------------------------- chiffres
-  function tiles(agg, membres) {
+  var membresTrigger = null;
+  var profileCache = {};
+
+  function chargerMembre(m) {
+    if (Object.prototype.hasOwnProperty.call(profileCache, m.id)) {
+      return Promise.resolve({ membre: m, profile: profileCache[m.id], erreur: false });
+    }
+    return fetch(API + '/characters/' + encodeURIComponent(m.id))
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (profile) {
+        profileCache[m.id] = profile;
+        return { membre: m, profile: profile, erreur: false };
+      })
+      .catch(function () { return { membre: m, profile: null, erreur: true }; });
+  }
+
+  function afficherMembres(membres, bouton, filtre) {
+    var wrap = $('members-wrap');
+    var cle = 'members:' + membres.map(function (m) { return m.id; }).join(',');
+    $('members-title').textContent = filtre
+      ? t('Membres — ' + filtre, 'Members — ' + filtre)
+      : t('Les membres de la guilde', 'Guild members');
+    membresTrigger = bouton;
+    if (wrap.dataset.key !== cle) {
+      var box = $('members');
+      box.textContent = '';
+      box.appendChild(el('p', 'members-loading', t('Chargement des dernières connexions…', 'Loading last logins…')));
+      wrap.dataset.key = cle;
+      Promise.all(membres.map(chargerMembre)).then(function (lignes) {
+        if (wrap.dataset.key !== cle) return;
+        lignes.sort(function (a, b) {
+          var ta = a.profile && a.profile.last_login ? Date.parse(a.profile.last_login) : -Infinity;
+          var tb = b.profile && b.profile.last_login ? Date.parse(b.profile.last_login) : -Infinity;
+          if (ta !== tb) return tb - ta;
+          return String(a.membre.name || '').localeCompare(String(b.membre.name || ''), en() ? 'en' : 'fr');
+        });
+        box.textContent = '';
+        lignes.forEach(function (ligne) {
+          var m = ligne.membre;
+          var chip = el('span', 'member');
+          var main = el('span', 'member-main');
+          var dot = el('span', 'dot');
+          dot.style.background = CLS_COLOR[m.class] || 'var(--dim)';
+          main.appendChild(dot);
+          main.appendChild(el('span', null, m.name || t('Membre inconnu', 'Unknown member')));
+          chip.appendChild(main);
+          var derniereConnexion = ligne.profile && ligne.profile.last_login;
+          var last = el('span', 'last', ligne.erreur
+            ? t('Dernière connexion indisponible', 'Last login unavailable')
+            : derniereConnexion
+              ? t('Dernière connexion : ', 'Last login: ') + date(derniereConnexion)
+              : t('Dernière connexion inconnue', 'Last login unknown'));
+          chip.appendChild(last);
+          box.appendChild(chip);
+        });
+      });
+    }
+    wrap.hidden = false;
+    document.body.classList.add('modal-open');
+    bouton.setAttribute('aria-expanded', 'true');
+    $('members-close').focus();
+  }
+
+  function date(iso) {
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return String(iso);
+    return d.toLocaleString(en() ? 'en-GB' : 'fr-FR', { dateStyle: 'short', timeStyle: 'short' });
+  }
+
+  var STAT_DETAILS = {
+    playtime: { fr: 'Temps de jeu par membre', en: 'Playtime by member', get: function (p) { return p.playtime_seconds; }, format: heures },
+    kills: { fr: 'Monstres tués par membre', en: 'Monsters slain by member', get: function (p) { return p.counters && p.counters.kills; }, format: num },
+    clears: { fr: 'Donjons terminés par membre', en: 'Dungeons cleared by member', get: function (p) { return p.counters && p.counters.dungeonFinalBossKills; }, format: num },
+    deeds: { fr: 'Hauts faits par membre', en: 'Deeds earned by member', get: function (p) { return Array.isArray(p.deeds) ? p.deeds.length : null; }, format: num },
+    renown: { fr: 'Renom par membre', en: 'Renown by member', get: function (p) { return p.ranks && p.ranks.renown && p.ranks.renown.score; }, format: num },
+    xp: { fr: "Expérience par membre", en: 'Experience by member', get: function (p) { return p.lifetime_xp; }, format: num },
+    damage: { fr: 'Dégâts infligés par membre', en: 'Damage dealt by member', get: function (p) { return p.counters && p.counters.damageDealt; }, format: num }
+  };
+
+  function afficherStatistiques(membres, bouton, stat) {
+    var detail = STAT_DETAILS[stat];
+    if (!detail) return;
+    var wrap = $('members-wrap');
+    var cle = 'stat:' + stat + ':' + membres.map(function (m) { return m.id; }).join(',');
+    $('members-title').textContent = t(detail.fr, detail.en);
+    membresTrigger = bouton;
+    if (wrap.dataset.key !== cle) {
+      var box = $('members');
+      box.textContent = '';
+      box.appendChild(el('p', 'members-loading', t('Chargement des détails…', 'Loading details…')));
+      wrap.dataset.key = cle;
+      Promise.all(membres.map(chargerMembre)).then(function (lignes) {
+        if (wrap.dataset.key !== cle) return;
+        lignes.sort(function (a, b) {
+          var va = a.profile ? detail.get(a.profile) : null;
+          var vb = b.profile ? detail.get(b.profile) : null;
+          var na = va === null || va === undefined || isNaN(va) ? -Infinity : Number(va);
+          var nb = vb === null || vb === undefined || isNaN(vb) ? -Infinity : Number(vb);
+          if (na !== nb) return nb - na;
+          return String(a.membre.name || '').localeCompare(String(b.membre.name || ''), en() ? 'en' : 'fr');
+        });
+        box.textContent = '';
+        lignes.forEach(function (ligne) {
+          var m = ligne.membre;
+          var chip = el('span', 'member');
+          var main = el('span', 'member-main');
+          var dot = el('span', 'dot');
+          dot.style.background = CLS_COLOR[m.class] || 'var(--dim)';
+          main.appendChild(dot);
+          main.appendChild(el('span', null, m.name || t('Membre inconnu', 'Unknown member')));
+          chip.appendChild(main);
+          var valeur = ligne.profile ? detail.get(ligne.profile) : null;
+          var valueText = ligne.erreur
+            ? t('Détail indisponible', 'Detail unavailable')
+            : valeur === null || valeur === undefined || isNaN(valeur)
+              ? t('Non renseigné', 'Not available')
+              : detail.format(valeur);
+          chip.appendChild(el('span', 'last stat-value', valueText));
+          box.appendChild(chip);
+        });
+      });
+    }
+    wrap.hidden = false;
+    document.body.classList.add('modal-open');
+    bouton.setAttribute('aria-expanded', 'true');
+    $('members-close').focus();
+  }
+
+  function fermerMembres() {
+    $('members-wrap').hidden = true;
+    document.body.classList.remove('modal-open');
+    var bouton = membresTrigger;
+    if (bouton) {
+      bouton.setAttribute('aria-expanded', 'false');
+      bouton.focus();
+    }
+  }
+
+  function tiles(agg, totalMembres, membres) {
     var box = $('tiles');
     box.textContent = '';
     var rows = [
-      [String(membres), t('membres', 'members')],
-      [heures(agg.playtime), t('de jeu cumulées', 'played, together')],
-      [num(agg.kills), t('monstres tués', 'monsters slain')],
-      [num(agg.clears), t('donjons terminés', 'dungeons cleared')],
-      [num(agg.deeds), t('hauts faits', 'deeds earned')],
-      [num(agg.renown), t('de renom', 'renown')],
-      [num(agg.xp), t("d'expérience", 'experience')],
-      [num(agg.damage), t('de dégâts infligés', 'damage dealt')]
+      { value: String(totalMembres), label: t('membres', 'members'), stat: null },
+      { value: heures(agg.playtime), label: t('de jeu cumulées', 'played, together'), stat: 'playtime' },
+      { value: num(agg.kills), label: t('monstres tués', 'monsters slain'), stat: 'kills' },
+      { value: num(agg.clears), label: t('donjons terminés', 'dungeons cleared'), stat: 'clears' },
+      { value: num(agg.deeds), label: t('hauts faits', 'deeds earned'), stat: 'deeds' },
+      { value: num(agg.renown), label: t('de renom', 'renown'), stat: 'renown' },
+      { value: num(agg.xp), label: t("d'expérience", 'experience'), stat: 'xp' },
+      { value: num(agg.damage), label: t('de dégâts infligés', 'damage dealt'), stat: 'damage' }
     ];
-    rows.forEach(function (r) {
-      var tile = el('div', 'tile');
-      tile.appendChild(el('span', 'n', r[0]));
-      tile.appendChild(el('span', 'k', r[1]));
+    rows.forEach(function (r, i) {
+      var tile = el('button', 'tile');
+      tile.type = 'button';
+      tile.setAttribute('aria-controls', 'members-wrap');
+      tile.setAttribute('aria-expanded', 'false');
+      tile.appendChild(el('span', 'n', r.value));
+      tile.appendChild(el('span', 'k', r.label));
+      tile.appendChild(el('span', 'more', i === 0 ? t('Voir la liste', 'Show the list') : t('Voir le détail', 'Show details')));
+      tile.addEventListener('click', function () {
+        if (r.stat) afficherStatistiques(membres, tile, r.stat);
+        else afficherMembres(membres, tile);
+      });
       box.appendChild(tile);
     });
   }
@@ -287,12 +419,18 @@ const EXPLOITS = /* EXPLOITS_START */{"releve":"2026-09-06T15:17:56.538Z","guild
     var box = $('compo');
     box.textContent = '';
     Object.keys(par).sort(function (a, b) { return par[b] - par[a]; }).forEach(function (c) {
-      var chip = el('span', 'cls');
+      var chip = el('button', 'cls');
+      chip.type = 'button';
+      chip.setAttribute('aria-controls', 'members-wrap');
+      chip.setAttribute('aria-expanded', 'false');
       var dot = el('span', 'dot');
       dot.style.background = CLS_COLOR[c] || 'var(--dim)';
       chip.appendChild(dot);
       chip.appendChild(el('span', null, noms[c] || c));
       chip.appendChild(el('span', 'c', par[c]));
+      chip.addEventListener('click', function () {
+        afficherMembres(membres.filter(function (m) { return m.class === c; }), chip, noms[c] || c);
+      });
       box.appendChild(chip);
     });
     $('compo-wrap').hidden = false;
@@ -305,72 +443,35 @@ const EXPLOITS = /* EXPLOITS_START */{"releve":"2026-09-06T15:17:56.538Z","guild
     dates.forEach(function (d) { if (jours[d] > max) max = jours[d]; });
     if (!max) return;
     var chart = $('chart');
+    $('chart-tip').hidden = true;
     chart.textContent = '';
     dates.forEach(function (d) {
       var bar = el('i');
       // 3 % de hauteur minimale : un jour à 1 haut fait doit rester visible,
       // sinon la barre disparaît et le jour a l'air vide.
       bar.style.height = Math.max(3, (jours[d] / max) * 100) + '%';
-      bar.title = d + ' · ' + jours[d] + t(' haut(s) fait(s)', ' deed(s)');
+      var exact = d + ' · ' + jours[d] + t(' haut(s) fait(s)', ' deed(s)');
+      bar.title = exact;
+      bar.tabIndex = 0;
+      bar.setAttribute('role', 'img');
+      bar.setAttribute('aria-label', exact);
+      bar.addEventListener('mouseenter', function () {
+        $('chart-tip').textContent = exact;
+        $('chart-tip').hidden = false;
+      });
+      bar.addEventListener('mouseleave', function () { $('chart-tip').hidden = true; });
+      bar.addEventListener('focus', function () {
+        $('chart-tip').textContent = exact;
+        $('chart-tip').hidden = false;
+      });
+      bar.addEventListener('blur', function () { $('chart-tip').hidden = true; });
       chart.appendChild(bar);
     });
     $('act-note').textContent = t(
-      dates.length + ' jours, du ' + dates[0] + ' au ' + dates[dates.length - 1] + '. Le plus gros jour : ' + max + ' hauts faits.',
-      dates.length + ' days, ' + dates[0] + ' to ' + dates[dates.length - 1] + '. Best day: ' + max + ' deeds.'
+      dates.length + ' jours, du ' + dates[0] + ' au ' + dates[dates.length - 1] + '. Le plus gros jour : ' + max + ' hauts faits. Survolez une barre pour voir le détail.',
+      dates.length + ' days, ' + dates[0] + ' to ' + dates[dates.length - 1] + '. Best day: ' + max + ' deeds. Hover or focus a bar for the exact count.'
     );
     $('act-wrap').hidden = false;
-  }
-
-  // --------------------------------------------------------------- exploits
-  function exploits() {
-    var box = $('firsts');
-    (EXPLOITS.premieres || []).forEach(function (p) {
-      var card = el('div', 'first');
-      card.appendChild(el('div', 'crown', '👑'));
-      card.appendChild(el('div', 'who', p.membre));
-      // En clair et en français d'abord…
-      var what = el('p', 'what');
-      what.appendChild(el('b', null, t('1ʳᵉ du serveur', 'Server first')));
-      what.appendChild(el('span', null, ' · ' + nomHautFait(p.deed_id, p.label.replace(/^First:\s*/i, ''))));
-      card.appendChild(what);
-      // …puis la formule EXACTE du site officiel, en petit : c'est LUI qui
-      // décerne ce « First », pas nous, et on veut que ça se voie.
-      var src = el('p', 'when');
-      src.textContent = '« ' + p.label + (p.detail ? ' — ' + p.detail : '') + ' »'
-        + (p.quand ? t(', le ', ', on ') + p.quand : '')
-        + t(' — dixit le site officiel des records.', ' — as stated by the official records site.');
-      card.appendChild(src);
-      box.appendChild(card);
-    });
-
-    var races = $('races');
-    (EXPLOITS.courses || []).forEach(function (c) {
-      var card = el('div', 'race');
-      var h = el('h3');
-      h.appendChild(el('span', null, nomHautFait(c.deed_id, c.label)));
-      h.appendChild(el('span', 'best', '#' + c.membres[0].rang));
-      h.appendChild(el('span', 'out', t('sur ' + num(c.total) + ' joueurs', 'of ' + num(c.total) + ' players')));
-      card.appendChild(h);
-      var ul = el('ul');
-      c.membres.forEach(function (m) {
-        var li = el('li');
-        var dot = el('span', 'dot');
-        dot.style.cssText = 'width:8px;height:8px;border-radius:50%;background:' + (CLS_COLOR[m.classe] || 'var(--dim)');
-        li.appendChild(dot);
-        li.appendChild(el('span', null, m.membre));
-        li.appendChild(el('span', 'r', '#' + m.rang));
-        ul.appendChild(li);
-      });
-      card.appendChild(ul);
-      races.appendChild(card);
-    });
-
-    if (EXPLOITS.releve) {
-      $('exploits-note').textContent = t(
-        'Palmarès relevé le ' + EXPLOITS.releve.slice(0, 10) + '. Les rangs bougent quand d’autres joueurs décrochent le même haut fait.',
-        'Hall of fame as of ' + EXPLOITS.releve.slice(0, 10) + '. Ranks shift as other players earn the same deeds.'
-      );
-    }
   }
 
   // ------------------------------------------------------------------ départ
@@ -379,23 +480,27 @@ const EXPLOITS = /* EXPLOITS_START */{"releve":"2026-09-06T15:17:56.538Z","guild
     box.textContent = '';
     var d = el('div', 'tile wide');
     var p = el('div', 'err', t(
-      'Les chiffres ne sont pas disponibles pour le moment — le site officiel des records ne répond pas. Le mur des exploits, lui, reste affiché plus bas.',
-      "The figures aren't available right now — the game's records site isn't answering. The wall of fame below is unaffected."
+      'Les chiffres ne sont pas disponibles pour le moment — le site officiel des records ne répond pas.',
+      "The figures aren't available right now — the game's records site isn't answering."
     ));
     d.appendChild(p);
     box.appendChild(d);
   }
 
-  exploits();
+  $('members-close').addEventListener('click', fermerMembres);
+  $('members-wrap').querySelector('[data-close-members]').addEventListener('click', fermerMembres);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !$('members-wrap').hidden) fermerMembres();
+  });
 
-  var id = EXPLOITS.guilde && EXPLOITS.guilde.id;
+  var id = 89;
   if (!id) { panne(); return; }
 
   fetch(API + '/guilds/' + id)
     .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(function (d) {
       var membres = d.members || [];
-      tiles(d.agg || {}, (d.guild && d.guild.members) || membres.length);
+      tiles(d.agg || {}, (d.guild && d.guild.members) || membres.length, membres);
       if (membres.length) compo(membres);
       activite(d.deed_days);
     })
