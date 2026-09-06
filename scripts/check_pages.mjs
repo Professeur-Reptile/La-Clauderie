@@ -62,6 +62,11 @@ const derniereVersion = JSON.parse(await readFile('patch-notes.json', 'utf8')).v
 
 const PAGES = [
   { path: '/index.html', filled: [] },
+  // #races vient du palmarès injecté dans la page : il doit toujours être
+  // rempli. #tiles, lui, dépend d'un appel au site officiel des records — on
+  // ne l'exige PAS, sinon une panne chez eux bloquerait notre publication (la
+  // page affiche alors son propre message, pas une zone vide).
+  { path: '/guilde.html', filled: ['#races'] },
   { path: '/bis.html', filled: ['#bisList', '#buildBox'] },
   { path: '/metiers.html', filled: ['#view-recolte', '#view-metiers'] },
   { path: '/pvp.html', filled: ['#buildBox'] },
