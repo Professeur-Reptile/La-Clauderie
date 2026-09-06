@@ -2,42 +2,42 @@
   "guilde": {
     "classementServeur": 7,
     "classement": {
-      "releveLe": "2026-09-06T04:22:52Z",
+      "releveLe": "2026-09-06T10:47:01Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Monarchs",
           "memberCount": 91,
-          "totalLifetimeXp": 50805891,
+          "totalLifetimeXp": 50810031,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "Look Good Play Good",
           "memberCount": 97,
-          "totalLifetimeXp": 46541745,
+          "totalLifetimeXp": 46645107,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Sovereign",
-          "memberCount": 94,
-          "totalLifetimeXp": 42317510,
+          "memberCount": 95,
+          "totalLifetimeXp": 42593237,
           "topLevel": 20
         },
         {
           "rank": 4,
           "name": "Raiders United",
           "memberCount": 79,
-          "totalLifetimeXp": 35534890,
+          "totalLifetimeXp": 35572773,
           "topLevel": 20
         },
         {
           "rank": 5,
           "name": "Vis Absoluta",
           "memberCount": 48,
-          "totalLifetimeXp": 19388135,
+          "totalLifetimeXp": 19401310,
           "topLevel": 20
         },
         {
@@ -63,16 +63,16 @@
         },
         {
           "rank": 9,
-          "name": "Holy Order",
-          "memberCount": 47,
-          "totalLifetimeXp": 10598426,
+          "name": "Cheaters",
+          "memberCount": 34,
+          "totalLifetimeXp": 10704654,
           "topLevel": 20
         },
         {
           "rank": 10,
-          "name": "Cheaters",
-          "memberCount": 33,
-          "totalLifetimeXp": 10488557,
+          "name": "Holy Order",
+          "memberCount": 47,
+          "totalLifetimeXp": 10598908,
           "topLevel": 20
         }
       ],
