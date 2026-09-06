@@ -274,6 +274,33 @@ UNOBTAINABLE |= {iid for iid, it in ITEMS.items()
                  if it.get('kind') in ('armor', 'weapon')
                  and iid not in SOURCES and not iid.startswith('heroic_')}
 
+# Inobtenable POUR UNE CLASSE seulement : les pièces des panoplies du Creuset.
+#
+# Le jeu sépare deux règles que l'on confond facilement. Porter une armure ne
+# dépend QUE de son poids (canEquipItem de equipment_rules.ts court-circuite sur
+# le type d'armure et ne lit jamais requiredClass — un Guerrier « peut » donc
+# porter une robe de tissu de Démoniste, ce que can_equip() reproduit fidèlement
+# et que la page signale par son badge « autre classe »). Mais l'OBTENIR est une
+# autre affaire : ces pièces sont soulbound (ni échange, ni courrier, ni marché,
+# ni vente) et leur unique source est le Quartier-maître du Creuset, dont
+# buyCrucibleVendorItem() refuse la transaction si requiredClass ne contient pas
+# la classe de l'acheteur — « a sigil can never turn into a set piece for
+# another class », dit son commentaire. Aucun chemin ne reste donc ouvert.
+#
+# Sans cette règle, chaque classe voyait les 29 panoplies du Creuset comme
+# candidates : 34 000 → 498 000 configurations pour le Guerrier protection, un
+# calcul qui ne finissait plus, et un BiS qui aurait pu conseiller la panoplie
+# d'une autre classe.
+_CLASS_LOCKED = {}   # iid -> classes autorisées, pour les pièces à source class-gatée
+for _o in _load('CRUCIBLE_VENDOR_STOCK', []):
+    _rc = ITEMS.get(_o['itemId'], {}).get('requiredClass')
+    if _rc: _CLASS_LOCKED[_o['itemId']] = set(_rc)
+
+def obtainable(cls, iid):
+    if iid in UNOBTAINABLE: return False
+    _rc = _CLASS_LOCKED.get(iid)
+    return _rc is None or cls in _rc
+
 LVL = 20
 CLASSES = {
     'warrior': {'base': {'str':23,'agi':20,'sta':22,'int':10,'spi':11,'armor':50}, 'per': {'str':2,'agi':1,'sta':2,'int':0,'spi':0,'armor':12}, 'hp': (50,18), 'mana': (100,0)},
@@ -478,7 +505,9 @@ def candidates(cls, role):
         sl = slot_key(it)
         if sl not in ('mainhand','offhand','helmet','shoulder','chest','waist','legs','gloves','feet','neck','ring'): continue
         if it.get('kind') not in ('armor','weapon','held_offhand'): continue
-        if iid in UNOBTAINABLE: continue   # jumelle héroïque que le jeu ne droppe jamais
+        # Jumelle héroïque que le jeu ne droppe jamais, équipement « héritage »
+        # placé nulle part, ou pièce du Creuset réservée à une autre classe.
+        if not obtainable(cls, iid): continue
         if sl == 'offhand':
             rc = it.get('requiredClass')
             if rc and cls not in rc: continue
@@ -532,7 +561,7 @@ def optimize(cls, role):
     class_sets = {}
     for sid in SETS:
         pieces = [iid for iid,it in ITEMS.items() if it.get('set')==sid and can_equip(cls,it)
-                  and iid not in UNOBTAINABLE]
+                  and obtainable(cls, iid)]
         # v0.25 : chaque pièce de set a une jumelle « heroic_<id> » (même set,
         # même slot, stats toutes ≥ — dominance vérifiée sur les données). On
         # ne force que la variante dominante, sinon l'énumération des
