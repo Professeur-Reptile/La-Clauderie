@@ -89,6 +89,7 @@
   // ---- Les onglets, dans l'ordre d'affichage. LA seule liste à maintenir. ----
   var TABS = [
     { id: 'home',    file: 'index.html',       fr: 'Accueil',       en: 'Home' },
+    { id: 'guilde',  file: 'guilde.html',      fr: '🛡️ Guilde',      en: '🛡️ Guild' },
     { id: 'bis',     file: 'bis.html',         fr: '⚔️ Builds',      en: '⚔️ Builds' },
     { id: 'metiers', file: 'metiers.html',     fr: '🌿 Métiers',     en: '🌿 Professions' },
     { id: 'pvp',     file: 'pvp.html',         fr: '🏆 PvP',         en: '🏆 PvP' },
