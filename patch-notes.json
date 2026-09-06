@@ -2,6 +2,44 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.41.4",
+   "date": "2026-09-05",
+   "titre": "Le Creuset a sa musique, un morceau par étage",
+   "resume": "Une version d’ambiance, et rien d’autre : le raid d’Ignivar reçoit sa propre bande-son, écrite pour lui et découpée par étage — A Way Through the Embers, Even Iron Must Yield, A Fate Still Unwritten, et The Future Is Not Yours to Keep pour la finale contre Varkhul. Un détail que les notes officielles ne donnent pas : elles annoncent « quatre étages » alors que le raid en compte cinq, parce que le monte-charge de la forge et les Halls du Premier Trempage partagent le même premier morceau — le monte-charge est une antichambre traversée en quelques secondes et n’avait pas besoin de son thème. Le vrai changement de comportement est ailleurs : à l’intérieur du Creuset, la musique ne bascule plus sur le thème de combat ni sur celui de boss. Partout ailleurs dans le jeu, engager un combat change la musique ; ici les deux bascules sont coupées, donc le morceau de l’étage tient du début à la fin, pulls et boss compris — c’est ce qui permet à une piste de porter toute une rencontre au lieu d’être interrompue au premier monstre. Passer d’un étage à l’autre fond vers le morceau suivant sans coupure sèche, sortir du raid rend la musique normale du monde, et le volume, la coupure du son et la pause du menu fonctionnent exactement comme avant. Les autres donjons, les Failles et le monde ouvert gardent leur bande-son actuelle. Aucune valeur de sort, de talent, de maîtrise, de panoplie ou d’objet ne change, et aucun monstre, aucune quête ni aucune zone n’est touché.",
+   "temps_forts": [
+    "🎵 Le raid d’Ignivar reçoit sa propre bande-son, un morceau par étage",
+    "1️⃣ A Way Through the Embers — le monte-charge ET les Halls du Premier Trempage",
+    "2️⃣ Even Iron Must Yield — l’arène, donc le premier boss",
+    "3️⃣ A Fate Still Unwritten — l’Assemblée en fusion",
+    "4️⃣ The Future Is Not Yours to Keep — le Creuset intérieur, la finale contre Varkhul",
+    "🔍 Quatre morceaux pour CINQ salles : le monte-charge et les Halls partagent le premier",
+    "⚔️ Dans le Creuset, la musique ne bascule plus en mode combat ni en mode boss",
+    "🎧 Un combat de boss se joue donc du début à la fin sur le même thème",
+    "🔀 Changer d’étage fond vers le morceau suivant, sans coupure sèche",
+    "🚪 Sortir du raid rend la musique normale du monde",
+    "🔊 Volume, coupure du son et pause du menu marchent comme avant",
+    "✅ Aucune valeur de jeu ne change, et les autres donjons gardent leur musique"
+   ],
+   "page": "notes/v0.41.4.html",
+   "titre_en": "The Crucible has its music, one track per floor",
+   "resume_en": "A mood release, and nothing else: the Ignivar raid gets its own soundtrack, written for it and split by floor — A Way Through the Embers, Even Iron Must Yield, A Fate Still Unwritten, and The Future Is Not Yours to Keep for the finale against Varkhul. One detail the official notes leave out: they announce “four floors” while the raid has five, because the forge lift and the Halls of First Tempering share the same opening track — the lift is an antechamber crossed in seconds and did not need a theme of its own. The real behavioural change is elsewhere: inside the Crucible the music no longer switches to the combat theme or the boss theme. Everywhere else in the game, entering combat changes the music; here both switches are cut, so the floor's track holds from start to finish, pulls and boss included — which is what lets one piece carry a whole encounter instead of being interrupted at the first mob. Moving between floors fades into the next track with no hard cut, leaving the raid restores the normal world soundtrack, and volume, mute and the menu pause behave exactly as before. Other dungeons, the Rifts and the open world keep their current soundtrack. No spell, talent, mastery, set or item value changes, and no mob, quest or zone is touched.",
+   "temps_forts_en": [
+    "🎵 The Ignivar raid gets its own soundtrack, one track per floor",
+    "1️⃣ A Way Through the Embers — the forge lift AND the Halls of First Tempering",
+    "2️⃣ Even Iron Must Yield — the arena, so the first boss",
+    "3️⃣ A Fate Still Unwritten — the Molten Assembly",
+    "4️⃣ The Future Is Not Yours to Keep — the Inner Crucible, the finale against Varkhul",
+    "🔍 Four tracks for FIVE rooms: the lift and the Halls share the first",
+    "⚔️ Inside the Crucible the music no longer switches to combat or boss mode",
+    "🎧 A boss fight therefore plays start to finish on one theme",
+    "🔀 Moving between floors fades into the next track, with no hard cut",
+    "🚪 Leaving the raid restores the normal world soundtrack",
+    "🔊 Volume, mute and the menu pause work as before",
+    "✅ No game value changes, and other dungeons keep their music"
+   ],
+   "page_en": "notes/v0.41.4.en.html"
+  },
+  {
    "version": "v0.41.3",
    "date": "2026-09-03",
    "titre": "Le combat colle — plus moyen d’en sortir en reculant",

@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Patch notes v0.41.4 — La Clauderie</title>
+<meta name="description" content="The v0.41.4 release of World of ClaudeCraft in plain language: the Ignivar raid gets its soundtrack, one track per floor, and the music no longer switches to combat inside the Crucible.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="Patch notes v0.41.4 — La Clauderie">
+<meta property="og:description" content="The Ignivar raid gets its music: one track per floor, holding through pulls and through boss fights.">
+<meta property="og:url" content="https://laclauderie.fr/notes/v0.41.4.en.html">
+<link rel="canonical" href="https://laclauderie.fr/notes/v0.41.4.en.html">
+<meta property="og:image" content="https://laclauderie.fr/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><polygon points=%2750,0 100,16 100,60 50,100 0,60 0,16%27 fill=%27%23c8a04b%27/><text x=%2750%27 y=%2772%27 font-size=%2758%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-weight=%27bold%27 fill=%27%231a130a%27>C</text></svg>">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../assets/pwa.js" defer></script>
+<script>if (localStorage.getItem('lang') !== 'en') location.replace('v0.41.4.html' + location.hash);</script>
+<style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style>
+</head><body>
+<div class="topbar">
+  <div class="row">
+    <a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a>
+    <nav class="topnav" data-guild-nav data-current="news" aria-label="Site navigation"></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">World of ClaudeCraft · Patch notes</p>
+    <h1>Patch notes <span class="v">v0.41.4</span></h1>
+    <p class="lede">A mood release, and nothing else: the <strong class="hl">Ignivar raid gets its own soundtrack</strong>, one track per floor. The detail the notes leave out: the raid has <strong class="hl">five rooms but four tracks</strong> — the forge lift and the Halls share the first. And inside the Crucible the music <strong class="hl">no longer switches to combat</strong>: the floor's theme holds from start to finish, boss included.</p>
+    <div class="meta">
+      <span><b>Released</b> September 5, 2026</span>
+      <span><b>Since</b> v0.41.3</span>
+      <span><b>4</b> tracks added</span>
+      <span><b>0</b> game values changed</span>
+    </div>
+    <div class="hint">💡 Click a card for details.</div>
+  </header>
+
+  <!-- Fixed digest: same rubrics, same order, every release. -->
+  <nav class="digest" aria-labelledby="digest-title">
+    <h2 id="digest-title">At a glance</h2>
+    <p class="sec-sub">The same rubrics every release, in the same order. Click a rubric to jump to its section.</p>
+    <ol>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">⚔️</span>
+        <span class="d-name">Classes &amp; spells</span>
+        <span class="d-say"><b class="eq">All =</b> no value moves: no spell, no talent, no mastery, no set, no item. The <a href="v0.41.3.en.html#combat">sticky-combat rule</a> from v0.41.3 stands as it is.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🔨</span>
+        <span class="d-name">Professions &amp; gathering</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">🐉</span>
+        <a class="d-name" href="#musique">Dungeons, rifts &amp; bosses</a>
+        <span class="d-say">The <strong class="hl">Ignivar raid</strong> gets its soundtrack: <strong class="hl">one track per floor</strong>, holding through pulls and through boss fights instead of switching to the usual combat theme.</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🗺️</span>
+        <span class="d-name">World &amp; quests</span>
+        <span class="d-say">—</span>
+      </li>
+      <li class="none">
+        <span class="d-ico" aria-hidden="true">🏰</span>
+        <span class="d-name">Guild &amp; social</span>
+        <span class="d-say">—</span>
+      </li>
+      <li>
+        <span class="d-ico" aria-hidden="true">⚙️</span>
+        <a class="d-name" href="#musique">Comfort &amp; technical</a>
+        <span class="d-say">Moving between floors <strong class="hl">fades</strong> from one track to the next, and leaving the raid restores the normal world soundtrack. Volume, mute and the menu pause work as before.</span>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="musique">
+    <h2><span class="num">01</span>The Crucible has its music</h2>
+    <p class="sec-sub">The raid had been running on the generic dungeon soundtrack. It now has its own, written for it, and split by floor.</p>
+    <div class="grid cols-3">
+      <div class="card more" data-detail="morceaux" tabindex="0" role="button" aria-label="Details: the four tracks, and which room plays which">
+        <h3>Four tracks, five rooms <span class="chip c-bal">Verified</span></h3>
+        <p>The official notes say "four floors". The raid has <strong class="hl">five</strong>: the <strong class="hl">forge lift</strong> and the <strong class="hl">Halls of First Tempering</strong> share the <strong class="hl">same</strong> opening track. The other three each have their own.</p>
+        <span class="more-link">See which room plays what</span>
+      </div>
+      <div class="card">
+        <h3>The music no longer switches to combat <span class="chip c-new">New</span></h3>
+        <ul>
+          <li>Everywhere else, entering combat moves the game to its <strong class="hl">combat theme</strong>.</li>
+          <li>Not in the Crucible: the floor's track <strong class="hl">keeps playing</strong> through pulls and through the boss.</li>
+          <li>Verified in the code, not just announced: while you are on a raid floor, the combat switch is <strong class="hl">disabled</strong>.</li>
+          <li>In practice a boss fight plays start to finish on one theme — which is the whole point of music written for an encounter.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>And the rest <span class="chip c-util">Scope</span></h3>
+        <ul>
+          <li>Moving between floors <strong class="hl">fades</strong> into the next track, with no hard cut.</li>
+          <li>Leaving the raid restores the <strong class="hl">normal world</strong> soundtrack.</li>
+          <li><strong class="hl">Volume</strong>, <strong class="hl">mute</strong> and the <strong class="hl">menu pause</strong> behave exactly as before.</li>
+          <li>Other dungeons and the Rifts keep their current soundtrack.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="confort">
+    <h2><span class="num">02</span>And nothing else</h2>
+    <p class="sec-sub">This is the shortest release of the run: five files touched, all of them audio.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>No game data changes <span class="chip c-util">Scope</span></h3>
+        <ul>
+          <li><strong class="hl">No value</strong> for any spell, talent, mastery, set or item.</li>
+          <li>No mob, no quest, no zone.</li>
+          <li>The <a href="../bis.html">Builds guide</a>, the <a href="../pvp.html">PvP guide</a>, the <a href="../metiers.html">Professions</a>, the <a href="../failles.html">Rifts</a> and the <a href="../montures.html">Mounts</a> pages stand as they are.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>What still holds from v0.41.3 <span class="chip c-bal">Reminder</span></h3>
+        <ul>
+          <li><a href="v0.41.3.en.html#combat">Combat still sticks</a>: you stay in combat while a living mob keeps you on its table.</li>
+          <li>In a dungeon, mobs <a href="v0.41.3.en.html#donjons">never go home</a>.</li>
+          <li>And the Hunter and Warlock win — the pet that no longer locks you — is still in place.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Our take <span class="chip c-bal">Guild view</span></h3>
+        <ul>
+          <li>Five releases in six days, all hanging off the <a href="v0.41.0.en.html">v0.41.0</a> raid.</li>
+          <li>This one fixes nothing: it is the finish, the kind of thing you only notice once it is missing.</li>
+          <li>If your guild runs the Crucible this weekend, turn it up.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="modal-head">
+    <h3 id="mTitle"></h3>
+    <button class="close" id="mClose" aria-label="Close">✕</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
+
+<script>
+  const DETAILS = {
+    morceaux: {
+      title: "The four tracks, and which room plays which",
+      summary: "The notes say \"four floors\". The raid has five — here is the exact mapping, read from the code.",
+      body: `
+        <h4>The mapping</h4>
+        <ul>
+          <li><b>1. A Way Through the Embers</b> — the <b>forge lift</b> AND the <b>Halls of First Tempering</b>. Both share this track.</li>
+          <li><b>2. Even Iron Must Yield</b> — the <b>Ignivar arena</b>, so the first boss.</li>
+          <li><b>3. A Fate Still Unwritten</b> — the <b>Molten Assembly</b>.</li>
+          <li><b>4. The Future Is Not Yours to Keep</b> — the <b>Inner Crucible</b>, the finale against Varkhul.</li>
+        </ul>
+        <h4>Why "four" and not "five"</h4>
+        <p>The raid does have <b>five rooms</b> (see <a href="v0.41.0.en.html#raid">the v0.41.0 page</a>), but the table mapping room to track sends <b>two</b> of them to the first. That is coherent: the forge lift is an antechamber crossed in seconds, and did not need a theme of its own. The official notes are counting tracks, not rooms.</p>
+        <h4>The combat switch</h4>
+        <p>Everywhere else in the game, entering combat moves the music to the combat theme, and an engaged boss to the boss theme. In the Crucible both switches are <b>cut</b>: while you are on a raid floor, the floor's track plays whatever happens. That is what lets one piece <b>carry a whole encounter</b> instead of being interrupted at the first pull.</p>
+        <h4>What has not changed</h4>
+        <p><b>Other dungeons</b>, the <b>Rifts</b> and the open world keep exactly the soundtrack they had, combat switch included. Only the Ignivar raid is affected.</p>`
+    },
+  };
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mBody = document.getElementById("mBody");
+  let lastFocus = null;
+
+  function openModal(key) {
+    const d = DETAILS[key];
+    if (!d) return;
+    lastFocus = document.activeElement;
+    mTitle.textContent = d.title;
+    mBody.innerHTML = (d.summary ? `<p class="summary">${d.summary}</p>` : "") + d.body;
+    if (window.CodexPopup) CodexPopup.enhance(mBody);
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+    mBody.scrollTop = 0;
+  }
+  function closeModal() {
+    if (typeof modal.close === "function") modal.close();
+    else modal.removeAttribute("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-detail]").forEach(el => {
+    el.addEventListener("click", () => openModal(el.dataset.detail));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(el.dataset.detail); }
+    });
+  });
+  document.getElementById("mClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener("cancel", () => { if (lastFocus) lastFocus.focus(); });
+</script>
+<!-- Fiches incrustées (glossaire, monstres, sorts…) basées sur les données du Codex -->
+<script src="../assets/codex-popup.js" defer></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/lang.js"></script>
+</body>
+</html>
