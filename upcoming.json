@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-05T04:52:42Z",
- "base_tag": "v0.41.3",
+ "generated": "2026-09-06T11:17:09Z",
+ "base_tag": "v0.41.4",
  "version": "v0.42.0",
  "branch": "ossbrain-release/v0.42.0",
  "declared_version": "0.42.0",
  "imminent": true,
- "commits": 332,
- "shown": 133,
- "last_commit": "2026-09-05T01:43:22Z",
+ "commits": 572,
+ "shown": 231,
+ "last_commit": "2026-09-06T10:34:07Z",
  "sections": [
   {
    "key": "classes",
@@ -16,6 +16,13 @@
    "en": "Classes & spells",
    "items": [
     {
+     "h": "75c5e609",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Order the player aura strips by urgency",
+     "date": "2026-09-01"
+    },
+    {
      "h": "7958d0d9",
      "kind": "feat",
      "scope": "combat",
@@ -23,10 +30,45 @@
      "date": "2026-08-30"
     },
     {
+     "h": "0d68abe1",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Resolve the aura rows' stock slot instead of remembering it",
+     "date": "2026-09-06"
+    },
+    {
+     "h": "bc9c029c",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Re-apply the aura anchor after Reset Frame Positions",
+     "date": "2026-09-06"
+    },
+    {
+     "h": "d5d1baec",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Let Possess and Hour of Judgment fire through a running cast",
+     "date": "2026-09-04"
+    },
+    {
      "h": "46d6ddf0",
      "kind": "fix",
      "scope": "sim",
      "text": "Auto-attack never turns the player; channels pin facing instead",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "f2524bb6",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Stack the player buff and debuff strips in one column",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "9db577f6",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Wrap the aura strips on play.html too, and guard entry parity",
      "date": "2026-09-01"
     },
     {
@@ -108,6 +150,13 @@
      "date": "2026-09-02"
     },
     {
+     "h": "24cfabb8",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Draw the pooled ability-VFX families from one material each",
+     "date": "2026-09-02"
+    },
+    {
      "h": "3ba47040",
      "kind": "fix",
      "scope": "vault",
@@ -137,11 +186,88 @@
    "en": "Dungeons, rifts & bosses",
    "items": [
     {
+     "h": "d6c86bd7",
+     "kind": "feat",
+     "scope": "rift",
+     "text": "Price Riftbound bands on an item-level ladder",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "bc1f5d89",
+     "kind": "feat",
+     "scope": "rift",
+     "text": "Ship the Rift Forge, a Riftwright NPC that upgrades Riftbound rings",
+     "date": "2026-09-04"
+    },
+    {
      "h": "ad7d46b7",
      "kind": "feat",
      "scope": "loot",
      "text": "Pace the Crucible raid at one item per five raiders per kill",
      "date": "2026-09-02"
+    },
+    {
+     "h": "004e549b",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "Localize forge log names, mint the probe band, lower two ceilings",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "a199e39b",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Ship the self in-combat flag so the player frame lights while a boss holds you",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "3fccc947",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "Action the forge review findings on the ladder",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "9af70675",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "Guard the forge log lines and skip a worn band's self-compare",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "781715a8",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "Second forge review pass: deploy pin, destroyed-gem line, tests",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "10ecd081",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Let the world map leave an instance plan and view a party dungeon",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "5dfbeb5f",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "Harden the forge kill switch, hold the window through its result, credit the ledger",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "a915c4cc",
+     "kind": "fix",
+     "scope": "chronomancy",
+     "text": "Sustain offensive raid healing",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "922c4fc0",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Let a mouseover combat res reach a raid member who released",
+     "date": "2026-09-04"
     },
     {
      "h": "8d6085cc",
@@ -201,6 +327,13 @@
      "date": "2026-09-02"
     },
     {
+     "h": "0e9ecdcd",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Compare the high-performance adapter at vendor granularity",
+     "date": "2026-09-03"
+    },
+    {
      "h": "44ac4787",
      "kind": "fix",
      "scope": "art",
@@ -251,6 +384,83 @@
    "en": "Guild & social",
    "items": [
     {
+     "h": "eef7878c",
+     "kind": "feat",
+     "scope": "chat",
+     "text": "Raise the Chat Text Size ceiling to 250% and follow the log",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "2be98fbb",
+     "kind": "feat",
+     "scope": "perf",
+     "text": "Report the real 3D drawing buffer in perfStats and the fleet report",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "c40d8279",
+     "kind": "feat",
+     "scope": "discord",
+     "text": "DM a player when their battleground or arena queue pops",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "44202fe9",
+     "kind": "feat",
+     "scope": "guild",
+     "text": "Sell 20-seat roster pages to the Guild Master for gold",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "6bd89dc9",
+     "kind": "perf",
+     "scope": "ui",
+     "text": "Read the party roster only when the mouseover target is out of scope",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "714add51",
+     "kind": "fix",
+     "scope": "",
+     "text": "Bring release/v0.42.0 into feature/perf-report-gpu-fields",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "ab092503",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep party map markers to the viewed instance copy",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "aeed17f6",
+     "kind": "fix",
+     "scope": "perf",
+     "text": "Field-shape the drawing buffer at the perf-report ingest",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "852f6891",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Harden the party config reader and pin the health-text seams",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "748658ea",
+     "kind": "fix",
+     "scope": "guild",
+     "text": "Harden the roster page purchase after review",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "1446c97d",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Enumerate each perf-report jsonb node once, and drop the fallback adapter",
+     "date": "2026-09-03"
+    },
+    {
      "h": "d2b01d27",
      "kind": "fix",
      "scope": "ui",
@@ -272,6 +482,125 @@
    "fr": "Confort & technique",
    "en": "Comfort & technical",
    "items": [
+    {
+     "h": "baa863ba",
+     "kind": "feat",
+     "scope": "guilds",
+     "text": "Run the roster ladder past 500 seats to a 1,000-seat hard cap",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "fdf89dd6",
+     "kind": "feat",
+     "scope": "action-bar",
+     "text": "Keep one action-bar layout per input surface",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "4003f73c",
+     "kind": "feat",
+     "scope": "guilds",
+     "text": "Re-price the roster ladder as a 40g ramp then 30% growth a page",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "f0361284",
+     "kind": "feat",
+     "scope": "chronomancy",
+     "text": "Scale Temporal Cascade's heal with missing health",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "6d48d236",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Health Text setting for the player and target frames",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "1d44369a",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Parse a GPU model family and laptop verdict from the renderer string",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "9d4f27d5",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Store the raw renderer string plus a GPU model and laptop column",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "3db6f4b2",
+     "kind": "feat",
+     "scope": "game",
+     "text": "Probe the WebGPU high-performance adapter for the perf beacon",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "cc2999b8",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Read the GPU model dimensions out of the admin perf summary",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "2d33ef9f",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Track your own dots on a Target dots frame and enemy nameplates",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "9b4941c8",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Size the nameplate dot row with a 100 to 300 percent slider",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "dbc8177e",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add the Loot Explorer window",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "ec6c0c2d",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Govern a terrain-detail level in the render budget",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "3c6a3c3c",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Pin the terrain-detail level with ?terraindetail= and read it in perfStats",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "d8644a31",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Govern a post-processing shed level in the render budget",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "a83ea71d",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Let the ownership chip hide illuminated pages on a shelf",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "6d1648cf",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Ladder texture anisotropy by graphics tier",
+     "date": "2026-09-02"
+    },
     {
      "h": "4cd8bd67",
      "kind": "feat",
@@ -362,6 +691,27 @@
      "scope": "mounts",
      "text": "Add the Goblin Rocket Sled mount",
      "date": "2026-08-12"
+    },
+    {
+     "h": "3b21361e",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Create the world WebGL2 context opaque",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "8e1c523e",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Grade spirit mode in the post chain instead of a CSS filter",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "356dce6d",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Lower the full-res AO cut to the 1080p class",
+     "date": "2026-09-03"
     },
     {
      "h": "9e91cbb9",
@@ -455,11 +805,172 @@
      "date": "2026-09-02"
     },
     {
+     "h": "36f3ac9c",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Keep idle VFX pools out of the render list",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "3483b562",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Discard zero-contribution additive VFX fill and bound the biggest quads",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "0a68137e",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Resolve full-res AO against the drawing-buffer pixel count",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "033c4077",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Give SMAA the 8-bit intermediates the reference uses",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "7ecbce06",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Coalesce viewport resizes and reallocate only on a real extent change",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "24d82e5c",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Put the grass tuft card count on the tier ladder",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "d2874ba7",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Spread the real-model foliage radius across the tiers",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "837a0fe8",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Give ultra the AO half of the canopy layer, insane keeps both",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "ff069b94",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Fetch and upload only the canopy maps an arm samples",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "2c7ef858",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Skip identical nameplate repaints and bound the plate surface",
+     "date": "2026-09-02"
+    },
+    {
      "h": "980b1013",
      "kind": "perf",
      "scope": "render",
      "text": "Measure a vehicle once per model, not per rider",
      "date": "2026-08-20"
+    },
+    {
+     "h": "363b696b",
+     "kind": "fix",
+     "scope": "action-bar",
+     "text": "Keep the login layout fresh across the handshake and seed an empty desktop from the bar in view",
+     "date": "2026-09-06"
+    },
+    {
+     "h": "45dab985",
+     "kind": "fix",
+     "scope": "action-bar",
+     "text": "Follow a surface flip and harden the layout save path",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "4b558720",
+     "kind": "fix",
+     "scope": "action-bar",
+     "text": "Back up a touch-only bar and flush the outgoing profile",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "69f06472",
+     "kind": "fix",
+     "scope": "world",
+     "text": "Hold the Forgefather slot shelf under the sea-ring parapet",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "e3fef780",
+     "kind": "fix",
+     "scope": "action-bar",
+     "text": "Close the four review gaps in the per-surface layouts",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "6fc82a81",
+     "kind": "fix",
+     "scope": "guilds",
+     "text": "Commit the roster page and its payment in one fenced transaction",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "56e89f7b",
+     "kind": "fix",
+     "scope": "guilds",
+     "text": "Abandon the session on any throw after the roster charge, bound the purchase",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "9dd12385",
+     "kind": "fix",
+     "scope": "guilds",
+     "text": "Reconcile roster receipts through the gated, deadline-cancelled reader",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "8660ebf4",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Shed terrain detail in two rungs, straight to where the gain is",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "e081e3ce",
+     "kind": "fix",
+     "scope": "exchange",
+     "text": "Let players hide the wallet card and compact it in landscape",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "cc405784",
+     "kind": "fix",
+     "scope": "exchange",
+     "text": "Scope the wallet-card dismiss to the reconnect state",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "b140dcd2",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Spend the dot row height in nameplate decluttering",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "75561989",
+     "kind": "fix",
+     "scope": "perf",
+     "text": "Say whether the drawing buffer is the allocation or the raster",
+     "date": "2026-09-04"
     },
     {
      "h": "11ffc2d2",
@@ -476,11 +987,95 @@
      "date": "2026-09-04"
     },
     {
+     "h": "13f26a07",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Address the second PR 3853 review on the dot surfaces",
+     "date": "2026-09-04"
+    },
+    {
      "h": "7e7b7d2e",
      "kind": "fix",
      "scope": "realm-builder",
      "text": "Keep ZWNJ and ZWJ out of the name refusal (round 4)",
      "date": "2026-09-04"
+    },
+    {
+     "h": "0d57b1bb",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Guard the post chain against Mali NaN so Android frames stop going black",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "4af53e11",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep the nameplate repaint gate off the quality-knob path",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "c5bbb914",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Close the review findings on the GPU model dimensions",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "fe1140ee",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Light the Lambert terrain under the standard-materials rig",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "2e120444",
+     "kind": "fix",
+     "scope": "bags",
+     "text": "Show the materials-only slots and refuse pool-honestly",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "6bbecbe0",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Ride price-gate health on the stale-serve bound",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "c6be95b7",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Keep the success TTL as an unhealthy answer's memo",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "7b964128",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Retrigger the PR run after a shard-contention timeout",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "e48f3429",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Never let the slope glue seat a walker below the terrain",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "fcb89829",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Read the WebGPU fallback flag where a current browser puts it",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "cf36973a",
+     "kind": "fix",
+     "scope": "loot",
+     "text": "Hold a full-bags roll award on the corpse instead of overfilling bags",
+     "date": "2026-09-03"
     },
     {
      "h": "bd520ffd",
@@ -501,6 +1096,69 @@
      "kind": "fix",
      "scope": "store",
      "text": "Render the Machine Stable as the Armory card family",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "7dd15e40",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Key the Target dots row pool to the row, not the slot index",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "58eca7a7",
+     "kind": "fix",
+     "scope": "styles",
+     "text": "Keep the Target dots label centred in its bar",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "29ba372c",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Fire a ready wand swing between spell-queued casts",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "e88c7bec",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Make Loping Stride stamp a real move-speed multiplier",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "1d199b5d",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Address the PR 3853 review on the dot surfaces",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "bbd6c46b",
+     "kind": "fix",
+     "scope": "workflows",
+     "text": "Sparse-check out the target-dots screenshot subtree",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "4d67fb41",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep the action-bar key-binding banner reachable over a moved bar",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "8568b614",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Ladder the post shed over the built chain only",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "1790e2b0",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Link the FXAA twin before its rung, latch the shed on dispose",
      "date": "2026-09-03"
     },
     {
@@ -578,6 +1236,34 @@
      "kind": "fix",
      "scope": "i18n",
      "text": "Clear v0.42 release-tier locale gaps",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "0453a124",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stop weapon skins dropping their shader hooks and holding dead light slots",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "8ebddcac",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Answer the render-performance review of the post-chain budget",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "a7d53a71",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Apply a coalesced resize before the frame renders, not after",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "2c309be0",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Close the gaps the foliage-ladder review found",
      "date": "2026-09-02"
     },
     {
@@ -995,9 +1681,9 @@
    "branch": "ossbrain-release/v0.42.0",
    "declared_version": "0.42.0",
    "imminent": true,
-   "commits": 332,
-   "shown": 133,
-   "last_commit": "2026-09-05T01:43:22Z",
+   "commits": 572,
+   "shown": 231,
+   "last_commit": "2026-09-06T10:34:07Z",
    "sections": [
     {
      "key": "classes",
@@ -1006,6 +1692,13 @@
      "en": "Classes & spells",
      "items": [
       {
+       "h": "75c5e609",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Order the player aura strips by urgency",
+       "date": "2026-09-01"
+      },
+      {
        "h": "7958d0d9",
        "kind": "feat",
        "scope": "combat",
@@ -1013,10 +1706,45 @@
        "date": "2026-08-30"
       },
       {
+       "h": "0d68abe1",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Resolve the aura rows' stock slot instead of remembering it",
+       "date": "2026-09-06"
+      },
+      {
+       "h": "bc9c029c",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Re-apply the aura anchor after Reset Frame Positions",
+       "date": "2026-09-06"
+      },
+      {
+       "h": "d5d1baec",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Let Possess and Hour of Judgment fire through a running cast",
+       "date": "2026-09-04"
+      },
+      {
        "h": "46d6ddf0",
        "kind": "fix",
        "scope": "sim",
        "text": "Auto-attack never turns the player; channels pin facing instead",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "f2524bb6",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stack the player buff and debuff strips in one column",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "9db577f6",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Wrap the aura strips on play.html too, and guard entry parity",
        "date": "2026-09-01"
       },
       {
@@ -1098,6 +1826,13 @@
        "date": "2026-09-02"
       },
       {
+       "h": "24cfabb8",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Draw the pooled ability-VFX families from one material each",
+       "date": "2026-09-02"
+      },
+      {
        "h": "3ba47040",
        "kind": "fix",
        "scope": "vault",
@@ -1127,11 +1862,88 @@
      "en": "Dungeons, rifts & bosses",
      "items": [
       {
+       "h": "d6c86bd7",
+       "kind": "feat",
+       "scope": "rift",
+       "text": "Price Riftbound bands on an item-level ladder",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "bc1f5d89",
+       "kind": "feat",
+       "scope": "rift",
+       "text": "Ship the Rift Forge, a Riftwright NPC that upgrades Riftbound rings",
+       "date": "2026-09-04"
+      },
+      {
        "h": "ad7d46b7",
        "kind": "feat",
        "scope": "loot",
        "text": "Pace the Crucible raid at one item per five raiders per kill",
        "date": "2026-09-02"
+      },
+      {
+       "h": "004e549b",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Localize forge log names, mint the probe band, lower two ceilings",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "a199e39b",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Ship the self in-combat flag so the player frame lights while a boss holds you",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "3fccc947",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Action the forge review findings on the ladder",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "9af70675",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Guard the forge log lines and skip a worn band's self-compare",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "781715a8",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Second forge review pass: deploy pin, destroyed-gem line, tests",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "10ecd081",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Let the world map leave an instance plan and view a party dungeon",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "5dfbeb5f",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Harden the forge kill switch, hold the window through its result, credit the ledger",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "a915c4cc",
+       "kind": "fix",
+       "scope": "chronomancy",
+       "text": "Sustain offensive raid healing",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "922c4fc0",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Let a mouseover combat res reach a raid member who released",
+       "date": "2026-09-04"
       },
       {
        "h": "8d6085cc",
@@ -1191,6 +2003,13 @@
        "date": "2026-09-02"
       },
       {
+       "h": "0e9ecdcd",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Compare the high-performance adapter at vendor granularity",
+       "date": "2026-09-03"
+      },
+      {
        "h": "44ac4787",
        "kind": "fix",
        "scope": "art",
@@ -1241,6 +2060,83 @@
      "en": "Guild & social",
      "items": [
       {
+       "h": "eef7878c",
+       "kind": "feat",
+       "scope": "chat",
+       "text": "Raise the Chat Text Size ceiling to 250% and follow the log",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "2be98fbb",
+       "kind": "feat",
+       "scope": "perf",
+       "text": "Report the real 3D drawing buffer in perfStats and the fleet report",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "c40d8279",
+       "kind": "feat",
+       "scope": "discord",
+       "text": "DM a player when their battleground or arena queue pops",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "44202fe9",
+       "kind": "feat",
+       "scope": "guild",
+       "text": "Sell 20-seat roster pages to the Guild Master for gold",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "6bd89dc9",
+       "kind": "perf",
+       "scope": "ui",
+       "text": "Read the party roster only when the mouseover target is out of scope",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "714add51",
+       "kind": "fix",
+       "scope": "",
+       "text": "Bring release/v0.42.0 into feature/perf-report-gpu-fields",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "ab092503",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep party map markers to the viewed instance copy",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "aeed17f6",
+       "kind": "fix",
+       "scope": "perf",
+       "text": "Field-shape the drawing buffer at the perf-report ingest",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "852f6891",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Harden the party config reader and pin the health-text seams",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "748658ea",
+       "kind": "fix",
+       "scope": "guild",
+       "text": "Harden the roster page purchase after review",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "1446c97d",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Enumerate each perf-report jsonb node once, and drop the fallback adapter",
+       "date": "2026-09-03"
+      },
+      {
        "h": "d2b01d27",
        "kind": "fix",
        "scope": "ui",
@@ -1262,6 +2158,125 @@
      "fr": "Confort & technique",
      "en": "Comfort & technical",
      "items": [
+      {
+       "h": "baa863ba",
+       "kind": "feat",
+       "scope": "guilds",
+       "text": "Run the roster ladder past 500 seats to a 1,000-seat hard cap",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "fdf89dd6",
+       "kind": "feat",
+       "scope": "action-bar",
+       "text": "Keep one action-bar layout per input surface",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "4003f73c",
+       "kind": "feat",
+       "scope": "guilds",
+       "text": "Re-price the roster ladder as a 40g ramp then 30% growth a page",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "f0361284",
+       "kind": "feat",
+       "scope": "chronomancy",
+       "text": "Scale Temporal Cascade's heal with missing health",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "6d48d236",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Health Text setting for the player and target frames",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "1d44369a",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Parse a GPU model family and laptop verdict from the renderer string",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "9d4f27d5",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Store the raw renderer string plus a GPU model and laptop column",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "3db6f4b2",
+       "kind": "feat",
+       "scope": "game",
+       "text": "Probe the WebGPU high-performance adapter for the perf beacon",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "cc2999b8",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Read the GPU model dimensions out of the admin perf summary",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "2d33ef9f",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Track your own dots on a Target dots frame and enemy nameplates",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "9b4941c8",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Size the nameplate dot row with a 100 to 300 percent slider",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "dbc8177e",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add the Loot Explorer window",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "ec6c0c2d",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Govern a terrain-detail level in the render budget",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "3c6a3c3c",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Pin the terrain-detail level with ?terraindetail= and read it in perfStats",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "d8644a31",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Govern a post-processing shed level in the render budget",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "a83ea71d",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Let the ownership chip hide illuminated pages on a shelf",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "6d1648cf",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Ladder texture anisotropy by graphics tier",
+       "date": "2026-09-02"
+      },
       {
        "h": "4cd8bd67",
        "kind": "feat",
@@ -1352,6 +2367,27 @@
        "scope": "mounts",
        "text": "Add the Goblin Rocket Sled mount",
        "date": "2026-08-12"
+      },
+      {
+       "h": "3b21361e",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Create the world WebGL2 context opaque",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "8e1c523e",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Grade spirit mode in the post chain instead of a CSS filter",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "356dce6d",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Lower the full-res AO cut to the 1080p class",
+       "date": "2026-09-03"
       },
       {
        "h": "9e91cbb9",
@@ -1445,11 +2481,172 @@
        "date": "2026-09-02"
       },
       {
+       "h": "36f3ac9c",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Keep idle VFX pools out of the render list",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "3483b562",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Discard zero-contribution additive VFX fill and bound the biggest quads",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "0a68137e",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Resolve full-res AO against the drawing-buffer pixel count",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "033c4077",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Give SMAA the 8-bit intermediates the reference uses",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "7ecbce06",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Coalesce viewport resizes and reallocate only on a real extent change",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "24d82e5c",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Put the grass tuft card count on the tier ladder",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "d2874ba7",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Spread the real-model foliage radius across the tiers",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "837a0fe8",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Give ultra the AO half of the canopy layer, insane keeps both",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "ff069b94",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Fetch and upload only the canopy maps an arm samples",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "2c7ef858",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Skip identical nameplate repaints and bound the plate surface",
+       "date": "2026-09-02"
+      },
+      {
        "h": "980b1013",
        "kind": "perf",
        "scope": "render",
        "text": "Measure a vehicle once per model, not per rider",
        "date": "2026-08-20"
+      },
+      {
+       "h": "363b696b",
+       "kind": "fix",
+       "scope": "action-bar",
+       "text": "Keep the login layout fresh across the handshake and seed an empty desktop from the bar in view",
+       "date": "2026-09-06"
+      },
+      {
+       "h": "45dab985",
+       "kind": "fix",
+       "scope": "action-bar",
+       "text": "Follow a surface flip and harden the layout save path",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "4b558720",
+       "kind": "fix",
+       "scope": "action-bar",
+       "text": "Back up a touch-only bar and flush the outgoing profile",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "69f06472",
+       "kind": "fix",
+       "scope": "world",
+       "text": "Hold the Forgefather slot shelf under the sea-ring parapet",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "e3fef780",
+       "kind": "fix",
+       "scope": "action-bar",
+       "text": "Close the four review gaps in the per-surface layouts",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "6fc82a81",
+       "kind": "fix",
+       "scope": "guilds",
+       "text": "Commit the roster page and its payment in one fenced transaction",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "56e89f7b",
+       "kind": "fix",
+       "scope": "guilds",
+       "text": "Abandon the session on any throw after the roster charge, bound the purchase",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "9dd12385",
+       "kind": "fix",
+       "scope": "guilds",
+       "text": "Reconcile roster receipts through the gated, deadline-cancelled reader",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "8660ebf4",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Shed terrain detail in two rungs, straight to where the gain is",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "e081e3ce",
+       "kind": "fix",
+       "scope": "exchange",
+       "text": "Let players hide the wallet card and compact it in landscape",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "cc405784",
+       "kind": "fix",
+       "scope": "exchange",
+       "text": "Scope the wallet-card dismiss to the reconnect state",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "b140dcd2",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Spend the dot row height in nameplate decluttering",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "75561989",
+       "kind": "fix",
+       "scope": "perf",
+       "text": "Say whether the drawing buffer is the allocation or the raster",
+       "date": "2026-09-04"
       },
       {
        "h": "11ffc2d2",
@@ -1466,11 +2663,95 @@
        "date": "2026-09-04"
       },
       {
+       "h": "13f26a07",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Address the second PR 3853 review on the dot surfaces",
+       "date": "2026-09-04"
+      },
+      {
        "h": "7e7b7d2e",
        "kind": "fix",
        "scope": "realm-builder",
        "text": "Keep ZWNJ and ZWJ out of the name refusal (round 4)",
        "date": "2026-09-04"
+      },
+      {
+       "h": "0d57b1bb",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Guard the post chain against Mali NaN so Android frames stop going black",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "4af53e11",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep the nameplate repaint gate off the quality-knob path",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "c5bbb914",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Close the review findings on the GPU model dimensions",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "fe1140ee",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Light the Lambert terrain under the standard-materials rig",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "2e120444",
+       "kind": "fix",
+       "scope": "bags",
+       "text": "Show the materials-only slots and refuse pool-honestly",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "6bbecbe0",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Ride price-gate health on the stale-serve bound",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "c6be95b7",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Keep the success TTL as an unhealthy answer's memo",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "7b964128",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Retrigger the PR run after a shard-contention timeout",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "e48f3429",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Never let the slope glue seat a walker below the terrain",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "fcb89829",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Read the WebGPU fallback flag where a current browser puts it",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "cf36973a",
+       "kind": "fix",
+       "scope": "loot",
+       "text": "Hold a full-bags roll award on the corpse instead of overfilling bags",
+       "date": "2026-09-03"
       },
       {
        "h": "bd520ffd",
@@ -1491,6 +2772,69 @@
        "kind": "fix",
        "scope": "store",
        "text": "Render the Machine Stable as the Armory card family",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "7dd15e40",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Key the Target dots row pool to the row, not the slot index",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "58eca7a7",
+       "kind": "fix",
+       "scope": "styles",
+       "text": "Keep the Target dots label centred in its bar",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "29ba372c",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Fire a ready wand swing between spell-queued casts",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "e88c7bec",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Make Loping Stride stamp a real move-speed multiplier",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "1d199b5d",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Address the PR 3853 review on the dot surfaces",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "bbd6c46b",
+       "kind": "fix",
+       "scope": "workflows",
+       "text": "Sparse-check out the target-dots screenshot subtree",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "4d67fb41",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep the action-bar key-binding banner reachable over a moved bar",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "8568b614",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Ladder the post shed over the built chain only",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "1790e2b0",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Link the FXAA twin before its rung, latch the shed on dispose",
        "date": "2026-09-03"
       },
       {
@@ -1568,6 +2912,34 @@
        "kind": "fix",
        "scope": "i18n",
        "text": "Clear v0.42 release-tier locale gaps",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "0453a124",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Stop weapon skins dropping their shader hooks and holding dead light slots",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "8ebddcac",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Answer the render-performance review of the post-chain budget",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "a7d53a71",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Apply a coalesced resize before the frame renders, not after",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "2c309be0",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Close the gaps the foliage-ladder review found",
        "date": "2026-09-02"
       },
       {
