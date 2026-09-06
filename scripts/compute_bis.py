@@ -25,7 +25,7 @@
 #
 # Usage :  python3 compute_bis.py <dossier data de la knowledge base> > bis.json
 # -----------------------------------------------------------------------------
-import json, sys, itertools, copy, math
+import json, sys, itertools, copy, math, os, re
 
 # Math.round de JS (x,5 arrondi vers le haut) — le round() de Python arrondit
 # au pair (49,5 → 50 mais 50,5 → 50), ce qui crée de faux plateaux : un +2 Int
@@ -51,6 +51,13 @@ _DUNGEONS = _load('DUNGEONS', {})
 # source src/sim/content/enchants.ts). statBonus ne contient que des clés de la
 # feuille de stats (str/agi/sta/int/spi/armor) — vérifié sur les données.
 ENCHANTS = _load('ENCHANTS', {})
+
+# Le stock du quartier-maître du Creuset est publié séparément de NPCS.json :
+# chaque pièce s'échange contre un sigil d'emplacement. Ces objets sont aussi
+# liés à une classe précise par le vendeur, même si l'armorType seul permettrait
+# techniquement de les équiper.
+CRUCIBLE_VENDOR_STOCK = _load('CRUCIBLE_VENDOR_STOCK', [])
+CRUCIBLE_VENDOR_IDS = {o.get('itemId') for o in CRUCIBLE_VENDOR_STOCK if o.get('itemId')}
 
 # --- obtenabilité des jumelles héroïques (port de loot/loot_roll.ts) ----------
 # Le jeu n'échange un drop contre sa variante « heroic_<id> » que si :
@@ -156,6 +163,14 @@ for _bid, _entries in _HEROIC.items():
 for _n in _NPCS.values():
     for _iid in _n.get('vendorItems', []):
         _add(_iid, f"Vendu par {_n['name']}", f"npc|{_n['id']}", _n['name'])
+# Quartier-maître du Creuset : ces pièces ne figurent dans aucune table de
+# butin ; elles s'obtiennent contre un sigil lâché par le raid.
+_BRONN = _NPCS.get('crucible_quartermaster', {}).get('name') or 'Quartermaster Bronn Emberward'
+for _o in CRUCIBLE_VENDOR_STOCK:
+    _sig = ITEMS.get(_o.get('sigilId'), {})
+    _sig_name = _sig.get('name', _o.get('sigilId', 'sigil'))
+    _add(_o['itemId'], f"Échangé chez {_BRONN} · 1 × {_sig_name}",
+         'npc|crucible_quartermaster', _BRONN)
 # Quartier-maître héroïque : bijoux payés en Heroic Marks (heroic_vendor.ts) —
 # la seule source des cous/anneaux épiques hors butin.
 _VEX = _MOBS.get('heroic_quartermaster', {}).get('name') or 'Quartermaster Vex'
@@ -284,6 +299,12 @@ W_WAR = {'warrior','rogue','hunter','shaman','paladin'}
 W_CAST = {'mage','priest','warlock','shaman','paladin','druid'}
 W_ROGUE = {'rogue','hunter'}
 SLOTS = ['mainhand','offhand','helmet','shoulder','chest','waist','legs','gloves','feet','neck','ring1','ring2']
+# Le calcul explore toutes les combinaisons de sets modélisés, mais le
+# remplissage des emplacements libres n'a besoin que des meilleurs candidats
+# bruts. Garder une marge de 16 conserve les meilleures alternatives tout en
+# évitant de recalculer des centaines d'objets dominés pour chaque combinaison.
+FILL_LIMIT = 16
+REFINE_PASSES = 1
 
 def max_armor(cls): return 2 if cls in MAIL else 1 if cls in LEATHER else 0
 
@@ -294,7 +315,14 @@ def max_armor(cls): return 2 if cls in MAIL else 1 if cls in LEATHER else 0
 def can_equip(cls, it):
     at = it.get('armorType') if it.get('kind') == 'armor' else None
     rc = it.get('requiredClass')
-    if at: return ARMOR_RANK[at] <= max_armor(cls)
+    # Le quartier-maître ne propose chaque panoplie du Creuset qu'à sa classe.
+    # Cette restriction de source s'ajoute à la règle générale d'armure, qui
+    # ignore requiredClass pour les objets trouvés dans le monde.
+    if at:
+        if it.get('id') in CRUCIBLE_VENDOR_IDS and rc:
+            allowed = rc if isinstance(rc, list) else [rc]
+            return cls in allowed
+        return ARMOR_RANK[at] <= max_armor(cls)
     if it.get('kind') == 'weapon' and rc:
         s = set(rc)
         if s == W_WAR: return cls in W_WAR
@@ -512,11 +540,106 @@ def better(v, iid, bs):
     if abs(v - bs[0]) <= 1e-9 and iscore(iid) > iscore(bs[1]) + 1e-9: return True
     return False
 
-def optimize(cls, role):
+# Mode B2 : partir du BiS publié et ne recalculer que les remplacements rendus
+# possibles par le stock du Creuset. Cela conserve les 18 builds déjà validés
+# et évite de refaire l'énumération gigantesque de tous les anciens sets.
+_BIS_B2_BASE = None
+if os.environ.get('BIS_B2') == '1':
+    _base_html = os.path.join(os.path.dirname(__file__), '..', 'bis.html')
+    try:
+        _html = open(_base_html, encoding='utf-8').read()
+        _match = re.search(r'const BIS = (\{.*?\});\s*const CLS_COLOR', _html, re.S)
+        if not _match:
+            raise ValueError('bloc const BIS introuvable')
+        _BIS_B2_BASE = json.loads(_match.group(1))
+    except (OSError, ValueError, json.JSONDecodeError) as exc:
+        raise SystemExit(f'compute_bis B2: impossible de lire le BiS publié ({exc})')
+
+def optimize_b2(cls, role):
+    """Teste les pièces du vendeur du Creuset sur la base publiée."""
+    try:
+        base_data = _BIS_B2_BASE[cls]['roles'][role]['picks']
+    except (KeyError, TypeError):
+        raise SystemExit(f'compute_bis B2: build de base absent pour {cls}/{role}')
+    base = {sl: p['best']['id'] for sl, p in base_data.items() if p.get('best', {}).get('id')}
     pool = candidates(cls, role)
+    vendor_by_slot = {}
+    for iid in CRUCIBLE_VENDOR_IDS:
+        it = ITEMS.get(iid)
+        if not it or iid in UNOBTAINABLE or not can_equip(cls, it):
+            continue
+        sl = it.get('slot')
+        if sl in ('helmet', 'shoulder', 'chest', 'legs', 'gloves', 'waist'):
+            vendor_by_slot.setdefault(sl, []).append(iid)
+
+    slots = sorted(vendor_by_slot)
+    choices = [[None] + sorted(vendor_by_slot[sl], key=lambda iid: (iscore(iid), iid), reverse=True)
+               for sl in slots]
+    best_v = evaluate(cls, role, base)
+    best_equip = dict(base)
+    for selected in itertools.product(*choices) if choices else [()]:
+        equip = dict(base)
+        for sl, iid in zip(slots, selected):
+            if iid:
+                equip[sl] = iid
+        value = evaluate(cls, role, equip)
+        if value > best_v + 1e-9:
+            best_v, best_equip = value, equip
+
+    # Les anneaux ne sont pas concernés par le vendeur, mais le changement de
+    # cinq pièces peut modifier le meilleur doublon ; on résout la paire comme
+    # dans le calcul général.
+    rings = pool['ring1']
+    if rings:
+        best_ring = None
+        for a in rings:
+            for b in rings:
+                equip = dict(best_equip); equip['ring1'] = a; equip['ring2'] = b
+                value = evaluate(cls, role, equip)
+                key = (round(value, 6), a == b, iscore(a) if a == b else -1.0)
+                if best_ring is None or key > best_ring[0]:
+                    best_ring = (key, (a, b))
+        best_equip['ring1'], best_equip['ring2'] = best_ring[1]
+        best_v = evaluate(cls, role, best_equip)
+
+    alts = {}
+    for sl in SLOTS:
+        cur = best_equip.get(sl); ranked = []
+        if sl == 'offhand' and best_equip.get('mainhand') \
+           and ITEMS[best_equip['mainhand']].get('hand') == 'twohand':
+            continue
+        for iid in pool[sl]:
+            if iid == cur:
+                continue
+            if sl not in ('ring1', 'ring2') and iid in best_equip.values():
+                continue
+            if sl in ('ring1', 'ring2') and iid in (best_equip['ring1'], best_equip['ring2']):
+                continue
+            equip = dict(best_equip); equip[sl] = iid
+            if sl == 'mainhand' and ITEMS[iid].get('hand') == 'twohand':
+                equip['offhand'] = None
+            value = evaluate(cls, role, equip)
+            ranked.append((value, iscore(iid), iid))
+        ranked.sort(key=lambda t: (t[0], t[1]), reverse=True)
+        if ranked:
+            alts[sl] = [iid for _v, _s, iid in ranked[:4]]
+    return best_v, best_equip, alts
+
+def optimize(cls, role):
+    if _BIS_B2_BASE is not None:
+        return optimize_b2(cls, role)
+    pool = candidates(cls, role)
+    fill_pool = {
+        sl: sorted(ids, key=lambda iid: (iscore(iid), iid), reverse=True)[:FILL_LIMIT]
+        for sl, ids in pool.items()
+    }
     # pièces de sets pertinentes pour la classe
     class_sets = {}
     for sid in SETS:
+        # Les sets « warfare_* » ne servent qu'au guide PvP ; ce calcul ne
+        # produit que les 18 builds PvE (tank, heal et DPS).
+        if sid.startswith('warfare_'):
+            continue
         pieces = [iid for iid,it in ITEMS.items() if it.get('set')==sid and can_equip(cls,it)
                   and iid not in UNOBTAINABLE]
         # v0.25 : chaque pièce de set a une jumelle « heroic_<id> » (même set,
@@ -526,7 +649,12 @@ def optimize(cls, role):
         # (elles ressortent en « Alt. »).
         ps = set(pieces)
         pieces = [iid for iid in pieces if f'heroic_{iid}' not in ps]
-        if len(pieces) >= 2: class_sets[sid]=pieces
+        # Les panoplies du Creuset ont leurs effets éditoriaux dans le jeu,
+        # mais ITEM_SETS.json ne publie encore aucun bonus chiffré pour elles.
+        # Les forcer ici multiplierait inutilement les configurations ; leurs
+        # pièces restent bien dans pool et sont évaluées individuellement.
+        modeled = any((b.get('effect') or {}) for b in SETS[sid].get('bonuses', []))
+        if len(pieces) >= 2 and modeled: class_sets[sid]=pieces
     # configurations : pour chaque set, sous-ensembles de pièces (0 ou >=2)
     def subsets(pieces):
         out=[()]
@@ -560,17 +688,17 @@ def optimize(cls, role):
             order = [sl for sl in free_order if allow_offhand or sl != 'offhand']
             for sl in order:
                 bs=None
-                for iid in pool[sl]:
+                for iid in fill_pool[sl]:
                     eq[sl]=iid
                     v=evaluate(cls,role,eq)
                     if better(v,iid,bs): bs=(v,iid)
                 eq[sl]=bs[1] if bs else None
-            for _ in range(4):  # passes de raffinement (slots libres uniquement)
+            for _ in range(REFINE_PASSES):  # passes de raffinement (slots libres uniquement)
                 changed=False
                 for sl in order:
                     cur=eq[sl]
                     bs=(evaluate(cls,role,eq),cur)
-                    for iid in pool[sl]:
+                    for iid in fill_pool[sl]:
                         if iid==cur: continue
                         eq[sl]=iid
                         v=evaluate(cls,role,eq)

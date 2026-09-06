@@ -49,8 +49,7 @@ const server = createServer(async (req, res) => {
     const body = await readFile(target);
     res.writeHead(200, { 'content-type': MIME[extname(target)] || 'application/octet-stream' });
     res.end(body);
-  } catch (error) {
-    console.error('serve 404', req.url, error?.message || error);
+  } catch {
     res.writeHead(404).end('not found');
   }
 });
@@ -114,10 +113,7 @@ for (const page of PAGES) {
   tab.on('response', (r) => {
     // Uniquement nos propres ressources : le badge de version interroge aussi
     // l'API GitHub, hors de notre contrôle et absente en CI hors ligne.
-    if (r.status() >= 400 && r.url().startsWith(base)) {
-      console.error('response-fail', r.status(), r.url(), 'service-worker=', r.fromServiceWorker());
-      failed.push(`${r.status()} ${r.url().replace(base, '')}`);
-    }
+    if (r.status() >= 400 && r.url().startsWith(base)) failed.push(`${r.status()} ${r.url().replace(base, '')}`);
   });
 
   await tab.goto(base + '/La-Clauderie' + page.path, { waitUntil: 'networkidle' });
