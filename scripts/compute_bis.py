@@ -161,6 +161,20 @@ for _n in _NPCS.values():
 _VEX = _MOBS.get('heroic_quartermaster', {}).get('name') or 'Quartermaster Vex'
 for _o in _load('HEROIC_VENDOR_STOCK', []):
     _add(_o['itemId'], f"Vendu par {_VEX} · {_o['marks']} Heroic Marks")
+# Quartier-maître du Creuset : les 145 pièces des 29 panoplies du raid
+# (v0.41.0) ne tombent d'AUCUNE table de butin — elles s'échangent contre un
+# sigil de leur emplacement, lâché par les deux boss du Creuset. Sans cette
+# correspondance (CRUCIBLE_VENDOR_STOCK, publiée par la KB depuis le
+# 6 septembre 2026), ces 145 objets n'avaient aucune provenance et tombaient
+# donc dans le filtre « héritage » plus bas : le BiS ignorait entièrement le
+# set de raid, six semaines après sa sortie. La provenance nomme le sigil,
+# parce que c'est LUI qu'on farme — la pièce, elle, est garantie une fois le
+# sigil en poche.
+_BRONN = _NPCS.get('crucible_quartermaster', {}).get('name') or 'Quartermaster Bronn Emberward'
+for _o in _load('CRUCIBLE_VENDOR_STOCK', []):
+    _sigil = ITEMS.get(_o['sigilId'], {}).get('name', _o['sigilId'])
+    _add(_o['itemId'], f"Échangé chez {_BRONN} · 1 {_sigil}",
+         'npc|crucible_quartermaster', _BRONN)
 # Boutiques de delve (payées en Marks, shop.ts) et reliquaire « bountiful » du
 # rite final du Drowned Litany (drowned_litany_loot.ts, 3 % — les trois épiques).
 _DELVE_NAMES = {d['id']: d['name'] for d in _load('DELVES', {}).values()}
@@ -527,15 +541,30 @@ def optimize(cls, role):
         ps = set(pieces)
         pieces = [iid for iid in pieces if f'heroic_{iid}' not in ps]
         if len(pieces) >= 2: class_sets[sid]=pieces
-    # configurations : pour chaque set, sous-ensembles de pièces (0 ou >=2)
-    def subsets(pieces):
+    # Configurations : pour chaque set, les sous-ensembles de pièces qu'il vaut
+    # la peine d'IMPOSER, plus l'ensemble vide.
+    #
+    # On n'impose que les tailles qui DÉCLENCHENT un palier de bonus (2 et 4
+    # partout, 3/6/7 sur quelques sets) au lieu de toutes les tailles ≥ 2.
+    # Porter une pièce de plus qu'un palier n'apporte que les stats de cette
+    # pièce : si elle est la meilleure de son emplacement, le remplissage
+    # glouton la reprend tout seul ; sinon, la porter est une perte sèche et la
+    # configuration n'était pas optimale. Imposer la taille intermédiaire ne
+    # peut donc rien découvrir de mieux — mais elle coûte, et cher : avec les
+    # 29 panoplies du Creuset (v0.41.0) devenues obtenables, l'énumération
+    # complète doublait (45 000 → 94 000 configurations pour le druide) et le
+    # calcul ne tenait plus dans le temps du robot horaire. Vérifié par A/B :
+    # à données égales, ce filtre rend un BiS identique au précédent.
+    def subsets(sid, pieces):
+        thresholds = sorted({b['pieces'] for b in SETS[sid]['bonuses']
+                             if b['pieces'] <= len(pieces)})
         out=[()]
-        for r in range(2, len(pieces)+1):
-            out += list(itertools.combinations(pieces, r))
+        for t in thresholds:
+            out += list(itertools.combinations(pieces, t))
         return out
     configs=[()]
     for sid, pieces in class_sets.items():
-        configs=[c+s for c in configs for s in subsets(pieces)
+        configs=[c+s for c in configs for s in subsets(sid, pieces)
                  if len(set(ITEMS[i]['slot'] for i in c+s))==len(c+s)]
     best=None
     for forced in configs:
