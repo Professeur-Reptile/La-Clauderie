@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-06T12:21:52Z",
+ "generated": "2026-09-07T05:08:17Z",
  "base_tag": "v0.41.4",
  "version": "v0.42.0",
  "branch": "ossbrain-release/v0.42.0",
  "declared_version": "0.42.0",
  "imminent": true,
- "commits": 572,
- "shown": 231,
- "last_commit": "2026-09-06T10:34:07+00:00",
+ "commits": 656,
+ "shown": 289,
+ "last_commit": "2026-09-07T02:37:50Z",
  "sections": [
   {
    "key": "classes",
@@ -30,6 +30,13 @@
      "date": "2026-08-30"
     },
     {
+     "h": "2241e3ec",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Warm the cast VFX programs by the compile arms, and gate the painter on them",
+     "date": "2026-08-28"
+    },
+    {
      "h": "0d68abe1",
      "kind": "fix",
      "scope": "ui",
@@ -49,6 +56,13 @@
      "scope": "warlock",
      "text": "Let Possess and Hour of Judgment fire through a running cast",
      "date": "2026-09-04"
+    },
+    {
+     "h": "575af7e2",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Type the cast gate's linked answer as a handle or null",
+     "date": "2026-09-03"
     },
     {
      "h": "46d6ddf0",
@@ -114,6 +128,20 @@
      "date": "2026-08-29"
     },
     {
+     "h": "36e806bd",
+     "kind": "fix",
+     "scope": "render",
+     "text": "The cast gate stops holding the telegraphs a player acts on",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "af8cdf33",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bound the cast gate, and widen the extension sweep with a drift watch",
+     "date": "2026-08-29"
+    },
+    {
      "h": "01c7e2b4",
      "kind": "fix",
      "scope": "ui",
@@ -125,6 +153,13 @@
      "kind": "fix",
      "scope": "sim",
      "text": "Auto-face the auto-attack target instead of silently stalling",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "8d001d00",
+     "kind": "fix",
+     "scope": "render",
+     "text": "The cast gate keeps the area ring, the worker refuses iOS, the GPU probe fails soft",
      "date": "2026-08-28"
     }
    ]
@@ -205,6 +240,13 @@
      "scope": "loot",
      "text": "Pace the Crucible raid at one item per five raiders per kill",
      "date": "2026-09-02"
+    },
+    {
+     "h": "e1735512",
+     "kind": "fix",
+     "scope": "raid",
+     "text": "Retune Heroic Varkhul intermission add health to 0.7x",
+     "date": "2026-09-07"
     },
     {
      "h": "004e549b",
@@ -325,6 +367,13 @@
      "scope": "render",
      "text": "Give the zone-feature dressing a lean-tier ladder",
      "date": "2026-09-02"
+    },
+    {
+     "h": "983c95f4",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Prewarm every summonable pet rig with the zone's mobs",
+     "date": "2026-08-28"
     },
     {
      "h": "0e9ecdcd",
@@ -473,6 +522,13 @@
      "scope": "moderation",
      "text": "Let staff spectate other staff with /spectate",
      "date": "2026-09-02"
+    },
+    {
+     "h": "27d9e047",
+     "kind": "fix",
+     "scope": "server",
+     "text": "A perf-report block opens on a real number only",
+     "date": "2026-08-29"
     }
    ]
   },
@@ -588,6 +644,13 @@
      "date": "2026-09-03"
     },
     {
+     "h": "19f12d5d",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Give the shader worker up early on its own evidence, and watch it",
+     "date": "2026-09-02"
+    },
+    {
      "h": "a83ea71d",
      "kind": "feat",
      "scope": "reliquary",
@@ -602,6 +665,27 @@
      "date": "2026-09-02"
     },
     {
+     "h": "1bb0ce40",
+     "kind": "feat",
+     "scope": "render",
+     "text": "A probe knob for the shader warm worker's ready deadline",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "f394f6e1",
+     "kind": "feat",
+     "scope": "desktop",
+     "text": "GPU policy over the Vulkan ladder, restart for next-launch settings",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "817863f7",
+     "kind": "feat",
+     "scope": "desktop",
+     "text": "The GPU policy carries per-card Vulkan switches; AMD gets the DRM-modifier workaround",
+     "date": "2026-08-30"
+    },
+    {
      "h": "4cd8bd67",
      "kind": "feat",
      "scope": "perf",
@@ -614,6 +698,111 @@
      "scope": "perf",
      "text": "Label the client perf metrics with the graphics backend",
      "date": "2026-08-29"
+    },
+    {
+     "h": "0341555f",
+     "kind": "feat",
+     "scope": "desktop",
+     "text": "The GPU backend remembers what it proved, and rescues every launch",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "1efe2e4e",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "The graphics backend row and the boot notice say which one is really running",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "2c611b5d",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Shader warm worker follows the GPU backend, with a player option",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "70ffdb7e",
+     "kind": "feat",
+     "scope": "desktop",
+     "text": "Try the Vulkan backend once on Linux, verify it, remember it",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "29549383",
+     "kind": "feat",
+     "scope": "render",
+     "text": "The shader warm worker holds live entity views too",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "1159e116",
+     "kind": "feat",
+     "scope": "desktop",
+     "text": "The Vulkan trial climbs a ladder: parallel compile, plain Vulkan, then GL",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "cab680fa",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "The Linux graphics backend row moves under the shader worker, and its note says Auto retries",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "8ef9f614",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Plain player wording for the graphics backend and shader worker options",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "f63042c3",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Enable the context's extension set before the first link",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "8487869e",
+     "kind": "feat",
+     "scope": "game",
+     "text": "Warm the shader cache from the player's own last session",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "d7c017fe",
+     "kind": "feat",
+     "scope": "perf",
+     "text": "Ship the post-reveal link window and the boot phases to the beacon",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "d2fb9c4f",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Dry compile in three and the shader warm audit",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "c18a44d7",
+     "kind": "feat",
+     "scope": "render",
+     "text": "The shader warm worker and the gates as its requesters",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "29857622",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Every shader producer asks the warm worker before it links",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "2f161cd7",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Keep a ledger of every program's cache key",
+     "date": "2026-08-26"
     },
     {
      "h": "fd8a712e",
@@ -875,6 +1064,41 @@
      "date": "2026-09-02"
     },
     {
+     "h": "766ad257",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Gate the battleground and yumi maze attaches, prebuild the field at the proposal",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "1bd5a51e",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Transmissive GLB materials become translucent at load",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "6899afe9",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Settle and touch the boot lane's programs under the cover",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "7b319248",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Dedup worn-stone programs, per-family scalars to uniforms",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "19bbc62d",
+     "kind": "perf",
+     "scope": "render",
+     "text": "The shader warm worker keeps no program after its resolve",
+     "date": "2026-08-27"
+    },
+    {
      "h": "980b1013",
      "kind": "perf",
      "scope": "render",
@@ -886,6 +1110,13 @@
      "kind": "fix",
      "scope": "action-bar",
      "text": "Keep the login layout fresh across the handshake and seed an empty desktop from the bar in view",
+     "date": "2026-09-06"
+    },
+    {
+     "h": "d9f181d0",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Let battleground Unstuck catch perimeter wall traps",
      "date": "2026-09-06"
     },
     {
@@ -1005,6 +1236,13 @@
      "kind": "fix",
      "scope": "render",
      "text": "Guard the post chain against Mali NaN so Android frames stop going black",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "a8a8a1a0",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Answer Rubsey's third pass on the give-up rule and its readout",
      "date": "2026-09-03"
     },
     {
@@ -1162,6 +1400,13 @@
      "date": "2026-09-03"
     },
     {
+     "h": "b527be53",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Answer the external review of the shader warm worker",
+     "date": "2026-09-02"
+    },
+    {
      "h": "603b405d",
      "kind": "fix",
      "scope": "unstuck",
@@ -1180,6 +1425,13 @@
      "kind": "fix",
      "scope": "render",
      "text": "Keep lean-tier rocks and dressing visible as the camera orbits",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "fae07b45",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Answer Rubsey's review and name what the audit caught",
      "date": "2026-09-02"
     },
     {
@@ -1407,6 +1659,13 @@
      "date": "2026-09-01"
     },
     {
+     "h": "3331d818",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Answer review round 3 of the shader warm worker",
+     "date": "2026-09-01"
+    },
+    {
      "h": "6a4a7b6b",
      "kind": "fix",
      "scope": "input",
@@ -1470,6 +1729,27 @@
      "date": "2026-08-31"
     },
     {
+     "h": "5d9f3cb7",
+     "kind": "fix",
+     "scope": "render",
+     "text": "The shader warm worker judges its links relative to the driver",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "b2ba257c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "The shader warm worker stays off on Vulkan under auto",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "ade83cd5",
+     "kind": "fix",
+     "scope": "render",
+     "text": "The shader warm worker stays off on Metal under auto too",
+     "date": "2026-08-30"
+    },
+    {
      "h": "f3be568b",
      "kind": "fix",
      "scope": "ui",
@@ -1488,6 +1768,13 @@
      "kind": "fix",
      "scope": "sim",
      "text": "Knockback no longer freezes players against static colliders",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "f560e5b8",
+     "kind": "fix",
+     "scope": "render",
+     "text": "The settle judge sets a cache hit aside in company too",
      "date": "2026-08-30"
     },
     {
@@ -1512,6 +1799,13 @@
      "date": "2026-08-30"
     },
     {
+     "h": "48f78e86",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Hear the rescued child, clamp the worker's retain cap, drop the dead announcement arm",
+     "date": "2026-08-30"
+    },
+    {
      "h": "49205b0e",
      "kind": "fix",
      "scope": "render",
@@ -1523,6 +1817,13 @@
      "kind": "fix",
      "scope": "render",
      "text": "Skip the KTX2 restore re-upload on a lost host context",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "18be667e",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Select Vulkan for WebGL only, never for Chromium's compositor",
      "date": "2026-08-30"
     },
     {
@@ -1561,6 +1862,69 @@
      "date": "2026-08-29"
     },
     {
+     "h": "d62fc423",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "On Linux the stored display mode applies after the page loads, not at the reveal",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "d9da53e3",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Three defects the backend review found, and the pins that let them through",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "b503d39f",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "The backend reading rides inside its row, not as a note beside it",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "f05691f7",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "The backend warning reads the player's choice, not the launch that survived",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "824911a2",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Rescue a Vulkan rung whose GPU process never started",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "cf6af557",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "The backend memory only moves on evidence about the machine",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "ea14013e",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Pin the cast-gate deadline and settle the shown battleground slot early",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "b37b4773",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "The graphics backend line follows the shell's verdict",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "fc00e5f3",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Create the WebGL2 context with a power-preference fallback",
+     "date": "2026-08-28"
+    },
+    {
      "h": "4b60c08c",
      "kind": "fix",
      "scope": "ui",
@@ -1573,6 +1937,48 @@
      "scope": "render",
      "text": "Sheathe a drawn weapon while mounted, folded into the swim overlay",
      "date": "2026-08-28"
+    },
+    {
+     "h": "3cc339b7",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Link the water height-field programs against their float target",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "52037fb1",
+     "kind": "fix",
+     "scope": "render",
+     "text": "A prewarm slot's resumed link names its root for the warm lane",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "0b9f2447",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Resolve the warm-up's links so the browser caches them",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "a7fe69f3",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Replay the attribute bind so the warmed programs are the entry's",
+     "date": "2026-08-27"
+    },
+    {
+     "h": "118a078d",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Reopen the compile lane when a settle refutes its stall",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "a217235b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Compose kit hooks in the clone's order, key the impostor once",
+     "date": "2026-08-26"
     },
     {
      "h": "e674f4e9",
@@ -1681,9 +2087,9 @@
    "branch": "ossbrain-release/v0.42.0",
    "declared_version": "0.42.0",
    "imminent": true,
-   "commits": 572,
-   "shown": 231,
-   "last_commit": "2026-09-06T10:34:07+00:00",
+   "commits": 656,
+   "shown": 289,
+   "last_commit": "2026-09-07T02:37:50Z",
    "sections": [
     {
      "key": "classes",
@@ -1706,6 +2112,13 @@
        "date": "2026-08-30"
       },
       {
+       "h": "2241e3ec",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Warm the cast VFX programs by the compile arms, and gate the painter on them",
+       "date": "2026-08-28"
+      },
+      {
        "h": "0d68abe1",
        "kind": "fix",
        "scope": "ui",
@@ -1725,6 +2138,13 @@
        "scope": "warlock",
        "text": "Let Possess and Hour of Judgment fire through a running cast",
        "date": "2026-09-04"
+      },
+      {
+       "h": "575af7e2",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Type the cast gate's linked answer as a handle or null",
+       "date": "2026-09-03"
       },
       {
        "h": "46d6ddf0",
@@ -1790,6 +2210,20 @@
        "date": "2026-08-29"
       },
       {
+       "h": "36e806bd",
+       "kind": "fix",
+       "scope": "render",
+       "text": "The cast gate stops holding the telegraphs a player acts on",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "af8cdf33",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Bound the cast gate, and widen the extension sweep with a drift watch",
+       "date": "2026-08-29"
+      },
+      {
        "h": "01c7e2b4",
        "kind": "fix",
        "scope": "ui",
@@ -1801,6 +2235,13 @@
        "kind": "fix",
        "scope": "sim",
        "text": "Auto-face the auto-attack target instead of silently stalling",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "8d001d00",
+       "kind": "fix",
+       "scope": "render",
+       "text": "The cast gate keeps the area ring, the worker refuses iOS, the GPU probe fails soft",
        "date": "2026-08-28"
       }
      ]
@@ -1881,6 +2322,13 @@
        "scope": "loot",
        "text": "Pace the Crucible raid at one item per five raiders per kill",
        "date": "2026-09-02"
+      },
+      {
+       "h": "e1735512",
+       "kind": "fix",
+       "scope": "raid",
+       "text": "Retune Heroic Varkhul intermission add health to 0.7x",
+       "date": "2026-09-07"
       },
       {
        "h": "004e549b",
@@ -2001,6 +2449,13 @@
        "scope": "render",
        "text": "Give the zone-feature dressing a lean-tier ladder",
        "date": "2026-09-02"
+      },
+      {
+       "h": "983c95f4",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Prewarm every summonable pet rig with the zone's mobs",
+       "date": "2026-08-28"
       },
       {
        "h": "0e9ecdcd",
@@ -2149,6 +2604,13 @@
        "scope": "moderation",
        "text": "Let staff spectate other staff with /spectate",
        "date": "2026-09-02"
+      },
+      {
+       "h": "27d9e047",
+       "kind": "fix",
+       "scope": "server",
+       "text": "A perf-report block opens on a real number only",
+       "date": "2026-08-29"
       }
      ]
     },
@@ -2264,6 +2726,13 @@
        "date": "2026-09-03"
       },
       {
+       "h": "19f12d5d",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Give the shader worker up early on its own evidence, and watch it",
+       "date": "2026-09-02"
+      },
+      {
        "h": "a83ea71d",
        "kind": "feat",
        "scope": "reliquary",
@@ -2278,6 +2747,27 @@
        "date": "2026-09-02"
       },
       {
+       "h": "1bb0ce40",
+       "kind": "feat",
+       "scope": "render",
+       "text": "A probe knob for the shader warm worker's ready deadline",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "f394f6e1",
+       "kind": "feat",
+       "scope": "desktop",
+       "text": "GPU policy over the Vulkan ladder, restart for next-launch settings",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "817863f7",
+       "kind": "feat",
+       "scope": "desktop",
+       "text": "The GPU policy carries per-card Vulkan switches; AMD gets the DRM-modifier workaround",
+       "date": "2026-08-30"
+      },
+      {
        "h": "4cd8bd67",
        "kind": "feat",
        "scope": "perf",
@@ -2290,6 +2780,111 @@
        "scope": "perf",
        "text": "Label the client perf metrics with the graphics backend",
        "date": "2026-08-29"
+      },
+      {
+       "h": "0341555f",
+       "kind": "feat",
+       "scope": "desktop",
+       "text": "The GPU backend remembers what it proved, and rescues every launch",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "1efe2e4e",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "The graphics backend row and the boot notice say which one is really running",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "2c611b5d",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Shader warm worker follows the GPU backend, with a player option",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "70ffdb7e",
+       "kind": "feat",
+       "scope": "desktop",
+       "text": "Try the Vulkan backend once on Linux, verify it, remember it",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "29549383",
+       "kind": "feat",
+       "scope": "render",
+       "text": "The shader warm worker holds live entity views too",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "1159e116",
+       "kind": "feat",
+       "scope": "desktop",
+       "text": "The Vulkan trial climbs a ladder: parallel compile, plain Vulkan, then GL",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "cab680fa",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "The Linux graphics backend row moves under the shader worker, and its note says Auto retries",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "8ef9f614",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Plain player wording for the graphics backend and shader worker options",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "f63042c3",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Enable the context's extension set before the first link",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "8487869e",
+       "kind": "feat",
+       "scope": "game",
+       "text": "Warm the shader cache from the player's own last session",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "d7c017fe",
+       "kind": "feat",
+       "scope": "perf",
+       "text": "Ship the post-reveal link window and the boot phases to the beacon",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "d2fb9c4f",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Dry compile in three and the shader warm audit",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "c18a44d7",
+       "kind": "feat",
+       "scope": "render",
+       "text": "The shader warm worker and the gates as its requesters",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "29857622",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Every shader producer asks the warm worker before it links",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "2f161cd7",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Keep a ledger of every program's cache key",
+       "date": "2026-08-26"
       },
       {
        "h": "fd8a712e",
@@ -2551,6 +3146,41 @@
        "date": "2026-09-02"
       },
       {
+       "h": "766ad257",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Gate the battleground and yumi maze attaches, prebuild the field at the proposal",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "1bd5a51e",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Transmissive GLB materials become translucent at load",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "6899afe9",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Settle and touch the boot lane's programs under the cover",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "7b319248",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Dedup worn-stone programs, per-family scalars to uniforms",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "19bbc62d",
+       "kind": "perf",
+       "scope": "render",
+       "text": "The shader warm worker keeps no program after its resolve",
+       "date": "2026-08-27"
+      },
+      {
        "h": "980b1013",
        "kind": "perf",
        "scope": "render",
@@ -2562,6 +3192,13 @@
        "kind": "fix",
        "scope": "action-bar",
        "text": "Keep the login layout fresh across the handshake and seed an empty desktop from the bar in view",
+       "date": "2026-09-06"
+      },
+      {
+       "h": "d9f181d0",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Let battleground Unstuck catch perimeter wall traps",
        "date": "2026-09-06"
       },
       {
@@ -2681,6 +3318,13 @@
        "kind": "fix",
        "scope": "render",
        "text": "Guard the post chain against Mali NaN so Android frames stop going black",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "a8a8a1a0",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Answer Rubsey's third pass on the give-up rule and its readout",
        "date": "2026-09-03"
       },
       {
@@ -2838,6 +3482,13 @@
        "date": "2026-09-03"
       },
       {
+       "h": "b527be53",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Answer the external review of the shader warm worker",
+       "date": "2026-09-02"
+      },
+      {
        "h": "603b405d",
        "kind": "fix",
        "scope": "unstuck",
@@ -2856,6 +3507,13 @@
        "kind": "fix",
        "scope": "render",
        "text": "Keep lean-tier rocks and dressing visible as the camera orbits",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "fae07b45",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Answer Rubsey's review and name what the audit caught",
        "date": "2026-09-02"
       },
       {
@@ -3083,6 +3741,13 @@
        "date": "2026-09-01"
       },
       {
+       "h": "3331d818",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Answer review round 3 of the shader warm worker",
+       "date": "2026-09-01"
+      },
+      {
        "h": "6a4a7b6b",
        "kind": "fix",
        "scope": "input",
@@ -3146,6 +3811,27 @@
        "date": "2026-08-31"
       },
       {
+       "h": "5d9f3cb7",
+       "kind": "fix",
+       "scope": "render",
+       "text": "The shader warm worker judges its links relative to the driver",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "b2ba257c",
+       "kind": "fix",
+       "scope": "render",
+       "text": "The shader warm worker stays off on Vulkan under auto",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "ade83cd5",
+       "kind": "fix",
+       "scope": "render",
+       "text": "The shader warm worker stays off on Metal under auto too",
+       "date": "2026-08-30"
+      },
+      {
        "h": "f3be568b",
        "kind": "fix",
        "scope": "ui",
@@ -3164,6 +3850,13 @@
        "kind": "fix",
        "scope": "sim",
        "text": "Knockback no longer freezes players against static colliders",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "f560e5b8",
+       "kind": "fix",
+       "scope": "render",
+       "text": "The settle judge sets a cache hit aside in company too",
        "date": "2026-08-30"
       },
       {
@@ -3188,6 +3881,13 @@
        "date": "2026-08-30"
       },
       {
+       "h": "48f78e86",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Hear the rescued child, clamp the worker's retain cap, drop the dead announcement arm",
+       "date": "2026-08-30"
+      },
+      {
        "h": "49205b0e",
        "kind": "fix",
        "scope": "render",
@@ -3199,6 +3899,13 @@
        "kind": "fix",
        "scope": "render",
        "text": "Skip the KTX2 restore re-upload on a lost host context",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "18be667e",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Select Vulkan for WebGL only, never for Chromium's compositor",
        "date": "2026-08-30"
       },
       {
@@ -3237,6 +3944,69 @@
        "date": "2026-08-29"
       },
       {
+       "h": "d62fc423",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "On Linux the stored display mode applies after the page loads, not at the reveal",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "d9da53e3",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Three defects the backend review found, and the pins that let them through",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "b503d39f",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "The backend reading rides inside its row, not as a note beside it",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "f05691f7",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "The backend warning reads the player's choice, not the launch that survived",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "824911a2",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Rescue a Vulkan rung whose GPU process never started",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "cf6af557",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "The backend memory only moves on evidence about the machine",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "ea14013e",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Pin the cast-gate deadline and settle the shown battleground slot early",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "b37b4773",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "The graphics backend line follows the shell's verdict",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "fc00e5f3",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Create the WebGL2 context with a power-preference fallback",
+       "date": "2026-08-28"
+      },
+      {
        "h": "4b60c08c",
        "kind": "fix",
        "scope": "ui",
@@ -3249,6 +4019,48 @@
        "scope": "render",
        "text": "Sheathe a drawn weapon while mounted, folded into the swim overlay",
        "date": "2026-08-28"
+      },
+      {
+       "h": "3cc339b7",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Link the water height-field programs against their float target",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "52037fb1",
+       "kind": "fix",
+       "scope": "render",
+       "text": "A prewarm slot's resumed link names its root for the warm lane",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "0b9f2447",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Resolve the warm-up's links so the browser caches them",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "a7fe69f3",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Replay the attribute bind so the warmed programs are the entry's",
+       "date": "2026-08-27"
+      },
+      {
+       "h": "118a078d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Reopen the compile lane when a settle refutes its stall",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "a217235b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Compose kit hooks in the clone's order, key the impostor once",
+       "date": "2026-08-26"
       },
       {
        "h": "e674f4e9",
