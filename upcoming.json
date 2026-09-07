@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-07T05:08:17Z",
+ "generated": "2026-09-07T12:57:43Z",
  "base_tag": "v0.41.4",
  "version": "v0.42.0",
  "branch": "ossbrain-release/v0.42.0",
  "declared_version": "0.42.0",
  "imminent": true,
- "commits": 656,
- "shown": 289,
- "last_commit": "2026-09-07T02:37:50Z",
+ "commits": 785,
+ "shown": 363,
+ "last_commit": "2026-09-07T12:55:56Z",
  "sections": [
   {
    "key": "classes",
@@ -15,6 +15,13 @@
    "fr": "Classes & sorts",
    "en": "Classes & spells",
    "items": [
+    {
+     "h": "bd700aef",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Nythraxis callouts, guide page, aura text, icons, and matcher rows",
+     "date": "2026-09-03"
+    },
     {
      "h": "75c5e609",
      "kind": "feat",
@@ -35,6 +42,13 @@
      "scope": "render",
      "text": "Warm the cast VFX programs by the compile arms, and gate the painter on them",
      "date": "2026-08-28"
+    },
+    {
+     "h": "91da4270",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Stroke map footprints in the collider's rotation sense",
+     "date": "2026-09-07"
     },
     {
      "h": "0d68abe1",
@@ -221,6 +235,13 @@
    "en": "Dungeons, rifts & bosses",
    "items": [
     {
+     "h": "1808bb89",
+     "kind": "feat",
+     "scope": "content",
+     "text": "Roots' Bramblehide set and seven Nythraxis gap-fill drops",
+     "date": "2026-09-07"
+    },
+    {
      "h": "d6c86bd7",
      "kind": "feat",
      "scope": "rift",
@@ -228,11 +249,81 @@
      "date": "2026-09-05"
     },
     {
+     "h": "18143aa7",
+     "kind": "feat",
+     "scope": "nythraxis",
+     "text": "Compact arena, heroic scaling everywhere, permanent heroic fire, 6:00 clock",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "0e047525",
+     "kind": "feat",
+     "scope": "dev",
+     "text": "A solo Nythraxis practice raid, mechanic pokes, and a full-fight smoke test",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "e014cd42",
+     "kind": "feat",
+     "scope": "nythraxis",
+     "text": "Double the hall to about 100 by 100 yd",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "a277c3de",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Draw Nythraxis fire from Tripo models and cage the Bound boss",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "4caf6bd5",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Regenerate the Nythraxis fire as tall Tripo P2 plumes",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "8fba5b6c",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Burn the Nythraxis fire as a soft sprite cloud, not geometry",
+     "date": "2026-09-04"
+    },
+    {
      "h": "bc1f5d89",
      "kind": "feat",
      "scope": "rift",
      "text": "Ship the Rift Forge, a Riftwright NPC that upgrades Riftbound rings",
      "date": "2026-09-04"
+    },
+    {
+     "h": "d8faecd1",
+     "kind": "feat",
+     "scope": "nythraxis",
+     "text": "Field no adds and turn the Binding Sigil blue",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "9d8dcf69",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "First-playtest tuning for Nythraxis: swaps, spikes, marks, health",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "453d2ed5",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Give Nythraxis a tank swap, Bone Spikes, and Grave Eruptions",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "47d07245",
+     "kind": "feat",
+     "scope": "net",
+     "text": "Wire the Nythraxis ground telegraphs and bump the world epoch to 26",
+     "date": "2026-09-03"
     },
     {
      "h": "ad7d46b7",
@@ -246,6 +337,62 @@
      "kind": "fix",
      "scope": "raid",
      "text": "Retune Heroic Varkhul intermission add health to 0.7x",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "0ebe5193",
+     "kind": "fix",
+     "scope": "items",
+     "text": "Paint the Bramblehide and Nythraxis gap-fill icons",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "2c7494c0",
+     "kind": "fix",
+     "scope": "raid",
+     "text": "Ease Nythraxis melee and heroic fire",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "e346f4e9",
+     "kind": "fix",
+     "scope": "raid",
+     "text": "Close Nythraxis merge-readiness gaps",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "f6a33d62",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Hold a major boss's lootable corpse for thirty minutes",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "ba28f3d6",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Scope the boss corpse hold to camp-placed bosses",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "e7c90967",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Hold only instance boss corpses",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "9fedddae",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release/v0.42.0 into fix/boss-corpse-hold",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "2b700420",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release/v0.42.0 (the Nythraxis redo landing), epoch 27",
      "date": "2026-09-07"
     },
     {
@@ -289,6 +436,13 @@
      "scope": "ui",
      "text": "Let the world map leave an instance plan and view a party dungeon",
      "date": "2026-09-05"
+    },
+    {
+     "h": "725a6790",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release/v0.42.0 into feature/nythraxis-mechanics-redo",
+     "date": "2026-09-04"
     },
     {
      "h": "5dfbeb5f",
@@ -355,11 +509,88 @@
    "en": "World & quests",
    "items": [
     {
+     "h": "930328f0",
+     "kind": "feat",
+     "scope": "drakelands",
+     "text": "Bake the sixth pass, two-way stair seams, exit seating",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "549c0a9e",
+     "kind": "feat",
+     "scope": "drakelands",
+     "text": "Raze the Ashen Bulwark",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "6205043c",
+     "kind": "feat",
+     "scope": "drakelands",
+     "text": "Brighten the rebuild kit, seat the Pale Keeper at the chapel",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "b4e3e80d",
+     "kind": "feat",
+     "scope": "drakelands",
+     "text": "Bake the seventh pass, grain the rebuild kit architecture",
+     "date": "2026-09-03"
+    },
+    {
      "h": "2ff1fb06",
      "kind": "feat",
      "scope": "content",
      "text": "Point new players at the Proving Shore ferry bell",
      "date": "2026-09-01"
+    },
+    {
+     "h": "b0401678",
+     "kind": "feat",
+     "scope": "drakelands",
+     "text": "Bake the fifth pass, fence colliders, two-way stairs",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "62e61f47",
+     "kind": "feat",
+     "scope": "drakelands",
+     "text": "Bake the fourth placer pass, walk-under decks, lamp dedupe",
+     "date": "2026-08-31"
+    },
+    {
+     "h": "df6f5d0b",
+     "kind": "feat",
+     "scope": "drakelands",
+     "text": "Bake the owner's Last Keep rebuild and open its door",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "34743f7b",
+     "kind": "feat",
+     "scope": "drakelands",
+     "text": "Bake the third placer pass and the Wyrmwatch first wave",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "a13cd2b0",
+     "kind": "feat",
+     "scope": "drakelands",
+     "text": "Swap the Last Keep and Trollmoot sites, strip both builds",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "e14f187e",
+     "kind": "feat",
+     "scope": "placer",
+     "text": "Mob freeze on open and the owner's custom asset kit",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "7b1dbd89",
+     "kind": "feat",
+     "scope": "placer",
+     "text": "Land the owner's 25-piece Drakelands rebuild kit",
+     "date": "2026-08-29"
     },
     {
      "h": "7cb65db3",
@@ -374,6 +605,27 @@
      "scope": "render",
      "text": "Prewarm every summonable pet rig with the zone's mobs",
      "date": "2026-08-28"
+    },
+    {
+     "h": "6e19ff42",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Carry the Bramblehide and gap-fill review follow-ups",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "cbbd43dd",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release/v0.42.0 into feature/drakelands-map-improvements",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "e523b5c6",
+     "kind": "fix",
+     "scope": "drakelands",
+     "text": "Address the epic review round",
+     "date": "2026-09-07"
     },
     {
      "h": "0e9ecdcd",
@@ -404,6 +656,13 @@
      "date": "2026-09-01"
     },
     {
+     "h": "2241447e",
+     "kind": "fix",
+     "scope": "drakelands",
+     "text": "Fill the temple court's west rank of stamps",
+     "date": "2026-08-30"
+    },
+    {
      "h": "0cfb1830",
      "kind": "fix",
      "scope": "ui",
@@ -432,6 +691,27 @@
    "fr": "Guilde & social",
    "en": "Guild & social",
    "items": [
+    {
+     "h": "897be4af",
+     "kind": "feat",
+     "scope": "guild-bank",
+     "text": "Paged, filterable transaction history for the guild bank",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "a1f8964b",
+     "kind": "feat",
+     "scope": "guild-bank",
+     "text": "History rows as a table with a pinned header",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "98ddc083",
+     "kind": "feat",
+     "scope": "guild-bank",
+     "text": "Search box on the guild bank history",
+     "date": "2026-09-07"
+    },
     {
      "h": "eef7878c",
      "kind": "feat",
@@ -466,6 +746,13 @@
      "scope": "ui",
      "text": "Read the party roster only when the mouseover target is out of scope",
      "date": "2026-09-04"
+    },
+    {
+     "h": "f3dfee9f",
+     "kind": "fix",
+     "scope": "guild-bank",
+     "text": "Address the history review (race, index, meter, focus, tap)",
+     "date": "2026-09-07"
     },
     {
      "h": "714add51",
@@ -539,6 +826,62 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "4f8b52e2",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Frame the last standing HUD stragglers and guard future additions",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "7ed34640",
+     "kind": "feat",
+     "scope": "keybinds",
+     "text": "Export and import hotkey setups from the Key Bindings panel",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "eee86105",
+     "kind": "feat",
+     "scope": "options",
+     "text": "Full settings import / export sub-panel",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "1446af6b",
+     "kind": "feat",
+     "scope": "action-bar",
+     "text": "Warn before changing a pre-existing action bar hotkey",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "37ca4ad3",
+     "kind": "feat",
+     "scope": "keybinds",
+     "text": "Keyboard overview of every key in use in the Key Bindings panel",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "ed36e3cf",
+     "kind": "feat",
+     "scope": "keybinds",
+     "text": "Rebind from the keyboard overview and pop it out into a window",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "063999b6",
+     "kind": "feat",
+     "scope": "keybinds",
+     "text": "Keyboard size picker and real key legends in the overview",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "f5f5beb5",
+     "kind": "feat",
+     "scope": "keybinds",
+     "text": "Keyboard overview options under the board, plus a QWERTY / layout legend choice",
+     "date": "2026-09-07"
+    },
+    {
      "h": "baa863ba",
      "kind": "feat",
      "scope": "guilds",
@@ -565,6 +908,13 @@
      "scope": "chronomancy",
      "text": "Scale Temporal Cascade's heal with missing health",
      "date": "2026-09-05"
+    },
+    {
+     "h": "4bea8659",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Make Gravefire read as fire, and show the Bone Spike taller",
+     "date": "2026-09-04"
     },
     {
      "h": "6d48d236",
@@ -599,6 +949,41 @@
      "kind": "feat",
      "scope": "server",
      "text": "Read the GPU model dimensions out of the admin perf summary",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "dda2ae76",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Draw the grave eruptions, grave flames, and the impaled pose",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "64a18df6",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Binding Sigil, Gravefire, Soulfire, phase 3, Bone Storm, and the enrage clock",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "dad712cb",
+     "kind": "feat",
+     "scope": "net",
+     "text": "Wire the Gravefire lines and Binding Sigils to the online client",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "332f2485",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Soulfire palette, the Gravefire strip, and the Binding Sigil ring",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "079d823d",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Callouts, guide, tooltips, and icons for the redo's new mechanics",
      "date": "2026-09-03"
     },
     {
@@ -644,6 +1029,20 @@
      "date": "2026-09-03"
     },
     {
+     "h": "7e1aed88",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Proc overlay and damage meter join the frames unlock, class-true pet previews",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "94fc3d2a",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Real-chrome pet placeholder, unlimited wishlist chip zoom",
+     "date": "2026-09-02"
+    },
+    {
      "h": "19f12d5d",
      "kind": "feat",
      "scope": "render",
@@ -663,6 +1062,20 @@
      "scope": "render",
      "text": "Ladder texture anisotropy by graphics tier",
      "date": "2026-09-02"
+    },
+    {
+     "h": "408ae811",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Trackers and class resource bars join the frames unlock, grid centerlines",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "68751e9c",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "The pet action bar joins the frames unlock",
+     "date": "2026-09-01"
     },
     {
      "h": "1bb0ce40",
@@ -1104,6 +1517,104 @@
      "scope": "render",
      "text": "Measure a vehicle once per model, not per rider",
      "date": "2026-08-20"
+    },
+    {
+     "h": "8ec85f94",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Drive the Target dots menu row from its master switch",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "1bd275dc",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Fit hud.ts under the release's lowered ratchet ceiling",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "6af0dc52",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Review round one for the frames-unlock PR",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "7c81d297",
+     "kind": "fix",
+     "scope": "shell",
+     "text": "Remove the $WOC contract address box from the landing page",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "c4ddea49",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release/v0.42.0 into ossbrain-release/v0.42.0",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "63ceae8e",
+     "kind": "fix",
+     "scope": "",
+     "text": "Resync release/v0.42.0 into ossbrain-release/v0.42.0",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "76604491",
+     "kind": "fix",
+     "scope": "keybinds",
+     "text": "Keyboard overview detail names a bare binding once",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "7ca58712",
+     "kind": "fix",
+     "scope": "keybinds",
+     "text": "Close the review gaps in the rebind surfaces",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "7685e63f",
+     "kind": "fix",
+     "scope": "options",
+     "text": "Drop the doom hidden flag from the full tier, the frames tier carries it now",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "63ceae8e",
+     "kind": "fix",
+     "scope": "",
+     "text": "Resync release/v0.42.0 into ossbrain-release/v0.42.0",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "baa60b5e",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release/v0.42.0 (the frames-unlock landing) into the epic",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "49fa6c07",
+     "kind": "fix",
+     "scope": "keybinds",
+     "text": "Address the PR #3926 review",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "63ceae8e",
+     "kind": "fix",
+     "scope": "",
+     "text": "Resync release/v0.42.0 into ossbrain-release/v0.42.0",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "63ceae8e",
+     "kind": "fix",
+     "scope": "",
+     "text": "Resync release/v0.42.0 into ossbrain-release/v0.42.0",
+     "date": "2026-09-07"
     },
     {
      "h": "363b696b",
@@ -1617,6 +2128,13 @@
      "date": "2026-09-01"
     },
     {
+     "h": "5e109237",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Reset ordering, reliquary edit gate, doom frame naming cleanup",
+     "date": "2026-09-01"
+    },
+    {
      "h": "5279608d",
      "kind": "fix",
      "scope": "server",
@@ -2087,9 +2605,9 @@
    "branch": "ossbrain-release/v0.42.0",
    "declared_version": "0.42.0",
    "imminent": true,
-   "commits": 656,
-   "shown": 289,
-   "last_commit": "2026-09-07T02:37:50Z",
+   "commits": 785,
+   "shown": 363,
+   "last_commit": "2026-09-07T12:55:56Z",
    "sections": [
     {
      "key": "classes",
@@ -2097,6 +2615,13 @@
      "fr": "Classes & sorts",
      "en": "Classes & spells",
      "items": [
+      {
+       "h": "bd700aef",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Nythraxis callouts, guide page, aura text, icons, and matcher rows",
+       "date": "2026-09-03"
+      },
       {
        "h": "75c5e609",
        "kind": "feat",
@@ -2117,6 +2642,13 @@
        "scope": "render",
        "text": "Warm the cast VFX programs by the compile arms, and gate the painter on them",
        "date": "2026-08-28"
+      },
+      {
+       "h": "91da4270",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stroke map footprints in the collider's rotation sense",
+       "date": "2026-09-07"
       },
       {
        "h": "0d68abe1",
@@ -2303,6 +2835,13 @@
      "en": "Dungeons, rifts & bosses",
      "items": [
       {
+       "h": "1808bb89",
+       "kind": "feat",
+       "scope": "content",
+       "text": "Roots' Bramblehide set and seven Nythraxis gap-fill drops",
+       "date": "2026-09-07"
+      },
+      {
        "h": "d6c86bd7",
        "kind": "feat",
        "scope": "rift",
@@ -2310,11 +2849,81 @@
        "date": "2026-09-05"
       },
       {
+       "h": "18143aa7",
+       "kind": "feat",
+       "scope": "nythraxis",
+       "text": "Compact arena, heroic scaling everywhere, permanent heroic fire, 6:00 clock",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "0e047525",
+       "kind": "feat",
+       "scope": "dev",
+       "text": "A solo Nythraxis practice raid, mechanic pokes, and a full-fight smoke test",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "e014cd42",
+       "kind": "feat",
+       "scope": "nythraxis",
+       "text": "Double the hall to about 100 by 100 yd",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "a277c3de",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Draw Nythraxis fire from Tripo models and cage the Bound boss",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "4caf6bd5",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Regenerate the Nythraxis fire as tall Tripo P2 plumes",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "8fba5b6c",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Burn the Nythraxis fire as a soft sprite cloud, not geometry",
+       "date": "2026-09-04"
+      },
+      {
        "h": "bc1f5d89",
        "kind": "feat",
        "scope": "rift",
        "text": "Ship the Rift Forge, a Riftwright NPC that upgrades Riftbound rings",
        "date": "2026-09-04"
+      },
+      {
+       "h": "d8faecd1",
+       "kind": "feat",
+       "scope": "nythraxis",
+       "text": "Field no adds and turn the Binding Sigil blue",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "9d8dcf69",
+       "kind": "feat",
+       "scope": "sim",
+       "text": "First-playtest tuning for Nythraxis: swaps, spikes, marks, health",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "453d2ed5",
+       "kind": "feat",
+       "scope": "sim",
+       "text": "Give Nythraxis a tank swap, Bone Spikes, and Grave Eruptions",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "47d07245",
+       "kind": "feat",
+       "scope": "net",
+       "text": "Wire the Nythraxis ground telegraphs and bump the world epoch to 26",
+       "date": "2026-09-03"
       },
       {
        "h": "ad7d46b7",
@@ -2328,6 +2937,62 @@
        "kind": "fix",
        "scope": "raid",
        "text": "Retune Heroic Varkhul intermission add health to 0.7x",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "0ebe5193",
+       "kind": "fix",
+       "scope": "items",
+       "text": "Paint the Bramblehide and Nythraxis gap-fill icons",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "2c7494c0",
+       "kind": "fix",
+       "scope": "raid",
+       "text": "Ease Nythraxis melee and heroic fire",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "e346f4e9",
+       "kind": "fix",
+       "scope": "raid",
+       "text": "Close Nythraxis merge-readiness gaps",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "f6a33d62",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Hold a major boss's lootable corpse for thirty minutes",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "ba28f3d6",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Scope the boss corpse hold to camp-placed bosses",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "e7c90967",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Hold only instance boss corpses",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "9fedddae",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release/v0.42.0 into fix/boss-corpse-hold",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "2b700420",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release/v0.42.0 (the Nythraxis redo landing), epoch 27",
        "date": "2026-09-07"
       },
       {
@@ -2371,6 +3036,13 @@
        "scope": "ui",
        "text": "Let the world map leave an instance plan and view a party dungeon",
        "date": "2026-09-05"
+      },
+      {
+       "h": "725a6790",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release/v0.42.0 into feature/nythraxis-mechanics-redo",
+       "date": "2026-09-04"
       },
       {
        "h": "5dfbeb5f",
@@ -2437,11 +3109,88 @@
      "en": "World & quests",
      "items": [
       {
+       "h": "930328f0",
+       "kind": "feat",
+       "scope": "drakelands",
+       "text": "Bake the sixth pass, two-way stair seams, exit seating",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "549c0a9e",
+       "kind": "feat",
+       "scope": "drakelands",
+       "text": "Raze the Ashen Bulwark",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "6205043c",
+       "kind": "feat",
+       "scope": "drakelands",
+       "text": "Brighten the rebuild kit, seat the Pale Keeper at the chapel",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "b4e3e80d",
+       "kind": "feat",
+       "scope": "drakelands",
+       "text": "Bake the seventh pass, grain the rebuild kit architecture",
+       "date": "2026-09-03"
+      },
+      {
        "h": "2ff1fb06",
        "kind": "feat",
        "scope": "content",
        "text": "Point new players at the Proving Shore ferry bell",
        "date": "2026-09-01"
+      },
+      {
+       "h": "b0401678",
+       "kind": "feat",
+       "scope": "drakelands",
+       "text": "Bake the fifth pass, fence colliders, two-way stairs",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "62e61f47",
+       "kind": "feat",
+       "scope": "drakelands",
+       "text": "Bake the fourth placer pass, walk-under decks, lamp dedupe",
+       "date": "2026-08-31"
+      },
+      {
+       "h": "df6f5d0b",
+       "kind": "feat",
+       "scope": "drakelands",
+       "text": "Bake the owner's Last Keep rebuild and open its door",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "34743f7b",
+       "kind": "feat",
+       "scope": "drakelands",
+       "text": "Bake the third placer pass and the Wyrmwatch first wave",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "a13cd2b0",
+       "kind": "feat",
+       "scope": "drakelands",
+       "text": "Swap the Last Keep and Trollmoot sites, strip both builds",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "e14f187e",
+       "kind": "feat",
+       "scope": "placer",
+       "text": "Mob freeze on open and the owner's custom asset kit",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "7b1dbd89",
+       "kind": "feat",
+       "scope": "placer",
+       "text": "Land the owner's 25-piece Drakelands rebuild kit",
+       "date": "2026-08-29"
       },
       {
        "h": "7cb65db3",
@@ -2456,6 +3205,27 @@
        "scope": "render",
        "text": "Prewarm every summonable pet rig with the zone's mobs",
        "date": "2026-08-28"
+      },
+      {
+       "h": "6e19ff42",
+       "kind": "fix",
+       "scope": "content",
+       "text": "Carry the Bramblehide and gap-fill review follow-ups",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "cbbd43dd",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release/v0.42.0 into feature/drakelands-map-improvements",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "e523b5c6",
+       "kind": "fix",
+       "scope": "drakelands",
+       "text": "Address the epic review round",
+       "date": "2026-09-07"
       },
       {
        "h": "0e9ecdcd",
@@ -2486,6 +3256,13 @@
        "date": "2026-09-01"
       },
       {
+       "h": "2241447e",
+       "kind": "fix",
+       "scope": "drakelands",
+       "text": "Fill the temple court's west rank of stamps",
+       "date": "2026-08-30"
+      },
+      {
        "h": "0cfb1830",
        "kind": "fix",
        "scope": "ui",
@@ -2514,6 +3291,27 @@
      "fr": "Guilde & social",
      "en": "Guild & social",
      "items": [
+      {
+       "h": "897be4af",
+       "kind": "feat",
+       "scope": "guild-bank",
+       "text": "Paged, filterable transaction history for the guild bank",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "a1f8964b",
+       "kind": "feat",
+       "scope": "guild-bank",
+       "text": "History rows as a table with a pinned header",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "98ddc083",
+       "kind": "feat",
+       "scope": "guild-bank",
+       "text": "Search box on the guild bank history",
+       "date": "2026-09-07"
+      },
       {
        "h": "eef7878c",
        "kind": "feat",
@@ -2548,6 +3346,13 @@
        "scope": "ui",
        "text": "Read the party roster only when the mouseover target is out of scope",
        "date": "2026-09-04"
+      },
+      {
+       "h": "f3dfee9f",
+       "kind": "fix",
+       "scope": "guild-bank",
+       "text": "Address the history review (race, index, meter, focus, tap)",
+       "date": "2026-09-07"
       },
       {
        "h": "714add51",
@@ -2621,6 +3426,62 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "4f8b52e2",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Frame the last standing HUD stragglers and guard future additions",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "7ed34640",
+       "kind": "feat",
+       "scope": "keybinds",
+       "text": "Export and import hotkey setups from the Key Bindings panel",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "eee86105",
+       "kind": "feat",
+       "scope": "options",
+       "text": "Full settings import / export sub-panel",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "1446af6b",
+       "kind": "feat",
+       "scope": "action-bar",
+       "text": "Warn before changing a pre-existing action bar hotkey",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "37ca4ad3",
+       "kind": "feat",
+       "scope": "keybinds",
+       "text": "Keyboard overview of every key in use in the Key Bindings panel",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "ed36e3cf",
+       "kind": "feat",
+       "scope": "keybinds",
+       "text": "Rebind from the keyboard overview and pop it out into a window",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "063999b6",
+       "kind": "feat",
+       "scope": "keybinds",
+       "text": "Keyboard size picker and real key legends in the overview",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "f5f5beb5",
+       "kind": "feat",
+       "scope": "keybinds",
+       "text": "Keyboard overview options under the board, plus a QWERTY / layout legend choice",
+       "date": "2026-09-07"
+      },
+      {
        "h": "baa863ba",
        "kind": "feat",
        "scope": "guilds",
@@ -2647,6 +3508,13 @@
        "scope": "chronomancy",
        "text": "Scale Temporal Cascade's heal with missing health",
        "date": "2026-09-05"
+      },
+      {
+       "h": "4bea8659",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Make Gravefire read as fire, and show the Bone Spike taller",
+       "date": "2026-09-04"
       },
       {
        "h": "6d48d236",
@@ -2681,6 +3549,41 @@
        "kind": "feat",
        "scope": "server",
        "text": "Read the GPU model dimensions out of the admin perf summary",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "dda2ae76",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Draw the grave eruptions, grave flames, and the impaled pose",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "64a18df6",
+       "kind": "feat",
+       "scope": "sim",
+       "text": "Binding Sigil, Gravefire, Soulfire, phase 3, Bone Storm, and the enrage clock",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "dad712cb",
+       "kind": "feat",
+       "scope": "net",
+       "text": "Wire the Gravefire lines and Binding Sigils to the online client",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "332f2485",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Soulfire palette, the Gravefire strip, and the Binding Sigil ring",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "079d823d",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Callouts, guide, tooltips, and icons for the redo's new mechanics",
        "date": "2026-09-03"
       },
       {
@@ -2726,6 +3629,20 @@
        "date": "2026-09-03"
       },
       {
+       "h": "7e1aed88",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Proc overlay and damage meter join the frames unlock, class-true pet previews",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "94fc3d2a",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Real-chrome pet placeholder, unlimited wishlist chip zoom",
+       "date": "2026-09-02"
+      },
+      {
        "h": "19f12d5d",
        "kind": "feat",
        "scope": "render",
@@ -2745,6 +3662,20 @@
        "scope": "render",
        "text": "Ladder texture anisotropy by graphics tier",
        "date": "2026-09-02"
+      },
+      {
+       "h": "408ae811",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Trackers and class resource bars join the frames unlock, grid centerlines",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "68751e9c",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "The pet action bar joins the frames unlock",
+       "date": "2026-09-01"
       },
       {
        "h": "1bb0ce40",
@@ -3186,6 +4117,104 @@
        "scope": "render",
        "text": "Measure a vehicle once per model, not per rider",
        "date": "2026-08-20"
+      },
+      {
+       "h": "8ec85f94",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Drive the Target dots menu row from its master switch",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "1bd275dc",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Fit hud.ts under the release's lowered ratchet ceiling",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "6af0dc52",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Review round one for the frames-unlock PR",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "7c81d297",
+       "kind": "fix",
+       "scope": "shell",
+       "text": "Remove the $WOC contract address box from the landing page",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "c4ddea49",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release/v0.42.0 into ossbrain-release/v0.42.0",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "63ceae8e",
+       "kind": "fix",
+       "scope": "",
+       "text": "Resync release/v0.42.0 into ossbrain-release/v0.42.0",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "76604491",
+       "kind": "fix",
+       "scope": "keybinds",
+       "text": "Keyboard overview detail names a bare binding once",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "7ca58712",
+       "kind": "fix",
+       "scope": "keybinds",
+       "text": "Close the review gaps in the rebind surfaces",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "7685e63f",
+       "kind": "fix",
+       "scope": "options",
+       "text": "Drop the doom hidden flag from the full tier, the frames tier carries it now",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "63ceae8e",
+       "kind": "fix",
+       "scope": "",
+       "text": "Resync release/v0.42.0 into ossbrain-release/v0.42.0",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "baa60b5e",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release/v0.42.0 (the frames-unlock landing) into the epic",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "49fa6c07",
+       "kind": "fix",
+       "scope": "keybinds",
+       "text": "Address the PR #3926 review",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "63ceae8e",
+       "kind": "fix",
+       "scope": "",
+       "text": "Resync release/v0.42.0 into ossbrain-release/v0.42.0",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "63ceae8e",
+       "kind": "fix",
+       "scope": "",
+       "text": "Resync release/v0.42.0 into ossbrain-release/v0.42.0",
+       "date": "2026-09-07"
       },
       {
        "h": "363b696b",
@@ -3696,6 +4725,13 @@
        "kind": "fix",
        "scope": "sim",
        "text": "Show Mister Crabs summon lines only to the summoner",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "5e109237",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Reset ordering, reliquary edit gate, doom frame naming cleanup",
        "date": "2026-09-01"
       },
       {
