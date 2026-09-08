@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-08T05:06:30Z",
+ "generated": "2026-09-08T11:40:09Z",
  "base_tag": "v0.41.4",
  "version": "v0.42.0",
- "branch": "release/v0.42.0",
+ "branch": "ossbrain-release/v0.42.0",
  "declared_version": "0.42.0",
  "imminent": true,
- "commits": 1931,
- "shown": 768,
- "last_commit": "2026-09-07T23:36:15Z",
+ "commits": 2472,
+ "shown": 982,
+ "last_commit": "2026-09-08T09:38:57Z",
  "sections": [
   {
    "key": "classes",
@@ -23,6 +23,13 @@
      "date": "2026-09-07"
     },
     {
+     "h": "9189307d",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Six opt-in aura tracks for the buffs you have out",
+     "date": "2026-09-04"
+    },
+    {
      "h": "bd700aef",
      "kind": "feat",
      "scope": "ui",
@@ -35,6 +42,13 @@
      "scope": "ui",
      "text": "Order the player aura strips by urgency",
      "date": "2026-09-01"
+    },
+    {
+     "h": "7958d0d9",
+     "kind": "feat",
+     "scope": "combat",
+     "text": "Add a player-toggleable auto-face lock for PvE auto-attack",
+     "date": "2026-08-30"
     },
     {
      "h": "5e80e9b0",
@@ -86,6 +100,13 @@
      "date": "2026-08-28"
     },
     {
+     "h": "cc1e1799",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Satisfy the two base-side gates the aura tracks tripped",
+     "date": "2026-09-08"
+    },
+    {
      "h": "68b6ce8c",
      "kind": "fix",
      "scope": "balance",
@@ -128,6 +149,27 @@
      "date": "2026-09-06"
     },
     {
+     "h": "d5d1baec",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Let Possess and Hour of Judgment fire through a running cast",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "1c4571ad",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Drop the spell-school tint from the aura tracks",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "ed3aaecc",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Every aura track can see the allies, not just the first",
+     "date": "2026-09-04"
+    },
+    {
      "h": "575af7e2",
      "kind": "fix",
      "scope": "render",
@@ -140,6 +182,13 @@
      "scope": "guide",
      "text": "Spell paragraph breaks as real newlines in the guide prose",
      "date": "2026-09-03"
+    },
+    {
+     "h": "46d6ddf0",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Auto-attack never turns the player; channels pin facing instead",
+     "date": "2026-09-01"
     },
     {
      "h": "f2524bb6",
@@ -156,6 +205,48 @@
      "date": "2026-09-01"
     },
     {
+     "h": "70de3d36",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Stop a refused cast leaking a stale auto-attack engage into Soulwell",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "56940483",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Make the rogue poisons real weapon coats",
+     "date": "2026-08-31"
+    },
+    {
+     "h": "a7fb08ee",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep the Vespers priest Gloomtithe bank visible past the low-tier buff cap",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "58cbf757",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Scope auto-attack auto-facing to PvE, keep the facing gate in PvP",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "35d92876",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Don't auto-attack when casting Rune of Power",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "bafc229a",
+     "kind": "fix",
+     "scope": "rogue",
+     "text": "Reset the swing timer when Eye Jab lands",
+     "date": "2026-08-29"
+    },
+    {
      "h": "36e806bd",
      "kind": "fix",
      "scope": "render",
@@ -168,6 +259,20 @@
      "scope": "render",
      "text": "Bound the cast gate, and widen the extension sweep with a drift watch",
      "date": "2026-08-29"
+    },
+    {
+     "h": "01c7e2b4",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Decouple player-frame buff placement from the frame's drag state",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "2f855779",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Auto-face the auto-attack target instead of silently stalling",
+     "date": "2026-08-28"
     },
     {
      "h": "8d001d00",
@@ -281,6 +386,13 @@
      "scope": "e2e",
      "text": "Capture the crafting bill at the lowest preset in every locale, and stop finding elements by English",
      "date": "2026-08-31"
+    },
+    {
+     "h": "aaf44542",
+     "kind": "feat",
+     "scope": "professions",
+     "text": "Allow re-applying the same enchant to burn reagents",
+     "date": "2026-08-29"
     },
     {
      "h": "7c38e9b9",
@@ -521,6 +633,20 @@
      "date": "2026-08-07"
     },
     {
+     "h": "683746e4",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Coalesce the far bake's groups by resolved material",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "24cfabb8",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Draw the pooled ability-VFX families from one material each",
+     "date": "2026-09-02"
+    },
+    {
      "h": "bb9e412b",
      "kind": "fix",
      "scope": "professions",
@@ -626,6 +752,13 @@
      "date": "2026-09-02"
     },
     {
+     "h": "3ba47040",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Name an epic-or-better material the deposit-all sweep moved",
+     "date": "2026-09-01"
+    },
+    {
      "h": "72d08a2e",
      "kind": "fix",
      "scope": "ui",
@@ -645,6 +778,13 @@
      "scope": "sim",
      "text": "Apply the architecture review round over the crafting unit",
      "date": "2026-08-31"
+    },
+    {
+     "h": "ef62e91c",
+     "kind": "fix",
+     "scope": "scripts",
+     "text": "Select Apply Enchant row by action id in PR shot rig",
+     "date": "2026-08-29"
     },
     {
      "h": "fffd992d",
@@ -722,6 +862,13 @@
      "scope": "professions",
      "text": "Unify the party-station walk and align the craft-set array contract",
      "date": "2026-08-13"
+    },
+    {
+     "h": "9502c935",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Extract the prewarm depth-material cache to fit the ratchet",
+     "date": "2026-08-12"
     },
     {
      "h": "faf0c8f3",
@@ -1026,6 +1173,13 @@
      "date": "2026-09-05"
     },
     {
+     "h": "a199e39b",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Ship the self in-combat flag so the player frame lights while a boss holds you",
+     "date": "2026-09-05"
+    },
+    {
      "h": "3fccc947",
      "kind": "fix",
      "scope": "rift",
@@ -1047,6 +1201,13 @@
      "date": "2026-09-05"
     },
     {
+     "h": "10ecd081",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Let the world map leave an instance plan and view a party dungeon",
+     "date": "2026-09-05"
+    },
+    {
      "h": "725a6790",
      "kind": "fix",
      "scope": "",
@@ -1059,6 +1220,55 @@
      "scope": "rift",
      "text": "Harden the forge kill switch, hold the window through its result, credit the ledger",
      "date": "2026-09-04"
+    },
+    {
+     "h": "a915c4cc",
+     "kind": "fix",
+     "scope": "chronomancy",
+     "text": "Sustain offensive raid healing",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "922c4fc0",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Let a mouseover combat res reach a raid member who released",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "8d6085cc",
+     "kind": "fix",
+     "scope": "raid",
+     "text": "Make the Forge-Lift car's side panels solid",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "ab938fa6",
+     "kind": "fix",
+     "scope": "instances",
+     "text": "Let a raid party switch difficulty without disbanding",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "7567906a",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Key the vendor gate lookup to the page's own delve, add locale fills",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "9ddc0311",
+     "kind": "fix",
+     "scope": "social",
+     "text": "Register The Wildheart Basin in the Dungeon Finder catalogue",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "69be96a4",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "Humanize boss mechanic list in Dungeon Upgrader concept text",
+     "date": "2026-08-28"
     },
     {
      "h": "547fa221",
@@ -1116,6 +1326,27 @@
      "scope": "drakelands",
      "text": "Bake the seventh pass, grain the rebuild kit architecture",
      "date": "2026-09-03"
+    },
+    {
+     "h": "7e2846fb",
+     "kind": "feat",
+     "scope": "content",
+     "text": "Add a training dummy to the Eastbrook hub",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "3e204ccb",
+     "kind": "feat",
+     "scope": "content",
+     "text": "Add Drillmaster Hale, the hub dummy's meters tutorial",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "2ff1fb06",
+     "kind": "feat",
+     "scope": "content",
+     "text": "Point new players at the Proving Shore ferry bell",
+     "date": "2026-09-01"
     },
     {
      "h": "b0401678",
@@ -1426,6 +1657,13 @@
      "date": "2026-08-08"
     },
     {
+     "h": "7cb65db3",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Give the zone-feature dressing a lean-tier ladder",
+     "date": "2026-09-02"
+    },
+    {
      "h": "983c95f4",
      "kind": "perf",
      "scope": "render",
@@ -1461,11 +1699,53 @@
      "date": "2026-09-07"
     },
     {
+     "h": "0e9ecdcd",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Compare the high-performance adapter at vendor granularity",
+     "date": "2026-09-03"
+    },
+    {
      "h": "ae1c6d41",
      "kind": "fix",
      "scope": "e2e",
      "text": "Follow the touch quest strip",
      "date": "2026-09-03"
+    },
+    {
+     "h": "208e39c0",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Review follow-ups for the hub dummy lesson",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "e55c52fa",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Spawn the hub practice yard after the player, and scope the start-area tests",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "44ac4787",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Re-mint the Wildheart Basin rows in the mob portrait ledger",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "d434e252",
+     "kind": "fix",
+     "scope": "pet",
+     "text": "Refuse to attack or acquire a mob mid-evade",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "5b5f44f1",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Fall back retired deed descriptions",
+     "date": "2026-09-01"
     },
     {
      "h": "1f193ed1",
@@ -1482,11 +1762,25 @@
      "date": "2026-08-30"
     },
     {
+     "h": "0cfb1830",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Name the vendor unlock gate on gated Reliquary relics",
+     "date": "2026-08-29"
+    },
+    {
      "h": "964a0dee",
      "kind": "fix",
      "scope": "content",
      "text": "Stop the flask comment asserting the withdrawn verdict",
      "date": "2026-08-29"
+    },
+    {
+     "h": "5357a978",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Stop mail/vendor deny toasts and the proc overlay from mis-layering with windows",
+     "date": "2026-08-28"
     },
     {
      "h": "f628bc7c",
@@ -1514,6 +1808,13 @@
      "kind": "fix",
      "scope": "i18n",
      "text": "Fold the starter lessons into the ladderBody carve-out",
+     "date": "2026-08-26"
+    },
+    {
+     "h": "87c89fc5",
+     "kind": "fix",
+     "scope": "sfx",
+     "text": "Let a mob subfamily take inherit its family's custom-master flag",
      "date": "2026-08-26"
     },
     {
@@ -1735,6 +2036,27 @@
      "date": "2026-09-07"
     },
     {
+     "h": "eef7878c",
+     "kind": "feat",
+     "scope": "chat",
+     "text": "Raise the Chat Text Size ceiling to 250% and follow the log",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "2be98fbb",
+     "kind": "feat",
+     "scope": "perf",
+     "text": "Report the real 3D drawing buffer in perfStats and the fleet report",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "c40d8279",
+     "kind": "feat",
+     "scope": "discord",
+     "text": "DM a player when their battleground or arena queue pops",
+     "date": "2026-09-04"
+    },
+    {
      "h": "44202fe9",
      "kind": "feat",
      "scope": "guild",
@@ -1763,11 +2085,46 @@
      "date": "2026-08-13"
     },
     {
+     "h": "6bd89dc9",
+     "kind": "perf",
+     "scope": "ui",
+     "text": "Read the party roster only when the mouseover target is out of scope",
+     "date": "2026-09-04"
+    },
+    {
      "h": "f3dfee9f",
      "kind": "fix",
      "scope": "guild-bank",
      "text": "Address the history review (race, index, meter, focus, tap)",
      "date": "2026-09-07"
+    },
+    {
+     "h": "714add51",
+     "kind": "fix",
+     "scope": "",
+     "text": "Bring release/v0.42.0 into feature/perf-report-gpu-fields",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "ab092503",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep party map markers to the viewed instance copy",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "aeed17f6",
+     "kind": "fix",
+     "scope": "perf",
+     "text": "Field-shape the drawing buffer at the perf-report ingest",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "852f6891",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Harden the party config reader and pin the health-text seams",
+     "date": "2026-09-04"
     },
     {
      "h": "748658ea",
@@ -1777,11 +2134,32 @@
      "date": "2026-09-04"
     },
     {
+     "h": "1446c97d",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Enumerate each perf-report jsonb node once, and drop the fallback adapter",
+     "date": "2026-09-03"
+    },
+    {
      "h": "d3b9bcb8",
      "kind": "fix",
      "scope": "guide",
      "text": "Correct the social page's calendar, emote, finder and roll prose",
      "date": "2026-09-03"
+    },
+    {
+     "h": "d2b01d27",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Move the Filter Profanity switch from Key Bindings to Interface > Chat",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "fbed0d2c",
+     "kind": "fix",
+     "scope": "moderation",
+     "text": "Let staff spectate other staff with /spectate",
+     "date": "2026-09-02"
     },
     {
      "h": "e160d8c7",
@@ -1826,6 +2204,13 @@
    "fr": "Confort & technique",
    "en": "Comfort & technical",
    "items": [
+    {
+     "h": "e66eada9",
+     "kind": "feat",
+     "scope": "hub-practice",
+     "text": "Add guided damage and healing lessons",
+     "date": "2026-09-08"
+    },
     {
      "h": "03864d55",
      "kind": "feat",
@@ -1925,11 +2310,53 @@
      "date": "2026-09-05"
     },
     {
+     "h": "f0361284",
+     "kind": "feat",
+     "scope": "chronomancy",
+     "text": "Scale Temporal Cascade's heal with missing health",
+     "date": "2026-09-05"
+    },
+    {
      "h": "4bea8659",
      "kind": "feat",
      "scope": "render",
      "text": "Make Gravefire read as fire, and show the Bone Spike taller",
      "date": "2026-09-04"
+    },
+    {
+     "h": "6d48d236",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Health Text setting for the player and target frames",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "1d44369a",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Parse a GPU model family and laptop verdict from the renderer string",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "9d4f27d5",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Store the raw renderer string plus a GPU model and laptop column",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "3db6f4b2",
+     "kind": "feat",
+     "scope": "game",
+     "text": "Probe the WebGPU high-performance adapter for the perf beacon",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "cc2999b8",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Read the GPU model dimensions out of the admin perf summary",
+     "date": "2026-09-03"
     },
     {
      "h": "dda2ae76",
@@ -1988,6 +2415,34 @@
      "date": "2026-09-03"
     },
     {
+     "h": "dbc8177e",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add the Loot Explorer window",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "ec6c0c2d",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Govern a terrain-detail level in the render budget",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "3c6a3c3c",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Pin the terrain-detail level with ?terraindetail= and read it in perfStats",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "d8644a31",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Govern a post-processing shed level in the render budget",
+     "date": "2026-09-03"
+    },
+    {
      "h": "7e1aed88",
      "kind": "feat",
      "scope": "ui",
@@ -2002,10 +2457,31 @@
      "date": "2026-09-02"
     },
     {
+     "h": "3a439d8d",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Practice DPS tracker for training dummy runs",
+     "date": "2026-09-02"
+    },
+    {
      "h": "19f12d5d",
      "kind": "feat",
      "scope": "render",
      "text": "Give the shader worker up early on its own evidence, and watch it",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "a83ea71d",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Let the ownership chip hide illuminated pages on a shelf",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "6d1648cf",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Ladder texture anisotropy by graphics tier",
      "date": "2026-09-02"
     },
     {
@@ -2147,6 +2623,20 @@
      "scope": "merge-audit",
      "text": "Consume the doc's explained-extras tables in the census",
      "date": "2026-08-30"
+    },
+    {
+     "h": "4cd8bd67",
+     "kind": "feat",
+     "scope": "perf",
+     "text": "Store the graphics backend beside the GPU bucket",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "d663e500",
+     "kind": "feat",
+     "scope": "perf",
+     "text": "Label the client perf metrics with the graphics backend",
+     "date": "2026-08-29"
     },
     {
      "h": "0341555f",
@@ -2352,6 +2842,13 @@
      "date": "2026-08-20"
     },
     {
+     "h": "fd8a712e",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Item icon for the Rallycart RXT ignition key",
+     "date": "2026-08-20"
+    },
+    {
      "h": "d458c27d",
      "kind": "feat",
      "scope": "farming",
@@ -2436,6 +2933,13 @@
      "date": "2026-08-18"
     },
     {
+     "h": "ef3df570",
+     "kind": "feat",
+     "scope": "mounts",
+     "text": "Give the rocket sled a summon call, and lift its winddown",
+     "date": "2026-08-17"
+    },
+    {
      "h": "d19e6b57",
      "kind": "feat",
      "scope": "mounts",
@@ -2475,6 +2979,27 @@
      "kind": "feat",
      "scope": "ui",
      "text": "Market browse categories for patterns and materials",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "6e0b7fc2",
+     "kind": "feat",
+     "scope": "mounts",
+     "text": "Add the Rallycart RXT vehicle mount",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "b221e0dc",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Finish the rallycart headlight tuning",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "b2efeb84",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Rallycart tail lamp lenses from a hand-traced outline",
      "date": "2026-08-16"
     },
     {
@@ -2538,6 +3063,13 @@
      "kind": "feat",
      "scope": "guide",
      "text": "The gear page Masterwrought section",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "fe8a746d",
+     "kind": "feat",
+     "scope": "mounts",
+     "text": "Add the Goblin Rocket Sled mount",
      "date": "2026-08-12"
     },
     {
@@ -2681,6 +3213,188 @@
      "date": "2026-08-07"
     },
     {
+     "h": "3b21361e",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Create the world WebGL2 context opaque",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "8e1c523e",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Grade spirit mode in the post chain instead of a CSS filter",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "356dce6d",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Lower the full-res AO cut to the 1080p class",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "9e91cbb9",
+     "kind": "perf",
+     "scope": "render",
+     "text": "One skeleton and one bone texture per rig",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "ae3047a9",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Merge the composed body's morph-carrying parts",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "751de088",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Cheapen the rig bucket key, and price the morph texture",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "e7248d5e",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Reject the blade-grass pool corners the fade already hides",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "fe142cdd",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Band the blade-grass instance uploads by grid row",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "9a88bf4b",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Let three cull the blade pools sector by sector",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "2d357125",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Re-measure only the blade sectors a crossing touched",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "f8976eeb",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Band the uploads on bytes, not on how many blocks are dirty",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "48027360",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Merge a prop bucket's shadow casters with its non-casters",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "e4f8dad3",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Cull a character rig per pass, not per tier",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "418f40cf",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Render the High tier's sun shadows at 2560",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "efec7552",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Make three's shadow depth pass depth-only",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "5846882b",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Shed the sun shadow extent under sustained pressure",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "36f3ac9c",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Keep idle VFX pools out of the render list",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "3483b562",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Discard zero-contribution additive VFX fill and bound the biggest quads",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "0a68137e",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Resolve full-res AO against the drawing-buffer pixel count",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "033c4077",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Give SMAA the 8-bit intermediates the reference uses",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "7ecbce06",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Coalesce viewport resizes and reallocate only on a real extent change",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "24d82e5c",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Put the grass tuft card count on the tier ladder",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "d2874ba7",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Spread the real-model foliage radius across the tiers",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "837a0fe8",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Give ultra the AO half of the canopy layer, insane keeps both",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "ff069b94",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Fetch and upload only the canopy maps an arm samples",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "2c7ef858",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Skip identical nameplate repaints and bound the plate surface",
+     "date": "2026-09-02"
+    },
+    {
      "h": "766ad257",
      "kind": "perf",
      "scope": "render",
@@ -2716,6 +3430,13 @@
      "date": "2026-08-27"
     },
     {
+     "h": "980b1013",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Measure a vehicle once per model, not per rider",
+     "date": "2026-08-20"
+    },
+    {
      "h": "cac37f80",
      "kind": "fix",
      "scope": "ui",
@@ -2727,6 +3448,62 @@
      "kind": "fix",
      "scope": "asset-pipeline",
      "text": "Hand generated held models their authored-surface decision",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "34c92bda",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Address the aura-tracks review round",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "129c7419",
+     "kind": "fix",
+     "scope": "hub-practice",
+     "text": "Gate and anchor guided practice prompts",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "8392e232",
+     "kind": "fix",
+     "scope": "hub-practice",
+     "text": "Close gaps the v0.42.0 integration surfaced",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "d6093030",
+     "kind": "fix",
+     "scope": "guide",
+     "text": "Document the hub practice tracker and fix golden counts",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "d124239d",
+     "kind": "fix",
+     "scope": "hub-practice",
+     "text": "Close content-integrity gaps from the two new dummies",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "cbe524ff",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Accept sync periodic prune results",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "cf3e0974",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep the Exchange offset when the focused row leaves; attach the hold lazily",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "9e487e92",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Bound the Exchange dropdown hold's wheel release; disarm on pointercancel",
      "date": "2026-09-08"
     },
     {
@@ -2835,6 +3612,20 @@
      "date": "2026-09-07"
     },
     {
+     "h": "c4ddea49",
+     "kind": "fix",
+     "scope": "",
+     "text": "Sync release/v0.42.0 into ossbrain-release/v0.42.0",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "63ceae8e",
+     "kind": "fix",
+     "scope": "",
+     "text": "Resync release/v0.42.0 into ossbrain-release/v0.42.0",
+     "date": "2026-09-07"
+    },
+    {
      "h": "76604491",
      "kind": "fix",
      "scope": "keybinds",
@@ -2856,6 +3647,13 @@
      "date": "2026-09-07"
     },
     {
+     "h": "63ceae8e",
+     "kind": "fix",
+     "scope": "",
+     "text": "Resync release/v0.42.0 into ossbrain-release/v0.42.0",
+     "date": "2026-09-07"
+    },
+    {
      "h": "baa60b5e",
      "kind": "fix",
      "scope": "",
@@ -2870,10 +3668,59 @@
      "date": "2026-09-07"
     },
     {
+     "h": "63ceae8e",
+     "kind": "fix",
+     "scope": "",
+     "text": "Resync release/v0.42.0 into ossbrain-release/v0.42.0",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "63ceae8e",
+     "kind": "fix",
+     "scope": "",
+     "text": "Resync release/v0.42.0 into ossbrain-release/v0.42.0",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "63ceae8e",
+     "kind": "fix",
+     "scope": "",
+     "text": "Resync release/v0.42.0 into ossbrain-release/v0.42.0",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "aa124b82",
+     "kind": "fix",
+     "scope": "unstuck",
+     "text": "Include battleground collider bounds",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "9a541792",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Fill Romance locale release strings",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "cc160371",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Fill Germanic release locale strings",
+     "date": "2026-09-07"
+    },
+    {
      "h": "363b696b",
      "kind": "fix",
      "scope": "action-bar",
      "text": "Keep the login layout fresh across the handshake and seed an empty desktop from the bar in view",
+     "date": "2026-09-06"
+    },
+    {
+     "h": "d9f181d0",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Let battleground Unstuck catch perimeter wall traps",
      "date": "2026-09-06"
     },
     {
@@ -2888,6 +3735,13 @@
      "kind": "fix",
      "scope": "action-bar",
      "text": "Back up a touch-only bar and flush the outgoing profile",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "69f06472",
+     "kind": "fix",
+     "scope": "world",
+     "text": "Hold the Forgefather slot shelf under the sea-ring parapet",
      "date": "2026-09-05"
     },
     {
@@ -2926,11 +3780,39 @@
      "date": "2026-09-05"
     },
     {
+     "h": "8660ebf4",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Shed terrain detail in two rungs, straight to where the gain is",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "e081e3ce",
+     "kind": "fix",
+     "scope": "exchange",
+     "text": "Let players hide the wallet card and compact it in landscape",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "cc405784",
+     "kind": "fix",
+     "scope": "exchange",
+     "text": "Scope the wallet-card dismiss to the reconnect state",
+     "date": "2026-09-05"
+    },
+    {
      "h": "b140dcd2",
      "kind": "fix",
      "scope": "render",
      "text": "Spend the dot row height in nameplate decluttering",
      "date": "2026-09-05"
+    },
+    {
+     "h": "75561989",
+     "kind": "fix",
+     "scope": "perf",
+     "text": "Say whether the drawing buffer is the allocation or the raster",
+     "date": "2026-09-04"
     },
     {
      "h": "066b148e",
@@ -2968,10 +3850,87 @@
      "date": "2026-09-04"
     },
     {
+     "h": "0d57b1bb",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Guard the post chain against Mali NaN so Android frames stop going black",
+     "date": "2026-09-03"
+    },
+    {
      "h": "a8a8a1a0",
      "kind": "fix",
      "scope": "render",
      "text": "Answer Rubsey's third pass on the give-up rule and its readout",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "4af53e11",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep the nameplate repaint gate off the quality-knob path",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "c5bbb914",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Close the review findings on the GPU model dimensions",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "fe1140ee",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Light the Lambert terrain under the standard-materials rig",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "2e120444",
+     "kind": "fix",
+     "scope": "bags",
+     "text": "Show the materials-only slots and refuse pool-honestly",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "6bbecbe0",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Ride price-gate health on the stale-serve bound",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "c6be95b7",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Keep the success TTL as an unhealthy answer's memo",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "7b964128",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Retrigger the PR run after a shard-contention timeout",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "e48f3429",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Never let the slope glue seat a walker below the terrain",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "fcb89829",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Read the WebGPU fallback flag where a current browser puts it",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "cf36973a",
+     "kind": "fix",
+     "scope": "loot",
+     "text": "Hold a full-bags roll award on the corpse instead of overfilling bags",
      "date": "2026-09-03"
     },
     {
@@ -3010,6 +3969,20 @@
      "date": "2026-09-03"
     },
     {
+     "h": "29ba372c",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Fire a ready wand swing between spell-queued casts",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "e88c7bec",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Make Loping Stride stamp a real move-speed multiplier",
+     "date": "2026-09-03"
+    },
+    {
      "h": "1d199b5d",
      "kind": "fix",
      "scope": "ui",
@@ -3031,6 +4004,13 @@
      "date": "2026-09-03"
     },
     {
+     "h": "4d67fb41",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep the action-bar key-binding banner reachable over a moved bar",
+     "date": "2026-09-03"
+    },
+    {
      "h": "27fbdb72",
      "kind": "fix",
      "scope": "",
@@ -3049,6 +4029,20 @@
      "kind": "fix",
      "scope": "audio",
      "text": "Sequence Mech Bird movement cues",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "8568b614",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Ladder the post shed over the built chain only",
+     "date": "2026-09-03"
+    },
+    {
+     "h": "1790e2b0",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Link the FXAA twin before its rung, latch the shed on dispose",
      "date": "2026-09-03"
     },
     {
@@ -3101,10 +4095,66 @@
      "date": "2026-09-02"
     },
     {
+     "h": "603b405d",
+     "kind": "fix",
+     "scope": "unstuck",
+     "text": "Resolve battleground wall recovery identity",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "9ff5755b",
+     "kind": "fix",
+     "scope": "scripts",
+     "text": "Import the ferry landing after the bell lookup",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "b86cf1da",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep lean-tier rocks and dressing visible as the camera orbits",
+     "date": "2026-09-02"
+    },
+    {
      "h": "fae07b45",
      "kind": "fix",
      "scope": "render",
      "text": "Answer Rubsey's review and name what the audit caught",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "9daea35f",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Refuse a merge whose parts disagree on morph kinds",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "0324c5fc",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Drop the blade-grass disc rejection, it erodes the meadow",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "b5fdb21c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Answer the blade-pool review round",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "34c8f6e2",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep the shadow map's colour clear, drop only its colour write",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "546b7a35",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Answer the shadow-shed review round",
      "date": "2026-09-02"
     },
     {
@@ -3115,10 +4165,52 @@
      "date": "2026-09-02"
     },
     {
+     "h": "b0472cf2",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Reap a silent socket after two minutes however late the sweep runs",
+     "date": "2026-09-02"
+    },
+    {
      "h": "237d9385",
      "kind": "fix",
      "scope": "19d",
      "text": "Apply the fresh read of the review round, and land its record",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "823f3850",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Widen the socket silence deadline to ten minutes",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "01d53ad9",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Clear v0.42 release-tier locale gaps",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "f4463794",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Share the meters number format and memo the built markup",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "08c6e3ac",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Drop the moved em dash and the string concat the push floor flagged",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "0453a124",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stop weapon skins dropping their shader hooks and holding dead light slots",
      "date": "2026-09-02"
     },
     {
@@ -3147,6 +4239,27 @@
      "kind": "fix",
      "scope": "19e",
      "text": "Bound the tour attribution to what the committed series shows",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "8ebddcac",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Answer the render-performance review of the post-chain budget",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "a7d53a71",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Apply a coalesced resize before the frame renders, not after",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "2c309be0",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Close the gaps the foliage-ladder review found",
      "date": "2026-09-02"
     },
     {
@@ -3199,6 +4312,104 @@
      "date": "2026-09-02"
     },
     {
+     "h": "e78a9e7e",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Stop the Exchange Browse pane resetting scroll and closing filters",
+     "date": "2026-09-02"
+    },
+    {
+     "h": "a897bc30",
+     "kind": "fix",
+     "scope": "scripts",
+     "text": "Read the ferry landing from the sim in the tutorial E2E",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "f7eb351f",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Ignore rejected battleground wall-pressure input",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "5ff1e4f5",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Encode the prestige rank star as a unicode escape",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "71e6b364",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Drop the star glyph from the prestige rank display",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "a2af45b3",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Finish the pending.ts merge regen and drop a copy-scan false positive",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "5ff1e4f5",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Encode the prestige rank star as a unicode escape",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "ed56eb17",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Drop the non-ASCII star glyph from the prestige rank display",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "e1943c06",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Drop dead imports left by the release/v0.42.0 sync merge",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "e94cc8c4",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Reformat sim_i18n.ts BASE_DICT after the release/v0.42.0 merge",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "a9693cd8",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Break stealth on mount summon to close the stealth-horse exploit",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "f039a8e7",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Wire the missing autoFaceLock keybind label (#3729 follow-up)",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "6c4876d1",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Re-derive the W0b command-schema counts after the sync merge",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "7659b02a",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Dispose terrain/water/underwater views on renderer teardown",
+     "date": "2026-09-01"
+    },
+    {
      "h": "f0b94910",
      "kind": "fix",
      "scope": "sim",
@@ -3210,6 +4421,48 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Reset ordering, reliquary edit gate, doom frame naming cleanup",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "5279608d",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Use queued facing for battleground unstuck pressure",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "95c050d1",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Dispose farTerrainView and harden the world-view lifecycle seam",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "f47c6f9e",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Close the notable-item gap on the Bank and fix its Full arm",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "8ba5e2ae",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Observe pageshow context loss",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "ff630a2b",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Clear stacked stealth on summon",
+     "date": "2026-09-01"
+    },
+    {
+     "h": "24e5e25f",
+     "kind": "fix",
+     "scope": "styles",
+     "text": "Restore wallet mini focus border",
      "date": "2026-09-01"
     },
     {
@@ -3304,6 +4557,27 @@
      "date": "2026-09-01"
     },
     {
+     "h": "6a4a7b6b",
+     "kind": "fix",
+     "scope": "input",
+     "text": "Make the keybind corruption repair genuinely one-time",
+     "date": "2026-08-31"
+    },
+    {
+     "h": "fdfe2ca1",
+     "kind": "fix",
+     "scope": "input",
+     "text": "Document the repair-marker forward-compat gap and tighten types",
+     "date": "2026-08-31"
+    },
+    {
+     "h": "160386fc",
+     "kind": "fix",
+     "scope": "talents",
+     "text": "Let Redhanded's poison damage reach the coat rider",
+     "date": "2026-08-31"
+    },
+    {
      "h": "d6ebf440",
      "kind": "fix",
      "scope": "sim",
@@ -3325,6 +4599,13 @@
      "date": "2026-08-31"
     },
     {
+     "h": "4af99472",
+     "kind": "fix",
+     "scope": "controller",
+     "text": "Guide tutorial bag navigation",
+     "date": "2026-08-31"
+    },
+    {
      "h": "8422fd3b",
      "kind": "fix",
      "scope": "sim",
@@ -3336,6 +4617,13 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Apply the frontend seam review round over the windows unit",
+     "date": "2026-08-31"
+    },
+    {
+     "h": "e3008c1e",
+     "kind": "fix",
+     "scope": "test",
+     "text": "Drop the unused ITEMS import the audit-builder test carries",
      "date": "2026-08-31"
     },
     {
@@ -3357,6 +4645,13 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Correlate farm denies by bed, reserve only chargeable fees, and collapse the tooltip line copies",
+     "date": "2026-08-31"
+    },
+    {
+     "h": "97874e74",
+     "kind": "fix",
+     "scope": "test",
+     "text": "Follow the merged tree's pins after the release sync",
      "date": "2026-08-31"
     },
     {
@@ -3385,6 +4680,27 @@
      "kind": "fix",
      "scope": "i18n",
      "text": "Finish the em dash pass on the surface that actually renders",
+     "date": "2026-08-31"
+    },
+    {
+     "h": "4f18903b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Settle stale Rallycart exhaust stops",
+     "date": "2026-08-31"
+    },
+    {
+     "h": "8c053ab9",
+     "kind": "fix",
+     "scope": "controller",
+     "text": "Advance tutorial bag prompts",
+     "date": "2026-08-31"
+    },
+    {
+     "h": "b9a59795",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Preserve queued battleground unstuck wall pressure",
      "date": "2026-08-31"
     },
     {
@@ -3430,6 +4746,27 @@
      "date": "2026-08-30"
     },
     {
+     "h": "f3be568b",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Restore custom window/panel positions across a fullscreen resize",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "d01ddc6b",
+     "kind": "fix",
+     "scope": "deeds",
+     "text": "Retire the Vale Cup deeds to Feats of Strength",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "d81f7c10",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Knockback no longer freezes players against static colliders",
+     "date": "2026-08-30"
+    },
+    {
      "h": "f560e5b8",
      "kind": "fix",
      "scope": "render",
@@ -3451,10 +4788,45 @@
      "date": "2026-08-30"
     },
     {
+     "h": "30c647ba",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Self-heal a WebGL context loss that never restores",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "99e7be5b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Restore the bloom addend NaN scrub the Infinity cap dropped",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "d744a0de",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Run the KTX2 restore re-upload for real inside its queued unit",
+     "date": "2026-08-30"
+    },
+    {
      "h": "48f78e86",
      "kind": "fix",
      "scope": "render",
      "text": "Hear the rescued child, clamp the worker's retain cap, drop the dead announcement arm",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "49205b0e",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Clamp both sanitizeFinite bounds and cover the stuck-loss evidence, latch, and bfcache gaps",
+     "date": "2026-08-30"
+    },
+    {
+     "h": "f8915f11",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Skip the KTX2 restore re-upload on a lost host context",
      "date": "2026-08-30"
     },
     {
@@ -3533,6 +4905,41 @@
      "scope": "sync",
      "text": "Apply the fresh reader's round over the audit fixes",
      "date": "2026-08-30"
+    },
+    {
+     "h": "410aa5a7",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Read the KTX2 restore queue live at apply time, not at contextlost",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "223e500b",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Compensate the performance overlay for UI Scale like every other movable window",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "64f7958f",
+     "kind": "fix",
+     "scope": "deeds",
+     "text": "Retire the Fiesta bracket deeds to Feats of Strength",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "1aee2029",
+     "kind": "fix",
+     "scope": "scripts",
+     "text": "Dismiss the Proving Shore arrival note in the deeds shot",
+     "date": "2026-08-29"
+    },
+    {
+     "h": "be894fdc",
+     "kind": "fix",
+     "scope": "deeds",
+     "text": "Correct the Fiesta Feat comment and pin the un-stranding",
+     "date": "2026-08-29"
     },
     {
      "h": "d62fc423",
@@ -3633,10 +5040,24 @@
      "date": "2026-08-28"
     },
     {
+     "h": "4b60c08c",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Freed Attack-slot ability stays visible across a build switch",
+     "date": "2026-08-28"
+    },
+    {
      "h": "d8dcf775",
      "kind": "fix",
      "scope": "ui",
      "text": "Apply the fresh-reader and render-review rounds, add the phase 14 shot targets",
+     "date": "2026-08-28"
+    },
+    {
+     "h": "30005c86",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Sheathe a drawn weapon while mounted, folded into the swim overlay",
      "date": "2026-08-28"
     },
     {
@@ -4018,6 +5439,13 @@
      "date": "2026-08-25"
     },
     {
+     "h": "e674f4e9",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Scale the remote-entity teleport-snap threshold to elapsed time",
+     "date": "2026-08-24"
+    },
+    {
      "h": "eeedb437",
      "kind": "fix",
      "scope": "masterwrought",
@@ -4284,6 +5712,13 @@
      "date": "2026-08-21"
     },
     {
+     "h": "31f9b2f5",
+     "kind": "fix",
+     "scope": "audio",
+     "text": "Keep the tail fade when an attack is also set",
+     "date": "2026-08-21"
+    },
+    {
      "h": "8464e666",
      "kind": "fix",
      "scope": "merge",
@@ -4386,6 +5821,34 @@
      "kind": "fix",
      "scope": "sim",
      "text": "True the parked-mint comments and pin the absorb's parked state",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "30a8ac8a",
+     "kind": "fix",
+     "scope": "audio",
+     "text": "Fade the summon's tail and match the idle handoff to it",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "32d47012",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Drop engine state before arming the summon, not after",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "0e3bd181",
+     "kind": "fix",
+     "scope": "sfx",
+     "text": "Register the sled's summon take in the manifest",
+     "date": "2026-08-20"
+    },
+    {
+     "h": "7d5193e4",
+     "kind": "fix",
+     "scope": "sfx",
+     "text": "Register the rallycart's reverse takes",
      "date": "2026-08-20"
     },
     {
@@ -4592,6 +6055,13 @@
      "date": "2026-08-18"
     },
     {
+     "h": "e7200d51",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Aim the frozen chase camera from its current pose under r185",
+     "date": "2026-08-17"
+    },
+    {
      "h": "094a8141",
      "kind": "fix",
      "scope": "ui",
@@ -4694,6 +6164,20 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Apply the ruling-review findings across the five head items",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "0d6dfb42",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Put the rallycart headlights in their actual bowls",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "9d743732",
+     "kind": "fix",
+     "scope": "audio",
+     "text": "Carry engine transitions with the vehicle, soften the summon seam",
      "date": "2026-08-16"
     },
     {
@@ -4953,6 +6437,20 @@
      "kind": "fix",
      "scope": "qa",
      "text": "Close the four catalog-derived pins the full run caught",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "80a4d996",
+     "kind": "fix",
+     "scope": "sled",
+     "text": "KTX2-compress the sled GLB and refresh the seals",
+     "date": "2026-08-12"
+    },
+    {
+     "h": "ea95a16a",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Resolve goblin rocket sled gate failures",
      "date": "2026-08-12"
     },
     {
@@ -5437,12 +6935,12 @@
  "versions": [
   {
    "version": "v0.42.0",
-   "branch": "release/v0.42.0",
+   "branch": "ossbrain-release/v0.42.0",
    "declared_version": "0.42.0",
    "imminent": true,
-   "commits": 1931,
-   "shown": 768,
-   "last_commit": "2026-09-07T23:36:15Z",
+   "commits": 2472,
+   "shown": 982,
+   "last_commit": "2026-09-08T09:38:57Z",
    "sections": [
     {
      "key": "classes",
@@ -5458,6 +6956,13 @@
        "date": "2026-09-07"
       },
       {
+       "h": "9189307d",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Six opt-in aura tracks for the buffs you have out",
+       "date": "2026-09-04"
+      },
+      {
        "h": "bd700aef",
        "kind": "feat",
        "scope": "ui",
@@ -5470,6 +6975,13 @@
        "scope": "ui",
        "text": "Order the player aura strips by urgency",
        "date": "2026-09-01"
+      },
+      {
+       "h": "7958d0d9",
+       "kind": "feat",
+       "scope": "combat",
+       "text": "Add a player-toggleable auto-face lock for PvE auto-attack",
+       "date": "2026-08-30"
       },
       {
        "h": "5e80e9b0",
@@ -5521,6 +7033,13 @@
        "date": "2026-08-28"
       },
       {
+       "h": "cc1e1799",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Satisfy the two base-side gates the aura tracks tripped",
+       "date": "2026-09-08"
+      },
+      {
        "h": "68b6ce8c",
        "kind": "fix",
        "scope": "balance",
@@ -5563,6 +7082,27 @@
        "date": "2026-09-06"
       },
       {
+       "h": "d5d1baec",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Let Possess and Hour of Judgment fire through a running cast",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "1c4571ad",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Drop the spell-school tint from the aura tracks",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "ed3aaecc",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Every aura track can see the allies, not just the first",
+       "date": "2026-09-04"
+      },
+      {
        "h": "575af7e2",
        "kind": "fix",
        "scope": "render",
@@ -5575,6 +7115,13 @@
        "scope": "guide",
        "text": "Spell paragraph breaks as real newlines in the guide prose",
        "date": "2026-09-03"
+      },
+      {
+       "h": "46d6ddf0",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Auto-attack never turns the player; channels pin facing instead",
+       "date": "2026-09-01"
       },
       {
        "h": "f2524bb6",
@@ -5591,6 +7138,48 @@
        "date": "2026-09-01"
       },
       {
+       "h": "70de3d36",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stop a refused cast leaking a stale auto-attack engage into Soulwell",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "56940483",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Make the rogue poisons real weapon coats",
+       "date": "2026-08-31"
+      },
+      {
+       "h": "a7fb08ee",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep the Vespers priest Gloomtithe bank visible past the low-tier buff cap",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "58cbf757",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Scope auto-attack auto-facing to PvE, keep the facing gate in PvP",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "35d92876",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Don't auto-attack when casting Rune of Power",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "bafc229a",
+       "kind": "fix",
+       "scope": "rogue",
+       "text": "Reset the swing timer when Eye Jab lands",
+       "date": "2026-08-29"
+      },
+      {
        "h": "36e806bd",
        "kind": "fix",
        "scope": "render",
@@ -5603,6 +7192,20 @@
        "scope": "render",
        "text": "Bound the cast gate, and widen the extension sweep with a drift watch",
        "date": "2026-08-29"
+      },
+      {
+       "h": "01c7e2b4",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Decouple player-frame buff placement from the frame's drag state",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "2f855779",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Auto-face the auto-attack target instead of silently stalling",
+       "date": "2026-08-28"
       },
       {
        "h": "8d001d00",
@@ -5716,6 +7319,13 @@
        "scope": "e2e",
        "text": "Capture the crafting bill at the lowest preset in every locale, and stop finding elements by English",
        "date": "2026-08-31"
+      },
+      {
+       "h": "aaf44542",
+       "kind": "feat",
+       "scope": "professions",
+       "text": "Allow re-applying the same enchant to burn reagents",
+       "date": "2026-08-29"
       },
       {
        "h": "7c38e9b9",
@@ -5956,6 +7566,20 @@
        "date": "2026-08-07"
       },
       {
+       "h": "683746e4",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Coalesce the far bake's groups by resolved material",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "24cfabb8",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Draw the pooled ability-VFX families from one material each",
+       "date": "2026-09-02"
+      },
+      {
        "h": "bb9e412b",
        "kind": "fix",
        "scope": "professions",
@@ -6061,6 +7685,13 @@
        "date": "2026-09-02"
       },
       {
+       "h": "3ba47040",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Name an epic-or-better material the deposit-all sweep moved",
+       "date": "2026-09-01"
+      },
+      {
        "h": "72d08a2e",
        "kind": "fix",
        "scope": "ui",
@@ -6080,6 +7711,13 @@
        "scope": "sim",
        "text": "Apply the architecture review round over the crafting unit",
        "date": "2026-08-31"
+      },
+      {
+       "h": "ef62e91c",
+       "kind": "fix",
+       "scope": "scripts",
+       "text": "Select Apply Enchant row by action id in PR shot rig",
+       "date": "2026-08-29"
       },
       {
        "h": "fffd992d",
@@ -6157,6 +7795,13 @@
        "scope": "professions",
        "text": "Unify the party-station walk and align the craft-set array contract",
        "date": "2026-08-13"
+      },
+      {
+       "h": "9502c935",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Extract the prewarm depth-material cache to fit the ratchet",
+       "date": "2026-08-12"
       },
       {
        "h": "faf0c8f3",
@@ -6461,6 +8106,13 @@
        "date": "2026-09-05"
       },
       {
+       "h": "a199e39b",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Ship the self in-combat flag so the player frame lights while a boss holds you",
+       "date": "2026-09-05"
+      },
+      {
        "h": "3fccc947",
        "kind": "fix",
        "scope": "rift",
@@ -6482,6 +8134,13 @@
        "date": "2026-09-05"
       },
       {
+       "h": "10ecd081",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Let the world map leave an instance plan and view a party dungeon",
+       "date": "2026-09-05"
+      },
+      {
        "h": "725a6790",
        "kind": "fix",
        "scope": "",
@@ -6494,6 +8153,55 @@
        "scope": "rift",
        "text": "Harden the forge kill switch, hold the window through its result, credit the ledger",
        "date": "2026-09-04"
+      },
+      {
+       "h": "a915c4cc",
+       "kind": "fix",
+       "scope": "chronomancy",
+       "text": "Sustain offensive raid healing",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "922c4fc0",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Let a mouseover combat res reach a raid member who released",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "8d6085cc",
+       "kind": "fix",
+       "scope": "raid",
+       "text": "Make the Forge-Lift car's side panels solid",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "ab938fa6",
+       "kind": "fix",
+       "scope": "instances",
+       "text": "Let a raid party switch difficulty without disbanding",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "7567906a",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Key the vendor gate lookup to the page's own delve, add locale fills",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "9ddc0311",
+       "kind": "fix",
+       "scope": "social",
+       "text": "Register The Wildheart Basin in the Dungeon Finder catalogue",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "69be96a4",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Humanize boss mechanic list in Dungeon Upgrader concept text",
+       "date": "2026-08-28"
       },
       {
        "h": "547fa221",
@@ -6551,6 +8259,27 @@
        "scope": "drakelands",
        "text": "Bake the seventh pass, grain the rebuild kit architecture",
        "date": "2026-09-03"
+      },
+      {
+       "h": "7e2846fb",
+       "kind": "feat",
+       "scope": "content",
+       "text": "Add a training dummy to the Eastbrook hub",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "3e204ccb",
+       "kind": "feat",
+       "scope": "content",
+       "text": "Add Drillmaster Hale, the hub dummy's meters tutorial",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "2ff1fb06",
+       "kind": "feat",
+       "scope": "content",
+       "text": "Point new players at the Proving Shore ferry bell",
+       "date": "2026-09-01"
       },
       {
        "h": "b0401678",
@@ -6861,6 +8590,13 @@
        "date": "2026-08-08"
       },
       {
+       "h": "7cb65db3",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Give the zone-feature dressing a lean-tier ladder",
+       "date": "2026-09-02"
+      },
+      {
        "h": "983c95f4",
        "kind": "perf",
        "scope": "render",
@@ -6896,11 +8632,53 @@
        "date": "2026-09-07"
       },
       {
+       "h": "0e9ecdcd",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Compare the high-performance adapter at vendor granularity",
+       "date": "2026-09-03"
+      },
+      {
        "h": "ae1c6d41",
        "kind": "fix",
        "scope": "e2e",
        "text": "Follow the touch quest strip",
        "date": "2026-09-03"
+      },
+      {
+       "h": "208e39c0",
+       "kind": "fix",
+       "scope": "content",
+       "text": "Review follow-ups for the hub dummy lesson",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "e55c52fa",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Spawn the hub practice yard after the player, and scope the start-area tests",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "44ac4787",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Re-mint the Wildheart Basin rows in the mob portrait ledger",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "d434e252",
+       "kind": "fix",
+       "scope": "pet",
+       "text": "Refuse to attack or acquire a mob mid-evade",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "5b5f44f1",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Fall back retired deed descriptions",
+       "date": "2026-09-01"
       },
       {
        "h": "1f193ed1",
@@ -6917,11 +8695,25 @@
        "date": "2026-08-30"
       },
       {
+       "h": "0cfb1830",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Name the vendor unlock gate on gated Reliquary relics",
+       "date": "2026-08-29"
+      },
+      {
        "h": "964a0dee",
        "kind": "fix",
        "scope": "content",
        "text": "Stop the flask comment asserting the withdrawn verdict",
        "date": "2026-08-29"
+      },
+      {
+       "h": "5357a978",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stop mail/vendor deny toasts and the proc overlay from mis-layering with windows",
+       "date": "2026-08-28"
       },
       {
        "h": "f628bc7c",
@@ -6949,6 +8741,13 @@
        "kind": "fix",
        "scope": "i18n",
        "text": "Fold the starter lessons into the ladderBody carve-out",
+       "date": "2026-08-26"
+      },
+      {
+       "h": "87c89fc5",
+       "kind": "fix",
+       "scope": "sfx",
+       "text": "Let a mob subfamily take inherit its family's custom-master flag",
        "date": "2026-08-26"
       },
       {
@@ -7170,6 +8969,27 @@
        "date": "2026-09-07"
       },
       {
+       "h": "eef7878c",
+       "kind": "feat",
+       "scope": "chat",
+       "text": "Raise the Chat Text Size ceiling to 250% and follow the log",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "2be98fbb",
+       "kind": "feat",
+       "scope": "perf",
+       "text": "Report the real 3D drawing buffer in perfStats and the fleet report",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "c40d8279",
+       "kind": "feat",
+       "scope": "discord",
+       "text": "DM a player when their battleground or arena queue pops",
+       "date": "2026-09-04"
+      },
+      {
        "h": "44202fe9",
        "kind": "feat",
        "scope": "guild",
@@ -7198,11 +9018,46 @@
        "date": "2026-08-13"
       },
       {
+       "h": "6bd89dc9",
+       "kind": "perf",
+       "scope": "ui",
+       "text": "Read the party roster only when the mouseover target is out of scope",
+       "date": "2026-09-04"
+      },
+      {
        "h": "f3dfee9f",
        "kind": "fix",
        "scope": "guild-bank",
        "text": "Address the history review (race, index, meter, focus, tap)",
        "date": "2026-09-07"
+      },
+      {
+       "h": "714add51",
+       "kind": "fix",
+       "scope": "",
+       "text": "Bring release/v0.42.0 into feature/perf-report-gpu-fields",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "ab092503",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep party map markers to the viewed instance copy",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "aeed17f6",
+       "kind": "fix",
+       "scope": "perf",
+       "text": "Field-shape the drawing buffer at the perf-report ingest",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "852f6891",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Harden the party config reader and pin the health-text seams",
+       "date": "2026-09-04"
       },
       {
        "h": "748658ea",
@@ -7212,11 +9067,32 @@
        "date": "2026-09-04"
       },
       {
+       "h": "1446c97d",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Enumerate each perf-report jsonb node once, and drop the fallback adapter",
+       "date": "2026-09-03"
+      },
+      {
        "h": "d3b9bcb8",
        "kind": "fix",
        "scope": "guide",
        "text": "Correct the social page's calendar, emote, finder and roll prose",
        "date": "2026-09-03"
+      },
+      {
+       "h": "d2b01d27",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Move the Filter Profanity switch from Key Bindings to Interface > Chat",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "fbed0d2c",
+       "kind": "fix",
+       "scope": "moderation",
+       "text": "Let staff spectate other staff with /spectate",
+       "date": "2026-09-02"
       },
       {
        "h": "e160d8c7",
@@ -7261,6 +9137,13 @@
      "fr": "Confort & technique",
      "en": "Comfort & technical",
      "items": [
+      {
+       "h": "e66eada9",
+       "kind": "feat",
+       "scope": "hub-practice",
+       "text": "Add guided damage and healing lessons",
+       "date": "2026-09-08"
+      },
       {
        "h": "03864d55",
        "kind": "feat",
@@ -7360,11 +9243,53 @@
        "date": "2026-09-05"
       },
       {
+       "h": "f0361284",
+       "kind": "feat",
+       "scope": "chronomancy",
+       "text": "Scale Temporal Cascade's heal with missing health",
+       "date": "2026-09-05"
+      },
+      {
        "h": "4bea8659",
        "kind": "feat",
        "scope": "render",
        "text": "Make Gravefire read as fire, and show the Bone Spike taller",
        "date": "2026-09-04"
+      },
+      {
+       "h": "6d48d236",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Health Text setting for the player and target frames",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "1d44369a",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Parse a GPU model family and laptop verdict from the renderer string",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "9d4f27d5",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Store the raw renderer string plus a GPU model and laptop column",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "3db6f4b2",
+       "kind": "feat",
+       "scope": "game",
+       "text": "Probe the WebGPU high-performance adapter for the perf beacon",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "cc2999b8",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Read the GPU model dimensions out of the admin perf summary",
+       "date": "2026-09-03"
       },
       {
        "h": "dda2ae76",
@@ -7423,6 +9348,34 @@
        "date": "2026-09-03"
       },
       {
+       "h": "dbc8177e",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add the Loot Explorer window",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "ec6c0c2d",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Govern a terrain-detail level in the render budget",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "3c6a3c3c",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Pin the terrain-detail level with ?terraindetail= and read it in perfStats",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "d8644a31",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Govern a post-processing shed level in the render budget",
+       "date": "2026-09-03"
+      },
+      {
        "h": "7e1aed88",
        "kind": "feat",
        "scope": "ui",
@@ -7437,10 +9390,31 @@
        "date": "2026-09-02"
       },
       {
+       "h": "3a439d8d",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Practice DPS tracker for training dummy runs",
+       "date": "2026-09-02"
+      },
+      {
        "h": "19f12d5d",
        "kind": "feat",
        "scope": "render",
        "text": "Give the shader worker up early on its own evidence, and watch it",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "a83ea71d",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Let the ownership chip hide illuminated pages on a shelf",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "6d1648cf",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Ladder texture anisotropy by graphics tier",
        "date": "2026-09-02"
       },
       {
@@ -7582,6 +9556,20 @@
        "scope": "merge-audit",
        "text": "Consume the doc's explained-extras tables in the census",
        "date": "2026-08-30"
+      },
+      {
+       "h": "4cd8bd67",
+       "kind": "feat",
+       "scope": "perf",
+       "text": "Store the graphics backend beside the GPU bucket",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "d663e500",
+       "kind": "feat",
+       "scope": "perf",
+       "text": "Label the client perf metrics with the graphics backend",
+       "date": "2026-08-29"
       },
       {
        "h": "0341555f",
@@ -7787,6 +9775,13 @@
        "date": "2026-08-20"
       },
       {
+       "h": "fd8a712e",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Item icon for the Rallycart RXT ignition key",
+       "date": "2026-08-20"
+      },
+      {
        "h": "d458c27d",
        "kind": "feat",
        "scope": "farming",
@@ -7871,6 +9866,13 @@
        "date": "2026-08-18"
       },
       {
+       "h": "ef3df570",
+       "kind": "feat",
+       "scope": "mounts",
+       "text": "Give the rocket sled a summon call, and lift its winddown",
+       "date": "2026-08-17"
+      },
+      {
        "h": "d19e6b57",
        "kind": "feat",
        "scope": "mounts",
@@ -7910,6 +9912,27 @@
        "kind": "feat",
        "scope": "ui",
        "text": "Market browse categories for patterns and materials",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "6e0b7fc2",
+       "kind": "feat",
+       "scope": "mounts",
+       "text": "Add the Rallycart RXT vehicle mount",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "b221e0dc",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Finish the rallycart headlight tuning",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "b2efeb84",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Rallycart tail lamp lenses from a hand-traced outline",
        "date": "2026-08-16"
       },
       {
@@ -7973,6 +9996,13 @@
        "kind": "feat",
        "scope": "guide",
        "text": "The gear page Masterwrought section",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "fe8a746d",
+       "kind": "feat",
+       "scope": "mounts",
+       "text": "Add the Goblin Rocket Sled mount",
        "date": "2026-08-12"
       },
       {
@@ -8116,6 +10146,188 @@
        "date": "2026-08-07"
       },
       {
+       "h": "3b21361e",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Create the world WebGL2 context opaque",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "8e1c523e",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Grade spirit mode in the post chain instead of a CSS filter",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "356dce6d",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Lower the full-res AO cut to the 1080p class",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "9e91cbb9",
+       "kind": "perf",
+       "scope": "render",
+       "text": "One skeleton and one bone texture per rig",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "ae3047a9",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Merge the composed body's morph-carrying parts",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "751de088",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Cheapen the rig bucket key, and price the morph texture",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "e7248d5e",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Reject the blade-grass pool corners the fade already hides",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "fe142cdd",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Band the blade-grass instance uploads by grid row",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "9a88bf4b",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Let three cull the blade pools sector by sector",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "2d357125",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Re-measure only the blade sectors a crossing touched",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "f8976eeb",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Band the uploads on bytes, not on how many blocks are dirty",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "48027360",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Merge a prop bucket's shadow casters with its non-casters",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "e4f8dad3",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Cull a character rig per pass, not per tier",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "418f40cf",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Render the High tier's sun shadows at 2560",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "efec7552",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Make three's shadow depth pass depth-only",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "5846882b",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Shed the sun shadow extent under sustained pressure",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "36f3ac9c",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Keep idle VFX pools out of the render list",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "3483b562",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Discard zero-contribution additive VFX fill and bound the biggest quads",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "0a68137e",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Resolve full-res AO against the drawing-buffer pixel count",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "033c4077",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Give SMAA the 8-bit intermediates the reference uses",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "7ecbce06",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Coalesce viewport resizes and reallocate only on a real extent change",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "24d82e5c",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Put the grass tuft card count on the tier ladder",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "d2874ba7",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Spread the real-model foliage radius across the tiers",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "837a0fe8",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Give ultra the AO half of the canopy layer, insane keeps both",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "ff069b94",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Fetch and upload only the canopy maps an arm samples",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "2c7ef858",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Skip identical nameplate repaints and bound the plate surface",
+       "date": "2026-09-02"
+      },
+      {
        "h": "766ad257",
        "kind": "perf",
        "scope": "render",
@@ -8151,6 +10363,13 @@
        "date": "2026-08-27"
       },
       {
+       "h": "980b1013",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Measure a vehicle once per model, not per rider",
+       "date": "2026-08-20"
+      },
+      {
        "h": "cac37f80",
        "kind": "fix",
        "scope": "ui",
@@ -8162,6 +10381,62 @@
        "kind": "fix",
        "scope": "asset-pipeline",
        "text": "Hand generated held models their authored-surface decision",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "34c92bda",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Address the aura-tracks review round",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "129c7419",
+       "kind": "fix",
+       "scope": "hub-practice",
+       "text": "Gate and anchor guided practice prompts",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "8392e232",
+       "kind": "fix",
+       "scope": "hub-practice",
+       "text": "Close gaps the v0.42.0 integration surfaced",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "d6093030",
+       "kind": "fix",
+       "scope": "guide",
+       "text": "Document the hub practice tracker and fix golden counts",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "d124239d",
+       "kind": "fix",
+       "scope": "hub-practice",
+       "text": "Close content-integrity gaps from the two new dummies",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "cbe524ff",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Accept sync periodic prune results",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "cf3e0974",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep the Exchange offset when the focused row leaves; attach the hold lazily",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "9e487e92",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Bound the Exchange dropdown hold's wheel release; disarm on pointercancel",
        "date": "2026-09-08"
       },
       {
@@ -8270,6 +10545,20 @@
        "date": "2026-09-07"
       },
       {
+       "h": "c4ddea49",
+       "kind": "fix",
+       "scope": "",
+       "text": "Sync release/v0.42.0 into ossbrain-release/v0.42.0",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "63ceae8e",
+       "kind": "fix",
+       "scope": "",
+       "text": "Resync release/v0.42.0 into ossbrain-release/v0.42.0",
+       "date": "2026-09-07"
+      },
+      {
        "h": "76604491",
        "kind": "fix",
        "scope": "keybinds",
@@ -8291,6 +10580,13 @@
        "date": "2026-09-07"
       },
       {
+       "h": "63ceae8e",
+       "kind": "fix",
+       "scope": "",
+       "text": "Resync release/v0.42.0 into ossbrain-release/v0.42.0",
+       "date": "2026-09-07"
+      },
+      {
        "h": "baa60b5e",
        "kind": "fix",
        "scope": "",
@@ -8305,10 +10601,59 @@
        "date": "2026-09-07"
       },
       {
+       "h": "63ceae8e",
+       "kind": "fix",
+       "scope": "",
+       "text": "Resync release/v0.42.0 into ossbrain-release/v0.42.0",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "63ceae8e",
+       "kind": "fix",
+       "scope": "",
+       "text": "Resync release/v0.42.0 into ossbrain-release/v0.42.0",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "63ceae8e",
+       "kind": "fix",
+       "scope": "",
+       "text": "Resync release/v0.42.0 into ossbrain-release/v0.42.0",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "aa124b82",
+       "kind": "fix",
+       "scope": "unstuck",
+       "text": "Include battleground collider bounds",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "9a541792",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Fill Romance locale release strings",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "cc160371",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Fill Germanic release locale strings",
+       "date": "2026-09-07"
+      },
+      {
        "h": "363b696b",
        "kind": "fix",
        "scope": "action-bar",
        "text": "Keep the login layout fresh across the handshake and seed an empty desktop from the bar in view",
+       "date": "2026-09-06"
+      },
+      {
+       "h": "d9f181d0",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Let battleground Unstuck catch perimeter wall traps",
        "date": "2026-09-06"
       },
       {
@@ -8323,6 +10668,13 @@
        "kind": "fix",
        "scope": "action-bar",
        "text": "Back up a touch-only bar and flush the outgoing profile",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "69f06472",
+       "kind": "fix",
+       "scope": "world",
+       "text": "Hold the Forgefather slot shelf under the sea-ring parapet",
        "date": "2026-09-05"
       },
       {
@@ -8361,11 +10713,39 @@
        "date": "2026-09-05"
       },
       {
+       "h": "8660ebf4",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Shed terrain detail in two rungs, straight to where the gain is",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "e081e3ce",
+       "kind": "fix",
+       "scope": "exchange",
+       "text": "Let players hide the wallet card and compact it in landscape",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "cc405784",
+       "kind": "fix",
+       "scope": "exchange",
+       "text": "Scope the wallet-card dismiss to the reconnect state",
+       "date": "2026-09-05"
+      },
+      {
        "h": "b140dcd2",
        "kind": "fix",
        "scope": "render",
        "text": "Spend the dot row height in nameplate decluttering",
        "date": "2026-09-05"
+      },
+      {
+       "h": "75561989",
+       "kind": "fix",
+       "scope": "perf",
+       "text": "Say whether the drawing buffer is the allocation or the raster",
+       "date": "2026-09-04"
       },
       {
        "h": "066b148e",
@@ -8403,10 +10783,87 @@
        "date": "2026-09-04"
       },
       {
+       "h": "0d57b1bb",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Guard the post chain against Mali NaN so Android frames stop going black",
+       "date": "2026-09-03"
+      },
+      {
        "h": "a8a8a1a0",
        "kind": "fix",
        "scope": "render",
        "text": "Answer Rubsey's third pass on the give-up rule and its readout",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "4af53e11",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep the nameplate repaint gate off the quality-knob path",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "c5bbb914",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Close the review findings on the GPU model dimensions",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "fe1140ee",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Light the Lambert terrain under the standard-materials rig",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "2e120444",
+       "kind": "fix",
+       "scope": "bags",
+       "text": "Show the materials-only slots and refuse pool-honestly",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "6bbecbe0",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Ride price-gate health on the stale-serve bound",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "c6be95b7",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Keep the success TTL as an unhealthy answer's memo",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "7b964128",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Retrigger the PR run after a shard-contention timeout",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "e48f3429",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Never let the slope glue seat a walker below the terrain",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "fcb89829",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Read the WebGPU fallback flag where a current browser puts it",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "cf36973a",
+       "kind": "fix",
+       "scope": "loot",
+       "text": "Hold a full-bags roll award on the corpse instead of overfilling bags",
        "date": "2026-09-03"
       },
       {
@@ -8445,6 +10902,20 @@
        "date": "2026-09-03"
       },
       {
+       "h": "29ba372c",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Fire a ready wand swing between spell-queued casts",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "e88c7bec",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Make Loping Stride stamp a real move-speed multiplier",
+       "date": "2026-09-03"
+      },
+      {
        "h": "1d199b5d",
        "kind": "fix",
        "scope": "ui",
@@ -8466,6 +10937,13 @@
        "date": "2026-09-03"
       },
       {
+       "h": "4d67fb41",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep the action-bar key-binding banner reachable over a moved bar",
+       "date": "2026-09-03"
+      },
+      {
        "h": "27fbdb72",
        "kind": "fix",
        "scope": "",
@@ -8484,6 +10962,20 @@
        "kind": "fix",
        "scope": "audio",
        "text": "Sequence Mech Bird movement cues",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "8568b614",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Ladder the post shed over the built chain only",
+       "date": "2026-09-03"
+      },
+      {
+       "h": "1790e2b0",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Link the FXAA twin before its rung, latch the shed on dispose",
        "date": "2026-09-03"
       },
       {
@@ -8536,10 +11028,66 @@
        "date": "2026-09-02"
       },
       {
+       "h": "603b405d",
+       "kind": "fix",
+       "scope": "unstuck",
+       "text": "Resolve battleground wall recovery identity",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "9ff5755b",
+       "kind": "fix",
+       "scope": "scripts",
+       "text": "Import the ferry landing after the bell lookup",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "b86cf1da",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep lean-tier rocks and dressing visible as the camera orbits",
+       "date": "2026-09-02"
+      },
+      {
        "h": "fae07b45",
        "kind": "fix",
        "scope": "render",
        "text": "Answer Rubsey's review and name what the audit caught",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "9daea35f",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Refuse a merge whose parts disagree on morph kinds",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "0324c5fc",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Drop the blade-grass disc rejection, it erodes the meadow",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "b5fdb21c",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Answer the blade-pool review round",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "34c8f6e2",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep the shadow map's colour clear, drop only its colour write",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "546b7a35",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Answer the shadow-shed review round",
        "date": "2026-09-02"
       },
       {
@@ -8550,10 +11098,52 @@
        "date": "2026-09-02"
       },
       {
+       "h": "b0472cf2",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Reap a silent socket after two minutes however late the sweep runs",
+       "date": "2026-09-02"
+      },
+      {
        "h": "237d9385",
        "kind": "fix",
        "scope": "19d",
        "text": "Apply the fresh read of the review round, and land its record",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "823f3850",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Widen the socket silence deadline to ten minutes",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "01d53ad9",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Clear v0.42 release-tier locale gaps",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "f4463794",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Share the meters number format and memo the built markup",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "08c6e3ac",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Drop the moved em dash and the string concat the push floor flagged",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "0453a124",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Stop weapon skins dropping their shader hooks and holding dead light slots",
        "date": "2026-09-02"
       },
       {
@@ -8582,6 +11172,27 @@
        "kind": "fix",
        "scope": "19e",
        "text": "Bound the tour attribution to what the committed series shows",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "8ebddcac",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Answer the render-performance review of the post-chain budget",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "a7d53a71",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Apply a coalesced resize before the frame renders, not after",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "2c309be0",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Close the gaps the foliage-ladder review found",
        "date": "2026-09-02"
       },
       {
@@ -8634,6 +11245,104 @@
        "date": "2026-09-02"
       },
       {
+       "h": "e78a9e7e",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stop the Exchange Browse pane resetting scroll and closing filters",
+       "date": "2026-09-02"
+      },
+      {
+       "h": "a897bc30",
+       "kind": "fix",
+       "scope": "scripts",
+       "text": "Read the ferry landing from the sim in the tutorial E2E",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "f7eb351f",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Ignore rejected battleground wall-pressure input",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "5ff1e4f5",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Encode the prestige rank star as a unicode escape",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "71e6b364",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Drop the star glyph from the prestige rank display",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "a2af45b3",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Finish the pending.ts merge regen and drop a copy-scan false positive",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "5ff1e4f5",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Encode the prestige rank star as a unicode escape",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "ed56eb17",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Drop the non-ASCII star glyph from the prestige rank display",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "e1943c06",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Drop dead imports left by the release/v0.42.0 sync merge",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "e94cc8c4",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Reformat sim_i18n.ts BASE_DICT after the release/v0.42.0 merge",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "a9693cd8",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Break stealth on mount summon to close the stealth-horse exploit",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "f039a8e7",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Wire the missing autoFaceLock keybind label (#3729 follow-up)",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "6c4876d1",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Re-derive the W0b command-schema counts after the sync merge",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "7659b02a",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Dispose terrain/water/underwater views on renderer teardown",
+       "date": "2026-09-01"
+      },
+      {
        "h": "f0b94910",
        "kind": "fix",
        "scope": "sim",
@@ -8645,6 +11354,48 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Reset ordering, reliquary edit gate, doom frame naming cleanup",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "5279608d",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Use queued facing for battleground unstuck pressure",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "95c050d1",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Dispose farTerrainView and harden the world-view lifecycle seam",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "f47c6f9e",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Close the notable-item gap on the Bank and fix its Full arm",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "8ba5e2ae",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Observe pageshow context loss",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "ff630a2b",
+       "kind": "fix",
+       "scope": "mounts",
+       "text": "Clear stacked stealth on summon",
+       "date": "2026-09-01"
+      },
+      {
+       "h": "24e5e25f",
+       "kind": "fix",
+       "scope": "styles",
+       "text": "Restore wallet mini focus border",
        "date": "2026-09-01"
       },
       {
@@ -8739,6 +11490,27 @@
        "date": "2026-09-01"
       },
       {
+       "h": "6a4a7b6b",
+       "kind": "fix",
+       "scope": "input",
+       "text": "Make the keybind corruption repair genuinely one-time",
+       "date": "2026-08-31"
+      },
+      {
+       "h": "fdfe2ca1",
+       "kind": "fix",
+       "scope": "input",
+       "text": "Document the repair-marker forward-compat gap and tighten types",
+       "date": "2026-08-31"
+      },
+      {
+       "h": "160386fc",
+       "kind": "fix",
+       "scope": "talents",
+       "text": "Let Redhanded's poison damage reach the coat rider",
+       "date": "2026-08-31"
+      },
+      {
        "h": "d6ebf440",
        "kind": "fix",
        "scope": "sim",
@@ -8760,6 +11532,13 @@
        "date": "2026-08-31"
       },
       {
+       "h": "4af99472",
+       "kind": "fix",
+       "scope": "controller",
+       "text": "Guide tutorial bag navigation",
+       "date": "2026-08-31"
+      },
+      {
        "h": "8422fd3b",
        "kind": "fix",
        "scope": "sim",
@@ -8771,6 +11550,13 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Apply the frontend seam review round over the windows unit",
+       "date": "2026-08-31"
+      },
+      {
+       "h": "e3008c1e",
+       "kind": "fix",
+       "scope": "test",
+       "text": "Drop the unused ITEMS import the audit-builder test carries",
        "date": "2026-08-31"
       },
       {
@@ -8792,6 +11578,13 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Correlate farm denies by bed, reserve only chargeable fees, and collapse the tooltip line copies",
+       "date": "2026-08-31"
+      },
+      {
+       "h": "97874e74",
+       "kind": "fix",
+       "scope": "test",
+       "text": "Follow the merged tree's pins after the release sync",
        "date": "2026-08-31"
       },
       {
@@ -8820,6 +11613,27 @@
        "kind": "fix",
        "scope": "i18n",
        "text": "Finish the em dash pass on the surface that actually renders",
+       "date": "2026-08-31"
+      },
+      {
+       "h": "4f18903b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Settle stale Rallycart exhaust stops",
+       "date": "2026-08-31"
+      },
+      {
+       "h": "8c053ab9",
+       "kind": "fix",
+       "scope": "controller",
+       "text": "Advance tutorial bag prompts",
+       "date": "2026-08-31"
+      },
+      {
+       "h": "b9a59795",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Preserve queued battleground unstuck wall pressure",
        "date": "2026-08-31"
       },
       {
@@ -8865,6 +11679,27 @@
        "date": "2026-08-30"
       },
       {
+       "h": "f3be568b",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Restore custom window/panel positions across a fullscreen resize",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "d01ddc6b",
+       "kind": "fix",
+       "scope": "deeds",
+       "text": "Retire the Vale Cup deeds to Feats of Strength",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "d81f7c10",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Knockback no longer freezes players against static colliders",
+       "date": "2026-08-30"
+      },
+      {
        "h": "f560e5b8",
        "kind": "fix",
        "scope": "render",
@@ -8886,10 +11721,45 @@
        "date": "2026-08-30"
       },
       {
+       "h": "30c647ba",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Self-heal a WebGL context loss that never restores",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "99e7be5b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Restore the bloom addend NaN scrub the Infinity cap dropped",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "d744a0de",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Run the KTX2 restore re-upload for real inside its queued unit",
+       "date": "2026-08-30"
+      },
+      {
        "h": "48f78e86",
        "kind": "fix",
        "scope": "render",
        "text": "Hear the rescued child, clamp the worker's retain cap, drop the dead announcement arm",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "49205b0e",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Clamp both sanitizeFinite bounds and cover the stuck-loss evidence, latch, and bfcache gaps",
+       "date": "2026-08-30"
+      },
+      {
+       "h": "f8915f11",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Skip the KTX2 restore re-upload on a lost host context",
        "date": "2026-08-30"
       },
       {
@@ -8968,6 +11838,41 @@
        "scope": "sync",
        "text": "Apply the fresh reader's round over the audit fixes",
        "date": "2026-08-30"
+      },
+      {
+       "h": "410aa5a7",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Read the KTX2 restore queue live at apply time, not at contextlost",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "223e500b",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Compensate the performance overlay for UI Scale like every other movable window",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "64f7958f",
+       "kind": "fix",
+       "scope": "deeds",
+       "text": "Retire the Fiesta bracket deeds to Feats of Strength",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "1aee2029",
+       "kind": "fix",
+       "scope": "scripts",
+       "text": "Dismiss the Proving Shore arrival note in the deeds shot",
+       "date": "2026-08-29"
+      },
+      {
+       "h": "be894fdc",
+       "kind": "fix",
+       "scope": "deeds",
+       "text": "Correct the Fiesta Feat comment and pin the un-stranding",
+       "date": "2026-08-29"
       },
       {
        "h": "d62fc423",
@@ -9068,10 +11973,24 @@
        "date": "2026-08-28"
       },
       {
+       "h": "4b60c08c",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Freed Attack-slot ability stays visible across a build switch",
+       "date": "2026-08-28"
+      },
+      {
        "h": "d8dcf775",
        "kind": "fix",
        "scope": "ui",
        "text": "Apply the fresh-reader and render-review rounds, add the phase 14 shot targets",
+       "date": "2026-08-28"
+      },
+      {
+       "h": "30005c86",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Sheathe a drawn weapon while mounted, folded into the swim overlay",
        "date": "2026-08-28"
       },
       {
@@ -9453,6 +12372,13 @@
        "date": "2026-08-25"
       },
       {
+       "h": "e674f4e9",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Scale the remote-entity teleport-snap threshold to elapsed time",
+       "date": "2026-08-24"
+      },
+      {
        "h": "eeedb437",
        "kind": "fix",
        "scope": "masterwrought",
@@ -9719,6 +12645,13 @@
        "date": "2026-08-21"
       },
       {
+       "h": "31f9b2f5",
+       "kind": "fix",
+       "scope": "audio",
+       "text": "Keep the tail fade when an attack is also set",
+       "date": "2026-08-21"
+      },
+      {
        "h": "8464e666",
        "kind": "fix",
        "scope": "merge",
@@ -9821,6 +12754,34 @@
        "kind": "fix",
        "scope": "sim",
        "text": "True the parked-mint comments and pin the absorb's parked state",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "30a8ac8a",
+       "kind": "fix",
+       "scope": "audio",
+       "text": "Fade the summon's tail and match the idle handoff to it",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "32d47012",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Drop engine state before arming the summon, not after",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "0e3bd181",
+       "kind": "fix",
+       "scope": "sfx",
+       "text": "Register the sled's summon take in the manifest",
+       "date": "2026-08-20"
+      },
+      {
+       "h": "7d5193e4",
+       "kind": "fix",
+       "scope": "sfx",
+       "text": "Register the rallycart's reverse takes",
        "date": "2026-08-20"
       },
       {
@@ -10027,6 +12988,13 @@
        "date": "2026-08-18"
       },
       {
+       "h": "e7200d51",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Aim the frozen chase camera from its current pose under r185",
+       "date": "2026-08-17"
+      },
+      {
        "h": "094a8141",
        "kind": "fix",
        "scope": "ui",
@@ -10129,6 +13097,20 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Apply the ruling-review findings across the five head items",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "0d6dfb42",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Put the rallycart headlights in their actual bowls",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "9d743732",
+       "kind": "fix",
+       "scope": "audio",
+       "text": "Carry engine transitions with the vehicle, soften the summon seam",
        "date": "2026-08-16"
       },
       {
@@ -10388,6 +13370,20 @@
        "kind": "fix",
        "scope": "qa",
        "text": "Close the four catalog-derived pins the full run caught",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "80a4d996",
+       "kind": "fix",
+       "scope": "sled",
+       "text": "KTX2-compress the sled GLB and refresh the seals",
+       "date": "2026-08-12"
+      },
+      {
+       "h": "ea95a16a",
+       "kind": "fix",
+       "scope": "mounts",
+       "text": "Resolve goblin rocket sled gate failures",
        "date": "2026-08-12"
       },
       {
