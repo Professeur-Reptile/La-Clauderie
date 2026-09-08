@@ -2,49 +2,49 @@
   "guilde": {
     "classementServeur": 7,
     "classement": {
-      "releveLe": "2026-09-08T16:32:10Z",
+      "releveLe": "2026-09-08T21:02:40Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Sovereign",
-          "memberCount": 99,
-          "totalLifetimeXp": 52829643,
+          "memberCount": 98,
+          "totalLifetimeXp": 52854079,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "Monarchs",
-          "memberCount": 88,
-          "totalLifetimeXp": 49112368,
+          "memberCount": 87,
+          "totalLifetimeXp": 48608365,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Look Good Play Good",
           "memberCount": 100,
-          "totalLifetimeXp": 47238296,
+          "totalLifetimeXp": 47247863,
           "topLevel": 20
         },
         {
           "rank": 4,
           "name": "Raiders United",
           "memberCount": 79,
-          "totalLifetimeXp": 33423528,
+          "totalLifetimeXp": 33461991,
           "topLevel": 20
         },
         {
           "rank": 5,
           "name": "Vis Absoluta",
           "memberCount": 54,
-          "totalLifetimeXp": 20761332,
+          "totalLifetimeXp": 20772413,
           "topLevel": 20
         },
         {
           "rank": 6,
           "name": "Ehren Nuggets",
           "memberCount": 95,
-          "totalLifetimeXp": 16420946,
+          "totalLifetimeXp": 16421046,
           "topLevel": 20
         },
         {
@@ -64,15 +64,15 @@
         {
           "rank": 9,
           "name": "Cheaters",
-          "memberCount": 35,
-          "totalLifetimeXp": 11115148,
+          "memberCount": 36,
+          "totalLifetimeXp": 11482416,
           "topLevel": 20
         },
         {
           "rank": 10,
-          "name": "Holy Order",
-          "memberCount": 46,
-          "totalLifetimeXp": 10523226,
+          "name": "Legio X Equestris",
+          "memberCount": 43,
+          "totalLifetimeXp": 10814099,
           "topLevel": 20
         }
       ],
