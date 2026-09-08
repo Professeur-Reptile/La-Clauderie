@@ -2,35 +2,35 @@
   "guilde": {
     "classementServeur": 7,
     "classement": {
-      "releveLe": "2026-09-08T21:02:40Z",
+      "releveLe": "2026-09-08T23:18:53Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Sovereign",
           "memberCount": 98,
-          "totalLifetimeXp": 52854079,
+          "totalLifetimeXp": 53081405,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "Monarchs",
           "memberCount": 87,
-          "totalLifetimeXp": 48608365,
+          "totalLifetimeXp": 48609373,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Look Good Play Good",
           "memberCount": 100,
-          "totalLifetimeXp": 47247863,
+          "totalLifetimeXp": 47269177,
           "topLevel": 20
         },
         {
           "rank": 4,
           "name": "Raiders United",
-          "memberCount": 79,
-          "totalLifetimeXp": 33461991,
+          "memberCount": 80,
+          "totalLifetimeXp": 34385380,
           "topLevel": 20
         },
         {
@@ -51,7 +51,7 @@
           "rank": 7,
           "name": "La Clauderie",
           "memberCount": 58,
-          "totalLifetimeXp": 11980373,
+          "totalLifetimeXp": 11982645,
           "topLevel": 20
         },
         {
@@ -65,14 +65,14 @@
           "rank": 9,
           "name": "Cheaters",
           "memberCount": 36,
-          "totalLifetimeXp": 11482416,
+          "totalLifetimeXp": 11483072,
           "topLevel": 20
         },
         {
           "rank": 10,
           "name": "Legio X Equestris",
           "memberCount": 43,
-          "totalLifetimeXp": 10814099,
+          "totalLifetimeXp": 10860384,
           "topLevel": 20
         }
       ],
@@ -80,7 +80,7 @@
         "rank": 7,
         "name": "La Clauderie",
         "memberCount": 58,
-        "totalLifetimeXp": 11980373,
+        "totalLifetimeXp": 11982645,
         "topLevel": 20
       }
     }
