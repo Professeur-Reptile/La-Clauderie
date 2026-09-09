@@ -263,7 +263,9 @@ for (const e of ENCH) {
   const ref = enchByName.get(e.n);
   if (!ref) { fail('metiers.html', `enchantement « ${e.n} » inconnu du jeu`); continue; }
   const [stat, value] = Object.entries(ref.statBonus ?? {})[0] ?? [];
-  if (stat !== e.stat || value !== e.v) {
+  if (stat === undefined && value === undefined && e.stat === undefined && e.v === undefined) {
+    // Certains enchantements ont un effet d’arme proc et aucun bonus de stat.
+  } else if (stat !== e.stat || value !== e.v) {
     fail('metiers.html', `« ${e.n} » : le guide annonce ${e.stat} +${e.v}, le jeu ${stat} +${value}`);
   }
   if (ref.itemSlot !== e.slot) {

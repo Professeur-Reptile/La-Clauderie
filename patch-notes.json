@@ -2,6 +2,37 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+    "version": "v0.42.0",
+    "date": "2026-09-09",
+    "titre": "Masterwrought, farming et un monde reconstruit",
+    "resume": "La v0.42.0 ajoute le palier Masterwrought dans les dix métiers, l’agriculture et la récolte volontaire, refond Nythraxis, redessine les Drakelands et rend l’interface réorganisable. Le Rift Forge, les nouvelles collections du Creuset, les outils de guilde et les traductions complètes arrivent dans le même patch.",
+    "temps_forts": [
+      "🔨 Masterwrought devient le nouveau sommet de fabrication",
+      "🌱 L’agriculture devient le cinquième métier de récolte",
+      "🧰 Le Field Kit rend la récolte des cadavres volontaire et traçable",
+      "🐉 Nythraxis revient avec un combat de mouvement en trois phases",
+      "💎 Le Rift Forge fait progresser les anneaux et leurs gemmes",
+      "🗺️ Les Drakelands sont redessinées et les trajets deviennent plus fiables",
+      "🏰 Roster de guilde, historique de banque et notifications Discord gagnent des outils",
+      "⚙️ Cadres HUD, touches et barres d’action deviennent configurables"
+    ],
+    "page": "notes/v0.42.0.html",
+    "titre_en": "Masterwrought, farming and a rebuilt world",
+    "resume_en": "v0.42.0 adds the Masterwrought tier across all ten professions, farming and deliberate harvesting, rebuilds Nythraxis, redraws the Drakelands and makes the interface rearrangeable. The Rift Forge, new Crucible collections, guild tools and complete translations ship in the same release.",
+    "temps_forts_en": [
+      "🔨 Masterwrought is the new crafting ceiling",
+      "🌱 Farming becomes the fifth gathering profession",
+      "🧰 Field Kit makes corpse harvesting deliberate and traceable",
+      "🐉 Nythraxis returns as a three-phase movement fight",
+      "💎 Rift Forge advances bands and their gems",
+      "🗺️ The Drakelands are redrawn and routes become more reliable",
+      "🏰 Guild roster, bank history and Discord notifications gain tools",
+      "⚙️ HUD frames, keybinds and action bars become configurable"
+    ],
+    "page_en": "notes/v0.42.0.en.html"
+  },
+
+  {
    "version": "v0.41.4",
    "date": "2026-09-05",
    "titre": "Le Creuset a sa musique, un morceau par étage",

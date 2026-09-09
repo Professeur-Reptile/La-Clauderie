@@ -8005,48 +8005,54 @@ const CRAFT = {
   // couple (emplacement, stat), le plus gros bonus = recommandé, les autres
   // sont sous-optimaux ; l'Esprit (regen hors combat depuis v0.29) = à éviter.
   const ENCH = [
-      {n:"Enchant Boots - Agility",slot:"feet",tier:"Base",stat:"agi",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
-      {n:"Enchant Gloves - Greater Agility",slot:"gloves",tier:"Greater",stat:"agi",v:6,reg:[{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:2}]},
-      {n:"Enchant Gloves - Agility",slot:"gloves",tier:"Base",stat:"agi",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
-      {n:"Enchant Legs - Runed Hide",slot:"legs",tier:"Runed",stat:"agi",v:4,reg:[{id:"arcane_essence",n:"Chime Essence",c:2},{id:"resonant_hide",n:"Resonant Hide",c:1}]},
-      {n:"Enchant Weapon - Agility",slot:"mainhand",tier:"Base",stat:"agi",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
-      {n:"Enchant Necklace - Agility",slot:"neck",tier:"Base",stat:"agi",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
-      {n:"Enchant Ring - Agility",slot:"ring",tier:"Base",stat:"agi",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
-      {n:"Enchant Shoulders - Agility",slot:"shoulder",tier:"Base",stat:"agi",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
-      {n:"Enchant Belt - Agility",slot:"waist",tier:"Base",stat:"agi",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
-      {n:"Enchant Boots - Strength",slot:"feet",tier:"Base",stat:"str",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
-      {n:"Enchant Gloves - Strength",slot:"gloves",tier:"Base",stat:"str",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
-      {n:"Enchant Weapon - Greater Might",slot:"mainhand",tier:"Greater",stat:"str",v:5,reg:[{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:2}]},
-      {n:"Enchant Weapon - Runed Edge",slot:"mainhand",tier:"Runed",stat:"str",v:3,reg:[{id:"arcane_essence",n:"Chime Essence",c:2},{id:"resonant_steel",n:"Resonant Steel",c:1}]},
-      {n:"Enchant Weapon - Might",slot:"mainhand",tier:"Base",stat:"str",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
-      {n:"Enchant Ring - Strength",slot:"ring",tier:"Base",stat:"str",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
-      {n:"Enchant Shoulders - Strength",slot:"shoulder",tier:"Base",stat:"str",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
-      {n:"Enchant Belt - Strength",slot:"waist",tier:"Base",stat:"str",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
-      {n:"Enchant Gloves - Spellpower",slot:"gloves",tier:"Base",stat:"int",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
-      {n:"Enchant Helmet - Intellect",slot:"helmet",tier:"Base",stat:"int",v:4,reg:[{id:"arcane_dust",n:"Chime Dust",c:3},{id:"arcane_essence",n:"Chime Essence",c:2}]},
-      {n:"Enchant Legs - Intellect",slot:"legs",tier:"Base",stat:"int",v:4,reg:[{id:"arcane_dust",n:"Chime Dust",c:3},{id:"arcane_essence",n:"Chime Essence",c:2}]},
-      {n:"Enchant Weapon - Greater Spellpower",slot:"mainhand",tier:"Greater",stat:"int",v:5,reg:[{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:2}]},
-      {n:"Enchant Weapon - Runed Sigil",slot:"mainhand",tier:"Runed",stat:"int",v:3,reg:[{id:"arcane_essence",n:"Chime Essence",c:2},{id:"resonant_timber",n:"Resonant Timber",c:1}]},
-      {n:"Enchant Weapon - Spellpower",slot:"mainhand",tier:"Base",stat:"int",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
-      {n:"Enchant Necklace - Intellect",slot:"neck",tier:"Base",stat:"int",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
-      {n:"Enchant Ring - Intellect",slot:"ring",tier:"Base",stat:"int",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
-      {n:"Enchant Shoulders - Intellect",slot:"shoulder",tier:"Base",stat:"int",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
-      {n:"Enchant Chest - Greater Stamina",slot:"chest",tier:"Greater",stat:"sta",v:7,reg:[{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:3}]},
-      {n:"Enchant Chest - Stamina",slot:"chest",tier:"Base",stat:"sta",v:4,reg:[{id:"arcane_dust",n:"Chime Dust",c:3},{id:"arcane_essence",n:"Chime Essence",c:2}]},
-      {n:"Enchant Boots - Stamina",slot:"feet",tier:"Base",stat:"sta",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
-      {n:"Enchant Offhand - Stamina",slot:"offhand",tier:"Base",stat:"sta",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
-      {n:"Enchant Helmet - Greater Fortitude",slot:"helmet",tier:"Greater",stat:"sta",v:6,reg:[{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:2}]},
-      {n:"Enchant Helmet - Runed Links",slot:"helmet",tier:"Runed",stat:"sta",v:5,reg:[{id:"arcane_essence",n:"Chime Essence",c:2},{id:"resonant_links",n:"Resonant Links",c:1}]},
-      {n:"Enchant Helmet - Fortitude",slot:"helmet",tier:"Base",stat:"sta",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
-      {n:"Enchant Legs - Greater Stamina",slot:"legs",tier:"Greater",stat:"sta",v:6,reg:[{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:3}]},
-      {n:"Enchant Legs - Stamina",slot:"legs",tier:"Base",stat:"sta",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:3},{id:"arcane_essence",n:"Chime Essence",c:2}]},
-      {n:"Enchant Belt - Stamina",slot:"waist",tier:"Base",stat:"sta",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
-      {n:"Enchant Chest - Reinforcement",slot:"chest",tier:"Base",stat:"armor",v:20,reg:[{id:"arcane_dust",n:"Chime Dust",c:3},{id:"arcane_essence",n:"Chime Essence",c:2}]},
-      {n:"Enchant Helmet - Reinforcement",slot:"helmet",tier:"Base",stat:"armor",v:15,reg:[{id:"arcane_dust",n:"Chime Dust",c:3},{id:"arcane_essence",n:"Chime Essence",c:1}]},
-      {n:"Enchant Chest - Runed Weave",slot:"chest",tier:"Runed",stat:"spi",v:5,reg:[{id:"arcane_essence",n:"Chime Essence",c:2},{id:"resonant_thread",n:"Resonant Thread",c:1}]},
-      {n:"Enchant Chest - Spirit",slot:"chest",tier:"Base",stat:"spi",v:4,reg:[{id:"arcane_dust",n:"Chime Dust",c:3},{id:"arcane_essence",n:"Chime Essence",c:2}]},
-      {n:"Enchant Necklace - Spirit",slot:"neck",tier:"Base",stat:"spi",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
-      {n:"Enchant Ring - Spirit",slot:"ring",tier:"Base",stat:"spi",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]}
+      {n:"Belt Etching: Agility",slot:"waist",tier:"Base",stat:"agi",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
+      {n:"Belt Etching: Stamina",slot:"waist",tier:"Base",stat:"sta",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
+      {n:"Belt Etching: Strength",slot:"waist",tier:"Base",stat:"str",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
+      {n:"Boot Etching: Agility",slot:"feet",tier:"Base",stat:"agi",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
+      {n:"Boot Etching: Lucent Agility",slot:"feet",tier:"Lucent",stat:"agi",v:3,reg:[{id:"lucent_reagent",n:"Lucent Reagent",c:1},{id:"arcane_dust",n:"Chime Dust",c:4}]},
+      {n:"Boot Etching: Stamina",slot:"feet",tier:"Base",stat:"sta",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
+      {n:"Boot Etching: Strength",slot:"feet",tier:"Base",stat:"str",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
+      {n:"Chest Etching: Greater Stamina",slot:"chest",tier:"Greater",stat:"sta",v:7,reg:[{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:3}]},
+      {n:"Chest Etching: Lucent Stamina",slot:"chest",tier:"Lucent",stat:"sta",v:10,reg:[{id:"lucent_reagent",n:"Lucent Reagent",c:1},{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:3}]},
+      {n:"Chest Etching: Reinforcement",slot:"chest",tier:"Base",stat:"armor",v:20,reg:[{id:"arcane_dust",n:"Chime Dust",c:3},{id:"arcane_essence",n:"Chime Essence",c:2}]},
+      {n:"Chest Etching: Runed Weave",slot:"chest",tier:"Runed",stat:"spi",v:5,reg:[{id:"arcane_essence",n:"Chime Essence",c:2},{id:"resonant_thread",n:"Resonant Thread",c:1}]},
+      {n:"Chest Etching: Spirit",slot:"chest",tier:"Base",stat:"spi",v:4,reg:[{id:"arcane_dust",n:"Chime Dust",c:3},{id:"arcane_essence",n:"Chime Essence",c:2}]},
+      {n:"Chest Etching: Stamina",slot:"chest",tier:"Base",stat:"sta",v:4,reg:[{id:"arcane_dust",n:"Chime Dust",c:3},{id:"arcane_essence",n:"Chime Essence",c:2}]},
+      {n:"Glove Etching: Agility",slot:"gloves",tier:"Base",stat:"agi",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
+      {n:"Glove Etching: Greater Agility",slot:"gloves",tier:"Greater",stat:"agi",v:6,reg:[{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:2}]},
+      {n:"Glove Etching: Spellpower",slot:"gloves",tier:"Base",stat:"int",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
+      {n:"Glove Etching: Strength",slot:"gloves",tier:"Base",stat:"str",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
+      {n:"Helmet Etching: Fortitude",slot:"helmet",tier:"Base",stat:"sta",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
+      {n:"Helmet Etching: Greater Fortitude",slot:"helmet",tier:"Greater",stat:"sta",v:6,reg:[{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:2}]},
+      {n:"Helmet Etching: Intellect",slot:"helmet",tier:"Base",stat:"int",v:4,reg:[{id:"arcane_dust",n:"Chime Dust",c:3},{id:"arcane_essence",n:"Chime Essence",c:2}]},
+      {n:"Helmet Etching: Reinforcement",slot:"helmet",tier:"Base",stat:"armor",v:15,reg:[{id:"arcane_dust",n:"Chime Dust",c:3},{id:"arcane_essence",n:"Chime Essence",c:1}]},
+      {n:"Helmet Etching: Runed Links",slot:"helmet",tier:"Runed",stat:"sta",v:5,reg:[{id:"arcane_essence",n:"Chime Essence",c:2},{id:"resonant_links",n:"Resonant Links",c:1}]},
+      {n:"Last Flame's Zeal",slot:"mainhand",tier:"Special",reg:[{id:"lastflame_core",n:"Core of the Last Flame",c:3},{id:"arcane_shard",n:"Chime Shard",c:2}]},
+      {n:"Leg Etching: Greater Stamina",slot:"legs",tier:"Greater",stat:"sta",v:6,reg:[{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:3}]},
+      {n:"Leg Etching: Intellect",slot:"legs",tier:"Base",stat:"int",v:4,reg:[{id:"arcane_dust",n:"Chime Dust",c:3},{id:"arcane_essence",n:"Chime Essence",c:2}]},
+      {n:"Leg Etching: Runed Hide",slot:"legs",tier:"Runed",stat:"agi",v:4,reg:[{id:"arcane_essence",n:"Chime Essence",c:2},{id:"resonant_hide",n:"Resonant Hide",c:1}]},
+      {n:"Leg Etching: Stamina",slot:"legs",tier:"Base",stat:"sta",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:3},{id:"arcane_essence",n:"Chime Essence",c:2}]},
+      {n:"Lucent Infusion",slot:"chest",tier:"Lucent",stat:"sta",v:13,reg:[{id:"lucent_reagent",n:"Lucent Reagent",c:3},{id:"arcane_shard",n:"Chime Shard",c:2}]},
+      {n:"Necklace Etching: Agility",slot:"neck",tier:"Base",stat:"agi",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
+      {n:"Necklace Etching: Intellect",slot:"neck",tier:"Base",stat:"int",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
+      {n:"Necklace Etching: Spirit",slot:"neck",tier:"Base",stat:"spi",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
+      {n:"Offhand Etching: Stamina",slot:"offhand",tier:"Base",stat:"sta",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
+      {n:"Ring Etching: Agility",slot:"ring",tier:"Base",stat:"agi",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
+      {n:"Ring Etching: Intellect",slot:"ring",tier:"Base",stat:"int",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
+      {n:"Ring Etching: Spirit",slot:"ring",tier:"Base",stat:"spi",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
+      {n:"Ring Etching: Strength",slot:"ring",tier:"Base",stat:"str",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
+      {n:"Shoulder Etching: Agility",slot:"shoulder",tier:"Base",stat:"agi",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
+      {n:"Shoulder Etching: Intellect",slot:"shoulder",tier:"Base",stat:"int",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
+      {n:"Shoulder Etching: Strength",slot:"shoulder",tier:"Base",stat:"str",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
+      {n:"Weapon Etching: Agility",slot:"mainhand",tier:"Base",stat:"agi",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
+      {n:"Weapon Etching: Greater Might",slot:"mainhand",tier:"Greater",stat:"str",v:5,reg:[{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:2}]},
+      {n:"Weapon Etching: Greater Spellpower",slot:"mainhand",tier:"Greater",stat:"int",v:5,reg:[{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:2}]},
+      {n:"Weapon Etching: Lucent Might",slot:"mainhand",tier:"Lucent",stat:"str",v:6,reg:[{id:"lucent_reagent",n:"Lucent Reagent",c:1},{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:2}]},
+      {n:"Weapon Etching: Lucent Spellpower",slot:"mainhand",tier:"Lucent",stat:"int",v:6,reg:[{id:"lucent_reagent",n:"Lucent Reagent",c:1},{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:2}]},
+      {n:"Weapon Etching: Might",slot:"mainhand",tier:"Base",stat:"str",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
+      {n:"Weapon Etching: Runed Edge",slot:"mainhand",tier:"Runed",stat:"str",v:3,reg:[{id:"arcane_essence",n:"Chime Essence",c:2},{id:"resonant_steel",n:"Resonant Steel",c:1}]},
+      {n:"Weapon Etching: Runed Sigil",slot:"mainhand",tier:"Runed",stat:"int",v:3,reg:[{id:"arcane_essence",n:"Chime Essence",c:2},{id:"resonant_timber",n:"Resonant Timber",c:1}]},
+      {n:"Weapon Etching: Spellpower",slot:"mainhand",tier:"Base",stat:"int",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
   ];
   const ESLOT = { mainhand:['Arme','Main Hand'], offhand:['Main gauche','Off Hand'], helmet:['Casque','Helmet'], shoulder:['Épaules','Shoulder'], chest:['Torse','Chest'], waist:['Ceinture','Waist'], legs:['Jambes','Legs'], feet:['Pieds','Feet'], gloves:['Mains','Gloves'], neck:['Cou','Neck'], ring:['Doigt','Finger'] };
   const ESTAT = { agi:['Agilité','Agility'], str:['Force','Strength'], int:['Intellect','Intellect'], sta:['Endurance','Stamina'], armor:['Armure','Armor'], spi:['Esprit','Spirit'] };
@@ -8062,24 +8068,26 @@ const CRAFT = {
   function renderEnchantTable() {
     // meilleur bonus par (emplacement + stat) = recommandé
     const best = {};
-    ENCH.forEach(e => { const k = e.slot + '|' + e.stat; if (!(k in best) || e.v > best[k]) best[k] = e.v; });
+    ENCH.forEach(e => { if (!e.stat) return; const k = e.slot + '|' + e.stat; if (!(k in best) || e.v > best[k]) best[k] = e.v; });
     const sorted = ENCH.slice().sort((a, b) =>
-      (ESTAT_ORDER[a.stat] - ESTAT_ORDER[b.stat]) || a.slot.localeCompare(b.slot) || (b.v - a.v));
+      ((ESTAT_ORDER[a.stat] ?? 99) - (ESTAT_ORDER[b.stat] ?? 99)) || a.slot.localeCompare(b.slot) || ((b.v ?? 0) - (a.v ?? 0)));
     const rows = sorted.map(e => {
       let cls, verdict;
-      if (e.stat === 'spi') { cls = 'avoid'; verdict = T('à éviter', 'avoid'); }
+      if (!e.stat) { cls = 'sub'; verdict = T('effet spécial', 'special effect'); }
+      else if (e.stat === 'spi') { cls = 'avoid'; verdict = T('à éviter', 'avoid'); }
       else if (e.v === best[e.slot + '|' + e.stat]) { cls = 'rec'; verdict = T('★ meilleur', '★ best'); }
       else { cls = 'sub'; verdict = T('sous-optimal', 'sub-optimal'); }
       const mats = e.reg.map(r => `${r.c}× ${item({ id: r.id, name: r.n })}`).join(' + ');
-      const tierCls = e.tier === 'Greater' ? 'greater' : (e.tier === 'Runed' ? 'runed' : '');
-      const tierLbl = e.tier === 'Greater' ? T('Majeur', 'Greater') : (e.tier === 'Runed' ? 'Runed' : T('Base', 'Base'));
-      const statLbl = ESTAT[e.stat][window.LANG === 'en' ? 1 : 0];
+      const tierCls = e.tier === 'Greater' ? 'greater' : (e.tier === 'Runed' ? 'runed' : (e.tier === 'Lucent' ? 'lucent' : ''));
+      const tierLbl = e.tier === 'Greater' ? T('Majeur', 'Greater') : (e.tier === 'Runed' ? 'Runed' : (e.tier === 'Lucent' ? 'Lucent' : (e.tier === 'Special' ? T('Spécial', 'Special') : T('Base', 'Base'))));
+      const statLbl = e.stat ? ESTAT[e.stat][window.LANG === 'en' ? 1 : 0] : '';
+      const bonusLbl = e.stat ? `+${e.v} ${statLbl}` : T('effet d’arme', 'weapon effect');
       return `<tr class="${cls}" data-stat="${e.stat}">
         <td class="e-name">${esc(e.n)}</td>
         <td class="e-slot">${ESLOT[e.slot][window.LANG === 'en' ? 1 : 0]}</td>
         <td><span class="e-tier ${tierCls}">${tierLbl}</span></td>
         <td class="e-mats">${mats}</td>
-        <td class="e-bonus">+${e.v} ${statLbl}</td>
+        <td class="e-bonus">${bonusLbl}</td>
         <td class="e-verdict">${verdict}</td>
       </tr>`;
     }).join('');
