@@ -1,6 +1,110 @@
 {
- "generated": "",
+ "generated": "2026-09-09T16:51:19Z",
  "base_tag": "v0.42.0",
- "version": null,
- "sections": []
+ "version": "v0.43.0",
+ "branch": "release/v0.43.0",
+ "declared_version": "0.43.0",
+ "imminent": true,
+ "commits": 6,
+ "shown": 0,
+ "last_commit": "2026-09-10T00:21:24+12:00",
+ "sections": [
+  {
+   "key": "classes",
+   "icon": "⚔️",
+   "fr": "Classes & sorts",
+   "en": "Classes & spells",
+   "items": []
+  },
+  {
+   "key": "metiers",
+   "icon": "🔨",
+   "fr": "Métiers & récolte",
+   "en": "Professions & gathering",
+   "items": []
+  },
+  {
+   "key": "donjons",
+   "icon": "🐉",
+   "fr": "Donjons, failles & boss",
+   "en": "Dungeons, rifts & bosses",
+   "items": []
+  },
+  {
+   "key": "monde",
+   "icon": "🗺️",
+   "fr": "Monde & quêtes",
+   "en": "World & quests",
+   "items": []
+  },
+  {
+   "key": "guilde",
+   "icon": "🏰",
+   "fr": "Guilde & social",
+   "en": "Guild & social",
+   "items": []
+  },
+  {
+   "key": "confort",
+   "icon": "⚙️",
+   "fr": "Confort & technique",
+   "en": "Comfort & technical",
+   "items": []
+  }
+ ],
+ "versions": [
+  {
+   "version": "v0.43.0",
+   "branch": "release/v0.43.0",
+   "declared_version": "0.43.0",
+   "imminent": true,
+   "commits": 6,
+   "shown": 0,
+   "last_commit": "2026-09-10T00:21:24+12:00",
+   "sections": [
+    {
+     "key": "classes",
+     "icon": "⚔️",
+     "fr": "Classes & sorts",
+     "en": "Classes & spells",
+     "items": []
+    },
+    {
+     "key": "metiers",
+     "icon": "🔨",
+     "fr": "Métiers & récolte",
+     "en": "Professions & gathering",
+     "items": []
+    },
+    {
+     "key": "donjons",
+     "icon": "🐉",
+     "fr": "Donjons, failles & boss",
+     "en": "Dungeons, rifts & bosses",
+     "items": []
+    },
+    {
+     "key": "monde",
+     "icon": "🗺️",
+     "fr": "Monde & quêtes",
+     "en": "World & quests",
+     "items": []
+    },
+    {
+     "key": "guilde",
+     "icon": "🏰",
+     "fr": "Guilde & social",
+     "en": "Guild & social",
+     "items": []
+    },
+    {
+     "key": "confort",
+     "icon": "⚙️",
+     "fr": "Confort & technique",
+     "en": "Comfort & technical",
+     "items": []
+    }
+   ]
+  }
+ ]
 }
