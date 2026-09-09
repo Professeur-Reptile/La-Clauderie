@@ -2,42 +2,42 @@
   "guilde": {
     "classementServeur": 7,
     "classement": {
-      "releveLe": "2026-09-09T20:51:28Z",
+      "releveLe": "2026-09-09T23:08:45Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Sovereign",
-          "memberCount": 100,
-          "totalLifetimeXp": 55590621,
+          "memberCount": 101,
+          "totalLifetimeXp": 55841038,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "Monarchs",
           "memberCount": 87,
-          "totalLifetimeXp": 48675888,
+          "totalLifetimeXp": 48678717,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Look Good Play Good",
           "memberCount": 100,
-          "totalLifetimeXp": 47292308,
+          "totalLifetimeXp": 47302603,
           "topLevel": 20
         },
         {
           "rank": 4,
           "name": "Raiders United",
-          "memberCount": 79,
-          "totalLifetimeXp": 34105032,
+          "memberCount": 78,
+          "totalLifetimeXp": 33351322,
           "topLevel": 20
         },
         {
           "rank": 5,
           "name": "Vis Absoluta",
           "memberCount": 54,
-          "totalLifetimeXp": 21015145,
+          "totalLifetimeXp": 21030330,
           "topLevel": 20
         },
         {
@@ -71,8 +71,8 @@
         {
           "rank": 10,
           "name": "Legio X Equestris",
-          "memberCount": 45,
-          "totalLifetimeXp": 11520848,
+          "memberCount": 44,
+          "totalLifetimeXp": 11341910,
           "topLevel": 20
         }
       ],
