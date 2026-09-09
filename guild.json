@@ -2,49 +2,49 @@
   "guilde": {
     "classementServeur": 7,
     "classement": {
-      "releveLe": "2026-09-09T11:11:30Z",
+      "releveLe": "2026-09-09T16:29:42Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Sovereign",
           "memberCount": 98,
-          "totalLifetimeXp": 55219573,
+          "totalLifetimeXp": 55329508,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "Monarchs",
           "memberCount": 87,
-          "totalLifetimeXp": 48641875,
+          "totalLifetimeXp": 48658959,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Look Good Play Good",
           "memberCount": 100,
-          "totalLifetimeXp": 47284203,
+          "totalLifetimeXp": 47288928,
           "topLevel": 20
         },
         {
           "rank": 4,
           "name": "Raiders United",
-          "memberCount": 81,
-          "totalLifetimeXp": 35262159,
+          "memberCount": 80,
+          "totalLifetimeXp": 34535173,
           "topLevel": 20
         },
         {
           "rank": 5,
           "name": "Vis Absoluta",
           "memberCount": 54,
-          "totalLifetimeXp": 20785358,
+          "totalLifetimeXp": 20789785,
           "topLevel": 20
         },
         {
           "rank": 6,
           "name": "Ehren Nuggets",
           "memberCount": 95,
-          "totalLifetimeXp": 16421046,
+          "totalLifetimeXp": 16421154,
           "topLevel": 20
         },
         {
@@ -58,7 +58,7 @@
           "rank": 8,
           "name": "Cheaters",
           "memberCount": 37,
-          "totalLifetimeXp": 11795754,
+          "totalLifetimeXp": 11805873,
           "topLevel": 20
         },
         {
@@ -71,8 +71,8 @@
         {
           "rank": 10,
           "name": "Legio X Equestris",
-          "memberCount": 43,
-          "totalLifetimeXp": 10987031,
+          "memberCount": 45,
+          "totalLifetimeXp": 11343207,
           "topLevel": 20
         }
       ],
