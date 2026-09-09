@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-08T11:40:09Z",
+ "generated": "2026-09-09T05:05:35Z",
  "base_tag": "v0.41.4",
  "version": "v0.42.0",
- "branch": "ossbrain-release/v0.42.0",
+ "branch": "release/v0.42.0",
  "declared_version": "0.42.0",
  "imminent": true,
- "commits": 2472,
- "shown": 982,
- "last_commit": "2026-09-08T09:38:57Z",
+ "commits": 2497,
+ "shown": 989,
+ "last_commit": "2026-09-09T02:31:42Z",
  "sections": [
   {
    "key": "classes",
@@ -647,6 +647,13 @@
      "date": "2026-09-02"
     },
     {
+     "h": "83097d5d",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Stop harvest button flashing during status polls",
+     "date": "2026-09-09"
+    },
+    {
      "h": "bb9e412b",
      "kind": "fix",
      "scope": "professions",
@@ -1094,6 +1101,20 @@
      "scope": "sim",
      "text": "Wyrmfall core faucets, the rift daily gate, and the makers ember accrual",
      "date": "2026-08-08"
+    },
+    {
+     "h": "83bfe3e1",
+     "kind": "fix",
+     "scope": "quests",
+     "text": "Start Forgebreaker from its Ember and reward raid quests",
+     "date": "2026-09-09"
+    },
+    {
+     "h": "6150b2de",
+     "kind": "fix",
+     "scope": "loot",
+     "text": "Align Nythraxis and heroic dungeon equipment budgets",
+     "date": "2026-09-09"
     },
     {
      "h": "e1735512",
@@ -2209,6 +2230,13 @@
      "kind": "feat",
      "scope": "hub-practice",
      "text": "Add guided damage and healing lessons",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "a5371f10",
+     "kind": "feat",
+     "scope": "cosmetics",
+     "text": "Complete five account-wide mount skins",
      "date": "2026-09-08"
     },
     {
@@ -3437,6 +3465,20 @@
      "date": "2026-08-20"
     },
     {
+     "h": "38c8e39f",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Make mount skins epic and balance the sidebar",
+     "date": "2026-09-09"
+    },
+    {
+     "h": "41f2de72",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Align the rewards chest with sidebar buttons",
+     "date": "2026-09-09"
+    },
+    {
      "h": "cac37f80",
      "kind": "fix",
      "scope": "ui",
@@ -3504,6 +3546,13 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Bound the Exchange dropdown hold's wheel release; disarm on pointercancel",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "9b7ef189",
+     "kind": "fix",
+     "scope": "cosmetics",
+     "text": "Preserve action focus and size mobile tabs",
      "date": "2026-09-08"
     },
     {
@@ -6935,12 +6984,12 @@
  "versions": [
   {
    "version": "v0.42.0",
-   "branch": "ossbrain-release/v0.42.0",
+   "branch": "release/v0.42.0",
    "declared_version": "0.42.0",
    "imminent": true,
-   "commits": 2472,
-   "shown": 982,
-   "last_commit": "2026-09-08T09:38:57Z",
+   "commits": 2497,
+   "shown": 989,
+   "last_commit": "2026-09-09T02:31:42Z",
    "sections": [
     {
      "key": "classes",
@@ -7580,6 +7629,13 @@
        "date": "2026-09-02"
       },
       {
+       "h": "83097d5d",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stop harvest button flashing during status polls",
+       "date": "2026-09-09"
+      },
+      {
        "h": "bb9e412b",
        "kind": "fix",
        "scope": "professions",
@@ -8027,6 +8083,20 @@
        "scope": "sim",
        "text": "Wyrmfall core faucets, the rift daily gate, and the makers ember accrual",
        "date": "2026-08-08"
+      },
+      {
+       "h": "83bfe3e1",
+       "kind": "fix",
+       "scope": "quests",
+       "text": "Start Forgebreaker from its Ember and reward raid quests",
+       "date": "2026-09-09"
+      },
+      {
+       "h": "6150b2de",
+       "kind": "fix",
+       "scope": "loot",
+       "text": "Align Nythraxis and heroic dungeon equipment budgets",
+       "date": "2026-09-09"
       },
       {
        "h": "e1735512",
@@ -9142,6 +9212,13 @@
        "kind": "feat",
        "scope": "hub-practice",
        "text": "Add guided damage and healing lessons",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "a5371f10",
+       "kind": "feat",
+       "scope": "cosmetics",
+       "text": "Complete five account-wide mount skins",
        "date": "2026-09-08"
       },
       {
@@ -10370,6 +10447,20 @@
        "date": "2026-08-20"
       },
       {
+       "h": "38c8e39f",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Make mount skins epic and balance the sidebar",
+       "date": "2026-09-09"
+      },
+      {
+       "h": "41f2de72",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Align the rewards chest with sidebar buttons",
+       "date": "2026-09-09"
+      },
+      {
        "h": "cac37f80",
        "kind": "fix",
        "scope": "ui",
@@ -10437,6 +10528,13 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Bound the Exchange dropdown hold's wheel release; disarm on pointercancel",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "9b7ef189",
+       "kind": "fix",
+       "scope": "cosmetics",
+       "text": "Preserve action focus and size mobile tabs",
        "date": "2026-09-08"
       },
       {
