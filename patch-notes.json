@@ -2,6 +2,32 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+    "version": "v0.42.1",
+    "date": "2026-09-10",
+    "titre": "Le correctif qui rend les échanges et la récolte fiables",
+    "resume": "Le hotfix v0.42.1 rétablit les échanges du butin du Creuset, rend la touche Interagir aux nœuds de récolte et corrige le coffre de matériaux, l’entrée des Gouffres, le paiement bureau et les pics d’os héroïques. Le Rallycart est retiré et remboursé.",
+    "temps_forts": [
+      "🤝 Le butin échangeable du Creuset et la fenêtre de groupe sont de retour",
+      "⛏️ La touche Interagir récolte de nouveau les nœuds proches",
+      "📦 Le coffre de matériaux ne déconnecte plus sur les stocks mélangés",
+      "🐉 Les Bone Spikes héroïques retrouvent leurs 1 000 PV",
+      "🛒 Le paiement Claudium fonctionne dans le client bureau",
+      "🚗 Le Rallycart est retiré ; ses acheteurs reçoivent 3 000 Claudium"
+    ],
+    "page": "notes/v0.42.1.html",
+    "titre_en": "The hotfix that makes trading and gathering reliable",
+    "resume_en": "Hotfix v0.42.1 restores tradeable Crucible loot, brings the Interact key back to gathering nodes and fixes the Materials Vault, delve entry, desktop checkout and heroic Bone Spikes. Rallycart is retired and refunded.",
+    "temps_forts_en": [
+      "🤝 Tradeable Crucible loot and the party window are back",
+      "⛏️ Interact gathers nearby nodes again",
+      "📦 The Materials Vault no longer disconnects on mixed-source stock",
+      "🐉 Heroic Bone Spikes are back at 1,000 HP",
+      "🛒 Claudium checkout works in the desktop client",
+      "🚗 Rallycart is retired; buyers receive 3,000 Claudium"
+    ],
+    "page_en": "notes/v0.42.1.en.html"
+  },
+  {
     "version": "v0.42.0",
     "date": "2026-09-09",
     "titre": "Masterwrought, farming et un monde reconstruit",
