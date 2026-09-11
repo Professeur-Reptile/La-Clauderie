@@ -1,20 +1,28 @@
 {
- "generated": "2026-09-10T21:07:55Z",
+ "generated": "2026-09-11T11:44:18Z",
  "base_tag": "v0.42.1",
  "version": "v0.42.2",
  "branch": "release/v0.42.2",
  "declared_version": "0.42.2",
  "imminent": true,
- "commits": 2,
- "shown": 0,
- "last_commit": "2026-09-11T08:12:40+12:00",
+ "commits": 24,
+ "shown": 11,
+ "last_commit": "2026-09-11T23:23:40+12:00",
  "sections": [
   {
    "key": "classes",
    "icon": "⚔️",
    "fr": "Classes & sorts",
    "en": "Classes & spells",
-   "items": []
+   "items": [
+    {
+     "h": "91e3ba46",
+     "kind": "fix",
+     "scope": "nythraxis",
+     "text": "Retire Soulfire and put Bone Spike on a 55 s per-raider cooldown",
+     "date": "2026-09-11"
+    }
+   ]
   },
   {
    "key": "metiers",
@@ -28,7 +36,71 @@
    "icon": "🐉",
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
-   "items": []
+   "items": [
+    {
+     "h": "d5ba3c53",
+     "kind": "feat",
+     "scope": "nythraxis",
+     "text": "Stage the Binding Sigil on two flanking platforms",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "d720fbb0",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Recolour the Nythraxis Bone Spike ember orange",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "40b40f2d",
+     "kind": "fix",
+     "scope": "nythraxis",
+     "text": "Fill the reworded guide rows and close the review gaps",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "6fe25ce4",
+     "kind": "fix",
+     "scope": "nythraxis",
+     "text": "Wards, no Gravefire, and a sigil beside the boss",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "edeb5529",
+     "kind": "fix",
+     "scope": "guide",
+     "text": "Tell the raid about ward spikes and the sigil sides; drop the Gravefire rows",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "4fc8d163",
+     "kind": "fix",
+     "scope": "nythraxis",
+     "text": "Start the sigil on world -x, the raid's right facing the dais",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "11da5482",
+     "kind": "fix",
+     "scope": "nythraxis",
+     "text": "Close the batch-2 review round",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "86bf8261",
+     "kind": "fix",
+     "scope": "nythraxis",
+     "text": "Close the platform review round",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "2456fa09",
+     "kind": "fix",
+     "scope": "nythraxis",
+     "text": "Remember the landed sigil side and keep ward hits original",
+     "date": "2026-09-11"
+    }
+   ]
   },
   {
    "key": "monde",
@@ -49,7 +121,15 @@
    "icon": "⚙️",
    "fr": "Confort & technique",
    "en": "Comfort & technical",
-   "items": []
+   "items": [
+    {
+     "h": "cd4f995a",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Give the Bone Spike a click capsule twice its footprint",
+     "date": "2026-09-11"
+    }
+   ]
   }
  ],
  "versions": [
@@ -58,16 +138,24 @@
    "branch": "release/v0.42.2",
    "declared_version": "0.42.2",
    "imminent": true,
-   "commits": 2,
-   "shown": 0,
-   "last_commit": "2026-09-11T08:12:40+12:00",
+   "commits": 24,
+   "shown": 11,
+   "last_commit": "2026-09-11T23:23:40+12:00",
    "sections": [
     {
      "key": "classes",
      "icon": "⚔️",
      "fr": "Classes & sorts",
      "en": "Classes & spells",
-     "items": []
+     "items": [
+      {
+       "h": "91e3ba46",
+       "kind": "fix",
+       "scope": "nythraxis",
+       "text": "Retire Soulfire and put Bone Spike on a 55 s per-raider cooldown",
+       "date": "2026-09-11"
+      }
+     ]
     },
     {
      "key": "metiers",
@@ -81,7 +169,71 @@
      "icon": "🐉",
      "fr": "Donjons, failles & boss",
      "en": "Dungeons, rifts & bosses",
-     "items": []
+     "items": [
+      {
+       "h": "d5ba3c53",
+       "kind": "feat",
+       "scope": "nythraxis",
+       "text": "Stage the Binding Sigil on two flanking platforms",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "d720fbb0",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Recolour the Nythraxis Bone Spike ember orange",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "40b40f2d",
+       "kind": "fix",
+       "scope": "nythraxis",
+       "text": "Fill the reworded guide rows and close the review gaps",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "6fe25ce4",
+       "kind": "fix",
+       "scope": "nythraxis",
+       "text": "Wards, no Gravefire, and a sigil beside the boss",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "edeb5529",
+       "kind": "fix",
+       "scope": "guide",
+       "text": "Tell the raid about ward spikes and the sigil sides; drop the Gravefire rows",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "4fc8d163",
+       "kind": "fix",
+       "scope": "nythraxis",
+       "text": "Start the sigil on world -x, the raid's right facing the dais",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "11da5482",
+       "kind": "fix",
+       "scope": "nythraxis",
+       "text": "Close the batch-2 review round",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "86bf8261",
+       "kind": "fix",
+       "scope": "nythraxis",
+       "text": "Close the platform review round",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "2456fa09",
+       "kind": "fix",
+       "scope": "nythraxis",
+       "text": "Remember the landed sigil side and keep ward hits original",
+       "date": "2026-09-11"
+      }
+     ]
     },
     {
      "key": "monde",
@@ -102,7 +254,15 @@
      "icon": "⚙️",
      "fr": "Confort & technique",
      "en": "Comfort & technical",
-     "items": []
+     "items": [
+      {
+       "h": "cd4f995a",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Give the Bone Spike a click capsule twice its footprint",
+       "date": "2026-09-11"
+      }
+     ]
     }
    ]
   },
@@ -111,23 +271,60 @@
    "branch": "release/v0.43.0",
    "declared_version": "0.43.0",
    "imminent": true,
-   "commits": 2,
-   "shown": 0,
-   "last_commit": "2026-09-10T00:21:24+12:00",
+   "commits": 154,
+   "shown": 74,
+   "last_commit": "2026-09-11T09:50:42Z",
    "sections": [
     {
      "key": "classes",
      "icon": "⚔️",
      "fr": "Classes & sorts",
      "en": "Classes & spells",
-     "items": []
+     "items": [
+      {
+       "h": "d107a008",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Redesign aura and transient surfaces",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "0a7dbead",
+       "kind": "fix",
+       "scope": "rogue",
+       "text": "Preserve poison cleanup, attribution, and tooltip precision",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "00aede2b",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "End Sacrilegious March at its floor in health units, and pin the potion fractions",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "30f78dba",
+       "kind": "fix",
+       "scope": "styles",
+       "text": "Give a plain buff its semantic rim back",
+       "date": "2026-09-08"
+      }
+     ]
     },
     {
      "key": "metiers",
      "icon": "🔨",
      "fr": "Métiers & récolte",
      "en": "Professions & gathering",
-     "items": []
+     "items": [
+      {
+       "h": "1dfae817",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Unify crafting and market windows",
+       "date": "2026-09-07"
+      }
+     ]
     },
     {
      "key": "donjons",
@@ -141,21 +338,507 @@
      "icon": "🗺️",
      "fr": "Monde & quêtes",
      "en": "World & quests",
-     "items": []
+     "items": [
+      {
+       "h": "b3097ca4",
+       "kind": "feat",
+       "scope": "items",
+       "text": "Stamina baseline model, repo-wide guard and catalog codemod",
+       "date": "2026-09-10"
+      },
+      {
+       "h": "36da5193",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Give Untrack real tracking state and Show on Map the selected quest",
+       "date": "2026-09-10"
+      },
+      {
+       "h": "647a8245",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Deliver NPC coaching lines as bubbles, or a Talking Head when unseen",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "b9e3a3c6",
+       "kind": "fix",
+       "scope": "items",
+       "text": "Put the tier-bump generators and every stat pin on the stamina model",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "fb046768",
+       "kind": "fix",
+       "scope": "items",
+       "text": "Review round on the stamina model: tier-delta floor, line-budget cycle, exact pins",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "da7faba2",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Resolve the quest log's tracking dep by instance, not presence",
+       "date": "2026-09-10"
+      },
+      {
+       "h": "622c2262",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stop the quest log offering a disclosure onto nothing",
+       "date": "2026-09-08"
+      }
+     ]
     },
     {
      "key": "guilde",
      "icon": "🏰",
      "fr": "Guilde & social",
      "en": "Guild & social",
-     "items": []
+     "items": [
+      {
+       "h": "6bd4bc64",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Redesign unit and party frames",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "f3ffb176",
+       "kind": "feat",
+       "scope": "chat",
+       "text": "Redesign the chat frame",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "279ddef6",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Rebuild windows group B on the interface primitive library",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "332c4a76",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep the party row's quantized precision on the shield segment",
+       "date": "2026-09-08"
+      }
+     ]
     },
     {
      "key": "confort",
      "icon": "⚙️",
      "fr": "Confort & technique",
      "en": "Comfort & technical",
-     "items": []
+     "items": [
+      {
+       "h": "ca069787",
+       "kind": "feat",
+       "scope": "classes",
+       "text": "Set the class health table by design after the stamina model",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "c2704bf7",
+       "kind": "feat",
+       "scope": "woc-market",
+       "text": "Add Sales History tab to the $WOC Exchange",
+       "date": "2026-09-10"
+      },
+      {
+       "h": "5b522828",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Adopt the primitive library in the four release-landed windows",
+       "date": "2026-09-09"
+      },
+      {
+       "h": "64316204",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Seat the Talking Head in view and make it a movable frame",
+       "date": "2026-09-09"
+      },
+      {
+       "h": "3311c6fd",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Fold the Devotion medallion into the cross hotbar in pad mode",
+       "date": "2026-09-09"
+      },
+      {
+       "h": "80a4fa41",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Make the Devotion medallion the cross hotbar's keystone in pad mode",
+       "date": "2026-09-09"
+      },
+      {
+       "h": "b1dcaab0",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Mount the pad hint strip, launcher legend and set-swap chip",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "5a8cb2d4",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Finish the right-rail handoff with the ring, badges and dial painter",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "92671a25",
+       "kind": "feat",
+       "scope": "mobile",
+       "text": "Rebuild the touch HUD on the interface token set",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "54335c23",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Seat both stock unit frames above the action bar",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "c3f96ed0",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Align the XP rail to the hotbar and move its readout inside",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "551af7a9",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Spread the paperdoll columns and seat the weapons under the model",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "756fbc4d",
+       "kind": "feat",
+       "scope": "styles",
+       "text": "Add the interface token and primitive library",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "98b1e51d",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Redesign options interface",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "a497b26b",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Redesign character and utility windows",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "59f553b3",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Redesign economy windows",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "5f19201f",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Redesign activity and account windows",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "6290d366",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Redesign action bar cluster",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "29b13aa9",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add interaction prompt",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "219ccadf",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Rebuild the cross hotbar and the pad HUD extras on the library",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "36db10a8",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Rebuild the right rail on the interface primitive library",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "68ead5a4",
+       "kind": "perf",
+       "scope": "ui",
+       "text": "Stop the map atlas rail rebuilding while the player walks",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "f31aa90d",
+       "kind": "fix",
+       "scope": "classes",
+       "text": "Review round on the class health table: Sim-derived cloth band, potion issue linked",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "0b4570d8",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep readable text on every fixed-dark primitive surface",
+       "date": "2026-09-10"
+      },
+      {
+       "h": "d24cfb69",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Pick the prompt's accept button by role and reset the cosmetics sheet height",
+       "date": "2026-09-09"
+      },
+      {
+       "h": "20cc8b2f",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Name the Dialogue frame in the guide and rebalance the launcher rail",
+       "date": "2026-09-09"
+      },
+      {
+       "h": "33e8049e",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Seat the stance row above the action bar as square sockets",
+       "date": "2026-09-09"
+      },
+      {
+       "h": "14693be2",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Seat the pet bar beside the stance row and the pet frame above the player frame",
+       "date": "2026-09-09"
+      },
+      {
+       "h": "c3638e9b",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Raise the touch unit-frame factors a step",
+       "date": "2026-09-09"
+      },
+      {
+       "h": "3800b699",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Keep the touch pet frame at its full factor",
+       "date": "2026-09-09"
+      },
+      {
+       "h": "32af767c",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Keep the landscape pet frame seat onscreen at the larger factor",
+       "date": "2026-09-09"
+      },
+      {
+       "h": "3db7ebe8",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep rail focus across the atlas swap and cache the micro-menu windows",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "632e8c54",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Repair the suite regressions the merged redesign left behind",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "6bb25caf",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Size the arena window from the app viewport height",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "b20d07ec",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Size the cross hotbar set-swap chip to its pip rail",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "ebede966",
+       "kind": "fix",
+       "scope": "styles",
+       "text": "Repair the twelve stylesheet-side redesign regressions",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "79caa65e",
+       "kind": "fix",
+       "scope": "settings",
+       "text": "Re-stamp the unit frame widths to the whole-frame stock",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "b47c25e7",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Restore the Need, Greed and Pass colour code",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "402f6d82",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Route the professions wiki link through the confirm-first launcher",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "22121056",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Colour pad face buttons by the glyph the pad prints",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "7654665b",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep card buttons readable and window heads rigid in the browser suite",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "bce77600",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep the XP label on screen and drop the keycap from the touch prompt",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "978d71ab",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Tidy three character and professions edges the merge review found",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "faaa8557",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Keep the floating world banners as bare text",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "ffe23460",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Paint the absorb hatch over the shield, not the health bar",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "4a26799b",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Pin the action row of every options page below the scroller",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "279ceeaf",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Put the options menus on one gutter and one spacing scale",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "e6180dcd",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stop heading buttons falling back to the UA black text",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "53547046",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Fill the bags window with its socket grid",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "2199a53a",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Make the character model the full-height stage of its pane",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "61ab1f34",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Pin the mailbox and calendar action rows below their scrollers",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "71d1e112",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep settings rows at their natural height inside the shell body",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "c9f4a8e5",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Give the loot explorer launcher the icon-button primitives",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "71cf4a22",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Bracket the action bar with the stock unit frames and level the pager",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "49b7590b",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Size the target frame box by its scale and rebalance the rail columns",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "84760b03",
+       "kind": "fix",
+       "scope": "bags",
+       "text": "Size the bags window to its slots from the bottom anchor",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "6e8aa2cc",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Drop the plate behind the ghost prompt and content-size the mailbox",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "c02e723e",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Fit the cross hotbar to the action rail and level the pad-mode frames",
+       "date": "2026-09-08"
+      }
+     ]
     }
    ]
   }
