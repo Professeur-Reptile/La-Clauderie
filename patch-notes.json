@@ -2,6 +2,32 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+    "version": "v0.42.2",
+    "date": "2026-09-11",
+    "titre": "Nythraxis devient lisible et Zeal ne se cumule plus",
+    "resume": "La v0.42.2 retire les flaques de Soulfire et la ligne de Gravefire, transforme les Bone Spikes en wards à 4 ou 6 coups, les espace de 55 secondes par joueur et place le Binding Sigil sur deux plateformes alternées. Last Flame’s Zeal partage désormais un seul bonus en double arme.",
+    "temps_forts": [
+      "🐉 Soulfire et Gravefire sont retirés du combat",
+      "🦴 Les Bone Spikes demandent 4 coups en normal et 6 en héroïque",
+      "⏱️ Un joueur empalé reste hors cible pendant 55 secondes",
+      "🔥 Le Binding Sigil alterne entre deux plateformes à 30 yards",
+      "🟠 Les Bone Spikes deviennent orange braise à tous les niveaux graphiques",
+      "✨ Last Flame’s Zeal partage un seul bonus de 50 Force"
+    ],
+    "page": "notes/v0.42.2.html",
+    "titre_en": "Nythraxis is clearer and Zeal no longer stacks",
+    "resume_en": "v0.42.2 retires Soulfire pools and the Gravefire line, turns Bone Spikes into 4- or 6-hit wards, spaces each raider’s targets by 55 seconds and places Binding Sigil on two alternating platforms. Last Flame’s Zeal now shares one buff between both weapons.",
+    "temps_forts_en": [
+      "🐉 Soulfire and Gravefire are retired from the fight",
+      "🦴 Bone Spikes take 4 hits on Normal and 6 on Heroic",
+      "⏱️ An impaled player stays out of targets for 55 seconds",
+      "🔥 Binding Sigil alternates between two platforms 30 yards away",
+      "🟠 Bone Spikes are ember orange at every graphics tier",
+      "✨ Last Flame’s Zeal shares one 50 Strength buff"
+    ],
+    "page_en": "notes/v0.42.2.en.html"
+  },
+  {
     "version": "v0.42.1",
     "date": "2026-09-10",
     "titre": "Le correctif qui rend les échanges et la récolte fiables",
