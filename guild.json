@@ -2,42 +2,42 @@
   "guilde": {
     "classementServeur": 8,
     "classement": {
-      "releveLe": "2026-09-11T11:07:04Z",
+      "releveLe": "2026-09-11T16:21:42Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Sovereign",
-          "memberCount": 116,
-          "totalLifetimeXp": 58220278,
+          "memberCount": 115,
+          "totalLifetimeXp": 57660031,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "Monarchs",
           "memberCount": 87,
-          "totalLifetimeXp": 48725956,
+          "totalLifetimeXp": 48731556,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Look Good Play Good",
           "memberCount": 100,
-          "totalLifetimeXp": 47426223,
+          "totalLifetimeXp": 47442670,
           "topLevel": 20
         },
         {
           "rank": 4,
           "name": "Raiders United",
-          "memberCount": 99,
-          "totalLifetimeXp": 37613648,
+          "memberCount": 104,
+          "totalLifetimeXp": 37734044,
           "topLevel": 20
         },
         {
           "rank": 5,
           "name": "Vis Absoluta",
           "memberCount": 54,
-          "totalLifetimeXp": 21107862,
+          "totalLifetimeXp": 21149645,
           "topLevel": 20
         },
         {
@@ -50,8 +50,8 @@
         {
           "rank": 7,
           "name": "Legio X Equestris",
-          "memberCount": 50,
-          "totalLifetimeXp": 12456191,
+          "memberCount": 49,
+          "totalLifetimeXp": 12540364,
           "topLevel": 20
         },
         {
@@ -65,14 +65,14 @@
           "rank": 9,
           "name": "Cheaters",
           "memberCount": 37,
-          "totalLifetimeXp": 11867609,
+          "totalLifetimeXp": 11894349,
           "topLevel": 20
         },
         {
           "rank": 10,
           "name": "A Guilda",
           "memberCount": 30,
-          "totalLifetimeXp": 11812400,
+          "totalLifetimeXp": 11814016,
           "topLevel": 20
         }
       ],
