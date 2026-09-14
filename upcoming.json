@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-14T19:33:27Z",
+ "generated": "2026-09-14T23:22:30Z",
  "base_tag": "v0.42.2",
  "version": "v0.43.0",
  "branch": "ossbrain-release/v0.43.0",
  "declared_version": "0.43.0",
  "imminent": true,
- "commits": 410,
- "shown": 197,
- "last_commit": "2026-09-14T18:18:07Z",
+ "commits": 446,
+ "shown": 211,
+ "last_commit": "2026-09-14T23:04:16Z",
  "sections": [
   {
    "key": "classes",
@@ -28,6 +28,27 @@
      "scope": "hud",
      "text": "Redesign aura and transient surfaces",
      "date": "2026-09-07"
+    },
+    {
+     "h": "d28b373f",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Deny a movement-sensitive cast press instead of wasting the GCD",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "735dc7e3",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Allow Possess and Hour of Judgment without primary Eye target",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "8669b62c",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Align cast movement press gate",
+     "date": "2026-09-14"
     },
     {
      "h": "7ca15d6f",
@@ -56,6 +77,13 @@
      "scope": "ui",
      "text": "Show a Wolf Form druid as damage on role-sorted raid frames",
      "date": "2026-09-11"
+    },
+    {
+     "h": "f0df334d",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Show Chronomancy buffs on the aura tracks",
+     "date": "2026-09-10"
     },
     {
      "h": "30f78dba",
@@ -186,6 +214,13 @@
      "date": "2026-09-07"
     },
     {
+     "h": "916109d9",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Stop labeling heroic chance-only loot rows as guaranteed drops",
+     "date": "2026-09-14"
+    },
+    {
      "h": "9a1f208d",
      "kind": "fix",
      "scope": "render",
@@ -212,6 +247,13 @@
      "scope": "sim",
      "text": "Make the raid-boss living-target fallback follow the hate table",
      "date": "2026-09-11"
+    },
+    {
+     "h": "5c5e0857",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Enforce Nythraxis Dread Curse tank swap against decoy taunts",
+     "date": "2026-09-10"
     },
     {
      "h": "3fad2e6c",
@@ -482,6 +524,13 @@
      "date": "2026-09-12"
     },
     {
+     "h": "af753eed",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Keep a group burst to the caster's own aura-track row",
+     "date": "2026-09-10"
+    },
+    {
      "h": "332c4a76",
      "kind": "fix",
      "scope": "ui",
@@ -735,6 +784,20 @@
      "date": "2026-09-06"
     },
     {
+     "h": "fd8112c1",
+     "kind": "perf",
+     "scope": "foliage",
+     "text": "Draw decimated bark copies in the world foliage field",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "1e5ac19c",
+     "kind": "perf",
+     "scope": "ui",
+     "text": "Stop re-resolving the whole HUD's style every frame",
+     "date": "2026-09-14"
+    },
+    {
      "h": "68ead5a4",
      "kind": "perf",
      "scope": "ui",
@@ -789,6 +852,13 @@
      "scope": "render",
      "text": "A bench arm for the per-cell geometry binding",
      "date": "2026-09-08"
+    },
+    {
+     "h": "bcb5a82d",
+     "kind": "fix",
+     "scope": "mail",
+     "text": "Stack mergeable signed potions into one letter parcel",
+     "date": "2026-09-14"
     },
     {
      "h": "12a2b43b",
@@ -851,6 +921,20 @@
      "kind": "fix",
      "scope": "",
      "text": "Satisfy batch gate formatting",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "f2674c41",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Suspend prediction during Vaulting Charge",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "c6470c9a",
+     "kind": "fix",
+     "scope": "mail",
+     "text": "Stabilize bundled instanced parcels",
      "date": "2026-09-14"
     },
     {
@@ -1103,6 +1187,20 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Keep readable text on every fixed-dark primitive surface",
+     "date": "2026-09-10"
+    },
+    {
+     "h": "7764413e",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Suspend local movement prediction during Vaulting Charge",
+     "date": "2026-09-10"
+    },
+    {
+     "h": "07a6c9cf",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Stop Veilbound March's Ascension pull from dragging practice dummies",
      "date": "2026-09-10"
     },
     {
@@ -1443,9 +1541,9 @@
    "branch": "ossbrain-release/v0.43.0",
    "declared_version": "0.43.0",
    "imminent": true,
-   "commits": 410,
-   "shown": 197,
-   "last_commit": "2026-09-14T18:18:07Z",
+   "commits": 446,
+   "shown": 211,
+   "last_commit": "2026-09-14T23:04:16Z",
    "sections": [
     {
      "key": "classes",
@@ -1466,6 +1564,27 @@
        "scope": "hud",
        "text": "Redesign aura and transient surfaces",
        "date": "2026-09-07"
+      },
+      {
+       "h": "d28b373f",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Deny a movement-sensitive cast press instead of wasting the GCD",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "735dc7e3",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Allow Possess and Hour of Judgment without primary Eye target",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "8669b62c",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Align cast movement press gate",
+       "date": "2026-09-14"
       },
       {
        "h": "7ca15d6f",
@@ -1494,6 +1613,13 @@
        "scope": "ui",
        "text": "Show a Wolf Form druid as damage on role-sorted raid frames",
        "date": "2026-09-11"
+      },
+      {
+       "h": "f0df334d",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Show Chronomancy buffs on the aura tracks",
+       "date": "2026-09-10"
       },
       {
        "h": "30f78dba",
@@ -1624,6 +1750,13 @@
        "date": "2026-09-07"
       },
       {
+       "h": "916109d9",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stop labeling heroic chance-only loot rows as guaranteed drops",
+       "date": "2026-09-14"
+      },
+      {
        "h": "9a1f208d",
        "kind": "fix",
        "scope": "render",
@@ -1650,6 +1783,13 @@
        "scope": "sim",
        "text": "Make the raid-boss living-target fallback follow the hate table",
        "date": "2026-09-11"
+      },
+      {
+       "h": "5c5e0857",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Enforce Nythraxis Dread Curse tank swap against decoy taunts",
+       "date": "2026-09-10"
       },
       {
        "h": "3fad2e6c",
@@ -1920,6 +2060,13 @@
        "date": "2026-09-12"
       },
       {
+       "h": "af753eed",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Keep a group burst to the caster's own aura-track row",
+       "date": "2026-09-10"
+      },
+      {
        "h": "332c4a76",
        "kind": "fix",
        "scope": "ui",
@@ -2173,6 +2320,20 @@
        "date": "2026-09-06"
       },
       {
+       "h": "fd8112c1",
+       "kind": "perf",
+       "scope": "foliage",
+       "text": "Draw decimated bark copies in the world foliage field",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "1e5ac19c",
+       "kind": "perf",
+       "scope": "ui",
+       "text": "Stop re-resolving the whole HUD's style every frame",
+       "date": "2026-09-14"
+      },
+      {
        "h": "68ead5a4",
        "kind": "perf",
        "scope": "ui",
@@ -2227,6 +2388,13 @@
        "scope": "render",
        "text": "A bench arm for the per-cell geometry binding",
        "date": "2026-09-08"
+      },
+      {
+       "h": "bcb5a82d",
+       "kind": "fix",
+       "scope": "mail",
+       "text": "Stack mergeable signed potions into one letter parcel",
+       "date": "2026-09-14"
       },
       {
        "h": "12a2b43b",
@@ -2289,6 +2457,20 @@
        "kind": "fix",
        "scope": "",
        "text": "Satisfy batch gate formatting",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "f2674c41",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Suspend prediction during Vaulting Charge",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "c6470c9a",
+       "kind": "fix",
+       "scope": "mail",
+       "text": "Stabilize bundled instanced parcels",
        "date": "2026-09-14"
       },
       {
@@ -2541,6 +2723,20 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Keep readable text on every fixed-dark primitive surface",
+       "date": "2026-09-10"
+      },
+      {
+       "h": "7764413e",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Suspend local movement prediction during Vaulting Charge",
+       "date": "2026-09-10"
+      },
+      {
+       "h": "07a6c9cf",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Stop Veilbound March's Ascension pull from dragging practice dummies",
        "date": "2026-09-10"
       },
       {
