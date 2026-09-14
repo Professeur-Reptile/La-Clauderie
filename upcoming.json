@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-11T16:43:38Z",
+ "generated": "2026-09-14T13:15:49Z",
  "base_tag": "v0.42.2",
  "version": "v0.43.0",
- "branch": "release/v0.43.0",
+ "branch": "ossbrain-release/v0.43.0",
  "declared_version": "0.43.0",
  "imminent": true,
- "commits": 154,
- "shown": 74,
- "last_commit": "2026-09-11T09:50:42Z",
+ "commits": 380,
+ "shown": 185,
+ "last_commit": "2026-09-14T12:20:30Z",
  "sections": [
   {
    "key": "classes",
@@ -16,11 +16,25 @@
    "en": "Classes & spells",
    "items": [
     {
+     "h": "c1c4c213",
+     "kind": "feat",
+     "scope": "warlock",
+     "text": "Refine Hexcraft Consume pushback, instant Hex of Violence DoT, and Leaden Hex",
+     "date": "2026-09-08"
+    },
+    {
      "h": "d107a008",
      "kind": "feat",
      "scope": "hud",
      "text": "Redesign aura and transient surfaces",
      "date": "2026-09-07"
+    },
+    {
+     "h": "7ca15d6f",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Carry body-attached buff visuals with the mounted rider",
+     "date": "2026-09-12"
     },
     {
      "h": "0a7dbead",
@@ -37,11 +51,32 @@
      "date": "2026-09-11"
     },
     {
+     "h": "8d78c307",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Show a Wolf Form druid as damage on role-sorted raid frames",
+     "date": "2026-09-11"
+    },
+    {
      "h": "30f78dba",
      "kind": "fix",
      "scope": "styles",
      "text": "Give a plain buff its semantic rim back",
      "date": "2026-09-08"
+    },
+    {
+     "h": "54b55a03",
+     "kind": "fix",
+     "scope": "warlock",
+     "text": "Strengthen the Ruinbolt cycle",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "8f61de9b",
+     "kind": "fix",
+     "scope": "cosmetics",
+     "text": "Keep the hunter skin arm on its mainhand-only answer",
+     "date": "2026-09-07"
     }
    ]
   },
@@ -52,11 +87,74 @@
    "en": "Professions & gathering",
    "items": [
     {
+     "h": "51340f1b",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Fire the first-tier profession tutorial for gathering too",
+     "date": "2026-09-08"
+    },
+    {
      "h": "1dfae817",
      "kind": "feat",
      "scope": "ui",
      "text": "Unify crafting and market windows",
      "date": "2026-09-07"
+    },
+    {
+     "h": "2c628ab6",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Pin crafting recipes to an always-on HUD tracker",
+     "date": "2026-09-06"
+    },
+    {
+     "h": "862a2834",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Key gather nodes per zone and type and hide batches past the fog reach",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "1548fb05",
+     "kind": "fix",
+     "scope": "",
+     "text": "Align batch tests with tool degrade semantics",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "db3d8407",
+     "kind": "fix",
+     "scope": "professions",
+     "text": "Let unearned land tools degrade, align hoes to crop bands, make planting instant",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "60021f65",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Open the corpse harvest choice from the interact press",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "c4469364",
+     "kind": "fix",
+     "scope": "crafting",
+     "text": "Explain a fine-only reagent to a player holding its plain grade",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "a6035cf7",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Enlarge crafting reagent text for mobile legibility",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "bce5ce03",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Review follow-ups for the pinned-recipe tracker",
+     "date": "2026-09-06"
     }
    ]
   },
@@ -65,7 +163,92 @@
    "icon": "🐉",
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
-   "items": []
+   "items": [
+    {
+     "h": "5bc729b3",
+     "kind": "feat",
+     "scope": "social",
+     "text": "Add raid warning banner, pull countdown, ready check window, and smooth raid frames",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "c0535eb7",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Show the raid marker on the target frame",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "39465119",
+     "kind": "fix",
+     "scope": "pet",
+     "text": "Never body-pull a boss from the pet's proximity scan",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "2320a5a9",
+     "kind": "fix",
+     "scope": "pet",
+     "text": "Pin the surviving boss-engage orders and harden the pull guard",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "09f44c05",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Make the raid-boss living-target fallback follow the hate table",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "3fad2e6c",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Stop rift floor clutter from blocking casts through open air",
+     "date": "2026-09-09"
+    },
+    {
+     "h": "73d87ef6",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Stop delve floor clutter from blocking casts through open air",
+     "date": "2026-09-09"
+    },
+    {
+     "h": "da75935e",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Snap the self pose across a delve-entry teleport",
+     "date": "2026-09-06"
+    },
+    {
+     "h": "81052f18",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Span the rift sanctum deck to the room's own wall",
+     "date": "2026-09-06"
+    },
+    {
+     "h": "ec6dc987",
+     "kind": "fix",
+     "scope": "social",
+     "text": "Catalogue the Ignivar raid and The Wildheart Basin in the Dungeon Finder",
+     "date": "2026-09-06"
+    },
+    {
+     "h": "88a75fa9",
+     "kind": "fix",
+     "scope": "social",
+     "text": "Read every Ignivar boss-room lock on the raid's finder row",
+     "date": "2026-09-06"
+    },
+    {
+     "h": "deff23e0",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "Move the Riftwright off the Watch Meadow road ends and shore",
+     "date": "2026-09-05"
+    }
+   ]
   },
   {
    "key": "monde",
@@ -73,6 +256,20 @@
    "fr": "Monde & quêtes",
    "en": "World & quests",
    "items": [
+    {
+     "h": "eb308eb3",
+     "kind": "feat",
+     "scope": "charselect",
+     "text": "Show each character's zone on the character list",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "e2bcdb14",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Let a zoom-out leave the instance map for the zone map",
+     "date": "2026-09-12"
+    },
     {
      "h": "b3097ca4",
      "kind": "feat",
@@ -95,6 +292,34 @@
      "date": "2026-09-08"
     },
     {
+     "h": "a96ca675",
+     "kind": "feat",
+     "scope": "nameplates",
+     "text": "Show what an NPC does under its name",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "f64e4ce8",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Apparent-size reach for zone-feature dressing, sweep extracted",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "74d42d37",
+     "kind": "fix",
+     "scope": "charselect",
+     "text": "Label world-start saves, guard bad positions, share the zone-name helper",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "f185da4f",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stop the Wildheart caldera from changing the world light census",
+     "date": "2026-09-12"
+    },
+    {
      "h": "b9e3a3c6",
      "kind": "fix",
      "scope": "items",
@@ -102,10 +327,24 @@
      "date": "2026-09-11"
     },
     {
+     "h": "d66edc08",
+     "kind": "fix",
+     "scope": "dev",
+     "text": "Prefer hub names over zone ids in /dev town and scope the digit guard",
+     "date": "2026-09-11"
+    },
+    {
      "h": "fb046768",
      "kind": "fix",
      "scope": "items",
      "text": "Review round on the stamina model: tier-delta floor, line-budget cycle, exact pins",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "69c5578d",
+     "kind": "fix",
+     "scope": "drakelands",
+     "text": "Make the Last Keep churchyard a functional graveyard",
      "date": "2026-09-11"
     },
     {
@@ -121,6 +360,13 @@
      "scope": "ui",
      "text": "Stop the quest log offering a disclosure onto nothing",
      "date": "2026-09-08"
+    },
+    {
+     "h": "abbf3f66",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Raise the sunken Bridgemere toll-chest onto the moat bank",
+     "date": "2026-09-07"
     }
    ]
   },
@@ -130,6 +376,41 @@
    "fr": "Guilde & social",
    "en": "Guild & social",
    "items": [
+    {
+     "h": "074d9329",
+     "kind": "feat",
+     "scope": "social",
+     "text": "/who becomes a searchable, sortable Who tab in the Social window",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "885cf838",
+     "kind": "feat",
+     "scope": "social",
+     "text": "Mobile layout, capture rig and screenshots for the Who tab",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "1ba7bd47",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Name each live program's owner in the hunt report",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "a127ab6e",
+     "kind": "feat",
+     "scope": "input",
+     "text": "Add F1..F5 party target hotkeys keyed to the party frame rows",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "d927ac49",
+     "kind": "feat",
+     "scope": "input",
+     "text": "Extend the party target hotkeys to F1..F10",
+     "date": "2026-09-11"
+    },
     {
      "h": "6bd4bc64",
      "kind": "feat",
@@ -152,6 +433,41 @@
      "date": "2026-09-07"
     },
     {
+     "h": "4320e6f3",
+     "kind": "feat",
+     "scope": "guild-bank",
+     "text": "Announce gold deposits and withdrawals to the guild",
+     "date": "2026-09-06"
+    },
+    {
+     "h": "bd45c420",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Only credit PvP hits on players outside the party, latch the first opponent",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "16851aa9",
+     "kind": "fix",
+     "scope": "social",
+     "text": "Review fixes for the Who tab (hot path, parity, a11y)",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "60632e6e",
+     "kind": "fix",
+     "scope": "social",
+     "text": "Repaint a same-count Who answer, honest tab while spectating",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "b2862547",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep party churn out of the Who tab digest and pin three roster tests",
+     "date": "2026-09-12"
+    },
+    {
      "h": "332c4a76",
      "kind": "fix",
      "scope": "ui",
@@ -167,11 +483,81 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "c6a0bdc2",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Release instead of retiring the shader warm worker, A/B it on D3D11",
+     "date": "2026-09-13"
+    },
+    {
+     "h": "6b1716ba",
+     "kind": "feat",
+     "scope": "store",
+     "text": "Live mount-skin preview before purchase, plus Cosmetics previews",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "59c6e520",
+     "kind": "feat",
+     "scope": "input",
+     "text": "Bind the mouse wheel like a key and make camera zoom rebindable",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "8250fe14",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add a Hide Interface toggle for clean screenshots and videos",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "ee32dc1d",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Add the live program hunt script, skill and reviewer checks",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "3dfd32e8",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Let the hunt browser follow the window size",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "4b75d8ae",
+     "kind": "feat",
+     "scope": "store",
+     "text": "Repaint the Cluckwork Mech Bird card art",
+     "date": "2026-09-11"
+    },
+    {
      "h": "ca069787",
      "kind": "feat",
      "scope": "classes",
      "text": "Set the class health table by design after the stamina model",
      "date": "2026-09-11"
+    },
+    {
+     "h": "341b51c7",
+     "kind": "feat",
+     "scope": "dev",
+     "text": "Add /dev town teleport to any settlement hub by name",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "6de20dcf",
+     "kind": "feat",
+     "scope": "perf",
+     "text": "Mark desktop shell reports so the fleet can tell them from browser tabs",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "4d2c76b4",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Rework chronomancer mechanics and add healing monte carlo",
+     "date": "2026-09-10"
     },
     {
      "h": "c2704bf7",
@@ -314,11 +700,284 @@
      "date": "2026-09-07"
     },
     {
+     "h": "92e72002",
+     "kind": "feat",
+     "scope": "actionbar",
+     "text": "Allow elixirs on the action bar",
+     "date": "2026-09-06"
+    },
+    {
      "h": "68ead5a4",
      "kind": "perf",
      "scope": "ui",
      "text": "Stop the map atlas rail rebuilding while the player walks",
      "date": "2026-09-08"
+    },
+    {
+     "h": "8ebad51c",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Cull the fen dressing per cell on the classic tiers",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "3fbaf5fa",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Key the fen cell split on the far-field policy",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "516df6d4",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Shed the fen clutter by apparent size on the far-vista arm",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "34498a5b",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Review follow-ups on the apparent-size reach",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "bb7d5a43",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Shed the fen clutter by apparent size on every profile",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "3e0ee62f",
+     "kind": "perf",
+     "scope": "render",
+     "text": "One fen build shape, willows split but never sized",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "95bf1e6b",
+     "kind": "perf",
+     "scope": "render",
+     "text": "A bench arm for the per-cell geometry binding",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "12a2b43b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Clear stale self offset on teleport residual",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "3f90e4d8",
+     "kind": "fix",
+     "scope": "unstuck",
+     "text": "Rescue battleground wall pressure after ESC",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "24e5e25f",
+     "kind": "fix",
+     "scope": "shell",
+     "text": "Restore wallet mini focus border",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "3367b0a5",
+     "kind": "fix",
+     "scope": "",
+     "text": "Format merged release changes",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "c90bc0a7",
+     "kind": "fix",
+     "scope": "",
+     "text": "Repair v0.43 release integration",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "2b1fef36",
+     "kind": "fix",
+     "scope": "",
+     "text": "Preserve healing training entity id stream",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "f5f3762c",
+     "kind": "fix",
+     "scope": "",
+     "text": "Organize world population invariant imports",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "570c4c6b",
+     "kind": "fix",
+     "scope": "",
+     "text": "Align release dummy and art pins",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "ddf80da2",
+     "kind": "fix",
+     "scope": "",
+     "text": "Satisfy batch gate formatting",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "1408eea7",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Upload a flipY DataTexture in one call, never by rows",
+     "date": "2026-09-13"
+    },
+    {
+     "h": "300d343f",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Give a released burst's requests back to the shader warm worker",
+     "date": "2026-09-13"
+    },
+    {
+     "h": "b5f2cdf1",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Retire a shader warm worker that goes silent while standing down",
+     "date": "2026-09-13"
+    },
+    {
+     "h": "71f88905",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Count damage dealt to players on the combat meters",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "dcec4f2a",
+     "kind": "fix",
+     "scope": "store",
+     "text": "Harden the mount preview after the review round",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "5848a908",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Attach the rider anchor on every view and register the pose core",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "a27abd75",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Park the mount preview stage by position and clamp preview DPR",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "10b4d97b",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Give the Cosmetics Preview button its own class and a null-safe store seam",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "aea13a7d",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Harden the Hide Interface hide set and drop the painter suffix",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "f37acac8",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Route the client beacons and ladders through apiUrl",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "ad88ed2d",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Let the monument impostor shader compile, and link it in a test",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "08a94945",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Hand the shader prefixes back to three's diagnostic",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "0ea725a9",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Prewarm the Ignivar mechanic visuals in the Crucible arena",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "da5a113b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Anchor the ground fire AoE programs across waves",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "90e0954f",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Reveal-gate the Eastbrook monument with the town",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "aa481018",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stage the Ring of Frost materials in the boot manifest",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "95fd9bd0",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Gate the Varkhul forge meter's attach",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "0d40834c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Aim and balance the caldera grade like the removed fill pair",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "c34aacb1",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Review round on the live program lot",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "d9d7341e",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Close the shader warm worker's breaker holes",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "d065ae54",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Snap the self pose across teleports instead of gliding it",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "c5f6e354",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Measure the teleport jump from the anchored target, not the drawn pose",
+     "date": "2026-09-11"
     },
     {
      "h": "f31aa90d",
@@ -328,11 +987,46 @@
      "date": "2026-09-11"
     },
     {
+     "h": "b118fa7d",
+     "kind": "fix",
+     "scope": "input",
+     "text": "Cancel a bound F-key's default on auto-repeats too",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "9a43523f",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Make the living-target tie-break explicit and skip stealthed players",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "2c325603",
+     "kind": "fix",
+     "scope": "perf",
+     "text": "Feed the fps hidden-time ledger from page visibility in the browser",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "dc14ba1a",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Shed raw_summary one rung at a time instead of dropping the whole blob",
+     "date": "2026-09-11"
+    },
+    {
      "h": "0b4570d8",
      "kind": "fix",
      "scope": "ui",
      "text": "Keep readable text on every fixed-dark primitive surface",
      "date": "2026-09-10"
+    },
+    {
+     "h": "fafe0bbd",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Trim colliders.ts comment to hold the monolith line ceiling",
+     "date": "2026-09-09"
     },
     {
      "h": "d24cfb69",
@@ -461,6 +1155,13 @@
      "date": "2026-09-08"
     },
     {
+     "h": "81e69e15",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Tolerate finger jitter in touch tooltip peek",
+     "date": "2026-09-08"
+    },
+    {
      "h": "978d71ab",
      "kind": "fix",
      "scope": "ui",
@@ -538,6 +1239,13 @@
      "date": "2026-09-08"
     },
     {
+     "h": "1e39699d",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Correct Hexcraft's stale example-ability showcase",
+     "date": "2026-09-08"
+    },
+    {
      "h": "71cf4a22",
      "kind": "fix",
      "scope": "hud",
@@ -566,11 +1274,81 @@
      "date": "2026-09-08"
     },
     {
+     "h": "143393f5",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep a reveal that lands inside the hidden prewarm window",
+     "date": "2026-09-08"
+    },
+    {
      "h": "c02e723e",
      "kind": "fix",
      "scope": "hud",
      "text": "Fit the cross hotbar to the action rail and level the pad-mode frames",
      "date": "2026-09-08"
+    },
+    {
+     "h": "5ca25bff",
+     "kind": "fix",
+     "scope": "cosmetics",
+     "text": "Let an offhand-held weapon type take its Armory skin",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "2f835042",
+     "kind": "fix",
+     "scope": "cosmetics",
+     "text": "Answer review on the offhand skin rule",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "cc862bb9",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Give the sheathe swap its bone-texture pass for an unskinned hand",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "11dc19ce",
+     "kind": "fix",
+     "scope": "nameplates",
+     "text": "Typed role key in the test, memoized role lookup",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "d0625072",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Drop a teleport-scale replay residual by the same rule",
+     "date": "2026-09-06"
+    },
+    {
+     "h": "b052de9b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Reach the widest wall crossing per band and merge the deck",
+     "date": "2026-09-06"
+    },
+    {
+     "h": "7b1032dc",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Hatch only the shield segment on unit-frame health bars",
+     "date": "2026-09-06"
+    },
+    {
+     "h": "89695cb9",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep the absorb segment transform a constant, quantized shape",
+     "date": "2026-09-06"
+    },
+    {
+     "h": "119fcde4",
+     "kind": "fix",
+     "scope": "graphics",
+     "text": "Capture every graphics dial in the boot-time applied snapshot",
+     "date": "2026-09-06"
     }
    ]
   }
@@ -578,12 +1356,12 @@
  "versions": [
   {
    "version": "v0.43.0",
-   "branch": "release/v0.43.0",
+   "branch": "ossbrain-release/v0.43.0",
    "declared_version": "0.43.0",
    "imminent": true,
-   "commits": 154,
-   "shown": 74,
-   "last_commit": "2026-09-11T09:50:42Z",
+   "commits": 380,
+   "shown": 185,
+   "last_commit": "2026-09-14T12:20:30Z",
    "sections": [
     {
      "key": "classes",
@@ -592,11 +1370,25 @@
      "en": "Classes & spells",
      "items": [
       {
+       "h": "c1c4c213",
+       "kind": "feat",
+       "scope": "warlock",
+       "text": "Refine Hexcraft Consume pushback, instant Hex of Violence DoT, and Leaden Hex",
+       "date": "2026-09-08"
+      },
+      {
        "h": "d107a008",
        "kind": "feat",
        "scope": "hud",
        "text": "Redesign aura and transient surfaces",
        "date": "2026-09-07"
+      },
+      {
+       "h": "7ca15d6f",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Carry body-attached buff visuals with the mounted rider",
+       "date": "2026-09-12"
       },
       {
        "h": "0a7dbead",
@@ -613,11 +1405,32 @@
        "date": "2026-09-11"
       },
       {
+       "h": "8d78c307",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Show a Wolf Form druid as damage on role-sorted raid frames",
+       "date": "2026-09-11"
+      },
+      {
        "h": "30f78dba",
        "kind": "fix",
        "scope": "styles",
        "text": "Give a plain buff its semantic rim back",
        "date": "2026-09-08"
+      },
+      {
+       "h": "54b55a03",
+       "kind": "fix",
+       "scope": "warlock",
+       "text": "Strengthen the Ruinbolt cycle",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "8f61de9b",
+       "kind": "fix",
+       "scope": "cosmetics",
+       "text": "Keep the hunter skin arm on its mainhand-only answer",
+       "date": "2026-09-07"
       }
      ]
     },
@@ -628,11 +1441,74 @@
      "en": "Professions & gathering",
      "items": [
       {
+       "h": "51340f1b",
+       "kind": "feat",
+       "scope": "sim",
+       "text": "Fire the first-tier profession tutorial for gathering too",
+       "date": "2026-09-08"
+      },
+      {
        "h": "1dfae817",
        "kind": "feat",
        "scope": "ui",
        "text": "Unify crafting and market windows",
        "date": "2026-09-07"
+      },
+      {
+       "h": "2c628ab6",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Pin crafting recipes to an always-on HUD tracker",
+       "date": "2026-09-06"
+      },
+      {
+       "h": "862a2834",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Key gather nodes per zone and type and hide batches past the fog reach",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "1548fb05",
+       "kind": "fix",
+       "scope": "",
+       "text": "Align batch tests with tool degrade semantics",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "db3d8407",
+       "kind": "fix",
+       "scope": "professions",
+       "text": "Let unearned land tools degrade, align hoes to crop bands, make planting instant",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "60021f65",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Open the corpse harvest choice from the interact press",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "c4469364",
+       "kind": "fix",
+       "scope": "crafting",
+       "text": "Explain a fine-only reagent to a player holding its plain grade",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "a6035cf7",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Enlarge crafting reagent text for mobile legibility",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "bce5ce03",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Review follow-ups for the pinned-recipe tracker",
+       "date": "2026-09-06"
       }
      ]
     },
@@ -641,7 +1517,92 @@
      "icon": "🐉",
      "fr": "Donjons, failles & boss",
      "en": "Dungeons, rifts & bosses",
-     "items": []
+     "items": [
+      {
+       "h": "5bc729b3",
+       "kind": "feat",
+       "scope": "social",
+       "text": "Add raid warning banner, pull countdown, ready check window, and smooth raid frames",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "c0535eb7",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Show the raid marker on the target frame",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "39465119",
+       "kind": "fix",
+       "scope": "pet",
+       "text": "Never body-pull a boss from the pet's proximity scan",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "2320a5a9",
+       "kind": "fix",
+       "scope": "pet",
+       "text": "Pin the surviving boss-engage orders and harden the pull guard",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "09f44c05",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Make the raid-boss living-target fallback follow the hate table",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "3fad2e6c",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Stop rift floor clutter from blocking casts through open air",
+       "date": "2026-09-09"
+      },
+      {
+       "h": "73d87ef6",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Stop delve floor clutter from blocking casts through open air",
+       "date": "2026-09-09"
+      },
+      {
+       "h": "da75935e",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Snap the self pose across a delve-entry teleport",
+       "date": "2026-09-06"
+      },
+      {
+       "h": "81052f18",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Span the rift sanctum deck to the room's own wall",
+       "date": "2026-09-06"
+      },
+      {
+       "h": "ec6dc987",
+       "kind": "fix",
+       "scope": "social",
+       "text": "Catalogue the Ignivar raid and The Wildheart Basin in the Dungeon Finder",
+       "date": "2026-09-06"
+      },
+      {
+       "h": "88a75fa9",
+       "kind": "fix",
+       "scope": "social",
+       "text": "Read every Ignivar boss-room lock on the raid's finder row",
+       "date": "2026-09-06"
+      },
+      {
+       "h": "deff23e0",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Move the Riftwright off the Watch Meadow road ends and shore",
+       "date": "2026-09-05"
+      }
+     ]
     },
     {
      "key": "monde",
@@ -649,6 +1610,20 @@
      "fr": "Monde & quêtes",
      "en": "World & quests",
      "items": [
+      {
+       "h": "eb308eb3",
+       "kind": "feat",
+       "scope": "charselect",
+       "text": "Show each character's zone on the character list",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "e2bcdb14",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Let a zoom-out leave the instance map for the zone map",
+       "date": "2026-09-12"
+      },
       {
        "h": "b3097ca4",
        "kind": "feat",
@@ -671,6 +1646,34 @@
        "date": "2026-09-08"
       },
       {
+       "h": "a96ca675",
+       "kind": "feat",
+       "scope": "nameplates",
+       "text": "Show what an NPC does under its name",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "f64e4ce8",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Apparent-size reach for zone-feature dressing, sweep extracted",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "74d42d37",
+       "kind": "fix",
+       "scope": "charselect",
+       "text": "Label world-start saves, guard bad positions, share the zone-name helper",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "f185da4f",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Stop the Wildheart caldera from changing the world light census",
+       "date": "2026-09-12"
+      },
+      {
        "h": "b9e3a3c6",
        "kind": "fix",
        "scope": "items",
@@ -678,10 +1681,24 @@
        "date": "2026-09-11"
       },
       {
+       "h": "d66edc08",
+       "kind": "fix",
+       "scope": "dev",
+       "text": "Prefer hub names over zone ids in /dev town and scope the digit guard",
+       "date": "2026-09-11"
+      },
+      {
        "h": "fb046768",
        "kind": "fix",
        "scope": "items",
        "text": "Review round on the stamina model: tier-delta floor, line-budget cycle, exact pins",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "69c5578d",
+       "kind": "fix",
+       "scope": "drakelands",
+       "text": "Make the Last Keep churchyard a functional graveyard",
        "date": "2026-09-11"
       },
       {
@@ -697,6 +1714,13 @@
        "scope": "ui",
        "text": "Stop the quest log offering a disclosure onto nothing",
        "date": "2026-09-08"
+      },
+      {
+       "h": "abbf3f66",
+       "kind": "fix",
+       "scope": "content",
+       "text": "Raise the sunken Bridgemere toll-chest onto the moat bank",
+       "date": "2026-09-07"
       }
      ]
     },
@@ -706,6 +1730,41 @@
      "fr": "Guilde & social",
      "en": "Guild & social",
      "items": [
+      {
+       "h": "074d9329",
+       "kind": "feat",
+       "scope": "social",
+       "text": "/who becomes a searchable, sortable Who tab in the Social window",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "885cf838",
+       "kind": "feat",
+       "scope": "social",
+       "text": "Mobile layout, capture rig and screenshots for the Who tab",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "1ba7bd47",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Name each live program's owner in the hunt report",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "a127ab6e",
+       "kind": "feat",
+       "scope": "input",
+       "text": "Add F1..F5 party target hotkeys keyed to the party frame rows",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "d927ac49",
+       "kind": "feat",
+       "scope": "input",
+       "text": "Extend the party target hotkeys to F1..F10",
+       "date": "2026-09-11"
+      },
       {
        "h": "6bd4bc64",
        "kind": "feat",
@@ -728,6 +1787,41 @@
        "date": "2026-09-07"
       },
       {
+       "h": "4320e6f3",
+       "kind": "feat",
+       "scope": "guild-bank",
+       "text": "Announce gold deposits and withdrawals to the guild",
+       "date": "2026-09-06"
+      },
+      {
+       "h": "bd45c420",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Only credit PvP hits on players outside the party, latch the first opponent",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "16851aa9",
+       "kind": "fix",
+       "scope": "social",
+       "text": "Review fixes for the Who tab (hot path, parity, a11y)",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "60632e6e",
+       "kind": "fix",
+       "scope": "social",
+       "text": "Repaint a same-count Who answer, honest tab while spectating",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "b2862547",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep party churn out of the Who tab digest and pin three roster tests",
+       "date": "2026-09-12"
+      },
+      {
        "h": "332c4a76",
        "kind": "fix",
        "scope": "ui",
@@ -743,11 +1837,81 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "c6a0bdc2",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Release instead of retiring the shader warm worker, A/B it on D3D11",
+       "date": "2026-09-13"
+      },
+      {
+       "h": "6b1716ba",
+       "kind": "feat",
+       "scope": "store",
+       "text": "Live mount-skin preview before purchase, plus Cosmetics previews",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "59c6e520",
+       "kind": "feat",
+       "scope": "input",
+       "text": "Bind the mouse wheel like a key and make camera zoom rebindable",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "8250fe14",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add a Hide Interface toggle for clean screenshots and videos",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "ee32dc1d",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Add the live program hunt script, skill and reviewer checks",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "3dfd32e8",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Let the hunt browser follow the window size",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "4b75d8ae",
+       "kind": "feat",
+       "scope": "store",
+       "text": "Repaint the Cluckwork Mech Bird card art",
+       "date": "2026-09-11"
+      },
+      {
        "h": "ca069787",
        "kind": "feat",
        "scope": "classes",
        "text": "Set the class health table by design after the stamina model",
        "date": "2026-09-11"
+      },
+      {
+       "h": "341b51c7",
+       "kind": "feat",
+       "scope": "dev",
+       "text": "Add /dev town teleport to any settlement hub by name",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "6de20dcf",
+       "kind": "feat",
+       "scope": "perf",
+       "text": "Mark desktop shell reports so the fleet can tell them from browser tabs",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "4d2c76b4",
+       "kind": "feat",
+       "scope": "sim",
+       "text": "Rework chronomancer mechanics and add healing monte carlo",
+       "date": "2026-09-10"
       },
       {
        "h": "c2704bf7",
@@ -890,11 +2054,284 @@
        "date": "2026-09-07"
       },
       {
+       "h": "92e72002",
+       "kind": "feat",
+       "scope": "actionbar",
+       "text": "Allow elixirs on the action bar",
+       "date": "2026-09-06"
+      },
+      {
        "h": "68ead5a4",
        "kind": "perf",
        "scope": "ui",
        "text": "Stop the map atlas rail rebuilding while the player walks",
        "date": "2026-09-08"
+      },
+      {
+       "h": "8ebad51c",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Cull the fen dressing per cell on the classic tiers",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "3fbaf5fa",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Key the fen cell split on the far-field policy",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "516df6d4",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Shed the fen clutter by apparent size on the far-vista arm",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "34498a5b",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Review follow-ups on the apparent-size reach",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "bb7d5a43",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Shed the fen clutter by apparent size on every profile",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "3e0ee62f",
+       "kind": "perf",
+       "scope": "render",
+       "text": "One fen build shape, willows split but never sized",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "95bf1e6b",
+       "kind": "perf",
+       "scope": "render",
+       "text": "A bench arm for the per-cell geometry binding",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "12a2b43b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Clear stale self offset on teleport residual",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "3f90e4d8",
+       "kind": "fix",
+       "scope": "unstuck",
+       "text": "Rescue battleground wall pressure after ESC",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "24e5e25f",
+       "kind": "fix",
+       "scope": "shell",
+       "text": "Restore wallet mini focus border",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "3367b0a5",
+       "kind": "fix",
+       "scope": "",
+       "text": "Format merged release changes",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "c90bc0a7",
+       "kind": "fix",
+       "scope": "",
+       "text": "Repair v0.43 release integration",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "2b1fef36",
+       "kind": "fix",
+       "scope": "",
+       "text": "Preserve healing training entity id stream",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "f5f3762c",
+       "kind": "fix",
+       "scope": "",
+       "text": "Organize world population invariant imports",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "570c4c6b",
+       "kind": "fix",
+       "scope": "",
+       "text": "Align release dummy and art pins",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "ddf80da2",
+       "kind": "fix",
+       "scope": "",
+       "text": "Satisfy batch gate formatting",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "1408eea7",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Upload a flipY DataTexture in one call, never by rows",
+       "date": "2026-09-13"
+      },
+      {
+       "h": "300d343f",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Give a released burst's requests back to the shader warm worker",
+       "date": "2026-09-13"
+      },
+      {
+       "h": "b5f2cdf1",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Retire a shader warm worker that goes silent while standing down",
+       "date": "2026-09-13"
+      },
+      {
+       "h": "71f88905",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Count damage dealt to players on the combat meters",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "dcec4f2a",
+       "kind": "fix",
+       "scope": "store",
+       "text": "Harden the mount preview after the review round",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "5848a908",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Attach the rider anchor on every view and register the pose core",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "a27abd75",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Park the mount preview stage by position and clamp preview DPR",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "10b4d97b",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Give the Cosmetics Preview button its own class and a null-safe store seam",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "aea13a7d",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Harden the Hide Interface hide set and drop the painter suffix",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "f37acac8",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Route the client beacons and ladders through apiUrl",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "ad88ed2d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Let the monument impostor shader compile, and link it in a test",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "08a94945",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Hand the shader prefixes back to three's diagnostic",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "0ea725a9",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Prewarm the Ignivar mechanic visuals in the Crucible arena",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "da5a113b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Anchor the ground fire AoE programs across waves",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "90e0954f",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Reveal-gate the Eastbrook monument with the town",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "aa481018",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Stage the Ring of Frost materials in the boot manifest",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "95fd9bd0",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Gate the Varkhul forge meter's attach",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "0d40834c",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Aim and balance the caldera grade like the removed fill pair",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "c34aacb1",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Review round on the live program lot",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "d9d7341e",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Close the shader warm worker's breaker holes",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "d065ae54",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Snap the self pose across teleports instead of gliding it",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "c5f6e354",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Measure the teleport jump from the anchored target, not the drawn pose",
+       "date": "2026-09-11"
       },
       {
        "h": "f31aa90d",
@@ -904,11 +2341,46 @@
        "date": "2026-09-11"
       },
       {
+       "h": "b118fa7d",
+       "kind": "fix",
+       "scope": "input",
+       "text": "Cancel a bound F-key's default on auto-repeats too",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "9a43523f",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Make the living-target tie-break explicit and skip stealthed players",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "2c325603",
+       "kind": "fix",
+       "scope": "perf",
+       "text": "Feed the fps hidden-time ledger from page visibility in the browser",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "dc14ba1a",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Shed raw_summary one rung at a time instead of dropping the whole blob",
+       "date": "2026-09-11"
+      },
+      {
        "h": "0b4570d8",
        "kind": "fix",
        "scope": "ui",
        "text": "Keep readable text on every fixed-dark primitive surface",
        "date": "2026-09-10"
+      },
+      {
+       "h": "fafe0bbd",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Trim colliders.ts comment to hold the monolith line ceiling",
+       "date": "2026-09-09"
       },
       {
        "h": "d24cfb69",
@@ -1037,6 +2509,13 @@
        "date": "2026-09-08"
       },
       {
+       "h": "81e69e15",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Tolerate finger jitter in touch tooltip peek",
+       "date": "2026-09-08"
+      },
+      {
        "h": "978d71ab",
        "kind": "fix",
        "scope": "ui",
@@ -1114,6 +2593,13 @@
        "date": "2026-09-08"
       },
       {
+       "h": "1e39699d",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Correct Hexcraft's stale example-ability showcase",
+       "date": "2026-09-08"
+      },
+      {
        "h": "71cf4a22",
        "kind": "fix",
        "scope": "hud",
@@ -1142,11 +2628,81 @@
        "date": "2026-09-08"
       },
       {
+       "h": "143393f5",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep a reveal that lands inside the hidden prewarm window",
+       "date": "2026-09-08"
+      },
+      {
        "h": "c02e723e",
        "kind": "fix",
        "scope": "hud",
        "text": "Fit the cross hotbar to the action rail and level the pad-mode frames",
        "date": "2026-09-08"
+      },
+      {
+       "h": "5ca25bff",
+       "kind": "fix",
+       "scope": "cosmetics",
+       "text": "Let an offhand-held weapon type take its Armory skin",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "2f835042",
+       "kind": "fix",
+       "scope": "cosmetics",
+       "text": "Answer review on the offhand skin rule",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "cc862bb9",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Give the sheathe swap its bone-texture pass for an unskinned hand",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "11dc19ce",
+       "kind": "fix",
+       "scope": "nameplates",
+       "text": "Typed role key in the test, memoized role lookup",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "d0625072",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Drop a teleport-scale replay residual by the same rule",
+       "date": "2026-09-06"
+      },
+      {
+       "h": "b052de9b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Reach the widest wall crossing per band and merge the deck",
+       "date": "2026-09-06"
+      },
+      {
+       "h": "7b1032dc",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Hatch only the shield segment on unit-frame health bars",
+       "date": "2026-09-06"
+      },
+      {
+       "h": "89695cb9",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep the absorb segment transform a constant, quantized shape",
+       "date": "2026-09-06"
+      },
+      {
+       "h": "119fcde4",
+       "kind": "fix",
+       "scope": "graphics",
+       "text": "Capture every graphics dial in the boot-time applied snapshot",
+       "date": "2026-09-06"
       }
      ]
     }
