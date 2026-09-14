@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-14T13:15:49Z",
+ "generated": "2026-09-14T19:33:27Z",
  "base_tag": "v0.42.2",
  "version": "v0.43.0",
  "branch": "ossbrain-release/v0.43.0",
  "declared_version": "0.43.0",
  "imminent": true,
- "commits": 380,
- "shown": 185,
- "last_commit": "2026-09-14T12:20:30Z",
+ "commits": 410,
+ "shown": 197,
+ "last_commit": "2026-09-14T18:18:07Z",
  "sections": [
   {
    "key": "classes",
@@ -86,6 +86,13 @@
    "fr": "Métiers & récolte",
    "en": "Professions & gathering",
    "items": [
+    {
+     "h": "0b312e34",
+     "kind": "feat",
+     "scope": "professions",
+     "text": "Retune the charm recipes from five Chime Shards to one",
+     "date": "2026-09-13"
+    },
     {
      "h": "51340f1b",
      "kind": "feat",
@@ -177,6 +184,13 @@
      "scope": "hud",
      "text": "Show the raid marker on the target frame",
      "date": "2026-09-07"
+    },
+    {
+     "h": "9a1f208d",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Skip the raid telegraph rig walks for rigs outside an encounter",
+     "date": "2026-09-13"
     },
     {
      "h": "39465119",
@@ -487,6 +501,20 @@
      "kind": "feat",
      "scope": "render",
      "text": "Release instead of retiring the shader warm worker, A/B it on D3D11",
+     "date": "2026-09-13"
+    },
+    {
+     "h": "da45c4f1",
+     "kind": "feat",
+     "scope": "market",
+     "text": "Add Market Sweep, a cheapest-first multi-listing buyout",
+     "date": "2026-09-13"
+    },
+    {
+     "h": "61ff571b",
+     "kind": "feat",
+     "scope": "render",
+     "text": "GPU timer probe behind ?gputimer=1",
      "date": "2026-09-13"
     },
     {
@@ -844,6 +872,62 @@
      "kind": "fix",
      "scope": "render",
      "text": "Retire a shader warm worker that goes silent while standing down",
+     "date": "2026-09-13"
+    },
+    {
+     "h": "a17e607b",
+     "kind": "fix",
+     "scope": "loot",
+     "text": "Keep a held full-bags award on the corpse for five minutes",
+     "date": "2026-09-13"
+    },
+    {
+     "h": "d143ff65",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Review round on Market Sweep: memo, all-or-nothing, arm marks",
+     "date": "2026-09-13"
+    },
+    {
+     "h": "88d05d0b",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Settle a sweep in plan order and trim the candidate memo guard",
+     "date": "2026-09-13"
+    },
+    {
+     "h": "8288f292",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep Enter-to-confirm alive after a mouse click, add a sell-confirm quality threshold",
+     "date": "2026-09-13"
+    },
+    {
+     "h": "a0e00cd2",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Scope the GPU timer probe to the present submit",
+     "date": "2026-09-13"
+    },
+    {
+     "h": "f4af99bc",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Close the GPU timer probe's warm-up and restore residuals",
+     "date": "2026-09-13"
+    },
+    {
+     "h": "a6d4c917",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stop treating a GPU-bound frame as an external frame cap",
+     "date": "2026-09-13"
+    },
+    {
+     "h": "bb0034d9",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Cache the ground samples under remote bodies instead of resampling every frame",
      "date": "2026-09-13"
     },
     {
@@ -1359,9 +1443,9 @@
    "branch": "ossbrain-release/v0.43.0",
    "declared_version": "0.43.0",
    "imminent": true,
-   "commits": 380,
-   "shown": 185,
-   "last_commit": "2026-09-14T12:20:30Z",
+   "commits": 410,
+   "shown": 197,
+   "last_commit": "2026-09-14T18:18:07Z",
    "sections": [
     {
      "key": "classes",
@@ -1440,6 +1524,13 @@
      "fr": "Métiers & récolte",
      "en": "Professions & gathering",
      "items": [
+      {
+       "h": "0b312e34",
+       "kind": "feat",
+       "scope": "professions",
+       "text": "Retune the charm recipes from five Chime Shards to one",
+       "date": "2026-09-13"
+      },
       {
        "h": "51340f1b",
        "kind": "feat",
@@ -1531,6 +1622,13 @@
        "scope": "hud",
        "text": "Show the raid marker on the target frame",
        "date": "2026-09-07"
+      },
+      {
+       "h": "9a1f208d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Skip the raid telegraph rig walks for rigs outside an encounter",
+       "date": "2026-09-13"
       },
       {
        "h": "39465119",
@@ -1841,6 +1939,20 @@
        "kind": "feat",
        "scope": "render",
        "text": "Release instead of retiring the shader warm worker, A/B it on D3D11",
+       "date": "2026-09-13"
+      },
+      {
+       "h": "da45c4f1",
+       "kind": "feat",
+       "scope": "market",
+       "text": "Add Market Sweep, a cheapest-first multi-listing buyout",
+       "date": "2026-09-13"
+      },
+      {
+       "h": "61ff571b",
+       "kind": "feat",
+       "scope": "render",
+       "text": "GPU timer probe behind ?gputimer=1",
        "date": "2026-09-13"
       },
       {
@@ -2198,6 +2310,62 @@
        "kind": "fix",
        "scope": "render",
        "text": "Retire a shader warm worker that goes silent while standing down",
+       "date": "2026-09-13"
+      },
+      {
+       "h": "a17e607b",
+       "kind": "fix",
+       "scope": "loot",
+       "text": "Keep a held full-bags award on the corpse for five minutes",
+       "date": "2026-09-13"
+      },
+      {
+       "h": "d143ff65",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Review round on Market Sweep: memo, all-or-nothing, arm marks",
+       "date": "2026-09-13"
+      },
+      {
+       "h": "88d05d0b",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Settle a sweep in plan order and trim the candidate memo guard",
+       "date": "2026-09-13"
+      },
+      {
+       "h": "8288f292",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep Enter-to-confirm alive after a mouse click, add a sell-confirm quality threshold",
+       "date": "2026-09-13"
+      },
+      {
+       "h": "a0e00cd2",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Scope the GPU timer probe to the present submit",
+       "date": "2026-09-13"
+      },
+      {
+       "h": "f4af99bc",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Close the GPU timer probe's warm-up and restore residuals",
+       "date": "2026-09-13"
+      },
+      {
+       "h": "a6d4c917",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Stop treating a GPU-bound frame as an external frame cap",
+       "date": "2026-09-13"
+      },
+      {
+       "h": "bb0034d9",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Cache the ground samples under remote bodies instead of resampling every frame",
        "date": "2026-09-13"
       },
       {
