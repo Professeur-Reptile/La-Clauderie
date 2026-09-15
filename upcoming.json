@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-14T23:22:30Z",
+ "generated": "2026-09-15T12:02:10Z",
  "base_tag": "v0.42.2",
  "version": "v0.43.0",
  "branch": "ossbrain-release/v0.43.0",
  "declared_version": "0.43.0",
  "imminent": true,
- "commits": 446,
- "shown": 211,
- "last_commit": "2026-09-14T23:04:16Z",
+ "commits": 494,
+ "shown": 236,
+ "last_commit": "2026-09-15T11:10:22Z",
  "sections": [
   {
    "key": "classes",
@@ -15,6 +15,62 @@
    "fr": "Classes & sorts",
    "en": "Classes & spells",
    "items": [
+    {
+     "h": "dd009bce",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Take the Wildfang kit pass 2 review round",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "6a64aed4",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "State the Wolf Form passive speed on its buff line",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "3649ab5d",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Make Loping Stride baseline and turn row 5 into Longstride",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "4ad52b9b",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Pin, the Bruin Rush to Wolf Form rider",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "754109a8",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Stalk moves at full speed",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "cd21ea51",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Lunge, the out-of-stealth shape of Slinkstrike",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "8808871d",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Hamstring Bite, the Wolf control finisher",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "1901aba6",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Wolf Form passive speed and Fleet Form control break",
+     "date": "2026-09-11"
+    },
     {
      "h": "c1c4c213",
      "kind": "feat",
@@ -171,6 +227,13 @@
      "date": "2026-09-12"
     },
     {
+     "h": "40837156",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "Never carry a Perfected-only enchant marker on a band",
+     "date": "2026-09-11"
+    },
+    {
      "h": "c4469364",
      "kind": "fix",
      "scope": "crafting",
@@ -214,6 +277,13 @@
      "date": "2026-09-07"
     },
     {
+     "h": "f18217ce",
+     "kind": "perf",
+     "scope": "sim",
+     "text": "Scope the raid readouts and rift lookups to the instance that can hold them",
+     "date": "2026-09-14"
+    },
+    {
      "h": "916109d9",
      "kind": "fix",
      "scope": "ui",
@@ -226,6 +296,13 @@
      "scope": "render",
      "text": "Skip the raid telegraph rig walks for rigs outside an encounter",
      "date": "2026-09-13"
+    },
+    {
+     "h": "8a306846",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "Let Riftbound bands take ring enchants at every rung",
+     "date": "2026-09-11"
     },
     {
      "h": "39465119",
@@ -404,6 +481,13 @@
      "date": "2026-09-11"
     },
     {
+     "h": "c4451b2e",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Take the Drakelands kit ember floor through its atlas",
+     "date": "2026-09-10"
+    },
+    {
      "h": "da7faba2",
      "kind": "fix",
      "scope": "ui",
@@ -496,6 +580,13 @@
      "date": "2026-09-06"
     },
     {
+     "h": "977bb13e",
+     "kind": "perf",
+     "scope": "ui",
+     "text": "Cache the meters party set on the roster and membership keys",
+     "date": "2026-09-14"
+    },
+    {
      "h": "bd45c420",
      "kind": "fix",
      "scope": "ui",
@@ -545,6 +636,13 @@
    "fr": "Confort & technique",
    "en": "Comfort & technical",
    "items": [
+    {
+     "h": "fb4de33d",
+     "kind": "feat",
+     "scope": "world_api",
+     "text": "Expose an entity roster version on both worlds",
+     "date": "2026-09-14"
+    },
     {
      "h": "c6a0bdc2",
      "kind": "feat",
@@ -784,6 +882,27 @@
      "date": "2026-09-06"
     },
     {
+     "h": "bac5c163",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Harden the CPU-hygiene lot after review",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "946cb16d",
+     "kind": "perf",
+     "scope": "shaders",
+     "text": "Record the shader corpus as background queue units and reuse the boot adapter string",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "e6bf7ad0",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Re-check admissibility at view build and clamp the tree index",
+     "date": "2026-09-15"
+    },
+    {
      "h": "fd8112c1",
      "kind": "perf",
      "scope": "foliage",
@@ -795,6 +914,34 @@
      "kind": "perf",
      "scope": "ui",
      "text": "Stop re-resolving the whole HUD's style every frame",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "622fa6e2",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Scan for missing entity views only when the roster or view set changed",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "fe44db50",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Park the character preview loop while the preview is hidden",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "15140b5c",
+     "kind": "perf",
+     "scope": "ui",
+     "text": "Format the minimap clock once per displayed minute",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "5e64e7c4",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Index the tree occluder fade and note anglers from the view loop",
      "date": "2026-09-14"
     },
     {
@@ -852,6 +999,34 @@
      "scope": "render",
      "text": "A bench arm for the per-cell geometry binding",
      "date": "2026-09-08"
+    },
+    {
+     "h": "33d9930b",
+     "kind": "fix",
+     "scope": "unstuck",
+     "text": "Cancel bg rescue after fresh movement",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "9c330538",
+     "kind": "fix",
+     "scope": "shaders",
+     "text": "Hold the gzip unit's tail and skip deleted programs in the corpus walk",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "6b1fa6f9",
+     "kind": "fix",
+     "scope": "shaders",
+     "text": "Drop the isProgram query and log a queue shutdown at info level",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "1fc82087",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Build the queue shutdown error inside shutdown instead of renaming the caller's",
+     "date": "2026-09-15"
     },
     {
      "h": "bcb5a82d",
@@ -1541,9 +1716,9 @@
    "branch": "ossbrain-release/v0.43.0",
    "declared_version": "0.43.0",
    "imminent": true,
-   "commits": 446,
-   "shown": 211,
-   "last_commit": "2026-09-14T23:04:16Z",
+   "commits": 494,
+   "shown": 236,
+   "last_commit": "2026-09-15T11:10:22Z",
    "sections": [
     {
      "key": "classes",
@@ -1551,6 +1726,62 @@
      "fr": "Classes & sorts",
      "en": "Classes & spells",
      "items": [
+      {
+       "h": "dd009bce",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Take the Wildfang kit pass 2 review round",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "6a64aed4",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "State the Wolf Form passive speed on its buff line",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "3649ab5d",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Make Loping Stride baseline and turn row 5 into Longstride",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "4ad52b9b",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Pin, the Bruin Rush to Wolf Form rider",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "754109a8",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Stalk moves at full speed",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "cd21ea51",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Lunge, the out-of-stealth shape of Slinkstrike",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "8808871d",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Hamstring Bite, the Wolf control finisher",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "1901aba6",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Wolf Form passive speed and Fleet Form control break",
+       "date": "2026-09-11"
+      },
       {
        "h": "c1c4c213",
        "kind": "feat",
@@ -1707,6 +1938,13 @@
        "date": "2026-09-12"
       },
       {
+       "h": "40837156",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Never carry a Perfected-only enchant marker on a band",
+       "date": "2026-09-11"
+      },
+      {
        "h": "c4469364",
        "kind": "fix",
        "scope": "crafting",
@@ -1750,6 +1988,13 @@
        "date": "2026-09-07"
       },
       {
+       "h": "f18217ce",
+       "kind": "perf",
+       "scope": "sim",
+       "text": "Scope the raid readouts and rift lookups to the instance that can hold them",
+       "date": "2026-09-14"
+      },
+      {
        "h": "916109d9",
        "kind": "fix",
        "scope": "ui",
@@ -1762,6 +2007,13 @@
        "scope": "render",
        "text": "Skip the raid telegraph rig walks for rigs outside an encounter",
        "date": "2026-09-13"
+      },
+      {
+       "h": "8a306846",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Let Riftbound bands take ring enchants at every rung",
+       "date": "2026-09-11"
       },
       {
        "h": "39465119",
@@ -1940,6 +2192,13 @@
        "date": "2026-09-11"
       },
       {
+       "h": "c4451b2e",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Take the Drakelands kit ember floor through its atlas",
+       "date": "2026-09-10"
+      },
+      {
        "h": "da7faba2",
        "kind": "fix",
        "scope": "ui",
@@ -2032,6 +2291,13 @@
        "date": "2026-09-06"
       },
       {
+       "h": "977bb13e",
+       "kind": "perf",
+       "scope": "ui",
+       "text": "Cache the meters party set on the roster and membership keys",
+       "date": "2026-09-14"
+      },
+      {
        "h": "bd45c420",
        "kind": "fix",
        "scope": "ui",
@@ -2081,6 +2347,13 @@
      "fr": "Confort & technique",
      "en": "Comfort & technical",
      "items": [
+      {
+       "h": "fb4de33d",
+       "kind": "feat",
+       "scope": "world_api",
+       "text": "Expose an entity roster version on both worlds",
+       "date": "2026-09-14"
+      },
       {
        "h": "c6a0bdc2",
        "kind": "feat",
@@ -2320,6 +2593,27 @@
        "date": "2026-09-06"
       },
       {
+       "h": "bac5c163",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Harden the CPU-hygiene lot after review",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "946cb16d",
+       "kind": "perf",
+       "scope": "shaders",
+       "text": "Record the shader corpus as background queue units and reuse the boot adapter string",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "e6bf7ad0",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Re-check admissibility at view build and clamp the tree index",
+       "date": "2026-09-15"
+      },
+      {
        "h": "fd8112c1",
        "kind": "perf",
        "scope": "foliage",
@@ -2331,6 +2625,34 @@
        "kind": "perf",
        "scope": "ui",
        "text": "Stop re-resolving the whole HUD's style every frame",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "622fa6e2",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Scan for missing entity views only when the roster or view set changed",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "fe44db50",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Park the character preview loop while the preview is hidden",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "15140b5c",
+       "kind": "perf",
+       "scope": "ui",
+       "text": "Format the minimap clock once per displayed minute",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "5e64e7c4",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Index the tree occluder fade and note anglers from the view loop",
        "date": "2026-09-14"
       },
       {
@@ -2388,6 +2710,34 @@
        "scope": "render",
        "text": "A bench arm for the per-cell geometry binding",
        "date": "2026-09-08"
+      },
+      {
+       "h": "33d9930b",
+       "kind": "fix",
+       "scope": "unstuck",
+       "text": "Cancel bg rescue after fresh movement",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "9c330538",
+       "kind": "fix",
+       "scope": "shaders",
+       "text": "Hold the gzip unit's tail and skip deleted programs in the corpus walk",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "6b1fa6f9",
+       "kind": "fix",
+       "scope": "shaders",
+       "text": "Drop the isProgram query and log a queue shutdown at info level",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "1fc82087",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Build the queue shutdown error inside shutdown instead of renaming the caller's",
+       "date": "2026-09-15"
       },
       {
        "h": "bcb5a82d",
