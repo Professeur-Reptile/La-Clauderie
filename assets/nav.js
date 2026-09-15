@@ -91,6 +91,7 @@
     { id: 'home',    file: 'index.html',       fr: 'Accueil',       en: 'Home' },
     { id: 'guilde',  file: 'guilde.html',      fr: '🛡️ Guilde',      en: '🛡️ Guild' },
     { id: 'bis',     file: 'bis.html',         fr: '⚔️ Builds',      en: '⚔️ Builds' },
+    { id: 'dps',     file: 'dps.html',         fr: '📈 DPS',         en: '📈 DPS' },
     { id: 'metiers', file: 'metiers.html',     fr: '🌿 Métiers',     en: '🌿 Professions' },
     { id: 'pvp',     file: 'pvp.html',         fr: '🏆 PvP',         en: '🏆 PvP' },
     { id: 'failles', file: 'failles.html',     fr: '🌀 Failles',     en: '🌀 Rifts' },

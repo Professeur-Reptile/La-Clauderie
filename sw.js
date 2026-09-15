@@ -20,6 +20,7 @@ var CACHE = 'clauderie-v2';
 var SHELL = [
   './',
   './index.html',
+  './dps.html',
   './patch-notes.json',
   './assets/nav.js',
   './assets/lang.js',

@@ -1,7 +1,7 @@
 {
   "name": "La Clauderie — Guilde World of ClaudeCraft",
   "short_name": "La Clauderie",
-  "description": "La guilde francophone de World of ClaudeCraft : events, builds, métiers, PvP, nouveautés et Codex.",
+  "description": "La guilde francophone de World of ClaudeCraft : events, builds, DPS, métiers, PvP, nouveautés et Codex.",
   "lang": "fr",
   "id": "/",
   "start_url": "./",
@@ -17,6 +17,7 @@
   ],
   "shortcuts": [
     { "name": "Builds", "url": "bis.html" },
+    { "name": "DPS par classe", "url": "dps.html" },
     { "name": "Récolte & Métiers", "url": "metiers.html" },
     { "name": "PvP", "url": "pvp.html" },
     { "name": "Nouveautés", "url": "patch-notes.html" }

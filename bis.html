@@ -35083,7 +35083,8 @@ document.getElementById("bisList").addEventListener("click", e => {
   if (it) openItemModal(it);
 });
 
-let curCls = Object.keys(BIS)[0];
+const requestedCls = new URLSearchParams(location.search).get("class");
+let curCls = requestedCls && BIS[requestedCls] ? requestedCls : Object.keys(BIS)[0];
 let curRole = null;
 
 function fmtStats(it) {

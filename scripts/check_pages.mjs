@@ -70,6 +70,7 @@ const PAGES = [
   // on ne les exige PAS, sinon une panne chez eux bloquerait la publication.
   { path: '/guilde.html', filled: [] },
   { path: '/bis.html', filled: ['#bisList', '#buildBox'] },
+  { path: '/dps.html', filled: ['#dpsTable'] },
   { path: '/metiers.html', filled: ['#view-recolte', '#view-metiers'] },
   { path: '/pvp.html', filled: ['#buildBox'] },
   { path: '/failles.html', filled: [] },

@@ -11,6 +11,7 @@ Site statique, simple : un calendrier de guilde, le Discord, et les nouveautés 
 |---|---|
 | `index.html` | Accueil : Discord, guides, puis 3 onglets — Calendrier (à venir + passés), Membres, Faits d'armes |
 | `bis.html` | Builds par classe et rôle : spé, talents, rotation (éditorial, bloc `BUILDS`) et best-in-slot (bloc `BIS`, recalculé automatiquement par `update-bis.yml` → `scripts/compute_bis.py`) |
+| `dps.html` | DPS maximal simulé par classe avec le build DPS recommandé et l'équipement BiS de la page Builds |
 | `metiers.html` | Récolte & Métiers : où récolter (minerai/bois/herbes/pêche) par zone et toutes les recettes par métier (bloc `CRAFT` recalculé automatiquement par `update-bis.yml` → `scripts/build_craft.py`, données embarquées) + guide Enchantement éditorial |
 | `pvp.html` | Guide PvP : modes, Honor/Warfare, un build d'arène par classe, compos 2v2 et Protect Yumi — éditorial, vérifié sur les documents de design du jeu |
 | `failles.html` | Guide Failles (v0.32.0) : portails C/B/A/S, course au first-clear, butin rang par rang, forge à Essence — éditorial, vérifié sur le code du jeu |

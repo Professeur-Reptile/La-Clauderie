@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>DPS par classe — La Clauderie</title>
+<meta name="description" content="DPS maximal simulé pour chaque classe avec le build recommandé par La Clauderie.">
+<meta name="theme-color" content="#c8a04b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Clauderie">
+<meta property="og:title" content="DPS par classe — La Clauderie">
+<meta property="og:description" content="DPS maximal simulé pour chaque classe avec le build recommandé par La Clauderie.">
+<meta property="og:url" content="https://laclauderie.fr/dps.html">
+<link rel="canonical" href="https://laclauderie.fr/dps.html">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Clauderie">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="assets/pwa.js" defer></script>
+<style>
+  :root { --bg:#0b0d12; --card:#161a24; --line:#262c3a; --line-soft:#1e2431; --gold:#c8a04b; --gold-bright:#e6c37a; --text:#dfe3ea; --dim:#8b93a3; --faint:#5b6272; --dps:#e5544a; --font:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; --display:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; --mono:"SF Mono",ui-monospace,"Cascadia Code",Menlo,Consolas,monospace; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.5; -webkit-font-smoothing:antialiased; background-image:radial-gradient(ellipse 900px 460px at 15% -8%,rgba(229,84,74,.08),transparent 70%),radial-gradient(ellipse 760px 400px at 88% -4%,rgba(200,160,75,.07),transparent 70%); }
+  a { color:inherit; }
+  .wrap { max-width:880px; margin:0 auto; padding:0 clamp(16px,4vw,28px); }
+  .topbar { position:sticky; top:0; z-index:40; background:color-mix(in srgb,var(--bg) 88%,transparent); backdrop-filter:blur(12px); border-bottom:1px solid var(--line-soft); }
+  .topbar .row { max-width:880px; margin:0 auto; padding:8px clamp(16px,4vw,28px); display:flex; align-items:center; gap:14px; min-height:56px; }
+  .brand { display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .sigil { width:26px; height:30px; flex:none; background:linear-gradient(160deg,var(--gold-bright),var(--gold) 55%,#8a6d2e); clip-path:polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display:grid; place-items:center; color:#1a130a; font-family:var(--display); font-weight:700; font-size:.85rem; }
+  .brand b { font-family:var(--display); font-weight:600; font-size:1.05rem; }
+  .topnav { margin-left:auto; display:flex; align-items:center; gap:4px 16px; flex-wrap:wrap; font-size:.88rem; }
+  .topnav a { color:var(--dim); text-decoration:none; }
+  .topnav a:hover { color:var(--gold-bright); }
+  .topnav .cur { color:var(--gold-bright); font-weight:600; }
+  @media (max-width:620px) { .brand b{display:none;} .topnav{gap:4px 11px;font-size:.82rem;} }
+  header.page { padding:clamp(36px,6vw,60px) 0 24px; }
+  .eyebrow { font-family:var(--mono); font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin:0 0 12px; }
+  h1 { font-family:var(--display); font-weight:600; font-size:clamp(2.1rem,6vw,3.2rem); line-height:1.05; margin:0 0 10px; }
+  .lede { color:var(--dim); max-width:68ch; margin:0; font-size:.98rem; }
+  .note { background:color-mix(in srgb,var(--gold) 8%,transparent); border:1px solid color-mix(in srgb,var(--gold) 30%,transparent); border-radius:10px; padding:13px 16px; font-size:.88rem; color:var(--dim); margin:18px 0 24px; }
+  .note b { color:var(--gold-bright); }
+  .table-wrap { overflow-x:auto; border:1px solid var(--line-soft); border-radius:12px; background:var(--card); }
+  table { width:100%; border-collapse:collapse; min-width:650px; }
+  th { text-align:left; font-family:var(--mono); font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; color:var(--faint); padding:11px 14px; border-bottom:1px solid var(--line); }
+  td { padding:13px 14px; border-bottom:1px solid var(--line-soft); color:var(--dim); vertical-align:middle; }
+  tr:last-child td { border-bottom:0; }
+  td:first-child { color:var(--text); font-weight:650; }
+  td.num { color:var(--gold-bright); font-family:var(--mono); font-size:1.02rem; font-weight:700; white-space:nowrap; }
+  .spec { color:var(--text); font-weight:600; }
+  .method { font-size:.82rem; }
+  .build-link { color:var(--gold-bright); text-decoration:none; border-bottom:1px dotted color-mix(in srgb,var(--gold-bright) 55%,transparent); white-space:nowrap; }
+  .build-link:hover { color:#fff; }
+  .rank { color:var(--faint); font-family:var(--mono); width:2.8rem; }
+  .foot { color:var(--faint); font-size:.82rem; margin:14px 0 0; }
+  footer { border-top:1px solid var(--line-soft); margin-top:44px; padding:26px 0 50px; color:var(--faint); font-size:.82rem; text-align:center; }
+  footer a { color:var(--dim); text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="topbar"><div class="row"><a href="index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a><nav class="topnav" data-guild-nav data-current="dps" aria-label="Navigation du site"></nav></div></div>
+<main class="wrap">
+  <header class="page">
+    <p class="eyebrow" data-en="Damage benchmark · Patch v0.42.2">Comparatif de dégâts · Patch v0.42.2</p>
+    <h1 data-en="Maximum DPS by class">DPS maximal par classe</h1>
+    <p class="lede" data-en="The highest simulated sustained damage for each class, using the DPS build recommended on the Builds page and a complete BiS gear set.">Le meilleur DPS soutenu simulé pour chaque classe, avec le build DPS recommandé sur la page Builds et un équipement BiS complet.</p>
+  </header>
+  <div class="note" data-en="<b>How to read this:</b> one recommended DPS spec per class is compared: the first DPS build shown on the Builds page. These are controlled simulator results, not a promise for every real fight. The model assumes level 20, complete BiS gear, a clean single-target rotation and the Nythraxis normal encounter. Movement, mechanics, latency and player execution lower the result."><b>À lire avant de comparer :</b> une seule spé DPS est comparée par classe : le premier build DPS affiché sur la page Builds. Ce sont des résultats contrôlés du simulateur, pas une promesse pour tous les combats. Le modèle suppose le niveau 20, le BiS complet, une rotation propre sur une seule cible et Nythraxis en normal. Les déplacements, les mécaniques, le temps de réaction et les erreurs font baisser le résultat.</div>
+  <div class="table-wrap">
+    <table aria-describedby="dps-foot"><thead><tr><th>#</th><th data-en="Class">Classe</th><th data-en="Recommended DPS spec">Spé DPS proposée</th><th data-en="Sustained DPS">DPS soutenu</th><th data-en="Source">Source</th></tr></thead><tbody id="dpsTable"></tbody></table>
+  </div>
+  <p class="foot" id="dps-foot" data-en="Average active DPS (while the character can act) over two deterministic seeds from the game's Nythraxis matrix; values are rounded to one decimal. The ranking can change when the patch or the recommended build changes.">Moyenne du DPS actif (pendant que le personnage peut agir) sur deux graines déterministes de la matrice Nythraxis du jeu ; valeurs arrondies au dixième. Le classement peut changer avec le patch ou le build recommandé.</p>
+</main>
+<footer><div class="wrap"><p>Calculé pour <strong>La Clauderie</strong> à partir du simulateur public du jeu.</p><p style="margin-top:8px"><a href="bis.html">← Voir les builds</a> · <a href="index.html">Accueil</a></p></div></footer>
+<script src="assets/nav.js"></script><script src="assets/lang.js"></script>
+<script>
+const DPS = [
+  // Source : v0.42.2, Nythraxis normal, 20 groupes × 2 graines (42, 1337).
+  // Valeurs = moyenne activeDps du simulateur, pour la première spé DPS de BUILDS.
+  { class:'warlock', spec:'Hexcraft (affliction)', dps:140.7 },
+  { class:'rogue', spec:'Thuggery (combat)', dps:134.3 },
+  { class:'mage', spec:'Pyromancy (fire)', dps:131.6 },
+  { class:'druid', spec:'Moongrove (balance)', dps:130.6 },
+  { class:'hunter', spec:'Coldsight (marksmanship)', dps:123.3 },
+  { class:'paladin', spec:'Dawnreaver (retribution)', dps:108.5 },
+  { class:'priest', spec:'Vespers (shadow)', dps:101.5 },
+  { class:'shaman', spec:'Warspirit (enhancement)', dps:92.4 },
+  { class:'warrior', spec:'Bloodrush (fury)', dps:80.9 },
+];
+const CLASS_FR = { warrior:'Guerrier', paladin:'Paladin', shaman:'Chaman', druid:'Druide', priest:'Prêtre', mage:'Mage', warlock:'Démoniste', rogue:'Voleur', hunter:'Chasseur' };
+const CLASS_EN = { warrior:'Warrior', paladin:'Paladin', shaman:'Shaman', druid:'Druid', priest:'Priest', mage:'Mage', warlock:'Warlock', rogue:'Rogue', hunter:'Hunter' };
+const loc = v => LANG === 'en' ? (v.en || v.fr) : v.fr;
+document.getElementById('dpsTable').innerHTML = DPS.map((row, i) => `<tr><td class="rank">${i + 1}</td><td>${LANG === 'en' ? CLASS_EN[row.class] : CLASS_FR[row.class]}</td><td><span class="spec">${row.spec}</span></td><td class="num">${row.dps.toFixed(1)} DPS</td><td class="method"><a class="build-link" href="bis.html?class=${encodeURIComponent(row.class)}">${T({ fr: 'Voir le build', en: 'See the build' })}</a></td></tr>`).join('');
+applyLang();
+</script>
+</body>
+</html>

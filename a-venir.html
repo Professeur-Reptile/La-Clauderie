@@ -196,22 +196,22 @@
 <div class="wrap">
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · En préparation</p>
-    <h1>La prochaine version <span class="v" id="vNum">v0.40.0</span></h1>
-    <p class="lede">La <a href="notes/v0.41.4.html">v0.41.4</a> est sortie, et la v0.42.0 se prépare — <strong class="hl">plus de 570 commits</strong>, plus du double du dernier relevé, et le jeu a <strong class="hl">fixé son numéro de version</strong>. Deux morceaux nous concernent directement. La <strong class="hl">forge de Faille</strong> arrive enfin pour de vrai, avec un PNJ qui améliore les anneaux Riftbound — le système tournait en coulisses depuis des versions sans aucun bouton pour s’en servir. Et la <strong class="hl">guilde pourra s’agrandir contre de l’or</strong> : le maître de guilde achètera des pages de places supplémentaires. À côté : le corps à corps arrête de te faire pivoter tout seul, et les bandeaux de buffs sont réorganisés.</p>
+    <h1>La prochaine version <span class="v" id="vNum">v0.43.0</span></h1>
+    <p class="lede">La <a href="notes/v0.42.2.html">v0.42.2</a> est sortie, et la <strong class="hl">v0.43.0</strong> se prépare. Le chantier est déjà très fourni : une refonte visible de l’interface, un nouvel onglet <strong class="hl">Who</strong> pour chercher les joueurs, un kit Wildfang retravaillé, et des améliorations concrètes pour les métiers, les donjons et la guilde.</p>
 
     <div class="warn">
       <span class="ico" aria-hidden="true">⚠️</span>
       <div>
         <p><strong>Cette version n’est pas sortie.</strong> Tout ce qui suit est déjà mergé sur la branche que les développeurs préparent, mais peut encore être modifié, retiré, ou repoussé à plus tard.</p>
-        <p>Le jeu a <strong>fixé son numéro de version</strong>, le dernier geste avant publication — mais il l’avait déjà fait il y a plusieurs jours et a sorti quatre correctifs entre-temps, donc « imminent » ne veut pas dire « demain ». Cette page ne donne <strong>aucun chiffre</strong> de la branche : le prix des pages de guilde, par exemple, a déjà été re-tarifé deux fois en cours de route. Les vraies notes, vérifiées ligne à ligne dans le code, arriveront dans <a href="patch-notes.html">Nouveautés</a> le jour de la sortie.</p>
+        <p>Le numéro de version est déjà fixé, mais cette page reste un aperçu de travail : les détails peuvent encore changer. Les vraies notes, vérifiées dans le code, arriveront dans <a href="patch-notes.html">Nouveautés</a> le jour de la sortie.</p>
       </div>
     </div>
 
     <div class="meta">
-      <span><b>Depuis</b> la v0.41.4</span>
+      <span><b>Depuis</b> la v0.42.2</span>
       <span id="freshness"><b>Dernière vérification</b> à l’instant</span>
       <span id="moved"></span>
-      <span id="written"><b>Résumé écrit</b> le 6 septembre 2026</span>
+      <span id="written"><b>Résumé écrit</b> le 15 septembre 2026</span>
     </div>
     <p class="sec-sub" style="margin:6px 0 0;font-size:0.85rem">« Dernière vérification » = la dernière fois que cette page est allée voir où en sont les développeurs. « Dernier changement du jeu » = quand ils ont touché à cette version pour la dernière fois.</p>
     <div id="chantiers"></div>
@@ -222,161 +222,77 @@
     <h2 id="digest-title">En un coup d’œil</h2>
     <p class="sec-sub">Les mêmes rubriques qu’à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
     <ol>
-      <li>
-        <span class="d-ico" aria-hidden="true">⚔️</span>
-        <a class="d-name" href="#combat">Classes &amp; sorts</a>
-        <span class="d-say">— <b class="eq">Toutes =</b> pour l’instant : <b>aucune valeur de sort ni de talent ne bouge</b> sur la branche. Ce qui change est commun. Ton personnage <b>pivote tout seul</b> vers sa cible au corps à corps : un <b>réglage</b> arrive pour couper ça, et l’orientation sera <b>figée</b> pendant une canalisation. Les <b>bandeaux de buffs et de débuffs</b> sont réorganisés — rangés par urgence, empilés en une seule colonne, et ils retrouvent leur place après une remise à zéro de l’interface.</span>
-      </li>
-      <li>
-        <span class="d-ico" aria-hidden="true">🔨</span>
-        <a class="d-name" href="#confort">Métiers &amp; récolte</a>
-        <span class="d-say">— Peu de choses : <b>ré-appliquer le même enchantement</b> consommera bien ses réactifs au lieu de passer en silence, et le <b>dépôt-tout</b> du coffre à matériaux <b>nommera</b> ce qu’il vient d’emporter quand c’est épique ou mieux.</span>
-      </li>
-      <li>
-        <span class="d-ico" aria-hidden="true">🐉</span>
-        <a class="d-name" href="#forge">Donjons, failles &amp; boss</a>
-        <span class="d-say">— <b>La forge de Faille arrive.</b> Un PNJ dédié améliorera tes anneaux Riftbound, et le système passe d’une mécanique éteinte en coulisses à quelque chose d’utilisable. Le <b>butin du raid</b> sera calé sur le nombre de participants, et la <b>carte du monde</b> saura afficher un donjon de groupe.</span>
-      </li>
-      <li>
-        <span class="d-ico" aria-hidden="true">🗺️</span>
-        <a class="d-name" href="#confort">Monde &amp; quêtes</a>
-        <span class="d-say">— Les nouveaux joueurs seront <b>orientés vers la cloche du bac</b> de <span data-codex="zone|The Proving Shore">Proving Shore</span>, qu’ils ne trouvaient pas. Un monstre <b>en fuite</b> ne pourra plus être attaqué ni pris pour cible, et les relais du <b>Reliquaire</b> diront quel marchand les débloque.</span>
-      </li>
-      <li>
-        <span class="d-ico" aria-hidden="true">🏰</span>
-        <a class="d-name" href="#guilde">Guilde &amp; social</a>
-        <span class="d-say">— <b>La guilde pourra s’agrandir contre de l’or</b> : le maître de guilde achètera des <b>pages de places</b> supplémentaires, chacune de plus en plus chère. Autre confort qui compte : le jeu t’enverra un <b>message privé</b> quand ta file de champ de bataille ou d’arène est prête.</span>
-      </li>
-      <li>
-        <span class="d-ico" aria-hidden="true">⚙️</span>
-        <a class="d-name" href="#confort">Confort &amp; technique</a>
-        <span class="d-say">— C’est la plus grosse rubrique, et de loin. Un réglage de <b>texte de vie</b> sur ton cadre et celui de ta cible, une <b>disposition de barres d’action par type de commande</b> (clavier, manette, tactile), la <b>taille du texte de discussion</b> qui monte beaucoup plus haut, et tout un travail de coulisses pour savoir <b>quelle carte graphique</b> tourne chez qui.</span>
-      </li>
+      <li><span class="d-ico" aria-hidden="true">⚔️</span><a class="d-name" href="#combat">Classes &amp; sorts</a><span class="d-say">— <b class="eq">Classes =</b> : le chantier retravaille surtout le kit <span data-codex="spec|Wildfang">Wildfang</span> du druide et l’affichage des auras. Aucun chiffre final de dégâts n’est arrêté.</span></li>
+      <li><span class="d-ico" aria-hidden="true">🔨</span><a class="d-name" href="#metiers">Métiers &amp; récolte</a><span class="d-say">— Recettes de charmes simplifiées, recettes épinglées à l’écran, tutoriel de récolte et fenêtres de fabrication et de marché réunies.</span></li>
+      <li><span class="d-ico" aria-hidden="true">🐉</span><a class="d-name" href="#donjons">Donjons, failles &amp; boss</a><span class="d-say">— Avertissement de raid, compte à rebours de pull, ready check, cadres de raid plus lisibles et enchantements sur les anneaux Riftbound.</span></li>
+      <li><span class="d-ico" aria-hidden="true">🗺️</span><a class="d-name" href="#monde">Monde &amp; quêtes</a><span class="d-say">— Suivi de quête réparé, bouton « montrer sur la carte », zone de chaque personnage visible et conseils des PNJ sous forme de bulles.</span></li>
+      <li><span class="d-ico" aria-hidden="true">🏰</span><a class="d-name" href="#guilde">Guilde &amp; social</a><span class="d-say">— Un onglet <b>Who</b> permet de rechercher et trier les joueurs ; la banque de guilde annonce aussi les dépôts et retraits d’or.</span></li>
+      <li><span class="d-ico" aria-hidden="true">⚙️</span><a class="d-name" href="#confort">Confort &amp; technique</a><span class="d-say">— Refonte générale des fenêtres, de la barre d’action, du HUD tactile et des options, avec historique du marché et mode interface masquée.</span></li>
     </ol>
   </nav>
 
   <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
        s'efface d'elle-même quand cette version sort, et se signale périmée si
        le jeu passe à préparer la suivante. -->
-  <div id="editorial" data-for="v0.42.0" data-commits="572" data-chantiers="v0.42.0" data-written="2026-09-06T12:55+02:00">
+  <div id="editorial" data-for="v0.43.0" data-commits="494" data-chantiers="v0.43.0" data-written="2026-09-15T14:00+02:00">
 
-  <!-- 1 LA FORGE DE FAILLE -->
-  <section id="forge">
-    <div class="sec-head"><span class="sec-num">01</span><h2>La forge de Faille arrive enfin</h2></div>
-    <p class="sec-sub">C’est la nouvelle qui nous concerne le plus : le système d’amélioration des anneaux de Faille tournait <strong class="hl">déjà</strong> côté serveur depuis plusieurs versions, sans aucun bouton pour s’en servir — au point qu’il a fallu le couper, puis annuler ce qui avait été forgé par le trou. Voir la <a href="failles.html">page Failles</a> pour l’historique.</p>
-    <div class="grid cols-3">
-      <div class="card more" data-detail="forge" tabindex="0" role="button" aria-label="Détails : ce qu’on sait de la forge, et ce qui reste flou">
-        <h3>Un PNJ pour améliorer tes anneaux <span class="chip c-new">Nouveau</span></h3>
-        <p>Un <strong class="hl">Riftwright</strong> dédié se chargera d’améliorer les anneaux <strong class="hl">Riftbound</strong>. Le prix sera calé sur une <strong class="hl">échelle de niveau d’objet</strong> plutôt qu’un tarif unique, et le journal de la forge sera traduit.</p>
-        <span class="more-link">Voir ce qu’on sait, et ce qui reste flou</span>
-      </div>
-      <div class="card">
-        <h3>Le butin du raid suivra le groupe <span class="chip c-bal">Le changement</span></h3>
-        <ul>
-          <li>Aujourd’hui un boss du Creuset lâche un nombre d’objets <strong class="hl">fixe</strong>, quel que soit le nombre de présents.</li>
-          <li>La branche le cale sur le <strong class="hl">nombre de participants</strong> : plus vous êtes, plus il tombe d’objets.</li>
-          <li>Si ça tient, monter le raid <strong class="hl">au complet</strong> deviendra plus intéressant que d’y aller à effectif réduit — l’inverse d’aujourd’hui.</li>
-          <li>Le rapport exact n’est pas figé, donc pas de chiffre ici.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Et deux conforts d’instance <span class="chip c-util">Divers</span></h3>
-        <ul>
-          <li>La <strong class="hl">carte du monde</strong> saura quitter un plan d’instance et afficher le donjon où est ton groupe.</li>
-          <li>Les <strong class="hl">marqueurs de groupe</strong> resteront sur la copie d’instance que tu regardes, au lieu de se mélanger.</li>
-          <li>Ton cadre de joueur <strong class="hl">s’allumera</strong> quand un boss te retient en combat — la suite directe de la <a href="notes/v0.41.3.html#combat">règle du combat qui colle</a>.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2 GUILDE -->
-  <section id="guilde">
-    <div class="sec-head"><span class="sec-num">02</span><h2>La guilde pourra s’agrandir</h2></div>
-    <p class="sec-sub">Le deuxième morceau qui nous touche directement, et le premier depuis longtemps qui concerne la gestion de la guilde plutôt que le combat.</p>
-    <div class="grid cols-3">
-      <div class="card more" data-detail="places" tabindex="0" role="button" aria-label="Détails : les pages de places de guilde, et pourquoi aucun prix ici">
-        <h3>Des pages de places, contre de l’or <span class="chip c-new">Nouveau</span></h3>
-        <p>Le <strong class="hl">maître de guilde</strong> pourra acheter des <strong class="hl">pages</strong> de places supplémentaires, chacune plus chère que la précédente. Le plafond de la guilde monte donc, contre de l’or de guilde.</p>
-        <span class="more-link">Voir pourquoi aucun prix ici</span>
-      </div>
-      <div class="card">
-        <h3>Un message quand ta file part <span class="chip c-new">Confort</span></h3>
-        <ul>
-          <li>Le jeu t’enverra un <strong class="hl">message privé</strong> quand ta file de <strong class="hl">champ de bataille</strong> ou d’<strong class="hl">arène</strong> trouve un match.</li>
-          <li>Utile quand on fait autre chose en attendant — c’était le reproche récurrent sur Thornhollow Fields, dont la file a besoin de dix joueurs.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>La discussion se lit enfin <span class="chip c-new">Confort</span></h3>
-        <ul>
-          <li>Le réglage de <strong class="hl">taille du texte</strong> de la discussion monte beaucoup plus haut qu’aujourd’hui.</li>
-          <li>Le journal <strong class="hl">suit</strong> le changement au lieu de rester figé à l’ancienne taille.</li>
-          <li>Ça vise clairement les grands écrans et les téléphones, où le texte était trop petit.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3 COMBAT -->
   <section id="combat">
-    <div class="sec-head"><span class="sec-num">03</span><h2>Ton personnage arrête de pivoter tout seul</h2></div>
-    <p class="sec-sub">Côté jeu, <strong class="hl">aucune valeur ne bouge</strong>. Ce qui change est une règle commune du corps à corps, et la façon dont tes bonus s’affichent.</p>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Le druide Wildfang change de forme</h2></div>
+    <p class="sec-sub">La branche retravaille le kit de <span data-codex="spec|Wildfang">Wildfang</span> : sa forme de loup reçoit une vitesse propre et plusieurs outils de déplacement et de contrôle. Le HUD des auras devient aussi plus lisible pour toutes les classes.</p>
     <div class="grid cols-3">
-      <div class="card more" data-detail="orientation" tabindex="0" role="button" aria-label="Détails : l’orientation automatique et ce qui change">
-        <h3>Un réglage pour le couper <span class="chip c-new">Nouveau</span></h3>
-        <p>Frapper au corps à corps <strong class="hl">fait pivoter</strong> ton personnage vers sa cible, même si tu venais de l’orienter ailleurs. Un <strong class="hl">réglage activable</strong> arrive pour bloquer ce pivot, limité au <strong class="hl">PvE</strong> — en PvP la règle actuelle reste.</p>
-        <span class="more-link">Voir pourquoi ça gêne</span>
-      </div>
-      <div class="card">
-        <h3>Les bandeaux de buffs sont refaits <span class="chip c-new">Interface</span></h3>
-        <ul>
-          <li>Tes bonus et malus seront <strong class="hl">rangés par urgence</strong>, ce qui doit fini de perdre le regard.</li>
-          <li>Les deux bandeaux s’<strong class="hl">empilent en une seule colonne</strong> au lieu de vivre chacun de leur côté.</li>
-          <li>Et ils <strong class="hl">retrouvent leur place</strong> après une remise à zéro des positions de l’interface, ce qui n’était pas le cas.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Quelques détails d’incantation <span class="chip c-util">Divers</span></h3>
-        <ul>
-          <li>Pendant un <strong class="hl">sort canalisé</strong>, l’orientation est <strong class="hl">épinglée</strong> au lieu de tourner sous toi.</li>
-          <li>Deux capacités pourront partir <strong class="hl">à travers une incantation en cours</strong> au lieu d’attendre.</li>
-          <li>Voleur : le <strong class="hl">rythme d’attaque</strong> se remet à zéro quand <span data-codex="ability|Eye Jab">Eye Jab</span> touche.</li>
-        </ul>
-      </div>
+      <div class="card"><h3>Un kit de loup plus complet <span class="chip c-new">En préparation</span></h3><ul><li><b>Loping Stride</b> devient un élément de base et la rangée concernée accueille <b>Longstride</b>.</li><li><b>Bruin Rush</b>, <b>Stalk</b>, <b>Lunge</b> et <b>Hamstring Bite</b> donnent à la forme des options pour entrer, sortir et ralentir.</li></ul></div>
+      <div class="card"><h3>Les auras se lisent mieux <span class="chip c-new">Interface</span></h3><p>Les buffs temporaires, les auras de classe et les effets attachés au personnage sont regroupés sur des pistes plus claires, avec leur importance visuelle conservée.</p></div>
+      <div class="card"><h3>Pas encore un classement DPS <span class="chip c-util">Prudence</span></h3><p>La v0.43.0 n’est pas sortie et le kit continue d’être retouché. Les chiffres du nouvel onglet DPS restent ceux du patch publié, pas ceux d’une branche de test.</p></div>
     </div>
   </section>
 
-  <!-- 4 CONFORT -->
-  <section id="confort">
-    <div class="sec-head"><span class="sec-num">04</span><h2>Le reste : réglages, et beaucoup de coulisses</h2></div>
-    <p class="sec-sub">C’est de loin la plus grosse rubrique de la branche — mais l’essentiel n’est pas visible à l’écran.</p>
+  <section id="metiers">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Les métiers gagnent de vrais repères</h2></div>
+    <p class="sec-sub">Le chantier réduit les petits frottements qui font perdre du temps entre la recette et la récolte.</p>
     <div class="grid cols-3">
-      <div class="card">
-        <h3>Deux réglages qu’on attendait <span class="chip c-new">Interface</span></h3>
-        <ul>
-          <li>Un réglage de <strong class="hl">texte de vie</strong> sur ton cadre et celui de ta cible : voir les PV en chiffres, pas seulement en barre.</li>
-          <li>Une <strong class="hl">disposition de barres d’action par type de commande</strong> : ta mise en page au clavier, à la manette et au tactile ne se marcheront plus dessus.</li>
-          <li>Dans la lignée du <a href="notes/v0.41.0.html#confort">déverrouillage de l’interface</a> arrivé en v0.41.0.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Le monde et les débuts <span class="chip c-util">Divers</span></h3>
-        <ul>
-          <li>Les nouveaux joueurs seront <strong class="hl">envoyés vers la cloche du bac</strong> de <span data-codex="zone|The Proving Shore">Proving Shore</span> : beaucoup ne la trouvaient pas et restaient bloqués sur l’île de départ.</li>
-          <li>Un monstre <strong class="hl">en fuite</strong> ne pourra plus être attaqué ni pris pour cible tant qu’il fuit.</li>
-          <li>Les relais du <strong class="hl">Reliquaire</strong> encore verrouillés diront <strong class="hl">quel marchand</strong> les débloque.</li>
-          <li>Ré-appliquer <strong class="hl">le même enchantement</strong> consommera bien ses réactifs.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Beaucoup de coulisses <span class="chip c-util">Technique</span></h3>
-        <ul>
-          <li>Un gros travail pour savoir <strong class="hl">quelle carte graphique</strong> tourne chez chaque joueur, et si c’est un portable.</li>
-          <li>Ça ne se verra pas, mais c’est ce qui permet de comprendre pourquoi ça rame chez certains et pas chez d’autres.</li>
-          <li>Le reste est du rangement d’effets visuels et de mémoire — invisible, et c’est le but.</li>
-        </ul>
-      </div>
+      <div class="card"><h3>Les charmes coûtent moins de fragments <span class="chip c-new">Nouveau</span></h3><p>Les recettes de charmes sont rééquilibrées : elles demandent désormais un seul <b>Chime Shard</b>, contre cinq auparavant.</p></div>
+      <div class="card"><h3>Une recette reste sous les yeux <span class="chip c-new">Confort</span></h3><p>Une recette épinglée apparaît dans un suivi permanent du HUD. Les fenêtres de fabrication et de marché utilisent la même interface.</p></div>
+      <div class="card"><h3>La récolte explique mieux ses règles <span class="chip c-util">Clarté</span></h3><p>Le tutoriel couvre aussi la récolte, les outils non appris s’usent correctement et les choix d’interaction pour les cadavres sont accessibles directement.</p></div>
+    </div>
+  </section>
+
+  <section id="donjons">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Les groupes savent quand partir</h2></div>
+    <p class="sec-sub">Le jeu donne enfin les mêmes repères à un groupe avant et pendant le pull.</p>
+    <div class="grid cols-3">
+      <div class="card"><h3>Le pull devient lisible <span class="chip c-new">Raid</span></h3><p>Bannière d’avertissement, compte à rebours et fenêtre de <b>ready check</b> arrivent ensemble, avec des cadres de raid plus cohérents.</p></div>
+      <div class="card"><h3>Les anneaux Riftbound acceptent leurs enchantements <span class="chip c-new">Faille</span></h3><p>Les anneaux peuvent recevoir les enchantements prévus à chaque palier, sans marque réservée par erreur au seul palier parfait.</p></div>
+      <div class="card"><h3>Le Finder connaît les nouveaux lieux <span class="chip c-util">Donjons</span></h3><p><span data-codex="dungeon|ignivar_forge_lift">Ignivar</span> et <span data-codex="dungeon|wildheart_basin">The Wildheart Basin</span> sont catalogués dans le chercheur de donjons, et le marqueur de raid apparaît sur le cadre de cible.</p></div>
+    </div>
+  </section>
+
+  <section id="monde">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Le monde explique mieux où aller</h2></div>
+    <p class="sec-sub">La v0.43.0 travaille le lien entre journal de quêtes, carte et personnages.</p>
+    <div class="grid cols-3">
+      <div class="card"><h3>Le suivi de quête devient réel <span class="chip c-new">Quêtes</span></h3><p>« Ne plus suivre » agit sur la bonne instance de quête, et « montrer sur la carte » ouvre la quête sélectionnée au lieu d’un simple doublon.</p></div>
+      <div class="card"><h3>Les PNJ parlent au bon endroit <span class="chip c-new">Interface</span></h3><p>Les conseils apparaissent en bulle ; si le PNJ n’est pas visible, ils passent par une fenêtre <b>Talking Head</b> déplaçable.</p></div>
+      <div class="card"><h3>La sélection de personnage donne sa zone <span class="chip c-util">Monde</span></h3><p>Chaque sauvegarde affiche désormais la zone où se trouve le personnage, et les nameplates indiquent ce que fait un PNJ.</p></div>
+    </div>
+  </section>
+
+  <section id="guilde">
+    <div class="sec-head"><span class="sec-num">05</span><h2>La guilde voit enfin qui est connecté</h2></div>
+    <p class="sec-sub">C’est la nouveauté sociale la plus directement utile pour organiser un event.</p>
+    <div class="grid cols-3">
+      <div class="card"><h3>Un onglet Who recherchable <span class="chip c-new">Nouveau</span></h3><p>La fenêtre Social reçoit un onglet <b>Who</b> où l’on peut rechercher et trier les joueurs, avec une mise en page adaptée au mobile.</p></div>
+      <div class="card"><h3>La banque parle <span class="chip c-new">Guilde</span></h3><p>Les dépôts et retraits d’or sont annoncés dans la discussion de guilde : chacun sait quand le coffre a bougé.</p></div>
+      <div class="card"><h3>Les groupes se ciblent au clavier <span class="chip c-util">Groupe</span></h3><p>Les touches <b>F1 à F10</b> ciblent directement les lignes du groupe. Les cadres de groupe et la discussion partagent la nouvelle présentation.</p></div>
+    </div>
+  </section>
+
+  <section id="confort">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Une grande refonte de l’interface</h2></div>
+    <p class="sec-sub">La majorité des commits de la branche concerne le même objectif : rendre le jeu lisible au clavier, à la manette, au tactile et sur mobile.</p>
+    <div class="grid cols-3">
+      <div class="card"><h3>Les fenêtres parlent le même langage <span class="chip c-new">Refonte</span></h3><p>Options, personnage, économie, activité, compte, barre d’action et fenêtre tactile utilisent une bibliothèque de composants commune.</p></div>
+      <div class="card"><h3>Le marché devient plus pratique <span class="chip c-new">Économie</span></h3><p>L’échange <b>$WOC</b> ajoute un historique des ventes et une recherche de plusieurs annonces au meilleur prix.</p></div>
+      <div class="card"><h3>Des outils pour jouer et observer <span class="chip c-util">Technique</span></h3><p>Mode interface masquée pour les captures, aperçu des apparences avant achat et mesure GPU optionnelle pour diagnostiquer les performances.</p></div>
     </div>
   </section>
 
@@ -402,65 +318,7 @@
 </dialog>
 
 <script>
-  const DETAILS = {
-    forge: {
-      title: "La forge de Faille : ce qu’on sait, et ce qui reste flou",
-      summary: "Le système existait déjà, éteint. Cette fois il reçoit son PNJ et son interface — mais rien n’est figé.",
-      body: `
-        <h4>L’histoire, en deux lignes</h4>
-        <p>Le système améliorer / enchanter / sertir des anneaux <b>Riftbound</b> tournait entièrement côté serveur depuis la v0.36, sans aucun bouton en jeu pour le déclencher. Un joueur sachant parler au serveur à la main pouvait donc prendre de l’avance : la v0.37 a fermé la porte, et la v0.38 a <b>annulé</b> ce qui avait été forgé, en remboursant l’Essence exacte. Le détail est sur la <a href="failles.html">page Failles</a>.</p>
-        <h4>Ce qui arrive</h4>
-        <ul>
-          <li>Un <b>PNJ Riftwright</b> dédié, dont c’est le métier : améliorer les anneaux Riftbound.</li>
-          <li>Le prix ne sera pas un tarif unique mais une <b>échelle calée sur le niveau d’objet</b> — logique, puisque monter un anneau déjà haut coûte plus cher.</li>
-          <li>Le <b>journal de la forge</b> sera traduit, et il dira ce qu’il a fait plutôt que de rester muet.</li>
-          <li>Deux passes de relecture ont déjà eu lieu sur la branche, dont une qui a <b>baissé deux plafonds</b> — signe que l’équilibrage bouge encore.</li>
-        </ul>
-        <h4>Ce qui reste flou</h4>
-        <ul>
-          <li><b>Combien ça coûte.</b> L’échelle a été re-tarifée en cours de branche.</li>
-          <li><b>Où il se tient.</b> Rien ne dit encore dans quelle ville ou quel camp on le trouvera.</li>
-          <li><b>Ce qui arrive aux gemmes.</b> Le sertissage faisait partie du même système ; on ne sait pas encore s’il sort en même temps.</li>
-        </ul>
-        <h4>Ce qu’il faut faire d’ici là</h4>
-        <p>Rien, sinon <b>garder tes Essences et tes gemmes</b>. Elles ne se perdent pas, et la <a href="notes/v0.41.0.html">v0.41.0</a> a rendu l’Essence envoyable par courrier et vendable — donc elles circulent déjà. Ne les fais pas glisser dans le monde : ça les détruit.</p>`
-    },
-    places: {
-      title: "Les pages de places de guilde",
-      summary: "Le principe est posé. Le prix, lui, a déjà bougé deux fois sur la branche — d’où l’absence de chiffre ici.",
-      body: `
-        <h4>Le principe</h4>
-        <ul>
-          <li>Le <b>maître de guilde</b> pourra acheter des <b>pages</b> de places supplémentaires, avec de l’or.</li>
-          <li>Chaque page coûte <b>plus cher que la précédente</b> : c’est une échelle qui grimpe, pas un tarif fixe.</li>
-          <li>Un <b>plafond dur</b> existe, au-delà duquel on ne peut plus agrandir.</li>
-        </ul>
-        <h4>Pourquoi aucun chiffre sur cette page</h4>
-        <p>Parce qu’ils ont déjà changé. Sur la seule branche v0.42.0, l’échelle a été <b>re-tarifée</b> une fois et le <b>plafond relevé</b> une autre. C’est exactement le genre de valeur qui se règle jusqu’au dernier jour, et cette page a pour règle de ne jamais publier un chiffre non sorti. Les vrais nombres seront vérifiés dans le code et publiés dans <a href="patch-notes.html">Nouveautés</a> le jour de la sortie.</p>
-        <h4>Ce que ça changerait pour nous</h4>
-        <p>La Clauderie n’a pas de problème de place aujourd’hui. Mais si le plafond actuel devient un frein, ce sera une dépense de <b>trésorerie de guilde</b> à arbitrer — et une décision de maître de guilde, pas d’officier.</p>`
-    },
-    orientation: {
-      title: "L’orientation automatique : pourquoi ça gêne, et ce qui change",
-      summary: "Un comportement présent depuis toujours, que personne n’avait jamais pu couper. Travail en cours : le réglage et sa portée peuvent encore évoluer.",
-      body: `
-        <h4>Ce que fait le jeu aujourd’hui</h4>
-        <ul>
-          <li>Quand ton attaque automatique part au corps à corps, ton personnage <b>pivote vers sa cible</b>.</li>
-          <li>C’est pratique quand on découvre le jeu : on ne rate plus ses coups pour cause de mauvaise orientation.</li>
-          <li>C’est gênant dès qu’on joue sérieusement : tu orientes ton personnage pour un cône, un recul ou une fuite, et le prochain coup d’arme te <b>replace face à la cible</b>.</li>
-        </ul>
-        <h4>Ce qui est prévu</h4>
-        <ul>
-          <li>Un <b>réglage activable par le joueur</b> pour verrouiller l’orientation.</li>
-          <li>Limité au <b>PvE</b> : en PvP la règle actuelle reste en place — probablement pour éviter qu’un joueur verrouillé dos à son adversaire devienne intouchable.</li>
-          <li>Une attaque automatique ne fera <b>plus jamais</b> tourner le personnage quand le verrou est mis — et, quand il ne l’est pas, elle <b>oriente vers la cible</b> au lieu de rester bloquée sans rien faire.</li>
-          <li>Pendant un <b>sort canalisé</b>, l’orientation est <b>épinglée</b> pour toute la durée.</li>
-        </ul>
-        <h4>Ce qu’on ne sait pas encore</h4>
-        <p>Où se trouvera le réglage, s’il sera activé par défaut, et comment il se comportera exactement sur les capacités qui exigent d’être derrière la cible. Rien de tout cela n’est arrêté — c’est une branche en cours.</p>`
-    },
-  };
+  const DETAILS = {};
 
   const modal = document.getElementById("modal");
   const mTitle = document.getElementById("mTitle");
