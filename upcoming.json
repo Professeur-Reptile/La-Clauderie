@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-16T00:43:56Z",
+ "generated": "2026-09-16T07:52:33Z",
  "base_tag": "v0.42.2",
  "version": "v0.43.0",
  "branch": "ossbrain-release/v0.43.0",
  "declared_version": "0.43.0",
  "imminent": true,
- "commits": 540,
- "shown": 256,
- "last_commit": "2026-09-16T00:21:50Z",
+ "commits": 600,
+ "shown": 280,
+ "last_commit": "2026-09-16T06:20:41Z",
  "sections": [
   {
    "key": "classes",
@@ -16,11 +16,32 @@
    "en": "Classes & spells",
    "items": [
     {
+     "h": "7dd311ce",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Ship the compact 17-clip cat at 888 KB",
+     "date": "2026-09-15"
+    },
+    {
      "h": "dd009bce",
      "kind": "feat",
      "scope": "druid",
      "text": "Take the Wildfang kit pass 2 review round",
      "date": "2026-09-15"
+    },
+    {
+     "h": "bd7918a0",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Persist action bars per spec and swap talent choices in-place",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "a0b8b367",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Give Cat Form its own authored cat, stalk crouch, and name",
+     "date": "2026-09-14"
     },
     {
      "h": "6a64aed4",
@@ -84,6 +105,41 @@
      "scope": "hud",
      "text": "Redesign aura and transient surfaces",
      "date": "2026-09-07"
+    },
+    {
+     "h": "f3f42bb8",
+     "kind": "feat",
+     "scope": "auras",
+     "text": "Let players pick which spells get their own aura overlay",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "75884cd8",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Drop the loadout shift literal and pin the spec layout sanitizer",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "90006271",
+     "kind": "fix",
+     "scope": "druid",
+     "text": "Carry the Cat Form rename over the Wildfang mobility rows",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "063d380e",
+     "kind": "fix",
+     "scope": "druid",
+     "text": "Finish the Cat Form rename on the client and trim the cat's dead gait knobs",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "e63e5ccd",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Ensure talent choice swaps do not require auto-place set",
+     "date": "2026-09-15"
     },
     {
      "h": "d28b373f",
@@ -170,6 +226,13 @@
    "fr": "Métiers & récolte",
    "en": "Professions & gathering",
    "items": [
+    {
+     "h": "f653fe71",
+     "kind": "feat",
+     "scope": "professions",
+     "text": "Trainer subtitles and quiet profession quest markers",
+     "date": "2026-09-16"
+    },
     {
      "h": "0b312e34",
      "kind": "feat",
@@ -404,6 +467,13 @@
    "en": "World & quests",
    "items": [
     {
+     "h": "1e2677f1",
+     "kind": "feat",
+     "scope": "eastbrook",
+     "text": "Space the starter givers around the civic square",
+     "date": "2026-09-16"
+    },
+    {
      "h": "eb308eb3",
      "kind": "feat",
      "scope": "charselect",
@@ -451,6 +521,13 @@
      "scope": "render",
      "text": "Apparent-size reach for zone-feature dressing, sweep extracted",
      "date": "2026-09-08"
+    },
+    {
+     "h": "6f4c5087",
+     "kind": "fix",
+     "scope": "eastbrook",
+     "text": "Take the review round on the first-quest handoff",
+     "date": "2026-09-16"
     },
     {
      "h": "74d42d37",
@@ -693,6 +770,20 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "12f1f046",
+     "kind": "feat",
+     "scope": "guidance",
+     "text": "Optional golden Eastbrook guidance chosen at the ferry",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "61c3de7c",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add a Toggle Friendly Nameplates keybind on Ctrl+V",
+     "date": "2026-09-15"
+    },
+    {
      "h": "fb4de33d",
      "kind": "feat",
      "scope": "world_api",
@@ -896,6 +987,13 @@
      "date": "2026-09-08"
     },
     {
+     "h": "45b4e7cd",
+     "kind": "feat",
+     "scope": "auras",
+     "text": "Add hotbar glow, reticle ticks and rumble as proc channels",
+     "date": "2026-09-08"
+    },
+    {
      "h": "756fbc4d",
      "kind": "feat",
      "scope": "styles",
@@ -1085,6 +1183,69 @@
      "date": "2026-09-08"
     },
     {
+     "h": "17f6c22b",
+     "kind": "fix",
+     "scope": "auras",
+     "text": "Clear a reticle tick's lit state when it leaves the ring",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "ebb62b70",
+     "kind": "fix",
+     "scope": "auras",
+     "text": "Read an unknown stored rumble shape back as off",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "def854f3",
+     "kind": "fix",
+     "scope": "auras",
+     "text": "Explain the proc channels and drop Hotbar Glow off the desktop bar",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "4cfde695",
+     "kind": "fix",
+     "scope": "auras",
+     "text": "Forget a proc's cue edge when it leaves the loadout",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "4b0f253d",
+     "kind": "fix",
+     "scope": "action-bar",
+     "text": "Reconcile release v0.43.0",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "46f5226d",
+     "kind": "fix",
+     "scope": "styles",
+     "text": "Keep wallet mini focus border distinct",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "b1053844",
+     "kind": "fix",
+     "scope": "eastbrook",
+     "text": "Step the marshal clear of the posting point, re-pin CI",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "01e6eaa6",
+     "kind": "fix",
+     "scope": "eastbrook",
+     "text": "Take the maintainer review round on the handoff",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "4fe50749",
+     "kind": "fix",
+     "scope": "nameplates",
+     "text": "Draw a trainer's service title once after the base merge",
+     "date": "2026-09-16"
+    },
+    {
      "h": "33d9930b",
      "kind": "fix",
      "scope": "unstuck",
@@ -1180,6 +1341,13 @@
      "kind": "fix",
      "scope": "unstuck",
      "text": "Rescue battleground wall pressure after ESC",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "a0a44853",
+     "kind": "fix",
+     "scope": "",
+     "text": "Release/v0.43.0 into feature/druid-cat-form",
      "date": "2026-09-14"
     },
     {
@@ -1856,9 +2024,9 @@
    "branch": "ossbrain-release/v0.43.0",
    "declared_version": "0.43.0",
    "imminent": true,
-   "commits": 540,
-   "shown": 256,
-   "last_commit": "2026-09-16T00:21:50Z",
+   "commits": 600,
+   "shown": 280,
+   "last_commit": "2026-09-16T06:20:41Z",
    "sections": [
     {
      "key": "classes",
@@ -1867,11 +2035,32 @@
      "en": "Classes & spells",
      "items": [
       {
+       "h": "7dd311ce",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Ship the compact 17-clip cat at 888 KB",
+       "date": "2026-09-15"
+      },
+      {
        "h": "dd009bce",
        "kind": "feat",
        "scope": "druid",
        "text": "Take the Wildfang kit pass 2 review round",
        "date": "2026-09-15"
+      },
+      {
+       "h": "bd7918a0",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Persist action bars per spec and swap talent choices in-place",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "a0b8b367",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Give Cat Form its own authored cat, stalk crouch, and name",
+       "date": "2026-09-14"
       },
       {
        "h": "6a64aed4",
@@ -1935,6 +2124,41 @@
        "scope": "hud",
        "text": "Redesign aura and transient surfaces",
        "date": "2026-09-07"
+      },
+      {
+       "h": "f3f42bb8",
+       "kind": "feat",
+       "scope": "auras",
+       "text": "Let players pick which spells get their own aura overlay",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "75884cd8",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Drop the loadout shift literal and pin the spec layout sanitizer",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "90006271",
+       "kind": "fix",
+       "scope": "druid",
+       "text": "Carry the Cat Form rename over the Wildfang mobility rows",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "063d380e",
+       "kind": "fix",
+       "scope": "druid",
+       "text": "Finish the Cat Form rename on the client and trim the cat's dead gait knobs",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "e63e5ccd",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Ensure talent choice swaps do not require auto-place set",
+       "date": "2026-09-15"
       },
       {
        "h": "d28b373f",
@@ -2021,6 +2245,13 @@
      "fr": "Métiers & récolte",
      "en": "Professions & gathering",
      "items": [
+      {
+       "h": "f653fe71",
+       "kind": "feat",
+       "scope": "professions",
+       "text": "Trainer subtitles and quiet profession quest markers",
+       "date": "2026-09-16"
+      },
       {
        "h": "0b312e34",
        "kind": "feat",
@@ -2255,6 +2486,13 @@
      "en": "World & quests",
      "items": [
       {
+       "h": "1e2677f1",
+       "kind": "feat",
+       "scope": "eastbrook",
+       "text": "Space the starter givers around the civic square",
+       "date": "2026-09-16"
+      },
+      {
        "h": "eb308eb3",
        "kind": "feat",
        "scope": "charselect",
@@ -2302,6 +2540,13 @@
        "scope": "render",
        "text": "Apparent-size reach for zone-feature dressing, sweep extracted",
        "date": "2026-09-08"
+      },
+      {
+       "h": "6f4c5087",
+       "kind": "fix",
+       "scope": "eastbrook",
+       "text": "Take the review round on the first-quest handoff",
+       "date": "2026-09-16"
       },
       {
        "h": "74d42d37",
@@ -2544,6 +2789,20 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "12f1f046",
+       "kind": "feat",
+       "scope": "guidance",
+       "text": "Optional golden Eastbrook guidance chosen at the ferry",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "61c3de7c",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add a Toggle Friendly Nameplates keybind on Ctrl+V",
+       "date": "2026-09-15"
+      },
+      {
        "h": "fb4de33d",
        "kind": "feat",
        "scope": "world_api",
@@ -2747,6 +3006,13 @@
        "date": "2026-09-08"
       },
       {
+       "h": "45b4e7cd",
+       "kind": "feat",
+       "scope": "auras",
+       "text": "Add hotbar glow, reticle ticks and rumble as proc channels",
+       "date": "2026-09-08"
+      },
+      {
        "h": "756fbc4d",
        "kind": "feat",
        "scope": "styles",
@@ -2936,6 +3202,69 @@
        "date": "2026-09-08"
       },
       {
+       "h": "17f6c22b",
+       "kind": "fix",
+       "scope": "auras",
+       "text": "Clear a reticle tick's lit state when it leaves the ring",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "ebb62b70",
+       "kind": "fix",
+       "scope": "auras",
+       "text": "Read an unknown stored rumble shape back as off",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "def854f3",
+       "kind": "fix",
+       "scope": "auras",
+       "text": "Explain the proc channels and drop Hotbar Glow off the desktop bar",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "4cfde695",
+       "kind": "fix",
+       "scope": "auras",
+       "text": "Forget a proc's cue edge when it leaves the loadout",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "4b0f253d",
+       "kind": "fix",
+       "scope": "action-bar",
+       "text": "Reconcile release v0.43.0",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "46f5226d",
+       "kind": "fix",
+       "scope": "styles",
+       "text": "Keep wallet mini focus border distinct",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "b1053844",
+       "kind": "fix",
+       "scope": "eastbrook",
+       "text": "Step the marshal clear of the posting point, re-pin CI",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "01e6eaa6",
+       "kind": "fix",
+       "scope": "eastbrook",
+       "text": "Take the maintainer review round on the handoff",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "4fe50749",
+       "kind": "fix",
+       "scope": "nameplates",
+       "text": "Draw a trainer's service title once after the base merge",
+       "date": "2026-09-16"
+      },
+      {
        "h": "33d9930b",
        "kind": "fix",
        "scope": "unstuck",
@@ -3031,6 +3360,13 @@
        "kind": "fix",
        "scope": "unstuck",
        "text": "Rescue battleground wall pressure after ESC",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "a0a44853",
+       "kind": "fix",
+       "scope": "",
+       "text": "Release/v0.43.0 into feature/druid-cat-form",
        "date": "2026-09-14"
       },
       {
