@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-15T12:47:58Z",
+ "generated": "2026-09-16T00:43:56Z",
  "base_tag": "v0.42.2",
  "version": "v0.43.0",
  "branch": "ossbrain-release/v0.43.0",
  "declared_version": "0.43.0",
  "imminent": true,
- "commits": 494,
- "shown": 236,
- "last_commit": "2026-09-15T11:10:22Z",
+ "commits": 540,
+ "shown": 256,
+ "last_commit": "2026-09-16T00:21:50Z",
  "sections": [
   {
    "key": "classes",
@@ -284,6 +284,20 @@
      "date": "2026-09-14"
     },
     {
+     "h": "56159296",
+     "kind": "fix",
+     "scope": "raid",
+     "text": "Retire the mid-storm Bone Spike from Nythraxis Bone Storm",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "3101807f",
+     "kind": "fix",
+     "scope": "raid",
+     "text": "Soften the opening Bone Slam of each Nythraxis Bone Storm",
+     "date": "2026-09-16"
+    },
+    {
      "h": "916109d9",
      "kind": "fix",
      "scope": "ui",
@@ -517,6 +531,20 @@
    "en": "Guild & social",
    "items": [
     {
+     "h": "a563f58f",
+     "kind": "feat",
+     "scope": "i18n",
+     "text": "Podium label and unclaimed place for the leaderboard",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "ecaf6395",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "The leaderboard window in a ledger style with a podium",
+     "date": "2026-09-15"
+    },
+    {
      "h": "074d9329",
      "kind": "feat",
      "scope": "social",
@@ -585,6 +613,34 @@
      "scope": "ui",
      "text": "Cache the meters party set on the roster and membership keys",
      "date": "2026-09-14"
+    },
+    {
+     "h": "2df51116",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Leaderboard review round: ratchet ceiling, badge-arm pins, prestige title key",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "9ba36de8",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Leaderboard podium reads first place first and keeps every stat",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "f594c31a",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Guild board count line, focus and hit targets after review",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "5678e580",
+     "kind": "fix",
+     "scope": "styles",
+     "text": "Read the guild board category greens from tokens",
+     "date": "2026-09-15"
     },
     {
      "h": "bd45c420",
@@ -707,6 +763,13 @@
      "date": "2026-09-11"
     },
     {
+     "h": "91a7e640",
+     "kind": "feat",
+     "scope": "deeds",
+     "text": "Pull the account-scope pieces from PR #3933 into the ledger",
+     "date": "2026-09-11"
+    },
+    {
      "h": "ca069787",
      "kind": "feat",
      "scope": "classes",
@@ -721,11 +784,32 @@
      "date": "2026-09-11"
     },
     {
+     "h": "1d76ec02",
+     "kind": "feat",
+     "scope": "deeds",
+     "text": "Grant the Reliquary's account deeds to every character on the account",
+     "date": "2026-09-11"
+    },
+    {
      "h": "6de20dcf",
      "kind": "feat",
      "scope": "perf",
      "text": "Mark desktop shell reports so the fleet can tell them from browser tabs",
      "date": "2026-09-11"
+    },
+    {
+     "h": "3d90efeb",
+     "kind": "feat",
+     "scope": "deeds",
+     "text": "Make the Book of Deeds and Reliquary account-wide with per-character earners",
+     "date": "2026-09-10"
+    },
+    {
+     "h": "ded8606d",
+     "kind": "feat",
+     "scope": "guilds",
+     "text": "New-player-friendly category and officer presence on the signpost board",
+     "date": "2026-09-10"
     },
     {
      "h": "4d2c76b4",
@@ -1029,6 +1113,55 @@
      "date": "2026-09-15"
     },
     {
+     "h": "2fa03b12",
+     "kind": "fix",
+     "scope": "deeds",
+     "text": "Address the second review round on the account-wide grants",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "63b3fd66",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Leave the Spanish podium strings to the release fill",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "ab72311e",
+     "kind": "fix",
+     "scope": "guilds",
+     "text": "Meter officer presence on its own bucket and bound its wait",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "b219b180",
+     "kind": "fix",
+     "scope": "guilds",
+     "text": "Demand-gate and force the presence roster warm",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "6183ceff",
+     "kind": "fix",
+     "scope": "deeds",
+     "text": "Take the fourth review round on the account-wide books",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "4aa2ce40",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Allow battleground wall unstuck",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "b7327583",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Constrain battleground unstuck drift",
+     "date": "2026-09-15"
+    },
+    {
      "h": "bcb5a82d",
      "kind": "fix",
      "scope": "mail",
@@ -1320,6 +1453,13 @@
      "kind": "fix",
      "scope": "render",
      "text": "Measure the teleport jump from the anchored target, not the drawn pose",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "331033df",
+     "kind": "fix",
+     "scope": "deeds",
+     "text": "Address the first review round on the account ledger",
      "date": "2026-09-11"
     },
     {
@@ -1716,9 +1856,9 @@
    "branch": "ossbrain-release/v0.43.0",
    "declared_version": "0.43.0",
    "imminent": true,
-   "commits": 494,
-   "shown": 236,
-   "last_commit": "2026-09-15T11:10:22Z",
+   "commits": 540,
+   "shown": 256,
+   "last_commit": "2026-09-16T00:21:50Z",
    "sections": [
     {
      "key": "classes",
@@ -1995,6 +2135,20 @@
        "date": "2026-09-14"
       },
       {
+       "h": "56159296",
+       "kind": "fix",
+       "scope": "raid",
+       "text": "Retire the mid-storm Bone Spike from Nythraxis Bone Storm",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "3101807f",
+       "kind": "fix",
+       "scope": "raid",
+       "text": "Soften the opening Bone Slam of each Nythraxis Bone Storm",
+       "date": "2026-09-16"
+      },
+      {
        "h": "916109d9",
        "kind": "fix",
        "scope": "ui",
@@ -2228,6 +2382,20 @@
      "en": "Guild & social",
      "items": [
       {
+       "h": "a563f58f",
+       "kind": "feat",
+       "scope": "i18n",
+       "text": "Podium label and unclaimed place for the leaderboard",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "ecaf6395",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "The leaderboard window in a ledger style with a podium",
+       "date": "2026-09-15"
+      },
+      {
        "h": "074d9329",
        "kind": "feat",
        "scope": "social",
@@ -2296,6 +2464,34 @@
        "scope": "ui",
        "text": "Cache the meters party set on the roster and membership keys",
        "date": "2026-09-14"
+      },
+      {
+       "h": "2df51116",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Leaderboard review round: ratchet ceiling, badge-arm pins, prestige title key",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "9ba36de8",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Leaderboard podium reads first place first and keeps every stat",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "f594c31a",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Guild board count line, focus and hit targets after review",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "5678e580",
+       "kind": "fix",
+       "scope": "styles",
+       "text": "Read the guild board category greens from tokens",
+       "date": "2026-09-15"
       },
       {
        "h": "bd45c420",
@@ -2418,6 +2614,13 @@
        "date": "2026-09-11"
       },
       {
+       "h": "91a7e640",
+       "kind": "feat",
+       "scope": "deeds",
+       "text": "Pull the account-scope pieces from PR #3933 into the ledger",
+       "date": "2026-09-11"
+      },
+      {
        "h": "ca069787",
        "kind": "feat",
        "scope": "classes",
@@ -2432,11 +2635,32 @@
        "date": "2026-09-11"
       },
       {
+       "h": "1d76ec02",
+       "kind": "feat",
+       "scope": "deeds",
+       "text": "Grant the Reliquary's account deeds to every character on the account",
+       "date": "2026-09-11"
+      },
+      {
        "h": "6de20dcf",
        "kind": "feat",
        "scope": "perf",
        "text": "Mark desktop shell reports so the fleet can tell them from browser tabs",
        "date": "2026-09-11"
+      },
+      {
+       "h": "3d90efeb",
+       "kind": "feat",
+       "scope": "deeds",
+       "text": "Make the Book of Deeds and Reliquary account-wide with per-character earners",
+       "date": "2026-09-10"
+      },
+      {
+       "h": "ded8606d",
+       "kind": "feat",
+       "scope": "guilds",
+       "text": "New-player-friendly category and officer presence on the signpost board",
+       "date": "2026-09-10"
       },
       {
        "h": "4d2c76b4",
@@ -2740,6 +2964,55 @@
        "date": "2026-09-15"
       },
       {
+       "h": "2fa03b12",
+       "kind": "fix",
+       "scope": "deeds",
+       "text": "Address the second review round on the account-wide grants",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "63b3fd66",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Leave the Spanish podium strings to the release fill",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "ab72311e",
+       "kind": "fix",
+       "scope": "guilds",
+       "text": "Meter officer presence on its own bucket and bound its wait",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "b219b180",
+       "kind": "fix",
+       "scope": "guilds",
+       "text": "Demand-gate and force the presence roster warm",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "6183ceff",
+       "kind": "fix",
+       "scope": "deeds",
+       "text": "Take the fourth review round on the account-wide books",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "4aa2ce40",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Allow battleground wall unstuck",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "b7327583",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Constrain battleground unstuck drift",
+       "date": "2026-09-15"
+      },
+      {
        "h": "bcb5a82d",
        "kind": "fix",
        "scope": "mail",
@@ -3031,6 +3304,13 @@
        "kind": "fix",
        "scope": "render",
        "text": "Measure the teleport jump from the anchored target, not the drawn pose",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "331033df",
+       "kind": "fix",
+       "scope": "deeds",
+       "text": "Address the first review round on the account ledger",
        "date": "2026-09-11"
       },
       {
