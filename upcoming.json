@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-16T07:52:33Z",
+ "generated": "2026-09-16T13:41:45Z",
  "base_tag": "v0.42.2",
  "version": "v0.43.0",
  "branch": "ossbrain-release/v0.43.0",
  "declared_version": "0.43.0",
  "imminent": true,
- "commits": 600,
- "shown": 280,
- "last_commit": "2026-09-16T06:20:41Z",
+ "commits": 628,
+ "shown": 290,
+ "last_commit": "2026-09-16T12:10:46Z",
  "sections": [
   {
    "key": "classes",
@@ -125,6 +125,13 @@
      "kind": "fix",
      "scope": "druid",
      "text": "Carry the Cat Form rename over the Wildfang mobility rows",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "f8f0ae59",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Keep crit effects on a Bone Spike ward hit after the merge",
      "date": "2026-09-16"
     },
     {
@@ -302,6 +309,13 @@
      "scope": "crafting",
      "text": "Explain a fine-only reagent to a player holding its plain grade",
      "date": "2026-09-11"
+    },
+    {
+     "h": "4ec7023a",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Move the material Sources button behind right-click on desktop",
+     "date": "2026-09-10"
     },
     {
      "h": "a6035cf7",
@@ -777,6 +791,41 @@
      "date": "2026-09-16"
     },
     {
+     "h": "35b64480",
+     "kind": "feat",
+     "scope": "vault",
+     "text": "Pack identity rows at the vault size and split mergeable payloads",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "cdbbc345",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Open the source picker from more doors and step it by bag stacks",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "0e1a8994",
+     "kind": "feat",
+     "scope": "mail",
+     "text": "Age out read and unread letters, never a parcel",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "756b8116",
+     "kind": "feat",
+     "scope": "mail",
+     "text": "Sweep letters whose only coin is under a silver",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "c6bec6e2",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Wrap the vault quantity label on touch rows and add its screenshot target",
+     "date": "2026-09-16"
+    },
+    {
      "h": "61c3de7c",
      "kind": "feat",
      "scope": "ui",
@@ -1243,6 +1292,27 @@
      "kind": "fix",
      "scope": "nameplates",
      "text": "Draw a trainer's service title once after the base merge",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "15ce0d6c",
+     "kind": "fix",
+     "scope": "mail",
+     "text": "Bound the unread Exchange exemption and pin the purge arms",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "7102052d",
+     "kind": "fix",
+     "scope": "bank",
+     "text": "Take the review round on the source picker doors and the vault rows",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "7279b783",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep wallet mini keyboard focus visible",
      "date": "2026-09-16"
     },
     {
@@ -2024,9 +2094,9 @@
    "branch": "ossbrain-release/v0.43.0",
    "declared_version": "0.43.0",
    "imminent": true,
-   "commits": 600,
-   "shown": 280,
-   "last_commit": "2026-09-16T06:20:41Z",
+   "commits": 628,
+   "shown": 290,
+   "last_commit": "2026-09-16T12:10:46Z",
    "sections": [
     {
      "key": "classes",
@@ -2144,6 +2214,13 @@
        "kind": "fix",
        "scope": "druid",
        "text": "Carry the Cat Form rename over the Wildfang mobility rows",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "f8f0ae59",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Keep crit effects on a Bone Spike ward hit after the merge",
        "date": "2026-09-16"
       },
       {
@@ -2321,6 +2398,13 @@
        "scope": "crafting",
        "text": "Explain a fine-only reagent to a player holding its plain grade",
        "date": "2026-09-11"
+      },
+      {
+       "h": "4ec7023a",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Move the material Sources button behind right-click on desktop",
+       "date": "2026-09-10"
       },
       {
        "h": "a6035cf7",
@@ -2796,6 +2880,41 @@
        "date": "2026-09-16"
       },
       {
+       "h": "35b64480",
+       "kind": "feat",
+       "scope": "vault",
+       "text": "Pack identity rows at the vault size and split mergeable payloads",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "cdbbc345",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Open the source picker from more doors and step it by bag stacks",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "0e1a8994",
+       "kind": "feat",
+       "scope": "mail",
+       "text": "Age out read and unread letters, never a parcel",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "756b8116",
+       "kind": "feat",
+       "scope": "mail",
+       "text": "Sweep letters whose only coin is under a silver",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "c6bec6e2",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Wrap the vault quantity label on touch rows and add its screenshot target",
+       "date": "2026-09-16"
+      },
+      {
        "h": "61c3de7c",
        "kind": "feat",
        "scope": "ui",
@@ -3262,6 +3381,27 @@
        "kind": "fix",
        "scope": "nameplates",
        "text": "Draw a trainer's service title once after the base merge",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "15ce0d6c",
+       "kind": "fix",
+       "scope": "mail",
+       "text": "Bound the unread Exchange exemption and pin the purge arms",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "7102052d",
+       "kind": "fix",
+       "scope": "bank",
+       "text": "Take the review round on the source picker doors and the vault rows",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "7279b783",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep wallet mini keyboard focus visible",
        "date": "2026-09-16"
       },
       {
