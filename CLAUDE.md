@@ -223,7 +223,7 @@ avant de t'appuyer dessus pour le BiS ou les liens Codex.
 | Quoi | Mécanisme | Fréquence |
 |---|---|---|
 | Données du Codex | `wocc-knowledge-base` → `update-knowledge-base.yml` | ~5 min après chaque tag du jeu |
-| **Builds / BiS** (`bis.html`) | `update-bis.yml` → `compute_bis.py` + `inject_bis.py` | cron horaire ; s'arrête en ~10 s si la KB n'a pas bougé (`scripts/.kb-state`) — elle ne change qu'à chaque version du jeu |
+| **Builds / BiS** (`bis.html`) | `update-bis.yml` → `compute_bis.py` + `inject_bis.py` | toutes les 20 min (17 sept. 2026 : le planificateur GitHub sautait des passages horaires, écarts constatés de 4 à 5 h) ; s'arrête en ~10 s si la KB n'a pas bougé (`scripts/.kb-state`) — elle ne change qu'à chaque version du jeu |
 | **Récolte & Métiers** (`metiers.html`) | `update-bis.yml` → `build_craft.py` + `inject_craft.py` | idem |
 | Classement guilde (`guild.json`) | `update-guild-rank.yml` | toutes les 3 h |
 | Déploiement (OVH) | `deploy.yml` (vérifie, puis envoie par FTP) | à chaque push `main` (+ cron 6 h pour rafraîchir la copie du Codex) |

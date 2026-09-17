@@ -1,6 +1,6 @@
 # Recalcule les pages « mécaniques » du site à partir des données réelles du
 # jeu, sans IA ni intervention humaine : le BiS (page Builds) et les données de
-# la page Récolte & Métiers. Tourne toutes les 15 min : récupère la knowledge base
+# la page Récolte & Métiers. Tourne toutes les 20 min : récupère la knowledge base
 # (repo public wocc-knowledge-base, déjà régénérée tout seule à chaque nouvelle
 # version du jeu), régénère bis.html + metiers.html et ne commite QUE si quelque
 # chose a changé. 100 % déterministe — la partie « à calculer, pas à rédiger ».
@@ -12,12 +12,15 @@ name: Recalcul BiS + Récolte/Métiers
 
 on:
   schedule:
-    # Horaire, plus toutes les 15 min (6 août 2026) : les données ne changent
-    # qu'à chaque version du jeu, soit tous les 1 à 3 jours — 96 lancements
-    # par jour pour ça n'avaient pas de sens. Le vrai garde-fou est l'étape
-    # « la KB a-t-elle changé ? » ci-dessous : sans nouveauté, le passage
-    # s'arrête en quelques secondes, sans Python ni checkout de la KB.
-    - cron: '41 * * * *'
+    # Toutes les 20 min (17 sept. 2026). Historique : horaire depuis le 6 août
+    # (les données ne changent qu'à chaque version du jeu, 96 lancements/jour
+    # n'avaient pas de sens), MAIS le planificateur GitHub saute ou retarde des
+    # passages sans prévenir — constaté le 17 sept. : écarts de 4 à 5 h entre
+    # deux passages horaires, et la page Builds est restée sur l'ancienne
+    # version une demi-journée. À 20 min d'intervalle, un passage passe même
+    # quand la plateforme en saute la moitié ; le garde-fou « la KB a-t-elle
+    # changé ? » ci-dessous garde chaque passage à vide à quelques secondes.
+    - cron: '*/20 * * * *'
   workflow_dispatch: {}
 
 # Concurrence partagée avec les autres écritures sur main pour éviter les
