@@ -63,7 +63,7 @@
 <div class="topbar"><div class="row"><a href="index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a><nav class="topnav" data-guild-nav data-current="dps" aria-label="Navigation du site"></nav></div></div>
 <main class="wrap">
   <header class="page">
-    <p class="eyebrow" data-en="Damage benchmark · Patch v0.42.2">Comparatif de dégâts · Patch v0.42.2</p>
+    <p class="eyebrow" data-en="Damage benchmark · Patch v0.43.2">Comparatif de dégâts · Patch v0.43.2</p>
     <h1 data-en="Maximum DPS by class">DPS maximal par classe</h1>
     <p class="lede" data-en="The highest simulated sustained damage for each class, using the DPS build recommended on the Builds page and a complete BiS gear set.">Le meilleur DPS soutenu simulé pour chaque classe, avec le build DPS recommandé sur la page Builds et un équipement BiS complet.</p>
   </header>
@@ -74,20 +74,20 @@
   <p class="foot" id="dps-foot" data-en="Average active DPS (while the character can act) over two deterministic seeds from the game's Nythraxis matrix; values are rounded to one decimal. The ranking can change when the patch or the recommended build changes.">Moyenne du DPS actif (pendant que le personnage peut agir) sur deux graines déterministes de la matrice Nythraxis du jeu ; valeurs arrondies au dixième. Le classement peut changer avec le patch ou le build recommandé.</p>
 </main>
 <footer><div class="wrap"><p>Calculé pour <strong>La Clauderie</strong> à partir du simulateur public du jeu.</p><p style="margin-top:8px"><a href="bis.html">← Voir les builds</a> · <a href="index.html">Accueil</a></p></div></footer>
-<script src="assets/nav.js"></script><script src="assets/lang.js"></script>
+<script src="assets/nav.js"></script><script src="assets/lang.js"></script><script src="assets/version.js" data-version="v0.43.2" defer></script>
 <script>
 const DPS = [
-  // Source : v0.42.2, Nythraxis normal, 20 groupes × 2 graines (42, 1337).
+  // Source : v0.43.2, Nythraxis normal, 20 groupes × 2 graines (42, 1337).
   // Valeurs = moyenne activeDps du simulateur, pour la première spé DPS de BUILDS.
-  { class:'warlock', spec:'Hexcraft (affliction)', dps:140.7 },
-  { class:'rogue', spec:'Thuggery (combat)', dps:134.3 },
-  { class:'mage', spec:'Pyromancy (fire)', dps:131.6 },
-  { class:'druid', spec:'Moongrove (balance)', dps:130.6 },
-  { class:'hunter', spec:'Coldsight (marksmanship)', dps:123.3 },
-  { class:'paladin', spec:'Dawnreaver (retribution)', dps:108.5 },
-  { class:'priest', spec:'Vespers (shadow)', dps:101.5 },
-  { class:'shaman', spec:'Warspirit (enhancement)', dps:92.4 },
-  { class:'warrior', spec:'Bloodrush (fury)', dps:80.9 },
+  { class:'mage', spec:'Pyromancy (fire)', dps:146.7 },
+  { class:'warlock', spec:'Hexcraft (affliction)', dps:145.6 },
+  { class:'rogue', spec:'Thuggery (combat)', dps:142.1 },
+  { class:'paladin', spec:'Dawnreaver (retribution)', dps:131.1 },
+  { class:'druid', spec:'Moongrove (balance)', dps:129.6 },
+  { class:'priest', spec:'Vespers (shadow)', dps:122.3 },
+  { class:'hunter', spec:'Coldsight (marksmanship)', dps:119.5 },
+  { class:'shaman', spec:'Warspirit (enhancement)', dps:110.9 },
+  { class:'warrior', spec:'Bloodrush (fury)', dps:90.1 },
 ];
 const CLASS_FR = { warrior:'Guerrier', paladin:'Paladin', shaman:'Chaman', druid:'Druide', priest:'Prêtre', mage:'Mage', warlock:'Démoniste', rogue:'Voleur', hunter:'Chasseur' };
 const CLASS_EN = { warrior:'Warrior', paladin:'Paladin', shaman:'Shaman', druid:'Druid', priest:'Priest', mage:'Mage', warlock:'Warlock', rogue:'Rogue', hunter:'Hunter' };
