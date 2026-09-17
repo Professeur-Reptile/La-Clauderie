@@ -60,7 +60,7 @@
 
     var css = document.createElement('style');
     css.textContent = [
-      '.ver-badge { display: inline-flex; align-items: baseline; gap: 6px; margin: 14px 0 0;',
+      '.ver-badge { display: inline-block; margin: 14px 0 0; max-width: 100%; line-height: 1.5;',
       '  font-family: var(--font-mono, monospace); font-size: 0.74rem; letter-spacing: 0.02em;',
       '  border: 1px solid color-mix(in srgb, var(--heal, #58c46a) 45%, transparent);',
       '  color: var(--heal, #58c46a); border-radius: 7px; padding: 4px 10px; }',
