@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-17T07:57:15Z",
- "base_tag": "v0.43.0",
+ "generated": "2026-09-17T13:33:37Z",
+ "base_tag": "v0.43.2",
  "version": "v0.44.0",
- "branch": "release/v0.44.0",
+ "branch": "ossbrain-release/v0.44.0",
  "declared_version": "0.44.0",
  "imminent": true,
- "commits": 2,
- "shown": 0,
- "last_commit": "2026-09-17T18:56:16+12:00",
+ "commits": 12,
+ "shown": 4,
+ "last_commit": "2026-09-17T09:20:35Z",
  "sections": [
   {
    "key": "classes",
@@ -49,18 +49,47 @@
    "icon": "⚙️",
    "fr": "Confort & technique",
    "en": "Comfort & technical",
-   "items": []
+   "items": [
+    {
+     "h": "60e5f401",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Opposed movement keys no longer NaN the server position",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "67b82c5f",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Allow battleground wall-trap unstuck",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "89b38450",
+     "kind": "fix",
+     "scope": "unstuck",
+     "text": "Cancel battleground countdown on offense",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "7c880469",
+     "kind": "fix",
+     "scope": "unstuck",
+     "text": "Cancel battleground pet offense",
+     "date": "2026-09-17"
+    }
+   ]
   }
  ],
  "versions": [
   {
    "version": "v0.44.0",
-   "branch": "release/v0.44.0",
+   "branch": "ossbrain-release/v0.44.0",
    "declared_version": "0.44.0",
    "imminent": true,
-   "commits": 2,
-   "shown": 0,
-   "last_commit": "2026-09-17T18:56:16+12:00",
+   "commits": 12,
+   "shown": 4,
+   "last_commit": "2026-09-17T09:20:35Z",
    "sections": [
     {
      "key": "classes",
@@ -102,7 +131,36 @@
      "icon": "⚙️",
      "fr": "Confort & technique",
      "en": "Comfort & technical",
-     "items": []
+     "items": [
+      {
+       "h": "60e5f401",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Opposed movement keys no longer NaN the server position",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "67b82c5f",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Allow battleground wall-trap unstuck",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "89b38450",
+       "kind": "fix",
+       "scope": "unstuck",
+       "text": "Cancel battleground countdown on offense",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "7c880469",
+       "kind": "fix",
+       "scope": "unstuck",
+       "text": "Cancel battleground pet offense",
+       "date": "2026-09-17"
+      }
+     ]
     }
    ]
   }

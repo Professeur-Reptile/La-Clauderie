@@ -196,22 +196,22 @@
 <div class="wrap">
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · En préparation</p>
-    <h1>La prochaine version <span class="v" id="vNum">v0.43.0</span></h1>
-    <p class="lede">La <a href="notes/v0.42.2.html">v0.42.2</a> est sortie, et la <strong class="hl">v0.43.0</strong> se prépare. Le chantier est déjà très fourni : une refonte visible de l’interface, un nouvel onglet <strong class="hl">Who</strong> pour chercher les joueurs, un kit Wildfang retravaillé, et des améliorations concrètes pour les métiers, les donjons et la guilde.</p>
+    <h1>La prochaine version <span class="v" id="vNum">v0.44.0</span></h1>
+    <p class="lede">La <a href="notes/v0.43.0.html">v0.43.0</a> est sortie ce matin (avec les correctifs <a href="notes/v0.43.1.html">v0.43.1</a> et <a href="notes/v0.43.2.html">v0.43.2</a>), et la <strong class="hl">v0.44.0</strong> est déjà en préparation — <strong class="hl">et proche</strong> : le jeu a commencé l’emballage. Le chantier est pour l’instant petit : une poignée de correctifs anti-blocage en champ de bataille.</p>
 
     <div class="warn">
       <span class="ico" aria-hidden="true">⚠️</span>
       <div>
         <p><strong>Cette version n’est pas sortie.</strong> Tout ce qui suit est déjà mergé sur la branche que les développeurs préparent, mais peut encore être modifié, retiré, ou repoussé à plus tard.</p>
-        <p>Le numéro de version est déjà fixé, mais cette page reste un aperçu de travail : les détails peuvent encore changer. Les vraies notes, vérifiées dans le code, arriveront dans <a href="patch-notes.html">Nouveautés</a> le jour de la sortie.</p>
+        <p>Le numéro de version est déjà monté dans le jeu : la sortie est imminente. Cette page reste un aperçu de travail — les vraies notes, vérifiées dans le code, arriveront dans <a href="patch-notes.html">Nouveautés</a> le jour de la sortie.</p>
       </div>
     </div>
 
     <div class="meta">
-      <span><b>Depuis</b> la v0.42.2</span>
+      <span><b>Depuis</b> la v0.43.2</span>
       <span id="freshness"><b>Dernière vérification</b> à l’instant</span>
       <span id="moved"></span>
-      <span id="written"><b>Résumé écrit</b> le 15 septembre 2026</span>
+      <span id="written"><b>Résumé écrit</b> le 17 septembre 2026</span>
     </div>
     <p class="sec-sub" style="margin:6px 0 0;font-size:0.85rem">« Dernière vérification » = la dernière fois que cette page est allée voir où en sont les développeurs. « Dernier changement du jeu » = quand ils ont touché à cette version pour la dernière fois.</p>
     <div id="chantiers"></div>
@@ -222,77 +222,68 @@
     <h2 id="digest-title">En un coup d’œil</h2>
     <p class="sec-sub">Les mêmes rubriques qu’à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
     <ol>
-      <li><span class="d-ico" aria-hidden="true">⚔️</span><a class="d-name" href="#combat">Classes &amp; sorts</a><span class="d-say">— <b class="eq">Classes =</b> : le chantier retravaille surtout le kit <span data-codex="spec|Wildfang">Wildfang</span> du druide et l’affichage des auras. Aucun chiffre final de dégâts n’est arrêté.</span></li>
-      <li><span class="d-ico" aria-hidden="true">🔨</span><a class="d-name" href="#metiers">Métiers &amp; récolte</a><span class="d-say">— Recettes de charmes simplifiées, recettes épinglées à l’écran, tutoriel de récolte et fenêtres de fabrication et de marché réunies.</span></li>
-      <li><span class="d-ico" aria-hidden="true">🐉</span><a class="d-name" href="#donjons">Donjons, failles &amp; boss</a><span class="d-say">— Avertissement de raid, compte à rebours de pull, ready check, cadres de raid plus lisibles et enchantements sur les anneaux Riftbound.</span></li>
-      <li><span class="d-ico" aria-hidden="true">🗺️</span><a class="d-name" href="#monde">Monde &amp; quêtes</a><span class="d-say">— Suivi de quête réparé, bouton « montrer sur la carte », zone de chaque personnage visible et conseils des PNJ sous forme de bulles.</span></li>
-      <li><span class="d-ico" aria-hidden="true">🏰</span><a class="d-name" href="#guilde">Guilde &amp; social</a><span class="d-say">— Un onglet <b>Who</b> permet de rechercher et trier les joueurs ; la banque de guilde annonce aussi les dépôts et retraits d’or.</span></li>
-      <li><span class="d-ico" aria-hidden="true">⚙️</span><a class="d-name" href="#confort">Confort &amp; technique</a><span class="d-say">— Refonte générale des fenêtres, de la barre d’action, du HUD tactile et des options, avec historique du marché et mode interface masquée.</span></li>
+      <li class="none"><span class="d-ico" aria-hidden="true">⚔️</span><a class="d-name" href="#combat">Classes &amp; sorts</a><span class="d-say">— rien d’annoncé pour l’instant : aucun changement de classe sur la branche.</span></li>
+      <li class="none"><span class="d-ico" aria-hidden="true">🔨</span><a class="d-name" href="#metiers">Métiers &amp; récolte</a><span class="d-say">—</span></li>
+      <li class="none"><span class="d-ico" aria-hidden="true">🐉</span><a class="d-name" href="#donjons">Donjons, failles &amp; boss</a><span class="d-say">—</span></li>
+      <li class="none"><span class="d-ico" aria-hidden="true">🗺️</span><a class="d-name" href="#monde">Monde &amp; quêtes</a><span class="d-say">—</span></li>
+      <li class="none"><span class="d-ico" aria-hidden="true">🏰</span><a class="d-name" href="#guilde">Guilde &amp; social</a><span class="d-say">—</span></li>
+      <li><span class="d-ico" aria-hidden="true">⚙️</span><a class="d-name" href="#confort">Confort &amp; technique</a><span class="d-say">— Des correctifs anti-blocage en champ de bataille : sortie de piège à mur, plus de position serveur en vrac, compte à rebours mieux tenu.</span></li>
     </ol>
   </nav>
 
   <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
        s'efface d'elle-même quand cette version sort, et se signale périmée si
        le jeu passe à préparer la suivante. -->
-  <div id="editorial" data-for="v0.43.0" data-commits="494" data-chantiers="v0.43.0" data-written="2026-09-15T14:00+02:00">
+  <div id="editorial" data-for="v0.44.0" data-commits="12" data-chantiers="v0.44.0" data-written="2026-09-17T15:30+02:00">
 
   <section id="combat">
-    <div class="sec-head"><span class="sec-num">01</span><h2>Le druide Wildfang change de forme</h2></div>
-    <p class="sec-sub">La branche retravaille le kit de <span data-codex="spec|Wildfang">Wildfang</span> : sa forme de loup reçoit une vitesse propre et plusieurs outils de déplacement et de contrôle. Le HUD des auras devient aussi plus lisible pour toutes les classes.</p>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Classes &amp; sorts : rien d’annoncé</h2></div>
+    <p class="sec-sub">Aucun changement de classe n’a rejoint la branche pour l’instant.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Un kit de loup plus complet <span class="chip c-new">En préparation</span></h3><ul><li><b>Loping Stride</b> devient un élément de base et la rangée concernée accueille <b>Longstride</b>.</li><li><b>Bruin Rush</b>, <b>Stalk</b>, <b>Lunge</b> et <b>Hamstring Bite</b> donnent à la forme des options pour entrer, sortir et ralentir.</li></ul></div>
-      <div class="card"><h3>Les auras se lisent mieux <span class="chip c-new">Interface</span></h3><p>Les buffs temporaires, les auras de classe et les effets attachés au personnage sont regroupés sur des pistes plus claires, avec leur importance visuelle conservée.</p></div>
-      <div class="card"><h3>Pas encore un classement DPS <span class="chip c-util">Prudence</span></h3><p>La v0.43.0 n’est pas sortie et le kit continue d’être retouché. Les chiffres du nouvel onglet DPS restent ceux du patch publié, pas ceux d’une branche de test.</p></div>
+      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>Le chantier vient d’ouvrir après la sortie de la v0.43.0 : douze commits au relevé, tous côté confort. Si un rééquilibrage arrive, cette page le dira.</p></div>
     </div>
   </section>
 
   <section id="metiers">
-    <div class="sec-head"><span class="sec-num">02</span><h2>Les métiers gagnent de vrais repères</h2></div>
-    <p class="sec-sub">Le chantier réduit les petits frottements qui font perdre du temps entre la recette et la récolte.</p>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Métiers &amp; récolte : rien d’annoncé</h2></div>
+    <p class="sec-sub">Aucune recette, aucun nœud ni outil ne bouge sur la branche pour l’instant.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Les charmes coûtent moins de fragments <span class="chip c-new">Nouveau</span></h3><p>Les recettes de charmes sont rééquilibrées : elles demandent désormais un seul <b>Chime Shard</b>, contre cinq auparavant.</p></div>
-      <div class="card"><h3>Une recette reste sous les yeux <span class="chip c-new">Confort</span></h3><p>Une recette épinglée apparaît dans un suivi permanent du HUD. Les fenêtres de fabrication et de marché utilisent la même interface.</p></div>
-      <div class="card"><h3>La récolte explique mieux ses règles <span class="chip c-util">Clarté</span></h3><p>Le tutoriel couvre aussi la récolte, les outils non appris s’usent correctement et les choix d’interaction pour les cadavres sont accessibles directement.</p></div>
+      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>Les charmes à 1 éclat / 14 essences / 10 poussières de la v0.43.0 restent la règle du jour.</p></div>
     </div>
   </section>
 
   <section id="donjons">
-    <div class="sec-head"><span class="sec-num">03</span><h2>Les groupes savent quand partir</h2></div>
-    <p class="sec-sub">Le jeu donne enfin les mêmes repères à un groupe avant et pendant le pull.</p>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Donjons, failles &amp; boss : rien d’annoncé</h2></div>
+    <p class="sec-sub">Les instances restent celles de la v0.43.2, avec le raid Crucible of the Last Spring et le donjon The Wildheart Basin au Finder.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Le pull devient lisible <span class="chip c-new">Raid</span></h3><p>Bannière d’avertissement, compte à rebours et fenêtre de <b>ready check</b> arrivent ensemble, avec des cadres de raid plus cohérents.</p></div>
-      <div class="card"><h3>Les anneaux Riftbound acceptent leurs enchantements <span class="chip c-new">Faille</span></h3><p>Les anneaux peuvent recevoir les enchantements prévus à chaque palier, sans marque réservée par erreur au seul palier parfait.</p></div>
-      <div class="card"><h3>Le Finder connaît les nouveaux lieux <span class="chip c-util">Donjons</span></h3><p><span data-codex="dungeon|ignivar_forge_lift">Ignivar</span> et <span data-codex="dungeon|wildheart_basin">The Wildheart Basin</span> sont catalogués dans le chercheur de donjons, et le marqueur de raid apparaît sur le cadre de cible.</p></div>
+      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>Nythraxis est réglée sur 23 % / 37 % par frappe depuis le correctif v0.43.1 — rien de neuf sur la branche.</p></div>
     </div>
   </section>
 
   <section id="monde">
-    <div class="sec-head"><span class="sec-num">04</span><h2>Le monde explique mieux où aller</h2></div>
-    <p class="sec-sub">La v0.43.0 travaille le lien entre journal de quêtes, carte et personnages.</p>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Monde &amp; quêtes : rien d’annoncé</h2></div>
+    <p class="sec-sub">Le monde ouvert ne bouge pas sur la branche pour l’instant.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Le suivi de quête devient réel <span class="chip c-new">Quêtes</span></h3><p>« Ne plus suivre » agit sur la bonne instance de quête, et « montrer sur la carte » ouvre la quête sélectionnée au lieu d’un simple doublon.</p></div>
-      <div class="card"><h3>Les PNJ parlent au bon endroit <span class="chip c-new">Interface</span></h3><p>Les conseils apparaissent en bulle ; si le PNJ n’est pas visible, ils passent par une fenêtre <b>Talking Head</b> déplaçable.</p></div>
-      <div class="card"><h3>La sélection de personnage donne sa zone <span class="chip c-util">Monde</span></h3><p>Chaque sauvegarde affiche désormais la zone où se trouve le personnage, et les nameplates indiquent ce que fait un PNJ.</p></div>
+      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>Zones, quêtes et cimetière du Last Keep restent ceux de la v0.43.0.</p></div>
     </div>
   </section>
 
   <section id="guilde">
-    <div class="sec-head"><span class="sec-num">05</span><h2>La guilde voit enfin qui est connecté</h2></div>
-    <p class="sec-sub">C’est la nouveauté sociale la plus directement utile pour organiser un event.</p>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Guilde &amp; social : rien d’annoncé</h2></div>
+    <p class="sec-sub">Aucun outil de guilde ni social sur la branche pour l’instant.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Un onglet Who recherchable <span class="chip c-new">Nouveau</span></h3><p>La fenêtre Social reçoit un onglet <b>Who</b> où l’on peut rechercher et trier les joueurs, avec une mise en page adaptée au mobile.</p></div>
-      <div class="card"><h3>La banque parle <span class="chip c-new">Guilde</span></h3><p>Les dépôts et retraits d’or sont annoncés dans la discussion de guilde : chacun sait quand le coffre a bougé.</p></div>
-      <div class="card"><h3>Les groupes se ciblent au clavier <span class="chip c-util">Groupe</span></h3><p>Les touches <b>F1 à F10</b> ciblent directement les lignes du groupe. Les cadres de groupe et la discussion partagent la nouvelle présentation.</p></div>
+      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>L’onglet Who, le signpost et les annonces d’or de guilde de la v0.43.0 restent en place.</p></div>
     </div>
   </section>
 
   <section id="confort">
-    <div class="sec-head"><span class="sec-num">06</span><h2>Une grande refonte de l’interface</h2></div>
-    <p class="sec-sub">La majorité des commits de la branche concerne le même objectif : rendre le jeu lisible au clavier, à la manette, au tactile et sur mobile.</p>
+    <div class="sec-head"><span class="sec-num">06</span><h2>Un chantier qui commence par débloquer les champs de bataille</h2></div>
+    <p class="sec-sub">Douze commits au relevé, tous côté technique : la v0.44.0 s’attaque aux blocages rencontrés en champ de bataille. Une version d’entretien pour l’instant — la suite du chantier dira si elle grossit.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Les fenêtres parlent le même langage <span class="chip c-new">Refonte</span></h3><p>Options, personnage, économie, activité, compte, barre d’action et fenêtre tactile utilisent une bibliothèque de composants commune.</p></div>
-      <div class="card"><h3>Le marché devient plus pratique <span class="chip c-new">Économie</span></h3><p>L’échange <b>$WOC</b> ajoute un historique des ventes et une recherche de plusieurs annonces au meilleur prix.</p></div>
-      <div class="card"><h3>Des outils pour jouer et observer <span class="chip c-util">Technique</span></h3><p>Mode interface masquée pour les captures, aperçu des apparences avant achat et mesure GPU optionnelle pour diagnostiquer les performances.</p></div>
+      <div class="card"><h3>La position ne part plus en vrac <span class="chip c-util">Correctif</span></h3><p>Appuyer en même temps sur deux touches de déplacement opposées mettait la position côté serveur dans un état incohérent : c’est réparé.</p></div>
+      <div class="card"><h3>Sortir des pièges à mur <span class="chip c-new">Correctif</span></h3><p>Un joueur coincé contre un mur de champ de bataille peut enfin se débloquer au lieu d’attendre la fin du match.</p></div>
+      <div class="card"><h3>Le compte à rebours se tient <span class="chip c-util">Correctif</span></h3><p>Déclencher une offense pendant le compte à rebours d’entrée l’annule au lieu de laisser le match démarrer en roue libre — le familier compris.</p></div>
+      <div class="card"><h3>Chantier jeune <span class="chip c-util">Prudence</span></h3><p>Douze commits au moment du relevé, sortie imminente annoncée par l’emballage du jeu : cette page sera reprise si la branche grossit d’ici la sortie. Pas de chiffre ici : c’est du travail en cours.</p></div>
     </div>
   </section>
 

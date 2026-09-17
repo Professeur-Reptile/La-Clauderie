@@ -39,7 +39,7 @@ if [ ! -d "$clone/.git" ]; then
 fi
 
 echo "→ Choix du tag de base et des chantiers en cours…"
-if ! sel=$(python3 scripts/pick_release_branches.py "$GAME_URL"); then
+if ! sel=$(python3 scripts/pick_release_branches.py "$GAME_URL" | tr -d '\r'); then
   echo "Dépôt du jeu injoignable — relevé impossible." >&2
   exit 1
 fi

@@ -300,7 +300,7 @@
 
 <script src="assets/nav.js"></script>
 <script src="assets/lang.js"></script>
-<script src="assets/version.js" data-version="v0.42.2" defer></script>
+<script src="assets/version.js" data-version="v0.43.2" defer></script>
 <script>
 // Builds PvP par classe — éditorial La Clauderie, mêmes rangées de talents que
 // la page Builds (TALENTS.json de la knowledge base), re-choisies pour l'arène.
@@ -385,7 +385,8 @@ const PVP = {
    { fr: "<b>Bruin Rush</b> + <b>Concuss</b> en alternance : la cible passe sa vie stun ou ralentie.", en: "<b>Bruin Rush</b> + <b>Concuss</b> alternating: the target lives stunned or slowed." },
    { fr: "<b>Craven Roar</b> (−20 PA) en continu : la mêlée adverse tape dans du coton.", en: "<b>Craven Roar</b> (−20 AP) at all times: the enemy melee hits cotton." },
    { fr: "<b>Wildbloom</b> puis <b>Wildmend</b> : depuis la v0.39, plus besoin de sortir de forme à la main — le sort te fait quitter l’ours tout seul, gratuitement et sans temps de recharge global. Retourne en ours ensuite (ça, ça coûte). Et si on t’enracine, c’est le changement de forme lui-même qui te libère (Wildshift).", en: "<b>Wildbloom</b> then <b>Wildmend</b>: since v0.39 you no longer drop the form by hand — the cast leaves bear for you, free and with no global cooldown. Shift back into bear afterwards (that part does cost). And if they root you, the shift itself frees you (Wildshift)." },
-   { fr: "<b>Headbutt</b> les soins — l'interrupt verrouille 4 s.", en: "<b>Headbutt</b> their heals — the interrupt locks for 4s." }
+   { fr: "<b>Headbutt</b> les soins — l'interrupt verrouille 4 s.", en: "<b>Headbutt</b> their heals — the interrupt locks for 4s." },
+   { fr: "Depuis la v0.43, le kit du félin complète le peel : <b>Lunge</b> rattrape tout ce qui fuit (bond de 12 m) et <b>Takedown</b> étourdit 1 s + 1 s par point de combo (6 s à cinq) ; chaque changement de forme donne un élan de +60 % de vitesse (Loping Stride, 3 s).", en: "Since v0.43, the cat kit rounds out the peel: <b>Lunge</b> catches anything that runs (a 12 yd leap) and <b>Takedown</b> stuns for 1s + 1s per combo point (6s at five); every shapeshift grants a +60% speed burst (Loping Stride, 3s)." }
   ],
   partner: { fr: "Partenaire 2v2 : Pactbound (« l'Increvable », toi en Groveheart) ou Hexcraft.", en: "2v2 partner: Pactbound (“the Unkillable”, you as Groveheart) or Hexcraft." }
  },
@@ -442,7 +443,7 @@ const PVP = {
    ["Abyssal Rift", "niv. 20", { fr: "aspire les ennemis dans 8 m vers un point choisi, gros dégâts d’Ombre et étourdissement 2 s : ta fenêtre de kill en 2v2.", en: "pulls enemies within 8m to a chosen spot, heavy Shadow damage and a 2s stun: your 2v2 kill window." }]
   ],
   plan: [
-   { fr: "Pose ton <b>Evil Eye</b> sur la cible à tuer, monte la Condamnation avec <b>Needle of Fate</b> et <b>Hex of Violence</b>, puis lâche <b>Sentence</b> pendant le contrôle de ton partenaire.", en: "Put your <b>Evil Eye</b> on the kill target, build Condemnation with <b>Needle of Fate</b> and <b>Hex of Violence</b>, then unload <b>Sentence</b> inside your partner's control." },
+   { fr: "Pose ton <b>Evil Eye</b> sur la cible à tuer, monte la Condamnation avec <b>Needle of Fate</b> et <b>Hex of Violence</b>, puis lâche <b>Sentence</b> pendant le contrôle de ton partenaire. Et depuis la v0.43, <b>Hex of Violence</b> travaille tout seul : dégâts d’Ombre et 2 Condamnation toutes les 2 s pendant ses 8 s, même si la cible ne fait que courir.", en: "Put your <b>Evil Eye</b> on the kill target, build Condemnation with <b>Needle of Fate</b> and <b>Hex of Violence</b>, then unload <b>Sentence</b> inside your partner's control. And since v0.43, <b>Hex of Violence</b> works on its own: Shadow damage and 2 Condemnation every 2s over its 8s, even if the target only runs." },
    { fr: "<b>Harrow</b> en boucle sur la cible libre. v0.39 : elle dure 5 s au lieu de 8, mais il faut désormais lui infliger <b>8 % de ses PV max</b> pour la briser — avant, le moindre tic de DoT la faisait sauter. Elle tient donc pour de vrai. Les peurs gardent leurs rendements décroissants : alterne avec les stuns de ton partenaire.", en: "<b>Harrow</b> on loop on the free target. v0.39: it lasts 5s instead of 8, but breaking it now takes <b>8% of their max health</b> in damage — before, one dot tick popped it. So it actually holds. Fears still suffer diminishing returns: alternate with your partner's stuns." },
    { fr: "<b>Abyssal Gag</b> les soins : 4 s sans un seul sort, école par école.", en: "<b>Abyssal Gag</b> their heals: 4s without a single spell, school by school." },
    { fr: "<b>Consume</b> en kitant (Walking Hunger) : chaque mètre parcouru te soigne.", en: "<b>Consume</b> while kiting (Walking Hunger): every meter you cover heals you." }

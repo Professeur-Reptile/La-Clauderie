@@ -2,88 +2,157 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
-    "version": "v0.42.2",
-    "date": "2026-09-11",
-    "titre": "Nythraxis devient lisible et Zeal ne se cumule plus",
-    "resume": "La v0.42.2 retire les flaques de Soulfire et la ligne de Gravefire, transforme les Bone Spikes en wards à 4 ou 6 coups, les espace de 55 secondes par joueur et place le Binding Sigil sur deux plateformes alternées. Last Flame’s Zeal partage désormais un seul bonus en double arme.",
-    "temps_forts": [
-      "🐉 Soulfire et Gravefire sont retirés du combat",
-      "🦴 Les Bone Spikes demandent 4 coups en normal et 6 en héroïque",
-      "⏱️ Un joueur empalé reste hors cible pendant 55 secondes",
-      "🔥 Le Binding Sigil alterne entre deux plateformes à 30 yards",
-      "🟠 Les Bone Spikes deviennent orange braise à tous les niveaux graphiques",
-      "✨ Last Flame’s Zeal partage un seul bonus de 50 Force"
-    ],
-    "page": "notes/v0.42.2.html",
-    "titre_en": "Nythraxis is clearer and Zeal no longer stacks",
-    "resume_en": "v0.42.2 retires Soulfire pools and the Gravefire line, turns Bone Spikes into 4- or 6-hit wards, spaces each raider’s targets by 55 seconds and places Binding Sigil on two alternating platforms. Last Flame’s Zeal now shares one buff between both weapons.",
-    "temps_forts_en": [
-      "🐉 Soulfire and Gravefire are retired from the fight",
-      "🦴 Bone Spikes take 4 hits on Normal and 6 on Heroic",
-      "⏱️ An impaled player stays out of targets for 55 seconds",
-      "🔥 Binding Sigil alternates between two platforms 30 yards away",
-      "🟠 Bone Spikes are ember orange at every graphics tier",
-      "✨ Last Flame’s Zeal shares one 50 Strength buff"
-    ],
-    "page_en": "notes/v0.42.2.en.html"
+   "version": "v0.43.2",
+   "date": "2026-09-17",
+   "titre": "La feuille de personnage répond à nouveau à gauche",
+   "resume": "La v0.43.2 répare la colonne d’équipement gauche de la feuille de personnage : depuis la refonte de la v0.43.0, la survoler ne donnait ni info-bulle ni retrait, la scène du modèle 3D recouvrant la zone de clics. Les douze emplacements répondent à nouveau ; la feuille tactile et l’inspection n’étaient pas touchées.",
+   "temps_forts": [
+    "🖥️ Info-bulles et retrait sur les douze emplacements de la feuille",
+    "🖱️ La scène 3D ne recouvre plus la colonne gauche",
+    "📱 Feuille tactile et fenêtre d’inspection non concernées"
+   ],
+   "page": "notes/v0.43.2.html",
+   "titre_en": "The character sheet answers on the left again",
+   "resume_en": "v0.43.2 repairs the character sheet’s left gear column: since the v0.43.0 rebuild, hovering it gave neither a tooltip nor an unequip, the 3D model stage covering the click area. All twelve slots respond again; the touch sheet and the inspect window were unaffected.",
+   "temps_forts_en": [
+    "🖥️ Tooltips and unequip on all twelve sheet slots",
+    "🖱️ The 3D stage no longer covers the left column",
+    "📱 Touch sheet and inspect window unaffected"
+   ],
+   "page_en": "notes/v0.43.2.en.html"
   },
   {
-    "version": "v0.42.1",
-    "date": "2026-09-10",
-    "titre": "Le correctif qui rend les échanges et la récolte fiables",
-    "resume": "Le hotfix v0.42.1 rétablit les échanges du butin du Creuset, rend la touche Interagir aux nœuds de récolte et corrige le coffre de matériaux, l’entrée des Gouffres, le paiement bureau et les pics d’os héroïques. Le Rallycart est retiré et remboursé.",
-    "temps_forts": [
-      "🤝 Le butin échangeable du Creuset et la fenêtre de groupe sont de retour",
-      "⛏️ La touche Interagir récolte de nouveau les nœuds proches",
-      "📦 Le coffre de matériaux ne déconnecte plus sur les stocks mélangés",
-      "🐉 Les Bone Spikes héroïques retrouvent leurs 1 000 PV",
-      "🛒 Le paiement Claudium fonctionne dans le client bureau",
-      "🚗 Le Rallycart est retiré ; ses acheteurs reçoivent 3 000 Claudium"
-    ],
-    "page": "notes/v0.42.1.html",
-    "titre_en": "The hotfix that makes trading and gathering reliable",
-    "resume_en": "Hotfix v0.42.1 restores tradeable Crucible loot, brings the Interact key back to gathering nodes and fixes the Materials Vault, delve entry, desktop checkout and heroic Bone Spikes. Rallycart is retired and refunded.",
-    "temps_forts_en": [
-      "🤝 Tradeable Crucible loot and the party window are back",
-      "⛏️ Interact gathers nearby nodes again",
-      "📦 The Materials Vault no longer disconnects on mixed-source stock",
-      "🐉 Heroic Bone Spikes are back at 1,000 HP",
-      "🛒 Claudium checkout works in the desktop client",
-      "🚗 Rallycart is retired; buyers receive 3,000 Claudium"
-    ],
-    "page_en": "notes/v0.42.1.en.html"
+   "version": "v0.43.1",
+   "date": "2026-09-17",
+   "titre": "Toute la tempête de Nythraxis frappe à 23 % / 37 %",
+   "resume": "La v0.43.1 étend l’adoucissement de Bone Slam à chaque frappe d’une tempête d’os, au lieu de la seule première : 23 % des PV max en normal et 37 % en héroique, première comme suivantes. Les quatre charges, le rayon de 9 m et la cadence ne changent pas, et le guide du boss n’affiche plus qu’un chiffre par difficulté.",
+   "temps_forts": [
+    "🦴 Chaque Bone Slam d’une tempête : 23 % des PV max en normal, 37 % en héroique",
+    "⏱️ Quatre charges de 3 s et rayon de 9 m : inchangés",
+    "📖 Le guide du boss n’affiche plus qu’un chiffre par difficulté"
+   ],
+   "page": "notes/v0.43.1.html",
+   "titre_en": "Nythraxis’s whole storm hits at 23% / 37%",
+   "resume_en": "v0.43.1 extends the Bone Slam softening to every slam of a bone storm instead of only the first: 23% max health in Normal and 37% in Heroic, first and following alike. The four charge windows, the 9 yd radius and the cadence are unchanged, and the boss guide now shows a single number per difficulty.",
+   "temps_forts_en": [
+    "🦴 Every Bone Slam of a storm: 23% max health in Normal, 37% in Heroic",
+    "⏱️ Four 3 s charge windows and 9 yd radius: unchanged",
+    "📖 The boss guide shows a single number per difficulty"
+   ],
+   "page_en": "notes/v0.43.1.en.html"
   },
   {
-    "version": "v0.42.0",
-    "date": "2026-09-09",
-    "titre": "Masterwrought, farming et un monde reconstruit",
-    "resume": "La v0.42.0 ajoute le palier Masterwrought dans les dix métiers, l’agriculture et la récolte volontaire, refond Nythraxis, redessine les Drakelands et rend l’interface réorganisable. Le Rift Forge, les nouvelles collections du Creuset, les outils de guilde et les traductions complètes arrivent dans le même patch.",
-    "temps_forts": [
-      "🔨 Masterwrought devient le nouveau sommet de fabrication",
-      "🌱 L’agriculture devient le cinquième métier de récolte",
-      "🧰 Le Field Kit rend la récolte des cadavres volontaire et traçable",
-      "🐉 Nythraxis revient avec un combat de mouvement en trois phases",
-      "💎 Le Rift Forge fait progresser les anneaux et leurs gemmes",
-      "🗺️ Les Drakelands sont redessinées et les trajets deviennent plus fiables",
-      "🏰 Roster de guilde, historique de banque et notifications Discord gagnent des outils",
-      "⚙️ Cadres HUD, touches et barres d’action deviennent configurables"
-    ],
-    "page": "notes/v0.42.0.html",
-    "titre_en": "Masterwrought, farming and a rebuilt world",
-    "resume_en": "v0.42.0 adds the Masterwrought tier across all ten professions, farming and deliberate harvesting, rebuilds Nythraxis, redraws the Drakelands and makes the interface rearrangeable. The Rift Forge, new Crucible collections, guild tools and complete translations ship in the same release.",
-    "temps_forts_en": [
-      "🔨 Masterwrought is the new crafting ceiling",
-      "🌱 Farming becomes the fifth gathering profession",
-      "🧰 Field Kit makes corpse harvesting deliberate and traceable",
-      "🐉 Nythraxis returns as a three-phase movement fight",
-      "💎 Rift Forge advances bands and their gems",
-      "🗺️ The Drakelands are redrawn and routes become more reliable",
-      "🏰 Guild roster, bank history and Discord notifications gain tools",
-      "⚙️ HUD frames, keybinds and action bars become configurable"
-    ],
-    "page_en": "notes/v0.42.0.en.html"
+   "version": "v0.43.0",
+   "date": "2026-09-17",
+   "titre": "Le vrai félin du druide, deux instances, et la santé refondue",
+   "resume": "La v0.43.0 reconstruit l’interface sur une bibliothèque partagée (Watched Spells, barres par spécialisation, Alt+Z, cibles de groupe en F1–F10), donne au druide un félin quadrupède avec Lunge et Takedown, transforme le trop-soin du Chronomancier en bouclier et adoucit la première frappe de Nythraxis. Le raid Crucible of the Last Spring et le donjon The Wildheart Basin rejoignent le Dungeon Finder ; chaque objet gagne un tiers d’Endurance et les recettes de charmes ne coûtent plus qu’un désenchantement épique.",
+   "temps_forts": [
+    "🐆 Cat Form devient un quadrupède : +15 % de vitesse passive, Lunge, Takedown, Dash dès le niveau 12",
+    "🛡️ Temporal Aegis : le trop-soin du Chronomancien devient un bouclier plafonné à 20 % des PV max",
+    "🐉 Raid 10 Crucible of the Last Spring et donjon The Wildheart Basin au Dungeon Finder",
+    "❤️ Chaque objet porte un tiers d’Endurance ; toutes les classes gagnent 2 d’Endurance par niveau",
+    "👁️ Watched Spells : une aura par auto-buff et quatre canaux de notification, tout désactivé par défaut",
+    "⌨️ Barres d’action par spécialisation, Alt+Z, Ctrl+V, cibles de groupe en F1–F10",
+    "🧪 Recettes de charme : 1 éclat, 14 essences, 10 poussières — un désenchantement épique suffit",
+    "⚔️ Nythraxis : premier Bone Slam à 23 % / 37 % et plus de Bone Spike en pleine tempête"
+   ],
+   "page": "notes/v0.43.0.html",
+   "titre_en": "The druid’s real cat, two instances, and health reworked",
+   "resume_en": "v0.43.0 rebuilds the interface on a shared library (Watched Spells, per-spec bars, Alt+Z, group targets on F1–F10), gives the druid a quadruped cat with Lunge and Takedown, turns the Chronomancer’s overhealing into a shield and softens Nythraxis’s opening slam. The Crucible of the Last Spring raid and The Wildheart Basin dungeon join the Dungeon Finder; every item gains a third of Stamina and charm recipes now cost a single epic disenchant.",
+   "temps_forts_en": [
+    "🐆 Cat Form becomes a quadruped: +15% passive speed, Lunge, Takedown, Dash from level 12",
+    "🛡️ Temporal Aegis: the Chronomancer’s overhealing becomes a shield capped at 20% max health",
+    "🐉 The 10-player Crucible of the Last Spring raid and The Wildheart Basin dungeon join the Finder",
+    "❤️ Every item carries a third of Stamina; all classes gain 2 Stamina per level",
+    "👁️ Watched Spells: an aura per self-buff and four notification channels, all off by default",
+    "⌨️ Per-spec action bars, Alt+Z, Ctrl+V, group targets on F1–F10",
+    "🧪 Charm recipes: 1 shard, 14 essences, 10 dusts — one epic disenchant covers it",
+    "⚔️ Nythraxis: first Bone Slam at 23% / 37% and no more Bone Spike mid-storm"
+   ],
+   "page_en": "notes/v0.43.0.en.html"
   },
-
+  {
+   "version": "v0.42.2",
+   "date": "2026-09-11",
+   "titre": "Nythraxis devient lisible et Zeal ne se cumule plus",
+   "resume": "La v0.42.2 retire les flaques de Soulfire et la ligne de Gravefire, transforme les Bone Spikes en wards à 4 ou 6 coups, les espace de 55 secondes par joueur et place le Binding Sigil sur deux plateformes alternées. Last Flame’s Zeal partage désormais un seul bonus en double arme.",
+   "temps_forts": [
+    "🐉 Soulfire et Gravefire sont retirés du combat",
+    "🦴 Les Bone Spikes demandent 4 coups en normal et 6 en héroïque",
+    "⏱️ Un joueur empalé reste hors cible pendant 55 secondes",
+    "🔥 Le Binding Sigil alterne entre deux plateformes à 30 yards",
+    "🟠 Les Bone Spikes deviennent orange braise à tous les niveaux graphiques",
+    "✨ Last Flame’s Zeal partage un seul bonus de 50 Force"
+   ],
+   "page": "notes/v0.42.2.html",
+   "titre_en": "Nythraxis is clearer and Zeal no longer stacks",
+   "resume_en": "v0.42.2 retires Soulfire pools and the Gravefire line, turns Bone Spikes into 4- or 6-hit wards, spaces each raider’s targets by 55 seconds and places Binding Sigil on two alternating platforms. Last Flame’s Zeal now shares one buff between both weapons.",
+   "temps_forts_en": [
+    "🐉 Soulfire and Gravefire are retired from the fight",
+    "🦴 Bone Spikes take 4 hits on Normal and 6 on Heroic",
+    "⏱️ An impaled player stays out of targets for 55 seconds",
+    "🔥 Binding Sigil alternates between two platforms 30 yards away",
+    "🟠 Bone Spikes are ember orange at every graphics tier",
+    "✨ Last Flame’s Zeal shares one 50 Strength buff"
+   ],
+   "page_en": "notes/v0.42.2.en.html"
+  },
+  {
+   "version": "v0.42.1",
+   "date": "2026-09-10",
+   "titre": "Le correctif qui rend les échanges et la récolte fiables",
+   "resume": "Le hotfix v0.42.1 rétablit les échanges du butin du Creuset, rend la touche Interagir aux nœuds de récolte et corrige le coffre de matériaux, l’entrée des Gouffres, le paiement bureau et les pics d’os héroïques. Le Rallycart est retiré et remboursé.",
+   "temps_forts": [
+    "🤝 Le butin échangeable du Creuset et la fenêtre de groupe sont de retour",
+    "⛏️ La touche Interagir récolte de nouveau les nœuds proches",
+    "📦 Le coffre de matériaux ne déconnecte plus sur les stocks mélangés",
+    "🐉 Les Bone Spikes héroïques retrouvent leurs 1 000 PV",
+    "🛒 Le paiement Claudium fonctionne dans le client bureau",
+    "🚗 Le Rallycart est retiré ; ses acheteurs reçoivent 3 000 Claudium"
+   ],
+   "page": "notes/v0.42.1.html",
+   "titre_en": "The hotfix that makes trading and gathering reliable",
+   "resume_en": "Hotfix v0.42.1 restores tradeable Crucible loot, brings the Interact key back to gathering nodes and fixes the Materials Vault, delve entry, desktop checkout and heroic Bone Spikes. Rallycart is retired and refunded.",
+   "temps_forts_en": [
+    "🤝 Tradeable Crucible loot and the party window are back",
+    "⛏️ Interact gathers nearby nodes again",
+    "📦 The Materials Vault no longer disconnects on mixed-source stock",
+    "🐉 Heroic Bone Spikes are back at 1,000 HP",
+    "🛒 Claudium checkout works in the desktop client",
+    "🚗 Rallycart is retired; buyers receive 3,000 Claudium"
+   ],
+   "page_en": "notes/v0.42.1.en.html"
+  },
+  {
+   "version": "v0.42.0",
+   "date": "2026-09-09",
+   "titre": "Masterwrought, farming et un monde reconstruit",
+   "resume": "La v0.42.0 ajoute le palier Masterwrought dans les dix métiers, l’agriculture et la récolte volontaire, refond Nythraxis, redessine les Drakelands et rend l’interface réorganisable. Le Rift Forge, les nouvelles collections du Creuset, les outils de guilde et les traductions complètes arrivent dans le même patch.",
+   "temps_forts": [
+    "🔨 Masterwrought devient le nouveau sommet de fabrication",
+    "🌱 L’agriculture devient le cinquième métier de récolte",
+    "🧰 Le Field Kit rend la récolte des cadavres volontaire et traçable",
+    "🐉 Nythraxis revient avec un combat de mouvement en trois phases",
+    "💎 Le Rift Forge fait progresser les anneaux et leurs gemmes",
+    "🗺️ Les Drakelands sont redessinées et les trajets deviennent plus fiables",
+    "🏰 Roster de guilde, historique de banque et notifications Discord gagnent des outils",
+    "⚙️ Cadres HUD, touches et barres d’action deviennent configurables"
+   ],
+   "page": "notes/v0.42.0.html",
+   "titre_en": "Masterwrought, farming and a rebuilt world",
+   "resume_en": "v0.42.0 adds the Masterwrought tier across all ten professions, farming and deliberate harvesting, rebuilds Nythraxis, redraws the Drakelands and makes the interface rearrangeable. The Rift Forge, new Crucible collections, guild tools and complete translations ship in the same release.",
+   "temps_forts_en": [
+    "🔨 Masterwrought is the new crafting ceiling",
+    "🌱 Farming becomes the fifth gathering profession",
+    "🧰 Field Kit makes corpse harvesting deliberate and traceable",
+    "🐉 Nythraxis returns as a three-phase movement fight",
+    "💎 Rift Forge advances bands and their gems",
+    "🗺️ The Drakelands are redrawn and routes become more reliable",
+    "🏰 Guild roster, bank history and Discord notifications gain tools",
+    "⚙️ HUD frames, keybinds and action bars become configurable"
+   ],
+   "page_en": "notes/v0.42.0.en.html"
+  },
   {
    "version": "v0.41.4",
    "date": "2026-09-05",
