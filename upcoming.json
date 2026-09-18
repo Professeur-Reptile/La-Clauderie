@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-17T13:33:37Z",
+ "generated": "2026-09-18T00:43:42Z",
  "base_tag": "v0.43.2",
- "version": "v0.44.0",
- "branch": "ossbrain-release/v0.44.0",
- "declared_version": "0.44.0",
+ "version": "v0.43.3",
+ "branch": "release/v0.43.3",
+ "declared_version": "0.43.3",
  "imminent": true,
- "commits": 12,
- "shown": 4,
- "last_commit": "2026-09-17T09:20:35Z",
+ "commits": 2,
+ "shown": 0,
+ "last_commit": "2026-09-18T10:13:32+12:00",
  "sections": [
   {
    "key": "classes",
@@ -49,47 +49,18 @@
    "icon": "⚙️",
    "fr": "Confort & technique",
    "en": "Comfort & technical",
-   "items": [
-    {
-     "h": "60e5f401",
-     "kind": "fix",
-     "scope": "sim",
-     "text": "Opposed movement keys no longer NaN the server position",
-     "date": "2026-09-17"
-    },
-    {
-     "h": "67b82c5f",
-     "kind": "fix",
-     "scope": "sim",
-     "text": "Allow battleground wall-trap unstuck",
-     "date": "2026-09-17"
-    },
-    {
-     "h": "89b38450",
-     "kind": "fix",
-     "scope": "unstuck",
-     "text": "Cancel battleground countdown on offense",
-     "date": "2026-09-17"
-    },
-    {
-     "h": "7c880469",
-     "kind": "fix",
-     "scope": "unstuck",
-     "text": "Cancel battleground pet offense",
-     "date": "2026-09-17"
-    }
-   ]
+   "items": []
   }
  ],
  "versions": [
   {
-   "version": "v0.44.0",
-   "branch": "ossbrain-release/v0.44.0",
-   "declared_version": "0.44.0",
+   "version": "v0.43.3",
+   "branch": "release/v0.43.3",
+   "declared_version": "0.43.3",
    "imminent": true,
-   "commits": 12,
-   "shown": 4,
-   "last_commit": "2026-09-17T09:20:35Z",
+   "commits": 2,
+   "shown": 0,
+   "last_commit": "2026-09-18T10:13:32+12:00",
    "sections": [
     {
      "key": "classes",
@@ -131,36 +102,60 @@
      "icon": "⚙️",
      "fr": "Confort & technique",
      "en": "Comfort & technical",
-     "items": [
-      {
-       "h": "60e5f401",
-       "kind": "fix",
-       "scope": "sim",
-       "text": "Opposed movement keys no longer NaN the server position",
-       "date": "2026-09-17"
-      },
-      {
-       "h": "67b82c5f",
-       "kind": "fix",
-       "scope": "sim",
-       "text": "Allow battleground wall-trap unstuck",
-       "date": "2026-09-17"
-      },
-      {
-       "h": "89b38450",
-       "kind": "fix",
-       "scope": "unstuck",
-       "text": "Cancel battleground countdown on offense",
-       "date": "2026-09-17"
-      },
-      {
-       "h": "7c880469",
-       "kind": "fix",
-       "scope": "unstuck",
-       "text": "Cancel battleground pet offense",
-       "date": "2026-09-17"
-      }
-     ]
+     "items": []
+    }
+   ]
+  },
+  {
+   "version": "v0.44.0",
+   "branch": "ossbrain-release/v0.44.0",
+   "declared_version": "0.44.0",
+   "imminent": true,
+   "commits": 2,
+   "shown": 0,
+   "last_commit": "2026-09-17T18:56:16+12:00",
+   "sections": [
+    {
+     "key": "classes",
+     "icon": "⚔️",
+     "fr": "Classes & sorts",
+     "en": "Classes & spells",
+     "items": []
+    },
+    {
+     "key": "metiers",
+     "icon": "🔨",
+     "fr": "Métiers & récolte",
+     "en": "Professions & gathering",
+     "items": []
+    },
+    {
+     "key": "donjons",
+     "icon": "🐉",
+     "fr": "Donjons, failles & boss",
+     "en": "Dungeons, rifts & bosses",
+     "items": []
+    },
+    {
+     "key": "monde",
+     "icon": "🗺️",
+     "fr": "Monde & quêtes",
+     "en": "World & quests",
+     "items": []
+    },
+    {
+     "key": "guilde",
+     "icon": "🏰",
+     "fr": "Guilde & social",
+     "en": "Guild & social",
+     "items": []
+    },
+    {
+     "key": "confort",
+     "icon": "⚙️",
+     "fr": "Confort & technique",
+     "en": "Comfort & technical",
+     "items": []
     }
    ]
   }
