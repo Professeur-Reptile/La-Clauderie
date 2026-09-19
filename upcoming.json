@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-18T00:43:42Z",
+ "generated": "2026-09-19T00:32:49Z",
  "base_tag": "v0.43.2",
  "version": "v0.43.3",
  "branch": "release/v0.43.3",
@@ -111,9 +111,9 @@
    "branch": "ossbrain-release/v0.44.0",
    "declared_version": "0.44.0",
    "imminent": true,
-   "commits": 2,
-   "shown": 0,
-   "last_commit": "2026-09-17T18:56:16+12:00",
+   "commits": 33,
+   "shown": 13,
+   "last_commit": "2026-09-18T22:33:23Z",
    "sections": [
     {
      "key": "classes",
@@ -127,14 +127,44 @@
      "icon": "🔨",
      "fr": "Métiers & récolte",
      "en": "Professions & gathering",
-     "items": []
+     "items": [
+      {
+       "h": "7cb5ced9",
+       "kind": "fix",
+       "scope": "#4072",
+       "text": "Sort material source test imports",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "d3ab0059",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Pack a whole locked material stack into one fresh vault/bank slot",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "bd6fa855",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Pack a locked non-material stack into one fresh slot too",
+       "date": "2026-09-15"
+      }
+     ]
     },
     {
      "key": "donjons",
      "icon": "🐉",
      "fr": "Donjons, failles & boss",
      "en": "Dungeons, rifts & bosses",
-     "items": []
+     "items": [
+      {
+       "h": "7e546932",
+       "kind": "fix",
+       "scope": "#4076",
+       "text": "Reuse delve prediction frame state",
+       "date": "2026-09-18"
+      }
+     ]
     },
     {
      "key": "monde",
@@ -148,14 +178,79 @@
      "icon": "🏰",
      "fr": "Guilde & social",
      "en": "Guild & social",
-     "items": []
+     "items": [
+      {
+       "h": "64972e62",
+       "kind": "fix",
+       "scope": "discord",
+       "text": "Block relink identity repoints",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "10ffcda5",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Surface a failed Discord relink and let players relink while linked",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "ae5585da",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Take the guild-bank autosave off the shared market writer",
+       "date": "2026-09-15"
+      }
+     ]
     },
     {
      "key": "confort",
      "icon": "⚙️",
      "fr": "Confort & technique",
      "en": "Comfort & technical",
-     "items": []
+     "items": [
+      {
+       "h": "bb01eabc",
+       "kind": "feat",
+       "scope": "net",
+       "text": "Enable self-motion prediction inside delves",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "57289c1c",
+       "kind": "fix",
+       "scope": "materials",
+       "text": "Align market counts and locked vault rows",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "3f0ead5a",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stop native drags from being torn out by a mid-drag rebuild",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "c7a31cf0",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Cap the Sell tab quantity at what marketList will actually escrow",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "c73b7a21",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Avoid an object literal on the animation-frame hot path",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "c62da16b",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Finish the isChargeBearingPayload rollout the review round found",
+       "date": "2026-09-15"
+      }
+     ]
     }
    ]
   }
