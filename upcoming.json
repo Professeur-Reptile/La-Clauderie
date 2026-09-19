@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-19T05:05:11Z",
+ "generated": "2026-09-19T11:25:07Z",
  "base_tag": "v0.43.2",
  "version": "v0.43.3",
  "branch": "release/v0.43.3",
@@ -111,9 +111,9 @@
    "branch": "ossbrain-release/v0.44.0",
    "declared_version": "0.44.0",
    "imminent": true,
-   "commits": 79,
-   "shown": 29,
-   "last_commit": "2026-09-19T00:17:25Z",
+   "commits": 108,
+   "shown": 47,
+   "last_commit": "2026-09-19T05:38:28Z",
    "sections": [
     {
      "key": "classes",
@@ -245,6 +245,13 @@
      "en": "Guild & social",
      "items": [
       {
+       "h": "5b614203",
+       "kind": "feat",
+       "scope": "perf",
+       "text": "Report the frame rate ceiling as typed fleet columns",
+       "date": "2026-09-18"
+      },
+      {
        "h": "64972e62",
        "kind": "fix",
        "scope": "discord",
@@ -295,6 +302,34 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "8a2818ec",
+       "kind": "feat",
+       "scope": "game",
+       "text": "Make the automatic frame rate limit settle and hold",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "0884dfb1",
+       "kind": "feat",
+       "scope": "game",
+       "text": "Prototype a frame rate ceiling behind ?fpscap",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "ff52f56e",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add the Frame Rate Limit option",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "988e3d22",
+       "kind": "feat",
+       "scope": "game",
+       "text": "Add the automatic Frame Rate Limit, on by default",
+       "date": "2026-09-18"
+      },
+      {
        "h": "bb01eabc",
        "kind": "feat",
        "scope": "net",
@@ -302,10 +337,101 @@
        "date": "2026-09-16"
       },
       {
+       "h": "98e6851c",
+       "kind": "perf",
+       "scope": "game",
+       "text": "Let the timer start the frame where the display shows no slots",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "2182c384",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Put a passed return trial on probation",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "5c8dec35",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Limit by time when no display rhythm can be read",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "e5dcf98f",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Compensate late timers and stop reading a frame cost as a display",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "9dfc59b3",
+       "kind": "fix",
+       "scope": "perf",
+       "text": "Bound the cadence block and store the refresh rate in whole Hz",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "6144ebaf",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Close the review findings on the frame rate ceiling",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "59b99864",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Close the review findings on the settle-and-hold limit",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "7960e8a9",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Stop the Frame Rate Limit note promising a return to full rate",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "3bcc81bd",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Raise the evidence bar of the automatic frame rate limit",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "b80daa9e",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Close the second review round on the automatic limit",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "1ce719e7",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Keep an unprobed hold unprobed, and bound it at the bottom rung",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "f281aa59",
+       "kind": "fix",
+       "scope": "perf",
+       "text": "Judge frame health against the chosen frame rate",
+       "date": "2026-09-18"
+      },
+      {
        "h": "57289c1c",
        "kind": "fix",
        "scope": "materials",
        "text": "Align market counts and locked vault rows",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "01a907a2",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Colour the perf overlay against the chosen frame rate",
        "date": "2026-09-18"
       },
       {
