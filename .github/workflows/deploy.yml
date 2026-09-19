@@ -70,12 +70,12 @@ jobs:
           path: wocc-knowledge-base
 
       # Toutes les pages et données de la racine, plus le .htaccess
-      # (redirections HTTPS/www) et la copie du Codex.
+      # (redirections HTTPS/www), le robots.txt et la copie du Codex.
       - name: Assembler le site
         run: |
           mkdir -p _site
           cp *.html *.json _site/
-          cp sw.js _site/
+          cp sw.js robots.txt _site/
           cp -r assets _site/assets
           cp -r notes _site/notes
           cp .htaccess _site/.htaccess
@@ -83,6 +83,9 @@ jobs:
           # charge en relatif via « ../data/ », comme sur GitHub Pages).
           cp -r wocc-knowledge-base/site _site/codex
           cp -r wocc-knowledge-base/data _site/data
+          # Sitemap généré sur le site assemblé : toujours celui qui part en
+          # ligne (annoncé dans robots.txt, lu par Google).
+          python3 scripts/build_sitemap.py _site > _site/sitemap.xml
 
       - name: Déployer sur OVH (FTP)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
