@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-19T00:32:49Z",
+ "generated": "2026-09-19T05:05:11Z",
  "base_tag": "v0.43.2",
  "version": "v0.43.3",
  "branch": "release/v0.43.3",
@@ -111,16 +111,24 @@
    "branch": "ossbrain-release/v0.44.0",
    "declared_version": "0.44.0",
    "imminent": true,
-   "commits": 33,
-   "shown": 13,
-   "last_commit": "2026-09-18T22:33:23Z",
+   "commits": 79,
+   "shown": 29,
+   "last_commit": "2026-09-19T00:17:25Z",
    "sections": [
     {
      "key": "classes",
      "icon": "⚔️",
      "fr": "Classes & sorts",
      "en": "Classes & spells",
-     "items": []
+     "items": [
+      {
+       "h": "88956fdc",
+       "kind": "fix",
+       "scope": "druid",
+       "text": "Re-arm the Bruin Rush window when the Rush ends",
+       "date": "2026-09-18"
+      }
+     ]
     },
     {
      "key": "metiers",
@@ -134,6 +142,13 @@
        "scope": "#4072",
        "text": "Sort material source test imports",
        "date": "2026-09-18"
+      },
+      {
+       "h": "6220dd22",
+       "kind": "fix",
+       "scope": "professions",
+       "text": "Keep, show, and persist the queued Town Focus re-spec",
+       "date": "2026-09-17"
       },
       {
        "h": "d3ab0059",
@@ -158,11 +173,39 @@
      "en": "Dungeons, rifts & bosses",
      "items": [
       {
+       "h": "64eda046",
+       "kind": "feat",
+       "scope": "loot",
+       "text": "Redistribute the Crucible's caster weapon and held offhands to Heroic",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "60451c87",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Reset a wiped raid boss even when a raider zones in the same tick",
+       "date": "2026-09-18"
+      },
+      {
        "h": "7e546932",
        "kind": "fix",
        "scope": "#4076",
        "text": "Reuse delve prediction frame state",
        "date": "2026-09-18"
+      },
+      {
+       "h": "6a63c3b0",
+       "kind": "fix",
+       "scope": "loot",
+       "text": "Sync release/v0.44.0 into feature/ignivar-heroic-redistribution",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "d9d79f92",
+       "kind": "fix",
+       "scope": "loot",
+       "text": "Guarantee the Robe sigil on Heroic Crucible kills",
+       "date": "2026-09-11"
       }
      ]
     },
@@ -171,7 +214,29 @@
      "icon": "🗺️",
      "fr": "Monde & quêtes",
      "en": "World & quests",
-     "items": []
+     "items": [
+      {
+       "h": "6759d51c",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Collapse the world map's left atlas rail",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "11fde914",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Snap an immobile mob home instead of evading forever",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "8cdc1acb",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Keep the deed-bordered name row clear of the portrait",
+       "date": "2026-09-17"
+      }
+     ]
     },
     {
      "key": "guilde",
@@ -185,6 +250,27 @@
        "scope": "discord",
        "text": "Block relink identity repoints",
        "date": "2026-09-18"
+      },
+      {
+       "h": "fba7bccd",
+       "kind": "fix",
+       "scope": "#4096",
+       "text": "Resend session preferences after spectate hold clears",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "66a6b221",
+       "kind": "fix",
+       "scope": "discord",
+       "text": "Tag the rare-drop card's actual winner, not the first roll candidate",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "47170058",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Hold the spectate exit until the own presentation rebuilds",
+       "date": "2026-09-17"
       },
       {
        "h": "10ffcda5",
@@ -223,6 +309,27 @@
        "date": "2026-09-18"
       },
       {
+       "h": "028b00d2",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Keep lootRollAwarded off the client wire, pin the hold and expiry paths",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "364022fc",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Freeze the action bar layout while spectating",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "655c4dbe",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep a spectated kit out of the pad bar seed, add PR screenshots",
+       "date": "2026-09-17"
+      },
+      {
        "h": "3f0ead5a",
        "kind": "fix",
        "scope": "ui",
@@ -249,6 +356,13 @@
        "scope": "sim",
        "text": "Finish the isChargeBearingPayload rollout the review round found",
        "date": "2026-09-15"
+      },
+      {
+       "h": "4ec17e29",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Draw the Stonebound weapon shell solid when no AA pass runs",
+       "date": "2026-09-11"
       }
      ]
     }
