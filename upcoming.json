@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-20T11:45:14Z",
+ "generated": "2026-09-20T22:39:30Z",
  "base_tag": "v0.43.2",
  "version": "v0.43.3",
  "branch": "release/v0.43.3",
@@ -141,9 +141,9 @@
    "branch": "ossbrain-release/v0.44.0",
    "declared_version": "0.44.0",
    "imminent": true,
-   "commits": 147,
-   "shown": 68,
-   "last_commit": "2026-09-20T08:54:37Z",
+   "commits": 174,
+   "shown": 77,
+   "last_commit": "2026-09-20T22:00:41Z",
    "sections": [
     {
      "key": "classes",
@@ -201,6 +201,13 @@
        "date": "2026-09-20"
       },
       {
+       "h": "4d62757a",
+       "kind": "fix",
+       "scope": "instances",
+       "text": "Let a raid switch difficulty again without a 5 minute cooldown",
+       "date": "2026-09-20"
+      },
+      {
        "h": "19716c60",
        "kind": "fix",
        "scope": "druid",
@@ -222,6 +229,20 @@
      "fr": "Métiers & récolte",
      "en": "Professions & gathering",
      "items": [
+      {
+       "h": "e19b1458",
+       "kind": "feat",
+       "scope": "professions",
+       "text": "Give placed mobile stations a visible world object",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "13111d1c",
+       "kind": "fix",
+       "scope": "professions",
+       "text": "Set out the apex feast the player clicked",
+       "date": "2026-09-20"
+      },
       {
        "h": "7cb5ced9",
        "kind": "fix",
@@ -388,6 +409,13 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "d296f40f",
+       "kind": "feat",
+       "scope": "market",
+       "text": "Wanted board with buy orders and a not-on-the-market strip",
+       "date": "2026-09-20"
+      },
+      {
        "h": "8a2818ec",
        "kind": "feat",
        "scope": "game",
@@ -430,6 +458,13 @@
        "date": "2026-09-19"
       },
       {
+       "h": "3881eb7b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Budget and harden the placed mobile-station mirror",
+       "date": "2026-09-20"
+      },
+      {
        "h": "dadf1795",
        "kind": "fix",
        "scope": "#4115",
@@ -455,6 +490,34 @@
        "kind": "fix",
        "scope": "#4120",
        "text": "Mark dash speed shots as workflow sparse follow-up",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "a69293e6",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Inset the combo row past the player portrait so all five pips show",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "bdb012a7",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Let a released spirit use the Duskfall passage",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "ec7098b3",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Keep the player heading on an in-place resurrection",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "b5d90700",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Bound the Wanted board and harden its readout, save, and panel",
        "date": "2026-09-20"
       },
       {
