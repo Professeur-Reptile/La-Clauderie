@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-19T11:25:07Z",
+ "generated": "2026-09-20T11:45:14Z",
  "base_tag": "v0.43.2",
  "version": "v0.43.3",
  "branch": "release/v0.43.3",
  "declared_version": "0.43.3",
  "imminent": true,
- "commits": 2,
- "shown": 0,
- "last_commit": "2026-09-18T10:13:32+12:00",
+ "commits": 6,
+ "shown": 2,
+ "last_commit": "2026-09-20T20:16:36+12:00",
  "sections": [
   {
    "key": "classes",
@@ -49,7 +49,22 @@
    "icon": "⚙️",
    "fr": "Confort & technique",
    "en": "Comfort & technical",
-   "items": []
+   "items": [
+    {
+     "h": "8f5c0133",
+     "kind": "fix",
+     "scope": "store",
+     "text": "Float the purchase confirm above the inspect overlays",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "3ab1e0fb",
+     "kind": "fix",
+     "scope": "store",
+     "text": "Route the purchase result through the prompt host and harden the pins",
+     "date": "2026-09-19"
+    }
+   ]
   }
  ],
  "versions": [
@@ -58,9 +73,9 @@
    "branch": "release/v0.43.3",
    "declared_version": "0.43.3",
    "imminent": true,
-   "commits": 2,
-   "shown": 0,
-   "last_commit": "2026-09-18T10:13:32+12:00",
+   "commits": 6,
+   "shown": 2,
+   "last_commit": "2026-09-20T20:16:36+12:00",
    "sections": [
     {
      "key": "classes",
@@ -102,7 +117,22 @@
      "icon": "⚙️",
      "fr": "Confort & technique",
      "en": "Comfort & technical",
-     "items": []
+     "items": [
+      {
+       "h": "8f5c0133",
+       "kind": "fix",
+       "scope": "store",
+       "text": "Float the purchase confirm above the inspect overlays",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "3ab1e0fb",
+       "kind": "fix",
+       "scope": "store",
+       "text": "Route the purchase result through the prompt host and harden the pins",
+       "date": "2026-09-19"
+      }
+     ]
     }
    ]
   },
@@ -111,9 +141,9 @@
    "branch": "ossbrain-release/v0.44.0",
    "declared_version": "0.44.0",
    "imminent": true,
-   "commits": 108,
-   "shown": 47,
-   "last_commit": "2026-09-19T05:38:28Z",
+   "commits": 147,
+   "shown": 68,
+   "last_commit": "2026-09-20T08:54:37Z",
    "sections": [
     {
      "key": "classes",
@@ -121,6 +151,62 @@
      "fr": "Classes & sorts",
      "en": "Classes & spells",
      "items": [
+      {
+       "h": "6715bf3c",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Boon becomes Wildbloom and Oakhide, slower and stronger",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "d3d279dd",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "V0.43 Wildfang pass, reach, Old Blood, Nature's Boon, Cat mending",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "ce629e66",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Stalk enters Cat Form from any form, plus review fixes",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "658735e8",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Oakhide scales with armor, and three buttons enter their form",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "623faee9",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Gripping Roots joins Nature's Boon, and the window glows gold",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "9272e32a",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Instant Boon casts, Oakhide to 20%, Lunge off the GCD",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "997456b0",
+       "kind": "fix",
+       "scope": "druid",
+       "text": "Nature's Boon reaches the whole heal, and a refresh flashes",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "19716c60",
+       "kind": "fix",
+       "scope": "druid",
+       "text": "Stack Cat Form's passive speed with Dash and Loping Stride",
+       "date": "2026-09-19"
+      },
       {
        "h": "88956fdc",
        "kind": "fix",
@@ -344,6 +430,34 @@
        "date": "2026-09-19"
       },
       {
+       "h": "dadf1795",
+       "kind": "fix",
+       "scope": "#4115",
+       "text": "Dispose bind banner resize listener",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "4c50376f",
+       "kind": "fix",
+       "scope": "#4121",
+       "text": "Reset unread display sampling after cadence reset",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "8193ac95",
+       "kind": "fix",
+       "scope": "#4115, #4118",
+       "text": "Satisfy changed-file lint",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "98e3227a",
+       "kind": "fix",
+       "scope": "#4120",
+       "text": "Mark dash speed shots as workflow sparse follow-up",
+       "date": "2026-09-20"
+      },
+      {
        "h": "2182c384",
        "kind": "fix",
        "scope": "game",
@@ -412,6 +526,69 @@
        "scope": "game",
        "text": "Keep an unprobed hold unprobed, and bound it at the bottom rung",
        "date": "2026-09-19"
+      },
+      {
+       "h": "a5069ee1",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Place the action-bar bind banner clear of every bar and let it drag",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "3d947052",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Measure the bind banner drag once and clamp to the visible region",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "55ae4e4c",
+       "kind": "fix",
+       "scope": "map",
+       "text": "Lift a POI label clear of a navigation badge on the same spot",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "65c5d014",
+       "kind": "fix",
+       "scope": "map",
+       "text": "Draw the lifted POI label from a painter-only baseline",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "3cd611a4",
+       "kind": "fix",
+       "scope": "trade",
+       "text": "Amount box and Max button on a staged trade row",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "a5bbbb5f",
+       "kind": "fix",
+       "scope": "game",
+       "text": "Never state the vsync-off wording on a display not read yet",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "eebcb9ad",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Leave the shader warm worker off by default, end its A/B",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "c2ca0e6d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Withdraw the shader warm option row, keep the stored choice",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "834cda36",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Scope the empowered highlight to Nature's Boon's form gate",
+       "date": "2026-09-18"
       },
       {
        "h": "f281aa59",
