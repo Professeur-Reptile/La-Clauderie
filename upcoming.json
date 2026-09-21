@@ -1,48 +1,312 @@
 {
- "generated": "2026-09-20T22:39:30Z",
- "base_tag": "v0.43.2",
- "version": "v0.43.3",
- "branch": "release/v0.43.3",
- "declared_version": "0.43.3",
+ "generated": "2026-09-21T05:22:27Z",
+ "base_tag": "v0.43.3",
+ "version": "v0.44.0",
+ "branch": "ossbrain-release/v0.44.0",
+ "declared_version": "0.44.0",
  "imminent": true,
- "commits": 6,
- "shown": 2,
- "last_commit": "2026-09-20T20:16:36+12:00",
+ "commits": 210,
+ "shown": 89,
+ "last_commit": "2026-09-21T01:43:40Z",
  "sections": [
   {
    "key": "classes",
    "icon": "⚔️",
    "fr": "Classes & sorts",
    "en": "Classes & spells",
-   "items": []
+   "items": [
+    {
+     "h": "6715bf3c",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Boon becomes Wildbloom and Oakhide, slower and stronger",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "d3d279dd",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "V0.43 Wildfang pass, reach, Old Blood, Nature's Boon, Cat mending",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "ce629e66",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Stalk enters Cat Form from any form, plus review fixes",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "658735e8",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Oakhide scales with armor, and three buttons enter their form",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "623faee9",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Gripping Roots joins Nature's Boon, and the window glows gold",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "9272e32a",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Instant Boon casts, Oakhide to 20%, Lunge off the GCD",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "997456b0",
+     "kind": "fix",
+     "scope": "druid",
+     "text": "Nature's Boon reaches the whole heal, and a refresh flashes",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "4d62757a",
+     "kind": "fix",
+     "scope": "instances",
+     "text": "Let a raid switch difficulty again without a 5 minute cooldown",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "19716c60",
+     "kind": "fix",
+     "scope": "druid",
+     "text": "Stack Cat Form's passive speed with Dash and Loping Stride",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "6333229c",
+     "kind": "fix",
+     "scope": "hunter",
+     "text": "Plan Trailbreak's arc over the ground behind the hunter",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "87b71de4",
+     "kind": "fix",
+     "scope": "hunter",
+     "text": "Let Trailbreak's sweep fly over short steep features",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "88956fdc",
+     "kind": "fix",
+     "scope": "druid",
+     "text": "Re-arm the Bruin Rush window when the Rush ends",
+     "date": "2026-09-18"
+    }
+   ]
   },
   {
    "key": "metiers",
    "icon": "🔨",
    "fr": "Métiers & récolte",
    "en": "Professions & gathering",
-   "items": []
+   "items": [
+    {
+     "h": "e19b1458",
+     "kind": "feat",
+     "scope": "professions",
+     "text": "Give placed mobile stations a visible world object",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "13111d1c",
+     "kind": "fix",
+     "scope": "professions",
+     "text": "Set out the apex feast the player clicked",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "7cb5ced9",
+     "kind": "fix",
+     "scope": "#4072",
+     "text": "Sort material source test imports",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "6220dd22",
+     "kind": "fix",
+     "scope": "professions",
+     "text": "Keep, show, and persist the queued Town Focus re-spec",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "d3ab0059",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Pack a whole locked material stack into one fresh vault/bank slot",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "bd6fa855",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Pack a locked non-material stack into one fresh slot too",
+     "date": "2026-09-15"
+    }
+   ]
   },
   {
    "key": "donjons",
    "icon": "🐉",
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
-   "items": []
+   "items": [
+    {
+     "h": "64eda046",
+     "kind": "feat",
+     "scope": "loot",
+     "text": "Redistribute the Crucible's caster weapon and held offhands to Heroic",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "60451c87",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Reset a wiped raid boss even when a raider zones in the same tick",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "7e546932",
+     "kind": "fix",
+     "scope": "#4076",
+     "text": "Reuse delve prediction frame state",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "6a63c3b0",
+     "kind": "fix",
+     "scope": "loot",
+     "text": "Sync release/v0.44.0 into feature/ignivar-heroic-redistribution",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "d9d79f92",
+     "kind": "fix",
+     "scope": "loot",
+     "text": "Guarantee the Robe sigil on Heroic Crucible kills",
+     "date": "2026-09-11"
+    }
+   ]
   },
   {
    "key": "monde",
    "icon": "🗺️",
    "fr": "Monde & quêtes",
    "en": "World & quests",
-   "items": []
+   "items": [
+    {
+     "h": "4b1678c8",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Swap the zone-entry chat line once a town's quests are done",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "d1400d11",
+     "kind": "feat",
+     "scope": "content",
+     "text": "Give the three founding towns their own town-done entry line",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "ce395d51",
+     "kind": "feat",
+     "scope": "content",
+     "text": "Reword the three town-done entry lines",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "607a1e60",
+     "kind": "feat",
+     "scope": "content",
+     "text": "Address the player in Highwatch's town-done line",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "6759d51c",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Collapse the world map's left atlas rail",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "11fde914",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Snap an immobile mob home instead of evading forever",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "8cdc1acb",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Keep the deed-bordered name row clear of the portrait",
+     "date": "2026-09-17"
+    }
+   ]
   },
   {
    "key": "guilde",
    "icon": "🏰",
    "fr": "Guilde & social",
    "en": "Guild & social",
-   "items": []
+   "items": [
+    {
+     "h": "5b614203",
+     "kind": "feat",
+     "scope": "perf",
+     "text": "Report the frame rate ceiling as typed fleet columns",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "64972e62",
+     "kind": "fix",
+     "scope": "discord",
+     "text": "Block relink identity repoints",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "fba7bccd",
+     "kind": "fix",
+     "scope": "#4096",
+     "text": "Resend session preferences after spectate hold clears",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "66a6b221",
+     "kind": "fix",
+     "scope": "discord",
+     "text": "Tag the rare-drop card's actual winner, not the first roll candidate",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "47170058",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Hold the spectate exit until the own presentation rebuilds",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "10ffcda5",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Surface a failed Discord relink and let players relink while linked",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "ae5585da",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Take the guild-bank autosave off the shared market writer",
+     "date": "2026-09-15"
+    }
+   ]
   },
   {
    "key": "confort",
@@ -51,99 +315,381 @@
    "en": "Comfort & technical",
    "items": [
     {
-     "h": "8f5c0133",
-     "kind": "fix",
-     "scope": "store",
-     "text": "Float the purchase confirm above the inspect overlays",
+     "h": "d296f40f",
+     "kind": "feat",
+     "scope": "market",
+     "text": "Wanted board with buy orders and a not-on-the-market strip",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "8a2818ec",
+     "kind": "feat",
+     "scope": "game",
+     "text": "Make the automatic frame rate limit settle and hold",
      "date": "2026-09-19"
     },
     {
-     "h": "3ab1e0fb",
-     "kind": "fix",
-     "scope": "store",
-     "text": "Route the purchase result through the prompt host and harden the pins",
+     "h": "0884dfb1",
+     "kind": "feat",
+     "scope": "game",
+     "text": "Prototype a frame rate ceiling behind ?fpscap",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "ff52f56e",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add the Frame Rate Limit option",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "988e3d22",
+     "kind": "feat",
+     "scope": "game",
+     "text": "Add the automatic Frame Rate Limit, on by default",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "bb01eabc",
+     "kind": "feat",
+     "scope": "net",
+     "text": "Enable self-motion prediction inside delves",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "98e6851c",
+     "kind": "perf",
+     "scope": "game",
+     "text": "Let the timer start the frame where the display shows no slots",
      "date": "2026-09-19"
+    },
+    {
+     "h": "c50049e3",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Resolve the portrait lookups per call, not at hud.ts load",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "92bd8b0d",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Take the review round on the composed player portraits",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "ec272ba2",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Count only a town's own errands toward its town-done line",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "3881eb7b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Budget and harden the placed mobile-station mirror",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "dadf1795",
+     "kind": "fix",
+     "scope": "#4115",
+     "text": "Dispose bind banner resize listener",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "4c50376f",
+     "kind": "fix",
+     "scope": "#4121",
+     "text": "Reset unread display sampling after cadence reset",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "8193ac95",
+     "kind": "fix",
+     "scope": "#4115, #4118",
+     "text": "Satisfy changed-file lint",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "98e3227a",
+     "kind": "fix",
+     "scope": "#4120",
+     "text": "Mark dash speed shots as workflow sparse follow-up",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "a69293e6",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Inset the combo row past the player portrait so all five pips show",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "bdb012a7",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Let a released spirit use the Duskfall passage",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "ec7098b3",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Keep the player heading on an in-place resurrection",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "b5d90700",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Bound the Wanted board and harden its readout, save, and panel",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "2182c384",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Put a passed return trial on probation",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "5c8dec35",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Limit by time when no display rhythm can be read",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "e5dcf98f",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Compensate late timers and stop reading a frame cost as a display",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "9dfc59b3",
+     "kind": "fix",
+     "scope": "perf",
+     "text": "Bound the cadence block and store the refresh rate in whole Hz",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "6144ebaf",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Close the review findings on the frame rate ceiling",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "59b99864",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Close the review findings on the settle-and-hold limit",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "7960e8a9",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Stop the Frame Rate Limit note promising a return to full rate",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "3bcc81bd",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Raise the evidence bar of the automatic frame rate limit",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "b80daa9e",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Close the second review round on the automatic limit",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "1ce719e7",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Keep an unprobed hold unprobed, and bound it at the bottom rung",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "a5069ee1",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Place the action-bar bind banner clear of every bar and let it drag",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "3d947052",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Measure the bind banner drag once and clamp to the visible region",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "55ae4e4c",
+     "kind": "fix",
+     "scope": "map",
+     "text": "Lift a POI label clear of a navigation badge on the same spot",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "65c5d014",
+     "kind": "fix",
+     "scope": "map",
+     "text": "Draw the lifted POI label from a painter-only baseline",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "3cd611a4",
+     "kind": "fix",
+     "scope": "trade",
+     "text": "Amount box and Max button on a staged trade row",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "a5bbbb5f",
+     "kind": "fix",
+     "scope": "game",
+     "text": "Never state the vsync-off wording on a display not read yet",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "eebcb9ad",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Leave the shader warm worker off by default, end its A/B",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "c2ca0e6d",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Withdraw the shader warm option row, keep the stored choice",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "2748c203",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Release the optimistic target on the input ack, not a snapshot count",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "c8411adc",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Show a player's composed face in every frame that holds one",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "13410714",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep atlas uv in the far-LOD bake of composed bodies",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "834cda36",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Scope the empowered highlight to Nature's Boon's form gate",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "f281aa59",
+     "kind": "fix",
+     "scope": "perf",
+     "text": "Judge frame health against the chosen frame rate",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "57289c1c",
+     "kind": "fix",
+     "scope": "materials",
+     "text": "Align market counts and locked vault rows",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "01a907a2",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Colour the perf overlay against the chosen frame rate",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "028b00d2",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Keep lootRollAwarded off the client wire, pin the hold and expiry paths",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "364022fc",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Freeze the action bar layout while spectating",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "655c4dbe",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep a spectated kit out of the pad bar seed, add PR screenshots",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "3f0ead5a",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Stop native drags from being torn out by a mid-drag rebuild",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "c7a31cf0",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Cap the Sell tab quantity at what marketList will actually escrow",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "c73b7a21",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Avoid an object literal on the animation-frame hot path",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "c62da16b",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Finish the isChargeBearingPayload rollout the review round found",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "4ec17e29",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Draw the Stonebound weapon shell solid when no AA pass runs",
+     "date": "2026-09-11"
     }
    ]
   }
  ],
  "versions": [
   {
-   "version": "v0.43.3",
-   "branch": "release/v0.43.3",
-   "declared_version": "0.43.3",
-   "imminent": true,
-   "commits": 6,
-   "shown": 2,
-   "last_commit": "2026-09-20T20:16:36+12:00",
-   "sections": [
-    {
-     "key": "classes",
-     "icon": "⚔️",
-     "fr": "Classes & sorts",
-     "en": "Classes & spells",
-     "items": []
-    },
-    {
-     "key": "metiers",
-     "icon": "🔨",
-     "fr": "Métiers & récolte",
-     "en": "Professions & gathering",
-     "items": []
-    },
-    {
-     "key": "donjons",
-     "icon": "🐉",
-     "fr": "Donjons, failles & boss",
-     "en": "Dungeons, rifts & bosses",
-     "items": []
-    },
-    {
-     "key": "monde",
-     "icon": "🗺️",
-     "fr": "Monde & quêtes",
-     "en": "World & quests",
-     "items": []
-    },
-    {
-     "key": "guilde",
-     "icon": "🏰",
-     "fr": "Guilde & social",
-     "en": "Guild & social",
-     "items": []
-    },
-    {
-     "key": "confort",
-     "icon": "⚙️",
-     "fr": "Confort & technique",
-     "en": "Comfort & technical",
-     "items": [
-      {
-       "h": "8f5c0133",
-       "kind": "fix",
-       "scope": "store",
-       "text": "Float the purchase confirm above the inspect overlays",
-       "date": "2026-09-19"
-      },
-      {
-       "h": "3ab1e0fb",
-       "kind": "fix",
-       "scope": "store",
-       "text": "Route the purchase result through the prompt host and harden the pins",
-       "date": "2026-09-19"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "version": "v0.44.0",
    "branch": "ossbrain-release/v0.44.0",
    "declared_version": "0.44.0",
    "imminent": true,
-   "commits": 174,
-   "shown": 77,
-   "last_commit": "2026-09-20T22:00:41Z",
+   "commits": 210,
+   "shown": 89,
+   "last_commit": "2026-09-21T01:43:40Z",
    "sections": [
     {
      "key": "classes",
@@ -213,6 +759,20 @@
        "scope": "druid",
        "text": "Stack Cat Form's passive speed with Dash and Loping Stride",
        "date": "2026-09-19"
+      },
+      {
+       "h": "6333229c",
+       "kind": "fix",
+       "scope": "hunter",
+       "text": "Plan Trailbreak's arc over the ground behind the hunter",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "87b71de4",
+       "kind": "fix",
+       "scope": "hunter",
+       "text": "Let Trailbreak's sweep fly over short steep features",
+       "date": "2026-09-18"
       },
       {
        "h": "88956fdc",
@@ -322,6 +882,34 @@
      "fr": "Monde & quêtes",
      "en": "World & quests",
      "items": [
+      {
+       "h": "4b1678c8",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Swap the zone-entry chat line once a town's quests are done",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "d1400d11",
+       "kind": "feat",
+       "scope": "content",
+       "text": "Give the three founding towns their own town-done entry line",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "ce395d51",
+       "kind": "feat",
+       "scope": "content",
+       "text": "Reword the three town-done entry lines",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "607a1e60",
+       "kind": "feat",
+       "scope": "content",
+       "text": "Address the player in Highwatch's town-done line",
+       "date": "2026-09-18"
+      },
       {
        "h": "6759d51c",
        "kind": "feat",
@@ -456,6 +1044,27 @@
        "scope": "game",
        "text": "Let the timer start the frame where the display shows no slots",
        "date": "2026-09-19"
+      },
+      {
+       "h": "c50049e3",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Resolve the portrait lookups per call, not at hud.ts load",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "92bd8b0d",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Take the review round on the composed player portraits",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "ec272ba2",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Count only a town's own errands toward its town-done line",
+       "date": "2026-09-21"
       },
       {
        "h": "3881eb7b",
@@ -645,6 +1254,27 @@
        "scope": "render",
        "text": "Withdraw the shader warm option row, keep the stored choice",
        "date": "2026-09-19"
+      },
+      {
+       "h": "2748c203",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Release the optimistic target on the input ack, not a snapshot count",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "c8411adc",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Show a player's composed face in every frame that holds one",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "13410714",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep atlas uv in the far-LOD bake of composed bodies",
+       "date": "2026-09-18"
       },
       {
        "h": "834cda36",
