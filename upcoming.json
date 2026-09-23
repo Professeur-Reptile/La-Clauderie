@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-21T05:22:27Z",
+ "generated": "2026-09-23T00:52:45Z",
  "base_tag": "v0.43.3",
  "version": "v0.44.0",
  "branch": "ossbrain-release/v0.44.0",
  "declared_version": "0.44.0",
  "imminent": true,
- "commits": 210,
- "shown": 89,
- "last_commit": "2026-09-21T01:43:40Z",
+ "commits": 378,
+ "shown": 167,
+ "last_commit": "2026-09-23T00:41:05Z",
  "sections": [
   {
    "key": "classes",
@@ -15,6 +15,20 @@
    "fr": "Classes & sorts",
    "en": "Classes & spells",
    "items": [
+    {
+     "h": "ed8ae5a6",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Let players hang the target aura strip below the frame again",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "ec764902",
+     "kind": "feat",
+     "scope": "warrior",
+     "text": "Integrate authored ability presentation for release 44",
+     "date": "2026-09-21"
+    },
     {
      "h": "6715bf3c",
      "kind": "feat",
@@ -56,6 +70,41 @@
      "scope": "druid",
      "text": "Instant Boon casts, Oakhide to 20%, Lunge off the GCD",
      "date": "2026-09-17"
+    },
+    {
+     "h": "bc62e6fd",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Load the warrior kit textures on demand with mip chains",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "23af4bec",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Hang the target aura strip below the frame on touch, re-measure the party seat on the flip",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "390646c9",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Route quality auto-equip by spec and guard the public descriptor",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "93d1cd66",
+     "kind": "fix",
+     "scope": "warrior",
+     "text": "Close release integration guard failures",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "8d75220c",
+     "kind": "fix",
+     "scope": "warrior",
+     "text": "Repair release 44 CI contracts",
+     "date": "2026-09-21"
     },
     {
      "h": "997456b0",
@@ -108,11 +157,53 @@
    "en": "Professions & gathering",
    "items": [
     {
+     "h": "35fc1158",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Stage Red Harvest combat text to the authored beats",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "0c2eaed7",
+     "kind": "feat",
+     "scope": "scripts",
+     "text": "Harvest every shader text and price each link",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "13b475cb",
+     "kind": "feat",
+     "scope": "scripts",
+     "text": "Take the harvest tour under water and onto the field",
+     "date": "2026-09-21"
+    },
+    {
      "h": "e19b1458",
      "kind": "feat",
      "scope": "professions",
      "text": "Give placed mobile stations a visible world object",
      "date": "2026-09-20"
+    },
+    {
+     "h": "999a876c",
+     "kind": "feat",
+     "scope": "desktop",
+     "text": "Import the Windows host diagnostic tool",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "3e144230",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Resolve Red Harvest on the cast tick again",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "fb3a8b33",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Restore the warrior area telegraphs and stage the harvest",
+     "date": "2026-09-21"
     },
     {
      "h": "13111d1c",
@@ -158,11 +249,67 @@
    "en": "Dungeons, rifts & bosses",
    "items": [
     {
+     "h": "b74dd7d7",
+     "kind": "feat",
+     "scope": "talents",
+     "text": "Raise Oathward and Recompense threat for raid tank parity",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "4c105dbf",
+     "kind": "feat",
+     "scope": "charselect",
+     "text": "List each character's raid lockouts on the roster",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "ee829215",
+     "kind": "feat",
+     "scope": "charselect",
+     "text": "Label the zone line and collapse the raid lockouts",
+     "date": "2026-09-21"
+    },
+    {
      "h": "64eda046",
      "kind": "feat",
      "scope": "loot",
      "text": "Redistribute the Crucible's caster weapon and held offhands to Heroic",
      "date": "2026-09-07"
+    },
+    {
+     "h": "6f338678",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Count Heroic clears on the five-man and Nythraxis base pages",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "0059927d",
+     "kind": "fix",
+     "scope": "charselect",
+     "text": "Drop the CSS-baked colon and pin the lockout wire order",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "b7684e4a",
+     "kind": "fix",
+     "scope": "charselect",
+     "text": "Keep the lockout rows inside the roster's text column",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "acca11bf",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "Share the enemy quality roller and price the ladder at the capped level",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "3103a218",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "Carry an unread lootQuality descriptor through the band rebuild",
+     "date": "2026-09-21"
     },
     {
      "h": "60451c87",
@@ -258,11 +405,60 @@
    "en": "Guild & social",
    "items": [
     {
+     "h": "6b01b2ba",
+     "kind": "feat",
+     "scope": "charselect",
+     "text": "Group lockouts by kind and isolate the disclosure",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "de3426f4",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add the System Report options panel for the desktop shell",
+     "date": "2026-09-19"
+    },
+    {
      "h": "5b614203",
      "kind": "feat",
      "scope": "perf",
      "text": "Report the frame rate ceiling as typed fleet columns",
      "date": "2026-09-18"
+    },
+    {
+     "h": "fc963e41",
+     "kind": "fix",
+     "scope": "unstuck",
+     "text": "Report the charge that landed and keep the window across a match",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "a247528b",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Tighten the System Report after the maintainer review",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "a6ee2b33",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Make the System Report busy state visible and keep the verdict in view",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "0e0ce2be",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Head the overlay controls only when the System Report follows",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "7c1f72ae",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Close the System Report self-review findings",
+     "date": "2026-09-20"
     },
     {
      "h": "64972e62",
@@ -315,10 +511,122 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "2d5d29cc",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Dither one instance of a batch as a camera ghost",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "765bc509",
+     "kind": "feat",
+     "scope": "bank",
+     "text": "Add a name search to the Materials Vault tab",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "fb6c044e",
+     "kind": "feat",
+     "scope": "meters",
+     "text": "Credit absorbed damage to the shielder as healing",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "a620c8e8",
+     "kind": "feat",
+     "scope": "trade",
+     "text": "Click an offered row to adjust or remove it through the prompt",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "05fd0753",
+     "kind": "feat",
+     "scope": "trade",
+     "text": "Make the offered-row prompt a remove prompt",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "10aeafaf",
+     "kind": "feat",
+     "scope": "death",
+     "text": "Keeper revive says you are back but weaker",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "cb56c11e",
+     "kind": "feat",
+     "scope": "death",
+     "text": "Keeper dialogue with the level floor, then a confirm",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "c7d06374",
+     "kind": "feat",
+     "scope": "death",
+     "text": "Keeper dialogue differs for spared and levelled heroes",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "6132d04d",
+     "kind": "feat",
+     "scope": "unstuck",
+     "text": "Free the first /unstuck in an hour, charge sickness on repeats",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "ba0e65b4",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Prototype a dithered camera-ghost fade behind a URL flag",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "98e32cbf",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Make the dithered camera ghost a graphics setting",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "44282e14",
+     "kind": "feat",
+     "scope": "scripts",
+     "text": "Price one shader ingredient at a time by ablation",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "e19189a0",
+     "kind": "feat",
+     "scope": "scripts",
+     "text": "Tell early returns from branches in the worn ablation",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "0d3f8344",
+     "kind": "feat",
+     "scope": "scripts",
+     "text": "Time the first draw and show each link repetition",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "8cb2c8da",
+     "kind": "feat",
+     "scope": "scripts",
+     "text": "Name the programs a tour links outside every gate",
+     "date": "2026-09-21"
+    },
+    {
      "h": "d296f40f",
      "kind": "feat",
      "scope": "market",
      "text": "Wanted board with buy orders and a not-on-the-market strip",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "44ad4e06",
+     "kind": "feat",
+     "scope": "perf",
+     "text": "Add desktop host essentials to the perf reports",
      "date": "2026-09-20"
     },
     {
@@ -327,6 +635,41 @@
      "scope": "game",
      "text": "Make the automatic frame rate limit settle and hold",
      "date": "2026-09-19"
+    },
+    {
+     "h": "05e3f187",
+     "kind": "feat",
+     "scope": "desktop",
+     "text": "Collect and save a host diagnostic from the shell",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "5d4b3737",
+     "kind": "feat",
+     "scope": "trade",
+     "text": "Shift-click a bag stack to offer a chosen quantity",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "d591c5eb",
+     "kind": "feat",
+     "scope": "trade",
+     "text": "Open the offer prompt on a plain click, with stack step buttons",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "49801f37",
+     "kind": "feat",
+     "scope": "trade",
+     "text": "Add an Offer all button to the offer-quantity prompt",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "f361f981",
+     "kind": "feat",
+     "scope": "death",
+     "text": "Talk to the Pale Keeper for the Toll revive; ghost hint line",
+     "date": "2026-09-18"
     },
     {
      "h": "0884dfb1",
@@ -357,11 +700,67 @@
      "date": "2026-09-16"
     },
     {
+     "h": "707b1885",
+     "kind": "feat",
+     "scope": "loot",
+     "text": "Add permanent exceptional drop qualities",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "88ee5653",
+     "kind": "perf",
+     "scope": "loot",
+     "text": "Resolve the quality tier before the weapon item level",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "08ffc6f5",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Fade ghosts and character effects in one pass",
+     "date": "2026-09-21"
+    },
+    {
      "h": "98e6851c",
      "kind": "perf",
      "scope": "game",
      "text": "Let the timer start the frame where the display shows no slots",
      "date": "2026-09-19"
+    },
+    {
+     "h": "92b2225e",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Let the ghost style follow an in-page graphics rebuild",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "9bc7fe9b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Harden the dithered ghost layer against key and clone traps",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "cfbd8aac",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Hide the vault x-count chip when it repeats the row total",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "98d53e98",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Decide the vault own-count chip from the stocked row set",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "67095338",
+     "kind": "fix",
+     "scope": "death",
+     "text": "Ghost hint names the place of death",
+     "date": "2026-09-21"
     },
     {
      "h": "c50049e3",
@@ -378,11 +777,144 @@
      "date": "2026-09-21"
     },
     {
+     "h": "81836770",
+     "kind": "fix",
+     "scope": "trade",
+     "text": "Address review on the quantity prompts",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "cdbee814",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Drop the prompt-dialog detached-opener fallback",
+     "date": "2026-09-21"
+    },
+    {
      "h": "ec272ba2",
      "kind": "fix",
      "scope": "sim",
      "text": "Count only a town's own errands toward its town-done line",
      "date": "2026-09-21"
+    },
+    {
+     "h": "8cbd6f5d",
+     "kind": "fix",
+     "scope": "death",
+     "text": "Review round on the Keeper revive (PR 4134)",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "958b7ebf",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep the loot receipt line one guarded log() call",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "5d54b6b7",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Fold the trade headroom wrapper into the bags binding",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "73804cdd",
+     "kind": "fix",
+     "scope": "loot",
+     "text": "Project roll prompts and loot events through publicInstanceView",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "3e11c42b",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Resolve Warfare per copy; the quality badge owns its look with one aria channel",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "6c6f6493",
+     "kind": "fix",
+     "scope": "loot",
+     "text": "Show roll wins and full-bag warnings on screen",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "02408e0f",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Auto-equip compares against the hand the grant is routed to",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "d5abb465",
+     "kind": "fix",
+     "scope": "loot",
+     "text": "Share an instanced kill across the whole claim for released raiders",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "93fa69d8",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Validate the inspect-wire descriptor in place, keep the three source pins intact",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "e96ca17e",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Gate the opaque scene capture to the AO chains",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "022f1811",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Route the refused ring through the telegraph helper",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "4aab6d2d",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep character effects on two face passes",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "d31bdb8d",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Restore a dithered ghost in one step",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "9c94d3b2",
+     "kind": "fix",
+     "scope": "charselect",
+     "text": "Review round on the roster lockouts (PR 4137)",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "f79a51a4",
+     "kind": "fix",
+     "scope": "scripts",
+     "text": "Per-repetition median on a corpus without a Standard kind",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "d5271547",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Close the host diagnostic review findings",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "81750cad",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Keep the browsers in the shipped host diagnostic run",
+     "date": "2026-09-20"
     },
     {
      "h": "3881eb7b",
@@ -445,6 +977,13 @@
      "kind": "fix",
      "scope": "market",
      "text": "Bound the Wanted board and harden its readout, save, and panel",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "255d2074",
+     "kind": "fix",
+     "scope": "perf",
+     "text": "Close the host essentials review findings",
      "date": "2026-09-20"
     },
     {
@@ -595,6 +1134,13 @@
      "date": "2026-09-18"
     },
     {
+     "h": "3521494c",
+     "kind": "fix",
+     "scope": "death",
+     "text": "Show the ghost hint with display:block",
+     "date": "2026-09-18"
+    },
+    {
      "h": "834cda36",
      "kind": "fix",
      "scope": "ui",
@@ -687,9 +1233,9 @@
    "branch": "ossbrain-release/v0.44.0",
    "declared_version": "0.44.0",
    "imminent": true,
-   "commits": 210,
-   "shown": 89,
-   "last_commit": "2026-09-21T01:43:40Z",
+   "commits": 378,
+   "shown": 167,
+   "last_commit": "2026-09-23T00:41:05Z",
    "sections": [
     {
      "key": "classes",
@@ -697,6 +1243,20 @@
      "fr": "Classes & sorts",
      "en": "Classes & spells",
      "items": [
+      {
+       "h": "ed8ae5a6",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Let players hang the target aura strip below the frame again",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "ec764902",
+       "kind": "feat",
+       "scope": "warrior",
+       "text": "Integrate authored ability presentation for release 44",
+       "date": "2026-09-21"
+      },
       {
        "h": "6715bf3c",
        "kind": "feat",
@@ -738,6 +1298,41 @@
        "scope": "druid",
        "text": "Instant Boon casts, Oakhide to 20%, Lunge off the GCD",
        "date": "2026-09-17"
+      },
+      {
+       "h": "bc62e6fd",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Load the warrior kit textures on demand with mip chains",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "23af4bec",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Hang the target aura strip below the frame on touch, re-measure the party seat on the flip",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "390646c9",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Route quality auto-equip by spec and guard the public descriptor",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "93d1cd66",
+       "kind": "fix",
+       "scope": "warrior",
+       "text": "Close release integration guard failures",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "8d75220c",
+       "kind": "fix",
+       "scope": "warrior",
+       "text": "Repair release 44 CI contracts",
+       "date": "2026-09-21"
       },
       {
        "h": "997456b0",
@@ -790,11 +1385,53 @@
      "en": "Professions & gathering",
      "items": [
       {
+       "h": "35fc1158",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Stage Red Harvest combat text to the authored beats",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "0c2eaed7",
+       "kind": "feat",
+       "scope": "scripts",
+       "text": "Harvest every shader text and price each link",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "13b475cb",
+       "kind": "feat",
+       "scope": "scripts",
+       "text": "Take the harvest tour under water and onto the field",
+       "date": "2026-09-21"
+      },
+      {
        "h": "e19b1458",
        "kind": "feat",
        "scope": "professions",
        "text": "Give placed mobile stations a visible world object",
        "date": "2026-09-20"
+      },
+      {
+       "h": "999a876c",
+       "kind": "feat",
+       "scope": "desktop",
+       "text": "Import the Windows host diagnostic tool",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "3e144230",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Resolve Red Harvest on the cast tick again",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "fb3a8b33",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Restore the warrior area telegraphs and stage the harvest",
+       "date": "2026-09-21"
       },
       {
        "h": "13111d1c",
@@ -840,11 +1477,67 @@
      "en": "Dungeons, rifts & bosses",
      "items": [
       {
+       "h": "b74dd7d7",
+       "kind": "feat",
+       "scope": "talents",
+       "text": "Raise Oathward and Recompense threat for raid tank parity",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "4c105dbf",
+       "kind": "feat",
+       "scope": "charselect",
+       "text": "List each character's raid lockouts on the roster",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "ee829215",
+       "kind": "feat",
+       "scope": "charselect",
+       "text": "Label the zone line and collapse the raid lockouts",
+       "date": "2026-09-21"
+      },
+      {
        "h": "64eda046",
        "kind": "feat",
        "scope": "loot",
        "text": "Redistribute the Crucible's caster weapon and held offhands to Heroic",
        "date": "2026-09-07"
+      },
+      {
+       "h": "6f338678",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Count Heroic clears on the five-man and Nythraxis base pages",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "0059927d",
+       "kind": "fix",
+       "scope": "charselect",
+       "text": "Drop the CSS-baked colon and pin the lockout wire order",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "b7684e4a",
+       "kind": "fix",
+       "scope": "charselect",
+       "text": "Keep the lockout rows inside the roster's text column",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "acca11bf",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Share the enemy quality roller and price the ladder at the capped level",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "3103a218",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Carry an unread lootQuality descriptor through the band rebuild",
+       "date": "2026-09-21"
       },
       {
        "h": "60451c87",
@@ -940,11 +1633,60 @@
      "en": "Guild & social",
      "items": [
       {
+       "h": "6b01b2ba",
+       "kind": "feat",
+       "scope": "charselect",
+       "text": "Group lockouts by kind and isolate the disclosure",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "de3426f4",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add the System Report options panel for the desktop shell",
+       "date": "2026-09-19"
+      },
+      {
        "h": "5b614203",
        "kind": "feat",
        "scope": "perf",
        "text": "Report the frame rate ceiling as typed fleet columns",
        "date": "2026-09-18"
+      },
+      {
+       "h": "fc963e41",
+       "kind": "fix",
+       "scope": "unstuck",
+       "text": "Report the charge that landed and keep the window across a match",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "a247528b",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Tighten the System Report after the maintainer review",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "a6ee2b33",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Make the System Report busy state visible and keep the verdict in view",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "0e0ce2be",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Head the overlay controls only when the System Report follows",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "7c1f72ae",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Close the System Report self-review findings",
+       "date": "2026-09-20"
       },
       {
        "h": "64972e62",
@@ -997,10 +1739,122 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "2d5d29cc",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Dither one instance of a batch as a camera ghost",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "765bc509",
+       "kind": "feat",
+       "scope": "bank",
+       "text": "Add a name search to the Materials Vault tab",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "fb6c044e",
+       "kind": "feat",
+       "scope": "meters",
+       "text": "Credit absorbed damage to the shielder as healing",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "a620c8e8",
+       "kind": "feat",
+       "scope": "trade",
+       "text": "Click an offered row to adjust or remove it through the prompt",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "05fd0753",
+       "kind": "feat",
+       "scope": "trade",
+       "text": "Make the offered-row prompt a remove prompt",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "10aeafaf",
+       "kind": "feat",
+       "scope": "death",
+       "text": "Keeper revive says you are back but weaker",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "cb56c11e",
+       "kind": "feat",
+       "scope": "death",
+       "text": "Keeper dialogue with the level floor, then a confirm",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "c7d06374",
+       "kind": "feat",
+       "scope": "death",
+       "text": "Keeper dialogue differs for spared and levelled heroes",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "6132d04d",
+       "kind": "feat",
+       "scope": "unstuck",
+       "text": "Free the first /unstuck in an hour, charge sickness on repeats",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "ba0e65b4",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Prototype a dithered camera-ghost fade behind a URL flag",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "98e32cbf",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Make the dithered camera ghost a graphics setting",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "44282e14",
+       "kind": "feat",
+       "scope": "scripts",
+       "text": "Price one shader ingredient at a time by ablation",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "e19189a0",
+       "kind": "feat",
+       "scope": "scripts",
+       "text": "Tell early returns from branches in the worn ablation",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "0d3f8344",
+       "kind": "feat",
+       "scope": "scripts",
+       "text": "Time the first draw and show each link repetition",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "8cb2c8da",
+       "kind": "feat",
+       "scope": "scripts",
+       "text": "Name the programs a tour links outside every gate",
+       "date": "2026-09-21"
+      },
+      {
        "h": "d296f40f",
        "kind": "feat",
        "scope": "market",
        "text": "Wanted board with buy orders and a not-on-the-market strip",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "44ad4e06",
+       "kind": "feat",
+       "scope": "perf",
+       "text": "Add desktop host essentials to the perf reports",
        "date": "2026-09-20"
       },
       {
@@ -1009,6 +1863,41 @@
        "scope": "game",
        "text": "Make the automatic frame rate limit settle and hold",
        "date": "2026-09-19"
+      },
+      {
+       "h": "05e3f187",
+       "kind": "feat",
+       "scope": "desktop",
+       "text": "Collect and save a host diagnostic from the shell",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "5d4b3737",
+       "kind": "feat",
+       "scope": "trade",
+       "text": "Shift-click a bag stack to offer a chosen quantity",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "d591c5eb",
+       "kind": "feat",
+       "scope": "trade",
+       "text": "Open the offer prompt on a plain click, with stack step buttons",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "49801f37",
+       "kind": "feat",
+       "scope": "trade",
+       "text": "Add an Offer all button to the offer-quantity prompt",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "f361f981",
+       "kind": "feat",
+       "scope": "death",
+       "text": "Talk to the Pale Keeper for the Toll revive; ghost hint line",
+       "date": "2026-09-18"
       },
       {
        "h": "0884dfb1",
@@ -1039,11 +1928,67 @@
        "date": "2026-09-16"
       },
       {
+       "h": "707b1885",
+       "kind": "feat",
+       "scope": "loot",
+       "text": "Add permanent exceptional drop qualities",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "88ee5653",
+       "kind": "perf",
+       "scope": "loot",
+       "text": "Resolve the quality tier before the weapon item level",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "08ffc6f5",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Fade ghosts and character effects in one pass",
+       "date": "2026-09-21"
+      },
+      {
        "h": "98e6851c",
        "kind": "perf",
        "scope": "game",
        "text": "Let the timer start the frame where the display shows no slots",
        "date": "2026-09-19"
+      },
+      {
+       "h": "92b2225e",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Let the ghost style follow an in-page graphics rebuild",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "9bc7fe9b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Harden the dithered ghost layer against key and clone traps",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "cfbd8aac",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Hide the vault x-count chip when it repeats the row total",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "98d53e98",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Decide the vault own-count chip from the stocked row set",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "67095338",
+       "kind": "fix",
+       "scope": "death",
+       "text": "Ghost hint names the place of death",
+       "date": "2026-09-21"
       },
       {
        "h": "c50049e3",
@@ -1060,11 +2005,144 @@
        "date": "2026-09-21"
       },
       {
+       "h": "81836770",
+       "kind": "fix",
+       "scope": "trade",
+       "text": "Address review on the quantity prompts",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "cdbee814",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Drop the prompt-dialog detached-opener fallback",
+       "date": "2026-09-21"
+      },
+      {
        "h": "ec272ba2",
        "kind": "fix",
        "scope": "sim",
        "text": "Count only a town's own errands toward its town-done line",
        "date": "2026-09-21"
+      },
+      {
+       "h": "8cbd6f5d",
+       "kind": "fix",
+       "scope": "death",
+       "text": "Review round on the Keeper revive (PR 4134)",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "958b7ebf",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep the loot receipt line one guarded log() call",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "5d54b6b7",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Fold the trade headroom wrapper into the bags binding",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "73804cdd",
+       "kind": "fix",
+       "scope": "loot",
+       "text": "Project roll prompts and loot events through publicInstanceView",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "3e11c42b",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Resolve Warfare per copy; the quality badge owns its look with one aria channel",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "6c6f6493",
+       "kind": "fix",
+       "scope": "loot",
+       "text": "Show roll wins and full-bag warnings on screen",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "02408e0f",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Auto-equip compares against the hand the grant is routed to",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "d5abb465",
+       "kind": "fix",
+       "scope": "loot",
+       "text": "Share an instanced kill across the whole claim for released raiders",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "93fa69d8",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Validate the inspect-wire descriptor in place, keep the three source pins intact",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "e96ca17e",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Gate the opaque scene capture to the AO chains",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "022f1811",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Route the refused ring through the telegraph helper",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "4aab6d2d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep character effects on two face passes",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "d31bdb8d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Restore a dithered ghost in one step",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "9c94d3b2",
+       "kind": "fix",
+       "scope": "charselect",
+       "text": "Review round on the roster lockouts (PR 4137)",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "f79a51a4",
+       "kind": "fix",
+       "scope": "scripts",
+       "text": "Per-repetition median on a corpus without a Standard kind",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "d5271547",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Close the host diagnostic review findings",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "81750cad",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Keep the browsers in the shipped host diagnostic run",
+       "date": "2026-09-20"
       },
       {
        "h": "3881eb7b",
@@ -1127,6 +2205,13 @@
        "kind": "fix",
        "scope": "market",
        "text": "Bound the Wanted board and harden its readout, save, and panel",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "255d2074",
+       "kind": "fix",
+       "scope": "perf",
+       "text": "Close the host essentials review findings",
        "date": "2026-09-20"
       },
       {
@@ -1274,6 +2359,13 @@
        "kind": "fix",
        "scope": "render",
        "text": "Keep atlas uv in the far-LOD bake of composed bodies",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "3521494c",
+       "kind": "fix",
+       "scope": "death",
+       "text": "Show the ghost hint with display:block",
        "date": "2026-09-18"
       },
       {
