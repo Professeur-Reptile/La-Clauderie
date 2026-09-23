@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
 <title>La prochaine version — La Clauderie</title>
-<meta name="description" content="Ce que les développeurs préparent pour la prochaine version de World of ClaudeCraft, expliqué simplement — une carte du monde entièrement refaite, des nuits qu'on peut enfin traverser, le Voleur Combat qui redescend, le Mage soigneur qui finit sa montée, et une marque « Tricheur » impossible à enlever.">
+<meta name="description" content="Ce que les développeurs préparent pour la v0.44.0 de World of ClaudeCraft, expliqué simplement — le druide poursuit sa refonte, la mort et la fenêtre d'échange sont refaites, le marché gagne un tableau des demandes, et le jeu limite désormais lui-même ses images par seconde.">
 <meta name="theme-color" content="#c8a04b">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="La Clauderie">
 <meta property="og:title" content="La prochaine version — La Clauderie">
-<meta property="og:description" content="Ce que les développeurs préparent pour la prochaine version de World of ClaudeCraft, expliqué simplement — une carte du monde entièrement refaite, des nuits qu'on peut enfin traverser, le Voleur Combat qui redescend, le Mage soigneur qui finit sa montée, et une marque « Tricheur » impossible à enlever.">
+<meta property="og:description" content="Ce que les développeurs préparent pour la v0.44.0 de World of ClaudeCraft, expliqué simplement — le druide poursuit sa refonte, la mort et la fenêtre d'échange sont refaites, le marché gagne un tableau des demandes, et le jeu limite désormais lui-même ses images par seconde.">
 <meta property="og:url" content="https://laclauderie.fr/a-venir.html">
 <link rel="canonical" href="https://laclauderie.fr/a-venir.html">
 <meta property="og:image" content="https://laclauderie.fr/assets/og.png">
@@ -197,7 +197,7 @@
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · En préparation</p>
     <h1>La prochaine version <span class="v" id="vNum">v0.44.0</span></h1>
-    <p class="lede">La <a href="notes/v0.43.0.html">v0.43.0</a> est sortie ce matin (avec les correctifs <a href="notes/v0.43.1.html">v0.43.1</a> et <a href="notes/v0.43.2.html">v0.43.2</a>), et la <strong class="hl">v0.44.0</strong> est déjà en préparation — <strong class="hl">et proche</strong> : le jeu a commencé l’emballage. Le chantier est pour l’instant petit : une poignée de correctifs anti-blocage en champ de bataille.</p>
+    <p class="lede">La <a href="notes/v0.43.3.html">v0.43.3</a> est sortie le 21 septembre — un correctif sans aucun changement de jeu (site web et boutique). Derrière, la <strong class="hl">v0.44.0</strong> a <strong class="hl">grossi très vite</strong> : le chantier est passé de 12 à 379 commits depuis le dernier relevé — le druide poursuit sa refonte, la mort et la fenêtre d’échange sont refaites, et le jeu apprend à se régler tout seul. Sortie imminente annoncée par l’emballage.</p>
 
     <div class="warn">
       <span class="ico" aria-hidden="true">⚠️</span>
@@ -208,10 +208,10 @@
     </div>
 
     <div class="meta">
-      <span><b>Depuis</b> la v0.43.2</span>
+      <span><b>Depuis</b> la v0.43.3</span>
       <span id="freshness"><b>Dernière vérification</b> à l’instant</span>
       <span id="moved"></span>
-      <span id="written"><b>Résumé écrit</b> le 17 septembre 2026</span>
+      <span id="written"><b>Résumé écrit</b> le 23 septembre 2026</span>
     </div>
     <p class="sec-sub" style="margin:6px 0 0;font-size:0.85rem">« Dernière vérification » = la dernière fois que cette page est allée voir où en sont les développeurs. « Dernier changement du jeu » = quand ils ont touché à cette version pour la dernière fois.</p>
     <div id="chantiers"></div>
@@ -222,68 +222,84 @@
     <h2 id="digest-title">En un coup d’œil</h2>
     <p class="sec-sub">Les mêmes rubriques qu’à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
     <ol>
-      <li class="none"><span class="d-ico" aria-hidden="true">⚔️</span><a class="d-name" href="#combat">Classes &amp; sorts</a><span class="d-say">— rien d’annoncé pour l’instant : aucun changement de classe sur la branche.</span></li>
-      <li class="none"><span class="d-ico" aria-hidden="true">🔨</span><a class="d-name" href="#metiers">Métiers &amp; récolte</a><span class="d-say">—</span></li>
-      <li class="none"><span class="d-ico" aria-hidden="true">🐉</span><a class="d-name" href="#donjons">Donjons, failles &amp; boss</a><span class="d-say">—</span></li>
-      <li class="none"><span class="d-ico" aria-hidden="true">🗺️</span><a class="d-name" href="#monde">Monde &amp; quêtes</a><span class="d-say">—</span></li>
-      <li class="none"><span class="d-ico" aria-hidden="true">🏰</span><a class="d-name" href="#guilde">Guilde &amp; social</a><span class="d-say">—</span></li>
-      <li><span class="d-ico" aria-hidden="true">⚙️</span><a class="d-name" href="#confort">Confort &amp; technique</a><span class="d-say">— Des correctifs anti-blocage en champ de bataille : sortie de piège à mur, plus de position serveur en vrac, compte à rebours mieux tenu.</span></li>
+      <li><span class="d-ico" aria-hidden="true">⚔️</span><a class="d-name" href="#combat">Classes &amp; sorts</a><span class="d-say">— Le druide poursuit sa refonte : Boon se dédouble en Wildbloom et Oakhide, Stalk passe depuis n’importe quelle forme, Lunge sort du GCD.</span></li>
+      <li><span class="d-ico" aria-hidden="true">🔨</span><a class="d-name" href="#metiers">Métiers &amp; récolte</a><span class="d-say">— Red Harvest se met en scène, les ateliers mobiles deviennent visibles, le Town Focus se souvient de votre choix.</span></li>
+      <li><span class="d-ico" aria-hidden="true">🐉</span><a class="d-name" href="#donjons">Donjons, failles &amp; boss</a><span class="d-say">— Le butin héroique du Crucible se redistribue, vos lockouts de raid arrivent sur le roster, la menace des tanks de raid monte.</span></li>
+      <li><span class="d-ico" aria-hidden="true">🗺️</span><a class="d-name" href="#monde">Monde &amp; quêtes</a><span class="d-say">— Les villes terminées changent leur ligne d’entrée ; le rail d’atlas de la carte se replie.</span></li>
+      <li><span class="d-ico" aria-hidden="true">🏰</span><a class="d-name" href="#guilde">Guilde &amp; social</a><span class="d-say">— Un Rapport système sur la version bureau, une liaison Discord qui se répare, la banque de guilde qui ne gêne plus le marché.</span></li>
+      <li><span class="d-ico" aria-hidden="true">⚙️</span><a class="d-name" href="#confort">Confort &amp; technique</a><span class="d-say">— La mort et les échanges refaites, un tableau des demandes au marché, /unstuck gratuit une fois par heure, limite d’images par seconde automatique.</span></li>
     </ol>
   </nav>
 
   <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
        s'efface d'elle-même quand cette version sort, et se signale périmée si
        le jeu passe à préparer la suivante. -->
-  <div id="editorial" data-for="v0.44.0" data-commits="12" data-chantiers="v0.44.0" data-written="2026-09-17T15:30+02:00">
+  <div id="editorial" data-for="v0.44.0" data-commits="379" data-chantiers="v0.44.0" data-written="2026-09-23T18:20+02:00">
 
   <section id="combat">
-    <div class="sec-head"><span class="sec-num">01</span><h2>Classes &amp; sorts : rien d’annoncé</h2></div>
-    <p class="sec-sub">Aucun changement de classe n’a rejoint la branche pour l’instant.</p>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Classes &amp; sorts : le druide continue sa refonte</h2></div>
+    <p class="sec-sub">Une seule classe concernée pour l’instant : le druide, qui approfondit la refonte Féraud commencée en v0.43.0. Aucun chiffre d’équilibre annoncé.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>Le chantier vient d’ouvrir après la sortie de la v0.43.0 : douze commits au relevé, tous côté confort. Si un rééquilibrage arrive, cette page le dira.</p></div>
+      <div class="card more" data-detail="wildbloom" tabindex="0" role="button"><h3>Boon se dédouble <span class="chip c-bal">Druide</span></h3><p>Nature’s Boon éclate en deux sorts : Wildbloom et Oakhide — plus lent, plus fort, et l’écorce monte à 20 %.</p><span class="more-link">Voir le détail</span></div>
+      <div class="card"><h3>La patte entre de partout <span class="chip c-new">Druide</span></h3><p>Stalk passe en Cat Form depuis n’importe quelle forme ; Gripping Roots rejoint Nature’s Boon ; les lancements de Boon deviennent instantanés ; Lunge sort du GCD.</p></div>
+      <div class="card"><h3>Les détails qui comptent <span class="chip c-util">Druide</span></h3><p>La vitesse passive de Cat Form se cumule enfin avec Dash et Loping Stride ; la fenêtre de Bruin Rush se ré-arme quand le Rush se termine ; Nature’s Boon soigne le montant complet.</p></div>
+      <div class="card"><h3>Ailleurs <span class="chip c-bal">Autres classes</span></h3><p>Le guerrier reçoit la présentation visuelle de ses sorts ; Trailbreak du chasseur survole enfin les reliefs raides derrière lui. Aucun nerf ni buff annoncé.</p></div>
     </div>
   </section>
 
   <section id="metiers">
-    <div class="sec-head"><span class="sec-num">02</span><h2>Métiers &amp; récolte : rien d’annoncé</h2></div>
-    <p class="sec-sub">Aucune recette, aucun nœud ni outil ne bouge sur la branche pour l’instant.</p>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Métiers &amp; récolte : la mécanique peaufine</h2></div>
+    <p class="sec-sub">Pas de nouvelle recette annoncée : la branche soigne le confort des métiers posés et de la récolte.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>Les charmes à 1 éclat / 14 essences / 10 poussières de la v0.43.0 restent la règle du jour.</p></div>
+      <div class="card"><h3>Red Harvest se met en scène <span class="chip c-new">Récolte</span></h3><p>Le texte de combat de la récolte suit désormais des temps forts écrits — et la moisson part aussi sous l’eau et sur le terrain.</p></div>
+      <div class="card"><h3>Les ateliers deviennent visibles <span class="chip c-util">Métiers</span></h3><p>Les stations de métier mobiles posées au sol ont enfin un objet dans le monde, et la Fête d’apex servie est celle que le joueur a cliquée.</p></div>
+      <div class="card"><h3>Le Town Focus se souvient <span class="chip c-util">Métiers</span></h3><p>Le changement de Town Focus en attente est conservé, affiché et mémorisé ; les piles verrouillées rentrent dans un seul emplacement de voûte ou de banque.</p></div>
     </div>
   </section>
 
   <section id="donjons">
-    <div class="sec-head"><span class="sec-num">03</span><h2>Donjons, failles &amp; boss : rien d’annoncé</h2></div>
-    <p class="sec-sub">Les instances restent celles de la v0.43.2, avec le raid Crucible of the Last Spring et le donjon The Wildheart Basin au Finder.</p>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Donjons, failles &amp; boss : le Crucible redistribue son butin</h2></div>
+    <p class="sec-sub">Le raid Crucible of the Last Spring reçoit la plus grosse part du chantier : son butin héroique se redistribue, et vos lockouts deviennent visibles.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>Nythraxis est réglée sur 23 % / 37 % par frappe depuis le correctif v0.43.1 — rien de neuf sur la branche.</p></div>
+      <div class="card more" data-detail="crucible" tabindex="0" role="button"><h3>Le butin héroique se redistribue <span class="chip c-raid">Raid</span></h3><p>Les armes de lanceur de sorts et les offhands du Crucible rejoignent le mode Héroique, et le sigil de Robe y devient garanti.</p><span class="more-link">Voir le détail</span></div>
+      <div class="card"><h3>Vos lockouts sur le roster <span class="chip c-new">Suivi</span></h3><p>L’écran de sélection liste les lockouts de raid de chaque personnage, groupés par type et repliables ; le Reliquaire compte enfin les clears héroiques.</p></div>
+      <div class="card"><h3>La menace des tanks de raid monte <span class="chip c-bal">Équilibrage</span></h3><p>Oathward et Recompense génèrent plus de menace, pour rapprocher les tanks de raid des autres.</p></div>
+      <div class="card"><h3>Les angles morts réparés <span class="chip c-util">Correctifs</span></h3><p>Changer la difficulté d’un raid redevient immédiat (fini le blocage de 5 minutes) ; un boss effacé se réinitialise même si un raider entre au même moment ; la qualité du butin des failles suit une échelle plafonnée.</p></div>
     </div>
   </section>
 
   <section id="monde">
-    <div class="sec-head"><span class="sec-num">04</span><h2>Monde &amp; quêtes : rien d’annoncé</h2></div>
-    <p class="sec-sub">Le monde ouvert ne bouge pas sur la branche pour l’instant.</p>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Monde &amp; quêtes : les villes savent se faire discrètes</h2></div>
+    <p class="sec-sub">Aucune nouvelle zone : trois touches de lecture du monde, pensées pour les personnages qui avancent.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>Zones, quêtes et cimetière du Last Keep restent ceux de la v0.43.0.</p></div>
+      <div class="card"><h3>Les villes qui n’ont plus rien à dire <span class="chip c-new">Quêtes</span></h3><p>Quand toutes les quêtes d’une ville sont finies, la ligne d’entrée en chat change — chacune des trois villes fondatrices a la sienne, qui vous tutoie à Highwatch.</p></div>
+      <div class="card"><h3>La carte se replie <span class="chip c-util">Carte</span></h3><p>Le rail d’atlas à gauche de la carte du monde se replie pour laisser la place au terrain.</p></div>
+      <div class="card"><h3>Les mobs immobiles rentrent chez eux <span class="chip c-util">Correctif</span></h3><p>Un mob bloqué ne fuit plus indéfiniment : il se replace à sa position d’origine.</p></div>
     </div>
   </section>
 
   <section id="guilde">
-    <div class="sec-head"><span class="sec-num">05</span><h2>Guilde &amp; social : rien d’annoncé</h2></div>
-    <p class="sec-sub">Aucun outil de guilde ni social sur la branche pour l’instant.</p>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Guilde &amp; social : les outils se réparent tout seuls</h2></div>
+    <p class="sec-sub">Peu de nouveautés, beaucoup de solidité : diagnostics du poste, Discord réparable, spectate plus fiable.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>L’onglet Who, le signpost et les annonces d’or de guilde de la v0.43.0 restent en place.</p></div>
+      <div class="card"><h3>Un Rapport système sur bureau <span class="chip c-new">Outil</span></h3><p>Le client bureau gagne un panneau Rapport système : il collecte et sauvegarde un diagnostic du poste pour accompagner un bug, avec le plafond d’images par seconde en clair.</p></div>
+      <div class="card"><h3>La liaison Discord se répare <span class="chip c-util">Social</span></h3><p>Un lien Discord qui échoue devient visible et relançable sans devoir se délier ; les annonces de butin rare étiquettent le vrai gagnant du tirage, pas le premier candidat.</p></div>
+      <div class="card"><h3>Moins d’accrocs en spectate <span class="chip c-util">Social</span></h3><p>La sortie de spectate attend la fin de la reconstruction de l’affichage ; la barre d’action et le kit restent figés pendant qu’on regarde.</p></div>
+      <div class="card"><h3>La banque ne gêne plus le marché <span class="chip c-util">Guilde</span></h3><p>La sauvegarde automatique de la banque de guilde quitte l’écriture partagée avec le marché — fini les rares accrocs quand les deux passaient en même temps.</p></div>
     </div>
   </section>
 
   <section id="confort">
-    <div class="sec-head"><span class="sec-num">06</span><h2>Un chantier qui commence par débloquer les champs de bataille</h2></div>
-    <p class="sec-sub">Douze commits au relevé, tous côté technique : la v0.44.0 s’attaque aux blocages rencontrés en champ de bataille. Une version d’entretien pour l’instant — la suite du chantier dira si elle grossit.</p>
+    <div class="sec-head"><span class="sec-num">06</span><h2>Confort &amp; technique : les grandes refaites de la v0.44.0</h2></div>
+    <p class="sec-sub">La moitié du chantier vit ici : la mort, les échanges et le marché sont refaits, et le jeu apprend à se régler tout seul. 102 commits au relevé — le chantier le plus gros de la version.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>La position ne part plus en vrac <span class="chip c-util">Correctif</span></h3><p>Appuyer en même temps sur deux touches de déplacement opposées mettait la position côté serveur dans un état incohérent : c’est réparé.</p></div>
-      <div class="card"><h3>Sortir des pièges à mur <span class="chip c-new">Correctif</span></h3><p>Un joueur coincé contre un mur de champ de bataille peut enfin se débloquer au lieu d’attendre la fin du match.</p></div>
-      <div class="card"><h3>Le compte à rebours se tient <span class="chip c-util">Correctif</span></h3><p>Déclencher une offense pendant le compte à rebours d’entrée l’annule au lieu de laisser le match démarrer en roue libre — le familier compris.</p></div>
-      <div class="card"><h3>Chantier jeune <span class="chip c-util">Prudence</span></h3><p>Douze commits au moment du relevé, sortie imminente annoncée par l’emballage du jeu : cette page sera reprise si la branche grossit d’ici la sortie. Pas de chiffre ici : c’est du travail en cours.</p></div>
+      <div class="card more" data-detail="keeper" tabindex="0" role="button"><h3>La mort passe à la table du Veilleur <span class="chip c-new">Mort</span></h3><p>Le retour par le Toll devient un dialogue avec le Veilleur pâle, avec confirmation — et le fantôme sait désormais où il est mort.</p><span class="more-link">Voir le détail</span></div>
+      <div class="card"><h3>Les échanges se cliquent <span class="chip c-new">Échanges</span></h3><p>Un clic sur une ligne offerte l’ajuste ou la retire ; Maj-clic propose la quantité choisie, avec un bouton Tout offrir — et plus de quantité au-delà de ce que le marché accepte.</p></div>
+      <div class="card"><h3>Le tableau des demandes <span class="chip c-new">Marché</span></h3><p>Le marché gagne un Wanted board : des ordres d’achat, et un bandeau « pas sur le marché » pour ce qui n’y circule pas.</p></div>
+      <div class="card"><h3>Le jeu limite ses propres FPS <span class="chip c-new">Technique</span></h3><p>Une limite d’images par seconde automatique, active par défaut, se règle et tient sa cible ; un réglage graphique « fantôme de caméra » rejoint les options.</p></div>
+      <div class="card"><h3>/unstuck gratuit une fois <span class="chip c-util">Déblocage</span></h3><p>Le premier /unstuck de l’heure est gratuit, les suivants paient un malus ; la fenêtre se garde d’un match à l’autre et annonce la charge qui a marché.</p></div>
+      <div class="card"><h3>Le bouclier crédite ses soins <span class="chip c-util">Compteurs</span></h3><p>Les dégâts absorbés par un bouclier comptent comme des soins pour celui qui l’a posé ; les qualités de butin exceptionnelles deviennent permanentes.</p></div>
+      <div class="card"><h3>Et encore <span class="chip c-util">Divers</span></h3><p>Une recherche par nom dans la voûte de matériaux, la prédiction de mouvement dans les delves, les tirages de butin affichés à l’écran — la liste complète vit dans le jeu, pas ici.</p></div>
     </div>
   </section>
 
@@ -309,7 +325,29 @@
 </dialog>
 
 <script>
-  const DETAILS = {};
+  const DETAILS = {
+    wildbloom: {
+      title: "Nature’s Boon se dédouble en Wildbloom et Oakhide",
+      summary: "Le sort unique devient deux outils : un soin plus lent mais plus fort, et une écorce qui monte à 20 %.",
+      body: `<p>Sur la branche, <b>Nature’s Boon</b> éclate en deux sorts : <b>Wildbloom</b> côté soin et <b>Oakhide</b> côté protection. Les libellés de travail annoncent un soin « plus lent et plus fort », et une écorce qui monte à <b>20 %</b> en armure.</p>
+<ul><li><b>Stalk</b> permet d’entrer en Cat Form depuis n’importe quelle forme — plus besoin de repasser par la forme de lanceur de sorts.</li><li><b>Gripping Roots</b> rejoint Nature’s Boon, et sa fenêtre s’illumine en or quand le sort est prêt.</li><li>Les lancements de Boon deviennent instantanés, et <b>Lunge</b> sort du GCD.</li></ul>
+<p>Travail en cours : tout ceci peut encore bouger d’ici la sortie. Les chiffres définitifs, vérifiés dans le code, seront dans les notes du jour de sortie.</p>`
+    },
+    crucible: {
+      title: "Le butin héroique du Crucible se redistribue",
+      summary: "Les lanceurs de sorts repartent avec des armes et des offhands à eux, garanties là où elles manquaient.",
+      body: `<p>Le butin du raid <b>Crucible of the Last Spring</b> se redistribue en mode Héroique : les <b>armes de lanceur de sorts</b> et les <b>offhands</b> tenues rejoignent cette difficulté, et le <b>sigil de Robe</b> y devient garanti sur chaque victoire.</p>
+<ul><li>Le Reliquaire compte désormais les clears héroiques, y compris ceux du donjon à cinq et de la base de Nythraxis.</li><li>En parallèle, vos lockouts de raid s’affichent sur l’écran de sélection de personnage, groupés par type.</li></ul>
+<p>Travail en cours : la répartition exacte par boss sera vérifiée dans le code le jour de la sortie.</p>`
+    },
+    keeper: {
+      title: "Le retour par le Toll devient un dialogue",
+      summary: "Le Gardien du lieu vous parle, vous confirme, et vous prévient : vous rentrez plus faible.",
+      body: `<p>Ressusciter via le Toll devient une conversation avec le <b>Veilleur pâle</b> : un dialogue, un plancher de niveau, puis une <b>confirmation</b> — plus de retour subi par erreur. Le jeu annonce clairement « vous êtes de retour, mais plus faible », et le dialogue diffère selon que le héros a été épargné ou a perdu un niveau.</p>
+<ul><li>Le fantôme gagne une ligne d’indication qui <b>nomme le lieu de la mort</b>.</li><li>Le premier <b>/unstuck</b> de l’heure devient gratuit ; les suivants paient un malus de résurrection — et la fenêtre d’affichage de la charge qui a fonctionné se garde d’un match à l’autre.</li></ul>
+<p>Travail en cours : le coût exact du Toll et les paliers de faiblesse seront vérifiés dans le code le jour de la sortie.</p>`
+    }
+  };
 
   const modal = document.getElementById("modal");
   const mTitle = document.getElementById("mTitle");

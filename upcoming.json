@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-23T00:52:45Z",
+ "generated": "2026-09-23T16:11:56Z",
  "base_tag": "v0.43.3",
  "version": "v0.44.0",
  "branch": "ossbrain-release/v0.44.0",
  "declared_version": "0.44.0",
  "imminent": true,
- "commits": 378,
+ "commits": 379,
  "shown": 167,
- "last_commit": "2026-09-23T00:41:05Z",
+ "last_commit": "2026-09-23T01:01:06Z",
  "sections": [
   {
    "key": "classes",
@@ -1233,9 +1233,9 @@
    "branch": "ossbrain-release/v0.44.0",
    "declared_version": "0.44.0",
    "imminent": true,
-   "commits": 378,
+   "commits": 379,
    "shown": 167,
-   "last_commit": "2026-09-23T00:41:05Z",
+   "last_commit": "2026-09-23T01:01:06Z",
    "sections": [
     {
      "key": "classes",

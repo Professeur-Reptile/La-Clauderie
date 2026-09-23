@@ -2,6 +2,26 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.43.3",
+   "date": "2026-09-21",
+   "titre": "Un correctif qui ne touche pas au jeu",
+   "resume": "La v0.43.3 ne change aucun sort, objet ou boss : elle refait le site web et l'écran de connexion du jeu, traduit son menu outils dans toutes les langues, et répare la confirmation d'achat de la boutique — depuis l'inspection d'un objet ou d'une monture, elle s'affichait sous la fenêtre : invisible mais active, une pression d'Entrée suffisait à valider l'achat sans le voir.",
+   "temps_forts": [
+    "🛍️ Confirmation d'achat de nouveau visible au-dessus des inspections",
+    "🖥️ Site web et écran de connexion du jeu refaits",
+    "🎮 Zéro changement de gameplay — Android 61, iOS 68"
+   ],
+   "page": "notes/v0.43.3.html",
+   "titre_en": "A hotfix that doesn't touch the game",
+   "resume_en": "v0.43.3 changes no spell, item or boss: it redesigns the game's public website and login screen, translates its tools menu in every language, and repairs the store purchase confirm — from an item or mount inspection it rendered under the window: invisible but live, one Enter press was enough to buy without seeing it.",
+   "temps_forts_en": [
+    "🛍️ Purchase confirm visible again, above inspections",
+    "🖥️ Game website and login screen redesigned",
+    "🎮 Zero gameplay changes — Android 61, iOS 68"
+   ],
+   "page_en": "notes/v0.43.3.en.html"
+  },
+  {
    "version": "v0.43.2",
    "date": "2026-09-17",
    "titre": "La feuille de personnage répond à nouveau à gauche",
