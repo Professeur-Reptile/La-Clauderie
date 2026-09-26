@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-23T16:11:56Z",
+ "generated": "2026-09-26T07:57:59Z",
  "base_tag": "v0.43.3",
  "version": "v0.44.0",
  "branch": "ossbrain-release/v0.44.0",
  "declared_version": "0.44.0",
  "imminent": true,
- "commits": 379,
- "shown": 167,
- "last_commit": "2026-09-23T01:01:06Z",
+ "commits": 515,
+ "shown": 223,
+ "last_commit": "2026-09-26T18:18:55+12:00",
  "sections": [
   {
    "key": "classes",
@@ -15,6 +15,48 @@
    "fr": "Classes & sorts",
    "en": "Classes & spells",
    "items": [
+    {
+     "h": "520d35b4",
+     "kind": "feat",
+     "scope": "shaman",
+     "text": "Rework Thundercall around the classic elemental kit",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "e3031061",
+     "kind": "feat",
+     "scope": "shaman",
+     "text": "Rebuild the Stormkindled set around the Thundercall rework",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "dd30a903",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add the Cooldown Manager interface option",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "73f9024b",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Let the Cooldown Manager track every spell of the class",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "bf08ec2d",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Track engines, procs and buffs in the Cooldown Manager",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "a859ddc9",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Warfare Season 2, a five-piece honor set for every spec",
+     "date": "2026-09-24"
+    },
     {
      "h": "ed8ae5a6",
      "kind": "feat",
@@ -77,6 +119,34 @@
      "scope": "render",
      "text": "Load the warrior kit textures on demand with mip chains",
      "date": "2026-09-22"
+    },
+    {
+     "h": "e27abfe0",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Do not chime spells a spec swap teaches while ready",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "f1870939",
+     "kind": "fix",
+     "scope": "shaman",
+     "text": "Harden the Thundercall procs from review",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "3101f41d",
+     "kind": "fix",
+     "scope": "shaman",
+     "text": "Trim the Thundercall spec bonus to hold the Vespers band",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "ec9cdf6a",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Harden the Cooldown Manager after review",
+     "date": "2026-09-24"
     },
     {
      "h": "23af4bec",
@@ -157,6 +227,13 @@
    "en": "Professions & gathering",
    "items": [
     {
+     "h": "902f1e85",
+     "kind": "feat",
+     "scope": "server",
+     "text": "Audit chance-based crafting outcomes in craft_roll_events",
+     "date": "2026-09-23"
+    },
+    {
      "h": "35fc1158",
      "kind": "feat",
      "scope": "ui",
@@ -190,6 +267,13 @@
      "scope": "desktop",
      "text": "Import the Windows host diagnostic tool",
      "date": "2026-09-19"
+    },
+    {
+     "h": "6cb41316",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Keep raw craft rolls out of the account export",
+     "date": "2026-09-23"
     },
     {
      "h": "3e144230",
@@ -270,6 +354,13 @@
      "date": "2026-09-21"
     },
     {
+     "h": "81425982",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Add the floor VFX ladder so boss mechanics paint over player VFX",
+     "date": "2026-09-19"
+    },
+    {
      "h": "64eda046",
      "kind": "feat",
      "scope": "loot",
@@ -277,11 +368,25 @@
      "date": "2026-09-07"
     },
     {
+     "h": "5ec610f8",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Release Soul Rend marks when Nythraxis Bone Storm begins",
+     "date": "2026-09-25"
+    },
+    {
      "h": "6f338678",
      "kind": "fix",
      "scope": "reliquary",
      "text": "Count Heroic clears on the five-man and Nythraxis base pages",
      "date": "2026-09-22"
+    },
+    {
+     "h": "39312b5f",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Put the boss floor pieces that shipped with no order on the encounter band",
+     "date": "2026-09-21"
     },
     {
      "h": "0059927d",
@@ -348,6 +453,13 @@
    "en": "World & quests",
    "items": [
     {
+     "h": "46c2fbdb",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Zone policy, marking, hour DR window and shared aid hook",
+     "date": "2026-09-22"
+    },
+    {
      "h": "4b1678c8",
      "kind": "feat",
      "scope": "hud",
@@ -383,6 +495,13 @@
      "date": "2026-09-17"
     },
     {
+     "h": "5d668a9a",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Rune circles pick their floor band per spawn like the meteor telegraph",
+     "date": "2026-09-21"
+    },
+    {
      "h": "11fde914",
      "kind": "fix",
      "scope": "sim",
@@ -405,6 +524,13 @@
    "en": "Guild & social",
    "items": [
     {
+     "h": "535bb0de",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Group the overlay panels under Options > Overlays, name groups",
+     "date": "2026-09-25"
+    },
+    {
      "h": "6b01b2ba",
      "kind": "feat",
      "scope": "charselect",
@@ -424,6 +550,20 @@
      "scope": "perf",
      "text": "Report the frame rate ceiling as typed fleet columns",
      "date": "2026-09-18"
+    },
+    {
+     "h": "e3e83afe",
+     "kind": "fix",
+     "scope": "hill",
+     "text": "A late hill keeps its full warning; guild copy in five locales",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "be8bfd44",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Replay preferences after spectate restoration",
+     "date": "2026-09-24"
     },
     {
      "h": "fc963e41",
@@ -511,10 +651,94 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "ae1fca0a",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Paint the four Warfare Season 2 weapon icons",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "d51076d0",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Make Warfare Season 2 the PvP upgrade over Season 1",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "3a08656e",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Rework Season 2 bonuses from PvP feedback and a CC audit",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "89025a8f",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Ramp King of the Hill honor, double battlegrounds, raids earn nothing",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "92098427",
+     "kind": "feat",
+     "scope": "hill",
+     "text": "Three-hour random hill with a warning, parties only; guilds fight",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "f10809e9",
+     "kind": "feat",
+     "scope": "world-pvp",
+     "text": "Anyone on free-for-all ground is fair game; hill dev levers",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "46abf091",
+     "kind": "feat",
+     "scope": "world-pvp",
+     "text": "Free-for-all ground is the map's top row",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "9a0d2b05",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add frame presets and improve HUD layout editing",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "e37c6a5a",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "WARFARE Vitality, honor gear health outside PvE instances",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "dc7b4913",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "World PvP tab reads the ground and the realm switch",
+     "date": "2026-09-22"
+    },
+    {
      "h": "2d5d29cc",
      "kind": "feat",
      "scope": "render",
      "text": "Dither one instance of a batch as a camera ghost",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "8db06511",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "King of the Hill, an hourly held circle in the free-for-all zones",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "4a0127fe",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "The King of the Hill bar and the circle on the ground",
      "date": "2026-09-22"
     },
     {
@@ -571,6 +795,27 @@
      "kind": "feat",
      "scope": "unstuck",
      "text": "Free the first /unstuck in an hour, charge sickness on repeats",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "f2da0dae",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Add the World PvP flag system behind the SimContext seam",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "a8093214",
+     "kind": "feat",
+     "scope": "net",
+     "text": "Carry the /pvp flag on the wire through an IWorldWorldPvp facet",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "fc53225c",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "World PvP tab, /pvp hostility on nameplates and the target frame",
      "date": "2026-09-21"
     },
     {
@@ -707,6 +952,20 @@
      "date": "2026-09-15"
     },
     {
+     "h": "f4a6c52c",
+     "kind": "feat",
+     "scope": "mounts",
+     "text": "Give the Valestrider its voice and a standing jump",
+     "date": "2026-08-16"
+    },
+    {
+     "h": "7fcc053c",
+     "kind": "feat",
+     "scope": "mounts",
+     "text": "Add the Viridian Valestrider",
+     "date": "2026-08-14"
+    },
+    {
      "h": "88ee5653",
      "kind": "perf",
      "scope": "loot",
@@ -728,6 +987,62 @@
      "date": "2026-09-19"
     },
     {
+     "h": "e0fa2107",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Put release's new floor pieces on the VFX ladder",
+     "date": "2026-09-26"
+    },
+    {
+     "h": "0c4305b0",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Address the Season 2 review: completion, class lock, shop",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "41a5ad7d",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Drape the hill circle on the terrain with a soft radial fade",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "7423941b",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Resolve frame layout CI regressions",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "310fe6cc",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "WARFARE applies to all PvP combat, pets included",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "40298be8",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Address frame layout review feedback",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "ecee3121",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Preserve compatibility with parallel frame changes",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "75cc6c52",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Polish the World PvP tab, classify the blob field, pin the frame cue",
+     "date": "2026-09-22"
+    },
+    {
      "h": "92b2225e",
      "kind": "fix",
      "scope": "render",
@@ -739,6 +1054,62 @@
      "kind": "fix",
      "scope": "render",
      "text": "Harden the dithered ghost layer against key and clone traps",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "32c444b3",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Live verdict for periodic harm, spoken aid refusal, level-gated free-for-all",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "135d2c0b",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Throttle the wpvp self key to its own cadence",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "d49d417f",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "World PvP tab focus lands on Cancel, dead buttons stay focusable",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "662e74f8",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Repaint the nameplate PvP tag the frame the flag flips",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "cda83554",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Inert World PvP buttons use the shared class, not a global aria-disabled rule",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "c6351ac4",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep the nameplate content-resolve gate on one line for its source pin",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "92730cde",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Register the worldPvp lap and make the DoT interval harness a live duel",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "a8f9f4c3",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Register the hill lap phase beside worldPvp",
      "date": "2026-09-22"
     },
     {
@@ -865,6 +1236,13 @@
      "kind": "fix",
      "scope": "render",
      "text": "Gate the opaque scene capture to the AO chains",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "c5ce53cf",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Close the review findings on the World PvP flag",
      "date": "2026-09-21"
     },
     {
@@ -1223,6 +1601,20 @@
      "scope": "render",
      "text": "Draw the Stonebound weapon shell solid when no AA pass runs",
      "date": "2026-09-11"
+    },
+    {
+     "h": "7c85f613",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Finish the Valestrider's release-merge obligations",
+     "date": "2026-09-10"
+    },
+    {
+     "h": "1aba06ae",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Tighten avian jump launch",
+     "date": "2026-08-16"
     }
    ]
   }
@@ -1233,9 +1625,9 @@
    "branch": "ossbrain-release/v0.44.0",
    "declared_version": "0.44.0",
    "imminent": true,
-   "commits": 379,
-   "shown": 167,
-   "last_commit": "2026-09-23T01:01:06Z",
+   "commits": 515,
+   "shown": 223,
+   "last_commit": "2026-09-26T18:18:55+12:00",
    "sections": [
     {
      "key": "classes",
@@ -1243,6 +1635,48 @@
      "fr": "Classes & sorts",
      "en": "Classes & spells",
      "items": [
+      {
+       "h": "520d35b4",
+       "kind": "feat",
+       "scope": "shaman",
+       "text": "Rework Thundercall around the classic elemental kit",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "e3031061",
+       "kind": "feat",
+       "scope": "shaman",
+       "text": "Rebuild the Stormkindled set around the Thundercall rework",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "dd30a903",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add the Cooldown Manager interface option",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "73f9024b",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Let the Cooldown Manager track every spell of the class",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "bf08ec2d",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Track engines, procs and buffs in the Cooldown Manager",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "a859ddc9",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Warfare Season 2, a five-piece honor set for every spec",
+       "date": "2026-09-24"
+      },
       {
        "h": "ed8ae5a6",
        "kind": "feat",
@@ -1305,6 +1739,34 @@
        "scope": "render",
        "text": "Load the warrior kit textures on demand with mip chains",
        "date": "2026-09-22"
+      },
+      {
+       "h": "e27abfe0",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Do not chime spells a spec swap teaches while ready",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "f1870939",
+       "kind": "fix",
+       "scope": "shaman",
+       "text": "Harden the Thundercall procs from review",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "3101f41d",
+       "kind": "fix",
+       "scope": "shaman",
+       "text": "Trim the Thundercall spec bonus to hold the Vespers band",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "ec9cdf6a",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Harden the Cooldown Manager after review",
+       "date": "2026-09-24"
       },
       {
        "h": "23af4bec",
@@ -1385,6 +1847,13 @@
      "en": "Professions & gathering",
      "items": [
       {
+       "h": "902f1e85",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Audit chance-based crafting outcomes in craft_roll_events",
+       "date": "2026-09-23"
+      },
+      {
        "h": "35fc1158",
        "kind": "feat",
        "scope": "ui",
@@ -1418,6 +1887,13 @@
        "scope": "desktop",
        "text": "Import the Windows host diagnostic tool",
        "date": "2026-09-19"
+      },
+      {
+       "h": "6cb41316",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Keep raw craft rolls out of the account export",
+       "date": "2026-09-23"
       },
       {
        "h": "3e144230",
@@ -1498,6 +1974,13 @@
        "date": "2026-09-21"
       },
       {
+       "h": "81425982",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Add the floor VFX ladder so boss mechanics paint over player VFX",
+       "date": "2026-09-19"
+      },
+      {
        "h": "64eda046",
        "kind": "feat",
        "scope": "loot",
@@ -1505,11 +1988,25 @@
        "date": "2026-09-07"
       },
       {
+       "h": "5ec610f8",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Release Soul Rend marks when Nythraxis Bone Storm begins",
+       "date": "2026-09-25"
+      },
+      {
        "h": "6f338678",
        "kind": "fix",
        "scope": "reliquary",
        "text": "Count Heroic clears on the five-man and Nythraxis base pages",
        "date": "2026-09-22"
+      },
+      {
+       "h": "39312b5f",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Put the boss floor pieces that shipped with no order on the encounter band",
+       "date": "2026-09-21"
       },
       {
        "h": "0059927d",
@@ -1576,6 +2073,13 @@
      "en": "World & quests",
      "items": [
       {
+       "h": "46c2fbdb",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Zone policy, marking, hour DR window and shared aid hook",
+       "date": "2026-09-22"
+      },
+      {
        "h": "4b1678c8",
        "kind": "feat",
        "scope": "hud",
@@ -1611,6 +2115,13 @@
        "date": "2026-09-17"
       },
       {
+       "h": "5d668a9a",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Rune circles pick their floor band per spawn like the meteor telegraph",
+       "date": "2026-09-21"
+      },
+      {
        "h": "11fde914",
        "kind": "fix",
        "scope": "sim",
@@ -1633,6 +2144,13 @@
      "en": "Guild & social",
      "items": [
       {
+       "h": "535bb0de",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Group the overlay panels under Options > Overlays, name groups",
+       "date": "2026-09-25"
+      },
+      {
        "h": "6b01b2ba",
        "kind": "feat",
        "scope": "charselect",
@@ -1652,6 +2170,20 @@
        "scope": "perf",
        "text": "Report the frame rate ceiling as typed fleet columns",
        "date": "2026-09-18"
+      },
+      {
+       "h": "e3e83afe",
+       "kind": "fix",
+       "scope": "hill",
+       "text": "A late hill keeps its full warning; guild copy in five locales",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "be8bfd44",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Replay preferences after spectate restoration",
+       "date": "2026-09-24"
       },
       {
        "h": "fc963e41",
@@ -1739,10 +2271,94 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "ae1fca0a",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Paint the four Warfare Season 2 weapon icons",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "d51076d0",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Make Warfare Season 2 the PvP upgrade over Season 1",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "3a08656e",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Rework Season 2 bonuses from PvP feedback and a CC audit",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "89025a8f",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Ramp King of the Hill honor, double battlegrounds, raids earn nothing",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "92098427",
+       "kind": "feat",
+       "scope": "hill",
+       "text": "Three-hour random hill with a warning, parties only; guilds fight",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "f10809e9",
+       "kind": "feat",
+       "scope": "world-pvp",
+       "text": "Anyone on free-for-all ground is fair game; hill dev levers",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "46abf091",
+       "kind": "feat",
+       "scope": "world-pvp",
+       "text": "Free-for-all ground is the map's top row",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "9a0d2b05",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add frame presets and improve HUD layout editing",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "e37c6a5a",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "WARFARE Vitality, honor gear health outside PvE instances",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "dc7b4913",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "World PvP tab reads the ground and the realm switch",
+       "date": "2026-09-22"
+      },
+      {
        "h": "2d5d29cc",
        "kind": "feat",
        "scope": "render",
        "text": "Dither one instance of a batch as a camera ghost",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "8db06511",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "King of the Hill, an hourly held circle in the free-for-all zones",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "4a0127fe",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "The King of the Hill bar and the circle on the ground",
        "date": "2026-09-22"
       },
       {
@@ -1799,6 +2415,27 @@
        "kind": "feat",
        "scope": "unstuck",
        "text": "Free the first /unstuck in an hour, charge sickness on repeats",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "f2da0dae",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Add the World PvP flag system behind the SimContext seam",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "a8093214",
+       "kind": "feat",
+       "scope": "net",
+       "text": "Carry the /pvp flag on the wire through an IWorldWorldPvp facet",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "fc53225c",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "World PvP tab, /pvp hostility on nameplates and the target frame",
        "date": "2026-09-21"
       },
       {
@@ -1935,6 +2572,20 @@
        "date": "2026-09-15"
       },
       {
+       "h": "f4a6c52c",
+       "kind": "feat",
+       "scope": "mounts",
+       "text": "Give the Valestrider its voice and a standing jump",
+       "date": "2026-08-16"
+      },
+      {
+       "h": "7fcc053c",
+       "kind": "feat",
+       "scope": "mounts",
+       "text": "Add the Viridian Valestrider",
+       "date": "2026-08-14"
+      },
+      {
        "h": "88ee5653",
        "kind": "perf",
        "scope": "loot",
@@ -1956,6 +2607,62 @@
        "date": "2026-09-19"
       },
       {
+       "h": "e0fa2107",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Put release's new floor pieces on the VFX ladder",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "0c4305b0",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Address the Season 2 review: completion, class lock, shop",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "41a5ad7d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Drape the hill circle on the terrain with a soft radial fade",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "7423941b",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Resolve frame layout CI regressions",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "310fe6cc",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "WARFARE applies to all PvP combat, pets included",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "40298be8",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Address frame layout review feedback",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "ecee3121",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Preserve compatibility with parallel frame changes",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "75cc6c52",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Polish the World PvP tab, classify the blob field, pin the frame cue",
+       "date": "2026-09-22"
+      },
+      {
        "h": "92b2225e",
        "kind": "fix",
        "scope": "render",
@@ -1967,6 +2674,62 @@
        "kind": "fix",
        "scope": "render",
        "text": "Harden the dithered ghost layer against key and clone traps",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "32c444b3",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Live verdict for periodic harm, spoken aid refusal, level-gated free-for-all",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "135d2c0b",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Throttle the wpvp self key to its own cadence",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "d49d417f",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "World PvP tab focus lands on Cancel, dead buttons stay focusable",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "662e74f8",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Repaint the nameplate PvP tag the frame the flag flips",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "cda83554",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Inert World PvP buttons use the shared class, not a global aria-disabled rule",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "c6351ac4",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep the nameplate content-resolve gate on one line for its source pin",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "92730cde",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Register the worldPvp lap and make the DoT interval harness a live duel",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "a8f9f4c3",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Register the hill lap phase beside worldPvp",
        "date": "2026-09-22"
       },
       {
@@ -2093,6 +2856,13 @@
        "kind": "fix",
        "scope": "render",
        "text": "Gate the opaque scene capture to the AO chains",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "c5ce53cf",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Close the review findings on the World PvP flag",
        "date": "2026-09-21"
       },
       {
@@ -2451,6 +3221,20 @@
        "scope": "render",
        "text": "Draw the Stonebound weapon shell solid when no AA pass runs",
        "date": "2026-09-11"
+      },
+      {
+       "h": "7c85f613",
+       "kind": "fix",
+       "scope": "mounts",
+       "text": "Finish the Valestrider's release-merge obligations",
+       "date": "2026-09-10"
+      },
+      {
+       "h": "1aba06ae",
+       "kind": "fix",
+       "scope": "mounts",
+       "text": "Tighten avian jump launch",
+       "date": "2026-08-16"
       }
      ]
     }
