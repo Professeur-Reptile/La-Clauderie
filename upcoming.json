@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-26T13:20:37Z",
+ "generated": "2026-09-26T17:57:14Z",
  "base_tag": "v0.43.3",
  "version": "v0.44.0",
- "branch": "ossbrain-release/v0.44.0",
+ "branch": "release/v0.44.0",
  "declared_version": "0.44.0",
  "imminent": true,
- "commits": 644,
- "shown": 274,
- "last_commit": "2026-09-26T11:09:44Z",
+ "commits": 786,
+ "shown": 333,
+ "last_commit": "2026-09-26T17:07:09Z",
  "sections": [
   {
    "key": "classes",
@@ -15,6 +15,27 @@
    "fr": "Classes & sorts",
    "en": "Classes & spells",
    "items": [
+    {
+     "h": "f786fe54",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Show who applied a buff/debuff in its tooltip",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "9c925cfb",
+     "kind": "feat",
+     "scope": "action-bar",
+     "text": "Grey out slots whose situational cast requirement is unmet",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "54075378",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Resolve each cast's families and latch a refused cast",
+     "date": "2026-09-25"
+    },
     {
      "h": "520d35b4",
      "kind": "feat",
@@ -156,6 +177,13 @@
      "date": "2026-09-17"
     },
     {
+     "h": "11a44d15",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Answer a declined family on the cast gate's fast path",
+     "date": "2026-09-25"
+    },
+    {
      "h": "e27588de",
      "kind": "perf",
      "scope": "render",
@@ -177,10 +205,73 @@
      "date": "2026-09-22"
     },
     {
+     "h": "497ff541",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Hold casts on the Warrior kit pools again",
+     "date": "2026-09-25"
+    },
+    {
      "h": "e27abfe0",
      "kind": "fix",
      "scope": "ui",
      "text": "Do not chime spells a spec swap teaches while ready",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "b62eb9f4",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Stop Warlock Leaden Hex from aggroing mobs before spell impact",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "d7780593",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Give the cast gate one ready bit per program family",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "66774437",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Draw each cast whole or not at all, on its own families",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "ef76f662",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Ask the kit only for an aura that is a Warrior control mark",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "839dcc34",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep a queued recast and a loosely named cue on their own cast",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "c0e52c85",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Read a pushed-back cast bar as the same cast",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "b7329fac",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Drop a cast bar's refusal when the cast is interrupted",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "1d3e6714",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Drop a cast bar's refusal when the bar leaves with time left",
      "date": "2026-09-25"
     },
     {
@@ -230,6 +321,20 @@
      "kind": "fix",
      "scope": "render",
      "text": "Upload every sheet a Warrior cast draws in the kit preparation",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "f469ccb6",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Give the warlock channel and verdict pools a prewarm home",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "f469ccb6",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Give the warlock channel and verdict pools a prewarm home",
      "date": "2026-09-24"
     },
     {
@@ -381,10 +486,38 @@
      "date": "2026-09-19"
     },
     {
+     "h": "afa306ff",
+     "kind": "fix",
+     "scope": "professions",
+     "text": "Stop the koi's fishing flourish claiming generic rarity",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "9fdb61f5",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Share one rocket sled plume material pair across riders",
+     "date": "2026-09-25"
+    },
+    {
      "h": "542a564f",
      "kind": "fix",
      "scope": "render",
      "text": "Load the Warrior kit sheets before building its prewarm recipe",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "8da3b3d9",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Collect the ability-VFX warm-up by program, not by material",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "8da3b3d9",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Collect the ability-VFX warm-up by program, not by material",
      "date": "2026-09-24"
     },
     {
@@ -452,6 +585,13 @@
    "en": "Dungeons, rifts & bosses",
    "items": [
     {
+     "h": "4f680f04",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Give dungeon doors and rift portals a predefined exit facing",
+     "date": "2026-09-25"
+    },
+    {
      "h": "b74dd7d7",
      "kind": "feat",
      "scope": "talents",
@@ -492,6 +632,41 @@
      "scope": "loot",
      "text": "Redistribute the Crucible's caster weapon and held offhands to Heroic",
      "date": "2026-09-07"
+    },
+    {
+     "h": "2445b470",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Warm each raid encounter set once, from the Forge-Lift on",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "ecba7023",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Compile the Nythraxis floor telegraphs before the Soul Rend catalog",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "244a58e9",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep the raid prewarm in frame after the raid leaves the lift",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "f11675dc",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Thicken the Nythraxis Grave Eruption warning rim",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "a251ff1a",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Clear Dread Curse when Nythraxis Bone Storm begins",
+     "date": "2026-09-25"
     },
     {
      "h": "5ec610f8",
@@ -619,6 +794,20 @@
      "scope": "ui",
      "text": "Collapse the world map's left atlas rail",
      "date": "2026-09-17"
+    },
+    {
+     "h": "8e6cf5f7",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Make every gated pool refuse a spawn its family cannot draw",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "c52cb49a",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Limit idle mob tab targeting to 20 yards",
+     "date": "2026-09-24"
     },
     {
      "h": "060499c4",
@@ -812,6 +1001,34 @@
      "date": "2026-09-25"
     },
     {
+     "h": "f4ffbbdb",
+     "kind": "feat",
+     "scope": "market",
+     "text": "Split World Market sales into their own History tab",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "fbfa4a3d",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Browse the $WOC Exchange read-only at character select",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "901362bd",
+     "kind": "feat",
+     "scope": "action-bar",
+     "text": "Grey out shield, dagger and Burning Pact requirements",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "08c17425",
+     "kind": "feat",
+     "scope": "market",
+     "text": "Let buyers take fewer than a bulk listing's whole stack",
+     "date": "2026-09-25"
+    },
+    {
      "h": "89025a8f",
      "kind": "feat",
      "scope": "pvp",
@@ -865,6 +1082,13 @@
      "kind": "feat",
      "scope": "meters",
      "text": "Localize settings, rename presets, and enlarge death recap",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "db0da90b",
+     "kind": "feat",
+     "scope": "camera",
+     "text": "Add opt-in over-the-shoulder Action Cam",
      "date": "2026-09-24"
     },
     {
@@ -1232,6 +1456,62 @@
      "date": "2026-09-26"
     },
     {
+     "h": "ba509741",
+     "kind": "fix",
+     "scope": "#4196",
+     "text": "Align mouseover reset keys",
+     "date": "2026-09-26"
+    },
+    {
+     "h": "89b43ad6",
+     "kind": "fix",
+     "scope": "#4204,#4206",
+     "text": "Address review polish",
+     "date": "2026-09-26"
+    },
+    {
+     "h": "b2a8e1d7",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stage Varkhul's rig and the Forgestorm warning before the Inner Crucible",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "c4ccb8de",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Gate casts on the engine family the painter draws",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "41a66744",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Link the CC band, area ring and cloud in an exempt entry",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "3da261ca",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Shed the $WOC Exchange browse table's Buy Now column on the portrait phone sheet",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "e0ad85fc",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Let every first-read unit settle before the entry reports",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "904df09c",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep main.ts within its line-count ratchet, fix a focus-key selector",
+     "date": "2026-09-25"
+    },
+    {
      "h": "0c4305b0",
      "kind": "fix",
      "scope": "pvp",
@@ -1243,6 +1523,83 @@
      "kind": "fix",
      "scope": "render",
      "text": "Drape the hill circle on the terrain with a soft radial fade",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "40983bb6",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Hold a control mark on the engine it draws with",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "657d4b1e",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Link the underwater wash and water underside on approach",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "e1264b57",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Give the dropped weather resume its link step",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "ca95a383",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Gate a rebuilt water view's underside afresh",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "86895e62",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Widen the water approach probe to 60 yd with 5 reads a frame",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "0b6373c5",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Build the rocket sled plume inside the mount gate",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "1bebc91c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Link the hill ring's program off the draw path at first sight",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "5e1d8847",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Name the hill ring materials and retry a failed twin",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "88a7bd44",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Warm the weapon-skin host with the program each tier draws",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "499093d6",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Name the weapon-skin prewarm hosts and guard their build",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "acd8f65e",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Dispose a rejected hill ring twin and retry at the next hill",
      "date": "2026-09-25"
     },
     {
@@ -1309,6 +1666,27 @@
      "date": "2026-09-24"
     },
     {
+     "h": "ad96282d",
+     "kind": "fix",
+     "scope": "bags",
+     "text": "Let a touch player destroy a bag stack again",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "ee21c7a7",
+     "kind": "fix",
+     "scope": "bags",
+     "text": "Re-resolve the tapped copy when the touch Destroy row runs",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "dd9dd358",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Surface mouseover casting in Frames",
+     "date": "2026-09-24"
+    },
+    {
      "h": "40fca6bd",
      "kind": "fix",
      "scope": "render",
@@ -1334,6 +1712,41 @@
      "kind": "fix",
      "scope": "render",
      "text": "Skip a contact whose procedural fallback is not uploaded yet",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "40fca6bd",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Record sprite, line and points programs on a settled compile",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "26e3336b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Give the Divine Ascension, Frostglobe and meteor rocks a prewarm home",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "bcf406c2",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Give every weapon-aura program a never-disposed boot stand-in",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "e2882f53",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Prewarm and gate the Affliction familiar's first attach",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "40fca6bd",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Record sprite, line and points programs on a settled compile",
      "date": "2026-09-24"
     },
     {
@@ -1979,12 +2392,12 @@
  "versions": [
   {
    "version": "v0.44.0",
-   "branch": "ossbrain-release/v0.44.0",
+   "branch": "release/v0.44.0",
    "declared_version": "0.44.0",
    "imminent": true,
-   "commits": 644,
-   "shown": 274,
-   "last_commit": "2026-09-26T11:09:44Z",
+   "commits": 786,
+   "shown": 333,
+   "last_commit": "2026-09-26T17:07:09Z",
    "sections": [
     {
      "key": "classes",
@@ -1992,6 +2405,27 @@
      "fr": "Classes & sorts",
      "en": "Classes & spells",
      "items": [
+      {
+       "h": "f786fe54",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Show who applied a buff/debuff in its tooltip",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "9c925cfb",
+       "kind": "feat",
+       "scope": "action-bar",
+       "text": "Grey out slots whose situational cast requirement is unmet",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "54075378",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Resolve each cast's families and latch a refused cast",
+       "date": "2026-09-25"
+      },
       {
        "h": "520d35b4",
        "kind": "feat",
@@ -2133,6 +2567,13 @@
        "date": "2026-09-17"
       },
       {
+       "h": "11a44d15",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Answer a declined family on the cast gate's fast path",
+       "date": "2026-09-25"
+      },
+      {
        "h": "e27588de",
        "kind": "perf",
        "scope": "render",
@@ -2154,10 +2595,73 @@
        "date": "2026-09-22"
       },
       {
+       "h": "497ff541",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Hold casts on the Warrior kit pools again",
+       "date": "2026-09-25"
+      },
+      {
        "h": "e27abfe0",
        "kind": "fix",
        "scope": "ui",
        "text": "Do not chime spells a spec swap teaches while ready",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "b62eb9f4",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Stop Warlock Leaden Hex from aggroing mobs before spell impact",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "d7780593",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Give the cast gate one ready bit per program family",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "66774437",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Draw each cast whole or not at all, on its own families",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "ef76f662",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Ask the kit only for an aura that is a Warrior control mark",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "839dcc34",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep a queued recast and a loosely named cue on their own cast",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "c0e52c85",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Read a pushed-back cast bar as the same cast",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "b7329fac",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Drop a cast bar's refusal when the cast is interrupted",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "1d3e6714",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Drop a cast bar's refusal when the bar leaves with time left",
        "date": "2026-09-25"
       },
       {
@@ -2207,6 +2711,20 @@
        "kind": "fix",
        "scope": "render",
        "text": "Upload every sheet a Warrior cast draws in the kit preparation",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "f469ccb6",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Give the warlock channel and verdict pools a prewarm home",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "f469ccb6",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Give the warlock channel and verdict pools a prewarm home",
        "date": "2026-09-24"
       },
       {
@@ -2358,10 +2876,38 @@
        "date": "2026-09-19"
       },
       {
+       "h": "afa306ff",
+       "kind": "fix",
+       "scope": "professions",
+       "text": "Stop the koi's fishing flourish claiming generic rarity",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "9fdb61f5",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Share one rocket sled plume material pair across riders",
+       "date": "2026-09-25"
+      },
+      {
        "h": "542a564f",
        "kind": "fix",
        "scope": "render",
        "text": "Load the Warrior kit sheets before building its prewarm recipe",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "8da3b3d9",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Collect the ability-VFX warm-up by program, not by material",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "8da3b3d9",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Collect the ability-VFX warm-up by program, not by material",
        "date": "2026-09-24"
       },
       {
@@ -2429,6 +2975,13 @@
      "en": "Dungeons, rifts & bosses",
      "items": [
       {
+       "h": "4f680f04",
+       "kind": "feat",
+       "scope": "sim",
+       "text": "Give dungeon doors and rift portals a predefined exit facing",
+       "date": "2026-09-25"
+      },
+      {
        "h": "b74dd7d7",
        "kind": "feat",
        "scope": "talents",
@@ -2469,6 +3022,41 @@
        "scope": "loot",
        "text": "Redistribute the Crucible's caster weapon and held offhands to Heroic",
        "date": "2026-09-07"
+      },
+      {
+       "h": "2445b470",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Warm each raid encounter set once, from the Forge-Lift on",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "ecba7023",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Compile the Nythraxis floor telegraphs before the Soul Rend catalog",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "244a58e9",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep the raid prewarm in frame after the raid leaves the lift",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "f11675dc",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Thicken the Nythraxis Grave Eruption warning rim",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "a251ff1a",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Clear Dread Curse when Nythraxis Bone Storm begins",
+       "date": "2026-09-25"
       },
       {
        "h": "5ec610f8",
@@ -2596,6 +3184,20 @@
        "scope": "ui",
        "text": "Collapse the world map's left atlas rail",
        "date": "2026-09-17"
+      },
+      {
+       "h": "8e6cf5f7",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Make every gated pool refuse a spawn its family cannot draw",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "c52cb49a",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Limit idle mob tab targeting to 20 yards",
+       "date": "2026-09-24"
       },
       {
        "h": "060499c4",
@@ -2789,6 +3391,34 @@
        "date": "2026-09-25"
       },
       {
+       "h": "f4ffbbdb",
+       "kind": "feat",
+       "scope": "market",
+       "text": "Split World Market sales into their own History tab",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "fbfa4a3d",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Browse the $WOC Exchange read-only at character select",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "901362bd",
+       "kind": "feat",
+       "scope": "action-bar",
+       "text": "Grey out shield, dagger and Burning Pact requirements",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "08c17425",
+       "kind": "feat",
+       "scope": "market",
+       "text": "Let buyers take fewer than a bulk listing's whole stack",
+       "date": "2026-09-25"
+      },
+      {
        "h": "89025a8f",
        "kind": "feat",
        "scope": "pvp",
@@ -2842,6 +3472,13 @@
        "kind": "feat",
        "scope": "meters",
        "text": "Localize settings, rename presets, and enlarge death recap",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "db0da90b",
+       "kind": "feat",
+       "scope": "camera",
+       "text": "Add opt-in over-the-shoulder Action Cam",
        "date": "2026-09-24"
       },
       {
@@ -3209,6 +3846,62 @@
        "date": "2026-09-26"
       },
       {
+       "h": "ba509741",
+       "kind": "fix",
+       "scope": "#4196",
+       "text": "Align mouseover reset keys",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "89b43ad6",
+       "kind": "fix",
+       "scope": "#4204,#4206",
+       "text": "Address review polish",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "b2a8e1d7",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Stage Varkhul's rig and the Forgestorm warning before the Inner Crucible",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "c4ccb8de",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Gate casts on the engine family the painter draws",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "41a66744",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Link the CC band, area ring and cloud in an exempt entry",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "3da261ca",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Shed the $WOC Exchange browse table's Buy Now column on the portrait phone sheet",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "e0ad85fc",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Let every first-read unit settle before the entry reports",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "904df09c",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep main.ts within its line-count ratchet, fix a focus-key selector",
+       "date": "2026-09-25"
+      },
+      {
        "h": "0c4305b0",
        "kind": "fix",
        "scope": "pvp",
@@ -3220,6 +3913,83 @@
        "kind": "fix",
        "scope": "render",
        "text": "Drape the hill circle on the terrain with a soft radial fade",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "40983bb6",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Hold a control mark on the engine it draws with",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "657d4b1e",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Link the underwater wash and water underside on approach",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "e1264b57",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Give the dropped weather resume its link step",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "ca95a383",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Gate a rebuilt water view's underside afresh",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "86895e62",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Widen the water approach probe to 60 yd with 5 reads a frame",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "0b6373c5",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Build the rocket sled plume inside the mount gate",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "1bebc91c",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Link the hill ring's program off the draw path at first sight",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "5e1d8847",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Name the hill ring materials and retry a failed twin",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "88a7bd44",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Warm the weapon-skin host with the program each tier draws",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "499093d6",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Name the weapon-skin prewarm hosts and guard their build",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "acd8f65e",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Dispose a rejected hill ring twin and retry at the next hill",
        "date": "2026-09-25"
       },
       {
@@ -3286,6 +4056,27 @@
        "date": "2026-09-24"
       },
       {
+       "h": "ad96282d",
+       "kind": "fix",
+       "scope": "bags",
+       "text": "Let a touch player destroy a bag stack again",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "ee21c7a7",
+       "kind": "fix",
+       "scope": "bags",
+       "text": "Re-resolve the tapped copy when the touch Destroy row runs",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "dd9dd358",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Surface mouseover casting in Frames",
+       "date": "2026-09-24"
+      },
+      {
        "h": "40fca6bd",
        "kind": "fix",
        "scope": "render",
@@ -3311,6 +4102,41 @@
        "kind": "fix",
        "scope": "render",
        "text": "Skip a contact whose procedural fallback is not uploaded yet",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "40fca6bd",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Record sprite, line and points programs on a settled compile",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "26e3336b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Give the Divine Ascension, Frostglobe and meteor rocks a prewarm home",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "bcf406c2",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Give every weapon-aura program a never-disposed boot stand-in",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "e2882f53",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Prewarm and gate the Affliction familiar's first attach",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "40fca6bd",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Record sprite, line and points programs on a settled compile",
        "date": "2026-09-24"
       },
       {
