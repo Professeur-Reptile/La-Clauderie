@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-26T07:57:59Z",
+ "generated": "2026-09-26T13:20:37Z",
  "base_tag": "v0.43.3",
  "version": "v0.44.0",
  "branch": "ossbrain-release/v0.44.0",
  "declared_version": "0.44.0",
  "imminent": true,
- "commits": 515,
- "shown": 223,
- "last_commit": "2026-09-26T18:18:55+12:00",
+ "commits": 644,
+ "shown": 274,
+ "last_commit": "2026-09-26T11:09:44Z",
  "sections": [
   {
    "key": "classes",
@@ -51,11 +51,53 @@
      "date": "2026-09-24"
     },
     {
+     "h": "4ff0c62c",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Show Healing Power and Spell Crit on the character sheet",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "331c722e",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Movable mouseover tooltip with spec, title and guild lines",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "4c16c1a9",
+     "kind": "feat",
+     "scope": "priest",
+     "text": "Put Choirmend on a 12 sec cooldown",
+     "date": "2026-09-24"
+    },
+    {
      "h": "a859ddc9",
      "kind": "feat",
      "scope": "pvp",
      "text": "Warfare Season 2, a five-piece honor set for every spec",
      "date": "2026-09-24"
+    },
+    {
+     "h": "d5d8ba6a",
+     "kind": "feat",
+     "scope": "priest",
+     "text": "Redesign Benison Crucible prayer bonuses",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "42969cf1",
+     "kind": "feat",
+     "scope": "paladin",
+     "text": "Amplify Dawnreaver core rotation damage",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "188685c5",
+     "kind": "feat",
+     "scope": "meters",
+     "text": "Add spec icons, clean fight menu, and details customization dialog",
+     "date": "2026-09-23"
     },
     {
      "h": "ed8ae5a6",
@@ -114,6 +156,20 @@
      "date": "2026-09-17"
     },
     {
+     "h": "e27588de",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Pace the Warrior kit uploads through the per-frame budget",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "c094f636",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Let the Warrior kit wait out a loading cover",
+     "date": "2026-09-24"
+    },
+    {
      "h": "bc62e6fd",
      "kind": "perf",
      "scope": "render",
@@ -147,6 +203,62 @@
      "scope": "ui",
      "text": "Harden the Cooldown Manager after review",
      "date": "2026-09-24"
+    },
+    {
+     "h": "2967592d",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Open the cast gate when a dropped entry's resume links the stand-ins",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "65e23de0",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bind the demand-loaded kit textures to the Warrior crests",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "c2f5ddac",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Build the Warrior impact fragments in the kit preparation",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "d35c421d",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Upload every sheet a Warrior cast draws in the kit preparation",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "bad1d6ab",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Let paladin res and instant heal find their target",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "8e618f14",
+     "kind": "fix",
+     "scope": "talents",
+     "text": "Drop a swapped-out talent's buffs with the talent",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "9ab5ff1f",
+     "kind": "fix",
+     "scope": "druid",
+     "text": "Park Cat Form energy instead of refilling it on re-shift",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "2a741303",
+     "kind": "fix",
+     "scope": "druid",
+     "text": "Refill parked Cat energy on revive and the arena top-off",
+     "date": "2026-09-23"
     },
     {
      "h": "23af4bec",
@@ -269,6 +381,13 @@
      "date": "2026-09-19"
     },
     {
+     "h": "542a564f",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Load the Warrior kit sheets before building its prewarm recipe",
+     "date": "2026-09-24"
+    },
+    {
      "h": "6cb41316",
      "kind": "fix",
      "scope": "server",
@@ -337,6 +456,13 @@
      "kind": "feat",
      "scope": "talents",
      "text": "Raise Oathward and Recompense threat for raid tank parity",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "9fb26d6f",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Colorblind Mode for the Nythraxis floor hazards",
      "date": "2026-09-22"
     },
     {
@@ -495,6 +621,13 @@
      "date": "2026-09-17"
     },
     {
+     "h": "060499c4",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Grade the Thornpeak hillside pocket west of the practice row",
+     "date": "2026-09-23"
+    },
+    {
      "h": "5d668a9a",
      "kind": "fix",
      "scope": "render",
@@ -529,6 +662,13 @@
      "scope": "ui",
      "text": "Group the overlay panels under Options > Overlays, name groups",
      "date": "2026-09-25"
+    },
+    {
+     "h": "c6e297e6",
+     "kind": "feat",
+     "scope": "guild",
+     "text": "Custom guild ranks with per-rank permissions",
+     "date": "2026-09-24"
     },
     {
      "h": "6b01b2ba",
@@ -714,6 +854,55 @@
      "date": "2026-09-24"
     },
     {
+     "h": "9994dc73",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add a close button to the Target Auras panel",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "928f8feb",
+     "kind": "feat",
+     "scope": "meters",
+     "text": "Localize settings, rename presets, and enlarge death recap",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "ad59d6a0",
+     "kind": "feat",
+     "scope": "meters",
+     "text": "Add pro gradient preset, fix window overlap and full transparency",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "e4b82fd5",
+     "kind": "feat",
+     "scope": "deeds",
+     "text": "Unlock developer badge rungs as selectable titles",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "25df79c2",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Antlers, crescent and wings for Moonwing; a veil for Gloamveil",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "e23da80c",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Audit the world scene for stray point lights in DEV builds",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "aeff0e8c",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Add World of Warcraft style death recap dialog",
+     "date": "2026-09-23"
+    },
+    {
      "h": "dc7b4913",
      "kind": "feat",
      "scope": "ui",
@@ -861,6 +1050,13 @@
      "date": "2026-09-21"
     },
     {
+     "h": "a7b5deb8",
+     "kind": "feat",
+     "scope": "chronomancy",
+     "text": "Scale Echo conversion with Healing Power and update Arcane BiS",
+     "date": "2026-09-20"
+    },
+    {
      "h": "d296f40f",
      "kind": "feat",
      "scope": "market",
@@ -952,6 +1148,13 @@
      "date": "2026-09-15"
     },
     {
+     "h": "cbd4bb56",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Make the target-of-target frame movable and click-castable",
+     "date": "2026-09-01"
+    },
+    {
      "h": "f4a6c52c",
      "kind": "feat",
      "scope": "mounts",
@@ -964,6 +1167,41 @@
      "scope": "mounts",
      "text": "Add the Viridian Valestrider",
      "date": "2026-08-14"
+    },
+    {
+     "h": "7bcccd85",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Rebuild the worn layer with four branches for the D3D11 compiler",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "4ef4ba18",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Compile the point-light block as one loop instead of ten copies",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "c066eda9",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Draw point lights through a fixed set of packed carriers",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "aa0abbea",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Stop the point-light loop at the first black slot",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "d81fe961",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Drop the three patch's duplicate opaque NaN scrub",
+     "date": "2026-09-23"
     },
     {
      "h": "88ee5653",
@@ -1008,6 +1246,20 @@
      "date": "2026-09-25"
     },
     {
+     "h": "72dbbf09",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Keep charge pools at one timer per missing charge",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "3e98b340",
+     "kind": "fix",
+     "scope": "abilities",
+     "text": "Keep the frost Ice Block second charge through equip swaps",
+     "date": "2026-09-24"
+    },
+    {
      "h": "7423941b",
      "kind": "fix",
      "scope": "ui",
@@ -1019,6 +1271,27 @@
      "kind": "fix",
      "scope": "pvp",
      "text": "WARFARE applies to all PvP combat, pets included",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "eca402d4",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Paint the World Market filter menus on a solid panel",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "fd632f51",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Read the tooltip seat after the measure and pin the wiring",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "19f8d590",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep the boot prewarm running when an entry's progress throws",
      "date": "2026-09-24"
     },
     {
@@ -1034,6 +1307,83 @@
      "scope": "ui",
      "text": "Preserve compatibility with parallel frame changes",
      "date": "2026-09-24"
+    },
+    {
+     "h": "40fca6bd",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Record sprite, line and points programs on a settled compile",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "e37842a9",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Wait for the kit upload before drawing contact, smoke and dust",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "4e0a3948",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Finish the solid fragment cleanup and fail a missing prep step",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "e2f83924",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Skip a contact whose procedural fallback is not uploaded yet",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "975eb293",
+     "kind": "fix",
+     "scope": "deeds",
+     "text": "Localize developer badge titles and record the hidden exception",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "cbb8948c",
+     "kind": "fix",
+     "scope": "titles",
+     "text": "Never clear a rung title on a cold GitHub outage",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "c84118ad",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Keep hover heals off the enemy and rez picks useful",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "c8c936e9",
+     "kind": "fix",
+     "scope": "talents",
+     "text": "Close the remaining routes to keeping both talents",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "416a17b5",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Reset per-charge timers when a charge pool is refilled",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "ef0b7bb4",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Gate, hide and share the form adornment kits",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "5fff1b90",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Rank placed-GLB point lights in the budget like every world light",
+     "date": "2026-09-23"
     },
     {
      "h": "75cc6c52",
@@ -1610,6 +1960,13 @@
      "date": "2026-09-10"
     },
     {
+     "h": "7f4edc2f",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Make the moved target-of-target frame actually grabbable",
+     "date": "2026-09-01"
+    },
+    {
      "h": "1aba06ae",
      "kind": "fix",
      "scope": "mounts",
@@ -1625,9 +1982,9 @@
    "branch": "ossbrain-release/v0.44.0",
    "declared_version": "0.44.0",
    "imminent": true,
-   "commits": 515,
-   "shown": 223,
-   "last_commit": "2026-09-26T18:18:55+12:00",
+   "commits": 644,
+   "shown": 274,
+   "last_commit": "2026-09-26T11:09:44Z",
    "sections": [
     {
      "key": "classes",
@@ -1671,11 +2028,53 @@
        "date": "2026-09-24"
       },
       {
+       "h": "4ff0c62c",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Show Healing Power and Spell Crit on the character sheet",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "331c722e",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Movable mouseover tooltip with spec, title and guild lines",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "4c16c1a9",
+       "kind": "feat",
+       "scope": "priest",
+       "text": "Put Choirmend on a 12 sec cooldown",
+       "date": "2026-09-24"
+      },
+      {
        "h": "a859ddc9",
        "kind": "feat",
        "scope": "pvp",
        "text": "Warfare Season 2, a five-piece honor set for every spec",
        "date": "2026-09-24"
+      },
+      {
+       "h": "d5d8ba6a",
+       "kind": "feat",
+       "scope": "priest",
+       "text": "Redesign Benison Crucible prayer bonuses",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "42969cf1",
+       "kind": "feat",
+       "scope": "paladin",
+       "text": "Amplify Dawnreaver core rotation damage",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "188685c5",
+       "kind": "feat",
+       "scope": "meters",
+       "text": "Add spec icons, clean fight menu, and details customization dialog",
+       "date": "2026-09-23"
       },
       {
        "h": "ed8ae5a6",
@@ -1734,6 +2133,20 @@
        "date": "2026-09-17"
       },
       {
+       "h": "e27588de",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Pace the Warrior kit uploads through the per-frame budget",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "c094f636",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Let the Warrior kit wait out a loading cover",
+       "date": "2026-09-24"
+      },
+      {
        "h": "bc62e6fd",
        "kind": "perf",
        "scope": "render",
@@ -1767,6 +2180,62 @@
        "scope": "ui",
        "text": "Harden the Cooldown Manager after review",
        "date": "2026-09-24"
+      },
+      {
+       "h": "2967592d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Open the cast gate when a dropped entry's resume links the stand-ins",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "65e23de0",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Bind the demand-loaded kit textures to the Warrior crests",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "c2f5ddac",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Build the Warrior impact fragments in the kit preparation",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "d35c421d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Upload every sheet a Warrior cast draws in the kit preparation",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "bad1d6ab",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Let paladin res and instant heal find their target",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "8e618f14",
+       "kind": "fix",
+       "scope": "talents",
+       "text": "Drop a swapped-out talent's buffs with the talent",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "9ab5ff1f",
+       "kind": "fix",
+       "scope": "druid",
+       "text": "Park Cat Form energy instead of refilling it on re-shift",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "2a741303",
+       "kind": "fix",
+       "scope": "druid",
+       "text": "Refill parked Cat energy on revive and the arena top-off",
+       "date": "2026-09-23"
       },
       {
        "h": "23af4bec",
@@ -1889,6 +2358,13 @@
        "date": "2026-09-19"
       },
       {
+       "h": "542a564f",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Load the Warrior kit sheets before building its prewarm recipe",
+       "date": "2026-09-24"
+      },
+      {
        "h": "6cb41316",
        "kind": "fix",
        "scope": "server",
@@ -1957,6 +2433,13 @@
        "kind": "feat",
        "scope": "talents",
        "text": "Raise Oathward and Recompense threat for raid tank parity",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "9fb26d6f",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Colorblind Mode for the Nythraxis floor hazards",
        "date": "2026-09-22"
       },
       {
@@ -2115,6 +2598,13 @@
        "date": "2026-09-17"
       },
       {
+       "h": "060499c4",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Grade the Thornpeak hillside pocket west of the practice row",
+       "date": "2026-09-23"
+      },
+      {
        "h": "5d668a9a",
        "kind": "fix",
        "scope": "render",
@@ -2149,6 +2639,13 @@
        "scope": "ui",
        "text": "Group the overlay panels under Options > Overlays, name groups",
        "date": "2026-09-25"
+      },
+      {
+       "h": "c6e297e6",
+       "kind": "feat",
+       "scope": "guild",
+       "text": "Custom guild ranks with per-rank permissions",
+       "date": "2026-09-24"
       },
       {
        "h": "6b01b2ba",
@@ -2334,6 +2831,55 @@
        "date": "2026-09-24"
       },
       {
+       "h": "9994dc73",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add a close button to the Target Auras panel",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "928f8feb",
+       "kind": "feat",
+       "scope": "meters",
+       "text": "Localize settings, rename presets, and enlarge death recap",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "ad59d6a0",
+       "kind": "feat",
+       "scope": "meters",
+       "text": "Add pro gradient preset, fix window overlap and full transparency",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "e4b82fd5",
+       "kind": "feat",
+       "scope": "deeds",
+       "text": "Unlock developer badge rungs as selectable titles",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "25df79c2",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Antlers, crescent and wings for Moonwing; a veil for Gloamveil",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "e23da80c",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Audit the world scene for stray point lights in DEV builds",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "aeff0e8c",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Add World of Warcraft style death recap dialog",
+       "date": "2026-09-23"
+      },
+      {
        "h": "dc7b4913",
        "kind": "feat",
        "scope": "ui",
@@ -2481,6 +3027,13 @@
        "date": "2026-09-21"
       },
       {
+       "h": "a7b5deb8",
+       "kind": "feat",
+       "scope": "chronomancy",
+       "text": "Scale Echo conversion with Healing Power and update Arcane BiS",
+       "date": "2026-09-20"
+      },
+      {
        "h": "d296f40f",
        "kind": "feat",
        "scope": "market",
@@ -2572,6 +3125,13 @@
        "date": "2026-09-15"
       },
       {
+       "h": "cbd4bb56",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Make the target-of-target frame movable and click-castable",
+       "date": "2026-09-01"
+      },
+      {
        "h": "f4a6c52c",
        "kind": "feat",
        "scope": "mounts",
@@ -2584,6 +3144,41 @@
        "scope": "mounts",
        "text": "Add the Viridian Valestrider",
        "date": "2026-08-14"
+      },
+      {
+       "h": "7bcccd85",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Rebuild the worn layer with four branches for the D3D11 compiler",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "4ef4ba18",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Compile the point-light block as one loop instead of ten copies",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "c066eda9",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Draw point lights through a fixed set of packed carriers",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "aa0abbea",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Stop the point-light loop at the first black slot",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "d81fe961",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Drop the three patch's duplicate opaque NaN scrub",
+       "date": "2026-09-23"
       },
       {
        "h": "88ee5653",
@@ -2628,6 +3223,20 @@
        "date": "2026-09-25"
       },
       {
+       "h": "72dbbf09",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Keep charge pools at one timer per missing charge",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "3e98b340",
+       "kind": "fix",
+       "scope": "abilities",
+       "text": "Keep the frost Ice Block second charge through equip swaps",
+       "date": "2026-09-24"
+      },
+      {
        "h": "7423941b",
        "kind": "fix",
        "scope": "ui",
@@ -2639,6 +3248,27 @@
        "kind": "fix",
        "scope": "pvp",
        "text": "WARFARE applies to all PvP combat, pets included",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "eca402d4",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Paint the World Market filter menus on a solid panel",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "fd632f51",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Read the tooltip seat after the measure and pin the wiring",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "19f8d590",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep the boot prewarm running when an entry's progress throws",
        "date": "2026-09-24"
       },
       {
@@ -2654,6 +3284,83 @@
        "scope": "ui",
        "text": "Preserve compatibility with parallel frame changes",
        "date": "2026-09-24"
+      },
+      {
+       "h": "40fca6bd",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Record sprite, line and points programs on a settled compile",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "e37842a9",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Wait for the kit upload before drawing contact, smoke and dust",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "4e0a3948",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Finish the solid fragment cleanup and fail a missing prep step",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "e2f83924",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Skip a contact whose procedural fallback is not uploaded yet",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "975eb293",
+       "kind": "fix",
+       "scope": "deeds",
+       "text": "Localize developer badge titles and record the hidden exception",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "cbb8948c",
+       "kind": "fix",
+       "scope": "titles",
+       "text": "Never clear a rung title on a cold GitHub outage",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "c84118ad",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Keep hover heals off the enemy and rez picks useful",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "c8c936e9",
+       "kind": "fix",
+       "scope": "talents",
+       "text": "Close the remaining routes to keeping both talents",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "416a17b5",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Reset per-charge timers when a charge pool is refilled",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "ef0b7bb4",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Gate, hide and share the form adornment kits",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "5fff1b90",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Rank placed-GLB point lights in the budget like every world light",
+       "date": "2026-09-23"
       },
       {
        "h": "75cc6c52",
@@ -3228,6 +3935,13 @@
        "scope": "mounts",
        "text": "Finish the Valestrider's release-merge obligations",
        "date": "2026-09-10"
+      },
+      {
+       "h": "7f4edc2f",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Make the moved target-of-target frame actually grabbable",
+       "date": "2026-09-01"
       },
       {
        "h": "1aba06ae",
