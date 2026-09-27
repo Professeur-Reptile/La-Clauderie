@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-26T17:57:14Z",
+ "generated": "2026-09-27T00:49:11Z",
  "base_tag": "v0.43.3",
  "version": "v0.44.0",
  "branch": "release/v0.44.0",
  "declared_version": "0.44.0",
  "imminent": true,
- "commits": 786,
- "shown": 333,
- "last_commit": "2026-09-26T17:07:09Z",
+ "commits": 1104,
+ "shown": 508,
+ "last_commit": "2026-09-27T00:25:04Z",
  "sections": [
   {
    "key": "classes",
@@ -121,10 +121,24 @@
      "date": "2026-09-23"
     },
     {
+     "h": "209d557e",
+     "kind": "feat",
+     "scope": "trinkets",
+     "text": "Trinket aura icons, aura tooltips and an equip lockout",
+     "date": "2026-09-23"
+    },
+    {
      "h": "ed8ae5a6",
      "kind": "feat",
      "scope": "ui",
      "text": "Let players hang the target aura strip below the frame again",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "6c9d29c2",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Add 38 zone hunts so every zone rotation pool holds real variety",
      "date": "2026-09-22"
     },
     {
@@ -140,6 +154,13 @@
      "scope": "druid",
      "text": "Boon becomes Wildbloom and Oakhide, slower and stronger",
      "date": "2026-09-18"
+    },
+    {
+     "h": "6c5af22c",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Regional Mastery, the permanent per-zone completion count",
+     "date": "2026-09-17"
     },
     {
      "h": "d3d279dd",
@@ -175,6 +196,13 @@
      "scope": "druid",
      "text": "Instant Boon casts, Oakhide to 20%, Lunge off the GCD",
      "date": "2026-09-17"
+    },
+    {
+     "h": "8efde9bc",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Support daily 1-per-zone rotation and zone minimum levels",
+     "date": "2026-09-11"
     },
     {
      "h": "11a44d15",
@@ -434,6 +462,13 @@
      "scope": "druid",
      "text": "Re-arm the Bruin Rush window when the Rush ends",
      "date": "2026-09-18"
+    },
+    {
+     "h": "22e4b773",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Drop Regional Mastery, superseded by factions",
+     "date": "2026-09-18"
     }
    ]
   },
@@ -448,6 +483,13 @@
      "kind": "feat",
      "scope": "server",
      "text": "Audit chance-based crafting outcomes in craft_roll_events",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "52e87657",
+     "kind": "feat",
+     "scope": "factions",
+     "text": "Rework the quartermaster ladder and add four learned enchant formulas",
      "date": "2026-09-23"
     },
     {
@@ -592,6 +634,27 @@
      "date": "2026-09-25"
     },
     {
+     "h": "a7d82b3c",
+     "kind": "feat",
+     "scope": "factions",
+     "text": "Sell the Viridian Valestrider from the Rift Watch quartermaster at Champion",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "8507f7d9",
+     "kind": "feat",
+     "scope": "trinkets",
+     "text": "Add five Crucible raid trinkets, heroic-only",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "2e62ae07",
+     "kind": "feat",
+     "scope": "trinkets",
+     "text": "WARFARE on the honor trinkets, raid trinkets on Normal",
+     "date": "2026-09-23"
+    },
+    {
      "h": "b74dd7d7",
      "kind": "feat",
      "scope": "talents",
@@ -625,6 +688,34 @@
      "scope": "render",
      "text": "Add the floor VFX ladder so boss mechanics paint over player VFX",
      "date": "2026-09-19"
+    },
+    {
+     "h": "257a2776",
+     "kind": "feat",
+     "scope": "vault",
+     "text": "Light the Weekly Vault's world row with the previous raid tier",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "dea16698",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Raider rift ambush on the Farshore strand",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "8d37262b",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Playtest round two on shadow, rift, champion and flight",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "1053687e",
+     "kind": "feat",
+     "scope": "weekly-quests",
+     "text": "The Emissary's Cache opens into a Normal raid piece",
+     "date": "2026-09-14"
     },
     {
      "h": "64eda046",
@@ -674,6 +765,20 @@
      "scope": "sim",
      "text": "Release Soul Rend marks when Nythraxis Bone Storm begins",
      "date": "2026-09-25"
+    },
+    {
+     "h": "75aceccc",
+     "kind": "fix",
+     "scope": "factions",
+     "text": "Keep the Proven rows one point under the raid offset line",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "b530e030",
+     "kind": "fix",
+     "scope": "reliquary",
+     "text": "Name the raid trinkets on the Crucible heroic pages",
+     "date": "2026-09-23"
     },
     {
      "h": "6f338678",
@@ -739,6 +844,13 @@
      "date": "2026-09-17"
     },
     {
+     "h": "cd078ff6",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Reduce faction vendor jewelry stats below raid and crafted tiers",
+     "date": "2026-09-17"
+    },
+    {
      "h": "d9d79f92",
      "kind": "fix",
      "scope": "loot",
@@ -754,11 +866,39 @@
    "en": "World & quests",
    "items": [
     {
+     "h": "812db0b1",
+     "kind": "feat",
+     "scope": "transport",
+     "text": "Add the Harbor to Harbor deed for the ferry round trip",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "fb893c61",
+     "kind": "feat",
+     "scope": "ferry",
+     "text": "Two routes, Eastbrook to the Nightbloom and Wickharbor to the Drakelands",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "0264bc2c",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Add an NPC-only admiralty coat colorway",
+     "date": "2026-09-25"
+    },
+    {
      "h": "46c2fbdb",
      "kind": "feat",
      "scope": "pvp",
      "text": "Zone policy, marking, hour DR window and shared aid hook",
      "date": "2026-09-22"
+    },
+    {
+     "h": "a55e3680",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Pay the reward bundle on every quest and fix the day's item per zone and class",
+     "date": "2026-09-19"
     },
     {
      "h": "4b1678c8",
@@ -789,11 +929,39 @@
      "date": "2026-09-18"
     },
     {
+     "h": "f488279b",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "The taskmaster offers the world-quest board and the map rail folds away",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "b01c70fc",
+     "kind": "feat",
+     "scope": "content",
+     "text": "Rename conflicting quartermasters and update translations",
+     "date": "2026-09-17"
+    },
+    {
      "h": "6759d51c",
      "kind": "feat",
      "scope": "ui",
      "text": "Collapse the world map's left atlas rail",
      "date": "2026-09-17"
+    },
+    {
+     "h": "d6f24a66",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Add faction vendor icons, i18n entries, and asset parity",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "575be2b2",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Add starter dialogs and timed ley retries",
+     "date": "2026-09-12"
     },
     {
      "h": "8e6cf5f7",
@@ -810,11 +978,25 @@
      "date": "2026-09-24"
     },
     {
+     "h": "3fc21f55",
+     "kind": "fix",
+     "scope": "galecrest",
+     "text": "Keep the Shear off the stables hamlet and ship the glider prop KTX2",
+     "date": "2026-09-23"
+    },
+    {
      "h": "060499c4",
      "kind": "fix",
      "scope": "sim",
      "text": "Grade the Thornpeak hillside pocket west of the practice row",
      "date": "2026-09-23"
+    },
+    {
+     "h": "60f199b1",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Move the Shiverfen sprung traps onto the flat reed shelves",
+     "date": "2026-09-22"
     },
     {
      "h": "5d668a9a",
@@ -824,10 +1006,24 @@
      "date": "2026-09-21"
     },
     {
+     "h": "843b67f7",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Give the touch quest strip two more lines for a calligraphy instruction",
+     "date": "2026-09-19"
+    },
+    {
      "h": "11fde914",
      "kind": "fix",
      "scope": "sim",
      "text": "Snap an immobile mob home instead of evading forever",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "d7fe1480",
+     "kind": "fix",
+     "scope": "content",
+     "text": "Rename the Automaton quartermaster to Artificer Tobrin",
      "date": "2026-09-17"
     },
     {
@@ -836,6 +1032,34 @@
      "scope": "hud",
      "text": "Keep the deed-bordered name row clear of the portrait",
      "date": "2026-09-17"
+    },
+    {
+     "h": "0301c4fe",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Keep the Last Keep battery dressing off a quest pickup",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "084b84bd",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Widen the Frostveil trapline area around the release's moved trap",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "aa8176bf",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Adjust Eastbrook vendor and taskmaster spawn positions",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "688288fb",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Enumerate the world quest sim table and refresh stale ranking pins",
+     "date": "2026-09-15"
     }
    ]
   },
@@ -879,6 +1103,13 @@
      "scope": "perf",
      "text": "Report the frame rate ceiling as typed fleet columns",
      "date": "2026-09-18"
+    },
+    {
+     "h": "ca411708",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "The leaderboard window in the rankings ledger style",
+     "date": "2026-09-15"
     },
     {
      "h": "e3e83afe",
@@ -970,6 +1201,20 @@
      "scope": "server",
      "text": "Take the guild-bank autosave off the shared market writer",
      "date": "2026-09-15"
+    },
+    {
+     "h": "f7085470",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Touch layout for the shared podium and the leaderboard window",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "506dc0e3",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "A short standing pill and a guild line on the podium",
+     "date": "2026-09-15"
     }
    ]
   },
@@ -980,10 +1225,52 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "bda51fb5",
+     "kind": "feat",
+     "scope": "ferry",
+     "text": "Model Wickharbor's harbor in the wharf's wood in Blender",
+     "date": "2026-09-26"
+    },
+    {
+     "h": "da56e3dd",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Draw Wickharbor's harbor from its one Blender model",
+     "date": "2026-09-26"
+    },
+    {
+     "h": "d5060070",
+     "kind": "feat",
+     "scope": "ferry",
+     "text": "Plank Wickharbor's harbor water into one great quay",
+     "date": "2026-09-26"
+    },
+    {
+     "h": "6a7bdd55",
+     "kind": "feat",
+     "scope": "ferry",
+     "text": "Model Wickharbor's great quay, its crane and cargo shelter",
+     "date": "2026-09-26"
+    },
+    {
      "h": "ae1fca0a",
      "kind": "feat",
      "scope": "pvp",
      "text": "Paint the four Warfare Season 2 weapon icons",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "7dc26f2a",
+     "kind": "feat",
+     "scope": "transport",
+     "text": "Show the ferry timetable and a sea card on the HUD",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "1470dfb7",
+     "kind": "feat",
+     "scope": "transport",
+     "text": "Bump the world layout epoch to 30 for the scheduled ferry",
      "date": "2026-09-25"
     },
     {
@@ -1022,6 +1309,34 @@
      "date": "2026-09-25"
     },
     {
+     "h": "e9522674",
+     "kind": "feat",
+     "scope": "transport",
+     "text": "Sail the ferry along real sea lanes with a walkable moving deck",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "d9e8e0f5",
+     "kind": "feat",
+     "scope": "transport",
+     "text": "Send passengers in the ship frame and predict them on deck",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "453b13f5",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Keep ferry passengers and the camera glued to the moving deck",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "9921ff74",
+     "kind": "feat",
+     "scope": "transport",
+     "text": "Replace the ferry sea card with a quiet sailing line",
+     "date": "2026-09-25"
+    },
+    {
      "h": "08c17425",
      "kind": "feat",
      "scope": "market",
@@ -1033,6 +1348,90 @@
      "kind": "feat",
      "scope": "pvp",
      "text": "Ramp King of the Hill honor, double battlegrounds, raids earn nothing",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "56981fc2",
+     "kind": "feat",
+     "scope": "ferry",
+     "text": "Refuse mounting anywhere on a ship deck",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "a519e282",
+     "kind": "feat",
+     "scope": "ferry",
+     "text": "Model the harbor route marker signpost in Blender",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "3200b564",
+     "kind": "feat",
+     "scope": "ferry",
+     "text": "Stand a route marker at every ferry berth",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "75248cd9",
+     "kind": "feat",
+     "scope": "ferry",
+     "text": "Lay out the Wyrmwatch cliff harbor in the sim",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "c5a0a0d7",
+     "kind": "feat",
+     "scope": "ferry",
+     "text": "Model the Wyrmwatch cliff harbor in Blender",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "1edc947c",
+     "kind": "feat",
+     "scope": "ferry",
+     "text": "Draw the Wyrmwatch cliff harbor and its path to Wyrmwatch",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "a6540ac2",
+     "kind": "feat",
+     "scope": "ferry",
+     "text": "Lay out the walk-in Harbormaster's House in the sim",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "80d7404c",
+     "kind": "feat",
+     "scope": "ferry",
+     "text": "Model the Harbormaster's House in Blender",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "58ce89c4",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Cut the Harbormaster's House away around the camera",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "9bbda232",
+     "kind": "feat",
+     "scope": "ferry",
+     "text": "Dress Harbormaster Tamsin as an old sea wolf",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "a1a75563",
+     "kind": "feat",
+     "scope": "ferry",
+     "text": "Model the Wickharbor ferry wharf in Blender",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "ca57ed4a",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Draw the Wickharbor ferry wharf",
      "date": "2026-09-25"
     },
     {
@@ -1099,10 +1498,52 @@
      "date": "2026-09-24"
     },
     {
+     "h": "2f8a1ae5",
+     "kind": "feat",
+     "scope": "harbor",
+     "text": "Replace the Eastbrook ferry with a Blender-built walkable ship",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "a72c163b",
+     "kind": "feat",
+     "scope": "transport",
+     "text": "Sail the Eastbrook ferry on a round-trip timetable",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "549bde39",
+     "kind": "feat",
+     "scope": "transport",
+     "text": "Mirror the ferry timetable and passengers online",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "2428ae01",
+     "kind": "feat",
+     "scope": "transport",
+     "text": "Draw the ferry at its scheduled pose",
+     "date": "2026-09-24"
+    },
+    {
      "h": "e4b82fd5",
      "kind": "feat",
      "scope": "deeds",
      "text": "Unlock developer badge rungs as selectable titles",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "f9867666",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Refine glider courses and reward-free replays",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "d8b02017",
+     "kind": "feat",
+     "scope": "gear",
+     "text": "Add functional trinket equipment slot",
      "date": "2026-09-23"
     },
     {
@@ -1117,6 +1558,27 @@
      "kind": "feat",
      "scope": "render",
      "text": "Audit the world scene for stray point lights in DEV builds",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "a96d6b06",
+     "kind": "feat",
+     "scope": "trinkets",
+     "text": "Add thirteen original trinkets with use and passive effects",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "0780334f",
+     "kind": "feat",
+     "scope": "trinkets",
+     "text": "Price the two PvP trinkets at 800 honor",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "b0a44f55",
+     "kind": "feat",
+     "scope": "trinkets",
+     "text": "Show scaled tooltip amounts as base plus power bonus",
      "date": "2026-09-23"
     },
     {
@@ -1169,6 +1631,27 @@
      "date": "2026-09-22"
     },
     {
+     "h": "a3bd77b8",
+     "kind": "feat",
+     "scope": "glider",
+     "text": "Launch the Windrider Slalom from a wharf on the crest of the Shear",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "688ac00c",
+     "kind": "feat",
+     "scope": "glider",
+     "text": "Fly a different certified line through the slalom every day",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "a578111e",
+     "kind": "feat",
+     "scope": "glider",
+     "text": "Swap the procedural glider for a built Windrider glider model",
+     "date": "2026-09-22"
+    },
+    {
      "h": "a620c8e8",
      "kind": "feat",
      "scope": "trade",
@@ -1201,6 +1684,20 @@
      "kind": "feat",
      "scope": "death",
      "text": "Keeper dialogue differs for spared and levelled heroes",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "023fdc5c",
+     "kind": "feat",
+     "scope": "vault",
+     "text": "Select eligible loot tables and filter class rewards",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "28e7acc9",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Add authored shipwreck salvage assets and placements",
      "date": "2026-09-21"
     },
     {
@@ -1337,6 +1834,13 @@
      "date": "2026-09-18"
     },
     {
+     "h": "0c5d1e27",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "A modest daily casket with rare extras and Grumbol",
+     "date": "2026-09-18"
+    },
+    {
      "h": "0884dfb1",
      "kind": "feat",
      "scope": "game",
@@ -1358,6 +1862,76 @@
      "date": "2026-09-18"
     },
     {
+     "h": "091d18df",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Land the faction quartermaster stock's same-change obligations",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "caa36d0a",
+     "kind": "feat",
+     "scope": "vault",
+     "text": "Add animated rewards and durable opening",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "6ef38b6c",
+     "kind": "feat",
+     "scope": "vault",
+     "text": "Rework the weekly vault opening burst and gate the loot on the open door",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "ea08c837",
+     "kind": "feat",
+     "scope": "dev",
+     "text": "Add /dev rep to award faction standing for testing",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "3c0df750",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Celebrate a faction standing tier the moment it is reached",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "3b984506",
+     "kind": "feat",
+     "scope": "deeds",
+     "text": "Record Trusted and Champion standing with each faction",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "caafe259",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Seat a Specialization board under Defense on the character sheet",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "8a2ca79a",
+     "kind": "feat",
+     "scope": "weekly-quests",
+     "text": "The emissary's commendation, standing for one faction of your choice",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "1aa74fba",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Clue Scrolls, the Stage 3 treasure hunts and caskets",
+     "date": "2026-09-17"
+    },
+    {
+     "h": "ed41a413",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Faction reputation, faction vendors, and the daily reroll",
+     "date": "2026-09-16"
+    },
+    {
      "h": "bb01eabc",
      "kind": "feat",
      "scope": "net",
@@ -1365,11 +1939,263 @@
      "date": "2026-09-16"
     },
     {
+     "h": "cb832657",
+     "kind": "feat",
+     "scope": "net",
+     "text": "Mirror faction standing and the daily reroll on the owner snapshot",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "9578a7e1",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Add the Reputation tab to the character window",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "49b078f6",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "List the day's world quests on the map rail with the daily replacement",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "b027bf4e",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Add the Currencies tab to the character window",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "971ff47f",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Move Time Played onto the Progression tab",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "51ed1deb",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Restructure the character sheet around a bottom tab strip",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "e1f99ceb",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Drop the Specialization summary from the character sheet",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "fb3c6c63",
+     "kind": "feat",
+     "scope": "vault",
+     "text": "Add weekly rewards and Eastbrook vault hall",
+     "date": "2026-09-15"
+    },
+    {
      "h": "707b1885",
      "kind": "feat",
      "scope": "loot",
      "text": "Add permanent exceptional drop qualities",
      "date": "2026-09-15"
+    },
+    {
+     "h": "ae6bcaaf",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "The ladder read answers the viewer's own standing",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "bf683ef9",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "A rankings window with board cards and a podium",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "7e528e98",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Spanish and non-Latin copy for the rankings window",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "92319b4f",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Board and medal art for the rankings window",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "8c3c978a",
+     "kind": "feat",
+     "scope": "audio",
+     "text": "Add dedicated minigame music loops and dynamic crossfade",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "d794ab53",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "Page the Runecaller title from Arcane Calligraphy",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "8bdf4e89",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Playtest round one across the instructor quests",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "ef6588b4",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Lantern cones, a scattered strand and fresh sigils",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "a03be2e9",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Pick Normal or Hard at the maze keeper",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "d54d8798",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Flight clock plus held Climb and Dive slots",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "e2e618e7",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Two bonus ley boards past the daily solve",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "ec47c483",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "A shared champion encore after the plain quests",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "8b995f74",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Endless cannon waves past the authored victory",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "1a4ee55e",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Rebuild the forge as a timing hammer and heat gauge",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "5ed2c4d4",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Public scoreboards for the medal world quests",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "e2a5ef17",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Name the infiltrator to the sergeant, three more stories",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "3a5b90af",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Playtest round three across shadow, maze, forge and flight",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "feb669ce",
+     "kind": "feat",
+     "scope": "weekly-quests",
+     "text": "The weekly emissary and his four charges",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "66ef4254",
+     "kind": "feat",
+     "scope": "weekly-quests",
+     "text": "A window that scales with its size, and Cham Pete",
+     "date": "2026-09-14"
+    },
+    {
+     "h": "72434083",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Add daily puzzles and glider practice courses",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "f5448004",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Add Wispwood maze with escalating guardian pressure",
+     "date": "2026-09-12"
+    },
+    {
+     "h": "d632e603",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Add developer commands for testing world quests",
+     "date": "2026-09-11"
+    },
+    {
+     "h": "bd6f5340",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Polish confection and ley puzzle presentation",
+     "date": "2026-09-10"
+    },
+    {
+     "h": "1078137f",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Add shadow infiltration and extend glider course",
+     "date": "2026-09-08"
+    },
+    {
+     "h": "e847212a",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Add forging, horde defense, and infiltrator investigation encounters",
+     "date": "2026-09-07"
+    },
+    {
+     "h": "29ae15f9",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Add calligraphy and tactical cannon encounters",
+     "date": "2026-09-05"
+    },
+    {
+     "h": "eebb4ba0",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Add regional story caravans",
+     "date": "2026-09-04"
+    },
+    {
+     "h": "38a4fa89",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Add rotating world activities",
+     "date": "2026-09-02"
     },
     {
      "h": "cbd4bb56",
@@ -1449,10 +2275,87 @@
      "date": "2026-09-19"
     },
     {
+     "h": "9576c76a",
+     "kind": "fix",
+     "scope": "ferry",
+     "text": "Bring release/v0.44.0 (the OSSBrain release merge) into the ferry feature",
+     "date": "2026-09-27"
+    },
+    {
+     "h": "2b5ae252",
+     "kind": "fix",
+     "scope": "ferry",
+     "text": "Give the harbor house walls their depth back under the dithered fade",
+     "date": "2026-09-27"
+    },
+    {
+     "h": "0c9aa93f",
+     "kind": "fix",
+     "scope": "ferry",
+     "text": "Stop the ship's ends sweeping pier-standers into the sea",
+     "date": "2026-09-27"
+    },
+    {
+     "h": "a013e01d",
+     "kind": "fix",
+     "scope": "ferry",
+     "text": "Only carry a corpse that sailed on the deck",
+     "date": "2026-09-27"
+    },
+    {
+     "h": "5f993484",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Give the weekly vault keeper her own reserved entity id",
+     "date": "2026-09-27"
+    },
+    {
      "h": "e0fa2107",
      "kind": "fix",
      "scope": "render",
      "text": "Put release's new floor pieces on the VFX ladder",
+     "date": "2026-09-26"
+    },
+    {
+     "h": "34fa5976",
+     "kind": "fix",
+     "scope": "ferry",
+     "text": "Lay Wickharbor's harbor decks without a shared plane",
+     "date": "2026-09-26"
+    },
+    {
+     "h": "2c3470f6",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Batch the Wickharbor harbor with the wharf's materials",
+     "date": "2026-09-26"
+    },
+    {
+     "h": "94271d52",
+     "kind": "fix",
+     "scope": "ferry",
+     "text": "Bring release/v0.44.0 into the ferry feature",
+     "date": "2026-09-26"
+    },
+    {
+     "h": "66eb2b17",
+     "kind": "fix",
+     "scope": "ferry",
+     "text": "Keep the quay crane's rig off the low tier, raise the shelter",
+     "date": "2026-09-26"
+    },
+    {
+     "h": "4f7bd4e3",
+     "kind": "fix",
+     "scope": "ferry",
+     "text": "Bring the release/v0.44.0 merge into the ferry feature",
+     "date": "2026-09-26"
+    },
+    {
+     "h": "e7037649",
+     "kind": "fix",
+     "scope": "factions",
+     "text": "Bind every ladder row and gate the equipment at level 20",
      "date": "2026-09-26"
     },
     {
@@ -1468,6 +2371,13 @@
      "scope": "#4204,#4206",
      "text": "Address review polish",
      "date": "2026-09-26"
+    },
+    {
+     "h": "53f1ca36",
+     "kind": "fix",
+     "scope": "transport",
+     "text": "Harden ferry boarding, gates and pets after review",
+     "date": "2026-09-25"
     },
     {
      "h": "b2a8e1d7",
@@ -1498,6 +2408,13 @@
      "date": "2026-09-25"
     },
     {
+     "h": "d39d6ee7",
+     "kind": "fix",
+     "scope": "transport",
+     "text": "Keep ferry gate sync lazy and re-pin the gate's suites",
+     "date": "2026-09-25"
+    },
+    {
      "h": "e0ad85fc",
      "kind": "fix",
      "scope": "render",
@@ -1519,6 +2436,27 @@
      "date": "2026-09-25"
     },
     {
+     "h": "10d9b36a",
+     "kind": "fix",
+     "scope": "transport",
+     "text": "Close stale voyages and settle forced moves on the moving deck",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "877b59fe",
+     "kind": "fix",
+     "scope": "harbor",
+     "text": "Move the Eastbrook fairway buoys clear of the ferry's swing",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "982a9e4d",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep the deck under a predicted passenger as the ship moors",
+     "date": "2026-09-25"
+    },
+    {
      "h": "41a5ad7d",
      "kind": "fix",
      "scope": "render",
@@ -1526,10 +2464,31 @@
      "date": "2026-09-25"
     },
     {
+     "h": "c329fcd8",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stand ferry passengers on the drawn deck, not in the air",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "4e5cd718",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep full-rate sun shadows around a ship under way",
+     "date": "2026-09-25"
+    },
+    {
      "h": "40983bb6",
      "kind": "fix",
      "scope": "render",
      "text": "Hold a control mark on the engine it draws with",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "4d9eeb04",
+     "kind": "fix",
+     "scope": "ferry",
+     "text": "Review follow-ups for the two ferry routes",
      "date": "2026-09-25"
     },
     {
@@ -1554,6 +2513,13 @@
      "date": "2026-09-25"
     },
     {
+     "h": "226311df",
+     "kind": "fix",
+     "scope": "ferry",
+     "text": "Moor the two Wickharbor ships clear of the route marker",
+     "date": "2026-09-25"
+    },
+    {
      "h": "86895e62",
      "kind": "fix",
      "scope": "render",
@@ -1561,10 +2527,52 @@
      "date": "2026-09-25"
     },
     {
+     "h": "df75370c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Cull, clear and light the house shell the way the harbor does",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "8911e236",
+     "kind": "fix",
+     "scope": "ferry",
+     "text": "Voice the harbormaster and bound the house's rest area",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "b086f75f",
+     "kind": "fix",
+     "scope": "ferry",
+     "text": "Bring in the Wyrmwatch cliff harbor and harbormaster's house",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "93292f77",
+     "kind": "fix",
+     "scope": "ferry",
+     "text": "Replace Wickharbor's crossing decks with one ferry wharf",
+     "date": "2026-09-25"
+    },
+    {
      "h": "0b6373c5",
      "kind": "fix",
      "scope": "render",
      "text": "Build the rocket sled plume inside the mount gate",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "9d7a72ee",
+     "kind": "fix",
+     "scope": "ferry",
+     "text": "Keep the boardwalk bollards off the wharf flight",
+     "date": "2026-09-25"
+    },
+    {
+     "h": "de8cde36",
+     "kind": "fix",
+     "scope": "ferry",
+     "text": "Bring in the unified Wickharbor wharf",
      "date": "2026-09-25"
     },
     {
@@ -1729,6 +2737,13 @@
      "date": "2026-09-24"
     },
     {
+     "h": "fda34c58",
+     "kind": "fix",
+     "scope": "harbor",
+     "text": "Save Codex's first Eastbrook ferry pass",
+     "date": "2026-09-24"
+    },
+    {
      "h": "bcf406c2",
      "kind": "fix",
      "scope": "render",
@@ -1764,6 +2779,13 @@
      "date": "2026-09-23"
     },
     {
+     "h": "c3ba44e1",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Reconcile CI content pins and generated assets",
+     "date": "2026-09-23"
+    },
+    {
      "h": "c84118ad",
      "kind": "fix",
      "scope": "combat",
@@ -1796,6 +2818,13 @@
      "kind": "fix",
      "scope": "render",
      "text": "Rank placed-GLB point lights in the budget like every world light",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "99dc7726",
+     "kind": "fix",
+     "scope": "trinkets",
+     "text": "Close dead-wearer, duel-end and killing-blow edge cases",
      "date": "2026-09-23"
     },
     {
@@ -1890,6 +2919,48 @@
      "date": "2026-09-22"
     },
     {
+     "h": "879140c2",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Give the Clue Scroll talk and hand-over steps a gossip row that sends the interact",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "340fb859",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Move the forge workshop panel into the centred window family",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "3e183a1d",
+     "kind": "fix",
+     "scope": "quests",
+     "text": "Keep the Palmreach confection board on every day's roster",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "5aac05ed",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Keep the forge workshop panel out of the managed window family",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "537d6642",
+     "kind": "fix",
+     "scope": "shards",
+     "text": "Carry the four round-2 test files into the shard weights",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "44fcd122",
+     "kind": "fix",
+     "scope": "quests",
+     "text": "Close the round-2 review findings and the shard-6 CI red",
+     "date": "2026-09-22"
+    },
+    {
      "h": "67095338",
      "kind": "fix",
      "scope": "death",
@@ -1950,6 +3021,20 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Fold the trade headroom wrapper into the bags binding",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "1abad9a3",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Keep the shipwreck hull as decoration",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "7e1ec55b",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Address loot table review findings",
      "date": "2026-09-21"
     },
     {
@@ -2163,6 +3248,13 @@
      "date": "2026-09-19"
     },
     {
+     "h": "1dea5658",
+     "kind": "fix",
+     "scope": "integration",
+     "text": "Make the Weekly Vault landing green on release/v0.44.0",
+     "date": "2026-09-19"
+    },
+    {
      "h": "59b99864",
      "kind": "fix",
      "scope": "game",
@@ -2174,6 +3266,13 @@
      "kind": "fix",
      "scope": "i18n",
      "text": "Stop the Frame Rate Limit note promising a return to full rate",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "0dd6ac96",
+     "kind": "fix",
+     "scope": "integration",
+     "text": "Register the Vault Keeper and re-pin the Eastbrook terrain for the Weekly Vault",
      "date": "2026-09-19"
     },
     {
@@ -2310,6 +3409,13 @@
      "date": "2026-09-18"
     },
     {
+     "h": "8e666e6a",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Satisfy the tier-shadow and price-scan guards for the opening burst",
+     "date": "2026-09-17"
+    },
+    {
      "h": "028b00d2",
      "kind": "fix",
      "scope": "server",
@@ -2331,6 +3437,20 @@
      "date": "2026-09-17"
     },
     {
+     "h": "591725f1",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Give the North Watch battery a 26-yard firing field",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "6b7ed84b",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Give the shadow watch and the maze keeper a voice",
+     "date": "2026-09-16"
+    },
+    {
      "h": "3f0ead5a",
      "kind": "fix",
      "scope": "ui",
@@ -2345,6 +3465,13 @@
      "date": "2026-09-16"
     },
     {
+     "h": "6d4e56f7",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Restore the release path guard and ship the infiltrator portrait",
+     "date": "2026-09-16"
+    },
+    {
      "h": "c73b7a21",
      "kind": "fix",
      "scope": "net",
@@ -2352,11 +3479,102 @@
      "date": "2026-09-16"
     },
     {
+     "h": "6d4e56f7",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Restore the release path guard and ship the infiltrator portrait",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "5d52737c",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Take the release's portrait manifest guard and its test whole",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "fc121a5a",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Register the four branch mobs in the portrait source manifest",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "7952fd60",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Let the character sheet fill its window and clear the close button",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "8e4d9ce8",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Enforce weapon class requirements and clean test lint",
+     "date": "2026-09-16"
+    },
+    {
+     "h": "dea48ef8",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Keep the ladder signatures inside the monolith budgets",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "30b5cb87",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "A stepped podium that fits the window on every screen",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "8115e227",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "The ladder list keeps its rows visible on every screen",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "86ee0438",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Readable rank numbers on the podium plinths",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "599a1338",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Podium discs follow the place, not the earned medal",
+     "date": "2026-09-15"
+    },
+    {
      "h": "c62da16b",
      "kind": "fix",
      "scope": "sim",
      "text": "Finish the isChargeBearingPayload rollout the review round found",
      "date": "2026-09-15"
+    },
+    {
+     "h": "0efd05d7",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Move the North Watch battery off the Wyrmwatch church",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "6203bda2",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Shift the forge workshop off the new Wyrmwatch building",
+     "date": "2026-09-15"
+    },
+    {
+     "h": "0945c01d",
+     "kind": "fix",
+     "scope": "weekly-quests",
+     "text": "The Emissary's Cache never opens into a tier piece",
+     "date": "2026-09-14"
     },
     {
      "h": "4ec17e29",
@@ -2371,6 +3589,13 @@
      "scope": "mounts",
      "text": "Finish the Valestrider's release-merge obligations",
      "date": "2026-09-10"
+    },
+    {
+     "h": "85909c19",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Integrate release and harden feature",
+     "date": "2026-09-04"
     },
     {
      "h": "7f4edc2f",
@@ -2395,9 +3620,9 @@
    "branch": "release/v0.44.0",
    "declared_version": "0.44.0",
    "imminent": true,
-   "commits": 786,
-   "shown": 333,
-   "last_commit": "2026-09-26T17:07:09Z",
+   "commits": 1104,
+   "shown": 508,
+   "last_commit": "2026-09-27T00:25:04Z",
    "sections": [
     {
      "key": "classes",
@@ -2511,10 +3736,24 @@
        "date": "2026-09-23"
       },
       {
+       "h": "209d557e",
+       "kind": "feat",
+       "scope": "trinkets",
+       "text": "Trinket aura icons, aura tooltips and an equip lockout",
+       "date": "2026-09-23"
+      },
+      {
        "h": "ed8ae5a6",
        "kind": "feat",
        "scope": "ui",
        "text": "Let players hang the target aura strip below the frame again",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "6c9d29c2",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Add 38 zone hunts so every zone rotation pool holds real variety",
        "date": "2026-09-22"
       },
       {
@@ -2530,6 +3769,13 @@
        "scope": "druid",
        "text": "Boon becomes Wildbloom and Oakhide, slower and stronger",
        "date": "2026-09-18"
+      },
+      {
+       "h": "6c5af22c",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Regional Mastery, the permanent per-zone completion count",
+       "date": "2026-09-17"
       },
       {
        "h": "d3d279dd",
@@ -2565,6 +3811,13 @@
        "scope": "druid",
        "text": "Instant Boon casts, Oakhide to 20%, Lunge off the GCD",
        "date": "2026-09-17"
+      },
+      {
+       "h": "8efde9bc",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Support daily 1-per-zone rotation and zone minimum levels",
+       "date": "2026-09-11"
       },
       {
        "h": "11a44d15",
@@ -2824,6 +4077,13 @@
        "scope": "druid",
        "text": "Re-arm the Bruin Rush window when the Rush ends",
        "date": "2026-09-18"
+      },
+      {
+       "h": "22e4b773",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Drop Regional Mastery, superseded by factions",
+       "date": "2026-09-18"
       }
      ]
     },
@@ -2838,6 +4098,13 @@
        "kind": "feat",
        "scope": "server",
        "text": "Audit chance-based crafting outcomes in craft_roll_events",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "52e87657",
+       "kind": "feat",
+       "scope": "factions",
+       "text": "Rework the quartermaster ladder and add four learned enchant formulas",
        "date": "2026-09-23"
       },
       {
@@ -2982,6 +4249,27 @@
        "date": "2026-09-25"
       },
       {
+       "h": "a7d82b3c",
+       "kind": "feat",
+       "scope": "factions",
+       "text": "Sell the Viridian Valestrider from the Rift Watch quartermaster at Champion",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "8507f7d9",
+       "kind": "feat",
+       "scope": "trinkets",
+       "text": "Add five Crucible raid trinkets, heroic-only",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "2e62ae07",
+       "kind": "feat",
+       "scope": "trinkets",
+       "text": "WARFARE on the honor trinkets, raid trinkets on Normal",
+       "date": "2026-09-23"
+      },
+      {
        "h": "b74dd7d7",
        "kind": "feat",
        "scope": "talents",
@@ -3015,6 +4303,34 @@
        "scope": "render",
        "text": "Add the floor VFX ladder so boss mechanics paint over player VFX",
        "date": "2026-09-19"
+      },
+      {
+       "h": "257a2776",
+       "kind": "feat",
+       "scope": "vault",
+       "text": "Light the Weekly Vault's world row with the previous raid tier",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "dea16698",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Raider rift ambush on the Farshore strand",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "8d37262b",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Playtest round two on shadow, rift, champion and flight",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "1053687e",
+       "kind": "feat",
+       "scope": "weekly-quests",
+       "text": "The Emissary's Cache opens into a Normal raid piece",
+       "date": "2026-09-14"
       },
       {
        "h": "64eda046",
@@ -3064,6 +4380,20 @@
        "scope": "sim",
        "text": "Release Soul Rend marks when Nythraxis Bone Storm begins",
        "date": "2026-09-25"
+      },
+      {
+       "h": "75aceccc",
+       "kind": "fix",
+       "scope": "factions",
+       "text": "Keep the Proven rows one point under the raid offset line",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "b530e030",
+       "kind": "fix",
+       "scope": "reliquary",
+       "text": "Name the raid trinkets on the Crucible heroic pages",
+       "date": "2026-09-23"
       },
       {
        "h": "6f338678",
@@ -3129,6 +4459,13 @@
        "date": "2026-09-17"
       },
       {
+       "h": "cd078ff6",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Reduce faction vendor jewelry stats below raid and crafted tiers",
+       "date": "2026-09-17"
+      },
+      {
        "h": "d9d79f92",
        "kind": "fix",
        "scope": "loot",
@@ -3144,11 +4481,39 @@
      "en": "World & quests",
      "items": [
       {
+       "h": "812db0b1",
+       "kind": "feat",
+       "scope": "transport",
+       "text": "Add the Harbor to Harbor deed for the ferry round trip",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "fb893c61",
+       "kind": "feat",
+       "scope": "ferry",
+       "text": "Two routes, Eastbrook to the Nightbloom and Wickharbor to the Drakelands",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "0264bc2c",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Add an NPC-only admiralty coat colorway",
+       "date": "2026-09-25"
+      },
+      {
        "h": "46c2fbdb",
        "kind": "feat",
        "scope": "pvp",
        "text": "Zone policy, marking, hour DR window and shared aid hook",
        "date": "2026-09-22"
+      },
+      {
+       "h": "a55e3680",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Pay the reward bundle on every quest and fix the day's item per zone and class",
+       "date": "2026-09-19"
       },
       {
        "h": "4b1678c8",
@@ -3179,11 +4544,39 @@
        "date": "2026-09-18"
       },
       {
+       "h": "f488279b",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "The taskmaster offers the world-quest board and the map rail folds away",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "b01c70fc",
+       "kind": "feat",
+       "scope": "content",
+       "text": "Rename conflicting quartermasters and update translations",
+       "date": "2026-09-17"
+      },
+      {
        "h": "6759d51c",
        "kind": "feat",
        "scope": "ui",
        "text": "Collapse the world map's left atlas rail",
        "date": "2026-09-17"
+      },
+      {
+       "h": "d6f24a66",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Add faction vendor icons, i18n entries, and asset parity",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "575be2b2",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Add starter dialogs and timed ley retries",
+       "date": "2026-09-12"
       },
       {
        "h": "8e6cf5f7",
@@ -3200,11 +4593,25 @@
        "date": "2026-09-24"
       },
       {
+       "h": "3fc21f55",
+       "kind": "fix",
+       "scope": "galecrest",
+       "text": "Keep the Shear off the stables hamlet and ship the glider prop KTX2",
+       "date": "2026-09-23"
+      },
+      {
        "h": "060499c4",
        "kind": "fix",
        "scope": "sim",
        "text": "Grade the Thornpeak hillside pocket west of the practice row",
        "date": "2026-09-23"
+      },
+      {
+       "h": "60f199b1",
+       "kind": "fix",
+       "scope": "content",
+       "text": "Move the Shiverfen sprung traps onto the flat reed shelves",
+       "date": "2026-09-22"
       },
       {
        "h": "5d668a9a",
@@ -3214,10 +4621,24 @@
        "date": "2026-09-21"
       },
       {
+       "h": "843b67f7",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Give the touch quest strip two more lines for a calligraphy instruction",
+       "date": "2026-09-19"
+      },
+      {
        "h": "11fde914",
        "kind": "fix",
        "scope": "sim",
        "text": "Snap an immobile mob home instead of evading forever",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "d7fe1480",
+       "kind": "fix",
+       "scope": "content",
+       "text": "Rename the Automaton quartermaster to Artificer Tobrin",
        "date": "2026-09-17"
       },
       {
@@ -3226,6 +4647,34 @@
        "scope": "hud",
        "text": "Keep the deed-bordered name row clear of the portrait",
        "date": "2026-09-17"
+      },
+      {
+       "h": "0301c4fe",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Keep the Last Keep battery dressing off a quest pickup",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "084b84bd",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Widen the Frostveil trapline area around the release's moved trap",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "aa8176bf",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Adjust Eastbrook vendor and taskmaster spawn positions",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "688288fb",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Enumerate the world quest sim table and refresh stale ranking pins",
+       "date": "2026-09-15"
       }
      ]
     },
@@ -3269,6 +4718,13 @@
        "scope": "perf",
        "text": "Report the frame rate ceiling as typed fleet columns",
        "date": "2026-09-18"
+      },
+      {
+       "h": "ca411708",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "The leaderboard window in the rankings ledger style",
+       "date": "2026-09-15"
       },
       {
        "h": "e3e83afe",
@@ -3360,6 +4816,20 @@
        "scope": "server",
        "text": "Take the guild-bank autosave off the shared market writer",
        "date": "2026-09-15"
+      },
+      {
+       "h": "f7085470",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Touch layout for the shared podium and the leaderboard window",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "506dc0e3",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "A short standing pill and a guild line on the podium",
+       "date": "2026-09-15"
       }
      ]
     },
@@ -3370,10 +4840,52 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "bda51fb5",
+       "kind": "feat",
+       "scope": "ferry",
+       "text": "Model Wickharbor's harbor in the wharf's wood in Blender",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "da56e3dd",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Draw Wickharbor's harbor from its one Blender model",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "d5060070",
+       "kind": "feat",
+       "scope": "ferry",
+       "text": "Plank Wickharbor's harbor water into one great quay",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "6a7bdd55",
+       "kind": "feat",
+       "scope": "ferry",
+       "text": "Model Wickharbor's great quay, its crane and cargo shelter",
+       "date": "2026-09-26"
+      },
+      {
        "h": "ae1fca0a",
        "kind": "feat",
        "scope": "pvp",
        "text": "Paint the four Warfare Season 2 weapon icons",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "7dc26f2a",
+       "kind": "feat",
+       "scope": "transport",
+       "text": "Show the ferry timetable and a sea card on the HUD",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "1470dfb7",
+       "kind": "feat",
+       "scope": "transport",
+       "text": "Bump the world layout epoch to 30 for the scheduled ferry",
        "date": "2026-09-25"
       },
       {
@@ -3412,6 +4924,34 @@
        "date": "2026-09-25"
       },
       {
+       "h": "e9522674",
+       "kind": "feat",
+       "scope": "transport",
+       "text": "Sail the ferry along real sea lanes with a walkable moving deck",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "d9e8e0f5",
+       "kind": "feat",
+       "scope": "transport",
+       "text": "Send passengers in the ship frame and predict them on deck",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "453b13f5",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Keep ferry passengers and the camera glued to the moving deck",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "9921ff74",
+       "kind": "feat",
+       "scope": "transport",
+       "text": "Replace the ferry sea card with a quiet sailing line",
+       "date": "2026-09-25"
+      },
+      {
        "h": "08c17425",
        "kind": "feat",
        "scope": "market",
@@ -3423,6 +4963,90 @@
        "kind": "feat",
        "scope": "pvp",
        "text": "Ramp King of the Hill honor, double battlegrounds, raids earn nothing",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "56981fc2",
+       "kind": "feat",
+       "scope": "ferry",
+       "text": "Refuse mounting anywhere on a ship deck",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "a519e282",
+       "kind": "feat",
+       "scope": "ferry",
+       "text": "Model the harbor route marker signpost in Blender",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "3200b564",
+       "kind": "feat",
+       "scope": "ferry",
+       "text": "Stand a route marker at every ferry berth",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "75248cd9",
+       "kind": "feat",
+       "scope": "ferry",
+       "text": "Lay out the Wyrmwatch cliff harbor in the sim",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "c5a0a0d7",
+       "kind": "feat",
+       "scope": "ferry",
+       "text": "Model the Wyrmwatch cliff harbor in Blender",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "1edc947c",
+       "kind": "feat",
+       "scope": "ferry",
+       "text": "Draw the Wyrmwatch cliff harbor and its path to Wyrmwatch",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "a6540ac2",
+       "kind": "feat",
+       "scope": "ferry",
+       "text": "Lay out the walk-in Harbormaster's House in the sim",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "80d7404c",
+       "kind": "feat",
+       "scope": "ferry",
+       "text": "Model the Harbormaster's House in Blender",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "58ce89c4",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Cut the Harbormaster's House away around the camera",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "9bbda232",
+       "kind": "feat",
+       "scope": "ferry",
+       "text": "Dress Harbormaster Tamsin as an old sea wolf",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "a1a75563",
+       "kind": "feat",
+       "scope": "ferry",
+       "text": "Model the Wickharbor ferry wharf in Blender",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "ca57ed4a",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Draw the Wickharbor ferry wharf",
        "date": "2026-09-25"
       },
       {
@@ -3489,10 +5113,52 @@
        "date": "2026-09-24"
       },
       {
+       "h": "2f8a1ae5",
+       "kind": "feat",
+       "scope": "harbor",
+       "text": "Replace the Eastbrook ferry with a Blender-built walkable ship",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "a72c163b",
+       "kind": "feat",
+       "scope": "transport",
+       "text": "Sail the Eastbrook ferry on a round-trip timetable",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "549bde39",
+       "kind": "feat",
+       "scope": "transport",
+       "text": "Mirror the ferry timetable and passengers online",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "2428ae01",
+       "kind": "feat",
+       "scope": "transport",
+       "text": "Draw the ferry at its scheduled pose",
+       "date": "2026-09-24"
+      },
+      {
        "h": "e4b82fd5",
        "kind": "feat",
        "scope": "deeds",
        "text": "Unlock developer badge rungs as selectable titles",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "f9867666",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Refine glider courses and reward-free replays",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "d8b02017",
+       "kind": "feat",
+       "scope": "gear",
+       "text": "Add functional trinket equipment slot",
        "date": "2026-09-23"
       },
       {
@@ -3507,6 +5173,27 @@
        "kind": "feat",
        "scope": "render",
        "text": "Audit the world scene for stray point lights in DEV builds",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "a96d6b06",
+       "kind": "feat",
+       "scope": "trinkets",
+       "text": "Add thirteen original trinkets with use and passive effects",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "0780334f",
+       "kind": "feat",
+       "scope": "trinkets",
+       "text": "Price the two PvP trinkets at 800 honor",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "b0a44f55",
+       "kind": "feat",
+       "scope": "trinkets",
+       "text": "Show scaled tooltip amounts as base plus power bonus",
        "date": "2026-09-23"
       },
       {
@@ -3559,6 +5246,27 @@
        "date": "2026-09-22"
       },
       {
+       "h": "a3bd77b8",
+       "kind": "feat",
+       "scope": "glider",
+       "text": "Launch the Windrider Slalom from a wharf on the crest of the Shear",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "688ac00c",
+       "kind": "feat",
+       "scope": "glider",
+       "text": "Fly a different certified line through the slalom every day",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "a578111e",
+       "kind": "feat",
+       "scope": "glider",
+       "text": "Swap the procedural glider for a built Windrider glider model",
+       "date": "2026-09-22"
+      },
+      {
        "h": "a620c8e8",
        "kind": "feat",
        "scope": "trade",
@@ -3591,6 +5299,20 @@
        "kind": "feat",
        "scope": "death",
        "text": "Keeper dialogue differs for spared and levelled heroes",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "023fdc5c",
+       "kind": "feat",
+       "scope": "vault",
+       "text": "Select eligible loot tables and filter class rewards",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "28e7acc9",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Add authored shipwreck salvage assets and placements",
        "date": "2026-09-21"
       },
       {
@@ -3727,6 +5449,13 @@
        "date": "2026-09-18"
       },
       {
+       "h": "0c5d1e27",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "A modest daily casket with rare extras and Grumbol",
+       "date": "2026-09-18"
+      },
+      {
        "h": "0884dfb1",
        "kind": "feat",
        "scope": "game",
@@ -3748,6 +5477,76 @@
        "date": "2026-09-18"
       },
       {
+       "h": "091d18df",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Land the faction quartermaster stock's same-change obligations",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "caa36d0a",
+       "kind": "feat",
+       "scope": "vault",
+       "text": "Add animated rewards and durable opening",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "6ef38b6c",
+       "kind": "feat",
+       "scope": "vault",
+       "text": "Rework the weekly vault opening burst and gate the loot on the open door",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "ea08c837",
+       "kind": "feat",
+       "scope": "dev",
+       "text": "Add /dev rep to award faction standing for testing",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "3c0df750",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Celebrate a faction standing tier the moment it is reached",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "3b984506",
+       "kind": "feat",
+       "scope": "deeds",
+       "text": "Record Trusted and Champion standing with each faction",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "caafe259",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Seat a Specialization board under Defense on the character sheet",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "8a2ca79a",
+       "kind": "feat",
+       "scope": "weekly-quests",
+       "text": "The emissary's commendation, standing for one faction of your choice",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "1aa74fba",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Clue Scrolls, the Stage 3 treasure hunts and caskets",
+       "date": "2026-09-17"
+      },
+      {
+       "h": "ed41a413",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Faction reputation, faction vendors, and the daily reroll",
+       "date": "2026-09-16"
+      },
+      {
        "h": "bb01eabc",
        "kind": "feat",
        "scope": "net",
@@ -3755,11 +5554,263 @@
        "date": "2026-09-16"
       },
       {
+       "h": "cb832657",
+       "kind": "feat",
+       "scope": "net",
+       "text": "Mirror faction standing and the daily reroll on the owner snapshot",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "9578a7e1",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Add the Reputation tab to the character window",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "49b078f6",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "List the day's world quests on the map rail with the daily replacement",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "b027bf4e",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Add the Currencies tab to the character window",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "971ff47f",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Move Time Played onto the Progression tab",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "51ed1deb",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Restructure the character sheet around a bottom tab strip",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "e1f99ceb",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Drop the Specialization summary from the character sheet",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "fb3c6c63",
+       "kind": "feat",
+       "scope": "vault",
+       "text": "Add weekly rewards and Eastbrook vault hall",
+       "date": "2026-09-15"
+      },
+      {
        "h": "707b1885",
        "kind": "feat",
        "scope": "loot",
        "text": "Add permanent exceptional drop qualities",
        "date": "2026-09-15"
+      },
+      {
+       "h": "ae6bcaaf",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "The ladder read answers the viewer's own standing",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "bf683ef9",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "A rankings window with board cards and a podium",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "7e528e98",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Spanish and non-Latin copy for the rankings window",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "92319b4f",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Board and medal art for the rankings window",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "8c3c978a",
+       "kind": "feat",
+       "scope": "audio",
+       "text": "Add dedicated minigame music loops and dynamic crossfade",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "d794ab53",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "Page the Runecaller title from Arcane Calligraphy",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "8bdf4e89",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Playtest round one across the instructor quests",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "ef6588b4",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Lantern cones, a scattered strand and fresh sigils",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "a03be2e9",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Pick Normal or Hard at the maze keeper",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "d54d8798",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Flight clock plus held Climb and Dive slots",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "e2e618e7",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Two bonus ley boards past the daily solve",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "ec47c483",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "A shared champion encore after the plain quests",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "8b995f74",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Endless cannon waves past the authored victory",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "1a4ee55e",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Rebuild the forge as a timing hammer and heat gauge",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "5ed2c4d4",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Public scoreboards for the medal world quests",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "e2a5ef17",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Name the infiltrator to the sergeant, three more stories",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "3a5b90af",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Playtest round three across shadow, maze, forge and flight",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "feb669ce",
+       "kind": "feat",
+       "scope": "weekly-quests",
+       "text": "The weekly emissary and his four charges",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "66ef4254",
+       "kind": "feat",
+       "scope": "weekly-quests",
+       "text": "A window that scales with its size, and Cham Pete",
+       "date": "2026-09-14"
+      },
+      {
+       "h": "72434083",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Add daily puzzles and glider practice courses",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "f5448004",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Add Wispwood maze with escalating guardian pressure",
+       "date": "2026-09-12"
+      },
+      {
+       "h": "d632e603",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Add developer commands for testing world quests",
+       "date": "2026-09-11"
+      },
+      {
+       "h": "bd6f5340",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Polish confection and ley puzzle presentation",
+       "date": "2026-09-10"
+      },
+      {
+       "h": "1078137f",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Add shadow infiltration and extend glider course",
+       "date": "2026-09-08"
+      },
+      {
+       "h": "e847212a",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Add forging, horde defense, and infiltrator investigation encounters",
+       "date": "2026-09-07"
+      },
+      {
+       "h": "29ae15f9",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Add calligraphy and tactical cannon encounters",
+       "date": "2026-09-05"
+      },
+      {
+       "h": "eebb4ba0",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Add regional story caravans",
+       "date": "2026-09-04"
+      },
+      {
+       "h": "38a4fa89",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Add rotating world activities",
+       "date": "2026-09-02"
       },
       {
        "h": "cbd4bb56",
@@ -3839,10 +5890,87 @@
        "date": "2026-09-19"
       },
       {
+       "h": "9576c76a",
+       "kind": "fix",
+       "scope": "ferry",
+       "text": "Bring release/v0.44.0 (the OSSBrain release merge) into the ferry feature",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "2b5ae252",
+       "kind": "fix",
+       "scope": "ferry",
+       "text": "Give the harbor house walls their depth back under the dithered fade",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "0c9aa93f",
+       "kind": "fix",
+       "scope": "ferry",
+       "text": "Stop the ship's ends sweeping pier-standers into the sea",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "a013e01d",
+       "kind": "fix",
+       "scope": "ferry",
+       "text": "Only carry a corpse that sailed on the deck",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "5f993484",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Give the weekly vault keeper her own reserved entity id",
+       "date": "2026-09-27"
+      },
+      {
        "h": "e0fa2107",
        "kind": "fix",
        "scope": "render",
        "text": "Put release's new floor pieces on the VFX ladder",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "34fa5976",
+       "kind": "fix",
+       "scope": "ferry",
+       "text": "Lay Wickharbor's harbor decks without a shared plane",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "2c3470f6",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Batch the Wickharbor harbor with the wharf's materials",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "94271d52",
+       "kind": "fix",
+       "scope": "ferry",
+       "text": "Bring release/v0.44.0 into the ferry feature",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "66eb2b17",
+       "kind": "fix",
+       "scope": "ferry",
+       "text": "Keep the quay crane's rig off the low tier, raise the shelter",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "4f7bd4e3",
+       "kind": "fix",
+       "scope": "ferry",
+       "text": "Bring the release/v0.44.0 merge into the ferry feature",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "e7037649",
+       "kind": "fix",
+       "scope": "factions",
+       "text": "Bind every ladder row and gate the equipment at level 20",
        "date": "2026-09-26"
       },
       {
@@ -3858,6 +5986,13 @@
        "scope": "#4204,#4206",
        "text": "Address review polish",
        "date": "2026-09-26"
+      },
+      {
+       "h": "53f1ca36",
+       "kind": "fix",
+       "scope": "transport",
+       "text": "Harden ferry boarding, gates and pets after review",
+       "date": "2026-09-25"
       },
       {
        "h": "b2a8e1d7",
@@ -3888,6 +6023,13 @@
        "date": "2026-09-25"
       },
       {
+       "h": "d39d6ee7",
+       "kind": "fix",
+       "scope": "transport",
+       "text": "Keep ferry gate sync lazy and re-pin the gate's suites",
+       "date": "2026-09-25"
+      },
+      {
        "h": "e0ad85fc",
        "kind": "fix",
        "scope": "render",
@@ -3909,6 +6051,27 @@
        "date": "2026-09-25"
       },
       {
+       "h": "10d9b36a",
+       "kind": "fix",
+       "scope": "transport",
+       "text": "Close stale voyages and settle forced moves on the moving deck",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "877b59fe",
+       "kind": "fix",
+       "scope": "harbor",
+       "text": "Move the Eastbrook fairway buoys clear of the ferry's swing",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "982a9e4d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep the deck under a predicted passenger as the ship moors",
+       "date": "2026-09-25"
+      },
+      {
        "h": "41a5ad7d",
        "kind": "fix",
        "scope": "render",
@@ -3916,10 +6079,31 @@
        "date": "2026-09-25"
       },
       {
+       "h": "c329fcd8",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Stand ferry passengers on the drawn deck, not in the air",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "4e5cd718",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep full-rate sun shadows around a ship under way",
+       "date": "2026-09-25"
+      },
+      {
        "h": "40983bb6",
        "kind": "fix",
        "scope": "render",
        "text": "Hold a control mark on the engine it draws with",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "4d9eeb04",
+       "kind": "fix",
+       "scope": "ferry",
+       "text": "Review follow-ups for the two ferry routes",
        "date": "2026-09-25"
       },
       {
@@ -3944,6 +6128,13 @@
        "date": "2026-09-25"
       },
       {
+       "h": "226311df",
+       "kind": "fix",
+       "scope": "ferry",
+       "text": "Moor the two Wickharbor ships clear of the route marker",
+       "date": "2026-09-25"
+      },
+      {
        "h": "86895e62",
        "kind": "fix",
        "scope": "render",
@@ -3951,10 +6142,52 @@
        "date": "2026-09-25"
       },
       {
+       "h": "df75370c",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Cull, clear and light the house shell the way the harbor does",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "8911e236",
+       "kind": "fix",
+       "scope": "ferry",
+       "text": "Voice the harbormaster and bound the house's rest area",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "b086f75f",
+       "kind": "fix",
+       "scope": "ferry",
+       "text": "Bring in the Wyrmwatch cliff harbor and harbormaster's house",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "93292f77",
+       "kind": "fix",
+       "scope": "ferry",
+       "text": "Replace Wickharbor's crossing decks with one ferry wharf",
+       "date": "2026-09-25"
+      },
+      {
        "h": "0b6373c5",
        "kind": "fix",
        "scope": "render",
        "text": "Build the rocket sled plume inside the mount gate",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "9d7a72ee",
+       "kind": "fix",
+       "scope": "ferry",
+       "text": "Keep the boardwalk bollards off the wharf flight",
+       "date": "2026-09-25"
+      },
+      {
+       "h": "de8cde36",
+       "kind": "fix",
+       "scope": "ferry",
+       "text": "Bring in the unified Wickharbor wharf",
        "date": "2026-09-25"
       },
       {
@@ -4119,6 +6352,13 @@
        "date": "2026-09-24"
       },
       {
+       "h": "fda34c58",
+       "kind": "fix",
+       "scope": "harbor",
+       "text": "Save Codex's first Eastbrook ferry pass",
+       "date": "2026-09-24"
+      },
+      {
        "h": "bcf406c2",
        "kind": "fix",
        "scope": "render",
@@ -4154,6 +6394,13 @@
        "date": "2026-09-23"
       },
       {
+       "h": "c3ba44e1",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Reconcile CI content pins and generated assets",
+       "date": "2026-09-23"
+      },
+      {
        "h": "c84118ad",
        "kind": "fix",
        "scope": "combat",
@@ -4186,6 +6433,13 @@
        "kind": "fix",
        "scope": "render",
        "text": "Rank placed-GLB point lights in the budget like every world light",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "99dc7726",
+       "kind": "fix",
+       "scope": "trinkets",
+       "text": "Close dead-wearer, duel-end and killing-blow edge cases",
        "date": "2026-09-23"
       },
       {
@@ -4280,6 +6534,48 @@
        "date": "2026-09-22"
       },
       {
+       "h": "879140c2",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Give the Clue Scroll talk and hand-over steps a gossip row that sends the interact",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "340fb859",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Move the forge workshop panel into the centred window family",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "3e183a1d",
+       "kind": "fix",
+       "scope": "quests",
+       "text": "Keep the Palmreach confection board on every day's roster",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "5aac05ed",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Keep the forge workshop panel out of the managed window family",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "537d6642",
+       "kind": "fix",
+       "scope": "shards",
+       "text": "Carry the four round-2 test files into the shard weights",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "44fcd122",
+       "kind": "fix",
+       "scope": "quests",
+       "text": "Close the round-2 review findings and the shard-6 CI red",
+       "date": "2026-09-22"
+      },
+      {
        "h": "67095338",
        "kind": "fix",
        "scope": "death",
@@ -4340,6 +6636,20 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Fold the trade headroom wrapper into the bags binding",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "1abad9a3",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Keep the shipwreck hull as decoration",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "7e1ec55b",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Address loot table review findings",
        "date": "2026-09-21"
       },
       {
@@ -4553,6 +6863,13 @@
        "date": "2026-09-19"
       },
       {
+       "h": "1dea5658",
+       "kind": "fix",
+       "scope": "integration",
+       "text": "Make the Weekly Vault landing green on release/v0.44.0",
+       "date": "2026-09-19"
+      },
+      {
        "h": "59b99864",
        "kind": "fix",
        "scope": "game",
@@ -4564,6 +6881,13 @@
        "kind": "fix",
        "scope": "i18n",
        "text": "Stop the Frame Rate Limit note promising a return to full rate",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "0dd6ac96",
+       "kind": "fix",
+       "scope": "integration",
+       "text": "Register the Vault Keeper and re-pin the Eastbrook terrain for the Weekly Vault",
        "date": "2026-09-19"
       },
       {
@@ -4700,6 +7024,13 @@
        "date": "2026-09-18"
       },
       {
+       "h": "8e666e6a",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Satisfy the tier-shadow and price-scan guards for the opening burst",
+       "date": "2026-09-17"
+      },
+      {
        "h": "028b00d2",
        "kind": "fix",
        "scope": "server",
@@ -4721,6 +7052,20 @@
        "date": "2026-09-17"
       },
       {
+       "h": "591725f1",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Give the North Watch battery a 26-yard firing field",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "6b7ed84b",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Give the shadow watch and the maze keeper a voice",
+       "date": "2026-09-16"
+      },
+      {
        "h": "3f0ead5a",
        "kind": "fix",
        "scope": "ui",
@@ -4735,6 +7080,13 @@
        "date": "2026-09-16"
       },
       {
+       "h": "6d4e56f7",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Restore the release path guard and ship the infiltrator portrait",
+       "date": "2026-09-16"
+      },
+      {
        "h": "c73b7a21",
        "kind": "fix",
        "scope": "net",
@@ -4742,11 +7094,102 @@
        "date": "2026-09-16"
       },
       {
+       "h": "6d4e56f7",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Restore the release path guard and ship the infiltrator portrait",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "5d52737c",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Take the release's portrait manifest guard and its test whole",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "fc121a5a",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Register the four branch mobs in the portrait source manifest",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "7952fd60",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Let the character sheet fill its window and clear the close button",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "8e4d9ce8",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Enforce weapon class requirements and clean test lint",
+       "date": "2026-09-16"
+      },
+      {
+       "h": "dea48ef8",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Keep the ladder signatures inside the monolith budgets",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "30b5cb87",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "A stepped podium that fits the window on every screen",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "8115e227",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "The ladder list keeps its rows visible on every screen",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "86ee0438",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Readable rank numbers on the podium plinths",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "599a1338",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Podium discs follow the place, not the earned medal",
+       "date": "2026-09-15"
+      },
+      {
        "h": "c62da16b",
        "kind": "fix",
        "scope": "sim",
        "text": "Finish the isChargeBearingPayload rollout the review round found",
        "date": "2026-09-15"
+      },
+      {
+       "h": "0efd05d7",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Move the North Watch battery off the Wyrmwatch church",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "6203bda2",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Shift the forge workshop off the new Wyrmwatch building",
+       "date": "2026-09-15"
+      },
+      {
+       "h": "0945c01d",
+       "kind": "fix",
+       "scope": "weekly-quests",
+       "text": "The Emissary's Cache never opens into a tier piece",
+       "date": "2026-09-14"
       },
       {
        "h": "4ec17e29",
@@ -4761,6 +7204,13 @@
        "scope": "mounts",
        "text": "Finish the Valestrider's release-merge obligations",
        "date": "2026-09-10"
+      },
+      {
+       "h": "85909c19",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Integrate release and harden feature",
+       "date": "2026-09-04"
       },
       {
        "h": "7f4edc2f",
