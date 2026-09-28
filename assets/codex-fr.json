@@ -22,14 +22,14 @@
   "avatar": "Transforme-toi en colosse pendant 20 s : les effets de contrôle ennemis qui t'affectent sont brisés (ceux des boss ne le sont pas) et tes dégâts infligés augmentent de 20 %.",
   "avenging_wrath": "Déploie des ailes physiques de puissance sacrée dorée : tu gagnes 10 Dévotion et les capacités que tu utilises génèrent deux fois plus de Dévotion pendant 15 s. Augmente aussi de 20 % les dégâts et soins infligés. Dawnreaver : rend Tolling Hammer utilisable sur n’importe quelle cible.",
   "backstab": "Plante ta dague dans le dos de la cible pour 150 % des dégâts de l'arme plus $d. Tu dois être derrière la cible. Nécessite une dague. Octroie 1 point de combo.",
-  "barkskin": "Ta peau durcit comme de l'écorce, augmentant l'armure de 150 pendant 15 s.",
+  "barkskin": "Ta peau durcit comme de l’écorce, augmentant ton armure de 20 % pendant 15 s.",
   "bash": "Étourdit la cible pendant 2 s. Bruin Form uniquement.",
   "bastion_rite": "Réduit les dégâts physiques subis de 20 % et augmente ta chance de blocage de 20 % pendant 6 s. Sous Ascension, la durée passe à 10 s.",
   "bastion_sweep": "Balaie les ennemis d’un arc frontal de 180° avec ton bouclier pour $d dégâts sacrés à forte menace, et génère 1 Dévotion. Sous Ascension, +30 % de dégâts et un rayon porté à 8 m.",
   "battle_shout": "Un cri qui augmente la puissance d'attaque de tous les membres du groupe de $b % pendant 30 min.",
   "battle_stance": "Une posture de combat agressive : tu génères 10 % de rage en plus. La posture par défaut des spés Armes et Protection.",
   "beacon_of_light": "Désigne un membre du groupe comme ton Beacon of Light. 50 % de tes soins directs效 utiles sur un autre membre dans 60 m soignent aussi le Beacon. Les soins de zone et périodiques ne se reportent pas. Dure jusqu’à ce que l’un de vous meure.",
-  "bear_charge": "Fonce sur un ennemi, générant 9 rage et l’étourdissant pendant 1 s. Pendant les 3 s qui suivent, ou jusqu’à la fin du combat, Cat Form est gratuite et épingle la cible que tu as chargée, la ralentissant de 50 % pendant 4 s. Portée de 8 à 25 m. Bruin Form uniquement.",
+  "bear_charge": "Prends la forme de Bruin Form si ce n’est pas déjà fait, puis fonce sur un ennemi, générant 9 points de rage et l’étourdissant 1 s. Pendant les 3 s qui suivent, ou jusqu’à ta sortie de combat, Cat Form est gratuite et épingle la cible que tu as chargée, la ralentissant de 50 % pendant 4 s. Portée de 8 à 25 m. Utilisable depuis n’importe quelle forme.",
   "bear_form": "Te métamorphose en ours : armure +110 %, PV max +30 %, puissance d’attaque grandement accrue, tes attaques génèrent de la rage et 30 % de menace en plus. Prendre n’importe quelle forme accorde Loping Stride, un court élan de vitesse. Relance le sort pour reprendre ta forme d’incantateur.",
   "berserk": "Augmente la puissance d'attaque de 70 pendant 15 s. (Talent de druide)",
   "berserker_rage": "Entre dans une rage berserk, générant 20 points de rage. (talent de guerrier)",
@@ -111,9 +111,9 @@
   "divine_protection": "Un bouclier sacré absorbe $d % de tes PV max pendant $t s. Enduring Protection en augmente la valeur.",
   "dragons_breath": "Maintiens pour accumuler un souffle de flammes qui s'élargit, puis relâche-le en cône. Plus la charge est longue, plus la portée et les dégâts augmentent. Les ennemis touchés sont désorientés, et les dégâts mettent fin à l'effet ; la charge maximale inflige toujours un coup critique et compte une fois pour Hot Streak. (Feu)",
   "drain_life": "Consume la vitalité de la cible : $d dégâts d’Ombre par seconde, dont 70 % te sont transférés en points de vie. En Affliction, la totalité t’est transférée. Canalisé sur ton Evil Eye principal, il consomme tous tes Fate Threads au départ, et chaque Thread génère 1 de Condamnation supplémentaire par tick.",
-  "earth_shock": "Inflige $d dégâts de Nature. Les dégâts augmentent avec ta puissance des sorts. Thundercall : à 5 Thunder, inflige 125 % de dégâts en plus et consomme tout le Thunder. Stonebound : force la cible à t’attaquer pendant 3 s.",
+  "earth_shock": "Inflige $d dégâts de Nature. Les dégâts augmentent avec la Puissance des sorts. Thundercall : consomme toute la Foudre, infligeant 25 % de dégâts en plus par charge (125 % à 5). Stonebound : force la cible à t’attaquer pendant 3 s.",
   "earthbind": "Immobilise pendant 2 s les ennemis dans 4 m du point visé, puis les ralentit de 40 % pendant 6 s. (Talent de chaman)",
-  "earthquake": "Secoue une zone de 8 m pendant 6 s pour $d dégâts de Nature toutes les 1,5 s. Les dégâts augmentent avec ta puissance des sorts. Thundercall : à 5 Thunder, inflige 100 % de dégâts en plus et consomme tout le Thunder.",
+  "earthquake": "Ébranle une zone de 8 m pendant 6 s, infligeant $d dégâts de Nature toutes les 1,5 s. Les dégâts augmentent avec la Puissance des sorts. Thundercall : consomme toute la Foudre, infligeant 20 % de dégâts en plus par charge (100 % à 5).",
   "elemental_mastery": "Pendant 12 s, Arc Bolt donne 2 Thunder. Ton prochain Arc Bolt ou Skybranch est instantané, et ta prochaine décharge à Thunder plein inflige 25 % de dégâts en plus. (Signature de Thundercall)",
   "elemental_trance": "Entre en transe élémentaire pendant 15 s : 30 % de dégâts subis en moins, et 20 % de tous les dégâts que tu infliges sont convertis en mana. (Signature de Warspirit)",
   "emboldening_roar": "Pousse un rugissement galvanisant : toi et les joueurs alliés dans un rayon de 40 m gagnez l'effet Emboldened, et vos 3 prochaines techniques sont des coups critiques garantis. (Fury)",
@@ -134,7 +134,7 @@
   "feral_charge": "Libère une poussée primale. En Cat Form, la régénération d’énergie est augmentée de 100 % pendant 10 s. En Bruin Form, génère instantanément 50 rage. (Signature Feral)",
   "ferocious_bite": "Technique de finition qui inflige $d. Cat Form uniquement.",
   "fieldcraft_reentry": "Passif : Trailbreak rafraîchit Hunting Momentum et arme ton prochain Gutting Strike ou Bloodhook pendant 12 s. Gutting Strike inflige 15 % de dégâts en plus par cumul. Bloodhook inflige 18 à 24 dégâts physiques supplémentaires, majorés de 15 % par cumul et par ta puissance d’attaque à distance. À 3 cumuls, l’une ou l’autre attaque consomme Hunting Momentum. (Fieldcraft)",
-  "final_edict": "Une frappe d’arme écrasante qui génère 1 Dévotion lorsqu’elle inflige des dégâts. Un coup réussi enlève 2 s à la recharge restante de Dawnfall. Tes attaques automatiques et tes Final Edict réussis ont 15 % de chances d’accorder Dawn’s Wrath pendant 8 s. Sous Ascension, une explosion sacrée se libère aussi autour de toi.",
+  "final_edict": "Délivre un coup d’arme écrasant et génère 1 Dévotion quand il inflige des dégâts. Un coup au but réduit la recharge restante de Dawnfall de 2 s. Les auto-attaques réussies et les coups de Final Edict ont 15 % de chances de conférer Dawn’s Wrath pendant 8 s. L’Ascension libère aussi une explosion physique autour de toi.",
   "fingers_of_frost": "Rimelance a 15 % de chances de conférer Fingers of Frost, jusqu'à 2 charges : ton prochain Ice Lance traite sa cible comme gelée. (Frost)",
   "fire_blast": "Souffle l'ennemi pour $d dégâts de Feu. Instantané.",
   "fireball": "Projette une boule enflammée qui inflige $d dégâts de Feu, plus des dégâts supplémentaires sur la durée.",
@@ -146,7 +146,7 @@
   "flash_of_light": "Un éclair de Lumière, rapide et économe, qui soigne une cible alliée de $d. Rendre des points de vie génère 1 Dévotion, même sans spécialisation.",
   "flurry": "Décoche trois traits de glace infligeant chacun $d dégâts de Givre et appose Winter's Chill sur la cible : les 2 prochains sorts compatibles qu'elle subit la traitent comme gelée. Brain Freeze rend Winterlash instantané et ignore sa recharge. (Givre)",
   "flurry_of_knives": "Cingle tous les ennemis dans 6 m de couteaux lancés pour $d dégâts physiques et te donne 2 points de combo. (Talent de voleur)",
-  "frenzied_regeneration": "Rend 40 % de tes PV max sur 10 s. Uniquement en Bruin Form.",
+  "frenzied_regeneration": "Te rend 40 % de tes PV maximum sur 10 s. Bruin ou Cat Form uniquement.",
   "frost_armor": "T'enveloppe de givre, augmentant l'armure de $b pendant 30 min.",
   "frost_nova": "Gèle sur place tous les ennemis proches pendant un maximum de 8 s et inflige $d dégâts de Givre. L'immobilisation se brise quand les dégâts cumulés atteignent 15 % des PV max de la cible, avec un minimum de 20 et un maximum de 60 dégâts.",
   "frost_shock": "Inflige $d dégâts de Givre et ralentit la cible de 50 % pendant 8 s. Les dégâts augmentent avec ta puissance des sorts.",
@@ -251,7 +251,7 @@
   "piercing_howl": "Un hurlement perçant qui ralentit de 50 % tous les ennemis dans un rayon de 15 m pendant 8 s.",
   "polymorph": "Transforme l'ennemi en crapaud pendant $t s au maximum. Le crapaud erre et se soigne rapidement. Tout dégât met fin à l'effet. Bêtes et humanoïdes uniquement.",
   "possess_evil_eye": "Le Maledictor possède ton Evil Eye principal pendant 15 s et génère 35 de Condamnation. Needle of Fate s’incante en 1 s et génère 2 de Condamnation en plus, Consume se canalise en marchant, et Sentence inflige 25 % de dégâts en plus et libère un écho différé à 60 % des dégâts, qui décroît jusqu’à 30 % entre les niveaux 17 et 20.",
-  "pounce": "Ouverture en camouflage qui étourdit la cible pendant 2 s. Confère 1 point de combo. Cat Form uniquement. Hors camouflage, ce bouton devient Lunge.",
+  "pounce": "Une ouverture en discrétion qui étourdit la cible 2 s. Confère 1 point de combo et, en Wildfang, ajoute 1 Old Blood (3 max). Cat Form uniquement. Hors discrétion, ce bouton devient Lunge.",
   "power_echo": "Ton prochain sort direct se répète à 50 % de sa puissance sur la même cible. Dure 10 s. (talent de mage)",
   "power_infusion": "Oint une cible alliée : +20 % de dégâts, de soins et de vitesse d’incantation pendant 15 s.",
   "power_word_fortitude": "Augmente l’Endurance de tous les membres du groupe de $b % pendant 30 min.",
@@ -261,7 +261,7 @@
   "presence_of_mind": "Rend instantané ton prochain sort à temps d'incantation. Dure 60 s. (talent de mage)",
   "primal_exaltation": "Pendant 12 s, Thundercall rend l’incantation d’Arc Bolt et de Skybranch 50 % plus rapide, et Arc Bolt génère 2 Thunder ; Warspirit déclenche sa cadence toutes les 2 frappes d’arme ; Spiritcall ajoute 50 % de soins au Mending Current. (talent de Chaman)",
   "primal_reflexes": "Tes instincts s'aiguisent, augmentant ta chance d'esquive de 50 % pendant 6 s.",
-  "prowl": "Passe en camouflage en Cat Form. Inutilisable en combat.",
+  "prowl": "Prends la forme de Cat Form si ce n’est pas déjà fait, et passe en discrétion. Utilisable depuis n’importe quelle forme. Impossible en combat.",
   "psychic_scream": "Effraie les ennemis dans 8 m pendant 4 s au maximum. Les dégâts peuvent briser l’effet.",
   "pummel": "Interrompt l'incantation et empêche tout sort de la même école d'être lancé pendant 4 s. Génère 10 points de rage quand il stoppe une incantation.",
   "pyroblast": "Projette un immense rocher enflammé qui inflige $d points de dégâts de Feu, plus des dégâts supplémentaires sur la durée.",
@@ -381,7 +381,7 @@
   "thieves_chorus": "Un signal sifflé qui galvanise ton groupe : +10 % de vitesse d’attaque, d’incantation et de canalisation pendant 10 s. Les alliés qui ont reçu récemment un buff de hâte de groupe sont trop épuisés pour en profiter. (Talent de voleur)",
   "thorns": "Des épines poussent sur la cible : les attaquants en mêlée subissent $b dégâts de Nature.",
   "thunder_clap": "Frappe les ennemis proches, infligeant $d points de dégâts et ralentissant leurs attaques de 10 % pendant 10 s.",
-  "thunder_reservoir": "Passif : Arc Bolt et Skybranch donnent du Thunder, jusqu’à 5. À 5 Thunder, Earthen Jolt inflige 125 % de dégâts en plus ou Faultwake 100 % de plus, puis tout le Thunder est consommé. (Thundercall)",
+  "thunder_reservoir": "Passif : Arc Bolt et Skybranch confèrent de la Foudre, 5 au maximum. Earthen Jolt consomme toute la Foudre et inflige 25 % de dégâts en plus par charge (125 % à 5). Faultwake consomme toute la Foudre et inflige 20 % de dégâts en plus par charge (100 % à 5). (Thundercall)",
   "tidecall": "Soigne une cible alliée de $d. Les soins augmentent avec ta puissance des sorts. Ajoute la totalité du soin, avant tout surplus, à ton Mending Current, dans la limite de 30 % des PV max de la cible.",
   "tigers_fury": "Te rend 30 d’énergie d’un coup et augmente ta puissance d’attaque de $b pendant $t s. Cat Form uniquement.",
   "trailbreak": "Bondit de 12 m en arrière. Si tu as Hunting Momentum, le rafraîchit et arme Re-entry pendant 12 s.",
@@ -416,8 +416,12 @@
   "grove_awakening": "Rappelle à tes côtés chaque membre tombé de ton groupe ou de ton raid situé à moins de 40 m et dans ta ligne de vue, avec 30 % de ses PV et de sa mana. Incantable hors combat seulement. (Groveheart)",
   "prayer_of_returning": "Rappelle à tes côtés chaque membre tombé de ton groupe ou de ton raid situé à moins de 40 m et dans ta ligne de vue, avec 30 % de ses PV et de sa mana. Incantable hors combat seulement. (Benison et Doctrine)",
   "wildwake": "Fais refleurir un allié tombé : il revient à la vie à tes côtés avec 35 % de ses PV et de sa mana — même en plein combat. (Groveheart)",
-  "lunge": "Bondit sur un ennemi à jusqu’à 12 m. À l’arrivée, inflige 60 % des dégâts de l’arme et confère 1 point de combo ; un bond écourté rend sa recharge. Cat Form uniquement.",
-  "hamstring_bite": "Technique de finition qui étourdit la cible pendant 1 s plus 1 s par point de combo (5 points de combo : 6 s). Cat Form uniquement."
+  "lunge": "Prends la forme de Cat Form si ce n’est pas déjà fait, puis bondis sur un ennemi à jusqu’à 25 m. À l’arrivée, inflige 60 % des dégâts de l’arme, confère 1 point de combo et, en Wildfang, ajoute 1 Old Blood (3 max) ; un bond écourté rend sa recharge. Utilisable depuis n’importe quelle forme.",
+  "hamstring_bite": "Technique de finition qui étourdit la cible pendant 1 s plus 1 s par point de combo (5 points de combo : 6 s). Cat Form uniquement.",
+  "clockwork_shock_bomb": "Lance une Bombe choc mécanique à l’endroit visé, infligeant 120 à 160 dégâts de Nature aux ennemis dans 5 m.",
+  "lava_burst": "Inflige $d dégâts de Feu. Frappe toujours un coup critique sur une cible brûlée par ton Cinder Jolt. Magma Surge : chaque tick de Cinder Jolt a 20 % de chances de rendre la recharge de ce sort et de rendre ton prochain Magma Burst dans les 10 s instantané. Les dégâts augmentent avec la Puissance des sorts. (Thundercall)",
+  "lightning_overload": "Passif : Arc Bolt et Skybranch ont 20 % de chances de se surcharger, frappant à nouveau leur première cible à 50 % des dégâts infligés et conférant 1 Foudre. (Thundercall)",
+  "thunderstorm": "Appelle un coup de tonnerre, infligeant $d dégâts de Nature aux ennemis dans 10 m et les ralentissant de 50 % pendant 5 s. Rend 8 % de ton mana maximum. Les dégâts augmentent avec la Puissance des sorts. (Thundercall)"
  },
  "talent": {
   "druid/dru_r11_furor": "Gripping Roots rend instantané ton prochain Wildbolt lancé dans les 8 s, au plus une fois toutes les 15 s.",
@@ -537,9 +541,9 @@
   "shaman/sha_r17_earthbind": "Pendant 12 s, Thundercall rend l’incantation d’Arc Bolt et de Skybranch 50 % plus rapide, et Arc Bolt génère 2 Thunder ; Warspirit déclenche sa cadence toutes les 2 frappes d’arme ; Spiritcall ajoute 50 % de soins au Mending Current. Recharge de 120 s.",
   "shaman/sha_r17_elemental_warding": "Activer Thunder Ward donne 40 % de réduction de dégâts pendant 6 s. Recharge interne de 120 s.",
   "shaman/sha_r17_improved_ghost_wolf": "Quand l’effet est prêt, sortir de Shadewolf te permet d’incanter en marchant pendant 8 s. Recharge interne de 90 s.",
-  "shaman/sha_r20_bloodlust": "Après qu’Earthen Jolt ou Faultwake a consommé tout ton Thunder, tu en gardes 2. Après qu’un sort a consommé Stormcast, tu gardes 1 cran de cadence Warspirit. Après que Cascading Mend a consommé ton Mending Current, tu en récupères 25 %.",
-  "shaman/sha_r20_elemental_fury": "Après qu’Earthen Jolt ou Faultwake a consommé tout ton Thunder, 40 % de ses dégâts se répètent 1 s plus tard. Un sort qui consomme Stormcast se répète à 40 % de puissance. Les soins issus d’un Mending Current consommé se répètent à 40 % après 2 s. Ces répétitions ne déclenchent aucun autre effet.",
-  "shaman/sha_r20_tidal_waves": "Après qu’Earthen Jolt ou Faultwake a consommé tout ton Thunder, Pyrebrand rend ton prochain Arc Bolt instantané. Chaque écho de Galeheart inflige 40 % de dégâts à 2 ennemis au maximum dans un rayon de 8 m. Un sort Stonebound qui consomme Stormcast t’accorde une absorption égale à 8 % de tes PV max. Avec Lifespring actif, Tidecall ajoute aussi 50 % de son soin complet à l’allié le plus blessé dans un rayon de 10 m.",
+  "shaman/sha_r20_bloodlust": "Après qu’Earthen Jolt ou Faultwake a consommé une réserve complète de Foudre, conserve 2 charges de Foudre. Après qu’un sort a consommé Stormcast, conserve 1 pas de cadence de Warspirit. Après que Cascading Mend a consommé du Mending Current, rend 25 % de la quantité consommée.",
+  "shaman/sha_r20_elemental_fury": "Après qu’Earthen Jolt ou Faultwake a consommé une réserve complète de Foudre, répète 40 % de ses dégâts après 1 s. Un sort qui consomme Stormcast se répète à 40 % de sa puissance. Les soins du Mending Current consommé se répètent à 40 % de leur puissance après 2 s. Ces répétitions ne peuvent pas déclencher d’autres effets.",
+  "shaman/sha_r20_tidal_waves": "Après qu’Earthen Jolt ou Faultwake a consommé une réserve complète de Foudre, Pyrebrand rend ton prochain Arc Bolt instantané. Les échos de Galeheart infligent chacun 40 % de dégâts à jusqu’à 2 ennemis dans 8 m. Un sort Stonebound qui consomme Stormcast accorde une absorption égale à 8 % de tes PV maximum. Avec Lifespring actif, Tidecall ajoute aussi 50 % de son soin complet à l’allié le plus blessé dans 10 m.",
   "shaman/sha_r5_concussion": "Shadewolf devient instantané. Y entrer retire immobilisations et ralentissements.",
   "shaman/sha_r5_imbue_mastery": "Après un Jolt, le prochain Arc Bolt ou Mending Waters commencé dans les 8 s peut être lancé en marchant.",
   "shaman/sha_r5_improved_lightning_shield": "Entrer en Shadewolf donne 60 % de vitesse de déplacement pendant 3 s, une fois toutes les 20 s.",
@@ -638,7 +642,7 @@
   },
   "warrior/prot": {
    "description": "Le gardien qui mène la ligne de front, bouclier levé et volonté inébranlable. Il encaisse l'assaut d'ennemis innombrables, protège ses alliés et contrôle le champ de bataille avec autorité. Chaque coup bloqué devient une occasion de répondre par la force.",
-   "mastery": "Augmente toute la menace que tu génères de 80 % et ton armure de 10 %. Vanguard : ton Endurance est augmentée de 40 % et tu gagnes une armure égale à 70 % de ta Force."
+   "mastery": "Augmente toute la menace que tu génères de 110 % et ton armure de 10 %. Vanguard : ton Endurance augmente de 40 % et tu gagnes de l’armure égale à 70 % de ta Force."
   },
   "mage/frost": {
    "description": "Un lanceur de sorts qui contrôle le champ de bataille à coups de glace, de ralentissements et de gels. Il accumule une puissance glaciale pour détruire ses ennemis avec des attaques précises.",
@@ -646,7 +650,7 @@
   },
   "druid/feral": {
    "mastery": "Augmente les dégâts de tes techniques physiques de 50 %, tes dégâts de saignement de 50 %, ta menace de 45 % et ton armure de 15 %.",
-   "description": "Un métamorphe dont les coups au but bâtissent de l’Old Blood dans les deux formes : le félin la dépense pour frapper, l’ours pour tanker."
+   "description": "Un métamorphe dont les coups au but bâtissent de l’Old Blood dans les deux formes : le félin la dépense pour frapper, l’ours pour tanker. Tes attaques de mêlée portent 1 m plus loin, et les auto-attaques en mêlée accordent Nature’s Boon environ toutes les 15 s : pendant 10 s, un Wildbloom gratuit lançable depuis n’importe quelle forme, ou un Oakhide gratuit en Bruin Form, l’un et l’autre 25 % plus forts."
   },
   "warrior/arms": {
    "mastery": "Quand tu manies une arme à deux mains, tous les dégâts que tu infliges sont augmentés de 10 %.",
@@ -661,7 +665,7 @@
    "description": "Un incantateur en Moonwing Form dont les sorts remplissent la Moontide ; à 3, tu choisis comment la dépenser : Moonsurge pour les dégâts, ou Sunwake pour le mana."
   },
   "paladin/protection": {
-   "mastery": "Augmente toute la menace que tu génères de 40 %, ton armure de 20 % et ton Endurance de 35 %.",
+   "mastery": "Augmente toute la menace que tu génères de 100 %, ton armure de 20 % et ton Endurance de 35 %.",
    "description": "Un défenseur au bouclier qui convertit la puissance sacrée en menace et en atténuation des dégâts."
   },
   "shaman/enhancement": {
@@ -813,8 +817,8 @@
    "4": "Veiled Edge ajoute 100 % des dégâts de l’arme à ton prochain Lurker’s Strike au lieu de 50 %. N’augmente pas le bonus fixe et ne se cumule pas avec le bonus de camouflage."
   },
   "benison_dawnweave": {
-   "2": "Le sauvetage de Seraphic Vigil soigne de 270 au lieu de 180. Les dégâts subis ne retardent plus ton incantation.",
-   "4": "Quand Seraphic Vigil se déclenche, son allié est en plus soigné de 15 % de ses PV max sur 10 s."
+   "2": "Rendre de la santé avec Whispered Prayer, Solemn Prayer ou Urgent Prayer augmente les soins de ton prochain Choirmend de 10 %, cumulable 3 fois. Chaque lancement n’accorde qu’une seule charge. Choirmend consomme toutes les charges quand son incantation se termine. Les dégâts subis ne retardent plus tes incantations.",
+   "4": "Terminer Choirmend avec 3 charges rend ton prochain Whispered Prayer dans les 60 s instantané et augmente ses soins de 100 %. Cet effet ne se cumule pas ; le regagner rafraîchit sa durée."
   },
   "chronoweave": {
    "2": "Temporal Echo convertit 50 % de tes autres dégâts d’Arcane monocibles en soins. Aether Surge et Aether Darts en convertissent alors 200 % des leurs. Les dégâts subis ne retardent plus tes incantations.",
@@ -905,8 +909,8 @@
    "4": "Sous Stonebound, terminer une cadence te soigne de 3 % de tes PV max."
   },
   "stormkindled": {
-   "2": "Unleash Weapon sur Pyrebrand accorde 3 Thunder. Les dégâts subis ne retardent plus ton incantation.",
-   "4": "Le bonus d’Earthen Jolt par Thunder monte à 30 %."
+   "2": "Arc Overload se déclenche 30 % du temps. Les dégâts subis ne retardent plus tes incantations.",
+   "4": "Le bonus de Earthen Jolt par charge de Foudre monte à 30 %, et Magma Burst inflige 20 % de dégâts en plus."
   },
   "vesperash": {
    "2": "La recharge de Call Tithefiend est réduite de 6 s. Les dégâts subis ne retardent plus ton incantation.",
@@ -923,6 +927,114 @@
   "zealfire": {
    "2": "Final Edict et Dawnfall réduisent mutuellement leur recharge restante de 3 s au lieu de 2.",
    "4": "Hammer of Wrath lancé sous Dawn’s Wrath frappe 40 % plus fort, au lieu de 20."
+  },
+  "vanguard_druid_balance": {
+   "2": "Le temps d’incantation de Gripping Roots est réduit de 0,5 s.",
+   "4": "Lancer Gripping Roots te permet d’incanter en mouvement et augmente ta vitesse de déplacement de 20 % pendant 4 s. Ne peut pas survenir plus d’une fois toutes les 20 s."
+  },
+  "vanguard_druid_feral": {
+   "2": "La recharge de Bruin Rush est réduite de 3 s.",
+   "4": "Bruin Rush te confère un bouclier de 6 % de tes PV maximum pendant 6 s."
+  },
+  "vanguard_druid_restoration": {
+   "2": "La recharge de Fleetmend est réduite de 1 s.",
+   "4": "Fleetmend augmente aussi ta vitesse de déplacement de 30 % pendant 3 s."
+  },
+  "vanguard_hunter_beast_mastery": {
+   "2": "La recharge de Rattling Shot est réduite de 4 s.",
+   "4": "Rattling Shot réduit la recharge restante de Howling Rage de 1 s."
+  },
+  "vanguard_hunter_marksmanship": {
+   "2": "La recharge de Trailbreak est réduite de 4 s.",
+   "4": "Trailbreak rend ton prochain Long Draw dans les 6 s instantané. Ne peut pas survenir plus d’une fois toutes les 15 s."
+  },
+  "vanguard_hunter_survival": {
+   "2": "La recharge de Bloodhook est réduite de 3 s.",
+   "4": "Bloodhook confère 1 charge de Hunting Momentum."
+  },
+  "vanguard_mage_arcane": {
+   "2": "La recharge de Temporal Barrier est réduite de 2 s.",
+   "4": "Temporal Barrier augmente aussi la vitesse de déplacement de la cible sous bouclier de 20 % pendant 3 s."
+  },
+  "vanguard_mage_fire": {
+   "2": "Cinderfall se recharge 3 s plus vite.",
+   "4": "Lancer Cinderfall réduit la recharge restante de Blazing Barrier de 2 s."
+  },
+  "vanguard_mage_frost": {
+   "2": "La recharge d’Icebind est réduite de 2 s.",
+   "4": "Lancer Icebind réduit la recharge restante de Flitstep de 5 s."
+  },
+  "vanguard_paladin_holy": {
+   "2": "La recharge de Life Covenant est réduite de 30 s.",
+   "4": "Life Covenant confère aussi à l’allié un bouclier de 8 % de ses PV maximum pendant 6 s."
+  },
+  "vanguard_paladin_protection": {
+   "2": "La recharge d’Oath Chain est réduite de 2 s.",
+   "4": "Les ennemis attirés par Oath Chain incantent 30 % plus lentement pendant 4 s, et Oath Chain te confère Solar Reprisal quand il enchaîne un ennemi qui peut être attiré."
+  },
+  "vanguard_paladin_retribution": {
+   "2": "La recharge de Valkyr’s Calling est réduite de 15 s.",
+   "4": "Valkyr’s Calling rend la recharge de Final Edict, et ton prochain Final Edict dans les 6 s suivant un coup au but inflige 15 % de dégâts en plus."
+  },
+  "vanguard_priest_discipline": {
+   "2": "La recharge de Terror Canticle est réduite de 3 s.",
+   "4": "Quand ton Psalm of Warding est entièrement consommé, l’allié sous bouclier gagne 20 % de vitesse de déplacement pendant 3 s. Ne peut pas survenir plus d’une fois toutes les 8 s."
+  },
+  "vanguard_priest_holy": {
+   "2": "La recharge de Veilstep est réduite de 6 s.",
+   "4": "Veilstep te confère aussi un bouclier de 8 % de tes PV maximum pendant 6 s."
+  },
+  "vanguard_priest_shadow": {
+   "2": "Litany of Woe ralentit aussi le déplacement de la cible de 30 % pendant que tu la canalises.",
+   "4": "Call Tithefiend te confère aussi un bouclier de 10 % de tes PV maximum pendant 8 s."
+  },
+  "vanguard_rogue_assassination": {
+   "2": "Low Blow coûte 10 points d’énergie en moins.",
+   "4": "Low Blow fait aussi de ta prochaine attaque dans les 6 s un coup critique."
+  },
+  "vanguard_rogue_combat": {
+   "2": "La recharge de Swift Heels est réduite de 60 s.",
+   "4": "Pendant que Swift Heels est actif, Wicked Slash et Haymaker confèrent 1 point de combo supplémentaire."
+  },
+  "vanguard_rogue_subtlety": {
+   "2": "La recharge de Smokefade est réduite de 60 s.",
+   "4": "Gut Punch confère 2 points de combo supplémentaires quand il est utilisé depuis Smokefade."
+  },
+  "vanguard_shaman_elemental": {
+   "2": "La recharge d’Unleash Weapon est réduite de 3 s.",
+   "4": "Unleash Weapon te permet d’incanter en mouvement et augmente ta vitesse de déplacement de 20 % pendant 4 s. Ne peut pas survenir plus d’une fois toutes les 20 s."
+  },
+  "vanguard_shaman_enhancement": {
+   "2": "Ancestral Strike ralentit la vitesse de déplacement de la cible de 30 % pendant 4 s.",
+   "4": "Ancestral Strike réduit la recharge restante d’Elemental Trance de 4 s."
+  },
+  "vanguard_shaman_restoration": {
+   "2": "Mending Waters se lance 0,5 s plus vite sur un allié sous 50 % de PV.",
+   "4": "Tidecall confère aussi à sa cible un bouclier de 5 % de tes PV maximum pendant 6 s."
+  },
+  "vanguard_warlock_affliction": {
+   "2": "Le temps d’incantation de Harrow est réduit de 0,3 s.",
+   "4": "Consume te soigne 30 % de plus et peut être canalisé en mouvement."
+  },
+  "vanguard_warlock_demonology": {
+   "2": "La recharge de Bone Armor est réduite de 10 s.",
+   "4": "Reaping Command réduit la recharge restante de Bone Armor de 2 s."
+  },
+  "vanguard_warlock_destruction": {
+   "2": "La recharge de Cinderhide est réduite de 30 s.",
+   "4": "Un Conflagrate sur deux rend ton prochain Ruinbolt dans les 8 s instantané."
+  },
+  "vanguard_warrior_arms": {
+   "2": "Maiming Strike réduit la recharge restante d’Onrush de 1 s.",
+   "4": "Onrush renforce aussi ton prochain Maiming Strike de 20 % (une charge du renfort de Redhand)."
+  },
+  "vanguard_warrior_fury": {
+   "2": "La recharge de Vaulting Charge est réduite de 8 s.",
+   "4": "Réussir un Vaulting Charge te met Enragé."
+  },
+  "vanguard_warrior_prot": {
+   "2": "La recharge de Faultline est réduite de 5 s.",
+   "4": "Faultline réduit aussi les dégâts que tu subis de 10 % pendant 6 s."
   }
  },
  "_src": {
@@ -961,14 +1073,14 @@
   "ability\tavatar": "73448bdc",
   "ability\tavenging_wrath": "34bfd39e",
   "ability\tbackstab": "e64a1bfb",
-  "ability\tbarkskin": "436f3817",
+  "ability\tbarkskin": "061564d3",
   "ability\tbash": "ae9d1d9f",
   "ability\tbastion_rite": "29062fa1",
   "ability\tbastion_sweep": "a3acdaf4",
   "ability\tbattle_shout": "d45aa1b8",
   "ability\tbattle_stance": "07c705f9",
   "ability\tbeacon_of_light": "d8cc697a",
-  "ability\tbear_charge": "0f061927",
+  "ability\tbear_charge": "87dd0277",
   "ability\tbear_form": "21f36e0b",
   "ability\tberserk": "661be7c1",
   "ability\tberserker_rage": "b5d6b7af",
@@ -1050,9 +1162,9 @@
   "ability\tdivine_protection": "cd419d27",
   "ability\tdragons_breath": "021c50b3",
   "ability\tdrain_life": "b6c1120a",
-  "ability\tearth_shock": "53eb1864",
+  "ability\tearth_shock": "b24f6281",
   "ability\tearthbind": "a86a482e",
-  "ability\tearthquake": "c8c1848e",
+  "ability\tearthquake": "cb48ca6d",
   "ability\telemental_mastery": "cba5ed64",
   "ability\telemental_trance": "88b88eba",
   "ability\temboldening_roar": "912158e1",
@@ -1073,7 +1185,7 @@
   "ability\tferal_charge": "78464033",
   "ability\tferocious_bite": "4e82f5a7",
   "ability\tfieldcraft_reentry": "bfaf0ab9",
-  "ability\tfinal_edict": "bd764b95",
+  "ability\tfinal_edict": "c15adc00",
   "ability\tfingers_of_frost": "cd4543b3",
   "ability\tfire_blast": "7e5652fc",
   "ability\tfireball": "2ba50cb6",
@@ -1085,7 +1197,7 @@
   "ability\tflash_of_light": "cf8382e9",
   "ability\tflurry": "05f8bd02",
   "ability\tflurry_of_knives": "579a853d",
-  "ability\tfrenzied_regeneration": "1c09fb90",
+  "ability\tfrenzied_regeneration": "9d5c9b5b",
   "ability\tfrost_armor": "b1101ab9",
   "ability\tfrost_nova": "501fabb1",
   "ability\tfrost_shock": "b7e89728",
@@ -1190,7 +1302,7 @@
   "ability\tpiercing_howl": "8b69c953",
   "ability\tpolymorph": "5727e179",
   "ability\tpossess_evil_eye": "cbd90ad6",
-  "ability\tpounce": "acf6490e",
+  "ability\tpounce": "1df4d3fb",
   "ability\tpower_echo": "915c02d2",
   "ability\tpower_infusion": "761cf62b",
   "ability\tpower_word_fortitude": "49072eeb",
@@ -1200,7 +1312,7 @@
   "ability\tpresence_of_mind": "9c238b43",
   "ability\tprimal_exaltation": "a195a5db",
   "ability\tprimal_reflexes": "861e81fc",
-  "ability\tprowl": "4fe76a13",
+  "ability\tprowl": "a12fa044",
   "ability\tpsychic_scream": "0d4812d0",
   "ability\tpummel": "4a13ee6a",
   "ability\tpyroblast": "e8d1cbd8",
@@ -1320,7 +1432,7 @@
   "ability\tthieves_chorus": "3ab739d8",
   "ability\tthorns": "674f72e9",
   "ability\tthunder_clap": "37a22326",
-  "ability\tthunder_reservoir": "83f1ea8f",
+  "ability\tthunder_reservoir": "b1499d2b",
   "ability\ttidecall": "2a5c7318",
   "ability\ttigers_fury": "3f681509",
   "ability\ttrailbreak": "5ee11d6a",
@@ -1391,7 +1503,7 @@
   "set\twyrmshadow\t4": "47841b59",
   "spec\tdruid/balance\tdescription": "4f0909f9",
   "spec\tdruid/balance\tmastery": "2e085306",
-  "spec\tdruid/feral\tdescription": "ecb08f5a",
+  "spec\tdruid/feral\tdescription": "da428022",
   "spec\tdruid/feral\tmastery": "557f8d9a",
   "spec\tdruid/restoration\tdescription": "5070b145",
   "spec\tdruid/restoration\tmastery": "b556d240",
@@ -1410,7 +1522,7 @@
   "spec\tpaladin/holy\tdescription": "54caf862",
   "spec\tpaladin/holy\tmastery": "3277e828",
   "spec\tpaladin/protection\tdescription": "05fbe1bb",
-  "spec\tpaladin/protection\tmastery": "2aadbc2f",
+  "spec\tpaladin/protection\tmastery": "2a500673",
   "spec\tpaladin/retribution\tdescription": "954e273b",
   "spec\tpaladin/retribution\tmastery": "40dd8781",
   "spec\tpriest/discipline\tdescription": "def62716",
@@ -1442,7 +1554,7 @@
   "spec\twarrior/fury\tdescription": "de0b8b30",
   "spec\twarrior/fury\tmastery": "b9403e52",
   "spec\twarrior/prot\tdescription": "f8bc5251",
-  "spec\twarrior/prot\tmastery": "638f96ef",
+  "spec\twarrior/prot\tmastery": "d091cd38",
   "talent\tdruid/dru_r11_furor": "385947a3",
   "talent\tdruid/dru_r11_improved_mark": "fb6e3ea8",
   "talent\tdruid/dru_r11_innervate": "d43e13b9",
@@ -1560,9 +1672,9 @@
   "talent\tshaman/sha_r17_earthbind": "c0751f0a",
   "talent\tshaman/sha_r17_elemental_warding": "f7877d48",
   "talent\tshaman/sha_r17_improved_ghost_wolf": "f09418c5",
-  "talent\tshaman/sha_r20_bloodlust": "f49734e0",
-  "talent\tshaman/sha_r20_elemental_fury": "76e85e1d",
-  "talent\tshaman/sha_r20_tidal_waves": "17fcff16",
+  "talent\tshaman/sha_r20_bloodlust": "343d370c",
+  "talent\tshaman/sha_r20_elemental_fury": "b212504b",
+  "talent\tshaman/sha_r20_tidal_waves": "04c3915f",
   "talent\tshaman/sha_r5_concussion": "9a5560ba",
   "talent\tshaman/sha_r5_imbue_mastery": "138c709b",
   "talent\tshaman/sha_r5_improved_lightning_shield": "30983593",
@@ -1612,8 +1724,8 @@
   "ability\twildwake": "c0f9edd4",
   "set\tashveil\t2": "341d048c",
   "set\tashveil\t4": "0b4b9a52",
-  "set\tbenison_dawnweave\t2": "8b1388e1",
-  "set\tbenison_dawnweave\t4": "e61cbc3c",
+  "set\tbenison_dawnweave\t2": "74b088c4",
+  "set\tbenison_dawnweave\t4": "aa84723a",
   "set\tchronoweave\t2": "db65a132",
   "set\tchronoweave\t4": "bc1868f8",
   "set\tcinderbark\t2": "b034fe04",
@@ -1664,8 +1776,8 @@
   "set\tstonehearth\t2": "6f3f32c7",
   "set\tstonehearth\t4": "0d04c52f",
   "set\tstormcallers\t6": "eaf51cd9",
-  "set\tstormkindled\t2": "dd16f0c1",
-  "set\tstormkindled\t4": "78b543ad",
+  "set\tstormkindled\t2": "67363938",
+  "set\tstormkindled\t4": "27634f2b",
   "set\tvesperash\t2": "10a5ef64",
   "set\tvesperash\t4": "afb6da8f",
   "set\twarspirit_emberscale\t2": "95d47342",
@@ -1675,7 +1787,65 @@
   "set\twyrmshadow\t6": "7d2692c9",
   "set\tzealfire\t2": "6be034bc",
   "set\tzealfire\t4": "35619316",
-  "ability\tlunge": "deb1bf23",
-  "ability\thamstring_bite": "3de211e2"
+  "ability\tlunge": "5507a7b3",
+  "ability\thamstring_bite": "3de211e2",
+  "ability\tclockwork_shock_bomb": "33e6256e",
+  "ability\tlava_burst": "add68548",
+  "ability\tlightning_overload": "a57ca2d4",
+  "ability\tthunderstorm": "64719ab8",
+  "set\tvanguard_druid_balance\t2": "f95fc984",
+  "set\tvanguard_druid_balance\t4": "f895a3fd",
+  "set\tvanguard_druid_feral\t2": "bc9c4624",
+  "set\tvanguard_druid_feral\t4": "ed6973d8",
+  "set\tvanguard_druid_restoration\t2": "6ad8ec10",
+  "set\tvanguard_druid_restoration\t4": "4669739e",
+  "set\tvanguard_hunter_beast_mastery\t2": "42b3d185",
+  "set\tvanguard_hunter_beast_mastery\t4": "e63df415",
+  "set\tvanguard_hunter_marksmanship\t2": "1585c640",
+  "set\tvanguard_hunter_marksmanship\t4": "64a68cb4",
+  "set\tvanguard_hunter_survival\t2": "12975ab0",
+  "set\tvanguard_hunter_survival\t4": "aa7030be",
+  "set\tvanguard_mage_arcane\t2": "b4b9a6a2",
+  "set\tvanguard_mage_arcane\t4": "b2b8fe95",
+  "set\tvanguard_mage_fire\t2": "3bf5f1a0",
+  "set\tvanguard_mage_fire\t4": "31459e8b",
+  "set\tvanguard_mage_frost\t2": "da7f722c",
+  "set\tvanguard_mage_frost\t4": "7750f539",
+  "set\tvanguard_paladin_holy\t2": "00720621",
+  "set\tvanguard_paladin_holy\t4": "0473a269",
+  "set\tvanguard_paladin_protection\t2": "b216a978",
+  "set\tvanguard_paladin_protection\t4": "082796c9",
+  "set\tvanguard_paladin_retribution\t2": "41c7501f",
+  "set\tvanguard_paladin_retribution\t4": "a9467c31",
+  "set\tvanguard_priest_discipline\t2": "60d37b4c",
+  "set\tvanguard_priest_discipline\t4": "07888f0b",
+  "set\tvanguard_priest_holy\t2": "50191f31",
+  "set\tvanguard_priest_holy\t4": "91f6919e",
+  "set\tvanguard_priest_shadow\t2": "4f11af88",
+  "set\tvanguard_priest_shadow\t4": "9f4d6c26",
+  "set\tvanguard_rogue_assassination\t2": "57db8690",
+  "set\tvanguard_rogue_assassination\t4": "0d2b39a0",
+  "set\tvanguard_rogue_combat\t2": "84174b58",
+  "set\tvanguard_rogue_combat\t4": "12c1f049",
+  "set\tvanguard_rogue_subtlety\t2": "c710e733",
+  "set\tvanguard_rogue_subtlety\t4": "70597b2c",
+  "set\tvanguard_shaman_elemental\t2": "b3ea4621",
+  "set\tvanguard_shaman_elemental\t4": "8bfae76b",
+  "set\tvanguard_shaman_enhancement\t2": "0b27f5f9",
+  "set\tvanguard_shaman_enhancement\t4": "a3aa1886",
+  "set\tvanguard_shaman_restoration\t2": "37f328f4",
+  "set\tvanguard_shaman_restoration\t4": "61b00caf",
+  "set\tvanguard_warlock_affliction\t2": "254f8ef5",
+  "set\tvanguard_warlock_affliction\t4": "2cc949ab",
+  "set\tvanguard_warlock_demonology\t2": "809a7eed",
+  "set\tvanguard_warlock_demonology\t4": "16ca45e2",
+  "set\tvanguard_warlock_destruction\t2": "2e4834f9",
+  "set\tvanguard_warlock_destruction\t4": "b4f1e2e5",
+  "set\tvanguard_warrior_arms\t2": "842ea2fd",
+  "set\tvanguard_warrior_arms\t4": "64e8a6a3",
+  "set\tvanguard_warrior_fury\t2": "b432a305",
+  "set\tvanguard_warrior_fury\t4": "9addd2dc",
+  "set\tvanguard_warrior_prot\t2": "2da5a7e6",
+  "set\tvanguard_warrior_prot\t4": "3c43cfc4"
  }
 }

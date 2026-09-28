@@ -7983,7 +7983,7 @@ const CRAFT = {
 </script>
 
 <script src="assets/lang.js"></script>
-<script src="assets/version.js" data-version="v0.43.2" defer></script>
+<script src="assets/version.js" data-version="v0.44.0" defer></script>
 <script>
 (function () {
   const T = (fr, en) => (window.LANG === 'en' ? en : fr);
@@ -8121,6 +8121,7 @@ const CRAFT = {
       {n:"Boot Etching: Agility",slot:"feet",tier:"Base",stat:"agi",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
       {n:"Boot Etching: Lucent Agility",slot:"feet",tier:"Lucent",stat:"agi",v:3,reg:[{id:"lucent_reagent",n:"Lucent Reagent",c:1},{id:"arcane_dust",n:"Chime Dust",c:4}]},
       {n:"Boot Etching: Stamina",slot:"feet",tier:"Base",stat:"sta",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
+      {n:"Boot Etching: Shadowstride",slot:"feet",tier:"new",stat:"agi",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:2},{id:"arcane_essence",n:"Chime Essence",c:1}]},
       {n:"Boot Etching: Strength",slot:"feet",tier:"Base",stat:"str",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
       {n:"Chest Etching: Greater Stamina",slot:"chest",tier:"Greater",stat:"sta",v:7,reg:[{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:3}]},
       {n:"Chest Etching: Lucent Stamina",slot:"chest",tier:"Lucent",stat:"sta",v:10,reg:[{id:"lucent_reagent",n:"Lucent Reagent",c:1},{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:3}]},
@@ -8129,6 +8130,7 @@ const CRAFT = {
       {n:"Chest Etching: Spirit",slot:"chest",tier:"Base",stat:"spi",v:4,reg:[{id:"arcane_dust",n:"Chime Dust",c:3},{id:"arcane_essence",n:"Chime Essence",c:2}]},
       {n:"Chest Etching: Stamina",slot:"chest",tier:"Base",stat:"sta",v:4,reg:[{id:"arcane_dust",n:"Chime Dust",c:3},{id:"arcane_essence",n:"Chime Essence",c:2}]},
       {n:"Glove Etching: Agility",slot:"gloves",tier:"Base",stat:"agi",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
+      {n:"Glove Etching: Forged Might",slot:"gloves",tier:"new",stat:"str",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:3},{id:"arcane_essence",n:"Chime Essence",c:1}]},
       {n:"Glove Etching: Greater Agility",slot:"gloves",tier:"Greater",stat:"agi",v:6,reg:[{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:2}]},
       {n:"Glove Etching: Spellpower",slot:"gloves",tier:"Base",stat:"int",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
       {n:"Glove Etching: Strength",slot:"gloves",tier:"Base",stat:"str",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
@@ -8146,6 +8148,7 @@ const CRAFT = {
       {n:"Necklace Etching: Agility",slot:"neck",tier:"Base",stat:"agi",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
       {n:"Necklace Etching: Intellect",slot:"neck",tier:"Base",stat:"int",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
       {n:"Necklace Etching: Spirit",slot:"neck",tier:"Base",stat:"spi",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
+      {n:"Offhand Etching: Spirit",slot:"offhand",tier:"new",stat:"spi",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:3},{id:"arcane_essence",n:"Chime Essence",c:1}]},
       {n:"Offhand Etching: Stamina",slot:"offhand",tier:"Base",stat:"sta",v:3,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
       {n:"Ring Etching: Agility",slot:"ring",tier:"Base",stat:"agi",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
       {n:"Ring Etching: Intellect",slot:"ring",tier:"Base",stat:"int",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:3}]},
@@ -8155,6 +8158,10 @@ const CRAFT = {
       {n:"Shoulder Etching: Intellect",slot:"shoulder",tier:"Base",stat:"int",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
       {n:"Shoulder Etching: Strength",slot:"shoulder",tier:"Base",stat:"str",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
       {n:"Weapon Etching: Agility",slot:"mainhand",tier:"Base",stat:"agi",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
+      {n:"Weapon Etching: Dawn's Benediction",slot:"mainhand",tier:"new",stat:"healingPower",v:34,reg:[{id:"arcane_shard",n:"Chime Shard",c:2},{id:"arcane_essence",n:"Chime Essence",c:4}]},
+      {n:"Weapon Etching: Dawnfire",slot:"mainhand",tier:"new",stat:"spellPower",v:18,reg:[{id:"arcane_shard",n:"Chime Shard",c:2},{id:"arcane_essence",n:"Chime Essence",c:4}]},
+      {n:"Weapon Etching: Piston Drive",slot:"mainhand",tier:"new",stat:"str",v:12,bonus:{fr:"+25 de critique en sus",en:"+25 crit on top"},reg:[{id:"arcane_shard",n:"Chime Shard",c:2},{id:"arcane_essence",n:"Chime Essence",c:4}]},
+      {n:"Riftwalker's Grace",slot:"mainhand",tier:"new",bonus:{fr:"les coups au but en mêlée peuvent accorder 60 d’agilité et +2 % de vitesse d’attaque pendant 15 s",en:"landed melee attacks can grant 60 agility and +2% melee speed for 15 s"},reg:[{id:"arcane_shard",n:"Chime Shard",c:2},{id:"arcane_essence",n:"Chime Essence",c:4}]},
       {n:"Weapon Etching: Greater Might",slot:"mainhand",tier:"Greater",stat:"str",v:5,reg:[{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:2}]},
       {n:"Weapon Etching: Greater Spellpower",slot:"mainhand",tier:"Greater",stat:"int",v:5,reg:[{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:2}]},
       {n:"Weapon Etching: Lucent Might",slot:"mainhand",tier:"Lucent",stat:"str",v:6,reg:[{id:"lucent_reagent",n:"Lucent Reagent",c:1},{id:"arcane_shard",n:"Chime Shard",c:1},{id:"arcane_essence",n:"Chime Essence",c:2}]},
@@ -8165,8 +8172,8 @@ const CRAFT = {
       {n:"Weapon Etching: Spellpower",slot:"mainhand",tier:"Base",stat:"int",v:2,reg:[{id:"arcane_dust",n:"Chime Dust",c:5}]},
   ];
   const ESLOT = { mainhand:['Arme','Main Hand'], offhand:['Main gauche','Off Hand'], helmet:['Casque','Helmet'], shoulder:['Épaules','Shoulder'], chest:['Torse','Chest'], waist:['Ceinture','Waist'], legs:['Jambes','Legs'], feet:['Pieds','Feet'], gloves:['Mains','Gloves'], neck:['Cou','Neck'], ring:['Doigt','Finger'] };
-  const ESTAT = { agi:['Agilité','Agility'], str:['Force','Strength'], int:['Intellect','Intellect'], sta:['Endurance','Stamina'], armor:['Armure','Armor'], spi:['Esprit','Spirit'] };
-  const ESTAT_ORDER = { agi:0, str:1, int:2, sta:3, armor:4, spi:5 };
+  const ESTAT = { agi:['Agilité','Agility'], str:['Force','Strength'], int:['Intellect','Intellect'], sta:['Endurance','Stamina'], armor:['Armure','Armor'], spi:['Esprit','Spirit'], spellPower:['Puissance des sorts','Spell Power'], healingPower:['Puissance de soin','Healing Power'] };
+  const ESTAT_ORDER = { agi:0, str:1, int:2, sta:3, armor:4, spi:5, spellPower:6, healingPower:7 };
 
   window.enchFilter = function (btn, stat) {
     btn.parentNode.querySelectorAll('button').forEach(b => b.classList.toggle('on', b === btn));
@@ -8185,13 +8192,13 @@ const CRAFT = {
       let cls, verdict;
       if (!e.stat) { cls = 'sub'; verdict = T('effet spécial', 'special effect'); }
       else if (e.stat === 'spi') { cls = 'avoid'; verdict = T('à éviter', 'avoid'); }
-      else if (e.v === best[e.slot + '|' + e.stat]) { cls = 'rec'; verdict = T('★ meilleur', '★ best'); }
+      else if (!(e.slot + '|' + e.stat in best) || e.v === best[e.slot + '|' + e.stat]) { cls = 'rec'; verdict = (!(e.slot + '|' + e.stat in best)) ? T('★ seul en son genre', '★ only one') : T('★ meilleur', '★ best'); }
       else { cls = 'sub'; verdict = T('sous-optimal', 'sub-optimal'); }
       const mats = e.reg.map(r => `${r.c}× ${item({ id: r.id, name: r.n })}`).join(' + ');
       const tierCls = e.tier === 'Greater' ? 'greater' : (e.tier === 'Runed' ? 'runed' : (e.tier === 'Lucent' ? 'lucent' : ''));
-      const tierLbl = e.tier === 'Greater' ? T('Majeur', 'Greater') : (e.tier === 'Runed' ? 'Runed' : (e.tier === 'Lucent' ? 'Lucent' : (e.tier === 'Special' ? T('Spécial', 'Special') : T('Base', 'Base'))));
+      const tierLbl = e.tier === 'new' ? T('Nouveau v0.44', 'New in v0.44') : (e.tier === 'Greater' ? T('Majeur', 'Greater') : (e.tier === 'Runed' ? 'Runed' : (e.tier === 'Lucent' ? 'Lucent' : (e.tier === 'Special' ? T('Spécial', 'Special') : T('Base', 'Base')))));
       const statLbl = e.stat ? ESTAT[e.stat][window.LANG === 'en' ? 1 : 0] : '';
-      const bonusLbl = e.stat ? `+${e.v} ${statLbl}` : T('effet d’arme', 'weapon effect');
+      const bonusLbl = e.bonus ? (window.LANG === 'en' ? e.bonus.en : e.bonus.fr) : (e.stat ? `+${e.v} ${statLbl}` : T('effet d’arme', 'weapon effect'));
       return `<tr class="${cls}" data-stat="${e.stat}">
         <td class="e-name">${esc(e.n)}</td>
         <td class="e-slot">${ESLOT[e.slot][window.LANG === 'en' ? 1 : 0]}</td>

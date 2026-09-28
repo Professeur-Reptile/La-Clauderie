@@ -2,6 +2,30 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.44.0",
+   "date": "2026-09-28",
+   "titre": "Les Quêtes du monde, la saison 2 et le chaman refait",
+   "resume": "La v0.44.0 est la plus grosse version depuis des mois : les Quêtes du monde et leurs trois factions alliées (jusqu'à la monture épique Viridian Valestrider), la saison 2 de Guerre avec un set d'honneur de 5 pièces par spécialisation, le chaman Thundercall refait autour d'une nouvelle ressource, le butin héroique du Crucible re-découpé, une mort qui se dialogue avec le Veilleur pâle, et une limite d'images par seconde automatique.",
+   "temps_forts": [
+    "🗺️ Quêtes du monde : 8 minijeux, 3 factions, cartes au trésor",
+    "⚔️ Guerre saison 2 : 27 sets d'honneur, drapeau PvP mondial",
+    "⚡ Thundercall refait : la Foudre et 3 nouveaux sorts",
+    "🐉 Butin héroique re-découpé : les sigils ont leur tirage",
+    "☠️ La mort se dialogue ; /unstuck gratuit 1 fois par heure"
+   ],
+   "page": "notes/v0.44.0.html",
+   "titre_en": "World Quests, season 2 and the reworked shaman",
+   "resume_en": "v0.44.0 is the biggest release in months: World Quests and their three allied factions (up to the epic Viridian Valestrider mount), Warfare season 2 with a 5-piece honor set per spec, the Thundercall shaman rebuilt around a new resource, re-cut heroic Crucible loot, death that talks to the Pale Keeper, and an automatic frame rate limit.",
+   "temps_forts_en": [
+    "🗺️ World Quests: 8 minigames, 3 factions, treasure maps",
+    "⚔️ Warfare season 2: 27 honor sets, open-world PvP flag",
+    "⚡ Thundercall rebuilt: Thunder and 3 new spells",
+    "🐉 Heroic loot re-cut: sigils get their own roll",
+    "☠️ Death becomes a dialogue; /unstuck free once per hour"
+   ],
+   "page_en": "notes/v0.44.0.en.html"
+  },
+  {
    "version": "v0.43.3",
    "date": "2026-09-21",
    "titre": "Un correctif qui ne touche pas au jeu",
