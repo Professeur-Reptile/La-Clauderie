@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-27T00:49:11Z",
+ "generated": "2026-09-28T05:46:11Z",
  "base_tag": "v0.43.3",
  "version": "v0.44.0",
  "branch": "release/v0.44.0",
  "declared_version": "0.44.0",
  "imminent": true,
- "commits": 1104,
- "shown": 508,
- "last_commit": "2026-09-27T00:25:04Z",
+ "commits": 1285,
+ "shown": 637,
+ "last_commit": "2026-09-28T16:33:19+13:00",
  "sections": [
   {
    "key": "classes",
@@ -142,11 +142,32 @@
      "date": "2026-09-22"
     },
     {
+     "h": "01ad7c5a",
+     "kind": "feat",
+     "scope": "rift",
+     "text": "The hoard adds get a signature cast each",
+     "date": "2026-09-22"
+    },
+    {
      "h": "ec764902",
      "kind": "feat",
      "scope": "warrior",
      "text": "Integrate authored ability presentation for release 44",
      "date": "2026-09-21"
+    },
+    {
+     "h": "32b0116b",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Frontal ruptures, control cast sigils and named cast bars",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "f141f80f",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Lightning, gust and arcane spell effects",
+     "date": "2026-09-20"
     },
     {
      "h": "6715bf3c",
@@ -324,6 +345,13 @@
      "date": "2026-09-24"
     },
     {
+     "h": "dbd3a5a8",
+     "kind": "fix",
+     "scope": "bags",
+     "text": "Read item cooldown timers only for items that have one",
+     "date": "2026-09-24"
+    },
+    {
      "h": "2967592d",
      "kind": "fix",
      "scope": "render",
@@ -342,6 +370,13 @@
      "kind": "fix",
      "scope": "render",
      "text": "Build the Warrior impact fragments in the kit preparation",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "162dfc27",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Name cave boss wind-ups on the target cast bar",
      "date": "2026-09-24"
     },
     {
@@ -521,6 +556,13 @@
      "date": "2026-09-20"
     },
     {
+     "h": "4dca129d",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Bonelord Xarreth's Wandering Scythe and Soul Harvest",
+     "date": "2026-09-20"
+    },
+    {
      "h": "999a876c",
      "kind": "feat",
      "scope": "desktop",
@@ -641,6 +683,20 @@
      "date": "2026-09-24"
     },
     {
+     "h": "ec8d69e4",
+     "kind": "feat",
+     "scope": "i18n",
+     "text": "Localize rift and hoard boss yells and place names",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "9e53f92b",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "The Mother of Mushrooms, first boss of the cave hoards",
+     "date": "2026-09-23"
+    },
+    {
      "h": "8507f7d9",
      "kind": "feat",
      "scope": "trinkets",
@@ -669,6 +725,48 @@
      "date": "2026-09-22"
     },
     {
+     "h": "1f088947",
+     "kind": "feat",
+     "scope": "rift",
+     "text": "The Boneyard's heavy is a Marrow Golem, not a swamp troll",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "9c156039",
+     "kind": "feat",
+     "scope": "rift",
+     "text": "Slower hoard control casts, and the caster's tell stays on the ground",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "b3363b3a",
+     "kind": "feat",
+     "scope": "rift",
+     "text": "Hoard room tuning from the room-by-room playtest",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "018fa0dc",
+     "kind": "feat",
+     "scope": "rift",
+     "text": "The Maw's tide volleys are laid by the seed, not on a cross",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "6c66a32d",
+     "kind": "feat",
+     "scope": "rift",
+     "text": "Warlord Grask charges whoever holds him",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "2bfaaa4f",
+     "kind": "feat",
+     "scope": "rift",
+     "text": "Broodmother Vysska's Silk Snare",
+     "date": "2026-09-22"
+    },
+    {
      "h": "4c105dbf",
      "kind": "feat",
      "scope": "charselect",
@@ -683,6 +781,62 @@
      "date": "2026-09-21"
     },
     {
+     "h": "ef7b8937",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Hoard boss gestures, rigid heads and a boss-sized stature",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "194138d0",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Boss call gestures, a forge maul, and readable mob portraits",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "8576e485",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Dress the Emberforge boss room as a forge chamber",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "996ef5a0",
+     "kind": "feat",
+     "scope": "render",
+     "text": "A themed room for every Buried Hoard boss",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "20b3ed6b",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Add bespoke boss mechanics",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "fabb29e6",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Reward chest ceremony for the final boss",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "ea0bc26f",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Boss loot for the Buried Hoards, three tiers by map rarity",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "7894e818",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Scale every boss mechanic by party size and map rarity",
+     "date": "2026-09-20"
+    },
+    {
      "h": "81425982",
      "kind": "feat",
      "scope": "render",
@@ -694,6 +848,13 @@
      "kind": "feat",
      "scope": "vault",
      "text": "Light the Weekly Vault's world row with the previous raid tier",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "7891a0f5",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Add Buried Hoard boss mechanics",
      "date": "2026-09-19"
     },
     {
@@ -723,6 +884,13 @@
      "scope": "loot",
      "text": "Redistribute the Crucible's caster weapon and held offhands to Heroic",
      "date": "2026-09-07"
+    },
+    {
+     "h": "debcbb79",
+     "kind": "perf",
+     "scope": "hoards",
+     "text": "Make the boss dressing allocation-free and motion-aware",
+     "date": "2026-09-20"
     },
     {
      "h": "2445b470",
@@ -774,6 +942,13 @@
      "date": "2026-09-23"
     },
     {
+     "h": "feb7e56f",
+     "kind": "fix",
+     "scope": "hoards",
+     "text": "Cave boss telegraphs behave online, no swings while held",
+     "date": "2026-09-23"
+    },
+    {
      "h": "b530e030",
      "kind": "fix",
      "scope": "reliquary",
@@ -788,10 +963,59 @@
      "date": "2026-09-22"
     },
     {
+     "h": "74c5a209",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "No Soul Grave under the scythe, and a boulder lane that does not flicker",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "c65ebe0b",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "The second room-by-room playtest",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "d408437b",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "A Buried Hoard scales up when someone new walks in",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "293592a8",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "Keep the playtest fixes inside the hoard rooms",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "e8cf434a",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "Buried Hoard mechanics hit a flat amount, not a share of health",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "06b02a4e",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "The hoard chest stands on the room floor, not under it",
+     "date": "2026-09-22"
+    },
+    {
      "h": "39312b5f",
      "kind": "fix",
      "scope": "render",
      "text": "Put the boss floor pieces that shipped with no order on the encounter band",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "afbe779f",
+     "kind": "fix",
+     "scope": "hoards",
+     "text": "Review pass over the four new boss mechanics",
      "date": "2026-09-21"
     },
     {
@@ -887,10 +1111,45 @@
      "date": "2026-09-25"
     },
     {
+     "h": "e820fd8f",
+     "kind": "feat",
+     "scope": "map",
+     "text": "Rich world quest hover tooltip with reward icons",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "fcfb5af7",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Full item card in world quest rewards, fix Spanish mojibake",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "c40c6e63",
+     "kind": "feat",
+     "scope": "quests",
+     "text": "Add a World Quest entry banner that never collides",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "1ee3dd60",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "List a world quest only while in its area",
+     "date": "2026-09-24"
+    },
+    {
      "h": "46c2fbdb",
      "kind": "feat",
      "scope": "pvp",
      "text": "Zone policy, marking, hour DR window and shared aid hook",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "589ea1b8",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "The NPC answers when a Clue Scroll talk or delivery is solved",
      "date": "2026-09-22"
     },
     {
@@ -950,6 +1209,13 @@
      "date": "2026-09-17"
     },
     {
+     "h": "f06b5b1a",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Implement faction reputation currencies and vendor item costs",
+     "date": "2026-09-17"
+    },
+    {
      "h": "d6f24a66",
      "kind": "feat",
      "scope": "world-quests",
@@ -962,6 +1228,13 @@
      "scope": "world-quests",
      "text": "Add starter dialogs and timed ley retries",
      "date": "2026-09-12"
+    },
+    {
+     "h": "6d7c0bd4",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Load the World Quest rankings art from the site root",
+     "date": "2026-09-28"
     },
     {
      "h": "8e6cf5f7",
@@ -992,10 +1265,24 @@
      "date": "2026-09-23"
     },
     {
+     "h": "73b6eed7",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep world quest panel independent of trinket",
+     "date": "2026-09-23"
+    },
+    {
      "h": "60f199b1",
      "kind": "fix",
      "scope": "content",
      "text": "Move the Shiverfen sprung traps onto the flat reed shelves",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "fb90837e",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Talk steps of a Clue Scroll hunt are solvable from the NPC window",
      "date": "2026-09-22"
     },
     {
@@ -1098,6 +1385,13 @@
      "date": "2026-09-19"
     },
     {
+     "h": "cd7b5fff",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "The treasure map window, chat lines and dev commands",
+     "date": "2026-09-18"
+    },
+    {
      "h": "5b614203",
      "kind": "feat",
      "scope": "perf",
@@ -1110,6 +1404,13 @@
      "scope": "ui",
      "text": "The leaderboard window in the rankings ledger style",
      "date": "2026-09-15"
+    },
+    {
+     "h": "5a963414",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Make party rewards durable across reconnects",
+     "date": "2026-09-24"
     },
     {
      "h": "e3e83afe",
@@ -1159,6 +1460,13 @@
      "scope": "desktop",
      "text": "Close the System Report self-review findings",
      "date": "2026-09-20"
+    },
+    {
+     "h": "a95777e4",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "The hoard's chat lines say hoard, not vault",
+     "date": "2026-09-18"
     },
     {
      "h": "64972e62",
@@ -1477,10 +1785,31 @@
      "date": "2026-09-24"
     },
     {
+     "h": "3260391c",
+     "kind": "feat",
+     "scope": "i18n",
+     "text": "Fill the non-Latin locales for faction goods and hoard casts",
+     "date": "2026-09-24"
+    },
+    {
      "h": "928f8feb",
      "kind": "feat",
      "scope": "meters",
      "text": "Localize settings, rename presets, and enlarge death recap",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "7b28de87",
+     "kind": "feat",
+     "scope": "reputation",
+     "text": "Show each faction's emblem in the Reputation tab crest",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "708feceb",
+     "kind": "feat",
+     "scope": "quests",
+     "text": "Give world quests their own tracker section",
      "date": "2026-09-24"
     },
     {
@@ -1495,6 +1824,20 @@
      "kind": "feat",
      "scope": "meters",
      "text": "Add pro gradient preset, fix window overlap and full transparency",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "3a4255ef",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Dress the wisp maze as a garden hedge maze with leaf spirits",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "179bd5f1",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Spread the Eastbrook freight crates over six spots",
      "date": "2026-09-24"
     },
     {
@@ -1526,6 +1869,13 @@
      "date": "2026-09-24"
     },
     {
+     "h": "b5b82148",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "A Coinsack Scurrier sometimes runs through a hoard room",
+     "date": "2026-09-23"
+    },
+    {
      "h": "e4b82fd5",
      "kind": "feat",
      "scope": "deeds",
@@ -1540,6 +1890,20 @@
      "date": "2026-09-23"
     },
     {
+     "h": "cb47bc0e",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "The Coinsack Scurrier's sack bursts into coins when it dies",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "7a332316",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Warn the room when a goblin thief is in it",
+     "date": "2026-09-23"
+    },
+    {
      "h": "d8b02017",
      "kind": "feat",
      "scope": "gear",
@@ -1547,10 +1911,38 @@
      "date": "2026-09-23"
     },
     {
+     "h": "5c2f70b8",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Polish character and cosmetics panels",
+     "date": "2026-09-23"
+    },
+    {
      "h": "25df79c2",
      "kind": "feat",
      "scope": "render",
      "text": "Antlers, crescent and wings for Moonwing; a veil for Gloamveil",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "21657394",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Deeprake, the Colossal Bat and the Voracious Chest",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "804f9192",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "The chest spits real coins; bigger bat and chest, slower frontals",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "7339b3f4",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "The Voracious Chest gets its tongue",
      "date": "2026-09-23"
     },
     {
@@ -1603,6 +1995,20 @@
      "date": "2026-09-22"
     },
     {
+     "h": "bbaf1475",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Eight more hoard room mobs get bodies of their own",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "99c11680",
+     "kind": "feat",
+     "scope": "render",
+     "text": "The last three hoard room mobs, and a rig for limbs that stand out",
+     "date": "2026-09-22"
+    },
+    {
      "h": "8db06511",
      "kind": "feat",
      "scope": "pvp",
@@ -1652,6 +2058,20 @@
      "date": "2026-09-22"
     },
     {
+     "h": "e3787495",
+     "kind": "feat",
+     "scope": "dev",
+     "text": "/dev hoard takes a map rarity",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "89691336",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Nyxaris's Twin Pulsars, the orbs that ward him",
+     "date": "2026-09-21"
+    },
+    {
      "h": "a620c8e8",
      "kind": "feat",
      "scope": "trade",
@@ -1663,6 +2083,13 @@
      "kind": "feat",
      "scope": "trade",
      "text": "Make the offered-row prompt a remove prompt",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "88f1cbef",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Emberforge's Hammer of the Forge and its rings of fire",
      "date": "2026-09-21"
     },
     {
@@ -1680,10 +2107,31 @@
      "date": "2026-09-21"
     },
     {
+     "h": "358ed20e",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "The Abyssal Maw's Tentacles of the Abyss",
+     "date": "2026-09-21"
+    },
+    {
      "h": "c7d06374",
      "kind": "feat",
      "scope": "death",
      "text": "Keeper dialogue differs for spared and levelled heroes",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "216c249c",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Warlord Grask's Rolling Boulder",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "cf910c6e",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Broodmother Vysska's Cocoon",
      "date": "2026-09-21"
     },
     {
@@ -1708,6 +2156,13 @@
      "date": "2026-09-21"
     },
     {
+     "h": "1a24a124",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Playtest pass on the forge doors and the Abyssal Maw",
+     "date": "2026-09-21"
+    },
+    {
      "h": "f2da0dae",
      "kind": "feat",
      "scope": "pvp",
@@ -1726,6 +2181,34 @@
      "kind": "feat",
      "scope": "ui",
      "text": "World PvP tab, /pvp hostility on nameplates and the target frame",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "295c513d",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Forge gates on the hammer ring, and Emberforge gauntlets",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "256d343e",
+     "kind": "feat",
+     "scope": "audio",
+     "text": "Give the hammer, boulder, tentacles and cocoon a voice",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "fbbe0ce6",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Rebuild the Tempest Vharok room around a real storm spire",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "60f1f372",
+     "kind": "feat",
+     "scope": "render",
+     "text": "The Abyssal Maw's room gets its own Tide Thrall and Deep Lurker",
      "date": "2026-09-21"
     },
     {
@@ -1778,10 +2261,80 @@
      "date": "2026-09-20"
     },
     {
+     "h": "517cc0a0",
+     "kind": "feat",
+     "scope": "dev",
+     "text": "Add direct legendary hoard travel",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "3d857256",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Give tide waves volume and fair changing gaps",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "743f7aaf",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Interruptible control, Storm Surge, spiderlings and tighter kits",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "de39887e",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Ice crystals, storm arcs and terrain-draped telegraphs",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "ab5a803e",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Rework Nyxaris, move the frost kit home and tidy five bosses",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "100d7d14",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Storm Caller Lightning Strike",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "ec22b66c",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Trial real boulder shapes for the hoard wall and cornice",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "500eaabb",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "One continuous cliff body with rocks embedded in it",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "3c36a4da",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Add orbital lightning barrage",
+     "date": "2026-09-20"
+    },
+    {
      "h": "d296f40f",
      "kind": "feat",
      "scope": "market",
      "text": "Wanted board with buy orders and a not-on-the-market strip",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "9b5b1b20",
+     "kind": "feat",
+     "scope": "reliquary",
+     "text": "A Buried Hoards page, one slot per hoard piece",
      "date": "2026-09-20"
     },
     {
@@ -1792,6 +2345,13 @@
      "date": "2026-09-20"
     },
     {
+     "h": "f5424c78",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Hoarfrost's Ice Age, cover behind fallen icicles",
+     "date": "2026-09-20"
+    },
+    {
      "h": "8a2818ec",
      "kind": "feat",
      "scope": "game",
@@ -1799,10 +2359,80 @@
      "date": "2026-09-19"
     },
     {
+     "h": "251f197f",
+     "kind": "feat",
+     "scope": "map",
+     "text": "Give buried hoards their own treasure markers",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "0fa7b051",
+     "kind": "feat",
+     "scope": "net",
+     "text": "Mirror buried hoard rarity in entity snapshots",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "e013147b",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Reveal buried hoards as unearthed wooden hatches",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "d3caa189",
+     "kind": "feat",
+     "scope": "vaults",
+     "text": "Generate outdoor hoard valleys",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "75224b6b",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Build hidden hoard valleys",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "4bb6f181",
+     "kind": "feat",
+     "scope": "map",
+     "text": "Render hoard valleys as open ground",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "e1df3dd8",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Light hoard valleys as open air",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "7fd5c8bd",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Dress hoard valleys as collapsed caverns",
+     "date": "2026-09-19"
+    },
+    {
      "h": "05e3f187",
      "kind": "feat",
      "scope": "desktop",
      "text": "Collect and save a host diagnostic from the shell",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "cfcda0fe",
+     "kind": "feat",
+     "scope": "sim",
+     "text": "Diversify Buried Hoard bosses",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "9c87ac1d",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Paint Buried Hoard map icons",
      "date": "2026-09-19"
     },
     {
@@ -1838,6 +2468,34 @@
      "kind": "feat",
      "scope": "world-quests",
      "text": "A modest daily casket with rare extras and Grumbol",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "6ff0e80c",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Treasure maps and vaults, the sim engine",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "9a031c75",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Puzzle-free vaults and Cartographer's Ink at the quartermasters",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "8457edbe",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "One-room treasure vaults sized by the map's rarity",
+     "date": "2026-09-18"
+    },
+    {
+     "h": "28d2fb1a",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "The Buried Hoard, its own name, entrance and level 16 gate",
      "date": "2026-09-18"
     },
     {
@@ -2275,6 +2933,41 @@
      "date": "2026-09-19"
     },
     {
+     "h": "59e5f5c4",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Bring release/v0.44.0 into the World Quests follow-ups",
+     "date": "2026-09-28"
+    },
+    {
+     "h": "c9b8c4ce",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Name the real cause and pin every shipped rankings art file",
+     "date": "2026-09-28"
+    },
+    {
+     "h": "3b5c57bc",
+     "kind": "fix",
+     "scope": "hoards",
+     "text": "Bring release/v0.44.0 into Buried Hoards",
+     "date": "2026-09-28"
+    },
+    {
+     "h": "ed5ead6a",
+     "kind": "fix",
+     "scope": "hoards",
+     "text": "Settle the merged tree's pins, seams and assets",
+     "date": "2026-09-28"
+    },
+    {
+     "h": "2c998e00",
+     "kind": "fix",
+     "scope": "hoards",
+     "text": "Bring release/v0.44.0 (with PR 3847) into Buried Hoards",
+     "date": "2026-09-28"
+    },
+    {
      "h": "9576c76a",
      "kind": "fix",
      "scope": "ferry",
@@ -2625,6 +3318,13 @@
      "date": "2026-09-24"
     },
     {
+     "h": "3a27df0b",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Close retry and reward recovery gaps",
+     "date": "2026-09-24"
+    },
+    {
      "h": "7423941b",
      "kind": "fix",
      "scope": "ui",
@@ -2660,6 +3360,20 @@
      "date": "2026-09-24"
     },
     {
+     "h": "f5c22c47",
+     "kind": "fix",
+     "scope": "hoards",
+     "text": "Bring release/v0.44.0 into buried hoards",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "7778d186",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Localize the faction quartermaster currency refusal",
+     "date": "2026-09-24"
+    },
+    {
      "h": "40298be8",
      "kind": "fix",
      "scope": "ui",
@@ -2671,6 +3385,13 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Preserve compatibility with parallel frame changes",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "bd2cbc5d",
+     "kind": "fix",
+     "scope": "hoards",
+     "text": "Catch up with release/v0.44.0 again",
      "date": "2026-09-24"
     },
     {
@@ -2702,6 +3423,13 @@
      "date": "2026-09-24"
     },
     {
+     "h": "28384f5d",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Translate the Clockwork Shock Bomb and count the hoard letter",
+     "date": "2026-09-24"
+    },
+    {
      "h": "e37842a9",
      "kind": "fix",
      "scope": "render",
@@ -2730,6 +3458,20 @@
      "date": "2026-09-24"
     },
     {
+     "h": "71dffdd4",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Close the wisp maze panel after the win",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "1ca2ec02",
+     "kind": "fix",
+     "scope": "evergarden",
+     "text": "Clear and level the wisp maze trial's ground",
+     "date": "2026-09-24"
+    },
+    {
      "h": "26e3336b",
      "kind": "fix",
      "scope": "render",
@@ -2741,6 +3483,13 @@
      "kind": "fix",
      "scope": "harbor",
      "text": "Save Codex's first Eastbrook ferry pass",
+     "date": "2026-09-24"
+    },
+    {
+     "h": "24d64e29",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Center the forge action bar and show its button icons",
      "date": "2026-09-24"
     },
     {
@@ -2793,10 +3542,24 @@
      "date": "2026-09-23"
     },
     {
+     "h": "9020f90c",
+     "kind": "fix",
+     "scope": "vaults",
+     "text": "Bump hoard loot item levels to 28/31/33 and boost epic/legendary drop rates",
+     "date": "2026-09-23"
+    },
+    {
      "h": "c8c936e9",
      "kind": "fix",
      "scope": "talents",
      "text": "Close the remaining routes to keeping both talents",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "7fbb4cb4",
+     "kind": "fix",
+     "scope": "hoards",
+     "text": "Tell a late arrival the goblin's real time left",
      "date": "2026-09-23"
     },
     {
@@ -2807,10 +3570,31 @@
      "date": "2026-09-23"
     },
     {
+     "h": "50cf32e2",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Update branch to v0.44.0",
+     "date": "2026-09-23"
+    },
+    {
      "h": "ef0b7bb4",
      "kind": "fix",
      "scope": "render",
      "text": "Gate, hide and share the form adornment kits",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "74f7e398",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Tripo hoard mobs strike with both hands, never the one-hand clips",
+     "date": "2026-09-23"
+    },
+    {
+     "h": "a683ee43",
+     "kind": "fix",
+     "scope": "hoards",
+     "text": "Steady chest lid and a stone floor in the spore cave",
      "date": "2026-09-23"
     },
     {
@@ -2933,10 +3717,24 @@
      "date": "2026-09-22"
     },
     {
+     "h": "c51d661d",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bigger hoard room adds, and Vharok calls the storm standing still",
+     "date": "2026-09-22"
+    },
+    {
      "h": "3e183a1d",
      "kind": "fix",
      "scope": "quests",
      "text": "Keep the Palmreach confection board on every day's roster",
+     "date": "2026-09-22"
+    },
+    {
+     "h": "26801340",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Nyxaris's face moves with his hood",
      "date": "2026-09-22"
     },
     {
@@ -3101,6 +3899,27 @@
      "date": "2026-09-21"
     },
     {
+     "h": "313fb84f",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Held models for the Buried Hoard shields",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "29baeb9c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Straight gauntlets, and a clear floor in the forge room",
+     "date": "2026-09-21"
+    },
+    {
+     "h": "e794b0e1",
+     "kind": "fix",
+     "scope": "render",
+     "text": "No bare trees in the forge room",
+     "date": "2026-09-21"
+    },
+    {
      "h": "4aab6d2d",
      "kind": "fix",
      "scope": "render",
@@ -3199,10 +4018,38 @@
      "date": "2026-09-20"
     },
     {
+     "h": "687aaf48",
+     "kind": "fix",
+     "scope": "hoards",
+     "text": "Telegraph Grask strikes separately",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "c67ab21a",
+     "kind": "fix",
+     "scope": "hoards",
+     "text": "Two-second caster bars and no stun on Tempest Vharok",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "7e293f3d",
+     "kind": "fix",
+     "scope": "hoards",
+     "text": "Open the reward chest from the interact key, and say so",
+     "date": "2026-09-20"
+    },
+    {
      "h": "b5d90700",
      "kind": "fix",
      "scope": "market",
      "text": "Bound the Wanted board and harden its readout, save, and panel",
+     "date": "2026-09-20"
+    },
+    {
+     "h": "146ce9b0",
+     "kind": "fix",
+     "scope": "hoards",
+     "text": "Break the content to data import cycle the hoard casts closed",
      "date": "2026-09-20"
     },
     {
@@ -3339,6 +4186,20 @@
      "date": "2026-09-19"
     },
     {
+     "h": "6ed2edc2",
+     "kind": "fix",
+     "scope": "treasure",
+     "text": "Seat hoard entrances on dry stable ground",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "cba6e529",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bound hoard light shader power inputs",
+     "date": "2026-09-19"
+    },
+    {
      "h": "eebcb9ad",
      "kind": "fix",
      "scope": "render",
@@ -3350,6 +4211,48 @@
      "kind": "fix",
      "scope": "render",
      "text": "Withdraw the shader warm option row, keep the stored choice",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "6071eea7",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep hoard valleys readable",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "f7b95f6f",
+     "kind": "fix",
+     "scope": "vaults",
+     "text": "Harden hidden valley presentation",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "b8f07263",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Preserve cavern camera sightlines",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "baeca55e",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Make Hoard frontal readable",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "d7d2d557",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Rarer Grumbol from Epic and Legendary hoards",
+     "date": "2026-09-19"
+    },
+    {
+     "h": "05d7dfe8",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Align treasure map X with dig site",
      "date": "2026-09-19"
     },
     {
@@ -3620,9 +4523,9 @@
    "branch": "release/v0.44.0",
    "declared_version": "0.44.0",
    "imminent": true,
-   "commits": 1104,
-   "shown": 508,
-   "last_commit": "2026-09-27T00:25:04Z",
+   "commits": 1285,
+   "shown": 637,
+   "last_commit": "2026-09-28T16:33:19+13:00",
    "sections": [
     {
      "key": "classes",
@@ -3757,11 +4660,32 @@
        "date": "2026-09-22"
       },
       {
+       "h": "01ad7c5a",
+       "kind": "feat",
+       "scope": "rift",
+       "text": "The hoard adds get a signature cast each",
+       "date": "2026-09-22"
+      },
+      {
        "h": "ec764902",
        "kind": "feat",
        "scope": "warrior",
        "text": "Integrate authored ability presentation for release 44",
        "date": "2026-09-21"
+      },
+      {
+       "h": "32b0116b",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Frontal ruptures, control cast sigils and named cast bars",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "f141f80f",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Lightning, gust and arcane spell effects",
+       "date": "2026-09-20"
       },
       {
        "h": "6715bf3c",
@@ -3939,6 +4863,13 @@
        "date": "2026-09-24"
       },
       {
+       "h": "dbd3a5a8",
+       "kind": "fix",
+       "scope": "bags",
+       "text": "Read item cooldown timers only for items that have one",
+       "date": "2026-09-24"
+      },
+      {
        "h": "2967592d",
        "kind": "fix",
        "scope": "render",
@@ -3957,6 +4888,13 @@
        "kind": "fix",
        "scope": "render",
        "text": "Build the Warrior impact fragments in the kit preparation",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "162dfc27",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Name cave boss wind-ups on the target cast bar",
        "date": "2026-09-24"
       },
       {
@@ -4136,6 +5074,13 @@
        "date": "2026-09-20"
       },
       {
+       "h": "4dca129d",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Bonelord Xarreth's Wandering Scythe and Soul Harvest",
+       "date": "2026-09-20"
+      },
+      {
        "h": "999a876c",
        "kind": "feat",
        "scope": "desktop",
@@ -4256,6 +5201,20 @@
        "date": "2026-09-24"
       },
       {
+       "h": "ec8d69e4",
+       "kind": "feat",
+       "scope": "i18n",
+       "text": "Localize rift and hoard boss yells and place names",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "9e53f92b",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "The Mother of Mushrooms, first boss of the cave hoards",
+       "date": "2026-09-23"
+      },
+      {
        "h": "8507f7d9",
        "kind": "feat",
        "scope": "trinkets",
@@ -4284,6 +5243,48 @@
        "date": "2026-09-22"
       },
       {
+       "h": "1f088947",
+       "kind": "feat",
+       "scope": "rift",
+       "text": "The Boneyard's heavy is a Marrow Golem, not a swamp troll",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "9c156039",
+       "kind": "feat",
+       "scope": "rift",
+       "text": "Slower hoard control casts, and the caster's tell stays on the ground",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "b3363b3a",
+       "kind": "feat",
+       "scope": "rift",
+       "text": "Hoard room tuning from the room-by-room playtest",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "018fa0dc",
+       "kind": "feat",
+       "scope": "rift",
+       "text": "The Maw's tide volleys are laid by the seed, not on a cross",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "6c66a32d",
+       "kind": "feat",
+       "scope": "rift",
+       "text": "Warlord Grask charges whoever holds him",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "2bfaaa4f",
+       "kind": "feat",
+       "scope": "rift",
+       "text": "Broodmother Vysska's Silk Snare",
+       "date": "2026-09-22"
+      },
+      {
        "h": "4c105dbf",
        "kind": "feat",
        "scope": "charselect",
@@ -4298,6 +5299,62 @@
        "date": "2026-09-21"
       },
       {
+       "h": "ef7b8937",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Hoard boss gestures, rigid heads and a boss-sized stature",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "194138d0",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Boss call gestures, a forge maul, and readable mob portraits",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "8576e485",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Dress the Emberforge boss room as a forge chamber",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "996ef5a0",
+       "kind": "feat",
+       "scope": "render",
+       "text": "A themed room for every Buried Hoard boss",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "20b3ed6b",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Add bespoke boss mechanics",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "fabb29e6",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Reward chest ceremony for the final boss",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "ea0bc26f",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Boss loot for the Buried Hoards, three tiers by map rarity",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "7894e818",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Scale every boss mechanic by party size and map rarity",
+       "date": "2026-09-20"
+      },
+      {
        "h": "81425982",
        "kind": "feat",
        "scope": "render",
@@ -4309,6 +5366,13 @@
        "kind": "feat",
        "scope": "vault",
        "text": "Light the Weekly Vault's world row with the previous raid tier",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "7891a0f5",
+       "kind": "feat",
+       "scope": "sim",
+       "text": "Add Buried Hoard boss mechanics",
        "date": "2026-09-19"
       },
       {
@@ -4338,6 +5402,13 @@
        "scope": "loot",
        "text": "Redistribute the Crucible's caster weapon and held offhands to Heroic",
        "date": "2026-09-07"
+      },
+      {
+       "h": "debcbb79",
+       "kind": "perf",
+       "scope": "hoards",
+       "text": "Make the boss dressing allocation-free and motion-aware",
+       "date": "2026-09-20"
       },
       {
        "h": "2445b470",
@@ -4389,6 +5460,13 @@
        "date": "2026-09-23"
       },
       {
+       "h": "feb7e56f",
+       "kind": "fix",
+       "scope": "hoards",
+       "text": "Cave boss telegraphs behave online, no swings while held",
+       "date": "2026-09-23"
+      },
+      {
        "h": "b530e030",
        "kind": "fix",
        "scope": "reliquary",
@@ -4403,10 +5481,59 @@
        "date": "2026-09-22"
       },
       {
+       "h": "74c5a209",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "No Soul Grave under the scythe, and a boulder lane that does not flicker",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "c65ebe0b",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "The second room-by-room playtest",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "d408437b",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "A Buried Hoard scales up when someone new walks in",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "293592a8",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Keep the playtest fixes inside the hoard rooms",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "e8cf434a",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Buried Hoard mechanics hit a flat amount, not a share of health",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "06b02a4e",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "The hoard chest stands on the room floor, not under it",
+       "date": "2026-09-22"
+      },
+      {
        "h": "39312b5f",
        "kind": "fix",
        "scope": "render",
        "text": "Put the boss floor pieces that shipped with no order on the encounter band",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "afbe779f",
+       "kind": "fix",
+       "scope": "hoards",
+       "text": "Review pass over the four new boss mechanics",
        "date": "2026-09-21"
       },
       {
@@ -4502,10 +5629,45 @@
        "date": "2026-09-25"
       },
       {
+       "h": "e820fd8f",
+       "kind": "feat",
+       "scope": "map",
+       "text": "Rich world quest hover tooltip with reward icons",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "fcfb5af7",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Full item card in world quest rewards, fix Spanish mojibake",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "c40c6e63",
+       "kind": "feat",
+       "scope": "quests",
+       "text": "Add a World Quest entry banner that never collides",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "1ee3dd60",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "List a world quest only while in its area",
+       "date": "2026-09-24"
+      },
+      {
        "h": "46c2fbdb",
        "kind": "feat",
        "scope": "pvp",
        "text": "Zone policy, marking, hour DR window and shared aid hook",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "589ea1b8",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "The NPC answers when a Clue Scroll talk or delivery is solved",
        "date": "2026-09-22"
       },
       {
@@ -4565,6 +5727,13 @@
        "date": "2026-09-17"
       },
       {
+       "h": "f06b5b1a",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Implement faction reputation currencies and vendor item costs",
+       "date": "2026-09-17"
+      },
+      {
        "h": "d6f24a66",
        "kind": "feat",
        "scope": "world-quests",
@@ -4577,6 +5746,13 @@
        "scope": "world-quests",
        "text": "Add starter dialogs and timed ley retries",
        "date": "2026-09-12"
+      },
+      {
+       "h": "6d7c0bd4",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Load the World Quest rankings art from the site root",
+       "date": "2026-09-28"
       },
       {
        "h": "8e6cf5f7",
@@ -4607,10 +5783,24 @@
        "date": "2026-09-23"
       },
       {
+       "h": "73b6eed7",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep world quest panel independent of trinket",
+       "date": "2026-09-23"
+      },
+      {
        "h": "60f199b1",
        "kind": "fix",
        "scope": "content",
        "text": "Move the Shiverfen sprung traps onto the flat reed shelves",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "fb90837e",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Talk steps of a Clue Scroll hunt are solvable from the NPC window",
        "date": "2026-09-22"
       },
       {
@@ -4713,6 +5903,13 @@
        "date": "2026-09-19"
       },
       {
+       "h": "cd7b5fff",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "The treasure map window, chat lines and dev commands",
+       "date": "2026-09-18"
+      },
+      {
        "h": "5b614203",
        "kind": "feat",
        "scope": "perf",
@@ -4725,6 +5922,13 @@
        "scope": "ui",
        "text": "The leaderboard window in the rankings ledger style",
        "date": "2026-09-15"
+      },
+      {
+       "h": "5a963414",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Make party rewards durable across reconnects",
+       "date": "2026-09-24"
       },
       {
        "h": "e3e83afe",
@@ -4774,6 +5978,13 @@
        "scope": "desktop",
        "text": "Close the System Report self-review findings",
        "date": "2026-09-20"
+      },
+      {
+       "h": "a95777e4",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "The hoard's chat lines say hoard, not vault",
+       "date": "2026-09-18"
       },
       {
        "h": "64972e62",
@@ -5092,10 +6303,31 @@
        "date": "2026-09-24"
       },
       {
+       "h": "3260391c",
+       "kind": "feat",
+       "scope": "i18n",
+       "text": "Fill the non-Latin locales for faction goods and hoard casts",
+       "date": "2026-09-24"
+      },
+      {
        "h": "928f8feb",
        "kind": "feat",
        "scope": "meters",
        "text": "Localize settings, rename presets, and enlarge death recap",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "7b28de87",
+       "kind": "feat",
+       "scope": "reputation",
+       "text": "Show each faction's emblem in the Reputation tab crest",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "708feceb",
+       "kind": "feat",
+       "scope": "quests",
+       "text": "Give world quests their own tracker section",
        "date": "2026-09-24"
       },
       {
@@ -5110,6 +6342,20 @@
        "kind": "feat",
        "scope": "meters",
        "text": "Add pro gradient preset, fix window overlap and full transparency",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "3a4255ef",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Dress the wisp maze as a garden hedge maze with leaf spirits",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "179bd5f1",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Spread the Eastbrook freight crates over six spots",
        "date": "2026-09-24"
       },
       {
@@ -5141,6 +6387,13 @@
        "date": "2026-09-24"
       },
       {
+       "h": "b5b82148",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "A Coinsack Scurrier sometimes runs through a hoard room",
+       "date": "2026-09-23"
+      },
+      {
        "h": "e4b82fd5",
        "kind": "feat",
        "scope": "deeds",
@@ -5155,6 +6408,20 @@
        "date": "2026-09-23"
       },
       {
+       "h": "cb47bc0e",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "The Coinsack Scurrier's sack bursts into coins when it dies",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "7a332316",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Warn the room when a goblin thief is in it",
+       "date": "2026-09-23"
+      },
+      {
        "h": "d8b02017",
        "kind": "feat",
        "scope": "gear",
@@ -5162,10 +6429,38 @@
        "date": "2026-09-23"
       },
       {
+       "h": "5c2f70b8",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Polish character and cosmetics panels",
+       "date": "2026-09-23"
+      },
+      {
        "h": "25df79c2",
        "kind": "feat",
        "scope": "render",
        "text": "Antlers, crescent and wings for Moonwing; a veil for Gloamveil",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "21657394",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Deeprake, the Colossal Bat and the Voracious Chest",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "804f9192",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "The chest spits real coins; bigger bat and chest, slower frontals",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "7339b3f4",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "The Voracious Chest gets its tongue",
        "date": "2026-09-23"
       },
       {
@@ -5218,6 +6513,20 @@
        "date": "2026-09-22"
       },
       {
+       "h": "bbaf1475",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Eight more hoard room mobs get bodies of their own",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "99c11680",
+       "kind": "feat",
+       "scope": "render",
+       "text": "The last three hoard room mobs, and a rig for limbs that stand out",
+       "date": "2026-09-22"
+      },
+      {
        "h": "8db06511",
        "kind": "feat",
        "scope": "pvp",
@@ -5267,6 +6576,20 @@
        "date": "2026-09-22"
       },
       {
+       "h": "e3787495",
+       "kind": "feat",
+       "scope": "dev",
+       "text": "/dev hoard takes a map rarity",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "89691336",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Nyxaris's Twin Pulsars, the orbs that ward him",
+       "date": "2026-09-21"
+      },
+      {
        "h": "a620c8e8",
        "kind": "feat",
        "scope": "trade",
@@ -5278,6 +6601,13 @@
        "kind": "feat",
        "scope": "trade",
        "text": "Make the offered-row prompt a remove prompt",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "88f1cbef",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Emberforge's Hammer of the Forge and its rings of fire",
        "date": "2026-09-21"
       },
       {
@@ -5295,10 +6625,31 @@
        "date": "2026-09-21"
       },
       {
+       "h": "358ed20e",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "The Abyssal Maw's Tentacles of the Abyss",
+       "date": "2026-09-21"
+      },
+      {
        "h": "c7d06374",
        "kind": "feat",
        "scope": "death",
        "text": "Keeper dialogue differs for spared and levelled heroes",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "216c249c",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Warlord Grask's Rolling Boulder",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "cf910c6e",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Broodmother Vysska's Cocoon",
        "date": "2026-09-21"
       },
       {
@@ -5323,6 +6674,13 @@
        "date": "2026-09-21"
       },
       {
+       "h": "1a24a124",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Playtest pass on the forge doors and the Abyssal Maw",
+       "date": "2026-09-21"
+      },
+      {
        "h": "f2da0dae",
        "kind": "feat",
        "scope": "pvp",
@@ -5341,6 +6699,34 @@
        "kind": "feat",
        "scope": "ui",
        "text": "World PvP tab, /pvp hostility on nameplates and the target frame",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "295c513d",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Forge gates on the hammer ring, and Emberforge gauntlets",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "256d343e",
+       "kind": "feat",
+       "scope": "audio",
+       "text": "Give the hammer, boulder, tentacles and cocoon a voice",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "fbbe0ce6",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Rebuild the Tempest Vharok room around a real storm spire",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "60f1f372",
+       "kind": "feat",
+       "scope": "render",
+       "text": "The Abyssal Maw's room gets its own Tide Thrall and Deep Lurker",
        "date": "2026-09-21"
       },
       {
@@ -5393,10 +6779,80 @@
        "date": "2026-09-20"
       },
       {
+       "h": "517cc0a0",
+       "kind": "feat",
+       "scope": "dev",
+       "text": "Add direct legendary hoard travel",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "3d857256",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Give tide waves volume and fair changing gaps",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "743f7aaf",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Interruptible control, Storm Surge, spiderlings and tighter kits",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "de39887e",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Ice crystals, storm arcs and terrain-draped telegraphs",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "ab5a803e",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Rework Nyxaris, move the frost kit home and tidy five bosses",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "100d7d14",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Storm Caller Lightning Strike",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "ec22b66c",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Trial real boulder shapes for the hoard wall and cornice",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "500eaabb",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "One continuous cliff body with rocks embedded in it",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "3c36a4da",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Add orbital lightning barrage",
+       "date": "2026-09-20"
+      },
+      {
        "h": "d296f40f",
        "kind": "feat",
        "scope": "market",
        "text": "Wanted board with buy orders and a not-on-the-market strip",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "9b5b1b20",
+       "kind": "feat",
+       "scope": "reliquary",
+       "text": "A Buried Hoards page, one slot per hoard piece",
        "date": "2026-09-20"
       },
       {
@@ -5407,6 +6863,13 @@
        "date": "2026-09-20"
       },
       {
+       "h": "f5424c78",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Hoarfrost's Ice Age, cover behind fallen icicles",
+       "date": "2026-09-20"
+      },
+      {
        "h": "8a2818ec",
        "kind": "feat",
        "scope": "game",
@@ -5414,10 +6877,80 @@
        "date": "2026-09-19"
       },
       {
+       "h": "251f197f",
+       "kind": "feat",
+       "scope": "map",
+       "text": "Give buried hoards their own treasure markers",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "0fa7b051",
+       "kind": "feat",
+       "scope": "net",
+       "text": "Mirror buried hoard rarity in entity snapshots",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "e013147b",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Reveal buried hoards as unearthed wooden hatches",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "d3caa189",
+       "kind": "feat",
+       "scope": "vaults",
+       "text": "Generate outdoor hoard valleys",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "75224b6b",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Build hidden hoard valleys",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "4bb6f181",
+       "kind": "feat",
+       "scope": "map",
+       "text": "Render hoard valleys as open ground",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "e1df3dd8",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Light hoard valleys as open air",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "7fd5c8bd",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Dress hoard valleys as collapsed caverns",
+       "date": "2026-09-19"
+      },
+      {
        "h": "05e3f187",
        "kind": "feat",
        "scope": "desktop",
        "text": "Collect and save a host diagnostic from the shell",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "cfcda0fe",
+       "kind": "feat",
+       "scope": "sim",
+       "text": "Diversify Buried Hoard bosses",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "9c87ac1d",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Paint Buried Hoard map icons",
        "date": "2026-09-19"
       },
       {
@@ -5453,6 +6986,34 @@
        "kind": "feat",
        "scope": "world-quests",
        "text": "A modest daily casket with rare extras and Grumbol",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "6ff0e80c",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Treasure maps and vaults, the sim engine",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "9a031c75",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Puzzle-free vaults and Cartographer's Ink at the quartermasters",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "8457edbe",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "One-room treasure vaults sized by the map's rarity",
+       "date": "2026-09-18"
+      },
+      {
+       "h": "28d2fb1a",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "The Buried Hoard, its own name, entrance and level 16 gate",
        "date": "2026-09-18"
       },
       {
@@ -5890,6 +7451,41 @@
        "date": "2026-09-19"
       },
       {
+       "h": "59e5f5c4",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Bring release/v0.44.0 into the World Quests follow-ups",
+       "date": "2026-09-28"
+      },
+      {
+       "h": "c9b8c4ce",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Name the real cause and pin every shipped rankings art file",
+       "date": "2026-09-28"
+      },
+      {
+       "h": "3b5c57bc",
+       "kind": "fix",
+       "scope": "hoards",
+       "text": "Bring release/v0.44.0 into Buried Hoards",
+       "date": "2026-09-28"
+      },
+      {
+       "h": "ed5ead6a",
+       "kind": "fix",
+       "scope": "hoards",
+       "text": "Settle the merged tree's pins, seams and assets",
+       "date": "2026-09-28"
+      },
+      {
+       "h": "2c998e00",
+       "kind": "fix",
+       "scope": "hoards",
+       "text": "Bring release/v0.44.0 (with PR 3847) into Buried Hoards",
+       "date": "2026-09-28"
+      },
+      {
        "h": "9576c76a",
        "kind": "fix",
        "scope": "ferry",
@@ -6240,6 +7836,13 @@
        "date": "2026-09-24"
       },
       {
+       "h": "3a27df0b",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Close retry and reward recovery gaps",
+       "date": "2026-09-24"
+      },
+      {
        "h": "7423941b",
        "kind": "fix",
        "scope": "ui",
@@ -6275,6 +7878,20 @@
        "date": "2026-09-24"
       },
       {
+       "h": "f5c22c47",
+       "kind": "fix",
+       "scope": "hoards",
+       "text": "Bring release/v0.44.0 into buried hoards",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "7778d186",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Localize the faction quartermaster currency refusal",
+       "date": "2026-09-24"
+      },
+      {
        "h": "40298be8",
        "kind": "fix",
        "scope": "ui",
@@ -6286,6 +7903,13 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Preserve compatibility with parallel frame changes",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "bd2cbc5d",
+       "kind": "fix",
+       "scope": "hoards",
+       "text": "Catch up with release/v0.44.0 again",
        "date": "2026-09-24"
       },
       {
@@ -6317,6 +7941,13 @@
        "date": "2026-09-24"
       },
       {
+       "h": "28384f5d",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Translate the Clockwork Shock Bomb and count the hoard letter",
+       "date": "2026-09-24"
+      },
+      {
        "h": "e37842a9",
        "kind": "fix",
        "scope": "render",
@@ -6345,6 +7976,20 @@
        "date": "2026-09-24"
       },
       {
+       "h": "71dffdd4",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Close the wisp maze panel after the win",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "1ca2ec02",
+       "kind": "fix",
+       "scope": "evergarden",
+       "text": "Clear and level the wisp maze trial's ground",
+       "date": "2026-09-24"
+      },
+      {
        "h": "26e3336b",
        "kind": "fix",
        "scope": "render",
@@ -6356,6 +8001,13 @@
        "kind": "fix",
        "scope": "harbor",
        "text": "Save Codex's first Eastbrook ferry pass",
+       "date": "2026-09-24"
+      },
+      {
+       "h": "24d64e29",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Center the forge action bar and show its button icons",
        "date": "2026-09-24"
       },
       {
@@ -6408,10 +8060,24 @@
        "date": "2026-09-23"
       },
       {
+       "h": "9020f90c",
+       "kind": "fix",
+       "scope": "vaults",
+       "text": "Bump hoard loot item levels to 28/31/33 and boost epic/legendary drop rates",
+       "date": "2026-09-23"
+      },
+      {
        "h": "c8c936e9",
        "kind": "fix",
        "scope": "talents",
        "text": "Close the remaining routes to keeping both talents",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "7fbb4cb4",
+       "kind": "fix",
+       "scope": "hoards",
+       "text": "Tell a late arrival the goblin's real time left",
        "date": "2026-09-23"
       },
       {
@@ -6422,10 +8088,31 @@
        "date": "2026-09-23"
       },
       {
+       "h": "50cf32e2",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Update branch to v0.44.0",
+       "date": "2026-09-23"
+      },
+      {
        "h": "ef0b7bb4",
        "kind": "fix",
        "scope": "render",
        "text": "Gate, hide and share the form adornment kits",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "74f7e398",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Tripo hoard mobs strike with both hands, never the one-hand clips",
+       "date": "2026-09-23"
+      },
+      {
+       "h": "a683ee43",
+       "kind": "fix",
+       "scope": "hoards",
+       "text": "Steady chest lid and a stone floor in the spore cave",
        "date": "2026-09-23"
       },
       {
@@ -6548,10 +8235,24 @@
        "date": "2026-09-22"
       },
       {
+       "h": "c51d661d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Bigger hoard room adds, and Vharok calls the storm standing still",
+       "date": "2026-09-22"
+      },
+      {
        "h": "3e183a1d",
        "kind": "fix",
        "scope": "quests",
        "text": "Keep the Palmreach confection board on every day's roster",
+       "date": "2026-09-22"
+      },
+      {
+       "h": "26801340",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Nyxaris's face moves with his hood",
        "date": "2026-09-22"
       },
       {
@@ -6716,6 +8417,27 @@
        "date": "2026-09-21"
       },
       {
+       "h": "313fb84f",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Held models for the Buried Hoard shields",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "29baeb9c",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Straight gauntlets, and a clear floor in the forge room",
+       "date": "2026-09-21"
+      },
+      {
+       "h": "e794b0e1",
+       "kind": "fix",
+       "scope": "render",
+       "text": "No bare trees in the forge room",
+       "date": "2026-09-21"
+      },
+      {
        "h": "4aab6d2d",
        "kind": "fix",
        "scope": "render",
@@ -6814,10 +8536,38 @@
        "date": "2026-09-20"
       },
       {
+       "h": "687aaf48",
+       "kind": "fix",
+       "scope": "hoards",
+       "text": "Telegraph Grask strikes separately",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "c67ab21a",
+       "kind": "fix",
+       "scope": "hoards",
+       "text": "Two-second caster bars and no stun on Tempest Vharok",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "7e293f3d",
+       "kind": "fix",
+       "scope": "hoards",
+       "text": "Open the reward chest from the interact key, and say so",
+       "date": "2026-09-20"
+      },
+      {
        "h": "b5d90700",
        "kind": "fix",
        "scope": "market",
        "text": "Bound the Wanted board and harden its readout, save, and panel",
+       "date": "2026-09-20"
+      },
+      {
+       "h": "146ce9b0",
+       "kind": "fix",
+       "scope": "hoards",
+       "text": "Break the content to data import cycle the hoard casts closed",
        "date": "2026-09-20"
       },
       {
@@ -6954,6 +8704,20 @@
        "date": "2026-09-19"
       },
       {
+       "h": "6ed2edc2",
+       "kind": "fix",
+       "scope": "treasure",
+       "text": "Seat hoard entrances on dry stable ground",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "cba6e529",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Bound hoard light shader power inputs",
+       "date": "2026-09-19"
+      },
+      {
        "h": "eebcb9ad",
        "kind": "fix",
        "scope": "render",
@@ -6965,6 +8729,48 @@
        "kind": "fix",
        "scope": "render",
        "text": "Withdraw the shader warm option row, keep the stored choice",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "6071eea7",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep hoard valleys readable",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "f7b95f6f",
+       "kind": "fix",
+       "scope": "vaults",
+       "text": "Harden hidden valley presentation",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "b8f07263",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Preserve cavern camera sightlines",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "baeca55e",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Make Hoard frontal readable",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "d7d2d557",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Rarer Grumbol from Epic and Legendary hoards",
+       "date": "2026-09-19"
+      },
+      {
+       "h": "05d7dfe8",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Align treasure map X with dig site",
        "date": "2026-09-19"
       },
       {
