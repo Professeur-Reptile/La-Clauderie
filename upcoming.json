@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-28T11:16:45Z",
+ "generated": "2026-09-28T20:42:40Z",
  "base_tag": "v0.44.0",
- "version": "v0.45.0",
- "branch": "release/v0.45.0",
- "declared_version": "0.45.0",
- "imminent": true,
- "commits": 5,
- "shown": 1,
- "last_commit": "2026-09-28T07:11:35Z",
+ "version": "v0.44.1",
+ "branch": "release/v0.44.1",
+ "declared_version": "0.44.0",
+ "imminent": false,
+ "commits": 7,
+ "shown": 3,
+ "last_commit": "2026-09-29T09:39:15+13:00",
  "sections": [
   {
    "key": "classes",
@@ -56,11 +56,100 @@
      "scope": "desktop",
      "text": "Keep the host-diag manifest's bytes on Windows checkouts",
      "date": "2026-09-28"
+    },
+    {
+     "h": "3464a723",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Allow five guardians in wisp maze wire decode",
+     "date": "2026-09-28"
+    },
+    {
+     "h": "407b468c",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Keep rewarded practice runs completed",
+     "date": "2026-09-28"
     }
    ]
   }
  ],
  "versions": [
+  {
+   "version": "v0.44.1",
+   "branch": "release/v0.44.1",
+   "declared_version": "0.44.0",
+   "imminent": false,
+   "commits": 7,
+   "shown": 3,
+   "last_commit": "2026-09-29T09:39:15+13:00",
+   "sections": [
+    {
+     "key": "classes",
+     "icon": "⚔️",
+     "fr": "Classes & sorts",
+     "en": "Classes & spells",
+     "items": []
+    },
+    {
+     "key": "metiers",
+     "icon": "🔨",
+     "fr": "Métiers & récolte",
+     "en": "Professions & gathering",
+     "items": []
+    },
+    {
+     "key": "donjons",
+     "icon": "🐉",
+     "fr": "Donjons, failles & boss",
+     "en": "Dungeons, rifts & bosses",
+     "items": []
+    },
+    {
+     "key": "monde",
+     "icon": "🗺️",
+     "fr": "Monde & quêtes",
+     "en": "World & quests",
+     "items": []
+    },
+    {
+     "key": "guilde",
+     "icon": "🏰",
+     "fr": "Guilde & social",
+     "en": "Guild & social",
+     "items": []
+    },
+    {
+     "key": "confort",
+     "icon": "⚙️",
+     "fr": "Confort & technique",
+     "en": "Comfort & technical",
+     "items": [
+      {
+       "h": "43f21267",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Keep the host-diag manifest's bytes on Windows checkouts",
+       "date": "2026-09-28"
+      },
+      {
+       "h": "3464a723",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Allow five guardians in wisp maze wire decode",
+       "date": "2026-09-28"
+      },
+      {
+       "h": "407b468c",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Keep rewarded practice runs completed",
+       "date": "2026-09-28"
+      }
+     ]
+    }
+   ]
+  },
   {
    "version": "v0.45.0",
    "branch": "release/v0.45.0",
