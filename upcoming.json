@@ -1,20 +1,35 @@
 {
- "generated": "2026-09-28T20:42:40Z",
+ "generated": "2026-09-29T02:14:15Z",
  "base_tag": "v0.44.0",
  "version": "v0.44.1",
  "branch": "release/v0.44.1",
  "declared_version": "0.44.0",
  "imminent": false,
- "commits": 7,
- "shown": 3,
- "last_commit": "2026-09-29T09:39:15+13:00",
+ "commits": 47,
+ "shown": 18,
+ "last_commit": "2026-09-29T15:00:43+13:00",
  "sections": [
   {
    "key": "classes",
    "icon": "⚔️",
    "fr": "Classes & sorts",
    "en": "Classes & spells",
-   "items": []
+   "items": [
+    {
+     "h": "1dd5d391",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Preserve stealth when casting druid dash",
+     "date": "2026-09-28"
+    },
+    {
+     "h": "a9a0b9a0",
+     "kind": "fix",
+     "scope": "action-bar",
+     "text": "Keep refused layout saves pending and seed spec bars with their spells",
+     "date": "2026-09-28"
+    }
+   ]
   },
   {
    "key": "metiers",
@@ -28,7 +43,15 @@
    "icon": "🐉",
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
-   "items": []
+   "items": [
+    {
+     "h": "2d8f1e99",
+     "kind": "feat",
+     "scope": "dfinder",
+     "text": "Add read-only Weekly Vault preview tab to Dungeon Finder",
+     "date": "2026-09-28"
+    }
+   ]
   },
   {
    "key": "monde",
@@ -51,6 +74,48 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "9d4e95b6",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Reward flagged play with bonuses and persistent titles",
+     "date": "2026-09-29"
+    },
+    {
+     "h": "da98070e",
+     "kind": "feat",
+     "scope": "desktop",
+     "text": "Keep compiled shader programs between sessions",
+     "date": "2026-09-28"
+    },
+    {
+     "h": "42169c16",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Require Shift to drag an action off its action-bar slot",
+     "date": "2026-09-28"
+    },
+    {
+     "h": "2f3d68d6",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Translate weekly vault preview notice",
+     "date": "2026-09-29"
+    },
+    {
+     "h": "6ff86b66",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Pause tutorial rewards and preserve panel scroll",
+     "date": "2026-09-29"
+    },
+    {
+     "h": "f70fe37a",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Reconcile title catalog and CI fixtures",
+     "date": "2026-09-29"
+    },
+    {
      "h": "43f21267",
      "kind": "fix",
      "scope": "desktop",
@@ -70,6 +135,48 @@
      "scope": "world-quests",
      "text": "Keep rewarded practice runs completed",
      "date": "2026-09-28"
+    },
+    {
+     "h": "22d5b309",
+     "kind": "fix",
+     "scope": "shell",
+     "text": "Route footer legal links and whitepaper to system browser",
+     "date": "2026-09-28"
+    },
+    {
+     "h": "926ff965",
+     "kind": "fix",
+     "scope": "meters",
+     "text": "Show death recap instead of dealt damage in deaths tab tooltip",
+     "date": "2026-09-28"
+    },
+    {
+     "h": "fd02497f",
+     "kind": "fix",
+     "scope": "dfinder",
+     "text": "Assign explicit height to df-vault-mode window",
+     "date": "2026-09-28"
+    },
+    {
+     "h": "a64cb3a6",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Keep the shader disk cache off below the fixed Chromium",
+     "date": "2026-09-28"
+    },
+    {
+     "h": "25ab0d96",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Open the hoard chest for groups by typing the guest-cap query",
+     "date": "2026-09-28"
+    },
+    {
+     "h": "b9805763",
+     "kind": "fix",
+     "scope": "shaders",
+     "text": "Read the corpus sources off three's program handles",
+     "date": "2026-09-26"
     }
    ]
   }
@@ -80,16 +187,31 @@
    "branch": "release/v0.44.1",
    "declared_version": "0.44.0",
    "imminent": false,
-   "commits": 7,
-   "shown": 3,
-   "last_commit": "2026-09-29T09:39:15+13:00",
+   "commits": 47,
+   "shown": 18,
+   "last_commit": "2026-09-29T15:00:43+13:00",
    "sections": [
     {
      "key": "classes",
      "icon": "⚔️",
      "fr": "Classes & sorts",
      "en": "Classes & spells",
-     "items": []
+     "items": [
+      {
+       "h": "1dd5d391",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Preserve stealth when casting druid dash",
+       "date": "2026-09-28"
+      },
+      {
+       "h": "a9a0b9a0",
+       "kind": "fix",
+       "scope": "action-bar",
+       "text": "Keep refused layout saves pending and seed spec bars with their spells",
+       "date": "2026-09-28"
+      }
+     ]
     },
     {
      "key": "metiers",
@@ -103,7 +225,15 @@
      "icon": "🐉",
      "fr": "Donjons, failles & boss",
      "en": "Dungeons, rifts & bosses",
-     "items": []
+     "items": [
+      {
+       "h": "2d8f1e99",
+       "kind": "feat",
+       "scope": "dfinder",
+       "text": "Add read-only Weekly Vault preview tab to Dungeon Finder",
+       "date": "2026-09-28"
+      }
+     ]
     },
     {
      "key": "monde",
@@ -125,6 +255,48 @@
      "fr": "Confort & technique",
      "en": "Comfort & technical",
      "items": [
+      {
+       "h": "9d4e95b6",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Reward flagged play with bonuses and persistent titles",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "da98070e",
+       "kind": "feat",
+       "scope": "desktop",
+       "text": "Keep compiled shader programs between sessions",
+       "date": "2026-09-28"
+      },
+      {
+       "h": "42169c16",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Require Shift to drag an action off its action-bar slot",
+       "date": "2026-09-28"
+      },
+      {
+       "h": "2f3d68d6",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Translate weekly vault preview notice",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "6ff86b66",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Pause tutorial rewards and preserve panel scroll",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "f70fe37a",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Reconcile title catalog and CI fixtures",
+       "date": "2026-09-29"
+      },
       {
        "h": "43f21267",
        "kind": "fix",
@@ -145,6 +317,48 @@
        "scope": "world-quests",
        "text": "Keep rewarded practice runs completed",
        "date": "2026-09-28"
+      },
+      {
+       "h": "22d5b309",
+       "kind": "fix",
+       "scope": "shell",
+       "text": "Route footer legal links and whitepaper to system browser",
+       "date": "2026-09-28"
+      },
+      {
+       "h": "926ff965",
+       "kind": "fix",
+       "scope": "meters",
+       "text": "Show death recap instead of dealt damage in deaths tab tooltip",
+       "date": "2026-09-28"
+      },
+      {
+       "h": "fd02497f",
+       "kind": "fix",
+       "scope": "dfinder",
+       "text": "Assign explicit height to df-vault-mode window",
+       "date": "2026-09-28"
+      },
+      {
+       "h": "a64cb3a6",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Keep the shader disk cache off below the fixed Chromium",
+       "date": "2026-09-28"
+      },
+      {
+       "h": "25ab0d96",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Open the hoard chest for groups by typing the guest-cap query",
+       "date": "2026-09-28"
+      },
+      {
+       "h": "b9805763",
+       "kind": "fix",
+       "scope": "shaders",
+       "text": "Read the corpus sources off three's program handles",
+       "date": "2026-09-26"
       }
      ]
     }
@@ -152,19 +366,76 @@
   },
   {
    "version": "v0.45.0",
-   "branch": "release/v0.45.0",
+   "branch": "ossbrain-release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 5,
-   "shown": 1,
-   "last_commit": "2026-09-28T07:11:35Z",
+   "commits": 83,
+   "shown": 39,
+   "last_commit": "2026-09-29T01:13:15Z",
    "sections": [
     {
      "key": "classes",
      "icon": "⚔️",
      "fr": "Classes & sorts",
      "en": "Classes & spells",
-     "items": []
+     "items": [
+      {
+       "h": "1b5ff7a0",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Veil stealth in a rogue palette and an other palette",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "4bd77755",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Veil Moonkin and Soul Rend in their own palettes",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "f93be588",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Draw Shadowform as an opaque tint on the source programs",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "6172da8e",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Decode the Warrior kit's image sheets off the main thread",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "92196912",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Draw the Warrior kit surfaces with Lambert on Low",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "9b992759",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Link the Warrior kit's drawn programs at boot",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "9e2d9d52",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Prepare nothing of the Warrior kit on phones",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "5d90f3d3",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Ask for the Warrior kit again after a failed preparation",
+       "date": "2026-09-27"
+      }
+     ]
     },
     {
      "key": "metiers",
@@ -178,7 +449,22 @@
      "icon": "🐉",
      "fr": "Donjons, failles & boss",
      "en": "Dungeons, rifts & bosses",
-     "items": []
+     "items": [
+      {
+       "h": "a889d2db",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Build the cannon rift portals before the encounter's entry gate",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "041ed9ec",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Give the cannon encounter the Low portal look on Low",
+       "date": "2026-09-27"
+      }
+     ]
     },
     {
      "key": "monde",
@@ -201,11 +487,207 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "0a52ba0c",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Pause the GPU queue and relink compiles that straddle a context loss",
+       "date": "2026-09-28"
+      },
+      {
+       "h": "4446ab1b",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Show a \"Restoring graphics\" note while a context restore holds the view",
+       "date": "2026-09-28"
+      },
+      {
+       "h": "eb4db8d5",
+       "kind": "feat",
+       "scope": "server",
+       "text": "Count movement playout growths in the tick capture",
+       "date": "2026-09-28"
+      },
+      {
+       "h": "9f9189ee",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Pin the spirit veil program family and its rig sort",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "122dc826",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Draw released spirits with the shared spirit veil",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "19b27828",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Veil released spirits and link the family before the curtain",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "dffd1dc0",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Give the spirit veil palette knobs and the outfit dye",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "3f95ad59",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Veil Ghost Wolf, the March, the Keeper and the visions",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "150c4422",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Stop loading the shockwave sheet nothing draws",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "a7afb95e",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Close each kit sheet bitmap once it is uploaded",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "8e044289",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Touch the veil family's program tables before the curtain",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "ba72cd56",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Recover cleanly from an in-place WebGL context restore",
+       "date": "2026-09-28"
+      },
+      {
+       "h": "504b97c2",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Merge release/v0.44.0 into the WebGL context restore",
+       "date": "2026-09-28"
+      },
+      {
        "h": "43f21267",
        "kind": "fix",
        "scope": "desktop",
        "text": "Keep the host-diag manifest's bytes on Windows checkouts",
        "date": "2026-09-28"
+      },
+      {
+       "h": "802330f4",
+       "kind": "fix",
+       "scope": "movement",
+       "text": "Stop dropping the inputs of chronically late v2 clients",
+       "date": "2026-09-28"
+      },
+      {
+       "h": "93d0c231",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Warm the ferry's dithered sail clones in the props prewarm",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "9522f49f",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep the stock opaque write in the veil and list it in the scans",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "ba194f73",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Load the barrel GLB once per world entry",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "8cdc4315",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Wait the trinket relics on their own program family",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "10c9fbe3",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Commit a character effect swap only on a readiness proof",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "662eda86",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Start the relic family clock only when a relic is tracked",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "fac8a362",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Never hold the readiness proof on a texture the lane refuses",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "9a5ec55d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Link the solid impact fragments' program at boot",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "b0a66192",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Check the kit crest readiness on every held storm frame",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "69e1a2e9",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep the off-thread sheet decode to Chromium",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "7e01c2bb",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Read the veil family's renderer properties at use time",
+       "date": "2026-09-27"
+      },
+      {
+       "h": "ff3cd463",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Warm the local stealth and form twins, not the spirit run",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "086c3b2b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Let a resumed veil unit settle before its touch runs",
+       "date": "2026-09-26"
+      },
+      {
+       "h": "cf7bfa98",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Hide the weapon-skin glow shells under a veil that drops them",
+       "date": "2026-09-26"
       }
      ]
     }
