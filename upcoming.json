@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-29T02:14:15Z",
+ "generated": "2026-09-29T08:57:41Z",
  "base_tag": "v0.44.0",
  "version": "v0.44.1",
  "branch": "release/v0.44.1",
- "declared_version": "0.44.0",
- "imminent": false,
- "commits": 47,
- "shown": 18,
- "last_commit": "2026-09-29T15:00:43+13:00",
+ "declared_version": "0.44.1",
+ "imminent": true,
+ "commits": 56,
+ "shown": 20,
+ "last_commit": "2026-09-29T21:39:09+13:00",
  "sections": [
   {
    "key": "classes",
@@ -116,6 +116,20 @@
      "date": "2026-09-29"
     },
     {
+     "h": "65845d0e",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Correct feral Season 2 gear and mobility bonuses",
+     "date": "2026-09-29"
+    },
+    {
+     "h": "38377396",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Split feral staff Strength and Agility",
+     "date": "2026-09-29"
+    },
+    {
      "h": "43f21267",
      "kind": "fix",
      "scope": "desktop",
@@ -185,11 +199,11 @@
   {
    "version": "v0.44.1",
    "branch": "release/v0.44.1",
-   "declared_version": "0.44.0",
-   "imminent": false,
-   "commits": 47,
-   "shown": 18,
-   "last_commit": "2026-09-29T15:00:43+13:00",
+   "declared_version": "0.44.1",
+   "imminent": true,
+   "commits": 56,
+   "shown": 20,
+   "last_commit": "2026-09-29T21:39:09+13:00",
    "sections": [
     {
      "key": "classes",
@@ -295,6 +309,20 @@
        "kind": "fix",
        "scope": "pvp",
        "text": "Reconcile title catalog and CI fixtures",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "65845d0e",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Correct feral Season 2 gear and mobility bonuses",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "38377396",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Split feral staff Strength and Agility",
        "date": "2026-09-29"
       },
       {
