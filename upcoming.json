@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-30T01:28:28Z",
+ "generated": "2026-09-30T06:53:13Z",
  "base_tag": "v0.44.1",
  "version": "v0.45.0",
  "branch": "ossbrain-release/v0.45.0",
  "declared_version": "0.45.0",
  "imminent": true,
- "commits": 82,
- "shown": 38,
- "last_commit": "2026-09-29T01:13:15Z",
+ "commits": 133,
+ "shown": 66,
+ "last_commit": "2026-09-30T05:24:44Z",
  "sections": [
   {
    "key": "classes",
@@ -15,6 +15,13 @@
    "fr": "Classes & sorts",
    "en": "Classes & spells",
    "items": [
+    {
+     "h": "6cd86e79",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Add a Spell Effects option to turn off spell VFX",
+     "date": "2026-09-29"
+    },
     {
      "h": "1b5ff7a0",
      "kind": "feat",
@@ -42,6 +49,13 @@
      "scope": "render",
      "text": "Decode the Warrior kit's image sheets off the main thread",
      "date": "2026-09-27"
+    },
+    {
+     "h": "86e82a55",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep encounter and enemy reads under Spell Effects off",
+     "date": "2026-09-29"
     },
     {
      "h": "92196912",
@@ -87,6 +101,27 @@
    "en": "Dungeons, rifts & bosses",
    "items": [
     {
+     "h": "61aa3ea0",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Align rift gate test hook with LoadedGltf",
+     "date": "2026-09-30"
+    },
+    {
+     "h": "552b1058",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stream Rift creature bodies on iOS only when one is reachable",
+     "date": "2026-09-29"
+    },
+    {
+     "h": "f7dc40c7",
+     "kind": "fix",
+     "scope": "audio",
+     "text": "Bound decoded SFX and boss PCM on the iOS memory profile",
+     "date": "2026-09-29"
+    },
+    {
      "h": "a889d2db",
      "kind": "fix",
      "scope": "render",
@@ -107,7 +142,15 @@
    "icon": "🗺️",
    "fr": "Monde & quêtes",
    "en": "World & quests",
-   "items": []
+   "items": [
+    {
+     "h": "d0d6b6a6",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Load the Drakelands kit on approach on iOS",
+     "date": "2026-09-30"
+    }
+   ]
   },
   {
    "key": "guilde",
@@ -122,6 +165,41 @@
    "fr": "Confort & technique",
    "en": "Comfort & technical",
    "items": [
+    {
+     "h": "42b24b99",
+     "kind": "feat",
+     "scope": "fct",
+     "text": "Drop the per-school damage colours",
+     "date": "2026-09-30"
+    },
+    {
+     "h": "f53e5e33",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Stack trophy skulls and record whose each one is",
+     "date": "2026-09-30"
+    },
+    {
+     "h": "da0de21f",
+     "kind": "feat",
+     "scope": "fct",
+     "text": "Make outgoing damage numbers stand out by default",
+     "date": "2026-09-29"
+    },
+    {
+     "h": "5e4743ac",
+     "kind": "feat",
+     "scope": "hill",
+     "text": "Announce, map, rank and reward King of the Hill",
+     "date": "2026-09-29"
+    },
+    {
+     "h": "0f314fe8",
+     "kind": "feat",
+     "scope": "hill",
+     "text": "Caption the map marker below its badge, add shots",
+     "date": "2026-09-29"
+    },
     {
      "h": "0a52ba0c",
      "kind": "feat",
@@ -198,6 +276,125 @@
      "scope": "render",
      "text": "Touch the veil family's program tables before the curtain",
      "date": "2026-09-26"
+    },
+    {
+     "h": "50f51c05",
+     "kind": "fix",
+     "scope": "hill",
+     "text": "Keep the 3 h schedule, 45 min stand and map as they were",
+     "date": "2026-09-30"
+    },
+    {
+     "h": "a69cf3a0",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Bound the world-map background cache on the iOS memory profile",
+     "date": "2026-09-30"
+    },
+    {
+     "h": "5bff44f2",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bound idle composed looks on the iOS memory profile",
+     "date": "2026-09-30"
+    },
+    {
+     "h": "67af07d6",
+     "kind": "fix",
+     "scope": "test",
+     "text": "Stop character model downloads from outliving happy-dom suites",
+     "date": "2026-09-30"
+    },
+    {
+     "h": "98167a73",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Flush movement before unstuck command",
+     "date": "2026-09-30"
+    },
+    {
+     "h": "84e2428b",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Paint the harbor route plates at half size on the iOS memory profile",
+     "date": "2026-09-30"
+    },
+    {
+     "h": "d6f94642",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Keep unstuck movement flush under budget",
+     "date": "2026-09-30"
+    },
+    {
+     "h": "7056e58c",
+     "kind": "fix",
+     "scope": "fct",
+     "text": "Keep the vivid keyline off the effects tier",
+     "date": "2026-09-29"
+    },
+    {
+     "h": "a1a4ac1a",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Drop world kill gold and a trophy skull on the body",
+     "date": "2026-09-29"
+    },
+    {
+     "h": "7794984f",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Harden World PvP spoils and show the loot icon on the body",
+     "date": "2026-09-29"
+    },
+    {
+     "h": "4c91635f",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Give the trophy skull its own mounted-trophy icon",
+     "date": "2026-09-29"
+    },
+    {
+     "h": "475f9d01",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Preserve stackable skulls during spoils settlement",
+     "date": "2026-09-29"
+    },
+    {
+     "h": "1330bf09",
+     "kind": "fix",
+     "scope": "hill",
+     "text": "Close the vault farm and match the old Honor exactly",
+     "date": "2026-09-29"
+    },
+    {
+     "h": "f1b76514",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Drop the GLTF parser from every loaded GLB",
+     "date": "2026-09-29"
+    },
+    {
+     "h": "895e840d",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Halve the stubble decal map on the iOS memory profile",
+     "date": "2026-09-29"
+    },
+    {
+     "h": "9ec36a50",
+     "kind": "fix",
+     "scope": "portraits",
+     "text": "Warm only the default class skin on the iOS memory profile",
+     "date": "2026-09-29"
+    },
+    {
+     "h": "f578f89c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Cap character-side KTX2 mips at 512 on iPhones",
+     "date": "2026-09-29"
     },
     {
      "h": "ba72cd56",
@@ -327,9 +524,9 @@
    "branch": "ossbrain-release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 82,
-   "shown": 38,
-   "last_commit": "2026-09-29T01:13:15Z",
+   "commits": 133,
+   "shown": 66,
+   "last_commit": "2026-09-30T05:24:44Z",
    "sections": [
     {
      "key": "classes",
@@ -337,6 +534,13 @@
      "fr": "Classes & sorts",
      "en": "Classes & spells",
      "items": [
+      {
+       "h": "6cd86e79",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Add a Spell Effects option to turn off spell VFX",
+       "date": "2026-09-29"
+      },
       {
        "h": "1b5ff7a0",
        "kind": "feat",
@@ -364,6 +568,13 @@
        "scope": "render",
        "text": "Decode the Warrior kit's image sheets off the main thread",
        "date": "2026-09-27"
+      },
+      {
+       "h": "86e82a55",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep encounter and enemy reads under Spell Effects off",
+       "date": "2026-09-29"
       },
       {
        "h": "92196912",
@@ -409,6 +620,27 @@
      "en": "Dungeons, rifts & bosses",
      "items": [
       {
+       "h": "61aa3ea0",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Align rift gate test hook with LoadedGltf",
+       "date": "2026-09-30"
+      },
+      {
+       "h": "552b1058",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Stream Rift creature bodies on iOS only when one is reachable",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "f7dc40c7",
+       "kind": "fix",
+       "scope": "audio",
+       "text": "Bound decoded SFX and boss PCM on the iOS memory profile",
+       "date": "2026-09-29"
+      },
+      {
        "h": "a889d2db",
        "kind": "fix",
        "scope": "render",
@@ -429,7 +661,15 @@
      "icon": "🗺️",
      "fr": "Monde & quêtes",
      "en": "World & quests",
-     "items": []
+     "items": [
+      {
+       "h": "d0d6b6a6",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Load the Drakelands kit on approach on iOS",
+       "date": "2026-09-30"
+      }
+     ]
     },
     {
      "key": "guilde",
@@ -444,6 +684,41 @@
      "fr": "Confort & technique",
      "en": "Comfort & technical",
      "items": [
+      {
+       "h": "42b24b99",
+       "kind": "feat",
+       "scope": "fct",
+       "text": "Drop the per-school damage colours",
+       "date": "2026-09-30"
+      },
+      {
+       "h": "f53e5e33",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Stack trophy skulls and record whose each one is",
+       "date": "2026-09-30"
+      },
+      {
+       "h": "da0de21f",
+       "kind": "feat",
+       "scope": "fct",
+       "text": "Make outgoing damage numbers stand out by default",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "5e4743ac",
+       "kind": "feat",
+       "scope": "hill",
+       "text": "Announce, map, rank and reward King of the Hill",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "0f314fe8",
+       "kind": "feat",
+       "scope": "hill",
+       "text": "Caption the map marker below its badge, add shots",
+       "date": "2026-09-29"
+      },
       {
        "h": "0a52ba0c",
        "kind": "feat",
@@ -520,6 +795,125 @@
        "scope": "render",
        "text": "Touch the veil family's program tables before the curtain",
        "date": "2026-09-26"
+      },
+      {
+       "h": "50f51c05",
+       "kind": "fix",
+       "scope": "hill",
+       "text": "Keep the 3 h schedule, 45 min stand and map as they were",
+       "date": "2026-09-30"
+      },
+      {
+       "h": "a69cf3a0",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Bound the world-map background cache on the iOS memory profile",
+       "date": "2026-09-30"
+      },
+      {
+       "h": "5bff44f2",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Bound idle composed looks on the iOS memory profile",
+       "date": "2026-09-30"
+      },
+      {
+       "h": "67af07d6",
+       "kind": "fix",
+       "scope": "test",
+       "text": "Stop character model downloads from outliving happy-dom suites",
+       "date": "2026-09-30"
+      },
+      {
+       "h": "98167a73",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Flush movement before unstuck command",
+       "date": "2026-09-30"
+      },
+      {
+       "h": "84e2428b",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Paint the harbor route plates at half size on the iOS memory profile",
+       "date": "2026-09-30"
+      },
+      {
+       "h": "d6f94642",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Keep unstuck movement flush under budget",
+       "date": "2026-09-30"
+      },
+      {
+       "h": "7056e58c",
+       "kind": "fix",
+       "scope": "fct",
+       "text": "Keep the vivid keyline off the effects tier",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "a1a4ac1a",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Drop world kill gold and a trophy skull on the body",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "7794984f",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Harden World PvP spoils and show the loot icon on the body",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "4c91635f",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Give the trophy skull its own mounted-trophy icon",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "475f9d01",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Preserve stackable skulls during spoils settlement",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "1330bf09",
+       "kind": "fix",
+       "scope": "hill",
+       "text": "Close the vault farm and match the old Honor exactly",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "f1b76514",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Drop the GLTF parser from every loaded GLB",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "895e840d",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Halve the stubble decal map on the iOS memory profile",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "9ec36a50",
+       "kind": "fix",
+       "scope": "portraits",
+       "text": "Warm only the default class skin on the iOS memory profile",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "f578f89c",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Cap character-side KTX2 mips at 512 on iPhones",
+       "date": "2026-09-29"
       },
       {
        "h": "ba72cd56",

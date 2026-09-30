@@ -933,8 +933,8 @@
    "4": "Lancer Gripping Roots te permet d’incanter en mouvement et augmente ta vitesse de déplacement de 20 % pendant 4 s. Ne peut pas survenir plus d’une fois toutes les 20 s."
   },
   "vanguard_druid_feral": {
-   "2": "La recharge de Bruin Rush est réduite de 3 s.",
-   "4": "Bruin Rush te confère un bouclier de 6 % de tes PV maximum pendant 6 s."
+   "2": "La recharge de Lunge ET de Bruin Rush est réduite de 3 s (9 s et 12 s).",
+   "4": "La recharge de Dash est réduite de 15 s (45 s au lieu de 60 s). Remplace l'ancien bonus de bouclier."
   },
   "vanguard_druid_restoration": {
    "2": "La recharge de Fleetmend est réduite de 1 s.",
@@ -1795,8 +1795,8 @@
   "ability\tthunderstorm": "64719ab8",
   "set\tvanguard_druid_balance\t2": "f95fc984",
   "set\tvanguard_druid_balance\t4": "f895a3fd",
-  "set\tvanguard_druid_feral\t2": "bc9c4624",
-  "set\tvanguard_druid_feral\t4": "ed6973d8",
+  "set\tvanguard_druid_feral\t2": "33b822aa",
+  "set\tvanguard_druid_feral\t4": "e15b6037",
   "set\tvanguard_druid_restoration\t2": "6ad8ec10",
   "set\tvanguard_druid_restoration\t4": "4669739e",
   "set\tvanguard_hunter_beast_mastery\t2": "42b3d185",

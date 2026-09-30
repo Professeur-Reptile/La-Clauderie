@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
 <title>La prochaine version — La Clauderie</title>
-<meta name="description" content="Ce que les développeurs préparent pour la v0.45.0 de World of ClaudeCraft, expliqué simplement — le chantier vient d'ouvrir après la grosse v0.44.0 : rien d'annoncé pour les joueurs pour l'instant, un seul premier correctif côté client bureau.">
+<meta name="description" content="Ce que les développeurs préparent pour la v0.45.0 de World of ClaudeCraft, expliqué simplement — après la v0.44.1 au féré et au JcJ mondial, le chantier v0.45.0 s'étoffe : un interrupteur pour couper les effets des sorts, des collines remises au rythme d'avant, des trophées sur les cadavres, et tout un travail de mémoire sur iPhone.">
 <meta name="theme-color" content="#c8a04b">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="La Clauderie">
 <meta property="og:title" content="La prochaine version — La Clauderie">
-<meta property="og:description" content="Ce que les développeurs préparent pour la v0.45.0 de World of ClaudeCraft, expliqué simplement — le chantier vient d'ouvrir après la grosse v0.44.0 : rien d'annoncé pour les joueurs pour l'instant, un seul premier correctif côté client bureau.">
+<meta property="og:description" content="Ce que les développeurs préparent pour la v0.45.0 de World of ClaudeCraft, expliqué simplement — après la v0.44.1 au féré et au JcJ mondial, le chantier v0.45.0 s'étoffe : un interrupteur pour couper les effets des sorts, des collines remises au rythme d'avant, des trophées sur les cadavres, et tout un travail de mémoire sur iPhone.">
 <meta property="og:url" content="https://laclauderie.fr/a-venir.html">
 <link rel="canonical" href="https://laclauderie.fr/a-venir.html">
 <meta property="og:image" content="https://laclauderie.fr/assets/og.png">
@@ -197,7 +197,7 @@
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · En préparation</p>
     <h1>La prochaine version <span class="v" id="vNum">v0.45.0</span></h1>
-    <p class="lede">La <a href="notes/v0.44.0.html">v0.44.0</a> est là — la plus grosse version depuis des mois (Quêtes du monde, saison 2 de Guerre, chaman refait). Derrière, la <strong class="hl">v0.45.0</strong> a déjà son chantier, <strong class="hl">à peine ouvert</strong> : cinq commits au relevé, un seul visible côté joueurs — rien d’annoncé pour l’instant.</p>
+    <p class="lede">La <a href="notes/v0.44.1.html">v0.44.1</a> vient de sortir (féré à la Force, JcJ mondial au drapeau). Derrière, la <strong class="hl">v0.45.0</strong> est déjà en route et <strong class="hl">annoncée imminente</strong> par le jeu : 133 commits au relevé — un interrupteur pour les effets des sorts, des collines remises au rythme d’avant, des trophées sur les cadavres, et beaucoup de mémoire économisée sur iPhone.</p>
 
     <div class="warn">
       <span class="ico" aria-hidden="true">⚠️</span>
@@ -222,66 +222,73 @@
     <h2 id="digest-title">En un coup d’œil</h2>
     <p class="sec-sub">Les mêmes rubriques qu’à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
     <ol>
-      <li class="none"><span class="d-ico" aria-hidden="true">⚔️</span><a class="d-name" href="#combat">Classes &amp; sorts</a><span class="d-say">— rien d’annoncé : aucun changement de classe sur la branche.</span></li>
+      <li class=""><span class="d-ico" aria-hidden="true">⚔️</span><a class="d-name" href="#combat">Classes &amp; sorts</a><span class="d-say">— formes redessinées (cosmétique) ; aucune mécanique de classe.</span></li>
       <li class="none"><span class="d-ico" aria-hidden="true">🔨</span><a class="d-name" href="#metiers">Métiers &amp; récolte</a><span class="d-say">—</span></li>
-      <li class="none"><span class="d-ico" aria-hidden="true">🐉</span><a class="d-name" href="#donjons">Donjons, failles &amp; boss</a><span class="d-say">—</span></li>
-      <li class="none"><span class="d-ico" aria-hidden="true">🗺️</span><a class="d-name" href="#monde">Monde &amp; quêtes</a><span class="d-say">—</span></li>
-      <li class="none"><span class="d-ico" aria-hidden="true">🏰</span><a class="d-name" href="#guilde">Guilde &amp; social</a><span class="d-say">—</span></li>
-      <li class="none"><span class="d-ico" aria-hidden="true">⚙️</span><a class="d-name" href="#confort">Confort &amp; technique</a><span class="d-say">— Un premier correctif côté client bureau ; rien de visible en jeu.</span></li>
+      <li class=""><span class="d-ico" aria-hidden="true">🐉</span><a class="d-name" href="#donjons">Donjons, failles &amp; boss</a><span class="d-say">— failles allégées sur iPhone ; butin inchangé.</span></li>
+      <li class=""><span class="d-ico" aria-hidden="true">🗺️</span><a class="d-name" href="#monde">Monde &amp; quêtes</a><span class="d-say">— Terres du Dragon chargées à l’approche (iOS) ; quêtes inchangées.</span></li>
+      <li class=""><span class="d-ico" aria-hidden="true">🏰</span><a class="d-name" href="#guilde">Guilde &amp; social</a><span class="d-say">— collines possiblement remises à 3 h, crânes-trophées sur les cadavres.</span></li>
+      <li class=""><span class="d-ico" aria-hidden="true">⚙️</span><a class="d-name" href="#confort">Confort &amp; technique</a><span class="d-say">— un interrupteur pour couper les effets des sorts ; chiffres de dégâts lisibles.</span></li>
     </ol>
   </nav>
 
   <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
        s'efface d'elle-même quand cette version sort, et se signale périmée si
        le jeu passe à préparer la suivante. -->
-  <div id="editorial" data-for="v0.45.0" data-commits="5" data-chantiers="v0.45.0" data-written="2026-09-28T13:20+02:00">
+  <div id="editorial" data-for="v0.45.0" data-commits="133" data-chantiers="v0.45.0" data-written="2026-09-30T09:10+02:00">
 
   <section id="combat">
-    <div class="sec-head"><span class="sec-num">01</span><h2>Classes &amp; sorts : rien d’annoncé</h2></div>
-    <p class="sec-sub">Aucun changement de classe n’a rejoint la branche pour l’instant.</p>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Classes &amp; sorts : du cosmétique, aucune mécanique</h2></div>
+    <p class="sec-sub">Aucun sort, talent ni rééquilibrage sur la branche — mais les formes de classe sont en train d’être redessinées.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>La v0.44.0 vient de sortir et le chantier s’ouvre à peine : cinq commits au relevé, aucun côté classes. Si un rééquilibrage arrive, cette page le dira.</p></div>
+      <div class="card"><h3>Formes redessinées <span class="chip c-new">Visuel</span></h3><p>La furtivité prend une palette « voleur », l’Ombreframe (prêtre) devient une teinte opaque, le Moonkin et Soul Rend ont leurs propres apparences. Pur cosmétique.</p></div>
+      <div class="card"><h3>Kit du guerrier allégé <span class="chip c-util">Technique</span></h3><p>Les planches d’images du guerrier se décodent hors du fil principal et ne se préparent plus sur téléphone : moins de saccades quand il entre en scène.</p></div>
+      <div class="card"><h3>Aucun rééquilibrage annoncé <span class="chip c-bal">Égalité</span></h3><p>Rien sur les sorts ni les talents pour l’instant : 133 commits au relevé, zéro mécanique de classe.</p></div>
     </div>
   </section>
 
   <section id="metiers">
     <div class="sec-head"><span class="sec-num">02</span><h2>Métiers &amp; récolte : rien d’annoncé</h2></div>
-    <p class="sec-sub">Aucune recette, aucun nœud ni outil ne bouge sur la branche pour l’instant.</p>
+    <p class="sec-sub">Aucune recette, aucun nœud ni outil ne bouge sur la branche.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>Les recettes et enchantements de la v0.44.0 restent la règle du jour.</p></div>
+      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>Les 5 recettes et 7 enchantements de la v0.44.0 restent la règle du jour.</p></div>
     </div>
   </section>
 
   <section id="donjons">
-    <div class="sec-head"><span class="sec-num">03</span><h2>Donjons, failles &amp; boss : rien d’annoncé</h2></div>
-    <p class="sec-sub">Les instances restent celles de la v0.44.0.</p>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Donjons, failles &amp; boss : les failles peaufinées</h2></div>
+    <p class="sec-sub">Rien de nouveau en butin ni en rencontre : le travail porte sur l’affichage et la mémoire, surtout sur iPhone.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>Le butin héroique re-découpé de la v0.44.0 reste en place — rien de neuf sur la branche.</p></div>
+      <div class="card"><h3>Failles plus légères sur iPhone <span class="chip c-util">Technique</span></h3><p>Corps des créatures de faille diffusés seulement quand nécessaire, sons de boss plafonnés, portails du canon construits au bon moment : la mémoire d’iOS respire.</p></div>
+      <div class="card"><h3>Butin inchangé <span class="chip c-bal">Égalité</span></h3><p>Le re-découpage héroique de la v0.44.0 reste en place — rien de neuf côté loot sur la branche.</p></div>
     </div>
   </section>
 
   <section id="monde">
-    <div class="sec-head"><span class="sec-num">04</span><h2>Monde &amp; quêtes : rien d’annoncé</h2></div>
-    <p class="sec-sub">Le monde ouvert ne bouge pas sur la branche pour l’instant.</p>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Monde &amp; quêtes : une zone qui se charge mieux</h2></div>
+    <p class="sec-sub">Le monde et les Quêtes du monde ne changent pas ; une amélioration de chargement côté iOS.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>Les Quêtes du monde et les trois factions de la v0.44.0 restent telles quelles.</p></div>
+      <div class="card"><h3>Terres du Dragon à l’approche <span class="chip c-util">Technique</span></h3><p>Le décor des Terres du Dragon se charge à l’approche sur iPhone au lieu d’un seul coup — moins d’à-coups en entrant dans la zone.</p></div>
+      <div class="card"><h3>Quêtes inchangées <span class="chip c-bal">Égalité</span></h3><p>Les 8 minijeux et les trois factions de la v0.44.0 restent tels quels.</p></div>
     </div>
   </section>
 
   <section id="guilde">
-    <div class="sec-head"><span class="sec-num">05</span><h2>Guilde &amp; social : rien d’annoncé</h2></div>
-    <p class="sec-sub">Aucun outil de guilde ni social sur la branche pour l’instant.</p>
-    <div class="grid cols-3">
-      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>Les rangs de guilde personnalisés et le tableau des demandes de la v0.44.0 restent en place.</p></div>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Guilde &amp; social : les collines remises au rythme d’avant</h2></div>
+    <p class="sec-sub">Le gros chantier PvP de la v0.44.1 est déjà retouché sur la branche : cadence des collines, trophées et anti-farm.</p>
+    <div class="grid cols-2">
+      <div class="card"><h3>Collines : retour aux 3 heures <span class="chip c-pvp">JcJ</span></h3><p>Un commit remet le Roi de la colline sur le rythme d’avant la v0.44.1 — une colline toutes les 3 heures, debout 45 minutes — et bouche une farm d’Honor via la Chambre forte pour coller exactement aux gains d’origine. À confirmer à la sortie.</p></div>
+      <div class="card"><h3>Trophées sur les cadavres <span class="chip c-new">JcJ</span></h3><p>Un kill en JcJ mondial dépose l’or et un crâne-trophée sur le corps ; les crânes s’empilent et se souviennent de qui ils appartiennent : ton comptoir de chasse devient visible.</p></div>
     </div>
   </section>
 
   <section id="confort">
-    <div class="sec-head"><span class="sec-num">06</span><h2>Un chantier qui s’ouvre en douceur</h2></div>
-    <p class="sec-sub">Cinq commits au relevé, dont un seul visible côté joueurs — et encore, côté client bureau. La suite du chantier dira si la version grossit.</p>
-    <div class="grid cols-3">
-      <div class="card"><h3>Premier correctif technique <span class="chip c-util">Bureau</span></h3><p>Le Rapport système de la version bureau garde ses données intactes sur les installations Windows — un réglage d’outil, invisible en jeu.</p></div>
-      <div class="card"><h3>Chantier jeune <span class="chip c-util">Prudence</span></h3><p>Cinq commits au moment du relevé, un jour après la sortie de la v0.44.0 : cette page sera reprise si la branche grossit d’ici la sortie. Pas de chiffre ici : c’est du travail en cours.</p></div>
+    <div class="sec-head"><span class="sec-num">06</span><h2>Confort : un bouton pour couper les effets</h2></div>
+    <p class="sec-sub">La plus grosse file du chantier : lisibilité et mémoire, avec un vrai réglage joueurs en vitrine.</p>
+    <div class="grid cols-2">
+      <div class="card"><h3>Effets des sorts : l’interrupteur <span class="chip c-new">Option</span></h3><p>Une option « Effets des sorts » permettra de couper les effets visuels des sorts — les ennemis et les rencontres restent lisibles. Le réglage attendu depuis que les combats se sont remplis de VFX.</p></div>
+      <div class="card"><h3>Chiffres de dégâts plus lisibles <span class="chip c-new">Interface</span></h3><p>Tes dégâts sortent du lot par défaut, et les couleurs par école de magie disparaissent : on lit qui tape quoi, sans arc-en-ciel.</p></div>
+      <div class="card"><h3>iPhone sous tension maîtrisée <span class="chip c-util">Technique</span></h3><p>Tout un profil mémoire iOS : textures et sons plafonnés, caches bornés, restauration graphique propre avec un message « Restauration des graphismes » au lieu d’un écran cassé.</p></div>
+      <div class="card"><h3>/débloquer plus sûr <span class="chip c-util">Correctif</span></h3><p>La commande /unstuck vide d’abord tes déplacements en cours avant d’agir : plus de téléportation sur une vieille position.</p></div>
     </div>
   </section>
 

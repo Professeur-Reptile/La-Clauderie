@@ -2,6 +2,26 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.44.1",
+   "date": "2026-09-30",
+   "titre": "Le féré à la Force et un JcJ mondial qui paie",
+   "resume": "La v0.44.1 corrige et équipe le druide féré : l'armure Peau de Crin-sang passe à la Force, le set accélère Lunge, Bruin Rush et Dash, et un bâton épique à deux mains lui est réservé. Le JcJ mondial est repensé : plus aucune zone en chacun pour soi (tout se fait au drapeau, même le Val d'Eastbrook devient disputé), collines toutes les 2 heures pour 30 minutes, +20 % d'XP et de réputation drapeau levé, et cinq titres permanents. Suivent des correctifs bien sentis : coffre du Trésor enterré en groupe, aperçu de la Chambre forte dans le chercheur de donjon, Dash qui garde la furtivité, barres d'action qui sauvegardent pour de bon.",
+   "temps_forts": [
+    "⚔️ Druide féré : armure S2 à la Force, set accéléré, bâton épique dédié",
+    "🏰 JcJ mondial : drapeau obligatoire partout, +20 % XP/réputation, 5 titres",
+    "🐉 Trésor enterré en groupe et aperçu de la Chambre forte",
+    "⚙️ Maj pour déplacer une action, barres pré-remplies, récap de mort réparé"
+   ],
+   "temps_forts_en": [
+    "⚔️ Feral druid: S2 armor on Strength, faster set, dedicated epic staff",
+    "🏰 World PvP: flag required everywhere, +20% XP/reputation, 5 titles",
+    "🐉 Buried Hoard for groups and a Weekly Vault preview",
+    "⚙️ Shift to move an action, pre-seeded bars, death recap fixed"
+   ],
+   "page": "notes/v0.44.1.html",
+   "page_en": "notes/v0.44.1.en.html"
+  },
+  {
    "version": "v0.44.0",
    "date": "2026-09-28",
    "titre": "Les Quêtes du monde, la saison 2 et le chaman refait",
