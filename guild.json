@@ -2,28 +2,28 @@
   "guilde": {
     "classementServeur": 10,
     "classement": {
-      "releveLe": "2026-10-01T13:00:18Z",
+      "releveLe": "2026-10-01T20:17:53Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Sovereign",
-          "memberCount": 197,
-          "totalLifetimeXp": 80355735,
+          "memberCount": 200,
+          "totalLifetimeXp": 81434071,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "Raiders United",
-          "memberCount": 238,
-          "totalLifetimeXp": 67292140,
+          "memberCount": 237,
+          "totalLifetimeXp": 65578815,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Monarchs",
           "memberCount": 83,
-          "totalLifetimeXp": 45559384,
+          "totalLifetimeXp": 45606295,
           "topLevel": 20
         },
         {
@@ -37,28 +37,28 @@
           "rank": 5,
           "name": "Vis Absoluta",
           "memberCount": 64,
-          "totalLifetimeXp": 27541382,
+          "totalLifetimeXp": 27627792,
           "topLevel": 20
         },
         {
           "rank": 6,
-          "name": "Legio X Equestris",
-          "memberCount": 69,
-          "totalLifetimeXp": 21349665,
+          "name": "Cheaters",
+          "memberCount": 52,
+          "totalLifetimeXp": 20417900,
           "topLevel": 20
         },
         {
           "rank": 7,
-          "name": "Cheaters",
-          "memberCount": 52,
-          "totalLifetimeXp": 20401354,
+          "name": "Mayonnaise",
+          "memberCount": 136,
+          "totalLifetimeXp": 20364954,
           "topLevel": 20
         },
         {
           "rank": 8,
-          "name": "Mayonnaise",
-          "memberCount": 136,
-          "totalLifetimeXp": 20262777,
+          "name": "Legio X Equestris",
+          "memberCount": 68,
+          "totalLifetimeXp": 20246073,
           "topLevel": 20
         },
         {
