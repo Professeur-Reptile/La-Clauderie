@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-01T01:27:58Z",
+ "generated": "2026-10-01T09:21:16Z",
  "base_tag": "v0.44.1",
  "version": "v0.44.2",
  "branch": "release/v0.44.2",
- "declared_version": "0.44.1",
- "imminent": false,
- "commits": 0,
- "shown": 0,
- "last_commit": "2026-09-30T13:15:31+13:00",
+ "declared_version": "0.44.2",
+ "imminent": true,
+ "commits": 28,
+ "shown": 10,
+ "last_commit": "2026-10-01T22:07:41+13:00",
  "sections": [
   {
    "key": "classes",
@@ -42,25 +42,97 @@
    "icon": "🏰",
    "fr": "Guilde & social",
    "en": "Guild & social",
-   "items": []
+   "items": [
+    {
+     "h": "581bc3e8",
+     "kind": "feat",
+     "scope": "discord",
+     "text": "Add /flair on and off to show or hide your Discord role",
+     "date": "2026-10-01"
+    },
+    {
+     "h": "12aea9fe",
+     "kind": "fix",
+     "scope": "discord",
+     "text": "Show renamed Observer and Sentinel roles in game",
+     "date": "2026-10-01"
+    },
+    {
+     "h": "562f3033",
+     "kind": "fix",
+     "scope": "discord",
+     "text": "Bound flair command database work",
+     "date": "2026-10-01"
+    }
+   ]
   },
   {
    "key": "confort",
    "icon": "⚙️",
    "fr": "Confort & technique",
    "en": "Comfort & technical",
-   "items": []
+   "items": [
+    {
+     "h": "04a32585",
+     "kind": "fix",
+     "scope": "hoards",
+     "text": "Use fixed difficulty and replaceable summoner parties",
+     "date": "2026-10-01"
+    },
+    {
+     "h": "aac03220",
+     "kind": "fix",
+     "scope": "hoards",
+     "text": "Preserve corpse recovery and disconnected guest claims",
+     "date": "2026-10-01"
+    },
+    {
+     "h": "4c814229",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Expire attempts and restrict portal visibility",
+     "date": "2026-10-01"
+    },
+    {
+     "h": "7684d873",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Preserve bound ghost corpse recovery",
+     "date": "2026-10-01"
+    },
+    {
+     "h": "93ffc7bc",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Reconcile stat tooltip fix with v0.44.2",
+     "date": "2026-10-01"
+    },
+    {
+     "h": "8db0ddf1",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Self-cast a heal when a World PvP enemy is targeted",
+     "date": "2026-10-01"
+    },
+    {
+     "h": "671ae688",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Show the stat tooltips on the character sheet again",
+     "date": "2026-09-30"
+    }
+   ]
   }
  ],
  "versions": [
   {
    "version": "v0.44.2",
    "branch": "release/v0.44.2",
-   "declared_version": "0.44.1",
-   "imminent": false,
-   "commits": 0,
-   "shown": 0,
-   "last_commit": "2026-09-30T13:15:31+13:00",
+   "declared_version": "0.44.2",
+   "imminent": true,
+   "commits": 28,
+   "shown": 10,
+   "last_commit": "2026-10-01T22:07:41+13:00",
    "sections": [
     {
      "key": "classes",
@@ -95,14 +167,86 @@
      "icon": "🏰",
      "fr": "Guilde & social",
      "en": "Guild & social",
-     "items": []
+     "items": [
+      {
+       "h": "581bc3e8",
+       "kind": "feat",
+       "scope": "discord",
+       "text": "Add /flair on and off to show or hide your Discord role",
+       "date": "2026-10-01"
+      },
+      {
+       "h": "12aea9fe",
+       "kind": "fix",
+       "scope": "discord",
+       "text": "Show renamed Observer and Sentinel roles in game",
+       "date": "2026-10-01"
+      },
+      {
+       "h": "562f3033",
+       "kind": "fix",
+       "scope": "discord",
+       "text": "Bound flair command database work",
+       "date": "2026-10-01"
+      }
+     ]
     },
     {
      "key": "confort",
      "icon": "⚙️",
      "fr": "Confort & technique",
      "en": "Comfort & technical",
-     "items": []
+     "items": [
+      {
+       "h": "04a32585",
+       "kind": "fix",
+       "scope": "hoards",
+       "text": "Use fixed difficulty and replaceable summoner parties",
+       "date": "2026-10-01"
+      },
+      {
+       "h": "aac03220",
+       "kind": "fix",
+       "scope": "hoards",
+       "text": "Preserve corpse recovery and disconnected guest claims",
+       "date": "2026-10-01"
+      },
+      {
+       "h": "4c814229",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Expire attempts and restrict portal visibility",
+       "date": "2026-10-01"
+      },
+      {
+       "h": "7684d873",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Preserve bound ghost corpse recovery",
+       "date": "2026-10-01"
+      },
+      {
+       "h": "93ffc7bc",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Reconcile stat tooltip fix with v0.44.2",
+       "date": "2026-10-01"
+      },
+      {
+       "h": "8db0ddf1",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Self-cast a heal when a World PvP enemy is targeted",
+       "date": "2026-10-01"
+      },
+      {
+       "h": "671ae688",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Show the stat tooltips on the character sheet again",
+       "date": "2026-09-30"
+      }
+     ]
     }
    ]
   },
