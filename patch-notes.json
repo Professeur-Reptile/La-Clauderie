@@ -2,6 +2,26 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.44.2",
+   "date": "2026-10-01",
+   "titre": "Le Trésor enterré enfin calibré, et /flair pour Discord",
+   "resume": "La v0.44.2 retaille les donjons du Trésor enterré : les cartes communes restent pour un joueur, les rares, épiques et légendaires sont pour cinq SANS ajustement selon la taille du groupe, les boss frappent 30 % moins fort et leurs sbires 50 %. Les tentatives de coffre expirent (6 h après le creusage, 15 min après le dernier boss), l'entrée suit le groupe actuel de l'ouvreur, et le soin retombe sur soi face à un ennemi JcJ mondial ciblé. Discord gagne /flair pour masquer son étiquette de rôle.",
+   "temps_forts": [
+    "🐉 Trésor enterré : communs pour 1, rares et plus pour 5, boss −30 % / sbires −50 %",
+    "🗺️ Coffres qui expirent (6 h / 15 min) et remplacés en cours de route",
+    "⚔️ Le soin retombe sur soi face à un ennemi JcJ ciblé",
+    "🏰 Discord : /flair on/off et rôles renommés réparés"
+   ],
+   "temps_forts_en": [
+    "🐉 Buried Hoard: commons for 1, rare+ for 5, bosses −30% / adds −50%",
+    "🗺️ Vaults expire (6 h / 15 min) and mid-run party swaps",
+    "⚔️ Heals self-cast against a targeted PvP enemy",
+    "🏰 Discord: /flair on/off and renamed roles fixed"
+   ],
+   "page": "notes/v0.44.2.html",
+   "page_en": "notes/v0.44.2.en.html"
+  },
+  {
    "version": "v0.44.1",
    "date": "2026-09-30",
    "titre": "Le féré à la Force et un JcJ mondial qui paie",

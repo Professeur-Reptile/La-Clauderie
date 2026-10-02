@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
 <title>La prochaine version — La Clauderie</title>
-<meta name="description" content="Ce que les développeurs préparent pour la v0.45.0 de World of ClaudeCraft, expliqué simplement — après la v0.44.1 au féré et au JcJ mondial, le chantier v0.45.0 s'étoffe : un interrupteur pour couper les effets des sorts, des collines remises au rythme d'avant, des trophées sur les cadavres, et tout un travail de mémoire sur iPhone.">
+<meta name="description" content="Ce que les développeurs préparent pour la v0.44.3 de World of ClaudeCraft, expliqué simplement — la résurrection en JcJ mondial, /presence pour passer invisible, des primes de série sur les collines et la vente du matériel Guerre saison 1 ; la v0.45.0 se prépare déjà derrière.">
 <meta name="theme-color" content="#c8a04b">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="La Clauderie">
 <meta property="og:title" content="La prochaine version — La Clauderie">
-<meta property="og:description" content="Ce que les développeurs préparent pour la v0.45.0 de World of ClaudeCraft, expliqué simplement — après la v0.44.1 au féré et au JcJ mondial, le chantier v0.45.0 s'étoffe : un interrupteur pour couper les effets des sorts, des collines remises au rythme d'avant, des trophées sur les cadavres, et tout un travail de mémoire sur iPhone.">
+<meta property="og:description" content="Ce que les développeurs préparent pour la v0.44.3 de World of ClaudeCraft, expliqué simplement — la résurrection en JcJ mondial, /presence pour passer invisible, des primes de série sur les collines et la vente du matériel Guerre saison 1 ; la v0.45.0 se prépare déjà derrière.">
 <meta property="og:url" content="https://laclauderie.fr/a-venir.html">
 <link rel="canonical" href="https://laclauderie.fr/a-venir.html">
 <meta property="og:image" content="https://laclauderie.fr/assets/og.png">
@@ -196,8 +196,8 @@
 <div class="wrap">
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · En préparation</p>
-    <h1>La prochaine version <span class="v" id="vNum">v0.45.0</span></h1>
-    <p class="lede">La <a href="notes/v0.44.1.html">v0.44.1</a> vient de sortir (féré à la Force, JcJ mondial au drapeau). Derrière, la <strong class="hl">v0.45.0</strong> est déjà en route et <strong class="hl">annoncée imminente</strong> par le jeu : 133 commits au relevé — un interrupteur pour les effets des sorts, des collines remises au rythme d’avant, des trophées sur les cadavres, et beaucoup de mémoire économisée sur iPhone.</p>
+    <h1>La prochaine version <span class="v" id="vNum">v0.44.3</span></h1>
+    <p class="lede">La <a href="notes/v0.44.2.html">v0.44.2</a> vient de calibrer le Trésor enterré. Derrière, la <strong class="hl">v0.44.3</strong> est <strong class="hl">annoncée imminente</strong> par le jeu (52 commits) : la résurrection en JcJ mondial, une commande pour passer invisible, des primes de série sur les collines et la vente du matériel Guerre saison 1. Et la <strong class="hl">v0.45.0</strong> se prépare déjà derrière (186 commits).</p>
 
     <div class="warn">
       <span class="ico" aria-hidden="true">⚠️</span>
@@ -222,73 +222,70 @@
     <h2 id="digest-title">En un coup d’œil</h2>
     <p class="sec-sub">Les mêmes rubriques qu’à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
     <ol>
-      <li class=""><span class="d-ico" aria-hidden="true">⚔️</span><a class="d-name" href="#combat">Classes &amp; sorts</a><span class="d-say">— formes redessinées (cosmétique) ; aucune mécanique de classe.</span></li>
+      <li class="none"><span class="d-ico" aria-hidden="true">⚔️</span><a class="d-name" href="#combat">Classes &amp; sorts</a><span class="d-say">— rien d’annoncé : aucune mécanique de classe.</span></li>
       <li class="none"><span class="d-ico" aria-hidden="true">🔨</span><a class="d-name" href="#metiers">Métiers &amp; récolte</a><span class="d-say">—</span></li>
-      <li class=""><span class="d-ico" aria-hidden="true">🐉</span><a class="d-name" href="#donjons">Donjons, failles &amp; boss</a><span class="d-say">— failles allégées sur iPhone ; butin inchangé.</span></li>
-      <li class=""><span class="d-ico" aria-hidden="true">🗺️</span><a class="d-name" href="#monde">Monde &amp; quêtes</a><span class="d-say">— Terres du Dragon chargées à l’approche (iOS) ; quêtes inchangées.</span></li>
-      <li class=""><span class="d-ico" aria-hidden="true">🏰</span><a class="d-name" href="#guilde">Guilde &amp; social</a><span class="d-say">— collines possiblement remises à 3 h, crânes-trophées sur les cadavres.</span></li>
-      <li class=""><span class="d-ico" aria-hidden="true">⚙️</span><a class="d-name" href="#confort">Confort &amp; technique</a><span class="d-say">— un interrupteur pour couper les effets des sorts ; chiffres de dégâts lisibles.</span></li>
+      <li class=""><span class="d-ico" aria-hidden="true">🐉</span><a class="d-name" href="#donjons">Donjons, failles &amp; boss</a><span class="d-say">— portails de faille fermés pendant les épreuves de Quête du monde.</span></li>
+      <li class="none"><span class="d-ico" aria-hidden="true">🗺️</span><a class="d-name" href="#monde">Monde &amp; quêtes</a><span class="d-say">—</span></li>
+      <li class=""><span class="d-ico" aria-hidden="true">🏰</span><a class="d-name" href="#guilde">Guilde &amp; social</a><span class="d-say">— /presence pour cacher ton statut en ligne.</span></li>
+      <li class=""><span class="d-ico" aria-hidden="true">⚙️</span><a class="d-name" href="#confort">Confort &amp; technique</a><span class="d-say">— résurrection en JcJ mondial, primes de série, vente du matériel Guerre S1.</span></li>
     </ol>
   </nav>
 
   <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
        s'efface d'elle-même quand cette version sort, et se signale périmée si
        le jeu passe à préparer la suivante. -->
-  <div id="editorial" data-for="v0.45.0" data-commits="133" data-chantiers="v0.45.0" data-written="2026-09-30T09:10+02:00">
+  <div id="editorial" data-for="v0.44.3" data-commits="52" data-chantiers="v0.44.3" data-written="2026-10-02T11:30+02:00">
 
   <section id="combat">
-    <div class="sec-head"><span class="sec-num">01</span><h2>Classes &amp; sorts : du cosmétique, aucune mécanique</h2></div>
-    <p class="sec-sub">Aucun sort, talent ni rééquilibrage sur la branche — mais les formes de classe sont en train d’être redessinées.</p>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Classes &amp; sorts : rien d’annoncé</h2></div>
+    <p class="sec-sub">Aucun sort, talent ni rééquilibrage sur la branche.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Formes redessinées <span class="chip c-new">Visuel</span></h3><p>La furtivité prend une palette « voleur », l’Ombreframe (prêtre) devient une teinte opaque, le Moonkin et Soul Rend ont leurs propres apparences. Pur cosmétique.</p></div>
-      <div class="card"><h3>Kit du guerrier allégé <span class="chip c-util">Technique</span></h3><p>Les planches d’images du guerrier se décodent hors du fil principal et ne se préparent plus sur téléphone : moins de saccades quand il entre en scène.</p></div>
-      <div class="card"><h3>Aucun rééquilibrage annoncé <span class="chip c-bal">Égalité</span></h3><p>Rien sur les sorts ni les talents pour l’instant : 133 commits au relevé, zéro mécanique de classe.</p></div>
+      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>52 commits au relevé, zéro mécanique de classe : la v0.44.3 s’occupe du JcJ mondial et du confort.</p></div>
     </div>
   </section>
 
   <section id="metiers">
     <div class="sec-head"><span class="sec-num">02</span><h2>Métiers &amp; récolte : rien d’annoncé</h2></div>
-    <p class="sec-sub">Aucune recette, aucun nœud ni outil ne bouge sur la branche.</p>
+    <p class="sec-sub">Aucune recette, aucun nœud ni outil sur la branche.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>Les 5 recettes et 7 enchantements de la v0.44.0 restent la règle du jour.</p></div>
+      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>Les recettes et enchantements actuels restent la règle du jour.</p></div>
     </div>
   </section>
 
   <section id="donjons">
-    <div class="sec-head"><span class="sec-num">03</span><h2>Donjons, failles &amp; boss : les failles peaufinées</h2></div>
-    <p class="sec-sub">Rien de nouveau en butin ni en rencontre : le travail porte sur l’affichage et la mémoire, surtout sur iPhone.</p>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Donjons, failles &amp; boss : les failles se ferment pendant les épreuves</h2></div>
+    <p class="sec-sub">Un seul changement, mais qui enlève un raccourci connu : impossible d’entrer en faille pendant une épreuve de Quête du monde.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Failles plus légères sur iPhone <span class="chip c-util">Technique</span></h3><p>Corps des créatures de faille diffusés seulement quand nécessaire, sons de boss plafonnés, portails du canon construits au bon moment : la mémoire d’iOS respire.</p></div>
-      <div class="card"><h3>Butin inchangé <span class="chip c-bal">Égalité</span></h3><p>Le re-découpage héroique de la v0.44.0 reste en place — rien de neuf côté loot sur la branche.</p></div>
+      <div class="card"><h3>Portails verrouillés pendant les épreuves <span class="chip c-util">Correctif</span></h3><p>Les portails de faille refusent l’entrée pendant toute épreuve de Quête du monde — plus d’anti-jeu par téléportation au milieu d’un défi.</p></div>
+      <div class="card"><h3>Butin inchangé <span class="chip c-bal">Égalité</span></h3><p>Le calibrage du Trésor enterré tout juste réglé par la v0.44.2 n’est pas retouché.</p></div>
     </div>
   </section>
 
   <section id="monde">
-    <div class="sec-head"><span class="sec-num">04</span><h2>Monde &amp; quêtes : une zone qui se charge mieux</h2></div>
-    <p class="sec-sub">Le monde et les Quêtes du monde ne changent pas ; une amélioration de chargement côté iOS.</p>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Monde &amp; quêtes : rien d’annoncé</h2></div>
+    <p class="sec-sub">Le monde ouvert et les Quêtes du monde ne bougent pas sur la branche.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Terres du Dragon à l’approche <span class="chip c-util">Technique</span></h3><p>Le décor des Terres du Dragon se charge à l’approche sur iPhone au lieu d’un seul coup — moins d’à-coups en entrant dans la zone.</p></div>
-      <div class="card"><h3>Quêtes inchangées <span class="chip c-bal">Égalité</span></h3><p>Les 8 minijeux et les trois factions de la v0.44.0 restent tels quels.</p></div>
+      <div class="card"><h3>Quêtes inchangées <span class="chip c-bal">Égalité</span></h3><p>Minijeux, factions et cartes au trésor restent ceux de la v0.44.2.</p></div>
     </div>
   </section>
 
   <section id="guilde">
-    <div class="sec-head"><span class="sec-num">05</span><h2>Guilde &amp; social : les collines remises au rythme d’avant</h2></div>
-    <p class="sec-sub">Le gros chantier PvP de la v0.44.1 est déjà retouché sur la branche : cadence des collines, trophées et anti-farm.</p>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Guilde &amp; social : passe en mode invisible</h2></div>
+    <p class="sec-sub">La nouveauté sociale de la version : une commande pour se cacher des amis et de la guilde.</p>
     <div class="grid cols-2">
-      <div class="card"><h3>Collines : retour aux 3 heures <span class="chip c-pvp">JcJ</span></h3><p>Un commit remet le Roi de la colline sur le rythme d’avant la v0.44.1 — une colline toutes les 3 heures, debout 45 minutes — et bouche une farm d’Honor via la Chambre forte pour coller exactement aux gains d’origine. À confirmer à la sortie.</p></div>
-      <div class="card"><h3>Trophées sur les cadavres <span class="chip c-new">JcJ</span></h3><p>Un kill en JcJ mondial dépose l’or et un crâne-trophée sur le corps ; les crânes s’empilent et se souviennent de qui ils appartiennent : ton comptoir de chasse devient visible.</p></div>
+      <div class="card"><h3><b>/presence</b> : cacher ton statut <span class="chip c-new">Nouveau</span></h3><p>La commande masque ton statut en ligne aux amis et à la guilde, avec un réglage dans l’onglet Amis de la fenêtre sociale. Le jeu a même refermé les fuites de présence restantes.</p></div>
+      <div class="card"><h3>Vie privée par défaut renforcée <span class="chip c-util">Correctif</span></h3><p>Dans la même veine : les joueurs furtifs n’apparaissent plus aux morts, et les fantômes ne sont visibles que des leurs.</p></div>
     </div>
   </section>
 
   <section id="confort">
-    <div class="sec-head"><span class="sec-num">06</span><h2>Confort : un bouton pour couper les effets</h2></div>
-    <p class="sec-sub">La plus grosse file du chantier : lisibilité et mémoire, avec un vrai réglage joueurs en vitrine.</p>
+    <div class="sec-head"><span class="sec-num">06</span><h2>Confort : la mort en JcJ mondial gagne sa résurrection</h2></div>
+    <p class="sec-sub">Le gros du chantier : la mort en PvP mondial devient moins punitive, et l’ancien matériel de Guerre trouve preneur.</p>
     <div class="grid cols-2">
-      <div class="card"><h3>Effets des sorts : l’interrupteur <span class="chip c-new">Option</span></h3><p>Une option « Effets des sorts » permettra de couper les effets visuels des sorts — les ennemis et les rencontres restent lisibles. Le réglage attendu depuis que les combats se sont remplis de VFX.</p></div>
-      <div class="card"><h3>Chiffres de dégâts plus lisibles <span class="chip c-new">Interface</span></h3><p>Tes dégâts sortent du lot par défaut, et les couleurs par école de magie disparaissent : on lit qui tape quoi, sans arc-en-ciel.</p></div>
-      <div class="card"><h3>iPhone sous tension maîtrisée <span class="chip c-util">Technique</span></h3><p>Tout un profil mémoire iOS : textures et sons plafonnés, caches bornés, restauration graphique propre avec un message « Restauration des graphismes » au lieu d’un écran cassé.</p></div>
-      <div class="card"><h3>/débloquer plus sûr <span class="chip c-util">Correctif</span></h3><p>La commande /unstuck vide d’abord tes déplacements en cours avant d’agir : plus de téléportation sur une vieille position.</p></div>
+      <div class="card"><h3>Résurrection PvP <span class="chip c-new">Nouveau</span></h3><p>Mourir en JcJ mondial offre une proposition de résurrection sur place, remise à zéro à chaque nouvelle mort — le panneau de mort se réorganise pour la placer.</p></div>
+      <div class="card"><h3>Primes de série sur les collines <span class="chip c-new">JcJ</span></h3><p>Le Roi de la colline récompense les séries de kills — et toute mort pendant que la colline tient met fin à la série. Le temps de série ne compte plus que dans le monde ouvert, mort ou pas.</p></div>
+      <div class="card"><h3>Guerre saison 1 contre de l’or <span class="chip c-new">Vente</span></h3><p>Le matériel de Guerre de la saison 1 devient vendable contre de l’or : il quitte enfin les sacs où il s’entassait.</p></div>
+      <div class="card"><h3>Et derrière : la v0.45.0 <span class="chip c-util">Chantier</span></h3><p>La version d’après est déjà à 186 commits sur sa branche (interrupteur des effets des sorts, collines remises à 3 h). Elle aura sa propre page quand la v0.44.3 sera sortie.</p></div>
     </div>
   </section>
 

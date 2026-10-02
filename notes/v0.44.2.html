@@ -1,0 +1,139 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="color-scheme" content="dark"><title>Nouveautés v0.44.2 — La Clauderie</title><meta name="description" content="La v0.44.2 : les donjons du Trésor enterré trouvent leur calibrage (communs pour un joueur, rares et plus pour cinq, boss −30 % et sbires −50 %), les tentatives de coffre expirent enfin, et la commande /flair arrive pour Discord."><meta name="theme-color" content="#c8a04b"><meta property="og:type" content="website"><meta property="og:site_name" content="La Clauderie"><meta property="og:title" content="Nouveautés v0.44.2 — La Clauderie"><meta property="og:url" content="https://laclauderie.fr/notes/v0.44.2.html"><link rel="canonical" href="https://laclauderie.fr/notes/v0.44.2.html"><link rel="manifest" href="../manifest.json"><link rel="apple-touch-icon" href="../assets/icon-180.png"><script src="../assets/pwa.js" defer></script><script>if(localStorage.getItem('lang')==='en')location.replace('v0.44.2.en.html'+location.hash);</script><style>
+  :root {
+    --bg: #0b0d12; --bg-card: #161a24; --bg-card-hover: #1a1f2b; --bg-modal: #12161f;
+    --line: #262c3a; --line-soft: #1e2431;
+    --gold: #c8a04b; --gold-bright: #e6c37a;
+    --text: #dfe3ea; --dim: #8b93a3; --faint: #5b6272;
+    --q-rare: #2f8bff; --q-epic: #a335ee; --q-legendary: #ff8000;
+    --dps: #e5544a; --heal: #58c46a; --arcane: #58b6c9; --discord: #5865f2;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 460px at 15% -8%, rgba(200,160,75,0.09), transparent 70%),
+      radial-gradient(ellipse 760px 400px at 88% -4%, rgba(47,139,255,0.06), transparent 70%);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px); }
+
+  /* Topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+  .topbar .row { max-width: 960px; margin: 0 auto; padding: 8px clamp(16px,4vw,28px); display: flex; align-items: center; gap: 14px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .sigil { width: 26px; height: 30px; flex: none; background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, #8a6d2e); clip-path: polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%); display: grid; place-items: center; color: #1a130a; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; font-size: 0.88rem; }
+  .topnav a { color: var(--dim); text-decoration: none; }
+  .topnav a:hover { color: var(--gold-bright); }
+  .topnav .cur { color: var(--gold-bright); font-weight: 600; }
+  @media (max-width: 620px) { .brand b { display: none; } .topnav { gap: 4px 11px; font-size: 0.82rem; } }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 7vw, 72px) 0 clamp(24px, 4vw, 40px); border-bottom: 1px solid var(--line-soft); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1; margin: 0 0 12px; }
+  h1 .v { color: var(--gold-bright); }
+  .lede { color: var(--dim); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 58ch; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); }
+  .meta b { color: var(--dim); }
+  .hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: color-mix(in srgb, var(--gold) 10%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); color: var(--gold-bright); padding: 8px 14px; border-radius: 8px; font-size: 0.86rem; }
+
+  /* Sections */
+  section { padding: clamp(26px, 4vw, 40px) 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 72px; }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-family: var(--font-mono); color: var(--gold); font-size: 0.82rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin: 0; }
+  .sec-sub { color: var(--dim); margin: -8px 0 20px; max-width: 66ch; }
+
+  .grid { display: grid; gap: 13px; }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; padding: 19px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .card p { margin: 6px 0 0; color: var(--dim); font-size: 0.93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.05em; color: var(--dim); font-size: 0.9rem; }
+  .card ul li { margin: 4px 0; }
+  .card ul li::marker { color: var(--gold); }
+
+  /* Bandeau « En un coup d'œil » — mêmes rubriques, même ordre, à chaque
+     version : le lecteur prend l'habitude et trouve sa classe sans lire. */
+  .digest { padding: clamp(24px, 3.5vw, 34px) 0 clamp(2px, 1vw, 8px); }
+  .digest h2 { font-size: clamp(1.2rem, 2.8vw, 1.5rem); margin: 0 0 6px; }
+  .digest .sec-sub { margin: 0 0 16px; }
+  .digest ol { list-style: none; margin: 0; padding: 0; background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 11px; overflow: hidden; }
+  .digest li { display: grid; grid-template-columns: 30px 215px 1fr; align-items: baseline; gap: 3px 12px; padding: 13px 17px; border-top: 1px solid var(--line-soft); }
+  .digest li:first-child { border-top: none; }
+  .d-ico { font-size: 0.98rem; }
+  .d-name { font-weight: 600; color: var(--text); text-decoration: none; }
+  a.d-name:hover, a.d-name:focus-visible { color: var(--gold-bright); }
+  .d-say { color: var(--dim); font-size: 0.92rem; }
+  .digest li.none .d-name, .digest li.none .d-say { color: var(--faint); font-weight: 400; }
+  /* Sens du changement, d'un coup d'œil : amélioration, nerf, inchangé. */
+  .up { color: var(--heal); font-weight: 600; white-space: nowrap; }
+  .down { color: var(--dps); font-weight: 600; white-space: nowrap; }
+  .eq { color: var(--dim); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 620px) {
+    .digest li { grid-template-columns: 26px 1fr; padding: 12px 15px; }
+    .d-say { grid-column: 2; }
+  }
+
+  /* Clickable cards */
+  .card.more { cursor: pointer; transition: border-color .15s, transform .15s, background .15s; position: relative; }
+  .card.more:hover { border-color: var(--gold); transform: translateY(-2px); background: var(--bg-card-hover); }
+  .card.more:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .more-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; color: var(--gold-bright); font-size: 0.82rem; font-weight: 600; }
+  .more-link::after { content: "→"; transition: transform .15s; }
+  .card.more:hover .more-link::after { transform: translateX(3px); }
+
+  /* Chips */
+  .chip { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; font-weight: 600; white-space: nowrap; }
+  .c-new { color: var(--heal); } .c-raid { color: var(--gold); } .c-pvp { color: var(--dps); }
+  .c-bal { color: var(--q-legendary); } .c-mob { color: var(--arcane); } .c-epic { color: var(--q-epic); }
+  .c-plate { color: var(--dps); } .c-leather { color: var(--heal); } .c-cloth { color: var(--arcane); } .c-util { color: var(--q-rare); }
+
+  .statline { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); }
+  .statline b { color: var(--text); }
+  .grp-title { font-family: var(--font-display); font-size: 1rem; color: var(--dim); margin: 22px 0 12px; }
+  .compact { columns: 2; column-gap: 34px; }
+  .compact li { margin: 5px 0; }
+  @media (max-width: 560px) { .compact { columns: 1; } }
+  strong.hl { color: var(--text); font-weight: 600; }
+
+  /* Modal */
+  dialog { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-modal); color: var(--text); max-width: 640px; width: calc(100% - 28px); max-height: 86vh; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+  dialog::backdrop { background: rgba(4,6,10,0.72); backdrop-filter: blur(3px); }
+  .modal-head { position: sticky; top: 0; background: linear-gradient(180deg, var(--bg-modal), color-mix(in srgb, var(--bg-modal) 88%, transparent)); border-bottom: 1px solid var(--line-soft); padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; }
+  .modal-head h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0; line-height: 1.15; }
+  .modal-head .close { margin-left: auto; flex: none; background: var(--bg-card); border: 1px solid var(--line); color: var(--dim); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+  .modal-head .close:hover { color: var(--text); border-color: var(--gold); }
+  .modal-body { padding: 20px 22px 26px; overflow-y: auto; }
+  .modal-body .summary { color: var(--dim); font-style: italic; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+  .modal-body h4 { font-family: var(--font); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-bright); margin: 22px 0 8px; }
+  .modal-body h4:first-of-type { margin-top: 0; }
+  .modal-body p { margin: 0 0 10px; font-size: 0.94rem; color: var(--text); }
+  .modal-body ul { margin: 0 0 10px; padding-left: 1.15em; }
+  .modal-body li { margin: 6px 0; font-size: 0.93rem; }
+  .modal-body li::marker { color: var(--gold); }
+  .modal-body b { color: var(--gold-bright); font-weight: 600; }
+  .kbd { font-family: var(--font-mono); background: var(--bg-card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: var(--text); }
+
+  .note { margin-top: 8px; background: color-mix(in srgb, var(--gold) 8%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 30%, transparent); border-radius: 11px; padding: 16px 19px; color: var(--dim); font-size: 0.94rem; }
+  .note b { color: var(--gold-bright); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 28px 0 54px; color: var(--faint); font-size: 0.82rem; text-align: center; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); }
+</style></head><body><div class="topbar"><div class="row"><a href="../index.html" class="brand"><span class="sigil">C</span><b>La Clauderie</b></a><nav class="topnav" data-guild-nav data-current="news" aria-label="Navigation du site"></nav></div></div><div class="wrap"><header class="hero"><p class="eyebrow">World of ClaudeCraft · Notes de version</p><h1>Nouveautés <span class="v">v0.44.2</span></h1><p class="lede">Les donjons du <strong class="hl">Trésor enterré</strong> trouvent enfin leur calibrage : communs pour un joueur, rares et mieux pour cinq, avec des boss nettement moins violents. Les tentatives de coffre expirent, le soin redevient fiable, et Discord gagne la commande <strong class="hl">/flair</strong>.</p><div class="meta"><span><b>Publiée</b> le 1er octobre 2026</span><span><b>Depuis</b> v0.44.1</span><span><b>Correctif + calibrage</b></span></div><div class="hint">💡 Clique sur une carte pour le détail.</div></header><nav class="digest" aria-labelledby="digest-title"><h2 id="digest-title">En un coup d’œil</h2><p class="sec-sub">Les mêmes rubriques à chaque version, dans le même ordre.</p><ol><li class=""><span class="d-ico">⚔️</span><a class="d-name" href="#classes">Classes &amp; sorts</a><span class="d-say"><b class="eq">Classes =</b> aucun sort modifié ; le soin redevient fiable face à un ennemi JcJ.</span></li><li class="none"><span class="d-ico">🔨</span><a class="d-name" href="#metiers">Métiers &amp; récolte</a><span class="d-say">—</span></li><li class=""><span class="d-ico">🐉</span><a class="d-name" href="#donjons">Donjons, failles &amp; boss</a><span class="d-say"><b class="up">Trésor enterré ↑</b> communs pour un joueur, rares et plus pour cinq sans ajustement, boss −30 % et sbires −50 %.</span></li><li class=""><span class="d-ico">🗺️</span><a class="d-name" href="#monde">Monde &amp; quêtes</a><span class="d-say">Cartes au trésor : tentatives qui expirent, entrées visibles au groupe, récompenses préservées.</span></li><li class=""><span class="d-ico">🏰</span><a class="d-name" href="#guilde">Guilde &amp; social</a><span class="d-say">Discord : rôles renommés réparés et commande <b class="up">/flair</b>.</span></li><li class=""><span class="d-ico">⚙️</span><a class="d-name" href="#confort">Confort &amp; technique</a><span class="d-say">Fiche perso : infobulles de stats réparées.</span></li></ol></nav><section id="classes"><h2><span class="num">01</span>Classes &amp; sorts</h2><p class="sec-sub">Aucun sort ni talent ne change ; un seul réflexe de soigneur est réparé.</p><div class="grid cols-2"><div class="card more" data-detail="soin" tabindex="0" role="button"><h3>Le soin redevient fiable <span class="chip c-util">Correctif</span></h3><p>Soigner alors qu’un ennemi du JcJ mondial est ciblé retombait en erreur : le sort se pose désormais sur toi, comme en duel ou en arène.</p><span class="more-link">Voir le détail</span></div><div class="card"><h3>Les autres changements <span class="chip c-bal">Égalité</span></h3><p>Aucune mécanique de classe, aucun chiffre de sort ni de talent ne bouge en v0.44.2 — la page DPS du site garde donc ses chiffres.</p></div></div></section><section id="metiers"><h2><span class="num">02</span>Métiers &amp; récolte</h2><p class="sec-sub">Aucune recette, enchantement ou ressource dans ce correctif.</p><div class="grid cols-3"><div class="card"><h3>Aucun changement <span class="chip c-bal">Égalité</span></h3><p>Recettes, récolte et enchantements de la v0.44.0 restent les derniers en date.</p></div></div></section><section id="donjons"><h2><span class="num">03</span>Donjons, failles &amp; boss</h2><p class="sec-sub">Le cœur du correctif : le Trésor enterré (les donjons de cartes au trésor des Quêtes du monde) est enfin calibré pour de bon.</p><div class="grid cols-2"><div class="card more" data-detail="parchemins" tabindex="0" role="button"><h3>Un joueur ou cinq, sans surprise <span class="chip c-bal">Calibrage</span></h3><p>Commun = pour un joueur. Rare, épique et légendaire = pour cinq, SANS ajustement selon la taille du groupe. Et les boss rares+ frappent 30 % moins fort, leurs sbires 50 %.</p><span class="more-link">Voir le détail</span></div><div class="card"><h3>Remplace ton partenaire en route <span class="chip c-new">Nouveau</span></h3><p>L’entrée suit le groupe ACTUEL de celui qui ouvre, plus le roster verrouillé au départ : un déconnecté se remplace sans refaire le donjon. Corps à récupérer et récompenses déjà méritées survivent aux départs.</p></div><div class="card more" data-detail="tresors" tabindex="0" role="button"><h3>Trésors : ça fait le ménage <span class="chip c-util">Correctif</span></h3><p>Une tentative de coffre expire 6 h après le creusage, ou 15 min après la mort du dernier boss. Fini les tentatives bloquées qui encombraient la carte.</p><span class="more-link">Voir le détail</span></div></div></section><section id="monde"><h2><span class="num">04</span>Monde &amp; quêtes</h2><p class="sec-sub">Le monde ne change pas ; les cartes au trésor disent enfin ce qu’elles attendent de toi.</p><div class="grid cols-2"><div class="card"><h3>Cartes plus bavardes <span class="chip c-new">Interface</span></h3><p>Chaque carte affiche le nombre de joueurs conseillé, et les messages d’entrée précisent quand c’est un donjon de groupe.</p></div><div class="card"><h3>Quêtes inchangées <span class="chip c-bal">Égalité</span></h3><p>Les 8 minijeux et les trois factions de la v0.44.0 restent tels quels.</p></div></div></section><section id="guilde"><h2><span class="num">05</span>Guilde &amp; social</h2><p class="sec-sub">Discord est le seul chantier social du correctif — deux réparations et une commande.</p><div class="grid cols-2"><div class="card"><h3>Rôles renommés réparés <span class="chip c-util">Correctif</span></h3><p>Les rôles Observer et Sentinel s’affichent à nouveau correctement en jeu après leur renommage côté Discord.</p></div><div class="card"><h3><span class="kbd">/flair</span> : montre ou cache ton étiquette <span class="chip c-new">Nouveau</span></h3><p><span class="kbd">/flair off</span> masque l’étiquette de ton rôle Discord, <span class="kbd">/flair on</span> la remontre, <span class="kbd">/flair</span> seul dit où tu en es. Le réglage survit à la déconnexion.</p></div></div></section><section id="confort"><h2><span class="num">06</span>Confort &amp; technique</h2><p class="sec-sub">Une réparation attendue et l’entretien de rigueur.</p><div class="grid cols-2"><div class="card"><h3>Fiche perso réparée <span class="chip c-util">Correctif</span></h3><p>Les infobulles de statistiques de la fiche personnage sont de retour au survol.</p></div><div class="card"><h3>Entretien <span class="chip c-util">Technique</span></h3><p>Dépendances vulnérables mises à jour et empreintes des fichiers concernés rafraîchies — rien de visible en jeu.</p></div></div></section><div class="note"><b>Ce que ça change pour toi :</b> si tu creusais des cartes seul, les communes sont restées à ta main et les autres sont devenues jouables à cinq sans être écrasantes — le jeu dit même combien il en veut sur chaque carte. Tes tentatives de coffre oubliées se rangent toutes seules, et ton soigneur arrête de se battre avec sa barre de ciblage.</div></div><dialog id="modal" aria-labelledby="mTitle"><div class="modal-head"><h3 id="mTitle"></h3><button class="close" id="mClose" aria-label="Fermer">✕</button></div><div class="modal-body" id="mBody"></div></dialog><script>const DETAILS={
+"soin":{"title":"Le soin face à un ennemi JcJ : le réflexe classique","summary":"Depuis la v0.44.0, soigner avec un ennemi du JcJ mondial ciblé était refusé net. Le jeu adopte l'habitude des duels et arènes.","body":"<p>Un soigneur qui se bat contre un joueur marqué garde souvent l'ennemi en cible pendant qu'il se soigne : c'est le réflexe classique. Le JcJ mondial refusait pourtant le sort — il fallait penser à décibler avant chaque soin.</p><ul><li><b>Ennemi simplement ciblé</b> : le soin retombe sur TOI, exactement comme en duel, en arène ou au champ de bataille.</li><li><b>Ennemi désigné exprès</b> (au survol au moment de l'appui, ou cible verrouillée à la fin d'une incantation) : c'est une tentative d'aide délibérée, refusée ET annoncée — plus de soin qui part en silence sur le mauvais monde.</li><li><b>Cible qui devient ennemie en pleine incantation</b> : le sort échoue à la fin au lieu de retomber sur toi.</li></ul>"},
+"parchemins":{"title":"Le Trésor enterré : un joueur ou cinq, pour de vrai","summary":"Le calibrage ne flotte plus selon la taille du groupe : chaque rareté vise un effectif fixe, et la difficulté est retaillée en conséquence.","body":"<h4>Un effectif par rareté</h4><ul><li><b>Commun</b> : calibré pour <b>un joueur</b> — santé à <b>40 %</b> et dégâts à <b>30 %</b> de la version groupe, l'errande solitaire d'origine.</li><li><b>Rare, épique et légendaire</b> : calibrés pour <b>cinq joueurs</b>, avec <b>aucun ajustement</b> selon la taille du groupe : venir à deux ou trois ne rend PAS le boss plus faible, il a simplement toute sa santé.</li></ul><h4>Des boss retaillés</h4><p>Sur les paliers de groupe, les boss frappent <b>30 % moins fort</b> et leurs sbires <b>50 % moins fort</b> — coups d'arme et mécaniques scénarisées comprises. La cadence, les âmes bonus et la vitesse des mécaniques restent l'affaire de la rareté : une légendaire reste plus dense qu'une rare.</p><h4>Le groupe de remplacement</h4><p>L'entrée d'un donjon suit désormais le groupe <b>actuel</b> de celui qui ouvre, au lieu du roster verrouillé à la première entrée : un joueur déconnecté ou parti se remplace en route. Et si quelqu'un décroche, la récupération du corps et les récompenses déjà méritées survivent au départ.</p>"},
+"tresors":{"title":"Les tentatives de coffre ont une fin","summary":"Un coffre creusé vit 6 heures ; après le dernier boss, 15 minutes. Et les récompenses déjà gagnées ne se perdent plus.","body":"<h4>Expiration claire</h4><ul><li>Une tentative expire <b>6 heures après le creusage</b>, ou <b>15 minutes après la mort du dernier boss</b> — ce qui arrive d'abord.</li><li>À l'expiration, le verrou de carte du propriétaire se libère, y compris les vieilles tentatives <b>bloquées depuis des jours</b> : elles se rangent toutes seules.</li></ul><h4>Qui voit quoi</h4><p>L'entrée d'un coffre n'est visible que du <b>propriétaire et de son groupe actuel</b> — plus de portail visible de tout le voisinage. Les fantômes liés au coffre gardent leur accès pour aller récupérer leur corps.</p><h4>Rien ne se perd</h4><p>Les récompenses déjà gagnées (la réclamation de butin) <b>survivent à l'expiration</b> : un coffre qui ferme pendant que tu réfléchis ne t'efface pas ton gain.</p>"}
+};const modal=document.getElementById('modal'),mTitle=document.getElementById('mTitle'),mBody=document.getElementById('mBody');let lastFocus=null;function openModal(k){const x=DETAILS[k];if(!x)return;lastFocus=document.activeElement;mTitle.textContent=x.title;mBody.innerHTML=(x.summary?'<p class="summary">'+x.summary+'</p>':'')+x.body;if(window.CodexPopup)CodexPopup.enhance(mBody);if(typeof modal.showModal==='function')modal.showModal();else modal.setAttribute('open','');}function closeModal(){if(typeof modal.close==='function')modal.close();else modal.removeAttribute('open');if(lastFocus)lastFocus.focus();}document.querySelectorAll('[data-detail]').forEach(e=>{e.addEventListener('click',()=>openModal(e.dataset.detail));e.addEventListener('keydown',x=>{if(x.key==='Enter'||x.key===' '){x.preventDefault();openModal(e.dataset.detail);}})});document.getElementById('mClose').addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});modal.addEventListener('cancel',()=>{if(lastFocus)lastFocus.focus();});</script><script src="../assets/codex-popup.js" defer></script><script src="../assets/nav.js"></script><script src="../assets/lang.js"></script><script src="../assets/version.js" data-version="v0.44.2" defer></script></body></html>
