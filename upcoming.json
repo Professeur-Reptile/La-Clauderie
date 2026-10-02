@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-01T22:51:59Z",
+ "generated": "2026-10-02T13:04:40Z",
  "base_tag": "v0.44.2",
  "version": "v0.44.3",
  "branch": "release/v0.44.3",
  "declared_version": "0.44.3",
  "imminent": true,
- "commits": 7,
- "shown": 2,
- "last_commit": "2026-10-02T11:46:36+13:00",
+ "commits": 52,
+ "shown": 24,
+ "last_commit": "2026-10-02T20:42:46+13:00",
  "sections": [
   {
    "key": "classes",
@@ -57,14 +57,170 @@
    "icon": "🏰",
    "fr": "Guilde & social",
    "en": "Guild & social",
-   "items": []
+   "items": [
+    {
+     "h": "c2f3c073",
+     "kind": "feat",
+     "scope": "social",
+     "text": "Add /presence to hide online status from friends and guild",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "c791dc0b",
+     "kind": "feat",
+     "scope": "social",
+     "text": "Add the presence setting to the Social window Friends tab",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "85770eff",
+     "kind": "fix",
+     "scope": "social",
+     "text": "Confirm /presence as a chat line, not an error banner",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "a8d3d14b",
+     "kind": "fix",
+     "scope": "social",
+     "text": "Read the presence setting with the character row at join",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "3d79fdcf",
+     "kind": "fix",
+     "scope": "social",
+     "text": "Close the remaining presence leaks",
+     "date": "2026-10-02"
+    }
+   ]
   },
   {
    "key": "confort",
    "icon": "⚙️",
    "fr": "Confort & technique",
    "en": "Comfort & technical",
-   "items": []
+   "items": [
+    {
+     "h": "f5c4a103",
+     "kind": "feat",
+     "scope": "warfare",
+     "text": "Sell Season 1 Warfare gear for gold",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "993261de",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Add PvP Resurrect for open-world PvP deaths",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "5cfd47a0",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Add King of the Hill kill-streak bounties",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "4187e9c9",
+     "kind": "perf",
+     "scope": "hud",
+     "text": "Ask the PvP verdict only for players carrying our dots",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "a2137483",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Hide stealthed players from the dead and ghosts from strangers",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "516fdc57",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Count World PvP streak time only in the open world",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "6ce37e42",
+     "kind": "fix",
+     "scope": "warfare",
+     "text": "Land the Warfare caps on the full Season 2 kit",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "eb63d31d",
+     "kind": "fix",
+     "scope": "worldquests",
+     "text": "Allow pickpocketing wide-circle guards",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "3b6a28b7",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Name what paused the World PvP streak",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "a7fae45f",
+     "kind": "fix",
+     "scope": "worldquests",
+     "text": "Show the steal tip while a steal is open",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "e00b49c4",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Pause the World PvP streak while dead",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "9b45495e",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Wrap the death panel buttons so PvP Resurrect fits",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "1f605ac4",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Let ghosts see other ghosts again",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "d0db681a",
+     "kind": "fix",
+     "scope": "warfare",
+     "text": "Stop calling Season 1 an Honor purchase",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "4d4cea7c",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Reset the PvP Resurrect offer at every new death",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "d770d3a6",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "End a hill kill streak at any death while the hill stands",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "8371fbb2",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Track own debuffs on hostile players in Target dots",
+     "date": "2026-10-01"
+    }
+   ]
   }
  ],
  "versions": [
@@ -73,9 +229,9 @@
    "branch": "release/v0.44.3",
    "declared_version": "0.44.3",
    "imminent": true,
-   "commits": 7,
-   "shown": 2,
-   "last_commit": "2026-10-02T11:46:36+13:00",
+   "commits": 52,
+   "shown": 24,
+   "last_commit": "2026-10-02T20:42:46+13:00",
    "sections": [
     {
      "key": "classes",
@@ -125,14 +281,170 @@
      "icon": "🏰",
      "fr": "Guilde & social",
      "en": "Guild & social",
-     "items": []
+     "items": [
+      {
+       "h": "c2f3c073",
+       "kind": "feat",
+       "scope": "social",
+       "text": "Add /presence to hide online status from friends and guild",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "c791dc0b",
+       "kind": "feat",
+       "scope": "social",
+       "text": "Add the presence setting to the Social window Friends tab",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "85770eff",
+       "kind": "fix",
+       "scope": "social",
+       "text": "Confirm /presence as a chat line, not an error banner",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "a8d3d14b",
+       "kind": "fix",
+       "scope": "social",
+       "text": "Read the presence setting with the character row at join",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "3d79fdcf",
+       "kind": "fix",
+       "scope": "social",
+       "text": "Close the remaining presence leaks",
+       "date": "2026-10-02"
+      }
+     ]
     },
     {
      "key": "confort",
      "icon": "⚙️",
      "fr": "Confort & technique",
      "en": "Comfort & technical",
-     "items": []
+     "items": [
+      {
+       "h": "f5c4a103",
+       "kind": "feat",
+       "scope": "warfare",
+       "text": "Sell Season 1 Warfare gear for gold",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "993261de",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Add PvP Resurrect for open-world PvP deaths",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "5cfd47a0",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Add King of the Hill kill-streak bounties",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "4187e9c9",
+       "kind": "perf",
+       "scope": "hud",
+       "text": "Ask the PvP verdict only for players carrying our dots",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "a2137483",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Hide stealthed players from the dead and ghosts from strangers",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "516fdc57",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Count World PvP streak time only in the open world",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "6ce37e42",
+       "kind": "fix",
+       "scope": "warfare",
+       "text": "Land the Warfare caps on the full Season 2 kit",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "eb63d31d",
+       "kind": "fix",
+       "scope": "worldquests",
+       "text": "Allow pickpocketing wide-circle guards",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "3b6a28b7",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Name what paused the World PvP streak",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "a7fae45f",
+       "kind": "fix",
+       "scope": "worldquests",
+       "text": "Show the steal tip while a steal is open",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "e00b49c4",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Pause the World PvP streak while dead",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "9b45495e",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Wrap the death panel buttons so PvP Resurrect fits",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "1f605ac4",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Let ghosts see other ghosts again",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "d0db681a",
+       "kind": "fix",
+       "scope": "warfare",
+       "text": "Stop calling Season 1 an Honor purchase",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "4d4cea7c",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Reset the PvP Resurrect offer at every new death",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "d770d3a6",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "End a hill kill streak at any death while the hill stands",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "8371fbb2",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Track own debuffs on hostile players in Target dots",
+       "date": "2026-10-01"
+      }
+     ]
     }
    ]
   },
@@ -141,9 +453,9 @@
    "branch": "ossbrain-release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 169,
-   "shown": 87,
-   "last_commit": "2026-10-01T21:15:37Z",
+   "commits": 186,
+   "shown": 96,
+   "last_commit": "2026-10-02T18:11:42+13:00",
    "sections": [
     {
      "key": "classes",
@@ -287,6 +599,13 @@
      "en": "Dungeons, rifts & bosses",
      "items": [
       {
+       "h": "474f6b5f",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Refuse portal entry during every world quest trial",
+       "date": "2026-10-02"
+      },
+      {
        "h": "48789bc5",
        "kind": "fix",
        "scope": "dungeon",
@@ -305,6 +624,20 @@
        "kind": "fix",
        "scope": "render",
        "text": "Align rift gate test hook with LoadedGltf",
+       "date": "2026-09-30"
+      },
+      {
+       "h": "be104fd5",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Wash the whole blast disc of a rift boss windup ring",
+       "date": "2026-09-30"
+      },
+      {
+       "h": "0650ef85",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Let Vaulting Charge leave a rift's raised deck",
        "date": "2026-09-30"
       },
       {
@@ -351,6 +684,13 @@
        "date": "2026-09-30"
       },
       {
+       "h": "59fe614e",
+       "kind": "fix",
+       "scope": "factions",
+       "text": "List allied rows including cartographers ink in vendor window",
+       "date": "2026-10-01"
+      },
+      {
        "h": "d0d6b6a6",
        "kind": "fix",
        "scope": "render",
@@ -376,6 +716,13 @@
        "kind": "fix",
        "scope": "vendor",
        "text": "Say which sales buyback can no longer undo",
+       "date": "2026-09-30"
+      },
+      {
+       "h": "4cf6a269",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Keep world PvP off a player manning a world-quest cannon",
        "date": "2026-09-30"
       }
      ]
@@ -521,6 +868,13 @@
        "date": "2026-09-26"
       },
       {
+       "h": "4187e9c9",
+       "kind": "perf",
+       "scope": "hud",
+       "text": "Ask the PvP verdict only for players carrying our dots",
+       "date": "2026-10-02"
+      },
+      {
        "h": "150c4422",
        "kind": "perf",
        "scope": "render",
@@ -553,6 +907,13 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Keep the item tooltip source pins intact",
+       "date": "2026-10-01"
+      },
+      {
+       "h": "8371fbb2",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Track own debuffs on hostile players in Target dots",
        "date": "2026-10-01"
       },
       {
@@ -609,6 +970,20 @@
        "kind": "fix",
        "scope": "i18n",
        "text": "Keep the retired settings note off the wiki retire list",
+       "date": "2026-09-30"
+      },
+      {
+       "h": "87345962",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Stop endless cannon runs dropping the player",
+       "date": "2026-09-30"
+      },
+      {
+       "h": "f292602f",
+       "kind": "fix",
+       "scope": "faction-rewards",
+       "text": "Tame and honor the Dawn Battle Standard",
        "date": "2026-09-30"
       },
       {
