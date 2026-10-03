@@ -2,6 +2,26 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.44.3",
+   "date": "2026-10-03",
+   "titre": "Les collines à prix d'or, la Résurrection JcJ et une Nythraxis retaillée",
+   "resume": "La v0.44.3 met le JcJ en scène : les séries de kills sur les collines paient des primes (jusqu'à 33 Honor à 7 kills, contre 3 pour une tête en série de morts), un annonceur crie les séries à toute la zone, et la mort en monde ouvert contre un joueur offre la Résurrection JcJ au cimetière, pleine vie et sans nouveau Keeper's Toll. La commande /presence masque ton statut en ligne (zone et position comprises). Côté Guerre : la saison 1 passe à l'or (100 po le set de 7), la saison 2 gagne crit/hâte, Puissance des sorts et huit bijoux inédits, avec des caps de score Guerre qui exigent le kit complet. Et Nythraxis perd sa Tempête d'os : la page DPS du site sera re-simulée.",
+   "temps_forts": [
+    "🏰 Primes de série sur les collines (10 → 33 Honor) et annonceur de zone",
+    "⚔️ Résurrection JcJ : se relever au cimetière, pleine vie, sans nouveau Toll",
+    "🛡️ Guerre S1 en or (100 po), S2 avec scores de combat et 8 bijoux",
+    "🐉 Nythraxis : Tempête d'os retirée, Éruption et Soul Rend prennent leur tour"
+   ],
+   "temps_forts_en": [
+    "🏰 Streak bounties on hills (10 → 33 Honor) and a zone announcer",
+    "⚔️ PvP Resurrect: rise at the graveyard, full health, no new Toll",
+    "🛡️ Warfare S1 for gold (100 g), S2 with combat ratings and 8 jewelry",
+    "🐉 Nythraxis: Bone Storm retired, Eruption and Soul Rend take turns"
+   ],
+   "page": "notes/v0.44.3.html",
+   "page_en": "notes/v0.44.3.en.html"
+  },
+  {
    "version": "v0.44.2",
    "date": "2026-10-01",
    "titre": "Le Trésor enterré enfin calibré, et /flair pour Discord",
