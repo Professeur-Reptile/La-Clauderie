@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-03T09:58:47Z",
+ "generated": "2026-10-04T23:31:31Z",
  "base_tag": "v0.44.3",
  "version": "v0.44.4",
  "branch": "release/v0.44.4",
  "declared_version": "0.44.4",
  "imminent": true,
- "commits": 5,
- "shown": 2,
- "last_commit": "2026-10-03T22:53:15+13:00",
+ "commits": 14,
+ "shown": 4,
+ "last_commit": "2026-10-03T23:15:40+13:00",
  "sections": [
   {
    "key": "classes",
@@ -28,7 +28,15 @@
    "icon": "🐉",
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
-   "items": []
+   "items": [
+    {
+     "h": "d7e53144",
+     "kind": "fix",
+     "scope": "instances",
+     "text": "Let a party leader switch dungeon difficulty in place",
+     "date": "2026-10-02"
+    }
+   ]
   },
   {
    "key": "monde",
@@ -63,6 +71,13 @@
      "scope": "seo",
      "text": "Add the player-guides row to the /play footer",
      "date": "2026-10-03"
+    },
+    {
+     "h": "d85e2b3f",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Answer unknown page paths with a 404 status, same body",
+     "date": "2026-10-03"
     }
    ]
   }
@@ -73,9 +88,9 @@
    "branch": "release/v0.44.4",
    "declared_version": "0.44.4",
    "imminent": true,
-   "commits": 5,
-   "shown": 2,
-   "last_commit": "2026-10-03T22:53:15+13:00",
+   "commits": 14,
+   "shown": 4,
+   "last_commit": "2026-10-03T23:15:40+13:00",
    "sections": [
     {
      "key": "classes",
@@ -96,7 +111,15 @@
      "icon": "🐉",
      "fr": "Donjons, failles & boss",
      "en": "Dungeons, rifts & bosses",
-     "items": []
+     "items": [
+      {
+       "h": "d7e53144",
+       "kind": "fix",
+       "scope": "instances",
+       "text": "Let a party leader switch dungeon difficulty in place",
+       "date": "2026-10-02"
+      }
+     ]
     },
     {
      "key": "monde",
@@ -131,6 +154,13 @@
        "scope": "seo",
        "text": "Add the player-guides row to the /play footer",
        "date": "2026-10-03"
+      },
+      {
+       "h": "d85e2b3f",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Answer unknown page paths with a 404 status, same body",
+       "date": "2026-10-03"
       }
      ]
     }
@@ -141,9 +171,9 @@
    "branch": "ossbrain-release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 184,
-   "shown": 94,
-   "last_commit": "2026-10-02T18:11:42+13:00",
+   "commits": 236,
+   "shown": 119,
+   "last_commit": "2026-10-04T23:08:06Z",
    "sections": [
     {
      "key": "classes",
@@ -199,6 +229,20 @@
        "scope": "render",
        "text": "Decode the Warrior kit's image sheets off the main thread",
        "date": "2026-09-27"
+      },
+      {
+       "h": "7ba4b53c",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Stop Divine Ascension pinning the paladin's rider height",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "dbb6ee9a",
+       "kind": "fix",
+       "scope": "mounts",
+       "text": "Keep the mount when auto-attack is still armed",
+       "date": "2026-10-02"
       },
       {
        "h": "1fa62dc8",
@@ -287,10 +331,80 @@
      "en": "Dungeons, rifts & bosses",
      "items": [
       {
+       "h": "99bee994",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Avoid duplicate spectate exit floor resend",
+       "date": "2026-10-04"
+      },
+      {
+       "h": "bd1c02bc",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Clear the online rift floor when a ghost leaves it",
+       "date": "2026-10-02"
+      },
+      {
        "h": "474f6b5f",
        "kind": "fix",
        "scope": "rift",
        "text": "Refuse portal entry during every world quest trial",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "d7e53144",
+       "kind": "fix",
+       "scope": "instances",
+       "text": "Let a party leader switch dungeon difficulty in place",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "913924cf",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Send the rift exit on a battleground seat and a hearthstone",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "a20bfee7",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Send the rift exit and re-entry on moderation teleports",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "3ed32a88",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Follow the spectate view with the online rift floor",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "b64b44cb",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Send the moderator's own floor with the spectate exit frame",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "7b6685b5",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep the vault loot button and Dungeon Finder vault in view",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "913924cf",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Send the rift exit on a battleground seat and a hearthstone",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "a20bfee7",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Send the rift exit and re-entry on moderation teleports",
        "date": "2026-10-02"
       },
       {
@@ -358,6 +472,13 @@
      "en": "World & quests",
      "items": [
       {
+       "h": "025a1c80",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Allow replacing an in-progress world quest",
+       "date": "2026-10-02"
+      },
+      {
        "h": "02b761f5",
        "kind": "feat",
        "scope": "discord",
@@ -415,6 +536,13 @@
      "en": "Guild & social",
      "items": [
       {
+       "h": "cc18fe96",
+       "kind": "feat",
+       "scope": "social",
+       "text": "Right-click a Social row for the player menu",
+       "date": "2026-10-02"
+      },
+      {
        "h": "f710dabb",
        "kind": "feat",
        "scope": "moderation",
@@ -427,6 +555,13 @@
        "scope": "discord",
        "text": "Add World PvP kill feed to a dedicated channel",
        "date": "2026-09-29"
+      },
+      {
+       "h": "22ba61f9",
+       "kind": "fix",
+       "scope": "social",
+       "text": "Route row menus in the window, add touch long-press",
+       "date": "2026-10-02"
       },
       {
        "h": "47cdcce2",
@@ -443,6 +578,20 @@
      "fr": "Confort & technique",
      "en": "Comfort & technical",
      "items": [
+      {
+       "h": "4d5158bc",
+       "kind": "feat",
+       "scope": "seo",
+       "text": "Link the player guides from the site and wiki footers",
+       "date": "2026-10-03"
+      },
+      {
+       "h": "ab934d4d",
+       "kind": "feat",
+       "scope": "seo",
+       "text": "Add the player-guides row to the /play footer",
+       "date": "2026-10-03"
+      },
       {
        "h": "348ea5a6",
        "kind": "feat",
@@ -575,6 +724,62 @@
        "scope": "render",
        "text": "Touch the veil family's program tables before the curtain",
        "date": "2026-09-26"
+      },
+      {
+       "h": "f7d8c51b",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Translate hill vault progress in non-Latin locales",
+       "date": "2026-10-04"
+      },
+      {
+       "h": "d85e2b3f",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Answer unknown page paths with a 404 status, same body",
+       "date": "2026-10-03"
+      },
+      {
+       "h": "6fb27bfe",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Fill ranked hill vault guide locales",
+       "date": "2026-10-03"
+      },
+      {
+       "h": "0e4f9284",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Make rerolled-in quests completable",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "4abeef0a",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep the weekly vault on screen at any UI scale",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "dfd049da",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep wrapped vault labels from drawing over the vault art",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "4183e9ae",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Let feral strikes roll Last Flame's Zeal like other melee",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "ab9a1e9a",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Drop the Evergarden's undrawn scatter at the source",
+       "date": "2026-10-02"
       },
       {
        "h": "dc6ebf9c",
