@@ -2,6 +2,26 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.44.4",
+   "date": "2026-10-05",
+   "titre": "Les collines au classement, la Chambre forte aux répétitions",
+   "resume": "La v0.44.4 récompense autrement : les collines se commentent toutes les 5 minutes (top 3 des groupes au temps de détention) et la meilleure tenue d'au moins 10 minutes paie une victoire de Chambre forte à ses occupants. La Chambre forte compte désormais chaque dernier boss de raid, y compris les répétitions de Nythraxis (tes trois meilleures clears règlent les difficultés). Les invités du Trésor enterré ne sont plus limités à 3 paiements par cycle — et les chances du Grumbol au coffre final passent de 1–5 % à 0,25–1 % selon la rareté (les coffrets gardent leurs 1,5 %). Le chef de groupe change la difficulté sans reformer.",
+   "temps_forts": [
+    "🏰 Classements de colline toutes les 5 min et victoire de Chambre forte",
+    "🐉 Chambre forte : chaque dernier boss de raid compte, Nythraxis répétée incluse",
+    "🗺️ Invités des trésors déplafonnés ; Grumbol au coffre final divisé par quatre (0,25–1 %)",
+    "⚔️ Changement de difficulté sans reformer le groupe"
+   ],
+   "temps_forts_en": [
+    "🏰 Hill standings every 5 min and a Weekly Vault win",
+    "🐉 Weekly Vault: every final raid boss counts, repeat Nythraxis included",
+    "🗺️ Treasure guests uncapped; Grumbol at the final chest cut fourfold (0.25–1%)",
+    "⚔️ Difficulty switching without re-forming the party"
+   ],
+   "page": "notes/v0.44.4.html",
+   "page_en": "notes/v0.44.4.en.html"
+  },
+  {
    "version": "v0.44.3",
    "date": "2026-10-03",
    "titre": "Les collines à prix d'or, la Résurrection JcJ et une Nythraxis retaillée",

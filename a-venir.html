@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
 <title>La prochaine version — La Clauderie</title>
-<meta name="description" content="Ce que les développeurs préparent pour la v0.44.4 de World of ClaudeCraft, expliqué simplement — un micro-correctif de site web, rien en jeu ; la vraie préparation est la v0.45.0 (l'option pour couper les effets des sorts, les collines possiblement à 3 h, les crânes-trophées).">
+<meta name="description" content="Ce que les développeurs préparent pour la v0.45.0 de World of ClaudeCraft, expliqué simplement — l'option pour couper les effets des sorts, un ajustement du druide farouche, des crânes-trophées sur les cadavres et un gros travail de lisibilité.">
 <meta name="theme-color" content="#c8a04b">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="La Clauderie">
 <meta property="og:title" content="La prochaine version — La Clauderie">
-<meta property="og:description" content="Ce que les développeurs préparent pour la v0.44.4 de World of ClaudeCraft, expliqué simplement — un micro-correctif de site web, rien en jeu ; la vraie préparation est la v0.45.0 (l'option pour couper les effets des sorts, les collines possiblement à 3 h, les crânes-trophées).">
+<meta property="og:description" content="Ce que les développeurs préparent pour la v0.45.0 de World of ClaudeCraft, expliqué simplement — l'option pour couper les effets des sorts, un ajustement du druide farouche, des crânes-trophées sur les cadavres et un gros travail de lisibilité.">
 <meta property="og:url" content="https://laclauderie.fr/a-venir.html">
 <link rel="canonical" href="https://laclauderie.fr/a-venir.html">
 <meta property="og:image" content="https://laclauderie.fr/assets/og.png">
@@ -196,8 +196,8 @@
 <div class="wrap">
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · En préparation</p>
-    <h1>La prochaine version <span class="v" id="vNum">v0.44.4</span></h1>
-    <p class="lede">La <a href="notes/v0.44.3.html">v0.44.3</a> vient de mettre les collines à prix (primes de série, Résurrection JcJ, /presence, Guerre S1 en or). Le jeu annonce <strong class="hl">deux chantiers</strong> : la <strong class="hl">v0.44.4</strong>, un micro-correctif de site web (rien en jeu), et la <strong class="hl">v0.45.0</strong> derrière — 184 commits, dont l’option pour couper les effets des sorts.</p>
+    <h1>La prochaine version <span class="v" id="vNum">v0.45.0</span></h1>
+    <p class="lede">La <a href="notes/v0.44.4.html">v0.44.4</a> vient de mettre les collines au classement. Derrière, la <strong class="hl">v0.45.0</strong> est <strong class="hl">annoncée imminente</strong> par le jeu : 232 commits — l’option pour couper les effets des sorts, un ajustement du druide farouche, des trophées sur les cadavres et un gros travail de lisibilité.</p>
 
     <div class="warn">
       <span class="ico" aria-hidden="true">⚠️</span>
@@ -222,66 +222,72 @@
     <h2 id="digest-title">En un coup d’œil</h2>
     <p class="sec-sub">Les mêmes rubriques qu’à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
     <ol>
-      <li class="none"><span class="d-ico" aria-hidden="true">⚔️</span><a class="d-name" href="#combat">Classes &amp; sorts</a><span class="d-say">— rien d’annoncé.</span></li>
-      <li class="none"><span class="d-ico" aria-hidden="true">🔨</span><a class="d-name" href="#metiers">Métiers &amp; récolte</a><span class="d-say">—</span></li>
-      <li class="none"><span class="d-ico" aria-hidden="true">🐉</span><a class="d-name" href="#donjons">Donjons, failles &amp; boss</a><span class="d-say">—</span></li>
-      <li class="none"><span class="d-ico" aria-hidden="true">🗺️</span><a class="d-name" href="#monde">Monde &amp; quêtes</a><span class="d-say">—</span></li>
-      <li class="none"><span class="d-ico" aria-hidden="true">🏰</span><a class="d-name" href="#guilde">Guilde &amp; social</a><span class="d-say">—</span></li>
-      <li class=""><span class="d-ico" aria-hidden="true">⚙️</span><a class="d-name" href="#confort">Confort &amp; technique</a><span class="d-say">— le site du jeu lie les guides joueurs ; la v0.45.0 se prépare derrière.</span></li>
+      <li class=""><span class="d-ico" aria-hidden="true">⚔️</span><a class="d-name" href="#combat">Classes &amp; sorts</a><span class="d-say">— druide farouche ajusté ; l’option « effets des sorts » est là.</span></li>
+      <li class=""><span class="d-ico" aria-hidden="true">🔨</span><a class="d-name" href="#metiers">Métiers &amp; récolte</a><span class="d-say">— les motifs de recette disent ce qu’ils fabriquent.</span></li>
+      <li class=""><span class="d-ico" aria-hidden="true">🐉</span><a class="d-name" href="#donjons">Donjons, failles &amp; boss</a><span class="d-say">— difficulté affichée sur la minimap ; butin inchangé.</span></li>
+      <li class=""><span class="d-ico" aria-hidden="true">🗺️</span><a class="d-name" href="#monde">Monde &amp; quêtes</a><span class="d-say">— quêtes en cours remplaçables ; les collines s’annoncent sur Discord.</span></li>
+      <li class=""><span class="d-ico" aria-hidden="true">🏰</span><a class="d-name" href="#guilde">Guilde &amp; social</a><span class="d-say">— clic droit social et mot du royaume.</span></li>
+      <li class=""><span class="d-ico" aria-hidden="true">⚙️</span><a class="d-name" href="#confort">Confort &amp; technique</a><span class="d-say">— chiffres de dégâts lisibles, crânes-trophées, titres Titan/Timeless.</span></li>
     </ol>
   </nav>
 
   <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
        s'efface d'elle-même quand cette version sort, et se signale périmée si
        le jeu passe à préparer la suivante. -->
-  <div id="editorial" data-for="v0.44.4" data-commits="5" data-chantiers="v0.44.4" data-written="2026-10-03T12:10+02:00">
+  <div id="editorial" data-for="v0.45.0" data-commits="232" data-chantiers="v0.45.0" data-written="2026-10-05T11:30+02:00">
 
   <section id="combat">
-    <div class="sec-head"><span class="sec-num">01</span><h2>Classes &amp; sorts : rien d’annoncé</h2></div>
-    <p class="sec-sub">Aucun sort ni talent sur la branche.</p>
-    <div class="grid cols-3">
-      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>La v0.44.4 est un micro-correctif : 5 commits, tous côté site web du jeu.</p></div>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Classes &amp; sorts : le druide farouche passe à table</h2></div>
+    <p class="sec-sub">Premier vrai passage d’équilibrage depuis la v0.44.1, centré sur le kit farouche du druide.</p>
+    <div class="grid cols-2">
+      <div class="card"><h3>Druide farouche : ajustement Wildfang <span class="chip c-bal">Équilibrage</span></h3><p>Scratch devient un sort de base à 6 m qui repère les furtifs, la portée de Slinkstrike et Stalk sont retaillées : un passage d’ensemble, à confirmer à la sortie.</p></div>
+      <div class="card"><h3>Effets des sorts : l’interrupteur arrive <span class="chip c-new">Option</span></h3><p>L’option « Effets des sorts » pour couper les effets visuels est sur la branche — les ennemis restent lisibles. Le réglage le plus attendu du jeu.</p></div>
     </div>
   </section>
 
   <section id="metiers">
-    <div class="sec-head"><span class="sec-num">02</span><h2>Métiers &amp; récolte : rien d’annoncé</h2></div>
-    <p class="sec-sub">Aucune recette ni outil sur la branche.</p>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Métiers &amp; récolte : les recettes disent ce qu’elles font</h2></div>
+    <p class="sec-sub">Une seule nouveauté, mais bien sentie.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>Rien de neuf côté métiers.</p></div>
+      <div class="card"><h3>Infobulle des motifs de recette <span class="chip c-new">Interface</span></h3><p>Le motif d’une recette affiche désormais ce qu’il fabrique au survol — plus besoin de deviner avant d’acheter.</p></div>
     </div>
   </section>
 
   <section id="donjons">
-    <div class="sec-head"><span class="sec-num">03</span><h2>Donjons, failles &amp; boss : rien d’annoncé</h2></div>
-    <p class="sec-sub">Les instances restent celles de la v0.44.3.</p>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Donjons, failles &amp; boss : retouches techniques</h2></div>
+    <p class="sec-sub">Rien d’annoncé en contenu : les 18 commits de la rubrique sont de l’affichage et de la mémoire.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>Nythraxis tout juste retaillée n’est pas retouchée davantage.</p></div>
+      <div class="card"><h3>Difficulté affichée sur la minimap <span class="chip c-new">Interface</span></h3><p>L’indicateur de difficulté d’instance arrive sur la minimap et les en-têtes — plus de doute en entrant.</p></div>
+      <div class="card"><h3>Butin inchangé <span class="chip c-bal">Égalité</span></h3><p>Rien de neuf côté loot ni rencontres sur la branche.</p></div>
     </div>
   </section>
 
   <section id="monde">
-    <div class="sec-head"><span class="sec-num">04</span><h2>Monde &amp; quêtes : rien d’annoncé</h2></div>
-    <p class="sec-sub">Le monde ouvert ne bouge pas.</p>
-    <div class="grid cols-3">
-      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>Quêtes, factions et trésors restent ceux de la v0.44.3.</p></div>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Monde &amp; quêtes : une quête qui se remplace</h2></div>
+    <p class="sec-sub">Le monde ouvert peaufine, avec du Discord en prime.</p>
+    <div class="grid cols-2">
+      <div class="card"><h3>Remplacer une quête en cours <span class="chip c-new">Nouveau</span></h3><p>Les Quêtes du monde permettront de remplacer une quête en cours — plus de blocage sur une quête qui ne te va pas.</p></div>
+      <div class="card"><h3>Discord : les collines s’annoncent <span class="chip c-new">Communauté</span></h3><p>Les naissances de collines seront publiées dans un salon PvP, avec un flux de kills JcJ mondial dédié.</p></div>
     </div>
   </section>
 
   <section id="guilde">
-    <div class="sec-head"><span class="sec-num">05</span><h2>Guilde &amp; social : rien d’annoncé</h2></div>
-    <p class="sec-sub">Aucun outil de guilde ni social sur la branche.</p>
-    <div class="grid cols-3">
-      <div class="card"><h3>Aucun changement annoncé <span class="chip c-bal">Égalité</span></h3><p>Primes de colline, Résurrection JcJ et /presence restent ceux de la v0.44.3.</p></div>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Guilde &amp; social : clic droit et mot du royaume</h2></div>
+    <p class="sec-sub">La fenêtre sociale s’enrichit, et les admins gagnent un mégaphone.</p>
+    <div class="grid cols-2">
+      <div class="card"><h3>Clic droit sur une ligne sociale <span class="chip c-new">Interface</span></h3><p>Un clic droit sur un joueur de la fenêtre sociale ouvre son menu — plus de manipulations à rallonge.</p></div>
+      <div class="card"><h3>Mot du royaume <span class="chip c-new">Modération</span></h3><p>Les administrateurs pourront poser un message de royaume affiché à tous — l’outil des annonces communautaires.</p></div>
     </div>
   </section>
 
   <section id="confort">
-    <div class="sec-head"><span class="sec-num">06</span><h2>Un correctif de vitrine, et la grosse v0.45.0 derrière</h2></div>
-    <p class="sec-sub">La v0.44.4 ne touche pas le jeu : c’est le site public du jeu qui s’enrichit. La vraie préparation, c’est la v0.45.0.</p>
+    <div class="sec-head"><span class="sec-num">06</span><h2>Confort : la plus grosse rubrique du chantier</h2></div>
+    <p class="sec-sub">Chiffres de dégâts, trophées, titres et mémoire : 64 commits de lisibilité.</p>
     <div class="grid cols-2">
-      <div class="card"><h3>Le site du jeu met ses guides en vitrine <span class="chip c-util">Site web</span></h3><p>Le pied de page de la page /play du jeu ajoute une rangée de liens vers les guides joueurs (MMORPG gratuits, jeux comme WoW…) — du référencement, rien en jeu.</p></div>
-      <div class="card"><h3>Derrière : la v0.45.0 <span class="chip c-new">Chantier</span></h3><p>184 commits déjà : l’option très attendue pour couper les effets des sorts, des collines possiblement remises au rythme des 3 heures, des crânes-trophées sur les cadavres, et un gros travail de mémoire sur iPhone. Elle aura sa page quand son tour viendra.</p></div>
+      <div class="card"><h3>Chiffres et trophées <span class="chip c-new">Interface</span></h3><p>Tes dégâts sortent du lot par défaut, les couleurs par école disparaissent, et les kills JcJ mondial déposent des crânes-trophées qui s’empilent en se souvenant de qui ils sont.</p></div>
+      <div class="card"><h3>Deux titres d’XP de vie <span class="chip c-new">Titres</span></h3><p>Le titre des 10 millions d’XP cumulés se renomme <b>Titan</b>, et un titre <b>Timeless</b> apparaît dans la même famille.</p></div>
+      <div class="card"><h3>iPhone respire <span class="chip c-util">Technique</span></h3><p>Tout un profil mémoire iOS : textures et sons plafonnés, caches bornés, restauration graphique propre avec un message dédié.</p></div>
+      <div class="card"><h3>Prudence d’usage <span class="chip c-util">Prudence</span></h3><p>232 commits au relevé et version imminente annoncée par le jeu : tout ceci reste du travail en cours, cette page sera reprise à la sortie.</p></div>
     </div>
   </section>
 
