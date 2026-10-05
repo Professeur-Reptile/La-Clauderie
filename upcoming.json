@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-04T23:31:31Z",
+ "generated": "2026-10-05T06:07:16Z",
  "base_tag": "v0.44.3",
  "version": "v0.44.4",
  "branch": "release/v0.44.4",
  "declared_version": "0.44.4",
  "imminent": true,
- "commits": 14,
- "shown": 4,
- "last_commit": "2026-10-03T23:15:40+13:00",
+ "commits": 39,
+ "shown": 15,
+ "last_commit": "2026-10-05T18:41:23+13:00",
  "sections": [
   {
    "key": "classes",
@@ -29,6 +29,20 @@
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
    "items": [
+    {
+     "h": "213f2bbe",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Gate loot on current-week boss kills",
+     "date": "2026-10-05"
+    },
+    {
+     "h": "c0d5bdf6",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Count every raid boss clear",
+     "date": "2026-10-03"
+    },
     {
      "h": "d7e53144",
      "kind": "fix",
@@ -59,6 +73,20 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "e4d6f9e8",
+     "kind": "feat",
+     "scope": "hill",
+     "text": "Pay the vault point only for a ten-minute hold",
+     "date": "2026-10-05"
+    },
+    {
+     "h": "5968e948",
+     "kind": "feat",
+     "scope": "hoards",
+     "text": "Remove daily guest reward limit",
+     "date": "2026-10-04"
+    },
+    {
      "h": "4d5158bc",
      "kind": "feat",
      "scope": "seo",
@@ -73,11 +101,60 @@
      "date": "2026-10-03"
     },
     {
+     "h": "5e4743ac",
+     "kind": "feat",
+     "scope": "hill",
+     "text": "Announce, map, rank and reward King of the Hill",
+     "date": "2026-09-29"
+    },
+    {
+     "h": "0f314fe8",
+     "kind": "feat",
+     "scope": "hill",
+     "text": "Caption the map marker below its badge, add shots",
+     "date": "2026-09-29"
+    },
+    {
+     "h": "8b79f578",
+     "kind": "fix",
+     "scope": "hill",
+     "text": "Preserve vault credit for disbanded duo survivor",
+     "date": "2026-10-05"
+    },
+    {
+     "h": "f7d8c51b",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Translate hill vault progress in non-Latin locales",
+     "date": "2026-10-04"
+    },
+    {
+     "h": "4b4fc65e",
+     "kind": "fix",
+     "scope": "hoard",
+     "text": "Reduce chest mount odds",
+     "date": "2026-10-04"
+    },
+    {
      "h": "d85e2b3f",
      "kind": "fix",
      "scope": "server",
      "text": "Answer unknown page paths with a 404 status, same body",
      "date": "2026-10-03"
+    },
+    {
+     "h": "50f51c05",
+     "kind": "fix",
+     "scope": "hill",
+     "text": "Keep the 3 h schedule, 45 min stand and map as they were",
+     "date": "2026-09-30"
+    },
+    {
+     "h": "1330bf09",
+     "kind": "fix",
+     "scope": "hill",
+     "text": "Close the vault farm and match the old Honor exactly",
+     "date": "2026-09-29"
     }
    ]
   }
@@ -88,9 +165,9 @@
    "branch": "release/v0.44.4",
    "declared_version": "0.44.4",
    "imminent": true,
-   "commits": 14,
-   "shown": 4,
-   "last_commit": "2026-10-03T23:15:40+13:00",
+   "commits": 39,
+   "shown": 15,
+   "last_commit": "2026-10-05T18:41:23+13:00",
    "sections": [
     {
      "key": "classes",
@@ -112,6 +189,20 @@
      "fr": "Donjons, failles & boss",
      "en": "Dungeons, rifts & bosses",
      "items": [
+      {
+       "h": "213f2bbe",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Gate loot on current-week boss kills",
+       "date": "2026-10-05"
+      },
+      {
+       "h": "c0d5bdf6",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Count every raid boss clear",
+       "date": "2026-10-03"
+      },
       {
        "h": "d7e53144",
        "kind": "fix",
@@ -142,6 +233,20 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "e4d6f9e8",
+       "kind": "feat",
+       "scope": "hill",
+       "text": "Pay the vault point only for a ten-minute hold",
+       "date": "2026-10-05"
+      },
+      {
+       "h": "5968e948",
+       "kind": "feat",
+       "scope": "hoards",
+       "text": "Remove daily guest reward limit",
+       "date": "2026-10-04"
+      },
+      {
        "h": "4d5158bc",
        "kind": "feat",
        "scope": "seo",
@@ -156,11 +261,60 @@
        "date": "2026-10-03"
       },
       {
+       "h": "5e4743ac",
+       "kind": "feat",
+       "scope": "hill",
+       "text": "Announce, map, rank and reward King of the Hill",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "0f314fe8",
+       "kind": "feat",
+       "scope": "hill",
+       "text": "Caption the map marker below its badge, add shots",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "8b79f578",
+       "kind": "fix",
+       "scope": "hill",
+       "text": "Preserve vault credit for disbanded duo survivor",
+       "date": "2026-10-05"
+      },
+      {
+       "h": "f7d8c51b",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Translate hill vault progress in non-Latin locales",
+       "date": "2026-10-04"
+      },
+      {
+       "h": "4b4fc65e",
+       "kind": "fix",
+       "scope": "hoard",
+       "text": "Reduce chest mount odds",
+       "date": "2026-10-04"
+      },
+      {
        "h": "d85e2b3f",
        "kind": "fix",
        "scope": "server",
        "text": "Answer unknown page paths with a 404 status, same body",
        "date": "2026-10-03"
+      },
+      {
+       "h": "50f51c05",
+       "kind": "fix",
+       "scope": "hill",
+       "text": "Keep the 3 h schedule, 45 min stand and map as they were",
+       "date": "2026-09-30"
+      },
+      {
+       "h": "1330bf09",
+       "kind": "fix",
+       "scope": "hill",
+       "text": "Close the vault farm and match the old Honor exactly",
+       "date": "2026-09-29"
       }
      ]
     }
@@ -171,9 +325,9 @@
    "branch": "ossbrain-release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 236,
-   "shown": 119,
-   "last_commit": "2026-10-04T23:08:06Z",
+   "commits": 253,
+   "shown": 124,
+   "last_commit": "2026-10-05T05:47:39Z",
    "sections": [
     {
      "key": "classes",
@@ -579,6 +733,20 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "e4d6f9e8",
+       "kind": "feat",
+       "scope": "hill",
+       "text": "Pay the vault point only for a ten-minute hold",
+       "date": "2026-10-05"
+      },
+      {
+       "h": "1c3f85a9",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add instance difficulty indicator to minimap and headers",
+       "date": "2026-10-04"
+      },
+      {
        "h": "4d5158bc",
        "kind": "feat",
        "scope": "seo",
@@ -726,10 +894,31 @@
        "date": "2026-09-26"
       },
       {
+       "h": "8b79f578",
+       "kind": "fix",
+       "scope": "hill",
+       "text": "Preserve vault credit for disbanded duo survivor",
+       "date": "2026-10-05"
+      },
+      {
        "h": "f7d8c51b",
        "kind": "fix",
        "scope": "i18n",
        "text": "Translate hill vault progress in non-Latin locales",
+       "date": "2026-10-04"
+      },
+      {
+       "h": "6d5361db",
+       "kind": "fix",
+       "scope": "factions",
+       "text": "Admit faction tools to hotbar and protect airborne glider flight",
+       "date": "2026-10-04"
+      },
+      {
+       "h": "1652153a",
+       "kind": "fix",
+       "scope": "talents",
+       "text": "Persist loadout gear sets across serializeCharacter and reconnect",
        "date": "2026-10-04"
       },
       {
