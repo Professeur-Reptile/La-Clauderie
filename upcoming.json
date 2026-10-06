@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-05T10:03:43Z",
+ "generated": "2026-10-06T06:47:16Z",
  "base_tag": "v0.44.4",
  "version": "v0.45.0",
  "branch": "ossbrain-release/v0.45.0",
  "declared_version": "0.45.0",
  "imminent": true,
- "commits": 232,
- "shown": 115,
- "last_commit": "2026-10-05T06:54:08Z",
+ "commits": 275,
+ "shown": 132,
+ "last_commit": "2026-10-06T01:18:35Z",
  "sections": [
   {
    "key": "classes",
@@ -63,6 +63,13 @@
      "scope": "render",
      "text": "Decode the Warrior kit's image sheets off the main thread",
      "date": "2026-09-27"
+    },
+    {
+     "h": "9a83a5b5",
+     "kind": "fix",
+     "scope": "pets",
+     "text": "Retain champion size after hunter taming",
+     "date": "2026-10-05"
     },
     {
      "h": "7ba4b53c",
@@ -164,6 +171,27 @@
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
    "items": [
+    {
+     "h": "921fd138",
+     "kind": "fix",
+     "scope": "raid",
+     "text": "Fully reset Varkhul after arena retreat",
+     "date": "2026-10-05"
+    },
+    {
+     "h": "9591760c",
+     "kind": "fix",
+     "scope": "raid",
+     "text": "Retain Varkhul raiders on arena edge",
+     "date": "2026-10-05"
+    },
+    {
+     "h": "b3cfd81c",
+     "kind": "fix",
+     "scope": "nythraxis",
+     "text": "Move Aldric beside the entrance after his speech",
+     "date": "2026-10-05"
+    },
     {
      "h": "99bee994",
      "kind": "fix",
@@ -313,6 +341,13 @@
      "date": "2026-09-30"
     },
     {
+     "h": "38df63ed",
+     "kind": "fix",
+     "scope": "duels",
+     "text": "Scope victory banners to local zone",
+     "date": "2026-10-05"
+    },
+    {
      "h": "59fe614e",
      "kind": "fix",
      "scope": "factions",
@@ -384,6 +419,13 @@
      "date": "2026-09-29"
     },
     {
+     "h": "191d72bb",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Preserve party kill credit",
+     "date": "2026-10-05"
+    },
+    {
      "h": "3010bf47",
      "kind": "fix",
      "scope": "",
@@ -413,10 +455,24 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "a82d4ce8",
+     "kind": "feat",
+     "scope": "shell",
+     "text": "Show a branded loading screen while the homepage loads",
+     "date": "2026-10-05"
+    },
+    {
      "h": "e4d6f9e8",
      "kind": "feat",
      "scope": "hill",
      "text": "Pay the vault point only for a ten-minute hold",
+     "date": "2026-10-05"
+    },
+    {
+     "h": "01657e3d",
+     "kind": "feat",
+     "scope": "loot",
+     "text": "Add Crucible cores to weekly vault rewards",
      "date": "2026-10-05"
     },
     {
@@ -425,6 +481,13 @@
      "scope": "ui",
      "text": "Add instance difficulty indicator to minimap and headers",
      "date": "2026-10-04"
+    },
+    {
+     "h": "1918bbf1",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Mail rewards that do not fit in full bags",
+     "date": "2026-10-03"
     },
     {
      "h": "348ea5a6",
@@ -546,6 +609,55 @@
      "date": "2026-09-26"
     },
     {
+     "h": "4aab01b1",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Prevent iOS input zoom at reduced UI scale",
+     "date": "2026-10-05"
+    },
+    {
+     "h": "e9ac6b37",
+     "kind": "fix",
+     "scope": "maps",
+     "text": "Clear completed vault map lock",
+     "date": "2026-10-05"
+    },
+    {
+     "h": "dd785ba8",
+     "kind": "fix",
+     "scope": "transport",
+     "text": "Allow jumping off either side of boats",
+     "date": "2026-10-05"
+    },
+    {
+     "h": "4bdfe472",
+     "kind": "fix",
+     "scope": "abilities",
+     "text": "Remove out-of-combat resurrection cooldowns",
+     "date": "2026-10-05"
+    },
+    {
+     "h": "c11fe1fb",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Allow player reports after target logout",
+     "date": "2026-10-05"
+    },
+    {
+     "h": "232ffed3",
+     "kind": "fix",
+     "scope": "dungeons",
+     "text": "Select reachable doors and restore interiors on retry",
+     "date": "2026-10-05"
+    },
+    {
+     "h": "f219f252",
+     "kind": "fix",
+     "scope": "shell",
+     "text": "Keep the boot splash centered on phones",
+     "date": "2026-10-05"
+    },
+    {
      "h": "6d5361db",
      "kind": "fix",
      "scope": "factions",
@@ -558,6 +670,13 @@
      "scope": "talents",
      "text": "Persist loadout gear sets across serializeCharacter and reconnect",
      "date": "2026-10-04"
+    },
+    {
+     "h": "29b5df24",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Mail the weekly cache and hunt casket on full bags",
+     "date": "2026-10-03"
     },
     {
      "h": "6fb27bfe",
@@ -869,9 +988,9 @@
    "branch": "ossbrain-release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 232,
-   "shown": 115,
-   "last_commit": "2026-10-05T06:54:08Z",
+   "commits": 275,
+   "shown": 132,
+   "last_commit": "2026-10-06T01:18:35Z",
    "sections": [
     {
      "key": "classes",
@@ -927,6 +1046,13 @@
        "scope": "render",
        "text": "Decode the Warrior kit's image sheets off the main thread",
        "date": "2026-09-27"
+      },
+      {
+       "h": "9a83a5b5",
+       "kind": "fix",
+       "scope": "pets",
+       "text": "Retain champion size after hunter taming",
+       "date": "2026-10-05"
       },
       {
        "h": "7ba4b53c",
@@ -1028,6 +1154,27 @@
      "fr": "Donjons, failles & boss",
      "en": "Dungeons, rifts & bosses",
      "items": [
+      {
+       "h": "921fd138",
+       "kind": "fix",
+       "scope": "raid",
+       "text": "Fully reset Varkhul after arena retreat",
+       "date": "2026-10-05"
+      },
+      {
+       "h": "9591760c",
+       "kind": "fix",
+       "scope": "raid",
+       "text": "Retain Varkhul raiders on arena edge",
+       "date": "2026-10-05"
+      },
+      {
+       "h": "b3cfd81c",
+       "kind": "fix",
+       "scope": "nythraxis",
+       "text": "Move Aldric beside the entrance after his speech",
+       "date": "2026-10-05"
+      },
       {
        "h": "99bee994",
        "kind": "fix",
@@ -1177,6 +1324,13 @@
        "date": "2026-09-30"
       },
       {
+       "h": "38df63ed",
+       "kind": "fix",
+       "scope": "duels",
+       "text": "Scope victory banners to local zone",
+       "date": "2026-10-05"
+      },
+      {
        "h": "59fe614e",
        "kind": "fix",
        "scope": "factions",
@@ -1248,6 +1402,13 @@
        "date": "2026-09-29"
       },
       {
+       "h": "191d72bb",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Preserve party kill credit",
+       "date": "2026-10-05"
+      },
+      {
        "h": "3010bf47",
        "kind": "fix",
        "scope": "",
@@ -1277,10 +1438,24 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "a82d4ce8",
+       "kind": "feat",
+       "scope": "shell",
+       "text": "Show a branded loading screen while the homepage loads",
+       "date": "2026-10-05"
+      },
+      {
        "h": "e4d6f9e8",
        "kind": "feat",
        "scope": "hill",
        "text": "Pay the vault point only for a ten-minute hold",
+       "date": "2026-10-05"
+      },
+      {
+       "h": "01657e3d",
+       "kind": "feat",
+       "scope": "loot",
+       "text": "Add Crucible cores to weekly vault rewards",
        "date": "2026-10-05"
       },
       {
@@ -1289,6 +1464,13 @@
        "scope": "ui",
        "text": "Add instance difficulty indicator to minimap and headers",
        "date": "2026-10-04"
+      },
+      {
+       "h": "1918bbf1",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Mail rewards that do not fit in full bags",
+       "date": "2026-10-03"
       },
       {
        "h": "348ea5a6",
@@ -1410,6 +1592,55 @@
        "date": "2026-09-26"
       },
       {
+       "h": "4aab01b1",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Prevent iOS input zoom at reduced UI scale",
+       "date": "2026-10-05"
+      },
+      {
+       "h": "e9ac6b37",
+       "kind": "fix",
+       "scope": "maps",
+       "text": "Clear completed vault map lock",
+       "date": "2026-10-05"
+      },
+      {
+       "h": "dd785ba8",
+       "kind": "fix",
+       "scope": "transport",
+       "text": "Allow jumping off either side of boats",
+       "date": "2026-10-05"
+      },
+      {
+       "h": "4bdfe472",
+       "kind": "fix",
+       "scope": "abilities",
+       "text": "Remove out-of-combat resurrection cooldowns",
+       "date": "2026-10-05"
+      },
+      {
+       "h": "c11fe1fb",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Allow player reports after target logout",
+       "date": "2026-10-05"
+      },
+      {
+       "h": "232ffed3",
+       "kind": "fix",
+       "scope": "dungeons",
+       "text": "Select reachable doors and restore interiors on retry",
+       "date": "2026-10-05"
+      },
+      {
+       "h": "f219f252",
+       "kind": "fix",
+       "scope": "shell",
+       "text": "Keep the boot splash centered on phones",
+       "date": "2026-10-05"
+      },
+      {
        "h": "6d5361db",
        "kind": "fix",
        "scope": "factions",
@@ -1422,6 +1653,13 @@
        "scope": "talents",
        "text": "Persist loadout gear sets across serializeCharacter and reconnect",
        "date": "2026-10-04"
+      },
+      {
+       "h": "29b5df24",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Mail the weekly cache and hunt casket on full bags",
+       "date": "2026-10-03"
       },
       {
        "h": "6fb27bfe",
