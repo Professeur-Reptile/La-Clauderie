@@ -1,324 +1,34 @@
 {
- "generated": "2026-10-06T06:47:16Z",
+ "generated": "2026-10-07T01:45:54Z",
  "base_tag": "v0.44.4",
- "version": "v0.45.0",
- "branch": "ossbrain-release/v0.45.0",
- "declared_version": "0.45.0",
+ "version": "v0.44.5",
+ "branch": "release/v0.44.5",
+ "declared_version": "0.44.5",
  "imminent": true,
- "commits": 275,
- "shown": 132,
- "last_commit": "2026-10-06T01:18:35Z",
+ "commits": 7,
+ "shown": 3,
+ "last_commit": "2026-10-07T12:17:55+13:00",
  "sections": [
   {
    "key": "classes",
    "icon": "⚔️",
    "fr": "Classes & sorts",
    "en": "Classes & spells",
-   "items": [
-    {
-     "h": "6cd86e79",
-     "kind": "feat",
-     "scope": "render",
-     "text": "Add a Spell Effects option to turn off spell VFX",
-     "date": "2026-09-29"
-    },
-    {
-     "h": "ae4c8b3b",
-     "kind": "feat",
-     "scope": "druid",
-     "text": "Wildfang tuning pass (Scratch, Slinkstrike reach, Stalk)",
-     "date": "2026-09-29"
-    },
-    {
-     "h": "723827be",
-     "kind": "feat",
-     "scope": "druid",
-     "text": "Scratch is baseline, 6 yd, and spots stealthers",
-     "date": "2026-09-29"
-    },
-    {
-     "h": "1b5ff7a0",
-     "kind": "feat",
-     "scope": "render",
-     "text": "Veil stealth in a rogue palette and an other palette",
-     "date": "2026-09-26"
-    },
-    {
-     "h": "4bd77755",
-     "kind": "feat",
-     "scope": "render",
-     "text": "Veil Moonkin and Soul Rend in their own palettes",
-     "date": "2026-09-26"
-    },
-    {
-     "h": "f93be588",
-     "kind": "feat",
-     "scope": "render",
-     "text": "Draw Shadowform as an opaque tint on the source programs",
-     "date": "2026-09-26"
-    },
-    {
-     "h": "6172da8e",
-     "kind": "perf",
-     "scope": "render",
-     "text": "Decode the Warrior kit's image sheets off the main thread",
-     "date": "2026-09-27"
-    },
-    {
-     "h": "9a83a5b5",
-     "kind": "fix",
-     "scope": "pets",
-     "text": "Retain champion size after hunter taming",
-     "date": "2026-10-05"
-    },
-    {
-     "h": "7ba4b53c",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Stop Divine Ascension pinning the paladin's rider height",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "dbb6ee9a",
-     "kind": "fix",
-     "scope": "mounts",
-     "text": "Keep the mount when auto-attack is still armed",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "1fa62dc8",
-     "kind": "fix",
-     "scope": "druid",
-     "text": "Make Scratch pass the release gate obligations",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "15f7ec05",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Stop idle Buried Hoard spell ribbons from issuing draw calls",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "86e82a55",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Keep encounter and enemy reads under Spell Effects off",
-     "date": "2026-09-29"
-    },
-    {
-     "h": "9c358d27",
-     "kind": "fix",
-     "scope": "druid",
-     "text": "Tighten Scratch to melee sweep and honor sure-crit",
-     "date": "2026-09-29"
-    },
-    {
-     "h": "2f04f1dd",
-     "kind": "fix",
-     "scope": "rogue",
-     "text": "Falling no longer breaks Duskveil or Smokefade",
-     "date": "2026-09-29"
-    },
-    {
-     "h": "92196912",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Draw the Warrior kit surfaces with Lambert on Low",
-     "date": "2026-09-27"
-    },
-    {
-     "h": "9b992759",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Link the Warrior kit's drawn programs at boot",
-     "date": "2026-09-27"
-    },
-    {
-     "h": "9e2d9d52",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Prepare nothing of the Warrior kit on phones",
-     "date": "2026-09-27"
-    },
-    {
-     "h": "5d90f3d3",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Ask for the Warrior kit again after a failed preparation",
-     "date": "2026-09-27"
-    }
-   ]
+   "items": []
   },
   {
    "key": "metiers",
    "icon": "🔨",
    "fr": "Métiers & récolte",
    "en": "Professions & gathering",
-   "items": [
-    {
-     "h": "bc3eb7a9",
-     "kind": "feat",
-     "scope": "professions",
-     "text": "Show what a recipe pattern makes on its tooltip",
-     "date": "2026-09-30"
-    }
-   ]
+   "items": []
   },
   {
    "key": "donjons",
    "icon": "🐉",
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
-   "items": [
-    {
-     "h": "921fd138",
-     "kind": "fix",
-     "scope": "raid",
-     "text": "Fully reset Varkhul after arena retreat",
-     "date": "2026-10-05"
-    },
-    {
-     "h": "9591760c",
-     "kind": "fix",
-     "scope": "raid",
-     "text": "Retain Varkhul raiders on arena edge",
-     "date": "2026-10-05"
-    },
-    {
-     "h": "b3cfd81c",
-     "kind": "fix",
-     "scope": "nythraxis",
-     "text": "Move Aldric beside the entrance after his speech",
-     "date": "2026-10-05"
-    },
-    {
-     "h": "99bee994",
-     "kind": "fix",
-     "scope": "rift",
-     "text": "Avoid duplicate spectate exit floor resend",
-     "date": "2026-10-04"
-    },
-    {
-     "h": "bd1c02bc",
-     "kind": "fix",
-     "scope": "rift",
-     "text": "Clear the online rift floor when a ghost leaves it",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "474f6b5f",
-     "kind": "fix",
-     "scope": "rift",
-     "text": "Refuse portal entry during every world quest trial",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "913924cf",
-     "kind": "fix",
-     "scope": "rift",
-     "text": "Send the rift exit on a battleground seat and a hearthstone",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "a20bfee7",
-     "kind": "fix",
-     "scope": "rift",
-     "text": "Send the rift exit and re-entry on moderation teleports",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "3ed32a88",
-     "kind": "fix",
-     "scope": "rift",
-     "text": "Follow the spectate view with the online rift floor",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "b64b44cb",
-     "kind": "fix",
-     "scope": "rift",
-     "text": "Send the moderator's own floor with the spectate exit frame",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "7b6685b5",
-     "kind": "fix",
-     "scope": "ui",
-     "text": "Keep the vault loot button and Dungeon Finder vault in view",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "913924cf",
-     "kind": "fix",
-     "scope": "rift",
-     "text": "Send the rift exit on a battleground seat and a hearthstone",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "a20bfee7",
-     "kind": "fix",
-     "scope": "rift",
-     "text": "Send the rift exit and re-entry on moderation teleports",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "48789bc5",
-     "kind": "fix",
-     "scope": "dungeon",
-     "text": "Align Wildheart entrance collision with its gate",
-     "date": "2026-10-01"
-    },
-    {
-     "h": "61aa3ea0",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Align rift gate test hook with LoadedGltf",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "be104fd5",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Wash the whole blast disc of a rift boss windup ring",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "0650ef85",
-     "kind": "fix",
-     "scope": "combat",
-     "text": "Let Vaulting Charge leave a rift's raised deck",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "552b1058",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Stream Rift creature bodies on iOS only when one is reachable",
-     "date": "2026-09-29"
-    },
-    {
-     "h": "f7dc40c7",
-     "kind": "fix",
-     "scope": "audio",
-     "text": "Bound decoded SFX and boss PCM on the iOS memory profile",
-     "date": "2026-09-29"
-    },
-    {
-     "h": "a889d2db",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Build the cannon rift portals before the encounter's entry gate",
-     "date": "2026-09-27"
-    },
-    {
-     "h": "041ed9ec",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Give the cannon encounter the Low portal look on Low",
-     "date": "2026-09-27"
-    }
-   ]
+   "items": []
   },
   {
    "key": "monde",
@@ -327,67 +37,11 @@
    "en": "World & quests",
    "items": [
     {
-     "h": "025a1c80",
-     "kind": "feat",
-     "scope": "world-quests",
-     "text": "Allow replacing an in-progress world quest",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "02b761f5",
-     "kind": "feat",
-     "scope": "discord",
-     "text": "Post King of the Hill spawn calls to the PvP channel",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "38df63ed",
-     "kind": "fix",
-     "scope": "duels",
-     "text": "Scope victory banners to local zone",
-     "date": "2026-10-05"
-    },
-    {
      "h": "59fe614e",
      "kind": "fix",
      "scope": "factions",
      "text": "List allied rows including cartographers ink in vendor window",
      "date": "2026-10-01"
-    },
-    {
-     "h": "d0d6b6a6",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Load the Drakelands kit on approach on iOS",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "ce0af055",
-     "kind": "fix",
-     "scope": "discord",
-     "text": "Tidy hill spawn call review items",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "40aadd73",
-     "kind": "fix",
-     "scope": "vendor",
-     "text": "Keep gray junk out of the buyback list",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "cf9cd89d",
-     "kind": "fix",
-     "scope": "vendor",
-     "text": "Say which sales buyback can no longer undo",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "4cf6a269",
-     "kind": "fix",
-     "scope": "pvp",
-     "text": "Keep world PvP off a player manning a world-quest cannon",
-     "date": "2026-09-30"
     }
    ]
   },
@@ -396,57 +50,7 @@
    "icon": "🏰",
    "fr": "Guilde & social",
    "en": "Guild & social",
-   "items": [
-    {
-     "h": "cc18fe96",
-     "kind": "feat",
-     "scope": "social",
-     "text": "Right-click a Social row for the player menu",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "f710dabb",
-     "kind": "feat",
-     "scope": "moderation",
-     "text": "Add an admin-set realm message of the day",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "4e1283f6",
-     "kind": "feat",
-     "scope": "discord",
-     "text": "Add World PvP kill feed to a dedicated channel",
-     "date": "2026-09-29"
-    },
-    {
-     "h": "191d72bb",
-     "kind": "fix",
-     "scope": "world-quests",
-     "text": "Preserve party kill credit",
-     "date": "2026-10-05"
-    },
-    {
-     "h": "3010bf47",
-     "kind": "fix",
-     "scope": "",
-     "text": "Repair v0.45 discord reports",
-     "date": "2026-10-05"
-    },
-    {
-     "h": "22ba61f9",
-     "kind": "fix",
-     "scope": "social",
-     "text": "Route row menus in the window, add touch long-press",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "47cdcce2",
-     "kind": "fix",
-     "scope": "discord",
-     "text": "Bound kill-feed lines against the true worst case",
-     "date": "2026-09-29"
-    }
-   ]
+   "items": []
   },
   {
    "key": "confort",
@@ -455,542 +59,107 @@
    "en": "Comfort & technical",
    "items": [
     {
-     "h": "a82d4ce8",
-     "kind": "feat",
-     "scope": "shell",
-     "text": "Show a branded loading screen while the homepage loads",
-     "date": "2026-10-05"
-    },
-    {
-     "h": "e4d6f9e8",
-     "kind": "feat",
-     "scope": "hill",
-     "text": "Pay the vault point only for a ten-minute hold",
-     "date": "2026-10-05"
-    },
-    {
-     "h": "01657e3d",
-     "kind": "feat",
-     "scope": "loot",
-     "text": "Add Crucible cores to weekly vault rewards",
-     "date": "2026-10-05"
-    },
-    {
-     "h": "1c3f85a9",
-     "kind": "feat",
-     "scope": "ui",
-     "text": "Add instance difficulty indicator to minimap and headers",
-     "date": "2026-10-04"
-    },
-    {
-     "h": "1918bbf1",
-     "kind": "feat",
-     "scope": "world-quests",
-     "text": "Mail rewards that do not fit in full bags",
-     "date": "2026-10-03"
-    },
-    {
-     "h": "348ea5a6",
-     "kind": "feat",
-     "scope": "deeds",
-     "text": "Rename the 10M lifetime XP title to Titan",
-     "date": "2026-10-01"
-    },
-    {
-     "h": "42b24b99",
-     "kind": "feat",
-     "scope": "fct",
-     "text": "Drop the per-school damage colours",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "f53e5e33",
-     "kind": "feat",
-     "scope": "pvp",
-     "text": "Stack trophy skulls and record whose each one is",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "00d26dea",
-     "kind": "feat",
-     "scope": "deeds",
-     "text": "Add the Timeless title for 10M lifetime XP",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "da0de21f",
-     "kind": "feat",
-     "scope": "fct",
-     "text": "Make outgoing damage numbers stand out by default",
-     "date": "2026-09-29"
-    },
-    {
-     "h": "0a52ba0c",
-     "kind": "feat",
-     "scope": "render",
-     "text": "Pause the GPU queue and relink compiles that straddle a context loss",
-     "date": "2026-09-28"
-    },
-    {
-     "h": "4446ab1b",
-     "kind": "feat",
-     "scope": "ui",
-     "text": "Show a \"Restoring graphics\" note while a context restore holds the view",
-     "date": "2026-09-28"
-    },
-    {
-     "h": "eb4db8d5",
-     "kind": "feat",
+     "h": "a5d19a9b",
+     "kind": "perf",
      "scope": "server",
-     "text": "Count movement playout growths in the tick capture",
-     "date": "2026-09-28"
+     "text": "Compress game WebSocket frames with permessage-deflate",
+     "date": "2026-10-06"
     },
     {
-     "h": "9f9189ee",
-     "kind": "feat",
-     "scope": "render",
-     "text": "Pin the spirit veil program family and its rig sort",
-     "date": "2026-09-26"
-    },
-    {
-     "h": "122dc826",
-     "kind": "feat",
-     "scope": "render",
-     "text": "Draw released spirits with the shared spirit veil",
-     "date": "2026-09-26"
-    },
-    {
-     "h": "19b27828",
-     "kind": "feat",
-     "scope": "render",
-     "text": "Veil released spirits and link the family before the curtain",
-     "date": "2026-09-26"
-    },
-    {
-     "h": "dffd1dc0",
-     "kind": "feat",
-     "scope": "render",
-     "text": "Give the spirit veil palette knobs and the outfit dye",
-     "date": "2026-09-26"
-    },
-    {
-     "h": "3f95ad59",
-     "kind": "feat",
-     "scope": "render",
-     "text": "Veil Ghost Wolf, the March, the Keeper and the visions",
-     "date": "2026-09-26"
-    },
-    {
-     "h": "4187e9c9",
-     "kind": "perf",
-     "scope": "hud",
-     "text": "Ask the PvP verdict only for players carrying our dots",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "150c4422",
-     "kind": "perf",
-     "scope": "render",
-     "text": "Stop loading the shockwave sheet nothing draws",
-     "date": "2026-09-27"
-    },
-    {
-     "h": "a7afb95e",
-     "kind": "perf",
-     "scope": "render",
-     "text": "Close each kit sheet bitmap once it is uploaded",
-     "date": "2026-09-27"
-    },
-    {
-     "h": "8e044289",
-     "kind": "perf",
-     "scope": "render",
-     "text": "Touch the veil family's program tables before the curtain",
-     "date": "2026-09-26"
-    },
-    {
-     "h": "4aab01b1",
+     "h": "301acf8c",
      "kind": "fix",
-     "scope": "ui",
-     "text": "Prevent iOS input zoom at reduced UI scale",
-     "date": "2026-10-05"
-    },
-    {
-     "h": "e9ac6b37",
-     "kind": "fix",
-     "scope": "maps",
-     "text": "Clear completed vault map lock",
-     "date": "2026-10-05"
-    },
-    {
-     "h": "dd785ba8",
-     "kind": "fix",
-     "scope": "transport",
-     "text": "Allow jumping off either side of boats",
-     "date": "2026-10-05"
-    },
-    {
-     "h": "4bdfe472",
-     "kind": "fix",
-     "scope": "abilities",
-     "text": "Remove out-of-combat resurrection cooldowns",
-     "date": "2026-10-05"
-    },
-    {
-     "h": "c11fe1fb",
-     "kind": "fix",
-     "scope": "ui",
-     "text": "Allow player reports after target logout",
-     "date": "2026-10-05"
-    },
-    {
-     "h": "232ffed3",
-     "kind": "fix",
-     "scope": "dungeons",
-     "text": "Select reachable doors and restore interiors on retry",
-     "date": "2026-10-05"
-    },
-    {
-     "h": "f219f252",
-     "kind": "fix",
-     "scope": "shell",
-     "text": "Keep the boot splash centered on phones",
-     "date": "2026-10-05"
-    },
-    {
-     "h": "6d5361db",
-     "kind": "fix",
-     "scope": "factions",
-     "text": "Admit faction tools to hotbar and protect airborne glider flight",
-     "date": "2026-10-04"
-    },
-    {
-     "h": "1652153a",
-     "kind": "fix",
-     "scope": "talents",
-     "text": "Persist loadout gear sets across serializeCharacter and reconnect",
-     "date": "2026-10-04"
-    },
-    {
-     "h": "29b5df24",
-     "kind": "fix",
-     "scope": "world-quests",
-     "text": "Mail the weekly cache and hunt casket on full bags",
-     "date": "2026-10-03"
-    },
-    {
-     "h": "6fb27bfe",
-     "kind": "fix",
-     "scope": "i18n",
-     "text": "Fill ranked hill vault guide locales",
-     "date": "2026-10-03"
-    },
-    {
-     "h": "0e4f9284",
-     "kind": "fix",
-     "scope": "world-quests",
-     "text": "Make rerolled-in quests completable",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "4abeef0a",
-     "kind": "fix",
-     "scope": "ui",
-     "text": "Keep the weekly vault on screen at any UI scale",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "dfd049da",
-     "kind": "fix",
-     "scope": "ui",
-     "text": "Keep wrapped vault labels from drawing over the vault art",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "4183e9ae",
-     "kind": "fix",
-     "scope": "combat",
-     "text": "Let feral strikes roll Last Flame's Zeal like other melee",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "ab9a1e9a",
-     "kind": "fix",
-     "scope": "sim",
-     "text": "Drop the Evergarden's undrawn scatter at the source",
-     "date": "2026-10-02"
-    },
-    {
-     "h": "dc6ebf9c",
-     "kind": "fix",
-     "scope": "action-bar",
-     "text": "Allow all usable item shortcuts",
-     "date": "2026-10-01"
-    },
-    {
-     "h": "24436049",
-     "kind": "fix",
-     "scope": "ui",
-     "text": "Keep the item tooltip source pins intact",
-     "date": "2026-10-01"
-    },
-    {
-     "h": "a69cf3a0",
-     "kind": "fix",
-     "scope": "ui",
-     "text": "Bound the world-map background cache on the iOS memory profile",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "5bff44f2",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Bound idle composed looks on the iOS memory profile",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "67af07d6",
-     "kind": "fix",
-     "scope": "test",
-     "text": "Stop character model downloads from outliving happy-dom suites",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "98167a73",
-     "kind": "fix",
-     "scope": "net",
-     "text": "Flush movement before unstuck command",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "84e2428b",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Paint the harbor route plates at half size on the iOS memory profile",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "d6f94642",
-     "kind": "fix",
-     "scope": "net",
-     "text": "Keep unstuck movement flush under budget",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "fc781c6c",
-     "kind": "fix",
-     "scope": "i18n",
-     "text": "Keep the retired settings note off the wiki retire list",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "87345962",
-     "kind": "fix",
-     "scope": "world-quests",
-     "text": "Stop endless cannon runs dropping the player",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "f292602f",
-     "kind": "fix",
-     "scope": "faction-rewards",
-     "text": "Tame and honor the Dawn Battle Standard",
-     "date": "2026-09-30"
-    },
-    {
-     "h": "7056e58c",
-     "kind": "fix",
-     "scope": "fct",
-     "text": "Keep the vivid keyline off the effects tier",
-     "date": "2026-09-29"
-    },
-    {
-     "h": "a1a4ac1a",
-     "kind": "fix",
-     "scope": "pvp",
-     "text": "Drop world kill gold and a trophy skull on the body",
-     "date": "2026-09-29"
-    },
-    {
-     "h": "7794984f",
-     "kind": "fix",
-     "scope": "pvp",
-     "text": "Harden World PvP spoils and show the loot icon on the body",
-     "date": "2026-09-29"
-    },
-    {
-     "h": "4c91635f",
-     "kind": "fix",
-     "scope": "pvp",
-     "text": "Give the trophy skull its own mounted-trophy icon",
-     "date": "2026-09-29"
-    },
-    {
-     "h": "475f9d01",
-     "kind": "fix",
-     "scope": "pvp",
-     "text": "Preserve stackable skulls during spoils settlement",
-     "date": "2026-09-29"
-    },
-    {
-     "h": "f1b76514",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Drop the GLTF parser from every loaded GLB",
-     "date": "2026-09-29"
-    },
-    {
-     "h": "895e840d",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Halve the stubble decal map on the iOS memory profile",
-     "date": "2026-09-29"
-    },
-    {
-     "h": "9ec36a50",
-     "kind": "fix",
-     "scope": "portraits",
-     "text": "Warm only the default class skin on the iOS memory profile",
-     "date": "2026-09-29"
-    },
-    {
-     "h": "f578f89c",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Cap character-side KTX2 mips at 512 on iPhones",
-     "date": "2026-09-29"
-    },
-    {
-     "h": "ba72cd56",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Recover cleanly from an in-place WebGL context restore",
-     "date": "2026-09-28"
-    },
-    {
-     "h": "504b97c2",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Merge release/v0.44.0 into the WebGL context restore",
-     "date": "2026-09-28"
-    },
-    {
-     "h": "802330f4",
-     "kind": "fix",
-     "scope": "movement",
-     "text": "Stop dropping the inputs of chronically late v2 clients",
-     "date": "2026-09-28"
-    },
-    {
-     "h": "93d0c231",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Warm the ferry's dithered sail clones in the props prewarm",
-     "date": "2026-09-27"
-    },
-    {
-     "h": "9522f49f",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Keep the stock opaque write in the veil and list it in the scans",
-     "date": "2026-09-27"
-    },
-    {
-     "h": "ba194f73",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Load the barrel GLB once per world entry",
-     "date": "2026-09-27"
-    },
-    {
-     "h": "8cdc4315",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Wait the trinket relics on their own program family",
-     "date": "2026-09-27"
-    },
-    {
-     "h": "10c9fbe3",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Commit a character effect swap only on a readiness proof",
-     "date": "2026-09-27"
-    },
-    {
-     "h": "662eda86",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Start the relic family clock only when a relic is tracked",
-     "date": "2026-09-27"
-    },
-    {
-     "h": "fac8a362",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Never hold the readiness proof on a texture the lane refuses",
-     "date": "2026-09-27"
-    },
-    {
-     "h": "9a5ec55d",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Link the solid impact fragments' program at boot",
-     "date": "2026-09-27"
-    },
-    {
-     "h": "b0a66192",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Check the kit crest readiness on every held storm frame",
-     "date": "2026-09-27"
-    },
-    {
-     "h": "69e1a2e9",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Keep the off-thread sheet decode to Chromium",
-     "date": "2026-09-27"
-    },
-    {
-     "h": "7e01c2bb",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Read the veil family's renderer properties at use time",
-     "date": "2026-09-27"
-    },
-    {
-     "h": "ff3cd463",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Warm the local stealth and form twins, not the spirit run",
-     "date": "2026-09-26"
-    },
-    {
-     "h": "086c3b2b",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Let a resumed veil unit settle before its touch runs",
-     "date": "2026-09-26"
-    },
-    {
-     "h": "cf7bfa98",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Hide the weapon-skin glow shells under a veil that drops them",
-     "date": "2026-09-26"
+     "scope": "server",
+     "text": "Send WebSocket handshake rejections uncompressed",
+     "date": "2026-10-06"
     }
    ]
   }
  ],
  "versions": [
   {
+   "version": "v0.44.5",
+   "branch": "release/v0.44.5",
+   "declared_version": "0.44.5",
+   "imminent": true,
+   "commits": 7,
+   "shown": 3,
+   "last_commit": "2026-10-07T12:17:55+13:00",
+   "sections": [
+    {
+     "key": "classes",
+     "icon": "⚔️",
+     "fr": "Classes & sorts",
+     "en": "Classes & spells",
+     "items": []
+    },
+    {
+     "key": "metiers",
+     "icon": "🔨",
+     "fr": "Métiers & récolte",
+     "en": "Professions & gathering",
+     "items": []
+    },
+    {
+     "key": "donjons",
+     "icon": "🐉",
+     "fr": "Donjons, failles & boss",
+     "en": "Dungeons, rifts & bosses",
+     "items": []
+    },
+    {
+     "key": "monde",
+     "icon": "🗺️",
+     "fr": "Monde & quêtes",
+     "en": "World & quests",
+     "items": [
+      {
+       "h": "59fe614e",
+       "kind": "fix",
+       "scope": "factions",
+       "text": "List allied rows including cartographers ink in vendor window",
+       "date": "2026-10-01"
+      }
+     ]
+    },
+    {
+     "key": "guilde",
+     "icon": "🏰",
+     "fr": "Guilde & social",
+     "en": "Guild & social",
+     "items": []
+    },
+    {
+     "key": "confort",
+     "icon": "⚙️",
+     "fr": "Confort & technique",
+     "en": "Comfort & technical",
+     "items": [
+      {
+       "h": "a5d19a9b",
+       "kind": "perf",
+       "scope": "server",
+       "text": "Compress game WebSocket frames with permessage-deflate",
+       "date": "2026-10-06"
+      },
+      {
+       "h": "301acf8c",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Send WebSocket handshake rejections uncompressed",
+       "date": "2026-10-06"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "version": "v0.45.0",
    "branch": "ossbrain-release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 275,
-   "shown": 132,
-   "last_commit": "2026-10-06T01:18:35Z",
+   "commits": 280,
+   "shown": 135,
+   "last_commit": "2026-10-06T23:51:42Z",
    "sections": [
     {
      "key": "classes",
@@ -1438,6 +607,13 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "4f9b247b",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Add played-time deeds on release 0.45",
+       "date": "2026-10-06"
+      },
+      {
        "h": "a82d4ce8",
        "kind": "feat",
        "scope": "shell",
@@ -1590,6 +766,20 @@
        "scope": "render",
        "text": "Touch the veil family's program tables before the curtain",
        "date": "2026-09-26"
+      },
+      {
+       "h": "bbdc7c7d",
+       "kind": "fix",
+       "scope": "instances",
+       "text": "Queue blocked difficulty changes and explain failures",
+       "date": "2026-10-06"
+      },
+      {
+       "h": "99b1c1b3",
+       "kind": "fix",
+       "scope": "instances",
+       "text": "Complete queue fixtures and required translations",
+       "date": "2026-10-06"
       },
       {
        "h": "4aab01b1",
