@@ -2,6 +2,24 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.44.5",
+   "date": "2026-10-07",
+   "titre": "Huit fois moins de données, et l'Encre du cartographe revient",
+   "resume": "La v0.44.5 compresse la connexion au serveur : une session de 10 minutes passe d'environ 14 Mo à 1,8 Mo (huit fois moins), automatiquement sur navigateur, bureau et mobile, sans changer le gameplay. Et les intendants de faction revendent enfin leurs objets alliés — l'Encre du cartographe (60 marques), la Pierre de foyer alliée (100) et le Sac à dos de vanguarde allié (120) avaient disparu de leur fenêtre de vente depuis la v0.44.0.",
+   "temps_forts": [
+    "⚙️ Connexion compressée : 1,8 Mo au lieu de 14 Mo pour 10 minutes (×8 moins)",
+    "🗺️ Encre du cartographe, Pierre de foyer alliée et Sac à dos de vanguarde de retour chez les intendants",
+    "⚔️ Aucun changement de combat : la page DPS garde ses chiffres"
+   ],
+   "temps_forts_en": [
+    "⚙️ Compressed connection: 1.8 MB instead of 14 MB per 10 minutes (×8 less)",
+    "🗺️ Cartographer's Ink, Allied Hearthstone and Allied Vanguard Duffel back at quartermasters",
+    "⚔️ No combat change: the DPS page keeps its figures"
+   ],
+   "page": "notes/v0.44.5.html",
+   "page_en": "notes/v0.44.5.en.html"
+  },
+  {
    "version": "v0.44.4",
    "date": "2026-10-05",
    "titre": "Les collines au classement, la Chambre forte aux répétitions",

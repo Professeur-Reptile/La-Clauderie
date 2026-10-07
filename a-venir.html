@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
 <title>La prochaine version — La Clauderie</title>
-<meta name="description" content="Ce que les développeurs préparent pour la v0.45.0 de World of ClaudeCraft, expliqué simplement — l'option pour couper les effets des sorts, un ajustement du druide farouche, des crânes-trophées sur les cadavres et un gros travail de lisibilité.">
+<meta name="description" content="Ce que les développeurs préparent pour la v0.45.0 de World of ClaudeCraft, expliqué simplement — le druide soigneur refondu et le farouche ajusté, l'option pour couper les effets des sorts, des crânes-trophées sur les cadavres et une Chambre forte filtrable.">
 <meta name="theme-color" content="#c8a04b">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="La Clauderie">
 <meta property="og:title" content="La prochaine version — La Clauderie">
-<meta property="og:description" content="Ce que les développeurs préparent pour la v0.45.0 de World of ClaudeCraft, expliqué simplement — l'option pour couper les effets des sorts, un ajustement du druide farouche, des crânes-trophées sur les cadavres et un gros travail de lisibilité.">
+<meta property="og:description" content="Ce que les développeurs préparent pour la v0.45.0 de World of ClaudeCraft, expliqué simplement — le druide soigneur refondu et le farouche ajusté, l'option pour couper les effets des sorts, des crânes-trophées sur les cadavres et une Chambre forte filtrable.">
 <meta property="og:url" content="https://laclauderie.fr/a-venir.html">
 <link rel="canonical" href="https://laclauderie.fr/a-venir.html">
 <meta property="og:image" content="https://laclauderie.fr/assets/og.png">
@@ -197,7 +197,7 @@
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · En préparation</p>
     <h1>La prochaine version <span class="v" id="vNum">v0.45.0</span></h1>
-    <p class="lede">La <a href="notes/v0.44.4.html">v0.44.4</a> vient de mettre les collines au classement. Derrière, la <strong class="hl">v0.45.0</strong> est <strong class="hl">annoncée imminente</strong> par le jeu : 232 commits — l’option pour couper les effets des sorts, un ajustement du druide farouche, des trophées sur les cadavres et un gros travail de lisibilité.</p>
+    <p class="lede">La <a href="notes/v0.44.5.html">v0.44.5</a> vient d’alléger ta connexion (huit fois moins de données). Derrière, la <strong class="hl">v0.45.0</strong> est <strong class="hl">annoncée imminente</strong> par le jeu : 310 commits — les deux visages du druide retouchés, l’option pour couper les effets des sorts, des trophées sur les cadavres et une Chambre forte filtrable.</p>
 
     <div class="warn">
       <span class="ico" aria-hidden="true">⚠️</span>
@@ -222,7 +222,7 @@
     <h2 id="digest-title">En un coup d’œil</h2>
     <p class="sec-sub">Les mêmes rubriques qu’à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
     <ol>
-      <li class=""><span class="d-ico" aria-hidden="true">⚔️</span><a class="d-name" href="#combat">Classes &amp; sorts</a><span class="d-say">— druide farouche ajusté ; l’option « effets des sorts » est là.</span></li>
+      <li class=""><span class="d-ico" aria-hidden="true">⚔️</span><a class="d-name" href="#combat">Classes &amp; sorts</a><span class="d-say">— Groveheart refondu, farouche ajusté ; l’option « effets des sorts » est là.</span></li>
       <li class=""><span class="d-ico" aria-hidden="true">🔨</span><a class="d-name" href="#metiers">Métiers &amp; récolte</a><span class="d-say">— les motifs de recette disent ce qu’ils fabriquent.</span></li>
       <li class=""><span class="d-ico" aria-hidden="true">🐉</span><a class="d-name" href="#donjons">Donjons, failles &amp; boss</a><span class="d-say">— difficulté affichée sur la minimap ; butin inchangé.</span></li>
       <li class=""><span class="d-ico" aria-hidden="true">🗺️</span><a class="d-name" href="#monde">Monde &amp; quêtes</a><span class="d-say">— quêtes en cours remplaçables ; les collines s’annoncent sur Discord.</span></li>
@@ -234,13 +234,14 @@
   <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
        s'efface d'elle-même quand cette version sort, et se signale périmée si
        le jeu passe à préparer la suivante. -->
-  <div id="editorial" data-for="v0.45.0" data-commits="232" data-chantiers="v0.45.0" data-written="2026-10-05T11:30+02:00">
+  <div id="editorial" data-for="v0.45.0" data-commits="310" data-chantiers="v0.45.0" data-written="2026-10-07T14:40+02:00">
 
   <section id="combat">
     <div class="sec-head"><span class="sec-num">01</span><h2>Classes &amp; sorts : le druide farouche passe à table</h2></div>
-    <p class="sec-sub">Premier vrai passage d’équilibrage depuis la v0.44.1, centré sur le kit farouche du druide.</p>
+    <p class="sec-sub">Le vrai équilibrage depuis la v0.44.1 : les DEUX visages du druide sont retouchés, et les sets PvP de lanceur gagnent un bouclier anti-repoussure.</p>
     <div class="grid cols-2">
-      <div class="card"><h3>Druide farouche : ajustement Wildfang <span class="chip c-bal">Équilibrage</span></h3><p>Scratch devient un sort de base à 6 m qui repère les furtifs, la portée de Slinkstrike et Stalk sont retaillées : un passage d’ensemble, à confirmer à la sortie.</p></div>
+      <div class="card"><h3>Groveheart refondu (druide soigneur) <span class="chip c-bal">Équilibrage</span></h3><p>Un deuxième passage sur le moteur « Verdance » : Nature’s Boon, Bruin et Second Bloom retaillés, et le bouclier de Marrowbreak devient un SOIN de 18 % au lieu d’une protection. À confirmer à la sortie.</p></div>
+      <div class="card"><h3>Farouche ajusté, lanceurs couverts <span class="chip c-bal">Équilibrage</span></h3><p>Côté farouche : Scratch devient un sort de base à 6 m qui repère les furtifs, portées de Slinkstrike et Stalk retaillées. Côté JcJ : 2 pièces d’un set PvP de lanceur immunisent à la repoussure d’incantation.</p></div>
       <div class="card"><h3>Effets des sorts : l’interrupteur arrive <span class="chip c-new">Option</span></h3><p>L’option « Effets des sorts » pour couper les effets visuels est sur la branche — les ennemis restent lisibles. Le réglage le plus attendu du jeu.</p></div>
     </div>
   </section>
@@ -282,12 +283,12 @@
 
   <section id="confort">
     <div class="sec-head"><span class="sec-num">06</span><h2>Confort : la plus grosse rubrique du chantier</h2></div>
-    <p class="sec-sub">Chiffres de dégâts, trophées, titres et mémoire : 64 commits de lisibilité.</p>
+    <p class="sec-sub">Chiffres de dégâts, trophées, titres, et une Chambre forte qui se filtre : 83 commits de lisibilité.</p>
     <div class="grid cols-2">
       <div class="card"><h3>Chiffres et trophées <span class="chip c-new">Interface</span></h3><p>Tes dégâts sortent du lot par défaut, les couleurs par école disparaissent, et les kills JcJ mondial déposent des crânes-trophées qui s’empilent en se souvenant de qui ils sont.</p></div>
       <div class="card"><h3>Deux titres d’XP de vie <span class="chip c-new">Titres</span></h3><p>Le titre des 10 millions d’XP cumulés se renomme <b>Titan</b>, et un titre <b>Timeless</b> apparaît dans la même famille.</p></div>
       <div class="card"><h3>iPhone respire <span class="chip c-util">Technique</span></h3><p>Tout un profil mémoire iOS : textures et sons plafonnés, caches bornés, restauration graphique propre avec un message dédié.</p></div>
-      <div class="card"><h3>Prudence d’usage <span class="chip c-util">Prudence</span></h3><p>232 commits au relevé et version imminente annoncée par le jeu : tout ceci reste du travail en cours, cette page sera reprise à la sortie.</p></div>
+      <div class="card"><h3>Prudence d’usage <span class="chip c-util">Prudence</span></h3><p>310 commits au relevé et version imminente annoncée par le jeu : tout ceci reste du travail en cours, cette page sera reprise à la sortie.</p></div>
     </div>
   </section>
 

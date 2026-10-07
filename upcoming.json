@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-07T09:10:02Z",
+ "generated": "2026-10-07T16:35:15Z",
  "base_tag": "v0.44.5",
  "version": "v0.45.0",
  "branch": "ossbrain-release/v0.45.0",
  "declared_version": "0.45.0",
  "imminent": true,
- "commits": 284,
- "shown": 137,
- "last_commit": "2026-10-07T02:04:50Z",
+ "commits": 310,
+ "shown": 149,
+ "last_commit": "2026-10-07T11:03:01Z",
  "sections": [
   {
    "key": "classes",
@@ -15,6 +15,34 @@
    "fr": "Classes & sorts",
    "en": "Classes & spells",
    "items": [
+    {
+     "h": "fa80c955",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Groveheart rework pass 2 (Nature's Boon, Bruin, Second Bloom)",
+     "date": "2026-10-07"
+    },
+    {
+     "h": "3d73bde7",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Marrowbreak's guard heals 18% instead of shielding",
+     "date": "2026-10-07"
+    },
+    {
+     "h": "75cb894d",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Caster PvP sets grant spell pushback immunity at 2 pieces",
+     "date": "2026-10-07"
+    },
+    {
+     "h": "81af8af5",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Rework the Groveheart Verdance engine (first pass)",
+     "date": "2026-10-06"
+    },
     {
      "h": "81af8af5",
      "kind": "feat",
@@ -70,6 +98,20 @@
      "scope": "render",
      "text": "Decode the Warrior kit's image sheets off the main thread",
      "date": "2026-09-27"
+    },
+    {
+     "h": "84536d62",
+     "kind": "fix",
+     "scope": "druid",
+     "text": "End Nature's Boon windows on a specialization change",
+     "date": "2026-10-07"
+    },
+    {
+     "h": "f8da8ad8",
+     "kind": "fix",
+     "scope": "druid",
+     "text": "Keep Wildmend's Spell Power rider when Verdance speeds it",
+     "date": "2026-10-06"
     },
     {
      "h": "f8da8ad8",
@@ -355,6 +397,13 @@
      "date": "2026-09-30"
     },
     {
+     "h": "28d61401",
+     "kind": "fix",
+     "scope": "items",
+     "text": "Limit trinket soulbinding to PvP vendor gear",
+     "date": "2026-10-07"
+    },
+    {
      "h": "38df63ed",
      "kind": "fix",
      "scope": "duels",
@@ -468,6 +517,20 @@
    "fr": "Confort & technique",
    "en": "Comfort & technical",
    "items": [
+    {
+     "h": "edc58673",
+     "kind": "feat",
+     "scope": "quests",
+     "text": "Track the weekly emissary charge",
+     "date": "2026-10-07"
+    },
+    {
+     "h": "590a2a3c",
+     "kind": "feat",
+     "scope": "vault",
+     "text": "Filter class loot and add specialization focus",
+     "date": "2026-10-07"
+    },
     {
      "h": "4f9b247b",
      "kind": "feat",
@@ -628,6 +691,27 @@
      "scope": "render",
      "text": "Touch the veil family's program tables before the curtain",
      "date": "2026-09-26"
+    },
+    {
+     "h": "ffca4690",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Expand accessible vault dig locations",
+     "date": "2026-10-07"
+    },
+    {
+     "h": "14dffeaa",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Satisfy weekly focus integration checks",
+     "date": "2026-10-07"
+    },
+    {
+     "h": "577c6fcc",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Keep weekly controls on the status row",
+     "date": "2026-10-07"
     },
     {
      "h": "bbdc7c7d",
@@ -1023,9 +1107,9 @@
    "branch": "ossbrain-release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 284,
-   "shown": 137,
-   "last_commit": "2026-10-07T02:04:50Z",
+   "commits": 310,
+   "shown": 149,
+   "last_commit": "2026-10-07T11:03:01Z",
    "sections": [
     {
      "key": "classes",
@@ -1033,6 +1117,34 @@
      "fr": "Classes & sorts",
      "en": "Classes & spells",
      "items": [
+      {
+       "h": "fa80c955",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Groveheart rework pass 2 (Nature's Boon, Bruin, Second Bloom)",
+       "date": "2026-10-07"
+      },
+      {
+       "h": "3d73bde7",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Marrowbreak's guard heals 18% instead of shielding",
+       "date": "2026-10-07"
+      },
+      {
+       "h": "75cb894d",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Caster PvP sets grant spell pushback immunity at 2 pieces",
+       "date": "2026-10-07"
+      },
+      {
+       "h": "81af8af5",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Rework the Groveheart Verdance engine (first pass)",
+       "date": "2026-10-06"
+      },
       {
        "h": "81af8af5",
        "kind": "feat",
@@ -1088,6 +1200,20 @@
        "scope": "render",
        "text": "Decode the Warrior kit's image sheets off the main thread",
        "date": "2026-09-27"
+      },
+      {
+       "h": "84536d62",
+       "kind": "fix",
+       "scope": "druid",
+       "text": "End Nature's Boon windows on a specialization change",
+       "date": "2026-10-07"
+      },
+      {
+       "h": "f8da8ad8",
+       "kind": "fix",
+       "scope": "druid",
+       "text": "Keep Wildmend's Spell Power rider when Verdance speeds it",
+       "date": "2026-10-06"
       },
       {
        "h": "f8da8ad8",
@@ -1373,6 +1499,13 @@
        "date": "2026-09-30"
       },
       {
+       "h": "28d61401",
+       "kind": "fix",
+       "scope": "items",
+       "text": "Limit trinket soulbinding to PvP vendor gear",
+       "date": "2026-10-07"
+      },
+      {
        "h": "38df63ed",
        "kind": "fix",
        "scope": "duels",
@@ -1486,6 +1619,20 @@
      "fr": "Confort & technique",
      "en": "Comfort & technical",
      "items": [
+      {
+       "h": "edc58673",
+       "kind": "feat",
+       "scope": "quests",
+       "text": "Track the weekly emissary charge",
+       "date": "2026-10-07"
+      },
+      {
+       "h": "590a2a3c",
+       "kind": "feat",
+       "scope": "vault",
+       "text": "Filter class loot and add specialization focus",
+       "date": "2026-10-07"
+      },
       {
        "h": "4f9b247b",
        "kind": "feat",
@@ -1646,6 +1793,27 @@
        "scope": "render",
        "text": "Touch the veil family's program tables before the curtain",
        "date": "2026-09-26"
+      },
+      {
+       "h": "ffca4690",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Expand accessible vault dig locations",
+       "date": "2026-10-07"
+      },
+      {
+       "h": "14dffeaa",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Satisfy weekly focus integration checks",
+       "date": "2026-10-07"
+      },
+      {
+       "h": "577c6fcc",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Keep weekly controls on the status row",
+       "date": "2026-10-07"
       },
       {
        "h": "bbdc7c7d",
