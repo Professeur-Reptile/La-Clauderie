@@ -1,50 +1,50 @@
 {
   "guilde": {
-    "classementServeur": 10,
+    "classementServeur": 11,
     "classement": {
-      "releveLe": "2026-10-09T10:22:24Z",
+      "releveLe": "2026-10-09T18:17:36Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Sovereign",
           "memberCount": 175,
-          "totalLifetimeXp": 86275799,
+          "totalLifetimeXp": 86462002,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "Raiders United",
-          "memberCount": 242,
-          "totalLifetimeXp": 84171364,
+          "memberCount": 247,
+          "totalLifetimeXp": 84957958,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Monarchs",
           "memberCount": 81,
-          "totalLifetimeXp": 45422275,
+          "totalLifetimeXp": 45440709,
           "topLevel": 20
         },
         {
           "rank": 4,
           "name": "Look Good Play Good",
           "memberCount": 68,
-          "totalLifetimeXp": 32684429,
+          "totalLifetimeXp": 32694961,
           "topLevel": 20
         },
         {
           "rank": 5,
           "name": "Mayonnaise",
-          "memberCount": 127,
-          "totalLifetimeXp": 23943833,
+          "memberCount": 128,
+          "totalLifetimeXp": 24111876,
           "topLevel": 20
         },
         {
           "rank": 6,
           "name": "Cheaters",
           "memberCount": 52,
-          "totalLifetimeXp": 21175658,
+          "totalLifetimeXp": 21237446,
           "topLevel": 20
         },
         {
@@ -57,8 +57,8 @@
         {
           "rank": 8,
           "name": "Vis Absoluta",
-          "memberCount": 49,
-          "totalLifetimeXp": 18342466,
+          "memberCount": 46,
+          "totalLifetimeXp": 17085040,
           "topLevel": 20
         },
         {
@@ -70,14 +70,14 @@
         },
         {
           "rank": 10,
-          "name": "La Clauderie",
-          "memberCount": 73,
-          "totalLifetimeXp": 12465695,
+          "name": "Troll Riders inc",
+          "memberCount": 18,
+          "totalLifetimeXp": 13822197,
           "topLevel": 20
         }
       ],
       "laClauderie": {
-        "rank": 10,
+        "rank": 11,
         "name": "La Clauderie",
         "memberCount": 73,
         "totalLifetimeXp": 12465695,
