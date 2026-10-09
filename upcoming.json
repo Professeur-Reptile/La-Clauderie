@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-07T16:35:15Z",
+ "generated": "2026-10-09T00:35:30Z",
  "base_tag": "v0.44.5",
  "version": "v0.45.0",
  "branch": "ossbrain-release/v0.45.0",
  "declared_version": "0.45.0",
  "imminent": true,
- "commits": 310,
- "shown": 149,
- "last_commit": "2026-10-07T11:03:01Z",
+ "commits": 354,
+ "shown": 166,
+ "last_commit": "2026-10-08T22:32:03Z",
  "sections": [
   {
    "key": "classes",
@@ -34,6 +34,27 @@
      "kind": "feat",
      "scope": "pvp",
      "text": "Caster PvP sets grant spell pushback immunity at 2 pieces",
+     "date": "2026-10-07"
+    },
+    {
+     "h": "adfd8eca",
+     "kind": "feat",
+     "scope": "hunter",
+     "text": "Retune Courser daze and Trailbreak escape",
+     "date": "2026-10-07"
+    },
+    {
+     "h": "20a1f51c",
+     "kind": "feat",
+     "scope": "hunter",
+     "text": "Cut shot minimum range from 8 to 4 yards",
+     "date": "2026-10-07"
+    },
+    {
+     "h": "cdef8f1c",
+     "kind": "feat",
+     "scope": "hunter",
+     "text": "Shrink Auto Shot dead zone from 8 to 4 yards",
      "date": "2026-10-07"
     },
     {
@@ -228,6 +249,27 @@
    "en": "Dungeons, rifts & bosses",
    "items": [
     {
+     "h": "4bf226e2",
+     "kind": "feat",
+     "scope": "vault",
+     "text": "Include class-matched raid sigils",
+     "date": "2026-10-08"
+    },
+    {
+     "h": "284e5c24",
+     "kind": "fix",
+     "scope": "raid",
+     "text": "Never brand the player Ignivar is attacking",
+     "date": "2026-10-08"
+    },
+    {
+     "h": "19189d22",
+     "kind": "fix",
+     "scope": "raid",
+     "text": "Use form-aware tank detection for Ignivar and Varkhul",
+     "date": "2026-10-07"
+    },
+    {
      "h": "921fd138",
      "kind": "fix",
      "scope": "raid",
@@ -312,6 +354,13 @@
      "date": "2026-10-02"
     },
     {
+     "h": "a8f5b92b",
+     "kind": "fix",
+     "scope": "rift",
+     "text": "Resume a rift or hoard logout at its portal",
+     "date": "2026-10-02"
+    },
+    {
      "h": "a20bfee7",
      "kind": "fix",
      "scope": "rift",
@@ -382,6 +431,20 @@
    "fr": "Monde & quêtes",
    "en": "World & quests",
    "items": [
+    {
+     "h": "610b90f0",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Make the world map window resizable",
+     "date": "2026-10-07"
+    },
+    {
+     "h": "774fa1e8",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add a width divider to the world map sidebar",
+     "date": "2026-10-07"
+    },
     {
      "h": "025a1c80",
      "kind": "feat",
@@ -482,6 +545,13 @@
      "date": "2026-09-29"
     },
     {
+     "h": "ca8e03e8",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Report HoT and leech ticks that land entirely as overheal",
+     "date": "2026-10-08"
+    },
+    {
      "h": "191d72bb",
      "kind": "fix",
      "scope": "world-quests",
@@ -517,6 +587,13 @@
    "fr": "Confort & technique",
    "en": "Comfort & technical",
    "items": [
+    {
+     "h": "dae3e390",
+     "kind": "feat",
+     "scope": "audio",
+     "text": "Split ambience onto its own volume slider",
+     "date": "2026-10-08"
+    },
     {
      "h": "edc58673",
      "kind": "feat",
@@ -693,6 +770,34 @@
      "date": "2026-09-26"
     },
     {
+     "h": "de3eba75",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Reconcile core and specialization loot policies",
+     "date": "2026-10-09"
+    },
+    {
+     "h": "e51686a1",
+     "kind": "fix",
+     "scope": "meters",
+     "text": "Count the overheal of heals that landed entirely as overheal",
+     "date": "2026-10-08"
+    },
+    {
+     "h": "e3c49e4e",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Clamp HoT and leech ticks at zero missing health",
+     "date": "2026-10-08"
+    },
+    {
+     "h": "085dc43f",
+     "kind": "fix",
+     "scope": "hud",
+     "text": "Stop a reflex press from releasing the spirit on death",
+     "date": "2026-10-08"
+    },
+    {
      "h": "ffca4690",
      "kind": "fix",
      "scope": "world-quests",
@@ -711,6 +816,20 @@
      "kind": "fix",
      "scope": "vault",
      "text": "Keep weekly controls on the status row",
+     "date": "2026-10-07"
+    },
+    {
+     "h": "4cc66eb8",
+     "kind": "fix",
+     "scope": "meters",
+     "text": "Correct and localize the ability detail subtitle",
+     "date": "2026-10-07"
+    },
+    {
+     "h": "d5452fe7",
+     "kind": "fix",
+     "scope": "meters",
+     "text": "Keep detail counts exact and pin the subtitle wiring",
      "date": "2026-10-07"
     },
     {
@@ -1107,9 +1226,9 @@
    "branch": "ossbrain-release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 310,
-   "shown": 149,
-   "last_commit": "2026-10-07T11:03:01Z",
+   "commits": 354,
+   "shown": 166,
+   "last_commit": "2026-10-08T22:32:03Z",
    "sections": [
     {
      "key": "classes",
@@ -1136,6 +1255,27 @@
        "kind": "feat",
        "scope": "pvp",
        "text": "Caster PvP sets grant spell pushback immunity at 2 pieces",
+       "date": "2026-10-07"
+      },
+      {
+       "h": "adfd8eca",
+       "kind": "feat",
+       "scope": "hunter",
+       "text": "Retune Courser daze and Trailbreak escape",
+       "date": "2026-10-07"
+      },
+      {
+       "h": "20a1f51c",
+       "kind": "feat",
+       "scope": "hunter",
+       "text": "Cut shot minimum range from 8 to 4 yards",
+       "date": "2026-10-07"
+      },
+      {
+       "h": "cdef8f1c",
+       "kind": "feat",
+       "scope": "hunter",
+       "text": "Shrink Auto Shot dead zone from 8 to 4 yards",
        "date": "2026-10-07"
       },
       {
@@ -1330,6 +1470,27 @@
      "en": "Dungeons, rifts & bosses",
      "items": [
       {
+       "h": "4bf226e2",
+       "kind": "feat",
+       "scope": "vault",
+       "text": "Include class-matched raid sigils",
+       "date": "2026-10-08"
+      },
+      {
+       "h": "284e5c24",
+       "kind": "fix",
+       "scope": "raid",
+       "text": "Never brand the player Ignivar is attacking",
+       "date": "2026-10-08"
+      },
+      {
+       "h": "19189d22",
+       "kind": "fix",
+       "scope": "raid",
+       "text": "Use form-aware tank detection for Ignivar and Varkhul",
+       "date": "2026-10-07"
+      },
+      {
        "h": "921fd138",
        "kind": "fix",
        "scope": "raid",
@@ -1414,6 +1575,13 @@
        "date": "2026-10-02"
       },
       {
+       "h": "a8f5b92b",
+       "kind": "fix",
+       "scope": "rift",
+       "text": "Resume a rift or hoard logout at its portal",
+       "date": "2026-10-02"
+      },
+      {
        "h": "a20bfee7",
        "kind": "fix",
        "scope": "rift",
@@ -1484,6 +1652,20 @@
      "fr": "Monde & quêtes",
      "en": "World & quests",
      "items": [
+      {
+       "h": "610b90f0",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Make the world map window resizable",
+       "date": "2026-10-07"
+      },
+      {
+       "h": "774fa1e8",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add a width divider to the world map sidebar",
+       "date": "2026-10-07"
+      },
       {
        "h": "025a1c80",
        "kind": "feat",
@@ -1584,6 +1766,13 @@
        "date": "2026-09-29"
       },
       {
+       "h": "ca8e03e8",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Report HoT and leech ticks that land entirely as overheal",
+       "date": "2026-10-08"
+      },
+      {
        "h": "191d72bb",
        "kind": "fix",
        "scope": "world-quests",
@@ -1619,6 +1808,13 @@
      "fr": "Confort & technique",
      "en": "Comfort & technical",
      "items": [
+      {
+       "h": "dae3e390",
+       "kind": "feat",
+       "scope": "audio",
+       "text": "Split ambience onto its own volume slider",
+       "date": "2026-10-08"
+      },
       {
        "h": "edc58673",
        "kind": "feat",
@@ -1795,6 +1991,34 @@
        "date": "2026-09-26"
       },
       {
+       "h": "de3eba75",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Reconcile core and specialization loot policies",
+       "date": "2026-10-09"
+      },
+      {
+       "h": "e51686a1",
+       "kind": "fix",
+       "scope": "meters",
+       "text": "Count the overheal of heals that landed entirely as overheal",
+       "date": "2026-10-08"
+      },
+      {
+       "h": "e3c49e4e",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Clamp HoT and leech ticks at zero missing health",
+       "date": "2026-10-08"
+      },
+      {
+       "h": "085dc43f",
+       "kind": "fix",
+       "scope": "hud",
+       "text": "Stop a reflex press from releasing the spirit on death",
+       "date": "2026-10-08"
+      },
+      {
        "h": "ffca4690",
        "kind": "fix",
        "scope": "world-quests",
@@ -1813,6 +2037,20 @@
        "kind": "fix",
        "scope": "vault",
        "text": "Keep weekly controls on the status row",
+       "date": "2026-10-07"
+      },
+      {
+       "h": "4cc66eb8",
+       "kind": "fix",
+       "scope": "meters",
+       "text": "Correct and localize the ability detail subtitle",
+       "date": "2026-10-07"
+      },
+      {
+       "h": "d5452fe7",
+       "kind": "fix",
+       "scope": "meters",
+       "text": "Keep detail counts exact and pin the subtitle wiring",
        "date": "2026-10-07"
       },
       {
