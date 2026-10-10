@@ -2,28 +2,28 @@
   "guilde": {
     "classementServeur": 11,
     "classement": {
-      "releveLe": "2026-10-09T18:17:36Z",
+      "releveLe": "2026-10-10T00:41:18Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Sovereign",
-          "memberCount": 175,
-          "totalLifetimeXp": 86462002,
+          "memberCount": 176,
+          "totalLifetimeXp": 86804970,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "Raiders United",
-          "memberCount": 247,
-          "totalLifetimeXp": 84957958,
+          "memberCount": 254,
+          "totalLifetimeXp": 85252723,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Monarchs",
           "memberCount": 81,
-          "totalLifetimeXp": 45440709,
+          "totalLifetimeXp": 45486329,
           "topLevel": 20
         },
         {
@@ -36,15 +36,15 @@
         {
           "rank": 5,
           "name": "Mayonnaise",
-          "memberCount": 128,
-          "totalLifetimeXp": 24111876,
+          "memberCount": 131,
+          "totalLifetimeXp": 24348478,
           "topLevel": 20
         },
         {
           "rank": 6,
           "name": "Cheaters",
           "memberCount": 52,
-          "totalLifetimeXp": 21237446,
+          "totalLifetimeXp": 21280326,
           "topLevel": 20
         },
         {
@@ -56,23 +56,23 @@
         },
         {
           "rank": 8,
-          "name": "Vis Absoluta",
-          "memberCount": 46,
-          "totalLifetimeXp": 17085040,
-          "topLevel": 20
-        },
-        {
-          "rank": 9,
           "name": "Ehren Nuggets",
           "memberCount": 94,
           "totalLifetimeXp": 16368047,
           "topLevel": 20
         },
         {
+          "rank": 9,
+          "name": "Vis Absoluta",
+          "memberCount": 45,
+          "totalLifetimeXp": 16032666,
+          "topLevel": 20
+        },
+        {
           "rank": 10,
           "name": "Troll Riders inc",
-          "memberCount": 18,
-          "totalLifetimeXp": 13822197,
+          "memberCount": 19,
+          "totalLifetimeXp": 14909456,
           "topLevel": 20
         }
       ],
