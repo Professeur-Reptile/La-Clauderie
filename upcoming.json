@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-09T15:31:31Z",
+ "generated": "2026-10-10T08:53:37Z",
  "base_tag": "v0.44.6",
  "version": "v0.45.0",
  "branch": "ossbrain-release/v0.45.0",
  "declared_version": "0.45.0",
  "imminent": true,
- "commits": 402,
- "shown": 183,
- "last_commit": "2026-10-09T03:51:22Z",
+ "commits": 433,
+ "shown": 195,
+ "last_commit": "2026-10-10T04:50:05Z",
  "sections": [
   {
    "key": "classes",
@@ -15,6 +15,13 @@
    "fr": "Classes & sorts",
    "en": "Classes & spells",
    "items": [
+    {
+     "h": "779ae166",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add spell hover tooltip preference",
+     "date": "2026-10-09"
+    },
     {
      "h": "0e8bab03",
      "kind": "feat",
@@ -481,6 +488,13 @@
    "en": "World & quests",
    "items": [
     {
+     "h": "a603f6f4",
+     "kind": "feat",
+     "scope": "items",
+     "text": "Pin locked bag items to their slot",
+     "date": "2026-10-09"
+    },
+    {
      "h": "6b32477c",
      "kind": "feat",
      "scope": "deeds",
@@ -644,6 +658,27 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "cdeb8096",
+     "kind": "feat",
+     "scope": "client",
+     "text": "Add update search to version mismatch recovery",
+     "date": "2026-10-09"
+    },
+    {
+     "h": "19167d62",
+     "kind": "feat",
+     "scope": "mounts",
+     "text": "Let riders shift into Moonwing and Gloamveil",
+     "date": "2026-10-09"
+    },
+    {
+     "h": "3b21e45b",
+     "kind": "feat",
+     "scope": "i18n",
+     "text": "Add the non-Latin fills for the locked slot toast",
+     "date": "2026-10-09"
+    },
+    {
      "h": "dae3e390",
      "kind": "feat",
      "scope": "audio",
@@ -746,6 +781,20 @@
      "kind": "feat",
      "scope": "deeds",
      "text": "Rename the 10M lifetime XP title to Titan",
+     "date": "2026-10-01"
+    },
+    {
+     "h": "7ce26e8a",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Seat target auras below the frame on the stock seat",
+     "date": "2026-10-01"
+    },
+    {
+     "h": "eb416d17",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Badge stack counts on nameplate dot icons",
      "date": "2026-10-01"
     },
     {
@@ -861,10 +910,31 @@
      "date": "2026-09-26"
     },
     {
+     "h": "b89ed2fd",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Exclude sigils from new reward pools",
+     "date": "2026-10-10"
+    },
+    {
      "h": "de3eba75",
      "kind": "fix",
      "scope": "vault",
      "text": "Reconcile core and specialization loot policies",
+     "date": "2026-10-09"
+    },
+    {
+     "h": "db3a8121",
+     "kind": "fix",
+     "scope": "desktop",
+     "text": "Gate disabled update checks by sender",
+     "date": "2026-10-09"
+    },
+    {
+     "h": "f2ff6918",
+     "kind": "fix",
+     "scope": "loot",
+     "text": "Skip soulbound class-locked drops no eligible class can use",
      "date": "2026-10-09"
     },
     {
@@ -1047,6 +1117,20 @@
      "kind": "fix",
      "scope": "world-quests",
      "text": "Make rerolled-in quests completable",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "1d60a7c9",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Bottom-anchor the lifted target seat and lift the timers",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "191e1cb9",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Refresh nameplate stack text on a language switch",
      "date": "2026-10-02"
     },
     {
@@ -1345,9 +1429,9 @@
    "branch": "ossbrain-release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 402,
-   "shown": 183,
-   "last_commit": "2026-10-09T03:51:22Z",
+   "commits": 433,
+   "shown": 195,
+   "last_commit": "2026-10-10T04:50:05Z",
    "sections": [
     {
      "key": "classes",
@@ -1355,6 +1439,13 @@
      "fr": "Classes & sorts",
      "en": "Classes & spells",
      "items": [
+      {
+       "h": "779ae166",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add spell hover tooltip preference",
+       "date": "2026-10-09"
+      },
       {
        "h": "0e8bab03",
        "kind": "feat",
@@ -1821,6 +1912,13 @@
      "en": "World & quests",
      "items": [
       {
+       "h": "a603f6f4",
+       "kind": "feat",
+       "scope": "items",
+       "text": "Pin locked bag items to their slot",
+       "date": "2026-10-09"
+      },
+      {
        "h": "6b32477c",
        "kind": "feat",
        "scope": "deeds",
@@ -1984,6 +2082,27 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "cdeb8096",
+       "kind": "feat",
+       "scope": "client",
+       "text": "Add update search to version mismatch recovery",
+       "date": "2026-10-09"
+      },
+      {
+       "h": "19167d62",
+       "kind": "feat",
+       "scope": "mounts",
+       "text": "Let riders shift into Moonwing and Gloamveil",
+       "date": "2026-10-09"
+      },
+      {
+       "h": "3b21e45b",
+       "kind": "feat",
+       "scope": "i18n",
+       "text": "Add the non-Latin fills for the locked slot toast",
+       "date": "2026-10-09"
+      },
+      {
        "h": "dae3e390",
        "kind": "feat",
        "scope": "audio",
@@ -2086,6 +2205,20 @@
        "kind": "feat",
        "scope": "deeds",
        "text": "Rename the 10M lifetime XP title to Titan",
+       "date": "2026-10-01"
+      },
+      {
+       "h": "7ce26e8a",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Seat target auras below the frame on the stock seat",
+       "date": "2026-10-01"
+      },
+      {
+       "h": "eb416d17",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Badge stack counts on nameplate dot icons",
        "date": "2026-10-01"
       },
       {
@@ -2201,10 +2334,31 @@
        "date": "2026-09-26"
       },
       {
+       "h": "b89ed2fd",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Exclude sigils from new reward pools",
+       "date": "2026-10-10"
+      },
+      {
        "h": "de3eba75",
        "kind": "fix",
        "scope": "vault",
        "text": "Reconcile core and specialization loot policies",
+       "date": "2026-10-09"
+      },
+      {
+       "h": "db3a8121",
+       "kind": "fix",
+       "scope": "desktop",
+       "text": "Gate disabled update checks by sender",
+       "date": "2026-10-09"
+      },
+      {
+       "h": "f2ff6918",
+       "kind": "fix",
+       "scope": "loot",
+       "text": "Skip soulbound class-locked drops no eligible class can use",
        "date": "2026-10-09"
       },
       {
@@ -2387,6 +2541,20 @@
        "kind": "fix",
        "scope": "world-quests",
        "text": "Make rerolled-in quests completable",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "1d60a7c9",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Bottom-anchor the lifted target seat and lift the timers",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "191e1cb9",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Refresh nameplate stack text on a language switch",
        "date": "2026-10-02"
       },
       {
