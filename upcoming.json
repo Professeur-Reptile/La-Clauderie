@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-10T08:53:37Z",
+ "generated": "2026-10-11T23:53:41Z",
  "base_tag": "v0.44.6",
  "version": "v0.45.0",
  "branch": "ossbrain-release/v0.45.0",
  "declared_version": "0.45.0",
  "imminent": true,
- "commits": 433,
- "shown": 195,
- "last_commit": "2026-10-10T04:50:05Z",
+ "commits": 459,
+ "shown": 204,
+ "last_commit": "2026-10-11T23:01:53Z",
  "sections": [
   {
    "key": "classes",
@@ -168,6 +168,20 @@
      "scope": "ui",
      "text": "Pin resolved aura tooltip input type",
      "date": "2026-10-08"
+    },
+    {
+     "h": "2d374031",
+     "kind": "fix",
+     "scope": "shaman",
+     "text": "Stop Arc Bolt plus Earthen Jolt outdamaging the Thundercall kit",
+     "date": "2026-10-07"
+    },
+    {
+     "h": "34516e5a",
+     "kind": "fix",
+     "scope": "shaman",
+     "text": "Give the Thundercall kit Lava Flows and a 27 sec Cinder Jolt",
+     "date": "2026-10-07"
     },
     {
      "h": "84536d62",
@@ -615,6 +629,13 @@
      "date": "2026-09-29"
     },
     {
+     "h": "d63d1281",
+     "kind": "fix",
+     "scope": "moderation",
+     "text": "Keep the spectating moderator's body in the world",
+     "date": "2026-10-10"
+    },
+    {
      "h": "ca8e03e8",
      "kind": "fix",
      "scope": "sim",
@@ -658,6 +679,13 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "176a1197",
+     "kind": "feat",
+     "scope": "world-quests",
+     "text": "Pay 150 Honor on two world quests each day",
+     "date": "2026-10-10"
+    },
+    {
      "h": "cdeb8096",
      "kind": "feat",
      "scope": "client",
@@ -676,6 +704,13 @@
      "kind": "feat",
      "scope": "i18n",
      "text": "Add the non-Latin fills for the locked slot toast",
+     "date": "2026-10-09"
+    },
+    {
+     "h": "fa338c10",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Add World PvP bounties for flagged kill streaks",
      "date": "2026-10-09"
     },
     {
@@ -910,10 +945,24 @@
      "date": "2026-09-26"
     },
     {
+     "h": "41cd0048",
+     "kind": "fix",
+     "scope": "transport",
+     "text": "Remove boat jumping changes from message fix",
+     "date": "2026-10-12"
+    },
+    {
      "h": "b89ed2fd",
      "kind": "fix",
      "scope": "vault",
      "text": "Exclude sigils from new reward pools",
+     "date": "2026-10-10"
+    },
+    {
+     "h": "aa7569b6",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Keep a spectating moderator on the hill they stand on",
      "date": "2026-10-10"
     },
     {
@@ -935,6 +984,20 @@
      "kind": "fix",
      "scope": "loot",
      "text": "Skip soulbound class-locked drops no eligible class can use",
+     "date": "2026-10-09"
+    },
+    {
+     "h": "bde7ddbf",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Persist buffs through a logout",
+     "date": "2026-10-09"
+    },
+    {
+     "h": "eea4d6da",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Keep devotions caster-bound across a relog",
      "date": "2026-10-09"
     },
     {
@@ -1429,9 +1492,9 @@
    "branch": "ossbrain-release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 433,
-   "shown": 195,
-   "last_commit": "2026-10-10T04:50:05Z",
+   "commits": 459,
+   "shown": 204,
+   "last_commit": "2026-10-11T23:01:53Z",
    "sections": [
     {
      "key": "classes",
@@ -1592,6 +1655,20 @@
        "scope": "ui",
        "text": "Pin resolved aura tooltip input type",
        "date": "2026-10-08"
+      },
+      {
+       "h": "2d374031",
+       "kind": "fix",
+       "scope": "shaman",
+       "text": "Stop Arc Bolt plus Earthen Jolt outdamaging the Thundercall kit",
+       "date": "2026-10-07"
+      },
+      {
+       "h": "34516e5a",
+       "kind": "fix",
+       "scope": "shaman",
+       "text": "Give the Thundercall kit Lava Flows and a 27 sec Cinder Jolt",
+       "date": "2026-10-07"
       },
       {
        "h": "84536d62",
@@ -2039,6 +2116,13 @@
        "date": "2026-09-29"
       },
       {
+       "h": "d63d1281",
+       "kind": "fix",
+       "scope": "moderation",
+       "text": "Keep the spectating moderator's body in the world",
+       "date": "2026-10-10"
+      },
+      {
        "h": "ca8e03e8",
        "kind": "fix",
        "scope": "sim",
@@ -2082,6 +2166,13 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "176a1197",
+       "kind": "feat",
+       "scope": "world-quests",
+       "text": "Pay 150 Honor on two world quests each day",
+       "date": "2026-10-10"
+      },
+      {
        "h": "cdeb8096",
        "kind": "feat",
        "scope": "client",
@@ -2100,6 +2191,13 @@
        "kind": "feat",
        "scope": "i18n",
        "text": "Add the non-Latin fills for the locked slot toast",
+       "date": "2026-10-09"
+      },
+      {
+       "h": "fa338c10",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Add World PvP bounties for flagged kill streaks",
        "date": "2026-10-09"
       },
       {
@@ -2334,10 +2432,24 @@
        "date": "2026-09-26"
       },
       {
+       "h": "41cd0048",
+       "kind": "fix",
+       "scope": "transport",
+       "text": "Remove boat jumping changes from message fix",
+       "date": "2026-10-12"
+      },
+      {
        "h": "b89ed2fd",
        "kind": "fix",
        "scope": "vault",
        "text": "Exclude sigils from new reward pools",
+       "date": "2026-10-10"
+      },
+      {
+       "h": "aa7569b6",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Keep a spectating moderator on the hill they stand on",
        "date": "2026-10-10"
       },
       {
@@ -2359,6 +2471,20 @@
        "kind": "fix",
        "scope": "loot",
        "text": "Skip soulbound class-locked drops no eligible class can use",
+       "date": "2026-10-09"
+      },
+      {
+       "h": "bde7ddbf",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Persist buffs through a logout",
+       "date": "2026-10-09"
+      },
+      {
+       "h": "eea4d6da",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Keep devotions caster-bound across a relog",
        "date": "2026-10-09"
       },
       {
