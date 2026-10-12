@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-11T23:53:41Z",
+ "generated": "2026-10-12T15:59:09Z",
  "base_tag": "v0.44.6",
  "version": "v0.45.0",
  "branch": "ossbrain-release/v0.45.0",
  "declared_version": "0.45.0",
  "imminent": true,
- "commits": 459,
- "shown": 204,
- "last_commit": "2026-10-11T23:01:53Z",
+ "commits": 488,
+ "shown": 216,
+ "last_commit": "2026-10-12T14:15:59Z",
  "sections": [
   {
    "key": "classes",
@@ -15,6 +15,20 @@
    "fr": "Classes & sorts",
    "en": "Classes & spells",
    "items": [
+    {
+     "h": "e94dba74",
+     "kind": "feat",
+     "scope": "hunter",
+     "text": "Remove every hunter minimum range and Auto Shot's dead zone",
+     "date": "2026-10-12"
+    },
+    {
+     "h": "27a7c9cf",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Spore Burst, a ground-placed heal and damage splash",
+     "date": "2026-10-12"
+    },
     {
      "h": "779ae166",
      "kind": "feat",
@@ -161,6 +175,13 @@
      "scope": "render",
      "text": "Decode the Warrior kit's image sheets off the main thread",
      "date": "2026-09-27"
+    },
+    {
+     "h": "fd3df932",
+     "kind": "fix",
+     "scope": "druid",
+     "text": "Word the Nature's Boon passive without \"window.\"",
+     "date": "2026-10-12"
     },
     {
      "h": "0155425a",
@@ -324,6 +345,27 @@
      "scope": "vault",
      "text": "Include class-matched raid sigils",
      "date": "2026-10-08"
+    },
+    {
+     "h": "adf0a664",
+     "kind": "fix",
+     "scope": "instances",
+     "text": "Route a cleared raider back into their raid's run",
+     "date": "2026-10-11"
+    },
+    {
+     "h": "714f99b1",
+     "kind": "fix",
+     "scope": "instances",
+     "text": "Confine raid returners to the room they cleared",
+     "date": "2026-10-11"
+    },
+    {
+     "h": "b83d1fe9",
+     "kind": "fix",
+     "scope": "instances",
+     "text": "Never trap a raid returner inside the old run",
+     "date": "2026-10-11"
     },
     {
      "h": "284e5c24",
@@ -679,6 +721,13 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "4e2b773c",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Forfeit a world fight by leaving the world mid-fight",
+     "date": "2026-10-11"
+    },
+    {
      "h": "176a1197",
      "kind": "feat",
      "scope": "world-quests",
@@ -952,6 +1001,34 @@
      "date": "2026-10-12"
     },
     {
+     "h": "2cb3623c",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Align ranged auto attack aggro",
+     "date": "2026-10-12"
+    },
+    {
+     "h": "bef99e0e",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Fill locked storage sim errors",
+     "date": "2026-10-12"
+    },
+    {
+     "h": "2ea637ab",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Put the Spore Burst visual on the floor VFX ladder",
+     "date": "2026-10-12"
+    },
+    {
+     "h": "bbd1554f",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Forfeit on every leave path, not only logout and takeover",
+     "date": "2026-10-11"
+    },
+    {
      "h": "b89ed2fd",
      "kind": "fix",
      "scope": "vault",
@@ -963,6 +1040,13 @@
      "kind": "fix",
      "scope": "pvp",
      "text": "Keep a spectating moderator on the hill they stand on",
+     "date": "2026-10-10"
+    },
+    {
+     "h": "1bcd5d5f",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Hear a mounted rider's Fenbridge accusation",
      "date": "2026-10-10"
     },
     {
@@ -1492,9 +1576,9 @@
    "branch": "ossbrain-release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 459,
-   "shown": 204,
-   "last_commit": "2026-10-11T23:01:53Z",
+   "commits": 488,
+   "shown": 216,
+   "last_commit": "2026-10-12T14:15:59Z",
    "sections": [
     {
      "key": "classes",
@@ -1502,6 +1586,20 @@
      "fr": "Classes & sorts",
      "en": "Classes & spells",
      "items": [
+      {
+       "h": "e94dba74",
+       "kind": "feat",
+       "scope": "hunter",
+       "text": "Remove every hunter minimum range and Auto Shot's dead zone",
+       "date": "2026-10-12"
+      },
+      {
+       "h": "27a7c9cf",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Spore Burst, a ground-placed heal and damage splash",
+       "date": "2026-10-12"
+      },
       {
        "h": "779ae166",
        "kind": "feat",
@@ -1648,6 +1746,13 @@
        "scope": "render",
        "text": "Decode the Warrior kit's image sheets off the main thread",
        "date": "2026-09-27"
+      },
+      {
+       "h": "fd3df932",
+       "kind": "fix",
+       "scope": "druid",
+       "text": "Word the Nature's Boon passive without \"window.\"",
+       "date": "2026-10-12"
       },
       {
        "h": "0155425a",
@@ -1811,6 +1916,27 @@
        "scope": "vault",
        "text": "Include class-matched raid sigils",
        "date": "2026-10-08"
+      },
+      {
+       "h": "adf0a664",
+       "kind": "fix",
+       "scope": "instances",
+       "text": "Route a cleared raider back into their raid's run",
+       "date": "2026-10-11"
+      },
+      {
+       "h": "714f99b1",
+       "kind": "fix",
+       "scope": "instances",
+       "text": "Confine raid returners to the room they cleared",
+       "date": "2026-10-11"
+      },
+      {
+       "h": "b83d1fe9",
+       "kind": "fix",
+       "scope": "instances",
+       "text": "Never trap a raid returner inside the old run",
+       "date": "2026-10-11"
       },
       {
        "h": "284e5c24",
@@ -2166,6 +2292,13 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "4e2b773c",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Forfeit a world fight by leaving the world mid-fight",
+       "date": "2026-10-11"
+      },
+      {
        "h": "176a1197",
        "kind": "feat",
        "scope": "world-quests",
@@ -2439,6 +2572,34 @@
        "date": "2026-10-12"
       },
       {
+       "h": "2cb3623c",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Align ranged auto attack aggro",
+       "date": "2026-10-12"
+      },
+      {
+       "h": "bef99e0e",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Fill locked storage sim errors",
+       "date": "2026-10-12"
+      },
+      {
+       "h": "2ea637ab",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Put the Spore Burst visual on the floor VFX ladder",
+       "date": "2026-10-12"
+      },
+      {
+       "h": "bbd1554f",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Forfeit on every leave path, not only logout and takeover",
+       "date": "2026-10-11"
+      },
+      {
        "h": "b89ed2fd",
        "kind": "fix",
        "scope": "vault",
@@ -2450,6 +2611,13 @@
        "kind": "fix",
        "scope": "pvp",
        "text": "Keep a spectating moderator on the hill they stand on",
+       "date": "2026-10-10"
+      },
+      {
+       "h": "1bcd5d5f",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Hear a mounted rider's Fenbridge accusation",
        "date": "2026-10-10"
       },
       {
