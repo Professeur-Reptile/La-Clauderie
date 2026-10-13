@@ -2,21 +2,21 @@
   "guilde": {
     "classementServeur": 11,
     "classement": {
-      "releveLe": "2026-10-12T21:12:41Z",
+      "releveLe": "2026-10-13T06:39:08Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
-          "name": "Sovereign",
-          "memberCount": 173,
-          "totalLifetimeXp": 87099196,
+          "name": "Raiders United",
+          "memberCount": 253,
+          "totalLifetimeXp": 87332634,
           "topLevel": 20
         },
         {
           "rank": 2,
-          "name": "Raiders United",
-          "memberCount": 252,
-          "totalLifetimeXp": 86675254,
+          "name": "Sovereign",
+          "memberCount": 165,
+          "totalLifetimeXp": 86347471,
           "topLevel": 20
         },
         {
@@ -36,29 +36,29 @@
         {
           "rank": 5,
           "name": "Mayonnaise",
-          "memberCount": 127,
-          "totalLifetimeXp": 23789764,
+          "memberCount": 134,
+          "totalLifetimeXp": 23909808,
           "topLevel": 20
         },
         {
           "rank": 6,
           "name": "Cheaters",
           "memberCount": 52,
-          "totalLifetimeXp": 21385765,
+          "totalLifetimeXp": 21439438,
           "topLevel": 20
         },
         {
           "rank": 7,
           "name": "Legio X Equestris",
           "memberCount": 66,
-          "totalLifetimeXp": 19618292,
+          "totalLifetimeXp": 19628682,
           "topLevel": 20
         },
         {
           "rank": 8,
           "name": "Troll Riders inc",
           "memberCount": 20,
-          "totalLifetimeXp": 17352851,
+          "totalLifetimeXp": 17418884,
           "topLevel": 20
         },
         {
@@ -80,7 +80,7 @@
         "rank": 11,
         "name": "La Clauderie",
         "memberCount": 76,
-        "totalLifetimeXp": 12485765,
+        "totalLifetimeXp": 12486672,
         "topLevel": 20
       }
     }
