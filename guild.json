@@ -2,21 +2,21 @@
   "guilde": {
     "classementServeur": 11,
     "classement": {
-      "releveLe": "2026-10-13T16:52:54Z",
+      "releveLe": "2026-10-14T04:41:01Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Sovereign",
           "memberCount": 165,
-          "totalLifetimeXp": 86655390,
+          "totalLifetimeXp": 86951785,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "Raiders United",
           "memberCount": 253,
-          "totalLifetimeXp": 86326449,
+          "totalLifetimeXp": 86763945,
           "topLevel": 20
         },
         {
@@ -36,15 +36,15 @@
         {
           "rank": 5,
           "name": "Mayonnaise",
-          "memberCount": 140,
-          "totalLifetimeXp": 24049478,
+          "memberCount": 136,
+          "totalLifetimeXp": 24416192,
           "topLevel": 20
         },
         {
           "rank": 6,
           "name": "Cheaters",
           "memberCount": 52,
-          "totalLifetimeXp": 21474771,
+          "totalLifetimeXp": 21506820,
           "topLevel": 20
         },
         {
@@ -58,7 +58,7 @@
           "rank": 8,
           "name": "Troll Riders inc",
           "memberCount": 20,
-          "totalLifetimeXp": 17847012,
+          "totalLifetimeXp": 17864933,
           "topLevel": 20
         },
         {
@@ -72,7 +72,7 @@
           "rank": 10,
           "name": "Vis Absoluta",
           "memberCount": 44,
-          "totalLifetimeXp": 14942292,
+          "totalLifetimeXp": 14949555,
           "topLevel": 20
         }
       ],
@@ -80,7 +80,7 @@
         "rank": 11,
         "name": "La Clauderie",
         "memberCount": 81,
-        "totalLifetimeXp": 12524931,
+        "totalLifetimeXp": 12539886,
         "topLevel": 20
       }
     }
