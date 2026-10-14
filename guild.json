@@ -2,63 +2,63 @@
   "guilde": {
     "classementServeur": 11,
     "classement": {
-      "releveLe": "2026-10-14T04:41:01Z",
+      "releveLe": "2026-10-14T11:39:46Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
-          "name": "Sovereign",
-          "memberCount": 165,
-          "totalLifetimeXp": 86951785,
+          "name": "Raiders United",
+          "memberCount": 256,
+          "totalLifetimeXp": 87073576,
           "topLevel": 20
         },
         {
           "rank": 2,
-          "name": "Raiders United",
-          "memberCount": 253,
-          "totalLifetimeXp": 86763945,
+          "name": "Sovereign",
+          "memberCount": 165,
+          "totalLifetimeXp": 87027000,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Monarchs",
           "memberCount": 80,
-          "totalLifetimeXp": 45194507,
+          "totalLifetimeXp": 45249182,
           "topLevel": 20
         },
         {
           "rank": 4,
           "name": "Look Good Play Good",
           "memberCount": 66,
-          "totalLifetimeXp": 32075525,
+          "totalLifetimeXp": 32075566,
           "topLevel": 20
         },
         {
           "rank": 5,
           "name": "Mayonnaise",
-          "memberCount": 136,
-          "totalLifetimeXp": 24416192,
+          "memberCount": 133,
+          "totalLifetimeXp": 27143185,
           "topLevel": 20
         },
         {
           "rank": 6,
-          "name": "Cheaters",
-          "memberCount": 52,
-          "totalLifetimeXp": 21506820,
-          "topLevel": 20
-        },
-        {
-          "rank": 7,
           "name": "Legio X Equestris",
           "memberCount": 66,
           "totalLifetimeXp": 19628682,
           "topLevel": 20
         },
         {
+          "rank": 7,
+          "name": "Cheaters",
+          "memberCount": 47,
+          "totalLifetimeXp": 19059572,
+          "topLevel": 20
+        },
+        {
           "rank": 8,
           "name": "Troll Riders inc",
           "memberCount": 20,
-          "totalLifetimeXp": 17864933,
+          "totalLifetimeXp": 18034009,
           "topLevel": 20
         },
         {
@@ -80,7 +80,7 @@
         "rank": 11,
         "name": "La Clauderie",
         "memberCount": 81,
-        "totalLifetimeXp": 12539886,
+        "totalLifetimeXp": 12542360,
         "topLevel": 20
       }
     }
