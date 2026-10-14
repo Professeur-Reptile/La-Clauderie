@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-12T15:59:09Z",
+ "generated": "2026-10-14T13:58:23Z",
  "base_tag": "v0.44.6",
  "version": "v0.45.0",
  "branch": "ossbrain-release/v0.45.0",
  "declared_version": "0.45.0",
  "imminent": true,
- "commits": 488,
- "shown": 216,
- "last_commit": "2026-10-12T14:15:59Z",
+ "commits": 552,
+ "shown": 245,
+ "last_commit": "2026-10-14T13:04:08Z",
  "sections": [
   {
    "key": "classes",
@@ -15,6 +15,20 @@
    "fr": "Classes & sorts",
    "en": "Classes & spells",
    "items": [
+    {
+     "h": "29e4ab2d",
+     "kind": "feat",
+     "scope": "hunter",
+     "text": "Rework Fieldcraft and add Play Dead",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "30c8d323",
+     "kind": "feat",
+     "scope": "loot",
+     "text": "Move half the healer waists' Crit into Int and Spirit",
+     "date": "2026-10-12"
+    },
     {
      "h": "e94dba74",
      "kind": "feat",
@@ -27,6 +41,13 @@
      "kind": "feat",
      "scope": "druid",
      "text": "Spore Burst, a ground-placed heal and damage splash",
+     "date": "2026-10-12"
+    },
+    {
+     "h": "42c81c6a",
+     "kind": "feat",
+     "scope": "druid",
+     "text": "Typhoon air throw, Slumber DR, Dash from any form",
      "date": "2026-10-12"
     },
     {
@@ -177,10 +198,24 @@
      "date": "2026-09-27"
     },
     {
+     "h": "bebefdef",
+     "kind": "fix",
+     "scope": "loot",
+     "text": "Swap Hit for Crit on the Crucible healer electives",
+     "date": "2026-10-12"
+    },
+    {
      "h": "fd3df932",
      "kind": "fix",
      "scope": "druid",
      "text": "Word the Nature's Boon passive without \"window.\"",
+     "date": "2026-10-12"
+    },
+    {
+     "h": "3186b752",
+     "kind": "fix",
+     "scope": "druid",
+     "text": "Bound the Typhoon throw and keep fear out of it",
      "date": "2026-10-12"
     },
     {
@@ -325,11 +360,25 @@
    "en": "Professions & gathering",
    "items": [
     {
+     "h": "62aaf9a7",
+     "kind": "feat",
+     "scope": "crafting",
+     "text": "Count signed reagents banked in the vault for masterwork",
+     "date": "2026-10-12"
+    },
+    {
      "h": "bc3eb7a9",
      "kind": "feat",
      "scope": "professions",
      "text": "Show what a recipe pattern makes on its tooltip",
      "date": "2026-09-30"
+    },
+    {
+     "h": "4860643f",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Key self-signed craft draws by signer in the bank ledger",
+     "date": "2026-10-12"
     }
    ]
   },
@@ -345,6 +394,20 @@
      "scope": "vault",
      "text": "Include class-matched raid sigils",
      "date": "2026-10-08"
+    },
+    {
+     "h": "e7c1cec0",
+     "kind": "fix",
+     "scope": "factions",
+     "text": "Price the Valestrider reins in Rift Watch marks",
+     "date": "2026-10-12"
+    },
+    {
+     "h": "e5484908",
+     "kind": "fix",
+     "scope": "factions",
+     "text": "Price the Valestrider reins at 500 Rift Watch marks",
+     "date": "2026-10-12"
     },
     {
      "h": "adf0a664",
@@ -721,6 +784,69 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "677d9385",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Add the Skull Bag, a 500 honor sub-inventory for trophy skulls",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "7b6a29b6",
+     "kind": "feat",
+     "scope": "keybinds",
+     "text": "Add Turkish Q and Portuguese to the layout converter",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "493a2968",
+     "kind": "feat",
+     "scope": "i18n",
+     "text": "Fill the Fieldcraft rework strings",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "da05b545",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Add painted Play Dead and Tactical Camo icons",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "ed4b9af3",
+     "kind": "feat",
+     "scope": "keybinds",
+     "text": "Convert hotkeys to another keyboard layout",
+     "date": "2026-10-13"
+    },
+    {
+     "h": "4f460340",
+     "kind": "feat",
+     "scope": "treasure",
+     "text": "Ask which map Cartographer's Ink redraws",
+     "date": "2026-10-12"
+    },
+    {
+     "h": "01d52b8a",
+     "kind": "feat",
+     "scope": "hill",
+     "text": "30 second capture that a rival only pauses",
+     "date": "2026-10-12"
+    },
+    {
+     "h": "67d8f665",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Wait 15 seconds before PvP Resurrect raises the corpse",
+     "date": "2026-10-12"
+    },
+    {
+     "h": "1c1c9736",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Let the bag window grow upward from a top-left grip",
+     "date": "2026-10-12"
+    },
+    {
      "h": "4e2b773c",
      "kind": "feat",
      "scope": "pvp",
@@ -861,6 +987,13 @@
      "date": "2026-10-03"
     },
     {
+     "h": "993261de",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Add PvP Resurrect for open-world PvP deaths",
+     "date": "2026-10-02"
+    },
+    {
      "h": "348ea5a6",
      "kind": "feat",
      "scope": "deeds",
@@ -994,10 +1127,66 @@
      "date": "2026-09-26"
     },
     {
+     "h": "537d5334",
+     "kind": "fix",
+     "scope": "keybinds",
+     "text": "Lock movement in place after a conversion that kept it",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "e8b0dbad",
+     "kind": "fix",
+     "scope": "hill",
+     "text": "Shorten the paused contest line so it fits the bar",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "8c7db7de",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Give the PvP Resurrect painter's visibility its own cache slot",
+     "date": "2026-10-13"
+    },
+    {
+     "h": "bcff7993",
+     "kind": "fix",
+     "scope": "keybinds",
+     "text": "Remember the converted layout and keep focus on Convert",
+     "date": "2026-10-13"
+    },
+    {
+     "h": "19936716",
+     "kind": "fix",
+     "scope": "keybinds",
+     "text": "Keep the converted layout on the profile, pin only movement",
+     "date": "2026-10-13"
+    },
+    {
      "h": "41cd0048",
      "kind": "fix",
      "scope": "transport",
      "text": "Remove boat jumping changes from message fix",
+     "date": "2026-10-12"
+    },
+    {
+     "h": "306543e8",
+     "kind": "fix",
+     "scope": "dev",
+     "text": "Keep healer pieces out of non-healer /dev bis kits",
+     "date": "2026-10-12"
+    },
+    {
+     "h": "49a60c76",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Let crafts draw the crafter's own signed vault units",
+     "date": "2026-10-12"
+    },
+    {
+     "h": "900d16f1",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Keep the holy PBE kits' offhand beside the healer staff",
      "date": "2026-10-12"
     },
     {
@@ -1309,6 +1498,20 @@
      "date": "2026-10-02"
     },
     {
+     "h": "9b45495e",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Wrap the death panel buttons so PvP Resurrect fits",
+     "date": "2026-10-02"
+    },
+    {
+     "h": "4d4cea7c",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Reset the PvP Resurrect offer at every new death",
+     "date": "2026-10-02"
+    },
+    {
      "h": "dc6ebf9c",
      "kind": "fix",
      "scope": "action-bar",
@@ -1576,9 +1779,9 @@
    "branch": "ossbrain-release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 488,
-   "shown": 216,
-   "last_commit": "2026-10-12T14:15:59Z",
+   "commits": 552,
+   "shown": 245,
+   "last_commit": "2026-10-14T13:04:08Z",
    "sections": [
     {
      "key": "classes",
@@ -1586,6 +1789,20 @@
      "fr": "Classes & sorts",
      "en": "Classes & spells",
      "items": [
+      {
+       "h": "29e4ab2d",
+       "kind": "feat",
+       "scope": "hunter",
+       "text": "Rework Fieldcraft and add Play Dead",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "30c8d323",
+       "kind": "feat",
+       "scope": "loot",
+       "text": "Move half the healer waists' Crit into Int and Spirit",
+       "date": "2026-10-12"
+      },
       {
        "h": "e94dba74",
        "kind": "feat",
@@ -1598,6 +1815,13 @@
        "kind": "feat",
        "scope": "druid",
        "text": "Spore Burst, a ground-placed heal and damage splash",
+       "date": "2026-10-12"
+      },
+      {
+       "h": "42c81c6a",
+       "kind": "feat",
+       "scope": "druid",
+       "text": "Typhoon air throw, Slumber DR, Dash from any form",
        "date": "2026-10-12"
       },
       {
@@ -1748,10 +1972,24 @@
        "date": "2026-09-27"
       },
       {
+       "h": "bebefdef",
+       "kind": "fix",
+       "scope": "loot",
+       "text": "Swap Hit for Crit on the Crucible healer electives",
+       "date": "2026-10-12"
+      },
+      {
        "h": "fd3df932",
        "kind": "fix",
        "scope": "druid",
        "text": "Word the Nature's Boon passive without \"window.\"",
+       "date": "2026-10-12"
+      },
+      {
+       "h": "3186b752",
+       "kind": "fix",
+       "scope": "druid",
+       "text": "Bound the Typhoon throw and keep fear out of it",
        "date": "2026-10-12"
       },
       {
@@ -1896,11 +2134,25 @@
      "en": "Professions & gathering",
      "items": [
       {
+       "h": "62aaf9a7",
+       "kind": "feat",
+       "scope": "crafting",
+       "text": "Count signed reagents banked in the vault for masterwork",
+       "date": "2026-10-12"
+      },
+      {
        "h": "bc3eb7a9",
        "kind": "feat",
        "scope": "professions",
        "text": "Show what a recipe pattern makes on its tooltip",
        "date": "2026-09-30"
+      },
+      {
+       "h": "4860643f",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Key self-signed craft draws by signer in the bank ledger",
+       "date": "2026-10-12"
       }
      ]
     },
@@ -1916,6 +2168,20 @@
        "scope": "vault",
        "text": "Include class-matched raid sigils",
        "date": "2026-10-08"
+      },
+      {
+       "h": "e7c1cec0",
+       "kind": "fix",
+       "scope": "factions",
+       "text": "Price the Valestrider reins in Rift Watch marks",
+       "date": "2026-10-12"
+      },
+      {
+       "h": "e5484908",
+       "kind": "fix",
+       "scope": "factions",
+       "text": "Price the Valestrider reins at 500 Rift Watch marks",
+       "date": "2026-10-12"
       },
       {
        "h": "adf0a664",
@@ -2292,6 +2558,69 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "677d9385",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Add the Skull Bag, a 500 honor sub-inventory for trophy skulls",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "7b6a29b6",
+       "kind": "feat",
+       "scope": "keybinds",
+       "text": "Add Turkish Q and Portuguese to the layout converter",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "493a2968",
+       "kind": "feat",
+       "scope": "i18n",
+       "text": "Fill the Fieldcraft rework strings",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "da05b545",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Add painted Play Dead and Tactical Camo icons",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "ed4b9af3",
+       "kind": "feat",
+       "scope": "keybinds",
+       "text": "Convert hotkeys to another keyboard layout",
+       "date": "2026-10-13"
+      },
+      {
+       "h": "4f460340",
+       "kind": "feat",
+       "scope": "treasure",
+       "text": "Ask which map Cartographer's Ink redraws",
+       "date": "2026-10-12"
+      },
+      {
+       "h": "01d52b8a",
+       "kind": "feat",
+       "scope": "hill",
+       "text": "30 second capture that a rival only pauses",
+       "date": "2026-10-12"
+      },
+      {
+       "h": "67d8f665",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Wait 15 seconds before PvP Resurrect raises the corpse",
+       "date": "2026-10-12"
+      },
+      {
+       "h": "1c1c9736",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Let the bag window grow upward from a top-left grip",
+       "date": "2026-10-12"
+      },
+      {
        "h": "4e2b773c",
        "kind": "feat",
        "scope": "pvp",
@@ -2432,6 +2761,13 @@
        "date": "2026-10-03"
       },
       {
+       "h": "993261de",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Add PvP Resurrect for open-world PvP deaths",
+       "date": "2026-10-02"
+      },
+      {
        "h": "348ea5a6",
        "kind": "feat",
        "scope": "deeds",
@@ -2565,10 +2901,66 @@
        "date": "2026-09-26"
       },
       {
+       "h": "537d5334",
+       "kind": "fix",
+       "scope": "keybinds",
+       "text": "Lock movement in place after a conversion that kept it",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "e8b0dbad",
+       "kind": "fix",
+       "scope": "hill",
+       "text": "Shorten the paused contest line so it fits the bar",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "8c7db7de",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Give the PvP Resurrect painter's visibility its own cache slot",
+       "date": "2026-10-13"
+      },
+      {
+       "h": "bcff7993",
+       "kind": "fix",
+       "scope": "keybinds",
+       "text": "Remember the converted layout and keep focus on Convert",
+       "date": "2026-10-13"
+      },
+      {
+       "h": "19936716",
+       "kind": "fix",
+       "scope": "keybinds",
+       "text": "Keep the converted layout on the profile, pin only movement",
+       "date": "2026-10-13"
+      },
+      {
        "h": "41cd0048",
        "kind": "fix",
        "scope": "transport",
        "text": "Remove boat jumping changes from message fix",
+       "date": "2026-10-12"
+      },
+      {
+       "h": "306543e8",
+       "kind": "fix",
+       "scope": "dev",
+       "text": "Keep healer pieces out of non-healer /dev bis kits",
+       "date": "2026-10-12"
+      },
+      {
+       "h": "49a60c76",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Let crafts draw the crafter's own signed vault units",
+       "date": "2026-10-12"
+      },
+      {
+       "h": "900d16f1",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Keep the holy PBE kits' offhand beside the healer staff",
        "date": "2026-10-12"
       },
       {
@@ -2877,6 +3269,20 @@
        "kind": "fix",
        "scope": "sim",
        "text": "Drop the Evergarden's undrawn scatter at the source",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "9b45495e",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Wrap the death panel buttons so PvP Resurrect fits",
+       "date": "2026-10-02"
+      },
+      {
+       "h": "4d4cea7c",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Reset the PvP Resurrect offer at every new death",
        "date": "2026-10-02"
       },
       {
