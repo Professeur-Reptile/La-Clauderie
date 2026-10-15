@@ -2,28 +2,28 @@
   "guilde": {
     "classementServeur": 11,
     "classement": {
-      "releveLe": "2026-10-14T17:01:15Z",
+      "releveLe": "2026-10-15T04:23:14Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Raiders United",
           "memberCount": 256,
-          "totalLifetimeXp": 87355446,
+          "totalLifetimeXp": 87587526,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "Sovereign",
           "memberCount": 164,
-          "totalLifetimeXp": 86829775,
+          "totalLifetimeXp": 87145060,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Monarchs",
           "memberCount": 80,
-          "totalLifetimeXp": 45249824,
+          "totalLifetimeXp": 45251402,
           "topLevel": 20
         },
         {
@@ -36,8 +36,8 @@
         {
           "rank": 5,
           "name": "Mayonnaise",
-          "memberCount": 135,
-          "totalLifetimeXp": 27196966,
+          "memberCount": 136,
+          "totalLifetimeXp": 27673765,
           "topLevel": 20
         },
         {
@@ -51,14 +51,14 @@
           "rank": 7,
           "name": "Cheaters",
           "memberCount": 47,
-          "totalLifetimeXp": 19059626,
+          "totalLifetimeXp": 19098850,
           "topLevel": 20
         },
         {
           "rank": 8,
           "name": "Troll Riders inc",
           "memberCount": 20,
-          "totalLifetimeXp": 18239078,
+          "totalLifetimeXp": 18249408,
           "topLevel": 20
         },
         {
@@ -72,7 +72,7 @@
           "rank": 10,
           "name": "Vis Absoluta",
           "memberCount": 44,
-          "totalLifetimeXp": 14949555,
+          "totalLifetimeXp": 14953940,
           "topLevel": 20
         }
       ],
@@ -80,7 +80,7 @@
         "rank": 11,
         "name": "La Clauderie",
         "memberCount": 81,
-        "totalLifetimeXp": 12542764,
+        "totalLifetimeXp": 12547739,
         "topLevel": 20
       }
     }
