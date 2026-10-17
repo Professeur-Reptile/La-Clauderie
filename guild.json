@@ -2,21 +2,21 @@
   "guilde": {
     "classementServeur": 11,
     "classement": {
-      "releveLe": "2026-10-17T15:25:40Z",
+      "releveLe": "2026-10-17T20:28:04Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Raiders United",
           "memberCount": 253,
-          "totalLifetimeXp": 89903364,
+          "totalLifetimeXp": 89948993,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "Sovereign",
           "memberCount": 164,
-          "totalLifetimeXp": 88241111,
+          "totalLifetimeXp": 88328957,
           "topLevel": 20
         },
         {
@@ -36,29 +36,29 @@
         {
           "rank": 5,
           "name": "Mayonnaise",
-          "memberCount": 140,
-          "totalLifetimeXp": 28275734,
+          "memberCount": 129,
+          "totalLifetimeXp": 28254251,
           "topLevel": 20
         },
         {
           "rank": 6,
+          "name": "Troll Riders inc",
+          "memberCount": 22,
+          "totalLifetimeXp": 20436688,
+          "topLevel": 20
+        },
+        {
+          "rank": 7,
           "name": "Legio X Equestris",
           "memberCount": 66,
           "totalLifetimeXp": 19628682,
           "topLevel": 20
         },
         {
-          "rank": 7,
-          "name": "Troll Riders inc",
-          "memberCount": 21,
-          "totalLifetimeXp": 19569608,
-          "topLevel": 20
-        },
-        {
           "rank": 8,
           "name": "Cheaters",
           "memberCount": 47,
-          "totalLifetimeXp": 19386666,
+          "totalLifetimeXp": 19390550,
           "topLevel": 20
         },
         {
@@ -71,8 +71,8 @@
         {
           "rank": 10,
           "name": "Vis Absoluta",
-          "memberCount": 43,
-          "totalLifetimeXp": 14757298,
+          "memberCount": 42,
+          "totalLifetimeXp": 13893470,
           "topLevel": 20
         }
       ],
@@ -80,7 +80,7 @@
         "rank": 11,
         "name": "La Clauderie",
         "memberCount": 82,
-        "totalLifetimeXp": 12623366,
+        "totalLifetimeXp": 12624900,
         "topLevel": 20
       }
     }
