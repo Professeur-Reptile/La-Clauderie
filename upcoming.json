@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-19T05:11:40Z",
+ "generated": "2026-10-19T13:51:07Z",
  "base_tag": "v0.44.6",
  "version": "v0.45.0",
  "branch": "ossbrain-release/v0.45.0",
  "declared_version": "0.45.0",
  "imminent": true,
- "commits": 611,
- "shown": 273,
- "last_commit": "2026-10-19T02:11:27Z",
+ "commits": 665,
+ "shown": 308,
+ "last_commit": "2026-10-19T10:39:29Z",
  "sections": [
   {
    "key": "classes",
@@ -15,6 +15,41 @@
    "fr": "Classes & sorts",
    "en": "Classes & spells",
    "items": [
+    {
+     "h": "e1c943f3",
+     "kind": "feat",
+     "scope": "cooldown-manager",
+     "text": "Integrate visibility and buff reminders",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "31e987e5",
+     "kind": "feat",
+     "scope": "nameplates",
+     "text": "Integrate factual player cooldown tracking",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "96a90668",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Pushback immunity for every class with a delayable cast",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "3bd11ea9",
+     "kind": "feat",
+     "scope": "nameplates",
+     "text": "Enemy cooldown row above hostile player names",
+     "date": "2026-10-17"
+    },
+    {
+     "h": "d7f03ec5",
+     "kind": "feat",
+     "scope": "options",
+     "text": "Toggle and size slider for the enemy cooldown row",
+     "date": "2026-10-17"
+    },
     {
      "h": "b12bd5ad",
      "kind": "feat",
@@ -27,6 +62,13 @@
      "kind": "feat",
      "scope": "hunter",
      "text": "Rework Fieldcraft and add Play Dead",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "5b3d8683",
+     "kind": "feat",
+     "scope": "cooldown-manager",
+     "text": "Checkmark visibility and a buff reminder",
      "date": "2026-10-14"
     },
     {
@@ -198,11 +240,32 @@
      "date": "2026-09-26"
     },
     {
+     "h": "8ae2cd11",
+     "kind": "perf",
+     "scope": "net",
+     "text": "Ship enemy cooldowns on the stable aura channel",
+     "date": "2026-10-17"
+    },
+    {
      "h": "6172da8e",
      "kind": "perf",
      "scope": "render",
      "text": "Decode the Warrior kit's image sheets off the main thread",
      "date": "2026-09-27"
+    },
+    {
+     "h": "acff9db4",
+     "kind": "fix",
+     "scope": "nameplates",
+     "text": "Track factual medallion cooldown use",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "8bbf58e5",
+     "kind": "fix",
+     "scope": "nameplates",
+     "text": "Show companion and handler aura ids as active buffs",
+     "date": "2026-10-17"
     },
     {
      "h": "19478e6a",
@@ -410,11 +473,32 @@
    "en": "Dungeons, rifts & bosses",
    "items": [
     {
+     "h": "4e480aeb",
+     "kind": "feat",
+     "scope": "dungeons",
+     "text": "Integrate Heroic Marks currency without overflow loss",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "48de13ba",
+     "kind": "feat",
+     "scope": "dungeons",
+     "text": "Carry Heroic Marks currency into v0.45",
+     "date": "2026-10-19"
+    },
+    {
      "h": "3009903b",
      "kind": "feat",
      "scope": "loot",
      "text": "Print boss drops to the whole party at the kill",
      "date": "2026-10-14"
+    },
+    {
+     "h": "01b6844b",
+     "kind": "feat",
+     "scope": "dungeons",
+     "text": "Make Heroic Marks a currency instead of a bag item",
+     "date": "2026-10-12"
     },
     {
      "h": "4bf226e2",
@@ -442,6 +526,13 @@
      "kind": "fix",
      "scope": "factions",
      "text": "Price the Valestrider reins at 500 Rift Watch marks",
+     "date": "2026-10-12"
+    },
+    {
+     "h": "89b2037c",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Repaint on a Heroic Marks balance move and pin the hmarks key",
      "date": "2026-10-12"
     },
     {
@@ -748,6 +839,20 @@
    "en": "Guild & social",
    "items": [
     {
+     "h": "3332665a",
+     "kind": "feat",
+     "scope": "moderation",
+     "text": "Integrate GM visibility watch and announcements",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "323db573",
+     "kind": "feat",
+     "scope": "moderation",
+     "text": "Add /visible, /watch and /announce GM commands",
+     "date": "2026-10-15"
+    },
+    {
      "h": "cc18fe96",
      "kind": "feat",
      "scope": "social",
@@ -767,6 +872,13 @@
      "scope": "discord",
      "text": "Add World PvP kill feed to a dedicated channel",
      "date": "2026-09-29"
+    },
+    {
+     "h": "4ced537a",
+     "kind": "fix",
+     "scope": "moderation",
+     "text": "Bound shared watchlist list refreshes",
+     "date": "2026-10-19"
     },
     {
      "h": "ad668356",
@@ -833,11 +945,74 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "77dd8249",
+     "kind": "feat",
+     "scope": "pets",
+     "text": "Integrate pet commands and Assist for v0.45",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "f1919985",
+     "kind": "feat",
+     "scope": "cooldown-manager",
+     "text": "Carry reminder settings into v0.45",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "fa082d49",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Integrate prepared target highlight styles",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "144f0027",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Integrate expanded two-piece pushback immunity",
+     "date": "2026-10-19"
+    },
+    {
      "h": "a023622b",
      "kind": "feat",
      "scope": "delves",
      "text": "Warlocks keep their demon inside delves too",
      "date": "2026-10-17"
+    },
+    {
+     "h": "a4016367",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Classify the cooldowns an enemy nameplate tracks",
+     "date": "2026-10-17"
+    },
+    {
+     "h": "996ce111",
+     "kind": "feat",
+     "scope": "net",
+     "text": "Ship enemy players' tracked cooldowns on the peer wire",
+     "date": "2026-10-17"
+    },
+    {
+     "h": "1c3dc25f",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Count emergency self-heals as tracked defensives",
+     "date": "2026-10-17"
+    },
+    {
+     "h": "6faede68",
+     "kind": "feat",
+     "scope": "options",
+     "text": "Name the row the Offensive/Defensive Tracker",
+     "date": "2026-10-17"
+    },
+    {
+     "h": "db2a59bd",
+     "kind": "feat",
+     "scope": "combat",
+     "text": "Add Style of Enemy Highlight options for the current target",
+     "date": "2026-10-16"
     },
     {
      "h": "80097287",
@@ -882,6 +1057,13 @@
      "date": "2026-10-14"
     },
     {
+     "h": "a66b8ad0",
+     "kind": "feat",
+     "scope": "pets",
+     "text": "Add an Assist pet stance",
+     "date": "2026-10-14"
+    },
+    {
      "h": "493a2968",
      "kind": "feat",
      "scope": "i18n",
@@ -900,6 +1082,13 @@
      "kind": "feat",
      "scope": "keybinds",
      "text": "Convert hotkeys to another keyboard layout",
+     "date": "2026-10-13"
+    },
+    {
+     "h": "74c7c80a",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Put pet commands on the action bar",
      "date": "2026-10-13"
     },
     {
@@ -1267,6 +1456,48 @@
      "date": "2026-10-19"
     },
     {
+     "h": "531d6004",
+     "kind": "fix",
+     "scope": "inventory",
+     "text": "Integrate cross-maker crafted stacks for v0.45",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "52c11f31",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Prepare and own hostile target highlights",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "ec14ae34",
+     "kind": "fix",
+     "scope": "rewards",
+     "text": "Conserve earned marks at scalar capacity",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "d9da2633",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Complete v0.45 release translations",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "f276b517",
+     "kind": "fix",
+     "scope": "persistence",
+     "text": "Canonicalize source slots when saving",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "36e63860",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Clear major cooldowns when self becomes peer",
+     "date": "2026-10-19"
+    },
+    {
      "h": "ba4e900e",
      "kind": "fix",
      "scope": "quests",
@@ -1320,6 +1551,13 @@
      "kind": "fix",
      "scope": "factions",
      "text": "Make a same-hub Allied Hearthstone rebind a no-op",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "b89e3ea8",
+     "kind": "fix",
+     "scope": "dungeons",
+     "text": "Gate the quartermaster grant on the marks debit",
      "date": "2026-10-14"
     },
     {
@@ -1621,6 +1859,13 @@
      "kind": "fix",
      "scope": "talents",
      "text": "Persist loadout gear sets across serializeCharacter and reconnect",
+     "date": "2026-10-04"
+    },
+    {
+     "h": "7fa37a73",
+     "kind": "fix",
+     "scope": "inventory",
+     "text": "Stack crafted consumables across makers",
      "date": "2026-10-04"
     },
     {
@@ -1975,9 +2220,9 @@
    "branch": "ossbrain-release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 611,
-   "shown": 273,
-   "last_commit": "2026-10-19T02:11:27Z",
+   "commits": 665,
+   "shown": 308,
+   "last_commit": "2026-10-19T10:39:29Z",
    "sections": [
     {
      "key": "classes",
@@ -1985,6 +2230,41 @@
      "fr": "Classes & sorts",
      "en": "Classes & spells",
      "items": [
+      {
+       "h": "e1c943f3",
+       "kind": "feat",
+       "scope": "cooldown-manager",
+       "text": "Integrate visibility and buff reminders",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "31e987e5",
+       "kind": "feat",
+       "scope": "nameplates",
+       "text": "Integrate factual player cooldown tracking",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "96a90668",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Pushback immunity for every class with a delayable cast",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "3bd11ea9",
+       "kind": "feat",
+       "scope": "nameplates",
+       "text": "Enemy cooldown row above hostile player names",
+       "date": "2026-10-17"
+      },
+      {
+       "h": "d7f03ec5",
+       "kind": "feat",
+       "scope": "options",
+       "text": "Toggle and size slider for the enemy cooldown row",
+       "date": "2026-10-17"
+      },
       {
        "h": "b12bd5ad",
        "kind": "feat",
@@ -1997,6 +2277,13 @@
        "kind": "feat",
        "scope": "hunter",
        "text": "Rework Fieldcraft and add Play Dead",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "5b3d8683",
+       "kind": "feat",
+       "scope": "cooldown-manager",
+       "text": "Checkmark visibility and a buff reminder",
        "date": "2026-10-14"
       },
       {
@@ -2168,11 +2455,32 @@
        "date": "2026-09-26"
       },
       {
+       "h": "8ae2cd11",
+       "kind": "perf",
+       "scope": "net",
+       "text": "Ship enemy cooldowns on the stable aura channel",
+       "date": "2026-10-17"
+      },
+      {
        "h": "6172da8e",
        "kind": "perf",
        "scope": "render",
        "text": "Decode the Warrior kit's image sheets off the main thread",
        "date": "2026-09-27"
+      },
+      {
+       "h": "acff9db4",
+       "kind": "fix",
+       "scope": "nameplates",
+       "text": "Track factual medallion cooldown use",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "8bbf58e5",
+       "kind": "fix",
+       "scope": "nameplates",
+       "text": "Show companion and handler aura ids as active buffs",
+       "date": "2026-10-17"
       },
       {
        "h": "19478e6a",
@@ -2380,11 +2688,32 @@
      "en": "Dungeons, rifts & bosses",
      "items": [
       {
+       "h": "4e480aeb",
+       "kind": "feat",
+       "scope": "dungeons",
+       "text": "Integrate Heroic Marks currency without overflow loss",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "48de13ba",
+       "kind": "feat",
+       "scope": "dungeons",
+       "text": "Carry Heroic Marks currency into v0.45",
+       "date": "2026-10-19"
+      },
+      {
        "h": "3009903b",
        "kind": "feat",
        "scope": "loot",
        "text": "Print boss drops to the whole party at the kill",
        "date": "2026-10-14"
+      },
+      {
+       "h": "01b6844b",
+       "kind": "feat",
+       "scope": "dungeons",
+       "text": "Make Heroic Marks a currency instead of a bag item",
+       "date": "2026-10-12"
       },
       {
        "h": "4bf226e2",
@@ -2412,6 +2741,13 @@
        "kind": "fix",
        "scope": "factions",
        "text": "Price the Valestrider reins at 500 Rift Watch marks",
+       "date": "2026-10-12"
+      },
+      {
+       "h": "89b2037c",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Repaint on a Heroic Marks balance move and pin the hmarks key",
        "date": "2026-10-12"
       },
       {
@@ -2718,6 +3054,20 @@
      "en": "Guild & social",
      "items": [
       {
+       "h": "3332665a",
+       "kind": "feat",
+       "scope": "moderation",
+       "text": "Integrate GM visibility watch and announcements",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "323db573",
+       "kind": "feat",
+       "scope": "moderation",
+       "text": "Add /visible, /watch and /announce GM commands",
+       "date": "2026-10-15"
+      },
+      {
        "h": "cc18fe96",
        "kind": "feat",
        "scope": "social",
@@ -2737,6 +3087,13 @@
        "scope": "discord",
        "text": "Add World PvP kill feed to a dedicated channel",
        "date": "2026-09-29"
+      },
+      {
+       "h": "4ced537a",
+       "kind": "fix",
+       "scope": "moderation",
+       "text": "Bound shared watchlist list refreshes",
+       "date": "2026-10-19"
       },
       {
        "h": "ad668356",
@@ -2803,11 +3160,74 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "77dd8249",
+       "kind": "feat",
+       "scope": "pets",
+       "text": "Integrate pet commands and Assist for v0.45",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "f1919985",
+       "kind": "feat",
+       "scope": "cooldown-manager",
+       "text": "Carry reminder settings into v0.45",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "fa082d49",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Integrate prepared target highlight styles",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "144f0027",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Integrate expanded two-piece pushback immunity",
+       "date": "2026-10-19"
+      },
+      {
        "h": "a023622b",
        "kind": "feat",
        "scope": "delves",
        "text": "Warlocks keep their demon inside delves too",
        "date": "2026-10-17"
+      },
+      {
+       "h": "a4016367",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Classify the cooldowns an enemy nameplate tracks",
+       "date": "2026-10-17"
+      },
+      {
+       "h": "996ce111",
+       "kind": "feat",
+       "scope": "net",
+       "text": "Ship enemy players' tracked cooldowns on the peer wire",
+       "date": "2026-10-17"
+      },
+      {
+       "h": "1c3dc25f",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Count emergency self-heals as tracked defensives",
+       "date": "2026-10-17"
+      },
+      {
+       "h": "6faede68",
+       "kind": "feat",
+       "scope": "options",
+       "text": "Name the row the Offensive/Defensive Tracker",
+       "date": "2026-10-17"
+      },
+      {
+       "h": "db2a59bd",
+       "kind": "feat",
+       "scope": "combat",
+       "text": "Add Style of Enemy Highlight options for the current target",
+       "date": "2026-10-16"
       },
       {
        "h": "80097287",
@@ -2852,6 +3272,13 @@
        "date": "2026-10-14"
       },
       {
+       "h": "a66b8ad0",
+       "kind": "feat",
+       "scope": "pets",
+       "text": "Add an Assist pet stance",
+       "date": "2026-10-14"
+      },
+      {
        "h": "493a2968",
        "kind": "feat",
        "scope": "i18n",
@@ -2870,6 +3297,13 @@
        "kind": "feat",
        "scope": "keybinds",
        "text": "Convert hotkeys to another keyboard layout",
+       "date": "2026-10-13"
+      },
+      {
+       "h": "74c7c80a",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Put pet commands on the action bar",
        "date": "2026-10-13"
       },
       {
@@ -3237,6 +3671,48 @@
        "date": "2026-10-19"
       },
       {
+       "h": "531d6004",
+       "kind": "fix",
+       "scope": "inventory",
+       "text": "Integrate cross-maker crafted stacks for v0.45",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "52c11f31",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Prepare and own hostile target highlights",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "ec14ae34",
+       "kind": "fix",
+       "scope": "rewards",
+       "text": "Conserve earned marks at scalar capacity",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "d9da2633",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Complete v0.45 release translations",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "f276b517",
+       "kind": "fix",
+       "scope": "persistence",
+       "text": "Canonicalize source slots when saving",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "36e63860",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Clear major cooldowns when self becomes peer",
+       "date": "2026-10-19"
+      },
+      {
        "h": "ba4e900e",
        "kind": "fix",
        "scope": "quests",
@@ -3290,6 +3766,13 @@
        "kind": "fix",
        "scope": "factions",
        "text": "Make a same-hub Allied Hearthstone rebind a no-op",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "b89e3ea8",
+       "kind": "fix",
+       "scope": "dungeons",
+       "text": "Gate the quartermaster grant on the marks debit",
        "date": "2026-10-14"
       },
       {
@@ -3591,6 +4074,13 @@
        "kind": "fix",
        "scope": "talents",
        "text": "Persist loadout gear sets across serializeCharacter and reconnect",
+       "date": "2026-10-04"
+      },
+      {
+       "h": "7fa37a73",
+       "kind": "fix",
+       "scope": "inventory",
+       "text": "Stack crafted consumables across makers",
        "date": "2026-10-04"
       },
       {
