@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-14T13:58:23Z",
+ "generated": "2026-10-19T05:11:40Z",
  "base_tag": "v0.44.6",
  "version": "v0.45.0",
  "branch": "ossbrain-release/v0.45.0",
  "declared_version": "0.45.0",
  "imminent": true,
- "commits": 552,
- "shown": 245,
- "last_commit": "2026-10-14T13:04:08Z",
+ "commits": 611,
+ "shown": 273,
+ "last_commit": "2026-10-19T02:11:27Z",
  "sections": [
   {
    "key": "classes",
@@ -15,6 +15,13 @@
    "fr": "Classes & sorts",
    "en": "Classes & spells",
    "items": [
+    {
+     "h": "b12bd5ad",
+     "kind": "feat",
+     "scope": "warrior",
+     "text": "Iron Resolve shields for 20% of max health",
+     "date": "2026-10-15"
+    },
     {
      "h": "29e4ab2d",
      "kind": "feat",
@@ -198,6 +205,13 @@
      "date": "2026-09-27"
     },
     {
+     "h": "19478e6a",
+     "kind": "fix",
+     "scope": "factions",
+     "text": "Make the Allied Hearthstone bind stick and stop it eating the cooldown",
+     "date": "2026-10-14"
+    },
+    {
      "h": "bebefdef",
      "kind": "fix",
      "scope": "loot",
@@ -360,6 +374,13 @@
    "en": "Professions & gathering",
    "items": [
     {
+     "h": "198dbd55",
+     "kind": "feat",
+     "scope": "treasure-maps",
+     "text": "Add Prime Cut to the hoard chest material pool",
+     "date": "2026-10-15"
+    },
+    {
      "h": "62aaf9a7",
      "kind": "feat",
      "scope": "crafting",
@@ -389,11 +410,25 @@
    "en": "Dungeons, rifts & bosses",
    "items": [
     {
+     "h": "3009903b",
+     "kind": "feat",
+     "scope": "loot",
+     "text": "Print boss drops to the whole party at the kill",
+     "date": "2026-10-14"
+    },
+    {
      "h": "4bf226e2",
      "kind": "feat",
      "scope": "vault",
      "text": "Include class-matched raid sigils",
      "date": "2026-10-08"
+    },
+    {
+     "h": "9b20fbbf",
+     "kind": "fix",
+     "scope": "delves",
+     "text": "Keep a delve pet pathing, ejects, and HUD identity sound",
+     "date": "2026-10-16"
     },
     {
      "h": "e7c1cec0",
@@ -734,6 +769,20 @@
      "date": "2026-09-29"
     },
     {
+     "h": "ad668356",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Count the local player in the Party N header",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "c3f72dfe",
+     "kind": "fix",
+     "scope": "scripts",
+     "text": "Expand desktop party frames in the party-pets shot",
+     "date": "2026-10-14"
+    },
+    {
      "h": "d63d1281",
      "kind": "fix",
      "scope": "moderation",
@@ -784,6 +833,34 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "a023622b",
+     "kind": "feat",
+     "scope": "delves",
+     "text": "Warlocks keep their demon inside delves too",
+     "date": "2026-10-17"
+    },
+    {
+     "h": "80097287",
+     "kind": "feat",
+     "scope": "delves",
+     "text": "Hunters keep their pet inside delves",
+     "date": "2026-10-16"
+    },
+    {
+     "h": "5ba1e3b7",
+     "kind": "feat",
+     "scope": "treasure-maps",
+     "text": "Hoard chest pays Pristine specimens and consumables",
+     "date": "2026-10-15"
+    },
+    {
+     "h": "61afc595",
+     "kind": "feat",
+     "scope": "bank",
+     "text": "Ten-rung Materials Vault and cheaper bank bag sockets",
+     "date": "2026-10-15"
+    },
+    {
      "h": "677d9385",
      "kind": "feat",
      "scope": "pvp",
@@ -795,6 +872,13 @@
      "kind": "feat",
      "scope": "keybinds",
      "text": "Add Turkish Q and Portuguese to the layout converter",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "9a070aa5",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Pay King of the Hill honor at a flat rate",
      "date": "2026-10-14"
     },
     {
@@ -1127,6 +1211,97 @@
      "date": "2026-09-26"
     },
     {
+     "h": "e5e2542b",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Fill release locales and hearthstone notices",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "ac367fe0",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Pace complete vault snapshots in bounded chunks",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "90adf8c2",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Compose bounded vault delivery with release integrations",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "9e1e7ac8",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Clear vault transfer when spectating changes owner",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "e3f18c74",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Compose vault owner reset on spectator changes",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "085b5802",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Complete release locale and changed-description coverage",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "71542805",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Stream revision-pinned vault reads without bootstrap clone",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "99783869",
+     "kind": "fix",
+     "scope": "server",
+     "text": "Derive vault ledger rows from actual movement facts",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "ba4e900e",
+     "kind": "fix",
+     "scope": "quests",
+     "text": "Word a carried weekly pick as last week's in the window",
+     "date": "2026-10-18"
+    },
+    {
+     "h": "4615fd13",
+     "kind": "fix",
+     "scope": "quests",
+     "text": "Keep the weekly strip one line when a pick is carried",
+     "date": "2026-10-18"
+    },
+    {
+     "h": "aff89745",
+     "kind": "fix",
+     "scope": "quests",
+     "text": "Keep an unclaimed weekly commendation until redeemed",
+     "date": "2026-10-17"
+    },
+    {
+     "h": "b1858bcc",
+     "kind": "fix",
+     "scope": "treasure",
+     "text": "Lower the epic to legendary map redraw to 8 inks",
+     "date": "2026-10-16"
+    },
+    {
+     "h": "ba77d491",
+     "kind": "fix",
+     "scope": "combat",
+     "text": "Keep practice dummies planted against knockbacks",
+     "date": "2026-10-16"
+    },
+    {
      "h": "537d5334",
      "kind": "fix",
      "scope": "keybinds",
@@ -1138,6 +1313,20 @@
      "kind": "fix",
      "scope": "hill",
      "text": "Shorten the paused contest line so it fits the bar",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "98d3aa97",
+     "kind": "fix",
+     "scope": "factions",
+     "text": "Make a same-hub Allied Hearthstone rebind a no-op",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "c8dfec23",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Keep the quartermaster attune row short enough for phones",
      "date": "2026-10-14"
     },
     {
@@ -1624,6 +1813,13 @@
      "date": "2026-09-29"
     },
     {
+     "h": "701ed106",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Show the mined ore in Willowfen objectives",
+     "date": "2026-09-29"
+    },
+    {
      "h": "f1b76514",
      "kind": "fix",
      "scope": "render",
@@ -1779,9 +1975,9 @@
    "branch": "ossbrain-release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 552,
-   "shown": 245,
-   "last_commit": "2026-10-14T13:04:08Z",
+   "commits": 611,
+   "shown": 273,
+   "last_commit": "2026-10-19T02:11:27Z",
    "sections": [
     {
      "key": "classes",
@@ -1789,6 +1985,13 @@
      "fr": "Classes & sorts",
      "en": "Classes & spells",
      "items": [
+      {
+       "h": "b12bd5ad",
+       "kind": "feat",
+       "scope": "warrior",
+       "text": "Iron Resolve shields for 20% of max health",
+       "date": "2026-10-15"
+      },
       {
        "h": "29e4ab2d",
        "kind": "feat",
@@ -1972,6 +2175,13 @@
        "date": "2026-09-27"
       },
       {
+       "h": "19478e6a",
+       "kind": "fix",
+       "scope": "factions",
+       "text": "Make the Allied Hearthstone bind stick and stop it eating the cooldown",
+       "date": "2026-10-14"
+      },
+      {
        "h": "bebefdef",
        "kind": "fix",
        "scope": "loot",
@@ -2134,6 +2344,13 @@
      "en": "Professions & gathering",
      "items": [
       {
+       "h": "198dbd55",
+       "kind": "feat",
+       "scope": "treasure-maps",
+       "text": "Add Prime Cut to the hoard chest material pool",
+       "date": "2026-10-15"
+      },
+      {
        "h": "62aaf9a7",
        "kind": "feat",
        "scope": "crafting",
@@ -2163,11 +2380,25 @@
      "en": "Dungeons, rifts & bosses",
      "items": [
       {
+       "h": "3009903b",
+       "kind": "feat",
+       "scope": "loot",
+       "text": "Print boss drops to the whole party at the kill",
+       "date": "2026-10-14"
+      },
+      {
        "h": "4bf226e2",
        "kind": "feat",
        "scope": "vault",
        "text": "Include class-matched raid sigils",
        "date": "2026-10-08"
+      },
+      {
+       "h": "9b20fbbf",
+       "kind": "fix",
+       "scope": "delves",
+       "text": "Keep a delve pet pathing, ejects, and HUD identity sound",
+       "date": "2026-10-16"
       },
       {
        "h": "e7c1cec0",
@@ -2508,6 +2739,20 @@
        "date": "2026-09-29"
       },
       {
+       "h": "ad668356",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Count the local player in the Party N header",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "c3f72dfe",
+       "kind": "fix",
+       "scope": "scripts",
+       "text": "Expand desktop party frames in the party-pets shot",
+       "date": "2026-10-14"
+      },
+      {
        "h": "d63d1281",
        "kind": "fix",
        "scope": "moderation",
@@ -2558,6 +2803,34 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "a023622b",
+       "kind": "feat",
+       "scope": "delves",
+       "text": "Warlocks keep their demon inside delves too",
+       "date": "2026-10-17"
+      },
+      {
+       "h": "80097287",
+       "kind": "feat",
+       "scope": "delves",
+       "text": "Hunters keep their pet inside delves",
+       "date": "2026-10-16"
+      },
+      {
+       "h": "5ba1e3b7",
+       "kind": "feat",
+       "scope": "treasure-maps",
+       "text": "Hoard chest pays Pristine specimens and consumables",
+       "date": "2026-10-15"
+      },
+      {
+       "h": "61afc595",
+       "kind": "feat",
+       "scope": "bank",
+       "text": "Ten-rung Materials Vault and cheaper bank bag sockets",
+       "date": "2026-10-15"
+      },
+      {
        "h": "677d9385",
        "kind": "feat",
        "scope": "pvp",
@@ -2569,6 +2842,13 @@
        "kind": "feat",
        "scope": "keybinds",
        "text": "Add Turkish Q and Portuguese to the layout converter",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "9a070aa5",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Pay King of the Hill honor at a flat rate",
        "date": "2026-10-14"
       },
       {
@@ -2901,6 +3181,97 @@
        "date": "2026-09-26"
       },
       {
+       "h": "e5e2542b",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Fill release locales and hearthstone notices",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "ac367fe0",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Pace complete vault snapshots in bounded chunks",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "90adf8c2",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Compose bounded vault delivery with release integrations",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "9e1e7ac8",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Clear vault transfer when spectating changes owner",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "e3f18c74",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Compose vault owner reset on spectator changes",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "085b5802",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Complete release locale and changed-description coverage",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "71542805",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Stream revision-pinned vault reads without bootstrap clone",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "99783869",
+       "kind": "fix",
+       "scope": "server",
+       "text": "Derive vault ledger rows from actual movement facts",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "ba4e900e",
+       "kind": "fix",
+       "scope": "quests",
+       "text": "Word a carried weekly pick as last week's in the window",
+       "date": "2026-10-18"
+      },
+      {
+       "h": "4615fd13",
+       "kind": "fix",
+       "scope": "quests",
+       "text": "Keep the weekly strip one line when a pick is carried",
+       "date": "2026-10-18"
+      },
+      {
+       "h": "aff89745",
+       "kind": "fix",
+       "scope": "quests",
+       "text": "Keep an unclaimed weekly commendation until redeemed",
+       "date": "2026-10-17"
+      },
+      {
+       "h": "b1858bcc",
+       "kind": "fix",
+       "scope": "treasure",
+       "text": "Lower the epic to legendary map redraw to 8 inks",
+       "date": "2026-10-16"
+      },
+      {
+       "h": "ba77d491",
+       "kind": "fix",
+       "scope": "combat",
+       "text": "Keep practice dummies planted against knockbacks",
+       "date": "2026-10-16"
+      },
+      {
        "h": "537d5334",
        "kind": "fix",
        "scope": "keybinds",
@@ -2912,6 +3283,20 @@
        "kind": "fix",
        "scope": "hill",
        "text": "Shorten the paused contest line so it fits the bar",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "98d3aa97",
+       "kind": "fix",
+       "scope": "factions",
+       "text": "Make a same-hub Allied Hearthstone rebind a no-op",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "c8dfec23",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Keep the quartermaster attune row short enough for phones",
        "date": "2026-10-14"
       },
       {
@@ -3395,6 +3780,13 @@
        "kind": "fix",
        "scope": "pvp",
        "text": "Preserve stackable skulls during spoils settlement",
+       "date": "2026-09-29"
+      },
+      {
+       "h": "701ed106",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Show the mined ore in Willowfen objectives",
        "date": "2026-09-29"
       },
       {
