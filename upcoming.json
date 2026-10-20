@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-19T13:51:07Z",
+ "generated": "2026-10-20T12:00:11Z",
  "base_tag": "v0.44.6",
  "version": "v0.45.0",
  "branch": "ossbrain-release/v0.45.0",
  "declared_version": "0.45.0",
  "imminent": true,
- "commits": 665,
- "shown": 308,
- "last_commit": "2026-10-19T10:39:29Z",
+ "commits": 725,
+ "shown": 331,
+ "last_commit": "2026-10-20T09:20:59Z",
  "sections": [
   {
    "key": "classes",
@@ -15,6 +15,13 @@
    "fr": "Classes & sorts",
    "en": "Classes & spells",
    "items": [
+    {
+     "h": "1e8b026e",
+     "kind": "feat",
+     "scope": "nameplates",
+     "text": "Integrate active buff and spent marker updates",
+     "date": "2026-10-20"
+    },
     {
      "h": "e1c943f3",
      "kind": "feat",
@@ -261,6 +268,13 @@
      "date": "2026-10-19"
     },
     {
+     "h": "2318d7c1",
+     "kind": "fix",
+     "scope": "hunter",
+     "text": "Show Efficient Rhythm and Fang Chorus progress on the buff bar",
+     "date": "2026-10-19"
+    },
+    {
      "h": "8bbf58e5",
      "kind": "fix",
      "scope": "nameplates",
@@ -437,6 +451,13 @@
    "en": "Professions & gathering",
    "items": [
     {
+     "h": "86ad722f",
+     "kind": "feat",
+     "scope": "crafting",
+     "text": "Name the rolled loot quality on the crafted chat line",
+     "date": "2026-10-20"
+    },
+    {
      "h": "198dbd55",
      "kind": "feat",
      "scope": "treasure-maps",
@@ -458,6 +479,20 @@
      "date": "2026-09-30"
     },
     {
+     "h": "8a71dee8",
+     "kind": "fix",
+     "scope": "loot",
+     "text": "Keep casket draw order and re-record the craft parity golden",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "594766f1",
+     "kind": "fix",
+     "scope": "loot",
+     "text": "Link the whole crafted copy and never skip a craft grant",
+     "date": "2026-10-20"
+    },
+    {
      "h": "4860643f",
      "kind": "fix",
      "scope": "vault",
@@ -472,6 +507,13 @@
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
    "items": [
+    {
+     "h": "24e4a437",
+     "kind": "feat",
+     "scope": "loot",
+     "text": "Add the Infernal Quiver to Heroic Varkhul's Crucible loot",
+     "date": "2026-10-19"
+    },
     {
      "h": "4e480aeb",
      "kind": "feat",
@@ -775,6 +817,13 @@
      "date": "2026-09-30"
     },
     {
+     "h": "1d3ec015",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Keep a rerolled world quest's progress in the client mirror",
+     "date": "2026-10-19"
+    },
+    {
      "h": "28d61401",
      "kind": "fix",
      "scope": "items",
@@ -945,6 +994,48 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "6a301ff0",
+     "kind": "feat",
+     "scope": "loot",
+     "text": "Roll permanent loot quality on every earned reward source",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "47885bb6",
+     "kind": "feat",
+     "scope": "treasure-maps",
+     "text": "Drop the consumable stack from the hoard chest",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "40c336ed",
+     "kind": "feat",
+     "scope": "treasure-maps",
+     "text": "Integrate specimen-only hoard rewards",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "c3d55f9c",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Ask a first-time player which graphics preset to play on",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "862e371d",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Show short offensive and defensive buffs while they are up",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "4181b1dd",
+     "kind": "feat",
+     "scope": "loot",
+     "text": "Prepare earned quality integration",
+     "date": "2026-10-20"
+    },
+    {
      "h": "77dd8249",
      "kind": "feat",
      "scope": "pets",
@@ -966,10 +1057,31 @@
      "date": "2026-10-19"
     },
     {
+     "h": "07382c37",
+     "kind": "feat",
+     "scope": "options",
+     "text": "Add a Raw Mouse Input toggle for mouse-look",
+     "date": "2026-10-19"
+    },
+    {
      "h": "144f0027",
      "kind": "feat",
      "scope": "pvp",
      "text": "Integrate expanded two-piece pushback immunity",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "87956056",
+     "kind": "feat",
+     "scope": "nameplates",
+     "text": "Show spent cooldowns without their time left",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "66f25aa0",
+     "kind": "feat",
+     "scope": "net",
+     "text": "Send only which enemy cooldowns are spent, never their time",
      "date": "2026-10-19"
     },
     {
@@ -1400,10 +1512,45 @@
      "date": "2026-09-26"
     },
     {
+     "h": "cbf40ea4",
+     "kind": "fix",
+     "scope": "input",
+     "text": "Harden the raw lock fallback after QA review",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "bf2e5427",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Seat touch strips and radials in viewport coordinates",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "0a0c5871",
+     "kind": "fix",
+     "scope": "mobile",
+     "text": "Stop the Deeds search from stranding a zoomed page",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "c173c4f4",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Cap the graphics prompt at Medium on touch devices",
+     "date": "2026-10-20"
+    },
+    {
      "h": "e5e2542b",
      "kind": "fix",
      "scope": "i18n",
      "text": "Fill release locales and hearthstone notices",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "8f676e66",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Stop the inspect model stage growing on Firefox",
      "date": "2026-10-19"
     },
     {
@@ -1439,6 +1586,13 @@
      "kind": "fix",
      "scope": "i18n",
      "text": "Complete release locale and changed-description coverage",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "f600e38d",
+     "kind": "fix",
+     "scope": "input",
+     "text": "Stop sudden mouse-look camera jumps on high polling mice",
      "date": "2026-10-19"
     },
     {
@@ -1495,6 +1649,13 @@
      "kind": "fix",
      "scope": "net",
      "text": "Clear major cooldowns when self becomes peer",
+     "date": "2026-10-19"
+    },
+    {
+     "h": "2a0afd19",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Judge a re-armed PvP medallion afresh, veil spent under forced colors",
      "date": "2026-10-19"
     },
     {
@@ -2220,9 +2381,9 @@
    "branch": "ossbrain-release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 665,
-   "shown": 308,
-   "last_commit": "2026-10-19T10:39:29Z",
+   "commits": 725,
+   "shown": 331,
+   "last_commit": "2026-10-20T09:20:59Z",
    "sections": [
     {
      "key": "classes",
@@ -2230,6 +2391,13 @@
      "fr": "Classes & sorts",
      "en": "Classes & spells",
      "items": [
+      {
+       "h": "1e8b026e",
+       "kind": "feat",
+       "scope": "nameplates",
+       "text": "Integrate active buff and spent marker updates",
+       "date": "2026-10-20"
+      },
       {
        "h": "e1c943f3",
        "kind": "feat",
@@ -2476,6 +2644,13 @@
        "date": "2026-10-19"
       },
       {
+       "h": "2318d7c1",
+       "kind": "fix",
+       "scope": "hunter",
+       "text": "Show Efficient Rhythm and Fang Chorus progress on the buff bar",
+       "date": "2026-10-19"
+      },
+      {
        "h": "8bbf58e5",
        "kind": "fix",
        "scope": "nameplates",
@@ -2652,6 +2827,13 @@
      "en": "Professions & gathering",
      "items": [
       {
+       "h": "86ad722f",
+       "kind": "feat",
+       "scope": "crafting",
+       "text": "Name the rolled loot quality on the crafted chat line",
+       "date": "2026-10-20"
+      },
+      {
        "h": "198dbd55",
        "kind": "feat",
        "scope": "treasure-maps",
@@ -2673,6 +2855,20 @@
        "date": "2026-09-30"
       },
       {
+       "h": "8a71dee8",
+       "kind": "fix",
+       "scope": "loot",
+       "text": "Keep casket draw order and re-record the craft parity golden",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "594766f1",
+       "kind": "fix",
+       "scope": "loot",
+       "text": "Link the whole crafted copy and never skip a craft grant",
+       "date": "2026-10-20"
+      },
+      {
        "h": "4860643f",
        "kind": "fix",
        "scope": "vault",
@@ -2687,6 +2883,13 @@
      "fr": "Donjons, failles & boss",
      "en": "Dungeons, rifts & bosses",
      "items": [
+      {
+       "h": "24e4a437",
+       "kind": "feat",
+       "scope": "loot",
+       "text": "Add the Infernal Quiver to Heroic Varkhul's Crucible loot",
+       "date": "2026-10-19"
+      },
       {
        "h": "4e480aeb",
        "kind": "feat",
@@ -2990,6 +3193,13 @@
        "date": "2026-09-30"
       },
       {
+       "h": "1d3ec015",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Keep a rerolled world quest's progress in the client mirror",
+       "date": "2026-10-19"
+      },
+      {
        "h": "28d61401",
        "kind": "fix",
        "scope": "items",
@@ -3160,6 +3370,48 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "6a301ff0",
+       "kind": "feat",
+       "scope": "loot",
+       "text": "Roll permanent loot quality on every earned reward source",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "47885bb6",
+       "kind": "feat",
+       "scope": "treasure-maps",
+       "text": "Drop the consumable stack from the hoard chest",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "40c336ed",
+       "kind": "feat",
+       "scope": "treasure-maps",
+       "text": "Integrate specimen-only hoard rewards",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "c3d55f9c",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Ask a first-time player which graphics preset to play on",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "862e371d",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Show short offensive and defensive buffs while they are up",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "4181b1dd",
+       "kind": "feat",
+       "scope": "loot",
+       "text": "Prepare earned quality integration",
+       "date": "2026-10-20"
+      },
+      {
        "h": "77dd8249",
        "kind": "feat",
        "scope": "pets",
@@ -3181,10 +3433,31 @@
        "date": "2026-10-19"
       },
       {
+       "h": "07382c37",
+       "kind": "feat",
+       "scope": "options",
+       "text": "Add a Raw Mouse Input toggle for mouse-look",
+       "date": "2026-10-19"
+      },
+      {
        "h": "144f0027",
        "kind": "feat",
        "scope": "pvp",
        "text": "Integrate expanded two-piece pushback immunity",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "87956056",
+       "kind": "feat",
+       "scope": "nameplates",
+       "text": "Show spent cooldowns without their time left",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "66f25aa0",
+       "kind": "feat",
+       "scope": "net",
+       "text": "Send only which enemy cooldowns are spent, never their time",
        "date": "2026-10-19"
       },
       {
@@ -3615,10 +3888,45 @@
        "date": "2026-09-26"
       },
       {
+       "h": "cbf40ea4",
+       "kind": "fix",
+       "scope": "input",
+       "text": "Harden the raw lock fallback after QA review",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "bf2e5427",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Seat touch strips and radials in viewport coordinates",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "0a0c5871",
+       "kind": "fix",
+       "scope": "mobile",
+       "text": "Stop the Deeds search from stranding a zoomed page",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "c173c4f4",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Cap the graphics prompt at Medium on touch devices",
+       "date": "2026-10-20"
+      },
+      {
        "h": "e5e2542b",
        "kind": "fix",
        "scope": "i18n",
        "text": "Fill release locales and hearthstone notices",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "8f676e66",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Stop the inspect model stage growing on Firefox",
        "date": "2026-10-19"
       },
       {
@@ -3654,6 +3962,13 @@
        "kind": "fix",
        "scope": "i18n",
        "text": "Complete release locale and changed-description coverage",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "f600e38d",
+       "kind": "fix",
+       "scope": "input",
+       "text": "Stop sudden mouse-look camera jumps on high polling mice",
        "date": "2026-10-19"
       },
       {
@@ -3710,6 +4025,13 @@
        "kind": "fix",
        "scope": "net",
        "text": "Clear major cooldowns when self becomes peer",
+       "date": "2026-10-19"
+      },
+      {
+       "h": "2a0afd19",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Judge a re-armed PvP medallion afresh, veil spent under forced colors",
        "date": "2026-10-19"
       },
       {
