@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-20T12:00:11Z",
- "base_tag": "v0.44.6",
+ "generated": "2026-10-21T14:04:15Z",
+ "base_tag": "v0.44.7",
  "version": "v0.45.0",
  "branch": "ossbrain-release/v0.45.0",
  "declared_version": "0.45.0",
  "imminent": true,
- "commits": 725,
- "shown": 331,
- "last_commit": "2026-10-20T09:20:59Z",
+ "commits": 752,
+ "shown": 345,
+ "last_commit": "2026-10-21T13:12:22Z",
  "sections": [
   {
    "key": "classes",
@@ -16,10 +16,38 @@
    "en": "Classes & spells",
    "items": [
     {
+     "h": "073c4d3c",
+     "kind": "feat",
+     "scope": "hunter",
+     "text": "Mobile casts, instant zones, Scatterbolt and hidden traps",
+     "date": "2026-10-21"
+    },
+    {
+     "h": "e9a0c72a",
+     "kind": "feat",
+     "scope": "i18n",
+     "text": "Fill the hunter follow-up strings",
+     "date": "2026-10-21"
+    },
+    {
      "h": "1e8b026e",
      "kind": "feat",
      "scope": "nameplates",
      "text": "Integrate active buff and spent marker updates",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "e5addc2f",
+     "kind": "feat",
+     "scope": "rogue",
+     "text": "Mobility, economy and cooldown tweak pass",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "459dad05",
+     "kind": "feat",
+     "scope": "rogue",
+     "text": "Skulduggery +25% and Brawlmark 2pc 25% Swift Heels cut",
      "date": "2026-10-20"
     },
     {
@@ -259,6 +287,20 @@
      "scope": "render",
      "text": "Decode the Warrior kit's image sheets off the main thread",
      "date": "2026-09-27"
+    },
+    {
+     "h": "77055c33",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Interpolate Mass Barrier talent shield amount",
+     "date": "2026-10-21"
+    },
+    {
+     "h": "8b533211",
+     "kind": "fix",
+     "scope": "hunter",
+     "text": "Resolve rounded trap damage in tooltips",
+     "date": "2026-10-21"
     },
     {
      "h": "acff9db4",
@@ -817,6 +859,27 @@
      "date": "2026-09-30"
     },
     {
+     "h": "c53be1d0",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Stop stacking nameplates and trim NPC plates",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "c0f55402",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Give friendly quest-giver mobs the NPC plate",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "77e4fefe",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Draw the targeted plate on top and share the NPC rule",
+     "date": "2026-10-20"
+    },
+    {
      "h": "1d3ec015",
      "kind": "fix",
      "scope": "net",
@@ -994,6 +1057,20 @@
    "en": "Comfort & technical",
    "items": [
     {
+     "h": "e386af5b",
+     "kind": "feat",
+     "scope": "loot",
+     "text": "Give the Infernal Quiver Hit 50 and an 8/3 agility split",
+     "date": "2026-10-21"
+    },
+    {
+     "h": "5d04dd8b",
+     "kind": "feat",
+     "scope": "icons",
+     "text": "Add Scatterbolt crossbow explosion art",
+     "date": "2026-10-21"
+    },
+    {
      "h": "6a301ff0",
      "kind": "feat",
      "scope": "loot",
@@ -1033,6 +1110,13 @@
      "kind": "feat",
      "scope": "loot",
      "text": "Prepare earned quality integration",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "99fa835f",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Show Gearscore on the character sheet and inspect window",
      "date": "2026-10-20"
     },
     {
@@ -1512,6 +1596,13 @@
      "date": "2026-09-26"
     },
     {
+     "h": "af08e246",
+     "kind": "fix",
+     "scope": "loot",
+     "text": "Keep the Infernal Quiver on the stamina baseline (7/4)",
+     "date": "2026-10-21"
+    },
+    {
      "h": "cbf40ea4",
      "kind": "fix",
      "scope": "input",
@@ -1537,6 +1628,13 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Cap the graphics prompt at Medium on touch devices",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "4331a048",
+     "kind": "fix",
+     "scope": "loot",
+     "text": "Integrate Infernal Quiver Hit revision",
      "date": "2026-10-20"
     },
     {
@@ -2381,9 +2479,9 @@
    "branch": "ossbrain-release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 725,
-   "shown": 331,
-   "last_commit": "2026-10-20T09:20:59Z",
+   "commits": 752,
+   "shown": 345,
+   "last_commit": "2026-10-21T13:12:22Z",
    "sections": [
     {
      "key": "classes",
@@ -2392,10 +2490,38 @@
      "en": "Classes & spells",
      "items": [
       {
+       "h": "073c4d3c",
+       "kind": "feat",
+       "scope": "hunter",
+       "text": "Mobile casts, instant zones, Scatterbolt and hidden traps",
+       "date": "2026-10-21"
+      },
+      {
+       "h": "e9a0c72a",
+       "kind": "feat",
+       "scope": "i18n",
+       "text": "Fill the hunter follow-up strings",
+       "date": "2026-10-21"
+      },
+      {
        "h": "1e8b026e",
        "kind": "feat",
        "scope": "nameplates",
        "text": "Integrate active buff and spent marker updates",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "e5addc2f",
+       "kind": "feat",
+       "scope": "rogue",
+       "text": "Mobility, economy and cooldown tweak pass",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "459dad05",
+       "kind": "feat",
+       "scope": "rogue",
+       "text": "Skulduggery +25% and Brawlmark 2pc 25% Swift Heels cut",
        "date": "2026-10-20"
       },
       {
@@ -2635,6 +2761,20 @@
        "scope": "render",
        "text": "Decode the Warrior kit's image sheets off the main thread",
        "date": "2026-09-27"
+      },
+      {
+       "h": "77055c33",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Interpolate Mass Barrier talent shield amount",
+       "date": "2026-10-21"
+      },
+      {
+       "h": "8b533211",
+       "kind": "fix",
+       "scope": "hunter",
+       "text": "Resolve rounded trap damage in tooltips",
+       "date": "2026-10-21"
       },
       {
        "h": "acff9db4",
@@ -3193,6 +3333,27 @@
        "date": "2026-09-30"
       },
       {
+       "h": "c53be1d0",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Stop stacking nameplates and trim NPC plates",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "c0f55402",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Give friendly quest-giver mobs the NPC plate",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "77e4fefe",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Draw the targeted plate on top and share the NPC rule",
+       "date": "2026-10-20"
+      },
+      {
        "h": "1d3ec015",
        "kind": "fix",
        "scope": "net",
@@ -3370,6 +3531,20 @@
      "en": "Comfort & technical",
      "items": [
       {
+       "h": "e386af5b",
+       "kind": "feat",
+       "scope": "loot",
+       "text": "Give the Infernal Quiver Hit 50 and an 8/3 agility split",
+       "date": "2026-10-21"
+      },
+      {
+       "h": "5d04dd8b",
+       "kind": "feat",
+       "scope": "icons",
+       "text": "Add Scatterbolt crossbow explosion art",
+       "date": "2026-10-21"
+      },
+      {
        "h": "6a301ff0",
        "kind": "feat",
        "scope": "loot",
@@ -3409,6 +3584,13 @@
        "kind": "feat",
        "scope": "loot",
        "text": "Prepare earned quality integration",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "99fa835f",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Show Gearscore on the character sheet and inspect window",
        "date": "2026-10-20"
       },
       {
@@ -3888,6 +4070,13 @@
        "date": "2026-09-26"
       },
       {
+       "h": "af08e246",
+       "kind": "fix",
+       "scope": "loot",
+       "text": "Keep the Infernal Quiver on the stamina baseline (7/4)",
+       "date": "2026-10-21"
+      },
+      {
        "h": "cbf40ea4",
        "kind": "fix",
        "scope": "input",
@@ -3913,6 +4102,13 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Cap the graphics prompt at Medium on touch devices",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "4331a048",
+       "kind": "fix",
+       "scope": "loot",
+       "text": "Integrate Infernal Quiver Hit revision",
        "date": "2026-10-20"
       },
       {
