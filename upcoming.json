@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-21T14:04:15Z",
+ "generated": "2026-10-22T21:31:24Z",
  "base_tag": "v0.44.7",
  "version": "v0.45.0",
  "branch": "ossbrain-release/v0.45.0",
  "declared_version": "0.45.0",
  "imminent": true,
- "commits": 752,
- "shown": 345,
- "last_commit": "2026-10-21T13:12:22Z",
+ "commits": 770,
+ "shown": 355,
+ "last_commit": "2026-10-21T21:14:04Z",
  "sections": [
   {
    "key": "classes",
@@ -592,6 +592,34 @@
      "date": "2026-10-08"
     },
     {
+     "h": "0783df92",
+     "kind": "fix",
+     "scope": "raid",
+     "text": "Land Ignivar's opening Forge Wave before the second Torrent",
+     "date": "2026-10-21"
+    },
+    {
+     "h": "457a3904",
+     "kind": "fix",
+     "scope": "raid",
+     "text": "Hold Ignivar's Forge Wave until Water Conduits close",
+     "date": "2026-10-21"
+    },
+    {
+     "h": "3fd3ee39",
+     "kind": "fix",
+     "scope": "raid",
+     "text": "Read live conduit state for the Forge Wave hold",
+     "date": "2026-10-21"
+    },
+    {
+     "h": "8a9a6142",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Emissary cache pays Nythraxis tier pieces, never recipes",
+     "date": "2026-10-21"
+    },
+    {
      "h": "9b20fbbf",
      "kind": "fix",
      "scope": "delves",
@@ -857,6 +885,13 @@
      "scope": "discord",
      "text": "Post King of the Hill spawn calls to the PvP channel",
      "date": "2026-09-30"
+    },
+    {
+     "h": "b197238a",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Cover every target camp in kill quest rings",
+     "date": "2026-10-21"
     },
     {
      "h": "c53be1d0",
@@ -1600,6 +1635,41 @@
      "kind": "fix",
      "scope": "loot",
      "text": "Keep the Infernal Quiver on the stamina baseline (7/4)",
+     "date": "2026-10-21"
+    },
+    {
+     "h": "bf860074",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Never raise a training dummy as a site champion",
+     "date": "2026-10-21"
+    },
+    {
+     "h": "91dddb3a",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Keep the hedge knight champion out of the maze",
+     "date": "2026-10-21"
+    },
+    {
+     "h": "c37a2877",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Raise hunt champions on open ground",
+     "date": "2026-10-21"
+    },
+    {
+     "h": "ac52e584",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Always banner the champion to the completer",
+     "date": "2026-10-21"
+    },
+    {
+     "h": "be17a44a",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Describe specialization bonuses by live effect",
      "date": "2026-10-21"
     },
     {
@@ -2479,9 +2549,9 @@
    "branch": "ossbrain-release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 752,
-   "shown": 345,
-   "last_commit": "2026-10-21T13:12:22Z",
+   "commits": 770,
+   "shown": 355,
+   "last_commit": "2026-10-21T21:14:04Z",
    "sections": [
     {
      "key": "classes",
@@ -3066,6 +3136,34 @@
        "date": "2026-10-08"
       },
       {
+       "h": "0783df92",
+       "kind": "fix",
+       "scope": "raid",
+       "text": "Land Ignivar's opening Forge Wave before the second Torrent",
+       "date": "2026-10-21"
+      },
+      {
+       "h": "457a3904",
+       "kind": "fix",
+       "scope": "raid",
+       "text": "Hold Ignivar's Forge Wave until Water Conduits close",
+       "date": "2026-10-21"
+      },
+      {
+       "h": "3fd3ee39",
+       "kind": "fix",
+       "scope": "raid",
+       "text": "Read live conduit state for the Forge Wave hold",
+       "date": "2026-10-21"
+      },
+      {
+       "h": "8a9a6142",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Emissary cache pays Nythraxis tier pieces, never recipes",
+       "date": "2026-10-21"
+      },
+      {
        "h": "9b20fbbf",
        "kind": "fix",
        "scope": "delves",
@@ -3331,6 +3429,13 @@
        "scope": "discord",
        "text": "Post King of the Hill spawn calls to the PvP channel",
        "date": "2026-09-30"
+      },
+      {
+       "h": "b197238a",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Cover every target camp in kill quest rings",
+       "date": "2026-10-21"
       },
       {
        "h": "c53be1d0",
@@ -4074,6 +4179,41 @@
        "kind": "fix",
        "scope": "loot",
        "text": "Keep the Infernal Quiver on the stamina baseline (7/4)",
+       "date": "2026-10-21"
+      },
+      {
+       "h": "bf860074",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Never raise a training dummy as a site champion",
+       "date": "2026-10-21"
+      },
+      {
+       "h": "91dddb3a",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Keep the hedge knight champion out of the maze",
+       "date": "2026-10-21"
+      },
+      {
+       "h": "c37a2877",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Raise hunt champions on open ground",
+       "date": "2026-10-21"
+      },
+      {
+       "h": "ac52e584",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Always banner the champion to the completer",
+       "date": "2026-10-21"
+      },
+      {
+       "h": "be17a44a",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Describe specialization bonuses by live effect",
        "date": "2026-10-21"
       },
       {

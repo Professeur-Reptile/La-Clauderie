@@ -2,6 +2,36 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.44.7",
+   "date": "2026-10-21",
+   "titre": "Le site officiel signe Levy Street",
+   "resume": "La v0.44.7 ne touche pas au jeu : le pied de page de l’accueil et de la page de jeu du site officiel renvoie désormais vers Levy Street, le studio derrière World of ClaudeCraft, avec un libellé traduit dans toutes les langues. Le gameplay ne change pas d’un poil.",
+   "temps_forts": [
+    "⚙️ Le site officiel lie le studio Levy Street en pied de page"
+   ],
+   "temps_forts_en": [
+    "⚙️ The official site links the Levy Street studio in its footer"
+   ],
+   "page": "notes/v0.44.7.html",
+   "page_en": "notes/v0.44.7.en.html"
+  },
+  {
+   "version": "v0.44.6",
+   "date": "2026-10-09",
+   "titre": "Bloquer un compte des quêtes mondiales",
+   "resume": "La v0.44.6 donne un nouvel outil à la modération : un compte pris à botter les quêtes mondiales peut être bloqué de celles-ci sans être banni — il joue encore à tout le reste, mais plus aucune de ses quêtes mondiales ne démarre, ne progresse ou ne paie. Les quêtes déjà terminées restent réclamées, pour qu’un bloc levé ne rejoue pas les récompenses du jour.",
+   "temps_forts": [
+    "🗺️ Blocage des quêtes mondiales par compte : ni démarrage, ni progression, ni récompense",
+    "🏰 Le reste du jeu — donjons, PvP, métiers, guilde — reste accessible"
+   ],
+   "temps_forts_en": [
+    "🗺️ Per-account world quest block: no start, no progress, no payout",
+    "🏰 The rest of the game — dungeons, PvP, professions, guild — stays open"
+   ],
+   "page": "notes/v0.44.6.html",
+   "page_en": "notes/v0.44.6.en.html"
+  },
+  {
    "version": "v0.44.5",
    "date": "2026-10-07",
    "titre": "Huit fois moins de données, et l'Encre du cartographe revient",
