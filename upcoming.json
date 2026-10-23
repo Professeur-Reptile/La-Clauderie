@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-22T21:31:24Z",
+ "generated": "2026-10-23T23:24:40Z",
  "base_tag": "v0.44.7",
  "version": "v0.45.0",
- "branch": "ossbrain-release/v0.45.0",
+ "branch": "release/v0.45.0",
  "declared_version": "0.45.0",
  "imminent": true,
- "commits": 770,
- "shown": 355,
- "last_commit": "2026-10-21T21:14:04Z",
+ "commits": 812,
+ "shown": 376,
+ "last_commit": "2026-10-23T22:40:09Z",
  "sections": [
   {
    "key": "classes",
@@ -578,6 +578,13 @@
      "date": "2026-10-14"
     },
     {
+     "h": "a9ed43ed",
+     "kind": "feat",
+     "scope": "groups",
+     "text": "Unify dungeon recruitment and expedition management",
+     "date": "2026-10-13"
+    },
+    {
      "h": "01b6844b",
      "kind": "feat",
      "scope": "dungeons",
@@ -845,6 +852,20 @@
    "en": "World & quests",
    "items": [
     {
+     "h": "72b85028",
+     "kind": "feat",
+     "scope": "art",
+     "text": "Paint the three leveling quest shields",
+     "date": "2026-10-23"
+    },
+    {
+     "h": "c09f6a48",
+     "kind": "feat",
+     "scope": "quests",
+     "text": "Reward a shield on one quest each in Eastbrook, Mirefen and Thornpeak",
+     "date": "2026-10-21"
+    },
+    {
      "h": "a603f6f4",
      "kind": "feat",
      "scope": "items",
@@ -986,6 +1007,20 @@
    "en": "Guild & social",
    "items": [
     {
+     "h": "689e14ba",
+     "kind": "feat",
+     "scope": "groups",
+     "text": "Party member roles and a listing difficulty switch",
+     "date": "2026-10-21"
+    },
+    {
+     "h": "90ca3755",
+     "kind": "feat",
+     "scope": "groups",
+     "text": "Guild parties, listing adverts, applicant inspect and /lfg",
+     "date": "2026-10-20"
+    },
+    {
      "h": "3332665a",
      "kind": "feat",
      "scope": "moderation",
@@ -1019,6 +1054,20 @@
      "scope": "discord",
      "text": "Add World PvP kill feed to a dedicated channel",
      "date": "2026-09-29"
+    },
+    {
+     "h": "cf2f18d7",
+     "kind": "fix",
+     "scope": "groups",
+     "text": "Bound note admission before chat quota",
+     "date": "2026-10-23"
+    },
+    {
+     "h": "33194598",
+     "kind": "fix",
+     "scope": "groups",
+     "text": "Keep party role picks and kept applications consistent",
+     "date": "2026-10-21"
     },
     {
      "h": "4ced537a",
@@ -1091,6 +1140,13 @@
    "fr": "Confort & technique",
    "en": "Comfort & technical",
    "items": [
+    {
+     "h": "e8c4f63b",
+     "kind": "feat",
+     "scope": "ui",
+     "text": "Detachable resource bar and movable King of the Hill bar",
+     "date": "2026-10-22"
+    },
     {
      "h": "e386af5b",
      "kind": "feat",
@@ -1631,6 +1687,69 @@
      "date": "2026-09-26"
     },
     {
+     "h": "5e41ad25",
+     "kind": "fix",
+     "scope": "groups",
+     "text": "Resolve release integration conflicts",
+     "date": "2026-10-24"
+    },
+    {
+     "h": "165accf8",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Preserve resource bar seats and mobile visibility",
+     "date": "2026-10-23"
+    },
+    {
+     "h": "b552f70b",
+     "kind": "fix",
+     "scope": "art",
+     "text": "Keep shield review evidence available in CI",
+     "date": "2026-10-23"
+    },
+    {
+     "h": "ffda2dca",
+     "kind": "fix",
+     "scope": "groups",
+     "text": "Move the bell into the sidebar and address review feedback",
+     "date": "2026-10-23"
+    },
+    {
+     "h": "08924ec3",
+     "kind": "fix",
+     "scope": "world-quests",
+     "text": "Let rerolled-in station and investigation quests start",
+     "date": "2026-10-22"
+    },
+    {
+     "h": "c437fa34",
+     "kind": "fix",
+     "scope": "sim",
+     "text": "Settle the body on revive so a mid-fall ghost takes no fall damage",
+     "date": "2026-10-22"
+    },
+    {
+     "h": "12f4e9e1",
+     "kind": "fix",
+     "scope": "market",
+     "text": "Keep World Market sales on the History tab after collecting",
+     "date": "2026-10-22"
+    },
+    {
+     "h": "d68338a9",
+     "kind": "fix",
+     "scope": "minimap",
+     "text": "Show rerolled world quests on the minimap",
+     "date": "2026-10-22"
+    },
+    {
+     "h": "73404b65",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Address review findings on the new frames",
+     "date": "2026-10-22"
+    },
+    {
      "h": "af08e246",
      "kind": "fix",
      "scope": "loot",
@@ -1698,6 +1817,13 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Cap the graphics prompt at Medium on touch devices",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "edfd530f",
+     "kind": "fix",
+     "scope": "groups",
+     "text": "Close the three pre-existing gate failures",
      "date": "2026-10-20"
     },
     {
@@ -1915,6 +2041,27 @@
      "kind": "fix",
      "scope": "keybinds",
      "text": "Keep the converted layout on the profile, pin only movement",
+     "date": "2026-10-13"
+    },
+    {
+     "h": "7e4e45fa",
+     "kind": "fix",
+     "scope": "groups",
+     "text": "Align release guards and localized travel denial",
+     "date": "2026-10-13"
+    },
+    {
+     "h": "b7a23286",
+     "kind": "fix",
+     "scope": "groups",
+     "text": "Recover async joins and pause helper rewards",
+     "date": "2026-10-13"
+    },
+    {
+     "h": "77265625",
+     "kind": "fix",
+     "scope": "groups",
+     "text": "Complete required translations and portable audits",
      "date": "2026-10-13"
     },
     {
@@ -2546,12 +2693,12 @@
  "versions": [
   {
    "version": "v0.45.0",
-   "branch": "ossbrain-release/v0.45.0",
+   "branch": "release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 770,
-   "shown": 355,
-   "last_commit": "2026-10-21T21:14:04Z",
+   "commits": 812,
+   "shown": 376,
+   "last_commit": "2026-10-23T22:40:09Z",
    "sections": [
     {
      "key": "classes",
@@ -3122,6 +3269,13 @@
        "date": "2026-10-14"
       },
       {
+       "h": "a9ed43ed",
+       "kind": "feat",
+       "scope": "groups",
+       "text": "Unify dungeon recruitment and expedition management",
+       "date": "2026-10-13"
+      },
+      {
        "h": "01b6844b",
        "kind": "feat",
        "scope": "dungeons",
@@ -3389,6 +3543,20 @@
      "en": "World & quests",
      "items": [
       {
+       "h": "72b85028",
+       "kind": "feat",
+       "scope": "art",
+       "text": "Paint the three leveling quest shields",
+       "date": "2026-10-23"
+      },
+      {
+       "h": "c09f6a48",
+       "kind": "feat",
+       "scope": "quests",
+       "text": "Reward a shield on one quest each in Eastbrook, Mirefen and Thornpeak",
+       "date": "2026-10-21"
+      },
+      {
        "h": "a603f6f4",
        "kind": "feat",
        "scope": "items",
@@ -3530,6 +3698,20 @@
      "en": "Guild & social",
      "items": [
       {
+       "h": "689e14ba",
+       "kind": "feat",
+       "scope": "groups",
+       "text": "Party member roles and a listing difficulty switch",
+       "date": "2026-10-21"
+      },
+      {
+       "h": "90ca3755",
+       "kind": "feat",
+       "scope": "groups",
+       "text": "Guild parties, listing adverts, applicant inspect and /lfg",
+       "date": "2026-10-20"
+      },
+      {
        "h": "3332665a",
        "kind": "feat",
        "scope": "moderation",
@@ -3563,6 +3745,20 @@
        "scope": "discord",
        "text": "Add World PvP kill feed to a dedicated channel",
        "date": "2026-09-29"
+      },
+      {
+       "h": "cf2f18d7",
+       "kind": "fix",
+       "scope": "groups",
+       "text": "Bound note admission before chat quota",
+       "date": "2026-10-23"
+      },
+      {
+       "h": "33194598",
+       "kind": "fix",
+       "scope": "groups",
+       "text": "Keep party role picks and kept applications consistent",
+       "date": "2026-10-21"
       },
       {
        "h": "4ced537a",
@@ -3635,6 +3831,13 @@
      "fr": "Confort & technique",
      "en": "Comfort & technical",
      "items": [
+      {
+       "h": "e8c4f63b",
+       "kind": "feat",
+       "scope": "ui",
+       "text": "Detachable resource bar and movable King of the Hill bar",
+       "date": "2026-10-22"
+      },
       {
        "h": "e386af5b",
        "kind": "feat",
@@ -4175,6 +4378,69 @@
        "date": "2026-09-26"
       },
       {
+       "h": "5e41ad25",
+       "kind": "fix",
+       "scope": "groups",
+       "text": "Resolve release integration conflicts",
+       "date": "2026-10-24"
+      },
+      {
+       "h": "165accf8",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Preserve resource bar seats and mobile visibility",
+       "date": "2026-10-23"
+      },
+      {
+       "h": "b552f70b",
+       "kind": "fix",
+       "scope": "art",
+       "text": "Keep shield review evidence available in CI",
+       "date": "2026-10-23"
+      },
+      {
+       "h": "ffda2dca",
+       "kind": "fix",
+       "scope": "groups",
+       "text": "Move the bell into the sidebar and address review feedback",
+       "date": "2026-10-23"
+      },
+      {
+       "h": "08924ec3",
+       "kind": "fix",
+       "scope": "world-quests",
+       "text": "Let rerolled-in station and investigation quests start",
+       "date": "2026-10-22"
+      },
+      {
+       "h": "c437fa34",
+       "kind": "fix",
+       "scope": "sim",
+       "text": "Settle the body on revive so a mid-fall ghost takes no fall damage",
+       "date": "2026-10-22"
+      },
+      {
+       "h": "12f4e9e1",
+       "kind": "fix",
+       "scope": "market",
+       "text": "Keep World Market sales on the History tab after collecting",
+       "date": "2026-10-22"
+      },
+      {
+       "h": "d68338a9",
+       "kind": "fix",
+       "scope": "minimap",
+       "text": "Show rerolled world quests on the minimap",
+       "date": "2026-10-22"
+      },
+      {
+       "h": "73404b65",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Address review findings on the new frames",
+       "date": "2026-10-22"
+      },
+      {
        "h": "af08e246",
        "kind": "fix",
        "scope": "loot",
@@ -4242,6 +4508,13 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Cap the graphics prompt at Medium on touch devices",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "edfd530f",
+       "kind": "fix",
+       "scope": "groups",
+       "text": "Close the three pre-existing gate failures",
        "date": "2026-10-20"
       },
       {
@@ -4459,6 +4732,27 @@
        "kind": "fix",
        "scope": "keybinds",
        "text": "Keep the converted layout on the profile, pin only movement",
+       "date": "2026-10-13"
+      },
+      {
+       "h": "7e4e45fa",
+       "kind": "fix",
+       "scope": "groups",
+       "text": "Align release guards and localized travel denial",
+       "date": "2026-10-13"
+      },
+      {
+       "h": "b7a23286",
+       "kind": "fix",
+       "scope": "groups",
+       "text": "Recover async joins and pause helper rewards",
+       "date": "2026-10-13"
+      },
+      {
+       "h": "77265625",
+       "kind": "fix",
+       "scope": "groups",
+       "text": "Complete required translations and portable audits",
        "date": "2026-10-13"
       },
       {
