@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-24T04:56:54Z",
+ "generated": "2026-10-24T11:29:18Z",
  "base_tag": "v0.44.7",
  "version": "v0.45.0",
  "branch": "release/v0.45.0",
  "declared_version": "0.45.0",
  "imminent": true,
- "commits": 2455,
- "shown": 1350,
- "last_commit": "2026-10-24T03:11:56Z",
+ "commits": 2485,
+ "shown": 1365,
+ "last_commit": "2026-10-24T07:45:15Z",
  "sections": [
   {
    "key": "classes",
@@ -1234,6 +1234,13 @@
      "scope": "delves",
      "text": "Keep a delve pet pathing, ejects, and HUD identity sound",
      "date": "2026-10-16"
+    },
+    {
+     "h": "d2bce96f",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "List every loot table in the Dungeon Finder vault preview",
+     "date": "2026-10-14"
     },
     {
      "h": "71f3d20b",
@@ -2888,6 +2895,13 @@
      "kind": "feat",
      "scope": "membership",
      "text": "Cap courier legs at 15 seconds and animate its flight",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "849f51dd",
+     "kind": "feat",
+     "scope": "web",
+     "text": "Show Loading with real progress, then Starting, on a held Play",
      "date": "2026-10-20"
     },
     {
@@ -5908,6 +5922,55 @@
      "date": "2026-08-18"
     },
     {
+     "h": "32080866",
+     "kind": "perf",
+     "scope": "web",
+     "text": "Serve the home page logo and backdrop as WebP",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "18d94386",
+     "kind": "perf",
+     "scope": "web",
+     "text": "Paint the home page first and start the client on interaction",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "4a691c26",
+     "kind": "perf",
+     "scope": "web",
+     "text": "Hydrate only the landing's icons before the client loads",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "4341aa5c",
+     "kind": "perf",
+     "scope": "web",
+     "text": "Keep the landing's later scenes and the captcha off the first paint",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "e12b38dd",
+     "kind": "perf",
+     "scope": "web",
+     "text": "Paint the landing's text before its art, and close review gaps",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "b282591d",
+     "kind": "perf",
+     "scope": "web",
+     "text": "Self-host the game's webfonts and slim the app icons",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "6bcc5ef7",
+     "kind": "perf",
+     "scope": "web",
+     "text": "Prefetch the client as soon as the landing's art has faded in",
+     "date": "2026-10-20"
+    },
+    {
      "h": "6e99525e",
      "kind": "perf",
      "scope": "sanctum",
@@ -6073,6 +6136,27 @@
      "kind": "fix",
      "scope": "referrals",
      "text": "Compare canonical inventory before reward projection",
+     "date": "2026-10-24"
+    },
+    {
+     "h": "5fbfa5d4",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Prepare flagged XP bonus for release v0.45.0",
+     "date": "2026-10-24"
+    },
+    {
+     "h": "5a68e2bd",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Restore Groups preview on v0.45 release",
+     "date": "2026-10-24"
+    },
+    {
+     "h": "d912988d",
+     "kind": "fix",
+     "scope": "web",
+     "text": "Integrate landing-first boot with v0.45 release",
      "date": "2026-10-24"
     },
     {
@@ -6566,6 +6650,13 @@
      "date": "2026-10-21"
     },
     {
+     "h": "918c4806",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Set flagged XP bonus to 10 percent",
+     "date": "2026-10-21"
+    },
+    {
      "h": "be17a44a",
      "kind": "fix",
      "scope": "ui",
@@ -6682,6 +6773,13 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Cap the graphics prompt at Medium on touch devices",
+     "date": "2026-10-20"
+    },
+    {
+     "h": "5fc7c69a",
+     "kind": "fix",
+     "scope": "web",
+     "text": "Link the webfonts per entry and settle the CI pins",
      "date": "2026-10-20"
     },
     {
@@ -7179,6 +7277,13 @@
      "kind": "fix",
      "scope": "characters",
      "text": "Keep WOC pauldrons on top of the shoulders",
+     "date": "2026-10-15"
+    },
+    {
+     "h": "b5f38e11",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Carry the loot catalog mode on each row and tighten its copy",
      "date": "2026-10-15"
     },
     {
@@ -9514,9 +9619,9 @@
    "branch": "release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 2455,
-   "shown": 1350,
-   "last_commit": "2026-10-24T03:11:56Z",
+   "commits": 2485,
+   "shown": 1365,
+   "last_commit": "2026-10-24T07:45:15Z",
    "sections": [
     {
      "key": "classes",
@@ -10743,6 +10848,13 @@
        "scope": "delves",
        "text": "Keep a delve pet pathing, ejects, and HUD identity sound",
        "date": "2026-10-16"
+      },
+      {
+       "h": "d2bce96f",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "List every loot table in the Dungeon Finder vault preview",
+       "date": "2026-10-14"
       },
       {
        "h": "71f3d20b",
@@ -12397,6 +12509,13 @@
        "kind": "feat",
        "scope": "membership",
        "text": "Cap courier legs at 15 seconds and animate its flight",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "849f51dd",
+       "kind": "feat",
+       "scope": "web",
+       "text": "Show Loading with real progress, then Starting, on a held Play",
        "date": "2026-10-20"
       },
       {
@@ -15417,6 +15536,55 @@
        "date": "2026-08-18"
       },
       {
+       "h": "32080866",
+       "kind": "perf",
+       "scope": "web",
+       "text": "Serve the home page logo and backdrop as WebP",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "18d94386",
+       "kind": "perf",
+       "scope": "web",
+       "text": "Paint the home page first and start the client on interaction",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "4a691c26",
+       "kind": "perf",
+       "scope": "web",
+       "text": "Hydrate only the landing's icons before the client loads",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "4341aa5c",
+       "kind": "perf",
+       "scope": "web",
+       "text": "Keep the landing's later scenes and the captcha off the first paint",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "e12b38dd",
+       "kind": "perf",
+       "scope": "web",
+       "text": "Paint the landing's text before its art, and close review gaps",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "b282591d",
+       "kind": "perf",
+       "scope": "web",
+       "text": "Self-host the game's webfonts and slim the app icons",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "6bcc5ef7",
+       "kind": "perf",
+       "scope": "web",
+       "text": "Prefetch the client as soon as the landing's art has faded in",
+       "date": "2026-10-20"
+      },
+      {
        "h": "6e99525e",
        "kind": "perf",
        "scope": "sanctum",
@@ -15582,6 +15750,27 @@
        "kind": "fix",
        "scope": "referrals",
        "text": "Compare canonical inventory before reward projection",
+       "date": "2026-10-24"
+      },
+      {
+       "h": "5fbfa5d4",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Prepare flagged XP bonus for release v0.45.0",
+       "date": "2026-10-24"
+      },
+      {
+       "h": "5a68e2bd",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Restore Groups preview on v0.45 release",
+       "date": "2026-10-24"
+      },
+      {
+       "h": "d912988d",
+       "kind": "fix",
+       "scope": "web",
+       "text": "Integrate landing-first boot with v0.45 release",
        "date": "2026-10-24"
       },
       {
@@ -16075,6 +16264,13 @@
        "date": "2026-10-21"
       },
       {
+       "h": "918c4806",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Set flagged XP bonus to 10 percent",
+       "date": "2026-10-21"
+      },
+      {
        "h": "be17a44a",
        "kind": "fix",
        "scope": "ui",
@@ -16191,6 +16387,13 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Cap the graphics prompt at Medium on touch devices",
+       "date": "2026-10-20"
+      },
+      {
+       "h": "5fc7c69a",
+       "kind": "fix",
+       "scope": "web",
+       "text": "Link the webfonts per entry and settle the CI pins",
        "date": "2026-10-20"
       },
       {
@@ -16688,6 +16891,13 @@
        "kind": "fix",
        "scope": "characters",
        "text": "Keep WOC pauldrons on top of the shoulders",
+       "date": "2026-10-15"
+      },
+      {
+       "h": "b5f38e11",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Carry the loot catalog mode on each row and tighten its copy",
        "date": "2026-10-15"
       },
       {
