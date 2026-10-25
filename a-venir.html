@@ -197,7 +197,7 @@
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · En préparation</p>
     <h1>La prochaine version <span class="v" id="vNum">v0.45.0</span></h1>
-    <p class="lede">La <a href="notes/v0.44.7.html">v0.44.7</a> n’a touché que le site officiel. Derrière, la <strong class="hl">v0.45.0</strong> est <strong class="hl">annoncée imminente</strong> par le jeu : 770 commits — le chasseur refondu, la forme Sporemender du druide, les marques héroïques devenues une monnaie et des familiers qui suivent jusque dans les failles.</p>
+    <p class="lede">La <a href="notes/v0.45.0.html">v0.45.0</a> est sortie — la plus grosse mise à jour du jeu à ce jour — suivie de la <a href="notes/v0.45.1.html">v0.45.1</a> (correctif de paiement). Pour l’instant, <strong class="hl">rien n’est en préparation</strong> : cette page reprendra du service dès que le jeu ouvrira son prochain chantier.</p>
 
     <div class="warn">
       <span class="ico" aria-hidden="true">⚠️</span>
@@ -420,6 +420,8 @@
       // La version décrite est sortie : le résumé ne vaut plus rien.
       if (ed) ed.style.display = "none";
       if (warn) warn.style.display = "none";
+      const digestNav = document.querySelector(".digest");
+      if (digestNav) digestNav.style.display = "none";
       document.getElementById("vNum").textContent = "";
       document.getElementById("staleNote").innerHTML =
         '<p class="sec-sub">Aucune version en préparation pour le moment — la dernière sortie est la plus récente. Retrouve-la dans <a href="patch-notes.html">Nouveautés</a>.</p>';

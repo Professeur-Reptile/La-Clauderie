@@ -567,12 +567,12 @@ const BUILDS = {
     ["Skylark", "niv. 5", { fr: "Wildmend et Second Bloom se lancent en marchant — le soin de déplacement du druide.", en: "Wildmend and Second Bloom cast while moving — the druid's mobile healing." }],
     ["Bear-Blood Mending", "niv. 8", { fr: "un coup à 20 % de tes PV max te rend 12 % : de quoi survivre à ce qui traverse le groupe.", en: "a hit for 20% of your max HP heals you for 12%: enough to survive what leaks through." }],
     ["Typhoon", "niv. 11", { fr: "un souffle qui repousse tout dans 8 m et ralentit de 50 % : le bouton qui décolle les adds du groupe.", en: "a blast that knocks everything back within 8m and slows by 50%: the button that peels adds off the group." }],
-    ["Seedspread", "niv. 14", { fr: "Overbloom replante un Wildbloom frais sur chaque allié dont il a récolté les soins — ton HoT de groupe se renouvelle tout seul.", en: "Overbloom replants a fresh Wildbloom on every ally it harvested — your group HoT renews itself." }],
+    ["Seedspread", "niv. 14", { fr: "Overbloom replante un Sporemending frais sur chaque allié dont il a récolté les soins — ton HoT de groupe se renouvelle tout seul.", en: "Overbloom replants a fresh Sporemending on every ally it harvested — your group HoT renews itself." }],
     ["Gladesong", "niv. 17", { fr: "4 s de canalisation qui soignent 42 à 52 par seconde tout le monde dans 30 m : la remontée de groupe.", en: "a 4s channel healing everyone within 30m for 42 to 52 per second: the group recovery." }],
     ["Quickening", "niv. 20", { fr: "chaque point de Verdance gagné rend 2 % de ton mana max — c’est ce qui te fait tenir un combat long.", en: "every point of Verdance gained restores 2% of your max mana — that is what carries a long fight." }]
    ],
    rotation: [
-    ["Wildbloom", { fr: "le HoT, sur le tank en permanence, sur les DPS qui prennent cher.", en: "the HoT — on the tank at all times, on DPS who take a beating." }],
+    ["Sporemending", { fr: "le HoT (l’ex-Wildbloom), sur le tank en permanence, sur les DPS qui prennent cher.", en: "the HoT — on the tank at all times, on DPS who take a beating." }],
     ["Fleetmend", { fr: "le sort signature (v0.25) : consomme un HoT pour un gros soin instantané — le bouton d'urgence.", en: "the signature spell (v0.25): consumes a HoT for a big instant heal — the emergency button." }],
     ["Overbloom", { fr: "à 5 Verdance, Fleetmend devient Overbloom : tous les alliés qui portent tes HoT sont soignés d’un coup de 60 % de ce que ces HoT devaient encore rendre. C’est ta réponse aux dégâts de raid.", en: "at 5 Verdance, Fleetmend becomes Overbloom: every ally carrying your HoTs is instantly healed for 60% of what those HoTs still owed them. This is your answer to raid damage." }],
     ["Second Bloom", { fr: "soin direct + HoT de 21 s : ton meilleur rapport mana/soin.", en: "direct heal + 21s HoT: your best healing per mana." }],
@@ -582,8 +582,8 @@ const BUILDS = {
     ["Wildwake", { fr: "NOUVEAU en v0.41.1 : la résurrection EN PLEIN COMBAT, 2 s d’incantation, 5 min de recharge. L’allié revient à tes côtés avec 35 % de ses PV et de sa mana, et SANS mal de résurrection. C’est aujourd’hui la seule résurrection en combat à 5 minutes — celle du Mage est à 10.", en: "NEW in v0.41.1: the IN-COMBAT resurrection, 2s cast, 5 min cooldown. The ally returns at your side with 35% of their health and mana, and NO resurrection sickness. It is currently the only in-combat rez at 5 minutes — the Mage's sits at 10." }],
     ["Grove Awakening", { fr: "NOUVEAU en v0.41.1 : la résurrection de groupe hors combat, 7 s d’incantation, 5 min de recharge. Tout le groupe ou le raid dans 40 m et en ligne de vue revient à 30 % de PV et de mana.", en: "NEW in v0.41.1: the out-of-combat group resurrection, 7s cast, 5 min cooldown. The whole group or raid within 40 yd and in line of sight comes back at 30% health and mana." }]
    ],
-   astuce: { fr: "Pose Wildbloom AVANT le pull — un HoT qui tourne, c'est un heal d'avance. Et depuis la v0.41.1 tu es le seul soigneur à pouvoir relever quelqu’un SANS sortir du combat à cinq minutes de recharge : garde Wildwake pour le tank ou l’autre soigneur, pas pour le premier DPS tombé.",
-             en: "Cast Wildbloom BEFORE the pull — a rolling HoT is a heal in the bank. And since v0.41.1 you are the only healer who can pick someone up WITHOUT leaving combat on a five-minute cooldown: save Wildwake for the tank or the other healer, not for the first DPS who drops." }
+   astuce: { fr: "Pose Sporemending AVANT le pull — un HoT qui tourne, c'est un heal d'avance. Et depuis la v0.41.1 tu es le seul soigneur à pouvoir relever quelqu’un SANS sortir du combat à cinq minutes de recharge : garde Wildwake pour le tank ou l’autre soigneur, pas pour le premier DPS tombé.",
+             en: "Cast Sporemending BEFORE the pull — a rolling HoT is a heal in the bank. And since v0.41.1 you are the only healer who can pick someone up WITHOUT leaving combat on a five-minute cooldown: save Wildwake for the tank or the other healer, not for the first DPS who drops." }
   },
   dps: {
    spec: { fr: "Moongrove (balance) — Moonwing", en: "Moongrove (balance) — Moonwing" },
@@ -889,7 +889,7 @@ const BUILDS = {
    stats: { fr: "Agilité > Crit > Hâte > Endurance", en: "Agility > Crit > Haste > Stamina" },
    talents: [
     ["Predator's Pace", "niv. 5", { fr: "un Measured Shot réussi te donne 20 % de vitesse 3 s : tu gardes ta distance sans perdre de tir.", en: "a landed Measured Shot grants 20% speed for 3s: you keep your range without dropping a shot." }],
-    ["Beastguard", "niv. 8", { fr: "15 % de tes dégâts partent sur le familier (jamais sous 20 % de ses PV) — ou 8 % de moins sous 50 % si tu joues sans.", en: "15% of your damage is redirected to your pet (never below 20% of its health) — or 8% less below 50% with no pet." }],
+    ["Lonely Soul", "niv. 8", { fr: "30 % des dégâts subis partent sur le familier (jamais sous 20 % de ses PV) — ou +10 % de dégâts si tu joues sans.", en: "30% of damage taken is redirected to your pet (never below 20% of its health) — or 10% more damage with no pet." }],
     ["Double Hush", "niv. 11", { fr: "Hushing Shot stocke 2 charges : deux interruptions à distance, la spécialité du chasseur.", en: "Hushing Shot stores 2 charges: two ranged interrupts, the hunter's specialty." }],
     ["Efficient Rhythm", "niv. 14", { fr: "après 75 Concentration dépensée, ton prochain Measured Shot en rend 20 de plus — la boucle se referme.", en: "after spending 75 Focus, your next Measured Shot returns 20 more — the loop closes." }],
     ["Apex Instinct", "niv. 17", { fr: "Cold Focus rend 40 Concentration et tes 3 tirs suivants coûtent 50 % de moins pour 20 % de dégâts en plus.", en: "Cold Focus restores 40 Focus and your next 3 spenders cost 50% less for 20% more damage." }],
@@ -952,7 +952,7 @@ const BUILDS = {
    stats: { fr: "Agilité > Crit > Hâte (la maîtrise convertit déjà ton Agi en esquive)", en: "Agility > Crit > Haste (the mastery already converts your Agi into dodge)" },
    talents: [
     ["Predator's Pace", "niv. 5", { fr: "un Gutting Strike réussi te donne 20 % de vitesse 3 s — Fieldcraft se joue au contact, il faut suivre.", en: "a landed Gutting Strike grants 20% speed for 3s — Fieldcraft plays up close, and has to keep up." }],
-    ["Beastguard", "niv. 8", { fr: "15 % de tes dégâts redirigés sur le familier : indispensable quand tu es à portée de mêlée.", en: "15% of your damage redirected to your pet: essential when you stand in melee range." }],
+    ["Lonely Soul", "niv. 8", { fr: "30 % des dégâts subis redirigés sur le familier : indispensable quand tu es à portée de mêlée.", en: "30% of damage taken redirected to your pet: essential when you stand in melee range." }],
     ["Binding Payload", "niv. 11", { fr: "Frostjaw Trap immobilise 3 s puis ralentit de 40 % : le piège devient un vrai contrôle de groupe.", en: "Frostjaw Trap roots for 3s then slows by 40%: the trap becomes real crowd control." }],
     ["Trapcraft", "niv. 14", { fr: "−20 % de cooldown sur Frostjaw Trap, et le déclenchement rend 20 Concentration et 5 s de Trailbreak.", en: "−20% cooldown on Frostjaw Trap, and triggering it returns 20 Focus and 5s of Trailbreak." }],
     ["Apex Instinct", "niv. 17", { fr: "Bloodtrail Assault rend 40 Concentration et renforce tes 3 dépenses suivantes.", en: "Bloodtrail Assault restores 40 Focus and empowers your next 3 spenders." }],
@@ -966,7 +966,6 @@ const BUILDS = {
     ["Woundrend", { fr: "le dépensier : sur une cible qui porte ta plaie de Bloodhook, il déclenche un tic de plaie en plus — et à 3 Hunting Momentum, il frappe 45 % plus fort.", en: "the spender: against a target carrying your Bloodhook wound it triggers an extra wound tick — and at 3 Hunting Momentum it hits 45% harder." }],
     ["Shrapnel Charge", { fr: "l’AoE courte (12 s) : la cible plus 4 ennemis à 6 m, qui saignent en prime.", en: "the short AoE (12s): the target plus 4 enemies within 6m, who bleed on top." }],
     ["Fettering Slash / Rattling Shot", { fr: "les deux ralentissements : le kite permanent.", en: "your two slows: permanent kiting." }],
-    ["Volley", { fr: "l'AoE.", en: "the AoE." }],
     ["Hushing Shot", { fr: "l'interrupt.", en: "the interrupt." }],
     ["Bloodtrail Assault", { fr: "le gros cooldown (90 s, niv. 17) : 12 s où Bloodhook contamine 2 ennemis proches et où Woundrend commande une attaque du familier.", en: "the big cooldown (90s, lvl 17): 12s where Bloodhook spreads to 2 nearby enemies and Woundrend commands a pet attack." }]
    ],

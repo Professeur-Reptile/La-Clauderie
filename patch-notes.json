@@ -2,6 +2,40 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.45.1",
+   "date": "2026-10-25",
+   "titre": "L’Adhésion annuelle refonctionne",
+   "resume": "La v0.45.1 est un correctif de paiement, quelques heures après la v0.45.0 : la validation du paiement annuel est rétablie sur les royaumes comme Claudemoon, en préservant l’identité exacte du personnage et du royaume. Le gameplay ne change pas d’un poil.",
+   "temps_forts": [
+    "💳 Paiement annuel de l’Adhésion rétabli (royaumes type Claudemoon)"
+   ],
+   "temps_forts_en": [
+    "💳 Annual Membership checkout restored (Claudemoon-like realms)"
+   ],
+   "page": "notes/v0.45.1.html",
+   "page_en": "notes/v0.45.1.en.html"
+  },
+  {
+   "version": "v0.45.0",
+   "date": "2026-10-25",
+   "titre": "Le monde reconstruit, l’Adhésion en approche",
+   "resume": "La v0.45.0 est la plus grosse mise à jour du jeu : toutes les villes et cinq donjons sont reconstruits à la main, l’infrastructure d’abonnement « Adhésion » est posée (achats pas encore ouverts) et chaque personnage existant reçoit un cadeau de sortie — un redesign d’apparence et ses verrouillages de donjons/raids remis à zéro. Côté combat : le Groveheart se réinvente (forme Sporemender), le chasseur est refondu (plus aucune portée minimale) et Amélioration comme farouche passent à la Force. Les montures deviennent cosmétiques, les marques héroïques une monnaie, et deux quêtes mondiales paient 150 Honor par jour.",
+   "temps_forts": [
+    "🏰 Toutes les villes et cinq donjons reconstruits à la main",
+    "⚔️ Groveheart réinventé (forme Sporemender), chasseur refondu, Amélioration/farouche à la Force",
+    "🎁 Cadeau de sortie : redesign d’apparence + verrouillages remis à zéro ; Adhésion posée, achats fermés",
+    "🗺️ Marques héroïques en monnaie, montures cosmétiques, 2 quêtes mondiales à 150 Honor/jour"
+   ],
+   "temps_forts_en": [
+    "🏰 Every town and five dungeons rebuilt by hand",
+    "⚔️ Groveheart reinvented (Sporemender Form), hunter reworked, Enhancement/Feral to Strength",
+    "🎁 Release gift: appearance redesign + lockouts reset; Membership in place, purchases closed",
+    "🗺️ Heroic Marks become a currency, mounts go cosmetic, 2 world quests pay 150 Honor a day"
+   ],
+   "page": "notes/v0.45.0.html",
+   "page_en": "notes/v0.45.0.en.html"
+  },
+  {
    "version": "v0.44.7",
    "date": "2026-10-21",
    "titre": "Le site officiel signe Levy Street",
