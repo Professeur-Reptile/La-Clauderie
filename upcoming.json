@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-24T11:29:18Z",
+ "generated": "2026-10-25T05:10:00Z",
  "base_tag": "v0.44.7",
  "version": "v0.45.0",
  "branch": "release/v0.45.0",
  "declared_version": "0.45.0",
  "imminent": true,
- "commits": 2485,
- "shown": 1365,
- "last_commit": "2026-10-24T07:45:15Z",
+ "commits": 2566,
+ "shown": 1404,
+ "last_commit": "2026-10-25T03:39:54Z",
  "sections": [
   {
    "key": "classes",
@@ -1776,6 +1776,20 @@
      "date": "2026-10-20"
     },
     {
+     "h": "b8309e3f",
+     "kind": "feat",
+     "scope": "items",
+     "text": "Add the public history view other players read",
+     "date": "2026-10-16"
+    },
+    {
+     "h": "ed9dd873",
+     "kind": "feat",
+     "scope": "items",
+     "text": "Let other players open a tracked copy's history",
+     "date": "2026-10-16"
+    },
+    {
      "h": "dea7b73d",
      "kind": "feat",
      "scope": "render",
@@ -1823,6 +1837,13 @@
      "scope": "render",
      "text": "Remake four Wildheart Basin bosses on art-guide bodies",
      "date": "2026-10-11"
+    },
+    {
+     "h": "fc832538",
+     "kind": "feat",
+     "scope": "items",
+     "text": "Record the whole life of a tracked copy in the ledger",
+     "date": "2026-10-09"
     },
     {
      "h": "a603f6f4",
@@ -2007,10 +2028,24 @@
      "date": "2026-10-02"
     },
     {
+     "h": "33090bb0",
+     "kind": "feat",
+     "scope": "items",
+     "text": "Move tracked-item history to a right-click prompt, hide the item ID",
+     "date": "2026-10-01"
+    },
+    {
      "h": "02b761f5",
      "kind": "feat",
      "scope": "discord",
      "text": "Post King of the Hill spawn calls to the PvP channel",
+     "date": "2026-09-30"
+    },
+    {
+     "h": "7af76f2b",
+     "kind": "feat",
+     "scope": "items",
+     "text": "Give epic and legendary copies a UUID and provenance tracking",
      "date": "2026-09-30"
     },
     {
@@ -2061,6 +2096,13 @@
      "scope": "render",
      "text": "The Wildheart Basin's sky, haze and gates on a fill budget",
      "date": "2026-10-02"
+    },
+    {
+     "h": "17f06cbd",
+     "kind": "fix",
+     "scope": "items",
+     "text": "Index realm ledger pages and verify release integration",
+     "date": "2026-10-25"
     },
     {
      "h": "f8d66cb8",
@@ -2166,6 +2208,20 @@
      "scope": "dungeons",
      "text": "Clear every mob's reach round a death checkpoint",
      "date": "2026-10-11"
+    },
+    {
+     "h": "9f1bd472",
+     "kind": "fix",
+     "scope": "items",
+     "text": "Keep bags, auto-equip and buy orders working with tracked copies",
+     "date": "2026-10-09"
+    },
+    {
+     "h": "cd8fce9c",
+     "kind": "fix",
+     "scope": "items",
+     "text": "Treat an identity-only epic copy as ordinary in market and bags",
+     "date": "2026-10-09"
     },
     {
      "h": "28d61401",
@@ -2449,6 +2505,13 @@
      "date": "2026-10-14"
     },
     {
+     "h": "328d62c2",
+     "kind": "feat",
+     "scope": "warfare",
+     "text": "Give the honor shop companions their own group heading",
+     "date": "2026-10-14"
+    },
+    {
      "h": "cc18fe96",
      "kind": "feat",
      "scope": "social",
@@ -2475,6 +2538,13 @@
      "scope": "hunting",
      "text": "Group pets by kind, rank the sets, rename the window",
      "date": "2026-09-04"
+    },
+    {
+     "h": "74bb6c1c",
+     "kind": "fix",
+     "scope": "referrals",
+     "text": "Only explain unbound accounts on a new-player party invite",
+     "date": "2026-10-25"
     },
     {
      "h": "285f6fac",
@@ -2568,6 +2638,13 @@
      "date": "2026-10-19"
     },
     {
+     "h": "c176e8ad",
+     "kind": "fix",
+     "scope": "items",
+     "text": "Project the guild bank history at the wire, not the ledger read",
+     "date": "2026-10-16"
+    },
+    {
      "h": "b881ac9a",
      "kind": "fix",
      "scope": "guild",
@@ -2621,6 +2698,13 @@
      "kind": "fix",
      "scope": "scripts",
      "text": "Expand desktop party frames in the party-pets shot",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "d78b33e0",
+     "kind": "fix",
+     "scope": "warfare",
+     "text": "Key the companions title skip on its group",
      "date": "2026-10-14"
     },
     {
@@ -2749,6 +2833,34 @@
      "scope": "mounts",
      "text": "Assign annual and referral mount rewards",
      "date": "2026-10-23"
+    },
+    {
+     "h": "ae093b6a",
+     "kind": "feat",
+     "scope": "buddies",
+     "text": "Keep only the three active buddy whistles",
+     "date": "2026-10-23"
+    },
+    {
+     "h": "5fe8ee3d",
+     "kind": "feat",
+     "scope": "buddies",
+     "text": "Price Tug, the Warhorse at 10,000 honor",
+     "date": "2026-10-23"
+    },
+    {
+     "h": "9870d01d",
+     "kind": "feat",
+     "scope": "membership",
+     "text": "The courier carries Materials Vault deliveries",
+     "date": "2026-10-22"
+    },
+    {
+     "h": "5aec0c76",
+     "kind": "feat",
+     "scope": "membership",
+     "text": "The courier delivers to other characters' banks",
+     "date": "2026-10-22"
     },
     {
      "h": "9926f448",
@@ -4008,6 +4120,20 @@
      "kind": "feat",
      "scope": "vault",
      "text": "Filter class loot and add specialization focus",
+     "date": "2026-10-07"
+    },
+    {
+     "h": "0318650e",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Make Warfare Season 2 a Weekly Vault PvP reward only",
+     "date": "2026-10-07"
+    },
+    {
+     "h": "d9058673",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Roll only class Season 2 gear from the Weekly Vault PvP row",
      "date": "2026-10-07"
     },
     {
@@ -5978,6 +6104,13 @@
      "date": "2026-10-20"
     },
     {
+     "h": "a5b38a85",
+     "kind": "perf",
+     "scope": "server",
+     "text": "Index item_ledger.account_id",
+     "date": "2026-10-16"
+    },
+    {
      "h": "58b9c856",
      "kind": "perf",
      "scope": "render",
@@ -6090,6 +6223,48 @@
      "date": "2026-09-26"
     },
     {
+     "h": "3a83b4a1",
+     "kind": "fix",
+     "scope": "courier",
+     "text": "Integrate full-bank delivery with v0.45.0",
+     "date": "2026-10-25"
+    },
+    {
+     "h": "bfda53df",
+     "kind": "fix",
+     "scope": "buddies",
+     "text": "Make the release roster collection-only",
+     "date": "2026-10-25"
+    },
+    {
+     "h": "fc1fb455",
+     "kind": "fix",
+     "scope": "dungeons",
+     "text": "Reset instances without changing difficulty",
+     "date": "2026-10-25"
+    },
+    {
+     "h": "ff6fcdc9",
+     "kind": "fix",
+     "scope": "dungeons",
+     "text": "Skip fresh claims on reset and correct reset copy",
+     "date": "2026-10-25"
+    },
+    {
+     "h": "2b5e17e7",
+     "kind": "fix",
+     "scope": "vault",
+     "text": "Persist tracked reward identities before live grants",
+     "date": "2026-10-25"
+    },
+    {
+     "h": "1c76ce11",
+     "kind": "fix",
+     "scope": "courier",
+     "text": "Refresh v0.45 release integration",
+     "date": "2026-10-25"
+    },
+    {
      "h": "79b27b2a",
      "kind": "fix",
      "scope": "rewards",
@@ -6157,6 +6332,41 @@
      "kind": "fix",
      "scope": "web",
      "text": "Integrate landing-first boot with v0.45 release",
+     "date": "2026-10-24"
+    },
+    {
+     "h": "8889c9d8",
+     "kind": "fix",
+     "scope": "security",
+     "text": "Patch release dependency vulnerabilities",
+     "date": "2026-10-24"
+    },
+    {
+     "h": "9e9b4d4a",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Fill admin companion messages and reuse established UI translations",
+     "date": "2026-10-24"
+    },
+    {
+     "h": "c93e8731",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Handle cancelled puzzle animation promises",
+     "date": "2026-10-24"
+    },
+    {
+     "h": "d9da2633",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Complete v0.45 release translations",
+     "date": "2026-10-24"
+    },
+    {
+     "h": "41d2fcf8",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Preserve dictionary source anchor format",
      "date": "2026-10-24"
     },
     {
@@ -6356,10 +6566,31 @@
      "date": "2026-10-22"
     },
     {
+     "h": "f99b1411",
+     "kind": "fix",
+     "scope": "membership",
+     "text": "A courier host without a roster shows no Other characters tab",
+     "date": "2026-10-22"
+    },
+    {
+     "h": "552efc2a",
+     "kind": "fix",
+     "scope": "membership",
+     "text": "Never rerun or abandon a banked courier's legs",
+     "date": "2026-10-22"
+    },
+    {
      "h": "72b0cfd0",
      "kind": "fix",
      "scope": "maps",
      "text": "Integrate the reviewed map prerequisites",
+     "date": "2026-10-22"
+    },
+    {
+     "h": "7d9cdcc2",
+     "kind": "fix",
+     "scope": "membership",
+     "text": "Courier custody budget and exact vault row pickups",
      "date": "2026-10-22"
     },
     {
@@ -6416,6 +6647,13 @@
      "kind": "fix",
      "scope": "render",
      "text": "Refine female character shoulder mesh and keyed animations",
+     "date": "2026-10-22"
+    },
+    {
+     "h": "31900480",
+     "kind": "fix",
+     "scope": "buddies",
+     "text": "Take the SQL buddy roster from BUDDY_KEYS",
      "date": "2026-10-22"
     },
     {
@@ -7021,6 +7259,13 @@
      "date": "2026-10-19"
     },
     {
+     "h": "5dbc60a0",
+     "kind": "fix",
+     "scope": "buddies",
+     "text": "Keep a dismissed buddy dismissed across logins",
+     "date": "2026-10-19"
+    },
+    {
      "h": "ba4e900e",
      "kind": "fix",
      "scope": "quests",
@@ -7032,6 +7277,13 @@
      "kind": "fix",
      "scope": "quests",
      "text": "Keep the weekly strip one line when a pick is carried",
+     "date": "2026-10-18"
+    },
+    {
+     "h": "12199a72",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Center the inspect touch history button under its row",
      "date": "2026-10-18"
     },
     {
@@ -7424,6 +7676,13 @@
      "kind": "fix",
      "scope": "ui",
      "text": "Keep the quartermaster attune row short enough for phones",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "ccc2d84e",
+     "kind": "fix",
+     "scope": "styles",
+     "text": "Tokenize the collections window colors",
      "date": "2026-10-14"
     },
     {
@@ -8019,6 +8278,13 @@
      "kind": "fix",
      "scope": "vault",
      "text": "Keep weekly controls on the status row",
+     "date": "2026-10-07"
+    },
+    {
+     "h": "b5ef81c9",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Keep Warfare Season 2 on sale at the honor quartermasters",
      "date": "2026-10-07"
     },
     {
@@ -8904,6 +9170,13 @@
      "date": "2026-10-01"
     },
     {
+     "h": "6f9dc2fa",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Give the item history prompt a labelled close button",
+     "date": "2026-10-01"
+    },
+    {
      "h": "ad867ee7",
      "kind": "fix",
      "scope": "render",
@@ -9619,9 +9892,9 @@
    "branch": "release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 2485,
-   "shown": 1365,
-   "last_commit": "2026-10-24T07:45:15Z",
+   "commits": 2566,
+   "shown": 1404,
+   "last_commit": "2026-10-25T03:39:54Z",
    "sections": [
     {
      "key": "classes",
@@ -11390,6 +11663,20 @@
        "date": "2026-10-20"
       },
       {
+       "h": "b8309e3f",
+       "kind": "feat",
+       "scope": "items",
+       "text": "Add the public history view other players read",
+       "date": "2026-10-16"
+      },
+      {
+       "h": "ed9dd873",
+       "kind": "feat",
+       "scope": "items",
+       "text": "Let other players open a tracked copy's history",
+       "date": "2026-10-16"
+      },
+      {
        "h": "dea7b73d",
        "kind": "feat",
        "scope": "render",
@@ -11437,6 +11724,13 @@
        "scope": "render",
        "text": "Remake four Wildheart Basin bosses on art-guide bodies",
        "date": "2026-10-11"
+      },
+      {
+       "h": "fc832538",
+       "kind": "feat",
+       "scope": "items",
+       "text": "Record the whole life of a tracked copy in the ledger",
+       "date": "2026-10-09"
       },
       {
        "h": "a603f6f4",
@@ -11621,10 +11915,24 @@
        "date": "2026-10-02"
       },
       {
+       "h": "33090bb0",
+       "kind": "feat",
+       "scope": "items",
+       "text": "Move tracked-item history to a right-click prompt, hide the item ID",
+       "date": "2026-10-01"
+      },
+      {
        "h": "02b761f5",
        "kind": "feat",
        "scope": "discord",
        "text": "Post King of the Hill spawn calls to the PvP channel",
+       "date": "2026-09-30"
+      },
+      {
+       "h": "7af76f2b",
+       "kind": "feat",
+       "scope": "items",
+       "text": "Give epic and legendary copies a UUID and provenance tracking",
        "date": "2026-09-30"
       },
       {
@@ -11675,6 +11983,13 @@
        "scope": "render",
        "text": "The Wildheart Basin's sky, haze and gates on a fill budget",
        "date": "2026-10-02"
+      },
+      {
+       "h": "17f06cbd",
+       "kind": "fix",
+       "scope": "items",
+       "text": "Index realm ledger pages and verify release integration",
+       "date": "2026-10-25"
       },
       {
        "h": "f8d66cb8",
@@ -11780,6 +12095,20 @@
        "scope": "dungeons",
        "text": "Clear every mob's reach round a death checkpoint",
        "date": "2026-10-11"
+      },
+      {
+       "h": "9f1bd472",
+       "kind": "fix",
+       "scope": "items",
+       "text": "Keep bags, auto-equip and buy orders working with tracked copies",
+       "date": "2026-10-09"
+      },
+      {
+       "h": "cd8fce9c",
+       "kind": "fix",
+       "scope": "items",
+       "text": "Treat an identity-only epic copy as ordinary in market and bags",
+       "date": "2026-10-09"
       },
       {
        "h": "28d61401",
@@ -12063,6 +12392,13 @@
        "date": "2026-10-14"
       },
       {
+       "h": "328d62c2",
+       "kind": "feat",
+       "scope": "warfare",
+       "text": "Give the honor shop companions their own group heading",
+       "date": "2026-10-14"
+      },
+      {
        "h": "cc18fe96",
        "kind": "feat",
        "scope": "social",
@@ -12089,6 +12425,13 @@
        "scope": "hunting",
        "text": "Group pets by kind, rank the sets, rename the window",
        "date": "2026-09-04"
+      },
+      {
+       "h": "74bb6c1c",
+       "kind": "fix",
+       "scope": "referrals",
+       "text": "Only explain unbound accounts on a new-player party invite",
+       "date": "2026-10-25"
       },
       {
        "h": "285f6fac",
@@ -12182,6 +12525,13 @@
        "date": "2026-10-19"
       },
       {
+       "h": "c176e8ad",
+       "kind": "fix",
+       "scope": "items",
+       "text": "Project the guild bank history at the wire, not the ledger read",
+       "date": "2026-10-16"
+      },
+      {
        "h": "b881ac9a",
        "kind": "fix",
        "scope": "guild",
@@ -12235,6 +12585,13 @@
        "kind": "fix",
        "scope": "scripts",
        "text": "Expand desktop party frames in the party-pets shot",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "d78b33e0",
+       "kind": "fix",
+       "scope": "warfare",
+       "text": "Key the companions title skip on its group",
        "date": "2026-10-14"
       },
       {
@@ -12363,6 +12720,34 @@
        "scope": "mounts",
        "text": "Assign annual and referral mount rewards",
        "date": "2026-10-23"
+      },
+      {
+       "h": "ae093b6a",
+       "kind": "feat",
+       "scope": "buddies",
+       "text": "Keep only the three active buddy whistles",
+       "date": "2026-10-23"
+      },
+      {
+       "h": "5fe8ee3d",
+       "kind": "feat",
+       "scope": "buddies",
+       "text": "Price Tug, the Warhorse at 10,000 honor",
+       "date": "2026-10-23"
+      },
+      {
+       "h": "9870d01d",
+       "kind": "feat",
+       "scope": "membership",
+       "text": "The courier carries Materials Vault deliveries",
+       "date": "2026-10-22"
+      },
+      {
+       "h": "5aec0c76",
+       "kind": "feat",
+       "scope": "membership",
+       "text": "The courier delivers to other characters' banks",
+       "date": "2026-10-22"
       },
       {
        "h": "9926f448",
@@ -13622,6 +14007,20 @@
        "kind": "feat",
        "scope": "vault",
        "text": "Filter class loot and add specialization focus",
+       "date": "2026-10-07"
+      },
+      {
+       "h": "0318650e",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Make Warfare Season 2 a Weekly Vault PvP reward only",
+       "date": "2026-10-07"
+      },
+      {
+       "h": "d9058673",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Roll only class Season 2 gear from the Weekly Vault PvP row",
        "date": "2026-10-07"
       },
       {
@@ -15592,6 +15991,13 @@
        "date": "2026-10-20"
       },
       {
+       "h": "a5b38a85",
+       "kind": "perf",
+       "scope": "server",
+       "text": "Index item_ledger.account_id",
+       "date": "2026-10-16"
+      },
+      {
        "h": "58b9c856",
        "kind": "perf",
        "scope": "render",
@@ -15704,6 +16110,48 @@
        "date": "2026-09-26"
       },
       {
+       "h": "3a83b4a1",
+       "kind": "fix",
+       "scope": "courier",
+       "text": "Integrate full-bank delivery with v0.45.0",
+       "date": "2026-10-25"
+      },
+      {
+       "h": "bfda53df",
+       "kind": "fix",
+       "scope": "buddies",
+       "text": "Make the release roster collection-only",
+       "date": "2026-10-25"
+      },
+      {
+       "h": "fc1fb455",
+       "kind": "fix",
+       "scope": "dungeons",
+       "text": "Reset instances without changing difficulty",
+       "date": "2026-10-25"
+      },
+      {
+       "h": "ff6fcdc9",
+       "kind": "fix",
+       "scope": "dungeons",
+       "text": "Skip fresh claims on reset and correct reset copy",
+       "date": "2026-10-25"
+      },
+      {
+       "h": "2b5e17e7",
+       "kind": "fix",
+       "scope": "vault",
+       "text": "Persist tracked reward identities before live grants",
+       "date": "2026-10-25"
+      },
+      {
+       "h": "1c76ce11",
+       "kind": "fix",
+       "scope": "courier",
+       "text": "Refresh v0.45 release integration",
+       "date": "2026-10-25"
+      },
+      {
        "h": "79b27b2a",
        "kind": "fix",
        "scope": "rewards",
@@ -15771,6 +16219,41 @@
        "kind": "fix",
        "scope": "web",
        "text": "Integrate landing-first boot with v0.45 release",
+       "date": "2026-10-24"
+      },
+      {
+       "h": "8889c9d8",
+       "kind": "fix",
+       "scope": "security",
+       "text": "Patch release dependency vulnerabilities",
+       "date": "2026-10-24"
+      },
+      {
+       "h": "9e9b4d4a",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Fill admin companion messages and reuse established UI translations",
+       "date": "2026-10-24"
+      },
+      {
+       "h": "c93e8731",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Handle cancelled puzzle animation promises",
+       "date": "2026-10-24"
+      },
+      {
+       "h": "d9da2633",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Complete v0.45 release translations",
+       "date": "2026-10-24"
+      },
+      {
+       "h": "41d2fcf8",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Preserve dictionary source anchor format",
        "date": "2026-10-24"
       },
       {
@@ -15970,10 +16453,31 @@
        "date": "2026-10-22"
       },
       {
+       "h": "f99b1411",
+       "kind": "fix",
+       "scope": "membership",
+       "text": "A courier host without a roster shows no Other characters tab",
+       "date": "2026-10-22"
+      },
+      {
+       "h": "552efc2a",
+       "kind": "fix",
+       "scope": "membership",
+       "text": "Never rerun or abandon a banked courier's legs",
+       "date": "2026-10-22"
+      },
+      {
        "h": "72b0cfd0",
        "kind": "fix",
        "scope": "maps",
        "text": "Integrate the reviewed map prerequisites",
+       "date": "2026-10-22"
+      },
+      {
+       "h": "7d9cdcc2",
+       "kind": "fix",
+       "scope": "membership",
+       "text": "Courier custody budget and exact vault row pickups",
        "date": "2026-10-22"
       },
       {
@@ -16030,6 +16534,13 @@
        "kind": "fix",
        "scope": "render",
        "text": "Refine female character shoulder mesh and keyed animations",
+       "date": "2026-10-22"
+      },
+      {
+       "h": "31900480",
+       "kind": "fix",
+       "scope": "buddies",
+       "text": "Take the SQL buddy roster from BUDDY_KEYS",
        "date": "2026-10-22"
       },
       {
@@ -16635,6 +17146,13 @@
        "date": "2026-10-19"
       },
       {
+       "h": "5dbc60a0",
+       "kind": "fix",
+       "scope": "buddies",
+       "text": "Keep a dismissed buddy dismissed across logins",
+       "date": "2026-10-19"
+      },
+      {
        "h": "ba4e900e",
        "kind": "fix",
        "scope": "quests",
@@ -16646,6 +17164,13 @@
        "kind": "fix",
        "scope": "quests",
        "text": "Keep the weekly strip one line when a pick is carried",
+       "date": "2026-10-18"
+      },
+      {
+       "h": "12199a72",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Center the inspect touch history button under its row",
        "date": "2026-10-18"
       },
       {
@@ -17038,6 +17563,13 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Keep the quartermaster attune row short enough for phones",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "ccc2d84e",
+       "kind": "fix",
+       "scope": "styles",
+       "text": "Tokenize the collections window colors",
        "date": "2026-10-14"
       },
       {
@@ -17633,6 +18165,13 @@
        "kind": "fix",
        "scope": "vault",
        "text": "Keep weekly controls on the status row",
+       "date": "2026-10-07"
+      },
+      {
+       "h": "b5ef81c9",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Keep Warfare Season 2 on sale at the honor quartermasters",
        "date": "2026-10-07"
       },
       {
@@ -18515,6 +19054,13 @@
        "kind": "fix",
        "scope": "ui",
        "text": "Keep the item tooltip source pins intact",
+       "date": "2026-10-01"
+      },
+      {
+       "h": "6f9dc2fa",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Give the item history prompt a labelled close button",
        "date": "2026-10-01"
       },
       {
