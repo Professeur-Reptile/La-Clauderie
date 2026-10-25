@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-25T05:10:00Z",
+ "generated": "2026-10-25T11:56:02Z",
  "base_tag": "v0.44.7",
  "version": "v0.45.0",
  "branch": "release/v0.45.0",
  "declared_version": "0.45.0",
  "imminent": true,
- "commits": 2566,
- "shown": 1404,
- "last_commit": "2026-10-25T03:39:54Z",
+ "commits": 2624,
+ "shown": 1430,
+ "last_commit": "2026-10-25T22:19:23+13:00",
  "sections": [
   {
    "key": "classes",
@@ -352,6 +352,13 @@
      "date": "2026-09-27"
     },
     {
+     "h": "06ad3b1b",
+     "kind": "fix",
+     "scope": "scripts",
+     "text": "Scope the portrait menu shot's warrior class to its own target",
+     "date": "2026-10-25"
+    },
+    {
      "h": "7104ef95",
      "kind": "fix",
      "scope": "store",
@@ -412,6 +419,13 @@
      "kind": "fix",
      "scope": "factions",
      "text": "Make the Allied Hearthstone bind stick and stop it eating the cooldown",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "10ec8cbc",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Replace Zulgar priest body during jaguar transformation",
      "date": "2026-10-14"
     },
     {
@@ -778,6 +792,13 @@
      "kind": "feat",
      "scope": "loot",
      "text": "Print boss drops to the whole party at the kill",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "5f3adc0a",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Teach Selthe's Score through the dungeon alert family",
      "date": "2026-10-14"
     },
     {
@@ -1797,6 +1818,13 @@
      "date": "2026-10-15"
     },
     {
+     "h": "ca72462b",
+     "kind": "feat",
+     "scope": "wildheart",
+     "text": "Rework Zulgar's hunt into a whole-group fight",
+     "date": "2026-10-14"
+    },
+    {
      "h": "f5878780",
      "kind": "feat",
      "scope": "wildheart-entrance",
@@ -2180,6 +2208,13 @@
      "scope": "sim",
      "text": "Stand spawn probes on the floor beside walk-in buildings",
      "date": "2026-10-15"
+    },
+    {
+     "h": "af8a00eb",
+     "kind": "fix",
+     "scope": "wildheart",
+     "text": "Bring Zulgar hunt capture into melee range",
+     "date": "2026-10-14"
     },
     {
      "h": "ec999255",
@@ -2874,6 +2909,13 @@
      "kind": "feat",
      "scope": "ui",
      "text": "Detachable resource bar and movable King of the Hill bar",
+     "date": "2026-10-22"
+    },
+    {
+     "h": "20d37dcf",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Opt-in first-person camera at the closest zoom",
      "date": "2026-10-22"
     },
     {
@@ -3647,6 +3689,48 @@
      "date": "2026-10-14"
     },
     {
+     "h": "5a847919",
+     "kind": "feat",
+     "scope": "hud",
+     "text": "Teach Zulgar's glyphs, spear and Idol's Breath",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "5a8350a7",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Paint Zulgar's glyph states, Hunting Spear and Idol's Breath",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "7362fb6d",
+     "kind": "feat",
+     "scope": "temple",
+     "text": "Give Selthe the Score and trim her kit so it reads",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "59f5bdc9",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Paint Selthe's Score on the moon tiles",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "c6815fe5",
+     "kind": "feat",
+     "scope": "finder",
+     "text": "List the Score among Selthe's mechanics",
+     "date": "2026-10-14"
+    },
+    {
+     "h": "e3821639",
+     "kind": "feat",
+     "scope": "dungeons",
+     "text": "Alternate players for Selthe's Score",
+     "date": "2026-10-14"
+    },
+    {
      "h": "fe20bac9",
      "kind": "feat",
      "scope": "studio",
@@ -4071,6 +4155,13 @@
      "kind": "feat",
      "scope": "quests",
      "text": "Keep the choose-one rewards off the tutorial island",
+     "date": "2026-10-07"
+    },
+    {
+     "h": "d08ad684",
+     "kind": "feat",
+     "scope": "mounts",
+     "text": "Make mounts cosmetic and add riding ranks",
      "date": "2026-10-07"
     },
     {
@@ -6237,6 +6328,13 @@
      "date": "2026-10-25"
     },
     {
+     "h": "999534f7",
+     "kind": "fix",
+     "scope": "dungeons",
+     "text": "Integrate Selthe and Zulgar with v0.45",
+     "date": "2026-10-25"
+    },
+    {
      "h": "fc1fb455",
      "kind": "fix",
      "scope": "dungeons",
@@ -6258,10 +6356,66 @@
      "date": "2026-10-25"
     },
     {
+     "h": "3049e7e4",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Settle release merge pins and fills",
+     "date": "2026-10-25"
+    },
+    {
+     "h": "8ba18aeb",
+     "kind": "fix",
+     "scope": "instances",
+     "text": "Show when the selected difficulty has not reached live instances",
+     "date": "2026-10-25"
+    },
+    {
      "h": "1c76ce11",
      "kind": "fix",
      "scope": "courier",
      "text": "Refresh v0.45 release integration",
+     "date": "2026-10-25"
+    },
+    {
+     "h": "4fa40598",
+     "kind": "fix",
+     "scope": "encounters",
+     "text": "Integrate current v0.45 release",
+     "date": "2026-10-25"
+    },
+    {
+     "h": "b77b96a9",
+     "kind": "fix",
+     "scope": "encounters",
+     "text": "Reconcile release buddy roster integration",
+     "date": "2026-10-25"
+    },
+    {
+     "h": "f3190c37",
+     "kind": "fix",
+     "scope": "encounters",
+     "text": "Integrate release item provenance",
+     "date": "2026-10-25"
+    },
+    {
+     "h": "666988a9",
+     "kind": "fix",
+     "scope": "instances",
+     "text": "Take the difficulty menu fix ahead of its landing",
+     "date": "2026-10-25"
+    },
+    {
+     "h": "bd9be216",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Prepare first-person camera for v0.45 release",
+     "date": "2026-10-25"
+    },
+    {
+     "h": "e2045b78",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Complete v0.45 release translations and wiki seed",
      "date": "2026-10-25"
     },
     {
@@ -7679,6 +7833,13 @@
      "date": "2026-10-14"
     },
     {
+     "h": "67309752",
+     "kind": "fix",
+     "scope": "temple",
+     "text": "Tighten Selthe score rules and accelerate final melody",
+     "date": "2026-10-14"
+    },
+    {
      "h": "ccc2d84e",
      "kind": "fix",
      "scope": "styles",
@@ -8162,6 +8323,13 @@
      "date": "2026-10-09"
     },
     {
+     "h": "ad5376a9",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Restore full horse reins refund",
+     "date": "2026-10-09"
+    },
+    {
      "h": "f2ff6918",
      "kind": "fix",
      "scope": "loot",
@@ -8251,6 +8419,20 @@
      "scope": "game",
      "text": "Turn click-to-move by elapsed time, not per frame",
      "date": "2026-10-08"
+    },
+    {
+     "h": "82bc0b60",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Address cosmetic riding review",
+     "date": "2026-10-07"
+    },
+    {
+     "h": "cd073d79",
+     "kind": "fix",
+     "scope": "mounts",
+     "text": "Clarify possession test and timestamp fixture",
+     "date": "2026-10-07"
     },
     {
      "h": "ffca4690",
@@ -9892,9 +10074,9 @@
    "branch": "release/v0.45.0",
    "declared_version": "0.45.0",
    "imminent": true,
-   "commits": 2566,
-   "shown": 1404,
-   "last_commit": "2026-10-25T03:39:54Z",
+   "commits": 2624,
+   "shown": 1430,
+   "last_commit": "2026-10-25T22:19:23+13:00",
    "sections": [
     {
      "key": "classes",
@@ -10239,6 +10421,13 @@
        "date": "2026-09-27"
       },
       {
+       "h": "06ad3b1b",
+       "kind": "fix",
+       "scope": "scripts",
+       "text": "Scope the portrait menu shot's warrior class to its own target",
+       "date": "2026-10-25"
+      },
+      {
        "h": "7104ef95",
        "kind": "fix",
        "scope": "store",
@@ -10299,6 +10488,13 @@
        "kind": "fix",
        "scope": "factions",
        "text": "Make the Allied Hearthstone bind stick and stop it eating the cooldown",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "10ec8cbc",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Replace Zulgar priest body during jaguar transformation",
        "date": "2026-10-14"
       },
       {
@@ -10665,6 +10861,13 @@
        "kind": "feat",
        "scope": "loot",
        "text": "Print boss drops to the whole party at the kill",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "5f3adc0a",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Teach Selthe's Score through the dungeon alert family",
        "date": "2026-10-14"
       },
       {
@@ -11684,6 +11887,13 @@
        "date": "2026-10-15"
       },
       {
+       "h": "ca72462b",
+       "kind": "feat",
+       "scope": "wildheart",
+       "text": "Rework Zulgar's hunt into a whole-group fight",
+       "date": "2026-10-14"
+      },
+      {
        "h": "f5878780",
        "kind": "feat",
        "scope": "wildheart-entrance",
@@ -12067,6 +12277,13 @@
        "scope": "sim",
        "text": "Stand spawn probes on the floor beside walk-in buildings",
        "date": "2026-10-15"
+      },
+      {
+       "h": "af8a00eb",
+       "kind": "fix",
+       "scope": "wildheart",
+       "text": "Bring Zulgar hunt capture into melee range",
+       "date": "2026-10-14"
       },
       {
        "h": "ec999255",
@@ -12761,6 +12978,13 @@
        "kind": "feat",
        "scope": "ui",
        "text": "Detachable resource bar and movable King of the Hill bar",
+       "date": "2026-10-22"
+      },
+      {
+       "h": "20d37dcf",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Opt-in first-person camera at the closest zoom",
        "date": "2026-10-22"
       },
       {
@@ -13534,6 +13758,48 @@
        "date": "2026-10-14"
       },
       {
+       "h": "5a847919",
+       "kind": "feat",
+       "scope": "hud",
+       "text": "Teach Zulgar's glyphs, spear and Idol's Breath",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "5a8350a7",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Paint Zulgar's glyph states, Hunting Spear and Idol's Breath",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "7362fb6d",
+       "kind": "feat",
+       "scope": "temple",
+       "text": "Give Selthe the Score and trim her kit so it reads",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "59f5bdc9",
+       "kind": "feat",
+       "scope": "render",
+       "text": "Paint Selthe's Score on the moon tiles",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "c6815fe5",
+       "kind": "feat",
+       "scope": "finder",
+       "text": "List the Score among Selthe's mechanics",
+       "date": "2026-10-14"
+      },
+      {
+       "h": "e3821639",
+       "kind": "feat",
+       "scope": "dungeons",
+       "text": "Alternate players for Selthe's Score",
+       "date": "2026-10-14"
+      },
+      {
        "h": "fe20bac9",
        "kind": "feat",
        "scope": "studio",
@@ -13958,6 +14224,13 @@
        "kind": "feat",
        "scope": "quests",
        "text": "Keep the choose-one rewards off the tutorial island",
+       "date": "2026-10-07"
+      },
+      {
+       "h": "d08ad684",
+       "kind": "feat",
+       "scope": "mounts",
+       "text": "Make mounts cosmetic and add riding ranks",
        "date": "2026-10-07"
       },
       {
@@ -16124,6 +16397,13 @@
        "date": "2026-10-25"
       },
       {
+       "h": "999534f7",
+       "kind": "fix",
+       "scope": "dungeons",
+       "text": "Integrate Selthe and Zulgar with v0.45",
+       "date": "2026-10-25"
+      },
+      {
        "h": "fc1fb455",
        "kind": "fix",
        "scope": "dungeons",
@@ -16145,10 +16425,66 @@
        "date": "2026-10-25"
       },
       {
+       "h": "3049e7e4",
+       "kind": "fix",
+       "scope": "mounts",
+       "text": "Settle release merge pins and fills",
+       "date": "2026-10-25"
+      },
+      {
+       "h": "8ba18aeb",
+       "kind": "fix",
+       "scope": "instances",
+       "text": "Show when the selected difficulty has not reached live instances",
+       "date": "2026-10-25"
+      },
+      {
        "h": "1c76ce11",
        "kind": "fix",
        "scope": "courier",
        "text": "Refresh v0.45 release integration",
+       "date": "2026-10-25"
+      },
+      {
+       "h": "4fa40598",
+       "kind": "fix",
+       "scope": "encounters",
+       "text": "Integrate current v0.45 release",
+       "date": "2026-10-25"
+      },
+      {
+       "h": "b77b96a9",
+       "kind": "fix",
+       "scope": "encounters",
+       "text": "Reconcile release buddy roster integration",
+       "date": "2026-10-25"
+      },
+      {
+       "h": "f3190c37",
+       "kind": "fix",
+       "scope": "encounters",
+       "text": "Integrate release item provenance",
+       "date": "2026-10-25"
+      },
+      {
+       "h": "666988a9",
+       "kind": "fix",
+       "scope": "instances",
+       "text": "Take the difficulty menu fix ahead of its landing",
+       "date": "2026-10-25"
+      },
+      {
+       "h": "bd9be216",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Prepare first-person camera for v0.45 release",
+       "date": "2026-10-25"
+      },
+      {
+       "h": "e2045b78",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Complete v0.45 release translations and wiki seed",
        "date": "2026-10-25"
       },
       {
@@ -17566,6 +17902,13 @@
        "date": "2026-10-14"
       },
       {
+       "h": "67309752",
+       "kind": "fix",
+       "scope": "temple",
+       "text": "Tighten Selthe score rules and accelerate final melody",
+       "date": "2026-10-14"
+      },
+      {
        "h": "ccc2d84e",
        "kind": "fix",
        "scope": "styles",
@@ -18049,6 +18392,13 @@
        "date": "2026-10-09"
       },
       {
+       "h": "ad5376a9",
+       "kind": "fix",
+       "scope": "mounts",
+       "text": "Restore full horse reins refund",
+       "date": "2026-10-09"
+      },
+      {
        "h": "f2ff6918",
        "kind": "fix",
        "scope": "loot",
@@ -18138,6 +18488,20 @@
        "scope": "game",
        "text": "Turn click-to-move by elapsed time, not per frame",
        "date": "2026-10-08"
+      },
+      {
+       "h": "82bc0b60",
+       "kind": "fix",
+       "scope": "mounts",
+       "text": "Address cosmetic riding review",
+       "date": "2026-10-07"
+      },
+      {
+       "h": "cd073d79",
+       "kind": "fix",
+       "scope": "mounts",
+       "text": "Clarify possession test and timestamp fixture",
+       "date": "2026-10-07"
       },
       {
        "h": "ffca4690",
