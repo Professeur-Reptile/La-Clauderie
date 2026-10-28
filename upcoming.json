@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-28T08:55:51Z",
+ "generated": "2026-10-28T16:47:44Z",
  "base_tag": "v0.45.3",
  "version": "v0.45.4",
  "branch": "release/v0.45.4",
- "declared_version": "0.45.3",
- "imminent": false,
- "commits": 3,
- "shown": 3,
- "last_commit": "2026-10-28T21:27:15+13:00",
+ "declared_version": "0.45.4",
+ "imminent": true,
+ "commits": 6,
+ "shown": 4,
+ "last_commit": "2026-10-29T00:54:17+13:00",
  "sections": [
   {
    "key": "classes",
@@ -71,6 +71,13 @@
      "scope": "render",
      "text": "Reduce v0.45 shader, texture, and scenery GPU residency",
      "date": "2026-10-28"
+    },
+    {
+     "h": "16257d7c",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Bind isZonePreparedAt on prototype and catalog deepmerge advisory",
+     "date": "2026-10-29"
     }
    ]
   }
@@ -79,11 +86,11 @@
   {
    "version": "v0.45.4",
    "branch": "release/v0.45.4",
-   "declared_version": "0.45.3",
-   "imminent": false,
-   "commits": 3,
-   "shown": 3,
-   "last_commit": "2026-10-28T21:27:15+13:00",
+   "declared_version": "0.45.4",
+   "imminent": true,
+   "commits": 6,
+   "shown": 4,
+   "last_commit": "2026-10-29T00:54:17+13:00",
    "sections": [
     {
      "key": "classes",
@@ -147,6 +154,13 @@
        "scope": "render",
        "text": "Reduce v0.45 shader, texture, and scenery GPU residency",
        "date": "2026-10-28"
+      },
+      {
+       "h": "16257d7c",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Bind isZonePreparedAt on prototype and catalog deepmerge advisory",
+       "date": "2026-10-29"
       }
      ]
     }
