@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-28T01:36:29Z",
+ "generated": "2026-10-28T08:55:51Z",
  "base_tag": "v0.45.3",
- "version": "v0.46.0",
- "branch": "release/v0.46.0",
+ "version": "v0.45.4",
+ "branch": "release/v0.45.4",
  "declared_version": "0.45.3",
  "imminent": false,
- "commits": 0,
- "shown": 0,
- "last_commit": "2026-10-28T12:03:35+13:00",
+ "commits": 3,
+ "shown": 3,
+ "last_commit": "2026-10-28T21:27:15+13:00",
  "sections": [
   {
    "key": "classes",
@@ -28,7 +28,22 @@
    "icon": "🐉",
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
-   "items": []
+   "items": [
+    {
+     "h": "2eae79d5",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Separate dungeon, raid, delve, and rift loading on all hosts",
+     "date": "2026-10-28"
+    },
+    {
+     "h": "a8a8c5ef",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Restore overworld dungeon doors and gate dungeon entry on interior build",
+     "date": "2026-10-28"
+    }
+   ]
   },
   {
    "key": "monde",
@@ -49,10 +64,94 @@
    "icon": "⚙️",
    "fr": "Confort & technique",
    "en": "Comfort & technical",
-   "items": []
+   "items": [
+    {
+     "h": "8164942f",
+     "kind": "perf",
+     "scope": "render",
+     "text": "Reduce v0.45 shader, texture, and scenery GPU residency",
+     "date": "2026-10-28"
+    }
+   ]
   }
  ],
  "versions": [
+  {
+   "version": "v0.45.4",
+   "branch": "release/v0.45.4",
+   "declared_version": "0.45.3",
+   "imminent": false,
+   "commits": 3,
+   "shown": 3,
+   "last_commit": "2026-10-28T21:27:15+13:00",
+   "sections": [
+    {
+     "key": "classes",
+     "icon": "⚔️",
+     "fr": "Classes & sorts",
+     "en": "Classes & spells",
+     "items": []
+    },
+    {
+     "key": "metiers",
+     "icon": "🔨",
+     "fr": "Métiers & récolte",
+     "en": "Professions & gathering",
+     "items": []
+    },
+    {
+     "key": "donjons",
+     "icon": "🐉",
+     "fr": "Donjons, failles & boss",
+     "en": "Dungeons, rifts & bosses",
+     "items": [
+      {
+       "h": "2eae79d5",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Separate dungeon, raid, delve, and rift loading on all hosts",
+       "date": "2026-10-28"
+      },
+      {
+       "h": "a8a8c5ef",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Restore overworld dungeon doors and gate dungeon entry on interior build",
+       "date": "2026-10-28"
+      }
+     ]
+    },
+    {
+     "key": "monde",
+     "icon": "🗺️",
+     "fr": "Monde & quêtes",
+     "en": "World & quests",
+     "items": []
+    },
+    {
+     "key": "guilde",
+     "icon": "🏰",
+     "fr": "Guilde & social",
+     "en": "Guild & social",
+     "items": []
+    },
+    {
+     "key": "confort",
+     "icon": "⚙️",
+     "fr": "Confort & technique",
+     "en": "Comfort & technical",
+     "items": [
+      {
+       "h": "8164942f",
+       "kind": "perf",
+       "scope": "render",
+       "text": "Reduce v0.45 shader, texture, and scenery GPU residency",
+       "date": "2026-10-28"
+      }
+     ]
+    }
+   ]
+  },
   {
    "version": "v0.46.0",
    "branch": "release/v0.46.0",
