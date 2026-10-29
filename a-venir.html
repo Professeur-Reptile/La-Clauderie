@@ -197,7 +197,7 @@
   <header class="hero">
     <p class="eyebrow">World of ClaudeCraft · En préparation</p>
     <h1>La prochaine version <span class="v" id="vNum">v0.45.0</span></h1>
-    <p class="lede">La <a href="notes/v0.45.0.html">v0.45.0</a> est sortie — la plus grosse mise à jour du jeu à ce jour — suivie de la <a href="notes/v0.45.1.html">v0.45.1</a> (correctif de paiement). Pour l’instant, <strong class="hl">rien n’est en préparation</strong> : cette page reprendra du service dès que le jeu ouvrira son prochain chantier.</p>
+    <p class="lede">La <a href="notes/v0.45.4.html">v0.45.4</a> allège le rendu et ferme les failles du nord. Derrière, la <strong class="hl">v0.46.0</strong> s’ouvre tout juste : <strong class="hl">44 commits</strong> au relevé, autour de la <strong class="hl">détection du furtif en JcJ mondial</strong> — traces au sol, flair de proximité, liseré sur les furtifs — et les Sceaux de la Lanterne promus en monnaie. Trop tôt pour un panorama : cette page grossira avec le chantier.</p>
 
     <div class="warn">
       <span class="ico" aria-hidden="true">⚠️</span>
@@ -211,7 +211,7 @@
       <span><b>Depuis</b> la v0.44.0</span>
       <span id="freshness"><b>Dernière vérification</b> à l’instant</span>
       <span id="moved"></span>
-      <span id="written"><b>Résumé écrit</b> le 22 octobre 2026</span>
+      <span id="written"><b>Résumé écrit</b> le 29 octobre 2026</span>
     </div>
     <p class="sec-sub" style="margin:6px 0 0;font-size:0.85rem">« Dernière vérification » = la dernière fois que cette page est allée voir où en sont les développeurs. « Dernier changement du jeu » = quand ils ont touché à cette version pour la dernière fois.</p>
     <div id="chantiers"></div>
@@ -222,83 +222,69 @@
     <h2 id="digest-title">En un coup d’œil</h2>
     <p class="sec-sub">Les mêmes rubriques qu’à chaque version, dans le même ordre. Clique une rubrique pour aller à sa section.</p>
     <ol>
-      <li class=""><span class="d-ico" aria-hidden="true">⚔️</span><a class="d-name" href="#combat">Classes &amp; sorts</a><span class="d-say">— chasseur refondu, forme Sporemender pour le Groveheart, anti-repoussure pour tous les lanceurs.</span></li>
-      <li class=""><span class="d-ico" aria-hidden="true">🔨</span><a class="d-name" href="#metiers">Métiers &amp; récolte</a><span class="d-say">— la qualité du fabriqué s’affiche en chat ; réactifs signés en Chambre forte.</span></li>
-      <li class=""><span class="d-ico" aria-hidden="true">🐉</span><a class="d-name" href="#donjons">Donjons, failles &amp; boss</a><span class="d-say">— les marques héroïques deviennent une monnaie ; le Carquois infernal arrive.</span></li>
-      <li class=""><span class="d-ico" aria-hidden="true">🗺️</span><a class="d-name" href="#monde">Monde &amp; quêtes</a><span class="d-say">— 150 Honor sur deux quêtes mondiales par jour ; collines à 30 secondes.</span></li>
-      <li class=""><span class="d-ico" aria-hidden="true">🏰</span><a class="d-name" href="#guilde">Guilde &amp; social</a><span class="d-say">— clic droit social, mot du royaume, outils GM de terrain.</span></li>
-      <li class=""><span class="d-ico" aria-hidden="true">⚙️</span><a class="d-name" href="#confort">Confort &amp; technique</a><span class="d-say">— tracker de cooldowns ennemis, familiers en faille, Gearscore, banque agrandie.</span></li>
+      <li class=""><span class="d-ico" aria-hidden="true">⚔️</span><a class="d-name" href="#combat">Classes &amp; sorts</a><span class="d-say">— Tactical Camo passe par Lonely Soul pour toutes les spés du chasseur.</span></li>
+      <li class="none"><span class="d-ico" aria-hidden="true">🔨</span><a class="d-name" href="#metiers">Métiers &amp; récolte</a><span class="d-say">— rien encore au relevé.</span></li>
+      <li class="none"><span class="d-ico" aria-hidden="true">🐉</span><a class="d-name" href="#donjons">Donjons, failles &amp; boss</a><span class="d-say">— rien encore au relevé.</span></li>
+      <li class="none"><span class="d-ico" aria-hidden="true">🗺️</span><a class="d-name" href="#monde">Monde &amp; quêtes</a><span class="d-say">— rien encore au relevé.</span></li>
+      <li class=""><span class="d-ico" aria-hidden="true">🏰</span><a class="d-name" href="#guilde">Guilde &amp; social</a><span class="d-say">— les Sceaux de la Lanterne deviennent une monnaie.</span></li>
+      <li class=""><span class="d-ico" aria-hidden="true">⚙️</span><a class="d-name" href="#confort">Confort &amp; technique</a><span class="d-say">— le furtif JcJ se voit : traces, flair, liseré ; le bonus flagué s’affiche.</span></li>
     </ol>
   </nav>
 
   <!-- Partie rédigée à la main, pour la version indiquée par data-for. Elle
        s'efface d'elle-même quand cette version sort, et se signale périmée si
        le jeu passe à préparer la suivante. -->
-    <div id="editorial" data-for="v0.45.0" data-commits="770" data-chantiers="v0.45.0" data-written="2026-10-22T23:30+02:00">
+    <div id="editorial" data-for="v0.46.0" data-commits="44" data-chantiers="v0.46.0" data-written="2026-10-29T15:30+02:00">
 
   <section id="combat">
-    <div class="sec-head"><span class="sec-num">01</span><h2>Classes &amp; sorts : le chasseur refondu, le druide réinventé</h2></div>
-    <p class="sec-sub">La plus grosse passe d’équilibrage depuis des mois : une classe entièrement revue, une nouvelle forme de soigneur, et les lanceurs couverts face à la repoussure.</p>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Classes &amp; sorts : le camouflage s’étend</h2></div>
+    <p class="sec-sub">Premières retouches de classe sur le chantier — menu, mais bien senties.</p>
     <div class="grid cols-2">
-      <div class="card"><h3>Chasseur : le grand rework <span class="chip c-bal">Équilibrage</span></h3><p>Incantations en mouvement, zones instantanées, un nouveau sort <b>Scatterbolt</b> et le <b>Play Dead</b> inédit ; Fieldcraft refondu, pièges cachés — et plus AUCUNE portée minimale : la zone morte d’Auto Shot disparaît complètement.</p></div>
-      <div class="card"><h3>Groveheart : la forme Sporemender <span class="chip c-new">Nouveau</span></h3><p>Le druide soigneur gagne sa signature visible : la forme <b>Sporemender</b> (modèle animé dédié), <b>Spore Burst</b> — un soin posé au sol qui éclabousse les alliés —, un Typhoon qui projette en l’air, et Wildbloom rebaptisé Sporemending.</p></div>
-      <div class="card"><h3>Et les autres suivent <span class="chip c-bal">Équilibrage</span></h3><p>Le shaman Thundercall est rebalancé (Lava Flows, Cinder Jolt à 27 s), <b>Iron Resolve</b> bouclier 20 % des PV max pour le guerrier, passe mobilité-économie côté rogue — et l’immunité à la repoussure d’incantation s’étend à toute classe avec une incantation retardable.</p></div>
-      <div class="card"><h3>Effets des sorts : l’interrupteur arrive <span class="chip c-new">Option</span></h3><p>L’option « Effets des sorts » pour couper les effets visuels est sur la branche — les ennemis restent lisibles. Le réglage le plus attendu du jeu.</p></div>
+      <div class="card"><h3>Tactical Camo pour tous <span class="chip c-new">Nouveau</span></h3><p>Le camouflage tactique passe par <b>Lonely Soul</b> et devient accessible à <b>toutes les spécialisations du chasseur</b>, plus seulement Fieldcraft.</p></div>
+      <div class="card"><h3>Posture Assist fiabilisée <span class="chip c-util">Correctif</span></h3><p>La posture <b>Assist</b> des familiers oublie proprement sa cible à la fin du combat et après les trous dans les ticks — plus de familier qui fixe un fantôme.</p></div>
     </div>
   </section>
 
   <section id="metiers">
-    <div class="sec-head"><span class="sec-num">02</span><h2>Métiers &amp; récolte : la qualité s’assume</h2></div>
-    <p class="sec-sub">La fabrication affiche enfin ce qu’elle produit, et la Chambre forte devient une réserve de réactifs à part entière.</p>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Métiers &amp; récolte</h2></div>
+    <p class="sec-sub">Rien au relevé pour l’instant.</p>
     <div class="grid cols-3">
-      <div class="card"><h3>La qualité annoncée en chat <span class="chip c-new">Nouveau</span></h3><p>La ligne de chat d’un objet fabriqué nomme désormais la qualité obtenue — et la qualité devient permanente sur toutes les sources de récompenses gagnées.</p></div>
-      <div class="card"><h3>Réactifs signés en Chambre forte <span class="chip c-new">Nouveau</span></h3><p>Les réactifs signés déposés dans la Chambre forte comptent pour le chef-d’œuvre (masterwork), et les consommables fabriqués s’empilent entre auteurs différents.</p></div>
-      <div class="card"><h3>Infobulle des motifs de recette <span class="chip c-new">Interface</span></h3><p>Le motif d’une recette affiche ce qu’il fabrique au survol — plus besoin de deviner avant d’acheter.</p></div>
+      <div class="card"><h3>Aucun changement <span class="chip c-bal">Égalité</span></h3><p>Le chantier vient de s’ouvrir — cette section se remplira au fil du relevé.</p></div>
     </div>
   </section>
 
   <section id="donjons">
-    <div class="sec-head"><span class="sec-num">03</span><h2>Donjons, failles &amp; boss : les marques héroïques deviennent une monnaie</h2></div>
-    <p class="sec-sub">Du vrai contenu côté instance : une monnaie héroïque, un nouveau butin de raid et des sceaux hebdo filtrés par classe.</p>
-    <div class="grid cols-2">
-      <div class="card"><h3>Marques Héroïques = une monnaie <span class="chip c-new">Nouveau</span></h3><p>Les <b>Heroic Marks</b> quittent le sac pour la bourse : plus de débordement perdu, un solde qui s’affiche et se dépense — et qui sera reporté tel quel dans la v0.45.</p></div>
-      <div class="card"><h3>Le Carquois infernal <span class="chip c-epic">Butin</span></h3><p>Le Crucible de Varkhul en héroïque lâche un nouveau carquois, l’<b>Infernal Quiver</b> — et le butin des boss s’affiche enfin pour tout le groupe, dès le kill.</p></div>
-      <div class="card"><h3>Chambre forte et retouches <span class="chip c-util">Ajustement</span></h3><p>La Chambre forte hebdo intègre les sceaux de raid de ta classe, la monture Valestrider est vendue 500 marques Rift Watch, et une faille ou un Trésor enterré retrouve son portail après une déconnexion.</p></div>
-      <div class="card"><h3>Difficulté affichée sur la minimap <span class="chip c-new">Interface</span></h3><p>L’indicateur de difficulté d’instance arrive sur la minimap et les en-têtes — plus de doute en entrant.</p></div>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Donjons, failles &amp; boss</h2></div>
+    <p class="sec-sub">Rien au relevé pour l’instant.</p>
+    <div class="grid cols-3">
+      <div class="card"><h3>Aucun changement <span class="chip c-bal">Égalité</span></h3><p>Instances, trésors et collines suivent la v0.45.4 pour l’instant.</p></div>
     </div>
   </section>
 
   <section id="monde">
-    <div class="sec-head"><span class="sec-num">04</span><h2>Monde &amp; quêtes : l’Honor entre dans les quêtes mondiales</h2></div>
-    <p class="sec-sub">Deux quêtes mondiales paieront chaque jour de l’Honor — et le monde ouvert accélère, collines comprises.</p>
-    <div class="grid cols-2">
-      <div class="card"><h3>150 Honor sur deux quêtes/jour <span class="chip c-new">Nouveau</span></h3><p>Chaque jour, deux quêtes mondiales paient <b>150 Honor</b> : une raison PvE de porter le drapeau — ou de chasser ceux qui le portent.</p></div>
-      <div class="card"><h3>Garder le choix <span class="chip c-new">Nouveau</span></h3><p>Les quêtes en cours restent remplaçables — plus de blocage sur une quête qui ne te va pas — et un nouvel exploit récompense le labyrinthe de haies terminé en difficile.</p></div>
-      <div class="card"><h3>Collines plus vives <span class="chip c-pvp">JcJ</span></h3><p>La capture d’une colline passe à <b>30 secondes</b> qu’un rival met seulement en pause, l’Honor du Roi de la Colline paie à taux fixe, et les primes JcJ récompensent les séries de kills flagués.</p></div>
-      <div class="card"><h3>Carte, ferries et Discord <span class="chip c-new">Communauté</span></h3><p>La carte du monde devient redimensionnable et affiche les ports de ferry avec horaires en direct — et les naissances de collines s’annoncent toujours dans un salon PvP, avec le flux de kills mondial.</p></div>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Monde &amp; quêtes</h2></div>
+    <p class="sec-sub">Rien au relevé pour l’instant.</p>
+    <div class="grid cols-3">
+      <div class="card"><h3>Aucun changement <span class="chip c-bal">Égalité</span></h3><p>Le monde ouvert suit la v0.45.4 pour l’instant.</p></div>
     </div>
   </section>
 
   <section id="guilde">
-    <div class="sec-head"><span class="sec-num">05</span><h2>Guilde &amp; social : clic droit, mégaphone et surveillance</h2></div>
-    <p class="sec-sub">La fenêtre sociale s’enrichit, et la modération reçoit ses outils de terrain.</p>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Guilde &amp; social : des Sceaux qui pèsent</h2></div>
+    <p class="sec-sub">La monnaie de la guilde des aventuriers change de nature.</p>
     <div class="grid cols-2">
-      <div class="card"><h3>Clic droit sur une ligne sociale <span class="chip c-new">Interface</span></h3><p>Un clic droit sur un joueur de la fenêtre sociale ouvre son menu — plus de manipulations à rallonge.</p></div>
-      <div class="card"><h3>Mot du royaume <span class="chip c-new">Modération</span></h3><p>Les administrateurs pourront poser un message de royaume affiché à tous (/announce) — l’outil des annonces communautaires.</p></div>
-      <div class="card"><h3>Outils GM de terrain <span class="chip c-new">Modération</span></h3><p>/visible, /watch et /announce : surveillance de visibilité et annonces pour l’équipe — invisibles pour les joueurs normaux, qui ne verront que le résultat.</p></div>
+      <div class="card"><h3>Sceaux de la Lanterne = monnaie <span class="chip c-new">Nouveau</span></h3><p>Les <b>Lantern Seals</b> quittent le sac pour la bourse, comme les marques héroïques avant elles — plus de débordement perdu, et le crédit préserve les sceaux même en cas de dépassement.</p></div>
     </div>
   </section>
 
   <section id="confort">
-    <div class="sec-head"><span class="sec-num">06</span><h2>Confort : le tracker de cooldowns change le JcJ</h2></div>
-    <p class="sec-sub">La plus grosse rubrique du chantier — 124 nouvelles entrées au relevé : lisibilité du JcJ, familiers partout, banque qui grandit.</p>
+    <div class="sec-head"><span class="sec-num">06</span><h2>Confort : le furtif JcJ se voit</h2></div>
+    <p class="sec-sub">Le plus gros volet du jeune chantier : contrejouer les camouflages en monde ouvert.</p>
     <div class="grid cols-2">
-      <div class="card"><h3>Le tracker de cooldowns ennemis <span class="chip c-new">Nouveau</span></h3><p>Au-dessus des noms ennemis, une rangée montre les cooldowns offensifs et défensifs déjà dépensés — option d’affichage, taille réglable, et le serveur ne transmet jamais le temps restant.</p></div>
-      <div class="card"><h3>Familiers en faille <span class="chip c-new">Nouveau</span></h3><p>Le chasseur garde son familier dans les failles, le démoniste son démon — avec des ordres à la barre d’action et une posture <b>Assist</b>.</p></div>
-      <div class="card"><h3>Cartographe et crânes <span class="chip c-new">Ajustement</span></h3><p>L’Encre du cartographe demande quelle carte redessiner, le passage épique→légendaire descend à <b>8 encres</b>, le coffre du Trésor enterré paie des spécimens Pristine, et les crânes-trophées reçoivent un sac dédié (500 Honor).</p></div>
-      <div class="card"><h3>Gearscore et banque <span class="chip c-new">Interface</span></h3><p>Le Gearscore s’affiche sur la fiche et l’inspecteur, la Chambre forte des matériaux passe à 10 étagères, les emplacements de sacs de banque coûtent moins cher — et la souris gagne un mode Raw Input.</p></div>
-      <div class="card"><h3>Chiffres et titres <span class="chip c-new">Interface</span></h3><p>Tes dégâts sortent du lot par défaut, et les titres <b>Titan</b> (10 millions d’XP cumulés) et <b>Timeless</b> rejoignent la même famille.</p></div>
-      <div class="card"><h3>Prudence d’usage <span class="chip c-util">Prudence</span></h3><p>770 commits au relevé et version imminente annoncée par le jeu : tout ceci reste du travail en cours, cette page sera reprise à la sortie.</p></div>
+      <div class="card"><h3>Traces et flair <span class="chip c-new">Nouveau</span></h3><p>Les furtifs <b>laissent des traces au sol</b> que les ennemis lisent, les <b>ennemis — joueurs et familiers — détectent le furtif par proximité</b>, et un <b>liseré</b> signale un furtif ennemi juste hors du cône de détection. Le furtif ne rend plus aveugle : il se joue.</p></div>
+      <div class="card"><h3>Le bonus flagué affiché <span class="chip c-new">Interface</span></h3><p>Le panneau du JcJ mondial montre désormais le <b>bonus de drapeau</b> (+10 % d’XP) en clair — fini de le deviner.</p></div>
+      <div class="card"><h3>Boutique et promos <span class="chip c-util">Correctif</span></h3><p>La fenêtre de la <b>Boutique WOC</b> tient dans l’écran à toutes les échelles d’interface, les promos se ferment <b>en un clic</b> et les annonces de parrainage terminées se masquent.</p></div>
+      <div class="card"><h3>Prudence d’usage <span class="chip c-util">Prudence</span></h3><p>44 commits au relevé, chantier à ses débuts : tout ceci reste du travail en cours — cette page sera reprise au fil de l’eau et à la sortie.</p></div>
     </div>
   </section>
 

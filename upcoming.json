@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-29T06:21:01Z",
+ "generated": "2026-10-29T13:29:36Z",
  "base_tag": "v0.45.4",
  "version": "v0.46.0",
  "branch": "ossbrain-release/v0.46.0",
  "declared_version": "0.45.3",
  "imminent": false,
- "commits": 30,
- "shown": 16,
- "last_commit": "2026-10-29T02:33:49Z",
+ "commits": 44,
+ "shown": 27,
+ "last_commit": "2026-10-29T06:46:58Z",
  "sections": [
   {
    "key": "classes",
@@ -21,6 +21,27 @@
      "scope": "hunter",
      "text": "Grant Tactical Camo through Lonely Soul to every spec",
      "date": "2026-10-27"
+    },
+    {
+     "h": "29ad28c2",
+     "kind": "fix",
+     "scope": "pets",
+     "text": "Expire the Assist cast record when the fight ends",
+     "date": "2026-10-29"
+    },
+    {
+     "h": "7cdcae1b",
+     "kind": "fix",
+     "scope": "pets",
+     "text": "Expire the Assist cast across gaps in pet ticks",
+     "date": "2026-10-29"
+    },
+    {
+     "h": "ad33052a",
+     "kind": "fix",
+     "scope": "pets",
+     "text": "Expire the Assist cast record from the per-player combat pass",
+     "date": "2026-10-29"
     }
    ]
   },
@@ -109,6 +130,27 @@
      "date": "2026-10-29"
     },
     {
+     "h": "ea8af71c",
+     "kind": "fix",
+     "scope": "store",
+     "text": "Hide finished referral advert and close promos in one click",
+     "date": "2026-10-29"
+    },
+    {
+     "h": "e2351247",
+     "kind": "fix",
+     "scope": "store",
+     "text": "Keep the WOC Store window on screen at every UI scale",
+     "date": "2026-10-29"
+    },
+    {
+     "h": "d5dacc49",
+     "kind": "fix",
+     "scope": "store",
+     "text": "Close the review findings on the store window fit",
+     "date": "2026-10-29"
+    },
+    {
      "h": "78b367e9",
      "kind": "fix",
      "scope": "i18n",
@@ -120,6 +162,41 @@
      "kind": "fix",
      "scope": "render",
      "text": "Transform stealth footprints relative to camera",
+     "date": "2026-10-29"
+    },
+    {
+     "h": "d4b3cf6a",
+     "kind": "fix",
+     "scope": "store",
+     "text": "Integrate scaled store viewport bounds",
+     "date": "2026-10-29"
+    },
+    {
+     "h": "42d8b0a7",
+     "kind": "fix",
+     "scope": "store",
+     "text": "Integrate promo eligibility and dismissal",
+     "date": "2026-10-29"
+    },
+    {
+     "h": "09dd1df5",
+     "kind": "fix",
+     "scope": "pets",
+     "text": "Integrate Assist stale target expiration",
+     "date": "2026-10-29"
+    },
+    {
+     "h": "cc1253bc",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Recover reviewed promotion close translations",
+     "date": "2026-10-29"
+    },
+    {
+     "h": "b4834468",
+     "kind": "fix",
+     "scope": "pet",
+     "text": "Recover reviewed in-flight assist liveness repair",
      "date": "2026-10-29"
     },
     {
@@ -173,9 +250,9 @@
    "branch": "ossbrain-release/v0.46.0",
    "declared_version": "0.45.3",
    "imminent": false,
-   "commits": 30,
-   "shown": 16,
-   "last_commit": "2026-10-29T02:33:49Z",
+   "commits": 44,
+   "shown": 27,
+   "last_commit": "2026-10-29T06:46:58Z",
    "sections": [
     {
      "key": "classes",
@@ -189,6 +266,27 @@
        "scope": "hunter",
        "text": "Grant Tactical Camo through Lonely Soul to every spec",
        "date": "2026-10-27"
+      },
+      {
+       "h": "29ad28c2",
+       "kind": "fix",
+       "scope": "pets",
+       "text": "Expire the Assist cast record when the fight ends",
+       "date": "2026-10-29"
+      },
+      {
+       "h": "7cdcae1b",
+       "kind": "fix",
+       "scope": "pets",
+       "text": "Expire the Assist cast across gaps in pet ticks",
+       "date": "2026-10-29"
+      },
+      {
+       "h": "ad33052a",
+       "kind": "fix",
+       "scope": "pets",
+       "text": "Expire the Assist cast record from the per-player combat pass",
+       "date": "2026-10-29"
       }
      ]
     },
@@ -277,6 +375,27 @@
        "date": "2026-10-29"
       },
       {
+       "h": "ea8af71c",
+       "kind": "fix",
+       "scope": "store",
+       "text": "Hide finished referral advert and close promos in one click",
+       "date": "2026-10-29"
+      },
+      {
+       "h": "e2351247",
+       "kind": "fix",
+       "scope": "store",
+       "text": "Keep the WOC Store window on screen at every UI scale",
+       "date": "2026-10-29"
+      },
+      {
+       "h": "d5dacc49",
+       "kind": "fix",
+       "scope": "store",
+       "text": "Close the review findings on the store window fit",
+       "date": "2026-10-29"
+      },
+      {
        "h": "78b367e9",
        "kind": "fix",
        "scope": "i18n",
@@ -288,6 +407,41 @@
        "kind": "fix",
        "scope": "render",
        "text": "Transform stealth footprints relative to camera",
+       "date": "2026-10-29"
+      },
+      {
+       "h": "d4b3cf6a",
+       "kind": "fix",
+       "scope": "store",
+       "text": "Integrate scaled store viewport bounds",
+       "date": "2026-10-29"
+      },
+      {
+       "h": "42d8b0a7",
+       "kind": "fix",
+       "scope": "store",
+       "text": "Integrate promo eligibility and dismissal",
+       "date": "2026-10-29"
+      },
+      {
+       "h": "09dd1df5",
+       "kind": "fix",
+       "scope": "pets",
+       "text": "Integrate Assist stale target expiration",
+       "date": "2026-10-29"
+      },
+      {
+       "h": "cc1253bc",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Recover reviewed promotion close translations",
+       "date": "2026-10-29"
+      },
+      {
+       "h": "b4834468",
+       "kind": "fix",
+       "scope": "pet",
+       "text": "Recover reviewed in-flight assist liveness repair",
        "date": "2026-10-29"
       },
       {

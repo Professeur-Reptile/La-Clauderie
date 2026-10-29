@@ -2,6 +2,56 @@
  "_aide": "Une entrée par mise à jour du jeu, la plus récente EN PREMIER. Pour ajouter une mise à jour : 1) créer notes/vX.Y.Z.html sur le modèle de la version précédente, 2) ajouter une entrée ici. L'accueil et la page « Nouveautés » se mettent à jour tout seuls. Champs optionnels titre_en / resume_en / temps_forts_en : la version anglaise du site les utilise s'ils existent (sinon elle affiche le français). Champ page_en : la page de notes en anglais (notes/vX.Y.Z.en.html) ; la version anglaise du site l'utilise.",
  "versions": [
   {
+   "version": "v0.45.4",
+   "date": "2026-10-29",
+   "titre": "Un rendu plus léger, et les failles quittent le nord",
+   "resume": "La v0.45.4 allège le rendu et la mémoire graphique : les visuels de donjons, raids, delves et failles se chargent à l’entrée de la rencontre et se libèrent à la sortie, avec moins d’appels de dessin, de shaders et de textures. Et les failles naturelles n’ouvrent plus dans la rangée nord : Amberfall, Frostveil Reach et Drakelands n’en ont plus — les huit régions du sud gardent leur cadence.",
+   "temps_forts": [
+    "🐉 Plus aucune faille naturelle à Amberfall, Frostveil Reach et Drakelands",
+    "⚙️ Visuels d’instance chargés à l’entrée, libérés à la sortie — longues sessions allégées"
+   ],
+   "temps_forts_en": [
+    "🐉 No natural rifts left at Amberfall, Frostveil Reach and the Drakelands",
+    "⚙️ Instance visuals load on entry, release on exit — long sessions run lighter"
+   ],
+   "page": "notes/v0.45.4.html",
+   "page_en": "notes/v0.45.4.en.html"
+  },
+  {
+   "version": "v0.45.3",
+   "date": "2026-10-27",
+   "titre": "Gourdlight Eve, et le prêtre Ombre remise à neuf",
+   "resume": "L’événement d’automne s’installe jusqu’au 1er novembre à 12 h UTC : tournée des bonbons à Eastbrook, Fenbridge et Highwatch, quêtes tournantes de Hester Gourdwick, Citrouilles hantées, et l’épouvantail Old Thatchgrin à abattre chaque jour — avec le balai Emberbristle à la clé (cinq gerbes, ou 3 % de drop). Le prêtre Ombre reçoit Vampiric Touch, Void Rupture et la Tithe Bomb autour de sa ressource Gloomtithe. Les collines reviennent au rythme 2 h/30 min et les primes monde et colline s’empilent.",
+   "temps_forts": [
+    "🎃 Gourdlight Eve jusqu’au 1er novembre : bonbons, citrouilles, Thatchgrin et le balai Emberbristle",
+    "⚔️ Prêtre Ombre : Vampiric Touch, Void Rupture, Tithe Bomb et le médaillon Gloomtithe",
+    "🏰 Collines de retour à 2 h/30 min ; primes monde et colline cumulées"
+   ],
+   "temps_forts_en": [
+    "🎃 Gourdlight Eve until November 1st: treats, pumpkins, Thatchgrin and the Emberbristle Broom",
+    "⚔️ Shadow priest: Vampiric Touch, Void Rupture, the Tithe Bomb and the Gloomtithe medallion",
+    "🏰 Hills back to 2h/30min; world and hill bounties now stack"
+   ],
+   "page": "notes/v0.45.3.html",
+   "page_en": "notes/v0.45.3.en.html"
+  },
+  {
+   "version": "v0.45.2",
+   "date": "2026-10-26",
+   "titre": "Le rattrapage v0.44.x, et l’Adhésion s’empile",
+   "resume": "La v0.45.2 restaure les correctifs v0.44.x perdus à l’intégration de la v0.45.0 : Nythraxis (Tempête d’os, timing Soul Rend), collines complètes (primes, classements, alertes, carte), équipement de Guerre, invités de Chambre forte et Trésor enterré, présence et modération. L’Adhésion se paie désormais dans le jeu : abonnements cumulables, monture annuelle partagée sur le compte, pas de rênes en double.",
+   "temps_forts": [
+    "🏰 Rattrapage : Nythraxis, collines, Guerre et Chambre forte retrouvent leur v0.44.x",
+    "💳 Adhésion : paiement intégré au jeu, abonnements empilables, monture annuelle par compte"
+   ],
+   "temps_forts_en": [
+    "🏰 Recovery: Nythraxis, hills, Warfare and the Vault get their v0.44.x back",
+    "💳 Membership: in-game checkout, stackable subscriptions, account-wide annual mount"
+   ],
+   "page": "notes/v0.45.2.html",
+   "page_en": "notes/v0.45.2.en.html"
+  },
+  {
    "version": "v0.45.1",
    "date": "2026-10-25",
    "titre": "L’Adhésion annuelle refonctionne",
