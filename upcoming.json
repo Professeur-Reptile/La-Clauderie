@@ -1,20 +1,28 @@
 {
- "generated": "2026-10-28T16:47:44Z",
- "base_tag": "v0.45.3",
- "version": "v0.45.4",
- "branch": "release/v0.45.4",
- "declared_version": "0.45.4",
- "imminent": true,
- "commits": 6,
- "shown": 4,
- "last_commit": "2026-10-29T00:54:17+13:00",
+ "generated": "2026-10-29T06:21:01Z",
+ "base_tag": "v0.45.4",
+ "version": "v0.46.0",
+ "branch": "ossbrain-release/v0.46.0",
+ "declared_version": "0.45.3",
+ "imminent": false,
+ "commits": 30,
+ "shown": 16,
+ "last_commit": "2026-10-29T02:33:49Z",
  "sections": [
   {
    "key": "classes",
    "icon": "⚔️",
    "fr": "Classes & sorts",
    "en": "Classes & spells",
-   "items": []
+   "items": [
+    {
+     "h": "fb272195",
+     "kind": "feat",
+     "scope": "hunter",
+     "text": "Grant Tactical Camo through Lonely Soul to every spec",
+     "date": "2026-10-27"
+    }
+   ]
   },
   {
    "key": "metiers",
@@ -28,22 +36,7 @@
    "icon": "🐉",
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
-   "items": [
-    {
-     "h": "2eae79d5",
-     "kind": "perf",
-     "scope": "render",
-     "text": "Separate dungeon, raid, delve, and rift loading on all hosts",
-     "date": "2026-10-28"
-    },
-    {
-     "h": "a8a8c5ef",
-     "kind": "fix",
-     "scope": "render",
-     "text": "Restore overworld dungeon doors and gate dungeon entry on interior build",
-     "date": "2026-10-28"
-    }
-   ]
+   "items": []
   },
   {
    "key": "monde",
@@ -57,7 +50,22 @@
    "icon": "🏰",
    "fr": "Guilde & social",
    "en": "Guild & social",
-   "items": []
+   "items": [
+    {
+     "h": "ce4e1a08",
+     "kind": "feat",
+     "scope": "guild",
+     "text": "Make Lantern Seals a currency instead of a bag item",
+     "date": "2026-10-28"
+    },
+    {
+     "h": "a9417436",
+     "kind": "fix",
+     "scope": "guild",
+     "text": "Preserve seals when currency credits overflow",
+     "date": "2026-10-28"
+    }
+   ]
   },
   {
    "key": "confort",
@@ -66,121 +74,123 @@
    "en": "Comfort & technical",
    "items": [
     {
-     "h": "8164942f",
-     "kind": "perf",
-     "scope": "render",
-     "text": "Reduce v0.45 shader, texture, and scenery GPU residency",
+     "h": "35dd1c06",
+     "kind": "feat",
+     "scope": "pvp",
+     "text": "Show the flagged bonus on the World PvP panel",
      "date": "2026-10-28"
     },
     {
-     "h": "16257d7c",
+     "h": "df81fb2d",
+     "kind": "feat",
+     "scope": "stealth",
+     "text": "Let enemy players and pets detect stealth by proximity",
+     "date": "2026-10-27"
+    },
+    {
+     "h": "67d68e1f",
+     "kind": "feat",
+     "scope": "stealth",
+     "text": "Leave lagged footprints enemies can read",
+     "date": "2026-10-27"
+    },
+    {
+     "h": "20f95cf0",
+     "kind": "feat",
+     "scope": "stealth",
+     "text": "Show a rim glint for enemy stealthers just past the cone",
+     "date": "2026-10-27"
+    },
+    {
+     "h": "150651bb",
      "kind": "fix",
      "scope": "render",
-     "text": "Bind isZonePreparedAt on prototype and catalog deepmerge advisory",
+     "text": "Keep a mounted rider seated when struck",
      "date": "2026-10-29"
+    },
+    {
+     "h": "78b367e9",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Complete v0.46 maintenance translations",
+     "date": "2026-10-29"
+    },
+    {
+     "h": "891fd976",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Transform stealth footprints relative to camera",
+     "date": "2026-10-29"
+    },
+    {
+     "h": "db80a179",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Restore the flagged reputation bonus at 10 percent",
+     "date": "2026-10-28"
+    },
+    {
+     "h": "b3e2c7fb",
+     "kind": "fix",
+     "scope": "trinkets",
+     "text": "Make the referral charm shields flat 250 and 350 absorbs",
+     "date": "2026-10-28"
+    },
+    {
+     "h": "5cbb05aa",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Guard the seals mirror on a bare client and pin gcon seals",
+     "date": "2026-10-28"
+    },
+    {
+     "h": "f30b4838",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Hide flagged stealthers from strangers who could flag at will",
+     "date": "2026-10-28"
+    },
+    {
+     "h": "123c0d63",
+     "kind": "fix",
+     "scope": "stealth",
+     "text": "Verify reveals and clear fading escape cues",
+     "date": "2026-10-28"
+    },
+    {
+     "h": "81d83ca3",
+     "kind": "fix",
+     "scope": "stealth",
+     "text": "Bound paced shimmer and footprint candidate work",
+     "date": "2026-10-28"
     }
    ]
   }
  ],
  "versions": [
   {
-   "version": "v0.45.4",
-   "branch": "release/v0.45.4",
-   "declared_version": "0.45.4",
-   "imminent": true,
-   "commits": 6,
-   "shown": 4,
-   "last_commit": "2026-10-29T00:54:17+13:00",
-   "sections": [
-    {
-     "key": "classes",
-     "icon": "⚔️",
-     "fr": "Classes & sorts",
-     "en": "Classes & spells",
-     "items": []
-    },
-    {
-     "key": "metiers",
-     "icon": "🔨",
-     "fr": "Métiers & récolte",
-     "en": "Professions & gathering",
-     "items": []
-    },
-    {
-     "key": "donjons",
-     "icon": "🐉",
-     "fr": "Donjons, failles & boss",
-     "en": "Dungeons, rifts & bosses",
-     "items": [
-      {
-       "h": "2eae79d5",
-       "kind": "perf",
-       "scope": "render",
-       "text": "Separate dungeon, raid, delve, and rift loading on all hosts",
-       "date": "2026-10-28"
-      },
-      {
-       "h": "a8a8c5ef",
-       "kind": "fix",
-       "scope": "render",
-       "text": "Restore overworld dungeon doors and gate dungeon entry on interior build",
-       "date": "2026-10-28"
-      }
-     ]
-    },
-    {
-     "key": "monde",
-     "icon": "🗺️",
-     "fr": "Monde & quêtes",
-     "en": "World & quests",
-     "items": []
-    },
-    {
-     "key": "guilde",
-     "icon": "🏰",
-     "fr": "Guilde & social",
-     "en": "Guild & social",
-     "items": []
-    },
-    {
-     "key": "confort",
-     "icon": "⚙️",
-     "fr": "Confort & technique",
-     "en": "Comfort & technical",
-     "items": [
-      {
-       "h": "8164942f",
-       "kind": "perf",
-       "scope": "render",
-       "text": "Reduce v0.45 shader, texture, and scenery GPU residency",
-       "date": "2026-10-28"
-      },
-      {
-       "h": "16257d7c",
-       "kind": "fix",
-       "scope": "render",
-       "text": "Bind isZonePreparedAt on prototype and catalog deepmerge advisory",
-       "date": "2026-10-29"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "version": "v0.46.0",
-   "branch": "release/v0.46.0",
+   "branch": "ossbrain-release/v0.46.0",
    "declared_version": "0.45.3",
    "imminent": false,
-   "commits": 0,
-   "shown": 0,
-   "last_commit": "2026-10-28T12:03:35+13:00",
+   "commits": 30,
+   "shown": 16,
+   "last_commit": "2026-10-29T02:33:49Z",
    "sections": [
     {
      "key": "classes",
      "icon": "⚔️",
      "fr": "Classes & sorts",
      "en": "Classes & spells",
-     "items": []
+     "items": [
+      {
+       "h": "fb272195",
+       "kind": "feat",
+       "scope": "hunter",
+       "text": "Grant Tactical Camo through Lonely Soul to every spec",
+       "date": "2026-10-27"
+      }
+     ]
     },
     {
      "key": "metiers",
@@ -208,14 +218,121 @@
      "icon": "🏰",
      "fr": "Guilde & social",
      "en": "Guild & social",
-     "items": []
+     "items": [
+      {
+       "h": "ce4e1a08",
+       "kind": "feat",
+       "scope": "guild",
+       "text": "Make Lantern Seals a currency instead of a bag item",
+       "date": "2026-10-28"
+      },
+      {
+       "h": "a9417436",
+       "kind": "fix",
+       "scope": "guild",
+       "text": "Preserve seals when currency credits overflow",
+       "date": "2026-10-28"
+      }
+     ]
     },
     {
      "key": "confort",
      "icon": "⚙️",
      "fr": "Confort & technique",
      "en": "Comfort & technical",
-     "items": []
+     "items": [
+      {
+       "h": "35dd1c06",
+       "kind": "feat",
+       "scope": "pvp",
+       "text": "Show the flagged bonus on the World PvP panel",
+       "date": "2026-10-28"
+      },
+      {
+       "h": "df81fb2d",
+       "kind": "feat",
+       "scope": "stealth",
+       "text": "Let enemy players and pets detect stealth by proximity",
+       "date": "2026-10-27"
+      },
+      {
+       "h": "67d68e1f",
+       "kind": "feat",
+       "scope": "stealth",
+       "text": "Leave lagged footprints enemies can read",
+       "date": "2026-10-27"
+      },
+      {
+       "h": "20f95cf0",
+       "kind": "feat",
+       "scope": "stealth",
+       "text": "Show a rim glint for enemy stealthers just past the cone",
+       "date": "2026-10-27"
+      },
+      {
+       "h": "150651bb",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Keep a mounted rider seated when struck",
+       "date": "2026-10-29"
+      },
+      {
+       "h": "78b367e9",
+       "kind": "fix",
+       "scope": "i18n",
+       "text": "Complete v0.46 maintenance translations",
+       "date": "2026-10-29"
+      },
+      {
+       "h": "891fd976",
+       "kind": "fix",
+       "scope": "render",
+       "text": "Transform stealth footprints relative to camera",
+       "date": "2026-10-29"
+      },
+      {
+       "h": "db80a179",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Restore the flagged reputation bonus at 10 percent",
+       "date": "2026-10-28"
+      },
+      {
+       "h": "b3e2c7fb",
+       "kind": "fix",
+       "scope": "trinkets",
+       "text": "Make the referral charm shields flat 250 and 350 absorbs",
+       "date": "2026-10-28"
+      },
+      {
+       "h": "5cbb05aa",
+       "kind": "fix",
+       "scope": "net",
+       "text": "Guard the seals mirror on a bare client and pin gcon seals",
+       "date": "2026-10-28"
+      },
+      {
+       "h": "f30b4838",
+       "kind": "fix",
+       "scope": "pvp",
+       "text": "Hide flagged stealthers from strangers who could flag at will",
+       "date": "2026-10-28"
+      },
+      {
+       "h": "123c0d63",
+       "kind": "fix",
+       "scope": "stealth",
+       "text": "Verify reveals and clear fading escape cues",
+       "date": "2026-10-28"
+      },
+      {
+       "h": "81d83ca3",
+       "kind": "fix",
+       "scope": "stealth",
+       "text": "Bound paced shimmer and footprint candidate work",
+       "date": "2026-10-28"
+      }
+     ]
     }
    ]
   }
