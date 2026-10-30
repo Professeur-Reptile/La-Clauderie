@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-30T00:12:27Z",
+ "generated": "2026-10-30T06:19:37Z",
  "base_tag": "v0.45.4",
  "version": "v0.45.5",
  "branch": "release/v0.45.5",
- "declared_version": "0.45.4",
- "imminent": false,
- "commits": 0,
- "shown": 0,
- "last_commit": "2026-10-29T16:30:06+13:00",
+ "declared_version": "0.45.5",
+ "imminent": true,
+ "commits": 22,
+ "shown": 12,
+ "last_commit": "2026-10-30T17:22:46+13:00",
  "sections": [
   {
    "key": "classes",
@@ -28,7 +28,15 @@
    "icon": "🐉",
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
-   "items": []
+   "items": [
+    {
+     "h": "f5ac3442",
+     "kind": "fix",
+     "scope": "mobs",
+     "text": "Smooth leveling HP and restore elite health floors",
+     "date": "2026-10-30"
+    }
+   ]
   },
   {
    "key": "monde",
@@ -49,18 +57,96 @@
    "icon": "⚙️",
    "fr": "Confort & technique",
    "en": "Comfort & technical",
-   "items": []
+   "items": [
+    {
+     "h": "fcbe8d6e",
+     "kind": "feat",
+     "scope": "mail",
+     "text": "Deliver store purchases to a loot window",
+     "date": "2026-10-30"
+    },
+    {
+     "h": "ebf31962",
+     "kind": "fix",
+     "scope": "store",
+     "text": "Preserve encoded membership checkout secrets",
+     "date": "2026-10-30"
+    },
+    {
+     "h": "a5c05a13",
+     "kind": "fix",
+     "scope": "store",
+     "text": "Rebuild the Memberships tab and drop collect buttons",
+     "date": "2026-10-30"
+    },
+    {
+     "h": "4dc2bf80",
+     "kind": "fix",
+     "scope": "store",
+     "text": "Label the monthly-to-annual upgrade and polish dialogs",
+     "date": "2026-10-30"
+    },
+    {
+     "h": "b8a5e15b",
+     "kind": "fix",
+     "scope": "store",
+     "text": "Keep claiming paid rewards until they arrive",
+     "date": "2026-10-30"
+    },
+    {
+     "h": "ddf5468b",
+     "kind": "fix",
+     "scope": "store",
+     "text": "Route the login re-offer through the sim, recentre art",
+     "date": "2026-10-30"
+    },
+    {
+     "h": "072fb948",
+     "kind": "fix",
+     "scope": "store",
+     "text": "Show the courier on the membership card art",
+     "date": "2026-10-30"
+    },
+    {
+     "h": "94b910bd",
+     "kind": "fix",
+     "scope": "store",
+     "text": "Include release v0.45.5 checkout fixes",
+     "date": "2026-10-30"
+    },
+    {
+     "h": "55cdb323",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Refresh membership status while the store is open",
+     "date": "2026-10-30"
+    },
+    {
+     "h": "b826ed2d",
+     "kind": "fix",
+     "scope": "ui",
+     "text": "Preserve membership refresh contracts through extraction",
+     "date": "2026-10-30"
+    },
+    {
+     "h": "daa09488",
+     "kind": "fix",
+     "scope": "store",
+     "text": "Retain entry reward delivery across background refreshes",
+     "date": "2026-10-30"
+    }
+   ]
   }
  ],
  "versions": [
   {
    "version": "v0.45.5",
    "branch": "release/v0.45.5",
-   "declared_version": "0.45.4",
-   "imminent": false,
-   "commits": 0,
-   "shown": 0,
-   "last_commit": "2026-10-29T16:30:06+13:00",
+   "declared_version": "0.45.5",
+   "imminent": true,
+   "commits": 22,
+   "shown": 12,
+   "last_commit": "2026-10-30T17:22:46+13:00",
    "sections": [
     {
      "key": "classes",
@@ -81,7 +167,15 @@
      "icon": "🐉",
      "fr": "Donjons, failles & boss",
      "en": "Dungeons, rifts & bosses",
-     "items": []
+     "items": [
+      {
+       "h": "f5ac3442",
+       "kind": "fix",
+       "scope": "mobs",
+       "text": "Smooth leveling HP and restore elite health floors",
+       "date": "2026-10-30"
+      }
+     ]
     },
     {
      "key": "monde",
@@ -102,7 +196,85 @@
      "icon": "⚙️",
      "fr": "Confort & technique",
      "en": "Comfort & technical",
-     "items": []
+     "items": [
+      {
+       "h": "fcbe8d6e",
+       "kind": "feat",
+       "scope": "mail",
+       "text": "Deliver store purchases to a loot window",
+       "date": "2026-10-30"
+      },
+      {
+       "h": "ebf31962",
+       "kind": "fix",
+       "scope": "store",
+       "text": "Preserve encoded membership checkout secrets",
+       "date": "2026-10-30"
+      },
+      {
+       "h": "a5c05a13",
+       "kind": "fix",
+       "scope": "store",
+       "text": "Rebuild the Memberships tab and drop collect buttons",
+       "date": "2026-10-30"
+      },
+      {
+       "h": "4dc2bf80",
+       "kind": "fix",
+       "scope": "store",
+       "text": "Label the monthly-to-annual upgrade and polish dialogs",
+       "date": "2026-10-30"
+      },
+      {
+       "h": "b8a5e15b",
+       "kind": "fix",
+       "scope": "store",
+       "text": "Keep claiming paid rewards until they arrive",
+       "date": "2026-10-30"
+      },
+      {
+       "h": "ddf5468b",
+       "kind": "fix",
+       "scope": "store",
+       "text": "Route the login re-offer through the sim, recentre art",
+       "date": "2026-10-30"
+      },
+      {
+       "h": "072fb948",
+       "kind": "fix",
+       "scope": "store",
+       "text": "Show the courier on the membership card art",
+       "date": "2026-10-30"
+      },
+      {
+       "h": "94b910bd",
+       "kind": "fix",
+       "scope": "store",
+       "text": "Include release v0.45.5 checkout fixes",
+       "date": "2026-10-30"
+      },
+      {
+       "h": "55cdb323",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Refresh membership status while the store is open",
+       "date": "2026-10-30"
+      },
+      {
+       "h": "b826ed2d",
+       "kind": "fix",
+       "scope": "ui",
+       "text": "Preserve membership refresh contracts through extraction",
+       "date": "2026-10-30"
+      },
+      {
+       "h": "daa09488",
+       "kind": "fix",
+       "scope": "store",
+       "text": "Retain entry reward delivery across background refreshes",
+       "date": "2026-10-30"
+      }
+     ]
     }
    ]
   },
