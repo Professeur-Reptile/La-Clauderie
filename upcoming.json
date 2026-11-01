@@ -1,20 +1,63 @@
 {
- "generated": "2026-10-30T06:19:37Z",
- "base_tag": "v0.45.4",
- "version": "v0.45.5",
- "branch": "release/v0.45.5",
- "declared_version": "0.45.5",
- "imminent": true,
- "commits": 22,
- "shown": 12,
- "last_commit": "2026-10-30T17:22:46+13:00",
+ "generated": "2026-11-01T15:25:17Z",
+ "base_tag": "v0.45.5",
+ "version": "v0.46.0",
+ "branch": "ossbrain-release/v0.46.0",
+ "declared_version": "0.45.3",
+ "imminent": false,
+ "commits": 53,
+ "shown": 30,
+ "last_commit": "2026-10-29T21:58:37Z",
  "sections": [
   {
    "key": "classes",
    "icon": "⚔️",
    "fr": "Classes & sorts",
    "en": "Classes & spells",
-   "items": []
+   "items": [
+    {
+     "h": "0803fe56",
+     "kind": "feat",
+     "scope": "talents",
+     "text": "Cheap Trick's Gut Punch costs no Energy",
+     "date": "2026-10-29"
+    },
+    {
+     "h": "fb272195",
+     "kind": "feat",
+     "scope": "hunter",
+     "text": "Grant Tactical Camo through Lonely Soul to every spec",
+     "date": "2026-10-27"
+    },
+    {
+     "h": "29ad28c2",
+     "kind": "fix",
+     "scope": "pets",
+     "text": "Expire the Assist cast record when the fight ends",
+     "date": "2026-10-29"
+    },
+    {
+     "h": "7cdcae1b",
+     "kind": "fix",
+     "scope": "pets",
+     "text": "Expire the Assist cast across gaps in pet ticks",
+     "date": "2026-10-29"
+    },
+    {
+     "h": "ad33052a",
+     "kind": "fix",
+     "scope": "pets",
+     "text": "Expire the Assist cast record from the per-player combat pass",
+     "date": "2026-10-29"
+    },
+    {
+     "h": "03c82ba0",
+     "kind": "fix",
+     "scope": "talents",
+     "text": "Give Cheap Trick's Gut Punch a 10 sec cooldown",
+     "date": "2026-10-29"
+    }
+   ]
   },
   {
    "key": "metiers",
@@ -28,15 +71,7 @@
    "icon": "🐉",
    "fr": "Donjons, failles & boss",
    "en": "Dungeons, rifts & bosses",
-   "items": [
-    {
-     "h": "f5ac3442",
-     "kind": "fix",
-     "scope": "mobs",
-     "text": "Smooth leveling HP and restore elite health floors",
-     "date": "2026-10-30"
-    }
-   ]
+   "items": []
   },
   {
    "key": "monde",
@@ -50,7 +85,22 @@
    "icon": "🏰",
    "fr": "Guilde & social",
    "en": "Guild & social",
-   "items": []
+   "items": [
+    {
+     "h": "ce4e1a08",
+     "kind": "feat",
+     "scope": "guild",
+     "text": "Make Lantern Seals a currency instead of a bag item",
+     "date": "2026-10-28"
+    },
+    {
+     "h": "a9417436",
+     "kind": "fix",
+     "scope": "guild",
+     "text": "Preserve seals when currency credits overflow",
+     "date": "2026-10-28"
+    }
+   ]
   },
   {
    "key": "confort",
@@ -59,225 +109,163 @@
    "en": "Comfort & technical",
    "items": [
     {
-     "h": "fcbe8d6e",
+     "h": "35dd1c06",
      "kind": "feat",
-     "scope": "mail",
-     "text": "Deliver store purchases to a loot window",
-     "date": "2026-10-30"
+     "scope": "pvp",
+     "text": "Show the flagged bonus on the World PvP panel",
+     "date": "2026-10-28"
     },
     {
-     "h": "ebf31962",
+     "h": "e1257993",
+     "kind": "feat",
+     "scope": "render",
+     "text": "Drop the wings from Moonwing Form",
+     "date": "2026-10-28"
+    },
+    {
+     "h": "df81fb2d",
+     "kind": "feat",
+     "scope": "stealth",
+     "text": "Let enemy players and pets detect stealth by proximity",
+     "date": "2026-10-27"
+    },
+    {
+     "h": "67d68e1f",
+     "kind": "feat",
+     "scope": "stealth",
+     "text": "Leave lagged footprints enemies can read",
+     "date": "2026-10-27"
+    },
+    {
+     "h": "20f95cf0",
+     "kind": "feat",
+     "scope": "stealth",
+     "text": "Show a rim glint for enemy stealthers just past the cone",
+     "date": "2026-10-27"
+    },
+    {
+     "h": "150651bb",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Keep a mounted rider seated when struck",
+     "date": "2026-10-29"
+    },
+    {
+     "h": "ea8af71c",
      "kind": "fix",
      "scope": "store",
-     "text": "Preserve encoded membership checkout secrets",
-     "date": "2026-10-30"
+     "text": "Hide finished referral advert and close promos in one click",
+     "date": "2026-10-29"
     },
     {
-     "h": "a5c05a13",
+     "h": "e2351247",
      "kind": "fix",
      "scope": "store",
-     "text": "Rebuild the Memberships tab and drop collect buttons",
-     "date": "2026-10-30"
+     "text": "Keep the WOC Store window on screen at every UI scale",
+     "date": "2026-10-29"
     },
     {
-     "h": "4dc2bf80",
+     "h": "d5dacc49",
      "kind": "fix",
      "scope": "store",
-     "text": "Label the monthly-to-annual upgrade and polish dialogs",
-     "date": "2026-10-30"
+     "text": "Close the review findings on the store window fit",
+     "date": "2026-10-29"
     },
     {
-     "h": "b8a5e15b",
+     "h": "78b367e9",
+     "kind": "fix",
+     "scope": "i18n",
+     "text": "Complete v0.46 maintenance translations",
+     "date": "2026-10-29"
+    },
+    {
+     "h": "891fd976",
+     "kind": "fix",
+     "scope": "render",
+     "text": "Transform stealth footprints relative to camera",
+     "date": "2026-10-29"
+    },
+    {
+     "h": "d4b3cf6a",
      "kind": "fix",
      "scope": "store",
-     "text": "Keep claiming paid rewards until they arrive",
-     "date": "2026-10-30"
+     "text": "Integrate scaled store viewport bounds",
+     "date": "2026-10-29"
     },
     {
-     "h": "ddf5468b",
+     "h": "42d8b0a7",
      "kind": "fix",
      "scope": "store",
-     "text": "Route the login re-offer through the sim, recentre art",
-     "date": "2026-10-30"
+     "text": "Integrate promo eligibility and dismissal",
+     "date": "2026-10-29"
     },
     {
-     "h": "072fb948",
+     "h": "09dd1df5",
      "kind": "fix",
-     "scope": "store",
-     "text": "Show the courier on the membership card art",
-     "date": "2026-10-30"
+     "scope": "pets",
+     "text": "Integrate Assist stale target expiration",
+     "date": "2026-10-29"
     },
     {
-     "h": "94b910bd",
+     "h": "cc1253bc",
      "kind": "fix",
-     "scope": "store",
-     "text": "Include release v0.45.5 checkout fixes",
-     "date": "2026-10-30"
+     "scope": "i18n",
+     "text": "Recover reviewed promotion close translations",
+     "date": "2026-10-29"
     },
     {
-     "h": "55cdb323",
+     "h": "b4834468",
      "kind": "fix",
-     "scope": "ui",
-     "text": "Refresh membership status while the store is open",
-     "date": "2026-10-30"
+     "scope": "pet",
+     "text": "Recover reviewed in-flight assist liveness repair",
+     "date": "2026-10-29"
     },
     {
-     "h": "b826ed2d",
+     "h": "db80a179",
      "kind": "fix",
-     "scope": "ui",
-     "text": "Preserve membership refresh contracts through extraction",
-     "date": "2026-10-30"
+     "scope": "pvp",
+     "text": "Restore the flagged reputation bonus at 10 percent",
+     "date": "2026-10-28"
     },
     {
-     "h": "daa09488",
+     "h": "b3e2c7fb",
      "kind": "fix",
-     "scope": "store",
-     "text": "Retain entry reward delivery across background refreshes",
-     "date": "2026-10-30"
+     "scope": "trinkets",
+     "text": "Make the referral charm shields flat 250 and 350 absorbs",
+     "date": "2026-10-28"
+    },
+    {
+     "h": "5cbb05aa",
+     "kind": "fix",
+     "scope": "net",
+     "text": "Guard the seals mirror on a bare client and pin gcon seals",
+     "date": "2026-10-28"
+    },
+    {
+     "h": "f30b4838",
+     "kind": "fix",
+     "scope": "pvp",
+     "text": "Hide flagged stealthers from strangers who could flag at will",
+     "date": "2026-10-28"
+    },
+    {
+     "h": "123c0d63",
+     "kind": "fix",
+     "scope": "stealth",
+     "text": "Verify reveals and clear fading escape cues",
+     "date": "2026-10-28"
+    },
+    {
+     "h": "81d83ca3",
+     "kind": "fix",
+     "scope": "stealth",
+     "text": "Bound paced shimmer and footprint candidate work",
+     "date": "2026-10-28"
     }
    ]
   }
  ],
  "versions": [
-  {
-   "version": "v0.45.5",
-   "branch": "release/v0.45.5",
-   "declared_version": "0.45.5",
-   "imminent": true,
-   "commits": 22,
-   "shown": 12,
-   "last_commit": "2026-10-30T17:22:46+13:00",
-   "sections": [
-    {
-     "key": "classes",
-     "icon": "⚔️",
-     "fr": "Classes & sorts",
-     "en": "Classes & spells",
-     "items": []
-    },
-    {
-     "key": "metiers",
-     "icon": "🔨",
-     "fr": "Métiers & récolte",
-     "en": "Professions & gathering",
-     "items": []
-    },
-    {
-     "key": "donjons",
-     "icon": "🐉",
-     "fr": "Donjons, failles & boss",
-     "en": "Dungeons, rifts & bosses",
-     "items": [
-      {
-       "h": "f5ac3442",
-       "kind": "fix",
-       "scope": "mobs",
-       "text": "Smooth leveling HP and restore elite health floors",
-       "date": "2026-10-30"
-      }
-     ]
-    },
-    {
-     "key": "monde",
-     "icon": "🗺️",
-     "fr": "Monde & quêtes",
-     "en": "World & quests",
-     "items": []
-    },
-    {
-     "key": "guilde",
-     "icon": "🏰",
-     "fr": "Guilde & social",
-     "en": "Guild & social",
-     "items": []
-    },
-    {
-     "key": "confort",
-     "icon": "⚙️",
-     "fr": "Confort & technique",
-     "en": "Comfort & technical",
-     "items": [
-      {
-       "h": "fcbe8d6e",
-       "kind": "feat",
-       "scope": "mail",
-       "text": "Deliver store purchases to a loot window",
-       "date": "2026-10-30"
-      },
-      {
-       "h": "ebf31962",
-       "kind": "fix",
-       "scope": "store",
-       "text": "Preserve encoded membership checkout secrets",
-       "date": "2026-10-30"
-      },
-      {
-       "h": "a5c05a13",
-       "kind": "fix",
-       "scope": "store",
-       "text": "Rebuild the Memberships tab and drop collect buttons",
-       "date": "2026-10-30"
-      },
-      {
-       "h": "4dc2bf80",
-       "kind": "fix",
-       "scope": "store",
-       "text": "Label the monthly-to-annual upgrade and polish dialogs",
-       "date": "2026-10-30"
-      },
-      {
-       "h": "b8a5e15b",
-       "kind": "fix",
-       "scope": "store",
-       "text": "Keep claiming paid rewards until they arrive",
-       "date": "2026-10-30"
-      },
-      {
-       "h": "ddf5468b",
-       "kind": "fix",
-       "scope": "store",
-       "text": "Route the login re-offer through the sim, recentre art",
-       "date": "2026-10-30"
-      },
-      {
-       "h": "072fb948",
-       "kind": "fix",
-       "scope": "store",
-       "text": "Show the courier on the membership card art",
-       "date": "2026-10-30"
-      },
-      {
-       "h": "94b910bd",
-       "kind": "fix",
-       "scope": "store",
-       "text": "Include release v0.45.5 checkout fixes",
-       "date": "2026-10-30"
-      },
-      {
-       "h": "55cdb323",
-       "kind": "fix",
-       "scope": "ui",
-       "text": "Refresh membership status while the store is open",
-       "date": "2026-10-30"
-      },
-      {
-       "h": "b826ed2d",
-       "kind": "fix",
-       "scope": "ui",
-       "text": "Preserve membership refresh contracts through extraction",
-       "date": "2026-10-30"
-      },
-      {
-       "h": "daa09488",
-       "kind": "fix",
-       "scope": "store",
-       "text": "Retain entry reward delivery across background refreshes",
-       "date": "2026-10-30"
-      }
-     ]
-    }
-   ]
-  },
   {
    "version": "v0.46.0",
    "branch": "ossbrain-release/v0.46.0",
