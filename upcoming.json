@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-03T02:35:17Z",
+ "generated": "2026-11-03T09:58:42Z",
  "base_tag": "v0.45.6",
  "version": "v0.45.7",
  "branch": "release/v0.45.7",
- "declared_version": "0.45.6",
- "imminent": false,
- "commits": 11,
+ "declared_version": "0.45.7",
+ "imminent": true,
+ "commits": 15,
  "shown": 4,
- "last_commit": "2026-11-03T15:05:26+13:00",
+ "last_commit": "2026-11-03T20:45:59+13:00",
  "sections": [
   {
    "key": "classes",
@@ -85,11 +85,11 @@
   {
    "version": "v0.45.7",
    "branch": "release/v0.45.7",
-   "declared_version": "0.45.6",
-   "imminent": false,
-   "commits": 11,
+   "declared_version": "0.45.7",
+   "imminent": true,
+   "commits": 15,
    "shown": 4,
-   "last_commit": "2026-11-03T15:05:26+13:00",
+   "last_commit": "2026-11-03T20:45:59+13:00",
    "sections": [
     {
      "key": "classes",
