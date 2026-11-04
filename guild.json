@@ -2,35 +2,35 @@
   "guilde": {
     "classementServeur": 17,
     "classement": {
-      "releveLe": "2026-11-03T16:57:58Z",
+      "releveLe": "2026-11-04T05:59:49Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Sovereign",
           "memberCount": 160,
-          "totalLifetimeXp": 90412264,
+          "totalLifetimeXp": 90417813,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "Raiders United",
           "memberCount": 234,
-          "totalLifetimeXp": 88283469,
+          "totalLifetimeXp": 88329267,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Monarchs",
           "memberCount": 80,
-          "totalLifetimeXp": 47089352,
+          "totalLifetimeXp": 47145762,
           "topLevel": 20
         },
         {
           "rank": 4,
           "name": "Mayonnaise",
-          "memberCount": 137,
-          "totalLifetimeXp": 33650738,
+          "memberCount": 140,
+          "totalLifetimeXp": 33940683,
           "topLevel": 20
         },
         {
@@ -44,7 +44,7 @@
           "rank": 6,
           "name": "Troll Riders inc",
           "memberCount": 27,
-          "totalLifetimeXp": 25463899,
+          "totalLifetimeXp": 25536086,
           "topLevel": 20
         },
         {
@@ -58,7 +58,7 @@
           "rank": 8,
           "name": "Cheaters",
           "memberCount": 44,
-          "totalLifetimeXp": 18681199,
+          "totalLifetimeXp": 18745527,
           "topLevel": 20
         },
         {
@@ -72,7 +72,7 @@
           "rank": 10,
           "name": "SPARTA",
           "memberCount": 75,
-          "totalLifetimeXp": 13138972,
+          "totalLifetimeXp": 13234514,
           "topLevel": 20
         }
       ],
@@ -80,7 +80,7 @@
         "rank": 17,
         "name": "La Clauderie",
         "memberCount": 99,
-        "totalLifetimeXp": 11054464,
+        "totalLifetimeXp": 11057691,
         "topLevel": 20
       }
     }
