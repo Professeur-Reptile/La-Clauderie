@@ -59,7 +59,7 @@ jobs:
       - name: Checkout du Codex (wocc-knowledge-base)
         uses: actions/checkout@v4
         with:
-          repository: Reptile-New/wocc-knowledge-base
+          repository: Professeur-Reptile/wocc-knowledge-base
           path: wocc-knowledge-base
 
       # Toutes les pages et données de la racine, plus le .htaccess

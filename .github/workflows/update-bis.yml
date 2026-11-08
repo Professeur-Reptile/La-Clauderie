@@ -54,7 +54,7 @@ jobs:
           meta=$(curl -s --max-time 20 \
             -H "Authorization: Bearer $GH_TOKEN" \
             -H "Accept: application/vnd.github.raw+json" \
-            "https://api.github.com/repos/Reptile-New/wocc-knowledge-base/contents/data/_meta.json?ref=main" || true)
+            "https://api.github.com/repos/Professeur-Reptile/wocc-knowledge-base/contents/data/_meta.json?ref=main" || true)
           cur=$(printf '%s' "$meta" | python3 -c "import sys,json;d=json.load(sys.stdin);print(str(d['tag'])+'/'+str(d.get('schema',0)))" 2>/dev/null || true)
           if [ -z "$cur" ]; then
             # _meta illisible (API en panne ?) : on tente le recalcul complet,
@@ -78,7 +78,7 @@ jobs:
         if: steps.kb.outputs.run == 'true'
         uses: actions/checkout@v4
         with:
-          repository: Reptile-New/wocc-knowledge-base
+          repository: Professeur-Reptile/wocc-knowledge-base
           path: wocc-knowledge-base
 
       - name: Python
