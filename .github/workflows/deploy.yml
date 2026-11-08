@@ -1,23 +1,18 @@
-# Publication du site sur laclauderie.fr (hébergement OVH, par FTP).
+# Publication du site sur laclauderie.fr (VPS IONOS 31.70.172.141, tar+SSH).
 #
-# Le site a longtemps été publié AUSSI sur un miroir GitHub Pages, en secours.
-# Ce miroir a été retiré le 6 août 2026 : depuis que tout l'art du jeu est
-# embarqué, l'artefact pèse ~17 Mo et GitHub Pages dépassait régulièrement les
-# 10 minutes que actions/deploy-pages accorde au maximum — 2 publications sur 3
-# échouaient. Un secours indisponible deux fois sur trois n'en est pas un, et
-# la décision a été prise d'assumer : si OVH tombe, le site tombe.
-# Si un miroir redevient souhaitable un jour, ressusciter le job `pages` depuis
-# l'historique de ce fichier (commit « Publication : retirer le miroir »).
+# Historique : publication par FTP sur l'hébergement OVH jusqu'en 2026-11
+# (voir l'historique de ce fichier), puis bascule du domaine sur le VPS.
+# Le miroir GitHub Pages, retiré le 6 août 2026 (artefact ~17 Mo, 2
+# publications sur 3 échouaient), n'a pas été ressuscité.
 #
-# Prérequis (une seule fois) : créer 3 secrets dans
-# Settings → Secrets and variables → Actions → « New repository secret » :
+# Prérequis : secret DEPLOY_SSH_KEY = clé privée dont la partie publique
+# est installée sur le VPS avec une commande forcée « deploy-tar »
+# (le serveur n'exécute rien d'autre avec cette clé).
 #
-#   OVH_FTP_SERVER    → l'« Adresse du serveur FTP » (ex: ftp.cluster0XX.hosting.ovh.net),
-#                       visible dans l'espace client OVH : Web Cloud → Hébergements
-#                       → laclauderie.fr → onglet FTP-SSH
-#   OVH_FTP_USERNAME  → l'« identifiant principal » du même onglet (ex: laclaudp)
-#   OVH_FTP_PASSWORD  → le mot de passe FTP (bouton « Modifier le mot de passe »
-#                       dans le même onglet si vous ne l'avez pas encore défini)
+# IMPORTANT : ce repo est la source de vérité. Les JSON édités en ligne
+# (admin.html passe par l'API GitHub) et les JSON mis à jour par les
+# workflows planifiés (classement guilde, BiS, à venir) arrivent sur main,
+# puis ce workflow les pousse vers le VPS.
 
 name: Publier le site
 
@@ -25,7 +20,7 @@ on:
   push:
     branches: [main]
   schedule:
-    # Rafraîchit la copie du Codex embarquée chez OVH (les données sont
+    # Rafraîchit la copie du Codex embarquée sur le VPS (les données sont
     # régénérées de leur côté, dans wocc-knowledge-base).
     - cron: '23 */6 * * *'
   workflow_dispatch: {}
@@ -33,7 +28,7 @@ on:
 permissions:
   contents: read
 
-# Une publication à la fois : deux envois FTP simultanés sur le même dossier
+# Une publication à la fois : deux envois simultanés sur le même dossier
 # se marcheraient dessus.
 concurrency:
   group: publish
@@ -44,21 +39,19 @@ jobs:
   checks:
     uses: ./.github/workflows/check-site.yml
 
-  ovh:
+  vps:
     needs: checks
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Vérifier que les secrets FTP sont configurés
+      - name: Vérifier que le secret de déploiement est configuré
         env:
-          FTP_SERVER: ${{ secrets.OVH_FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.OVH_FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.OVH_FTP_PASSWORD }}
+          DEPLOY_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
         run: |
-          if [ -z "$FTP_SERVER" ] || [ -z "$FTP_USERNAME" ] || [ -z "$FTP_PASSWORD" ]; then
-            echo "::error::Secrets FTP manquants. Créer OVH_FTP_SERVER, OVH_FTP_USERNAME et OVH_FTP_PASSWORD dans Settings → Secrets and variables → Actions (voir le commentaire en tête de ce fichier)."
+          if [ -z "$DEPLOY_KEY" ]; then
+            echo "::error::Secret DEPLOY_SSH_KEY manquant. Settings → Secrets and variables → Actions (voir le commentaire en tête de ce fichier)."
             exit 1
           fi
 
@@ -87,15 +80,10 @@ jobs:
           # ligne (annoncé dans robots.txt, lu par Google).
           python3 scripts/build_sitemap.py _site > _site/sitemap.xml
 
-      - name: Déployer sur OVH (FTP)
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.OVH_FTP_SERVER }}
-          username: ${{ secrets.OVH_FTP_USERNAME }}
-          password: ${{ secrets.OVH_FTP_PASSWORD }}
-          # FTP simple : tenté en FTPS le 19/07/2026, mais ce serveur OVH
-          # répond « 500 This security scheme is not implemented » à AUTH TLS.
-          # Si OVH active le FTPS explicite un jour, repasser à ftps.
-          protocol: ftp
-          local-dir: _site/
-          server-dir: www/
+      - name: Déployer sur le VPS (tar + SSH)
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' '31.70.172.141 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAX2+4Kl4cmZo6Zed95rS9C34NKiXYjPf/l36IXmtRLC' > ~/.ssh/known_hosts
+          tar -C _site -cpf - . | ssh -i ~/.ssh/deploy_key -o BatchMode=yes root@31.70.172.141 "deploy-tar clauderie"
