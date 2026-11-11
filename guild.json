@@ -2,35 +2,35 @@
   "guilde": {
     "classementServeur": 17,
     "classement": {
-      "releveLe": "2026-11-10T01:25:42Z",
+      "releveLe": "2026-11-11T10:40:58Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Sovereign",
           "memberCount": 159,
-          "totalLifetimeXp": 89400468,
+          "totalLifetimeXp": 89400613,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "Raiders United",
           "memberCount": 235,
-          "totalLifetimeXp": 89116111,
+          "totalLifetimeXp": 89210693,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Monarchs",
           "memberCount": 80,
-          "totalLifetimeXp": 47570447,
+          "totalLifetimeXp": 47636090,
           "topLevel": 20
         },
         {
           "rank": 4,
           "name": "Mayonnaise",
-          "memberCount": 135,
-          "totalLifetimeXp": 35129130,
+          "memberCount": 136,
+          "totalLifetimeXp": 35385275,
           "topLevel": 20
         },
         {
@@ -44,7 +44,7 @@
           "rank": 6,
           "name": "Troll Riders inc",
           "memberCount": 27,
-          "totalLifetimeXp": 25800983,
+          "totalLifetimeXp": 25898726,
           "topLevel": 20
         },
         {
@@ -70,9 +70,9 @@
         },
         {
           "rank": 10,
-          "name": "SPARTA",
-          "memberCount": 77,
-          "totalLifetimeXp": 13960492,
+          "name": "Dubwise",
+          "memberCount": 24,
+          "totalLifetimeXp": 13999089,
           "topLevel": 20
         }
       ],
