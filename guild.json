@@ -2,28 +2,28 @@
   "guilde": {
     "classementServeur": 17,
     "classement": {
-      "releveLe": "2026-11-22T19:26:53Z",
+      "releveLe": "2026-11-23T01:31:43Z",
       "metric": "guildLifetimeXp",
       "top": [
         {
           "rank": 1,
           "name": "Raiders United",
-          "memberCount": 236,
-          "totalLifetimeXp": 90934367,
+          "memberCount": 237,
+          "totalLifetimeXp": 91001974,
           "topLevel": 20
         },
         {
           "rank": 2,
           "name": "Sovereign",
           "memberCount": 160,
-          "totalLifetimeXp": 89167961,
+          "totalLifetimeXp": 89168532,
           "topLevel": 20
         },
         {
           "rank": 3,
           "name": "Monarchs",
           "memberCount": 80,
-          "totalLifetimeXp": 48302504,
+          "totalLifetimeXp": 48363829,
           "topLevel": 20
         },
         {
@@ -44,7 +44,7 @@
           "rank": 6,
           "name": "Troll Riders inc",
           "memberCount": 28,
-          "totalLifetimeXp": 26318507,
+          "totalLifetimeXp": 26391224,
           "topLevel": 20
         },
         {
@@ -63,16 +63,16 @@
         },
         {
           "rank": 9,
-          "name": "Ehren Nuggets",
-          "memberCount": 94,
-          "totalLifetimeXp": 16381237,
+          "name": "Dubwise",
+          "memberCount": 25,
+          "totalLifetimeXp": 16456565,
           "topLevel": 20
         },
         {
           "rank": 10,
-          "name": "Dubwise",
-          "memberCount": 25,
-          "totalLifetimeXp": 16285304,
+          "name": "Ehren Nuggets",
+          "memberCount": 94,
+          "totalLifetimeXp": 16381237,
           "topLevel": 20
         }
       ],
